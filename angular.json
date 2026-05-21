@@ -24,7 +24,9 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/kimi",
             "browser": "src/main.ts",
+
             "polyfills": [
               "zone.js"
             ],
@@ -33,7 +35,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "/"
               }
             ],
             "styles": [
