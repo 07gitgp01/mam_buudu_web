@@ -1,0 +1,94 @@
+<!-- ===== EN-TÊTE ===== -->
+<div class="page-header">
+  <div class="header-row">
+    <div>
+      <h2>Bonjour 👋</h2>
+      <p *ngIf="nomFamille">Bienvenue dans l'espace familial <strong>{{ nomFamille }}</strong></p>
+    </div>
+    <button class="btn-primary" routerLink="/app/personnes">
+      <span class="material-icons-round">person_add</span>
+      Ajouter un membre
+    </button>
+  </div>
+</div>
+
+<!-- ===== STATS ===== -->
+<div class="stats-grid mb-32">
+  <div class="stat-card" *ngFor="let s of stats" [class]="'stat-card--' + s.color">
+    <div class="stat-icon-wrap">
+      <span class="material-icons-round">{{ s.icon }}</span>
+    </div>
+    <div class="stat-body">
+      <span class="stat-value">{{ loading ? '…' : s.value }}</span>
+      <span class="stat-label">{{ s.label }}</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ACTIONS RAPIDES ===== -->
+<div class="section-header mb-16">
+  <h3>Actions rapides</h3>
+</div>
+
+<div class="quick-actions mb-32">
+  <a *ngFor="let a of quickActions" [routerLink]="a.route" class="quick-action" [class]="'quick-action--' + a.color">
+    <span class="material-icons-round">{{ a.icon }}</span>
+    <span>{{ a.label }}</span>
+  </a>
+</div>
+
+<!-- ===== DERNIERS MEMBRES ===== -->
+<div class="section-header mb-16">
+  <h3>Membres récents</h3>
+  <div class="section-actions">
+    <div class="view-switcher">
+      <button class="toggle-btn" type="button" [class.active]="viewMode === 'cards'" (click)="setViewMode('cards')">Cartes</button>
+      <button class="toggle-btn" type="button" [class.active]="viewMode === 'list'" (click)="setViewMode('list')">Liste</button>
+    </div>
+    <a routerLink="/app/personnes" class="btn-secondary btn-sm">Voir tous</a>
+  </div>
+</div>
+
+<div class="loading-state" *ngIf="loading">
+  <span class="material-icons-round spin">sync</span>
+  Chargement...
+</div>
+
+<div class="members-grid" [class.list]="viewMode === 'list'" [class.cards]="viewMode === 'cards'" *ngIf="!loading">
+  <div class="member-card" *ngFor="let p of recentPersonnes; let i = index">
+    <div class="colorband" [ngClass]="{ 'color-1': i % 3 === 0, 'color-2': i % 3 === 1, 'color-3': i % 3 === 2 }"></div>
+    <div class="avatar-column">
+      <div class="card-avatar">
+        <div class="avatar avatar-md" [class.female]="p.sexe === 'F'" [class.male]="p.sexe === 'M'">
+          <img *ngIf="p.photoUrl" [src]="p.photoUrl" [alt]="(p.prenoms ?? '') + ' ' + (p.nomUsage ?? p.nomNaissance ?? '')" />
+          <ng-container *ngIf="!p.photoUrl">{{ getInitiales(p) }}</ng-container>
+        </div>
+      </div>
+      <div class="actions">
+        <button type="button"><span class="material-icons-round">favorite_border</span>Like</button>
+        <a [routerLink]="['/app/personnes']" [queryParams]="{ id: p.id }" class="btn-link">
+          <span class="material-icons-round">visibility</span>
+          Voir
+        </a>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>{{ p.prenoms }} {{ p.nomUsage ?? p.nomNaissance }}</h2>
+      <div class="title">{{ p.sexe === 'M' ? 'Homme' : p.sexe === 'F' ? 'Femme' : 'Autre' }}</div>
+      <div class="desc">
+        <span class="desc-meta">
+          {{ extractAnnee(p.dateNaissance) ?? '?' }}
+          <ng-container *ngIf="!estVivant(p)"> – {{ extractAnnee(p.dateDeces) ?? '?' }} décédé</ng-container>
+          <ng-container *ngIf="estVivant(p)"> · vivant</ng-container>
+        </span>
+        <span class="desc-location" *ngIf="p.lieuNaissance">{{ p.lieuNaissance }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="recentPersonnes.length === 0">
+    <span class="material-icons-round">people</span>
+    <h3>Aucun membre encore</h3>
+    <p>Commencez par ajouter des personnes à votre famille.</p>
+  </div>
+</div>

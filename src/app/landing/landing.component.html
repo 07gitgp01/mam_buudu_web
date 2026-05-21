@@ -1,0 +1,428 @@
+<!-- ===== NAVBAR ===== -->
+<nav class="landing-nav">
+  <a routerLink="/" class="nav-logo">
+    <span class="material-icons-round">account_tree</span>
+    <span>Mam Buudu</span>
+  </a>
+  <div class="nav-links">
+    <a href="#features" class="nav-link">Fonctionnalités</a>
+    <a href="#familles" class="nav-link">Familles</a>
+    <a href="#temoignages" class="nav-link">Témoignages</a>
+  </div>
+  <div class="nav-actions">
+    <ng-container *ngIf="!isLoggedIn">
+      <a routerLink="/famille/login" class="btn-nav-famille">
+        <span class="material-icons-round">people</span>
+        Espace Famille
+      </a>
+      <a routerLink="/auth/login" class="btn-nav-admin">
+        <span class="material-icons-round">manage_accounts</span>
+        Administration
+      </a>
+    </ng-container>
+    <ng-container *ngIf="isLoggedIn">
+      <a [routerLink]="dashboardRoute" class="btn-nav-famille">
+        <span class="material-icons-round">dashboard</span>
+        Mon espace
+      </a>
+      <button class="btn-nav-logout" (click)="logout()">
+        <span class="material-icons-round">logout</span>
+        Se déconnecter
+      </button>
+    </ng-container>
+    <button class="nav-hamburger" (click)="navOpen = !navOpen" aria-label="Menu">
+      <span class="material-icons-round">{{ navOpen ? 'close' : 'menu' }}</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== MOBILE NAV SHEET ===== -->
+<div class="nav-mobile-overlay" *ngIf="navOpen" (click)="navOpen=false"></div>
+<div class="nav-mobile-sheet" [class.open]="navOpen">
+  <div class="nms-header">
+    <div class="nav-logo nms-logo">
+      <span class="material-icons-round">account_tree</span>
+      <span>Mam Buudu</span>
+    </div>
+    <button class="nms-close" (click)="navOpen=false">
+      <span class="material-icons-round">close</span>
+    </button>
+  </div>
+  <div class="nms-links">
+    <a href="#features" class="nms-link" (click)="navOpen=false">
+      <span class="material-icons-round">star</span>Fonctionnalités
+    </a>
+    <a href="#familles" class="nms-link" (click)="navOpen=false">
+      <span class="material-icons-round">family_restroom</span>Familles
+    </a>
+    <a href="#temoignages" class="nms-link" (click)="navOpen=false">
+      <span class="material-icons-round">format_quote</span>Témoignages
+    </a>
+  </div>
+  <div class="nms-actions">
+    <ng-container *ngIf="!isLoggedIn">
+      <a routerLink="/famille/login" class="nms-btn nms-btn-famille" (click)="navOpen=false">
+        <span class="material-icons-round">people</span>Espace Famille
+      </a>
+      <a routerLink="/auth/login" class="nms-btn nms-btn-admin" (click)="navOpen=false">
+        <span class="material-icons-round">manage_accounts</span>Administration
+      </a>
+    </ng-container>
+    <ng-container *ngIf="isLoggedIn">
+      <a [routerLink]="dashboardRoute" class="nms-btn nms-btn-famille" (click)="navOpen=false">
+        <span class="material-icons-round">dashboard</span>Mon espace
+      </a>
+      <button class="nms-btn nms-btn-logout" (click)="logout(); navOpen=false">
+        <span class="material-icons-round">logout</span>Se déconnecter
+      </button>
+    </ng-container>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+
+  <!-- Zone bleue : éléments flottants -->
+  <div class="hero-blue">
+    <div class="hb-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="dots-grid"></div>
+    </div>
+    <div class="fn-group">
+      <div class="float-node fn-1">
+        <div class="fn-disc fn-disc-blue"><span class="material-icons-round">account_tree</span></div>
+        <span class="fn-lbl">Arbre</span>
+      </div>
+      <div class="float-node fn-2">
+        <div class="fn-disc fn-disc-pink"><span class="material-icons-round">favorite</span></div>
+        <span class="fn-lbl">Unions</span>
+      </div>
+      <div class="float-node fn-3">
+        <div class="fn-disc fn-disc-green"><span class="material-icons-round">family_restroom</span></div>
+        <span class="fn-lbl">Famille</span>
+      </div>
+      <div class="float-node fn-4">
+        <div class="fn-disc fn-disc-violet"><span class="material-icons-round">auto_stories</span></div>
+        <span class="fn-lbl">Stories</span>
+      </div>
+      <div class="float-node fn-5">
+        <div class="fn-disc fn-disc-cyan"><span class="material-icons-round">people</span></div>
+        <span class="fn-lbl">Membres</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vague bleu → blanc -->
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,45 C360,90 1080,0 1440,45 L1440,90 L0,90 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+
+  <!-- Zone blanche : contenu principal -->
+  <div class="hero-white">
+    <div class="hero-badge">
+      <span class="material-icons-round">auto_awesome</span>
+      Application généalogique africaine
+    </div>
+    <h1 class="hero-title">
+      L'histoire de votre<br/>
+      <span class="gradient-text">famille</span>,<br/>
+      préservée pour toujours
+    </h1>
+    <p class="hero-subtitle">
+      Construisez l'arbre généalogique de votre famille, partagez vos stories et connectez les générations à travers le temps.
+    </p>
+    <div class="hero-entries">
+      <ng-container *ngIf="!isLoggedIn">
+        <a routerLink="/famille/login" class="entry-card entry-famille">
+          <div class="entry-icon-wrap famille-icon">
+            <span class="material-icons-round">family_restroom</span>
+          </div>
+          <div class="entry-info">
+            <strong>Espace Famille</strong>
+            <span>Pour les membres de la famille</span>
+          </div>
+          <span class="material-icons-round entry-arrow">arrow_forward</span>
+        </a>
+        <a routerLink="/auth/login" class="entry-card entry-admin">
+          <div class="entry-icon-wrap admin-icon">
+            <span class="material-icons-round">admin_panel_settings</span>
+          </div>
+          <div class="entry-info">
+            <strong>Espace Admin</strong>
+            <span>Pour les gestionnaires</span>
+          </div>
+          <span class="material-icons-round entry-arrow">arrow_forward</span>
+        </a>
+      </ng-container>
+      <ng-container *ngIf="isLoggedIn">
+        <a [routerLink]="dashboardRoute" class="entry-card entry-famille">
+          <div class="entry-icon-wrap famille-icon">
+            <span class="material-icons-round">dashboard</span>
+          </div>
+          <div class="entry-info">
+            <strong>Retour à mon espace</strong>
+            <span>{{ userName }}</span>
+          </div>
+          <span class="material-icons-round entry-arrow">arrow_forward</span>
+        </a>
+        <button class="entry-card entry-logout" (click)="logout()">
+          <div class="entry-icon-wrap logout-icon">
+            <span class="material-icons-round">logout</span>
+          </div>
+          <div class="entry-info">
+            <strong>Se déconnecter</strong>
+            <span>Quitter la session</span>
+          </div>
+          <span class="material-icons-round entry-arrow">arrow_forward</span>
+        </button>
+      </ng-container>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">{{ formatStat(stats.familles) }}+</span>
+        <span class="stat-label">Familles</span>
+        <span class="stat-icon-bg"><span class="material-icons-round">family_restroom</span></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">{{ formatStat(stats.membres) }}+</span>
+        <span class="stat-label">Membres</span>
+        <span class="stat-icon-bg"><span class="material-icons-round">people</span></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">{{ formatStat(stats.unions) }}+</span>
+        <span class="stat-label">Unions</span>
+        <span class="stat-icon-bg"><span class="material-icons-round">favorite</span></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">{{ formatStat(stats.stories) }}+</span>
+        <span class="stat-label">Stories</span>
+        <span class="stat-icon-bg"><span class="material-icons-round">auto_stories</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTION (section bleue, inspirée Image 1) ===== -->
+<section class="solution-section">
+  <div class="container">
+    <!-- Noeuds 3D flottants -->
+    <div class="sol-floats">
+      <div class="sf-node">
+        <div class="sf-disc sf-glass-blue"><span class="material-icons-round">account_tree</span></div>
+      </div>
+      <div class="sf-node sf-main">
+        <div class="sf-disc sf-white"><span class="material-icons-round">people</span></div>
+      </div>
+      <div class="sf-node">
+        <div class="sf-disc sf-glass-dark"><span class="material-icons-round">auto_stories</span></div>
+      </div>
+    </div>
+    <div class="sol-arrow-indicator">
+      <span class="material-icons-round">arrow_upward</span>
+      <span class="sol-arrow-label">Notre Solution</span>
+    </div>
+
+    <div class="section-header-landing light">
+      <span class="section-tag light-tag">Notre Solution</span>
+      <h2>Mam Buudu simplifie la généalogie,<br/>pour toutes les familles.</h2>
+      <p>De la création de l'arbre au partage des stories — une solution complète, accessible en ligne ou hors ligne.</p>
+    </div>
+
+    <div class="sol-cards">
+      <div class="sol-card">
+        <div class="sc-icon"><span class="material-icons-round">account_tree</span></div>
+        <h3>Sans code, sans effort</h3>
+        <p>Construisez votre arbre généalogique facilement, sans aucune compétence technique. En ligne ou hors ligne.</p>
+      </div>
+      <div class="sol-card">
+        <div class="sc-icon"><span class="material-icons-round">share</span></div>
+        <h3>Partage en famille</h3>
+        <p>Invitez les membres, partagez les stories et connectez les générations en temps réel, depuis n'importe où.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES (redesign, inspirée Image 2) ===== -->
+<section class="features-section" id="features">
+  <div class="container">
+
+    <div class="features-layout">
+
+      <!-- Colonne gauche : texte + évoluer -->
+      <div class="fl-left">
+        <span class="welcome-badge">
+          <span class="material-icons-round">account_tree</span>
+          Bienvenue sur Mam Buudu
+          <span class="wb-chevron material-icons-round">chevron_right</span>
+        </span>
+        <h2>Généalogie nouvelle<br/>génération</h2>
+        <p class="fl-sub">Construite pour équiper chaque famille d'outils modernes pour préserver et partager leur histoire.</p>
+
+        <div class="fl-evolving">
+          <h3>Évoluer au-delà des méthodes traditionnelles</h3>
+          <p>Nous répondons aux défis de la préservation familiale en remplaçant les albums éparpillés et la mémoire orale par une plateforme numérique sécurisée, accessible à toute la famille.</p>
+        </div>
+      </div>
+
+      <!-- Colonne droite : carte mission + icônes features -->
+      <div class="fl-right">
+        <div class="fl-mission">
+          <p>Notre mission est d'équiper les familles africaines d'outils modernes pour rester connectées et préserver leur patrimoine à travers les générations.</p>
+        </div>
+        <div class="fl-feat-icons">
+          <div class="ffi-card" *ngFor="let f of features">
+            <div class="ffi-icon" [style.background]="f.color + '18'" [style.color]="f.color">
+              <span class="material-icons-round">{{ f.icon }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FAMILLES SHOWCASE ===== -->
+<section class="showcase-section" id="familles">
+  <div class="container">
+    <div class="section-header-landing">
+      <span class="section-tag">Familles</span>
+      <h2>Des familles qui nous font confiance</h2>
+      <p>Rejoignez des centaines de familles qui ont choisi Mam Buudu pour préserver leur patrimoine.</p>
+    </div>
+    <div class="familles-carousel">
+      <div class="famille-card" *ngFor="let f of familles">
+        <div class="fc-header" [style.background]="'linear-gradient(135deg,' + f.color + '22 0%, ' + f.color + '0a 100%)'">
+          <div class="fc-avatar" [style.background]="f.color + '22'" [style.color]="f.color">
+            {{ f.initiale }}
+          </div>
+          <div class="fc-identity">
+            <h3>Famille {{ f.nom }}</h3>
+            <span class="fc-origine"><span class="material-icons-round">place</span> {{ f.origine }}</span>
+          </div>
+        </div>
+        <div class="fc-stats">
+          <div class="fc-stat">
+            <span class="fc-stat-val" [style.color]="f.color">{{ f.membres }}</span>
+            <span class="fc-stat-label">Membres</span>
+          </div>
+          <div class="fc-divider"></div>
+          <div class="fc-stat">
+            <span class="fc-stat-val" [style.color]="f.color">{{ f.generations }}</span>
+            <span class="fc-stat-label">Générations</span>
+          </div>
+          <div class="fc-divider"></div>
+          <div class="fc-stat">
+            <span class="fc-stat-val" [style.color]="f.color">{{ f.unions }}</span>
+            <span class="fc-stat-label">Unions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials-section" id="temoignages">
+  <div class="container">
+    <div class="section-header-landing light">
+      <span class="section-tag light-tag">Témoignages</span>
+      <h2>Ce que disent nos utilisateurs</h2>
+      <p>Ils ont choisi Mam Buudu pour connecter leur famille à travers les générations.</p>
+    </div>
+
+    <div class="testimonial-carousel">
+      <div class="testimonial-track" [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
+        <div class="testimonial-slide" *ngFor="let t of testimonials">
+          <div class="testimonial-card">
+            <div class="testi-quote">
+              <span class="material-icons-round quote-icon">format_quote</span>
+              <p>{{ t.texte }}</p>
+            </div>
+            <div class="testi-author">
+              <div class="testi-avatar" [style.background]="t.color + '22'" [style.color]="t.color">
+                {{ t.initiale }}
+              </div>
+              <div>
+                <strong>{{ t.nom }}</strong>
+                <span>{{ t.role }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn" (click)="prevSlide()">
+          <span class="material-icons-round">chevron_left</span>
+        </button>
+        <div class="carousel-dots">
+          <button class="dot" *ngFor="let t of testimonials; let i = index"
+                  [class.active]="i === currentSlide"
+                  (click)="goToSlide(i)"></button>
+        </div>
+        <button class="carousel-btn" (click)="nextSlide()">
+          <span class="material-icons-round">chevron_right</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <div class="cta-badge">
+        <span class="material-icons-round">rocket_launch</span>
+        Commencez maintenant — C'est gratuit
+      </div>
+      <h2>Prêt à connecter votre famille ?</h2>
+      <p>Rejoignez des milliers de familles qui préservent leur histoire avec Mam Buudu.</p>
+      <div class="cta-actions">
+        <a routerLink="/famille/login" class="cta-btn cta-btn-famille">
+          <span class="material-icons-round">family_restroom</span>
+          Accéder à mon espace famille
+        </a>
+        <a routerLink="/auth/login" class="cta-btn cta-btn-admin">
+          <span class="material-icons-round">admin_panel_settings</span>
+          Espace administrateur
+        </a>
+      </div>
+    </div>
+    <div class="cta-deco">
+      <div class="cta-blob"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="landing-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="material-icons-round">account_tree</span>
+      <span>Mam Buudu</span>
+      <span class="footer-sep">·</span>
+      <span class="footer-by">par Sahelys</span>
+    </div>
+    <div class="footer-links">
+      <a routerLink="/famille/login">Espace Famille</a>
+      <a routerLink="/auth/login">Administration</a>
+      <a routerLink="/auth/register">Créer un espace</a>
+    </div>
+    <div class="footer-copy">© 2025 Sahelys. Tous droits réservés.</div>
+  </div>
+</footer>

@@ -1,0 +1,95 @@
+<div class="fs-layout">
+
+  <!-- BACKDROP MOBILE -->
+  <div class="fs-backdrop" *ngIf="sidebarOpen" (click)="sidebarOpen=false"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="fs-sidebar" [class.fs-sidebar-open]="sidebarOpen">
+    <div class="fs-sidebar-top">
+      <div class="fs-brand">
+        <span class="material-icons-round">account_tree</span>
+        <span class="fs-brand-name">Mam Buudu</span>
+        <!-- Bouton fermer sur mobile -->
+        <button class="fs-close-btn" (click)="sidebarOpen=false">
+          <span class="material-icons-round">close</span>
+        </button>
+      </div>
+
+      <nav class="fs-nav">
+        <a class="fs-nav-item" *ngFor="let item of navItems"
+           [routerLink]="item.route" routerLinkActive="active"
+           (click)="sidebarOpen=false">
+          <div class="fs-nav-icon" [style.color]="item.color" [style.background]="item.color + '18'">
+            <span class="material-icons-round">{{ item.icon }}</span>
+          </div>
+          <span class="fs-nav-label">{{ item.label }}</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="fs-sidebar-bottom">
+
+      <!-- LIEN ACCUEIL PRINCIPAL -->
+      <a routerLink="/" class="fs-home-link" title="Page d'accueil" (click)="sidebarOpen=false">
+        <span class="material-icons-round">language</span>
+        <span>Page d'accueil</span>
+      </a>
+
+      <!-- SÉLECTEUR DE THÈME -->
+      <div class="fs-theme-picker">
+        <span class="fs-theme-label">Thème</span>
+        <div class="fs-theme-dots">
+          <button
+            class="fs-theme-dot"
+            *ngFor="let t of themeService.themes"
+            [style.background]="t.color"
+            [class.active]="themeService.current === t.name"
+            (click)="themeService.applyColor(t.name)"
+            [title]="t.label"
+          ></button>
+        </div>
+      </div>
+
+      <div class="fs-user-card">
+        <div class="fs-user-avatar">{{ userInitiales }}</div>
+        <div class="fs-user-info">
+          <span class="fs-user-name">{{ user?.prenom }} {{ user?.nom }}</span>
+          <span class="fs-user-role">Espace Famille</span>
+        </div>
+        <button class="btn-icon fs-logout" title="Déconnexion" (click)="logout()">
+          <span class="material-icons-round">logout</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENU -->
+  <main class="fs-main">
+
+    <!-- TOPBAR MOBILE -->
+    <header class="fs-mobile-topbar">
+      <button class="btn-icon" (click)="sidebarOpen=true">
+        <span class="material-icons-round">menu</span>
+      </button>
+      <div class="fs-mobile-brand">
+        <span class="material-icons-round">account_tree</span>
+        <span>Mam Buudu</span>
+      </div>
+      <div class="fs-user-avatar fs-avatar-sm">{{ userInitiales }}</div>
+    </header>
+
+    <div class="fs-content">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <!-- BOTTOM NAVIGATION MOBILE -->
+  <nav class="fs-bottom-nav">
+    <a class="fs-bnav-item" *ngFor="let item of navItems"
+       [routerLink]="item.route" routerLinkActive="active">
+      <span class="material-icons-round">{{ item.icon }}</span>
+      <span>{{ item.label }}</span>
+    </a>
+  </nav>
+
+</div>

@@ -1,0 +1,228 @@
+<div class="admin-page">
+
+  <!-- En-tête -->
+  <div class="page-header">
+    <div>
+      <h2 class="page-title">Administration</h2>
+      <p class="page-subtitle" *ngIf="famille">
+        {{ famille.nom }}
+        <span class="famille-code" *ngIf="famille.code">&nbsp;·&nbsp;Code : <strong>{{ famille.code }}</strong></span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Chargement -->
+  <div class="loading-state" *ngIf="loading">
+    <span class="material-icons-round spin">sync</span>
+    Chargement...
+  </div>
+
+  <!-- Erreur -->
+  <div class="error-state" *ngIf="erreur && !loading">
+    <span class="material-icons-round">error_outline</span>
+    {{ erreur }}
+  </div>
+
+  <ng-container *ngIf="!loading && !erreur">
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="material-icons-round stat-icon">group</span>
+        <div>
+          <div class="stat-value">{{ membres.length }}</div>
+          <div class="stat-label">Membre{{ membres.length > 1 ? 's' : '' }}</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="material-icons-round stat-icon">shield</span>
+        <div>
+          <div class="stat-value">{{ countRole('admin') }}</div>
+          <div class="stat-label">Administrateur{{ countRole('admin') > 1 ? 's' : '' }}</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="material-icons-round stat-icon">manage_accounts</span>
+        <div>
+          <div class="stat-value">{{ countRole('gestionnaire') }}</div>
+          <div class="stat-label">Gestionnaire{{ countRole('gestionnaire') > 1 ? 's' : '' }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Accès consultation (lecture seule) ===== -->
+    <div class="section-card viewonly-card" *ngIf="viewonlyCreds">
+      <div class="section-header">
+        <div class="viewonly-title">
+          <span class="material-icons-round">visibility</span>
+          <div>
+            <h3>Accès consultation <span class="badge badge-gray">Lecture seule</span></h3>
+            <p>Partagez ces identifiants avec les membres qui souhaitent consulter l'arbre sans compte personnel.</p>
+          </div>
+        </div>
+        <button class="btn-icon" (click)="showViewonlyPassword = !showViewonlyPassword" title="Afficher / masquer">
+          <span class="material-icons-round">{{ showViewonlyPassword ? 'visibility_off' : 'visibility' }}</span>
+        </button>
+      </div>
+
+      <div class="viewonly-rows">
+        <div class="viewonly-row">
+          <span class="viewonly-label">Code famille</span>
+          <span class="viewonly-value">{{ viewonlyCreds.familleCode }}</span>
+          <button class="btn-copy" (click)="copyViewonly('code')" title="Copier">
+            <span class="material-icons-round">{{ viewonlyCopied === 'code' ? 'check' : 'content_copy' }}</span>
+          </button>
+        </div>
+        <div class="viewonly-row">
+          <span class="viewonly-label">Identifiant</span>
+          <span class="viewonly-value">{{ viewonlyCreds.viewonlyUsername }}</span>
+          <button class="btn-copy" (click)="copyViewonly('username')" title="Copier">
+            <span class="material-icons-round">{{ viewonlyCopied === 'username' ? 'check' : 'content_copy' }}</span>
+          </button>
+        </div>
+        <div class="viewonly-row">
+          <span class="viewonly-label">Mot de passe</span>
+          <span class="viewonly-value">{{ showViewonlyPassword ? viewonlyCreds.viewonlyPassword : '••••••••' }}</span>
+          <button class="btn-copy" (click)="copyViewonly('password')" title="Copier">
+            <span class="material-icons-round">{{ viewonlyCopied === 'password' ? 'check' : 'content_copy' }}</span>
+          </button>
+        </div>
+      </div>
+
+      <button class="btn-share-viewonly" (click)="shareViewonly()">
+        <span class="material-icons-round">share</span>
+        {{ viewonlyCopied === 'share' ? 'Copié dans le presse-papier !' : 'Partager les accès' }}
+      </button>
+    </div>
+
+    <!-- Section Membres -->
+    <div class="section-card">
+      <div class="section-header">
+        <h3>Membres ({{ membres.length }})</h3>
+        <button class="btn-primary btn-sm" (click)="showCreateForm = true">
+          <span class="material-icons-round">person_add</span>
+          Nouveau compte
+        </button>
+      </div>
+
+      <div class="members-table">
+        <div class="member-row" *ngFor="let m of membres">
+          <div class="member-info">
+            <div class="avatar avatar-sm">{{ userInitiales(m.user) }}</div>
+            <div class="member-details">
+              <span class="member-name">{{ m.user?.prenom }} {{ m.user?.nom }}</span>
+              <span class="member-contact">{{ m.user?.email || m.user?.telephone || '—' }}</span>
+            </div>
+          </div>
+          <span class="badge" [ngClass]="getRoleBadgeClass(m.role)">{{ getRoleLabel(m.role) }}</span>
+          <div class="member-actions" *ngIf="m.role !== 'admin'">
+            <button class="btn-ghost btn-sm"
+                    [disabled]="roleChanging === m.user?.id"
+                    (click)="changeRole(m.user?.id, getNextRole(m.role))">
+              <span class="material-icons-round spin" *ngIf="roleChanging === m.user?.id">sync</span>
+              {{ getPromoLabel(m.role) }}
+            </button>
+          </div>
+          <div class="member-actions" *ngIf="m.role === 'admin'">
+            <span class="admin-badge">
+              <span class="material-icons-round">verified</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="empty-list-msg" *ngIf="membres.length === 0">
+          Aucun membre dans cette famille
+        </div>
+      </div>
+    </div>
+
+  </ng-container>
+
+</div>
+
+<!-- ===== OVERLAY ===== -->
+<div class="panel-overlay" *ngIf="showCreateForm" (click)="showCreateForm = false"></div>
+
+<!-- ===== PANNEAU CRÉATION MEMBRE ===== -->
+<div class="slide-panel" [class.open]="showCreateForm">
+  <div class="panel-header">
+    <h3>Nouveau compte membre</h3>
+    <button class="btn-icon" (click)="showCreateForm = false">
+      <span class="material-icons-round">close</span>
+    </button>
+  </div>
+
+  <div class="panel-body">
+    <form #createMemberForm="ngForm">
+
+      <div class="form-section">
+        <div class="section-title">Identité</div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Prénom <span class="required">*</span></label>
+            <input type="text" name="prenom" [(ngModel)]="createForm.prenom"
+                   required placeholder="Prénom" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Nom <span class="required">*</span></label>
+            <input type="text" name="nom" [(ngModel)]="createForm.nom"
+                   required placeholder="Nom de famille" class="form-control" />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="section-title">Connexion</div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" [(ngModel)]="createForm.email"
+                 placeholder="exemple@email.com" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label>Téléphone</label>
+          <input type="tel" name="telephone" [(ngModel)]="createForm.telephone"
+                 placeholder="+221 77 000 00 00" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label>Mot de passe <span class="required">*</span></label>
+          <input type="password" name="password" [(ngModel)]="createForm.password"
+                 required placeholder="Mot de passe" class="form-control" />
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="section-title">Rôle et association</div>
+
+        <div class="form-group">
+          <label>Rôle</label>
+          <select name="role" [(ngModel)]="createForm.role" class="form-control">
+            <option *ngFor="let r of roles" [value]="r.val">{{ r.label }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Associer à une personne <span class="optional">(optionnel)</span></label>
+          <select name="personneId" [(ngModel)]="createForm.personneId" class="form-control">
+            <option value="">— Aucune association —</option>
+            <option *ngFor="let p of personnes" [value]="p.id">
+              {{ p.prenoms }} {{ p.nomUsage ?? p.nomNaissance }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="panel-footer">
+    <button class="btn-ghost" (click)="showCreateForm = false">Annuler</button>
+    <button class="btn-primary" (click)="createMember()" [disabled]="saving">
+      <span class="material-icons-round spin" *ngIf="saving">sync</span>
+      {{ saving ? 'Création...' : 'Créer le compte' }}
+    </button>
+  </div>
+</div>

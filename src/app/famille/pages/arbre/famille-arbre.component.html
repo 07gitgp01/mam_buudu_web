@@ -1,0 +1,80 @@
+<div class="fa-page">
+
+  <div class="fa-header">
+    <div>
+      <h2 class="fa-title">Arbre généalogique</h2>
+      <p class="fa-subtitle" *ngIf="!loading">{{ totalGenerations }} génération{{ totalGenerations > 1 ? 's' : '' }} · {{ personnes.length }} membre{{ personnes.length > 1 ? 's' : '' }}</p>
+    </div>
+  </div>
+
+  <div class="loading-state" *ngIf="loading">
+    <span class="material-icons-round spin">sync</span> Chargement de l'arbre...
+  </div>
+
+  <div class="error-state" *ngIf="erreur">
+    <span class="material-icons-round">error_outline</span> {{ erreur }}
+  </div>
+
+  <div class="fa-canvas" *ngIf="!loading && !erreur">
+    <div class="fa-generation" *ngFor="let gen of generations">
+      <div class="fa-gen-label">
+        <span class="fa-gen-number">G{{ gen.level + 1 }}</span>
+      </div>
+      <div class="fa-gen-row">
+        <ng-container *ngFor="let item of gen.items">
+
+          <!-- Union -->
+          <div class="fa-union-group" *ngIf="item.type === 'union'">
+            <div class="fa-couple-wrap" [class.root]="gen.level === 0">
+              <div class="fa-node">
+                <div class="fa-avatar" [class.fa-male]="item.p1.sexe === 'M'" [class.fa-female]="item.p1.sexe === 'F'">
+                  {{ getInitiales(item.p1) }}
+                </div>
+                <div class="fa-node-info">
+                  <span class="fa-node-name">{{ getNomComplet(item.p1) }}</span>
+                  <span class="fa-node-year">{{ yearLabel(item.p1) }}</span>
+                </div>
+              </div>
+              <div class="fa-heart-connector" *ngIf="item.p2">
+                <span class="material-icons-round fa-heart-icon">favorite</span>
+              </div>
+              <div class="fa-node" *ngIf="item.p2">
+                <div class="fa-avatar" [class.fa-male]="item.p2.sexe === 'M'" [class.fa-female]="item.p2.sexe === 'F'">
+                  {{ getInitiales(item.p2) }}
+                </div>
+                <div class="fa-node-info">
+                  <span class="fa-node-name">{{ getNomComplet(item.p2) }}</span>
+                  <span class="fa-node-year">{{ yearLabel(item.p2) }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="fa-union-badge" *ngIf="item.union">
+              {{ typeLabel(item.union.type) }}
+              <span *ngIf="item.union.dateDebut"> · {{ item.union.dateDebut | slice:0:4 }}</span>
+            </div>
+            <div class="fa-down-connector" *ngIf="item.hasChildren"></div>
+          </div>
+
+          <!-- Solo -->
+          <div class="fa-node fa-node-solo" *ngIf="item.type === 'solo'">
+            <div class="fa-avatar" [class.fa-male]="item.p1.sexe === 'M'" [class.fa-female]="item.p1.sexe === 'F'">
+              {{ getInitiales(item.p1) }}
+            </div>
+            <div class="fa-node-info">
+              <span class="fa-node-name">{{ getNomComplet(item.p1) }}</span>
+              <span class="fa-node-year">{{ yearLabel(item.p1) }}</span>
+            </div>
+          </div>
+
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="empty-state" *ngIf="generations.length === 0">
+      <span class="material-icons-round">account_tree</span>
+      <h3>Arbre vide</h3>
+      <p>Aucune personne dans l'arbre familial.</p>
+    </div>
+  </div>
+
+</div>

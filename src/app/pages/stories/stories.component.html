@@ -1,0 +1,68 @@
+<div class="page-header">
+  <div class="header-row">
+    <div>
+      <h2>Stories familiales</h2>
+      <p>Partagez des moments forts avec votre famille</p>
+    </div>
+    <button class="btn-primary">
+      <span class="material-icons-round">add</span>
+      Nouvelle story
+    </button>
+  </div>
+</div>
+
+<!-- STORIES CIRCLES (style Instagram) -->
+<div class="stories-circles mb-32">
+  <div class="story-circle add-story">
+    <div class="story-avatar add">
+      <span class="material-icons-round">add</span>
+    </div>
+    <span class="story-author">Ma story</span>
+  </div>
+  <div class="story-circle" *ngFor="let s of stories">
+    <div class="story-avatar" [class.female]="s.genre === 'F'" [class.male]="s.genre === 'M'">
+      {{ s.initiales }}
+    </div>
+    <span class="story-author">{{ s.auteur.split(' ')[0] }}</span>
+  </div>
+</div>
+
+<!-- FEED DES STORIES -->
+<div class="stories-feed">
+  <div class="story-card" *ngFor="let s of stories">
+
+    <div class="story-card-header">
+      <div class="story-meta">
+        <div class="avatar avatar-md" [class.female]="s.genre === 'F'" [class.male]="s.genre === 'M'">
+          {{ s.initiales }}
+        </div>
+        <div>
+          <span class="story-name">{{ s.auteur }}</span>
+          <span class="story-date">{{ s.date }}</span>
+        </div>
+      </div>
+      <span class="badge" [class]="getTagClass(s.tag)">{{ s.tag }}</span>
+    </div>
+
+    <div class="story-card-body">
+      <h4>{{ s.titre }}</h4>
+      <p>{{ s.contenu }}</p>
+    </div>
+
+    <div class="story-card-footer">
+      <button class="reaction-btn">
+        <span class="material-icons-round">favorite_border</span>
+        {{ s.likes }}
+      </button>
+      <button class="reaction-btn">
+        <span class="material-icons-round">chat_bubble_outline</span>
+        {{ s.commentaires }}
+      </button>
+      <button class="reaction-btn">
+        <span class="material-icons-round">share</span>
+        Partager
+      </button>
+    </div>
+
+  </div>
+</div>

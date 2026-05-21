@@ -1,0 +1,67 @@
+<header class="topbar">
+
+  <!-- Bouton hamburger (mobile seulement) -->
+  <button class="btn-icon btn-menu" (click)="menuToggle.emit()" title="Menu">
+    <span class="material-icons-round">menu</span>
+  </button>
+
+  <!-- Titre de la page -->
+  <div class="page-title">
+    <span class="material-icons-round page-icon">{{ currentPage.icon }}</span>
+    <h3>{{ currentPage.label }}</h3>
+  </div>
+
+  <!-- Actions à droite -->
+  <div class="topbar-actions">
+
+    <!-- Bouton actualiser -->
+    <button class="btn-icon btn-refresh" (click)="refresh()" title="Actualiser les données">
+      <span class="material-icons-round">sync</span>
+    </button>
+
+    <!-- Bouton notifications -->
+    <button class="btn-icon notif-btn">
+      <span class="material-icons-round">notifications_none</span>
+      <span class="notif-badge">3</span>
+    </button>
+
+    <!-- Avatar + menu user -->
+    <div class="user-menu-wrap" (click)="showUserMenu = !showUserMenu">
+      <button class="user-btn">
+        <div class="avatar avatar-sm">{{ initiales }}</div>
+        <div class="user-btn-info">
+          <span class="user-btn-name">{{ user?.prenom }} {{ user?.nom }}</span>
+          <span class="user-btn-role">{{ user?.role }}</span>
+        </div>
+        <span class="material-icons-round chevron">expand_more</span>
+      </button>
+
+      @if (showUserMenu) {
+        <div class="user-dropdown">
+          <div class="dropdown-header">
+            <div class="avatar avatar-md">{{ initiales }}</div>
+            <div>
+              <span class="dd-name">{{ user?.prenom }} {{ user?.nom }}</span>
+              <span class="dd-email">{{ user?.email }}</span>
+            </div>
+          </div>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="/">
+            <span class="material-icons-round">language</span>
+            Page d'accueil
+          </a>
+          <a class="dropdown-item" routerLink="/app/admin">
+            <span class="material-icons-round">admin_panel_settings</span>
+            Administration
+          </a>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item danger" (click)="logout()">
+            <span class="material-icons-round">logout</span>
+            Déconnexion
+          </button>
+        </div>
+      }
+    </div>
+
+  </div>
+</header>

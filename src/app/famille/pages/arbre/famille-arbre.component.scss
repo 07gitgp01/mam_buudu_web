@@ -1,0 +1,162 @@
+.fa-page { display: flex; flex-direction: column; gap: 24px; }
+
+.fa-header { display: flex; align-items: center; justify-content: space-between; }
+.fa-title  { font-size: 20px; font-weight: 700; color: #1F2937; margin: 0 0 4px; }
+.fa-subtitle { font-size: 13px; color: #9CA3AF; margin: 0; }
+
+/* ===== CANVAS ===== */
+.fa-canvas {
+  background:
+    radial-gradient(circle, #d4defc 1.2px, transparent 1.2px),
+    linear-gradient(135deg, #f0f4ff 0%, #f8f6ff 100%);
+  background-size: 32px 32px, 100% 100%;
+  border-radius: 20px;
+  padding: 32px 20px;
+  overflow-x: auto;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ===== GENERATION ROW ===== */
+.fa-generation {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.fa-gen-label {
+  width: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 14px;
+}
+
+.fa-gen-number {
+  font-size: 11px;
+  font-weight: 700;
+  color: #7C3AED;
+  background: #F5F3FF;
+  border: 1.5px solid #DDD6FE;
+  border-radius: 8px;
+  padding: 4px 6px;
+}
+
+.fa-gen-row {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* ===== UNION GROUP ===== */
+.fa-union-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.fa-couple-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(255,255,255,0.9);
+  border: 2px solid #DDD6FE;
+  border-radius: 20px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 12px rgba(124,58,237,.08);
+
+  &.root {
+    background: #F0F4FF;
+    border-color: #A78BFA;
+    box-shadow: 0 4px 20px rgba(124,58,237,.15);
+  }
+}
+
+.fa-heart-connector {
+  padding: 0 6px;
+}
+
+.fa-heart-icon {
+  font-size: 16px !important;
+  color: #F472B6;
+}
+
+/* ===== NODE ===== */
+.fa-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fa-node-solo {
+  background: rgba(255,255,255,0.9);
+  border: 1.5px solid #E5E7EB;
+  border-radius: 16px;
+  padding: 10px 14px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.05);
+}
+
+.fa-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+
+  &.fa-male   { background: linear-gradient(135deg, #3B82F6, #6366F1); }
+  &.fa-female { background: linear-gradient(135deg, #EC4899, #F43F5E); }
+}
+
+.fa-node-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.fa-node-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1F2937;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fa-node-year {
+  font-size: 10px;
+  color: #9CA3AF;
+}
+
+/* ===== UNION BADGE ===== */
+.fa-union-badge {
+  margin-top: 4px;
+  padding: 3px 10px;
+  background: #F5F3FF;
+  border: 1px solid #DDD6FE;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #7C3AED;
+}
+
+/* ===== DOWN CONNECTOR ===== */
+.fa-down-connector {
+  width: 2px;
+  height: 28px;
+  background: linear-gradient(to bottom, #A78BFA, rgba(167,139,250,0));
+  margin-top: 2px;
+}

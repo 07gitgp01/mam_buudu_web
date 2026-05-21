@@ -1,0 +1,10 @@
+<div class="shell" [class.sidebar-open]="sidebarOpen">
+  <div class="mob-backdrop" *ngIf="sidebarOpen" (click)="sidebarOpen=false"></div>
+  <app-sidebar [mobileOpen]="sidebarOpen" (mobileClose)="sidebarOpen=false"></app-sidebar>
+  <div class="shell-right">
+    <app-topbar (menuToggle)="sidebarOpen = !sidebarOpen"></app-topbar>
+    <main class="shell-main">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

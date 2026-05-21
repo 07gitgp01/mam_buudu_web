@@ -1,0 +1,80 @@
+<div class="fh-page">
+
+  <!-- Bannière de bienvenue -->
+  <div class="fh-hero">
+    <div class="fh-hero-bg"></div>
+    <div class="fh-hero-content">
+      <div class="fh-hello" *ngIf="user">
+        <div class="fh-user-avatar">{{ (user.prenom[0] + user.nom[0]).toUpperCase() }}</div>
+        <div>
+          <p class="fh-greeting">Bonjour, {{ user.prenom }} 👋</p>
+          <h1 class="fh-family-name">Famille {{ nomFamille || '…' }}</h1>
+        </div>
+      </div>
+      <div class="fh-hero-stats">
+        <div class="fh-hero-stat">
+          <span class="fhs-value">{{ totalMembres }}</span>
+          <span class="fhs-label">Membres</span>
+        </div>
+        <div class="fh-hero-divider"></div>
+        <div class="fh-hero-stat">
+          <span class="fhs-value">{{ totalGenerations }}</span>
+          <span class="fhs-label">Générations</span>
+        </div>
+        <div class="fh-hero-divider"></div>
+        <div class="fh-hero-stat">
+          <span class="fhs-value">{{ totalUnions }}</span>
+          <span class="fhs-label">Unions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chargement -->
+  <div class="loading-state" *ngIf="loading">
+    <span class="material-icons-round spin">sync</span> Chargement...
+  </div>
+
+  <ng-container *ngIf="!loading">
+
+    <!-- Tuiles de navigation -->
+    <div class="fh-section">
+      <h2 class="fh-section-title">Explorer</h2>
+      <div class="fh-tiles">
+        <a class="fh-tile" *ngFor="let t of tiles" [routerLink]="t.route"
+           [style.--tile-color]="t.color" [style.--tile-bg]="t.bg">
+          <div class="fh-tile-icon" [style.background]="t.bg" [style.color]="t.color">
+            <span class="material-icons-round">{{ t.icon }}</span>
+          </div>
+          <span class="fh-tile-label">{{ t.label }}</span>
+          <span class="material-icons-round fh-tile-arrow">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Membres récents -->
+    <div class="fh-section" *ngIf="recentPersonnes.length > 0">
+      <div class="fh-section-header">
+        <h2 class="fh-section-title">Membres récents</h2>
+        <a routerLink="/famille/membres" class="fh-see-all">
+          Voir tous <span class="material-icons-round">arrow_forward</span>
+        </a>
+      </div>
+      <div class="fh-members-row">
+        <div class="fh-member-card" *ngFor="let p of recentPersonnes">
+          <div class="fh-member-avatar" [class.female]="p.sexe === 'F'" [class.male]="p.sexe === 'M'">
+            {{ getInitiales(p) }}
+          </div>
+          <div class="fh-member-info">
+            <span class="fh-member-name">{{ getNomComplet(p) }}</span>
+            <span class="fh-member-year" *ngIf="p.dateNaissance">{{ extractAnnee(p.dateNaissance) }}</span>
+            <span class="fh-member-alive" *ngIf="estVivant(p)">
+              <span class="alive-dot"></span> Vivant(e)
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ng-container>
+</div>

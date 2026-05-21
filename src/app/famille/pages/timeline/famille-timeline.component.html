@@ -1,0 +1,50 @@
+<div class="ft-page">
+
+  <div class="ft-header">
+    <div>
+      <h2 class="ft-title">Ligne du temps</h2>
+      <p class="ft-subtitle">Les grands moments de l'histoire familiale</p>
+    </div>
+  </div>
+
+  <div class="ft-filtres">
+    <button class="ft-filtre" *ngFor="let f of filtres"
+            [class.active]="filtreActif === f.key"
+            (click)="filtreActif = f.key">
+      <span class="material-icons-round">{{ f.icon }}</span>
+      {{ f.label }}
+    </button>
+  </div>
+
+  <div class="ft-timeline">
+    <div class="ft-line"></div>
+
+    <div class="ft-event" *ngFor="let e of eventsFiltres; let i = index" [class.right]="i % 2 === 0">
+      <div class="ft-event-dot" [style.background]="typeConfig(e.type).color">
+        <span class="material-icons-round">{{ typeConfig(e.type).icon }}</span>
+      </div>
+
+      <div class="ft-event-card">
+        <div class="ft-event-date">{{ e.date }}</div>
+        <div class="ft-event-type-badge"
+             [style.background]="typeConfig(e.type).bg"
+             [style.color]="typeConfig(e.type).color">
+          <span class="material-icons-round">{{ typeConfig(e.type).icon }}</span>
+          {{ typeConfig(e.type).label }}
+        </div>
+        <h3 class="ft-event-title">{{ e.titre }}</h3>
+        <p class="ft-event-desc">{{ e.description }}</p>
+        <div class="ft-event-author">
+          <span class="material-icons-round">person</span>
+          {{ e.auteur }}
+        </div>
+      </div>
+    </div>
+
+    <div class="ft-empty" *ngIf="eventsFiltres.length === 0">
+      <span class="material-icons-round">timeline</span>
+      <p>Aucun événement pour ce filtre</p>
+    </div>
+  </div>
+
+</div>

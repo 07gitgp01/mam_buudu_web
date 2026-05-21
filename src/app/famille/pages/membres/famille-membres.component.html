@@ -1,0 +1,111 @@
+<div class="fm-page">
+
+  <div class="fm-header">
+    <div>
+      <h2 class="fm-title">Membres de la famille</h2>
+      <p class="fm-subtitle">{{ personnesFiltrees.length }} personne{{ personnesFiltrees.length > 1 ? 's' : '' }} affichée{{ personnesFiltrees.length > 1 ? 's' : '' }}</p>
+    </div>
+  </div>
+
+  <div class="fm-toolbar">
+    <div class="search-bar">
+      <span class="material-icons-round">search</span>
+      <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher par nom, lieu..." />
+    </div>
+    <div class="fm-filtres">
+      <button class="fm-filtre" *ngFor="let f of filtres"
+              [class.active]="filtreActif === f.key"
+              (click)="filtreActif = f.key">
+        <span class="material-icons-round">{{ f.icon }}</span>
+        {{ f.label }}
+      </button>
+    </div>
+  </div>
+
+  <div class="loading-state" *ngIf="loading">
+    <span class="material-icons-round spin">sync</span> Chargement...
+  </div>
+
+  <div class="error-state" *ngIf="erreur">
+    <span class="material-icons-round">error_outline</span> {{ erreur }}
+  </div>
+
+  <div class="fm-grid" *ngIf="!loading && !erreur && personnesFiltrees.length > 0">
+    <div class="fm-card" *ngFor="let p of personnesFiltrees" (click)="openDetail(p)">
+      <div class="fm-card-top" [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">
+        <div class="fm-avatar" [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">
+          {{ getInitiales(p) }}
+        </div>
+        <div class="fm-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></div>
+      </div>
+      <div class="fm-card-body">
+        <h4 class="fm-name">{{ getNomComplet(p) }}</h4>
+        <span class="fm-age">{{ getAgeLabel(p) }}</span>
+        <div class="fm-meta" *ngIf="p.lieuNaissance">
+          <span class="material-icons-round">place</span>
+          {{ p.lieuNaissance }}
+        </div>
+      </div>
+      <div class="fm-card-footer">
+        <span class="fm-badge" [class.fm-badge-male]="p.sexe === 'M'" [class.fm-badge-female]="p.sexe === 'F'">
+          {{ getSexeLabel(p.sexe) }}
+        </span>
+        <span class="fm-badge fm-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="!loading && !erreur && personnesFiltrees.length === 0">
+    <span class="material-icons-round">person_search</span>
+    <h3>Aucun membre trouvé</h3>
+    <p>Essayez un autre terme de recherche.</p>
+  </div>
+
+</div>
+
+<!-- Overlay + Détail -->
+<div class="fm-overlay" *ngIf="showDetail" (click)="closeDetail()"></div>
+
+<div class="fm-detail-panel" [class.open]="showDetail" *ngIf="detailTarget as p">
+  <div class="fm-detail-header">
+    <button class="btn-icon" (click)="closeDetail()">
+      <span class="material-icons-round">close</span>
+    </button>
+  </div>
+  <div class="fm-detail-hero">
+    <div class="fm-detail-avatar" [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">
+      {{ getInitiales(p) }}
+    </div>
+    <h2>{{ getNomComplet(p) }}</h2>
+    <p>{{ getAgeLabel(p) }}</p>
+    <div class="fm-detail-badges">
+      <span class="fm-badge" [class.fm-badge-male]="p.sexe === 'M'" [class.fm-badge-female]="p.sexe === 'F'">{{ getSexeLabel(p.sexe) }}</span>
+      <span class="fm-badge fm-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
+      <span class="fm-badge fm-badge-dead" *ngIf="!estVivant(p)">Décédé(e)</span>
+    </div>
+  </div>
+  <div class="fm-detail-body">
+    <div class="fm-detail-grid">
+      <div class="fm-detail-item" *ngIf="p.nomNaissance">
+        <span class="fm-detail-label">Nom de naissance</span>
+        <span class="fm-detail-value">{{ p.nomNaissance }}</span>
+      </div>
+      <div class="fm-detail-item" *ngIf="p.dateNaissance">
+        <span class="fm-detail-label">Date de naissance</span>
+        <span class="fm-detail-value">{{ p.dateNaissance }}</span>
+      </div>
+      <div class="fm-detail-item" *ngIf="p.lieuNaissance">
+        <span class="fm-detail-label">Lieu de naissance</span>
+        <span class="fm-detail-value">{{ p.lieuNaissance }}</span>
+      </div>
+      <div class="fm-detail-item" *ngIf="p.dateDeces">
+        <span class="fm-detail-label">Date de décès</span>
+        <span class="fm-detail-value">{{ p.dateDeces }}</span>
+      </div>
+    </div>
+    <div class="fm-detail-bio" *ngIf="p.biographie">
+      <span class="fm-detail-label">Biographie</span>
+      <p>{{ p.biographie }}</p>
+    </div>
+  </div>
+</div>

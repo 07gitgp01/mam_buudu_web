@@ -1,0 +1,89 @@
+<nav class="sidebar" [class.expanded]="isExpanded" [class.mobile-open]="mobileOpen">
+
+  <!-- ===== EN-TÊTE ===== -->
+  <div class="sidebar-header">
+    <div class="brand" *ngIf="isExpanded">
+      <div class="brand-icon-wrap">
+        <span class="material-icons-round">account_tree</span>
+      </div>
+      <span class="brand-text">Mam Buudu</span>
+    </div>
+    <button class="toggle-btn" (click)="toggle()" [title]="isExpanded ? 'Réduire' : 'Agrandir'">
+      <span class="material-icons-round">{{ isExpanded ? 'menu_open' : 'menu' }}</span>
+    </button>
+  </div>
+
+  <!-- ===== NAVIGATION PRINCIPALE ===== -->
+  <div class="nav-section">
+    <a
+      *ngFor="let item of navItems"
+      [routerLink]="item.route"
+      routerLinkActive="active"
+      class="nav-item"
+      [title]="!isExpanded ? item.label : ''"
+      (click)="mobileClose.emit()"
+    >
+      <span class="nav-icon material-icons-round">{{ item.icon }}</span>
+      <span class="nav-label" *ngIf="isExpanded">{{ item.label }}</span>
+    </a>
+  </div>
+
+  <!-- ===== SÉPARATEUR ===== -->
+  <div class="sidebar-spacer"></div>
+
+  <!-- ===== SÉLECTEUR DE THÈME ===== -->
+  <div class="theme-picker" *ngIf="isExpanded">
+    <span class="theme-picker-label">Thème</span>
+    <div class="theme-dots">
+      <button
+        class="theme-dot"
+        *ngFor="let t of themeService.themes"
+        [style.background]="t.color"
+        [class.active]="themeService.current === t.name"
+        (click)="themeService.applyColor(t.name)"
+        [title]="t.label"
+      ></button>
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <!-- ===== SECTION ADMIN / DÉCONNEXION ===== -->
+  <div class="nav-section">
+    <a
+      routerLink="/"
+      class="nav-item nav-home-link"
+      [title]="!isExpanded ? 'Page d\'accueil' : ''"
+      (click)="mobileClose.emit()"
+    >
+      <span class="nav-icon material-icons-round">language</span>
+      <span class="nav-label" *ngIf="isExpanded">Page d'accueil</span>
+    </a>
+
+    <a
+      routerLink="/app/admin"
+      routerLinkActive="active"
+      class="nav-item"
+      [title]="!isExpanded ? 'Admin' : ''"
+      (click)="mobileClose.emit()"
+    >
+      <span class="nav-icon material-icons-round">admin_panel_settings</span>
+      <span class="nav-label" *ngIf="isExpanded">Administration</span>
+    </a>
+
+    <button class="nav-item nav-btn logout-btn" (click)="logout()" [title]="!isExpanded ? 'Déconnexion' : ''">
+      <span class="nav-icon material-icons-round">logout</span>
+      <span class="nav-label" *ngIf="isExpanded">Déconnexion</span>
+    </button>
+  </div>
+
+  <!-- ===== PROFIL UTILISATEUR ===== -->
+  <div class="user-section" [class.collapsed]="!isExpanded">
+    <div class="avatar avatar-sm">{{ initiales }}</div>
+    <div class="user-info" *ngIf="isExpanded">
+      <span class="user-name">{{ user?.prenom }} {{ user?.nom }}</span>
+      <span class="user-role badge badge-primary">{{ user?.role }}</span>
+    </div>
+  </div>
+
+</nav>

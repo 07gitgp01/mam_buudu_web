@@ -1,0 +1,243 @@
+<div class="auth-page">
+
+  <!-- ═══ PANNEAU GAUCHE ═══ -->
+  <aside class="auth-left">
+    <div class="al-bg">
+      <div class="al-blob al-blob-1"></div>
+      <div class="al-blob al-blob-2"></div>
+      <div class="al-dots"></div>
+    </div>
+    <div class="al-content">
+
+      <div class="al-brand">
+        <div class="al-brand-icon">
+          <span class="material-icons-round">account_tree</span>
+        </div>
+        <span class="al-brand-name">Mam Buudu</span>
+      </div>
+
+      <h1 class="al-title">Créez l'espace<br/>familial de votre<br/>famille</h1>
+      <p class="al-subtitle">Quelques minutes suffisent pour démarrer votre arbre généalogique.</p>
+
+      <div class="al-steps">
+        <div class="al-step" [class.al-step-active]="step === 1" [class.al-step-done]="step > 1">
+          <div class="als-num">
+            <span class="material-icons-round" *ngIf="step > 1">check</span>
+            <span *ngIf="step <= 1">1</span>
+          </div>
+          <div class="als-info">
+            <strong>Votre identité</strong>
+            <span>Nom de famille, email, mot de passe</span>
+          </div>
+        </div>
+        <div class="als-connector" [class.done]="step > 1"></div>
+        <div class="al-step" [class.al-step-active]="step === 2">
+          <div class="als-num">2</div>
+          <div class="als-info">
+            <strong>Sécurité</strong>
+            <span>Question secrète de récupération</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="al-what-next">
+        <div class="awn-item">
+          <div class="awn-icon"><span class="material-icons-round">vpn_key</span></div>
+          <span>Code famille unique généré automatiquement</span>
+        </div>
+        <div class="awn-item">
+          <div class="awn-icon"><span class="material-icons-round">group_add</span></div>
+          <span>Invitez vos proches avec votre code</span>
+        </div>
+        <div class="awn-item">
+          <div class="awn-icon"><span class="material-icons-round">account_tree</span></div>
+          <span>Construisez votre arbre généalogique</span>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ═══ PANNEAU DROIT ═══ -->
+  <main class="auth-right">
+    <div class="auth-card">
+
+      <div class="auth-card-header">
+        <div class="auth-card-icon">
+          <span class="material-icons-round">{{ step === 1 ? 'family_restroom' : 'security' }}</span>
+        </div>
+        <h2>{{ step === 1 ? 'Créer un espace familial' : 'Sécurisez votre compte' }}</h2>
+        <p>{{ step === 1 ? 'Étape 1 sur 2 — Vos informations' : 'Étape 2 sur 2 — Question de sécurité' }}</p>
+      </div>
+
+      <!-- Indicateur d'étapes -->
+      <div class="step-indicator">
+        <div class="si-step" [class.si-active]="step === 1" [class.si-done]="step > 1">
+          <div class="si-circle">
+            <span class="material-icons-round" *ngIf="step > 1">check</span>
+            <span *ngIf="step <= 1">1</span>
+          </div>
+          <span class="si-label">Identité</span>
+        </div>
+        <div class="si-line" [class.si-line-done]="step > 1"></div>
+        <div class="si-step" [class.si-active]="step === 2">
+          <div class="si-circle">2</div>
+          <span class="si-label">Sécurité</span>
+        </div>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <!-- ═════ ÉTAPE 1 ═════ -->
+        <div class="step-panel" *ngIf="step === 1">
+
+          <!-- Nom famille -->
+          <div class="form-group">
+            <label>Nom de la famille</label>
+            <div class="input-wrapper">
+              <span class="material-icons-round">group</span>
+              <input type="text" formControlName="nomFamille" placeholder="Ex : Famille Diallo"
+                     [class.input-error]="f['nomFamille'].invalid && f['nomFamille'].touched"/>
+            </div>
+            <span class="field-error" *ngIf="f['nomFamille'].invalid && f['nomFamille'].touched">Nom requis (2 car. min.)</span>
+            <div class="code-preview" *ngIf="familleCodePreview">
+              <span class="material-icons-round">tag</span>
+              Code famille : <strong>{{ familleCodePreview }}</strong>
+            </div>
+          </div>
+
+          <!-- Prénom + Nom -->
+          <div class="form-row">
+            <div class="form-group">
+              <label>Prénom</label>
+              <div class="input-wrapper">
+                <span class="material-icons-round">badge</span>
+                <input type="text" formControlName="prenom" placeholder="Votre prénom"
+                       [class.input-error]="f['prenom'].invalid && f['prenom'].touched"/>
+              </div>
+              <span class="field-error" *ngIf="f['prenom'].invalid && f['prenom'].touched">Requis</span>
+            </div>
+            <div class="form-group">
+              <label>Nom</label>
+              <div class="input-wrapper">
+                <span class="material-icons-round">badge</span>
+                <input type="text" formControlName="nom" placeholder="Votre nom"
+                       [class.input-error]="f['nom'].invalid && f['nom'].touched"/>
+              </div>
+              <span class="field-error" *ngIf="f['nom'].invalid && f['nom'].touched">Requis</span>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label>Email</label>
+            <div class="input-wrapper">
+              <span class="material-icons-round">email</span>
+              <input type="email" formControlName="email" placeholder="votre@email.com"
+                     [class.input-error]="f['email'].invalid && f['email'].touched"/>
+            </div>
+            <span class="field-error" *ngIf="f['email'].invalid && f['email'].touched">Adresse email invalide</span>
+          </div>
+
+          <!-- Mot de passe + jauge -->
+          <div class="form-group">
+            <label>Mot de passe</label>
+            <div class="input-wrapper">
+              <span class="material-icons-round">lock</span>
+              <input [type]="showPassword ? 'text' : 'password'" formControlName="password"
+                     placeholder="8 caractères minimum"
+                     [class.input-error]="f['password'].invalid && f['password'].touched"/>
+              <div class="input-suffix">
+                <button type="button" class="btn-icon-eye" (click)="showPassword = !showPassword">
+                  <span class="material-icons-round">{{ showPassword ? 'visibility_off' : 'visibility' }}</span>
+                </button>
+              </div>
+            </div>
+            <div class="pwd-strength" *ngIf="passwordStrength.level > 0">
+              <div class="pwd-bars">
+                <div class="pwd-bar" [style.background]="passwordStrength.level >= 1 ? passwordStrength.color : ''"></div>
+                <div class="pwd-bar" [style.background]="passwordStrength.level >= 2 ? passwordStrength.color : ''"></div>
+                <div class="pwd-bar" [style.background]="passwordStrength.level >= 3 ? passwordStrength.color : ''"></div>
+                <div class="pwd-bar" [style.background]="passwordStrength.level >= 4 ? passwordStrength.color : ''"></div>
+              </div>
+              <span class="pwd-label" [style.color]="passwordStrength.color">{{ passwordStrength.label }}</span>
+            </div>
+            <span class="field-error" *ngIf="f['password'].invalid && f['password'].touched">8 caractères minimum</span>
+          </div>
+
+          <button type="button" class="btn-submit" (click)="nextStep()">
+            <span class="material-icons-round">arrow_forward</span>
+            Continuer
+          </button>
+
+        </div>
+
+        <!-- ═════ ÉTAPE 2 ═════ -->
+        <div class="step-panel" *ngIf="step === 2">
+
+          <div class="step2-info">
+            <div class="s2i-icon">
+              <span class="material-icons-round">security</span>
+            </div>
+            <div class="s2i-text">
+              <strong>Pourquoi une question secrète ?</strong>
+              <p>Elle vous permet de récupérer votre compte si vous oubliez votre mot de passe. Mémorisez bien votre réponse.</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Question secrète</label>
+            <div class="input-wrapper input-wrapper-select">
+              <span class="material-icons-round">help_outline</span>
+              <select formControlName="questionSecrete"
+                      [class.input-error]="f['questionSecrete'].invalid && f['questionSecrete'].touched">
+                <option value="">-- Choisir une question --</option>
+                <option *ngFor="let q of questions" [value]="q">{{ q }}</option>
+              </select>
+            </div>
+            <span class="field-error" *ngIf="f['questionSecrete'].invalid && f['questionSecrete'].touched">Veuillez choisir une question</span>
+          </div>
+
+          <div class="form-group">
+            <label>Réponse secrète</label>
+            <div class="input-wrapper">
+              <span class="material-icons-round">key</span>
+              <input type="text" formControlName="reponseSecrete"
+                     placeholder="Votre réponse"
+                     [class.input-error]="f['reponseSecrete'].invalid && f['reponseSecrete'].touched"/>
+            </div>
+            <span class="field-error" *ngIf="f['reponseSecrete'].invalid && f['reponseSecrete'].touched">La réponse est requise</span>
+            <span class="field-hint">Sensible à la casse — mémorisez-la bien.</span>
+          </div>
+
+          <div class="alert-error-box" *ngIf="errorMsg">
+            <span class="material-icons-round">error_outline</span>
+            {{ errorMsg }}
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-back" (click)="step = 1">
+              <span class="material-icons-round">arrow_back</span>
+              Retour
+            </button>
+            <button type="submit" class="btn-submit btn-submit-flex" [disabled]="loading">
+              <span class="btn-spinner" *ngIf="loading"></span>
+              <ng-container *ngIf="!loading">
+                <span class="material-icons-round">rocket_launch</span>
+                Créer mon espace
+              </ng-container>
+            </button>
+          </div>
+
+        </div>
+
+      </form>
+
+      <div class="auth-footer">
+        <p>Déjà un compte ? <a routerLink="/auth/login">Se connecter</a></p>
+      </div>
+
+    </div>
+  </main>
+
+</div>

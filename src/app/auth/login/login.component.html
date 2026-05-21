@@ -1,0 +1,212 @@
+<div class="auth-page">
+
+  <!-- ═══ PANNEAU GAUCHE ═══ -->
+  <aside class="auth-left">
+    <div class="al-bg">
+      <div class="al-blob al-blob-1"></div>
+      <div class="al-blob al-blob-2"></div>
+      <div class="al-dots"></div>
+    </div>
+    <div class="al-content">
+
+      <div class="al-brand">
+        <div class="al-brand-icon">
+          <span class="material-icons-round">account_tree</span>
+        </div>
+        <span class="al-brand-name">Mam Buudu</span>
+      </div>
+
+      <h1 class="al-title">Votre histoire familiale,<br/>préservée pour toujours</h1>
+      <p class="al-subtitle">Créez, gérez et partagez l'arbre généalogique de votre famille.</p>
+
+      <div class="al-features">
+        <div class="al-feat">
+          <div class="al-feat-icon"><span class="material-icons-round">account_tree</span></div>
+          <span>Arbre généalogique interactif</span>
+        </div>
+        <div class="al-feat">
+          <div class="al-feat-icon"><span class="material-icons-round">auto_stories</span></div>
+          <span>Stories et photos de famille</span>
+        </div>
+        <div class="al-feat">
+          <div class="al-feat-icon"><span class="material-icons-round">emoji_events</span></div>
+          <span>Gamification et récompenses</span>
+        </div>
+        <div class="al-feat">
+          <div class="al-feat-icon"><span class="material-icons-round">cloud_sync</span></div>
+          <span>Synchronisation multi-appareils</span>
+        </div>
+      </div>
+
+      <div class="al-stats">
+        <div class="al-stat">
+          <span class="al-stat-num">420+</span>
+          <span class="al-stat-label">Familles</span>
+        </div>
+        <div class="al-stat-sep"></div>
+        <div class="al-stat">
+          <span class="al-stat-num">18 500+</span>
+          <span class="al-stat-label">Membres</span>
+        </div>
+        <div class="al-stat-sep"></div>
+        <div class="al-stat">
+          <span class="al-stat-num">5</span>
+          <span class="al-stat-label">Générations</span>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ═══ PANNEAU DROIT ═══ -->
+  <main class="auth-right">
+    <div class="auth-card">
+
+      <div class="auth-card-header">
+        <div class="auth-card-icon">
+          <span class="material-icons-round">login</span>
+        </div>
+        <h2>Connexion</h2>
+        <p>Accédez à l'espace de votre famille</p>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <!-- Code famille -->
+        <div class="form-group">
+          <div class="field-label-row">
+            <label>Code famille</label>
+            <span class="field-hint-tag">
+              <span class="material-icons-round">info</span>
+              Fourni par votre admin
+            </span>
+          </div>
+          <div class="input-wrapper">
+            <span class="material-icons-round">group</span>
+            <input type="text" formControlName="familleCode" placeholder="Ex : DIALLO-2024"
+                   [class.input-error]="f['familleCode'].invalid && f['familleCode'].touched" />
+          </div>
+          <span class="field-error" *ngIf="f['familleCode'].invalid && f['familleCode'].touched">
+            Le code famille est requis
+          </span>
+        </div>
+
+        <!-- Onglets identifiant -->
+        <div class="form-group">
+          <label>Identifiant</label>
+          <div class="id-tabs">
+            <button type="button" class="id-tab" [class.active]="activeTab === 'email'" (click)="setTab('email')">
+              <span class="material-icons-round">email</span> Email
+            </button>
+            <button type="button" class="id-tab" [class.active]="activeTab === 'telephone'" (click)="setTab('telephone')">
+              <span class="material-icons-round">phone</span> Téléphone
+            </button>
+            <button type="button" class="id-tab" [class.active]="activeTab === 'username'" (click)="setTab('username')">
+              <span class="material-icons-round">badge</span> Username
+            </button>
+          </div>
+
+          <!-- Email / Username -->
+          <div class="input-wrapper" *ngIf="activeTab !== 'telephone'">
+            <span class="material-icons-round">{{ tabIcon }}</span>
+            <input type="text" formControlName="identifiant" [placeholder]="tabPlaceholder"
+                   [class.input-error]="f['identifiant'].invalid && f['identifiant'].touched" />
+          </div>
+
+          <!-- Téléphone -->
+          <div class="phone-field-wrap" *ngIf="activeTab === 'telephone'">
+            <div class="phone-input-row">
+              <button type="button" class="country-selector" (click)="showCountryPicker = !showCountryPicker; $event.stopPropagation()">
+                <img class="country-flag-img"
+                     [src]="'https://flagcdn.com/20x15/' + selectedCountry.iso + '.png'"
+                     [alt]="selectedCountry.name" />
+                <span class="country-dial">{{ selectedCountry.dial }}</span>
+                <span class="material-icons-round country-chevron" [class.open]="showCountryPicker">expand_more</span>
+              </button>
+              <input class="phone-number-input" type="tel"
+                     [value]="localPhone"
+                     (input)="localPhone = $any($event.target).value; updatePhoneIdentifiant()"
+                     placeholder="620 00 00 00"
+                     [class.input-error]="f['identifiant'].invalid && f['identifiant'].touched" />
+            </div>
+            <div class="country-dropdown" *ngIf="showCountryPicker" (click)="$event.stopPropagation()">
+              <div class="dropdown-search-wrap">
+                <span class="material-icons-round">search</span>
+                <input class="country-search" type="text"
+                       [value]="countrySearch"
+                       (input)="countrySearch = $any($event.target).value"
+                       placeholder="Rechercher un pays..." />
+              </div>
+              <div class="country-list">
+                <button type="button" class="country-option"
+                        *ngFor="let c of filteredCountries"
+                        (click)="selectCountry(c)">
+                  <img class="country-flag-img" [src]="'https://flagcdn.com/20x15/' + c.iso + '.png'" [alt]="c.name" />
+                  <span class="country-name">{{ c.name }}</span>
+                  <span class="country-dial-sm">{{ c.dial }}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <span class="field-error" *ngIf="f['identifiant'].invalid && f['identifiant'].touched">
+            L'identifiant est requis
+          </span>
+        </div>
+
+        <!-- Mot de passe -->
+        <div class="form-group">
+          <div class="field-label-row">
+            <label>Mot de passe</label>
+            <a routerLink="/auth/forgot" class="forgot-link">Mot de passe oublié ?</a>
+          </div>
+          <div class="input-wrapper">
+            <span class="material-icons-round">lock</span>
+            <input [type]="showPassword ? 'text' : 'password'" formControlName="password"
+                   placeholder="••••••••"
+                   [class.input-error]="f['password'].invalid && f['password'].touched" />
+            <div class="input-suffix">
+              <button type="button" class="btn-icon-eye" (click)="showPassword = !showPassword">
+                <span class="material-icons-round">{{ showPassword ? 'visibility_off' : 'visibility' }}</span>
+              </button>
+            </div>
+          </div>
+          <span class="field-error" *ngIf="f['password'].invalid && f['password'].touched">
+            Mot de passe requis (6 caractères minimum)
+          </span>
+        </div>
+
+        <div class="alert-error-box" *ngIf="errorMsg">
+          <span class="material-icons-round">error_outline</span>
+          {{ errorMsg }}
+        </div>
+
+        <button type="submit" class="btn-submit" [disabled]="loading">
+          <span class="btn-spinner" *ngIf="loading"></span>
+          <ng-container *ngIf="!loading">
+            <span class="material-icons-round">login</span>
+            Se connecter
+          </ng-container>
+        </button>
+
+      </form>
+
+      <div class="auth-footer">
+        <p>Pas encore de compte ? <a routerLink="/auth/register">Créer un espace familial</a></p>
+        <div class="footer-links">
+          <a routerLink="/famille/login" class="footer-link">
+            <span class="material-icons-round">people</span>
+            Espace famille
+          </a>
+          <span class="footer-sep">·</span>
+          <a routerLink="/" class="footer-link">
+            <span class="material-icons-round">home</span>
+            Accueil
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</div>

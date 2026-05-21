@@ -1,0 +1,71 @@
+<div class="fs-page">
+
+  <div class="fs-header">
+    <div>
+      <h2 class="fs-title">Stories familiales</h2>
+      <p class="fs-subtitle">{{ storiesFiltrees.length }} histoire{{ storiesFiltrees.length > 1 ? 's' : '' }} partagée{{ storiesFiltrees.length > 1 ? 's' : '' }}</p>
+    </div>
+  </div>
+
+  <div class="fs-toolbar">
+    <div class="search-bar">
+      <span class="material-icons-round">search</span>
+      <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher une story..." />
+    </div>
+    <div class="fs-tags">
+      <button class="fs-tag-btn" *ngFor="let t of tags"
+              [class.active]="selectedTag === t"
+              (click)="selectedTag = t">
+        {{ t === 'tous' ? 'Toutes' : t }}
+      </button>
+    </div>
+  </div>
+
+  <div class="fs-grid" *ngIf="storiesFiltrees.length > 0">
+    <div class="fs-card" *ngFor="let s of storiesFiltrees">
+      <div class="fs-card-header">
+        <div class="fs-author">
+          <div class="fs-author-avatar" [class.male]="s.sexe === 'M'" [class.female]="s.sexe === 'F'">
+            {{ s.initiales }}
+          </div>
+          <div class="fs-author-info">
+            <span class="fs-author-name">{{ s.auteur }}</span>
+            <span class="fs-author-date">{{ s.date }}</span>
+          </div>
+        </div>
+        <span class="fs-tag-badge"
+              [style.background]="tagColor(s.tag).bg"
+              [style.color]="tagColor(s.tag).color">
+          {{ s.tag }}
+        </span>
+      </div>
+
+      <div class="fs-card-body">
+        <h3 class="fs-card-title">{{ s.titre }}</h3>
+        <p class="fs-card-text">{{ s.contenu }}</p>
+      </div>
+
+      <div class="fs-card-footer">
+        <button class="fs-action-btn" [class.liked]="s.liked" (click)="toggleLike(s)">
+          <span class="material-icons-round">{{ s.liked ? 'favorite' : 'favorite_border' }}</span>
+          <span>{{ s.likes }}</span>
+        </button>
+        <button class="fs-action-btn">
+          <span class="material-icons-round">chat_bubble_outline</span>
+          <span>{{ s.commentaires }}</span>
+        </button>
+        <button class="fs-action-btn fs-share-btn">
+          <span class="material-icons-round">share</span>
+          <span>Partager</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="storiesFiltrees.length === 0">
+    <span class="material-icons-round">auto_stories</span>
+    <h3>Aucune story trouvée</h3>
+    <p>Essayez un autre filtre ou terme de recherche.</p>
+  </div>
+
+</div>

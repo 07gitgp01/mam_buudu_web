@@ -1,0 +1,57 @@
+<div class="page-header">
+  <div class="header-row">
+    <div>
+      <h2>Jeux familiaux</h2>
+      <p>Apprenez l'histoire de votre famille en vous amusant</p>
+    </div>
+  </div>
+</div>
+
+<!-- STATS JOUEUR -->
+<div class="player-stats mb-32">
+  <div class="player-stat" *ngFor="let s of stats" [class]="'player-stat--' + s.color">
+    <span class="material-icons-round">{{ s.icon }}</span>
+    <div>
+      <span class="stat-val">{{ s.value }}</span>
+      <span class="stat-lbl">{{ s.label }}</span>
+    </div>
+  </div>
+</div>
+
+<!-- GRILLE DES JEUX -->
+<div class="section-header mb-16">
+  <h3>Choisir un jeu</h3>
+  <span class="badge badge-primary">{{ jeux.length }} jeux disponibles</span>
+</div>
+
+<div class="jeux-grid">
+  <div class="jeu-card" *ngFor="let j of jeux" [class]="'jeu-card--' + j.color">
+
+    <div class="jeu-icon">
+      <span class="material-icons-round">{{ j.icon }}</span>
+    </div>
+
+    <div class="jeu-body">
+      <h4>{{ j.titre }}</h4>
+      <p>{{ j.description }}</p>
+    </div>
+
+    <div class="jeu-meta">
+      <div class="jeu-info">
+        <span class="badge" [class]="j.difficulte === 'Facile' ? 'badge-success' : j.difficulte === 'Moyen' ? 'badge-warning' : 'badge-error'">
+          {{ j.difficulte }}
+        </span>
+        <span class="jeu-points">
+          <span class="material-icons-round">stars</span>
+          {{ j.points }} pts
+        </span>
+        <span class="jeu-joueurs">
+          <span class="material-icons-round">people</span>
+          {{ j.joueurs }}
+        </span>
+      </div>
+      <button class="btn-primary btn-sm">Jouer</button>
+    </div>
+
+  </div>
+</div>

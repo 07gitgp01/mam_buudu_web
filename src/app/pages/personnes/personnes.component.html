@@ -1,0 +1,332 @@
+<div class="personnes-page">
+
+  <!-- En-tête -->
+  <div class="page-header">
+    <div>
+      <h2 class="page-title">Membres de la famille</h2>
+      <p class="page-subtitle">{{ personnesFiltrees.length }} personne{{ personnesFiltrees.length > 1 ? 's' : '' }} affichée{{ personnesFiltrees.length > 1 ? 's' : '' }}</p>
+    </div>
+    <button class="btn-primary" (click)="openCreate()">
+      <span class="material-icons-round">person_add</span>
+      Nouveau membre
+    </button>
+  </div>
+
+  <!-- Barre de recherche + filtres -->
+  <div class="toolbar">
+    <div class="search-bar">
+      <span class="material-icons-round">search</span>
+      <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher par nom, prénom, lieu..." />
+    </div>
+    <div class="chip-group">
+      <button *ngFor="let f of filtres" class="chip" [class.active]="filtreActif === f.key" (click)="filtreActif = f.key">
+        {{ f.label }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Chargement -->
+  <div class="loading-state" *ngIf="loading">
+    <span class="material-icons-round spin">sync</span> Chargement...
+  </div>
+
+  <!-- Erreur -->
+  <div class="error-state" *ngIf="erreur && !loading">
+    <span class="material-icons-round">error_outline</span> {{ erreur }}
+  </div>
+
+  <!-- État vide -->
+  <div class="empty-state" *ngIf="!loading && !erreur && personnesFiltrees.length === 0">
+    <span class="material-icons-round">person_search</span>
+    <h3>Aucune personne trouvée</h3>
+    <p>Essayez un autre terme de recherche ou ajoutez un nouveau membre.</p>
+    <button class="btn-primary" (click)="openCreate()">
+      <span class="material-icons-round">person_add</span> Nouveau membre
+    </button>
+  </div>
+
+  <!-- Grille des personnes -->
+  <div class="personnes-grid" *ngIf="!loading && !erreur && personnesFiltrees.length > 0">
+    <div class="personne-card" *ngFor="let p of personnesFiltrees" (click)="openDetail(p)">
+
+      <div class="card-top">
+        <div class="avatar avatar-lg" [class.female]="p.sexe === 'F'" [class.male]="p.sexe === 'M'">
+          {{ getInitiales(p) }}
+        </div>
+        <span class="status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
+      </div>
+
+      <div class="card-body">
+        <h4 class="p-name">{{ getNomComplet(p) }}</h4>
+        <span class="p-dates">{{ getAgeLabel(p) }}</span>
+        <div class="p-meta" *ngIf="p.lieuNaissance">
+          <span class="material-icons-round">place</span>
+          {{ p.lieuNaissance }}
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <span class="badge" [class.badge-primary]="p.sexe === 'M'" [class.badge-pink]="p.sexe === 'F'" [class.badge-gray]="p.sexe === 'autre' || !p.sexe">
+          {{ getSexeLabel(p.sexe) }}
+        </span>
+        <div class="card-actions">
+          <button class="btn-icon" title="Voir le profil" (click)="openDetail(p); $event.stopPropagation()">
+            <span class="material-icons-round">visibility</span>
+          </button>
+          <button class="btn-icon" title="Modifier" (click)="openEdit(p, $event)">
+            <span class="material-icons-round">edit</span>
+          </button>
+          <button class="btn-icon btn-icon-danger" title="Supprimer" (click)="confirmDelete(p, $event)">
+            <span class="material-icons-round">delete</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== OVERLAY ===== -->
+<div class="panel-overlay" *ngIf="showForm || showDetail || showDeleteConfirm" (click)="closeAll()"></div>
+
+<!-- ===== PANNEAU FORMULAIRE ===== -->
+<div class="slide-panel" [class.open]="showForm">
+  <div class="panel-header">
+    <div>
+      <h3>{{ editTarget ? 'Modifier le membre' : 'Nouveau membre' }}</h3>
+      <p class="panel-header-sub" *ngIf="editTarget">{{ getNomComplet(editTarget) }}</p>
+    </div>
+    <button class="btn-icon" (click)="closeAll()">
+      <span class="material-icons-round">close</span>
+    </button>
+  </div>
+
+  <div class="panel-body">
+    <form #personneForm="ngForm">
+
+      <!-- Section: Identité -->
+      <div class="form-section">
+        <div class="section-title">Identité</div>
+
+        <div class="form-group">
+          <label>Prénom(s)</label>
+          <input type="text" name="prenoms" [(ngModel)]="form.prenoms" placeholder="Jean-Baptiste, Marie..." class="form-control" />
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Nom de naissance</label>
+            <input type="text" name="nomNaissance" [(ngModel)]="form.nomNaissance" placeholder="Dupont" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Nom d'usage <span class="optional">(optionnel)</span></label>
+            <input type="text" name="nomUsage" [(ngModel)]="form.nomUsage" placeholder="Nom après mariage..." class="form-control" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Sexe</label>
+          <div class="radio-group">
+            <label class="radio-option" *ngFor="let s of sexeOptions" [class.selected]="form.sexe === s.val">
+              <input type="radio" [name]="'sexe'" [value]="s.val" [(ngModel)]="form.sexe" />
+              {{ s.label }}
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Naissance -->
+      <div class="form-section">
+        <div class="section-title">Naissance</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Année</label>
+            <input type="number" name="nais_annee" [(ngModel)]="form.nais_annee" placeholder="1960" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Mois</label>
+            <select name="nais_mois" [(ngModel)]="form.nais_mois" class="form-control">
+              <option value="">—</option>
+              <option *ngFor="let m of mois" [value]="m.val">{{ m.label }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Jour</label>
+            <input type="number" name="nais_jour" [(ngModel)]="form.nais_jour" placeholder="1" min="1" max="31" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Lieu de naissance</label>
+          <input type="text" name="lieuNaissance" [(ngModel)]="form.lieuNaissance" placeholder="Ville, pays..." class="form-control" />
+        </div>
+      </div>
+
+      <!-- Section: Décès -->
+      <div class="form-section">
+        <div class="section-title">
+          Décès
+          <label class="toggle-wrap">
+            <input type="checkbox" name="estDecede" [(ngModel)]="form.estDecede" />
+            <span class="toggle"></span>
+            <span class="toggle-label">{{ form.estDecede ? 'Décédé(e)' : 'Vivant(e)' }}</span>
+          </label>
+        </div>
+
+        <div *ngIf="form.estDecede">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Année</label>
+              <input type="number" name="deces_annee" [(ngModel)]="form.deces_annee" placeholder="2020" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Mois</label>
+              <select name="deces_mois" [(ngModel)]="form.deces_mois" class="form-control">
+                <option value="">—</option>
+                <option *ngFor="let m of mois" [value]="m.val">{{ m.label }}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Jour</label>
+              <input type="number" name="deces_jour" [(ngModel)]="form.deces_jour" placeholder="1" min="1" max="31" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Lieu de décès</label>
+            <input type="text" name="lieuDeces" [(ngModel)]="form.lieuDeces" placeholder="Ville, pays..." class="form-control" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Biographie -->
+      <div class="form-section">
+        <div class="section-title">Biographie <span class="optional">(optionnel)</span></div>
+        <div class="form-group">
+          <textarea name="biographie" [(ngModel)]="form.biographie" rows="4" placeholder="Parcours de vie, anecdotes..." class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Notes</label>
+          <textarea name="notes" [(ngModel)]="form.notes" rows="2" placeholder="Notes complémentaires..." class="form-control"></textarea>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="panel-footer">
+    <button class="btn-ghost" (click)="closeAll()">Annuler</button>
+    <button class="btn-primary" (click)="savePersonne()" [disabled]="saving">
+      <span class="material-icons-round spin" *ngIf="saving">sync</span>
+      {{ saving ? 'Sauvegarde...' : (editTarget ? 'Enregistrer' : 'Créer le membre') }}
+    </button>
+  </div>
+</div>
+
+<!-- ===== PANNEAU DÉTAIL ===== -->
+<div class="slide-panel slide-panel-wide" [class.open]="showDetail">
+  <div class="panel-header">
+    <div *ngIf="detailTarget">
+      <h3>{{ getNomComplet(detailTarget) }}</h3>
+      <p class="panel-header-sub">{{ getAgeLabel(detailTarget) }}</p>
+    </div>
+    <div class="panel-header-actions">
+      <button class="btn-icon" title="Modifier" (click)="openEdit(detailTarget!); showDetail = false">
+        <span class="material-icons-round">edit</span>
+      </button>
+      <button class="btn-icon" (click)="closeAll()">
+        <span class="material-icons-round">close</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="panel-body" *ngIf="detailTarget as p">
+
+    <!-- Avatar + statut -->
+    <div class="detail-hero">
+      <div class="avatar avatar-xl" [class.female]="p.sexe === 'F'" [class.male]="p.sexe === 'M'">
+        {{ getInitiales(p) }}
+      </div>
+      <div class="detail-hero-info">
+        <h2>{{ getNomComplet(p) }}</h2>
+        <div class="detail-badges">
+          <span class="badge" [class.badge-primary]="p.sexe === 'M'" [class.badge-pink]="p.sexe === 'F'" [class.badge-gray]="!p.sexe">
+            {{ getSexeLabel(p.sexe) }}
+          </span>
+          <span class="badge" [class.badge-success]="estVivant(p)" [class.badge-gray]="!estVivant(p)">
+            {{ estVivant(p) ? 'Vivant(e)' : 'Décédé(e)' }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infos structurées -->
+    <div class="detail-section">
+      <div class="section-title">Informations</div>
+      <div class="detail-grid">
+        <div class="detail-item" *ngIf="p.nomNaissance">
+          <span class="detail-label">Nom de naissance</span>
+          <span class="detail-value">{{ p.nomNaissance }}</span>
+        </div>
+        <div class="detail-item" *ngIf="p.nomUsage">
+          <span class="detail-label">Nom d'usage</span>
+          <span class="detail-value">{{ p.nomUsage }}</span>
+        </div>
+        <div class="detail-item" *ngIf="p.dateNaissance">
+          <span class="detail-label">Date de naissance</span>
+          <span class="detail-value">{{ p.dateNaissance }}</span>
+        </div>
+        <div class="detail-item" *ngIf="p.lieuNaissance">
+          <span class="detail-label">Lieu de naissance</span>
+          <span class="detail-value">{{ p.lieuNaissance }}</span>
+        </div>
+        <div class="detail-item" *ngIf="p.dateDeces">
+          <span class="detail-label">Date de décès</span>
+          <span class="detail-value">{{ p.dateDeces }}</span>
+        </div>
+        <div class="detail-item" *ngIf="p.lieuDeces">
+          <span class="detail-label">Lieu de décès</span>
+          <span class="detail-value">{{ p.lieuDeces }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Biographie -->
+    <div class="detail-section" *ngIf="p.biographie">
+      <div class="section-title">Biographie</div>
+      <p class="detail-bio">{{ p.biographie }}</p>
+    </div>
+
+    <!-- Notes -->
+    <div class="detail-section" *ngIf="p.notes">
+      <div class="section-title">Notes</div>
+      <p class="detail-bio">{{ p.notes }}</p>
+    </div>
+
+  </div>
+
+  <div class="panel-footer">
+    <button class="btn-danger" (click)="confirmDelete(detailTarget!, undefined); showDetail = false">
+      <span class="material-icons-round">delete</span>
+      Supprimer
+    </button>
+    <button class="btn-ghost" (click)="closeAll()">Fermer</button>
+  </div>
+</div>
+
+<!-- ===== DIALOG SUPPRESSION ===== -->
+<div class="confirm-dialog" *ngIf="showDeleteConfirm">
+  <div class="confirm-box">
+    <div class="confirm-icon">
+      <span class="material-icons-round">delete_forever</span>
+    </div>
+    <h4>Supprimer {{ deleteTarget ? getNomComplet(deleteTarget) : 'ce membre' }} ?</h4>
+    <p>Cette action est irréversible. Toutes les relations associées seront également supprimées.</p>
+    <div class="confirm-actions">
+      <button class="btn-ghost" (click)="closeAll()">Annuler</button>
+      <button class="btn-danger" (click)="deletePersonne()" [disabled]="deleting">
+        <span class="material-icons-round spin" *ngIf="deleting">sync</span>
+        {{ deleting ? 'Suppression...' : 'Supprimer' }}
+      </button>
+    </div>
+  </div>
+</div>

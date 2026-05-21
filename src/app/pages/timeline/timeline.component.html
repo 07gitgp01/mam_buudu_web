@@ -1,0 +1,47 @@
+<div class="page-header">
+  <div class="header-row">
+    <div>
+      <h2>Timeline familiale</h2>
+      <p>L'histoire de votre famille, chronologiquement</p>
+    </div>
+    <button class="btn-primary">
+      <span class="material-icons-round">add</span>
+      Ajouter un événement
+    </button>
+  </div>
+</div>
+
+<div class="timeline-container">
+
+  <div class="timeline-item" *ngFor="let ev of events; let i = index">
+
+    <!-- Année -->
+    <div class="timeline-year">
+      <span>{{ ev.annee }}</span>
+    </div>
+
+    <!-- Ligne + Dot -->
+    <div class="timeline-axis">
+      <div class="axis-dot" [class]="'dot-' + getConfig(ev.type).color">
+        <span class="material-icons-round">{{ getConfig(ev.type).icon }}</span>
+      </div>
+      <div class="axis-line" *ngIf="i < events.length - 1"></div>
+    </div>
+
+    <!-- Carte événement -->
+    <div class="timeline-card">
+      <div class="ev-header">
+        <h4>{{ ev.titre }}</h4>
+        <span class="badge" [class]="'badge-' + getConfig(ev.type).color">{{ ev.type }}</span>
+      </div>
+      <p class="ev-desc">{{ ev.description }}</p>
+      <div class="ev-footer">
+        <span class="material-icons-round">person</span>
+        {{ ev.personne }}
+        <span class="ev-date">· {{ ev.date }}</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
