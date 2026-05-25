@@ -48,6 +48,16 @@ export class ApiService {
     return this.http.delete<void>(`${this.base}/api/personnes/${id}`);
   }
 
+  uploadPhoto(personneId: string, file: File): Observable<{ photoUrl: string }> {
+    const formData = new FormData();
+    formData.append('photo', file);
+    return this.http.post<{ photoUrl: string }>(`${this.base}/api/uploads/photo/${personneId}`, formData);
+  }
+
+  deletePhoto(personneId: string): Observable<void> {
+    return this.http.delete<void>(`${this.base}/api/uploads/photo/${personneId}`);
+  }
+
   /* === Unions === */
   getUnions(): Observable<Union[]> {
     return this.http.get<Union[]>(`${this.base}/api/unions`);

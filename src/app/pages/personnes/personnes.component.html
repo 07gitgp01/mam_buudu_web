@@ -50,7 +50,14 @@
     <div class="personne-card" *ngFor="let p of personnesFiltrees" (click)="openDetail(p)">
 
       <div class="card-top">
-        <div class="avatar avatar-lg" [class.female]="p.sexe === 'F'" [class.male]="p.sexe === 'M'">
+        <img *ngIf="p.photoUrl && !failedPhotos.has(p.id)"
+             [src]="p.photoUrl"
+             class="avatar avatar-lg photo-avatar"
+             [alt]="getNomComplet(p)"
+             (error)="onPhotoError(p.id)" />
+        <div *ngIf="!p.photoUrl || failedPhotos.has(p.id)"
+             class="avatar avatar-lg"
+             [class.female]="p.sexe === 'F'" [class.male]="p.sexe === 'M'">
           {{ getInitiales(p) }}
         </div>
         <span class="status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
@@ -104,6 +111,33 @@
 
   <div class="panel-body">
     <form #personneForm="ngForm">
+
+      <!-- Section: Photo -->
+      <div class="form-section">
+        <div class="section-title">Photo</div>
+        <div class="photo-upload-area">
+          <div class="photo-preview-wrap">
+            <img *ngIf="photoPreview" [src]="photoPreview" class="photo-preview-img" alt="Aperçu" />
+            <div *ngIf="!photoPreview" class="photo-placeholder"
+                 [class.male]="form.sexe === 'M'" [class.female]="form.sexe === 'F'">
+              {{ (form.prenoms.charAt(0) || '') + (form.nomNaissance.charAt(0) || '') || 'MB' }}
+            </div>
+            <button *ngIf="photoPreview" class="photo-remove-btn" type="button"
+                    (click)="removeSelectedPhoto()" title="Supprimer la photo">
+              <span class="material-icons-round">close</span>
+            </button>
+          </div>
+          <div class="photo-actions">
+            <label class="btn-photo-pick" for="photoInput">
+              <span class="material-icons-round">add_photo_alternate</span>
+              {{ photoPreview ? 'Changer la photo' : 'Ajouter une photo' }}
+            </label>
+            <input id="photoInput" type="file" accept="image/jpeg,image/png,image/webp"
+                   style="display:none" (change)="onFileSelect($event)" />
+            <p class="photo-hint">JPG, PNG ou WebP · max 5 Mo</p>
+          </div>
+        </div>
+      </div>
 
       <!-- Section: Identité -->
       <div class="form-section">
@@ -243,7 +277,14 @@
 
     <!-- Avatar + statut -->
     <div class="detail-hero">
-      <div class="avatar avatar-xl" [class.female]="p.sexe === 'F'" [class.male]="p.sexe === 'M'">
+      <img *ngIf="p.photoUrl && !failedPhotos.has(p.id)"
+           [src]="p.photoUrl"
+           class="avatar avatar-xl photo-avatar"
+           [alt]="getNomComplet(p)"
+           (error)="onPhotoError(p.id)" />
+      <div *ngIf="!p.photoUrl || failedPhotos.has(p.id)"
+           class="avatar avatar-xl"
+           [class.female]="p.sexe === 'F'" [class.male]="p.sexe === 'M'">
         {{ getInitiales(p) }}
       </div>
       <div class="detail-hero-info">

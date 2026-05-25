@@ -72,6 +72,14 @@ export class PersonnesComponent implements OnInit {
   form: PersonneForm = this.emptyForm();
   saving = false;
 
+  /* ---- Photo ---- */
+  selectedFile: File | null = null;
+  photoPreview: string | null = null;
+  photoToDelete = false;
+  failedPhotos = new Set<string>();
+
+  onPhotoError(id: string): void { this.failedPhotos.add(id); }
+
   /* ---- Détail ---- */
   showDetail = false;
   detailTarget: Personne | null = null;
@@ -98,6 +106,7 @@ export class PersonnesComponent implements OnInit {
 
   private loadPersonnes(): void {
     this.loading = true;
+    this.failedPhotos.clear();
     this.api.getPersonnes().subscribe({
       next: (data) => {
         this.toutes = data;
@@ -143,6 +152,9 @@ export class PersonnesComponent implements OnInit {
   openCreate(): void {
     this.editTarget = null;
     this.form = this.emptyForm();
+    this.selectedFile = null;
+    this.photoPreview = null;
+    this.photoToDelete = false;
     this.showForm = true;
   }
 
@@ -164,7 +176,28 @@ export class PersonnesComponent implements OnInit {
       biographie: p.biographie ?? '',
       notes:      p.notes      ?? '',
     };
+    this.selectedFile = null;
+    this.photoPreview = p.photoUrl;
+    this.photoToDelete = false;
     this.showForm = true;
+  }
+
+  onFileSelect(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+    this.selectedFile = file;
+    this.photoToDelete = false;
+    const reader = new FileReader();
+    reader.onload = (e) => { this.photoPreview = e.target?.result as string; };
+    reader.readAsDataURL(file);
+    input.value = '';
+  }
+
+  removeSelectedPhoto(): void {
+    this.selectedFile = null;
+    this.photoPreview = null;
+    this.photoToDelete = !!this.editTarget?.photoUrl;
   }
 
   openDetail(p: Personne): void {
@@ -211,10 +244,15 @@ export class PersonnesComponent implements OnInit {
       : this.api.createPersonne(body);
 
     obs.subscribe({
-      next: () => {
-        this.saving = false;
-        this.closeAll();
-        this.loadPersonnes();
+      next: (saved) => {
+        const finish = () => { this.saving = false; this.closeAll(); this.loadPersonnes(); };
+        if (this.selectedFile) {
+          this.api.uploadPhoto(saved.id, this.selectedFile).subscribe({ next: finish, error: finish });
+        } else if (this.photoToDelete) {
+          this.api.deletePhoto(saved.id).subscribe({ next: finish, error: finish });
+        } else {
+          finish();
+        }
       },
       error: () => { this.saving = false; },
     });

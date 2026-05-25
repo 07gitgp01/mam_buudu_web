@@ -530,6 +530,12 @@ input, select, textarea {
   &.male       { background: var(--primary); }
   &.female     { background: var(--pink); }
   &.neutral    { background: var(--accent); }
+
+  &.photo-avatar {
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+  }
 }
 
 /* ============================================
