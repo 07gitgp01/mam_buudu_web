@@ -35,9 +35,27 @@
     </button>
   </div>
 
-  <!-- Grille des unions -->
-  <div class="unions-grid" *ngIf="!loading && !erreur && unions.length > 0">
-    <div class="union-card" *ngFor="let u of unions">
+  <!-- Toolbar toggle vue -->
+  <div class="toolbar-right" *ngIf="!loading && !erreur && unions.length > 0">
+    <div class="view-toggle">
+      <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">
+        <span class="material-icons-round">grid_view</span>
+      </button>
+      <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">
+        <span class="material-icons-round">view_list</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== VUE CARTES ===== -->
+  <div class="unions-grid" *ngIf="!loading && !erreur && unions.length > 0 && viewMode === 'cards'">
+    <div class="union-card" *ngFor="let u of unions; let i = index">
+
+      <!-- Colorband style home -->
+      <div class="pc-colorband"
+           [class.color-1]="i % 3 === 0"
+           [class.color-2]="i % 3 === 1"
+           [class.color-3]="i % 3 === 2"></div>
 
       <!-- Bandeau type -->
       <div class="union-type-banner" [ngClass]="getTypeColor(u.type)">
@@ -91,6 +109,68 @@
         </button>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ===== VUE LISTE ===== -->
+  <div class="ul-table" *ngIf="!loading && !erreur && unions.length > 0 && viewMode === 'list'">
+    <!-- En-tête -->
+    <div class="ul-thead">
+      <span class="pl-th">Couple</span>
+      <span class="pl-th ul-th-type">Type</span>
+      <span class="pl-th ul-th-date">Depuis</span>
+      <span class="pl-th ul-th-enfants">Enfants</span>
+      <span class="pl-th ul-th-actions">Actions</span>
+    </div>
+    <!-- Lignes -->
+    <div class="ul-row" *ngFor="let u of unions">
+      <!-- Couple -->
+      <div class="ul-cell ul-cell-couple">
+        <div class="ul-avatars">
+          <div class="avatar avatar-sm" [class.male]="getConjoint1(u)?.sexe === 'M'" [class.female]="getConjoint1(u)?.sexe === 'F'">
+            {{ initiales(getConjoint1(u)) }}
+          </div>
+          <span class="material-icons-round ul-heart">favorite</span>
+          <div class="avatar avatar-sm" [class.male]="getConjoint2(u)?.sexe === 'M'" [class.female]="getConjoint2(u)?.sexe === 'F'">
+            {{ initiales(getConjoint2(u)) }}
+          </div>
+        </div>
+        <div class="ul-names">
+          <span class="ul-name-primary">{{ nomComplet(getConjoint1(u)) }}</span>
+          <span class="ul-name-secondary">& {{ nomComplet(getConjoint2(u)) }}</span>
+        </div>
+      </div>
+      <!-- Type -->
+      <div class="ul-cell ul-cell-type">
+        <span class="union-type-badge" [ngClass]="getTypeColor(u.type)">
+          <span class="material-icons-round">{{ getTypeIcon(u.type) }}</span>
+          {{ getTypeLabel(u.type) }}
+        </span>
+      </div>
+      <!-- Date -->
+      <div class="ul-cell ul-cell-date">
+        <span *ngIf="u.dateDebut">{{ annee(u.dateDebut) ?? u.dateDebut }}</span>
+        <span *ngIf="!u.dateDebut" class="pl-empty">—</span>
+      </div>
+      <!-- Enfants -->
+      <div class="ul-cell ul-cell-enfants">
+        <span class="ul-enfant-count">
+          <span class="material-icons-round">child_care</span>
+          {{ u.filiations.length }}
+        </span>
+      </div>
+      <!-- Actions -->
+      <div class="ul-cell ul-cell-actions" (click)="$event.stopPropagation()">
+        <button class="btn-icon" title="Gérer les enfants" (click)="openEnfantPanel(u)">
+          <span class="material-icons-round">people_add</span>
+        </button>
+        <button class="btn-icon" title="Modifier" (click)="openEdit(u)">
+          <span class="material-icons-round">edit</span>
+        </button>
+        <button class="btn-icon btn-icon-danger" title="Supprimer" (click)="confirmDelete(u)">
+          <span class="material-icons-round">delete</span>
+        </button>
+      </div>
     </div>
   </div>
 

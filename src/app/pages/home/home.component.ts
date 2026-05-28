@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Personne, getInitiales, estVivant, extractAnnee } from '../../models/personne.model';
+import { Personne, getInitiales, estVivant, extractAnnee, getAgeLabel, getNomComplet } from '../../models/personne.model';
 import { ApiService } from '../../services/api.service';
 import { AuthService } from '../../services/auth.service';
 import { forkJoin } from 'rxjs';
@@ -11,9 +11,11 @@ import { forkJoin } from 'rxjs';
   standalone: false,
 })
 export class HomeComponent implements OnInit {
-  getInitiales = getInitiales;
-  estVivant    = estVivant;
-  extractAnnee = extractAnnee;
+  getInitiales  = getInitiales;
+  estVivant     = estVivant;
+  extractAnnee  = extractAnnee;
+  getAgeLabel   = getAgeLabel;
+  getNomComplet = getNomComplet;
 
   nomFamille = '';
   loading = true;
@@ -26,7 +28,10 @@ export class HomeComponent implements OnInit {
   ];
 
   recentPersonnes: Personne[] = [];
+  failedPhotos = new Set<string>();
   viewMode: 'cards' | 'list' = 'cards';
+
+  onPhotoError(id: string): void { this.failedPhotos.add(id); }
 
   quickActions = [
     { icon: 'person_add',         label: 'Ajouter un membre', route: '/app/personnes', color: 'blue'   },
@@ -60,6 +65,7 @@ export class HomeComponent implements OnInit {
           .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
           .slice(0, 8);
 
+        this.failedPhotos.clear();
         this.loading = false;
       },
       error: () => { this.loading = false; },

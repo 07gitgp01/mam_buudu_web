@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Personne, Sexe, getInitiales, getAgeLabel, estVivant, getNomComplet, extractAnnee } from '../../models/personne.model';
 import { ApiService } from '../../services/api.service';
@@ -84,6 +84,9 @@ export class PersonnesComponent implements OnInit {
   showDetail = false;
   detailTarget: Personne | null = null;
 
+  /* ---- Vue ---- */
+  viewMode: 'cards' | 'list' = 'cards';
+
   /* ---- Suppression ---- */
   showDeleteConfirm = false;
   deleteTarget: Personne | null = null;
@@ -92,6 +95,7 @@ export class PersonnesComponent implements OnInit {
   /* ---- Constantes exposées au template ---- */
   mois = MOIS;
   sexeOptions = SEXE_OPTIONS;
+  currentYear = new Date().getFullYear();
 
   /* ---- Helpers ---- */
   getInitiales = getInitiales;
@@ -100,7 +104,7 @@ export class PersonnesComponent implements OnInit {
   getNomComplet = getNomComplet;
   extractAnnee  = extractAnnee;
 
-  constructor(private api: ApiService, private route: ActivatedRoute) {}
+  constructor(private api: ApiService, private route: ActivatedRoute, private ngZone: NgZone) {}
 
   ngOnInit(): void { this.loadPersonnes(); }
 
@@ -189,7 +193,11 @@ export class PersonnesComponent implements OnInit {
     this.selectedFile = file;
     this.photoToDelete = false;
     const reader = new FileReader();
-    reader.onload = (e) => { this.photoPreview = e.target?.result as string; };
+    reader.onload = (e) => {
+      this.ngZone.run(() => {
+        this.photoPreview = e.target?.result as string;
+      });
+    };
     reader.readAsDataURL(file);
     input.value = '';
   }

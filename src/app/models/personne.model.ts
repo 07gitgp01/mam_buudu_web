@@ -40,8 +40,10 @@ export function estVivant(p: Personne): boolean {
 
 export function getAgeLabel(p: Personne): string {
   const anneeNaissance = extractAnnee(p.dateNaissance);
-  if (!anneeNaissance) return '';
+  if (!anneeNaissance || anneeNaissance < 1850) return '';
   const anneeDeces = extractAnnee(p.dateDeces);
   if (anneeDeces) return `${anneeNaissance} – ${anneeDeces}`;
-  return `${new Date().getFullYear() - anneeNaissance} ans`;
+  const age = new Date().getFullYear() - anneeNaissance;
+  if (age < 0 || age > 150) return '';
+  return `${age} ans`;
 }

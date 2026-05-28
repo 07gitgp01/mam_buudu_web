@@ -53,6 +53,7 @@ export class UnionsComponent implements OnInit {
   personnes: Personne[] = [];
   loading = true;
   erreur: string | null = null;
+  viewMode: 'cards' | 'list' = 'cards';
 
   // Panel form
   showForm = false;

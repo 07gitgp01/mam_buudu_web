@@ -31,16 +31,24 @@
   gap: 16px;
 }
 
+/* ===== TOOLBAR ===== */
+.toolbar-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 /* ===== CARTE ===== */
 .union-card {
+  position: relative;
   background: var(--white);
-  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
   overflow: hidden;
   transition: var(--transition);
 
   &:hover {
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
     transform: translateY(-2px);
   }
 }
@@ -438,6 +446,131 @@
   justify-content: center;
 }
 
+/* ===== BADGE TYPE (vue liste) ===== */
+.union-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+
+  .material-icons-round { font-size: 13px !important; }
+
+  &.banner-pink    { background: #fdf2f8; color: #db2777; }
+  &.banner-accent  { background: #eef2ff; color: var(--accent); }
+  &.banner-primary { background: var(--primary-bg); color: var(--primary); }
+  &.banner-gold    { background: #fffbeb; color: #b45309; }
+  &.banner-green   { background: #f0fdf4; color: #16a34a; }
+  &.banner-purple  { background: #faf5ff; color: #7c3aed; }
+}
+
+/* ===== VUE LISTE ===== */
+.ul-table {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+.ul-thead {
+  display: grid;
+  grid-template-columns: 2fr 1fr 100px 80px 120px;
+  padding: 10px 16px;
+  background: var(--bg-muted, #f8fafc);
+  border-bottom: 1px solid var(--border);
+}
+
+.ul-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 100px 80px 120px;
+  padding: 12px 16px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+
+  &:last-child { border-bottom: none; }
+  &:hover { background: var(--bg-muted, #f8fafc); }
+}
+
+.ul-cell {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.ul-cell-couple {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.ul-avatars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.ul-heart {
+  font-size: 14px !important;
+  color: #f43f5e;
+}
+
+.ul-names {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ul-name-primary {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ul-name-secondary {
+  font-size: 12px;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ul-cell-type { }
+
+.ul-cell-date {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.ul-cell-enfants { }
+
+.ul-enfant-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-secondary);
+
+  .material-icons-round { font-size: 15px !important; color: var(--text-muted); }
+}
+
+.ul-cell-actions {
+  display: flex;
+  gap: 2px;
+  justify-content: flex-end;
+}
+
 /* ===== ANIMATION SPIN ===== */
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -452,6 +585,14 @@
 
   .unions-grid { grid-template-columns: 1fr; }
 
+  /* Liste : masquer type et date, garder couple + enfants + actions */
+  .ul-thead,
+  .ul-row {
+    grid-template-columns: 2fr 60px 80px;
+  }
+  .ul-th-type, .ul-th-date,
+  .ul-cell-type, .ul-cell-date { display: none; }
+
   .slide-panel {
     width: 100vw;
     border-radius: 20px 20px 0 0;
@@ -465,4 +606,14 @@
 
   .form-row { grid-template-columns: 1fr; }
   .panel-footer { flex-direction: column-reverse; button { width: 100%; justify-content: center; } }
+}
+
+@media (max-width: 480px) {
+  /* Liste très petits écrans : seulement couple + actions */
+  .ul-thead,
+  .ul-row {
+    grid-template-columns: 1fr 80px;
+  }
+  .ul-th-type, .ul-th-date, .ul-th-enfants,
+  .ul-cell-type, .ul-cell-date, .ul-cell-enfants { display: none; }
 }
