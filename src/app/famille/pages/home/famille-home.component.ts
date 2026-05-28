@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { forkJoin } from 'rxjs';
-import { Personne, getInitiales, estVivant, extractAnnee, getNomComplet } from '../../../models/personne.model';
+import { Personne, getInitiales, estVivant, extractAnnee, getNomComplet, getPhotoUrl, getAgeLabel } from '../../../models/personne.model';
 import { ApiService } from '../../../services/api.service';
 import { AuthService } from '../../../services/auth.service';
 
@@ -15,6 +15,10 @@ export class FamilleHomeComponent implements OnInit {
   estVivant     = estVivant;
   extractAnnee  = extractAnnee;
   getNomComplet = getNomComplet;
+  getAgeLabel   = getAgeLabel;
+  getPhotoUrl   = getPhotoUrl;
+  failedPhotos  = new Set<string>();
+  viewMode: 'cards' | 'list' = 'cards';
 
   nomFamille = '';
   loading = true;
@@ -50,6 +54,7 @@ export class FamilleHomeComponent implements OnInit {
         this.recentPersonnes = [...personnes]
           .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
           .slice(0, 6);
+        this.failedPhotos.clear();
         this.loading = false;
       },
       error: () => { this.loading = false; },
@@ -57,4 +62,6 @@ export class FamilleHomeComponent implements OnInit {
   }
 
   get user() { return this.auth.getUser(); }
+
+  onPhotoError(id: string): void { this.failedPhotos.add(id); }
 }

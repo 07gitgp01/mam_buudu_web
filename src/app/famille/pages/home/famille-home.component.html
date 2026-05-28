@@ -56,21 +56,94 @@
     <div class="fh-section" *ngIf="recentPersonnes.length > 0">
       <div class="fh-section-header">
         <h2 class="fh-section-title">Membres récents</h2>
-        <a routerLink="/famille/membres" class="fh-see-all">
-          Voir tous <span class="material-icons-round">arrow_forward</span>
-        </a>
-      </div>
-      <div class="fh-members-row">
-        <div class="fh-member-card" *ngFor="let p of recentPersonnes">
-          <div class="fh-member-avatar" [class.female]="p.sexe === 'F'" [class.male]="p.sexe === 'M'">
-            {{ getInitiales(p) }}
+        <div class="fh-section-actions">
+          <div class="view-toggle">
+            <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">
+              <span class="material-icons-round">grid_view</span>
+            </button>
+            <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">
+              <span class="material-icons-round">view_list</span>
+            </button>
           </div>
-          <div class="fh-member-info">
-            <span class="fh-member-name">{{ getNomComplet(p) }}</span>
-            <span class="fh-member-year" *ngIf="p.dateNaissance">{{ extractAnnee(p.dateNaissance) }}</span>
-            <span class="fh-member-alive" *ngIf="estVivant(p)">
-              <span class="alive-dot"></span> Vivant(e)
+          <a routerLink="/famille/membres" class="fh-see-all">
+            Voir tous <span class="material-icons-round">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Vue cartes -->
+      <div class="pc-grid" *ngIf="viewMode === 'cards'">
+        <div class="pc-card" *ngFor="let p of recentPersonnes; let i = index"
+             [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'">
+          <div class="pc-card-banner">
+            <div class="pc-colorband"
+                 [class.color-1]="i % 3 === 0"
+                 [class.color-2]="i % 3 === 1"
+                 [class.color-3]="i % 3 === 2"></div>
+            <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
+            <div class="pc-avatar-ring">
+              <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
+                   [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"
+                   [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
+              <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">
+                {{ getInitiales(p) }}
+              </div>
+            </div>
+          </div>
+          <div class="pc-card-body">
+            <h4 class="pc-name">{{ getNomComplet(p) }}</h4>
+            <span class="pc-age" [class.pc-age-unknown]="!getAgeLabel(p)">
+              {{ getAgeLabel(p) || 'Naissance inconnue' }}
             </span>
+            <div class="pc-loc" *ngIf="p.lieuNaissance">
+              <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
+            </div>
+            <div class="pc-badges">
+              <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
+              <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">Décédé(e)</span>
+            </div>
+          </div>
+          <div class="pc-card-actions">
+            <a class="pc-act" routerLink="/famille/membres">
+              <span class="material-icons-round">visibility</span>Voir
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vue liste -->
+      <div class="pl-table" *ngIf="viewMode === 'list'">
+        <div class="pl-thead">
+          <span class="pl-th pl-th-person">Personne</span>
+          <span class="pl-th pl-th-lieu">Lieu de naissance</span>
+          <span class="pl-th pl-th-statut">Statut</span>
+        </div>
+        <div class="pl-row" *ngFor="let p of recentPersonnes">
+          <div class="pl-cell pl-cell-person">
+            <div class="pl-avatar-wrap">
+              <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
+                   [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"
+                   [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
+              <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pl-avatar pl-avatar-initials"
+                   [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">{{ getInitiales(p) }}</div>
+              <span class="pl-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
+            </div>
+            <div class="pl-person-info">
+              <span class="pl-person-name">{{ getNomComplet(p) }}</span>
+              <span class="pl-person-age" [class.pc-age-unknown]="!getAgeLabel(p)">
+                {{ getAgeLabel(p) || 'Naissance inconnue' }}
+              </span>
+            </div>
+          </div>
+          <div class="pl-cell pl-cell-lieu">
+            <span *ngIf="p.lieuNaissance" class="pl-lieu">
+              <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
+            </span>
+            <span *ngIf="!p.lieuNaissance" class="pl-empty">—</span>
+          </div>
+          <div class="pl-cell pl-cell-statut">
+            <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
+            <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">Décédé(e)</span>
           </div>
         </div>
       </div>
