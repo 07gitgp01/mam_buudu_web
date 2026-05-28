@@ -12,25 +12,24 @@
       <button class="btn-ghost btn-sm" type="button" (click)="zoomOut()" title="Dézoomer">
         <span class="material-icons-round">zoom_out</span>
       </button>
+      <span class="zoom-level">{{ (scale * 100) | number:'1.0-0' }}%</span>
       <button class="btn-ghost btn-sm" type="button" (click)="zoomIn()" title="Zoomer">
         <span class="material-icons-round">zoom_in</span>
       </button>
       <button class="btn-ghost btn-sm" type="button" (click)="resetView()" title="Réinitialiser la vue">
         <span class="material-icons-round">refresh</span>
       </button>
-      <button class="btn-outline btn-sm" type="button" (click)="exportTree()" title="Exporter l'arbre en PNG">
-        <span class="material-icons-round">download</span>
-        PNG
+      <button class="btn-outline btn-sm" type="button" (click)="exportTree()">
+        <span class="material-icons-round">download</span>PNG
       </button>
-      <button class="btn-outline btn-sm" type="button" (click)="exportTreePdf()" title="Exporter l'arbre en PDF">
-        <span class="material-icons-round">picture_as_pdf</span>
-        PDF
+      <button class="btn-outline btn-sm" type="button" (click)="exportTreePdf()">
+        <span class="material-icons-round">picture_as_pdf</span>PDF
       </button>
     </div>
   </div>
 
   <!-- CANVAS -->
-  <div class="tree-canvas">
+  <div class="tree-canvas" #treeCanvas (wheel)="onWheel($event)">
 
     <div class="loading-state" *ngIf="loading">
       <span class="material-icons-round spin">sync</span>
@@ -55,11 +54,9 @@
       (pointerdown)="startDrag($event)"
       (pointermove)="drag($event)"
       (pointerup)="endDrag($event)"
-      (pointercancel)="endDrag($event)"
-      (wheel)="onWheel($event)">
+      (pointercancel)="endDrag($event)">
 
       <ng-container *ngFor="let gen of generations">
-
         <div class="generation">
           <div class="gen-label">Génération {{ gen.level }}</div>
 
@@ -69,16 +66,31 @@
               <!-- ── UNION ── -->
               <div class="union-group" *ngIf="item.type === 'union'">
 
-                <!-- Carte couple -->
-                <div class="couple-wrap" [class.root]="item.isRoot">
+                <!-- Connecteur montant (si enfant d'une union) -->
+                <div class="up-connector" *ngIf="item.parentUnionId"></div>
+
+                <div class="couple-wrap" [class.root]="item.isRoot"
+                     [class.selected]="selectedPerson && (selectedPerson.id === item.p1.id || selectedPerson.id === item.p2?.id)">
+
                   <!-- Personne 1 -->
-                  <div class="tree-node" [class.male]="item.p1.sexe==='M'" [class.female]="item.p1.sexe==='F'">
-                    <div class="node-avatar" [class.male]="item.p1.sexe==='M'" [class.female]="item.p1.sexe==='F'">{{ getInitiales(item.p1) }}</div>
+                  <div class="tree-node"
+                       [class.male]="item.p1.sexe==='M'" [class.female]="item.p1.sexe==='F'"
+                       [class.active]="selectedPerson?.id === item.p1.id"
+                       (mouseenter)="showTooltip(item.p1, $event)"
+                       (mousemove)="moveTooltip($event)"
+                       (mouseleave)="hideTooltip()"
+                       (click)="openDetail(item.p1)">
+                    <div class="node-avatar" [class.male]="item.p1.sexe==='M'" [class.female]="item.p1.sexe==='F'">
+                      <img *ngIf="getPhotoUrl(item.p1) && !failedPhotos.has(item.p1.id)"
+                           [src]="getPhotoUrl(item.p1)!" class="node-avatar-photo"
+                           [alt]="getInitiales(item.p1)" (error)="onPhotoError(item.p1.id)" />
+                      <span *ngIf="!getPhotoUrl(item.p1) || failedPhotos.has(item.p1.id)">{{ getInitiales(item.p1) }}</span>
+                    </div>
                     <span class="node-name">{{ item.p1.prenoms }} {{ item.p1.nomUsage ?? item.p1.nomNaissance }}</span>
                     <span class="node-year">{{ yearLabel(item.p1) }}</span>
                   </div>
 
-                  <!-- Connecteur union central -->
+                  <!-- Connecteur cœur -->
                   <div class="union-heart-connector" *ngIf="item.p2">
                     <span class="material-icons-round">favorite</span>
                     <span class="union-hline"></span>
@@ -86,8 +98,18 @@
 
                   <!-- Personne 2 -->
                   <div class="tree-node" *ngIf="item.p2"
-                       [class.male]="item.p2!.sexe==='M'" [class.female]="item.p2!.sexe==='F'">
-                    <div class="node-avatar" [class.male]="item.p2!.sexe==='M'" [class.female]="item.p2!.sexe==='F'">{{ getInitiales(item.p2!) }}</div>
+                       [class.male]="item.p2!.sexe==='M'" [class.female]="item.p2!.sexe==='F'"
+                       [class.active]="selectedPerson?.id === item.p2!.id"
+                       (mouseenter)="showTooltip(item.p2!, $event)"
+                       (mousemove)="moveTooltip($event)"
+                       (mouseleave)="hideTooltip()"
+                       (click)="openDetail(item.p2!)">
+                    <div class="node-avatar" [class.male]="item.p2!.sexe==='M'" [class.female]="item.p2!.sexe==='F'">
+                      <img *ngIf="getPhotoUrl(item.p2!) && !failedPhotos.has(item.p2!.id)"
+                           [src]="getPhotoUrl(item.p2!)!" class="node-avatar-photo"
+                           [alt]="getInitiales(item.p2!)" (error)="onPhotoError(item.p2!.id)" />
+                      <span *ngIf="!getPhotoUrl(item.p2!) || failedPhotos.has(item.p2!.id)">{{ getInitiales(item.p2!) }}</span>
+                    </div>
                     <span class="node-name">{{ item.p2!.prenoms }} {{ item.p2!.nomUsage ?? item.p2!.nomNaissance }}</span>
                     <span class="node-year">{{ yearLabel(item.p2!) }}</span>
                   </div>
@@ -97,29 +119,179 @@
                 <div class="union-badge" *ngIf="item.union?.type">
                   <span class="material-icons-round">favorite_border</span>
                   {{ typeLabel(item.union!.type) }}
-                  <ng-container *ngIf="item.union!.dateDebut">· {{ extractAnnee(item.union!.dateDebut) }}</ng-container>
+                  <ng-container *ngIf="item.union!.dateDebut"> · {{ extractAnnee(item.union!.dateDebut) }}</ng-container>
                 </div>
 
-                <!-- Connecteur vers génération suivante (centré sur l'union) -->
+                <!-- Connecteur descendant -->
                 <div class="down-connector" *ngIf="item.hasChildren"></div>
 
               </div>
 
               <!-- ── SOLO ── -->
-              <div class="tree-node solo" *ngIf="item.type === 'solo'"
-                   [class.root]="item.isRoot"
-                   [class.male]="item.p1.sexe==='M'" [class.female]="item.p1.sexe==='F'">
-                <div class="node-avatar" [class.male]="item.p1.sexe==='M'" [class.female]="item.p1.sexe==='F'">{{ getInitiales(item.p1) }}</div>
-                <span class="node-name">{{ item.p1.prenoms }} {{ item.p1.nomUsage ?? item.p1.nomNaissance }}</span>
-                <span class="node-year">{{ yearLabel(item.p1) }}</span>
+              <div class="solo-group" *ngIf="item.type === 'solo'">
+                <div class="up-connector" *ngIf="item.parentUnionId"></div>
+                <div class="tree-node solo"
+                     [class.root]="item.isRoot"
+                     [class.male]="item.p1.sexe==='M'" [class.female]="item.p1.sexe==='F'"
+                     [class.active]="selectedPerson?.id === item.p1.id"
+                     (mouseenter)="showTooltip(item.p1, $event)"
+                     (mousemove)="moveTooltip($event)"
+                     (mouseleave)="hideTooltip()"
+                     (click)="openDetail(item.p1)">
+                  <div class="node-avatar" [class.male]="item.p1.sexe==='M'" [class.female]="item.p1.sexe==='F'">
+                    <img *ngIf="getPhotoUrl(item.p1) && !failedPhotos.has(item.p1.id)"
+                         [src]="getPhotoUrl(item.p1)!" class="node-avatar-photo"
+                         [alt]="getInitiales(item.p1)" (error)="onPhotoError(item.p1.id)" />
+                    <span *ngIf="!getPhotoUrl(item.p1) || failedPhotos.has(item.p1.id)">{{ getInitiales(item.p1) }}</span>
+                  </div>
+                  <span class="node-name">{{ item.p1.prenoms }} {{ item.p1.nomUsage ?? item.p1.nomNaissance }}</span>
+                  <span class="node-year">{{ yearLabel(item.p1) }}</span>
+                </div>
               </div>
 
             </ng-container>
           </div>
         </div>
-
       </ng-container>
     </div>
 
+  </div>
+
+  <!-- Hint ctrl+molette -->
+  <div class="zoom-hint" *ngIf="!loading && generations.length > 0">
+    <span class="material-icons-round">info_outline</span>
+    Ctrl + molette pour zoomer · Glisser pour naviguer · Clic sur un membre pour sa fiche
+  </div>
+
+</div>
+
+<!-- ===== TOOLTIP ===== -->
+<div class="tree-tooltip"
+     *ngIf="hoveredPerson"
+     [style.left.px]="tooltipX"
+     [style.top.px]="tooltipY">
+
+  <div class="tt-avatar"
+       [class.male]="hoveredPerson.sexe === 'M'"
+       [class.female]="hoveredPerson.sexe === 'F'">
+    <img *ngIf="getPhotoUrl(hoveredPerson) && !failedPhotos.has(hoveredPerson.id)"
+         [src]="getPhotoUrl(hoveredPerson)!" class="tt-avatar-photo"
+         (error)="onPhotoError(hoveredPerson.id)" />
+    <span *ngIf="!getPhotoUrl(hoveredPerson) || failedPhotos.has(hoveredPerson.id)">
+      {{ getInitiales(hoveredPerson) }}
+    </span>
+  </div>
+
+  <div class="tt-content">
+    <span class="tt-name">{{ getNomComplet(hoveredPerson) }}</span>
+
+    <span class="tt-dates" *ngIf="tooltipAge(hoveredPerson)">
+      <span class="material-icons-round">hourglass_bottom</span>
+      {{ tooltipAge(hoveredPerson) }}
+    </span>
+
+    <span class="tt-lieu" *ngIf="hoveredPerson.lieuNaissance">
+      <span class="material-icons-round">place</span>
+      {{ hoveredPerson.lieuNaissance }}
+    </span>
+
+    <div class="tt-badges">
+      <span class="tt-badge" [class.tt-m]="hoveredPerson.sexe === 'M'" [class.tt-f]="hoveredPerson.sexe === 'F'">
+        {{ hoveredPerson.sexe === 'M' ? 'Homme' : hoveredPerson.sexe === 'F' ? 'Femme' : 'Autre' }}
+      </span>
+      <span class="tt-badge tt-alive" *ngIf="estVivant(hoveredPerson)">Vivant(e)</span>
+      <span class="tt-badge tt-dead"  *ngIf="!estVivant(hoveredPerson)">Décédé(e)</span>
+    </div>
+
+    <span class="tt-hint">Clic pour la fiche complète</span>
+  </div>
+</div>
+
+<!-- ===== OVERLAY ===== -->
+<div class="panel-overlay" *ngIf="showDetail" (click)="closeDetail()"></div>
+
+<!-- ===== PANNEAU DÉTAIL ===== -->
+<div class="detail-panel" [class.open]="showDetail">
+  <div class="dp-header">
+    <h3>Fiche membre</h3>
+    <button class="btn-icon" (click)="closeDetail()">
+      <span class="material-icons-round">close</span>
+    </button>
+  </div>
+
+  <div class="dp-body" *ngIf="selectedPerson">
+
+    <!-- Avatar -->
+    <div class="dp-avatar-wrap">
+      <div class="dp-avatar" [class.male]="selectedPerson.sexe === 'M'" [class.female]="selectedPerson.sexe === 'F'">
+        <img *ngIf="getPhotoUrl(selectedPerson) && !failedPhotos.has(selectedPerson.id)"
+             [src]="getPhotoUrl(selectedPerson)!" class="dp-avatar-photo"
+             (error)="onPhotoError(selectedPerson.id)" />
+        <span *ngIf="!getPhotoUrl(selectedPerson) || failedPhotos.has(selectedPerson.id)">
+          {{ getInitiales(selectedPerson) }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Nom -->
+    <h2 class="dp-name">{{ getNomComplet(selectedPerson) }}</h2>
+
+    <!-- Badges -->
+    <div class="dp-badges">
+      <span class="pc-badge" [class.pc-badge-m]="selectedPerson.sexe === 'M'" [class.pc-badge-f]="selectedPerson.sexe === 'F'">
+        {{ selectedPerson.sexe === 'M' ? 'Homme' : selectedPerson.sexe === 'F' ? 'Femme' : 'Autre' }}
+      </span>
+      <span class="pc-badge pc-badge-alive" *ngIf="estVivant(selectedPerson)">Vivant(e)</span>
+      <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(selectedPerson)">Décédé(e)</span>
+    </div>
+
+    <!-- Infos -->
+    <div class="dp-info-list">
+      <div class="dp-info-item" *ngIf="selectedPerson.dateNaissance || selectedPerson.lieuNaissance">
+        <span class="material-icons-round">cake</span>
+        <div class="dp-info-text">
+          <span class="dp-info-label">Naissance</span>
+          <span class="dp-info-value">
+            {{ selectedPerson.dateNaissance ?? '—' }}
+            <span *ngIf="selectedPerson.lieuNaissance"> · {{ selectedPerson.lieuNaissance }}</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="dp-info-item" *ngIf="!estVivant(selectedPerson)">
+        <span class="material-icons-round">sentiment_very_dissatisfied</span>
+        <div class="dp-info-text">
+          <span class="dp-info-label">Décès</span>
+          <span class="dp-info-value">
+            {{ selectedPerson.dateDeces ?? '—' }}
+            <span *ngIf="selectedPerson.lieuDeces"> · {{ selectedPerson.lieuDeces }}</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="dp-info-item" *ngIf="getAgeLabel(selectedPerson)">
+        <span class="material-icons-round">hourglass_bottom</span>
+        <div class="dp-info-text">
+          <span class="dp-info-label">{{ estVivant(selectedPerson) ? 'Âge' : 'Durée de vie' }}</span>
+          <span class="dp-info-value">{{ getAgeLabel(selectedPerson) }}</span>
+        </div>
+      </div>
+
+      <div class="dp-info-item" *ngIf="selectedPerson.lieuNaissance">
+        <span class="material-icons-round">place</span>
+        <div class="dp-info-text">
+          <span class="dp-info-label">Lieu de naissance</span>
+          <span class="dp-info-value">{{ selectedPerson.lieuNaissance }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action -->
+    <a class="btn-primary dp-link"
+       [routerLink]="['/app/personnes']" [queryParams]="{ id: selectedPerson.id }"
+       (click)="closeDetail()">
+      <span class="material-icons-round">person</span>
+      Voir le profil complet
+    </a>
   </div>
 </div>

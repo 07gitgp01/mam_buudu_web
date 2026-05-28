@@ -1,5 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Personne, getInitiales, extractAnnee, estVivant } from '../../models/personne.model';
+import {
+  Personne, getInitiales, extractAnnee, estVivant,
+  getNomComplet, getAgeLabel, getPhotoUrl,
+} from '../../models/personne.model';
 import { Union } from '../../models/union.model';
 import { ApiService } from '../../services/api.service';
 import { forkJoin } from 'rxjs';
@@ -13,6 +16,7 @@ export interface GenItem {
   union?: Union;
   isRoot?: boolean;
   hasChildren: boolean;
+  parentUnionId?: string;
 }
 
 export interface DisplayGen {
@@ -32,21 +36,39 @@ export class TreeComponent implements OnInit {
   generations: DisplayGen[] = [];
 
   @ViewChild('treeVisual', { static: false }) treeVisual?: ElementRef<HTMLElement>;
+  @ViewChild('treeCanvas', { static: false }) treeCanvas?: ElementRef<HTMLElement>;
 
-  getInitiales = getInitiales;
-  extractAnnee = extractAnnee;
-  estVivant    = estVivant;
+  getInitiales  = getInitiales;
+  extractAnnee  = extractAnnee;
+  estVivant     = estVivant;
+  getNomComplet = getNomComplet;
+  getAgeLabel   = getAgeLabel;
+  getPhotoUrl   = getPhotoUrl;
 
   totalPersonnes = 0;
 
   scale = 1;
-  readonly minScale = 0.6;
-  readonly maxScale = 2.2;
+  readonly minScale = 0.3;
+  readonly maxScale = 2.5;
   translateX = 0;
   translateY = 0;
   isDragging = false;
+  private dragMoved = false;
   private dragOrigin = { x: 0, y: 0 };
   private startTranslate = { x: 0, y: 0 };
+  private captureTarget: HTMLElement | null = null;
+  private captureId = 0;
+
+  // Panneau détail
+  selectedPerson: Personne | null = null;
+  showDetail = false;
+  failedPhotos = new Set<string>();
+
+  // Tooltip
+  hoveredPerson: Personne | null = null;
+  tooltipX = 0;
+  tooltipY = 0;
+  private tooltipHideTimer: any = null;
 
   constructor(private api: ApiService) {}
 
@@ -73,13 +95,61 @@ export class TreeComponent implements OnInit {
     return `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
   }
 
-  zoomIn(): void {
-    this.updateScale(this.scale + 0.1);
+  // ── Détail personne ───────────────────────────────────
+  openDetail(p: Personne): void {
+    if (this.dragMoved) return;
+    this.selectedPerson = p;
+    this.showDetail = true;
   }
 
-  zoomOut(): void {
-    this.updateScale(this.scale - 0.1);
+  closeDetail(): void {
+    this.showDetail = false;
+    this.selectedPerson = null;
   }
+
+  onPhotoError(id: string): void { this.failedPhotos.add(id); }
+
+  // ── Tooltip ───────────────────────────────────────────
+  showTooltip(p: Personne, event: MouseEvent): void {
+    if (this.dragMoved) return;
+    clearTimeout(this.tooltipHideTimer);
+    this.hoveredPerson = p;
+    this.repositionTooltip(event);
+  }
+
+  moveTooltip(event: MouseEvent): void {
+    if (!this.hoveredPerson) return;
+    this.repositionTooltip(event);
+  }
+
+  hideTooltip(): void {
+    this.tooltipHideTimer = setTimeout(() => { this.hoveredPerson = null; }, 120);
+  }
+
+  private repositionTooltip(event: MouseEvent): void {
+    const offset = 14;
+    const tw = 240; // tooltip width approx
+    const left = event.clientX + offset + tw > window.innerWidth
+      ? event.clientX - tw - offset
+      : event.clientX + offset;
+    this.tooltipX = left;
+    this.tooltipY = event.clientY - 10;
+  }
+
+  tooltipAge(p: Personne): string {
+    const n = extractAnnee(p.dateNaissance);
+    if (!n) return '';
+    if (!estVivant(p)) {
+      const d = extractAnnee(p.dateDeces);
+      const age = d ? d - n : null;
+      return `${n} – ${d ?? '?'}${age ? '  ('+age+' ans)' : ''}`;
+    }
+    return `${n} – présent  (${new Date().getFullYear() - n} ans)`;
+  }
+
+  // ── Zoom ─────────────────────────────────────────────
+  zoomIn(): void  { this.zoomAtCenter(this.scale + 0.15); }
+  zoomOut(): void { this.zoomAtCenter(this.scale - 0.15); }
 
   resetView(): void {
     this.scale = 1;
@@ -87,18 +157,35 @@ export class TreeComponent implements OnInit {
     this.translateY = 0;
   }
 
+  private zoomAtCenter(newScale: number): void {
+    const canvas = this.treeCanvas?.nativeElement;
+    if (!canvas) { this.updateScale(newScale); return; }
+    const rect = canvas.getBoundingClientRect();
+    this.applyZoom(newScale, rect.width / 2, rect.height / 2);
+  }
+
+  private applyZoom(newScale: number, originX: number, originY: number): void {
+    const oldScale = this.scale;
+    const clamped  = Math.max(this.minScale, Math.min(this.maxScale, Number(newScale.toFixed(2))));
+    const ratio    = clamped / oldScale;
+    this.translateX = originX - ratio * (originX - this.translateX);
+    this.translateY = originY - ratio * (originY - this.translateY);
+    this.scale = clamped;
+  }
+
+  private updateScale(newScale: number): void {
+    this.scale = Math.max(this.minScale, Math.min(this.maxScale, Number(newScale.toFixed(2))));
+  }
+
+  // ── Export ───────────────────────────────────────────
   async exportTree(): Promise<void> {
     if (!this.treeVisual) return;
-    const element = this.treeVisual.nativeElement;
-    const canvas = await html2canvas(element, {
-      backgroundColor: '#F0F4FF',
-      scale: 2,
-      useCORS: true,
-      logging: false,
+    const canvas = await html2canvas(this.treeVisual.nativeElement, {
+      backgroundColor: '#F0F4FF', scale: 2, useCORS: true, logging: false,
     });
     canvas.toBlob((blob) => {
       if (!blob) return;
-      const url = URL.createObjectURL(blob);
+      const url  = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
       link.download = 'arbre-familial.png';
@@ -109,88 +196,95 @@ export class TreeComponent implements OnInit {
 
   async exportTreePdf(): Promise<void> {
     if (!this.treeVisual) return;
-    const element = this.treeVisual.nativeElement;
-    const canvas = await html2canvas(element, {
-      backgroundColor: '#F0F4FF',
-      scale: 2,
-      useCORS: true,
-      logging: false,
+    const canvas  = await html2canvas(this.treeVisual.nativeElement, {
+      backgroundColor: '#F0F4FF', scale: 2, useCORS: true, logging: false,
     });
     const imgData = canvas.toDataURL('image/png');
-    const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const pageHeight = pdf.internal.pageSize.getHeight();
-    const margin = 10;
-    const pdfWidth = pageWidth - margin * 2;
-    const imgProps = pdf.getImageProperties(imgData);
-    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-    const finalHeight = Math.min(pdfHeight, pageHeight - margin * 2);
-    pdf.addImage(imgData, 'PNG', margin, margin, pdfWidth, finalHeight);
+    const pdf     = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+    const pw      = pdf.internal.pageSize.getWidth();
+    const ph      = pdf.internal.pageSize.getHeight();
+    const margin  = 10;
+    const pdfW    = pw - margin * 2;
+    const pdfH    = Math.min((pdf.getImageProperties(imgData).height * pdfW) / pdf.getImageProperties(imgData).width, ph - margin * 2);
+    pdf.addImage(imgData, 'PNG', margin, margin, pdfW, pdfH);
     pdf.save('arbre-familial.pdf');
   }
 
+  // ── Interactions canvas ──────────────────────────────
   onWheel(event: WheelEvent): void {
     if (!event.ctrlKey) return;
     event.preventDefault();
-    this.updateScale(this.scale - event.deltaY * 0.0015);
+    const canvas = this.treeCanvas?.nativeElement;
+    if (canvas) {
+      const rect = canvas.getBoundingClientRect();
+      this.applyZoom(this.scale - event.deltaY * 0.001, event.clientX - rect.left, event.clientY - rect.top);
+    } else {
+      this.updateScale(this.scale - event.deltaY * 0.001);
+    }
   }
 
   startDrag(event: PointerEvent): void {
     if (event.button !== 0) return;
-    event.preventDefault();
-    this.isDragging = true;
-    this.dragOrigin = { x: event.clientX, y: event.clientY };
+    this.isDragging     = true;
+    this.dragMoved      = false;
+    this.dragOrigin     = { x: event.clientX, y: event.clientY };
     this.startTranslate = { x: this.translateX, y: this.translateY };
-    const target = event.currentTarget as HTMLElement;
-    target.setPointerCapture(event.pointerId);
+    // On ne capture PAS encore — la capture empêcherait les click sur les nœuds fils
+    this.captureTarget = event.currentTarget as HTMLElement;
+    this.captureId     = event.pointerId;
   }
 
   drag(event: PointerEvent): void {
     if (!this.isDragging) return;
-    this.translateX = this.startTranslate.x + (event.clientX - this.dragOrigin.x);
-    this.translateY = this.startTranslate.y + (event.clientY - this.dragOrigin.y);
+    const dx = event.clientX - this.dragOrigin.x;
+    const dy = event.clientY - this.dragOrigin.y;
+    // On capture seulement quand le vrai drag commence (> 4px)
+    if (!this.dragMoved && (Math.abs(dx) > 4 || Math.abs(dy) > 4)) {
+      this.dragMoved = true;
+      try { this.captureTarget?.setPointerCapture(this.captureId); } catch {}
+    }
+    this.translateX = this.startTranslate.x + dx;
+    this.translateY = this.startTranslate.y + dy;
   }
 
   endDrag(event: PointerEvent): void {
     if (!this.isDragging) return;
     this.isDragging = false;
-    const target = event.currentTarget as HTMLElement;
-    target.releasePointerCapture(event.pointerId);
-  }
-
-  private updateScale(newScale: number): void {
-    this.scale = Math.max(this.minScale, Math.min(this.maxScale, Number(newScale.toFixed(2))));
+    if (this.dragMoved) {
+      try { this.captureTarget?.releasePointerCapture(this.captureId); } catch {}
+    }
+    this.captureTarget = null;
+    setTimeout(() => { this.dragMoved = false; }, 50);
   }
 
   typeLabel(type: string | null): string {
     const map: Record<string, string> = {
-      mariage: 'Mariage', union_libre: 'Union libre', fiancailles: 'Fiançailles',
+      mariage: 'Mariage', pacs: 'PACS', union_libre: 'Union libre',
+      fiancailles: 'Fiançailles', adoption: 'Adoption', polygamie: 'Polygamie',
     };
     return map[type ?? ''] ?? type ?? '';
   }
 
   yearLabel(p: Personne): string {
-    const naissance = extractAnnee(p.dateNaissance);
-    if (!naissance) return '';
-    if (!estVivant(p)) {
-      const deces = extractAnnee(p.dateDeces);
-      return `${naissance} – ${deces ?? '?'}`;
-    }
-    return `${naissance} – présent`;
+    const n = extractAnnee(p.dateNaissance);
+    if (!n) return '';
+    if (!estVivant(p)) return `${n} – ${extractAnnee(p.dateDeces) ?? '?'}`;
+    return `${n} – présent`;
   }
 
-  // ── Construction par génération ──────────────────────────────────────
+
+  // ── Construction par génération ──────────────────────
   private buildGenerations(personnes: Personne[], unions: Union[]): DisplayGen[] {
-    // Map personId → génération
     const genMap = new Map<string, number>();
 
-    // Personnes qui sont filiation (ont un parent connu)
-    const isChild = new Set<string>();
+    // Map enfantId → unionId parent
+    const parentUnionMap = new Map<string, string>();
     for (const u of unions) {
-      for (const f of u.filiations) isChild.add(f.enfantId);
+      for (const f of u.filiations) parentUnionMap.set(f.enfantId, u.id);
     }
 
-    // Unions par participant
+    const isChild = new Set<string>(unions.flatMap(u => u.filiations.map(f => f.enfantId)));
+
     const personUnions = new Map<string, Union[]>();
     for (const u of unions) {
       for (const p of u.participants) {
@@ -200,26 +294,20 @@ export class TreeComponent implements OnInit {
       }
     }
 
-    // Racines = sans parent connu
     const roots = personnes.filter(p => !isChild.has(p.id));
-
-    // BFS pour assigner les générations (Bellman-Ford : re-propage si gen augmente)
     const queue: { id: string; gen: number }[] = roots.map(p => ({ id: p.id, gen: 0 }));
 
     while (queue.length > 0) {
       const { id, gen } = queue.shift()!;
       const prev = genMap.get(id) ?? -1;
-      if (gen <= prev) continue; // pas d'amélioration, skip
+      if (gen <= prev) continue;
       genMap.set(id, gen);
-
       for (const u of personUnions.get(id) ?? []) {
-        // Conjoint à la même génération
         for (const p of u.participants) {
           if (p.personneId !== id && (genMap.get(p.personneId) ?? -1) < gen) {
             queue.push({ id: p.personneId, gen });
           }
         }
-        // Enfants à la génération suivante
         for (const f of u.filiations) {
           if ((genMap.get(f.enfantId) ?? -1) < gen + 1) {
             queue.push({ id: f.enfantId, gen: gen + 1 });
@@ -228,13 +316,10 @@ export class TreeComponent implements OnInit {
       }
     }
 
-    // Personnes non atteintes → génération 0
     for (const p of personnes) {
       if (!genMap.has(p.id)) genMap.set(p.id, 0);
     }
 
-    // Un conjoint "marié dans" (sans parents connus) prend la génération
-    // de son époux/épouse — on itère jusqu'à stabilité
     let changed = true;
     while (changed) {
       changed = false;
@@ -256,9 +341,7 @@ export class TreeComponent implements OnInit {
 
     for (let g = 0; g <= maxGen; g++) {
       const personsAtGen = personnes.filter(p => genMap.get(p.id) === g);
-
-      // Unions dont les deux participants sont à cette génération
-      const unionsAtGen = unions.filter(u =>
+      const unionsAtGen  = unions.filter(u =>
         u.participants.length > 0 &&
         u.participants.every(p => genMap.get(p.personneId) === g)
       );
@@ -278,19 +361,23 @@ export class TreeComponent implements OnInit {
           union: u,
           isRoot: rootSet.has(p1.id) || (p2 ? rootSet.has(p2.id) : false),
           hasChildren: u.filiations.length > 0,
+          parentUnionId: parentUnionMap.get(p1.id) ?? (p2 ? parentUnionMap.get(p2.id) : undefined),
         });
       }
 
-      // Solos
       for (const p of personsAtGen) {
         if (!inUnion.has(p.id)) {
-          items.push({ type: 'solo', p1: p, isRoot: rootSet.has(p.id), hasChildren: false });
+          items.push({
+            type: 'solo',
+            p1: p,
+            isRoot: rootSet.has(p.id),
+            hasChildren: false,
+            parentUnionId: parentUnionMap.get(p.id),
+          });
         }
       }
 
-      if (items.length > 0) {
-        rows.push({ level: g + 1, items });
-      }
+      if (items.length > 0) rows.push({ level: g + 1, items });
     }
 
     return rows;
