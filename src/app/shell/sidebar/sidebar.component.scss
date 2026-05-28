@@ -226,8 +226,23 @@
   border-top: 1px solid var(--sb-divider, rgba(0,0,0,0.08));
   flex-shrink: 0;
   min-height: 60px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-radius: 0 0 var(--radius-lg, 12px) var(--radius-lg, 12px);
 
+  &:hover { background: rgba(0,0,0,0.04); text-decoration: none; }
   &.collapsed { justify-content: center; padding: 12px 0; }
+}
+
+.user-profile-arrow {
+  font-size: 16px !important;
+  color: var(--sb-text-muted, #94A3B8);
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.15s;
+
+  .user-section:hover & { opacity: 1; }
 }
 
 .user-info {

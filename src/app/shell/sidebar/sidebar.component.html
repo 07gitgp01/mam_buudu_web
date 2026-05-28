@@ -78,12 +78,13 @@
   </div>
 
   <!-- ===== PROFIL UTILISATEUR ===== -->
-  <div class="user-section" [class.collapsed]="!isExpanded">
+  <a class="user-section" [class.collapsed]="!isExpanded" routerLink="/app/profil" (click)="mobileClose.emit()" title="Mon profil">
     <div class="avatar avatar-sm">{{ initiales }}</div>
     <div class="user-info" *ngIf="isExpanded">
       <span class="user-name">{{ user?.prenom }} {{ user?.nom }}</span>
       <span class="user-role badge badge-primary">{{ user?.role }}</span>
     </div>
-  </div>
+    <span class="material-icons-round user-profile-arrow" *ngIf="isExpanded">chevron_right</span>
+  </a>
 
 </nav>

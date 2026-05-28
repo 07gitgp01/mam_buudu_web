@@ -12,6 +12,7 @@ const PAGE_LABELS: Record<string, { label: string; icon: string }> = {
   '/app/timeline':  { label: 'Timeline',          icon: 'timeline' },
   '/app/jeux':      { label: 'Jeux familiaux',    icon: 'sports_esports' },
   '/app/admin':     { label: 'Administration',    icon: 'admin_panel_settings' },
+  '/app/profil':    { label: 'Mon profil',        icon: 'account_circle' },
 };
 
 @Component({

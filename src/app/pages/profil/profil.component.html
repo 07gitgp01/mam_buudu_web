@@ -1,0 +1,306 @@
+<div class="profil-page">
+
+  <div class="loading-state" *ngIf="loading">
+    <span class="material-icons-round spin">sync</span> Chargement...
+  </div>
+
+  <ng-container *ngIf="!loading && user">
+
+    <!-- ===== HERO ===== -->
+    <div class="profil-hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-avatar-wrap">
+          <div class="hero-avatar">{{ initiales }}</div>
+          <span class="hero-status-dot"></span>
+        </div>
+        <div class="hero-info">
+          <h1 class="hero-name">{{ user.prenom }} {{ user.nom }}</h1>
+          <div class="hero-meta">
+            <span class="role-badge" [class]="roleClass">{{ roleLabel }}</span>
+            <span class="hero-contact" *ngIf="user.email">
+              <span class="material-icons-round">mail</span>{{ user.email }}
+            </span>
+            <span class="hero-contact" *ngIf="user.telephone">
+              <span class="material-icons-round">phone</span>{{ user.telephone }}
+            </span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button class="btn-outline btn-sm" (click)="openEdit()" *ngIf="!editMode">
+            <span class="material-icons-round">edit</span>Modifier
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SUCCÈS GLOBAL ===== -->
+    <div class="alert alert-success" *ngIf="editSuccess">
+      <span class="material-icons-round">check_circle</span>
+      Profil mis à jour avec succès !
+    </div>
+    <div class="alert alert-success" *ngIf="pwSuccess">
+      <span class="material-icons-round">lock</span>
+      Mot de passe changé avec succès !
+    </div>
+
+    <div class="profil-grid">
+
+      <!-- ===== INFORMATIONS PERSONNELLES ===== -->
+      <div class="profil-card span-2">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="material-icons-round">person</span>
+            Informations personnelles
+          </div>
+          <button class="btn-ghost btn-sm" (click)="openEdit()" *ngIf="!editMode">
+            <span class="material-icons-round">edit</span>Modifier
+          </button>
+        </div>
+
+        <!-- Affichage -->
+        <div class="info-grid" *ngIf="!editMode">
+          <div class="info-item">
+            <span class="info-label">Prénom</span>
+            <span class="info-value">{{ user.prenom }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Nom</span>
+            <span class="info-value">{{ user.nom }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Email</span>
+            <span class="info-value">{{ user.email || '—' }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Téléphone</span>
+            <span class="info-value">{{ user.telephone || '—' }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Rôle</span>
+            <span class="role-badge" [class]="roleClass">{{ roleLabel }}</span>
+          </div>
+        </div>
+
+        <!-- Formulaire d'édition -->
+        <div class="edit-form" *ngIf="editMode">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Prénom <span class="required">*</span></label>
+              <input type="text" [(ngModel)]="editForm.prenom" placeholder="Prénom" />
+            </div>
+            <div class="form-group">
+              <label>Nom <span class="required">*</span></label>
+              <input type="text" [(ngModel)]="editForm.nom" placeholder="Nom" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" [(ngModel)]="editForm.email" placeholder="votre@email.com" />
+            </div>
+            <div class="form-group">
+              <label>Téléphone</label>
+              <input type="tel" [(ngModel)]="editForm.telephone" placeholder="+221 77 000 00 00" />
+            </div>
+          </div>
+          <div class="alert alert-error" *ngIf="editError">
+            <span class="material-icons-round">error_outline</span>{{ editError }}
+          </div>
+          <div class="form-actions">
+            <button class="btn-ghost btn-sm" (click)="cancelEdit()" [disabled]="editSaving">Annuler</button>
+            <button class="btn-primary btn-sm" (click)="saveProfile()" [disabled]="editSaving">
+              <span class="material-icons-round" *ngIf="!editSaving">save</span>
+              <span class="material-icons-round spin" *ngIf="editSaving">sync</span>
+              {{ editSaving ? 'Sauvegarde…' : 'Enregistrer' }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== MA FAMILLE ===== -->
+      <div class="profil-card" *ngIf="famille">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="material-icons-round">groups</span>
+            Ma famille
+          </div>
+        </div>
+        <div class="famille-hero">
+          <div class="famille-icon">
+            <span class="material-icons-round">account_tree</span>
+          </div>
+          <div>
+            <h3 class="famille-nom">{{ famille.nom }}</h3>
+            <div class="famille-code-wrap">
+              <span class="famille-code">{{ famille.code }}</span>
+              <button class="btn-icon copy-btn" (click)="copyCode()" [title]="codeCopied ? 'Copié !' : 'Copier le code'">
+                <span class="material-icons-round">{{ codeCopied ? 'check' : 'content_copy' }}</span>
+              </button>
+            </div>
+            <p class="famille-hint">Partagez ce code pour inviter des membres</p>
+          </div>
+        </div>
+        <div class="famille-stats">
+          <div class="fstat">
+            <span class="fstat-val">{{ famille.totalMembres }}</span>
+            <span class="fstat-lbl">Membres</span>
+          </div>
+          <div class="fstat-divider"></div>
+          <div class="fstat">
+            <span class="fstat-val">{{ famille.totalUnions }}</span>
+            <span class="fstat-lbl">Unions</span>
+          </div>
+          <div class="fstat-divider"></div>
+          <div class="fstat">
+            <span class="role-badge" [class]="roleClass">{{ roleLabel }}</span>
+            <span class="fstat-lbl">Mon rôle</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SÉCURITÉ ===== -->
+      <div class="profil-card">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="material-icons-round">security</span>
+            Sécurité
+          </div>
+        </div>
+
+        <div class="security-items" *ngIf="!showPwSection">
+          <div class="security-item">
+            <div class="security-item-left">
+              <span class="security-icon material-icons-round">lock</span>
+              <div>
+                <span class="security-label">Mot de passe</span>
+                <span class="security-sub">••••••••••</span>
+              </div>
+            </div>
+            <button class="btn-outline btn-sm" (click)="showPwSection = true">Changer</button>
+          </div>
+          <div class="security-item">
+            <div class="security-item-left">
+              <span class="security-icon material-icons-round">verified_user</span>
+              <div>
+                <span class="security-label">Compte actif</span>
+                <span class="security-sub security-ok">Connecté</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pw-form" *ngIf="showPwSection">
+          <div class="form-group">
+            <label>Mot de passe actuel</label>
+            <input type="password" [(ngModel)]="pwForm.ancien" placeholder="••••••••" />
+          </div>
+          <div class="form-group">
+            <label>Nouveau mot de passe</label>
+            <input type="password" [(ngModel)]="pwForm.nouveau" placeholder="Minimum 6 caractères" />
+          </div>
+          <div class="form-group">
+            <label>Confirmer le nouveau mot de passe</label>
+            <input type="password" [(ngModel)]="pwForm.confirm" placeholder="Répétez le mot de passe" />
+          </div>
+          <div class="alert alert-error" *ngIf="pwError">
+            <span class="material-icons-round">error_outline</span>{{ pwError }}
+          </div>
+          <div class="form-actions">
+            <button class="btn-ghost btn-sm" (click)="showPwSection = false; pwError = ''" [disabled]="pwSaving">Annuler</button>
+            <button class="btn-primary btn-sm" (click)="savePassword()" [disabled]="pwSaving">
+              <span class="material-icons-round" *ngIf="!pwSaving">lock</span>
+              <span class="material-icons-round spin" *ngIf="pwSaving">sync</span>
+              {{ pwSaving ? 'En cours…' : 'Changer' }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== NAVIGATION RAPIDE ===== -->
+      <div class="profil-card">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="material-icons-round">apps</span>
+            Navigation rapide
+          </div>
+        </div>
+        <div class="quick-nav">
+          <a class="qnav-item" routerLink="/app/home">
+            <span class="qnav-icon material-icons-round">home</span>
+            <span>Accueil</span>
+          </a>
+          <a class="qnav-item" routerLink="/app/tree">
+            <span class="qnav-icon material-icons-round">account_tree</span>
+            <span>Arbre familial</span>
+          </a>
+          <a class="qnav-item" routerLink="/app/personnes">
+            <span class="qnav-icon material-icons-round">people</span>
+            <span>Membres</span>
+          </a>
+          <a class="qnav-item" routerLink="/app/unions">
+            <span class="qnav-icon material-icons-round">favorite</span>
+            <span>Unions</span>
+          </a>
+          <a class="qnav-item" routerLink="/app/stories">
+            <span class="qnav-icon material-icons-round">collections_bookmark</span>
+            <span>Stories</span>
+          </a>
+          <a class="qnav-item" routerLink="/app/timeline">
+            <span class="qnav-icon material-icons-round">timeline</span>
+            <span>Timeline</span>
+          </a>
+          <a class="qnav-item qnav-admin" routerLink="/app/admin" *ngIf="user.role === 'admin' || user.role === 'gestionnaire'">
+            <span class="qnav-icon material-icons-round">admin_panel_settings</span>
+            <span>Administration</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ===== THÈME ===== -->
+      <div class="profil-card">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="material-icons-round">palette</span>
+            Thème de couleur
+          </div>
+        </div>
+        <div class="theme-grid">
+          <button
+            class="theme-btn"
+            *ngFor="let t of theme.themes"
+            [class.active]="theme.current === t.name"
+            [style.background]="t.color"
+            (click)="theme.applyColor(t.name)"
+            [title]="t.label">
+            <span class="material-icons-round" *ngIf="theme.current === t.name">check</span>
+          </button>
+        </div>
+        <p class="theme-hint">Choisissez la couleur principale de l'interface</p>
+      </div>
+
+      <!-- ===== ZONE DANGER ===== -->
+      <div class="profil-card danger-card span-2">
+        <div class="card-header">
+          <div class="card-title danger-title">
+            <span class="material-icons-round">warning</span>
+            Zone de danger
+          </div>
+        </div>
+        <div class="danger-actions">
+          <div class="danger-item">
+            <div>
+              <span class="danger-label">Se déconnecter</span>
+              <span class="danger-sub">Vous serez redirigé vers la page de connexion</span>
+            </div>
+            <button class="btn-danger" (click)="logout()">
+              <span class="material-icons-round">logout</span>Déconnexion
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </ng-container>
+
+</div>

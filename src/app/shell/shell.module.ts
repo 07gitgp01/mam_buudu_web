@@ -15,6 +15,7 @@ import { TimelineComponent } from '../pages/timeline/timeline.component';
 import { JeuxComponent } from '../pages/jeux/jeux.component';
 import { UnionsComponent } from '../pages/unions/unions.component';
 import { AdminComponent } from '../pages/admin/admin.component';
+import { ProfilComponent } from '../pages/profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AdminComponent } from '../pages/admin/admin.component';
     JeuxComponent,
     UnionsComponent,
     AdminComponent,
+    ProfilComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule, ShellRoutingModule],
 })
