@@ -18,6 +18,13 @@ export interface Personne {
   updatedAt: string;
 }
 
+// Retourne null pour les anciennes URLs Render (ephemeres) — affiche initiales a la place
+export function getPhotoUrl(p: Personne): string | null {
+  if (!p.photoUrl) return null;
+  if (p.photoUrl.includes('onrender.com/uploads/')) return null;
+  return p.photoUrl;
+}
+
 export function getInitiales(p: Personne): string {
   const prenom = p.prenoms?.charAt(0) ?? '';
   const nom = (p.nomUsage ?? p.nomNaissance)?.charAt(0) ?? '';

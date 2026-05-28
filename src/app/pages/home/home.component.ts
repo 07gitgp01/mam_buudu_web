@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Personne, getInitiales, estVivant, extractAnnee, getAgeLabel, getNomComplet } from '../../models/personne.model';
+import { Personne, getInitiales, estVivant, extractAnnee, getAgeLabel, getNomComplet, getPhotoUrl } from '../../models/personne.model';
 import { ApiService } from '../../services/api.service';
 import { AuthService } from '../../services/auth.service';
 import { forkJoin } from 'rxjs';
@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   extractAnnee  = extractAnnee;
   getAgeLabel   = getAgeLabel;
   getNomComplet = getNomComplet;
+  getPhotoUrl   = getPhotoUrl;
 
   nomFamille = '';
   loading = true;

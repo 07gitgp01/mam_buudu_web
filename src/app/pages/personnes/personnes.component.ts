@@ -1,6 +1,6 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Personne, Sexe, getInitiales, getAgeLabel, estVivant, getNomComplet, extractAnnee } from '../../models/personne.model';
+import { Personne, Sexe, getInitiales, getAgeLabel, estVivant, getNomComplet, extractAnnee, getPhotoUrl } from '../../models/personne.model';
 import { ApiService } from '../../services/api.service';
 
 export const MOIS = [
@@ -98,10 +98,11 @@ export class PersonnesComponent implements OnInit {
   currentYear = new Date().getFullYear();
 
   /* ---- Helpers ---- */
-  getInitiales = getInitiales;
-  getAgeLabel  = getAgeLabel;
-  estVivant    = estVivant;
+  getInitiales  = getInitiales;
+  getAgeLabel   = getAgeLabel;
+  estVivant     = estVivant;
   getNomComplet = getNomComplet;
+  getPhotoUrl   = getPhotoUrl;
   extractAnnee  = extractAnnee;
 
   constructor(private api: ApiService, private route: ActivatedRoute, private ngZone: NgZone) {}

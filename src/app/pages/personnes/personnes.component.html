@@ -69,10 +69,10 @@
              [class.color-3]="i % 3 === 2"></div>
         <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
         <div class="pc-avatar-ring">
-          <img *ngIf="p.photoUrl && !failedPhotos.has(p.id)"
-               [src]="p.photoUrl" class="pc-avatar pc-avatar-photo"
+          <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
+               [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"
                [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
-          <div *ngIf="!p.photoUrl || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">
+          <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">
             {{ getInitiales(p) }}
           </div>
         </div>
@@ -127,10 +127,10 @@
       <!-- Avatar + nom -->
       <div class="pl-cell pl-cell-person">
         <div class="pl-avatar-wrap">
-          <img *ngIf="p.photoUrl && !failedPhotos.has(p.id)"
-               [src]="p.photoUrl" class="pl-avatar pl-avatar-photo"
+          <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
+               [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"
                [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
-          <div *ngIf="!p.photoUrl || failedPhotos.has(p.id)"
+          <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)"
                class="pl-avatar pl-avatar-initials"
                [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">
             {{ getInitiales(p) }}
@@ -363,12 +363,12 @@
 
     <!-- Avatar + statut -->
     <div class="detail-hero">
-      <img *ngIf="p.photoUrl && !failedPhotos.has(p.id)"
-           [src]="p.photoUrl"
+      <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
+           [src]="getPhotoUrl(p)"
            class="avatar avatar-xl photo-avatar"
            [alt]="getNomComplet(p)"
            (error)="onPhotoError(p.id)" />
-      <div *ngIf="!p.photoUrl || failedPhotos.has(p.id)"
+      <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)"
            class="avatar avatar-xl"
            [class.female]="p.sexe === 'F'" [class.male]="p.sexe === 'M'">
         {{ getInitiales(p) }}
