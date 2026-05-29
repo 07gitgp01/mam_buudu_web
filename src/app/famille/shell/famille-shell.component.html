@@ -50,16 +50,14 @@
         </div>
       </div>
 
-      <div class="fs-user-card">
+      <a class="fs-user-card" routerLink="/famille/profil" (click)="sidebarOpen=false">
         <div class="fs-user-avatar">{{ userInitiales }}</div>
         <div class="fs-user-info">
           <span class="fs-user-name">{{ user?.prenom }} {{ user?.nom }}</span>
           <span class="fs-user-role">Espace Famille</span>
         </div>
-        <button class="btn-icon fs-logout" title="Déconnexion" (click)="logout()">
-          <span class="material-icons-round">logout</span>
-        </button>
-      </div>
+        <span class="material-icons-round fs-user-arrow">chevron_right</span>
+      </a>
     </div>
   </aside>
 
@@ -75,7 +73,7 @@
         <span class="material-icons-round">account_tree</span>
         <span>Mam Buudu</span>
       </div>
-      <div class="fs-user-avatar fs-avatar-sm">{{ userInitiales }}</div>
+      <a class="fs-user-avatar fs-avatar-sm" routerLink="/famille/profil">{{ userInitiales }}</a>
     </header>
 
     <div class="fs-content">

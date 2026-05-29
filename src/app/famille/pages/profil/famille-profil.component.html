@@ -1,0 +1,273 @@
+<div class="fp-page">
+
+  <div class="loading-state" *ngIf="loading">
+    <span class="material-icons-round spin">sync</span> Chargement...
+  </div>
+
+  <ng-container *ngIf="!loading && user">
+
+    <!-- ===== HERO ===== -->
+    <div class="fp-hero">
+      <div class="fp-hero-bg"></div>
+      <div class="fp-hero-content">
+        <div class="fp-avatar-wrap">
+          <div class="fp-hero-avatar">{{ initiales }}</div>
+          <span class="fp-online-dot"></span>
+        </div>
+        <div class="fp-hero-info">
+          <h1 class="fp-hero-name">{{ user.prenom }} {{ user.nom }}</h1>
+          <div class="fp-hero-meta">
+            <span class="fp-role-badge">{{ roleLabel }}</span>
+            <span class="fp-contact" *ngIf="user.email">
+              <span class="material-icons-round">mail</span>{{ user.email }}
+            </span>
+            <span class="fp-contact" *ngIf="user.telephone">
+              <span class="material-icons-round">phone</span>{{ user.telephone }}
+            </span>
+          </div>
+        </div>
+        <button class="fp-edit-btn" (click)="openEdit()" *ngIf="!editMode">
+          <span class="material-icons-round">edit</span>Modifier
+        </button>
+      </div>
+    </div>
+
+    <!-- Alertes globales -->
+    <div class="fp-alert fp-alert-success" *ngIf="editSuccess">
+      <span class="material-icons-round">check_circle</span> Profil mis à jour !
+    </div>
+    <div class="fp-alert fp-alert-success" *ngIf="pwSuccess">
+      <span class="material-icons-round">lock</span> Mot de passe changé !
+    </div>
+
+    <!-- ===== GRILLE ===== -->
+    <div class="fp-grid">
+
+      <!-- Infos personnelles -->
+      <div class="fp-card fp-span-2">
+        <div class="fp-card-head">
+          <div class="fp-card-title">
+            <span class="material-icons-round">person</span>
+            Informations personnelles
+          </div>
+          <button class="fp-btn-ghost" (click)="openEdit()" *ngIf="!editMode">
+            <span class="material-icons-round">edit</span>Modifier
+          </button>
+        </div>
+
+        <!-- Vue lecture -->
+        <div class="fp-info-grid" *ngIf="!editMode">
+          <div class="fp-info-item">
+            <span class="fp-info-label">Prénom</span>
+            <span class="fp-info-value">{{ user.prenom }}</span>
+          </div>
+          <div class="fp-info-item">
+            <span class="fp-info-label">Nom</span>
+            <span class="fp-info-value">{{ user.nom }}</span>
+          </div>
+          <div class="fp-info-item">
+            <span class="fp-info-label">Email</span>
+            <span class="fp-info-value">{{ user.email || '—' }}</span>
+          </div>
+          <div class="fp-info-item">
+            <span class="fp-info-label">Téléphone</span>
+            <span class="fp-info-value">{{ user.telephone || '—' }}</span>
+          </div>
+          <div class="fp-info-item">
+            <span class="fp-info-label">Rôle</span>
+            <span class="fp-role-badge">{{ roleLabel }}</span>
+          </div>
+        </div>
+
+        <!-- Formulaire édition -->
+        <div class="fp-form" *ngIf="editMode">
+          <div class="fp-form-row">
+            <div class="fp-form-group">
+              <label>Prénom <span class="fp-req">*</span></label>
+              <input type="text" [(ngModel)]="editForm.prenom" placeholder="Prénom" />
+            </div>
+            <div class="fp-form-group">
+              <label>Nom <span class="fp-req">*</span></label>
+              <input type="text" [(ngModel)]="editForm.nom" placeholder="Nom" />
+            </div>
+          </div>
+          <div class="fp-form-row">
+            <div class="fp-form-group">
+              <label>Email</label>
+              <input type="email" [(ngModel)]="editForm.email" placeholder="votre@email.com" />
+            </div>
+            <div class="fp-form-group">
+              <label>Téléphone</label>
+              <input type="tel" [(ngModel)]="editForm.telephone" placeholder="+221 77 000 00 00" />
+            </div>
+          </div>
+          <div class="fp-alert fp-alert-error" *ngIf="editError">
+            <span class="material-icons-round">error_outline</span>{{ editError }}
+          </div>
+          <div class="fp-form-actions">
+            <button class="fp-btn-ghost" (click)="cancelEdit()" [disabled]="editSaving">Annuler</button>
+            <button class="fp-btn-primary" (click)="saveProfile()" [disabled]="editSaving">
+              <span class="material-icons-round" *ngIf="!editSaving">save</span>
+              <span class="material-icons-round spin" *ngIf="editSaving">sync</span>
+              {{ editSaving ? 'Enregistrement…' : 'Enregistrer' }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ma famille -->
+      <div class="fp-card">
+        <div class="fp-card-head">
+          <div class="fp-card-title">
+            <span class="material-icons-round">groups</span>
+            Ma famille
+          </div>
+        </div>
+        <div class="fp-famille-hero">
+          <div class="fp-famille-icon">
+            <span class="material-icons-round">account_tree</span>
+          </div>
+          <div>
+            <h3 class="fp-famille-nom">{{ familleNom }}</h3>
+            <div class="fp-code-wrap">
+              <span class="fp-code">{{ familleCode }}</span>
+              <button class="fp-copy-btn" (click)="copyCode()" [title]="codeCopied ? 'Copié !' : 'Copier'">
+                <span class="material-icons-round">{{ codeCopied ? 'check' : 'content_copy' }}</span>
+              </button>
+            </div>
+            <p class="fp-code-hint">Code d'accès famille</p>
+          </div>
+        </div>
+        <div class="fp-famille-stat">
+          <span class="material-icons-round">people</span>
+          <strong>{{ totalMembres }}</strong> membre{{ totalMembres > 1 ? 's' : '' }}
+        </div>
+      </div>
+
+      <!-- Sécurité -->
+      <div class="fp-card">
+        <div class="fp-card-head">
+          <div class="fp-card-title">
+            <span class="material-icons-round">security</span>
+            Sécurité
+          </div>
+        </div>
+
+        <div class="fp-security-list" *ngIf="!showPwSection">
+          <div class="fp-security-row">
+            <div class="fp-security-left">
+              <span class="material-icons-round">lock</span>
+              <div>
+                <span class="fp-sec-label">Mot de passe</span>
+                <span class="fp-sec-sub">••••••••</span>
+              </div>
+            </div>
+            <button class="fp-btn-outline" (click)="showPwSection = true">Changer</button>
+          </div>
+          <div class="fp-security-row">
+            <div class="fp-security-left">
+              <span class="material-icons-round">verified_user</span>
+              <div>
+                <span class="fp-sec-label">Compte</span>
+                <span class="fp-sec-sub fp-sec-ok">Actif · Connecté</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-form" *ngIf="showPwSection">
+          <div class="fp-form-group">
+            <label>Mot de passe actuel</label>
+            <input type="password" [(ngModel)]="pwForm.ancien" placeholder="••••••••" />
+          </div>
+          <div class="fp-form-group">
+            <label>Nouveau mot de passe</label>
+            <input type="password" [(ngModel)]="pwForm.nouveau" placeholder="Min. 6 caractères" />
+          </div>
+          <div class="fp-form-group">
+            <label>Confirmer</label>
+            <input type="password" [(ngModel)]="pwForm.confirm" placeholder="Répétez" />
+          </div>
+          <div class="fp-alert fp-alert-error" *ngIf="pwError">
+            <span class="material-icons-round">error_outline</span>{{ pwError }}
+          </div>
+          <div class="fp-form-actions">
+            <button class="fp-btn-ghost" (click)="showPwSection = false; pwError = ''" [disabled]="pwSaving">Annuler</button>
+            <button class="fp-btn-primary" (click)="savePassword()" [disabled]="pwSaving">
+              <span class="material-icons-round" *ngIf="!pwSaving">lock</span>
+              <span class="material-icons-round spin" *ngIf="pwSaving">sync</span>
+              {{ pwSaving ? 'En cours…' : 'Changer' }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation rapide -->
+      <div class="fp-card">
+        <div class="fp-card-head">
+          <div class="fp-card-title">
+            <span class="material-icons-round">apps</span>
+            Navigation
+          </div>
+        </div>
+        <div class="fp-nav-grid">
+          <a class="fp-nav-item" routerLink="/famille/home">
+            <span class="material-icons-round">home</span><span>Accueil</span>
+          </a>
+          <a class="fp-nav-item" routerLink="/famille/arbre">
+            <span class="material-icons-round">account_tree</span><span>Arbre</span>
+          </a>
+          <a class="fp-nav-item" routerLink="/famille/membres">
+            <span class="material-icons-round">people</span><span>Membres</span>
+          </a>
+          <a class="fp-nav-item" routerLink="/famille/stories">
+            <span class="material-icons-round">auto_stories</span><span>Stories</span>
+          </a>
+          <a class="fp-nav-item" routerLink="/famille/timeline">
+            <span class="material-icons-round">timeline</span><span>Événements</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Thème -->
+      <div class="fp-card">
+        <div class="fp-card-head">
+          <div class="fp-card-title">
+            <span class="material-icons-round">palette</span>
+            Thème
+          </div>
+        </div>
+        <div class="fp-theme-row">
+          <button class="fp-theme-dot" *ngFor="let t of theme.themes"
+                  [class.active]="theme.current === t.name"
+                  [style.background]="t.color"
+                  (click)="theme.applyColor(t.name)"
+                  [title]="t.label">
+            <span class="material-icons-round" *ngIf="theme.current === t.name">check</span>
+          </button>
+        </div>
+        <p class="fp-theme-hint">Couleur principale de l'interface</p>
+      </div>
+
+      <!-- Zone danger -->
+      <div class="fp-card fp-danger-card fp-span-2">
+        <div class="fp-card-head">
+          <div class="fp-card-title fp-danger-title">
+            <span class="material-icons-round">warning</span>
+            Zone de danger
+          </div>
+        </div>
+        <div class="fp-danger-row">
+          <div>
+            <span class="fp-danger-label">Se déconnecter</span>
+            <span class="fp-danger-sub">Vous serez redirigé vers la page de connexion famille</span>
+          </div>
+          <button class="fp-logout-btn" (click)="logout()">
+            <span class="material-icons-round">logout</span>Déconnexion
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </ng-container>
+</div>
