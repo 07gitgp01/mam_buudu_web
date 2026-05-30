@@ -64,16 +64,56 @@
   <!-- CONTENU -->
   <main class="fs-main">
 
-    <!-- TOPBAR MOBILE -->
-    <header class="fs-mobile-topbar">
-      <button class="btn-icon" (click)="sidebarOpen=true">
+    <!-- TOPBAR (desktop + mobile) -->
+    <header class="ft-topbar">
+
+      <!-- Hamburger mobile uniquement -->
+      <button class="btn-icon ft-btn-menu" (click)="sidebarOpen=true">
         <span class="material-icons-round">menu</span>
       </button>
-      <div class="fs-mobile-brand">
-        <span class="material-icons-round">account_tree</span>
-        <span>Mam Buudu</span>
+
+      <!-- Titre de la page -->
+      <div class="ft-page-title">
+        <span class="material-icons-round ft-page-icon">{{ currentPage.icon }}</span>
+        <h3>{{ currentPage.label }}</h3>
       </div>
-      <a class="fs-user-avatar fs-avatar-sm" routerLink="/famille/profil">{{ userInitiales }}</a>
+
+      <!-- Actions droite -->
+      <div class="ft-actions">
+
+        <div class="ft-user-wrap" (click)="showUserMenu = !showUserMenu">
+          <button class="ft-user-btn">
+            <div class="avatar avatar-sm">{{ userInitiales }}</div>
+            <div class="ft-user-info">
+              <span class="ft-user-name">{{ user?.prenom }} {{ user?.nom }}</span>
+              <span class="ft-user-role">Espace Famille</span>
+            </div>
+            <span class="material-icons-round ft-chevron">expand_more</span>
+          </button>
+
+          <div class="ft-dropdown" *ngIf="showUserMenu">
+            <div class="ft-drop-header">
+              <div class="avatar avatar-md">{{ userInitiales }}</div>
+              <div>
+                <span class="ft-drop-name">{{ user?.prenom }} {{ user?.nom }}</span>
+                <span class="ft-drop-sub">{{ user?.email || user?.telephone || 'Espace Famille' }}</span>
+              </div>
+            </div>
+            <div class="ft-drop-divider"></div>
+            <a class="ft-drop-item" routerLink="/famille/profil" (click)="showUserMenu=false">
+              <span class="material-icons-round">account_circle</span>Mon profil
+            </a>
+            <a class="ft-drop-item" routerLink="/" (click)="showUserMenu=false">
+              <span class="material-icons-round">language</span>Page d'accueil
+            </a>
+            <div class="ft-drop-divider"></div>
+            <button class="ft-drop-item ft-drop-danger" (click)="logout()">
+              <span class="material-icons-round">logout</span>Déconnexion
+            </button>
+          </div>
+        </div>
+
+      </div>
     </header>
 
     <div class="fs-content">

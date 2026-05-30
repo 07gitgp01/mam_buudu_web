@@ -39597,6 +39597,7 @@ export {
   ɵɵelement,
   ɵɵelementContainerStart,
   ɵɵelementContainerEnd,
+  ɵɵelementContainer,
   ɵɵgetCurrentView,
   ɵɵlistener,
   ɵɵnextContext,
@@ -39637,6 +39638,7 @@ export {
   NgClass,
   NgForOf,
   NgIf,
+  NgTemplateOutlet,
   DecimalPipe,
   CommonModule,
   platformBrowser,
@@ -39702,4 +39704,4 @@ export {
    * found in the LICENSE file at https://angular.dev/license
    *)
 */
-//# sourceMappingURL=chunk-AEFTRA6R.js.map
+//# sourceMappingURL=chunk-3JURVHRC.js.map

@@ -169,32 +169,90 @@
   flex: 1;
 }
 
-/* ===== TOPBAR MOBILE (caché sur desktop) ===== */
-.fs-mobile-topbar {
-  display: none;
+/* ===== TOPBAR (desktop + mobile) — identique au mode gestionnaire ===== */
+.ft-topbar {
+  display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 0 16px;
-  height: 56px;
-  background: var(--sb-bg, #F8FAFC);
-  border-bottom: 1px solid var(--sb-divider, rgba(0,0,0,0.08));
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 60px;
+  background: var(--white, #fff);
+  border-bottom: 1px solid var(--border, #E5E7EB);
   flex-shrink: 0;
   position: sticky;
   top: 0;
   z-index: 50;
+  gap: 12px;
 }
 
-.fs-mobile-brand {
+/* Hamburger : caché sur desktop */
+.ft-btn-menu { display: none; flex-shrink: 0; }
+
+.ft-page-title {
+  display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0;
+  h3 { font-size: 16px; font-weight: 600; margin: 0; color: var(--text-primary, #1F2937); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+
+.ft-page-icon { color: var(--primary); font-size: 20px !important; flex-shrink: 0; }
+
+.ft-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+/* ── Bouton user ── */
+.ft-user-wrap { position: relative; }
+
+.ft-user-btn {
   display: flex; align-items: center; gap: 8px;
-  flex: 1;
-  font-size: 15px; font-weight: 700; color: var(--sb-text-hi, #1E293B);
-  .material-icons-round { color: var(--primary); font-size: 20px !important; }
+  padding: 6px 10px; border: 1.5px solid var(--border, #E5E7EB);
+  border-radius: 99px; background: var(--white, #fff);
+  cursor: pointer; font-family: inherit; transition: border-color 0.15s, background 0.15s;
+  &:hover { border-color: var(--primary-border, #BFDBFE); background: var(--primary-bg, #EFF6FF); }
 }
 
-.fs-avatar-sm {
-  width: 34px; height: 34px; border-radius: 10px; font-size: 12px;
-  text-decoration: none;
-  &:hover { opacity: 0.85; }
+.ft-user-info { display: flex; flex-direction: column; align-items: flex-start; }
+.ft-user-name { font-size: 13px; font-weight: 600; color: var(--text-primary, #1F2937); line-height: 1.2; white-space: nowrap; }
+.ft-user-role { font-size: 10px; color: var(--text-muted, #9CA3AF); }
+.ft-chevron   { font-size: 16px !important; color: var(--text-muted, #9CA3AF); }
+
+/* ── Dropdown ── */
+.ft-dropdown {
+  position: absolute; top: calc(100% + 8px); right: 0;
+  width: 240px; background: var(--white, #fff);
+  border: 1px solid var(--border, #E5E7EB);
+  border-radius: var(--radius-lg, 12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  overflow: hidden; z-index: 200;
+  animation: ft-drop-in 0.15s ease;
+}
+
+@keyframes ft-drop-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ft-drop-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 16px; background: var(--bg-muted, #F9FAFB);
+}
+
+.ft-drop-name { display: block; font-size: 13px; font-weight: 600; color: var(--text-primary, #1F2937); }
+.ft-drop-sub  { display: block; font-size: 11px; color: var(--text-muted, #9CA3AF); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 160px; }
+
+.ft-drop-divider { height: 1px; background: var(--border, #E5E7EB); }
+
+.ft-drop-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 16px; width: 100%;
+  font-size: 13px; font-weight: 500; color: var(--text-secondary, #6B7280);
+  text-decoration: none; background: transparent; border: none;
+  cursor: pointer; font-family: inherit; transition: background 0.12s, color 0.12s;
+  .material-icons-round { font-size: 18px !important; }
+  &:hover { background: var(--bg-muted, #F9FAFB); color: var(--text-primary, #1F2937); text-decoration: none; }
+}
+
+.ft-drop-danger {
+  color: #DC2626;
+  .material-icons-round { color: #DC2626; }
+  &:hover { background: #FEF2F2; color: #DC2626; }
 }
 
 /* ===== BOTTOM NAV MOBILE (caché sur desktop) ===== */
@@ -254,8 +312,13 @@
   /* Bouton fermer visible */
   .fs-close-btn { display: flex; }
 
-  /* Topbar mobile visible */
-  .fs-mobile-topbar { display: flex; }
+  /* Hamburger visible sur mobile */
+  .ft-btn-menu { display: flex; }
+
+  /* Topbar mobile : cacher texte user, garder juste l'avatar */
+  .ft-user-info, .ft-chevron { display: none; }
+  .ft-user-btn { padding: 4px; border: none; background: transparent; gap: 0; }
+  .ft-topbar { padding: 0 12px; height: 54px; }
 
   /* Bottom nav visible */
   .fs-bottom-nav { display: flex; }

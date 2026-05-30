@@ -211,6 +211,58 @@
 
 /* members-grid replaced by global pc-grid / pl-table */
 
+/* ===== SKELETON LOADING ===== */
+@keyframes skeleton-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton-bar, .skeleton-card-top, .skeleton-card {
+  background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+  background-size: 800px 100%;
+  animation: skeleton-shimmer 1.4s infinite;
+  border-radius: 8px;
+}
+
+.skeleton-section { display: flex; flex-direction: column; gap: 16px; }
+
+.skeleton-header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+}
+
+.skeleton-bar {
+  height: 16px;
+  &-title { width: 160px; height: 20px; }
+  &-sm    { width: 100px; height: 14px; }
+  &-xs    { width: 70px;  height: 12px; }
+}
+
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.skeleton-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+}
+
+.skeleton-card-top {
+  height: 90px;
+  border-radius: 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.skeleton-card-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 @media (max-width: 1200px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
 
 @media (max-width: 640px) {

@@ -1,6 +1,6 @@
 import {
   ThemeService
-} from "./chunk-OLYVASOI.js";
+} from "./chunk-FXQQZUJZ.js";
 import {
   AuthService,
   BrowserModule,
@@ -46,7 +46,7 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1
-} from "./chunk-AEFTRA6R.js";
+} from "./chunk-3JURVHRC.js";
 import {
   __spreadValues
 } from "./chunk-YP43Q66R.js";
@@ -1314,16 +1314,16 @@ var routes = [
   { path: "", component: LandingComponent, pathMatch: "full" },
   {
     path: "auth",
-    loadChildren: () => import("./chunk-7MWGZCWF.js").then((m) => m.AuthModule)
+    loadChildren: () => import("./chunk-4VI6C55G.js").then((m) => m.AuthModule)
   },
   {
     path: "app",
     canActivate: [authGuard],
-    loadChildren: () => import("./chunk-LF75D6LI.js").then((m) => m.ShellModule)
+    loadChildren: () => import("./chunk-U3KDGSUY.js").then((m) => m.ShellModule)
   },
   {
     path: "famille",
-    loadChildren: () => import("./chunk-EXIRBIYX.js").then((m) => m.FamilleModule)
+    loadChildren: () => import("./chunk-HVPKCUA2.js").then((m) => m.FamilleModule)
   },
   { path: "**", redirectTo: "" }
 ];

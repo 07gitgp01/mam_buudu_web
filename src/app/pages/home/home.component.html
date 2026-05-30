@@ -79,8 +79,26 @@
   </div>
 </div>
 
+<!-- ===== SKELETON CHARGEMENT MEMBRES ===== -->
+<div *ngIf="loading" class="skeleton-section mb-32">
+  <div class="skeleton-header">
+    <div class="skeleton-bar skeleton-bar-title"></div>
+    <div class="skeleton-bar skeleton-bar-sm"></div>
+  </div>
+  <div class="skeleton-grid">
+    <div class="skeleton-card" *ngFor="let _ of [1,2,3,4]">
+      <div class="skeleton-card-top"></div>
+      <div class="skeleton-card-body">
+        <div class="skeleton-bar"></div>
+        <div class="skeleton-bar skeleton-bar-sm"></div>
+        <div class="skeleton-bar skeleton-bar-xs"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ===== DERNIERS MEMBRES ===== -->
-<div class="section-header mb-16">
+<div class="section-header mb-16" *ngIf="!loading">
   <h3>Membres récents</h3>
   <div class="section-actions">
     <div class="view-toggle">

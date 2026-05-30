@@ -13,10 +13,10 @@ import {
   getInitiales,
   getNomComplet,
   getPhotoUrl
-} from "./chunk-CR5JEDSC.js";
+} from "./chunk-ICIYOYFR.js";
 import {
   ThemeService
-} from "./chunk-OLYVASOI.js";
+} from "./chunk-FXQQZUJZ.js";
 import {
   CheckboxControlValueAccessor,
   DefaultValueAccessor,
@@ -34,7 +34,7 @@ import {
   SelectControlValueAccessor,
   ɵNgNoValidate,
   ɵNgSelectMultipleOption
-} from "./chunk-6X4DYPEG.js";
+} from "./chunk-2GNQ7GWJ.js";
 import {
   API_BASE_URL,
   ActivatedRoute,
@@ -52,6 +52,7 @@ import {
   NgForOf,
   NgIf,
   NgModule,
+  NgTemplateOutlet,
   NgZone,
   Output,
   Router,
@@ -65,7 +66,6 @@ import {
   setClassMetadata,
   ɵsetClassDebugInfo,
   ɵɵadvance,
-  ɵɵattribute,
   ɵɵclassMap,
   ɵɵclassProp,
   ɵɵconditional,
@@ -75,6 +75,7 @@ import {
   ɵɵdefineNgModule,
   ɵɵdirectiveInject,
   ɵɵelement,
+  ɵɵelementContainer,
   ɵɵelementContainerEnd,
   ɵɵelementContainerStart,
   ɵɵelementEnd,
@@ -108,7 +109,7 @@ import {
   ɵɵtwoWayListener,
   ɵɵtwoWayProperty,
   ɵɵviewQuery
-} from "./chunk-AEFTRA6R.js";
+} from "./chunk-3JURVHRC.js";
 import {
   __async,
   __spreadProps,
@@ -793,8 +794,9 @@ var ShellComponent = class _ShellComponent {
 })();
 
 // src/app/pages/home/home.component.ts
-var _c0 = () => ["/app/personnes"];
-var _c1 = (a0) => ({ id: a0 });
+var _c0 = () => [1, 2, 3, 4];
+var _c1 = () => ["/app/personnes"];
+var _c2 = (a0) => ({ id: a0 });
 function HomeComponent_p_5_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "p");
@@ -811,13 +813,13 @@ function HomeComponent_p_5_Template(rf, ctx) {
 }
 function HomeComponent_div_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 24)(1, "div", 25)(2, "span", 8);
+    \u0275\u0275elementStart(0, "div", 21)(1, "div", 22)(2, "span", 8);
     \u0275\u0275text(3);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(4, "div", 26)(5, "span", 27);
+    \u0275\u0275elementStart(4, "div", 23)(5, "span", 24);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "span", 28);
+    \u0275\u0275elementStart(7, "span", 25);
     \u0275\u0275text(8);
     \u0275\u0275elementEnd()()();
   }
@@ -835,18 +837,18 @@ function HomeComponent_div_16_Template(rf, ctx) {
 }
 function HomeComponent_div_17_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 29)(1, "div", 30)(2, "span", 8);
+    \u0275\u0275elementStart(0, "div", 26)(1, "div", 27)(2, "span", 8);
     \u0275\u0275text(3, "bar_chart");
     \u0275\u0275elementEnd();
     \u0275\u0275text(4, " Compl\xE9tion des profils ");
     \u0275\u0275elementStart(5, "strong");
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "span", 31);
+    \u0275\u0275elementStart(7, "span", 28);
     \u0275\u0275text(8, "\u2014 dates & lieux renseign\xE9s");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(9, "div", 32);
-    \u0275\u0275element(10, "div", 33);
+    \u0275\u0275elementStart(9, "div", 29);
+    \u0275\u0275element(10, "div", 30);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -859,7 +861,7 @@ function HomeComponent_div_17_Template(rf, ctx) {
 }
 function HomeComponent_a_22_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "a", 34)(1, "span", 8);
+    \u0275\u0275elementStart(0, "a", 31)(1, "span", 8);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "span");
@@ -878,16 +880,16 @@ function HomeComponent_a_22_Template(rf, ctx) {
 }
 function HomeComponent_div_23_div_7_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 39)(1, "div", 40);
+    \u0275\u0275elementStart(0, "div", 36)(1, "div", 37);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 41)(4, "span", 42);
+    \u0275\u0275elementStart(3, "div", 38)(4, "span", 39);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 43);
+    \u0275\u0275elementStart(6, "span", 40);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(8, "span", 44);
+    \u0275\u0275elementStart(8, "span", 41);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd()();
   }
@@ -910,13 +912,13 @@ function HomeComponent_div_23_div_7_Template(rf, ctx) {
 }
 function HomeComponent_div_23_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 35)(1, "div", 12)(2, "h3")(3, "span", 36);
+    \u0275\u0275elementStart(0, "div", 32)(1, "div", 12)(2, "h3")(3, "span", 33);
     \u0275\u0275text(4, "cake");
     \u0275\u0275elementEnd();
     \u0275\u0275text(5, " Anniversaires \xE0 venir");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(6, "div", 37);
-    \u0275\u0275template(7, HomeComponent_div_23_div_7_Template, 10, 10, "div", 38);
+    \u0275\u0275elementStart(6, "div", 34);
+    \u0275\u0275template(7, HomeComponent_div_23_div_7_Template, 10, 10, "div", 35);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -925,126 +927,185 @@ function HomeComponent_div_23_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r0.anniversairesProches);
   }
 }
-function HomeComponent_div_37_div_1_img_5_Template(rf, ctx) {
+function HomeComponent_div_24_div_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 48);
+    \u0275\u0275element(1, "div", 49);
+    \u0275\u0275elementStart(2, "div", 50);
+    \u0275\u0275element(3, "div", 51)(4, "div", 45)(5, "div", 52);
+    \u0275\u0275elementEnd()();
+  }
+}
+function HomeComponent_div_24_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 42)(1, "div", 43);
+    \u0275\u0275element(2, "div", 44)(3, "div", 45);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "div", 46);
+    \u0275\u0275template(5, HomeComponent_div_24_div_5_Template, 6, 0, "div", 47);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    \u0275\u0275advance(5);
+    \u0275\u0275property("ngForOf", \u0275\u0275pureFunction0(1, _c0));
+  }
+}
+function HomeComponent_div_25_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 64);
-    \u0275\u0275listener("error", function HomeComponent_div_37_div_1_img_5_Template_img_error_0_listener() {
+    \u0275\u0275elementStart(0, "div", 12)(1, "h3");
+    \u0275\u0275text(2, "Membres r\xE9cents");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "div", 53)(4, "div", 54)(5, "button", 55);
+    \u0275\u0275listener("click", function HomeComponent_div_25_Template_button_click_5_listener() {
       \u0275\u0275restoreView(_r5);
-      const p_r6 = \u0275\u0275nextContext().$implicit;
+      const ctx_r0 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r0.viewMode = "cards");
+    });
+    \u0275\u0275elementStart(6, "span", 8);
+    \u0275\u0275text(7, "grid_view");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(8, "button", 56);
+    \u0275\u0275listener("click", function HomeComponent_div_25_Template_button_click_8_listener() {
+      \u0275\u0275restoreView(_r5);
+      const ctx_r0 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r0.viewMode = "list");
+    });
+    \u0275\u0275elementStart(9, "span", 8);
+    \u0275\u0275text(10, "view_list");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(11, "a", 57);
+    \u0275\u0275text(12, "Voir tous");
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance(5);
+    \u0275\u0275classProp("active", ctx_r0.viewMode === "cards");
+    \u0275\u0275advance(3);
+    \u0275\u0275classProp("active", ctx_r0.viewMode === "list");
+  }
+}
+function HomeComponent_div_26_div_1_img_5_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r6 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 77);
+    \u0275\u0275listener("error", function HomeComponent_div_26_div_1_img_5_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r6);
+      const p_r7 = \u0275\u0275nextContext().$implicit;
       const ctx_r0 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r0.onPhotoError(p_r6.id));
+      return \u0275\u0275resetView(ctx_r0.onPhotoError(p_r7.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r6 = \u0275\u0275nextContext().$implicit;
+    const p_r7 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r0.getPhotoUrl(p_r6), \u0275\u0275sanitizeUrl)("alt", ctx_r0.getNomComplet(p_r6));
+    \u0275\u0275property("src", ctx_r0.getPhotoUrl(p_r7), \u0275\u0275sanitizeUrl)("alt", ctx_r0.getNomComplet(p_r7));
   }
 }
-function HomeComponent_div_37_div_1_div_6_Template(rf, ctx) {
+function HomeComponent_div_26_div_1_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 65);
+    \u0275\u0275elementStart(0, "div", 78);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r6 = \u0275\u0275nextContext().$implicit;
+    const p_r7 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r0.getInitiales(p_r6), " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r0.getInitiales(p_r7), " ");
   }
 }
-function HomeComponent_div_37_div_1_div_12_Template(rf, ctx) {
+function HomeComponent_div_26_div_1_div_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 66)(1, "span", 8);
+    \u0275\u0275elementStart(0, "div", 79)(1, "span", 8);
     \u0275\u0275text(2, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r6 = \u0275\u0275nextContext().$implicit;
+    const p_r7 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1("", p_r6.lieuNaissance, " ");
+    \u0275\u0275textInterpolate1("", p_r7.lieuNaissance, " ");
   }
 }
-function HomeComponent_div_37_div_1_span_14_Template(rf, ctx) {
+function HomeComponent_div_26_div_1_span_14_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 67);
+    \u0275\u0275elementStart(0, "span", 80);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
-function HomeComponent_div_37_div_1_span_15_Template(rf, ctx) {
+function HomeComponent_div_26_div_1_span_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 68);
+    \u0275\u0275elementStart(0, "span", 81);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
 }
-function HomeComponent_div_37_div_1_Template(rf, ctx) {
+function HomeComponent_div_26_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 47)(1, "div", 48);
-    \u0275\u0275element(2, "div", 49)(3, "span", 50);
-    \u0275\u0275elementStart(4, "div", 51);
-    \u0275\u0275template(5, HomeComponent_div_37_div_1_img_5_Template, 1, 2, "img", 52)(6, HomeComponent_div_37_div_1_div_6_Template, 2, 1, "div", 53);
+    \u0275\u0275elementStart(0, "div", 60)(1, "div", 61);
+    \u0275\u0275element(2, "div", 62)(3, "span", 63);
+    \u0275\u0275elementStart(4, "div", 64);
+    \u0275\u0275template(5, HomeComponent_div_26_div_1_img_5_Template, 1, 2, "img", 65)(6, HomeComponent_div_26_div_1_div_6_Template, 2, 1, "div", 66);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "div", 54)(8, "h4", 55);
+    \u0275\u0275elementStart(7, "div", 67)(8, "h4", 68);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 56);
+    \u0275\u0275elementStart(10, "span", 69);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(12, HomeComponent_div_37_div_1_div_12_Template, 4, 1, "div", 57);
-    \u0275\u0275elementStart(13, "div", 58);
-    \u0275\u0275template(14, HomeComponent_div_37_div_1_span_14_Template, 2, 0, "span", 59)(15, HomeComponent_div_37_div_1_span_15_Template, 2, 0, "span", 60);
+    \u0275\u0275template(12, HomeComponent_div_26_div_1_div_12_Template, 4, 1, "div", 70);
+    \u0275\u0275elementStart(13, "div", 71);
+    \u0275\u0275template(14, HomeComponent_div_26_div_1_span_14_Template, 2, 0, "span", 72)(15, HomeComponent_div_26_div_1_span_15_Template, 2, 0, "span", 73);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(16, "div", 61)(17, "button", 62)(18, "span", 8);
+    \u0275\u0275elementStart(16, "div", 74)(17, "button", 75)(18, "span", 8);
     \u0275\u0275text(19, "favorite_border");
     \u0275\u0275elementEnd();
     \u0275\u0275text(20, "Like ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(21, "a", 63)(22, "span", 8);
+    \u0275\u0275elementStart(21, "a", 76)(22, "span", 8);
     \u0275\u0275text(23, "visibility");
     \u0275\u0275elementEnd();
     \u0275\u0275text(24, "Voir ");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const p_r6 = ctx.$implicit;
-    const i_r7 = ctx.index;
+    const p_r7 = ctx.$implicit;
+    const i_r8 = ctx.index;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("pc-male", p_r6.sexe === "M")("pc-female", p_r6.sexe === "F");
+    \u0275\u0275classProp("pc-male", p_r7.sexe === "M")("pc-female", p_r7.sexe === "F");
     \u0275\u0275advance(2);
-    \u0275\u0275classProp("color-1", i_r7 % 3 === 0)("color-2", i_r7 % 3 === 1)("color-3", i_r7 % 3 === 2);
+    \u0275\u0275classProp("color-1", i_r8 % 3 === 0)("color-2", i_r8 % 3 === 1)("color-3", i_r8 % 3 === 2);
     \u0275\u0275advance();
-    \u0275\u0275classProp("alive", ctx_r0.estVivant(p_r6))("dead", !ctx_r0.estVivant(p_r6));
+    \u0275\u0275classProp("alive", ctx_r0.estVivant(p_r7))("dead", !ctx_r0.estVivant(p_r7));
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r0.getPhotoUrl(p_r6) && !ctx_r0.failedPhotos.has(p_r6.id));
+    \u0275\u0275property("ngIf", ctx_r0.getPhotoUrl(p_r7) && !ctx_r0.failedPhotos.has(p_r7.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r0.getPhotoUrl(p_r6) || ctx_r0.failedPhotos.has(p_r6.id));
+    \u0275\u0275property("ngIf", !ctx_r0.getPhotoUrl(p_r7) || ctx_r0.failedPhotos.has(p_r7.id));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(p_r6));
+    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(p_r7));
     \u0275\u0275advance();
-    \u0275\u0275classProp("pc-age-unknown", !ctx_r0.getAgeLabel(p_r6));
+    \u0275\u0275classProp("pc-age-unknown", !ctx_r0.getAgeLabel(p_r7));
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r0.getAgeLabel(p_r6) || "Naissance inconnue", " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r0.getAgeLabel(p_r7) || "Naissance inconnue", " ");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", p_r6.lieuNaissance);
+    \u0275\u0275property("ngIf", p_r7.lieuNaissance);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r0.estVivant(p_r6));
+    \u0275\u0275property("ngIf", ctx_r0.estVivant(p_r7));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r0.estVivant(p_r6));
+    \u0275\u0275property("ngIf", !ctx_r0.estVivant(p_r7));
     \u0275\u0275advance(6);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(25, _c0))("queryParams", \u0275\u0275pureFunction1(26, _c1, p_r6.id));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(25, _c1))("queryParams", \u0275\u0275pureFunction1(26, _c2, p_r7.id));
   }
 }
-function HomeComponent_div_37_Template(rf, ctx) {
+function HomeComponent_div_26_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 45);
-    \u0275\u0275template(1, HomeComponent_div_37_div_1_Template, 25, 28, "div", 46);
+    \u0275\u0275elementStart(0, "div", 58);
+    \u0275\u0275template(1, HomeComponent_div_26_div_1_Template, 25, 28, "div", 59);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -1053,147 +1114,147 @@ function HomeComponent_div_37_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r0.recentPersonnes);
   }
 }
-function HomeComponent_div_38_div_12_img_3_Template(rf, ctx) {
+function HomeComponent_div_27_div_12_img_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 94);
-    \u0275\u0275listener("error", function HomeComponent_div_38_div_12_img_3_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r8);
-      const p_r9 = \u0275\u0275nextContext().$implicit;
+    const _r9 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 107);
+    \u0275\u0275listener("error", function HomeComponent_div_27_div_12_img_3_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r9);
+      const p_r10 = \u0275\u0275nextContext().$implicit;
       const ctx_r0 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r0.onPhotoError(p_r9.id));
+      return \u0275\u0275resetView(ctx_r0.onPhotoError(p_r10.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r9 = \u0275\u0275nextContext().$implicit;
+    const p_r10 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r0.getPhotoUrl(p_r9), \u0275\u0275sanitizeUrl)("alt", ctx_r0.getNomComplet(p_r9));
+    \u0275\u0275property("src", ctx_r0.getPhotoUrl(p_r10), \u0275\u0275sanitizeUrl)("alt", ctx_r0.getNomComplet(p_r10));
   }
 }
-function HomeComponent_div_38_div_12_div_4_Template(rf, ctx) {
+function HomeComponent_div_27_div_12_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 95);
+    \u0275\u0275elementStart(0, "div", 108);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r9 = \u0275\u0275nextContext().$implicit;
+    const p_r10 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("male", p_r9.sexe === "M")("female", p_r9.sexe === "F");
+    \u0275\u0275classProp("male", p_r10.sexe === "M")("female", p_r10.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r0.getInitiales(p_r9));
+    \u0275\u0275textInterpolate(ctx_r0.getInitiales(p_r10));
   }
 }
-function HomeComponent_div_38_div_12_span_15_Template(rf, ctx) {
+function HomeComponent_div_27_div_12_span_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 96)(1, "span", 8);
+    \u0275\u0275elementStart(0, "span", 109)(1, "span", 8);
     \u0275\u0275text(2, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r9 = \u0275\u0275nextContext().$implicit;
+    const p_r10 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1("", p_r9.lieuNaissance, " ");
+    \u0275\u0275textInterpolate1("", p_r10.lieuNaissance, " ");
   }
 }
-function HomeComponent_div_38_div_12_span_16_Template(rf, ctx) {
+function HomeComponent_div_27_div_12_span_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 97);
+    \u0275\u0275elementStart(0, "span", 110);
     \u0275\u0275text(1, "\u2014");
     \u0275\u0275elementEnd();
   }
 }
-function HomeComponent_div_38_div_12_span_18_Template(rf, ctx) {
+function HomeComponent_div_27_div_12_span_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 67);
+    \u0275\u0275elementStart(0, "span", 80);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
-function HomeComponent_div_38_div_12_span_19_Template(rf, ctx) {
+function HomeComponent_div_27_div_12_span_19_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 68);
+    \u0275\u0275elementStart(0, "span", 81);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
 }
-function HomeComponent_div_38_div_12_Template(rf, ctx) {
+function HomeComponent_div_27_div_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 77)(1, "div", 78)(2, "div", 79);
-    \u0275\u0275template(3, HomeComponent_div_38_div_12_img_3_Template, 1, 2, "img", 80)(4, HomeComponent_div_38_div_12_div_4_Template, 2, 5, "div", 81);
-    \u0275\u0275element(5, "span", 82);
+    \u0275\u0275elementStart(0, "div", 90)(1, "div", 91)(2, "div", 92);
+    \u0275\u0275template(3, HomeComponent_div_27_div_12_img_3_Template, 1, 2, "img", 93)(4, HomeComponent_div_27_div_12_div_4_Template, 2, 5, "div", 94);
+    \u0275\u0275element(5, "span", 95);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div", 83)(7, "span", 84);
+    \u0275\u0275elementStart(6, "div", 96)(7, "span", 97);
     \u0275\u0275text(8);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "span", 85);
+    \u0275\u0275elementStart(9, "span", 98);
     \u0275\u0275text(10);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(11, "div", 86)(12, "span", 87);
+    \u0275\u0275elementStart(11, "div", 99)(12, "span", 100);
     \u0275\u0275text(13);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(14, "div", 88);
-    \u0275\u0275template(15, HomeComponent_div_38_div_12_span_15_Template, 4, 1, "span", 89)(16, HomeComponent_div_38_div_12_span_16_Template, 2, 0, "span", 90);
+    \u0275\u0275elementStart(14, "div", 101);
+    \u0275\u0275template(15, HomeComponent_div_27_div_12_span_15_Template, 4, 1, "span", 102)(16, HomeComponent_div_27_div_12_span_16_Template, 2, 0, "span", 103);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(17, "div", 91);
-    \u0275\u0275template(18, HomeComponent_div_38_div_12_span_18_Template, 2, 0, "span", 59)(19, HomeComponent_div_38_div_12_span_19_Template, 2, 0, "span", 60);
+    \u0275\u0275elementStart(17, "div", 104);
+    \u0275\u0275template(18, HomeComponent_div_27_div_12_span_18_Template, 2, 0, "span", 72)(19, HomeComponent_div_27_div_12_span_19_Template, 2, 0, "span", 73);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "div", 92)(21, "a", 93)(22, "span", 8);
+    \u0275\u0275elementStart(20, "div", 105)(21, "a", 106)(22, "span", 8);
     \u0275\u0275text(23, "visibility");
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
-    const p_r9 = ctx.$implicit;
+    const p_r10 = ctx.$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(3);
-    \u0275\u0275property("ngIf", ctx_r0.getPhotoUrl(p_r9) && !ctx_r0.failedPhotos.has(p_r9.id));
+    \u0275\u0275property("ngIf", ctx_r0.getPhotoUrl(p_r10) && !ctx_r0.failedPhotos.has(p_r10.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r0.getPhotoUrl(p_r9) || ctx_r0.failedPhotos.has(p_r9.id));
+    \u0275\u0275property("ngIf", !ctx_r0.getPhotoUrl(p_r10) || ctx_r0.failedPhotos.has(p_r10.id));
     \u0275\u0275advance();
-    \u0275\u0275classProp("alive", ctx_r0.estVivant(p_r9))("dead", !ctx_r0.estVivant(p_r9));
+    \u0275\u0275classProp("alive", ctx_r0.estVivant(p_r10))("dead", !ctx_r0.estVivant(p_r10));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(p_r9));
+    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(p_r10));
     \u0275\u0275advance();
-    \u0275\u0275classProp("pc-age-unknown", !ctx_r0.getAgeLabel(p_r9));
+    \u0275\u0275classProp("pc-age-unknown", !ctx_r0.getAgeLabel(p_r10));
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r0.getAgeLabel(p_r9) || "Naissance inconnue", " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r0.getAgeLabel(p_r10) || "Naissance inconnue", " ");
     \u0275\u0275advance(2);
-    \u0275\u0275classProp("pc-badge-m", p_r9.sexe === "M")("pc-badge-f", p_r9.sexe === "F");
+    \u0275\u0275classProp("pc-badge-m", p_r10.sexe === "M")("pc-badge-f", p_r10.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", p_r9.sexe === "M" ? "Homme" : p_r9.sexe === "F" ? "Femme" : "Autre", " ");
+    \u0275\u0275textInterpolate1(" ", p_r10.sexe === "M" ? "Homme" : p_r10.sexe === "F" ? "Femme" : "Autre", " ");
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", p_r9.lieuNaissance);
+    \u0275\u0275property("ngIf", p_r10.lieuNaissance);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !p_r9.lieuNaissance);
+    \u0275\u0275property("ngIf", !p_r10.lieuNaissance);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r0.estVivant(p_r9));
+    \u0275\u0275property("ngIf", ctx_r0.estVivant(p_r10));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r0.estVivant(p_r9));
+    \u0275\u0275property("ngIf", !ctx_r0.estVivant(p_r10));
     \u0275\u0275advance(2);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(21, _c0))("queryParams", \u0275\u0275pureFunction1(22, _c1, p_r9.id));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(21, _c1))("queryParams", \u0275\u0275pureFunction1(22, _c2, p_r10.id));
   }
 }
-function HomeComponent_div_38_Template(rf, ctx) {
+function HomeComponent_div_27_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 69)(1, "div", 70)(2, "span", 71);
+    \u0275\u0275elementStart(0, "div", 82)(1, "div", 83)(2, "span", 84);
     \u0275\u0275text(3, "Personne");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 72);
+    \u0275\u0275elementStart(4, "span", 85);
     \u0275\u0275text(5, "Genre");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 73);
+    \u0275\u0275elementStart(6, "span", 86);
     \u0275\u0275text(7, "Lieu de naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "span", 74);
+    \u0275\u0275elementStart(8, "span", 87);
     \u0275\u0275text(9, "Statut");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 75);
+    \u0275\u0275elementStart(10, "span", 88);
     \u0275\u0275text(11, "Actions");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(12, HomeComponent_div_38_div_12_Template, 24, 24, "div", 76);
+    \u0275\u0275template(12, HomeComponent_div_27_div_12_Template, 24, 24, "div", 89);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -1202,9 +1263,9 @@ function HomeComponent_div_38_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r0.recentPersonnes);
   }
 }
-function HomeComponent_div_39_Template(rf, ctx) {
+function HomeComponent_div_28_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 98)(1, "span", 8);
+    \u0275\u0275elementStart(0, "div", 111)(1, "span", 8);
     \u0275\u0275text(2, "people");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "h3");
@@ -1316,7 +1377,7 @@ Code : *${this.familleCode}*`;
   static \u0275fac = function HomeComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HomeComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HomeComponent, selectors: [["app-home"]], standalone: false, decls: 40, vars: 12, consts: [[1, "page-header"], [1, "header-row"], [4, "ngIf"], [1, "header-actions"], ["routerLink", "/app/inviter", "title", "Inviter des membres", 1, "btn-invite"], ["viewBox", "0 0 24 24", "fill", "currentColor", 2, "width", "15px", "height", "15px", "flex-shrink", "0"], ["d", "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"], ["routerLink", "/app/personnes", 1, "btn-primary"], [1, "material-icons-round"], [1, "stats-grid", "mb-16"], ["class", "stat-card", 3, "class", 4, "ngFor", "ngForOf"], ["class", "completion-bar-wrap mb-32", 4, "ngIf"], [1, "section-header", "mb-16"], [1, "quick-actions", "mb-32"], ["class", "quick-action", 3, "routerLink", "class", 4, "ngFor", "ngForOf"], ["class", "mb-32", 4, "ngIf"], [1, "section-actions"], [1, "view-toggle"], ["title", "Vue cartes", 1, "vt-btn", 3, "click"], ["title", "Vue liste", 1, "vt-btn", 3, "click"], ["routerLink", "/app/personnes", 1, "btn-secondary", "btn-sm"], ["class", "pc-grid", 4, "ngIf"], ["class", "pl-table", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "stat-card"], [1, "stat-icon-wrap"], [1, "stat-body"], [1, "stat-value"], [1, "stat-label"], [1, "completion-bar-wrap", "mb-32"], [1, "completion-label"], [1, "completion-hint"], [1, "completion-track"], [1, "completion-fill"], [1, "quick-action", 3, "routerLink"], [1, "mb-32"], [1, "material-icons-round", 2, "vertical-align", "middle", "color", "#DB2777", "font-size", "20px!important"], [1, "bday-row"], ["class", "bday-card", 4, "ngFor", "ngForOf"], [1, "bday-card"], [1, "bday-avatar"], [1, "bday-info"], [1, "bday-name"], [1, "bday-date"], [1, "bday-badge"], [1, "pc-grid"], ["class", "pc-card", 3, "pc-male", "pc-female", 4, "ngFor", "ngForOf"], [1, "pc-card"], [1, "pc-card-banner"], [1, "pc-colorband"], [1, "pc-live-dot"], [1, "pc-avatar-ring"], ["class", "pc-avatar pc-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pc-avatar pc-avatar-initials", 4, "ngIf"], [1, "pc-card-body"], [1, "pc-name"], [1, "pc-age"], ["class", "pc-loc", 4, "ngIf"], [1, "pc-badges"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "pc-card-actions"], [1, "pc-act"], [1, "pc-act", 3, "routerLink", "queryParams"], [1, "pc-avatar", "pc-avatar-photo", 3, "error", "src", "alt"], [1, "pc-avatar", "pc-avatar-initials"], [1, "pc-loc"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "pl-table"], [1, "pl-thead"], [1, "pl-th", "pl-th-person"], [1, "pl-th", "pl-th-genre"], [1, "pl-th", "pl-th-lieu"], [1, "pl-th", "pl-th-statut"], [1, "pl-th", "pl-th-actions"], ["class", "pl-row", 4, "ngFor", "ngForOf"], [1, "pl-row"], [1, "pl-cell", "pl-cell-person"], [1, "pl-avatar-wrap"], ["class", "pl-avatar pl-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pl-avatar pl-avatar-initials", 3, "male", "female", 4, "ngIf"], [1, "pl-status-dot"], [1, "pl-person-info"], [1, "pl-person-name"], [1, "pl-person-age"], [1, "pl-cell", "pl-cell-genre"], [1, "pc-badge"], [1, "pl-cell", "pl-cell-lieu"], ["class", "pl-lieu", 4, "ngIf"], ["class", "pl-empty", 4, "ngIf"], [1, "pl-cell", "pl-cell-statut"], [1, "pl-cell", "pl-cell-actions"], ["title", "Voir", 1, "btn-icon", 3, "routerLink", "queryParams"], [1, "pl-avatar", "pl-avatar-photo", 3, "error", "src", "alt"], [1, "pl-avatar", "pl-avatar-initials"], [1, "pl-lieu"], [1, "pl-empty"], [1, "empty-state"]], template: function HomeComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HomeComponent, selectors: [["app-home"]], standalone: false, decls: 29, vars: 10, consts: [[1, "page-header"], [1, "header-row"], [4, "ngIf"], [1, "header-actions"], ["routerLink", "/app/inviter", "title", "Inviter des membres", 1, "btn-invite"], ["viewBox", "0 0 24 24", "fill", "currentColor", 2, "width", "15px", "height", "15px", "flex-shrink", "0"], ["d", "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"], ["routerLink", "/app/personnes", 1, "btn-primary"], [1, "material-icons-round"], [1, "stats-grid", "mb-16"], ["class", "stat-card", 3, "class", 4, "ngFor", "ngForOf"], ["class", "completion-bar-wrap mb-32", 4, "ngIf"], [1, "section-header", "mb-16"], [1, "quick-actions", "mb-32"], ["class", "quick-action", 3, "routerLink", "class", 4, "ngFor", "ngForOf"], ["class", "mb-32", 4, "ngIf"], ["class", "skeleton-section mb-32", 4, "ngIf"], ["class", "section-header mb-16", 4, "ngIf"], ["class", "pc-grid", 4, "ngIf"], ["class", "pl-table", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "stat-card"], [1, "stat-icon-wrap"], [1, "stat-body"], [1, "stat-value"], [1, "stat-label"], [1, "completion-bar-wrap", "mb-32"], [1, "completion-label"], [1, "completion-hint"], [1, "completion-track"], [1, "completion-fill"], [1, "quick-action", 3, "routerLink"], [1, "mb-32"], [1, "material-icons-round", 2, "vertical-align", "middle", "color", "#DB2777", "font-size", "20px!important"], [1, "bday-row"], ["class", "bday-card", 4, "ngFor", "ngForOf"], [1, "bday-card"], [1, "bday-avatar"], [1, "bday-info"], [1, "bday-name"], [1, "bday-date"], [1, "bday-badge"], [1, "skeleton-section", "mb-32"], [1, "skeleton-header"], [1, "skeleton-bar", "skeleton-bar-title"], [1, "skeleton-bar", "skeleton-bar-sm"], [1, "skeleton-grid"], ["class", "skeleton-card", 4, "ngFor", "ngForOf"], [1, "skeleton-card"], [1, "skeleton-card-top"], [1, "skeleton-card-body"], [1, "skeleton-bar"], [1, "skeleton-bar", "skeleton-bar-xs"], [1, "section-actions"], [1, "view-toggle"], ["title", "Vue cartes", 1, "vt-btn", 3, "click"], ["title", "Vue liste", 1, "vt-btn", 3, "click"], ["routerLink", "/app/personnes", 1, "btn-secondary", "btn-sm"], [1, "pc-grid"], ["class", "pc-card", 3, "pc-male", "pc-female", 4, "ngFor", "ngForOf"], [1, "pc-card"], [1, "pc-card-banner"], [1, "pc-colorband"], [1, "pc-live-dot"], [1, "pc-avatar-ring"], ["class", "pc-avatar pc-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pc-avatar pc-avatar-initials", 4, "ngIf"], [1, "pc-card-body"], [1, "pc-name"], [1, "pc-age"], ["class", "pc-loc", 4, "ngIf"], [1, "pc-badges"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "pc-card-actions"], [1, "pc-act"], [1, "pc-act", 3, "routerLink", "queryParams"], [1, "pc-avatar", "pc-avatar-photo", 3, "error", "src", "alt"], [1, "pc-avatar", "pc-avatar-initials"], [1, "pc-loc"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "pl-table"], [1, "pl-thead"], [1, "pl-th", "pl-th-person"], [1, "pl-th", "pl-th-genre"], [1, "pl-th", "pl-th-lieu"], [1, "pl-th", "pl-th-statut"], [1, "pl-th", "pl-th-actions"], ["class", "pl-row", 4, "ngFor", "ngForOf"], [1, "pl-row"], [1, "pl-cell", "pl-cell-person"], [1, "pl-avatar-wrap"], ["class", "pl-avatar pl-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pl-avatar pl-avatar-initials", 3, "male", "female", 4, "ngIf"], [1, "pl-status-dot"], [1, "pl-person-info"], [1, "pl-person-name"], [1, "pl-person-age"], [1, "pl-cell", "pl-cell-genre"], [1, "pc-badge"], [1, "pl-cell", "pl-cell-lieu"], ["class", "pl-lieu", 4, "ngIf"], ["class", "pl-empty", 4, "ngIf"], [1, "pl-cell", "pl-cell-statut"], [1, "pl-cell", "pl-cell-actions"], ["title", "Voir", 1, "btn-icon", 3, "routerLink", "queryParams"], [1, "pl-avatar", "pl-avatar-photo", 3, "error", "src", "alt"], [1, "pl-avatar", "pl-avatar-initials"], [1, "pl-lieu"], [1, "pl-empty"], [1, "empty-state"]], template: function HomeComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div")(3, "h2");
       \u0275\u0275text(4, "Bonjour \u{1F44B}");
@@ -1346,28 +1407,7 @@ Code : *${this.familleCode}*`;
       \u0275\u0275elementStart(21, "div", 13);
       \u0275\u0275template(22, HomeComponent_a_22_Template, 5, 5, "a", 14);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(23, HomeComponent_div_23_Template, 8, 1, "div", 15);
-      \u0275\u0275elementStart(24, "div", 12)(25, "h3");
-      \u0275\u0275text(26, "Membres r\xE9cents");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(27, "div", 16)(28, "div", 17)(29, "button", 18);
-      \u0275\u0275listener("click", function HomeComponent_Template_button_click_29_listener() {
-        return ctx.viewMode = "cards";
-      });
-      \u0275\u0275elementStart(30, "span", 8);
-      \u0275\u0275text(31, "grid_view");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(32, "button", 19);
-      \u0275\u0275listener("click", function HomeComponent_Template_button_click_32_listener() {
-        return ctx.viewMode = "list";
-      });
-      \u0275\u0275elementStart(33, "span", 8);
-      \u0275\u0275text(34, "view_list");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(35, "a", 20);
-      \u0275\u0275text(36, "Voir tous");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275template(37, HomeComponent_div_37_Template, 2, 1, "div", 21)(38, HomeComponent_div_38_Template, 13, 1, "div", 22)(39, HomeComponent_div_39_Template, 7, 0, "div", 23);
+      \u0275\u0275template(23, HomeComponent_div_23_Template, 8, 1, "div", 15)(24, HomeComponent_div_24_Template, 6, 2, "div", 16)(25, HomeComponent_div_25_Template, 13, 4, "div", 17)(26, HomeComponent_div_26_Template, 2, 1, "div", 18)(27, HomeComponent_div_27_Template, 13, 1, "div", 19)(28, HomeComponent_div_28_Template, 7, 0, "div", 20);
     }
     if (rf & 2) {
       \u0275\u0275advance(5);
@@ -1380,18 +1420,18 @@ Code : *${this.familleCode}*`;
       \u0275\u0275property("ngForOf", ctx.quickActions);
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.anniversairesProches.length > 0);
-      \u0275\u0275advance(6);
-      \u0275\u0275classProp("active", ctx.viewMode === "cards");
-      \u0275\u0275advance(3);
-      \u0275\u0275classProp("active", ctx.viewMode === "list");
-      \u0275\u0275advance(5);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.loading);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", !ctx.loading);
+      \u0275\u0275advance();
       \u0275\u0275property("ngIf", !ctx.loading && ctx.recentPersonnes.length > 0 && ctx.viewMode === "cards");
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", !ctx.loading && ctx.recentPersonnes.length > 0 && ctx.viewMode === "list");
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", !ctx.loading && ctx.recentPersonnes.length === 0);
     }
-  }, dependencies: [NgForOf, NgIf, RouterLink], styles: ["\n\n.header-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.header-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: var(--text-primary);\n}\n.stats-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n}\n.stat-card[_ngcontent-%COMP%] {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  border: 1px solid var(--border-light);\n  box-shadow: var(--shadow-sm);\n  padding: 20px;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  transition: box-shadow var(--transition), transform var(--transition);\n}\n.stat-card[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.stat-icon-wrap[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 24px !important;\n}\n.stat-card--blue[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.stat-card--blue[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n.stat-card--indigo[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%] {\n  background: var(--accent-bg);\n}\n.stat-card--indigo[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--accent);\n}\n.stat-card--pink[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%] {\n  background: var(--pink-bg);\n}\n.stat-card--pink[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--pink);\n}\n.stat-card--green[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%] {\n  background: var(--success-bg);\n}\n.stat-card--green[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--success);\n}\n.stat-body[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n.stat-value[_ngcontent-%COMP%] {\n  font-size: 26px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1;\n}\n.stat-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-weight: 500;\n}\n.quick-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.quick-action[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 18px;\n  border-radius: var(--radius-full);\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  text-decoration: none;\n  transition: var(--transition);\n}\n.quick-action[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.quick-action--blue[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary-dark);\n}\n.quick-action--blue[_ngcontent-%COMP%]:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.quick-action--indigo[_ngcontent-%COMP%] {\n  background: var(--accent-bg);\n  color: var(--accent);\n}\n.quick-action--indigo[_ngcontent-%COMP%]:hover {\n  background: #DDD6FE;\n  text-decoration: none;\n}\n.quick-action--pink[_ngcontent-%COMP%] {\n  background: var(--pink-bg);\n  color: var(--pink);\n}\n.quick-action--pink[_ngcontent-%COMP%]:hover {\n  background: #FBCFE8;\n  text-decoration: none;\n}\n.quick-action--green[_ngcontent-%COMP%] {\n  background: var(--success-bg);\n  color: var(--success);\n}\n.quick-action--green[_ngcontent-%COMP%]:hover {\n  background: #A7F3D0;\n  text-decoration: none;\n}\n.section-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.header-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.btn-invite[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 9px 16px;\n  border-radius: var(--radius-md);\n  border: 1.5px solid #86EFAC;\n  background: #DCFCE7;\n  color: #15803D;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  text-decoration: none;\n  transition: all 0.15s;\n  white-space: nowrap;\n}\n.btn-invite[_ngcontent-%COMP%]:hover {\n  background: #25D366;\n  color: #fff;\n  border-color: #25D366;\n  text-decoration: none;\n}\n.completion-bar-wrap[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: var(--radius-lg);\n  padding: 14px 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.completion-label[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  font-size: 13px;\n  color: var(--text-secondary);\n}\n.completion-label[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n  color: var(--primary);\n}\n.completion-label[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: var(--text-primary);\n  font-weight: 700;\n}\n.completion-hint[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.completion-track[_ngcontent-%COMP%] {\n  height: 6px;\n  border-radius: 99px;\n  background: var(--border-light);\n  overflow: hidden;\n}\n.completion-fill[_ngcontent-%COMP%] {\n  height: 100%;\n  border-radius: 99px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary),\n      #A78BFA);\n  transition: width 0.8s ease;\n}\n.bday-row[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  overflow-x: auto;\n  padding-bottom: 4px;\n  scrollbar-width: none;\n}\n.bday-row[_ngcontent-%COMP%]::-webkit-scrollbar {\n  display: none;\n}\n.bday-card[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 14px;\n  background: var(--white);\n  border: 1px solid #FBE8F3;\n  border-radius: var(--radius-lg);\n  min-width: 200px;\n  flex-shrink: 0;\n  transition: box-shadow var(--transition);\n}\n.bday-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 4px 14px rgba(219, 39, 119, 0.12);\n}\n.bday-avatar[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.bday-avatar.male[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #3B82F6);\n}\n.bday-avatar.female[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #F472B6,\n      #EC4899);\n}\n.bday-avatar[_ngcontent-%COMP%]:not(.male):not(.female) {\n  background:\n    linear-gradient(\n      135deg,\n      #A78BFA,\n      var(--primary));\n}\n.bday-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.bday-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-date[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.bday-badge[_ngcontent-%COMP%] {\n  background: #FDF2F8;\n  color: #DB2777;\n  font-size: 11px;\n  font-weight: 700;\n  padding: 3px 8px;\n  border-radius: 7px;\n  white-space: nowrap;\n}\n.bday-badge.soon[_ngcontent-%COMP%] {\n  background: #FEF3C7;\n  color: #B45309;\n  animation: _ngcontent-%COMP%_pulse-bday 1.5s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n@media (max-width: 1200px) {\n  .stats-grid[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media (max-width: 640px) {\n  .stats-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .stat-card[_ngcontent-%COMP%] {\n    padding: 14px;\n  }\n  .stat-value[_ngcontent-%COMP%] {\n    font-size: 22px;\n  }\n  .header-row[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .header-row[_ngcontent-%COMP%]   .btn-primary[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n  .quick-actions[_ngcontent-%COMP%] {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 8px;\n  }\n  .quick-action[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n}\n@media (max-width: 360px) {\n  .stats-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */"] });
+  }, dependencies: [NgForOf, NgIf, RouterLink], styles: ["\n\n.header-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.header-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: var(--text-primary);\n}\n.stats-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n}\n.stat-card[_ngcontent-%COMP%] {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  border: 1px solid var(--border-light);\n  box-shadow: var(--shadow-sm);\n  padding: 20px;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  transition: box-shadow var(--transition), transform var(--transition);\n}\n.stat-card[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.stat-icon-wrap[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 24px !important;\n}\n.stat-card--blue[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.stat-card--blue[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n.stat-card--indigo[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%] {\n  background: var(--accent-bg);\n}\n.stat-card--indigo[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--accent);\n}\n.stat-card--pink[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%] {\n  background: var(--pink-bg);\n}\n.stat-card--pink[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--pink);\n}\n.stat-card--green[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%] {\n  background: var(--success-bg);\n}\n.stat-card--green[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--success);\n}\n.stat-body[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n.stat-value[_ngcontent-%COMP%] {\n  font-size: 26px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1;\n}\n.stat-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-weight: 500;\n}\n.quick-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.quick-action[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 18px;\n  border-radius: var(--radius-full);\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  text-decoration: none;\n  transition: var(--transition);\n}\n.quick-action[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.quick-action--blue[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary-dark);\n}\n.quick-action--blue[_ngcontent-%COMP%]:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.quick-action--indigo[_ngcontent-%COMP%] {\n  background: var(--accent-bg);\n  color: var(--accent);\n}\n.quick-action--indigo[_ngcontent-%COMP%]:hover {\n  background: #DDD6FE;\n  text-decoration: none;\n}\n.quick-action--pink[_ngcontent-%COMP%] {\n  background: var(--pink-bg);\n  color: var(--pink);\n}\n.quick-action--pink[_ngcontent-%COMP%]:hover {\n  background: #FBCFE8;\n  text-decoration: none;\n}\n.quick-action--green[_ngcontent-%COMP%] {\n  background: var(--success-bg);\n  color: var(--success);\n}\n.quick-action--green[_ngcontent-%COMP%]:hover {\n  background: #A7F3D0;\n  text-decoration: none;\n}\n.section-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.header-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.btn-invite[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 9px 16px;\n  border-radius: var(--radius-md);\n  border: 1.5px solid #86EFAC;\n  background: #DCFCE7;\n  color: #15803D;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  text-decoration: none;\n  transition: all 0.15s;\n  white-space: nowrap;\n}\n.btn-invite[_ngcontent-%COMP%]:hover {\n  background: #25D366;\n  color: #fff;\n  border-color: #25D366;\n  text-decoration: none;\n}\n.completion-bar-wrap[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: var(--radius-lg);\n  padding: 14px 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.completion-label[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  font-size: 13px;\n  color: var(--text-secondary);\n}\n.completion-label[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n  color: var(--primary);\n}\n.completion-label[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: var(--text-primary);\n  font-weight: 700;\n}\n.completion-hint[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.completion-track[_ngcontent-%COMP%] {\n  height: 6px;\n  border-radius: 99px;\n  background: var(--border-light);\n  overflow: hidden;\n}\n.completion-fill[_ngcontent-%COMP%] {\n  height: 100%;\n  border-radius: 99px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary),\n      #A78BFA);\n  transition: width 0.8s ease;\n}\n.bday-row[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  overflow-x: auto;\n  padding-bottom: 4px;\n  scrollbar-width: none;\n}\n.bday-row[_ngcontent-%COMP%]::-webkit-scrollbar {\n  display: none;\n}\n.bday-card[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 14px;\n  background: var(--white);\n  border: 1px solid #FBE8F3;\n  border-radius: var(--radius-lg);\n  min-width: 200px;\n  flex-shrink: 0;\n  transition: box-shadow var(--transition);\n}\n.bday-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 4px 14px rgba(219, 39, 119, 0.12);\n}\n.bday-avatar[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.bday-avatar.male[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #3B82F6);\n}\n.bday-avatar.female[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #F472B6,\n      #EC4899);\n}\n.bday-avatar[_ngcontent-%COMP%]:not(.male):not(.female) {\n  background:\n    linear-gradient(\n      135deg,\n      #A78BFA,\n      var(--primary));\n}\n.bday-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.bday-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-date[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.bday-badge[_ngcontent-%COMP%] {\n  background: #FDF2F8;\n  color: #DB2777;\n  font-size: 11px;\n  font-weight: 700;\n  padding: 3px 8px;\n  border-radius: 7px;\n  white-space: nowrap;\n}\n.bday-badge.soon[_ngcontent-%COMP%] {\n  background: #FEF3C7;\n  color: #B45309;\n  animation: _ngcontent-%COMP%_pulse-bday 1.5s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n@keyframes _ngcontent-%COMP%_skeleton-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.skeleton-bar[_ngcontent-%COMP%], \n.skeleton-card-top[_ngcontent-%COMP%], \n.skeleton-card[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: _ngcontent-%COMP%_skeleton-shimmer 1.4s infinite;\n  border-radius: 8px;\n}\n.skeleton-section[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.skeleton-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.skeleton-bar[_ngcontent-%COMP%] {\n  height: 16px;\n}\n.skeleton-bar-title[_ngcontent-%COMP%] {\n  width: 160px;\n  height: 20px;\n}\n.skeleton-bar-sm[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 14px;\n}\n.skeleton-bar-xs[_ngcontent-%COMP%] {\n  width: 70px;\n  height: 12px;\n}\n.skeleton-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 16px;\n}\n.skeleton-card[_ngcontent-%COMP%] {\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: 1px solid var(--border-light);\n}\n.skeleton-card-top[_ngcontent-%COMP%] {\n  height: 90px;\n  border-radius: 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.skeleton-card-body[_ngcontent-%COMP%] {\n  padding: 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n@media (max-width: 1200px) {\n  .stats-grid[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media (max-width: 640px) {\n  .stats-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .stat-card[_ngcontent-%COMP%] {\n    padding: 14px;\n  }\n  .stat-value[_ngcontent-%COMP%] {\n    font-size: 22px;\n  }\n  .header-row[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .header-row[_ngcontent-%COMP%]   .btn-primary[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n  .quick-actions[_ngcontent-%COMP%] {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 8px;\n  }\n  .quick-action[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n}\n@media (max-width: 360px) {\n  .stats-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(HomeComponent, [{
@@ -1477,8 +1517,26 @@ Code : *${this.familleCode}*`;
   </div>
 </div>
 
+<!-- ===== SKELETON CHARGEMENT MEMBRES ===== -->
+<div *ngIf="loading" class="skeleton-section mb-32">
+  <div class="skeleton-header">
+    <div class="skeleton-bar skeleton-bar-title"></div>
+    <div class="skeleton-bar skeleton-bar-sm"></div>
+  </div>
+  <div class="skeleton-grid">
+    <div class="skeleton-card" *ngFor="let _ of [1,2,3,4]">
+      <div class="skeleton-card-top"></div>
+      <div class="skeleton-card-body">
+        <div class="skeleton-bar"></div>
+        <div class="skeleton-bar skeleton-bar-sm"></div>
+        <div class="skeleton-bar skeleton-bar-xs"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ===== DERNIERS MEMBRES ===== -->
-<div class="section-header mb-16">
+<div class="section-header mb-16" *ngIf="!loading">
   <h3>Membres r\xE9cents</h3>
   <div class="section-actions">
     <div class="view-toggle">
@@ -1590,7 +1648,7 @@ Code : *${this.familleCode}*`;
   <h3>Aucun membre encore</h3>
   <p>Commencez par ajouter des personnes \xE0 votre famille.</p>
 </div>
-`, styles: ["/* src/app/pages/home/home.component.scss */\n.header-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row h2 {\n  margin-bottom: 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row strong {\n  color: var(--text-primary);\n}\n.stats-grid {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n}\n.stat-card {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  border: 1px solid var(--border-light);\n  box-shadow: var(--shadow-sm);\n  padding: 20px;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  transition: box-shadow var(--transition), transform var(--transition);\n}\n.stat-card:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.stat-icon-wrap {\n  width: 48px;\n  height: 48px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.stat-icon-wrap .material-icons-round {\n  font-size: 24px !important;\n}\n.stat-card--blue .stat-icon-wrap {\n  background: var(--primary-bg);\n}\n.stat-card--blue .stat-icon-wrap .material-icons-round {\n  color: var(--primary);\n}\n.stat-card--indigo .stat-icon-wrap {\n  background: var(--accent-bg);\n}\n.stat-card--indigo .stat-icon-wrap .material-icons-round {\n  color: var(--accent);\n}\n.stat-card--pink .stat-icon-wrap {\n  background: var(--pink-bg);\n}\n.stat-card--pink .stat-icon-wrap .material-icons-round {\n  color: var(--pink);\n}\n.stat-card--green .stat-icon-wrap {\n  background: var(--success-bg);\n}\n.stat-card--green .stat-icon-wrap .material-icons-round {\n  color: var(--success);\n}\n.stat-body {\n  display: flex;\n  flex-direction: column;\n}\n.stat-value {\n  font-size: 26px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1;\n}\n.stat-label {\n  font-size: 12px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-weight: 500;\n}\n.quick-actions {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.quick-action {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 18px;\n  border-radius: var(--radius-full);\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  text-decoration: none;\n  transition: var(--transition);\n}\n.quick-action .material-icons-round {\n  font-size: 18px !important;\n}\n.quick-action--blue {\n  background: var(--primary-bg);\n  color: var(--primary-dark);\n}\n.quick-action--blue:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.quick-action--indigo {\n  background: var(--accent-bg);\n  color: var(--accent);\n}\n.quick-action--indigo:hover {\n  background: #DDD6FE;\n  text-decoration: none;\n}\n.quick-action--pink {\n  background: var(--pink-bg);\n  color: var(--pink);\n}\n.quick-action--pink:hover {\n  background: #FBCFE8;\n  text-decoration: none;\n}\n.quick-action--green {\n  background: var(--success-bg);\n  color: var(--success);\n}\n.quick-action--green:hover {\n  background: #A7F3D0;\n  text-decoration: none;\n}\n.section-actions {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.header-actions {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.btn-invite {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 9px 16px;\n  border-radius: var(--radius-md);\n  border: 1.5px solid #86EFAC;\n  background: #DCFCE7;\n  color: #15803D;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  text-decoration: none;\n  transition: all 0.15s;\n  white-space: nowrap;\n}\n.btn-invite:hover {\n  background: #25D366;\n  color: #fff;\n  border-color: #25D366;\n  text-decoration: none;\n}\n.completion-bar-wrap {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: var(--radius-lg);\n  padding: 14px 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.completion-label {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  font-size: 13px;\n  color: var(--text-secondary);\n}\n.completion-label .material-icons-round {\n  font-size: 16px !important;\n  color: var(--primary);\n}\n.completion-label strong {\n  color: var(--text-primary);\n  font-weight: 700;\n}\n.completion-hint {\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.completion-track {\n  height: 6px;\n  border-radius: 99px;\n  background: var(--border-light);\n  overflow: hidden;\n}\n.completion-fill {\n  height: 100%;\n  border-radius: 99px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary),\n      #A78BFA);\n  transition: width 0.8s ease;\n}\n.bday-row {\n  display: flex;\n  gap: 12px;\n  overflow-x: auto;\n  padding-bottom: 4px;\n  scrollbar-width: none;\n}\n.bday-row::-webkit-scrollbar {\n  display: none;\n}\n.bday-card {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 14px;\n  background: var(--white);\n  border: 1px solid #FBE8F3;\n  border-radius: var(--radius-lg);\n  min-width: 200px;\n  flex-shrink: 0;\n  transition: box-shadow var(--transition);\n}\n.bday-card:hover {\n  box-shadow: 0 4px 14px rgba(219, 39, 119, 0.12);\n}\n.bday-avatar {\n  width: 38px;\n  height: 38px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.bday-avatar.male {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #3B82F6);\n}\n.bday-avatar.female {\n  background:\n    linear-gradient(\n      135deg,\n      #F472B6,\n      #EC4899);\n}\n.bday-avatar:not(.male):not(.female) {\n  background:\n    linear-gradient(\n      135deg,\n      #A78BFA,\n      var(--primary));\n}\n.bday-info {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.bday-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-date {\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.bday-badge {\n  background: #FDF2F8;\n  color: #DB2777;\n  font-size: 11px;\n  font-weight: 700;\n  padding: 3px 8px;\n  border-radius: 7px;\n  white-space: nowrap;\n}\n.bday-badge.soon {\n  background: #FEF3C7;\n  color: #B45309;\n  animation: pulse-bday 1.5s infinite;\n}\n@keyframes pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n@media (max-width: 1200px) {\n  .stats-grid {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media (max-width: 640px) {\n  .stats-grid {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .stat-card {\n    padding: 14px;\n  }\n  .stat-value {\n    font-size: 22px;\n  }\n  .header-row {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .header-row .btn-primary {\n    width: 100%;\n    justify-content: center;\n  }\n  .quick-actions {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 8px;\n  }\n  .quick-action {\n    justify-content: center;\n  }\n}\n@media (max-width: 360px) {\n  .stats-grid {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */\n"] }]
+`, styles: ["/* src/app/pages/home/home.component.scss */\n.header-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row h2 {\n  margin-bottom: 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row strong {\n  color: var(--text-primary);\n}\n.stats-grid {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n}\n.stat-card {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  border: 1px solid var(--border-light);\n  box-shadow: var(--shadow-sm);\n  padding: 20px;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  transition: box-shadow var(--transition), transform var(--transition);\n}\n.stat-card:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.stat-icon-wrap {\n  width: 48px;\n  height: 48px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.stat-icon-wrap .material-icons-round {\n  font-size: 24px !important;\n}\n.stat-card--blue .stat-icon-wrap {\n  background: var(--primary-bg);\n}\n.stat-card--blue .stat-icon-wrap .material-icons-round {\n  color: var(--primary);\n}\n.stat-card--indigo .stat-icon-wrap {\n  background: var(--accent-bg);\n}\n.stat-card--indigo .stat-icon-wrap .material-icons-round {\n  color: var(--accent);\n}\n.stat-card--pink .stat-icon-wrap {\n  background: var(--pink-bg);\n}\n.stat-card--pink .stat-icon-wrap .material-icons-round {\n  color: var(--pink);\n}\n.stat-card--green .stat-icon-wrap {\n  background: var(--success-bg);\n}\n.stat-card--green .stat-icon-wrap .material-icons-round {\n  color: var(--success);\n}\n.stat-body {\n  display: flex;\n  flex-direction: column;\n}\n.stat-value {\n  font-size: 26px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1;\n}\n.stat-label {\n  font-size: 12px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-weight: 500;\n}\n.quick-actions {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.quick-action {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 18px;\n  border-radius: var(--radius-full);\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  text-decoration: none;\n  transition: var(--transition);\n}\n.quick-action .material-icons-round {\n  font-size: 18px !important;\n}\n.quick-action--blue {\n  background: var(--primary-bg);\n  color: var(--primary-dark);\n}\n.quick-action--blue:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.quick-action--indigo {\n  background: var(--accent-bg);\n  color: var(--accent);\n}\n.quick-action--indigo:hover {\n  background: #DDD6FE;\n  text-decoration: none;\n}\n.quick-action--pink {\n  background: var(--pink-bg);\n  color: var(--pink);\n}\n.quick-action--pink:hover {\n  background: #FBCFE8;\n  text-decoration: none;\n}\n.quick-action--green {\n  background: var(--success-bg);\n  color: var(--success);\n}\n.quick-action--green:hover {\n  background: #A7F3D0;\n  text-decoration: none;\n}\n.section-actions {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.header-actions {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.btn-invite {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 9px 16px;\n  border-radius: var(--radius-md);\n  border: 1.5px solid #86EFAC;\n  background: #DCFCE7;\n  color: #15803D;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  text-decoration: none;\n  transition: all 0.15s;\n  white-space: nowrap;\n}\n.btn-invite:hover {\n  background: #25D366;\n  color: #fff;\n  border-color: #25D366;\n  text-decoration: none;\n}\n.completion-bar-wrap {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: var(--radius-lg);\n  padding: 14px 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.completion-label {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  font-size: 13px;\n  color: var(--text-secondary);\n}\n.completion-label .material-icons-round {\n  font-size: 16px !important;\n  color: var(--primary);\n}\n.completion-label strong {\n  color: var(--text-primary);\n  font-weight: 700;\n}\n.completion-hint {\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.completion-track {\n  height: 6px;\n  border-radius: 99px;\n  background: var(--border-light);\n  overflow: hidden;\n}\n.completion-fill {\n  height: 100%;\n  border-radius: 99px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary),\n      #A78BFA);\n  transition: width 0.8s ease;\n}\n.bday-row {\n  display: flex;\n  gap: 12px;\n  overflow-x: auto;\n  padding-bottom: 4px;\n  scrollbar-width: none;\n}\n.bday-row::-webkit-scrollbar {\n  display: none;\n}\n.bday-card {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 14px;\n  background: var(--white);\n  border: 1px solid #FBE8F3;\n  border-radius: var(--radius-lg);\n  min-width: 200px;\n  flex-shrink: 0;\n  transition: box-shadow var(--transition);\n}\n.bday-card:hover {\n  box-shadow: 0 4px 14px rgba(219, 39, 119, 0.12);\n}\n.bday-avatar {\n  width: 38px;\n  height: 38px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.bday-avatar.male {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #3B82F6);\n}\n.bday-avatar.female {\n  background:\n    linear-gradient(\n      135deg,\n      #F472B6,\n      #EC4899);\n}\n.bday-avatar:not(.male):not(.female) {\n  background:\n    linear-gradient(\n      135deg,\n      #A78BFA,\n      var(--primary));\n}\n.bday-info {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.bday-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-date {\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.bday-badge {\n  background: #FDF2F8;\n  color: #DB2777;\n  font-size: 11px;\n  font-weight: 700;\n  padding: 3px 8px;\n  border-radius: 7px;\n  white-space: nowrap;\n}\n.bday-badge.soon {\n  background: #FEF3C7;\n  color: #B45309;\n  animation: pulse-bday 1.5s infinite;\n}\n@keyframes pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n@keyframes skeleton-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.skeleton-bar,\n.skeleton-card-top,\n.skeleton-card {\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: skeleton-shimmer 1.4s infinite;\n  border-radius: 8px;\n}\n.skeleton-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.skeleton-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.skeleton-bar {\n  height: 16px;\n}\n.skeleton-bar-title {\n  width: 160px;\n  height: 20px;\n}\n.skeleton-bar-sm {\n  width: 100px;\n  height: 14px;\n}\n.skeleton-bar-xs {\n  width: 70px;\n  height: 12px;\n}\n.skeleton-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 16px;\n}\n.skeleton-card {\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: 1px solid var(--border-light);\n}\n.skeleton-card-top {\n  height: 90px;\n  border-radius: 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.skeleton-card-body {\n  padding: 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n@media (max-width: 1200px) {\n  .stats-grid {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media (max-width: 640px) {\n  .stats-grid {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .stat-card {\n    padding: 14px;\n  }\n  .stat-value {\n    font-size: 22px;\n  }\n  .header-row {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .header-row .btn-primary {\n    width: 100%;\n    justify-content: center;\n  }\n  .quick-actions {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 8px;\n  }\n  .quick-action {\n    justify-content: center;\n  }\n}\n@media (max-width: 360px) {\n  .stats-grid {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */\n"] }]
   }], () => [{ type: ApiService }, { type: AuthService }, { type: Router }], null);
 })();
 (() => {
@@ -3576,11 +3634,12 @@ var PersonnesComponent = class _PersonnesComponent {
 var import_html2canvas = __toESM(require_html2canvas());
 var _c02 = ["treeVisual"];
 var _c12 = ["treeCanvas"];
-var _c2 = () => ["/app/personnes"];
-var _c3 = (a0) => ({ id: a0 });
+var _c22 = (a0) => ({ node: a0 });
+var _c3 = () => ["/app/personnes"];
+var _c4 = (a0) => ({ id: a0 });
 function TreeComponent_span_5_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 33);
+    \u0275\u0275elementStart(0, "span", 34);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3593,19 +3652,19 @@ function TreeComponent_span_5_Template(rf, ctx) {
 function TreeComponent_div_6_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 34)(1, "span", 9);
+    \u0275\u0275elementStart(0, "div", 35)(1, "span", 10);
     \u0275\u0275text(2, "account_tree");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 35);
+    \u0275\u0275elementStart(3, "span", 36);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "button", 36);
+    \u0275\u0275elementStart(5, "button", 37);
     \u0275\u0275listener("click", function TreeComponent_div_6_Template_button_click_5_listener() {
       \u0275\u0275restoreView(_r3);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.setRoot(null));
     });
-    \u0275\u0275elementStart(6, "span", 9);
+    \u0275\u0275elementStart(6, "span", 10);
     \u0275\u0275text(7, "close");
     \u0275\u0275elementEnd()()();
   }
@@ -3650,25 +3709,18 @@ function TreeComponent_div_37_button_10_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r1.getNomComplet(p_r6));
   }
 }
-function TreeComponent_div_37_div_11_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 46);
-    \u0275\u0275text(1, " Aucun r\xE9sultat ");
-    \u0275\u0275elementEnd();
-  }
-}
 function TreeComponent_div_37_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 37);
+    \u0275\u0275elementStart(0, "div", 38);
     \u0275\u0275listener("click", function TreeComponent_div_37_Template_div_click_0_listener($event) {
       \u0275\u0275restoreView(_r4);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275elementStart(1, "div", 38)(2, "span", 9);
+    \u0275\u0275elementStart(1, "div", 39)(2, "span", 10);
     \u0275\u0275text(3, "search");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "input", 39);
+    \u0275\u0275elementStart(4, "input", 40);
     \u0275\u0275twoWayListener("ngModelChange", function TreeComponent_div_37_Template_input_ngModelChange_4_listener($event) {
       \u0275\u0275restoreView(_r4);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -3676,18 +3728,18 @@ function TreeComponent_div_37_Template(rf, ctx) {
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(5, "div", 40)(6, "button", 41);
+    \u0275\u0275elementStart(5, "div", 41)(6, "button", 42);
     \u0275\u0275listener("click", function TreeComponent_div_37_Template_button_click_6_listener() {
       \u0275\u0275restoreView(_r4);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.setRoot(null));
     });
-    \u0275\u0275elementStart(7, "span", 9);
+    \u0275\u0275elementStart(7, "span", 10);
     \u0275\u0275text(8, "account_tree");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(9, " Arbre complet ");
+    \u0275\u0275text(9, "Arbre complet ");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(10, TreeComponent_div_37_button_10_Template, 5, 8, "button", 42)(11, TreeComponent_div_37_div_11_Template, 2, 0, "div", 43);
+    \u0275\u0275template(10, TreeComponent_div_37_button_10_Template, 5, 8, "button", 43);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -3698,14 +3750,12 @@ function TreeComponent_div_37_Template(rf, ctx) {
     \u0275\u0275classProp("active", !ctx_r1.rootPersonId);
     \u0275\u0275advance(4);
     \u0275\u0275property("ngForOf", ctx_r1.rootCandidates);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.rootCandidates.length === 0);
   }
 }
 function TreeComponent_div_38_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 47);
+    \u0275\u0275elementStart(0, "div", 46);
     \u0275\u0275listener("click", function TreeComponent_div_38_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r7);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -3716,7 +3766,7 @@ function TreeComponent_div_38_Template(rf, ctx) {
 }
 function TreeComponent_div_41_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 48)(1, "span", 49);
+    \u0275\u0275elementStart(0, "div", 47)(1, "span", 48);
     \u0275\u0275text(2, "sync");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3, " Chargement de l'arbre... ");
@@ -3725,7 +3775,7 @@ function TreeComponent_div_41_Template(rf, ctx) {
 }
 function TreeComponent_div_42_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 50)(1, "span", 9);
+    \u0275\u0275elementStart(0, "div", 49)(1, "span", 10);
     \u0275\u0275text(2, "error_outline");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -3739,7 +3789,7 @@ function TreeComponent_div_42_Template(rf, ctx) {
 }
 function TreeComponent_div_43_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 51)(1, "span", 9);
+    \u0275\u0275elementStart(0, "div", 50)(1, "span", 10);
     \u0275\u0275text(2, "account_tree");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "h3");
@@ -3750,383 +3800,395 @@ function TreeComponent_div_43_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
   }
 }
-function TreeComponent_div_44_ng_container_2_div_5_div_1_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_1_img_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "div", 62);
-  }
-  if (rf & 2) {
-    const group_r9 = \u0275\u0275nextContext().$implicit;
-    \u0275\u0275classProp("stem-single", group_r9.length === 1)("stem-multi", group_r9.length > 1);
-  }
-}
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_1_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275element(0, "div", 67);
-  }
-}
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_img_4_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r12 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 79);
-    \u0275\u0275listener("error", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_img_4_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r12);
-      const item_r11 = \u0275\u0275nextContext(2).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(item_r11.p1.id));
+    const _r11 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 65);
+    \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_ng_container_1_img_4_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r11);
+      const node_r10 = \u0275\u0275nextContext(2).node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r10.p1.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r11 = \u0275\u0275nextContext(2).$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(4);
-    \u0275\u0275property("src", ctx_r1.getPhotoUrl(item_r11.p1), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(item_r11.p1));
+    const node_r10 = \u0275\u0275nextContext(2).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r10.p1), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(node_r10.p1));
   }
 }
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_span_5_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_1_span_5_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r11 = \u0275\u0275nextContext(2).$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(4);
+    const node_r10 = \u0275\u0275nextContext(2).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r1.getInitiales(item_r11.p1));
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r10.p1));
   }
 }
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_10_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_1_div_10_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 80)(1, "span", 9);
+    \u0275\u0275elementStart(0, "div", 66)(1, "span", 10);
     \u0275\u0275text(2, "favorite");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(3, "span", 81);
+    \u0275\u0275element(3, "span", 67);
     \u0275\u0275elementEnd();
   }
 }
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_11_img_2_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_img_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r14 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 79);
-    \u0275\u0275listener("error", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_11_img_2_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r14);
-      const item_r11 = \u0275\u0275nextContext(3).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(item_r11.p2.id));
+    const _r13 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 65);
+    \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_img_2_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r13);
+      const node_r10 = \u0275\u0275nextContext(3).node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r10.p2.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r11 = \u0275\u0275nextContext(3).$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(4);
-    \u0275\u0275property("src", ctx_r1.getPhotoUrl(item_r11.p2), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(item_r11.p2));
+    const node_r10 = \u0275\u0275nextContext(3).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r10.p2), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(node_r10.p2));
   }
 }
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_11_span_3_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_span_3_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r11 = \u0275\u0275nextContext(3).$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(4);
+    const node_r10 = \u0275\u0275nextContext(3).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r1.getInitiales(item_r11.p2));
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r10.p2));
   }
 }
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_11_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_Template(rf, ctx) {
   if (rf & 1) {
-    const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 70);
-    \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_11_Template_div_mouseenter_0_listener($event) {
-      \u0275\u0275restoreView(_r13);
-      const item_r11 = \u0275\u0275nextContext(2).$implicit;
+    const _r12 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 57);
+    \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_Template_div_mouseenter_0_listener($event) {
+      \u0275\u0275restoreView(_r12);
+      const node_r10 = \u0275\u0275nextContext(2).node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.showTooltip(node_r10.p2, $event));
+    })("mousemove", function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_Template_div_mousemove_0_listener($event) {
+      \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.showTooltip(item_r11.p2, $event));
-    })("mousemove", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_11_Template_div_mousemove_0_listener($event) {
-      \u0275\u0275restoreView(_r13);
-      const ctx_r1 = \u0275\u0275nextContext(6);
       return \u0275\u0275resetView(ctx_r1.moveTooltip($event));
-    })("mouseleave", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_11_Template_div_mouseleave_0_listener() {
-      \u0275\u0275restoreView(_r13);
-      const ctx_r1 = \u0275\u0275nextContext(6);
-      return \u0275\u0275resetView(ctx_r1.hideTooltip());
-    })("click", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_11_Template_div_click_0_listener() {
-      \u0275\u0275restoreView(_r13);
-      const item_r11 = \u0275\u0275nextContext(2).$implicit;
+    })("mouseleave", function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_Template_div_mouseleave_0_listener() {
+      \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.openDetail(item_r11.p2));
+      return \u0275\u0275resetView(ctx_r1.hideTooltip());
+    })("click", function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_Template_div_click_0_listener() {
+      \u0275\u0275restoreView(_r12);
+      const node_r10 = \u0275\u0275nextContext(2).node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.openDetail(node_r10.p2));
     });
-    \u0275\u0275elementStart(1, "div", 71);
-    \u0275\u0275template(2, TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_11_img_2_Template, 1, 2, "img", 72)(3, TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_11_span_3_Template, 2, 1, "span", 18);
+    \u0275\u0275elementStart(1, "div", 58);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_1_div_11_img_2_Template, 1, 2, "img", 59)(3, TreeComponent_div_44_ng_template_2_ng_container_1_div_11_span_3_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 73);
+    \u0275\u0275elementStart(4, "span", 60);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 74);
+    \u0275\u0275elementStart(6, "span", 61);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const item_r11 = \u0275\u0275nextContext(2).$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(4);
-    \u0275\u0275classProp("male", item_r11.p2.sexe === "M")("female", item_r11.p2.sexe === "F")("active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === item_r11.p2.id);
+    const node_r10 = \u0275\u0275nextContext(2).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275classProp("male", node_r10.p2.sexe === "M")("female", node_r10.p2.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === node_r10.p2.id);
     \u0275\u0275advance();
-    \u0275\u0275classProp("male", item_r11.p2.sexe === "M")("female", item_r11.p2.sexe === "F");
+    \u0275\u0275classProp("male", node_r10.p2.sexe === "M")("female", node_r10.p2.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(item_r11.p2) && !ctx_r1.failedPhotos.has(item_r11.p2.id));
+    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r10.p2) && !ctx_r1.failedPhotos.has(node_r10.p2.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(item_r11.p2) || ctx_r1.failedPhotos.has(item_r11.p2.id));
+    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r10.p2) || ctx_r1.failedPhotos.has(node_r10.p2.id));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate2("", item_r11.p2.prenoms, " ", item_r11.p2.nomUsage ?? item_r11.p2.nomNaissance);
+    \u0275\u0275textInterpolate2("", node_r10.p2.prenoms, " ", node_r10.p2.nomUsage ?? node_r10.p2.nomNaissance);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.yearLabel(item_r11.p2));
+    \u0275\u0275textInterpolate(ctx_r1.yearLabel(node_r10.p2));
   }
 }
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_12_ng_container_4_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_1_div_12_ng_container_4_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
     \u0275\u0275text(1);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const item_r11 = \u0275\u0275nextContext(3).$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(4);
+    const node_r10 = \u0275\u0275nextContext(3).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" \xB7 ", ctx_r1.extractAnnee(item_r11.union.dateDebut));
+    \u0275\u0275textInterpolate1(" \xB7 ", ctx_r1.extractAnnee(node_r10.union.dateDebut));
   }
 }
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_12_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_1_div_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 82)(1, "span", 9);
+    \u0275\u0275elementStart(0, "div", 68)(1, "span", 10);
     \u0275\u0275text(2, "favorite_border");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
-    \u0275\u0275template(4, TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_12_ng_container_4_Template, 2, 1, "ng-container", 18);
+    \u0275\u0275template(4, TreeComponent_div_44_ng_template_2_ng_container_1_div_12_ng_container_4_Template, 2, 1, "ng-container", 19);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r11 = \u0275\u0275nextContext(2).$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(4);
+    const node_r10 = \u0275\u0275nextContext(2).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1(" ", ctx_r1.typeLabel(item_r11.union.type), " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r1.typeLabel(node_r10.union.type), " ");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r11.union.dateDebut);
+    \u0275\u0275property("ngIf", node_r10.union.dateDebut);
   }
 }
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_13_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "div", 83);
-  }
-}
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r10 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 68)(1, "div", 69)(2, "div", 70);
-    \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_Template_div_mouseenter_2_listener($event) {
-      \u0275\u0275restoreView(_r10);
-      const item_r11 = \u0275\u0275nextContext().$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.showTooltip(item_r11.p1, $event));
-    })("mousemove", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_Template_div_mousemove_2_listener($event) {
-      \u0275\u0275restoreView(_r10);
-      const ctx_r1 = \u0275\u0275nextContext(5);
+    const _r9 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275elementStart(1, "div", 56)(2, "div", 57);
+    \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_template_2_ng_container_1_Template_div_mouseenter_2_listener($event) {
+      \u0275\u0275restoreView(_r9);
+      const node_r10 = \u0275\u0275nextContext().node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.showTooltip(node_r10.p1, $event));
+    })("mousemove", function TreeComponent_div_44_ng_template_2_ng_container_1_Template_div_mousemove_2_listener($event) {
+      \u0275\u0275restoreView(_r9);
+      const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.moveTooltip($event));
-    })("mouseleave", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_Template_div_mouseleave_2_listener() {
-      \u0275\u0275restoreView(_r10);
-      const ctx_r1 = \u0275\u0275nextContext(5);
+    })("mouseleave", function TreeComponent_div_44_ng_template_2_ng_container_1_Template_div_mouseleave_2_listener() {
+      \u0275\u0275restoreView(_r9);
+      const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.hideTooltip());
-    })("click", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_Template_div_click_2_listener() {
-      \u0275\u0275restoreView(_r10);
-      const item_r11 = \u0275\u0275nextContext().$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.openDetail(item_r11.p1));
+    })("click", function TreeComponent_div_44_ng_template_2_ng_container_1_Template_div_click_2_listener() {
+      \u0275\u0275restoreView(_r9);
+      const node_r10 = \u0275\u0275nextContext().node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.openDetail(node_r10.p1));
     });
-    \u0275\u0275elementStart(3, "div", 71);
-    \u0275\u0275template(4, TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_img_4_Template, 1, 2, "img", 72)(5, TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_span_5_Template, 2, 1, "span", 18);
+    \u0275\u0275elementStart(3, "div", 58);
+    \u0275\u0275template(4, TreeComponent_div_44_ng_template_2_ng_container_1_img_4_Template, 1, 2, "img", 59)(5, TreeComponent_div_44_ng_template_2_ng_container_1_span_5_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 73);
+    \u0275\u0275elementStart(6, "span", 60);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "span", 74);
+    \u0275\u0275elementStart(8, "span", 61);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(10, TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_10_Template, 4, 0, "div", 75)(11, TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_11_Template, 8, 15, "div", 76);
+    \u0275\u0275template(10, TreeComponent_div_44_ng_template_2_ng_container_1_div_10_Template, 4, 0, "div", 62)(11, TreeComponent_div_44_ng_template_2_ng_container_1_div_11_Template, 8, 15, "div", 63);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(12, TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_12_Template, 5, 2, "div", 77)(13, TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_div_13_Template, 1, 0, "div", 78);
-    \u0275\u0275elementEnd();
+    \u0275\u0275template(12, TreeComponent_div_44_ng_template_2_ng_container_1_div_12_Template, 5, 2, "div", 64);
+    \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const item_r11 = \u0275\u0275nextContext().$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(4);
-    \u0275\u0275attribute("data-union", item_r11.union == null ? null : item_r11.union.id);
+    const node_r10 = \u0275\u0275nextContext().node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275classProp("root", item_r11.isRoot)("selected", ctx_r1.selectedPerson && (ctx_r1.selectedPerson.id === item_r11.p1.id || ctx_r1.selectedPerson.id === (item_r11.p2 == null ? null : item_r11.p2.id)));
+    \u0275\u0275classProp("ts-root", node_r10.isRoot)("ts-selected", ctx_r1.selectedPerson && (ctx_r1.selectedPerson.id === node_r10.p1.id || ctx_r1.selectedPerson.id === (node_r10.p2 == null ? null : node_r10.p2.id)));
     \u0275\u0275advance();
-    \u0275\u0275classProp("male", item_r11.p1.sexe === "M")("female", item_r11.p1.sexe === "F")("active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === item_r11.p1.id);
+    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === node_r10.p1.id);
     \u0275\u0275advance();
-    \u0275\u0275classProp("male", item_r11.p1.sexe === "M")("female", item_r11.p1.sexe === "F");
+    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(item_r11.p1) && !ctx_r1.failedPhotos.has(item_r11.p1.id));
+    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r10.p1) && !ctx_r1.failedPhotos.has(node_r10.p1.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(item_r11.p1) || ctx_r1.failedPhotos.has(item_r11.p1.id));
+    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r10.p1) || ctx_r1.failedPhotos.has(node_r10.p1.id));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate2("", item_r11.p1.prenoms, " ", item_r11.p1.nomUsage ?? item_r11.p1.nomNaissance);
+    \u0275\u0275textInterpolate2("", node_r10.p1.prenoms, " ", node_r10.p1.nomUsage ?? node_r10.p1.nomNaissance);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.yearLabel(item_r11.p1));
+    \u0275\u0275textInterpolate(ctx_r1.yearLabel(node_r10.p1));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r11.p2);
+    \u0275\u0275property("ngIf", node_r10.p2);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r11.p2);
+    \u0275\u0275property("ngIf", node_r10.p2);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r11.union == null ? null : item_r11.union.type);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r11.hasChildren);
+    \u0275\u0275property("ngIf", node_r10.union == null ? null : node_r10.union.type);
   }
 }
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_3_img_3_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_div_2_img_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r16 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 79);
-    \u0275\u0275listener("error", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_3_img_3_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r16);
-      const item_r11 = \u0275\u0275nextContext(2).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(item_r11.p1.id));
+    const _r15 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 65);
+    \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_div_2_img_2_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r15);
+      const node_r10 = \u0275\u0275nextContext(2).node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r10.p1.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r11 = \u0275\u0275nextContext(2).$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(4);
-    \u0275\u0275property("src", ctx_r1.getPhotoUrl(item_r11.p1), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(item_r11.p1));
+    const node_r10 = \u0275\u0275nextContext(2).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r10.p1), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(node_r10.p1));
   }
 }
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_3_span_4_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_div_2_span_3_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r11 = \u0275\u0275nextContext(2).$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(4);
+    const node_r10 = \u0275\u0275nextContext(2).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r1.getInitiales(item_r11.p1));
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r10.p1));
   }
 }
-function TreeComponent_div_44_ng_container_2_div_5_div_3_div_3_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r15 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 84)(1, "div", 85);
-    \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_3_Template_div_mouseenter_1_listener($event) {
-      \u0275\u0275restoreView(_r15);
-      const item_r11 = \u0275\u0275nextContext().$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.showTooltip(item_r11.p1, $event));
-    })("mousemove", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_3_Template_div_mousemove_1_listener($event) {
-      \u0275\u0275restoreView(_r15);
-      const ctx_r1 = \u0275\u0275nextContext(5);
+    const _r14 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 69);
+    \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_template_2_div_2_Template_div_mouseenter_0_listener($event) {
+      \u0275\u0275restoreView(_r14);
+      const node_r10 = \u0275\u0275nextContext().node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.showTooltip(node_r10.p1, $event));
+    })("mousemove", function TreeComponent_div_44_ng_template_2_div_2_Template_div_mousemove_0_listener($event) {
+      \u0275\u0275restoreView(_r14);
+      const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.moveTooltip($event));
-    })("mouseleave", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_3_Template_div_mouseleave_1_listener() {
-      \u0275\u0275restoreView(_r15);
-      const ctx_r1 = \u0275\u0275nextContext(5);
+    })("mouseleave", function TreeComponent_div_44_ng_template_2_div_2_Template_div_mouseleave_0_listener() {
+      \u0275\u0275restoreView(_r14);
+      const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.hideTooltip());
-    })("click", function TreeComponent_div_44_ng_container_2_div_5_div_3_div_3_Template_div_click_1_listener() {
-      \u0275\u0275restoreView(_r15);
-      const item_r11 = \u0275\u0275nextContext().$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.openDetail(item_r11.p1));
+    })("click", function TreeComponent_div_44_ng_template_2_div_2_Template_div_click_0_listener() {
+      \u0275\u0275restoreView(_r14);
+      const node_r10 = \u0275\u0275nextContext().node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.openDetail(node_r10.p1));
     });
-    \u0275\u0275elementStart(2, "div", 71);
-    \u0275\u0275template(3, TreeComponent_div_44_ng_container_2_div_5_div_3_div_3_img_3_Template, 1, 2, "img", 72)(4, TreeComponent_div_44_ng_container_2_div_5_div_3_div_3_span_4_Template, 2, 1, "span", 18);
+    \u0275\u0275elementStart(1, "div", 58);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_div_2_img_2_Template, 1, 2, "img", 59)(3, TreeComponent_div_44_ng_template_2_div_2_span_3_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "span", 73);
-    \u0275\u0275text(6);
+    \u0275\u0275elementStart(4, "span", 60);
+    \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "span", 74);
-    \u0275\u0275text(8);
-    \u0275\u0275elementEnd()()();
-  }
-  if (rf & 2) {
-    const item_r11 = \u0275\u0275nextContext().$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(4);
-    \u0275\u0275advance();
-    \u0275\u0275classProp("root", item_r11.isRoot)("male", item_r11.p1.sexe === "M")("female", item_r11.p1.sexe === "F")("active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === item_r11.p1.id);
-    \u0275\u0275advance();
-    \u0275\u0275classProp("male", item_r11.p1.sexe === "M")("female", item_r11.p1.sexe === "F");
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(item_r11.p1) && !ctx_r1.failedPhotos.has(item_r11.p1.id));
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(item_r11.p1) || ctx_r1.failedPhotos.has(item_r11.p1.id));
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate2("", item_r11.p1.prenoms, " ", item_r11.p1.nomUsage ?? item_r11.p1.nomNaissance);
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.yearLabel(item_r11.p1));
-  }
-}
-function TreeComponent_div_44_ng_container_2_div_5_div_3_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 63);
-    \u0275\u0275template(1, TreeComponent_div_44_ng_container_2_div_5_div_3_div_1_Template, 1, 0, "div", 64)(2, TreeComponent_div_44_ng_container_2_div_5_div_3_div_2_Template, 14, 24, "div", 65)(3, TreeComponent_div_44_ng_container_2_div_5_div_3_div_3_Template, 9, 17, "div", 66);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const item_r11 = ctx.$implicit;
-    const group_r9 = \u0275\u0275nextContext().$implicit;
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", group_r9.length > 1);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r11.type === "union");
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r11.type === "solo");
-  }
-}
-function TreeComponent_div_44_ng_container_2_div_5_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 58);
-    \u0275\u0275template(1, TreeComponent_div_44_ng_container_2_div_5_div_1_Template, 1, 4, "div", 59);
-    \u0275\u0275elementStart(2, "div", 60);
-    \u0275\u0275template(3, TreeComponent_div_44_ng_container_2_div_5_div_3_Template, 4, 3, "div", 61);
+    \u0275\u0275elementStart(6, "span", 61);
+    \u0275\u0275text(7);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const group_r9 = ctx.$implicit;
-    \u0275\u0275attribute("data-parent", group_r9[0].parentUnionId);
+    const node_r10 = \u0275\u0275nextContext().node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275classProp("ts-root", node_r10.isRoot)("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === node_r10.p1.id);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", group_r9[0].parentUnionId);
+    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275styleProp("--bar-l", group_r9[0].type === "union" ? "139px" : "55px")("--bar-r", group_r9[group_r9.length - 1].type === "union" ? "139px" : "55px");
-    \u0275\u0275classProp("multi", group_r9.length > 1);
+    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r10.p1) && !ctx_r1.failedPhotos.has(node_r10.p1.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", group_r9);
+    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r10.p1) || ctx_r1.failedPhotos.has(node_r10.p1.id));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate2("", node_r10.p1.prenoms, " ", node_r10.p1.nomUsage ?? node_r10.p1.nomNaissance);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r1.yearLabel(node_r10.p1));
   }
 }
-function TreeComponent_div_44_ng_container_2_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_3_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "div", 54)(2, "div", 55);
-    \u0275\u0275text(3);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "div", 56);
-    \u0275\u0275template(5, TreeComponent_div_44_ng_container_2_div_5_Template, 4, 9, "div", 57);
-    \u0275\u0275elementEnd()();
+    \u0275\u0275elementContainer(1, 72);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const gen_r17 = ctx.$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1("G\xE9n\xE9ration ", gen_r17.level);
+    const node_r10 = \u0275\u0275nextContext(2).node;
+    \u0275\u0275nextContext();
+    const nodeRef_r16 = \u0275\u0275reference(3);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngTemplateOutlet", nodeRef_r16)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c22, node_r10.children[0]));
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_3_div_3_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 77);
+    \u0275\u0275element(1, "div", 78);
+    \u0275\u0275elementContainer(2, 72);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const child_r17 = ctx.$implicit;
+    \u0275\u0275nextContext(4);
+    const nodeRef_r16 = \u0275\u0275reference(3);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngForOf", ctx_r1.getItemGroups(gen_r17));
+    \u0275\u0275property("ngTemplateOutlet", nodeRef_r16)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c22, child_r17));
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_3_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 73);
+    \u0275\u0275element(1, "div", 74);
+    \u0275\u0275elementStart(2, "div", 75);
+    \u0275\u0275template(3, TreeComponent_div_44_ng_template_2_ng_container_3_div_3_div_3_Template, 3, 4, "div", 76);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const node_r10 = \u0275\u0275nextContext(2).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275styleProp("margin-left", ctx_r1.barInset(node_r10.children[0]), "px")("margin-right", ctx_r1.barInset(node_r10.children[node_r10.children.length - 1]), "px");
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngForOf", node_r10.children);
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275element(1, "div", 70);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_3_ng_container_2_Template, 2, 4, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_ng_container_3_div_3_Template, 4, 5, "div", 71);
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const node_r10 = \u0275\u0275nextContext().node;
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngIf", node_r10.children.length === 1);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", node_r10.children.length > 1);
+  }
+}
+function TreeComponent_div_44_ng_template_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 54);
+    \u0275\u0275template(1, TreeComponent_div_44_ng_template_2_ng_container_1_Template, 13, 22, "ng-container", 19)(2, TreeComponent_div_44_ng_template_2_div_2_Template, 8, 17, "div", 55)(3, TreeComponent_div_44_ng_template_2_ng_container_3_Template, 4, 2, "ng-container", 19);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const node_r10 = ctx.node;
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", node_r10.type === "union");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", node_r10.type === "solo");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", node_r10.children.length > 0);
+  }
+}
+function TreeComponent_div_44_ng_container_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275elementContainer(1, 72);
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const root_r18 = ctx.$implicit;
+    \u0275\u0275nextContext();
+    const nodeRef_r16 = \u0275\u0275reference(3);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngTemplateOutlet", nodeRef_r16)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c22, root_r18));
   }
 }
 function TreeComponent_div_44_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 52, 1);
+    \u0275\u0275elementStart(0, "div", 51, 1);
     \u0275\u0275listener("pointerdown", function TreeComponent_div_44_Template_div_pointerdown_0_listener($event) {
       \u0275\u0275restoreView(_r8);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -4144,31 +4206,33 @@ function TreeComponent_div_44_Template(rf, ctx) {
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.endDrag($event));
     });
-    \u0275\u0275template(2, TreeComponent_div_44_ng_container_2_Template, 6, 2, "ng-container", 53);
-    \u0275\u0275elementEnd();
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_Template, 4, 3, "ng-template", null, 2, \u0275\u0275templateRefExtractor);
+    \u0275\u0275elementStart(4, "div", 52);
+    \u0275\u0275template(5, TreeComponent_div_44_ng_container_5_Template, 2, 4, "ng-container", 53);
+    \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275styleProp("transform", ctx_r1.treeTransform);
-    \u0275\u0275advance(2);
-    \u0275\u0275property("ngForOf", ctx_r1.generations);
+    \u0275\u0275advance(5);
+    \u0275\u0275property("ngForOf", ctx_r1.treeRoots);
   }
 }
 function TreeComponent_div_45_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 86)(1, "span", 9);
+    \u0275\u0275elementStart(0, "div", 79)(1, "span", 10);
     \u0275\u0275text(2, "info_outline");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(3, " Ctrl + molette pour zoomer \xB7 Glisser pour naviguer \xB7 Clic sur un membre pour sa fiche ");
+    \u0275\u0275text(3, " Ctrl + molette pour zoomer \xB7 Glisser pour naviguer \xB7 Clic pour la fiche ");
     \u0275\u0275elementEnd();
   }
 }
 function TreeComponent_div_46_img_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r18 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 99);
+    const _r19 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 92);
     \u0275\u0275listener("error", function TreeComponent_div_46_img_2_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r18);
+      \u0275\u0275restoreView(_r19);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onPhotoError(ctx_r1.hoveredPerson.id));
     });
@@ -4188,12 +4252,12 @@ function TreeComponent_div_46_span_3_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.getInitiales(ctx_r1.hoveredPerson), " ");
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(ctx_r1.hoveredPerson));
   }
 }
 function TreeComponent_div_46_span_7_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 100)(1, "span", 9);
+    \u0275\u0275elementStart(0, "span", 93)(1, "span", 10);
     \u0275\u0275text(2, "hourglass_bottom");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -4202,12 +4266,12 @@ function TreeComponent_div_46_span_7_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1(" ", ctx_r1.tooltipAge(ctx_r1.hoveredPerson), " ");
+    \u0275\u0275textInterpolate1("", ctx_r1.tooltipAge(ctx_r1.hoveredPerson), " ");
   }
 }
 function TreeComponent_div_46_span_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 101)(1, "span", 9);
+    \u0275\u0275elementStart(0, "span", 94)(1, "span", 10);
     \u0275\u0275text(2, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -4216,38 +4280,38 @@ function TreeComponent_div_46_span_8_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1(" ", ctx_r1.hoveredPerson.lieuNaissance, " ");
+    \u0275\u0275textInterpolate1("", ctx_r1.hoveredPerson.lieuNaissance, " ");
   }
 }
 function TreeComponent_div_46_span_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 102);
+    \u0275\u0275elementStart(0, "span", 95);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
 function TreeComponent_div_46_span_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 103);
+    \u0275\u0275elementStart(0, "span", 96);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
 }
 function TreeComponent_div_46_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 87)(1, "div", 88);
-    \u0275\u0275template(2, TreeComponent_div_46_img_2_Template, 1, 1, "img", 89)(3, TreeComponent_div_46_span_3_Template, 2, 1, "span", 18);
+    \u0275\u0275elementStart(0, "div", 80)(1, "div", 81);
+    \u0275\u0275template(2, TreeComponent_div_46_img_2_Template, 1, 1, "img", 82)(3, TreeComponent_div_46_span_3_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "div", 90)(5, "span", 91);
+    \u0275\u0275elementStart(4, "div", 83)(5, "span", 84);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(7, TreeComponent_div_46_span_7_Template, 4, 1, "span", 92)(8, TreeComponent_div_46_span_8_Template, 4, 1, "span", 93);
-    \u0275\u0275elementStart(9, "div", 94)(10, "span", 95);
+    \u0275\u0275template(7, TreeComponent_div_46_span_7_Template, 4, 1, "span", 85)(8, TreeComponent_div_46_span_8_Template, 4, 1, "span", 86);
+    \u0275\u0275elementStart(9, "div", 87)(10, "span", 88);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(12, TreeComponent_div_46_span_12_Template, 2, 0, "span", 96)(13, TreeComponent_div_46_span_13_Template, 2, 0, "span", 97);
+    \u0275\u0275template(12, TreeComponent_div_46_span_12_Template, 2, 0, "span", 89)(13, TreeComponent_div_46_span_13_Template, 2, 0, "span", 90);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "span", 98);
+    \u0275\u0275elementStart(14, "span", 91);
     \u0275\u0275text(15, "Clic pour la fiche compl\xE8te");
     \u0275\u0275elementEnd()()();
   }
@@ -4278,10 +4342,10 @@ function TreeComponent_div_46_Template(rf, ctx) {
 }
 function TreeComponent_div_47_Template(rf, ctx) {
   if (rf & 1) {
-    const _r19 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 104);
+    const _r20 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 97);
     \u0275\u0275listener("click", function TreeComponent_div_47_Template_div_click_0_listener() {
-      \u0275\u0275restoreView(_r19);
+      \u0275\u0275restoreView(_r20);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.closeDetail());
     });
@@ -4290,10 +4354,10 @@ function TreeComponent_div_47_Template(rf, ctx) {
 }
 function TreeComponent_div_55_img_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r21 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 117);
+    const _r22 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 110);
     \u0275\u0275listener("error", function TreeComponent_div_55_img_3_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r21);
+      \u0275\u0275restoreView(_r22);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onPhotoError(ctx_r1.selectedPerson.id));
     });
@@ -4313,19 +4377,19 @@ function TreeComponent_div_55_span_4_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.getInitiales(ctx_r1.selectedPerson), " ");
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(ctx_r1.selectedPerson));
   }
 }
 function TreeComponent_div_55_span_10_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 118);
+    \u0275\u0275elementStart(0, "span", 111);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
 function TreeComponent_div_55_span_11_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 119);
+    \u0275\u0275elementStart(0, "span", 112);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
@@ -4344,15 +4408,15 @@ function TreeComponent_div_55_div_13_span_8_Template(rf, ctx) {
 }
 function TreeComponent_div_55_div_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 120)(1, "span", 9);
+    \u0275\u0275elementStart(0, "div", 113)(1, "span", 10);
     \u0275\u0275text(2, "cake");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 121)(4, "span", 122);
+    \u0275\u0275elementStart(3, "div", 114)(4, "span", 115);
     \u0275\u0275text(5, "Naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 123);
+    \u0275\u0275elementStart(6, "span", 116);
     \u0275\u0275text(7);
-    \u0275\u0275template(8, TreeComponent_div_55_div_13_span_8_Template, 2, 1, "span", 18);
+    \u0275\u0275template(8, TreeComponent_div_55_div_13_span_8_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -4377,34 +4441,34 @@ function TreeComponent_div_55_div_14_span_8_Template(rf, ctx) {
 }
 function TreeComponent_div_55_div_14_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 120)(1, "span", 9);
+    \u0275\u0275elementStart(0, "div", 113)(1, "span", 10);
     \u0275\u0275text(2, "sentiment_very_dissatisfied");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 121)(4, "span", 122);
+    \u0275\u0275elementStart(3, "div", 114)(4, "span", 115);
     \u0275\u0275text(5, "D\xE9c\xE8s");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 123);
+    \u0275\u0275elementStart(6, "span", 116);
     \u0275\u0275text(7);
-    \u0275\u0275template(8, TreeComponent_div_55_div_14_span_8_Template, 2, 1, "span", 18);
+    \u0275\u0275template(8, TreeComponent_div_55_div_14_span_8_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(7);
-    \u0275\u0275textInterpolate1(" ", ctx_r1.selectedPerson.dateDeces ?? "\u2014", " ");
+    \u0275\u0275textInterpolate(ctx_r1.selectedPerson.dateDeces ?? "\u2014");
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r1.selectedPerson.lieuDeces);
   }
 }
 function TreeComponent_div_55_div_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 120)(1, "span", 9);
+    \u0275\u0275elementStart(0, "div", 113)(1, "span", 10);
     \u0275\u0275text(2, "hourglass_bottom");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 121)(4, "span", 122);
+    \u0275\u0275elementStart(3, "div", 114)(4, "span", 115);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 123);
+    \u0275\u0275elementStart(6, "span", 116);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()()();
   }
@@ -4416,51 +4480,33 @@ function TreeComponent_div_55_div_15_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r1.getAgeLabel(ctx_r1.selectedPerson));
   }
 }
-function TreeComponent_div_55_div_16_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 120)(1, "span", 9);
-    \u0275\u0275text(2, "place");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 121)(4, "span", 122);
-    \u0275\u0275text(5, "Lieu de naissance");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 123);
-    \u0275\u0275text(7);
-    \u0275\u0275elementEnd()()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(7);
-    \u0275\u0275textInterpolate(ctx_r1.selectedPerson.lieuNaissance);
-  }
-}
 function TreeComponent_div_55_Template(rf, ctx) {
   if (rf & 1) {
-    const _r20 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 105)(1, "div", 106)(2, "div", 107);
-    \u0275\u0275template(3, TreeComponent_div_55_img_3_Template, 1, 1, "img", 108)(4, TreeComponent_div_55_span_4_Template, 2, 1, "span", 18);
+    const _r21 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 98)(1, "div", 99)(2, "div", 100);
+    \u0275\u0275template(3, TreeComponent_div_55_img_3_Template, 1, 1, "img", 101)(4, TreeComponent_div_55_span_4_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(5, "h2", 109);
+    \u0275\u0275elementStart(5, "h2", 102);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "div", 110)(8, "span", 111);
+    \u0275\u0275elementStart(7, "div", 103)(8, "span", 104);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(10, TreeComponent_div_55_span_10_Template, 2, 0, "span", 112)(11, TreeComponent_div_55_span_11_Template, 2, 0, "span", 113);
+    \u0275\u0275template(10, TreeComponent_div_55_span_10_Template, 2, 0, "span", 105)(11, TreeComponent_div_55_span_11_Template, 2, 0, "span", 106);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "div", 114);
-    \u0275\u0275template(13, TreeComponent_div_55_div_13_Template, 9, 2, "div", 115)(14, TreeComponent_div_55_div_14_Template, 9, 2, "div", 115)(15, TreeComponent_div_55_div_15_Template, 8, 2, "div", 115)(16, TreeComponent_div_55_div_16_Template, 8, 1, "div", 115);
+    \u0275\u0275elementStart(12, "div", 107);
+    \u0275\u0275template(13, TreeComponent_div_55_div_13_Template, 9, 2, "div", 108)(14, TreeComponent_div_55_div_14_Template, 9, 2, "div", 108)(15, TreeComponent_div_55_div_15_Template, 8, 2, "div", 108);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(17, "a", 116);
-    \u0275\u0275listener("click", function TreeComponent_div_55_Template_a_click_17_listener() {
-      \u0275\u0275restoreView(_r20);
+    \u0275\u0275elementStart(16, "a", 109);
+    \u0275\u0275listener("click", function TreeComponent_div_55_Template_a_click_16_listener() {
+      \u0275\u0275restoreView(_r21);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.closeDetail());
     });
-    \u0275\u0275elementStart(18, "span", 9);
-    \u0275\u0275text(19, "person");
+    \u0275\u0275elementStart(17, "span", 10);
+    \u0275\u0275text(18, "person");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(20, " Voir le profil complet ");
+    \u0275\u0275text(19, "Voir le profil complet ");
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -4488,16 +4534,14 @@ function TreeComponent_div_55_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r1.getAgeLabel(ctx_r1.selectedPerson));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.selectedPerson.lieuNaissance);
-    \u0275\u0275advance();
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(20, _c2))("queryParams", \u0275\u0275pureFunction1(21, _c3, ctx_r1.selectedPerson.id));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(19, _c3))("queryParams", \u0275\u0275pureFunction1(20, _c4, ctx_r1.selectedPerson.id));
   }
 }
 var TreeComponent = class _TreeComponent {
   api;
   loading = true;
   erreur = null;
-  generations = [];
+  treeRoots = [];
   treeVisual;
   treeCanvas;
   getInitiales = getInitiales;
@@ -4506,12 +4550,23 @@ var TreeComponent = class _TreeComponent {
   getNomComplet = getNomComplet;
   getAgeLabel = getAgeLabel;
   getPhotoUrl = getPhotoUrl;
-  totalPersonnes = 0;
-  // ── Données brutes (pour le filtrage de racine) ──────────────────────────
+  // ── Données brutes ───────────────────────────────────────────────────────
   allPersonnes = [];
   allUnions = [];
+  // ── Stats ────────────────────────────────────────────────────────────────
+  get totalPersonnes() {
+    return this.allPersonnes.length;
+  }
+  get totalGenerations() {
+    return this.treeDepth(this.treeRoots);
+  }
+  treeDepth(nodes) {
+    if (!nodes.length)
+      return 0;
+    return 1 + Math.max(...nodes.map((n) => this.treeDepth(n.children)));
+  }
   // ── Sélection de racine ──────────────────────────────────────────────────
-  rootPersonId = null;
+  rootPersonId = "";
   rootPersonName = "";
   showRootPicker = false;
   rootSearchQuery = "";
@@ -4520,6 +4575,7 @@ var TreeComponent = class _TreeComponent {
     const list = q ? this.allPersonnes.filter((p) => getNomComplet(p).toLowerCase().includes(q)) : this.allPersonnes;
     return list.slice(0, 30);
   }
+  // ── Canvas transform ─────────────────────────────────────────────────────
   scale = 1;
   minScale = 0.3;
   maxScale = 2.5;
@@ -4531,21 +4587,22 @@ var TreeComponent = class _TreeComponent {
   startTranslate = { x: 0, y: 0 };
   captureTarget = null;
   captureId = 0;
-  // Panneau détail
+  // ── Panneau détail ───────────────────────────────────────────────────────
   selectedPerson = null;
   showDetail = false;
   failedPhotos = /* @__PURE__ */ new Set();
+  // ── Mode kiosque ─────────────────────────────────────────────────────────
   isKiosk = false;
-  // Tooltip
+  exporting = false;
+  // ── Tooltip ──────────────────────────────────────────────────────────────
   hoveredPerson = null;
   tooltipX = 0;
   tooltipY = 0;
   tooltipHideTimer = null;
-  // Écoute globale : ferme la tooltip si le pointeur quitte tout nœud
   onDocPointerOver = (e) => {
     if (!this.hoveredPerson)
       return;
-    if (!e.target.closest(".tree-node")) {
+    if (!e.target.closest(".ts-person, .ts-solo-card")) {
       this.clearTooltip();
     }
   };
@@ -4554,17 +4611,12 @@ var TreeComponent = class _TreeComponent {
   }
   ngOnInit() {
     document.addEventListener("pointerover", this.onDocPointerOver, { passive: true });
-    forkJoin({
-      personnes: this.api.getPersonnes(),
-      unions: this.api.getUnions()
-    }).subscribe({
+    forkJoin({ personnes: this.api.getPersonnes(), unions: this.api.getUnions() }).subscribe({
       next: ({ personnes, unions }) => {
         this.allPersonnes = personnes;
         this.allUnions = unions;
-        this.totalPersonnes = personnes.length;
-        this.generations = this.buildGenerations(personnes, unions);
+        this.treeRoots = this.buildTree(personnes, unions);
         this.loading = false;
-        setTimeout(() => this.alignGroups(), 0);
       },
       error: () => {
         this.erreur = "Impossible de charger l'arbre.";
@@ -4572,142 +4624,78 @@ var TreeComponent = class _TreeComponent {
       }
     });
   }
-  // ── Constantes de layout ──────────────────────────────────────────────────
-  TREE_COUPLE_W = 310;
-  // largeur carte couple (px)
-  TREE_SOLO_W = 140;
-  // largeur carte solo   (px)
-  TREE_GAP = 40;
-  // espace entre sous-arbres (px)
-  TREE_PADDING = 80;
-  // padding gauche/droite (px)
-  /**
-   * Layout arbre — calcul bas→haut, positionnement par largeurs CSS.
-   *
-   * Principe :
-   *   • chaque item reçoit une largeur = max(sa carte, somme enfants + gaps)
-   *   • chaque gen-group reçoit cette largeur → l'item est centré dedans
-   *   • les parents sans enfants reçoivent un spacer invisible de même largeur
-   *   • le gen-row utilise justify-content:center → tout s'aligne naturellement
-   *   • AUCUN left, aucune position:absolute, aucune mesure DOM
-   */
-  alignGroups() {
-    const visual = this.treeVisual?.nativeElement;
-    if (!visual || !this.generations.length)
-      return;
-    const ikey = (item) => item.union?.id ?? item.p1.id;
-    const childrenOf = /* @__PURE__ */ new Map();
-    for (let gi = 1; gi < this.generations.length; gi++) {
-      for (const item of this.generations[gi].items) {
-        if (!item.parentUnionId)
-          continue;
-        if (!childrenOf.has(item.parentUnionId))
-          childrenOf.set(item.parentUnionId, []);
-        childrenOf.get(item.parentUnionId).push(item);
-      }
-    }
-    const subtreeW = /* @__PURE__ */ new Map();
-    for (let gi = this.generations.length - 1; gi >= 0; gi--) {
-      for (const item of this.generations[gi].items) {
-        const key = ikey(item);
-        const nodeW = item.type === "union" ? this.TREE_COUPLE_W : this.TREE_SOLO_W;
-        const kids = item.union?.id ? childrenOf.get(item.union.id) ?? [] : [];
-        if (!kids.length) {
-          subtreeW.set(key, nodeW);
-        } else {
-          const kidsW = kids.reduce((s, c, i) => s + (subtreeW.get(ikey(c)) ?? this.TREE_SOLO_W) + (i ? this.TREE_GAP : 0), 0);
-          subtreeW.set(key, Math.max(nodeW, kidsW));
-        }
-      }
-    }
-    const unionSW = /* @__PURE__ */ new Map();
-    for (const gen of this.generations) {
-      for (const item of gen.items) {
-        if (item.union?.id)
-          unionSW.set(item.union.id, subtreeW.get(ikey(item)) ?? this.TREE_SOLO_W);
-      }
-    }
-    const gen0items = this.generations[0].items;
-    const totalTreeW = gen0items.reduce((s, c, i) => s + (subtreeW.get(ikey(c)) ?? this.TREE_SOLO_W) + (i ? this.TREE_GAP : 0), 0);
-    const canvasW = totalTreeW + 2 * this.TREE_PADDING;
-    visual.querySelectorAll(".tree-spacer").forEach((s) => s.remove());
-    visual.querySelectorAll(".gen-group, .gen-row, .group-child-wrap, .group-items").forEach((el) => {
-      el.style.cssText = "";
-    });
-    visual.style.minWidth = canvasW + "px";
-    const rows = Array.from(visual.querySelectorAll(".gen-row"));
-    for (let gi = 0; gi < rows.length; gi++) {
-      const row = rows[gi];
-      const gen = this.generations[gi];
-      if (!gen)
-        continue;
-      const groups = Array.from(row.querySelectorAll(":scope > .gen-group"));
-      if (!groups.length)
-        continue;
-      const pidToGroup = /* @__PURE__ */ new Map();
-      groups.forEach((g) => pidToGroup.set(g.getAttribute("data-parent"), g));
-      const slots = gi === 0 ? gen0items.map((item) => ({ unionId: item.union?.id ?? null, sw: subtreeW.get(ikey(item)) ?? this.TREE_SOLO_W })) : this.generations[gi - 1].items.map((item) => ({
-        unionId: item.union?.id ?? null,
-        sw: item.union?.id ? unionSW.get(item.union.id) ?? this.TREE_SOLO_W : this.TREE_SOLO_W
-      }));
-      slots.forEach((slot, orderIdx) => {
-        const group = slot.unionId ? pidToGroup.get(slot.unionId) : null;
-        if (group) {
-          group.style.width = slot.sw + "px";
-          group.style.flexShrink = "0";
-          group.style.order = String(orderIdx);
-          const items = gen.items.filter((item) => slot.unionId ? item.parentUnionId === slot.unionId : !item.parentUnionId);
-          const gItemsEl = group.querySelector(".group-items");
-          if (gItemsEl && items.length) {
-            gItemsEl.style.gap = this.TREE_GAP + "px";
-            gItemsEl.style.setProperty("--bar-l", (subtreeW.get(ikey(items[0])) ?? this.TREE_SOLO_W) / 2 + "px");
-            gItemsEl.style.setProperty("--bar-r", (subtreeW.get(ikey(items[items.length - 1])) ?? this.TREE_SOLO_W) / 2 + "px");
-          }
-          const wraps = Array.from(group.querySelectorAll(":scope .group-items > .group-child-wrap"));
-          wraps.forEach((wrap, i) => {
-            if (i >= items.length)
-              return;
-            wrap.style.width = (subtreeW.get(ikey(items[i])) ?? this.TREE_SOLO_W) + "px";
-            wrap.style.flexShrink = "0";
-          });
-        } else {
-          const sp = document.createElement("div");
-          sp.className = "tree-spacer";
-          sp.style.width = slot.sw + "px";
-          sp.style.flexShrink = "0";
-          sp.style.order = String(orderIdx);
-          row.appendChild(sp);
-        }
-      });
-      row.style.display = "flex";
-      row.style.flexWrap = "nowrap";
-      row.style.justifyContent = "center";
-      row.style.alignItems = "flex-start";
-      row.style.gap = this.TREE_GAP + "px";
-      row.style.width = canvasW + "px";
-    }
-  }
   ngOnDestroy() {
     document.removeEventListener("pointerover", this.onDocPointerOver);
     clearTimeout(this.tooltipHideTimer);
   }
-  // ── Gestion de la racine ─────────────────────────────────────────────────
+  // ══════════════════════════════════════════════════════════════════════════
+  // Construction récursive de l'arbre
+  // ══════════════════════════════════════════════════════════════════════════
+  buildTree(personnes, unions) {
+    const childIds = new Set(unions.flatMap((u) => u.filiations.map((f) => f.enfantId)));
+    const placedPersons = /* @__PURE__ */ new Set();
+    const placedUnions = /* @__PURE__ */ new Set();
+    const buildNode = (pid) => {
+      if (placedPersons.has(pid))
+        return null;
+      const person = personnes.find((p) => p.id === pid);
+      if (!person)
+        return null;
+      placedPersons.add(pid);
+      const myUnion = unions.find((u) => !placedUnions.has(u.id) && u.participants.some((pt) => pt.personneId === pid));
+      if (!myUnion) {
+        return { type: "solo", p1: person, isRoot: !childIds.has(pid), children: [] };
+      }
+      placedUnions.add(myUnion.id);
+      const partnerPart = myUnion.participants.filter((pt) => pt.personneId !== pid).sort((a, b) => (a.ordre ?? 1) - (b.ordre ?? 1))[0];
+      let partner;
+      if (partnerPart && !placedPersons.has(partnerPart.personneId)) {
+        partner = personnes.find((p) => p.id === partnerPart.personneId);
+        if (partner)
+          placedPersons.add(partner.id);
+      }
+      const children = myUnion.filiations.map((f) => buildNode(f.enfantId)).filter((n) => n !== null);
+      return {
+        type: "union",
+        p1: person,
+        p2: partner,
+        union: myUnion,
+        isRoot: !childIds.has(pid),
+        children
+      };
+    };
+    const rootCandidates = personnes.filter((p) => {
+      if (childIds.has(p.id))
+        return false;
+      const hasChildPartner = unions.some((u) => u.participants.some((pt) => pt.personneId === p.id) && u.participants.some((pt) => pt.personneId !== p.id && childIds.has(pt.personneId)));
+      return !hasChildPartner;
+    });
+    const roots = [];
+    for (const p of rootCandidates) {
+      if (placedPersons.has(p.id))
+        continue;
+      const node = buildNode(p.id);
+      if (node)
+        roots.push(node);
+    }
+    return roots;
+  }
+  // ══════════════════════════════════════════════════════════════════════════
+  // Sélection de racine
+  // ══════════════════════════════════════════════════════════════════════════
   setRoot(p) {
-    this.rootPersonId = p?.id ?? null;
+    this.rootPersonId = p?.id ?? "";
     this.rootPersonName = p ? getNomComplet(p) : "";
     this.showRootPicker = false;
     this.rootSearchQuery = "";
     this.resetView();
     if (!p) {
-      this.generations = this.buildGenerations(this.allPersonnes, this.allUnions);
+      this.treeRoots = this.buildTree(this.allPersonnes, this.allUnions);
     } else {
       const sub = this.extractSubtree(p.id);
-      this.generations = this.buildGenerations(sub.personnes, sub.unions);
+      this.treeRoots = this.buildTree(sub.personnes, sub.unions);
     }
-    this.totalPersonnes = this.allPersonnes.length;
-    setTimeout(() => this.alignGroups(), 0);
   }
-  /** Extrait le sous-arbre DESCENDANT de la personne sélectionnée. */
   extractSubtree(personId) {
     const inclPersonIds = /* @__PURE__ */ new Set();
     const inclUnionIds = /* @__PURE__ */ new Set();
@@ -4735,32 +4723,38 @@ var TreeComponent = class _TreeComponent {
       unions: this.allUnions.filter((u) => inclUnionIds.has(u.id))
     };
   }
-  // ── Utilitaires ──────────────────────────────────────────────────────────
-  get totalGenerations() {
-    return this.generations.length;
-  }
-  /** Groupe les items d'une génération par parentUnionId (ordre préservé). */
-  getItemGroups(gen) {
-    const groups = [];
-    const parentMap = /* @__PURE__ */ new Map();
-    for (const item of gen.items) {
-      if (item.parentUnionId) {
-        if (!parentMap.has(item.parentUnionId)) {
-          const g = [];
-          parentMap.set(item.parentUnionId, g);
-          groups.push(g);
-        }
-        parentMap.get(item.parentUnionId).push(item);
-      } else {
-        groups.push([item]);
-      }
-    }
-    return groups;
-  }
+  // ══════════════════════════════════════════════════════════════════════════
+  // Helpers template
+  // ══════════════════════════════════════════════════════════════════════════
   get treeTransform() {
     return `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
   }
-  // ── Détail personne ───────────────────────────────────
+  typeLabel(type) {
+    const map = {
+      mariage: "Mariage",
+      pacs: "PACS",
+      union_libre: "Union libre",
+      fiancailles: "Fian\xE7ailles",
+      adoption: "Adoption",
+      polygamie: "Polygamie"
+    };
+    return map[type ?? ""] ?? type ?? "";
+  }
+  yearLabel(p) {
+    const n = extractAnnee(p.dateNaissance);
+    if (!n)
+      return "";
+    if (!estVivant(p))
+      return `${n} \u2013 ${extractAnnee(p.dateDeces) ?? "?"}`;
+    return `${n} \u2013 pr\xE9sent`;
+  }
+  /** Demi-largeur approximative d'un nœud pour le calcul de la barre horizontale. */
+  barInset(node) {
+    return node.type === "union" ? 155 : 70;
+  }
+  // ══════════════════════════════════════════════════════════════════════════
+  // Détail & tooltip
+  // ══════════════════════════════════════════════════════════════════════════
   openDetail(p) {
     if (this.dragMoved)
       return;
@@ -4774,7 +4768,6 @@ var TreeComponent = class _TreeComponent {
   onPhotoError(id) {
     this.failedPhotos.add(id);
   }
-  // ── Tooltip ───────────────────────────────────────────
   showTooltip(p, event) {
     if (this.isDragging || this.dragMoved)
       return;
@@ -4797,10 +4790,8 @@ var TreeComponent = class _TreeComponent {
     this.hoveredPerson = null;
   }
   repositionTooltip(event) {
-    const offset = 14;
     const tw = 240;
-    const left = event.clientX + offset + tw > window.innerWidth ? event.clientX - tw - offset : event.clientX + offset;
-    this.tooltipX = left;
+    this.tooltipX = event.clientX + 14 + tw > window.innerWidth ? event.clientX - tw - 14 : event.clientX + 14;
     this.tooltipY = event.clientY - 10;
   }
   tooltipAge(p) {
@@ -4809,12 +4800,13 @@ var TreeComponent = class _TreeComponent {
       return "";
     if (!estVivant(p)) {
       const d = extractAnnee(p.dateDeces);
-      const age = d ? d - n : null;
-      return `${n} \u2013 ${d ?? "?"}${age ? "  (" + age + " ans)" : ""}`;
+      return `${n} \u2013 ${d ?? "?"}${d ? "  (" + (d - n) + " ans)" : ""}`;
     }
     return `${n} \u2013 pr\xE9sent  (${(/* @__PURE__ */ new Date()).getFullYear() - n} ans)`;
   }
-  // ── Zoom ─────────────────────────────────────────────
+  // ══════════════════════════════════════════════════════════════════════════
+  // Zoom / Drag / Kiosque / Export
+  // ══════════════════════════════════════════════════════════════════════════
   zoomIn() {
     this.zoomAtCenter(this.scale + 0.15);
   }
@@ -4825,7 +4817,6 @@ var TreeComponent = class _TreeComponent {
     this.scale = 1;
     this.translateX = 0;
     this.translateY = 0;
-    setTimeout(() => this.alignGroups(), 0);
   }
   zoomAtCenter(newScale) {
     const canvas = this.treeCanvas?.nativeElement;
@@ -4837,74 +4828,15 @@ var TreeComponent = class _TreeComponent {
     this.applyZoom(newScale, rect.width / 2, rect.height / 2);
   }
   applyZoom(newScale, originX, originY) {
-    const oldScale = this.scale;
     const clamped = Math.max(this.minScale, Math.min(this.maxScale, Number(newScale.toFixed(2))));
-    const ratio = clamped / oldScale;
+    const ratio = clamped / this.scale;
     this.translateX = originX - ratio * (originX - this.translateX);
     this.translateY = originY - ratio * (originY - this.translateY);
     this.scale = clamped;
-    setTimeout(() => this.alignGroups(), 0);
   }
   updateScale(newScale) {
     this.scale = Math.max(this.minScale, Math.min(this.maxScale, Number(newScale.toFixed(2))));
   }
-  // ── Kiosque ──────────────────────────────────────────
-  toggleKiosk() {
-    if (!this.isKiosk) {
-      document.documentElement.requestFullscreen?.().catch(() => {
-      });
-      this.isKiosk = true;
-    } else {
-      document.exitFullscreen?.().catch(() => {
-      });
-      this.isKiosk = false;
-    }
-  }
-  // ── Export ───────────────────────────────────────────
-  exportTree() {
-    return __async(this, null, function* () {
-      if (!this.treeVisual)
-        return;
-      const canvas = yield (0, import_html2canvas.default)(this.treeVisual.nativeElement, {
-        backgroundColor: "#F0F4FF",
-        scale: 2,
-        useCORS: true,
-        logging: false
-      });
-      canvas.toBlob((blob) => {
-        if (!blob)
-          return;
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "arbre-familial.png";
-        link.click();
-        URL.revokeObjectURL(url);
-      }, "image/png");
-    });
-  }
-  exportTreePdf() {
-    return __async(this, null, function* () {
-      if (!this.treeVisual)
-        return;
-      const canvas = yield (0, import_html2canvas.default)(this.treeVisual.nativeElement, {
-        backgroundColor: "#F0F4FF",
-        scale: 2,
-        useCORS: true,
-        logging: false
-      });
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new E({ orientation: "landscape", unit: "mm", format: "a4" });
-      const pw = pdf.internal.pageSize.getWidth();
-      const ph = pdf.internal.pageSize.getHeight();
-      const margin = 10;
-      const pdfW = pw - margin * 2;
-      const pdfH = Math.min(pdf.getImageProperties(imgData).height * pdfW / pdf.getImageProperties(imgData).width, ph - margin * 2);
-      pdf.addImage(imgData, "PNG", margin, margin, pdfW, pdfH);
-      pdf.save("arbre-familial.pdf");
-    });
-  }
-  // ── Interactions canvas ──────────────────────────────
   onWheel(event) {
     if (!event.ctrlKey)
       return;
@@ -4958,122 +4890,61 @@ var TreeComponent = class _TreeComponent {
       this.dragMoved = false;
     }, 50);
   }
-  typeLabel(type) {
-    const map = {
-      mariage: "Mariage",
-      pacs: "PACS",
-      union_libre: "Union libre",
-      fiancailles: "Fian\xE7ailles",
-      adoption: "Adoption",
-      polygamie: "Polygamie"
-    };
-    return map[type ?? ""] ?? type ?? "";
+  toggleKiosk() {
+    if (!this.isKiosk) {
+      document.documentElement.requestFullscreen?.().catch(() => {
+      });
+      this.isKiosk = true;
+    } else {
+      document.exitFullscreen?.().catch(() => {
+      });
+      this.isKiosk = false;
+    }
   }
-  yearLabel(p) {
-    const n = extractAnnee(p.dateNaissance);
-    if (!n)
-      return "";
-    if (!estVivant(p))
-      return `${n} \u2013 ${extractAnnee(p.dateDeces) ?? "?"}`;
-    return `${n} \u2013 pr\xE9sent`;
-  }
-  // ── Construction par génération ──────────────────────
-  buildGenerations(personnes, unions) {
-    const genMap = /* @__PURE__ */ new Map();
-    const parentUnionMap = /* @__PURE__ */ new Map();
-    for (const u of unions) {
-      for (const f of u.filiations)
-        parentUnionMap.set(f.enfantId, u.id);
-    }
-    const isChild = new Set(unions.flatMap((u) => u.filiations.map((f) => f.enfantId)));
-    const personUnions = /* @__PURE__ */ new Map();
-    for (const u of unions) {
-      for (const p of u.participants) {
-        const list = personUnions.get(p.personneId) ?? [];
-        list.push(u);
-        personUnions.set(p.personneId, list);
-      }
-    }
-    const roots = personnes.filter((p) => !isChild.has(p.id));
-    const queue = roots.map((p) => ({ id: p.id, gen: 0 }));
-    while (queue.length > 0) {
-      const { id, gen } = queue.shift();
-      const prev = genMap.get(id) ?? -1;
-      if (gen <= prev)
-        continue;
-      genMap.set(id, gen);
-      for (const u of personUnions.get(id) ?? []) {
-        for (const p of u.participants) {
-          if (p.personneId !== id && (genMap.get(p.personneId) ?? -1) < gen) {
-            queue.push({ id: p.personneId, gen });
-          }
-        }
-        for (const f of u.filiations) {
-          if ((genMap.get(f.enfantId) ?? -1) < gen + 1) {
-            queue.push({ id: f.enfantId, gen: gen + 1 });
-          }
-        }
-      }
-    }
-    for (const p of personnes) {
-      if (!genMap.has(p.id))
-        genMap.set(p.id, 0);
-    }
-    let changed = true;
-    while (changed) {
-      changed = false;
-      for (const u of unions) {
-        const gens = u.participants.map((p) => genMap.get(p.personneId) ?? 0);
-        const maxG = Math.max(...gens);
-        for (const p of u.participants) {
-          if ((genMap.get(p.personneId) ?? 0) < maxG) {
-            genMap.set(p.personneId, maxG);
-            changed = true;
-          }
-        }
-      }
-    }
-    const maxGen = Math.max(...genMap.values(), 0);
-    const rows = [];
-    const rootSet = new Set(roots.map((p) => p.id));
-    for (let g = 0; g <= maxGen; g++) {
-      const personsAtGen = personnes.filter((p) => genMap.get(p.id) === g);
-      const unionsAtGen = unions.filter((u) => u.participants.length > 0 && u.participants.every((p) => genMap.get(p.personneId) === g));
-      const inUnion = /* @__PURE__ */ new Set();
-      const items = [];
-      for (const u of unionsAtGen) {
-        const p1 = u.participants.find((p) => p.ordre === 0)?.personne;
-        const p2 = u.participants.find((p) => p.ordre === 1)?.personne;
-        if (!p1)
-          continue;
-        inUnion.add(p1.id);
-        if (p2)
-          inUnion.add(p2.id);
-        items.push({
-          type: "union",
-          p1,
-          p2,
-          union: u,
-          isRoot: rootSet.has(p1.id) || (p2 ? rootSet.has(p2.id) : false),
-          hasChildren: u.filiations.length > 0,
-          parentUnionId: parentUnionMap.get(p1.id) ?? (p2 ? parentUnionMap.get(p2.id) : void 0)
+  exportTree() {
+    return __async(this, null, function* () {
+      if (!this.treeVisual || this.exporting)
+        return;
+      this.exporting = true;
+      try {
+        const canvas = yield (0, import_html2canvas.default)(this.treeVisual.nativeElement, {
+          backgroundColor: "#F0F4FF",
+          scale: 2,
+          useCORS: true,
+          logging: false
         });
+        canvas.toBlob((blob) => {
+          if (!blob)
+            return;
+          const url = URL.createObjectURL(blob);
+          Object.assign(document.createElement("a"), { href: url, download: "arbre-familial.png" }).click();
+          URL.revokeObjectURL(url);
+        }, "image/png");
+      } finally {
+        this.exporting = false;
       }
-      for (const p of personsAtGen) {
-        if (!inUnion.has(p.id)) {
-          items.push({
-            type: "solo",
-            p1: p,
-            isRoot: rootSet.has(p.id),
-            hasChildren: false,
-            parentUnionId: parentUnionMap.get(p.id)
-          });
-        }
+    });
+  }
+  exportTreePdf() {
+    return __async(this, null, function* () {
+      if (!this.treeVisual || this.exporting)
+        return;
+      this.exporting = true;
+      try {
+        const canvas = yield (0, import_html2canvas.default)(this.treeVisual.nativeElement, { backgroundColor: "#F0F4FF", scale: 2, useCORS: true, logging: false });
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new E({ orientation: "landscape", unit: "mm", format: "a4" });
+        const pw = pdf.internal.pageSize.getWidth();
+        const ph = pdf.internal.pageSize.getHeight();
+        const m = 10;
+        const pdfW = pw - m * 2;
+        const pdfH = Math.min(pdf.getImageProperties(imgData).height * pdfW / pdf.getImageProperties(imgData).width, ph - m * 2);
+        pdf.addImage(imgData, "PNG", m, m, pdfW, pdfH);
+        pdf.save("arbre-familial.pdf");
+      } finally {
+        this.exporting = false;
       }
-      if (items.length > 0)
-        rows.push({ level: g + 1, items });
-    }
-    return rows;
+    });
   }
   static \u0275fac = function TreeComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _TreeComponent)(\u0275\u0275directiveInject(ApiService));
@@ -5088,86 +4959,86 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.treeVisual = _t.first);
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.treeCanvas = _t.first);
     }
-  }, standalone: false, decls: 56, vars: 25, consts: [["treeCanvas", ""], ["treeVisual", ""], [1, "tree-page"], [1, "tree-toolbar"], [1, "toolbar-left"], ["class", "badge badge-primary", 4, "ngIf"], ["class", "root-badge", 4, "ngIf"], [1, "toolbar-right"], ["type", "button", "title", "D\xE9zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "zoom-level"], ["type", "button", "title", "Zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], ["type", "button", "title", "R\xE9initialiser la vue", 1, "btn-ghost", "btn-sm", 3, "click"], ["type", "button", 1, "btn-outline", "btn-sm", 3, "click"], [2, "width", "1px", "height", "20px", "background", "var(--border)", "margin", "0 2px"], ["type", "button", 1, "btn-ghost", "btn-sm", "tree-kiosk-btn", 3, "click", "title"], [1, "root-picker-wrap"], ["title", "Choisir une racine", 1, "btn-ghost", "btn-sm", "root-pick-btn", 3, "click"], [4, "ngIf"], ["class", "root-dropdown", 3, "click", 4, "ngIf"], ["class", "root-overlay", 3, "click", 4, "ngIf"], [1, "tree-canvas", 3, "wheel", "mouseleave"], ["class", "loading-state", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "tree-visual", 3, "transform", "pointerdown", "pointermove", "pointerup", "pointercancel", 4, "ngIf"], ["class", "zoom-hint", 4, "ngIf"], ["class", "tree-tooltip", 3, "left", "top", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "detail-panel"], [1, "dp-header"], [1, "btn-icon", 3, "click"], ["class", "dp-body", 4, "ngIf"], [1, "badge", "badge-primary"], [1, "root-badge"], [1, "root-badge-name"], ["title", "Voir l'arbre complet", 1, "root-badge-clear", 3, "click"], [1, "root-dropdown", 3, "click"], [1, "root-search-bar"], ["type", "text", "placeholder", "Rechercher un membre\u2026", "autofocus", "", 1, "root-search-input", 3, "ngModelChange", "ngModel"], [1, "root-list"], [1, "root-list-item", "root-list-all", 3, "click"], ["class", "root-list-item", 3, "active", "click", 4, "ngFor", "ngForOf"], ["class", "root-empty", 4, "ngIf"], [1, "root-list-item", 3, "click"], [1, "root-list-avatar"], [1, "root-empty"], [1, "root-overlay", 3, "click"], [1, "loading-state"], [1, "material-icons-round", "spin"], [1, "error-state"], [1, "empty-state"], [1, "tree-visual", 3, "pointerdown", "pointermove", "pointerup", "pointercancel"], [4, "ngFor", "ngForOf"], [1, "generation"], [1, "gen-label"], [1, "gen-row"], ["class", "gen-group", 4, "ngFor", "ngForOf"], [1, "gen-group"], ["class", "group-stem", 3, "stem-single", "stem-multi", 4, "ngIf"], [1, "group-items"], ["class", "group-child-wrap", 4, "ngFor", "ngForOf"], [1, "group-stem"], [1, "group-child-wrap"], ["class", "group-child-drop", 4, "ngIf"], ["class", "union-group", 4, "ngIf"], ["class", "solo-group", 4, "ngIf"], [1, "group-child-drop"], [1, "union-group"], [1, "couple-wrap"], [1, "tree-node", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "node-avatar"], ["class", "node-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "node-name"], [1, "node-year"], ["class", "union-heart-connector", 4, "ngIf"], ["class", "tree-node", 3, "male", "female", "active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "union-badge", 4, "ngIf"], ["class", "down-connector", 4, "ngIf"], [1, "node-avatar-photo", 3, "error", "src", "alt"], [1, "union-heart-connector"], [1, "union-hline"], [1, "union-badge"], [1, "down-connector"], [1, "solo-group"], [1, "tree-node", "solo", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "zoom-hint"], [1, "tree-tooltip"], [1, "tt-avatar"], ["class", "tt-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "tt-content"], [1, "tt-name"], ["class", "tt-dates", 4, "ngIf"], ["class", "tt-lieu", 4, "ngIf"], [1, "tt-badges"], [1, "tt-badge"], ["class", "tt-badge tt-alive", 4, "ngIf"], ["class", "tt-badge tt-dead", 4, "ngIf"], [1, "tt-hint"], [1, "tt-avatar-photo", 3, "error", "src"], [1, "tt-dates"], [1, "tt-lieu"], [1, "tt-badge", "tt-alive"], [1, "tt-badge", "tt-dead"], [1, "panel-overlay", 3, "click"], [1, "dp-body"], [1, "dp-avatar-wrap"], [1, "dp-avatar"], ["class", "dp-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "dp-name"], [1, "dp-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "dp-info-list"], ["class", "dp-info-item", 4, "ngIf"], [1, "btn-primary", "dp-link", 3, "click", "routerLink", "queryParams"], [1, "dp-avatar-photo", 3, "error", "src"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "dp-info-item"], [1, "dp-info-text"], [1, "dp-info-label"], [1, "dp-info-value"]], template: function TreeComponent_Template(rf, ctx) {
+  }, standalone: false, decls: 56, vars: 27, consts: [["treeCanvas", ""], ["treeVisual", ""], ["nodeRef", ""], [1, "tree-page"], [1, "tree-toolbar"], [1, "toolbar-left"], ["class", "badge badge-primary", 4, "ngIf"], ["class", "root-badge", 4, "ngIf"], [1, "toolbar-right"], ["title", "D\xE9zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "zoom-level"], ["title", "Zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], ["title", "R\xE9initialiser", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "btn-outline", "btn-sm", 3, "click", "disabled"], [2, "width", "1px", "height", "20px", "background", "var(--border)", "margin", "0 2px"], [1, "btn-ghost", "btn-sm", "tree-kiosk-btn", 3, "click", "title"], [1, "root-picker-wrap"], [1, "btn-ghost", "btn-sm", "root-pick-btn", 3, "click"], [4, "ngIf"], ["class", "root-dropdown", 3, "click", 4, "ngIf"], ["class", "root-overlay", 3, "click", 4, "ngIf"], [1, "tree-canvas", 3, "wheel", "mouseleave"], ["class", "loading-state", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "tree-visual", 3, "transform", "pointerdown", "pointermove", "pointerup", "pointercancel", 4, "ngIf"], ["class", "zoom-hint", 4, "ngIf"], ["class", "tree-tooltip", 3, "left", "top", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "detail-panel"], [1, "dp-header"], [1, "btn-icon", 3, "click"], ["class", "dp-body", 4, "ngIf"], [1, "badge", "badge-primary"], [1, "root-badge"], [1, "root-badge-name"], [1, "root-badge-clear", 3, "click"], [1, "root-dropdown", 3, "click"], [1, "root-search-bar"], ["type", "text", "placeholder", "Rechercher\u2026", 1, "root-search-input", 3, "ngModelChange", "ngModel"], [1, "root-list"], [1, "root-list-item", "root-list-all", 3, "click"], ["class", "root-list-item", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "root-list-item", 3, "click"], [1, "root-list-avatar"], [1, "root-overlay", 3, "click"], [1, "loading-state"], [1, "material-icons-round", "spin"], [1, "error-state"], [1, "empty-state"], [1, "tree-visual", 3, "pointerdown", "pointermove", "pointerup", "pointercancel"], [1, "ts-roots"], [4, "ngFor", "ngForOf"], [1, "ts-subtree"], ["class", "ts-solo-card", 3, "ts-root", "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], [1, "ts-couple"], [1, "ts-person", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar"], ["class", "ts-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ts-name"], [1, "ts-year"], ["class", "ts-heart", 4, "ngIf"], ["class", "ts-person", 3, "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-union-badge", 4, "ngIf"], [1, "ts-avatar-photo", 3, "error", "src", "alt"], [1, "ts-heart"], [1, "ts-hline"], [1, "ts-union-badge"], [1, "ts-solo-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-down"], ["class", "ts-branch", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "ts-branch"], [1, "ts-hbar"], [1, "ts-children-row"], ["class", "ts-child-col", 4, "ngFor", "ngForOf"], [1, "ts-child-col"], [1, "ts-up"], [1, "zoom-hint"], [1, "tree-tooltip"], [1, "tt-avatar"], ["class", "tt-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "tt-content"], [1, "tt-name"], ["class", "tt-dates", 4, "ngIf"], ["class", "tt-lieu", 4, "ngIf"], [1, "tt-badges"], [1, "tt-badge"], ["class", "tt-badge tt-alive", 4, "ngIf"], ["class", "tt-badge tt-dead", 4, "ngIf"], [1, "tt-hint"], [1, "tt-avatar-photo", 3, "error", "src"], [1, "tt-dates"], [1, "tt-lieu"], [1, "tt-badge", "tt-alive"], [1, "tt-badge", "tt-dead"], [1, "panel-overlay", 3, "click"], [1, "dp-body"], [1, "dp-avatar-wrap"], [1, "dp-avatar"], ["class", "dp-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "dp-name"], [1, "dp-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "dp-info-list"], ["class", "dp-info-item", 4, "ngIf"], [1, "btn-primary", "dp-link", 3, "click", "routerLink", "queryParams"], [1, "dp-avatar-photo", 3, "error", "src"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "dp-info-item"], [1, "dp-info-text"], [1, "dp-info-label"], [1, "dp-info-value"]], template: function TreeComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
-      \u0275\u0275elementStart(0, "div", 2)(1, "div", 3)(2, "div", 4)(3, "h2");
+      \u0275\u0275elementStart(0, "div", 3)(1, "div", 4)(2, "div", 5)(3, "h2");
       \u0275\u0275text(4, "Arbre familial");
       \u0275\u0275elementEnd();
-      \u0275\u0275template(5, TreeComponent_span_5_Template, 2, 3, "span", 5)(6, TreeComponent_div_6_Template, 8, 1, "div", 6);
+      \u0275\u0275template(5, TreeComponent_span_5_Template, 2, 3, "span", 6)(6, TreeComponent_div_6_Template, 8, 1, "div", 7);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(7, "div", 7)(8, "button", 8);
+      \u0275\u0275elementStart(7, "div", 8)(8, "button", 9);
       \u0275\u0275listener("click", function TreeComponent_Template_button_click_8_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.zoomOut());
       });
-      \u0275\u0275elementStart(9, "span", 9);
+      \u0275\u0275elementStart(9, "span", 10);
       \u0275\u0275text(10, "zoom_out");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(11, "span", 10);
+      \u0275\u0275elementStart(11, "span", 11);
       \u0275\u0275text(12);
       \u0275\u0275pipe(13, "number");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(14, "button", 11);
+      \u0275\u0275elementStart(14, "button", 12);
       \u0275\u0275listener("click", function TreeComponent_Template_button_click_14_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.zoomIn());
       });
-      \u0275\u0275elementStart(15, "span", 9);
+      \u0275\u0275elementStart(15, "span", 10);
       \u0275\u0275text(16, "zoom_in");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(17, "button", 12);
+      \u0275\u0275elementStart(17, "button", 13);
       \u0275\u0275listener("click", function TreeComponent_Template_button_click_17_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.resetView());
       });
-      \u0275\u0275elementStart(18, "span", 9);
+      \u0275\u0275elementStart(18, "span", 10);
       \u0275\u0275text(19, "refresh");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(20, "button", 13);
+      \u0275\u0275elementStart(20, "button", 14);
       \u0275\u0275listener("click", function TreeComponent_Template_button_click_20_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.exportTree());
       });
-      \u0275\u0275elementStart(21, "span", 9);
+      \u0275\u0275elementStart(21, "span", 10);
       \u0275\u0275text(22, "download");
       \u0275\u0275elementEnd();
       \u0275\u0275text(23, "PNG ");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(24, "button", 13);
+      \u0275\u0275elementStart(24, "button", 14);
       \u0275\u0275listener("click", function TreeComponent_Template_button_click_24_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.exportTreePdf());
       });
-      \u0275\u0275elementStart(25, "span", 9);
+      \u0275\u0275elementStart(25, "span", 10);
       \u0275\u0275text(26, "picture_as_pdf");
       \u0275\u0275elementEnd();
       \u0275\u0275text(27, "PDF ");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(28, "div", 14);
-      \u0275\u0275elementStart(29, "button", 15);
+      \u0275\u0275element(28, "div", 15);
+      \u0275\u0275elementStart(29, "button", 16);
       \u0275\u0275listener("click", function TreeComponent_Template_button_click_29_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.toggleKiosk());
       });
-      \u0275\u0275elementStart(30, "span", 9);
+      \u0275\u0275elementStart(30, "span", 10);
       \u0275\u0275text(31);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(32, "div", 16)(33, "button", 17);
+      \u0275\u0275elementStart(32, "div", 17)(33, "button", 18);
       \u0275\u0275listener("click", function TreeComponent_Template_button_click_33_listener() {
         \u0275\u0275restoreView(_r1);
         ctx.showRootPicker = !ctx.showRootPicker;
         return \u0275\u0275resetView(ctx.rootSearchQuery = "");
       });
-      \u0275\u0275elementStart(34, "span", 9);
+      \u0275\u0275elementStart(34, "span", 10);
       \u0275\u0275text(35, "my_location");
       \u0275\u0275elementEnd();
-      \u0275\u0275template(36, TreeComponent_span_36_Template, 2, 0, "span", 18);
+      \u0275\u0275template(36, TreeComponent_span_36_Template, 2, 0, "span", 19);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(37, TreeComponent_div_37_Template, 12, 5, "div", 19);
+      \u0275\u0275template(37, TreeComponent_div_37_Template, 11, 4, "div", 20);
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(38, TreeComponent_div_38_Template, 1, 0, "div", 20);
-      \u0275\u0275elementStart(39, "div", 21, 0);
+      \u0275\u0275template(38, TreeComponent_div_38_Template, 1, 0, "div", 21);
+      \u0275\u0275elementStart(39, "div", 22, 0);
       \u0275\u0275listener("wheel", function TreeComponent_Template_div_wheel_39_listener($event) {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onWheel($event));
@@ -5175,23 +5046,23 @@ var TreeComponent = class _TreeComponent {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.clearTooltip());
       });
-      \u0275\u0275template(41, TreeComponent_div_41_Template, 4, 0, "div", 22)(42, TreeComponent_div_42_Template, 4, 1, "div", 23)(43, TreeComponent_div_43_Template, 7, 0, "div", 24)(44, TreeComponent_div_44_Template, 3, 3, "div", 25);
+      \u0275\u0275template(41, TreeComponent_div_41_Template, 4, 0, "div", 23)(42, TreeComponent_div_42_Template, 4, 1, "div", 24)(43, TreeComponent_div_43_Template, 7, 0, "div", 25)(44, TreeComponent_div_44_Template, 6, 3, "div", 26);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(45, TreeComponent_div_45_Template, 4, 0, "div", 26);
+      \u0275\u0275template(45, TreeComponent_div_45_Template, 4, 0, "div", 27);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(46, TreeComponent_div_46_Template, 16, 20, "div", 27)(47, TreeComponent_div_47_Template, 1, 0, "div", 28);
-      \u0275\u0275elementStart(48, "div", 29)(49, "div", 30)(50, "h3");
+      \u0275\u0275template(46, TreeComponent_div_46_Template, 16, 20, "div", 28)(47, TreeComponent_div_47_Template, 1, 0, "div", 29);
+      \u0275\u0275elementStart(48, "div", 30)(49, "div", 31)(50, "h3");
       \u0275\u0275text(51, "Fiche membre");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(52, "button", 31);
+      \u0275\u0275elementStart(52, "button", 32);
       \u0275\u0275listener("click", function TreeComponent_Template_button_click_52_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeDetail());
       });
-      \u0275\u0275elementStart(53, "span", 9);
+      \u0275\u0275elementStart(53, "span", 10);
       \u0275\u0275text(54, "close");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(55, TreeComponent_div_55_Template, 21, 23, "div", 32);
+      \u0275\u0275template(55, TreeComponent_div_55_Template, 20, 22, "div", 33);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
@@ -5201,9 +5072,13 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.rootPersonId);
       \u0275\u0275advance(6);
-      \u0275\u0275textInterpolate1("", \u0275\u0275pipeBind2(13, 22, ctx.scale * 100, "1.0-0"), "%");
-      \u0275\u0275advance(17);
-      \u0275\u0275property("title", ctx.isKiosk ? "Quitter le mode pr\xE9sentation" : "Mode pr\xE9sentation plein \xE9cran");
+      \u0275\u0275textInterpolate1("", \u0275\u0275pipeBind2(13, 24, ctx.scale * 100, "1.0-0"), "%");
+      \u0275\u0275advance(8);
+      \u0275\u0275property("disabled", ctx.exporting);
+      \u0275\u0275advance(4);
+      \u0275\u0275property("disabled", ctx.exporting);
+      \u0275\u0275advance(5);
+      \u0275\u0275property("title", ctx.isKiosk ? "Quitter" : "Plein \xE9cran");
       \u0275\u0275advance(2);
       \u0275\u0275textInterpolate(ctx.isKiosk ? "fullscreen_exit" : "fullscreen");
       \u0275\u0275advance(2);
@@ -5217,13 +5092,13 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275advance(3);
       \u0275\u0275property("ngIf", ctx.loading);
       \u0275\u0275advance();
-      \u0275\u0275property("ngIf", ctx.erreur);
+      \u0275\u0275property("ngIf", ctx.erreur && !ctx.loading);
       \u0275\u0275advance();
-      \u0275\u0275property("ngIf", !ctx.loading && !ctx.erreur && ctx.generations.length === 0);
+      \u0275\u0275property("ngIf", !ctx.loading && !ctx.erreur && ctx.treeRoots.length === 0);
       \u0275\u0275advance();
-      \u0275\u0275property("ngIf", !ctx.loading && !ctx.erreur && ctx.generations.length > 0);
+      \u0275\u0275property("ngIf", !ctx.loading && !ctx.erreur && ctx.treeRoots.length > 0);
       \u0275\u0275advance();
-      \u0275\u0275property("ngIf", !ctx.loading && ctx.generations.length > 0);
+      \u0275\u0275property("ngIf", !ctx.loading && ctx.treeRoots.length > 0);
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.hoveredPerson);
       \u0275\u0275advance();
@@ -5233,300 +5108,270 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275advance(7);
       \u0275\u0275property("ngIf", ctx.selectedPerson);
     }
-  }, dependencies: [NgForOf, NgIf, RouterLink, DefaultValueAccessor, NgControlStatus, NgModel, DecimalPipe], styles: ['@charset "UTF-8";\n\n\n\n.tree-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  margin: -28px -32px;\n}\n.tree-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 24px;\n  background: var(--white);\n  border-bottom: 1px solid var(--border);\n  gap: 16px;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-left[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 18px;\n  margin: 0;\n  white-space: nowrap;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n}\n.tree-kiosk-btn[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n.root-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  background: var(--primary-bg);\n  border: 1.5px solid var(--primary-border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--primary);\n}\n.root-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.root-badge-name[_ngcontent-%COMP%] {\n  max-width: 160px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.root-badge-clear[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  border: none;\n  background: var(--primary-border);\n  cursor: pointer;\n  padding: 0;\n}\n.root-badge-clear[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: var(--primary);\n}\n.root-badge-clear[_ngcontent-%COMP%]:hover {\n  background: var(--primary);\n}\n.root-badge-clear[_ngcontent-%COMP%]:hover   .material-icons-round[_ngcontent-%COMP%] {\n  color: #fff;\n}\n.root-picker-wrap[_ngcontent-%COMP%] {\n  position: relative;\n}\n.root-pick-btn.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.root-pick-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.root-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  z-index: 299;\n}\n.root-dropdown[_ngcontent-%COMP%] {\n  position: absolute;\n  top: calc(100% + 8px);\n  right: 0;\n  width: 280px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);\n  z-index: 300;\n  overflow: hidden;\n  animation: _ngcontent-%COMP%_root-drop-in 0.15s ease;\n}\n@keyframes _ngcontent-%COMP%_root-drop-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.root-search-bar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-bottom: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.root-search-bar[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.root-search-input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--text-primary);\n  font-family: inherit;\n}\n.root-search-input[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n.root-search-input[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.root-list[_ngcontent-%COMP%] {\n  max-height: 280px;\n  overflow-y: auto;\n  padding: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.root-list-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 10px;\n  border-radius: 9px;\n  border: none;\n  background: transparent;\n  text-align: left;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n  cursor: pointer;\n  font-family: inherit;\n  transition: background 0.12s;\n}\n.root-list-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.root-list-item[_ngcontent-%COMP%]:hover {\n  background: var(--bg-muted);\n}\n.root-list-item.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 700;\n}\n.root-list-all[_ngcontent-%COMP%] {\n  border-bottom: 1px solid var(--border);\n  border-radius: 0;\n  margin-bottom: 4px;\n  padding-bottom: 10px;\n}\n.root-list-avatar[_ngcontent-%COMP%] {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.root-list-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.root-list-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink, #EC4899);\n}\n.root-list-avatar[_ngcontent-%COMP%]:not(.male):not(.female) {\n  background: var(--text-muted);\n}\n.root-empty[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 20px;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.tree-kiosk[_ngcontent-%COMP%]   .tree-toolbar[_ngcontent-%COMP%] {\n  display: none;\n}\n.tree-kiosk[_ngcontent-%COMP%]   .tree-canvas[_ngcontent-%COMP%] {\n  padding: 0;\n}\n.tree-kiosk[_ngcontent-%COMP%]:hover   .tree-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 50;\n  animation: _ngcontent-%COMP%_tree-slide-down 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_tree-slide-down {\n  from {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n.zoom-level[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-muted);\n  min-width: 38px;\n  text-align: center;\n}\n.tree-canvas[_ngcontent-%COMP%] {\n  flex: 1;\n  background: #F0F4FF;\n  background-image:\n    radial-gradient(\n      circle,\n      #BFDBFE 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px 24px;\n  position: relative;\n}\n.tree-visual[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n  min-width: 500px;\n  transition: transform 0.15s ease;\n  transform-origin: top center;\n  cursor: grab;\n  touch-action: none;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.tree-visual[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.generation[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.gen-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  background: var(--white);\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  border: 1px solid var(--border);\n}\n.gen-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 80px;\n  flex-wrap: nowrap;\n  justify-content: center;\n}\n.gen-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-stem[_ngcontent-%COMP%] {\n  width: 2px;\n  border-radius: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n}\n.group-stem.stem-single[_ngcontent-%COMP%] {\n  height: 40px;\n}\n.group-stem.stem-multi[_ngcontent-%COMP%] {\n  height: 20px;\n}\n.group-items[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  position: relative;\n}\n.group-items.multi[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: var(--bar-l, 55px);\n  right: var(--bar-r, 55px);\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.group-items.multi[_ngcontent-%COMP%] {\n  background: rgba(219, 234, 254, 0.28);\n  border-radius: 14px;\n  padding-bottom: 8px;\n}\n.group-child-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-child-drop[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.down-connector[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  margin-top: 2px;\n  border-radius: 2px;\n}\n.generation[_ngcontent-%COMP%]    + .generation[_ngcontent-%COMP%] {\n  margin-top: 4px;\n}\n.union-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.solo-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.couple-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);\n  transition: var(--transition);\n}\n.couple-wrap.root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);\n}\n.couple-wrap.selected[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.couple-wrap[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.union-heart-connector[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.union-heart-connector[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.union-heart-connector[_ngcontent-%COMP%]   .union-hline[_ngcontent-%COMP%] {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.union-badge[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.union-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.tree-node[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  transition: var(--transition);\n  border-radius: 12px;\n}\n.tree-node[_ngcontent-%COMP%]:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.tree-node.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.tree-node.solo[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n}\n.tree-node.solo.root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.tree-node.solo[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.tree-node.solo.active[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.node-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.node-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.node-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.node-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.node-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.node-name[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  word-break: break-word;\n}\n.node-year[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n}\n.zoom-hint[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(15, 23, 42, 0.7);\n  color: #fff;\n  font-size: 12px;\n  padding: 6px 14px;\n  border-radius: var(--radius-full);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  pointer-events: none;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  z-index: 10;\n}\n.zoom-hint[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.tree-tooltip[_ngcontent-%COMP%] {\n  position: fixed;\n  z-index: 500;\n  pointer-events: none;\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  padding: 12px 14px;\n  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);\n  min-width: 220px;\n  max-width: 280px;\n  animation: _ngcontent-%COMP%_tt-in 0.15s ease;\n}\n@keyframes _ngcontent-%COMP%_tt-in {\n  from {\n    opacity: 0;\n    transform: translateY(6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.tt-avatar[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.tt-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.tt-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.tt-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.tt-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.tt-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  flex: 1;\n}\n.tt-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n  word-break: break-word;\n}\n.tt-dates[_ngcontent-%COMP%], \n.tt-lieu[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 11px;\n  color: var(--text-secondary);\n}\n.tt-dates[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%], \n.tt-lieu[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.tt-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  flex-wrap: wrap;\n  margin-top: 2px;\n}\n.tt-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  padding: 1px 7px;\n  border-radius: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  background: var(--bg-muted);\n  color: var(--text-muted);\n}\n.tt-badge.tt-m[_ngcontent-%COMP%] {\n  background: #eff6ff;\n  color: var(--primary);\n}\n.tt-badge.tt-f[_ngcontent-%COMP%] {\n  background: #fdf2f8;\n  color: var(--pink);\n}\n.tt-badge.tt-alive[_ngcontent-%COMP%] {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.tt-badge.tt-dead[_ngcontent-%COMP%] {\n  background: #f1f5f9;\n  color: #64748b;\n}\n.tt-hint[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-style: italic;\n}\n.panel-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.3);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.detail-panel[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 340px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.detail-panel.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.dp-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.dp-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  margin: 0;\n  color: var(--text-primary);\n}\n.dp-body[_ngcontent-%COMP%] {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 24px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.dp-avatar-wrap[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.dp-avatar[_ngcontent-%COMP%] {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n  font-weight: 700;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);\n}\n.dp-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.dp-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);\n}\n.dp-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.dp-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.dp-name[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  text-align: center;\n  margin: 0;\n  line-height: 1.3;\n}\n.dp-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n.dp-info-list[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  margin-top: 4px;\n}\n.dp-info-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  padding: 12px 16px;\n  border-bottom: 1px solid var(--border);\n}\n.dp-info-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.dp-info-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.dp-info-text[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.dp-info-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n}\n.dp-info-value[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-primary);\n  font-weight: 500;\n}\n.dp-link[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  text-decoration: none;\n  margin-top: 8px;\n}\n@media (max-width: 640px) {\n  .tree-toolbar[_ngcontent-%COMP%] {\n    padding: 12px 16px;\n  }\n  .toolbar-right[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n    min-width: 0;\n  }\n  .detail-panel[_ngcontent-%COMP%] {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 85vh;\n    transform: translateY(100%);\n  }\n  .detail-panel.open[_ngcontent-%COMP%] {\n    transform: translateY(0);\n  }\n  .zoom-hint[_ngcontent-%COMP%] {\n    bottom: 8px;\n    font-size: 11px;\n    padding: 5px 10px;\n  }\n}\n/*# sourceMappingURL=tree.component.css.map */'] });
+  }, dependencies: [NgForOf, NgIf, NgTemplateOutlet, RouterLink, DefaultValueAccessor, NgControlStatus, NgModel, DecimalPipe], styles: ['@charset "UTF-8";\n\n\n\n.tree-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  margin: -28px -32px;\n}\n.tree-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 24px;\n  background: var(--white);\n  border-bottom: 1px solid var(--border);\n  gap: 16px;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-left[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 18px;\n  margin: 0;\n  white-space: nowrap;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n}\n.tree-kiosk-btn[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n.root-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  background: var(--primary-bg);\n  border: 1.5px solid var(--primary-border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--primary);\n}\n.root-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.root-badge-name[_ngcontent-%COMP%] {\n  max-width: 160px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.root-badge-clear[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  border: none;\n  background: var(--primary-border);\n  cursor: pointer;\n  padding: 0;\n}\n.root-badge-clear[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: var(--primary);\n}\n.root-badge-clear[_ngcontent-%COMP%]:hover {\n  background: var(--primary);\n}\n.root-badge-clear[_ngcontent-%COMP%]:hover   .material-icons-round[_ngcontent-%COMP%] {\n  color: #fff;\n}\n.root-picker-wrap[_ngcontent-%COMP%] {\n  position: relative;\n}\n.root-pick-btn.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.root-pick-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.root-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  z-index: 299;\n}\n.root-dropdown[_ngcontent-%COMP%] {\n  position: absolute;\n  top: calc(100% + 8px);\n  right: 0;\n  width: 280px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);\n  z-index: 300;\n  overflow: hidden;\n  animation: _ngcontent-%COMP%_root-drop-in 0.15s ease;\n}\n@keyframes _ngcontent-%COMP%_root-drop-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.root-search-bar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-bottom: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.root-search-bar[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.root-search-input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--text-primary);\n  font-family: inherit;\n}\n.root-search-input[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n.root-search-input[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.root-list[_ngcontent-%COMP%] {\n  max-height: 280px;\n  overflow-y: auto;\n  padding: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.root-list-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 10px;\n  border-radius: 9px;\n  border: none;\n  background: transparent;\n  text-align: left;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n  cursor: pointer;\n  font-family: inherit;\n  transition: background 0.12s;\n}\n.root-list-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.root-list-item[_ngcontent-%COMP%]:hover {\n  background: var(--bg-muted);\n}\n.root-list-item.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 700;\n}\n.root-list-all[_ngcontent-%COMP%] {\n  border-bottom: 1px solid var(--border);\n  border-radius: 0;\n  margin-bottom: 4px;\n  padding-bottom: 10px;\n}\n.root-list-avatar[_ngcontent-%COMP%] {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.root-list-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.root-list-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink, #EC4899);\n}\n.root-list-avatar[_ngcontent-%COMP%]:not(.male):not(.female) {\n  background: var(--text-muted);\n}\n.root-empty[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 20px;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.tree-kiosk[_ngcontent-%COMP%]   .tree-toolbar[_ngcontent-%COMP%] {\n  display: none;\n}\n.tree-kiosk[_ngcontent-%COMP%]   .tree-canvas[_ngcontent-%COMP%] {\n  padding: 0;\n}\n.tree-kiosk[_ngcontent-%COMP%]:hover   .tree-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 50;\n  animation: _ngcontent-%COMP%_tree-slide-down 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_tree-slide-down {\n  from {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n.zoom-level[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-muted);\n  min-width: 38px;\n  text-align: center;\n}\n.tree-canvas[_ngcontent-%COMP%] {\n  flex: 1;\n  background: #F0F4FF;\n  background-image:\n    radial-gradient(\n      circle,\n      #BFDBFE 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px 24px;\n  position: relative;\n}\n.tree-visual[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n  min-width: 500px;\n  transition: transform 0.15s ease;\n  transform-origin: top center;\n  cursor: grab;\n  touch-action: none;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.tree-visual[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.generation[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.gen-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  background: var(--white);\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  border: 1px solid var(--border);\n}\n.gen-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 80px;\n  flex-wrap: nowrap;\n  justify-content: center;\n}\n.gen-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-stem[_ngcontent-%COMP%] {\n  width: 2px;\n  border-radius: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n}\n.group-stem.stem-single[_ngcontent-%COMP%] {\n  height: 40px;\n}\n.group-stem.stem-multi[_ngcontent-%COMP%] {\n  height: 20px;\n}\n.group-items[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  position: relative;\n}\n.group-items.multi[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: var(--bar-l, 55px);\n  right: var(--bar-r, 55px);\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.group-items.multi[_ngcontent-%COMP%] {\n  background: rgba(219, 234, 254, 0.28);\n  border-radius: 14px;\n  padding-bottom: 8px;\n}\n.group-child-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-child-drop[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.down-connector[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  margin-top: 2px;\n  border-radius: 2px;\n}\n.generation[_ngcontent-%COMP%]    + .generation[_ngcontent-%COMP%] {\n  margin-top: 4px;\n}\n.union-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.solo-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.couple-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);\n  transition: var(--transition);\n}\n.couple-wrap.root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);\n}\n.couple-wrap.selected[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.couple-wrap[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.union-heart-connector[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.union-heart-connector[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.union-heart-connector[_ngcontent-%COMP%]   .union-hline[_ngcontent-%COMP%] {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.union-badge[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.union-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.tree-node[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  transition: var(--transition);\n  border-radius: 12px;\n}\n.tree-node[_ngcontent-%COMP%]:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.tree-node.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.tree-node.solo[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n}\n.tree-node.solo.root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.tree-node.solo[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.tree-node.solo.active[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.node-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.node-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.node-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.node-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.node-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.node-name[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  word-break: break-word;\n}\n.node-year[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n}\n.zoom-hint[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(15, 23, 42, 0.7);\n  color: #fff;\n  font-size: 12px;\n  padding: 6px 14px;\n  border-radius: var(--radius-full);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  pointer-events: none;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  z-index: 10;\n}\n.zoom-hint[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.tree-tooltip[_ngcontent-%COMP%] {\n  position: fixed;\n  z-index: 500;\n  pointer-events: none;\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  padding: 12px 14px;\n  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);\n  min-width: 220px;\n  max-width: 280px;\n  animation: _ngcontent-%COMP%_tt-in 0.15s ease;\n}\n@keyframes _ngcontent-%COMP%_tt-in {\n  from {\n    opacity: 0;\n    transform: translateY(6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.tt-avatar[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.tt-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.tt-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.tt-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.tt-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.tt-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  flex: 1;\n}\n.tt-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n  word-break: break-word;\n}\n.tt-dates[_ngcontent-%COMP%], \n.tt-lieu[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 11px;\n  color: var(--text-secondary);\n}\n.tt-dates[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%], \n.tt-lieu[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.tt-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  flex-wrap: wrap;\n  margin-top: 2px;\n}\n.tt-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  padding: 1px 7px;\n  border-radius: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  background: var(--bg-muted);\n  color: var(--text-muted);\n}\n.tt-badge.tt-m[_ngcontent-%COMP%] {\n  background: #eff6ff;\n  color: var(--primary);\n}\n.tt-badge.tt-f[_ngcontent-%COMP%] {\n  background: #fdf2f8;\n  color: var(--pink);\n}\n.tt-badge.tt-alive[_ngcontent-%COMP%] {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.tt-badge.tt-dead[_ngcontent-%COMP%] {\n  background: #f1f5f9;\n  color: #64748b;\n}\n.tt-hint[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-style: italic;\n}\n.panel-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.3);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.detail-panel[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 340px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.detail-panel.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.dp-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.dp-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  margin: 0;\n  color: var(--text-primary);\n}\n.dp-body[_ngcontent-%COMP%] {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 24px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.dp-avatar-wrap[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.dp-avatar[_ngcontent-%COMP%] {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n  font-weight: 700;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);\n}\n.dp-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.dp-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);\n}\n.dp-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.dp-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.dp-name[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  text-align: center;\n  margin: 0;\n  line-height: 1.3;\n}\n.dp-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n.dp-info-list[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  margin-top: 4px;\n}\n.dp-info-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  padding: 12px 16px;\n  border-bottom: 1px solid var(--border);\n}\n.dp-info-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.dp-info-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.dp-info-text[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.dp-info-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n}\n.dp-info-value[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-primary);\n  font-weight: 500;\n}\n.dp-link[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  text-decoration: none;\n  margin-top: 8px;\n}\n@media (max-width: 640px) {\n  .tree-toolbar[_ngcontent-%COMP%] {\n    padding: 12px 16px;\n  }\n  .toolbar-right[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n    min-width: 0;\n  }\n  .detail-panel[_ngcontent-%COMP%] {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 85vh;\n    transform: translateY(100%);\n  }\n  .detail-panel.open[_ngcontent-%COMP%] {\n    transform: translateY(0);\n  }\n  .zoom-hint[_ngcontent-%COMP%] {\n    bottom: 8px;\n    font-size: 11px;\n    padding: 5px 10px;\n  }\n}\n.ts-roots[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 60px;\n  padding: 40px;\n}\n.ts-subtree[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.ts-couple[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);\n  transition: var(--transition);\n}\n.ts-couple.ts-root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18);\n}\n.ts-couple.ts-selected[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-couple[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.ts-solo-card.ts-root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.ts-solo-card.ts-active[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-solo-card.male[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card.female[_ngcontent-%COMP%]:hover {\n  border-color: var(--pink);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-person[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  border-radius: 12px;\n  transition: var(--transition);\n}\n.ts-person[_ngcontent-%COMP%]:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.ts-person.ts-active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.ts-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.ts-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.ts-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink, #EC4899);\n}\n.ts-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.ts-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.ts-name[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  max-width: 110px;\n  word-break: break-word;\n}\n.ts-year[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n  white-space: nowrap;\n}\n.ts-heart[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.ts-heart[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.ts-hline[_ngcontent-%COMP%] {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.ts-union-badge[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.ts-union-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.ts-down[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  border-radius: 2px;\n  margin-top: 2px;\n}\n.ts-branch[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n}\n.ts-hbar[_ngcontent-%COMP%] {\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.ts-children-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 40px;\n}\n.ts-child-col[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ts-up[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n/*# sourceMappingURL=tree.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(TreeComponent, [{
     type: Component,
     args: [{ selector: "app-tree", standalone: false, template: `<div class="tree-page" [class.tree-kiosk]="isKiosk">
 
-  <!-- TOOLBAR -->
+  <!-- ===== TOOLBAR ===== -->
   <div class="tree-toolbar">
     <div class="toolbar-left">
       <h2>Arbre familial</h2>
       <span class="badge badge-primary" *ngIf="!loading">
         {{ totalPersonnes }} membres \xB7 {{ totalGenerations }} g\xE9n\xE9ration{{ totalGenerations > 1 ? 's' : '' }}
       </span>
-      <!-- Badge racine active -->
       <div class="root-badge" *ngIf="rootPersonId">
         <span class="material-icons-round">account_tree</span>
         <span class="root-badge-name">{{ rootPersonName }}</span>
-        <button class="root-badge-clear" (click)="setRoot(null)" title="Voir l'arbre complet">
+        <button class="root-badge-clear" (click)="setRoot(null)">
           <span class="material-icons-round">close</span>
         </button>
       </div>
     </div>
     <div class="toolbar-right">
-      <button class="btn-ghost btn-sm" type="button" (click)="zoomOut()" title="D\xE9zoomer">
+      <button class="btn-ghost btn-sm" (click)="zoomOut()" title="D\xE9zoomer">
         <span class="material-icons-round">zoom_out</span>
       </button>
       <span class="zoom-level">{{ (scale * 100) | number:'1.0-0' }}%</span>
-      <button class="btn-ghost btn-sm" type="button" (click)="zoomIn()" title="Zoomer">
+      <button class="btn-ghost btn-sm" (click)="zoomIn()" title="Zoomer">
         <span class="material-icons-round">zoom_in</span>
       </button>
-      <button class="btn-ghost btn-sm" type="button" (click)="resetView()" title="R\xE9initialiser la vue">
+      <button class="btn-ghost btn-sm" (click)="resetView()" title="R\xE9initialiser">
         <span class="material-icons-round">refresh</span>
       </button>
-      <button class="btn-outline btn-sm" type="button" (click)="exportTree()">
+      <button class="btn-outline btn-sm" (click)="exportTree()" [disabled]="exporting">
         <span class="material-icons-round">download</span>PNG
       </button>
-      <button class="btn-outline btn-sm" type="button" (click)="exportTreePdf()">
+      <button class="btn-outline btn-sm" (click)="exportTreePdf()" [disabled]="exporting">
         <span class="material-icons-round">picture_as_pdf</span>PDF
       </button>
       <div style="width:1px;height:20px;background:var(--border);margin:0 2px"></div>
-      <button class="btn-ghost btn-sm tree-kiosk-btn" type="button" (click)="toggleKiosk()"
-              [title]="isKiosk ? 'Quitter le mode pr\xE9sentation' : 'Mode pr\xE9sentation plein \xE9cran'">
+      <button class="btn-ghost btn-sm tree-kiosk-btn" (click)="toggleKiosk()"
+              [title]="isKiosk ? 'Quitter' : 'Plein \xE9cran'">
         <span class="material-icons-round">{{ isKiosk ? 'fullscreen_exit' : 'fullscreen' }}</span>
       </button>
 
       <!-- S\xE9lecteur de racine -->
       <div class="root-picker-wrap">
-        <button class="btn-ghost btn-sm root-pick-btn"
-                [class.active]="showRootPicker"
-                (click)="showRootPicker = !showRootPicker; rootSearchQuery = ''"
-                title="Choisir une racine">
+        <button class="btn-ghost btn-sm root-pick-btn" [class.active]="showRootPicker"
+                (click)="showRootPicker = !showRootPicker; rootSearchQuery = ''">
           <span class="material-icons-round">my_location</span>
           <span *ngIf="!rootPersonId">Racine</span>
         </button>
-
-        <!-- Dropdown -->
         <div class="root-dropdown" *ngIf="showRootPicker" (click)="$event.stopPropagation()">
           <div class="root-search-bar">
             <span class="material-icons-round">search</span>
-            <input type="text" [(ngModel)]="rootSearchQuery"
-                   placeholder="Rechercher un membre\u2026"
-                   class="root-search-input" autofocus />
+            <input type="text" [(ngModel)]="rootSearchQuery" placeholder="Rechercher\u2026" class="root-search-input" />
           </div>
           <div class="root-list">
-            <button class="root-list-item root-list-all"
-                    [class.active]="!rootPersonId"
-                    (click)="setRoot(null)">
-              <span class="material-icons-round">account_tree</span>
-              Arbre complet
+            <button class="root-list-item root-list-all" [class.active]="!rootPersonId" (click)="setRoot(null)">
+              <span class="material-icons-round">account_tree</span>Arbre complet
             </button>
-            <button class="root-list-item"
-                    *ngFor="let p of rootCandidates"
-                    [class.active]="rootPersonId === p.id"
-                    (click)="setRoot(p)">
-              <div class="root-list-avatar"
-                   [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">
+            <button class="root-list-item" *ngFor="let p of rootCandidates"
+                    [class.active]="rootPersonId === p.id" (click)="setRoot(p)">
+              <div class="root-list-avatar" [class.male]="p.sexe==='M'" [class.female]="p.sexe==='F'">
                 {{ getInitiales(p) }}
               </div>
               <span>{{ getNomComplet(p) }}</span>
             </button>
-            <div class="root-empty" *ngIf="rootCandidates.length === 0">
-              Aucun r\xE9sultat
-            </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
+  <div class="root-overlay" *ngIf="showRootPicker" (click)="showRootPicker=false"></div>
 
-  <!-- Overlay pour fermer le picker -->
-  <div class="root-overlay" *ngIf="showRootPicker" (click)="showRootPicker = false"></div>
-
-  <!-- CANVAS -->
+  <!-- ===== CANVAS ===== -->
   <div class="tree-canvas" #treeCanvas (wheel)="onWheel($event)" (mouseleave)="clearTooltip()">
 
     <div class="loading-state" *ngIf="loading">
-      <span class="material-icons-round spin">sync</span>
-      Chargement de l'arbre...
+      <span class="material-icons-round spin">sync</span> Chargement de l'arbre...
     </div>
-
-    <div class="error-state" *ngIf="erreur">
+    <div class="error-state" *ngIf="erreur && !loading">
       <span class="material-icons-round">error_outline</span>{{ erreur }}
     </div>
-
-    <div class="empty-state" *ngIf="!loading && !erreur && generations.length === 0">
+    <div class="empty-state" *ngIf="!loading && !erreur && treeRoots.length === 0">
       <span class="material-icons-round">account_tree</span>
       <h3>Arbre vide</h3>
       <p>Ajoutez des membres et des unions pour construire l'arbre familial.</p>
     </div>
 
-    <div
-      class="tree-visual"
-      #treeVisual
-      *ngIf="!loading && !erreur && generations.length > 0"
-      [style.transform]="treeTransform"
-      (pointerdown)="startDrag($event)"
-      (pointermove)="drag($event)"
-      (pointerup)="endDrag($event)"
-      (pointercancel)="endDrag($event)">
+    <!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+         ARBRE R\xC9CURSIF
+         Pour chaque n\u0153ud : affiche la carte \u2192 si enfants \u2192 les affiche dessous
+         \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 -->
+    <div class="tree-visual"
+         #treeVisual
+         *ngIf="!loading && !erreur && treeRoots.length > 0"
+         [style.transform]="treeTransform"
+         (pointerdown)="startDrag($event)"
+         (pointermove)="drag($event)"
+         (pointerup)="endDrag($event)"
+         (pointercancel)="endDrag($event)">
 
-      <ng-container *ngFor="let gen of generations">
-        <div class="generation">
-          <div class="gen-label">G\xE9n\xE9ration {{ gen.level }}</div>
+      <!-- Template r\xE9cursif -->
+      <ng-template #nodeRef let-node="node">
+        <div class="ts-subtree">
 
-          <div class="gen-row">
+          <!-- \u2500\u2500 Carte couple \u2500\u2500 -->
+          <ng-container *ngIf="node.type === 'union'">
+            <div class="ts-couple" [class.ts-root]="node.isRoot"
+                 [class.ts-selected]="selectedPerson && (selectedPerson.id===node.p1.id || selectedPerson.id===node.p2?.id)">
 
-            <!-- \u2500\u2500 Groupe d'enfants par parent \u2500\u2500 -->
-            <div class="gen-group" *ngFor="let group of getItemGroups(gen)"
-                 [attr.data-parent]="group[0].parentUnionId">
+              <!-- Personne 1 -->
+              <div class="ts-person"
+                   [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'"
+                   [class.ts-active]="selectedPerson?.id===node.p1.id"
+                   (mouseenter)="showTooltip(node.p1,$event)"
+                   (mousemove)="moveTooltip($event)"
+                   (mouseleave)="hideTooltip()"
+                   (click)="openDetail(node.p1)">
+                <div class="ts-avatar" [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'">
+                  <img *ngIf="getPhotoUrl(node.p1) && !failedPhotos.has(node.p1.id)"
+                       [src]="getPhotoUrl(node.p1)!" class="ts-avatar-photo"
+                       [alt]="getInitiales(node.p1)" (error)="onPhotoError(node.p1.id)" />
+                  <span *ngIf="!getPhotoUrl(node.p1) || failedPhotos.has(node.p1.id)">{{ getInitiales(node.p1) }}</span>
+                </div>
+                <span class="ts-name">{{ node.p1.prenoms }} {{ node.p1.nomUsage ?? node.p1.nomNaissance }}</span>
+                <span class="ts-year">{{ yearLabel(node.p1) }}</span>
+              </div>
 
-              <!-- Tige montante unique centr\xE9e sur le groupe -->
-              <div class="group-stem"
-                   *ngIf="group[0].parentUnionId"
-                   [class.stem-single]="group.length === 1"
-                   [class.stem-multi]="group.length > 1"></div>
+              <!-- C\u0153ur -->
+              <div class="ts-heart" *ngIf="node.p2">
+                <span class="material-icons-round">favorite</span>
+                <span class="ts-hline"></span>
+              </div>
 
-              <!-- Rang\xE9e de fr\xE8res/s\u0153urs -->
-              <div class="group-items" [class.multi]="group.length > 1"
-                   [style.--bar-l]="group[0].type === 'union' ? '139px' : '55px'"
-                   [style.--bar-r]="group[group.length-1].type === 'union' ? '139px' : '55px'">
+              <!-- Personne 2 -->
+              <div class="ts-person" *ngIf="node.p2"
+                   [class.male]="node.p2!.sexe==='M'" [class.female]="node.p2!.sexe==='F'"
+                   [class.ts-active]="selectedPerson?.id===node.p2!.id"
+                   (mouseenter)="showTooltip(node.p2!,$event)"
+                   (mousemove)="moveTooltip($event)"
+                   (mouseleave)="hideTooltip()"
+                   (click)="openDetail(node.p2!)">
+                <div class="ts-avatar" [class.male]="node.p2!.sexe==='M'" [class.female]="node.p2!.sexe==='F'">
+                  <img *ngIf="getPhotoUrl(node.p2!) && !failedPhotos.has(node.p2!.id)"
+                       [src]="getPhotoUrl(node.p2!)!" class="ts-avatar-photo"
+                       [alt]="getInitiales(node.p2!)" (error)="onPhotoError(node.p2!.id)" />
+                  <span *ngIf="!getPhotoUrl(node.p2!) || failedPhotos.has(node.p2!.id)">{{ getInitiales(node.p2!) }}</span>
+                </div>
+                <span class="ts-name">{{ node.p2!.prenoms }} {{ node.p2!.nomUsage ?? node.p2!.nomNaissance }}</span>
+                <span class="ts-year">{{ yearLabel(node.p2!) }}</span>
+              </div>
+            </div>
 
-                <div class="group-child-wrap" *ngFor="let item of group">
+            <!-- Badge type union -->
+            <div class="ts-union-badge" *ngIf="node.union?.type">
+              <span class="material-icons-round">favorite_border</span>
+              {{ typeLabel(node.union!.type) }}
+              <ng-container *ngIf="node.union!.dateDebut"> \xB7 {{ extractAnnee(node.union!.dateDebut) }}</ng-container>
+            </div>
+          </ng-container>
 
-                  <!-- Chute verticale depuis la barre horizontale (si > 1 enfant) -->
-                  <div class="group-child-drop" *ngIf="group.length > 1"></div>
-
-                  <!-- \u2500\u2500 UNION \u2500\u2500 -->
-                  <div class="union-group" *ngIf="item.type === 'union'"
-                       [attr.data-union]="item.union?.id">
-                    <div class="couple-wrap" [class.root]="item.isRoot"
-                         [class.selected]="selectedPerson && (selectedPerson.id === item.p1.id || selectedPerson.id === item.p2?.id)">
-
-                      <!-- Personne 1 -->
-                      <div class="tree-node"
-                           [class.male]="item.p1.sexe==='M'" [class.female]="item.p1.sexe==='F'"
-                           [class.active]="selectedPerson?.id === item.p1.id"
-                           (mouseenter)="showTooltip(item.p1, $event)"
-                           (mousemove)="moveTooltip($event)"
-                           (mouseleave)="hideTooltip()"
-                           (click)="openDetail(item.p1)">
-                        <div class="node-avatar" [class.male]="item.p1.sexe==='M'" [class.female]="item.p1.sexe==='F'">
-                          <img *ngIf="getPhotoUrl(item.p1) && !failedPhotos.has(item.p1.id)"
-                               [src]="getPhotoUrl(item.p1)!" class="node-avatar-photo"
-                               [alt]="getInitiales(item.p1)" (error)="onPhotoError(item.p1.id)" />
-                          <span *ngIf="!getPhotoUrl(item.p1) || failedPhotos.has(item.p1.id)">{{ getInitiales(item.p1) }}</span>
-                        </div>
-                        <span class="node-name">{{ item.p1.prenoms }} {{ item.p1.nomUsage ?? item.p1.nomNaissance }}</span>
-                        <span class="node-year">{{ yearLabel(item.p1) }}</span>
-                      </div>
-
-                      <!-- Connecteur c\u0153ur -->
-                      <div class="union-heart-connector" *ngIf="item.p2">
-                        <span class="material-icons-round">favorite</span>
-                        <span class="union-hline"></span>
-                      </div>
-
-                      <!-- Personne 2 -->
-                      <div class="tree-node" *ngIf="item.p2"
-                           [class.male]="item.p2!.sexe==='M'" [class.female]="item.p2!.sexe==='F'"
-                           [class.active]="selectedPerson?.id === item.p2!.id"
-                           (mouseenter)="showTooltip(item.p2!, $event)"
-                           (mousemove)="moveTooltip($event)"
-                           (mouseleave)="hideTooltip()"
-                           (click)="openDetail(item.p2!)">
-                        <div class="node-avatar" [class.male]="item.p2!.sexe==='M'" [class.female]="item.p2!.sexe==='F'">
-                          <img *ngIf="getPhotoUrl(item.p2!) && !failedPhotos.has(item.p2!.id)"
-                               [src]="getPhotoUrl(item.p2!)!" class="node-avatar-photo"
-                               [alt]="getInitiales(item.p2!)" (error)="onPhotoError(item.p2!.id)" />
-                          <span *ngIf="!getPhotoUrl(item.p2!) || failedPhotos.has(item.p2!.id)">{{ getInitiales(item.p2!) }}</span>
-                        </div>
-                        <span class="node-name">{{ item.p2!.prenoms }} {{ item.p2!.nomUsage ?? item.p2!.nomNaissance }}</span>
-                        <span class="node-year">{{ yearLabel(item.p2!) }}</span>
-                      </div>
-                    </div>
-
-                    <!-- Badge type union -->
-                    <div class="union-badge" *ngIf="item.union?.type">
-                      <span class="material-icons-round">favorite_border</span>
-                      {{ typeLabel(item.union!.type) }}
-                      <ng-container *ngIf="item.union!.dateDebut"> \xB7 {{ extractAnnee(item.union!.dateDebut) }}</ng-container>
-                    </div>
-
-                    <!-- Connecteur descendant -->
-                    <div class="down-connector" *ngIf="item.hasChildren"></div>
-                  </div>
-
-                  <!-- \u2500\u2500 SOLO \u2500\u2500 -->
-                  <div class="solo-group" *ngIf="item.type === 'solo'">
-                    <div class="tree-node solo"
-                         [class.root]="item.isRoot"
-                         [class.male]="item.p1.sexe==='M'" [class.female]="item.p1.sexe==='F'"
-                         [class.active]="selectedPerson?.id === item.p1.id"
-                         (mouseenter)="showTooltip(item.p1, $event)"
-                         (mousemove)="moveTooltip($event)"
-                         (mouseleave)="hideTooltip()"
-                         (click)="openDetail(item.p1)">
-                      <div class="node-avatar" [class.male]="item.p1.sexe==='M'" [class.female]="item.p1.sexe==='F'">
-                        <img *ngIf="getPhotoUrl(item.p1) && !failedPhotos.has(item.p1.id)"
-                             [src]="getPhotoUrl(item.p1)!" class="node-avatar-photo"
-                             [alt]="getInitiales(item.p1)" (error)="onPhotoError(item.p1.id)" />
-                        <span *ngIf="!getPhotoUrl(item.p1) || failedPhotos.has(item.p1.id)">{{ getInitiales(item.p1) }}</span>
-                      </div>
-                      <span class="node-name">{{ item.p1.prenoms }} {{ item.p1.nomUsage ?? item.p1.nomNaissance }}</span>
-                      <span class="node-year">{{ yearLabel(item.p1) }}</span>
-                    </div>
-                  </div>
-
-                </div><!-- /group-child-wrap -->
-              </div><!-- /group-items -->
-            </div><!-- /gen-group -->
-
+          <!-- \u2500\u2500 Carte solo \u2500\u2500 -->
+          <div class="ts-solo-card" *ngIf="node.type === 'solo'"
+               [class.ts-root]="node.isRoot"
+               [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'"
+               [class.ts-active]="selectedPerson?.id===node.p1.id"
+               (mouseenter)="showTooltip(node.p1,$event)"
+               (mousemove)="moveTooltip($event)"
+               (mouseleave)="hideTooltip()"
+               (click)="openDetail(node.p1)">
+            <div class="ts-avatar" [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'">
+              <img *ngIf="getPhotoUrl(node.p1) && !failedPhotos.has(node.p1.id)"
+                   [src]="getPhotoUrl(node.p1)!" class="ts-avatar-photo"
+                   [alt]="getInitiales(node.p1)" (error)="onPhotoError(node.p1.id)" />
+              <span *ngIf="!getPhotoUrl(node.p1) || failedPhotos.has(node.p1.id)">{{ getInitiales(node.p1) }}</span>
+            </div>
+            <span class="ts-name">{{ node.p1.prenoms }} {{ node.p1.nomUsage ?? node.p1.nomNaissance }}</span>
+            <span class="ts-year">{{ yearLabel(node.p1) }}</span>
           </div>
+
+          <!-- \u2500\u2500 Enfants (r\xE9cursif) \u2500\u2500 -->
+          <ng-container *ngIf="node.children.length > 0">
+            <!-- Tige descendante -->
+            <div class="ts-down"></div>
+
+            <!-- Enfant unique : pas de barre horizontale -->
+            <ng-container *ngIf="node.children.length === 1">
+              <ng-container [ngTemplateOutlet]="nodeRef"
+                            [ngTemplateOutletContext]="{ node: node.children[0] }">
+              </ng-container>
+            </ng-container>
+
+            <!-- Plusieurs enfants : barre + chutes + sous-arbres -->
+            <div class="ts-branch" *ngIf="node.children.length > 1">
+              <!-- Barre horizontale (du centre du 1er au centre du dernier) -->
+              <div class="ts-hbar"
+                   [style.marginLeft.px]="barInset(node.children[0])"
+                   [style.marginRight.px]="barInset(node.children[node.children.length-1])">
+              </div>
+              <!-- Rang\xE9e d'enfants -->
+              <div class="ts-children-row">
+                <div class="ts-child-col" *ngFor="let child of node.children">
+                  <div class="ts-up"></div>
+                  <ng-container [ngTemplateOutlet]="nodeRef"
+                                [ngTemplateOutletContext]="{ node: child }">
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+
+          </ng-container>
+
         </div>
-      </ng-container>
+      </ng-template>
+
+      <!-- Racines de l'arbre -->
+      <div class="ts-roots">
+        <ng-container *ngFor="let root of treeRoots">
+          <ng-container [ngTemplateOutlet]="nodeRef"
+                        [ngTemplateOutletContext]="{ node: root }">
+          </ng-container>
+        </ng-container>
+      </div>
+
     </div>
-
   </div>
 
-  <!-- Hint ctrl+molette -->
-  <div class="zoom-hint" *ngIf="!loading && generations.length > 0">
+  <div class="zoom-hint" *ngIf="!loading && treeRoots.length > 0">
     <span class="material-icons-round">info_outline</span>
-    Ctrl + molette pour zoomer \xB7 Glisser pour naviguer \xB7 Clic sur un membre pour sa fiche
+    Ctrl + molette pour zoomer \xB7 Glisser pour naviguer \xB7 Clic pour la fiche
   </div>
-
 </div>
 
 <!-- ===== TOOLTIP ===== -->
-<div class="tree-tooltip"
-     *ngIf="hoveredPerson"
-     [style.left.px]="tooltipX"
-     [style.top.px]="tooltipY">
-
-  <div class="tt-avatar"
-       [class.male]="hoveredPerson.sexe === 'M'"
-       [class.female]="hoveredPerson.sexe === 'F'">
+<div class="tree-tooltip" *ngIf="hoveredPerson"
+     [style.left.px]="tooltipX" [style.top.px]="tooltipY">
+  <div class="tt-avatar" [class.male]="hoveredPerson.sexe==='M'" [class.female]="hoveredPerson.sexe==='F'">
     <img *ngIf="getPhotoUrl(hoveredPerson) && !failedPhotos.has(hoveredPerson.id)"
-         [src]="getPhotoUrl(hoveredPerson)!" class="tt-avatar-photo"
-         (error)="onPhotoError(hoveredPerson.id)" />
-    <span *ngIf="!getPhotoUrl(hoveredPerson) || failedPhotos.has(hoveredPerson.id)">
-      {{ getInitiales(hoveredPerson) }}
-    </span>
+         [src]="getPhotoUrl(hoveredPerson)!" class="tt-avatar-photo" (error)="onPhotoError(hoveredPerson.id)" />
+    <span *ngIf="!getPhotoUrl(hoveredPerson) || failedPhotos.has(hoveredPerson.id)">{{ getInitiales(hoveredPerson) }}</span>
   </div>
-
   <div class="tt-content">
     <span class="tt-name">{{ getNomComplet(hoveredPerson) }}</span>
-
     <span class="tt-dates" *ngIf="tooltipAge(hoveredPerson)">
-      <span class="material-icons-round">hourglass_bottom</span>
-      {{ tooltipAge(hoveredPerson) }}
+      <span class="material-icons-round">hourglass_bottom</span>{{ tooltipAge(hoveredPerson) }}
     </span>
-
     <span class="tt-lieu" *ngIf="hoveredPerson.lieuNaissance">
-      <span class="material-icons-round">place</span>
-      {{ hoveredPerson.lieuNaissance }}
+      <span class="material-icons-round">place</span>{{ hoveredPerson.lieuNaissance }}
     </span>
-
     <div class="tt-badges">
-      <span class="tt-badge" [class.tt-m]="hoveredPerson.sexe === 'M'" [class.tt-f]="hoveredPerson.sexe === 'F'">
-        {{ hoveredPerson.sexe === 'M' ? 'Homme' : hoveredPerson.sexe === 'F' ? 'Femme' : 'Autre' }}
+      <span class="tt-badge" [class.tt-m]="hoveredPerson.sexe==='M'" [class.tt-f]="hoveredPerson.sexe==='F'">
+        {{ hoveredPerson.sexe==='M' ? 'Homme' : hoveredPerson.sexe==='F' ? 'Femme' : 'Autre' }}
       </span>
       <span class="tt-badge tt-alive" *ngIf="estVivant(hoveredPerson)">Vivant(e)</span>
       <span class="tt-badge tt-dead"  *ngIf="!estVivant(hoveredPerson)">D\xE9c\xE9d\xE9(e)</span>
     </div>
-
     <span class="tt-hint">Clic pour la fiche compl\xE8te</span>
   </div>
 </div>
 
-<!-- ===== OVERLAY ===== -->
+<!-- ===== OVERLAY + DETAIL ===== -->
 <div class="panel-overlay" *ngIf="showDetail" (click)="closeDetail()"></div>
-
-<!-- ===== PANNEAU D\xC9TAIL ===== -->
 <div class="detail-panel" [class.open]="showDetail">
   <div class="dp-header">
     <h3>Fiche membre</h3>
@@ -5534,34 +5379,22 @@ var TreeComponent = class _TreeComponent {
       <span class="material-icons-round">close</span>
     </button>
   </div>
-
   <div class="dp-body" *ngIf="selectedPerson">
-
-    <!-- Avatar -->
     <div class="dp-avatar-wrap">
-      <div class="dp-avatar" [class.male]="selectedPerson.sexe === 'M'" [class.female]="selectedPerson.sexe === 'F'">
+      <div class="dp-avatar" [class.male]="selectedPerson.sexe==='M'" [class.female]="selectedPerson.sexe==='F'">
         <img *ngIf="getPhotoUrl(selectedPerson) && !failedPhotos.has(selectedPerson.id)"
-             [src]="getPhotoUrl(selectedPerson)!" class="dp-avatar-photo"
-             (error)="onPhotoError(selectedPerson.id)" />
-        <span *ngIf="!getPhotoUrl(selectedPerson) || failedPhotos.has(selectedPerson.id)">
-          {{ getInitiales(selectedPerson) }}
-        </span>
+             [src]="getPhotoUrl(selectedPerson)!" class="dp-avatar-photo" (error)="onPhotoError(selectedPerson.id)" />
+        <span *ngIf="!getPhotoUrl(selectedPerson) || failedPhotos.has(selectedPerson.id)">{{ getInitiales(selectedPerson) }}</span>
       </div>
     </div>
-
-    <!-- Nom -->
     <h2 class="dp-name">{{ getNomComplet(selectedPerson) }}</h2>
-
-    <!-- Badges -->
     <div class="dp-badges">
-      <span class="pc-badge" [class.pc-badge-m]="selectedPerson.sexe === 'M'" [class.pc-badge-f]="selectedPerson.sexe === 'F'">
-        {{ selectedPerson.sexe === 'M' ? 'Homme' : selectedPerson.sexe === 'F' ? 'Femme' : 'Autre' }}
+      <span class="pc-badge" [class.pc-badge-m]="selectedPerson.sexe==='M'" [class.pc-badge-f]="selectedPerson.sexe==='F'">
+        {{ selectedPerson.sexe==='M' ? 'Homme' : selectedPerson.sexe==='F' ? 'Femme' : 'Autre' }}
       </span>
       <span class="pc-badge pc-badge-alive" *ngIf="estVivant(selectedPerson)">Vivant(e)</span>
       <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(selectedPerson)">D\xE9c\xE9d\xE9(e)</span>
     </div>
-
-    <!-- Infos -->
     <div class="dp-info-list">
       <div class="dp-info-item" *ngIf="selectedPerson.dateNaissance || selectedPerson.lieuNaissance">
         <span class="material-icons-round">cake</span>
@@ -5573,18 +5406,13 @@ var TreeComponent = class _TreeComponent {
           </span>
         </div>
       </div>
-
       <div class="dp-info-item" *ngIf="!estVivant(selectedPerson)">
         <span class="material-icons-round">sentiment_very_dissatisfied</span>
         <div class="dp-info-text">
           <span class="dp-info-label">D\xE9c\xE8s</span>
-          <span class="dp-info-value">
-            {{ selectedPerson.dateDeces ?? '\u2014' }}
-            <span *ngIf="selectedPerson.lieuDeces"> \xB7 {{ selectedPerson.lieuDeces }}</span>
-          </span>
+          <span class="dp-info-value">{{ selectedPerson.dateDeces ?? '\u2014' }}<span *ngIf="selectedPerson.lieuDeces"> \xB7 {{ selectedPerson.lieuDeces }}</span></span>
         </div>
       </div>
-
       <div class="dp-info-item" *ngIf="getAgeLabel(selectedPerson)">
         <span class="material-icons-round">hourglass_bottom</span>
         <div class="dp-info-text">
@@ -5592,26 +5420,13 @@ var TreeComponent = class _TreeComponent {
           <span class="dp-info-value">{{ getAgeLabel(selectedPerson) }}</span>
         </div>
       </div>
-
-      <div class="dp-info-item" *ngIf="selectedPerson.lieuNaissance">
-        <span class="material-icons-round">place</span>
-        <div class="dp-info-text">
-          <span class="dp-info-label">Lieu de naissance</span>
-          <span class="dp-info-value">{{ selectedPerson.lieuNaissance }}</span>
-        </div>
-      </div>
     </div>
-
-    <!-- Action -->
-    <a class="btn-primary dp-link"
-       [routerLink]="['/app/personnes']" [queryParams]="{ id: selectedPerson.id }"
-       (click)="closeDetail()">
-      <span class="material-icons-round">person</span>
-      Voir le profil complet
+    <a class="btn-primary dp-link" [routerLink]="['/app/personnes']" [queryParams]="{ id: selectedPerson.id }" (click)="closeDetail()">
+      <span class="material-icons-round">person</span>Voir le profil complet
     </a>
   </div>
 </div>
-`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/tree/tree.component.scss */\n.tree-page {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  margin: -28px -32px;\n}\n.tree-toolbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 24px;\n  background: var(--white);\n  border-bottom: 1px solid var(--border);\n  gap: 16px;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.tree-toolbar .toolbar-left {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.tree-toolbar .toolbar-left h2 {\n  font-size: 18px;\n  margin: 0;\n  white-space: nowrap;\n}\n.tree-toolbar .toolbar-right {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n}\n.tree-kiosk-btn {\n  color: var(--primary) !important;\n}\n.root-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  background: var(--primary-bg);\n  border: 1.5px solid var(--primary-border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--primary);\n}\n.root-badge .material-icons-round {\n  font-size: 15px !important;\n}\n.root-badge-name {\n  max-width: 160px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.root-badge-clear {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  border: none;\n  background: var(--primary-border);\n  cursor: pointer;\n  padding: 0;\n}\n.root-badge-clear .material-icons-round {\n  font-size: 12px !important;\n  color: var(--primary);\n}\n.root-badge-clear:hover {\n  background: var(--primary);\n}\n.root-badge-clear:hover .material-icons-round {\n  color: #fff;\n}\n.root-picker-wrap {\n  position: relative;\n}\n.root-pick-btn.active {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.root-pick-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.root-overlay {\n  position: fixed;\n  inset: 0;\n  z-index: 299;\n}\n.root-dropdown {\n  position: absolute;\n  top: calc(100% + 8px);\n  right: 0;\n  width: 280px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);\n  z-index: 300;\n  overflow: hidden;\n  animation: root-drop-in 0.15s ease;\n}\n@keyframes root-drop-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.root-search-bar {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-bottom: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.root-search-bar .material-icons-round {\n  font-size: 17px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.root-search-input {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--text-primary);\n  font-family: inherit;\n}\n.root-search-input:focus {\n  outline: none;\n}\n.root-search-input::placeholder {\n  color: var(--text-muted);\n}\n.root-list {\n  max-height: 280px;\n  overflow-y: auto;\n  padding: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.root-list-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 10px;\n  border-radius: 9px;\n  border: none;\n  background: transparent;\n  text-align: left;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n  cursor: pointer;\n  font-family: inherit;\n  transition: background 0.12s;\n}\n.root-list-item .material-icons-round {\n  font-size: 17px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.root-list-item:hover {\n  background: var(--bg-muted);\n}\n.root-list-item.active {\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 700;\n}\n.root-list-all {\n  border-bottom: 1px solid var(--border);\n  border-radius: 0;\n  margin-bottom: 4px;\n  padding-bottom: 10px;\n}\n.root-list-avatar {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.root-list-avatar.male {\n  background: var(--primary);\n}\n.root-list-avatar.female {\n  background: var(--pink, #EC4899);\n}\n.root-list-avatar:not(.male):not(.female) {\n  background: var(--text-muted);\n}\n.root-empty {\n  text-align: center;\n  padding: 20px;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.tree-kiosk .tree-toolbar {\n  display: none;\n}\n.tree-kiosk .tree-canvas {\n  padding: 0;\n}\n.tree-kiosk:hover .tree-toolbar {\n  display: flex;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 50;\n  animation: tree-slide-down 0.2s ease;\n}\n@keyframes tree-slide-down {\n  from {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n.zoom-level {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-muted);\n  min-width: 38px;\n  text-align: center;\n}\n.tree-canvas {\n  flex: 1;\n  background: #F0F4FF;\n  background-image:\n    radial-gradient(\n      circle,\n      #BFDBFE 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px 24px;\n  position: relative;\n}\n.tree-visual {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n  min-width: 500px;\n  transition: transform 0.15s ease;\n  transform-origin: top center;\n  cursor: grab;\n  touch-action: none;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.tree-visual:active {\n  cursor: grabbing;\n}\n.generation {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.gen-label {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  background: var(--white);\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  border: 1px solid var(--border);\n}\n.gen-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 80px;\n  flex-wrap: nowrap;\n  justify-content: center;\n}\n.gen-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-stem {\n  width: 2px;\n  border-radius: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n}\n.group-stem.stem-single {\n  height: 40px;\n}\n.group-stem.stem-multi {\n  height: 20px;\n}\n.group-items {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  position: relative;\n}\n.group-items.multi::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: var(--bar-l, 55px);\n  right: var(--bar-r, 55px);\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.group-items.multi {\n  background: rgba(219, 234, 254, 0.28);\n  border-radius: 14px;\n  padding-bottom: 8px;\n}\n.group-child-wrap {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-child-drop {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.down-connector {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  margin-top: 2px;\n  border-radius: 2px;\n}\n.generation + .generation {\n  margin-top: 4px;\n}\n.union-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.solo-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.couple-wrap {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);\n  transition: var(--transition);\n}\n.couple-wrap.root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);\n}\n.couple-wrap.selected {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.couple-wrap:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.union-heart-connector {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.union-heart-connector .material-icons-round {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.union-heart-connector .union-hline {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.union-badge {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.union-badge .material-icons-round {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.tree-node {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  transition: var(--transition);\n  border-radius: 12px;\n}\n.tree-node:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.tree-node.active {\n  background: var(--primary-bg);\n}\n.tree-node.solo {\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n}\n.tree-node.solo.root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.tree-node.solo:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.tree-node.solo.active {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.node-avatar {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.node-avatar.male {\n  background: var(--primary);\n}\n.node-avatar.female {\n  background: var(--pink);\n}\n.node-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.node-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.node-name {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  word-break: break-word;\n}\n.node-year {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n}\n.zoom-hint {\n  position: fixed;\n  bottom: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(15, 23, 42, 0.7);\n  color: #fff;\n  font-size: 12px;\n  padding: 6px 14px;\n  border-radius: var(--radius-full);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  pointer-events: none;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  z-index: 10;\n}\n.zoom-hint .material-icons-round {\n  font-size: 14px !important;\n}\n.tree-tooltip {\n  position: fixed;\n  z-index: 500;\n  pointer-events: none;\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  padding: 12px 14px;\n  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);\n  min-width: 220px;\n  max-width: 280px;\n  animation: tt-in 0.15s ease;\n}\n@keyframes tt-in {\n  from {\n    opacity: 0;\n    transform: translateY(6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.tt-avatar {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.tt-avatar.male {\n  background: var(--primary);\n}\n.tt-avatar.female {\n  background: var(--pink);\n}\n.tt-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.tt-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.tt-content {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  flex: 1;\n}\n.tt-name {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n  word-break: break-word;\n}\n.tt-dates,\n.tt-lieu {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 11px;\n  color: var(--text-secondary);\n}\n.tt-dates .material-icons-round,\n.tt-lieu .material-icons-round {\n  font-size: 13px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.tt-badges {\n  display: flex;\n  gap: 4px;\n  flex-wrap: wrap;\n  margin-top: 2px;\n}\n.tt-badge {\n  display: inline-flex;\n  align-items: center;\n  padding: 1px 7px;\n  border-radius: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  background: var(--bg-muted);\n  color: var(--text-muted);\n}\n.tt-badge.tt-m {\n  background: #eff6ff;\n  color: var(--primary);\n}\n.tt-badge.tt-f {\n  background: #fdf2f8;\n  color: var(--pink);\n}\n.tt-badge.tt-alive {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.tt-badge.tt-dead {\n  background: #f1f5f9;\n  color: #64748b;\n}\n.tt-hint {\n  font-size: 10px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-style: italic;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.3);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.detail-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 340px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.detail-panel.open {\n  transform: translateX(0);\n}\n.dp-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.dp-header h3 {\n  font-size: 16px;\n  font-weight: 700;\n  margin: 0;\n  color: var(--text-primary);\n}\n.dp-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 24px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.dp-avatar-wrap {\n  margin-bottom: 4px;\n}\n.dp-avatar {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n  font-weight: 700;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);\n}\n.dp-avatar.male {\n  background: var(--primary);\n}\n.dp-avatar.female {\n  background: var(--pink);\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);\n}\n.dp-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.dp-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.dp-name {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  text-align: center;\n  margin: 0;\n  line-height: 1.3;\n}\n.dp-badges {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n.dp-info-list {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  margin-top: 4px;\n}\n.dp-info-item {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  padding: 12px 16px;\n  border-bottom: 1px solid var(--border);\n}\n.dp-info-item:last-child {\n  border-bottom: none;\n}\n.dp-info-item .material-icons-round {\n  font-size: 18px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.dp-info-text {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.dp-info-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n}\n.dp-info-value {\n  font-size: 14px;\n  color: var(--text-primary);\n  font-weight: 500;\n}\n.dp-link {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  text-decoration: none;\n  margin-top: 8px;\n}\n@media (max-width: 640px) {\n  .tree-toolbar {\n    padding: 12px 16px;\n  }\n  .toolbar-right button {\n    min-width: 0;\n  }\n  .detail-panel {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 85vh;\n    transform: translateY(100%);\n  }\n  .detail-panel.open {\n    transform: translateY(0);\n  }\n  .zoom-hint {\n    bottom: 8px;\n    font-size: 11px;\n    padding: 5px 10px;\n  }\n}\n/*# sourceMappingURL=tree.component.css.map */\n'] }]
+`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/tree/tree.component.scss */\n.tree-page {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  margin: -28px -32px;\n}\n.tree-toolbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 24px;\n  background: var(--white);\n  border-bottom: 1px solid var(--border);\n  gap: 16px;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.tree-toolbar .toolbar-left {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.tree-toolbar .toolbar-left h2 {\n  font-size: 18px;\n  margin: 0;\n  white-space: nowrap;\n}\n.tree-toolbar .toolbar-right {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n}\n.tree-kiosk-btn {\n  color: var(--primary) !important;\n}\n.root-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  background: var(--primary-bg);\n  border: 1.5px solid var(--primary-border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--primary);\n}\n.root-badge .material-icons-round {\n  font-size: 15px !important;\n}\n.root-badge-name {\n  max-width: 160px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.root-badge-clear {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  border: none;\n  background: var(--primary-border);\n  cursor: pointer;\n  padding: 0;\n}\n.root-badge-clear .material-icons-round {\n  font-size: 12px !important;\n  color: var(--primary);\n}\n.root-badge-clear:hover {\n  background: var(--primary);\n}\n.root-badge-clear:hover .material-icons-round {\n  color: #fff;\n}\n.root-picker-wrap {\n  position: relative;\n}\n.root-pick-btn.active {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.root-pick-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.root-overlay {\n  position: fixed;\n  inset: 0;\n  z-index: 299;\n}\n.root-dropdown {\n  position: absolute;\n  top: calc(100% + 8px);\n  right: 0;\n  width: 280px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);\n  z-index: 300;\n  overflow: hidden;\n  animation: root-drop-in 0.15s ease;\n}\n@keyframes root-drop-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.root-search-bar {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-bottom: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.root-search-bar .material-icons-round {\n  font-size: 17px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.root-search-input {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--text-primary);\n  font-family: inherit;\n}\n.root-search-input:focus {\n  outline: none;\n}\n.root-search-input::placeholder {\n  color: var(--text-muted);\n}\n.root-list {\n  max-height: 280px;\n  overflow-y: auto;\n  padding: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.root-list-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 10px;\n  border-radius: 9px;\n  border: none;\n  background: transparent;\n  text-align: left;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n  cursor: pointer;\n  font-family: inherit;\n  transition: background 0.12s;\n}\n.root-list-item .material-icons-round {\n  font-size: 17px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.root-list-item:hover {\n  background: var(--bg-muted);\n}\n.root-list-item.active {\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 700;\n}\n.root-list-all {\n  border-bottom: 1px solid var(--border);\n  border-radius: 0;\n  margin-bottom: 4px;\n  padding-bottom: 10px;\n}\n.root-list-avatar {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.root-list-avatar.male {\n  background: var(--primary);\n}\n.root-list-avatar.female {\n  background: var(--pink, #EC4899);\n}\n.root-list-avatar:not(.male):not(.female) {\n  background: var(--text-muted);\n}\n.root-empty {\n  text-align: center;\n  padding: 20px;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.tree-kiosk .tree-toolbar {\n  display: none;\n}\n.tree-kiosk .tree-canvas {\n  padding: 0;\n}\n.tree-kiosk:hover .tree-toolbar {\n  display: flex;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 50;\n  animation: tree-slide-down 0.2s ease;\n}\n@keyframes tree-slide-down {\n  from {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n.zoom-level {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-muted);\n  min-width: 38px;\n  text-align: center;\n}\n.tree-canvas {\n  flex: 1;\n  background: #F0F4FF;\n  background-image:\n    radial-gradient(\n      circle,\n      #BFDBFE 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px 24px;\n  position: relative;\n}\n.tree-visual {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n  min-width: 500px;\n  transition: transform 0.15s ease;\n  transform-origin: top center;\n  cursor: grab;\n  touch-action: none;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.tree-visual:active {\n  cursor: grabbing;\n}\n.generation {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.gen-label {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  background: var(--white);\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  border: 1px solid var(--border);\n}\n.gen-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 80px;\n  flex-wrap: nowrap;\n  justify-content: center;\n}\n.gen-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-stem {\n  width: 2px;\n  border-radius: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n}\n.group-stem.stem-single {\n  height: 40px;\n}\n.group-stem.stem-multi {\n  height: 20px;\n}\n.group-items {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  position: relative;\n}\n.group-items.multi::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: var(--bar-l, 55px);\n  right: var(--bar-r, 55px);\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.group-items.multi {\n  background: rgba(219, 234, 254, 0.28);\n  border-radius: 14px;\n  padding-bottom: 8px;\n}\n.group-child-wrap {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-child-drop {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.down-connector {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  margin-top: 2px;\n  border-radius: 2px;\n}\n.generation + .generation {\n  margin-top: 4px;\n}\n.union-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.solo-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.couple-wrap {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);\n  transition: var(--transition);\n}\n.couple-wrap.root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);\n}\n.couple-wrap.selected {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.couple-wrap:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.union-heart-connector {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.union-heart-connector .material-icons-round {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.union-heart-connector .union-hline {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.union-badge {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.union-badge .material-icons-round {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.tree-node {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  transition: var(--transition);\n  border-radius: 12px;\n}\n.tree-node:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.tree-node.active {\n  background: var(--primary-bg);\n}\n.tree-node.solo {\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n}\n.tree-node.solo.root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.tree-node.solo:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.tree-node.solo.active {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.node-avatar {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.node-avatar.male {\n  background: var(--primary);\n}\n.node-avatar.female {\n  background: var(--pink);\n}\n.node-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.node-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.node-name {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  word-break: break-word;\n}\n.node-year {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n}\n.zoom-hint {\n  position: fixed;\n  bottom: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(15, 23, 42, 0.7);\n  color: #fff;\n  font-size: 12px;\n  padding: 6px 14px;\n  border-radius: var(--radius-full);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  pointer-events: none;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  z-index: 10;\n}\n.zoom-hint .material-icons-round {\n  font-size: 14px !important;\n}\n.tree-tooltip {\n  position: fixed;\n  z-index: 500;\n  pointer-events: none;\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  padding: 12px 14px;\n  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);\n  min-width: 220px;\n  max-width: 280px;\n  animation: tt-in 0.15s ease;\n}\n@keyframes tt-in {\n  from {\n    opacity: 0;\n    transform: translateY(6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.tt-avatar {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.tt-avatar.male {\n  background: var(--primary);\n}\n.tt-avatar.female {\n  background: var(--pink);\n}\n.tt-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.tt-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.tt-content {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  flex: 1;\n}\n.tt-name {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n  word-break: break-word;\n}\n.tt-dates,\n.tt-lieu {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 11px;\n  color: var(--text-secondary);\n}\n.tt-dates .material-icons-round,\n.tt-lieu .material-icons-round {\n  font-size: 13px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.tt-badges {\n  display: flex;\n  gap: 4px;\n  flex-wrap: wrap;\n  margin-top: 2px;\n}\n.tt-badge {\n  display: inline-flex;\n  align-items: center;\n  padding: 1px 7px;\n  border-radius: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  background: var(--bg-muted);\n  color: var(--text-muted);\n}\n.tt-badge.tt-m {\n  background: #eff6ff;\n  color: var(--primary);\n}\n.tt-badge.tt-f {\n  background: #fdf2f8;\n  color: var(--pink);\n}\n.tt-badge.tt-alive {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.tt-badge.tt-dead {\n  background: #f1f5f9;\n  color: #64748b;\n}\n.tt-hint {\n  font-size: 10px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-style: italic;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.3);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.detail-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 340px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.detail-panel.open {\n  transform: translateX(0);\n}\n.dp-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.dp-header h3 {\n  font-size: 16px;\n  font-weight: 700;\n  margin: 0;\n  color: var(--text-primary);\n}\n.dp-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 24px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.dp-avatar-wrap {\n  margin-bottom: 4px;\n}\n.dp-avatar {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n  font-weight: 700;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);\n}\n.dp-avatar.male {\n  background: var(--primary);\n}\n.dp-avatar.female {\n  background: var(--pink);\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);\n}\n.dp-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.dp-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.dp-name {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  text-align: center;\n  margin: 0;\n  line-height: 1.3;\n}\n.dp-badges {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n.dp-info-list {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  margin-top: 4px;\n}\n.dp-info-item {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  padding: 12px 16px;\n  border-bottom: 1px solid var(--border);\n}\n.dp-info-item:last-child {\n  border-bottom: none;\n}\n.dp-info-item .material-icons-round {\n  font-size: 18px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.dp-info-text {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.dp-info-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n}\n.dp-info-value {\n  font-size: 14px;\n  color: var(--text-primary);\n  font-weight: 500;\n}\n.dp-link {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  text-decoration: none;\n  margin-top: 8px;\n}\n@media (max-width: 640px) {\n  .tree-toolbar {\n    padding: 12px 16px;\n  }\n  .toolbar-right button {\n    min-width: 0;\n  }\n  .detail-panel {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 85vh;\n    transform: translateY(100%);\n  }\n  .detail-panel.open {\n    transform: translateY(0);\n  }\n  .zoom-hint {\n    bottom: 8px;\n    font-size: 11px;\n    padding: 5px 10px;\n  }\n}\n.ts-roots {\n  display: flex;\n  align-items: flex-start;\n  gap: 60px;\n  padding: 40px;\n}\n.ts-subtree {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.ts-couple {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);\n  transition: var(--transition);\n}\n.ts-couple.ts-root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18);\n}\n.ts-couple.ts-selected {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-couple:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.ts-solo-card.ts-root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.ts-solo-card.ts-active {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-solo-card.male:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card.female:hover {\n  border-color: var(--pink);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-person {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  border-radius: 12px;\n  transition: var(--transition);\n}\n.ts-person:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.ts-person.ts-active {\n  background: var(--primary-bg);\n}\n.ts-avatar {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.ts-avatar.male {\n  background: var(--primary);\n}\n.ts-avatar.female {\n  background: var(--pink, #EC4899);\n}\n.ts-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.ts-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.ts-name {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  max-width: 110px;\n  word-break: break-word;\n}\n.ts-year {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n  white-space: nowrap;\n}\n.ts-heart {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.ts-heart .material-icons-round {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.ts-hline {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.ts-union-badge {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.ts-union-badge .material-icons-round {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.ts-down {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  border-radius: 2px;\n  margin-top: 2px;\n}\n.ts-branch {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n}\n.ts-hbar {\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.ts-children-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 40px;\n}\n.ts-child-col {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ts-up {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n/*# sourceMappingURL=tree.component.css.map */\n'] }]
   }], () => [{ type: ApiService }], { treeVisual: [{
     type: ViewChild,
     args: ["treeVisual", { static: false }]
@@ -5621,7 +5436,7 @@ var TreeComponent = class _TreeComponent {
   }] });
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TreeComponent, { className: "TreeComponent", filePath: "src/app/pages/tree/tree.component.ts", lineNumber: 33 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TreeComponent, { className: "TreeComponent", filePath: "src/app/pages/tree/tree.component.ts", lineNumber: 28 });
 })();
 
 // src/app/pages/stories/stories.component.ts
@@ -11142,4 +10957,4 @@ var ShellModule = class _ShellModule {
 export {
   ShellModule
 };
-//# sourceMappingURL=chunk-LF75D6LI.js.map
+//# sourceMappingURL=chunk-U3KDGSUY.js.map
