@@ -1,228 +1,361 @@
 <div class="admin-page">
 
-  <!-- En-tête -->
-  <div class="page-header">
-    <div>
-      <h2 class="page-title">Administration</h2>
-      <p class="page-subtitle" *ngIf="famille">
-        {{ famille.nom }}
-        <span class="famille-code" *ngIf="famille.code">&nbsp;·&nbsp;Code : <strong>{{ famille.code }}</strong></span>
-      </p>
+  <!-- ===== HERO ===== -->
+  <div class="adm-hero">
+    <div class="adm-hero-bg"></div>
+    <div class="adm-hero-content">
+      <div class="adm-hero-left">
+        <div class="adm-hero-icon">
+          <span class="material-icons-round">admin_panel_settings</span>
+        </div>
+        <div>
+          <p class="adm-hero-eyebrow">Administration</p>
+          <h1 class="adm-hero-title">{{ famille?.nom || 'Famille' }}</h1>
+          <div class="adm-hero-code" *ngIf="famille?.code">
+            <span class="material-icons-round">key</span>
+            <span class="adm-code-val">{{ famille.code }}</span>
+            <button class="adm-copy-code" (click)="copyFamilleCode()" [title]="viewonlyCopied === 'familleCode' ? 'Copié !' : 'Copier le code'">
+              <span class="material-icons-round">{{ viewonlyCopied === 'familleCode' ? 'check' : 'content_copy' }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="adm-hero-stats">
+        <div class="adm-hstat">
+          <span class="adm-hstat-val">{{ membres.length }}</span>
+          <span class="adm-hstat-lbl">Membres</span>
+        </div>
+        <div class="adm-hstat-sep"></div>
+        <div class="adm-hstat">
+          <span class="adm-hstat-val">{{ countRole('admin') }}</span>
+          <span class="adm-hstat-lbl">Admins</span>
+        </div>
+        <div class="adm-hstat-sep"></div>
+        <div class="adm-hstat">
+          <span class="adm-hstat-val">{{ countRole('gestionnaire') }}</span>
+          <span class="adm-hstat-lbl">Gestionnaires</span>
+        </div>
+        <div class="adm-hstat-sep"></div>
+        <div class="adm-hstat">
+          <span class="adm-hstat-val">{{ countRole('viewonly') }}</span>
+          <span class="adm-hstat-lbl">Lecture seule</span>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Chargement -->
+  <!-- Chargement / Erreur -->
   <div class="loading-state" *ngIf="loading">
-    <span class="material-icons-round spin">sync</span>
-    Chargement...
+    <span class="material-icons-round spin">sync</span> Chargement...
+  </div>
+  <div class="error-state" *ngIf="erreur && !loading">
+    <span class="material-icons-round">error_outline</span>{{ erreur }}
   </div>
 
-  <!-- Erreur -->
-  <div class="error-state" *ngIf="erreur && !loading">
-    <span class="material-icons-round">error_outline</span>
-    {{ erreur }}
+  <!-- Toast succès -->
+  <div class="adm-toast" *ngIf="saveSuccess">
+    <span class="material-icons-round">check_circle</span>{{ saveSuccess }}
   </div>
 
   <ng-container *ngIf="!loading && !erreur">
 
-    <!-- Stats -->
-    <div class="stats-row">
-      <div class="stat-card">
-        <span class="material-icons-round stat-icon">group</span>
-        <div>
-          <div class="stat-value">{{ membres.length }}</div>
-          <div class="stat-label">Membre{{ membres.length > 1 ? 's' : '' }}</div>
-        </div>
-      </div>
-      <div class="stat-card">
-        <span class="material-icons-round stat-icon">shield</span>
-        <div>
-          <div class="stat-value">{{ countRole('admin') }}</div>
-          <div class="stat-label">Administrateur{{ countRole('admin') > 1 ? 's' : '' }}</div>
-        </div>
-      </div>
-      <div class="stat-card">
-        <span class="material-icons-round stat-icon">manage_accounts</span>
-        <div>
-          <div class="stat-value">{{ countRole('gestionnaire') }}</div>
-          <div class="stat-label">Gestionnaire{{ countRole('gestionnaire') > 1 ? 's' : '' }}</div>
-        </div>
-      </div>
-    </div>
+    <!-- ===== GRILLE PRINCIPALE ===== -->
+    <div class="adm-main-grid">
 
-    <!-- ===== Accès consultation (lecture seule) ===== -->
-    <div class="section-card viewonly-card" *ngIf="viewonlyCreds">
-      <div class="section-header">
-        <div class="viewonly-title">
-          <span class="material-icons-round">visibility</span>
-          <div>
-            <h3>Accès consultation <span class="badge badge-gray">Lecture seule</span></h3>
-            <p>Partagez ces identifiants avec les membres qui souhaitent consulter l'arbre sans compte personnel.</p>
+      <!-- ── COLONNE MEMBRES ── -->
+      <div class="adm-card adm-card-members">
+
+        <!-- En-tête -->
+        <div class="adm-card-head">
+          <div class="adm-card-title">
+            <span class="material-icons-round">group</span>
+            Comptes membres
+            <span class="adm-count-badge">{{ filteredMembres.length }}/{{ membres.length }}</span>
           </div>
-        </div>
-        <button class="btn-icon" (click)="showViewonlyPassword = !showViewonlyPassword" title="Afficher / masquer">
-          <span class="material-icons-round">{{ showViewonlyPassword ? 'visibility_off' : 'visibility' }}</span>
-        </button>
-      </div>
-
-      <div class="viewonly-rows">
-        <div class="viewonly-row">
-          <span class="viewonly-label">Code famille</span>
-          <span class="viewonly-value">{{ viewonlyCreds.familleCode }}</span>
-          <button class="btn-copy" (click)="copyViewonly('code')" title="Copier">
-            <span class="material-icons-round">{{ viewonlyCopied === 'code' ? 'check' : 'content_copy' }}</span>
+          <button class="btn-primary btn-sm" (click)="showCreateForm = true">
+            <span class="material-icons-round">person_add</span>
+            Nouveau
           </button>
         </div>
-        <div class="viewonly-row">
-          <span class="viewonly-label">Identifiant</span>
-          <span class="viewonly-value">{{ viewonlyCreds.viewonlyUsername }}</span>
-          <button class="btn-copy" (click)="copyViewonly('username')" title="Copier">
-            <span class="material-icons-round">{{ viewonlyCopied === 'username' ? 'check' : 'content_copy' }}</span>
+
+        <!-- Barre de recherche -->
+        <div class="adm-search-bar">
+          <span class="material-icons-round adm-search-icon">search</span>
+          <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher un membre…" class="adm-search-input" />
+          <button class="adm-search-clear" *ngIf="searchQuery" (click)="searchQuery = ''">
+            <span class="material-icons-round">close</span>
           </button>
         </div>
-        <div class="viewonly-row">
-          <span class="viewonly-label">Mot de passe</span>
-          <span class="viewonly-value">{{ showViewonlyPassword ? viewonlyCreds.viewonlyPassword : '••••••••' }}</span>
-          <button class="btn-copy" (click)="copyViewonly('password')" title="Copier">
-            <span class="material-icons-round">{{ viewonlyCopied === 'password' ? 'check' : 'content_copy' }}</span>
+
+        <!-- Filtres rôle -->
+        <div class="adm-role-filters">
+          <button class="adm-filter-btn" *ngFor="let f of roleFilters"
+                  [class.active]="roleFilter === f.key"
+                  (click)="roleFilter = f.key">
+            <span class="material-icons-round">{{ f.icon }}</span>
+            {{ f.label }}
+            <span class="adm-filter-count" *ngIf="f.key !== 'tous'">{{ countRole(f.key) }}</span>
           </button>
         </div>
-      </div>
 
-      <button class="btn-share-viewonly" (click)="shareViewonly()">
-        <span class="material-icons-round">share</span>
-        {{ viewonlyCopied === 'share' ? 'Copié dans le presse-papier !' : 'Partager les accès' }}
-      </button>
-    </div>
+        <!-- Liste membres -->
+        <div class="adm-members-list">
 
-    <!-- Section Membres -->
-    <div class="section-card">
-      <div class="section-header">
-        <h3>Membres ({{ membres.length }})</h3>
-        <button class="btn-primary btn-sm" (click)="showCreateForm = true">
-          <span class="material-icons-round">person_add</span>
-          Nouveau compte
-        </button>
-      </div>
+          <div class="adm-member-row" *ngFor="let m of filteredMembres; trackBy: trackById">
 
-      <div class="members-table">
-        <div class="member-row" *ngFor="let m of membres">
-          <div class="member-info">
-            <div class="avatar avatar-sm">{{ userInitiales(m.user) }}</div>
-            <div class="member-details">
-              <span class="member-name">{{ m.user?.prenom }} {{ m.user?.nom }}</span>
-              <span class="member-contact">{{ m.user?.email || m.user?.telephone || '—' }}</span>
+            <!-- Avatar + Infos -->
+            <div class="adm-member-left">
+              <div class="adm-avatar" [class]="'adm-avatar--' + getRoleColor(m.role)">
+                {{ userInitiales(m.user) }}
+              </div>
+              <div class="adm-member-info">
+                <span class="adm-member-name">{{ m.user?.prenom }} {{ m.user?.nom }}</span>
+                <span class="adm-member-contact">{{ m.user?.email || m.user?.telephone || '—' }}</span>
+              </div>
             </div>
+
+            <!-- Sélecteur de rôle -->
+            <div class="adm-role-cell">
+              <div class="adm-role-select-wrap" *ngIf="m.role !== 'admin'; else adminBadge">
+                <select class="adm-role-select"
+                        [(ngModel)]="editingRole[m.user?.id]"
+                        [disabled]="roleChanging === m.user?.id"
+                        [class]="'role-' + editingRole[m.user?.id]">
+                  <option *ngFor="let r of roles" [value]="r.val">{{ r.label }}</option>
+                </select>
+
+                <!-- Confirmation inline -->
+                <ng-container *ngIf="hasRoleChanged(m.user?.id)">
+                  <button class="adm-confirm-btn adm-confirm-yes"
+                          [disabled]="roleChanging === m.user?.id"
+                          (click)="confirmRoleChange(m.user?.id)"
+                          title="Confirmer le changement">
+                    <span class="material-icons-round spin" *ngIf="roleChanging === m.user?.id">sync</span>
+                    <span class="material-icons-round" *ngIf="roleChanging !== m.user?.id">check</span>
+                  </button>
+                  <button class="adm-confirm-btn adm-confirm-no"
+                          [disabled]="roleChanging === m.user?.id"
+                          (click)="cancelRoleChange(m.user?.id)"
+                          title="Annuler">
+                    <span class="material-icons-round">close</span>
+                  </button>
+                </ng-container>
+              </div>
+
+              <ng-template #adminBadge>
+                <div class="adm-admin-badge">
+                  <span class="material-icons-round">verified</span>
+                  Administrateur
+                </div>
+              </ng-template>
+            </div>
+
           </div>
-          <span class="badge" [ngClass]="getRoleBadgeClass(m.role)">{{ getRoleLabel(m.role) }}</span>
-          <div class="member-actions" *ngIf="m.role !== 'admin'">
-            <button class="btn-ghost btn-sm"
-                    [disabled]="roleChanging === m.user?.id"
-                    (click)="changeRole(m.user?.id, getNextRole(m.role))">
-              <span class="material-icons-round spin" *ngIf="roleChanging === m.user?.id">sync</span>
-              {{ getPromoLabel(m.role) }}
+
+          <!-- Vide -->
+          <div class="adm-empty" *ngIf="filteredMembres.length === 0">
+            <span class="material-icons-round">manage_search</span>
+            <p>Aucun membre trouvé</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── COLONNE DROITE ── -->
+      <div class="adm-right-col">
+
+        <!-- Accès consultation -->
+        <div class="adm-card adm-card-viewonly" *ngIf="viewonlyCreds">
+          <div class="adm-card-head">
+            <div class="adm-card-title">
+              <span class="material-icons-round">visibility</span>
+              Accès lecture seule
+            </div>
+            <button class="btn-icon" (click)="showViewonlyPassword = !showViewonlyPassword"
+                    [title]="showViewonlyPassword ? 'Masquer' : 'Afficher'">
+              <span class="material-icons-round">{{ showViewonlyPassword ? 'visibility_off' : 'visibility' }}</span>
             </button>
           </div>
-          <div class="member-actions" *ngIf="m.role === 'admin'">
-            <span class="admin-badge">
-              <span class="material-icons-round">verified</span>
-            </span>
+
+          <p class="adm-viewonly-desc">
+            Partagez ces identifiants pour un accès en consultation uniquement, sans compte personnel.
+          </p>
+
+          <!-- QR + Identifiants -->
+          <div class="adm-viewonly-body">
+            <img [src]="viewonlyQrUrl" alt="QR code" class="adm-viewonly-qr" />
+            <div class="adm-cred-rows">
+              <div class="adm-cred-row">
+                <span class="adm-cred-label">Code famille</span>
+                <span class="adm-cred-val">{{ viewonlyCreds.familleCode }}</span>
+                <button class="adm-cred-copy" (click)="copyViewonly('code')">
+                  <span class="material-icons-round">{{ viewonlyCopied === 'code' ? 'check' : 'content_copy' }}</span>
+                </button>
+              </div>
+              <div class="adm-cred-row">
+                <span class="adm-cred-label">Identifiant</span>
+                <span class="adm-cred-val">{{ viewonlyCreds.viewonlyUsername }}</span>
+                <button class="adm-cred-copy" (click)="copyViewonly('username')">
+                  <span class="material-icons-round">{{ viewonlyCopied === 'username' ? 'check' : 'content_copy' }}</span>
+                </button>
+              </div>
+              <div class="adm-cred-row">
+                <span class="adm-cred-label">Mot de passe</span>
+                <span class="adm-cred-val">{{ showViewonlyPassword ? viewonlyCreds.viewonlyPassword : '••••••••' }}</span>
+                <button class="adm-cred-copy" (click)="copyViewonly('password')">
+                  <span class="material-icons-round">{{ viewonlyCopied === 'password' ? 'check' : 'content_copy' }}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partage -->
+          <div class="adm-share-btns">
+            <button class="adm-share-wa" (click)="shareViewonlyWhatsApp()">
+              <svg style="width:16px;height:16px;flex-shrink:0" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+              WhatsApp
+            </button>
+            <button class="adm-share-copy" (click)="shareViewonly()">
+              <span class="material-icons-round">{{ viewonlyCopied === 'share' ? 'check' : 'share' }}</span>
+              {{ viewonlyCopied === 'share' ? 'Copié !' : 'Partager' }}
+            </button>
           </div>
         </div>
 
-        <div class="empty-list-msg" *ngIf="membres.length === 0">
-          Aucun membre dans cette famille
+        <!-- Infos famille -->
+        <div class="adm-card adm-card-info">
+          <div class="adm-card-head">
+            <div class="adm-card-title">
+              <span class="material-icons-round">info</span>
+              Informations famille
+            </div>
+          </div>
+          <div class="adm-info-rows">
+            <div class="adm-info-row">
+              <span class="adm-info-label">Nom</span>
+              <span class="adm-info-val">{{ famille?.nom || '—' }}</span>
+            </div>
+            <div class="adm-info-row">
+              <span class="adm-info-label">Code d'accès</span>
+              <span class="adm-info-val adm-info-code">{{ famille?.code || '—' }}</span>
+            </div>
+            <div class="adm-info-row">
+              <span class="adm-info-label">Total membres</span>
+              <span class="adm-info-val">{{ membres.length }}</span>
+            </div>
+            <div class="adm-info-row">
+              <span class="adm-info-label">Profils arbre</span>
+              <span class="adm-info-val">{{ personnes.length }}</span>
+            </div>
+          </div>
         </div>
+
+      </div>
+    </div>
+
+    <!-- ===== ZONE DANGER ===== -->
+    <div class="adm-card adm-danger-card">
+      <div class="adm-card-head">
+        <div class="adm-card-title adm-danger-title">
+          <span class="material-icons-round">warning</span>
+          Zone de danger
+        </div>
+      </div>
+      <div class="adm-danger-row">
+        <div>
+          <span class="adm-danger-label">Réinitialiser l'accès lecture seule</span>
+          <span class="adm-danger-sub">Génère de nouveaux identifiants — les anciens ne fonctionneront plus</span>
+        </div>
+        <button class="adm-danger-btn" disabled title="Bientôt disponible">
+          <span class="material-icons-round">refresh</span>Réinitialiser
+        </button>
       </div>
     </div>
 
   </ng-container>
-
 </div>
 
 <!-- ===== OVERLAY ===== -->
 <div class="panel-overlay" *ngIf="showCreateForm" (click)="showCreateForm = false"></div>
 
-<!-- ===== PANNEAU CRÉATION MEMBRE ===== -->
+<!-- ===== PANNEAU CRÉATION ===== -->
 <div class="slide-panel" [class.open]="showCreateForm">
   <div class="panel-header">
-    <h3>Nouveau compte membre</h3>
+    <div class="panel-header-title">
+      <span class="material-icons-round">person_add</span>
+      <h3>Nouveau compte membre</h3>
+    </div>
     <button class="btn-icon" (click)="showCreateForm = false">
       <span class="material-icons-round">close</span>
     </button>
   </div>
 
   <div class="panel-body">
-    <form #createMemberForm="ngForm">
 
-      <div class="form-section">
-        <div class="section-title">Identité</div>
-
-        <div class="form-row-2">
-          <div class="form-group">
-            <label>Prénom <span class="required">*</span></label>
-            <input type="text" name="prenom" [(ngModel)]="createForm.prenom"
-                   required placeholder="Prénom" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label>Nom <span class="required">*</span></label>
-            <input type="text" name="nom" [(ngModel)]="createForm.nom"
-                   required placeholder="Nom de famille" class="form-control" />
-          </div>
+    <div class="form-section">
+      <div class="section-title">Identité</div>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>Prénom <span class="required">*</span></label>
+          <input type="text" name="prenom" [(ngModel)]="createForm.prenom"
+                 required placeholder="Prénom" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Nom <span class="required">*</span></label>
+          <input type="text" name="nom" [(ngModel)]="createForm.nom"
+                 required placeholder="Nom de famille" class="form-control" />
         </div>
       </div>
+    </div>
 
-      <div class="form-section">
-        <div class="section-title">Connexion</div>
-
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" name="email" [(ngModel)]="createForm.email"
-                 placeholder="exemple@email.com" class="form-control" />
-        </div>
-
-        <div class="form-group">
-          <label>Téléphone</label>
-          <input type="tel" name="telephone" [(ngModel)]="createForm.telephone"
-                 placeholder="+221 77 000 00 00" class="form-control" />
-        </div>
-
-        <div class="form-group">
-          <label>Mot de passe <span class="required">*</span></label>
-          <input type="password" name="password" [(ngModel)]="createForm.password"
-                 required placeholder="Mot de passe" class="form-control" />
-        </div>
+    <div class="form-section">
+      <div class="section-title">Connexion</div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" [(ngModel)]="createForm.email"
+               placeholder="exemple@email.com" class="form-control" />
       </div>
-
-      <div class="form-section">
-        <div class="section-title">Rôle et association</div>
-
-        <div class="form-group">
-          <label>Rôle</label>
-          <select name="role" [(ngModel)]="createForm.role" class="form-control">
-            <option *ngFor="let r of roles" [value]="r.val">{{ r.label }}</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Associer à une personne <span class="optional">(optionnel)</span></label>
-          <select name="personneId" [(ngModel)]="createForm.personneId" class="form-control">
-            <option value="">— Aucune association —</option>
-            <option *ngFor="let p of personnes" [value]="p.id">
-              {{ p.prenoms }} {{ p.nomUsage ?? p.nomNaissance }}
-            </option>
-          </select>
-        </div>
+      <div class="form-group">
+        <label>Téléphone</label>
+        <input type="tel" name="telephone" [(ngModel)]="createForm.telephone"
+               placeholder="+221 77 000 00 00" class="form-control" />
       </div>
+      <div class="form-group">
+        <label>Mot de passe <span class="required">*</span></label>
+        <input type="password" name="password" [(ngModel)]="createForm.password"
+               required placeholder="Mot de passe" class="form-control" />
+      </div>
+    </div>
 
-    </form>
+    <div class="form-section">
+      <div class="section-title">Rôle et association</div>
+      <div class="form-group">
+        <label>Rôle</label>
+        <select name="role" [(ngModel)]="createForm.role" class="form-control">
+          <option *ngFor="let r of roles" [value]="r.val">{{ r.label }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Associer à une personne <span class="optional">(optionnel)</span></label>
+        <select name="personneId" [(ngModel)]="createForm.personneId" class="form-control">
+          <option value="">— Aucune association —</option>
+          <option *ngFor="let p of personnes" [value]="p.id">
+            {{ p.prenoms }} {{ p.nomUsage ?? p.nomNaissance }}
+          </option>
+        </select>
+      </div>
+    </div>
+
   </div>
 
   <div class="panel-footer">
     <button class="btn-ghost" (click)="showCreateForm = false">Annuler</button>
     <button class="btn-primary" (click)="createMember()" [disabled]="saving">
       <span class="material-icons-round spin" *ngIf="saving">sync</span>
-      {{ saving ? 'Création...' : 'Créer le compte' }}
+      <span class="material-icons-round" *ngIf="!saving">person_add</span>
+      {{ saving ? 'Création…' : 'Créer le compte' }}
     </button>
   </div>
 </div>

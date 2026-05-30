@@ -1,4 +1,4 @@
-<div class="fa-page">
+<div class="fa-page" [class.fa-kiosk]="isKiosk">
 
   <!-- TOOLBAR -->
   <div class="fa-toolbar">
@@ -18,6 +18,15 @@
       </button>
       <button class="btn-ghost btn-sm" type="button" (click)="resetView()" title="Réinitialiser">
         <span class="material-icons-round">refresh</span>
+      </button>
+      <div class="fa-toolbar-sep"></div>
+      <button class="btn-ghost btn-sm" type="button" (click)="exportPDF()" [disabled]="exporting" title="Exporter en PDF">
+        <span class="material-icons-round" *ngIf="!exporting">picture_as_pdf</span>
+        <span class="material-icons-round spin" *ngIf="exporting">sync</span>
+      </button>
+      <button class="btn-ghost btn-sm fa-kiosk-btn" type="button" (click)="toggleKiosk()"
+              [title]="isKiosk ? 'Quitter le mode présentation' : 'Mode présentation plein écran'">
+        <span class="material-icons-round">{{ isKiosk ? 'fullscreen_exit' : 'fullscreen' }}</span>
       </button>
     </div>
   </div>

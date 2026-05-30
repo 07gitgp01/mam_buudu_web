@@ -33,6 +33,125 @@
   }
 }
 
+.tree-kiosk-btn { color: var(--primary) !important; }
+
+/* ===== BADGE RACINE ACTIVE ===== */
+.root-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 20px;
+  background: var(--primary-bg); border: 1.5px solid var(--primary-border);
+  font-size: 12px; font-weight: 600; color: var(--primary);
+  .material-icons-round { font-size: 15px !important; }
+}
+
+.root-badge-name {
+  max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+.root-badge-clear {
+  display: flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%;
+  border: none; background: var(--primary-border);
+  cursor: pointer; padding: 0;
+  .material-icons-round { font-size: 12px !important; color: var(--primary); }
+  &:hover { background: var(--primary); .material-icons-round { color: #fff; } }
+}
+
+/* ===== SÉLECTEUR DE RACINE ===== */
+.root-picker-wrap { position: relative; }
+
+.root-pick-btn {
+  &.active { background: var(--primary-bg); color: var(--primary); }
+  .material-icons-round { font-size: 18px !important; }
+}
+
+.root-overlay {
+  position: fixed; inset: 0; z-index: 299;
+}
+
+.root-dropdown {
+  position: absolute; top: calc(100% + 8px); right: 0;
+  width: 280px; background: var(--white);
+  border: 1px solid var(--border); border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  z-index: 300; overflow: hidden;
+  animation: root-drop-in 0.15s ease;
+}
+
+@keyframes root-drop-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.root-search-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-muted);
+  .material-icons-round { font-size: 17px !important; color: var(--text-muted); flex-shrink: 0; }
+}
+
+.root-search-input {
+  flex: 1; border: none; background: transparent;
+  font-size: 13px; color: var(--text-primary); font-family: inherit;
+  &:focus { outline: none; }
+  &::placeholder { color: var(--text-muted); }
+}
+
+.root-list {
+  max-height: 280px; overflow-y: auto; padding: 6px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+
+.root-list-item {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; padding: 8px 10px; border-radius: 9px;
+  border: none; background: transparent;
+  text-align: left; font-size: 13px; font-weight: 500;
+  color: var(--text-primary); cursor: pointer; font-family: inherit;
+  transition: background 0.12s;
+  .material-icons-round { font-size: 17px !important; color: var(--primary); flex-shrink: 0; }
+  &:hover { background: var(--bg-muted); }
+  &.active { background: var(--primary-bg); color: var(--primary); font-weight: 700; }
+}
+
+.root-list-all {
+  border-bottom: 1px solid var(--border);
+  border-radius: 0; margin-bottom: 4px; padding-bottom: 10px;
+}
+
+.root-list-avatar {
+  width: 28px; height: 28px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #fff; flex-shrink: 0;
+  &.male   { background: var(--primary); }
+  &.female { background: var(--pink, #EC4899); }
+  &:not(.male):not(.female) { background: var(--text-muted); }
+}
+
+.root-empty {
+  text-align: center; padding: 20px; font-size: 13px; color: var(--text-muted);
+}
+
+/* ===== MODE KIOSQUE ===== */
+.tree-kiosk {
+  .tree-toolbar { display: none; }
+  .tree-canvas  { padding: 0; }
+
+  &:hover .tree-toolbar {
+    display: flex;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    animation: tree-slide-down 0.2s ease;
+  }
+}
+
+@keyframes tree-slide-down {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
 .zoom-level {
   font-size: 12px;
   font-weight: 600;
@@ -95,9 +214,70 @@
 .gen-row {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
+  gap: 80px;          /* espace entre groupes de parents différents */
   flex-wrap: nowrap;
   justify-content: center;
+}
+
+/* ===== GROUPE D'ENFANTS (même parent) ===== */
+.gen-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Tige montante unique centrée sur le groupe */
+.group-stem {
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, var(--primary-border), var(--primary));
+
+  &.stem-single { height: 40px; } /* enfant unique : tige pleine */
+  &.stem-multi  { height: 20px; } /* enfants multiples : demi-tige + barre + chutes */
+}
+
+/* Rangée de frères/sœurs */
+.group-items {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;          /* espace entre frères/sœurs du même parent */
+  position: relative;
+
+  /* Barre horizontale reliant les frères/sœurs.
+     --bar-l / --bar-r : calculés dans le template (55px=solo, 139px=couple) */
+  &.multi::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--bar-l, 55px);
+    right: var(--bar-r, 55px);
+    height: 2px;
+    background: linear-gradient(to right,
+      var(--primary-border), var(--primary), var(--primary-border));
+    border-radius: 2px;
+  }
+
+  /* Fond léger pour délimiter chaque fratrie */
+  &.multi {
+    background: rgba(219, 234, 254, 0.28);
+    border-radius: 14px;
+    padding-bottom: 8px; /* uniquement vertical pour ne pas décaler la barre */
+  }
+}
+
+/* Wrapper par enfant */
+.group-child-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Chute verticale de la barre horizontale vers chaque enfant */
+.group-child-drop {
+  width: 2px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 2px;
 }
 
 /* ===== CONNECTEURS ===== */
@@ -106,14 +286,6 @@
   height: 40px;
   background: linear-gradient(to bottom, var(--primary-border), var(--primary));
   margin-top: 2px;
-  border-radius: 2px;
-}
-
-.up-connector {
-  width: 2px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--primary), var(--primary-border));
-  margin-bottom: 2px;
   border-radius: 2px;
 }
 

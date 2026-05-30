@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { forkJoin } from 'rxjs';
 import { Union } from '../../models/union.model';
-import { Personne, getInitiales, extractAnnee, getNomComplet } from '../../models/personne.model';
+import { Personne, getInitiales, extractAnnee, getNomComplet, getPhotoUrl } from '../../models/personne.model';
 import { ApiService } from '../../services/api.service';
 
 export const MOIS = [
@@ -54,6 +54,15 @@ export class UnionsComponent implements OnInit {
   loading = true;
   erreur: string | null = null;
   viewMode: 'cards' | 'list' = 'cards';
+
+  getPhotoUrl = getPhotoUrl;
+  failedPhotos = new Set<string>();
+
+  onPhotoError(id: string): void { this.failedPhotos.add(id); }
+
+  photoOf(p: Personne | null): string | null {
+    return p ? getPhotoUrl(p) : null;
+  }
 
   // Panel form
   showForm = false;

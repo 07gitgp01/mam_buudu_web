@@ -28,6 +28,7 @@ export class SidebarComponent {
     { icon: 'collections_bookmark',  label: 'Stories',        route: '/app/stories' },
     { icon: 'timeline',              label: 'Timeline',       route: '/app/timeline' },
     { icon: 'sports_esports',        label: 'Jeux',           route: '/app/jeux' },
+    { icon: 'group_add',             label: 'Inviter',        route: '/app/inviter' },
   ];
 
   constructor(

@@ -11,21 +11,38 @@
           <h1 class="fh-family-name">Famille {{ nomFamille || '…' }}</h1>
         </div>
       </div>
-      <div class="fh-hero-stats">
-        <div class="fh-hero-stat">
-          <span class="fhs-value">{{ totalMembres }}</span>
-          <span class="fhs-label">Membres</span>
+      <div class="fh-hero-right">
+        <div class="fh-hero-stats">
+          <div class="fh-hero-stat">
+            <span class="fhs-value">{{ totalMembres }}</span>
+            <span class="fhs-label">Membres</span>
+          </div>
+          <div class="fh-hero-divider"></div>
+          <div class="fh-hero-stat">
+            <span class="fhs-value">{{ totalGenerations }}</span>
+            <span class="fhs-label">Générations</span>
+          </div>
+          <div class="fh-hero-divider"></div>
+          <div class="fh-hero-stat">
+            <span class="fhs-value">{{ totalUnions }}</span>
+            <span class="fhs-label">Unions</span>
+          </div>
         </div>
-        <div class="fh-hero-divider"></div>
-        <div class="fh-hero-stat">
-          <span class="fhs-value">{{ totalGenerations }}</span>
-          <span class="fhs-label">Générations</span>
-        </div>
-        <div class="fh-hero-divider"></div>
-        <div class="fh-hero-stat">
-          <span class="fhs-value">{{ totalUnions }}</span>
-          <span class="fhs-label">Unions</span>
-        </div>
+        <a class="fh-invite-btn" routerLink="/famille/inviter">
+          <span class="material-icons-round">group_add</span>
+          Inviter
+        </a>
+      </div>
+    </div>
+    <!-- Barre de complétion -->
+    <div class="fh-completion" *ngIf="!loading && totalMembres > 0">
+      <div class="fh-completion-label">
+        <span class="material-icons-round">bar_chart</span>
+        Complétion des profils
+        <strong>{{ completionScore }}%</strong>
+      </div>
+      <div class="fh-completion-bar">
+        <div class="fh-completion-fill" [style.width.%]="completionScore"></div>
       </div>
     </div>
   </div>
@@ -49,6 +66,28 @@
           <span class="fh-tile-label">{{ t.label }}</span>
           <span class="material-icons-round fh-tile-arrow">arrow_forward</span>
         </a>
+      </div>
+    </div>
+
+    <!-- Anniversaires à venir -->
+    <div class="fh-section" *ngIf="anniversairesProches.length > 0">
+      <h2 class="fh-section-title">
+        <span class="material-icons-round" style="color:#DB2777;font-size:20px!important;vertical-align:middle">cake</span>
+        Anniversaires à venir
+      </h2>
+      <div class="fh-bday-row">
+        <div class="fh-bday-card" *ngFor="let b of anniversairesProches">
+          <div class="fh-bday-avatar" [class.male]="b.p.sexe === 'M'" [class.female]="b.p.sexe === 'F'">
+            {{ getInitiales(b.p) }}
+          </div>
+          <div class="fh-bday-info">
+            <span class="fh-bday-name">{{ getNomComplet(b.p) }}</span>
+            <span class="fh-bday-date">{{ b.dateStr }}</span>
+          </div>
+          <span class="fh-bday-badge" [class.soon]="b.jours <= 7">
+            {{ b.jours === 0 ? 'Aujourd\'hui !' : b.jours === 1 ? 'Demain !' : b.jours + 'j' }}
+          </span>
+        </div>
       </div>
     </div>
 

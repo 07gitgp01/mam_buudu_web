@@ -132,6 +132,11 @@ export class FamilleProfilComponent implements OnInit {
     });
   }
 
+  shareWhatsApp(): void {
+    const msg = `Rejoignez l'arbre familial de la famille *${this.familleNom}* sur Mam Buudu 🌳\nCode d'accès : *${this.familleCode}*`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
   logout(): void {
     this.auth.logout();
     this.router.navigate(['/famille/login']);

@@ -66,14 +66,36 @@
       <!-- Couple -->
       <div class="couple-row">
         <div class="person-chip">
-          <div class="avatar avatar-md">{{ initiales(getConjoint1(u)) }}</div>
+          <div class="u-avatar-wrap">
+            <img *ngIf="photoOf(getConjoint1(u)) && !failedPhotos.has(getConjoint1(u)!.id)"
+                 [src]="photoOf(getConjoint1(u))" class="u-avatar-photo avatar avatar-md"
+                 [alt]="nomComplet(getConjoint1(u))"
+                 (error)="onPhotoError(getConjoint1(u)!.id)" />
+            <div *ngIf="!photoOf(getConjoint1(u)) || failedPhotos.has(getConjoint1(u)?.id ?? '')"
+                 class="avatar avatar-md"
+                 [class.male]="getConjoint1(u)?.sexe === 'M'"
+                 [class.female]="getConjoint1(u)?.sexe === 'F'">
+              {{ initiales(getConjoint1(u)) }}
+            </div>
+          </div>
           <div class="person-info">
             <span class="person-name">{{ nomComplet(getConjoint1(u)) }}</span>
           </div>
         </div>
         <span class="material-icons-round link-icon">favorite</span>
         <div class="person-chip">
-          <div class="avatar avatar-md accent">{{ initiales(getConjoint2(u)) }}</div>
+          <div class="u-avatar-wrap">
+            <img *ngIf="photoOf(getConjoint2(u)) && !failedPhotos.has(getConjoint2(u)!.id)"
+                 [src]="photoOf(getConjoint2(u))" class="u-avatar-photo avatar avatar-md"
+                 [alt]="nomComplet(getConjoint2(u))"
+                 (error)="onPhotoError(getConjoint2(u)!.id)" />
+            <div *ngIf="!photoOf(getConjoint2(u)) || failedPhotos.has(getConjoint2(u)?.id ?? '')"
+                 class="avatar avatar-md accent"
+                 [class.male]="getConjoint2(u)?.sexe === 'M'"
+                 [class.female]="getConjoint2(u)?.sexe === 'F'">
+              {{ initiales(getConjoint2(u)) }}
+            </div>
+          </div>
           <div class="person-info">
             <span class="person-name">{{ nomComplet(getConjoint2(u)) }}</span>
           </div>
@@ -127,12 +149,28 @@
       <!-- Couple -->
       <div class="ul-cell ul-cell-couple">
         <div class="ul-avatars">
-          <div class="avatar avatar-sm" [class.male]="getConjoint1(u)?.sexe === 'M'" [class.female]="getConjoint1(u)?.sexe === 'F'">
-            {{ initiales(getConjoint1(u)) }}
+          <div class="u-avatar-wrap">
+            <img *ngIf="photoOf(getConjoint1(u)) && !failedPhotos.has(getConjoint1(u)!.id)"
+                 [src]="photoOf(getConjoint1(u))" class="u-avatar-photo avatar avatar-sm"
+                 [alt]="nomComplet(getConjoint1(u))"
+                 (error)="onPhotoError(getConjoint1(u)!.id)" />
+            <div *ngIf="!photoOf(getConjoint1(u)) || failedPhotos.has(getConjoint1(u)?.id ?? '')"
+                 class="avatar avatar-sm"
+                 [class.male]="getConjoint1(u)?.sexe === 'M'" [class.female]="getConjoint1(u)?.sexe === 'F'">
+              {{ initiales(getConjoint1(u)) }}
+            </div>
           </div>
           <span class="material-icons-round ul-heart">favorite</span>
-          <div class="avatar avatar-sm" [class.male]="getConjoint2(u)?.sexe === 'M'" [class.female]="getConjoint2(u)?.sexe === 'F'">
-            {{ initiales(getConjoint2(u)) }}
+          <div class="u-avatar-wrap">
+            <img *ngIf="photoOf(getConjoint2(u)) && !failedPhotos.has(getConjoint2(u)!.id)"
+                 [src]="photoOf(getConjoint2(u))" class="u-avatar-photo avatar avatar-sm"
+                 [alt]="nomComplet(getConjoint2(u))"
+                 (error)="onPhotoError(getConjoint2(u)!.id)" />
+            <div *ngIf="!photoOf(getConjoint2(u)) || failedPhotos.has(getConjoint2(u)?.id ?? '')"
+                 class="avatar avatar-sm"
+                 [class.male]="getConjoint2(u)?.sexe === 'M'" [class.female]="getConjoint2(u)?.sexe === 'F'">
+              {{ initiales(getConjoint2(u)) }}
+            </div>
           </div>
         </div>
         <div class="ul-names">
@@ -219,7 +257,16 @@
                  *ngFor="let p of personnes"
                  [class.selected]="isParticipant(p.id)"
                  (click)="toggleParticipant(p.id)">
-              <div class="avatar avatar-sm">{{ initiales(p) }}</div>
+              <div class="u-avatar-wrap">
+                <img *ngIf="photoOf(p) && !failedPhotos.has(p.id)"
+                     [src]="photoOf(p)" class="u-avatar-photo avatar avatar-sm"
+                     [alt]="nomComplet(p)" (error)="onPhotoError(p.id)" />
+                <div *ngIf="!photoOf(p) || failedPhotos.has(p.id)"
+                     class="avatar avatar-sm"
+                     [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">
+                  {{ initiales(p) }}
+                </div>
+              </div>
               <span class="person-select-name">{{ nomComplet(p) }}</span>
               <span class="material-icons-round check-icon" *ngIf="isParticipant(p.id)">check_circle</span>
             </div>
@@ -332,7 +379,16 @@
            *ngFor="let p of personnesDisponibles"
            [class.selected]="isEnfantSelected(p.id)"
            (click)="toggleEnfantSelection(p.id)">
-        <div class="avatar avatar-sm">{{ initiales(p) }}</div>
+        <div class="u-avatar-wrap">
+          <img *ngIf="photoOf(p) && !failedPhotos.has(p.id)"
+               [src]="photoOf(p)" class="u-avatar-photo avatar avatar-sm"
+               [alt]="nomComplet(p)" (error)="onPhotoError(p.id)" />
+          <div *ngIf="!photoOf(p) || failedPhotos.has(p.id)"
+               class="avatar avatar-sm"
+               [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">
+            {{ initiales(p) }}
+          </div>
+        </div>
         <span class="person-select-name">{{ nomComplet(p) }}</span>
         <span class="material-icons-round check-icon" *ngIf="isEnfantSelected(p.id)">check_circle</span>
       </div>
@@ -345,7 +401,16 @@
     <div class="current-children" *ngIf="enfantUnionTarget && enfantUnionTarget.filiations.length > 0">
       <div class="section-title" style="margin-top: 20px;">Enfants actuels</div>
       <div class="child-item" *ngFor="let f of enfantUnionTarget.filiations">
-        <div class="avatar avatar-sm">{{ initiales(f.enfant) }}</div>
+        <div class="u-avatar-wrap">
+          <img *ngIf="photoOf(f.enfant) && !failedPhotos.has(f.enfant?.id ?? '')"
+               [src]="photoOf(f.enfant)" class="u-avatar-photo avatar avatar-sm"
+               [alt]="nomComplet(f.enfant)" (error)="f.enfant && onPhotoError(f.enfant.id)" />
+          <div *ngIf="!photoOf(f.enfant) || failedPhotos.has(f.enfant?.id ?? '')"
+               class="avatar avatar-sm"
+               [class.male]="f.enfant.sexe === 'M'" [class.female]="f.enfant.sexe === 'F'">
+            {{ initiales(f.enfant) }}
+          </div>
+        </div>
         <span class="child-name">{{ nomComplet(f.enfant) }}</span>
         <button class="btn-icon btn-icon-danger" title="Retirer"
                 (click)="retirerEnfant(enfantUnionTarget!.id, f.enfantId)">

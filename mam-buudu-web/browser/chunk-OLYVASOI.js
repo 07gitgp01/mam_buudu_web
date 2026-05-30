@@ -4,7 +4,7 @@ import {
   setClassMetadata,
   ɵɵdefineInjectable,
   ɵɵinject
-} from "./chunk-NB7PX5Q7.js";
+} from "./chunk-AEFTRA6R.js";
 
 // src/app/services/theme.service.ts
 var ThemeService = class _ThemeService {
@@ -44,4 +44,4 @@ var ThemeService = class _ThemeService {
 export {
   ThemeService
 };
-//# sourceMappingURL=chunk-D3ELWAJ2.js.map
+//# sourceMappingURL=chunk-OLYVASOI.js.map

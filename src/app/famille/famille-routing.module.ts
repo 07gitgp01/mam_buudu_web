@@ -9,6 +9,7 @@ import { FamilleStoriesComponent } from './pages/stories/famille-stories.compone
 import { FamilleArbreComponent } from './pages/arbre/famille-arbre.component';
 import { FamilleTimelineComponent } from './pages/timeline/famille-timeline.component';
 import { FamilleProfilComponent }   from './pages/profil/famille-profil.component';
+import { FamilleInviterComponent }  from './pages/inviter/famille-inviter.component';
 
 const routes: Routes = [
   { path: 'login', component: FamilleLoginComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
       { path: 'arbre',    component: FamilleArbreComponent    },
       { path: 'timeline', component: FamilleTimelineComponent },
       { path: 'profil',   component: FamilleProfilComponent   },
+      { path: 'inviter',  component: FamilleInviterComponent  },
     ],
   },
 ];

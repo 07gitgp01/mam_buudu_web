@@ -33,6 +33,35 @@
   flex-wrap: wrap;
 }
 
+.fa-toolbar-sep {
+  width: 1px; height: 20px;
+  background: var(--border, #E5E7EB);
+  margin: 0 2px;
+}
+
+.fa-kiosk-btn {
+  color: #7C3AED !important;
+}
+
+/* ===== MODE KIOSQUE ===== */
+.fa-kiosk {
+  .fa-toolbar { display: none; }
+  .fa-canvas { padding: 0; }
+
+  &:hover .fa-toolbar {
+    display: flex;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    animation: fa-slide-down 0.2s ease;
+  }
+}
+
+@keyframes fa-slide-down {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
 .fa-zoom-level {
   font-size: 12px;
   font-weight: 600;

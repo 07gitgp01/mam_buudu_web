@@ -25,6 +25,7 @@ export class FamilleShellComponent {
     { icon: 'people',       label: 'Membres',    route: '/famille/membres',  color: '#34D399' },
     { icon: 'auto_stories', label: 'Stories',    route: '/famille/stories',  color: '#F472B6' },
     { icon: 'timeline',     label: 'Événements', route: '/famille/timeline', color: '#FBBF24' },
+    { icon: 'group_add',    label: 'Inviter',    route: '/famille/inviter',  color: '#22D3EE' },
   ];
 
   constructor(

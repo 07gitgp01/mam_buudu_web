@@ -294,6 +294,19 @@
 
 .fp-code-hint { font-size: 11px; color: #9CA3AF; margin: 0; }
 
+.fp-famille-actions {
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+
+.fp-wa-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 14px; border-radius: 9px;
+  border: 1.5px solid #86EFAC; background: #DCFCE7;
+  color: #15803D; font-size: 12px; font-weight: 600;
+  cursor: pointer; font-family: inherit; transition: all 0.15s;
+  &:hover { background: #25D366; color: #fff; border-color: #25D366; }
+}
+
 .fp-famille-stat {
   display: flex;
   align-items: center;

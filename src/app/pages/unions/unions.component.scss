@@ -24,6 +24,18 @@
   margin: 0;
 }
 
+/* ===== PHOTO AVATAR ===== */
+.u-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.u-avatar-photo {
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
 /* ===== GRILLE ===== */
 .unions-grid {
   display: grid;

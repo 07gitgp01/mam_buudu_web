@@ -16,6 +16,7 @@ import { JeuxComponent } from '../pages/jeux/jeux.component';
 import { UnionsComponent } from '../pages/unions/unions.component';
 import { AdminComponent } from '../pages/admin/admin.component';
 import { ProfilComponent } from '../pages/profil/profil.component';
+import { InviterComponent } from '../pages/inviter/inviter.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ProfilComponent } from '../pages/profil/profil.component';
     UnionsComponent,
     AdminComponent,
     ProfilComponent,
+    InviterComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule, ShellRoutingModule],
 })

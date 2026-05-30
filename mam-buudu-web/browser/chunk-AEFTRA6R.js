@@ -39603,6 +39603,7 @@ export {
   ɵɵviewQuery,
   ɵɵqueryRefresh,
   ɵɵloadQuery,
+  ɵɵreference,
   ɵɵstyleProp,
   ɵɵclassProp,
   ɵɵclassMap,
@@ -39619,6 +39620,7 @@ export {
   ɵɵpureFunction1,
   ɵɵpipe,
   ɵɵpipeBind2,
+  ɵɵtemplateRefExtractor,
   ɵsetClassDebugInfo,
   Directive,
   Component,
@@ -39700,4 +39702,4 @@ export {
    * found in the LICENSE file at https://angular.dev/license
    *)
 */
-//# sourceMappingURL=chunk-NB7PX5Q7.js.map
+//# sourceMappingURL=chunk-AEFTRA6R.js.map

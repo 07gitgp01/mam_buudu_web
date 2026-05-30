@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import {
   Personne, getInitiales, extractAnnee, estVivant,
   getNomComplet, getAgeLabel, getPhotoUrl,
@@ -30,7 +30,7 @@ export interface DisplayGen {
   styleUrl: './tree.component.scss',
   standalone: false,
 })
-export class TreeComponent implements OnInit {
+export class TreeComponent implements OnInit, OnDestroy {
   loading = true;
   erreur: string | null = null;
   generations: DisplayGen[] = [];
@@ -46,6 +46,24 @@ export class TreeComponent implements OnInit {
   getPhotoUrl   = getPhotoUrl;
 
   totalPersonnes = 0;
+
+  // ── Données brutes (pour le filtrage de racine) ──────────────────────────
+  private allPersonnes: Personne[] = [];
+  private allUnions:    Union[]    = [];
+
+  // ── Sélection de racine ──────────────────────────────────────────────────
+  rootPersonId:     string | null = null;
+  rootPersonName    = '';
+  showRootPicker    = false;
+  rootSearchQuery   = '';
+
+  get rootCandidates(): Personne[] {
+    const q = this.rootSearchQuery.toLowerCase().trim();
+    const list = q
+      ? this.allPersonnes.filter(p => getNomComplet(p).toLowerCase().includes(q))
+      : this.allPersonnes;
+    return list.slice(0, 30);
+  }
 
   scale = 1;
   readonly minScale = 0.3;
@@ -64,23 +82,37 @@ export class TreeComponent implements OnInit {
   showDetail = false;
   failedPhotos = new Set<string>();
 
+  isKiosk = false;
+
   // Tooltip
   hoveredPerson: Personne | null = null;
   tooltipX = 0;
   tooltipY = 0;
   private tooltipHideTimer: any = null;
 
+  // Écoute globale : ferme la tooltip si le pointeur quitte tout nœud
+  private readonly onDocPointerOver = (e: PointerEvent): void => {
+    if (!this.hoveredPerson) return;
+    if (!(e.target as HTMLElement).closest('.tree-node')) {
+      this.clearTooltip();
+    }
+  };
+
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
+    document.addEventListener('pointerover', this.onDocPointerOver, { passive: true });
     forkJoin({
       personnes: this.api.getPersonnes(),
       unions:    this.api.getUnions(),
     }).subscribe({
       next: ({ personnes, unions }) => {
+        this.allPersonnes   = personnes;
+        this.allUnions      = unions;
         this.totalPersonnes = personnes.length;
         this.generations    = this.buildGenerations(personnes, unions);
         this.loading = false;
+        setTimeout(() => this.alignGroups(), 0);
       },
       error: () => {
         this.erreur  = 'Impossible de charger l\'arbre.';
@@ -89,7 +121,225 @@ export class TreeComponent implements OnInit {
     });
   }
 
+  // ── Constantes de layout ──────────────────────────────────────────────────
+  private readonly TREE_COUPLE_W = 310; // largeur carte couple (px)
+  private readonly TREE_SOLO_W   = 140; // largeur carte solo   (px)
+  private readonly TREE_GAP      = 40;  // espace entre sous-arbres (px)
+  private readonly TREE_PADDING  = 80;  // padding gauche/droite (px)
+
+  /**
+   * Layout arbre — calcul bas→haut, positionnement par largeurs CSS.
+   *
+   * Principe :
+   *   • chaque item reçoit une largeur = max(sa carte, somme enfants + gaps)
+   *   • chaque gen-group reçoit cette largeur → l'item est centré dedans
+   *   • les parents sans enfants reçoivent un spacer invisible de même largeur
+   *   • le gen-row utilise justify-content:center → tout s'aligne naturellement
+   *   • AUCUN left, aucune position:absolute, aucune mesure DOM
+   */
+  private alignGroups(): void {
+    const visual = this.treeVisual?.nativeElement;
+    if (!visual || !this.generations.length) return;
+
+    const ikey = (item: GenItem): string => item.union?.id ?? item.p1.id;
+
+    // ── Étape 1 : childrenOf ────────────────────────────────────────────────
+    const childrenOf = new Map<string, GenItem[]>();
+    for (let gi = 1; gi < this.generations.length; gi++) {
+      for (const item of this.generations[gi].items) {
+        if (!item.parentUnionId) continue;
+        if (!childrenOf.has(item.parentUnionId)) childrenOf.set(item.parentUnionId, []);
+        childrenOf.get(item.parentUnionId)!.push(item);
+      }
+    }
+
+    // ── Étape 2 : subtreeW bottom-up ────────────────────────────────────────
+    // subtreeW[key] = max(largeur propre, somme enfants + gaps)
+    const subtreeW = new Map<string, number>();
+    for (let gi = this.generations.length - 1; gi >= 0; gi--) {
+      for (const item of this.generations[gi].items) {
+        const key  = ikey(item);
+        const nodeW = item.type === 'union' ? this.TREE_COUPLE_W : this.TREE_SOLO_W;
+        const kids  = item.union?.id ? (childrenOf.get(item.union.id) ?? []) : [];
+        if (!kids.length) {
+          subtreeW.set(key, nodeW);
+        } else {
+          const kidsW = kids.reduce((s, c, i) =>
+            s + (subtreeW.get(ikey(c)) ?? this.TREE_SOLO_W) + (i ? this.TREE_GAP : 0), 0);
+          subtreeW.set(key, Math.max(nodeW, kidsW));
+        }
+      }
+    }
+
+    // unionId → subtreeW du couple propriétaire
+    const unionSW = new Map<string, number>();
+    for (const gen of this.generations) {
+      for (const item of gen.items) {
+        if (item.union?.id) unionSW.set(item.union.id, subtreeW.get(ikey(item)) ?? this.TREE_SOLO_W);
+      }
+    }
+
+    // Largeur totale + canvas
+    const gen0items = this.generations[0].items;
+    const totalTreeW = gen0items.reduce((s, c, i) =>
+      s + (subtreeW.get(ikey(c)) ?? this.TREE_SOLO_W) + (i ? this.TREE_GAP : 0), 0);
+    const canvasW = totalTreeW + 2 * this.TREE_PADDING;
+
+    // ── Étape 3 : application DOM ───────────────────────────────────────────
+    // Supprimer les anciens spacers, réinitialiser les styles
+    visual.querySelectorAll<HTMLElement>('.tree-spacer').forEach(s => s.remove());
+    visual.querySelectorAll<HTMLElement>('.gen-group, .gen-row, .group-child-wrap, .group-items').forEach(el => {
+      el.style.cssText = '';
+    });
+    visual.style.minWidth = canvasW + 'px';
+
+    const rows = Array.from(visual.querySelectorAll<HTMLElement>('.gen-row'));
+
+    for (let gi = 0; gi < rows.length; gi++) {
+      const row  = rows[gi];
+      const gen  = this.generations[gi];
+      if (!gen) continue;
+      const groups = Array.from(row.querySelectorAll<HTMLElement>(':scope > .gen-group'));
+      if (!groups.length) continue;
+
+      // pid → gen-group DOM
+      const pidToGroup = new Map<string | null, HTMLElement>();
+      groups.forEach(g => pidToGroup.set(g.getAttribute('data-parent'), g));
+
+      // Liste ordonnée des "slots" parentaux (= items de Gen N-1, ou Gen 0 lui-même)
+      // Chaque slot représente l'espace qu'un item de la génération précédente occupe.
+      interface Slot { unionId: string | null; sw: number; }
+      const slots: Slot[] = gi === 0
+        ? gen0items.map(item => ({ unionId: item.union?.id ?? null, sw: subtreeW.get(ikey(item)) ?? this.TREE_SOLO_W }))
+        : this.generations[gi - 1].items.map(item => ({
+            unionId: item.union?.id ?? null,
+            sw: item.union?.id ? (unionSW.get(item.union.id) ?? this.TREE_SOLO_W) : this.TREE_SOLO_W,
+          }));
+
+      slots.forEach((slot, orderIdx) => {
+        const group = slot.unionId ? pidToGroup.get(slot.unionId) : null;
+
+        if (group) {
+          // ── Groupe réel : width = slot du parent (= subtreeW du parent) ──
+          group.style.width      = slot.sw + 'px';
+          group.style.flexShrink = '0';
+          group.style.order      = String(orderIdx);
+
+          const items = gen.items.filter(item =>
+            slot.unionId ? item.parentUnionId === slot.unionId : !item.parentUnionId
+          );
+
+          // Barre horizontale centrée sur les enfants extrêmes
+          const gItemsEl = group.querySelector<HTMLElement>('.group-items');
+          if (gItemsEl && items.length) {
+            gItemsEl.style.gap = this.TREE_GAP + 'px';
+            gItemsEl.style.setProperty('--bar-l', ((subtreeW.get(ikey(items[0])) ?? this.TREE_SOLO_W) / 2) + 'px');
+            gItemsEl.style.setProperty('--bar-r', ((subtreeW.get(ikey(items[items.length - 1])) ?? this.TREE_SOLO_W) / 2) + 'px');
+          }
+
+          // Chaque wrap = subtreeW de son item → l'item se centre dans son slot
+          const wraps = Array.from(group.querySelectorAll<HTMLElement>(':scope .group-items > .group-child-wrap'));
+          wraps.forEach((wrap, i) => {
+            if (i >= items.length) return;
+            wrap.style.width      = (subtreeW.get(ikey(items[i])) ?? this.TREE_SOLO_W) + 'px';
+            wrap.style.flexShrink = '0';
+          });
+
+        } else {
+          // ── Spacer invisible pour les parents sans enfants ──────────────
+          const sp = document.createElement('div');
+          sp.className        = 'tree-spacer';
+          sp.style.width      = slot.sw + 'px';
+          sp.style.flexShrink = '0';
+          sp.style.order      = String(orderIdx);
+          row.appendChild(sp);
+        }
+      });
+
+      // Flex centré : avec les bons widths, l'alignement est parfait
+      row.style.display        = 'flex';
+      row.style.flexWrap       = 'nowrap';
+      row.style.justifyContent = 'center';
+      row.style.alignItems     = 'flex-start';
+      row.style.gap            = this.TREE_GAP + 'px';
+      row.style.width          = canvasW + 'px';
+    }
+  }
+
+  ngOnDestroy(): void {
+    document.removeEventListener('pointerover', this.onDocPointerOver);
+    clearTimeout(this.tooltipHideTimer);
+  }
+
+  // ── Gestion de la racine ─────────────────────────────────────────────────
+
+  setRoot(p: Personne | null): void {
+    this.rootPersonId   = p?.id ?? null;
+    this.rootPersonName = p ? getNomComplet(p) : '';
+    this.showRootPicker = false;
+    this.rootSearchQuery = '';
+    this.resetView();
+    if (!p) {
+      this.generations = this.buildGenerations(this.allPersonnes, this.allUnions);
+    } else {
+      const sub = this.extractSubtree(p.id);
+      this.generations = this.buildGenerations(sub.personnes, sub.unions);
+    }
+    this.totalPersonnes = this.allPersonnes.length;
+    setTimeout(() => this.alignGroups(), 0);
+  }
+
+  /** Extrait le sous-arbre DESCENDANT de la personne sélectionnée. */
+  private extractSubtree(personId: string): { personnes: Personne[], unions: Union[] } {
+    const inclPersonIds = new Set<string>();
+    const inclUnionIds  = new Set<string>();
+    const queue = [personId];
+
+    while (queue.length) {
+      const pid = queue.pop()!;
+      if (inclPersonIds.has(pid)) continue;
+      inclPersonIds.add(pid);
+
+      for (const union of this.allUnions) {
+        if (inclUnionIds.has(union.id)) continue;
+        if (!union.participants.some(p => p.personneId === pid)) continue;
+        inclUnionIds.add(union.id);
+        // Inclure le/la partenaire
+        union.participants.forEach(p => inclPersonIds.add(p.personneId));
+        // Mettre les enfants en file
+        union.filiations.forEach(f => {
+          if (!inclPersonIds.has(f.enfantId)) queue.push(f.enfantId);
+        });
+      }
+    }
+
+    return {
+      personnes: this.allPersonnes.filter(p => inclPersonIds.has(p.id)),
+      unions:    this.allUnions.filter(u => inclUnionIds.has(u.id)),
+    };
+  }
+
+  // ── Utilitaires ──────────────────────────────────────────────────────────
   get totalGenerations(): number { return this.generations.length; }
+
+  /** Groupe les items d'une génération par parentUnionId (ordre préservé). */
+  getItemGroups(gen: DisplayGen): GenItem[][] {
+    const groups: GenItem[][] = [];
+    const parentMap = new Map<string, GenItem[]>();
+    for (const item of gen.items) {
+      if (item.parentUnionId) {
+        if (!parentMap.has(item.parentUnionId)) {
+          const g: GenItem[] = [];
+          parentMap.set(item.parentUnionId, g);
+          groups.push(g);
+        }
+        parentMap.get(item.parentUnionId)!.push(item);
+      } else {
+        groups.push([item]); // racine : chaque item = son propre groupe
+      }
+    }
+    return groups;
+  }
 
   get treeTransform(): string {
     return `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
@@ -111,19 +361,24 @@ export class TreeComponent implements OnInit {
 
   // ── Tooltip ───────────────────────────────────────────
   showTooltip(p: Personne, event: MouseEvent): void {
-    if (this.dragMoved) return;
+    if (this.isDragging || this.dragMoved) return;
     clearTimeout(this.tooltipHideTimer);
     this.hoveredPerson = p;
     this.repositionTooltip(event);
   }
 
   moveTooltip(event: MouseEvent): void {
-    if (!this.hoveredPerson) return;
+    if (!this.hoveredPerson || this.isDragging || this.dragMoved) return;
     this.repositionTooltip(event);
   }
 
   hideTooltip(): void {
-    this.tooltipHideTimer = setTimeout(() => { this.hoveredPerson = null; }, 120);
+    this.tooltipHideTimer = setTimeout(() => { this.hoveredPerson = null; }, 80);
+  }
+
+  clearTooltip(): void {
+    clearTimeout(this.tooltipHideTimer);
+    this.hoveredPerson = null;
   }
 
   private repositionTooltip(event: MouseEvent): void {
@@ -155,6 +410,7 @@ export class TreeComponent implements OnInit {
     this.scale = 1;
     this.translateX = 0;
     this.translateY = 0;
+    setTimeout(() => this.alignGroups(), 0);
   }
 
   private zoomAtCenter(newScale: number): void {
@@ -171,10 +427,23 @@ export class TreeComponent implements OnInit {
     this.translateX = originX - ratio * (originX - this.translateX);
     this.translateY = originY - ratio * (originY - this.translateY);
     this.scale = clamped;
+    // Recalculer les offsets d'alignement après changement de scale
+    setTimeout(() => this.alignGroups(), 0);
   }
 
   private updateScale(newScale: number): void {
     this.scale = Math.max(this.minScale, Math.min(this.maxScale, Number(newScale.toFixed(2))));
+  }
+
+  // ── Kiosque ──────────────────────────────────────────
+  toggleKiosk(): void {
+    if (!this.isKiosk) {
+      document.documentElement.requestFullscreen?.().catch(() => {});
+      this.isKiosk = true;
+    } else {
+      document.exitFullscreen?.().catch(() => {});
+      this.isKiosk = false;
+    }
   }
 
   // ── Export ───────────────────────────────────────────
@@ -225,11 +494,12 @@ export class TreeComponent implements OnInit {
 
   startDrag(event: PointerEvent): void {
     if (event.button !== 0) return;
+    // Fermer immédiatement la tooltip : setPointerCapture va bloquer les mouseleave sur les nœuds
+    this.clearTooltip();
     this.isDragging     = true;
     this.dragMoved      = false;
     this.dragOrigin     = { x: event.clientX, y: event.clientY };
     this.startTranslate = { x: this.translateX, y: this.translateY };
-    // On ne capture PAS encore — la capture empêcherait les click sur les nœuds fils
     this.captureTarget = event.currentTarget as HTMLElement;
     this.captureId     = event.pointerId;
   }

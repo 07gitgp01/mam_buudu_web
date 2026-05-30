@@ -13,6 +13,7 @@ import { FamilleStoriesComponent }  from './pages/stories/famille-stories.compon
 import { FamilleArbreComponent }    from './pages/arbre/famille-arbre.component';
 import { FamilleTimelineComponent } from './pages/timeline/famille-timeline.component';
 import { FamilleProfilComponent }   from './pages/profil/famille-profil.component';
+import { FamilleInviterComponent }  from './pages/inviter/famille-inviter.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FamilleProfilComponent }   from './pages/profil/famille-profil.componen
     FamilleArbreComponent,
     FamilleTimelineComponent,
     FamilleProfilComponent,
+    FamilleInviterComponent,
   ],
   imports: [
     CommonModule,

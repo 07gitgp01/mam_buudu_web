@@ -58,6 +58,9 @@ export class FamilleArbreComponent implements OnInit {
   showDetail = false;
   failedPhotos = new Set<string>();
 
+  isKiosk = false;
+  exporting = false;
+
   hoveredPerson: Personne | null = null;
   tooltipX = 0;
   tooltipY = 0;
@@ -137,6 +140,35 @@ export class FamilleArbreComponent implements OnInit {
       return `${n} – ${d ?? '?'}${age ? '  ('+age+' ans)' : ''}`;
     }
     return `${n} – présent  (${new Date().getFullYear() - n} ans)`;
+  }
+
+  // ── Kiosque & Export ─────────────────────────────────
+  toggleKiosk(): void {
+    if (!this.isKiosk) {
+      document.documentElement.requestFullscreen?.().catch(() => {});
+      this.isKiosk = true;
+    } else {
+      document.exitFullscreen?.().catch(() => {});
+      this.isKiosk = false;
+    }
+  }
+
+  async exportPDF(): Promise<void> {
+    if (!this.treeVisual?.nativeElement || this.exporting) return;
+    this.exporting = true;
+    try {
+      const html2canvas = (await import('html2canvas')).default;
+      const { jsPDF }   = await import('jspdf');
+      const el = this.treeVisual.nativeElement;
+      const canvas = await html2canvas(el, { scale: 1.5, useCORS: true, backgroundColor: '#F5F3FF' });
+      const w = canvas.width;
+      const h = canvas.height;
+      const pdf = new jsPDF({ orientation: w > h ? 'landscape' : 'portrait', unit: 'px', format: [w, h] });
+      pdf.addImage(canvas.toDataURL('image/jpeg', 0.85), 'JPEG', 0, 0, w, h);
+      pdf.save(`arbre-familial.pdf`);
+    } finally {
+      this.exporting = false;
+    }
   }
 
   // ── Zoom ─────────────────────────────────────────────

@@ -10,6 +10,7 @@ import { JeuxComponent } from '../pages/jeux/jeux.component';
 import { UnionsComponent } from '../pages/unions/unions.component';
 import { AdminComponent } from '../pages/admin/admin.component';
 import { ProfilComponent } from '../pages/profil/profil.component';
+import { InviterComponent } from '../pages/inviter/inviter.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
       { path: 'jeux',      component: JeuxComponent },
       { path: 'unions',    component: UnionsComponent },
       { path: 'admin',     component: AdminComponent },
-      { path: 'profil',    component: ProfilComponent },
+      { path: 'profil',   component: ProfilComponent },
+      { path: 'inviter',  component: InviterComponent },
     ],
   },
 ];
