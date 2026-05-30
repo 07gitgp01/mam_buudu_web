@@ -12,12 +12,17 @@
     </button>
   </div>
 
-  <!-- Chargement -->
-  <div class="loading-state" *ngIf="loading">
-    <span class="material-icons-round spin">sync</span>
-    Chargement...
+  <!-- Skeleton chargement -->
+  <div class="sk-grid" *ngIf="loading">
+    <div class="sk-card" *ngFor="let _ of [1,2,3,4]">
+      <div class="sk-card-banner"></div>
+      <div class="sk-card-body">
+        <div class="sk-line sk-full"></div>
+        <div class="sk-line sk-md"></div>
+        <div class="sk-line sk-sm"></div>
+      </div>
+    </div>
   </div>
-
   <!-- Erreur -->
   <div class="error-state" *ngIf="erreur && !loading">
     <span class="material-icons-round">error_outline</span>

@@ -47,10 +47,21 @@
     </div>
   </div>
 
-  <!-- Chargement -->
-  <div class="loading-state" *ngIf="loading">
-    <span class="material-icons-round spin">sync</span> Chargement...
-  </div>
+  <!-- Skeleton chargement -->
+  <ng-container *ngIf="loading">
+    <div class="sk-section">
+      <div class="sk-hero"></div>
+      <div class="sk-grid">
+        <div class="sk-card" *ngFor="let _ of [1,2,3,4]">
+          <div class="sk-card-banner"></div>
+          <div class="sk-card-body">
+            <div class="sk-line sk-full"></div>
+            <div class="sk-line sk-md"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
 
   <ng-container *ngIf="!loading">
 

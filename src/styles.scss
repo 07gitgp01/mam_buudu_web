@@ -1002,3 +1002,164 @@ input, select, textarea {
   .pl-row { padding: 10px 14px; }
   .pl-thead { padding: 8px 14px; }
 }
+
+/* ============================================================
+   SKELETON LOADING — styles globaux réutilisables partout
+   ============================================================ */
+@keyframes sk-shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+
+/* Mixin appliqué à tout élément skeleton */
+%sk-base {
+  background: linear-gradient(90deg, #F1F5F9 25%, #E2E8F0 50%, #F1F5F9 75%);
+  background-size: 1200px 100%;
+  animation: sk-shimmer 1.5s ease-in-out infinite;
+  border-radius: 6px;
+}
+
+/* Ligne de texte */
+.sk-line {
+  @extend %sk-base;
+  height: 14px;
+  &.sk-lg  { height: 20px; width: 60%; }
+  &.sk-md  { height: 14px; width: 40%; }
+  &.sk-sm  { height: 12px; width: 25%; }
+  &.sk-xs  { height: 10px; width: 15%; }
+  &.sk-full{ width: 100%; }
+}
+
+/* Avatar circulaire */
+.sk-avatar {
+  @extend %sk-base;
+  border-radius: 50%;
+  flex-shrink: 0;
+  &.sk-av-sm { width: 36px; height: 36px; }
+  &.sk-av-md { width: 48px; height: 48px; }
+  &.sk-av-lg { width: 72px; height: 72px; }
+}
+
+/* Avatar carré/arrondi */
+.sk-avatar-sq {
+  @extend %sk-base;
+  border-radius: 10px;
+  flex-shrink: 0;
+  &.sk-av-sm { width: 36px; height: 36px; }
+  &.sk-av-md { width: 48px; height: 48px; }
+}
+
+/* Bloc rectangulaire */
+.sk-block {
+  @extend %sk-base;
+  height: 100%;
+  width: 100%;
+}
+
+/* ── Carte membre (pc-card skeleton) ── */
+.sk-card {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sk-card-banner {
+  @extend %sk-base;
+  height: 90px;
+  border-radius: 0;
+}
+
+.sk-card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Grille de cartes skeleton ── */
+.sk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* ── Rangée de liste skeleton ── */
+.sk-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid #F3F4F6;
+  &:last-child { border-bottom: none; }
+}
+
+.sk-row-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── En-tête de section skeleton ── */
+.sk-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+/* ── Stat card skeleton ── */
+.sk-stat {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sk-stat-icon {
+  @extend %sk-base;
+  width: 48px; height: 48px;
+  border-radius: 12px; flex-shrink: 0;
+}
+
+.sk-stat-body { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+
+/* ── Timeline skeleton ── */
+.sk-timeline-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #F3F4F6;
+  &:last-child { border-bottom: none; }
+}
+
+.sk-timeline-dot {
+  @extend %sk-base;
+  width: 40px; height: 40px;
+  border-radius: 50%; flex-shrink: 0;
+}
+
+.sk-timeline-content {
+  flex: 1; display: flex; flex-direction: column; gap: 8px;
+}
+
+/* ── Hero / banner skeleton ── */
+.sk-hero {
+  @extend %sk-base;
+  border-radius: 20px;
+  height: 140px;
+}
+
+/* ── Wrapper section chargement ── */
+.sk-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

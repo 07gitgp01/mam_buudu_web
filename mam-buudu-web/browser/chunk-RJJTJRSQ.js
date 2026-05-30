@@ -1,10 +1,37 @@
 import {
+  BehaviorSubject,
   Injectable,
   RendererFactory2,
   setClassMetadata,
   ɵɵdefineInjectable,
   ɵɵinject
-} from "./chunk-3JURVHRC.js";
+} from "./chunk-UCCPUYZ5.js";
+
+// src/app/core/loading.service.ts
+var LoadingService = class _LoadingService {
+  _count = 0;
+  _subject = new BehaviorSubject(false);
+  isLoading$ = this._subject.asObservable();
+  start() {
+    this._count++;
+    this._subject.next(true);
+  }
+  stop() {
+    this._count = Math.max(0, this._count - 1);
+    if (this._count === 0)
+      this._subject.next(false);
+  }
+  static \u0275fac = function LoadingService_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _LoadingService)();
+  };
+  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: _LoadingService, factory: _LoadingService.\u0275fac, providedIn: "root" });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(LoadingService, [{
+    type: Injectable,
+    args: [{ providedIn: "root" }]
+  }], null, null);
+})();
 
 // src/app/services/theme.service.ts
 var ThemeService = class _ThemeService {
@@ -42,6 +69,7 @@ var ThemeService = class _ThemeService {
 })();
 
 export {
+  LoadingService,
   ThemeService
 };
-//# sourceMappingURL=chunk-FXQQZUJZ.js.map
+//# sourceMappingURL=chunk-RJJTJRSQ.js.map

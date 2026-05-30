@@ -1,7 +1,16 @@
 <div class="profil-page">
 
-  <div class="loading-state" *ngIf="loading">
-    <span class="material-icons-round spin">sync</span> Chargement...
+  <!-- Skeleton chargement -->
+  <div class="sk-section" *ngIf="loading">
+    <div class="sk-hero"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px">
+      <div *ngFor="let _ of [1,2,3,4]" style="background:#fff;border:1px solid #E5E7EB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div class="sk-line sk-md"></div>
+        <div class="sk-line sk-full"></div>
+        <div class="sk-line sk-full"></div>
+        <div class="sk-line sk-sm"></div>
+      </div>
+    </div>
   </div>
 
   <ng-container *ngIf="!loading && user">

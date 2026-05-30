@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 import { ThemeService } from '../../services/theme.service';
+import { LoadingService } from '../../core/loading.service';
 
 interface NavItem { icon: string; label: string; route: string; color: string; }
 
@@ -46,6 +47,7 @@ export class FamilleShellComponent {
     private router: Router,
     public  themeService: ThemeService,
     private el: ElementRef,
+    public  loading: LoadingService,
   ) {
     this.router.events
       .pipe(filter(e => e instanceof NavigationEnd))

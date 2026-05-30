@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingService } from '../core/loading.service';
 
 @Component({
   selector: 'app-shell',
@@ -8,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class ShellComponent {
   sidebarOpen = false;
+  constructor(public loading: LoadingService) {}
 }

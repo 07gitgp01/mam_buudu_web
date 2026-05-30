@@ -5,6 +5,7 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { jwtInterceptor } from './core/jwt.interceptor';
+import { loadingInterceptor } from './core/loading.interceptor';
 import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
@@ -12,7 +13,7 @@ import { LandingComponent } from './landing/landing.component';
   imports: [BrowserModule, AppRoutingModule],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient(withInterceptors([jwtInterceptor])),
+    provideHttpClient(withInterceptors([jwtInterceptor, loadingInterceptor])),
   ],
   bootstrap: [App],
 })

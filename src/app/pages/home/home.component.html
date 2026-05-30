@@ -20,14 +20,25 @@
   </div>
 </div>
 
+<!-- ===== STATS SKELETON ===== -->
+<div class="stats-grid mb-16" *ngIf="loading">
+  <div class="sk-stat" *ngFor="let _ of [1,2,3,4]">
+    <div class="sk-stat-icon"></div>
+    <div class="sk-stat-body">
+      <div class="sk-line sk-lg"></div>
+      <div class="sk-line sk-sm"></div>
+    </div>
+  </div>
+</div>
+
 <!-- ===== STATS ===== -->
-<div class="stats-grid mb-16">
+<div class="stats-grid mb-16" *ngIf="!loading">
   <div class="stat-card" *ngFor="let s of stats" [class]="'stat-card--' + s.color">
     <div class="stat-icon-wrap">
       <span class="material-icons-round">{{ s.icon }}</span>
     </div>
     <div class="stat-body">
-      <span class="stat-value">{{ loading ? '…' : s.value }}</span>
+      <span class="stat-value">{{ s.value }}</span>
       <span class="stat-label">{{ s.label }}</span>
     </div>
   </div>

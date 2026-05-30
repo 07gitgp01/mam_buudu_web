@@ -44,9 +44,29 @@
     </div>
   </div>
 
-  <!-- Chargement / Erreur -->
-  <div class="loading-state" *ngIf="loading">
-    <span class="material-icons-round spin">sync</span> Chargement...
+  <!-- Skeleton chargement -->
+  <div class="sk-section" *ngIf="loading">
+    <!-- Stats skeleton -->
+    <div style="display:flex;gap:16px;flex-wrap:wrap">
+      <div class="sk-stat" *ngFor="let _ of [1,2,3]" style="flex:1;min-width:120px">
+        <div class="sk-stat-icon"></div>
+        <div class="sk-stat-body">
+          <div class="sk-line sk-lg"></div>
+          <div class="sk-line sk-sm"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Tableau membres skeleton -->
+    <div style="background:#fff;border:1px solid #E5E7EB;border-radius:14px;overflow:hidden;margin-top:8px">
+      <div class="sk-row" *ngFor="let _ of [1,2,3,4,5]" style="padding:14px 22px;border-bottom:1px solid #F3F4F6">
+        <div class="sk-avatar-sq sk-av-md"></div>
+        <div class="sk-row-content">
+          <div class="sk-line sk-md"></div>
+          <div class="sk-line sk-sm"></div>
+        </div>
+        <div class="sk-line sk-xs"></div>
+      </div>
+    </div>
   </div>
   <div class="error-state" *ngIf="erreur && !loading">
     <span class="material-icons-round">error_outline</span>{{ erreur }}

@@ -6,7 +6,7 @@ import {
   setClassMetadata,
   ɵɵdefineInjectable,
   ɵɵinject
-} from "./chunk-3JURVHRC.js";
+} from "./chunk-UCCPUYZ5.js";
 
 // src/app/models/personne.model.ts
 function getPhotoUrl(p) {
@@ -150,4 +150,4 @@ export {
   getAgeLabel,
   ApiService
 };
-//# sourceMappingURL=chunk-ICIYOYFR.js.map
+//# sourceMappingURL=chunk-VJEBGFIP.js.map

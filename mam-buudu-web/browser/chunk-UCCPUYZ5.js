@@ -39542,10 +39542,12 @@ var AuthService = class _AuthService {
 
 export {
   Subject,
+  BehaviorSubject,
   from,
   map,
   forkJoin,
   filter,
+  finalize,
   RuntimeError,
   forwardRef,
   ɵɵdefineInjectable,
@@ -39620,6 +39622,7 @@ export {
   ɵɵpureFunction0,
   ɵɵpureFunction1,
   ɵɵpipe,
+  ɵɵpipeBind1,
   ɵɵpipeBind2,
   ɵɵtemplateRefExtractor,
   ɵsetClassDebugInfo,
@@ -39639,6 +39642,7 @@ export {
   NgForOf,
   NgIf,
   NgTemplateOutlet,
+  AsyncPipe,
   DecimalPipe,
   CommonModule,
   platformBrowser,
@@ -39704,4 +39708,4 @@ export {
    * found in the LICENSE file at https://angular.dev/license
    *)
 */
-//# sourceMappingURL=chunk-3JURVHRC.js.map
+//# sourceMappingURL=chunk-UCCPUYZ5.js.map

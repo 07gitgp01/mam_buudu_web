@@ -1,3 +1,8 @@
+<!-- Barre de chargement globale (toutes les requêtes HTTP) -->
+<div class="global-loading-bar" *ngIf="loading.isLoading$ | async">
+  <div class="global-loading-fill"></div>
+</div>
+
 <div class="shell" [class.sidebar-open]="sidebarOpen">
   <div class="mob-backdrop" *ngIf="sidebarOpen" (click)="sidebarOpen=false"></div>
   <app-sidebar [mobileOpen]="sidebarOpen" (mobileClose)="sidebarOpen=false"></app-sidebar>
