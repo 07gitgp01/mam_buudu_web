@@ -329,12 +329,54 @@
     <button class="btn-icon" (click)="closeEnfantPanel()"><span class="material-icons-round">close</span></button>
   </div>
   <div class="panel-body">
-    <p class="panel-subtitle">Sélectionnez les enfants issus de ce couple</p>
-    <div class="search-bar" style="margin-bottom: 12px;">
-      <span class="material-icons-round">search</span>
-      <input type="text" [(ngModel)]="searchEnfant" placeholder="Rechercher..." />
+    <p class="panel-subtitle">Sélectionnez ou créez les enfants de ce couple</p>
+
+    <!-- Bouton toggle création rapide -->
+    <button class="qa-create-toggle" (click)="showCreateChild = !showCreateChild">
+      <span class="material-icons-round">{{ showCreateChild ? 'expand_less' : 'person_add' }}</span>
+      {{ showCreateChild ? 'Sélectionner un existant' : 'Créer un nouveau membre' }}
+    </button>
+
+    <!-- Formulaire création rapide -->
+    <div class="qa-create-form" *ngIf="showCreateChild">
+      <div class="form-group">
+        <label>Prénom(s) <span style="color:#EF4444">*</span></label>
+        <input type="text" [(ngModel)]="createChildForm.prenoms" placeholder="Prénom(s)" class="form-control" />
+      </div>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>Nom <span style="color:#EF4444">*</span></label>
+          <input type="text" [(ngModel)]="createChildForm.nomNaissance" placeholder="Nom" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Sexe</label>
+          <select [(ngModel)]="createChildForm.sexe" class="form-control">
+            <option value="M">Homme</option>
+            <option value="F">Femme</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Année de naissance</label>
+        <input type="number" [(ngModel)]="createChildForm.dateNaissance" placeholder="2000" class="form-control" />
+      </div>
+      <button class="btn-primary" style="width:100%"
+              (click)="createAndAddChild()"
+              [disabled]="createChildSaving || !createChildForm.prenoms || !createChildForm.nomNaissance">
+        <span class="material-icons-round spin" *ngIf="createChildSaving">sync</span>
+        <span class="material-icons-round" *ngIf="!createChildSaving">child_care</span>
+        {{ createChildSaving ? 'Création...' : 'Créer et ajouter comme enfant' }}
+      </button>
     </div>
-    <div class="person-select-list">
+
+    <!-- Sélection d'un membre existant -->
+    <ng-container *ngIf="!showCreateChild">
+      <div class="search-bar" style="margin: 10px 0 10px;">
+        <span class="material-icons-round">search</span>
+        <input type="text" [(ngModel)]="searchEnfant" placeholder="Rechercher..." />
+      </div>
+    </ng-container>
+    <div class="person-select-list" *ngIf="!showCreateChild">
       <div class="person-select-item" *ngFor="let p of personnesDisponibles"
            [class.selected]="isEnfantSelected(p.id)" (click)="toggleEnfantSelection(p.id)">
         <div class="u-avatar-wrap">

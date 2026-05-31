@@ -130,6 +130,11 @@ export class UnionsComponent implements OnInit {
   enfantsSelectionnes: string[] = [];
   searchEnfant = '';
 
+  // Création rapide dans le panneau enfants
+  showCreateChild = false;
+  createChildForm = { prenoms: '', nomNaissance: '', nomUsage: '', sexe: 'M', dateNaissance: '' };
+  createChildSaving = false;
+
   saving = false; deleting = false; addingEnfant = false;
 
   mois = MOIS; typeUnion = TYPE_UNION;
@@ -311,11 +316,44 @@ export class UnionsComponent implements OnInit {
 
   openEnfantPanel(u: Union): void {
     this.enfantUnionTarget = u; this.enfantsSelectionnes = [];
-    this.searchEnfant = ''; this.showEnfantPanel = true;
+    this.searchEnfant = ''; this.showCreateChild = false;
+    this.createChildForm = { prenoms: '', nomNaissance: '', nomUsage: '', sexe: 'M', dateNaissance: '' };
+    this.showEnfantPanel = true;
   }
 
   closeEnfantPanel(): void {
-    this.showEnfantPanel = false; this.enfantUnionTarget = null; this.enfantsSelectionnes = [];
+    this.showEnfantPanel = false; this.enfantUnionTarget = null;
+    this.enfantsSelectionnes = []; this.showCreateChild = false;
+  }
+
+  /** Crée un nouveau membre et l'ajoute directement comme enfant */
+  createAndAddChild(): void {
+    if (this.createChildSaving || !this.enfantUnionTarget) return;
+    if (!this.createChildForm.prenoms || !this.createChildForm.nomNaissance) return;
+    this.createChildSaving = true;
+
+    this.api.createPersonne({
+      prenoms:      this.createChildForm.prenoms,
+      nomNaissance: this.createChildForm.nomNaissance,
+      nomUsage:     this.createChildForm.nomUsage || undefined,
+      sexe:         this.createChildForm.sexe as 'M' | 'F',
+      dateNaissance: this.createChildForm.dateNaissance || null,
+    }).subscribe({
+      next: (created) => {
+        this.api.addEnfantToUnion(this.enfantUnionTarget!.id, created.id).subscribe({
+          next: () => {
+            this.createChildSaving = false;
+            this.showCreateChild = false;
+            this.createChildForm = { prenoms: '', nomNaissance: '', nomUsage: '', sexe: 'M', dateNaissance: '' };
+            this.refreshUnions();
+            // Aussi rafraîchir les personnes disponibles
+            this.api.getPersonnes().subscribe(p => { this.personnes = p; });
+          },
+          error: () => { this.createChildSaving = false; },
+        });
+      },
+      error: () => { this.createChildSaving = false; },
+    });
   }
 
   get personnesDisponibles(): Personne[] {

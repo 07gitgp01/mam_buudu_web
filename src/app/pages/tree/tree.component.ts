@@ -5,7 +5,8 @@ import {
 } from '../../models/personne.model';
 import { Union } from '../../models/union.model';
 import { ApiService } from '../../services/api.service';
-import { forkJoin } from 'rxjs';
+import { forkJoin, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 
@@ -96,6 +97,17 @@ export class TreeComponent implements OnInit, OnDestroy {
   selectedPerson: Personne | null = null;
   showDetail = false;
   failedPhotos = new Set<string>();
+
+  // ── Quick-add (raccourcis arbre) ─────────────────────────────────────────
+  showQuickAdd     = false;
+  quickAddMode: 'child' | 'partner' | null = null;
+  quickAddTarget: TreeNode | null  = null;
+  quickAddUnionId: string | null   = null; // union cible pour les enfants
+  quickAddTab: 'select' | 'create' = 'select';
+  quickAddSearch   = '';
+  quickAddSelected = '';
+  quickAddSaving   = false;
+  quickCreateForm  = { prenoms: '', nomNaissance: '', nomUsage: '', sexe: 'M', dateNaissance: '' };
 
   // ── Mode kiosque ─────────────────────────────────────────────────────────
   isKiosk = false;
@@ -262,6 +274,91 @@ export class TreeComponent implements OnInit, OnDestroy {
 
   // ══════════════════════════════════════════════════════════════════════════
   // Helpers template
+  // ══════════════════════════════════════════════════════════════════════════
+  // Quick-add — raccourcis depuis l'arbre
+  // ══════════════════════════════════════════════════════════════════════════
+
+  openQuickAdd(node: TreeNode, mode: 'child' | 'partner', unionId: string | null, event: Event): void {
+    event.stopPropagation();
+    this.clearTooltip();
+    this.quickAddTarget   = node;
+    this.quickAddMode     = mode;
+    this.quickAddUnionId  = unionId;
+    this.quickAddTab      = 'select';
+    this.quickAddSearch   = '';
+    this.quickAddSelected = '';
+    this.quickCreateForm  = {
+      prenoms: '', nomNaissance: '', nomUsage: '',
+      sexe: mode === 'partner' ? (node.p1.sexe === 'M' ? 'F' : 'M') : 'M',
+      dateNaissance: '',
+    };
+    this.showQuickAdd = true;
+  }
+
+  closeQuickAdd(): void {
+    this.showQuickAdd = false; this.quickAddTarget = null;
+    this.quickAddMode = null; this.quickAddSelected = '';
+  }
+
+  get quickAddPersonnes(): Personne[] {
+    if (!this.quickAddTarget || !this.quickAddMode) return [];
+    const q = this.quickAddSearch.toLowerCase().trim();
+    const excluded = new Set<string>();
+
+    if (this.quickAddMode === 'child' && this.quickAddUnionId) {
+      const u = this.allUnions.find(u => u.id === this.quickAddUnionId);
+      if (u) {
+        u.participants.forEach(p => excluded.add(p.personneId));
+        u.filiations.forEach(f => excluded.add(f.enfantId));
+      }
+    } else if (this.quickAddMode === 'partner') {
+      excluded.add(this.quickAddTarget.p1.id);
+      if (this.quickAddTarget.p2) excluded.add(this.quickAddTarget.p2.id);
+    }
+
+    return this.allPersonnes.filter(p => {
+      if (excluded.has(p.id)) return false;
+      return !q || getNomComplet(p).toLowerCase().includes(q);
+    });
+  }
+
+  saveQuickAdd(): void {
+    if (this.quickAddSaving || !this.quickAddTarget || !this.quickAddMode) return;
+    this.quickAddSaving = true;
+
+    const personObs = this.quickAddTab === 'select'
+      ? of({ id: this.quickAddSelected } as Personne)
+      : this.api.createPersonne({
+          prenoms:      this.quickCreateForm.prenoms,
+          nomNaissance: this.quickCreateForm.nomNaissance,
+          nomUsage:     this.quickCreateForm.nomUsage || undefined,
+          sexe:         this.quickCreateForm.sexe as 'M' | 'F',
+          dateNaissance: this.quickCreateForm.dateNaissance || null,
+        });
+
+    const target = this.quickAddTarget;
+    const mode   = this.quickAddMode;
+    const uid    = this.quickAddUnionId;
+
+    personObs.pipe(
+      switchMap(person => mode === 'child' && uid
+        ? this.api.addEnfantToUnion(uid, person.id)
+        : this.api.createUnion({ type: 'mariage', parentIds: [target.p1.id, person.id] })
+      ),
+      switchMap(() => forkJoin({ personnes: this.api.getPersonnes(), unions: this.api.getUnions() }))
+    ).subscribe({
+      next: ({ personnes, unions }) => {
+        this.allPersonnes = personnes;
+        this.allUnions    = unions;
+        const sub = this.rootPersonId ? this.extractSubtree(this.rootPersonId) : { personnes, unions };
+        this.treeRoots = this.buildTree(sub.personnes, sub.unions);
+        this.quickAddSaving = false;
+        this.closeQuickAdd();
+      },
+      error: () => { this.quickAddSaving = false; },
+    });
+  }
+
   // ══════════════════════════════════════════════════════════════════════════
 
   get treeTransform(): string {

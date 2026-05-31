@@ -39544,10 +39544,12 @@ export {
   Subject,
   BehaviorSubject,
   from,
+  of,
   map,
   forkJoin,
   filter,
   finalize,
+  switchMap,
   RuntimeError,
   forwardRef,
   ɵɵdefineInjectable,
@@ -39708,4 +39710,4 @@ export {
    * found in the LICENSE file at https://angular.dev/license
    *)
 */
-//# sourceMappingURL=chunk-LT3K6Q74.js.map
+//# sourceMappingURL=chunk-4UDFF4NQ.js.map

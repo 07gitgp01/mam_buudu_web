@@ -154,6 +154,20 @@
               {{ typeLabel(node.union!.type) }}
               <ng-container *ngIf="node.union!.dateDebut"> · {{ extractAnnee(node.union!.dateDebut) }}</ng-container>
             </div>
+
+            <!-- Raccourcis rapides -->
+            <div class="ts-quick-btns">
+              <button class="ts-quick-btn ts-qb-child"
+                      (click)="openQuickAdd(node, 'child', node.union?.id ?? null, $event)"
+                      title="Ajouter un enfant">
+                <span class="material-icons-round">child_care</span>Enfant
+              </button>
+              <button class="ts-quick-btn ts-qb-partner"
+                      (click)="openQuickAdd(node, 'partner', null, $event)"
+                      title="Ajouter une épouse">
+                <span class="material-icons-round">person_add</span>Épouse
+              </button>
+            </div>
           </ng-container>
 
           <!-- ── Personne avec PLUSIEURS UNIONS (polygamie, remariage…) ── -->
@@ -284,6 +298,14 @@
             <span class="ts-name">{{ node.p1.prenoms }} {{ node.p1.nomUsage ?? node.p1.nomNaissance }}</span>
             <span class="ts-year">{{ yearLabel(node.p1) }}</span>
           </div>
+          <!-- Raccourci solo : ajouter un(e) partenaire -->
+          <div class="ts-quick-btns" *ngIf="node.type === 'solo'">
+            <button class="ts-quick-btn ts-qb-partner"
+                    (click)="openQuickAdd(node, 'partner', null, $event)"
+                    title="Ajouter un(e) partenaire">
+              <span class="material-icons-round">favorite</span>Partenaire
+            </button>
+          </div>
 
           <!-- ── Enfants (récursif) ── -->
           <ng-container *ngIf="node.children.length > 0">
@@ -362,6 +384,103 @@
       <span class="tt-badge tt-dead"  *ngIf="!estVivant(hoveredPerson)">Décédé(e)</span>
     </div>
     <span class="tt-hint">Clic pour la fiche complète</span>
+  </div>
+</div>
+
+<!-- ===== PANNEAU QUICK-ADD ===== -->
+<div class="panel-overlay" *ngIf="showQuickAdd" (click)="closeQuickAdd()"></div>
+<div class="slide-panel qa-panel" [class.open]="showQuickAdd">
+  <div class="panel-header">
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="material-icons-round" style="color:var(--primary)">
+        {{ quickAddMode === 'child' ? 'child_care' : 'person_add' }}
+      </span>
+      <h3>{{ quickAddMode === 'child' ? 'Ajouter un enfant' : 'Ajouter une épouse / partenaire' }}</h3>
+    </div>
+    <button class="btn-icon" (click)="closeQuickAdd()">
+      <span class="material-icons-round">close</span>
+    </button>
+  </div>
+
+  <!-- Pour qui -->
+  <div class="qa-for-whom" *ngIf="quickAddTarget">
+    <span class="material-icons-round" style="font-size:16px!important;color:var(--text-muted)">arrow_forward</span>
+    <div class="avatar avatar-sm" [class.male]="quickAddTarget.p1.sexe==='M'" [class.female]="quickAddTarget.p1.sexe==='F'">
+      {{ getInitiales(quickAddTarget.p1) }}
+    </div>
+    <span style="font-size:13px;font-weight:600;color:var(--text-primary)">
+      {{ getNomComplet(quickAddTarget.p1) }}
+      <span *ngIf="quickAddTarget.p2"> ♥ {{ getNomComplet(quickAddTarget.p2) }}</span>
+    </span>
+  </div>
+
+  <!-- Onglets -->
+  <div class="qa-tabs">
+    <button class="qa-tab" [class.active]="quickAddTab==='select'" (click)="quickAddTab='select'">
+      <span class="material-icons-round">manage_search</span>
+      Sélectionner un membre
+    </button>
+    <button class="qa-tab" [class.active]="quickAddTab==='create'" (click)="quickAddTab='create'">
+      <span class="material-icons-round">person_add</span>
+      Créer un nouveau
+    </button>
+  </div>
+
+  <div class="panel-body">
+
+    <!-- ── Onglet Sélectionner ── -->
+    <ng-container *ngIf="quickAddTab === 'select'">
+      <div class="search-bar" style="margin-bottom:10px">
+        <span class="material-icons-round">search</span>
+        <input type="text" [(ngModel)]="quickAddSearch" placeholder="Rechercher un membre..." />
+      </div>
+      <div class="person-select-list">
+        <div class="person-select-item"
+             *ngFor="let p of quickAddPersonnes"
+             [class.selected]="quickAddSelected === p.id"
+             (click)="quickAddSelected = p.id">
+          <div class="avatar avatar-sm" [class.male]="p.sexe==='M'" [class.female]="p.sexe==='F'">
+            {{ getInitiales(p) }}
+          </div>
+          <span class="person-select-name">{{ getNomComplet(p) }}</span>
+          <span class="material-icons-round check-icon" *ngIf="quickAddSelected === p.id">check_circle</span>
+        </div>
+        <div class="empty-list-msg" *ngIf="quickAddPersonnes.length === 0">Aucun membre disponible</div>
+      </div>
+    </ng-container>
+
+    <!-- ── Onglet Créer ── -->
+    <ng-container *ngIf="quickAddTab === 'create'">
+      <div class="form-group">
+        <label>Prénom(s) <span style="color:#EF4444">*</span></label>
+        <input type="text" [(ngModel)]="quickCreateForm.prenoms" placeholder="Prénom(s)" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Nom de naissance <span style="color:#EF4444">*</span></label>
+        <input type="text" [(ngModel)]="quickCreateForm.nomNaissance" placeholder="Nom" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Sexe</label>
+        <select [(ngModel)]="quickCreateForm.sexe" class="form-control">
+          <option value="M">Homme</option>
+          <option value="F">Femme</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Année de naissance</label>
+        <input type="number" [(ngModel)]="quickCreateForm.dateNaissance" placeholder="1990" class="form-control" />
+      </div>
+    </ng-container>
+
+  </div>
+
+  <div class="panel-footer">
+    <button class="btn-ghost" (click)="closeQuickAdd()">Annuler</button>
+    <button class="btn-primary" (click)="saveQuickAdd()" [disabled]="quickAddSaving || (quickAddTab==='select' && !quickAddSelected) || (quickAddTab==='create' && (!quickCreateForm.prenoms || !quickCreateForm.nomNaissance))">
+      <span class="material-icons-round spin" *ngIf="quickAddSaving">sync</span>
+      <span class="material-icons-round" *ngIf="!quickAddSaving">save</span>
+      {{ quickAddSaving ? 'Enregistrement...' : (quickAddMode === 'child' ? 'Ajouter comme enfant' : 'Créer le couple') }}
+    </button>
   </div>
 </div>
 

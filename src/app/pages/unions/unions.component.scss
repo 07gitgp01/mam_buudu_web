@@ -430,6 +430,23 @@
   .material-icons-round { font-size: 12px !important; color: #D97706; }
 }
 
+/* ===== CRÉATION RAPIDE DANS LE PANNEAU ENFANTS ===== */
+.qa-create-toggle {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  padding: 10px 14px; border-radius: 10px;
+  border: 1.5px dashed var(--primary-border); background: var(--primary-bg);
+  color: var(--primary); font-size: 13px; font-weight: 600;
+  cursor: pointer; font-family: inherit; transition: all 0.15s; margin-bottom: 12px;
+  .material-icons-round { font-size: 18px !important; }
+  &:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+}
+
+.qa-create-form {
+  background: var(--bg-muted); border: 1px solid var(--border);
+  border-radius: 12px; padding: 14px; margin-bottom: 12px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
 /* ===== ALERTE UNIONS MULTIPLES ===== */
 .multi-union-alert {
   background: #FFFBEB;
