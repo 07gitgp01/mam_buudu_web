@@ -36,12 +36,118 @@
   display: block;
 }
 
-/* ===== GRILLE ===== */
-.unions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+/* ===== GROUPES D'UNIONS ===== */
+.ug-groups {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
+
+.ug-group {
+  background: var(--white);
+  border: 1px solid var(--border-light, #E5E7EB);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s;
+  &:hover { box-shadow: var(--shadow-md); }
+}
+
+/* ── En-tête du groupe ── */
+.ug-group-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; cursor: pointer;
+  background: var(--bg-muted, #F9FAFB);
+  border-bottom: 1px solid var(--border-light, #E5E7EB);
+  gap: 12px;
+  &:hover { background: var(--primary-bg, #EFF6FF); }
+}
+
+.ug-chef-left { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; }
+
+.ug-chef-avatar {
+  width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 700; color: #fff; position: relative; overflow: hidden;
+  &.male   { background: var(--primary, #3B82F6); }
+  &.female { background: var(--pink, #EC4899); }
+  &:not(.male):not(.female) { background: #9CA3AF; }
+}
+
+.ug-chef-avatar-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+
+.ug-chef-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.ug-chef-name { font-size: 15px; font-weight: 700; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ug-chef-meta { font-size: 12px; color: var(--text-muted); }
+
+.ug-poly-badge { font-size: 10px; padding: 2px 8px; flex-shrink: 0; }
+
+.ug-group-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+.ug-chevron {
+  font-size: 20px !important; color: var(--text-muted);
+  transition: transform 0.2s; cursor: pointer;
+  &.expanded { transform: rotate(180deg); }
+}
+
+/* ── Couples ── */
+.ug-couples { display: flex; flex-direction: column; }
+
+.ug-couple-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border-light, #F3F4F6);
+  transition: background 0.12s;
+  &:last-child { border-bottom: none; }
+  &:hover { background: var(--bg-muted, #F9FAFB); }
+}
+
+.ug-couple-num {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--border-light, #E5E7EB); color: var(--text-muted);
+  font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+
+.ug-status-icon {
+  font-size: 18px !important; flex-shrink: 0;
+  &.ug-active   { color: #f43f5e; }
+  &.ug-divorced { color: #9CA3AF; }
+  &.ug-widowed  { color: #6B7280; }
+}
+
+.ug-partner-info { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+
+.ug-partner-avatar {
+  width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: #fff; position: relative; overflow: hidden;
+  &.male   { background: var(--primary, #3B82F6); }
+  &.female { background: var(--pink, #EC4899); }
+  &:not(.male):not(.female) { background: #9CA3AF; }
+}
+
+.ug-partner-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+
+.ug-partner-details { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.ug-partner-name { font-size: 13px; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ug-partner-meta { font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+
+.ug-status-chip {
+  font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 10px;
+  &.chip-active   { background: #DCFCE7; color: #15803D; }
+  &.chip-divorced { background: #F3F4F6; color: #6B7280; }
+  &.chip-widowed  { background: #F1F5F9; color: #475569; }
+}
+
+.ug-children-count {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 12px; font-weight: 600; color: var(--text-secondary);
+  flex-shrink: 0;
+  .material-icons-round { font-size: 16px !important; color: var(--text-muted); }
+}
+
+.ug-couple-actions { display: flex; gap: 4px; flex-shrink: 0; }
 
 /* ===== TOOLBAR ===== */
 .toolbar-right {
@@ -303,20 +409,62 @@
   cursor: pointer;
   transition: background 0.15s;
 
-  &:hover {
-    background: var(--bg-muted);
-  }
+  &:hover { background: var(--bg-muted); }
+  &.selected { background: var(--primary-bg, #eff6ff); border: 1px solid var(--primary-border, #bfdbfe); }
+  &.has-union { background: #FFFBEB; }
+}
 
-  &.selected {
-    background: var(--primary-bg, #eff6ff);
-    border: 1px solid var(--primary-border, #bfdbfe);
-  }
+.person-select-info {
+  flex: 1; min-width: 0;
+  display: flex; flex-direction: column; gap: 2px;
 }
 
 .person-select-name {
-  flex: 1;
   font-size: 14px;
   color: var(--text-primary);
+}
+
+.person-union-hint {
+  display: flex; align-items: center; gap: 3px;
+  font-size: 11px; color: #D97706; font-weight: 500;
+  .material-icons-round { font-size: 12px !important; color: #D97706; }
+}
+
+/* ===== ALERTE UNIONS MULTIPLES ===== */
+.multi-union-alert {
+  background: #FFFBEB;
+  border: 1.5px solid #FDE68A;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.multi-union-alert-header {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 13px; color: #92400E;
+  .material-icons-round { font-size: 18px !important; color: #D97706; }
+  strong { font-weight: 700; }
+}
+
+.multi-union-alert-row {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 6px 0;
+  border-top: 1px solid #FDE68A;
+  &:first-of-type { border-top: none; }
+}
+
+.multi-union-alert-name { display: block; font-size: 13px; font-weight: 600; color: #78350F; }
+.multi-union-alert-hint { display: block; font-size: 11px; color: #92400E; margin-top: 1px; }
+
+.multi-union-alert-tip {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 11px; color: #78350F; margin: 0;
+  background: rgba(217,119,6,0.1); border-radius: 7px; padding: 5px 8px;
+  .material-icons-round { font-size: 14px !important; color: #D97706; }
+  strong { font-weight: 700; }
 }
 
 .check-icon {

@@ -156,6 +156,116 @@
             </div>
           </ng-container>
 
+          <!-- ── Personne avec PLUSIEURS UNIONS (polygamie, remariage…) ── -->
+          <ng-container *ngIf="node.type === 'multi'">
+            <div class="ts-multi-card"
+                 [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'"
+                 [class.ts-active]="selectedPerson?.id===node.p1.id"
+                 (mouseenter)="showTooltip(node.p1,$event)"
+                 (mousemove)="moveTooltip($event)"
+                 (mouseleave)="hideTooltip()"
+                 (click)="openDetail(node.p1)">
+              <div class="ts-avatar ts-avatar-lg" [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'">
+                <img *ngIf="getPhotoUrl(node.p1) && !failedPhotos.has(node.p1.id)"
+                     [src]="getPhotoUrl(node.p1)!" class="ts-avatar-photo"
+                     [alt]="getInitiales(node.p1)" (error)="onPhotoError(node.p1.id)" />
+                <span *ngIf="!getPhotoUrl(node.p1) || failedPhotos.has(node.p1.id)">{{ getInitiales(node.p1) }}</span>
+              </div>
+              <span class="ts-name">{{ node.p1.prenoms }} {{ node.p1.nomUsage ?? node.p1.nomNaissance }}</span>
+              <span class="ts-year">{{ yearLabel(node.p1) }}</span>
+              <span class="ts-multi-badge">{{ (node.unions?.length ?? 0) }} union{{ (node.unions?.length ?? 0) > 1 ? 's' : '' }}</span>
+            </div>
+
+            <div class="ts-down"></div>
+            <div class="ts-branch">
+              <div class="ts-hbar" [style.marginLeft.px]="155" [style.marginRight.px]="155"></div>
+              <div class="ts-children-row">
+                <div class="ts-child-col" *ngFor="let br of node.unions">
+                  <div class="ts-up"></div>
+                  <div class="ts-subtree">
+
+                    <!-- Couple de cette branche -->
+                    <div class="ts-couple ts-union-branch"
+                         [class.ts-union-active]="unionStatus(br)==='active'"
+                         [class.ts-union-divorced]="unionStatus(br)==='divorced'"
+                         [class.ts-union-widowed]="unionStatus(br)==='widowed'">
+
+                      <!-- Référence compacte à la personne centrale -->
+                      <div class="ts-person ts-person-ref"
+                           [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'"
+                           (click)="openDetail(node.p1)">
+                        <div class="ts-avatar ts-avatar-ref" [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'">
+                          <img *ngIf="getPhotoUrl(node.p1) && !failedPhotos.has(node.p1.id)"
+                               [src]="getPhotoUrl(node.p1)!" class="ts-avatar-photo" (error)="onPhotoError(node.p1.id)" />
+                          <span *ngIf="!getPhotoUrl(node.p1) || failedPhotos.has(node.p1.id)">{{ getInitiales(node.p1) }}</span>
+                        </div>
+                        <span class="ts-name-ref">{{ node.p1.prenoms?.split(' ')[0] }}</span>
+                      </div>
+
+                      <!-- Cœur avec statut visuel -->
+                      <div class="ts-heart" *ngIf="br.partner">
+                        <span class="material-icons-round"
+                              [class.ts-heart-active]="unionStatus(br)==='active'"
+                              [class.ts-heart-broken]="unionStatus(br)==='divorced'"
+                              [class.ts-heart-grey]="unionStatus(br)==='widowed'">
+                          {{ unionHeartIcon(br) }}
+                        </span>
+                        <span class="ts-hline" [class.ts-hline-grey]="unionStatus(br)!=='active'"></span>
+                      </div>
+
+                      <!-- Partenaire -->
+                      <div class="ts-person" *ngIf="br.partner"
+                           [class.male]="br.partner.sexe==='M'" [class.female]="br.partner.sexe==='F'"
+                           [class.ts-active]="selectedPerson?.id===br.partner.id"
+                           (mouseenter)="showTooltip(br.partner,$event)"
+                           (mousemove)="moveTooltip($event)"
+                           (mouseleave)="hideTooltip()"
+                           (click)="openDetail(br.partner)">
+                        <div class="ts-avatar" [class.male]="br.partner.sexe==='M'" [class.female]="br.partner.sexe==='F'">
+                          <img *ngIf="getPhotoUrl(br.partner) && !failedPhotos.has(br.partner.id)"
+                               [src]="getPhotoUrl(br.partner)!" class="ts-avatar-photo"
+                               [alt]="getInitiales(br.partner)" (error)="onPhotoError(br.partner.id)" />
+                          <span *ngIf="!getPhotoUrl(br.partner) || failedPhotos.has(br.partner.id)">{{ getInitiales(br.partner) }}</span>
+                        </div>
+                        <span class="ts-name">{{ br.partner.prenoms }} {{ br.partner.nomUsage ?? br.partner.nomNaissance }}</span>
+                        <span class="ts-year">{{ yearLabel(br.partner) }}</span>
+                      </div>
+                    </div>
+
+                    <!-- Badge union + statut -->
+                    <div class="ts-union-badge" [class]="'ts-badge-' + unionStatus(br)">
+                      <span class="material-icons-round">{{ unionHeartIcon(br) }}</span>
+                      {{ typeLabel(br.union.type) }}
+                      <ng-container *ngIf="br.union.dateDebut"> · {{ extractAnnee(br.union.dateDebut) }}</ng-container>
+                      <ng-container *ngIf="br.union.dateFin"> – {{ extractAnnee(br.union.dateFin) }}</ng-container>
+                      <span class="ts-status-chip" *ngIf="unionStatusLabel(br)">{{ unionStatusLabel(br) }}</span>
+                    </div>
+
+                    <!-- Enfants de cette union (récursif) -->
+                    <ng-container *ngIf="br.children.length > 0">
+                      <div class="ts-down"></div>
+                      <ng-container *ngIf="br.children.length === 1">
+                        <ng-container [ngTemplateOutlet]="nodeRef" [ngTemplateOutletContext]="{ node: br.children[0] }"></ng-container>
+                      </ng-container>
+                      <div class="ts-branch" *ngIf="br.children.length > 1">
+                        <div class="ts-hbar"
+                             [style.marginLeft.px]="barInset(br.children[0])"
+                             [style.marginRight.px]="barInset(br.children[br.children.length-1])"></div>
+                        <div class="ts-children-row">
+                          <div class="ts-child-col" *ngFor="let child of br.children">
+                            <div class="ts-up"></div>
+                            <ng-container [ngTemplateOutlet]="nodeRef" [ngTemplateOutletContext]="{ node: child }"></ng-container>
+                          </div>
+                        </div>
+                      </div>
+                    </ng-container>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
           <!-- ── Carte solo ── -->
           <div class="ts-solo-card" *ngIf="node.type === 'solo'"
                [class.ts-root]="node.isRoot"

@@ -721,6 +721,66 @@
   margin-top: 8px;
 }
 
+/* ===== MULTI-UNIONS ===== */
+
+/* Carte centrale de la personne avec plusieurs unions */
+.ts-multi-card {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 14px 20px; min-width: 130px;
+  background: var(--primary-bg); border: 2.5px solid var(--primary);
+  border-radius: 18px; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(59,130,246,0.20);
+  transition: var(--transition);
+  &.ts-active { box-shadow: 0 0 0 3px rgba(59,130,246,0.28); }
+  &:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59,130,246,0.25); }
+}
+
+/* Avatar plus grand pour la carte multi */
+.ts-avatar-lg {
+  width: 56px !important; height: 56px !important; font-size: 18px !important;
+}
+
+/* Badge "N unions" */
+.ts-multi-badge {
+  font-size: 10px; font-weight: 700; color: var(--primary);
+  background: rgba(59,130,246,0.12); border-radius: 10px;
+  padding: 2px 8px;
+}
+
+/* Union dans une branche (couple d'une union parmi plusieurs) */
+.ts-union-branch { cursor: default; }
+
+.ts-union-active  { border-color: var(--primary-border); }
+.ts-union-divorced { border-color: #D1D5DB; opacity: 0.85; }
+.ts-union-widowed  { border-color: #E5E7EB; }
+
+/* Référence compacte à la personne principale dans une branche */
+.ts-person-ref { width: 80px !important; opacity: 0.75; }
+.ts-avatar-ref { width: 34px !important; height: 34px !important; font-size: 11px !important; }
+.ts-name-ref   { font-size: 10px !important; color: var(--text-muted); }
+
+/* Cœur coloré selon statut */
+.ts-heart-active { color: #f43f5e !important; }
+.ts-heart-broken { color: #9CA3AF !important; }
+.ts-heart-grey   { color: #9CA3AF !important; }
+.ts-hline-grey   { background: #D1D5DB !important; }
+
+/* Badge union coloré par statut */
+.ts-badge-active   { background: var(--white); color: var(--primary); border-color: var(--primary-border); }
+.ts-badge-divorced { background: #F9FAFB; color: #6B7280; border-color: #E5E7EB;
+  .material-icons-round { color: #9CA3AF !important; }
+}
+.ts-badge-widowed  { background: #F3F4F6; color: #4B5563; border-color: #D1D5DB;
+  .material-icons-round { color: #6B7280 !important; }
+}
+
+/* Chip de statut (Divorcé·e / Veuf·ve) */
+.ts-status-chip {
+  display: inline-block; font-size: 9px; font-weight: 700;
+  padding: 1px 6px; border-radius: 8px;
+  background: rgba(0,0,0,0.06); margin-left: 2px;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 640px) {
   .tree-toolbar { padding: 12px 16px; }

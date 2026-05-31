@@ -7,14 +7,23 @@ import {
 import { Union } from '../../../models/union.model';
 import { ApiService } from '../../../services/api.service';
 
+export interface UnionBranch {
+  union: Union;
+  partner?: Personne;
+  children: TreeNode[];
+}
+
+export type UnionStatus = 'active' | 'divorced' | 'widowed';
+
 /** Nœud récursif de l'arbre */
 export interface TreeNode {
-  type: 'union' | 'solo';
+  type: 'union' | 'solo' | 'multi';
   p1: Personne;
   p2?: Personne;
   union?: Union;
   isRoot: boolean;
   children: TreeNode[];
+  unions?: UnionBranch[];
 }
 
 @Component({
@@ -171,32 +180,42 @@ export class FamilleArbreComponent implements OnInit, OnDestroy {
       if (!person) return null;
       placedPersons.add(pid);
 
-      const myUnion = unions.find(u =>
-        !placedUnions.has(u.id) &&
-        u.participants.some(pt => pt.personneId === pid)
-      );
+      const myUnions = unions
+        .filter(u => !placedUnions.has(u.id) && u.participants.some(pt => pt.personneId === pid))
+        .sort((a, b) => (extractAnnee(a.dateDebut) ?? 0) - (extractAnnee(b.dateDebut) ?? 0));
 
-      if (!myUnion) {
-        return { type: 'solo', p1: person, isRoot: !childIds.has(pid), children: [] };
+      if (myUnions.length === 0) {
+        return { type: 'solo', p1: person, isRoot: !childIds.has(pid), children: [], unions: [] };
       }
 
-      placedUnions.add(myUnion.id);
-
-      const partnerPart = myUnion.participants
-        .filter(pt => pt.personneId !== pid)
-        .sort((a, b) => (a.ordre ?? 1) - (b.ordre ?? 1))[0];
-
-      let partner: Personne | undefined;
-      if (partnerPart && !placedPersons.has(partnerPart.personneId)) {
-        partner = personnes.find(p => p.id === partnerPart.personneId);
-        if (partner) placedPersons.add(partner.id);
+      if (myUnions.length === 1) {
+        const u = myUnions[0];
+        placedUnions.add(u.id);
+        const partnerPart = u.participants.filter(pt => pt.personneId !== pid)
+          .sort((a, b) => (a.ordre ?? 1) - (b.ordre ?? 1))[0];
+        let partner: Personne | undefined;
+        if (partnerPart && !placedPersons.has(partnerPart.personneId)) {
+          partner = personnes.find(p => p.id === partnerPart.personneId);
+          if (partner) placedPersons.add(partner.id);
+        }
+        const children = u.filiations.map(f => buildNode(f.enfantId)).filter((n): n is TreeNode => n !== null);
+        return { type: 'union', p1: person, p2: partner, union: u, isRoot: !childIds.has(pid), children };
       }
 
-      const children = myUnion.filiations
-        .map(f => buildNode(f.enfantId))
-        .filter((n): n is TreeNode => n !== null);
-
-      return { type: 'union', p1: person, p2: partner, union: myUnion, isRoot: !childIds.has(pid), children };
+      // Plusieurs unions
+      const unionBranches: UnionBranch[] = myUnions.map(u => {
+        placedUnions.add(u.id);
+        const partnerPart = u.participants.filter(pt => pt.personneId !== pid)
+          .sort((a, b) => (a.ordre ?? 1) - (b.ordre ?? 1))[0];
+        let partner: Personne | undefined;
+        if (partnerPart && !placedPersons.has(partnerPart.personneId)) {
+          partner = personnes.find(p => p.id === partnerPart.personneId);
+          if (partner) placedPersons.add(partner.id);
+        }
+        const children = u.filiations.map(f => buildNode(f.enfantId)).filter((n): n is TreeNode => n !== null);
+        return { union: u, partner, children };
+      });
+      return { type: 'multi', p1: person, isRoot: !childIds.has(pid), children: [], unions: unionBranches };
     };
 
     // Candidats racines : non-enfants dont aucun partenaire n'est lui-même un enfant
@@ -240,7 +259,24 @@ export class FamilleArbreComponent implements OnInit, OnDestroy {
     return `${n} – présent`;
   }
 
-  barInset(node: TreeNode): number { return node.type === 'union' ? 155 : 70; }
+  barInset(node: TreeNode): number { return (node.type === 'union' || node.type === 'multi') ? 155 : 70; }
+
+  unionStatus(br: UnionBranch): UnionStatus {
+    if (!br.union.dateFin) return 'active';
+    if (br.partner && !estVivant(br.partner)) return 'widowed';
+    return 'divorced';
+  }
+
+  unionHeartIcon(br: UnionBranch): string {
+    return this.unionStatus(br) === 'divorced' ? 'heart_broken' : 'favorite';
+  }
+
+  unionStatusLabel(br: UnionBranch): string {
+    const s = this.unionStatus(br);
+    if (s === 'divorced') return 'Divorcé(e)';
+    if (s === 'widowed')  return 'Veuf/Veuve';
+    return '';
+  }
 
   openDetail(p: Personne): void { if (this.dragMoved) return; this.selectedPerson = p; this.showDetail = true; }
   closeDetail(): void { this.showDetail = false; this.selectedPerson = null; }

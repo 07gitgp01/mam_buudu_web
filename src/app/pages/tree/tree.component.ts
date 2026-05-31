@@ -9,14 +9,26 @@ import { forkJoin } from 'rxjs';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 
+/** Branche d'union pour une personne polygame */
+export interface UnionBranch {
+  union: Union;
+  partner?: Personne;
+  children: TreeNode[];
+}
+
+/** Statut d'une union */
+export type UnionStatus = 'active' | 'divorced' | 'widowed';
+
 /** Nœud récursif de l'arbre */
 export interface TreeNode {
-  type: 'union' | 'solo';
+  type: 'union' | 'solo' | 'multi'; // 'multi' = plusieurs unions
   p1: Personne;
   p2?: Personne;
   union?: Union;
   isRoot: boolean;
   children: TreeNode[];
+  // Uniquement pour type === 'multi'
+  unions?: UnionBranch[];
 }
 
 @Component({
@@ -135,48 +147,51 @@ export class TreeComponent implements OnInit, OnDestroy {
     const placedUnions  = new Set<string>();
 
     const buildNode = (pid: string): TreeNode | null => {
-      // Si déjà placé (partenaire d'un autre nœud), ne pas dupliquer
       if (placedPersons.has(pid)) return null;
       const person = personnes.find(p => p.id === pid);
       if (!person) return null;
       placedPersons.add(pid);
 
-      // Chercher une union non encore placée où cette personne est participante
-      const myUnion = unions.find(u =>
-        !placedUnions.has(u.id) &&
-        u.participants.some(pt => pt.personneId === pid)
-      );
+      // Toutes les unions non encore placées pour cette personne
+      const myUnions = unions
+        .filter(u => !placedUnions.has(u.id) && u.participants.some(pt => pt.personneId === pid))
+        .sort((a, b) => (extractAnnee(a.dateDebut) ?? 0) - (extractAnnee(b.dateDebut) ?? 0));
 
-      if (!myUnion) {
-        return { type: 'solo', p1: person, isRoot: !childIds.has(pid), children: [] };
+      // ── Cas 1 : aucune union → solo ──────────────────────────────────────
+      if (myUnions.length === 0) {
+        return { type: 'solo', p1: person, isRoot: !childIds.has(pid), children: [], unions: [] };
       }
 
-      placedUnions.add(myUnion.id);
-
-      // Partenaire (autre participant dans l'union)
-      const partnerPart = myUnion.participants
-        .filter(pt => pt.personneId !== pid)
-        .sort((a, b) => (a.ordre ?? 1) - (b.ordre ?? 1))[0];
-
-      let partner: Personne | undefined;
-      if (partnerPart && !placedPersons.has(partnerPart.personneId)) {
-        partner = personnes.find(p => p.id === partnerPart.personneId);
-        if (partner) placedPersons.add(partner.id);
+      // ── Cas 2 : une seule union → comportement classique ─────────────────
+      if (myUnions.length === 1) {
+        const u = myUnions[0];
+        placedUnions.add(u.id);
+        const partnerPart = u.participants.filter(pt => pt.personneId !== pid)
+          .sort((a, b) => (a.ordre ?? 1) - (b.ordre ?? 1))[0];
+        let partner: Personne | undefined;
+        if (partnerPart && !placedPersons.has(partnerPart.personneId)) {
+          partner = personnes.find(p => p.id === partnerPart.personneId);
+          if (partner) placedPersons.add(partner.id);
+        }
+        const children = u.filiations.map(f => buildNode(f.enfantId)).filter((n): n is TreeNode => n !== null);
+        return { type: 'union', p1: person, p2: partner, union: u, isRoot: !childIds.has(pid), children };
       }
 
-      // Enfants de cette union (récursivement)
-      const children = myUnion.filiations
-        .map(f => buildNode(f.enfantId))
-        .filter((n): n is TreeNode => n !== null);
+      // ── Cas 3 : plusieurs unions → nœud multi ────────────────────────────
+      const unionBranches: UnionBranch[] = myUnions.map(u => {
+        placedUnions.add(u.id);
+        const partnerPart = u.participants.filter(pt => pt.personneId !== pid)
+          .sort((a, b) => (a.ordre ?? 1) - (b.ordre ?? 1))[0];
+        let partner: Personne | undefined;
+        if (partnerPart && !placedPersons.has(partnerPart.personneId)) {
+          partner = personnes.find(p => p.id === partnerPart.personneId);
+          if (partner) placedPersons.add(partner.id);
+        }
+        const children = u.filiations.map(f => buildNode(f.enfantId)).filter((n): n is TreeNode => n !== null);
+        return { union: u, partner, children };
+      });
 
-      return {
-        type: 'union',
-        p1: person,
-        p2: partner,
-        union: myUnion,
-        isRoot: !childIds.has(pid),
-        children,
-      };
+      return { type: 'multi', p1: person, isRoot: !childIds.has(pid), children: [], unions: unionBranches };
     };
 
     // Candidats racines = non-enfants dont AUCUN partenaire n'est lui-même un enfant.
@@ -270,7 +285,25 @@ export class TreeComponent implements OnInit, OnDestroy {
 
   /** Demi-largeur approximative d'un nœud pour le calcul de la barre horizontale. */
   barInset(node: TreeNode): number {
-    return node.type === 'union' ? 155 : 70;
+    return (node.type === 'union' || node.type === 'multi') ? 155 : 70;
+  }
+
+  // ── Statut d'une union (pour affichage polygamie / divorce / veuvage) ───
+  unionStatus(br: UnionBranch): UnionStatus {
+    if (!br.union.dateFin) return 'active';
+    if (br.partner && !estVivant(br.partner)) return 'widowed';
+    return 'divorced';
+  }
+
+  unionHeartIcon(br: UnionBranch): string {
+    return this.unionStatus(br) === 'divorced' ? 'heart_broken' : 'favorite';
+  }
+
+  unionStatusLabel(br: UnionBranch): string {
+    const s = this.unionStatus(br);
+    if (s === 'divorced') return 'Divorcé(e)';
+    if (s === 'widowed')  return 'Veuf/Veuve';
+    return '';
   }
 
   // ══════════════════════════════════════════════════════════════════════════

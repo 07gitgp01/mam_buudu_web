@@ -2,218 +2,159 @@
 
   <!-- En-tête -->
   <div class="page-header">
-    <div>
-      <h2 class="page-title">Unions familiales</h2>
-      <p class="page-subtitle">{{ unions.length }} union{{ unions.length > 1 ? 's' : '' }} enregistrée{{ unions.length > 1 ? 's' : '' }}</p>
+    <div class="header-row">
+      <div>
+        <h2 class="page-title">Unions familiales</h2>
+        <p class="page-subtitle">{{ groupedUnions.length }} famille{{ groupedUnions.length > 1 ? 's' : '' }} · {{ unions.length }} couple{{ unions.length > 1 ? 's' : '' }}</p>
+      </div>
+      <button class="btn-primary" (click)="openCreate()">
+        <span class="material-icons-round">add</span>
+        Nouveau couple
+      </button>
     </div>
-    <button class="btn-primary" (click)="openCreate()">
-      <span class="material-icons-round">add</span>
-      Nouvelle union
-    </button>
   </div>
 
-  <!-- Skeleton chargement -->
-  <div class="sk-grid" *ngIf="loading">
-    <div class="sk-card" *ngFor="let _ of [1,2,3,4]">
-      <div class="sk-card-banner"></div>
-      <div class="sk-card-body">
-        <div class="sk-line sk-full"></div>
-        <div class="sk-line sk-md"></div>
-        <div class="sk-line sk-sm"></div>
+  <!-- Skeleton -->
+  <div class="sk-section" *ngIf="loading">
+    <div class="ug-group" *ngFor="let _ of [1,2]">
+      <div class="ug-group-header">
+        <div class="sk-avatar sk-av-md"></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:6px">
+          <div class="sk-line sk-md"></div>
+          <div class="sk-line sk-sm"></div>
+        </div>
+      </div>
+      <div class="ug-couple-row" *ngFor="let __ of [1,2]">
+        <div class="sk-line sk-xs" style="width:32px;height:32px;border-radius:50%"></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:5px">
+          <div class="sk-line sk-md"></div>
+          <div class="sk-line sk-sm"></div>
+        </div>
       </div>
     </div>
   </div>
+
   <!-- Erreur -->
   <div class="error-state" *ngIf="erreur && !loading">
-    <span class="material-icons-round">error_outline</span>
-    {{ erreur }}
+    <span class="material-icons-round">error_outline</span>{{ erreur }}
   </div>
 
-  <!-- État vide -->
+  <!-- Vide -->
   <div class="empty-state" *ngIf="!loading && !erreur && unions.length === 0">
     <span class="material-icons-round">favorite_border</span>
     <h3>Aucune union enregistrée</h3>
-    <p>Ajoutez la première union de votre famille.</p>
+    <p>Ajoutez le premier couple de votre famille.</p>
     <button class="btn-primary" (click)="openCreate()">
-      <span class="material-icons-round">add</span>
-      Nouvelle union
+      <span class="material-icons-round">add</span>Nouveau couple
     </button>
   </div>
 
-  <!-- Toolbar toggle vue -->
-  <div class="toolbar-right" *ngIf="!loading && !erreur && unions.length > 0">
-    <div class="view-toggle">
-      <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">
-        <span class="material-icons-round">grid_view</span>
-      </button>
-      <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">
-        <span class="material-icons-round">view_list</span>
-      </button>
-    </div>
-  </div>
+  <!-- ===== GROUPES ===== -->
+  <div class="ug-groups" *ngIf="!loading && !erreur && unions.length > 0">
 
-  <!-- ===== VUE CARTES ===== -->
-  <div class="unions-grid" *ngIf="!loading && !erreur && unions.length > 0 && viewMode === 'cards'">
-    <div class="union-card" *ngFor="let u of unions; let i = index">
+    <div class="ug-group" *ngFor="let g of groupedUnions">
 
-      <!-- Colorband style home -->
-      <div class="pc-colorband"
-           [class.color-1]="i % 3 === 0"
-           [class.color-2]="i % 3 === 1"
-           [class.color-3]="i % 3 === 2"></div>
+      <!-- En-tête du groupe -->
+      <div class="ug-group-header" (click)="toggleGroup(g.chef.id)">
+        <div class="ug-chef-left">
+          <!-- Avatar chef -->
+          <div class="ug-chef-avatar"
+               [class.male]="g.chef.sexe==='M'" [class.female]="g.chef.sexe==='F'">
+            <img *ngIf="photoOf(g.chef) && !failedPhotos.has(g.chef.id)"
+                 [src]="photoOf(g.chef)" class="ug-chef-avatar-photo"
+                 [alt]="initiales(g.chef)" (error)="onPhotoError(g.chef.id)" />
+            <span *ngIf="!photoOf(g.chef) || failedPhotos.has(g.chef.id)">{{ initiales(g.chef) }}</span>
+          </div>
 
-      <!-- Bandeau type -->
-      <div class="union-type-banner" [ngClass]="getTypeColor(u.type)">
-        <span class="material-icons-round">{{ getTypeIcon(u.type) }}</span>
-        <span>{{ getTypeLabel(u.type) }}</span>
+          <!-- Infos -->
+          <div class="ug-chef-info">
+            <span class="ug-chef-name">{{ nomComplet(g.chef) }}</span>
+            <span class="ug-chef-meta">
+              {{ g.couples.length }} couple{{ g.couples.length > 1 ? 's' : '' }}
+              · {{ totalEnfants(g.couples) }} enfant{{ totalEnfants(g.couples) > 1 ? 's' : '' }}
+            </span>
+          </div>
+
+          <!-- Badge polygamie -->
+          <span class="badge ug-poly-badge" *ngIf="g.couples.length > 1">Polygamie</span>
+        </div>
+
+        <div class="ug-group-actions">
+          <button class="btn-outline btn-sm" (click)="openCreateForChef(g.chef); $event.stopPropagation()">
+            <span class="material-icons-round">person_add</span>
+            Ajouter un couple
+          </button>
+          <span class="material-icons-round ug-chevron" [class.expanded]="isGroupExpanded(g.chef.id)">
+            expand_more
+          </span>
+        </div>
       </div>
 
-      <!-- Couple -->
-      <div class="couple-row">
-        <div class="person-chip">
-          <div class="u-avatar-wrap">
-            <img *ngIf="photoOf(getConjoint1(u)) && !failedPhotos.has(getConjoint1(u)!.id)"
-                 [src]="photoOf(getConjoint1(u))" class="u-avatar-photo avatar avatar-md"
-                 [alt]="nomComplet(getConjoint1(u))"
-                 (error)="onPhotoError(getConjoint1(u)!.id)" />
-            <div *ngIf="!photoOf(getConjoint1(u)) || failedPhotos.has(getConjoint1(u)?.id ?? '')"
-                 class="avatar avatar-md"
-                 [class.male]="getConjoint1(u)?.sexe === 'M'"
-                 [class.female]="getConjoint1(u)?.sexe === 'F'">
-              {{ initiales(getConjoint1(u)) }}
+      <!-- Couples de ce chef (accordéon) -->
+      <div class="ug-couples" *ngIf="isGroupExpanded(g.chef.id)">
+        <div class="ug-couple-row" *ngFor="let u of g.couples; let i = index">
+
+          <!-- Numéro -->
+          <span class="ug-couple-num">{{ i + 1 }}</span>
+
+          <!-- Statut icône -->
+          <span class="material-icons-round ug-status-icon"
+                [class.ug-active]="coupleStatus(u)==='active'"
+                [class.ug-divorced]="coupleStatus(u)==='divorced'"
+                [class.ug-widowed]="coupleStatus(u)==='widowed'">
+            {{ coupleStatusIcon(u) }}
+          </span>
+
+          <!-- Partenaire -->
+          <div class="ug-partner-info">
+            <div class="ug-partner-avatar"
+                 [class.male]="getPartner(u, g.chef.id)?.sexe==='M'"
+                 [class.female]="getPartner(u, g.chef.id)?.sexe==='F'">
+              <ng-container *ngIf="getPartner(u, g.chef.id) as partner">
+                <img *ngIf="photoOf(partner) && !failedPhotos.has(partner.id)"
+                     [src]="photoOf(partner)" class="ug-partner-photo"
+                     [alt]="initiales(partner)" (error)="onPhotoError(partner.id)" />
+                <span *ngIf="!photoOf(partner) || failedPhotos.has(partner.id)">{{ initiales(partner) }}</span>
+              </ng-container>
+              <span *ngIf="!getPartner(u, g.chef.id)">?</span>
+            </div>
+            <div class="ug-partner-details">
+              <span class="ug-partner-name">{{ nomComplet(getPartner(u, g.chef.id)) }}</span>
+              <span class="ug-partner-meta">
+                {{ getTypeLabel(u.type) }}
+                <ng-container *ngIf="u.dateDebut"> · {{ annee(u.dateDebut) }}</ng-container>
+                <ng-container *ngIf="u.dateFin"> – {{ annee(u.dateFin) }}</ng-container>
+                <span class="ug-status-chip"
+                      [class.chip-active]="coupleStatus(u)==='active'"
+                      [class.chip-divorced]="coupleStatus(u)==='divorced'"
+                      [class.chip-widowed]="coupleStatus(u)==='widowed'">
+                  {{ coupleStatusLabel(u) }}
+                </span>
+              </span>
             </div>
           </div>
-          <div class="person-info">
-            <span class="person-name">{{ nomComplet(getConjoint1(u)) }}</span>
+
+          <!-- Enfants -->
+          <div class="ug-children-count" *ngIf="u.filiations.length > 0">
+            <span class="material-icons-round">child_care</span>
+            {{ u.filiations.length }}
           </div>
-        </div>
-        <span class="material-icons-round link-icon">favorite</span>
-        <div class="person-chip">
-          <div class="u-avatar-wrap">
-            <img *ngIf="photoOf(getConjoint2(u)) && !failedPhotos.has(getConjoint2(u)!.id)"
-                 [src]="photoOf(getConjoint2(u))" class="u-avatar-photo avatar avatar-md"
-                 [alt]="nomComplet(getConjoint2(u))"
-                 (error)="onPhotoError(getConjoint2(u)!.id)" />
-            <div *ngIf="!photoOf(getConjoint2(u)) || failedPhotos.has(getConjoint2(u)?.id ?? '')"
-                 class="avatar avatar-md accent"
-                 [class.male]="getConjoint2(u)?.sexe === 'M'"
-                 [class.female]="getConjoint2(u)?.sexe === 'F'">
-              {{ initiales(getConjoint2(u)) }}
-            </div>
-          </div>
-          <div class="person-info">
-            <span class="person-name">{{ nomComplet(getConjoint2(u)) }}</span>
+
+          <!-- Actions -->
+          <div class="ug-couple-actions">
+            <button class="btn-icon" title="Gérer les enfants" (click)="openEnfantPanel(u)">
+              <span class="material-icons-round">people_add</span>
+            </button>
+            <button class="btn-icon" title="Modifier ce couple" (click)="openEdit(u)">
+              <span class="material-icons-round">edit</span>
+            </button>
+            <button class="btn-icon btn-icon-danger" title="Supprimer" (click)="confirmDelete(u)">
+              <span class="material-icons-round">delete</span>
+            </button>
           </div>
         </div>
       </div>
 
-      <!-- Détails -->
-      <div class="union-details">
-        <div class="detail-item" *ngIf="u.dateDebut">
-          <span class="material-icons-round">calendar_today</span>
-          <span>{{ annee(u.dateDebut) ?? u.dateDebut }}</span>
-        </div>
-        <div class="detail-item" *ngIf="u.lieuDebut">
-          <span class="material-icons-round">location_on</span>
-          <span>{{ u.lieuDebut }}</span>
-        </div>
-        <div class="detail-item">
-          <span class="material-icons-round">child_care</span>
-          <span>{{ u.filiations.length }} enfant{{ u.filiations.length > 1 ? 's' : '' }}</span>
-        </div>
-      </div>
-
-      <!-- Actions -->
-      <div class="card-actions">
-        <button class="btn-icon" title="Gérer les enfants" (click)="openEnfantPanel(u)">
-          <span class="material-icons-round">people_add</span>
-        </button>
-        <button class="btn-icon" title="Modifier" (click)="openEdit(u)">
-          <span class="material-icons-round">edit</span>
-        </button>
-        <button class="btn-icon btn-icon-danger" title="Supprimer" (click)="confirmDelete(u)">
-          <span class="material-icons-round">delete</span>
-        </button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ===== VUE LISTE ===== -->
-  <div class="ul-table" *ngIf="!loading && !erreur && unions.length > 0 && viewMode === 'list'">
-    <!-- En-tête -->
-    <div class="ul-thead">
-      <span class="pl-th">Couple</span>
-      <span class="pl-th ul-th-type">Type</span>
-      <span class="pl-th ul-th-date">Depuis</span>
-      <span class="pl-th ul-th-enfants">Enfants</span>
-      <span class="pl-th ul-th-actions">Actions</span>
-    </div>
-    <!-- Lignes -->
-    <div class="ul-row" *ngFor="let u of unions">
-      <!-- Couple -->
-      <div class="ul-cell ul-cell-couple">
-        <div class="ul-avatars">
-          <div class="u-avatar-wrap">
-            <img *ngIf="photoOf(getConjoint1(u)) && !failedPhotos.has(getConjoint1(u)!.id)"
-                 [src]="photoOf(getConjoint1(u))" class="u-avatar-photo avatar avatar-sm"
-                 [alt]="nomComplet(getConjoint1(u))"
-                 (error)="onPhotoError(getConjoint1(u)!.id)" />
-            <div *ngIf="!photoOf(getConjoint1(u)) || failedPhotos.has(getConjoint1(u)?.id ?? '')"
-                 class="avatar avatar-sm"
-                 [class.male]="getConjoint1(u)?.sexe === 'M'" [class.female]="getConjoint1(u)?.sexe === 'F'">
-              {{ initiales(getConjoint1(u)) }}
-            </div>
-          </div>
-          <span class="material-icons-round ul-heart">favorite</span>
-          <div class="u-avatar-wrap">
-            <img *ngIf="photoOf(getConjoint2(u)) && !failedPhotos.has(getConjoint2(u)!.id)"
-                 [src]="photoOf(getConjoint2(u))" class="u-avatar-photo avatar avatar-sm"
-                 [alt]="nomComplet(getConjoint2(u))"
-                 (error)="onPhotoError(getConjoint2(u)!.id)" />
-            <div *ngIf="!photoOf(getConjoint2(u)) || failedPhotos.has(getConjoint2(u)?.id ?? '')"
-                 class="avatar avatar-sm"
-                 [class.male]="getConjoint2(u)?.sexe === 'M'" [class.female]="getConjoint2(u)?.sexe === 'F'">
-              {{ initiales(getConjoint2(u)) }}
-            </div>
-          </div>
-        </div>
-        <div class="ul-names">
-          <span class="ul-name-primary">{{ nomComplet(getConjoint1(u)) }}</span>
-          <span class="ul-name-secondary">& {{ nomComplet(getConjoint2(u)) }}</span>
-        </div>
-      </div>
-      <!-- Type -->
-      <div class="ul-cell ul-cell-type">
-        <span class="union-type-badge" [ngClass]="getTypeColor(u.type)">
-          <span class="material-icons-round">{{ getTypeIcon(u.type) }}</span>
-          {{ getTypeLabel(u.type) }}
-        </span>
-      </div>
-      <!-- Date -->
-      <div class="ul-cell ul-cell-date">
-        <span *ngIf="u.dateDebut">{{ annee(u.dateDebut) ?? u.dateDebut }}</span>
-        <span *ngIf="!u.dateDebut" class="pl-empty">—</span>
-      </div>
-      <!-- Enfants -->
-      <div class="ul-cell ul-cell-enfants">
-        <span class="ul-enfant-count">
-          <span class="material-icons-round">child_care</span>
-          {{ u.filiations.length }}
-        </span>
-      </div>
-      <!-- Actions -->
-      <div class="ul-cell ul-cell-actions" (click)="$event.stopPropagation()">
-        <button class="btn-icon" title="Gérer les enfants" (click)="openEnfantPanel(u)">
-          <span class="material-icons-round">people_add</span>
-        </button>
-        <button class="btn-icon" title="Modifier" (click)="openEdit(u)">
-          <span class="material-icons-round">edit</span>
-        </button>
-        <button class="btn-icon btn-icon-danger" title="Supprimer" (click)="confirmDelete(u)">
-          <span class="material-icons-round">delete</span>
-        </button>
-      </div>
     </div>
   </div>
 
@@ -225,7 +166,7 @@
 <!-- ===== PANNEAU FORMULAIRE ===== -->
 <div class="slide-panel" [class.open]="showForm">
   <div class="panel-header">
-    <h3>{{ editTarget ? 'Modifier l\'union' : 'Nouvelle union' }}</h3>
+    <h3>{{ editTarget ? 'Modifier le couple' : 'Nouveau couple' }}</h3>
     <button class="btn-icon" (click)="closeAll()">
       <span class="material-icons-round">close</span>
     </button>
@@ -234,33 +175,57 @@
   <div class="panel-body">
     <form #unionForm="ngForm">
 
-      <!-- Section: Type et participants -->
+      <!-- Type -->
       <div class="form-section">
-        <div class="section-title">Type et participants</div>
-
+        <div class="section-title">Type de l'union</div>
         <div class="form-group">
-          <label>Type d'union</label>
+          <label>Type</label>
           <select name="type" [(ngModel)]="form.type" class="form-control">
             <option *ngFor="let t of typeUnion" [value]="t.val">{{ t.label }}</option>
           </select>
         </div>
+      </div>
+
+      <!-- Participants -->
+      <div class="form-section">
+        <div class="section-title">Participants du couple</div>
 
         <div class="form-group">
-          <label>Participants</label>
-          <div class="warning-msg" *ngIf="form.participantIds.length > 2">
-            <span class="material-icons-round">warning</span>
-            Plus de 2 participants sélectionnés
-          </div>
+          <label>Membres sélectionnés (max. 2)</label>
+
           <div class="participant-chips" *ngIf="form.participantIds.length > 0">
             <span class="participant-chip" *ngFor="let pid of form.participantIds">
               {{ nomComplet(getPersonneById(pid)) }}
               <button type="button" class="chip-remove" (click)="toggleParticipant(pid)">×</button>
             </span>
           </div>
+
+          <!-- Alerte unions multiples -->
+          <div class="multi-union-alert" *ngIf="multiUnionWarnings.length > 0">
+            <div class="multi-union-alert-header">
+              <span class="material-icons-round">info</span>
+              <strong>Unions multiples détectées</strong>
+            </div>
+            <div class="multi-union-alert-row" *ngFor="let w of multiUnionWarnings">
+              <div class="avatar avatar-sm" [class.male]="w.person.sexe==='M'" [class.female]="w.person.sexe==='F'">
+                {{ initiales(w.person) }}
+              </div>
+              <div>
+                <span class="multi-union-alert-name">{{ nomComplet(w.person) }}</span>
+                <span class="multi-union-alert-hint">{{ w.hint }}</span>
+              </div>
+            </div>
+            <p class="multi-union-alert-tip">
+              <span class="material-icons-round">auto_fix_high</span>
+              Type ajusté automatiquement à <strong>Polygamie</strong>.
+            </p>
+          </div>
+
           <div class="person-select-list">
             <div class="person-select-item"
                  *ngFor="let p of personnes"
                  [class.selected]="isParticipant(p.id)"
+                 [class.has-union]="getPersonActiveUnions(p.id).length > 0 && !isParticipant(p.id)"
                  (click)="toggleParticipant(p.id)">
               <div class="u-avatar-wrap">
                 <img *ngIf="photoOf(p) && !failedPhotos.has(p.id)"
@@ -272,21 +237,25 @@
                   {{ initiales(p) }}
                 </div>
               </div>
-              <span class="person-select-name">{{ nomComplet(p) }}</span>
+              <div class="person-select-info">
+                <span class="person-select-name">{{ nomComplet(p) }}</span>
+                <span class="person-union-hint" *ngIf="getPersonUnionHint(p.id)">
+                  <span class="material-icons-round">favorite</span>{{ getPersonUnionHint(p.id) }}
+                </span>
+              </div>
               <span class="material-icons-round check-icon" *ngIf="isParticipant(p.id)">check_circle</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Section: Début -->
+      <!-- Début -->
       <div class="form-section">
         <div class="section-title">Début de l'union</div>
         <div class="form-row">
           <div class="form-group">
             <label>Année</label>
-            <input type="number" name="debut_annee" [(ngModel)]="form.debut_annee"
-                   placeholder="2000" class="form-control" />
+            <input type="number" name="debut_annee" [(ngModel)]="form.debut_annee" placeholder="2000" class="form-control" />
           </div>
           <div class="form-group">
             <label>Mois</label>
@@ -297,25 +266,22 @@
           </div>
           <div class="form-group">
             <label>Jour</label>
-            <input type="number" name="debut_jour" [(ngModel)]="form.debut_jour"
-                   placeholder="1" min="1" max="31" class="form-control" />
+            <input type="number" name="debut_jour" [(ngModel)]="form.debut_jour" placeholder="1" min="1" max="31" class="form-control" />
           </div>
         </div>
         <div class="form-group">
           <label>Lieu</label>
-          <input type="text" name="lieuDebut" [(ngModel)]="form.lieuDebut"
-                 placeholder="Ville, pays..." class="form-control" />
+          <input type="text" name="lieuDebut" [(ngModel)]="form.lieuDebut" placeholder="Ville, pays..." class="form-control" />
         </div>
       </div>
 
-      <!-- Section: Fin -->
+      <!-- Fin (optionnel) -->
       <div class="form-section">
-        <div class="section-title">Fin de l'union <span class="optional">(optionnel)</span></div>
+        <div class="section-title">Fin de l'union <span class="optional">(si divorcé·e ou décédé·e)</span></div>
         <div class="form-row">
           <div class="form-group">
             <label>Année</label>
-            <input type="number" name="fin_annee" [(ngModel)]="form.fin_annee"
-                   placeholder="2020" class="form-control" />
+            <input type="number" name="fin_annee" [(ngModel)]="form.fin_annee" placeholder="2020" class="form-control" />
           </div>
           <div class="form-group">
             <label>Mois</label>
@@ -326,24 +292,20 @@
           </div>
           <div class="form-group">
             <label>Jour</label>
-            <input type="number" name="fin_jour" [(ngModel)]="form.fin_jour"
-                   placeholder="1" min="1" max="31" class="form-control" />
+            <input type="number" name="fin_jour" [(ngModel)]="form.fin_jour" placeholder="1" min="1" max="31" class="form-control" />
           </div>
         </div>
         <div class="form-group">
           <label>Lieu</label>
-          <input type="text" name="lieuFin" [(ngModel)]="form.lieuFin"
-                 placeholder="Ville, pays..." class="form-control" />
+          <input type="text" name="lieuFin" [(ngModel)]="form.lieuFin" placeholder="Ville, pays..." class="form-control" />
         </div>
       </div>
 
-      <!-- Section: Notes -->
+      <!-- Notes -->
       <div class="form-section">
         <div class="section-title">Notes</div>
         <div class="form-group">
-          <textarea name="notes" [(ngModel)]="form.notes"
-                    rows="3" placeholder="Notes complémentaires..."
-                    class="form-control"></textarea>
+          <textarea name="notes" [(ngModel)]="form.notes" rows="3" placeholder="Notes complémentaires..." class="form-control"></textarea>
         </div>
       </div>
 
@@ -354,6 +316,7 @@
     <button class="btn-ghost" (click)="closeAll()">Annuler</button>
     <button class="btn-primary" (click)="saveUnion()" [disabled]="saving">
       <span class="material-icons-round spin" *ngIf="saving">sync</span>
+      <span class="material-icons-round" *ngIf="!saving">save</span>
       {{ saving ? 'Sauvegarde...' : 'Sauvegarder' }}
     </button>
   </div>
@@ -362,73 +325,52 @@
 <!-- ===== PANNEAU ENFANTS ===== -->
 <div class="slide-panel" [class.open]="showEnfantPanel">
   <div class="panel-header">
-    <h3>Ajouter des enfants</h3>
-    <button class="btn-icon" (click)="closeEnfantPanel()">
-      <span class="material-icons-round">close</span>
-    </button>
+    <h3>Enfants du couple</h3>
+    <button class="btn-icon" (click)="closeEnfantPanel()"><span class="material-icons-round">close</span></button>
   </div>
-
   <div class="panel-body">
-    <p class="panel-subtitle">Sélectionnez des membres existants de la famille</p>
-
-    <!-- Recherche -->
+    <p class="panel-subtitle">Sélectionnez les enfants issus de ce couple</p>
     <div class="search-bar" style="margin-bottom: 12px;">
       <span class="material-icons-round">search</span>
-      <input type="text" name="searchEnfant" [(ngModel)]="searchEnfant"
-             placeholder="Rechercher une personne..." />
+      <input type="text" [(ngModel)]="searchEnfant" placeholder="Rechercher..." />
     </div>
-
-    <!-- Liste personnes disponibles -->
     <div class="person-select-list">
-      <div class="person-select-item"
-           *ngFor="let p of personnesDisponibles"
-           [class.selected]="isEnfantSelected(p.id)"
-           (click)="toggleEnfantSelection(p.id)">
+      <div class="person-select-item" *ngFor="let p of personnesDisponibles"
+           [class.selected]="isEnfantSelected(p.id)" (click)="toggleEnfantSelection(p.id)">
         <div class="u-avatar-wrap">
           <img *ngIf="photoOf(p) && !failedPhotos.has(p.id)"
                [src]="photoOf(p)" class="u-avatar-photo avatar avatar-sm"
                [alt]="nomComplet(p)" (error)="onPhotoError(p.id)" />
-          <div *ngIf="!photoOf(p) || failedPhotos.has(p.id)"
-               class="avatar avatar-sm"
-               [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">
-            {{ initiales(p) }}
-          </div>
+          <div *ngIf="!photoOf(p) || failedPhotos.has(p.id)" class="avatar avatar-sm"
+               [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">{{ initiales(p) }}</div>
         </div>
         <span class="person-select-name">{{ nomComplet(p) }}</span>
         <span class="material-icons-round check-icon" *ngIf="isEnfantSelected(p.id)">check_circle</span>
       </div>
-      <div class="empty-list-msg" *ngIf="personnesDisponibles.length === 0">
-        Aucune personne disponible
-      </div>
+      <div class="empty-list-msg" *ngIf="personnesDisponibles.length === 0">Aucune personne disponible</div>
     </div>
-
-    <!-- Enfants actuels -->
     <div class="current-children" *ngIf="enfantUnionTarget && enfantUnionTarget.filiations.length > 0">
       <div class="section-title" style="margin-top: 20px;">Enfants actuels</div>
       <div class="child-item" *ngFor="let f of enfantUnionTarget.filiations">
         <div class="u-avatar-wrap">
-          <img *ngIf="photoOf(f.enfant) && !failedPhotos.has(f.enfant?.id ?? '')"
+          <img *ngIf="photoOf(f.enfant) && !failedPhotos.has(f.enfant.id)"
                [src]="photoOf(f.enfant)" class="u-avatar-photo avatar avatar-sm"
-               [alt]="nomComplet(f.enfant)" (error)="f.enfant && onPhotoError(f.enfant.id)" />
-          <div *ngIf="!photoOf(f.enfant) || failedPhotos.has(f.enfant?.id ?? '')"
-               class="avatar avatar-sm"
-               [class.male]="f.enfant.sexe === 'M'" [class.female]="f.enfant.sexe === 'F'">
+               [alt]="nomComplet(f.enfant)" (error)="onPhotoError(f.enfant.id)" />
+          <div *ngIf="!photoOf(f.enfant) || failedPhotos.has(f.enfant.id)"
+               class="avatar avatar-sm" [class.male]="f.enfant.sexe==='M'" [class.female]="f.enfant.sexe==='F'">
             {{ initiales(f.enfant) }}
           </div>
         </div>
         <span class="child-name">{{ nomComplet(f.enfant) }}</span>
-        <button class="btn-icon btn-icon-danger" title="Retirer"
-                (click)="retirerEnfant(enfantUnionTarget!.id, f.enfantId)">
+        <button class="btn-icon btn-icon-danger" (click)="retirerEnfant(enfantUnionTarget!.id, f.enfantId)">
           <span class="material-icons-round">remove_circle_outline</span>
         </button>
       </div>
     </div>
   </div>
-
   <div class="panel-footer">
     <button class="btn-ghost" (click)="closeEnfantPanel()">Annuler</button>
-    <button class="btn-primary" (click)="ajouterEnfants()"
-            [disabled]="addingEnfant || enfantsSelectionnes.length === 0">
+    <button class="btn-primary" (click)="ajouterEnfants()" [disabled]="addingEnfant || enfantsSelectionnes.length === 0">
       <span class="material-icons-round spin" *ngIf="addingEnfant">sync</span>
       Ajouter ({{ enfantsSelectionnes.length }} sélectionné{{ enfantsSelectionnes.length > 1 ? 's' : '' }})
     </button>
@@ -438,10 +380,8 @@
 <!-- ===== DIALOG SUPPRESSION ===== -->
 <div class="confirm-dialog" *ngIf="showDeleteConfirm">
   <div class="confirm-box">
-    <div class="confirm-icon">
-      <span class="material-icons-round">delete_forever</span>
-    </div>
-    <h4>Supprimer cette union ?</h4>
+    <div class="confirm-icon"><span class="material-icons-round">delete_forever</span></div>
+    <h4>Supprimer ce couple ?</h4>
     <p>Cette action est irréversible. Tous les liens de parenté associés seront supprimés.</p>
     <div class="confirm-actions">
       <button class="btn-ghost" (click)="closeAll()">Annuler</button>

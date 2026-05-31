@@ -39615,6 +39615,7 @@ export {
   ɵɵtextInterpolate1,
   ɵɵtextInterpolate2,
   ɵɵtextInterpolate3,
+  ɵɵtextInterpolate4,
   ɵɵtwoWayProperty,
   ɵɵtwoWayBindingSet,
   ɵɵtwoWayListener,
@@ -39638,7 +39639,6 @@ export {
   ChangeDetectorRef,
   booleanAttribute,
   getDOM,
-  NgClass,
   NgForOf,
   NgIf,
   NgTemplateOutlet,
@@ -39708,4 +39708,4 @@ export {
    * found in the LICENSE file at https://angular.dev/license
    *)
 */
-//# sourceMappingURL=chunk-UCCPUYZ5.js.map
+//# sourceMappingURL=chunk-LT3K6Q74.js.map

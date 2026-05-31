@@ -13,11 +13,11 @@ import {
   getInitiales,
   getNomComplet,
   getPhotoUrl
-} from "./chunk-VJEBGFIP.js";
+} from "./chunk-5DNXLOPJ.js";
 import {
   LoadingService,
   ThemeService
-} from "./chunk-RJJTJRSQ.js";
+} from "./chunk-ISS6DHXE.js";
 import {
   CheckboxControlValueAccessor,
   DefaultValueAccessor,
@@ -35,7 +35,7 @@ import {
   SelectControlValueAccessor,
   ɵNgNoValidate,
   ɵNgSelectMultipleOption
-} from "./chunk-YCYTAEQB.js";
+} from "./chunk-OMONYWHI.js";
 import {
   API_BASE_URL,
   ActivatedRoute,
@@ -50,7 +50,6 @@ import {
   HttpClient,
   Input,
   NavigationEnd,
-  NgClass,
   NgForOf,
   NgIf,
   NgModule,
@@ -108,11 +107,12 @@ import {
   ɵɵtextInterpolate1,
   ɵɵtextInterpolate2,
   ɵɵtextInterpolate3,
+  ɵɵtextInterpolate4,
   ɵɵtwoWayBindingSet,
   ɵɵtwoWayListener,
   ɵɵtwoWayProperty,
   ɵɵviewQuery
-} from "./chunk-UCCPUYZ5.js";
+} from "./chunk-LT3K6Q74.js";
 import {
   __async,
   __spreadProps,
@@ -804,7 +804,7 @@ var ShellComponent = class _ShellComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ShellComponent, [{
     type: Component,
-    args: [{ selector: "app-shell", standalone: false, template: '<!-- Barre de chargement globale (toutes les requ\xEAtes HTTP) -->\n<div class="global-loading-bar" *ngIf="loading.isLoading$ | async">\n  <div class="global-loading-fill"></div>\n</div>\n\n<div class="shell" [class.sidebar-open]="sidebarOpen">\n  <div class="mob-backdrop" *ngIf="sidebarOpen" (click)="sidebarOpen=false"></div>\n  <app-sidebar [mobileOpen]="sidebarOpen" (mobileClose)="sidebarOpen=false"></app-sidebar>\n  <div class="shell-right">\n    <app-topbar (menuToggle)="sidebarOpen = !sidebarOpen"></app-topbar>\n    <main class="shell-main">\n      <router-outlet></router-outlet>\n    </main>\n  </div>\n</div>\n', styles: ["/* src/app/shell/shell.component.scss */\n.global-loading-bar {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 3px;\n  z-index: 9999;\n  background: rgba(59, 130, 246, 0.15);\n  overflow: hidden;\n}\n.global-loading-fill {\n  height: 100%;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary, #3B82F6),\n      #60A5FA,\n      var(--primary, #3B82F6));\n  background-size: 200% 100%;\n  animation: loading-slide 1.2s ease-in-out infinite;\n}\n@keyframes loading-slide {\n  0% {\n    width: 0%;\n    margin-left: 0;\n  }\n  50% {\n    width: 70%;\n    margin-left: 15%;\n  }\n  100% {\n    width: 0%;\n    margin-left: 100%;\n  }\n}\n.shell {\n  display: flex;\n  height: 100vh;\n  overflow: hidden;\n  background: var(--bg-app);\n}\n.shell-right {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n  overflow: hidden;\n}\n.shell-main {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 32px;\n}\n.mob-backdrop {\n  display: none;\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  z-index: 250;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n@media (max-width: 768px) {\n  .mob-backdrop {\n    display: block;\n  }\n  .shell-main {\n    padding: 16px;\n  }\n}\n/*# sourceMappingURL=shell.component.css.map */\n"] }]
+    args: [{ selector: "app-shell", standalone: false, template: '<!-- Barre de chargement globale (toutes les requ\xEAtes HTTP) -->\r\n<div class="global-loading-bar" *ngIf="loading.isLoading$ | async">\r\n  <div class="global-loading-fill"></div>\r\n</div>\r\n\r\n<div class="shell" [class.sidebar-open]="sidebarOpen">\r\n  <div class="mob-backdrop" *ngIf="sidebarOpen" (click)="sidebarOpen=false"></div>\r\n  <app-sidebar [mobileOpen]="sidebarOpen" (mobileClose)="sidebarOpen=false"></app-sidebar>\r\n  <div class="shell-right">\r\n    <app-topbar (menuToggle)="sidebarOpen = !sidebarOpen"></app-topbar>\r\n    <main class="shell-main">\r\n      <router-outlet></router-outlet>\r\n    </main>\r\n  </div>\r\n</div>\r\n', styles: ["/* src/app/shell/shell.component.scss */\n.global-loading-bar {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 3px;\n  z-index: 9999;\n  background: rgba(59, 130, 246, 0.15);\n  overflow: hidden;\n}\n.global-loading-fill {\n  height: 100%;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary, #3B82F6),\n      #60A5FA,\n      var(--primary, #3B82F6));\n  background-size: 200% 100%;\n  animation: loading-slide 1.2s ease-in-out infinite;\n}\n@keyframes loading-slide {\n  0% {\n    width: 0%;\n    margin-left: 0;\n  }\n  50% {\n    width: 70%;\n    margin-left: 15%;\n  }\n  100% {\n    width: 0%;\n    margin-left: 100%;\n  }\n}\n.shell {\n  display: flex;\n  height: 100vh;\n  overflow: hidden;\n  background: var(--bg-app);\n}\n.shell-right {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n  overflow: hidden;\n}\n.shell-main {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 32px;\n}\n.mob-backdrop {\n  display: none;\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  z-index: 250;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n@media (max-width: 768px) {\n  .mob-backdrop {\n    display: block;\n  }\n  .shell-main {\n    padding: 16px;\n  }\n}\n/*# sourceMappingURL=shell.component.css.map */\n"] }]
   }], () => [{ type: LoadingService }], null);
 })();
 (() => {
@@ -1484,229 +1484,229 @@ Code : *${this.familleCode}*`;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(HomeComponent, [{
     type: Component,
-    args: [{ selector: "app-home", standalone: false, template: `<!-- ===== EN-T\xCATE ===== -->
-<div class="page-header">
-  <div class="header-row">
-    <div>
-      <h2>Bonjour \u{1F44B}</h2>
-      <p *ngIf="nomFamille">Bienvenue dans l'espace familial <strong>{{ nomFamille }}</strong></p>
-    </div>
-    <div class="header-actions">
-      <button class="btn-invite" routerLink="/app/inviter" title="Inviter des membres">
-        <svg style="width:15px;height:15px;flex-shrink:0" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-        </svg>
-        Inviter
-      </button>
-      <button class="btn-primary" routerLink="/app/personnes">
-        <span class="material-icons-round">person_add</span>
-        Ajouter un membre
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- ===== STATS SKELETON ===== -->
-<div class="stats-grid mb-16" *ngIf="loading">
-  <div class="sk-stat" *ngFor="let _ of [1,2,3,4]">
-    <div class="sk-stat-icon"></div>
-    <div class="sk-stat-body">
-      <div class="sk-line sk-lg"></div>
-      <div class="sk-line sk-sm"></div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== STATS ===== -->
-<div class="stats-grid mb-16" *ngIf="!loading">
-  <div class="stat-card" *ngFor="let s of stats" [class]="'stat-card--' + s.color">
-    <div class="stat-icon-wrap">
-      <span class="material-icons-round">{{ s.icon }}</span>
-    </div>
-    <div class="stat-body">
-      <span class="stat-value">{{ s.value }}</span>
-      <span class="stat-label">{{ s.label }}</span>
-    </div>
-  </div>
-</div>
-
-<!-- ===== COMPL\xC9TION ===== -->
-<div class="completion-bar-wrap mb-32" *ngIf="!loading && toutes.length > 0">
-  <div class="completion-label">
-    <span class="material-icons-round">bar_chart</span>
-    Compl\xE9tion des profils
-    <strong>{{ completionScore }}%</strong>
-    <span class="completion-hint">\u2014 dates &amp; lieux renseign\xE9s</span>
-  </div>
-  <div class="completion-track">
-    <div class="completion-fill" [style.width.%]="completionScore"></div>
-  </div>
-</div>
-
-<!-- ===== ACTIONS RAPIDES ===== -->
-<div class="section-header mb-16">
-  <h3>Actions rapides</h3>
-</div>
-
-<div class="quick-actions mb-32">
-  <a *ngFor="let a of quickActions" [routerLink]="a.route" class="quick-action" [class]="'quick-action--' + a.color">
-    <span class="material-icons-round">{{ a.icon }}</span>
-    <span>{{ a.label }}</span>
-  </a>
-</div>
-
-<!-- ===== ANNIVERSAIRES ===== -->
-<div *ngIf="anniversairesProches.length > 0" class="mb-32">
-  <div class="section-header mb-16">
-    <h3><span class="material-icons-round" style="vertical-align:middle;color:#DB2777;font-size:20px!important">cake</span> Anniversaires \xE0 venir</h3>
-  </div>
-  <div class="bday-row">
-    <div class="bday-card" *ngFor="let b of anniversairesProches">
-      <div class="bday-avatar" [class.male]="b.p.sexe === 'M'" [class.female]="b.p.sexe === 'F'">
-        {{ getInitiales(b.p) }}
-      </div>
-      <div class="bday-info">
-        <span class="bday-name">{{ getNomComplet(b.p) }}</span>
-        <span class="bday-date">{{ b.dateStr }}</span>
-      </div>
-      <span class="bday-badge" [class.soon]="b.jours <= 7">
-        {{ b.jours === 0 ? "Aujourd'hui !" : b.jours === 1 ? 'Demain !' : b.jours + 'j' }}
-      </span>
-    </div>
-  </div>
-</div>
-
-<!-- ===== SKELETON CHARGEMENT MEMBRES ===== -->
-<div *ngIf="loading" class="skeleton-section mb-32">
-  <div class="skeleton-header">
-    <div class="skeleton-bar skeleton-bar-title"></div>
-    <div class="skeleton-bar skeleton-bar-sm"></div>
-  </div>
-  <div class="skeleton-grid">
-    <div class="skeleton-card" *ngFor="let _ of [1,2,3,4]">
-      <div class="skeleton-card-top"></div>
-      <div class="skeleton-card-body">
-        <div class="skeleton-bar"></div>
-        <div class="skeleton-bar skeleton-bar-sm"></div>
-        <div class="skeleton-bar skeleton-bar-xs"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== DERNIERS MEMBRES ===== -->
-<div class="section-header mb-16" *ngIf="!loading">
-  <h3>Membres r\xE9cents</h3>
-  <div class="section-actions">
-    <div class="view-toggle">
-      <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">
-        <span class="material-icons-round">grid_view</span>
-      </button>
-      <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">
-        <span class="material-icons-round">view_list</span>
-      </button>
-    </div>
-    <a routerLink="/app/personnes" class="btn-secondary btn-sm">Voir tous</a>
-  </div>
-</div>
-
-<!-- ===== VUE CARTES ===== -->
-<div class="pc-grid" *ngIf="!loading && recentPersonnes.length > 0 && viewMode === 'cards'">
-  <div class="pc-card" *ngFor="let p of recentPersonnes; let i = index"
-       [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'">
-    <div class="pc-card-banner">
-      <div class="pc-colorband"
-           [class.color-1]="i % 3 === 0"
-           [class.color-2]="i % 3 === 1"
-           [class.color-3]="i % 3 === 2"></div>
-      <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
-      <div class="pc-avatar-ring">
-        <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
-             [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"
-             [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
-        <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">
-          {{ getInitiales(p) }}
-        </div>
-      </div>
-    </div>
-    <div class="pc-card-body">
-      <h4 class="pc-name">{{ getNomComplet(p) }}</h4>
-      <span class="pc-age" [class.pc-age-unknown]="!getAgeLabel(p)">
-        {{ getAgeLabel(p) || 'Naissance inconnue' }}
-      </span>
-      <div class="pc-loc" *ngIf="p.lieuNaissance">
-        <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
-      </div>
-      <div class="pc-badges">
-        <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
-        <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>
-      </div>
-    </div>
-    <div class="pc-card-actions">
-      <button class="pc-act">
-        <span class="material-icons-round">favorite_border</span>Like
-      </button>
-      <a class="pc-act" [routerLink]="['/app/personnes']" [queryParams]="{ id: p.id }">
-        <span class="material-icons-round">visibility</span>Voir
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ===== VUE LISTE ===== -->
-<div class="pl-table" *ngIf="!loading && recentPersonnes.length > 0 && viewMode === 'list'">
-  <div class="pl-thead">
-    <span class="pl-th pl-th-person">Personne</span>
-    <span class="pl-th pl-th-genre">Genre</span>
-    <span class="pl-th pl-th-lieu">Lieu de naissance</span>
-    <span class="pl-th pl-th-statut">Statut</span>
-    <span class="pl-th pl-th-actions">Actions</span>
-  </div>
-  <div class="pl-row" *ngFor="let p of recentPersonnes">
-    <div class="pl-cell pl-cell-person">
-      <div class="pl-avatar-wrap">
-        <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
-             [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"
-             [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
-        <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pl-avatar pl-avatar-initials"
-             [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">{{ getInitiales(p) }}</div>
-        <span class="pl-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
-      </div>
-      <div class="pl-person-info">
-        <span class="pl-person-name">{{ getNomComplet(p) }}</span>
-        <span class="pl-person-age" [class.pc-age-unknown]="!getAgeLabel(p)">
-          {{ getAgeLabel(p) || 'Naissance inconnue' }}
-        </span>
-      </div>
-    </div>
-    <div class="pl-cell pl-cell-genre">
-      <span class="pc-badge" [class.pc-badge-m]="p.sexe === 'M'" [class.pc-badge-f]="p.sexe === 'F'">
-        {{ p.sexe === 'M' ? 'Homme' : p.sexe === 'F' ? 'Femme' : 'Autre' }}
-      </span>
-    </div>
-    <div class="pl-cell pl-cell-lieu">
-      <span *ngIf="p.lieuNaissance" class="pl-lieu">
-        <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
-      </span>
-      <span *ngIf="!p.lieuNaissance" class="pl-empty">\u2014</span>
-    </div>
-    <div class="pl-cell pl-cell-statut">
-      <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
-      <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>
-    </div>
-    <div class="pl-cell pl-cell-actions">
-      <a class="btn-icon" title="Voir" [routerLink]="['/app/personnes']" [queryParams]="{ id: p.id }">
-        <span class="material-icons-round">visibility</span>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="empty-state" *ngIf="!loading && recentPersonnes.length === 0">
-  <span class="material-icons-round">people</span>
-  <h3>Aucun membre encore</h3>
-  <p>Commencez par ajouter des personnes \xE0 votre famille.</p>
-</div>
+    args: [{ selector: "app-home", standalone: false, template: `<!-- ===== EN-T\xCATE ===== -->\r
+<div class="page-header">\r
+  <div class="header-row">\r
+    <div>\r
+      <h2>Bonjour \u{1F44B}</h2>\r
+      <p *ngIf="nomFamille">Bienvenue dans l'espace familial <strong>{{ nomFamille }}</strong></p>\r
+    </div>\r
+    <div class="header-actions">\r
+      <button class="btn-invite" routerLink="/app/inviter" title="Inviter des membres">\r
+        <svg style="width:15px;height:15px;flex-shrink:0" viewBox="0 0 24 24" fill="currentColor">\r
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>\r
+        </svg>\r
+        Inviter\r
+      </button>\r
+      <button class="btn-primary" routerLink="/app/personnes">\r
+        <span class="material-icons-round">person_add</span>\r
+        Ajouter un membre\r
+      </button>\r
+    </div>\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== STATS SKELETON ===== -->\r
+<div class="stats-grid mb-16" *ngIf="loading">\r
+  <div class="sk-stat" *ngFor="let _ of [1,2,3,4]">\r
+    <div class="sk-stat-icon"></div>\r
+    <div class="sk-stat-body">\r
+      <div class="sk-line sk-lg"></div>\r
+      <div class="sk-line sk-sm"></div>\r
+    </div>\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== STATS ===== -->\r
+<div class="stats-grid mb-16" *ngIf="!loading">\r
+  <div class="stat-card" *ngFor="let s of stats" [class]="'stat-card--' + s.color">\r
+    <div class="stat-icon-wrap">\r
+      <span class="material-icons-round">{{ s.icon }}</span>\r
+    </div>\r
+    <div class="stat-body">\r
+      <span class="stat-value">{{ s.value }}</span>\r
+      <span class="stat-label">{{ s.label }}</span>\r
+    </div>\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== COMPL\xC9TION ===== -->\r
+<div class="completion-bar-wrap mb-32" *ngIf="!loading && toutes.length > 0">\r
+  <div class="completion-label">\r
+    <span class="material-icons-round">bar_chart</span>\r
+    Compl\xE9tion des profils\r
+    <strong>{{ completionScore }}%</strong>\r
+    <span class="completion-hint">\u2014 dates &amp; lieux renseign\xE9s</span>\r
+  </div>\r
+  <div class="completion-track">\r
+    <div class="completion-fill" [style.width.%]="completionScore"></div>\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== ACTIONS RAPIDES ===== -->\r
+<div class="section-header mb-16">\r
+  <h3>Actions rapides</h3>\r
+</div>\r
+\r
+<div class="quick-actions mb-32">\r
+  <a *ngFor="let a of quickActions" [routerLink]="a.route" class="quick-action" [class]="'quick-action--' + a.color">\r
+    <span class="material-icons-round">{{ a.icon }}</span>\r
+    <span>{{ a.label }}</span>\r
+  </a>\r
+</div>\r
+\r
+<!-- ===== ANNIVERSAIRES ===== -->\r
+<div *ngIf="anniversairesProches.length > 0" class="mb-32">\r
+  <div class="section-header mb-16">\r
+    <h3><span class="material-icons-round" style="vertical-align:middle;color:#DB2777;font-size:20px!important">cake</span> Anniversaires \xE0 venir</h3>\r
+  </div>\r
+  <div class="bday-row">\r
+    <div class="bday-card" *ngFor="let b of anniversairesProches">\r
+      <div class="bday-avatar" [class.male]="b.p.sexe === 'M'" [class.female]="b.p.sexe === 'F'">\r
+        {{ getInitiales(b.p) }}\r
+      </div>\r
+      <div class="bday-info">\r
+        <span class="bday-name">{{ getNomComplet(b.p) }}</span>\r
+        <span class="bday-date">{{ b.dateStr }}</span>\r
+      </div>\r
+      <span class="bday-badge" [class.soon]="b.jours <= 7">\r
+        {{ b.jours === 0 ? "Aujourd'hui !" : b.jours === 1 ? 'Demain !' : b.jours + 'j' }}\r
+      </span>\r
+    </div>\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== SKELETON CHARGEMENT MEMBRES ===== -->\r
+<div *ngIf="loading" class="skeleton-section mb-32">\r
+  <div class="skeleton-header">\r
+    <div class="skeleton-bar skeleton-bar-title"></div>\r
+    <div class="skeleton-bar skeleton-bar-sm"></div>\r
+  </div>\r
+  <div class="skeleton-grid">\r
+    <div class="skeleton-card" *ngFor="let _ of [1,2,3,4]">\r
+      <div class="skeleton-card-top"></div>\r
+      <div class="skeleton-card-body">\r
+        <div class="skeleton-bar"></div>\r
+        <div class="skeleton-bar skeleton-bar-sm"></div>\r
+        <div class="skeleton-bar skeleton-bar-xs"></div>\r
+      </div>\r
+    </div>\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== DERNIERS MEMBRES ===== -->\r
+<div class="section-header mb-16" *ngIf="!loading">\r
+  <h3>Membres r\xE9cents</h3>\r
+  <div class="section-actions">\r
+    <div class="view-toggle">\r
+      <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">\r
+        <span class="material-icons-round">grid_view</span>\r
+      </button>\r
+      <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">\r
+        <span class="material-icons-round">view_list</span>\r
+      </button>\r
+    </div>\r
+    <a routerLink="/app/personnes" class="btn-secondary btn-sm">Voir tous</a>\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== VUE CARTES ===== -->\r
+<div class="pc-grid" *ngIf="!loading && recentPersonnes.length > 0 && viewMode === 'cards'">\r
+  <div class="pc-card" *ngFor="let p of recentPersonnes; let i = index"\r
+       [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'">\r
+    <div class="pc-card-banner">\r
+      <div class="pc-colorband"\r
+           [class.color-1]="i % 3 === 0"\r
+           [class.color-2]="i % 3 === 1"\r
+           [class.color-3]="i % 3 === 2"></div>\r
+      <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>\r
+      <div class="pc-avatar-ring">\r
+        <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
+             [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"\r
+             [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />\r
+        <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">\r
+          {{ getInitiales(p) }}\r
+        </div>\r
+      </div>\r
+    </div>\r
+    <div class="pc-card-body">\r
+      <h4 class="pc-name">{{ getNomComplet(p) }}</h4>\r
+      <span class="pc-age" [class.pc-age-unknown]="!getAgeLabel(p)">\r
+        {{ getAgeLabel(p) || 'Naissance inconnue' }}\r
+      </span>\r
+      <div class="pc-loc" *ngIf="p.lieuNaissance">\r
+        <span class="material-icons-round">place</span>{{ p.lieuNaissance }}\r
+      </div>\r
+      <div class="pc-badges">\r
+        <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>\r
+        <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>\r
+      </div>\r
+    </div>\r
+    <div class="pc-card-actions">\r
+      <button class="pc-act">\r
+        <span class="material-icons-round">favorite_border</span>Like\r
+      </button>\r
+      <a class="pc-act" [routerLink]="['/app/personnes']" [queryParams]="{ id: p.id }">\r
+        <span class="material-icons-round">visibility</span>Voir\r
+      </a>\r
+    </div>\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== VUE LISTE ===== -->\r
+<div class="pl-table" *ngIf="!loading && recentPersonnes.length > 0 && viewMode === 'list'">\r
+  <div class="pl-thead">\r
+    <span class="pl-th pl-th-person">Personne</span>\r
+    <span class="pl-th pl-th-genre">Genre</span>\r
+    <span class="pl-th pl-th-lieu">Lieu de naissance</span>\r
+    <span class="pl-th pl-th-statut">Statut</span>\r
+    <span class="pl-th pl-th-actions">Actions</span>\r
+  </div>\r
+  <div class="pl-row" *ngFor="let p of recentPersonnes">\r
+    <div class="pl-cell pl-cell-person">\r
+      <div class="pl-avatar-wrap">\r
+        <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
+             [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"\r
+             [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />\r
+        <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pl-avatar pl-avatar-initials"\r
+             [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">{{ getInitiales(p) }}</div>\r
+        <span class="pl-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>\r
+      </div>\r
+      <div class="pl-person-info">\r
+        <span class="pl-person-name">{{ getNomComplet(p) }}</span>\r
+        <span class="pl-person-age" [class.pc-age-unknown]="!getAgeLabel(p)">\r
+          {{ getAgeLabel(p) || 'Naissance inconnue' }}\r
+        </span>\r
+      </div>\r
+    </div>\r
+    <div class="pl-cell pl-cell-genre">\r
+      <span class="pc-badge" [class.pc-badge-m]="p.sexe === 'M'" [class.pc-badge-f]="p.sexe === 'F'">\r
+        {{ p.sexe === 'M' ? 'Homme' : p.sexe === 'F' ? 'Femme' : 'Autre' }}\r
+      </span>\r
+    </div>\r
+    <div class="pl-cell pl-cell-lieu">\r
+      <span *ngIf="p.lieuNaissance" class="pl-lieu">\r
+        <span class="material-icons-round">place</span>{{ p.lieuNaissance }}\r
+      </span>\r
+      <span *ngIf="!p.lieuNaissance" class="pl-empty">\u2014</span>\r
+    </div>\r
+    <div class="pl-cell pl-cell-statut">\r
+      <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>\r
+      <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>\r
+    </div>\r
+    <div class="pl-cell pl-cell-actions">\r
+      <a class="btn-icon" title="Voir" [routerLink]="['/app/personnes']" [queryParams]="{ id: p.id }">\r
+        <span class="material-icons-round">visibility</span>\r
+      </a>\r
+    </div>\r
+  </div>\r
+</div>\r
+\r
+<div class="empty-state" *ngIf="!loading && recentPersonnes.length === 0">\r
+  <span class="material-icons-round">people</span>\r
+  <h3>Aucun membre encore</h3>\r
+  <p>Commencez par ajouter des personnes \xE0 votre famille.</p>\r
+</div>\r
 `, styles: ["/* src/app/pages/home/home.component.scss */\n.header-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row h2 {\n  margin-bottom: 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row strong {\n  color: var(--text-primary);\n}\n.stats-grid {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n}\n.stat-card {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  border: 1px solid var(--border-light);\n  box-shadow: var(--shadow-sm);\n  padding: 20px;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  transition: box-shadow var(--transition), transform var(--transition);\n}\n.stat-card:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.stat-icon-wrap {\n  width: 48px;\n  height: 48px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.stat-icon-wrap .material-icons-round {\n  font-size: 24px !important;\n}\n.stat-card--blue .stat-icon-wrap {\n  background: var(--primary-bg);\n}\n.stat-card--blue .stat-icon-wrap .material-icons-round {\n  color: var(--primary);\n}\n.stat-card--indigo .stat-icon-wrap {\n  background: var(--accent-bg);\n}\n.stat-card--indigo .stat-icon-wrap .material-icons-round {\n  color: var(--accent);\n}\n.stat-card--pink .stat-icon-wrap {\n  background: var(--pink-bg);\n}\n.stat-card--pink .stat-icon-wrap .material-icons-round {\n  color: var(--pink);\n}\n.stat-card--green .stat-icon-wrap {\n  background: var(--success-bg);\n}\n.stat-card--green .stat-icon-wrap .material-icons-round {\n  color: var(--success);\n}\n.stat-body {\n  display: flex;\n  flex-direction: column;\n}\n.stat-value {\n  font-size: 26px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1;\n}\n.stat-label {\n  font-size: 12px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-weight: 500;\n}\n.quick-actions {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.quick-action {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 18px;\n  border-radius: var(--radius-full);\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  text-decoration: none;\n  transition: var(--transition);\n}\n.quick-action .material-icons-round {\n  font-size: 18px !important;\n}\n.quick-action--blue {\n  background: var(--primary-bg);\n  color: var(--primary-dark);\n}\n.quick-action--blue:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.quick-action--indigo {\n  background: var(--accent-bg);\n  color: var(--accent);\n}\n.quick-action--indigo:hover {\n  background: #DDD6FE;\n  text-decoration: none;\n}\n.quick-action--pink {\n  background: var(--pink-bg);\n  color: var(--pink);\n}\n.quick-action--pink:hover {\n  background: #FBCFE8;\n  text-decoration: none;\n}\n.quick-action--green {\n  background: var(--success-bg);\n  color: var(--success);\n}\n.quick-action--green:hover {\n  background: #A7F3D0;\n  text-decoration: none;\n}\n.section-actions {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.header-actions {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.btn-invite {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 9px 16px;\n  border-radius: var(--radius-md);\n  border: 1.5px solid #86EFAC;\n  background: #DCFCE7;\n  color: #15803D;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  text-decoration: none;\n  transition: all 0.15s;\n  white-space: nowrap;\n}\n.btn-invite:hover {\n  background: #25D366;\n  color: #fff;\n  border-color: #25D366;\n  text-decoration: none;\n}\n.completion-bar-wrap {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: var(--radius-lg);\n  padding: 14px 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.completion-label {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  font-size: 13px;\n  color: var(--text-secondary);\n}\n.completion-label .material-icons-round {\n  font-size: 16px !important;\n  color: var(--primary);\n}\n.completion-label strong {\n  color: var(--text-primary);\n  font-weight: 700;\n}\n.completion-hint {\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.completion-track {\n  height: 6px;\n  border-radius: 99px;\n  background: var(--border-light);\n  overflow: hidden;\n}\n.completion-fill {\n  height: 100%;\n  border-radius: 99px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary),\n      #A78BFA);\n  transition: width 0.8s ease;\n}\n.bday-row {\n  display: flex;\n  gap: 12px;\n  overflow-x: auto;\n  padding-bottom: 4px;\n  scrollbar-width: none;\n}\n.bday-row::-webkit-scrollbar {\n  display: none;\n}\n.bday-card {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 14px;\n  background: var(--white);\n  border: 1px solid #FBE8F3;\n  border-radius: var(--radius-lg);\n  min-width: 200px;\n  flex-shrink: 0;\n  transition: box-shadow var(--transition);\n}\n.bday-card:hover {\n  box-shadow: 0 4px 14px rgba(219, 39, 119, 0.12);\n}\n.bday-avatar {\n  width: 38px;\n  height: 38px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.bday-avatar.male {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #3B82F6);\n}\n.bday-avatar.female {\n  background:\n    linear-gradient(\n      135deg,\n      #F472B6,\n      #EC4899);\n}\n.bday-avatar:not(.male):not(.female) {\n  background:\n    linear-gradient(\n      135deg,\n      #A78BFA,\n      var(--primary));\n}\n.bday-info {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.bday-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-date {\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.bday-badge {\n  background: #FDF2F8;\n  color: #DB2777;\n  font-size: 11px;\n  font-weight: 700;\n  padding: 3px 8px;\n  border-radius: 7px;\n  white-space: nowrap;\n}\n.bday-badge.soon {\n  background: #FEF3C7;\n  color: #B45309;\n  animation: pulse-bday 1.5s infinite;\n}\n@keyframes pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n@keyframes skeleton-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.skeleton-bar,\n.skeleton-card-top,\n.skeleton-card {\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: skeleton-shimmer 1.4s infinite;\n  border-radius: 8px;\n}\n.skeleton-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.skeleton-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.skeleton-bar {\n  height: 16px;\n}\n.skeleton-bar-title {\n  width: 160px;\n  height: 20px;\n}\n.skeleton-bar-sm {\n  width: 100px;\n  height: 14px;\n}\n.skeleton-bar-xs {\n  width: 70px;\n  height: 12px;\n}\n.skeleton-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 16px;\n}\n.skeleton-card {\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: 1px solid var(--border-light);\n}\n.skeleton-card-top {\n  height: 90px;\n  border-radius: 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.skeleton-card-body {\n  padding: 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n@media (max-width: 1200px) {\n  .stats-grid {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media (max-width: 640px) {\n  .stats-grid {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .stat-card {\n    padding: 14px;\n  }\n  .stat-value {\n    font-size: 22px;\n  }\n  .header-row {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .header-row .btn-primary {\n    width: 100%;\n    justify-content: center;\n  }\n  .quick-actions {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 8px;\n  }\n  .quick-action {\n    justify-content: center;\n  }\n}\n@media (max-width: 360px) {\n  .stats-grid {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */\n"] }]
   }], () => [{ type: ApiService }, { type: AuthService }, { type: Router }], null);
 })();
@@ -3235,472 +3235,472 @@ var PersonnesComponent = class _PersonnesComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PersonnesComponent, [{
     type: Component,
-    args: [{ selector: "app-personnes", standalone: false, template: `<div class="personnes-page">
-
-  <!-- En-t\xEAte -->
-  <div class="page-header">
-    <div>
-      <h2 class="page-title">Membres de la famille</h2>
-      <p class="page-subtitle">{{ personnesFiltrees.length }} personne{{ personnesFiltrees.length > 1 ? 's' : '' }} affich\xE9e{{ personnesFiltrees.length > 1 ? 's' : '' }}</p>
-    </div>
-    <button class="btn-primary" (click)="openCreate()">
-      <span class="material-icons-round">person_add</span>
-      Nouveau membre
-    </button>
-  </div>
-
-  <!-- Barre de recherche + filtres + toggle vue -->
-  <div class="toolbar">
-    <div class="search-bar">
-      <span class="material-icons-round">search</span>
-      <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher par nom, pr\xE9nom, lieu..." />
-    </div>
-    <div class="toolbar-right">
-      <div class="chip-group">
-        <button *ngFor="let f of filtres" class="chip" [class.active]="filtreActif === f.key" (click)="filtreActif = f.key">
-          {{ f.label }}
-        </button>
-      </div>
-      <div class="view-toggle">
-        <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">
-          <span class="material-icons-round">grid_view</span>
-        </button>
-        <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">
-          <span class="material-icons-round">view_list</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Skeleton chargement -->
-  <div class="sk-grid" *ngIf="loading">
-    <div class="sk-card" *ngFor="let _ of [1,2,3,4,5,6,7,8]">
-      <div class="sk-card-banner"></div>
-      <div class="sk-card-body">
-        <div class="sk-line sk-full"></div>
-        <div class="sk-line sk-md"></div>
-        <div class="sk-line sk-sm"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Erreur -->
-  <div class="error-state" *ngIf="erreur && !loading">
-    <span class="material-icons-round">error_outline</span> {{ erreur }}
-  </div>
-
-  <!-- \xC9tat vide -->
-  <div class="empty-state" *ngIf="!loading && !erreur && personnesFiltrees.length === 0">
-    <span class="material-icons-round">person_search</span>
-    <h3>Aucune personne trouv\xE9e</h3>
-    <p>Essayez un autre terme de recherche ou ajoutez un nouveau membre.</p>
-    <button class="btn-primary" (click)="openCreate()">
-      <span class="material-icons-round">person_add</span> Nouveau membre
-    </button>
-  </div>
-
-  <!-- ===== VUE CARTES ===== -->
-  <div class="pc-grid" *ngIf="!loading && !erreur && personnesFiltrees.length > 0 && viewMode === 'cards'">
-    <div class="pc-card" *ngFor="let p of personnesFiltrees; let i = index"
-         [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'"
-         (click)="openDetail(p)">
-
-      <!-- Zone photo + d\xE9grad\xE9 -->
-      <div class="pc-card-banner">
-        <div class="pc-colorband"
-             [class.color-1]="i % 3 === 0"
-             [class.color-2]="i % 3 === 1"
-             [class.color-3]="i % 3 === 2"></div>
-        <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
-        <div class="pc-avatar-ring">
-          <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
-               [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"
-               [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
-          <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">
-            {{ getInitiales(p) }}
-          </div>
-        </div>
-      </div>
-
-      <!-- Infos -->
-      <div class="pc-card-body">
-        <h4 class="pc-name">{{ getNomComplet(p) }}</h4>
-        <span class="pc-age" [class.pc-age-unknown]="!getAgeLabel(p)">
-          {{ getAgeLabel(p) || 'Naissance inconnue' }}
-        </span>
-        <div class="pc-loc" *ngIf="p.lieuNaissance">
-          <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
-        </div>
-        <div class="pc-badges">
-          <span class="pc-badge" [class.pc-badge-m]="p.sexe === 'M'" [class.pc-badge-f]="p.sexe === 'F'">
-            {{ getSexeLabel(p.sexe) }}
-          </span>
-          <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
-          <span class="pc-badge pc-badge-dead" *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>
-        </div>
-      </div>
-
-      <!-- Actions -->
-      <div class="pc-card-actions">
-        <button class="pc-act" (click)="openDetail(p); $event.stopPropagation()">
-          <span class="material-icons-round">visibility</span>Voir
-        </button>
-        <button class="pc-act" (click)="openEdit(p, $event)">
-          <span class="material-icons-round">edit</span>\xC9diter
-        </button>
-        <button class="pc-act pc-act-danger" (click)="confirmDelete(p, $event)">
-          <span class="material-icons-round">delete</span>
-        </button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ===== VUE LISTE ===== -->
-  <div class="pl-table" *ngIf="!loading && !erreur && personnesFiltrees.length > 0 && viewMode === 'list'">
-    <!-- Header -->
-    <div class="pl-thead">
-      <span class="pl-th pl-th-person">Personne</span>
-      <span class="pl-th pl-th-genre">Genre</span>
-      <span class="pl-th pl-th-lieu">Lieu de naissance</span>
-      <span class="pl-th pl-th-statut">Statut</span>
-      <span class="pl-th pl-th-actions">Actions</span>
-    </div>
-    <!-- Rows -->
-    <div class="pl-row" *ngFor="let p of personnesFiltrees" (click)="openDetail(p)">
-      <!-- Avatar + nom -->
-      <div class="pl-cell pl-cell-person">
-        <div class="pl-avatar-wrap">
-          <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
-               [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"
-               [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
-          <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)"
-               class="pl-avatar pl-avatar-initials"
-               [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">
-            {{ getInitiales(p) }}
-          </div>
-          <span class="pl-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
-        </div>
-        <div class="pl-person-info">
-          <span class="pl-person-name">{{ getNomComplet(p) }}</span>
-          <span class="pl-person-age" [class.pc-age-unknown]="!getAgeLabel(p)">
-            {{ getAgeLabel(p) || 'Naissance inconnue' }}
-          </span>
-        </div>
-      </div>
-      <!-- Genre -->
-      <div class="pl-cell pl-cell-genre">
-        <span class="pc-badge" [class.pc-badge-m]="p.sexe === 'M'" [class.pc-badge-f]="p.sexe === 'F'">
-          {{ getSexeLabel(p.sexe) }}
-        </span>
-      </div>
-      <!-- Lieu -->
-      <div class="pl-cell pl-cell-lieu">
-        <span *ngIf="p.lieuNaissance" class="pl-lieu">
-          <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
-        </span>
-        <span *ngIf="!p.lieuNaissance" class="pl-empty">\u2014</span>
-      </div>
-      <!-- Statut -->
-      <div class="pl-cell pl-cell-statut">
-        <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
-        <span class="pc-badge pc-badge-dead" *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>
-      </div>
-      <!-- Actions -->
-      <div class="pl-cell pl-cell-actions" (click)="$event.stopPropagation()">
-        <button class="btn-icon" title="Voir" (click)="openDetail(p)">
-          <span class="material-icons-round">visibility</span>
-        </button>
-        <button class="btn-icon" title="Modifier" (click)="openEdit(p, $event)">
-          <span class="material-icons-round">edit</span>
-        </button>
-        <button class="btn-icon btn-icon-danger" title="Supprimer" (click)="confirmDelete(p, $event)">
-          <span class="material-icons-round">delete</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<!-- ===== OVERLAY ===== -->
-<div class="panel-overlay" *ngIf="showForm || showDetail || showDeleteConfirm" (click)="closeAll()"></div>
-
-<!-- ===== PANNEAU FORMULAIRE ===== -->
-<div class="slide-panel" [class.open]="showForm">
-  <div class="panel-header">
-    <div>
-      <h3>{{ editTarget ? 'Modifier le membre' : 'Nouveau membre' }}</h3>
-      <p class="panel-header-sub" *ngIf="editTarget">{{ getNomComplet(editTarget) }}</p>
-    </div>
-    <button class="btn-icon" (click)="closeAll()">
-      <span class="material-icons-round">close</span>
-    </button>
-  </div>
-
-  <div class="panel-body">
-    <form #personneForm="ngForm">
-
-      <!-- Section: Photo -->
-      <div class="form-section">
-        <div class="section-title">Photo</div>
-        <div class="photo-upload-area">
-          <div class="photo-preview-wrap">
-            <img *ngIf="photoPreview" [src]="photoPreview" class="photo-preview-img" alt="Aper\xE7u"
-                 (error)="photoPreview = null" />
-            <div *ngIf="!photoPreview" class="photo-placeholder"
-                 [class.male]="form.sexe === 'M'" [class.female]="form.sexe === 'F'">
-              {{ (form.prenoms.charAt(0) || '') + (form.nomNaissance.charAt(0) || '') || 'MB' }}
-            </div>
-            <button *ngIf="photoPreview" class="photo-remove-btn" type="button"
-                    (click)="removeSelectedPhoto()" title="Supprimer la photo">
-              <span class="material-icons-round">close</span>
-            </button>
-          </div>
-          <div class="photo-actions">
-            <label class="btn-photo-pick" for="photoInput">
-              <span class="material-icons-round">add_photo_alternate</span>
-              {{ photoPreview ? 'Changer la photo' : 'Ajouter une photo' }}
-            </label>
-            <input id="photoInput" type="file" accept="image/jpeg,image/png,image/webp"
-                   style="display:none" (change)="onFileSelect($event)" />
-            <p class="photo-hint">JPG, PNG ou WebP \xB7 max 5 Mo</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section: Identit\xE9 -->
-      <div class="form-section">
-        <div class="section-title">Identit\xE9</div>
-
-        <div class="form-group">
-          <label>Pr\xE9nom(s)</label>
-          <input type="text" name="prenoms" [(ngModel)]="form.prenoms" placeholder="Jean-Baptiste, Marie..." class="form-control" />
-        </div>
-
-        <div class="form-row-2">
-          <div class="form-group">
-            <label>Nom de naissance</label>
-            <input type="text" name="nomNaissance" [(ngModel)]="form.nomNaissance" placeholder="Dupont" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label>Nom d'usage <span class="optional">(optionnel)</span></label>
-            <input type="text" name="nomUsage" [(ngModel)]="form.nomUsage" placeholder="Nom apr\xE8s mariage..." class="form-control" />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Sexe</label>
-          <div class="radio-group">
-            <label class="radio-option" *ngFor="let s of sexeOptions" [class.selected]="form.sexe === s.val">
-              <input type="radio" [name]="'sexe'" [value]="s.val" [(ngModel)]="form.sexe" />
-              {{ s.label }}
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section: Naissance -->
-      <div class="form-section">
-        <div class="section-title">Naissance</div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Ann\xE9e</label>
-            <input type="number" name="nais_annee" [(ngModel)]="form.nais_annee" placeholder="1960" min="1850" [max]="currentYear" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label>Mois</label>
-            <select name="nais_mois" [(ngModel)]="form.nais_mois" class="form-control">
-              <option value="">\u2014</option>
-              <option *ngFor="let m of mois" [value]="m.val">{{ m.label }}</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Jour</label>
-            <input type="number" name="nais_jour" [(ngModel)]="form.nais_jour" placeholder="1" min="1" max="31" class="form-control" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Lieu de naissance</label>
-          <input type="text" name="lieuNaissance" [(ngModel)]="form.lieuNaissance" placeholder="Ville, pays..." class="form-control" />
-        </div>
-      </div>
-
-      <!-- Section: D\xE9c\xE8s -->
-      <div class="form-section">
-        <div class="section-title">
-          D\xE9c\xE8s
-          <label class="toggle-wrap">
-            <input type="checkbox" name="estDecede" [(ngModel)]="form.estDecede" />
-            <span class="toggle"></span>
-            <span class="toggle-label">{{ form.estDecede ? 'D\xE9c\xE9d\xE9(e)' : 'Vivant(e)' }}</span>
-          </label>
-        </div>
-
-        <div *ngIf="form.estDecede">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Ann\xE9e</label>
-              <input type="number" name="deces_annee" [(ngModel)]="form.deces_annee" placeholder="2020" min="1850" [max]="currentYear" class="form-control" />
-            </div>
-            <div class="form-group">
-              <label>Mois</label>
-              <select name="deces_mois" [(ngModel)]="form.deces_mois" class="form-control">
-                <option value="">\u2014</option>
-                <option *ngFor="let m of mois" [value]="m.val">{{ m.label }}</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Jour</label>
-              <input type="number" name="deces_jour" [(ngModel)]="form.deces_jour" placeholder="1" min="1" max="31" class="form-control" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Lieu de d\xE9c\xE8s</label>
-            <input type="text" name="lieuDeces" [(ngModel)]="form.lieuDeces" placeholder="Ville, pays..." class="form-control" />
-          </div>
-        </div>
-      </div>
-
-      <!-- Section: Biographie -->
-      <div class="form-section">
-        <div class="section-title">Biographie <span class="optional">(optionnel)</span></div>
-        <div class="form-group">
-          <textarea name="biographie" [(ngModel)]="form.biographie" rows="4" placeholder="Parcours de vie, anecdotes..." class="form-control"></textarea>
-        </div>
-        <div class="form-group">
-          <label>Notes</label>
-          <textarea name="notes" [(ngModel)]="form.notes" rows="2" placeholder="Notes compl\xE9mentaires..." class="form-control"></textarea>
-        </div>
-      </div>
-
-    </form>
-  </div>
-
-  <div class="panel-footer">
-    <button class="btn-ghost" (click)="closeAll()">Annuler</button>
-    <button class="btn-primary" (click)="savePersonne()" [disabled]="saving">
-      <span class="material-icons-round spin" *ngIf="saving">sync</span>
-      {{ saving ? 'Sauvegarde...' : (editTarget ? 'Enregistrer' : 'Cr\xE9er le membre') }}
-    </button>
-  </div>
-</div>
-
-<!-- ===== PANNEAU D\xC9TAIL ===== -->
-<div class="slide-panel slide-panel-wide" [class.open]="showDetail">
-  <div class="panel-header">
-    <div *ngIf="detailTarget">
-      <h3>{{ getNomComplet(detailTarget) }}</h3>
-      <p class="panel-header-sub">{{ getAgeLabel(detailTarget) }}</p>
-    </div>
-    <div class="panel-header-actions">
-      <button class="btn-icon" title="Modifier" (click)="openEdit(detailTarget!); showDetail = false">
-        <span class="material-icons-round">edit</span>
-      </button>
-      <button class="btn-icon" (click)="closeAll()">
-        <span class="material-icons-round">close</span>
-      </button>
-    </div>
-  </div>
-
-  <div class="panel-body" *ngIf="detailTarget as p">
-
-    <!-- Avatar + statut -->
-    <div class="detail-hero">
-      <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
-           [src]="getPhotoUrl(p)"
-           class="avatar avatar-xl photo-avatar"
-           [alt]="getNomComplet(p)"
-           (error)="onPhotoError(p.id)" />
-      <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)"
-           class="avatar avatar-xl"
-           [class.female]="p.sexe === 'F'" [class.male]="p.sexe === 'M'">
-        {{ getInitiales(p) }}
-      </div>
-      <div class="detail-hero-info">
-        <h2>{{ getNomComplet(p) }}</h2>
-        <div class="detail-badges">
-          <span class="badge" [class.badge-primary]="p.sexe === 'M'" [class.badge-pink]="p.sexe === 'F'" [class.badge-gray]="!p.sexe">
-            {{ getSexeLabel(p.sexe) }}
-          </span>
-          <span class="badge" [class.badge-success]="estVivant(p)" [class.badge-gray]="!estVivant(p)">
-            {{ estVivant(p) ? 'Vivant(e)' : 'D\xE9c\xE9d\xE9(e)' }}
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Infos structur\xE9es -->
-    <div class="detail-section">
-      <div class="section-title">Informations</div>
-      <div class="detail-grid">
-        <div class="detail-item" *ngIf="p.nomNaissance">
-          <span class="detail-label">Nom de naissance</span>
-          <span class="detail-value">{{ p.nomNaissance }}</span>
-        </div>
-        <div class="detail-item" *ngIf="p.nomUsage">
-          <span class="detail-label">Nom d'usage</span>
-          <span class="detail-value">{{ p.nomUsage }}</span>
-        </div>
-        <div class="detail-item" *ngIf="p.dateNaissance">
-          <span class="detail-label">Date de naissance</span>
-          <span class="detail-value">{{ p.dateNaissance }}</span>
-        </div>
-        <div class="detail-item" *ngIf="p.lieuNaissance">
-          <span class="detail-label">Lieu de naissance</span>
-          <span class="detail-value">{{ p.lieuNaissance }}</span>
-        </div>
-        <div class="detail-item" *ngIf="p.dateDeces">
-          <span class="detail-label">Date de d\xE9c\xE8s</span>
-          <span class="detail-value">{{ p.dateDeces }}</span>
-        </div>
-        <div class="detail-item" *ngIf="p.lieuDeces">
-          <span class="detail-label">Lieu de d\xE9c\xE8s</span>
-          <span class="detail-value">{{ p.lieuDeces }}</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Biographie -->
-    <div class="detail-section" *ngIf="p.biographie">
-      <div class="section-title">Biographie</div>
-      <p class="detail-bio">{{ p.biographie }}</p>
-    </div>
-
-    <!-- Notes -->
-    <div class="detail-section" *ngIf="p.notes">
-      <div class="section-title">Notes</div>
-      <p class="detail-bio">{{ p.notes }}</p>
-    </div>
-
-  </div>
-
-  <div class="panel-footer">
-    <button class="btn-danger" (click)="confirmDelete(detailTarget!, undefined); showDetail = false">
-      <span class="material-icons-round">delete</span>
-      Supprimer
-    </button>
-    <button class="btn-ghost" (click)="closeAll()">Fermer</button>
-  </div>
-</div>
-
-<!-- ===== DIALOG SUPPRESSION ===== -->
-<div class="confirm-dialog" *ngIf="showDeleteConfirm">
-  <div class="confirm-box">
-    <div class="confirm-icon">
-      <span class="material-icons-round">delete_forever</span>
-    </div>
-    <h4>Supprimer {{ deleteTarget ? getNomComplet(deleteTarget) : 'ce membre' }} ?</h4>
-    <p>Cette action est irr\xE9versible. Toutes les relations associ\xE9es seront \xE9galement supprim\xE9es.</p>
-    <div class="confirm-actions">
-      <button class="btn-ghost" (click)="closeAll()">Annuler</button>
-      <button class="btn-danger" (click)="deletePersonne()" [disabled]="deleting">
-        <span class="material-icons-round spin" *ngIf="deleting">sync</span>
-        {{ deleting ? 'Suppression...' : 'Supprimer' }}
-      </button>
-    </div>
-  </div>
-</div>
+    args: [{ selector: "app-personnes", standalone: false, template: `<div class="personnes-page">\r
+\r
+  <!-- En-t\xEAte -->\r
+  <div class="page-header">\r
+    <div>\r
+      <h2 class="page-title">Membres de la famille</h2>\r
+      <p class="page-subtitle">{{ personnesFiltrees.length }} personne{{ personnesFiltrees.length > 1 ? 's' : '' }} affich\xE9e{{ personnesFiltrees.length > 1 ? 's' : '' }}</p>\r
+    </div>\r
+    <button class="btn-primary" (click)="openCreate()">\r
+      <span class="material-icons-round">person_add</span>\r
+      Nouveau membre\r
+    </button>\r
+  </div>\r
+\r
+  <!-- Barre de recherche + filtres + toggle vue -->\r
+  <div class="toolbar">\r
+    <div class="search-bar">\r
+      <span class="material-icons-round">search</span>\r
+      <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher par nom, pr\xE9nom, lieu..." />\r
+    </div>\r
+    <div class="toolbar-right">\r
+      <div class="chip-group">\r
+        <button *ngFor="let f of filtres" class="chip" [class.active]="filtreActif === f.key" (click)="filtreActif = f.key">\r
+          {{ f.label }}\r
+        </button>\r
+      </div>\r
+      <div class="view-toggle">\r
+        <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">\r
+          <span class="material-icons-round">grid_view</span>\r
+        </button>\r
+        <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">\r
+          <span class="material-icons-round">view_list</span>\r
+        </button>\r
+      </div>\r
+    </div>\r
+  </div>\r
+\r
+  <!-- Skeleton chargement -->\r
+  <div class="sk-grid" *ngIf="loading">\r
+    <div class="sk-card" *ngFor="let _ of [1,2,3,4,5,6,7,8]">\r
+      <div class="sk-card-banner"></div>\r
+      <div class="sk-card-body">\r
+        <div class="sk-line sk-full"></div>\r
+        <div class="sk-line sk-md"></div>\r
+        <div class="sk-line sk-sm"></div>\r
+      </div>\r
+    </div>\r
+  </div>\r
+\r
+  <!-- Erreur -->\r
+  <div class="error-state" *ngIf="erreur && !loading">\r
+    <span class="material-icons-round">error_outline</span> {{ erreur }}\r
+  </div>\r
+\r
+  <!-- \xC9tat vide -->\r
+  <div class="empty-state" *ngIf="!loading && !erreur && personnesFiltrees.length === 0">\r
+    <span class="material-icons-round">person_search</span>\r
+    <h3>Aucune personne trouv\xE9e</h3>\r
+    <p>Essayez un autre terme de recherche ou ajoutez un nouveau membre.</p>\r
+    <button class="btn-primary" (click)="openCreate()">\r
+      <span class="material-icons-round">person_add</span> Nouveau membre\r
+    </button>\r
+  </div>\r
+\r
+  <!-- ===== VUE CARTES ===== -->\r
+  <div class="pc-grid" *ngIf="!loading && !erreur && personnesFiltrees.length > 0 && viewMode === 'cards'">\r
+    <div class="pc-card" *ngFor="let p of personnesFiltrees; let i = index"\r
+         [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'"\r
+         (click)="openDetail(p)">\r
+\r
+      <!-- Zone photo + d\xE9grad\xE9 -->\r
+      <div class="pc-card-banner">\r
+        <div class="pc-colorband"\r
+             [class.color-1]="i % 3 === 0"\r
+             [class.color-2]="i % 3 === 1"\r
+             [class.color-3]="i % 3 === 2"></div>\r
+        <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>\r
+        <div class="pc-avatar-ring">\r
+          <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
+               [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"\r
+               [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />\r
+          <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">\r
+            {{ getInitiales(p) }}\r
+          </div>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- Infos -->\r
+      <div class="pc-card-body">\r
+        <h4 class="pc-name">{{ getNomComplet(p) }}</h4>\r
+        <span class="pc-age" [class.pc-age-unknown]="!getAgeLabel(p)">\r
+          {{ getAgeLabel(p) || 'Naissance inconnue' }}\r
+        </span>\r
+        <div class="pc-loc" *ngIf="p.lieuNaissance">\r
+          <span class="material-icons-round">place</span>{{ p.lieuNaissance }}\r
+        </div>\r
+        <div class="pc-badges">\r
+          <span class="pc-badge" [class.pc-badge-m]="p.sexe === 'M'" [class.pc-badge-f]="p.sexe === 'F'">\r
+            {{ getSexeLabel(p.sexe) }}\r
+          </span>\r
+          <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>\r
+          <span class="pc-badge pc-badge-dead" *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- Actions -->\r
+      <div class="pc-card-actions">\r
+        <button class="pc-act" (click)="openDetail(p); $event.stopPropagation()">\r
+          <span class="material-icons-round">visibility</span>Voir\r
+        </button>\r
+        <button class="pc-act" (click)="openEdit(p, $event)">\r
+          <span class="material-icons-round">edit</span>\xC9diter\r
+        </button>\r
+        <button class="pc-act pc-act-danger" (click)="confirmDelete(p, $event)">\r
+          <span class="material-icons-round">delete</span>\r
+        </button>\r
+      </div>\r
+\r
+    </div>\r
+  </div>\r
+\r
+  <!-- ===== VUE LISTE ===== -->\r
+  <div class="pl-table" *ngIf="!loading && !erreur && personnesFiltrees.length > 0 && viewMode === 'list'">\r
+    <!-- Header -->\r
+    <div class="pl-thead">\r
+      <span class="pl-th pl-th-person">Personne</span>\r
+      <span class="pl-th pl-th-genre">Genre</span>\r
+      <span class="pl-th pl-th-lieu">Lieu de naissance</span>\r
+      <span class="pl-th pl-th-statut">Statut</span>\r
+      <span class="pl-th pl-th-actions">Actions</span>\r
+    </div>\r
+    <!-- Rows -->\r
+    <div class="pl-row" *ngFor="let p of personnesFiltrees" (click)="openDetail(p)">\r
+      <!-- Avatar + nom -->\r
+      <div class="pl-cell pl-cell-person">\r
+        <div class="pl-avatar-wrap">\r
+          <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
+               [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"\r
+               [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />\r
+          <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)"\r
+               class="pl-avatar pl-avatar-initials"\r
+               [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">\r
+            {{ getInitiales(p) }}\r
+          </div>\r
+          <span class="pl-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>\r
+        </div>\r
+        <div class="pl-person-info">\r
+          <span class="pl-person-name">{{ getNomComplet(p) }}</span>\r
+          <span class="pl-person-age" [class.pc-age-unknown]="!getAgeLabel(p)">\r
+            {{ getAgeLabel(p) || 'Naissance inconnue' }}\r
+          </span>\r
+        </div>\r
+      </div>\r
+      <!-- Genre -->\r
+      <div class="pl-cell pl-cell-genre">\r
+        <span class="pc-badge" [class.pc-badge-m]="p.sexe === 'M'" [class.pc-badge-f]="p.sexe === 'F'">\r
+          {{ getSexeLabel(p.sexe) }}\r
+        </span>\r
+      </div>\r
+      <!-- Lieu -->\r
+      <div class="pl-cell pl-cell-lieu">\r
+        <span *ngIf="p.lieuNaissance" class="pl-lieu">\r
+          <span class="material-icons-round">place</span>{{ p.lieuNaissance }}\r
+        </span>\r
+        <span *ngIf="!p.lieuNaissance" class="pl-empty">\u2014</span>\r
+      </div>\r
+      <!-- Statut -->\r
+      <div class="pl-cell pl-cell-statut">\r
+        <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>\r
+        <span class="pc-badge pc-badge-dead" *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>\r
+      </div>\r
+      <!-- Actions -->\r
+      <div class="pl-cell pl-cell-actions" (click)="$event.stopPropagation()">\r
+        <button class="btn-icon" title="Voir" (click)="openDetail(p)">\r
+          <span class="material-icons-round">visibility</span>\r
+        </button>\r
+        <button class="btn-icon" title="Modifier" (click)="openEdit(p, $event)">\r
+          <span class="material-icons-round">edit</span>\r
+        </button>\r
+        <button class="btn-icon btn-icon-danger" title="Supprimer" (click)="confirmDelete(p, $event)">\r
+          <span class="material-icons-round">delete</span>\r
+        </button>\r
+      </div>\r
+    </div>\r
+  </div>\r
+\r
+</div>\r
+\r
+<!-- ===== OVERLAY ===== -->\r
+<div class="panel-overlay" *ngIf="showForm || showDetail || showDeleteConfirm" (click)="closeAll()"></div>\r
+\r
+<!-- ===== PANNEAU FORMULAIRE ===== -->\r
+<div class="slide-panel" [class.open]="showForm">\r
+  <div class="panel-header">\r
+    <div>\r
+      <h3>{{ editTarget ? 'Modifier le membre' : 'Nouveau membre' }}</h3>\r
+      <p class="panel-header-sub" *ngIf="editTarget">{{ getNomComplet(editTarget) }}</p>\r
+    </div>\r
+    <button class="btn-icon" (click)="closeAll()">\r
+      <span class="material-icons-round">close</span>\r
+    </button>\r
+  </div>\r
+\r
+  <div class="panel-body">\r
+    <form #personneForm="ngForm">\r
+\r
+      <!-- Section: Photo -->\r
+      <div class="form-section">\r
+        <div class="section-title">Photo</div>\r
+        <div class="photo-upload-area">\r
+          <div class="photo-preview-wrap">\r
+            <img *ngIf="photoPreview" [src]="photoPreview" class="photo-preview-img" alt="Aper\xE7u"\r
+                 (error)="photoPreview = null" />\r
+            <div *ngIf="!photoPreview" class="photo-placeholder"\r
+                 [class.male]="form.sexe === 'M'" [class.female]="form.sexe === 'F'">\r
+              {{ (form.prenoms.charAt(0) || '') + (form.nomNaissance.charAt(0) || '') || 'MB' }}\r
+            </div>\r
+            <button *ngIf="photoPreview" class="photo-remove-btn" type="button"\r
+                    (click)="removeSelectedPhoto()" title="Supprimer la photo">\r
+              <span class="material-icons-round">close</span>\r
+            </button>\r
+          </div>\r
+          <div class="photo-actions">\r
+            <label class="btn-photo-pick" for="photoInput">\r
+              <span class="material-icons-round">add_photo_alternate</span>\r
+              {{ photoPreview ? 'Changer la photo' : 'Ajouter une photo' }}\r
+            </label>\r
+            <input id="photoInput" type="file" accept="image/jpeg,image/png,image/webp"\r
+                   style="display:none" (change)="onFileSelect($event)" />\r
+            <p class="photo-hint">JPG, PNG ou WebP \xB7 max 5 Mo</p>\r
+          </div>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- Section: Identit\xE9 -->\r
+      <div class="form-section">\r
+        <div class="section-title">Identit\xE9</div>\r
+\r
+        <div class="form-group">\r
+          <label>Pr\xE9nom(s)</label>\r
+          <input type="text" name="prenoms" [(ngModel)]="form.prenoms" placeholder="Jean-Baptiste, Marie..." class="form-control" />\r
+        </div>\r
+\r
+        <div class="form-row-2">\r
+          <div class="form-group">\r
+            <label>Nom de naissance</label>\r
+            <input type="text" name="nomNaissance" [(ngModel)]="form.nomNaissance" placeholder="Dupont" class="form-control" />\r
+          </div>\r
+          <div class="form-group">\r
+            <label>Nom d'usage <span class="optional">(optionnel)</span></label>\r
+            <input type="text" name="nomUsage" [(ngModel)]="form.nomUsage" placeholder="Nom apr\xE8s mariage..." class="form-control" />\r
+          </div>\r
+        </div>\r
+\r
+        <div class="form-group">\r
+          <label>Sexe</label>\r
+          <div class="radio-group">\r
+            <label class="radio-option" *ngFor="let s of sexeOptions" [class.selected]="form.sexe === s.val">\r
+              <input type="radio" [name]="'sexe'" [value]="s.val" [(ngModel)]="form.sexe" />\r
+              {{ s.label }}\r
+            </label>\r
+          </div>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- Section: Naissance -->\r
+      <div class="form-section">\r
+        <div class="section-title">Naissance</div>\r
+        <div class="form-row">\r
+          <div class="form-group">\r
+            <label>Ann\xE9e</label>\r
+            <input type="number" name="nais_annee" [(ngModel)]="form.nais_annee" placeholder="1960" min="1850" [max]="currentYear" class="form-control" />\r
+          </div>\r
+          <div class="form-group">\r
+            <label>Mois</label>\r
+            <select name="nais_mois" [(ngModel)]="form.nais_mois" class="form-control">\r
+              <option value="">\u2014</option>\r
+              <option *ngFor="let m of mois" [value]="m.val">{{ m.label }}</option>\r
+            </select>\r
+          </div>\r
+          <div class="form-group">\r
+            <label>Jour</label>\r
+            <input type="number" name="nais_jour" [(ngModel)]="form.nais_jour" placeholder="1" min="1" max="31" class="form-control" />\r
+          </div>\r
+        </div>\r
+        <div class="form-group">\r
+          <label>Lieu de naissance</label>\r
+          <input type="text" name="lieuNaissance" [(ngModel)]="form.lieuNaissance" placeholder="Ville, pays..." class="form-control" />\r
+        </div>\r
+      </div>\r
+\r
+      <!-- Section: D\xE9c\xE8s -->\r
+      <div class="form-section">\r
+        <div class="section-title">\r
+          D\xE9c\xE8s\r
+          <label class="toggle-wrap">\r
+            <input type="checkbox" name="estDecede" [(ngModel)]="form.estDecede" />\r
+            <span class="toggle"></span>\r
+            <span class="toggle-label">{{ form.estDecede ? 'D\xE9c\xE9d\xE9(e)' : 'Vivant(e)' }}</span>\r
+          </label>\r
+        </div>\r
+\r
+        <div *ngIf="form.estDecede">\r
+          <div class="form-row">\r
+            <div class="form-group">\r
+              <label>Ann\xE9e</label>\r
+              <input type="number" name="deces_annee" [(ngModel)]="form.deces_annee" placeholder="2020" min="1850" [max]="currentYear" class="form-control" />\r
+            </div>\r
+            <div class="form-group">\r
+              <label>Mois</label>\r
+              <select name="deces_mois" [(ngModel)]="form.deces_mois" class="form-control">\r
+                <option value="">\u2014</option>\r
+                <option *ngFor="let m of mois" [value]="m.val">{{ m.label }}</option>\r
+              </select>\r
+            </div>\r
+            <div class="form-group">\r
+              <label>Jour</label>\r
+              <input type="number" name="deces_jour" [(ngModel)]="form.deces_jour" placeholder="1" min="1" max="31" class="form-control" />\r
+            </div>\r
+          </div>\r
+          <div class="form-group">\r
+            <label>Lieu de d\xE9c\xE8s</label>\r
+            <input type="text" name="lieuDeces" [(ngModel)]="form.lieuDeces" placeholder="Ville, pays..." class="form-control" />\r
+          </div>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- Section: Biographie -->\r
+      <div class="form-section">\r
+        <div class="section-title">Biographie <span class="optional">(optionnel)</span></div>\r
+        <div class="form-group">\r
+          <textarea name="biographie" [(ngModel)]="form.biographie" rows="4" placeholder="Parcours de vie, anecdotes..." class="form-control"></textarea>\r
+        </div>\r
+        <div class="form-group">\r
+          <label>Notes</label>\r
+          <textarea name="notes" [(ngModel)]="form.notes" rows="2" placeholder="Notes compl\xE9mentaires..." class="form-control"></textarea>\r
+        </div>\r
+      </div>\r
+\r
+    </form>\r
+  </div>\r
+\r
+  <div class="panel-footer">\r
+    <button class="btn-ghost" (click)="closeAll()">Annuler</button>\r
+    <button class="btn-primary" (click)="savePersonne()" [disabled]="saving">\r
+      <span class="material-icons-round spin" *ngIf="saving">sync</span>\r
+      {{ saving ? 'Sauvegarde...' : (editTarget ? 'Enregistrer' : 'Cr\xE9er le membre') }}\r
+    </button>\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== PANNEAU D\xC9TAIL ===== -->\r
+<div class="slide-panel slide-panel-wide" [class.open]="showDetail">\r
+  <div class="panel-header">\r
+    <div *ngIf="detailTarget">\r
+      <h3>{{ getNomComplet(detailTarget) }}</h3>\r
+      <p class="panel-header-sub">{{ getAgeLabel(detailTarget) }}</p>\r
+    </div>\r
+    <div class="panel-header-actions">\r
+      <button class="btn-icon" title="Modifier" (click)="openEdit(detailTarget!); showDetail = false">\r
+        <span class="material-icons-round">edit</span>\r
+      </button>\r
+      <button class="btn-icon" (click)="closeAll()">\r
+        <span class="material-icons-round">close</span>\r
+      </button>\r
+    </div>\r
+  </div>\r
+\r
+  <div class="panel-body" *ngIf="detailTarget as p">\r
+\r
+    <!-- Avatar + statut -->\r
+    <div class="detail-hero">\r
+      <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
+           [src]="getPhotoUrl(p)"\r
+           class="avatar avatar-xl photo-avatar"\r
+           [alt]="getNomComplet(p)"\r
+           (error)="onPhotoError(p.id)" />\r
+      <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)"\r
+           class="avatar avatar-xl"\r
+           [class.female]="p.sexe === 'F'" [class.male]="p.sexe === 'M'">\r
+        {{ getInitiales(p) }}\r
+      </div>\r
+      <div class="detail-hero-info">\r
+        <h2>{{ getNomComplet(p) }}</h2>\r
+        <div class="detail-badges">\r
+          <span class="badge" [class.badge-primary]="p.sexe === 'M'" [class.badge-pink]="p.sexe === 'F'" [class.badge-gray]="!p.sexe">\r
+            {{ getSexeLabel(p.sexe) }}\r
+          </span>\r
+          <span class="badge" [class.badge-success]="estVivant(p)" [class.badge-gray]="!estVivant(p)">\r
+            {{ estVivant(p) ? 'Vivant(e)' : 'D\xE9c\xE9d\xE9(e)' }}\r
+          </span>\r
+        </div>\r
+      </div>\r
+    </div>\r
+\r
+    <!-- Infos structur\xE9es -->\r
+    <div class="detail-section">\r
+      <div class="section-title">Informations</div>\r
+      <div class="detail-grid">\r
+        <div class="detail-item" *ngIf="p.nomNaissance">\r
+          <span class="detail-label">Nom de naissance</span>\r
+          <span class="detail-value">{{ p.nomNaissance }}</span>\r
+        </div>\r
+        <div class="detail-item" *ngIf="p.nomUsage">\r
+          <span class="detail-label">Nom d'usage</span>\r
+          <span class="detail-value">{{ p.nomUsage }}</span>\r
+        </div>\r
+        <div class="detail-item" *ngIf="p.dateNaissance">\r
+          <span class="detail-label">Date de naissance</span>\r
+          <span class="detail-value">{{ p.dateNaissance }}</span>\r
+        </div>\r
+        <div class="detail-item" *ngIf="p.lieuNaissance">\r
+          <span class="detail-label">Lieu de naissance</span>\r
+          <span class="detail-value">{{ p.lieuNaissance }}</span>\r
+        </div>\r
+        <div class="detail-item" *ngIf="p.dateDeces">\r
+          <span class="detail-label">Date de d\xE9c\xE8s</span>\r
+          <span class="detail-value">{{ p.dateDeces }}</span>\r
+        </div>\r
+        <div class="detail-item" *ngIf="p.lieuDeces">\r
+          <span class="detail-label">Lieu de d\xE9c\xE8s</span>\r
+          <span class="detail-value">{{ p.lieuDeces }}</span>\r
+        </div>\r
+      </div>\r
+    </div>\r
+\r
+    <!-- Biographie -->\r
+    <div class="detail-section" *ngIf="p.biographie">\r
+      <div class="section-title">Biographie</div>\r
+      <p class="detail-bio">{{ p.biographie }}</p>\r
+    </div>\r
+\r
+    <!-- Notes -->\r
+    <div class="detail-section" *ngIf="p.notes">\r
+      <div class="section-title">Notes</div>\r
+      <p class="detail-bio">{{ p.notes }}</p>\r
+    </div>\r
+\r
+  </div>\r
+\r
+  <div class="panel-footer">\r
+    <button class="btn-danger" (click)="confirmDelete(detailTarget!, undefined); showDetail = false">\r
+      <span class="material-icons-round">delete</span>\r
+      Supprimer\r
+    </button>\r
+    <button class="btn-ghost" (click)="closeAll()">Fermer</button>\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== DIALOG SUPPRESSION ===== -->\r
+<div class="confirm-dialog" *ngIf="showDeleteConfirm">\r
+  <div class="confirm-box">\r
+    <div class="confirm-icon">\r
+      <span class="material-icons-round">delete_forever</span>\r
+    </div>\r
+    <h4>Supprimer {{ deleteTarget ? getNomComplet(deleteTarget) : 'ce membre' }} ?</h4>\r
+    <p>Cette action est irr\xE9versible. Toutes les relations associ\xE9es seront \xE9galement supprim\xE9es.</p>\r
+    <div class="confirm-actions">\r
+      <button class="btn-ghost" (click)="closeAll()">Annuler</button>\r
+      <button class="btn-danger" (click)="deletePersonne()" [disabled]="deleting">\r
+        <span class="material-icons-round spin" *ngIf="deleting">sync</span>\r
+        {{ deleting ? 'Suppression...' : 'Supprimer' }}\r
+      </button>\r
+    </div>\r
+  </div>\r
+</div>\r
 `, styles: ['@charset "UTF-8";\n\n/* src/app/pages/personnes/personnes.component.scss */\n.personnes-page {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.page-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.page-title {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 4px;\n}\n.page-subtitle {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.toolbar {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.toolbar .search-bar {\n  flex: 1;\n  min-width: 220px;\n}\n.toolbar-right {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.35);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.slide-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open {\n  transform: translateX(0);\n}\n.slide-panel.slide-panel-wide {\n  width: 540px;\n}\n.panel-header {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header h3 {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 2px;\n}\n.panel-header-sub {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.panel-header-actions {\n  display: flex;\n  gap: 4px;\n  align-items: center;\n}\n.panel-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.panel-footer {\n  display: flex;\n  gap: 12px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section {\n  margin-bottom: 24px;\n}\n.section-title {\n  font-size: 12px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.optional {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n.form-control {\n  width: 100%;\n  padding: 8px 12px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  transition: border-color 0.15s;\n  font-family: inherit;\n}\n.form-control:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row {\n  display: grid;\n  grid-template-columns: 2fr 2fr 1fr;\n  gap: 12px;\n}\n.form-row-2 {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.radio-group {\n  display: flex;\n  gap: 8px;\n}\n.radio-option {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 14px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: all 0.15s;\n}\n.radio-option input[type=radio] {\n  display: none;\n}\n.radio-option.selected {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 500;\n}\n.radio-option:hover:not(.selected) {\n  border-color: var(--primary-border);\n  background: var(--bg-muted);\n}\n.toggle-wrap {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  cursor: pointer;\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  text-transform: none;\n  letter-spacing: 0;\n}\n.toggle-wrap input[type=checkbox] {\n  display: none;\n}\n.toggle {\n  width: 36px;\n  height: 20px;\n  border-radius: 10px;\n  background: var(--border);\n  position: relative;\n  transition: background 0.2s;\n  flex-shrink: 0;\n}\n.toggle::after {\n  content: "";\n  position: absolute;\n  top: 3px;\n  left: 3px;\n  width: 14px;\n  height: 14px;\n  border-radius: 50%;\n  background: white;\n  transition: transform 0.2s;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n}\n.toggle-wrap input:checked + .toggle {\n  background: var(--error, #ef4444);\n}\n.toggle-wrap input:checked + .toggle::after {\n  transform: translateX(16px);\n}\n.toggle-label {\n  font-size: 12px;\n  font-weight: 500;\n}\n.detail-hero {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  padding: 8px 0 24px;\n  border-bottom: 1px solid var(--border);\n  margin-bottom: 24px;\n}\n.detail-hero h2 {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 8px;\n}\n.detail-hero-info {\n  flex: 1;\n}\n.detail-badges {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.detail-section {\n  margin-bottom: 24px;\n}\n.detail-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px 24px;\n}\n.detail-item {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.detail-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted);\n}\n.detail-value {\n  font-size: 14px;\n  color: var(--text-primary);\n}\n.detail-bio {\n  font-size: 14px;\n  color: var(--text-secondary);\n  line-height: 1.6;\n  margin: 0;\n  white-space: pre-wrap;\n}\n.confirm-dialog {\n  position: fixed;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 500;\n}\n.confirm-box {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  padding: 32px;\n  width: 400px;\n  max-width: 90vw;\n  box-shadow: var(--shadow-xl);\n  text-align: center;\n}\n.confirm-box h4 {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 12px 0 8px;\n}\n.confirm-box p {\n  font-size: 14px;\n  color: var(--text-muted);\n  margin: 0 0 24px;\n  line-height: 1.5;\n}\n.confirm-icon {\n  width: 56px;\n  height: 56px;\n  border-radius: 50%;\n  background: #fef2f2;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 4px;\n}\n.confirm-icon .material-icons-round {\n  font-size: 28px !important;\n  color: var(--error, #ef4444);\n}\n.confirm-actions {\n  display: flex;\n  gap: 12px;\n  justify-content: center;\n}\n.badge-gray {\n  background: var(--bg-muted);\n  color: var(--text-muted);\n  border-color: var(--border);\n}\n.badge-success {\n  background: #f0fdf4;\n  color: #16a34a;\n  border-color: #bbf7d0;\n}\n.avatar.female {\n  background: #fce7f3;\n  color: #db2777;\n}\n.avatar.male {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.avatar-xl {\n  width: 72px;\n  height: 72px;\n  font-size: 26px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  background: var(--primary-bg);\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.avatar-xl.photo-avatar {\n  display: block;\n}\n.photo-avatar {\n  object-fit: cover;\n  object-position: center;\n  background: var(--border-light);\n}\n.photo-upload-area {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n}\n.photo-preview-wrap {\n  position: relative;\n  flex-shrink: 0;\n}\n.photo-preview-img {\n  width: 80px;\n  height: 80px;\n  border-radius: 20px;\n  object-fit: cover;\n  object-position: center;\n  border: 2px solid var(--border);\n  display: block;\n}\n.photo-placeholder {\n  width: 80px;\n  height: 80px;\n  border-radius: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 24px;\n  font-weight: 700;\n  background: var(--primary-bg);\n  color: var(--primary);\n  border: 2px dashed var(--border);\n  text-transform: uppercase;\n}\n.photo-placeholder.male {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.photo-placeholder.female {\n  background: #fce7f3;\n  color: #db2777;\n  border-color: #fbcfe8;\n}\n.photo-remove-btn {\n  position: absolute;\n  top: -6px;\n  right: -6px;\n  width: 22px;\n  height: 22px;\n  border-radius: 50%;\n  background: #ef4444;\n  border: 2px solid #fff;\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  transition: background 0.15s;\n}\n.photo-remove-btn .material-icons-round {\n  font-size: 13px !important;\n}\n.photo-remove-btn:hover {\n  background: #dc2626;\n}\n.photo-actions {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.btn-photo-pick {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 9px 16px;\n  border: 1.5px solid var(--primary-border);\n  border-radius: var(--radius-md);\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: all 0.15s;\n  font-family: inherit;\n}\n.btn-photo-pick .material-icons-round {\n  font-size: 18px !important;\n}\n.btn-photo-pick:hover {\n  background: var(--primary-border);\n}\n.photo-hint {\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin {\n  animation: spin 1s linear infinite;\n}\n@media (max-width: 768px) {\n  .page-header {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .page-header .btn-primary {\n    width: 100%;\n    justify-content: center;\n  }\n  .toolbar {\n    flex-direction: column;\n    align-items: stretch;\n  }\n  .toolbar .search-bar {\n    min-width: unset;\n  }\n  .toolbar-right {\n    justify-content: space-between;\n  }\n  .slide-panel,\n  .slide-panel.slide-panel-wide {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open,\n  .slide-panel.slide-panel-wide.open {\n    transform: translateY(0);\n  }\n  .form-row {\n    grid-template-columns: 1fr;\n  }\n  .form-row-2 {\n    grid-template-columns: 1fr;\n  }\n  .detail-grid {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer {\n    flex-direction: column-reverse;\n  }\n  .panel-footer .btn-primary,\n  .panel-footer .btn-ghost,\n  .panel-footer .btn-danger {\n    width: 100%;\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=personnes.component.css.map */\n'] }]
   }], () => [{ type: ApiService }, { type: ActivatedRoute }, { type: NgZone }], null);
 })();
@@ -4092,11 +4092,11 @@ function TreeComponent_div_44_ng_template_2_ng_container_1_Template(rf, ctx) {
     \u0275\u0275property("ngIf", node_r10.union == null ? null : node_r10.union.type);
   }
 }
-function TreeComponent_div_44_ng_template_2_div_2_img_2_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_2_img_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r15 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "img", 65);
-    \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_div_2_img_2_Template_img_error_0_listener() {
+    \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_ng_container_2_img_3_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r15);
       const node_r10 = \u0275\u0275nextContext(2).node;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -4110,7 +4110,7 @@ function TreeComponent_div_44_ng_template_2_div_2_img_2_Template(rf, ctx) {
     \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r10.p1), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(node_r10.p1));
   }
 }
-function TreeComponent_div_44_ng_template_2_div_2_span_3_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_2_span_4_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1);
@@ -4123,31 +4123,424 @@ function TreeComponent_div_44_ng_template_2_div_2_span_3_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r10.p1));
   }
 }
-function TreeComponent_div_44_ng_template_2_div_2_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_img_6_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r17 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 85);
+    \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_img_6_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r17);
+      const node_r10 = \u0275\u0275nextContext(3).node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r10.p1.id));
+    });
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const node_r10 = \u0275\u0275nextContext(3).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r10.p1), \u0275\u0275sanitizeUrl);
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_span_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span");
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const node_r10 = \u0275\u0275nextContext(3).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r10.p1));
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_10_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 66)(1, "span", 10);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275element(3, "span", 67);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const br_r18 = \u0275\u0275nextContext().$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance();
+    \u0275\u0275classProp("ts-heart-active", ctx_r1.unionStatus(br_r18) === "active")("ts-heart-broken", ctx_r1.unionStatus(br_r18) === "divorced")("ts-heart-grey", ctx_r1.unionStatus(br_r18) === "widowed");
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r1.unionHeartIcon(br_r18), " ");
+    \u0275\u0275advance();
+    \u0275\u0275classProp("ts-hline-grey", ctx_r1.unionStatus(br_r18) !== "active");
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_img_2_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r20 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 65);
+    \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_img_2_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r20);
+      const br_r18 = \u0275\u0275nextContext(2).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(4);
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(br_r18.partner.id));
+    });
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const br_r18 = \u0275\u0275nextContext(2).$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275property("src", ctx_r1.getPhotoUrl(br_r18.partner), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(br_r18.partner));
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_span_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span");
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const br_r18 = \u0275\u0275nextContext(2).$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(br_r18.partner));
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r19 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 57);
+    \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_Template_div_mouseenter_0_listener($event) {
+      \u0275\u0275restoreView(_r19);
+      const br_r18 = \u0275\u0275nextContext().$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(4);
+      return \u0275\u0275resetView(ctx_r1.showTooltip(br_r18.partner, $event));
+    })("mousemove", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_Template_div_mousemove_0_listener($event) {
+      \u0275\u0275restoreView(_r19);
+      const ctx_r1 = \u0275\u0275nextContext(5);
+      return \u0275\u0275resetView(ctx_r1.moveTooltip($event));
+    })("mouseleave", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_Template_div_mouseleave_0_listener() {
+      \u0275\u0275restoreView(_r19);
+      const ctx_r1 = \u0275\u0275nextContext(5);
+      return \u0275\u0275resetView(ctx_r1.hideTooltip());
+    })("click", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_Template_div_click_0_listener() {
+      \u0275\u0275restoreView(_r19);
+      const br_r18 = \u0275\u0275nextContext().$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(4);
+      return \u0275\u0275resetView(ctx_r1.openDetail(br_r18.partner));
+    });
+    \u0275\u0275elementStart(1, "div", 58);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_img_2_Template, 1, 2, "img", 59)(3, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_span_3_Template, 2, 1, "span", 19);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "span", 60);
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "span", 61);
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const br_r18 = \u0275\u0275nextContext().$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275classProp("male", br_r18.partner.sexe === "M")("female", br_r18.partner.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === br_r18.partner.id);
+    \u0275\u0275advance();
+    \u0275\u0275classProp("male", br_r18.partner.sexe === "M")("female", br_r18.partner.sexe === "F");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(br_r18.partner) && !ctx_r1.failedPhotos.has(br_r18.partner.id));
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(br_r18.partner) || ctx_r1.failedPhotos.has(br_r18.partner.id));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate2("", br_r18.partner.prenoms, " ", br_r18.partner.nomUsage ?? br_r18.partner.nomNaissance);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r1.yearLabel(br_r18.partner));
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_16_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275text(1);
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const br_r18 = \u0275\u0275nextContext().$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" \xB7 ", ctx_r1.extractAnnee(br_r18.union.dateDebut));
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_17_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275text(1);
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const br_r18 = \u0275\u0275nextContext().$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" \u2013 ", ctx_r1.extractAnnee(br_r18.union.dateFin));
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_span_18_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 86);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const br_r18 = \u0275\u0275nextContext().$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r1.unionStatusLabel(br_r18));
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_ng_container_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275elementContainer(1, 88);
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const br_r18 = \u0275\u0275nextContext(2).$implicit;
+    \u0275\u0275nextContext(3);
+    const nodeRef_r21 = \u0275\u0275reference(3);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngTemplateOutlet", nodeRef_r21)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c22, br_r18.children[0]));
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_div_3_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 77);
+    \u0275\u0275element(1, "div", 78);
+    \u0275\u0275elementContainer(2, 88);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const child_r22 = ctx.$implicit;
+    \u0275\u0275nextContext(6);
+    const nodeRef_r21 = \u0275\u0275reference(3);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngTemplateOutlet", nodeRef_r21)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c22, child_r22));
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 73);
+    \u0275\u0275element(1, "div", 74);
+    \u0275\u0275elementStart(2, "div", 75);
+    \u0275\u0275template(3, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_div_3_div_3_Template, 3, 4, "div", 76);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const br_r18 = \u0275\u0275nextContext(2).$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance();
+    \u0275\u0275styleProp("margin-left", ctx_r1.barInset(br_r18.children[0]), "px")("margin-right", ctx_r1.barInset(br_r18.children[br_r18.children.length - 1]), "px");
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngForOf", br_r18.children);
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275element(1, "div", 72);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_ng_container_2_Template, 2, 4, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_div_3_Template, 4, 5, "div", 87);
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const br_r18 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngIf", br_r18.children.length === 1);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", br_r18.children.length > 1);
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r16 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 77);
+    \u0275\u0275element(1, "div", 78);
+    \u0275\u0275elementStart(2, "div", 54)(3, "div", 79)(4, "div", 80);
+    \u0275\u0275listener("click", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_Template_div_click_4_listener() {
+      \u0275\u0275restoreView(_r16);
+      const node_r10 = \u0275\u0275nextContext(2).node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.openDetail(node_r10.p1));
+    });
+    \u0275\u0275elementStart(5, "div", 81);
+    \u0275\u0275template(6, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_img_6_Template, 1, 1, "img", 82)(7, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_span_7_Template, 2, 1, "span", 19);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "span", 83);
+    \u0275\u0275text(9);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275template(10, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_10_Template, 4, 9, "div", 62)(11, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_Template, 8, 15, "div", 63);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "div", 68)(13, "span", 10);
+    \u0275\u0275text(14);
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(15);
+    \u0275\u0275template(16, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_16_Template, 2, 1, "ng-container", 19)(17, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_17_Template, 2, 1, "ng-container", 19)(18, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_span_18_Template, 2, 1, "span", 84);
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(19, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_Template, 4, 2, "ng-container", 19);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const br_r18 = ctx.$implicit;
+    const node_r10 = \u0275\u0275nextContext(2).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275classProp("ts-union-active", ctx_r1.unionStatus(br_r18) === "active")("ts-union-divorced", ctx_r1.unionStatus(br_r18) === "divorced")("ts-union-widowed", ctx_r1.unionStatus(br_r18) === "widowed");
+    \u0275\u0275advance();
+    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F");
+    \u0275\u0275advance();
+    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r10.p1) && !ctx_r1.failedPhotos.has(node_r10.p1.id));
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r10.p1) || ctx_r1.failedPhotos.has(node_r10.p1.id));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(node_r10.p1.prenoms == null ? null : node_r10.p1.prenoms.split(" ")[0]);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", br_r18.partner);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", br_r18.partner);
+    \u0275\u0275advance();
+    \u0275\u0275classMap("ts-badge-" + ctx_r1.unionStatus(br_r18));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r1.unionHeartIcon(br_r18));
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r1.typeLabel(br_r18.union.type), " ");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", br_r18.union.dateDebut);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", br_r18.union.dateFin);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.unionStatusLabel(br_r18));
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", br_r18.children.length > 0);
+  }
+}
+function TreeComponent_div_44_ng_template_2_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r14 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 69);
-    \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_template_2_div_2_Template_div_mouseenter_0_listener($event) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275elementStart(1, "div", 69);
+    \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_template_2_ng_container_2_Template_div_mouseenter_1_listener($event) {
       \u0275\u0275restoreView(_r14);
       const node_r10 = \u0275\u0275nextContext().node;
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.showTooltip(node_r10.p1, $event));
-    })("mousemove", function TreeComponent_div_44_ng_template_2_div_2_Template_div_mousemove_0_listener($event) {
+    })("mousemove", function TreeComponent_div_44_ng_template_2_ng_container_2_Template_div_mousemove_1_listener($event) {
       \u0275\u0275restoreView(_r14);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.moveTooltip($event));
-    })("mouseleave", function TreeComponent_div_44_ng_template_2_div_2_Template_div_mouseleave_0_listener() {
+    })("mouseleave", function TreeComponent_div_44_ng_template_2_ng_container_2_Template_div_mouseleave_1_listener() {
       \u0275\u0275restoreView(_r14);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.hideTooltip());
-    })("click", function TreeComponent_div_44_ng_template_2_div_2_Template_div_click_0_listener() {
+    })("click", function TreeComponent_div_44_ng_template_2_ng_container_2_Template_div_click_1_listener() {
       \u0275\u0275restoreView(_r14);
       const node_r10 = \u0275\u0275nextContext().node;
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.openDetail(node_r10.p1));
     });
+    \u0275\u0275elementStart(2, "div", 70);
+    \u0275\u0275template(3, TreeComponent_div_44_ng_template_2_ng_container_2_img_3_Template, 1, 2, "img", 59)(4, TreeComponent_div_44_ng_template_2_ng_container_2_span_4_Template, 2, 1, "span", 19);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "span", 60);
+    \u0275\u0275text(6);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(7, "span", 61);
+    \u0275\u0275text(8);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "span", 71);
+    \u0275\u0275text(10);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275element(11, "div", 72);
+    \u0275\u0275elementStart(12, "div", 73);
+    \u0275\u0275element(13, "div", 74);
+    \u0275\u0275elementStart(14, "div", 75);
+    \u0275\u0275template(15, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_Template, 20, 27, "div", 76);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const node_r10 = \u0275\u0275nextContext().node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === node_r10.p1.id);
+    \u0275\u0275advance();
+    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r10.p1) && !ctx_r1.failedPhotos.has(node_r10.p1.id));
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r10.p1) || ctx_r1.failedPhotos.has(node_r10.p1.id));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate2("", node_r10.p1.prenoms, " ", node_r10.p1.nomUsage ?? node_r10.p1.nomNaissance);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r1.yearLabel(node_r10.p1));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate2("", (node_r10.unions == null ? null : node_r10.unions.length) ?? 0, " union", ((node_r10.unions == null ? null : node_r10.unions.length) ?? 0) > 1 ? "s" : "");
+    \u0275\u0275advance(3);
+    \u0275\u0275styleProp("margin-left", 155, "px")("margin-right", 155, "px");
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngForOf", node_r10.unions);
+  }
+}
+function TreeComponent_div_44_ng_template_2_div_3_img_2_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r24 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 65);
+    \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_div_3_img_2_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r24);
+      const node_r10 = \u0275\u0275nextContext(2).node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r10.p1.id));
+    });
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const node_r10 = \u0275\u0275nextContext(2).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r10.p1), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(node_r10.p1));
+  }
+}
+function TreeComponent_div_44_ng_template_2_div_3_span_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span");
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const node_r10 = \u0275\u0275nextContext(2).node;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r10.p1));
+  }
+}
+function TreeComponent_div_44_ng_template_2_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r23 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 89);
+    \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_template_2_div_3_Template_div_mouseenter_0_listener($event) {
+      \u0275\u0275restoreView(_r23);
+      const node_r10 = \u0275\u0275nextContext().node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.showTooltip(node_r10.p1, $event));
+    })("mousemove", function TreeComponent_div_44_ng_template_2_div_3_Template_div_mousemove_0_listener($event) {
+      \u0275\u0275restoreView(_r23);
+      const ctx_r1 = \u0275\u0275nextContext(3);
+      return \u0275\u0275resetView(ctx_r1.moveTooltip($event));
+    })("mouseleave", function TreeComponent_div_44_ng_template_2_div_3_Template_div_mouseleave_0_listener() {
+      \u0275\u0275restoreView(_r23);
+      const ctx_r1 = \u0275\u0275nextContext(3);
+      return \u0275\u0275resetView(ctx_r1.hideTooltip());
+    })("click", function TreeComponent_div_44_ng_template_2_div_3_Template_div_click_0_listener() {
+      \u0275\u0275restoreView(_r23);
+      const node_r10 = \u0275\u0275nextContext().node;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.openDetail(node_r10.p1));
+    });
     \u0275\u0275elementStart(1, "div", 58);
-    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_div_2_img_2_Template, 1, 2, "img", 59)(3, TreeComponent_div_44_ng_template_2_div_2_span_3_Template, 2, 1, "span", 19);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_div_3_img_2_Template, 1, 2, "img", 59)(3, TreeComponent_div_44_ng_template_2_div_3_span_3_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(4, "span", 60);
     \u0275\u0275text(5);
@@ -4172,41 +4565,41 @@ function TreeComponent_div_44_ng_template_2_div_2_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r1.yearLabel(node_r10.p1));
   }
 }
-function TreeComponent_div_44_ng_template_2_ng_container_3_ng_container_2_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_4_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementContainer(1, 72);
+    \u0275\u0275elementContainer(1, 88);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
     const node_r10 = \u0275\u0275nextContext(2).node;
     \u0275\u0275nextContext();
-    const nodeRef_r16 = \u0275\u0275reference(3);
+    const nodeRef_r21 = \u0275\u0275reference(3);
     \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", nodeRef_r16)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c22, node_r10.children[0]));
+    \u0275\u0275property("ngTemplateOutlet", nodeRef_r21)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c22, node_r10.children[0]));
   }
 }
-function TreeComponent_div_44_ng_template_2_ng_container_3_div_3_div_3_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_4_div_3_div_3_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 77);
     \u0275\u0275element(1, "div", 78);
-    \u0275\u0275elementContainer(2, 72);
+    \u0275\u0275elementContainer(2, 88);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const child_r17 = ctx.$implicit;
+    const child_r25 = ctx.$implicit;
     \u0275\u0275nextContext(4);
-    const nodeRef_r16 = \u0275\u0275reference(3);
+    const nodeRef_r21 = \u0275\u0275reference(3);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngTemplateOutlet", nodeRef_r16)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c22, child_r17));
+    \u0275\u0275property("ngTemplateOutlet", nodeRef_r21)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c22, child_r25));
   }
 }
-function TreeComponent_div_44_ng_template_2_ng_container_3_div_3_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_4_div_3_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 73);
     \u0275\u0275element(1, "div", 74);
     \u0275\u0275elementStart(2, "div", 75);
-    \u0275\u0275template(3, TreeComponent_div_44_ng_template_2_ng_container_3_div_3_div_3_Template, 3, 4, "div", 76);
+    \u0275\u0275template(3, TreeComponent_div_44_ng_template_2_ng_container_4_div_3_div_3_Template, 3, 4, "div", 76);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -4218,11 +4611,11 @@ function TreeComponent_div_44_ng_template_2_ng_container_3_div_3_Template(rf, ct
     \u0275\u0275property("ngForOf", node_r10.children);
   }
 }
-function TreeComponent_div_44_ng_template_2_ng_container_3_Template(rf, ctx) {
+function TreeComponent_div_44_ng_template_2_ng_container_4_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275element(1, "div", 70);
-    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_3_ng_container_2_Template, 2, 4, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_ng_container_3_div_3_Template, 4, 5, "div", 71);
+    \u0275\u0275element(1, "div", 72);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_4_ng_container_2_Template, 2, 4, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_ng_container_4_div_3_Template, 4, 5, "div", 87);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
@@ -4236,13 +4629,15 @@ function TreeComponent_div_44_ng_template_2_ng_container_3_Template(rf, ctx) {
 function TreeComponent_div_44_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 54);
-    \u0275\u0275template(1, TreeComponent_div_44_ng_template_2_ng_container_1_Template, 13, 22, "ng-container", 19)(2, TreeComponent_div_44_ng_template_2_div_2_Template, 8, 17, "div", 55)(3, TreeComponent_div_44_ng_template_2_ng_container_3_Template, 4, 2, "ng-container", 19);
+    \u0275\u0275template(1, TreeComponent_div_44_ng_template_2_ng_container_1_Template, 13, 22, "ng-container", 19)(2, TreeComponent_div_44_ng_template_2_ng_container_2_Template, 16, 22, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_div_3_Template, 8, 17, "div", 55)(4, TreeComponent_div_44_ng_template_2_ng_container_4_Template, 4, 2, "ng-container", 19);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const node_r10 = ctx.node;
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", node_r10.type === "union");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", node_r10.type === "multi");
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", node_r10.type === "solo");
     \u0275\u0275advance();
@@ -4252,15 +4647,15 @@ function TreeComponent_div_44_ng_template_2_Template(rf, ctx) {
 function TreeComponent_div_44_ng_container_5_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementContainer(1, 72);
+    \u0275\u0275elementContainer(1, 88);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const root_r18 = ctx.$implicit;
+    const root_r26 = ctx.$implicit;
     \u0275\u0275nextContext();
-    const nodeRef_r16 = \u0275\u0275reference(3);
+    const nodeRef_r21 = \u0275\u0275reference(3);
     \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", nodeRef_r16)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c22, root_r18));
+    \u0275\u0275property("ngTemplateOutlet", nodeRef_r21)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c22, root_r26));
   }
 }
 function TreeComponent_div_44_Template(rf, ctx) {
@@ -4284,7 +4679,7 @@ function TreeComponent_div_44_Template(rf, ctx) {
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.endDrag($event));
     });
-    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_Template, 4, 3, "ng-template", null, 2, \u0275\u0275templateRefExtractor);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_Template, 5, 4, "ng-template", null, 2, \u0275\u0275templateRefExtractor);
     \u0275\u0275elementStart(4, "div", 52);
     \u0275\u0275template(5, TreeComponent_div_44_ng_container_5_Template, 2, 4, "ng-container", 53);
     \u0275\u0275elementEnd()();
@@ -4298,7 +4693,7 @@ function TreeComponent_div_44_Template(rf, ctx) {
 }
 function TreeComponent_div_45_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 79)(1, "span", 10);
+    \u0275\u0275elementStart(0, "div", 90)(1, "span", 10);
     \u0275\u0275text(2, "info_outline");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3, " Ctrl + molette pour zoomer \xB7 Glisser pour naviguer \xB7 Clic pour la fiche ");
@@ -4307,10 +4702,10 @@ function TreeComponent_div_45_Template(rf, ctx) {
 }
 function TreeComponent_div_46_img_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r19 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 92);
+    const _r27 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 103);
     \u0275\u0275listener("error", function TreeComponent_div_46_img_2_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r19);
+      \u0275\u0275restoreView(_r27);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onPhotoError(ctx_r1.hoveredPerson.id));
     });
@@ -4335,7 +4730,7 @@ function TreeComponent_div_46_span_3_Template(rf, ctx) {
 }
 function TreeComponent_div_46_span_7_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 93)(1, "span", 10);
+    \u0275\u0275elementStart(0, "span", 104)(1, "span", 10);
     \u0275\u0275text(2, "hourglass_bottom");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -4349,7 +4744,7 @@ function TreeComponent_div_46_span_7_Template(rf, ctx) {
 }
 function TreeComponent_div_46_span_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 94)(1, "span", 10);
+    \u0275\u0275elementStart(0, "span", 105)(1, "span", 10);
     \u0275\u0275text(2, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -4363,33 +4758,33 @@ function TreeComponent_div_46_span_8_Template(rf, ctx) {
 }
 function TreeComponent_div_46_span_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 95);
+    \u0275\u0275elementStart(0, "span", 106);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
 function TreeComponent_div_46_span_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 96);
+    \u0275\u0275elementStart(0, "span", 107);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
 }
 function TreeComponent_div_46_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 80)(1, "div", 81);
-    \u0275\u0275template(2, TreeComponent_div_46_img_2_Template, 1, 1, "img", 82)(3, TreeComponent_div_46_span_3_Template, 2, 1, "span", 19);
+    \u0275\u0275elementStart(0, "div", 91)(1, "div", 92);
+    \u0275\u0275template(2, TreeComponent_div_46_img_2_Template, 1, 1, "img", 93)(3, TreeComponent_div_46_span_3_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "div", 83)(5, "span", 84);
+    \u0275\u0275elementStart(4, "div", 94)(5, "span", 95);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(7, TreeComponent_div_46_span_7_Template, 4, 1, "span", 85)(8, TreeComponent_div_46_span_8_Template, 4, 1, "span", 86);
-    \u0275\u0275elementStart(9, "div", 87)(10, "span", 88);
+    \u0275\u0275template(7, TreeComponent_div_46_span_7_Template, 4, 1, "span", 96)(8, TreeComponent_div_46_span_8_Template, 4, 1, "span", 97);
+    \u0275\u0275elementStart(9, "div", 98)(10, "span", 99);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(12, TreeComponent_div_46_span_12_Template, 2, 0, "span", 89)(13, TreeComponent_div_46_span_13_Template, 2, 0, "span", 90);
+    \u0275\u0275template(12, TreeComponent_div_46_span_12_Template, 2, 0, "span", 100)(13, TreeComponent_div_46_span_13_Template, 2, 0, "span", 101);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "span", 91);
+    \u0275\u0275elementStart(14, "span", 102);
     \u0275\u0275text(15, "Clic pour la fiche compl\xE8te");
     \u0275\u0275elementEnd()()();
   }
@@ -4420,10 +4815,10 @@ function TreeComponent_div_46_Template(rf, ctx) {
 }
 function TreeComponent_div_47_Template(rf, ctx) {
   if (rf & 1) {
-    const _r20 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 97);
+    const _r28 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 108);
     \u0275\u0275listener("click", function TreeComponent_div_47_Template_div_click_0_listener() {
-      \u0275\u0275restoreView(_r20);
+      \u0275\u0275restoreView(_r28);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.closeDetail());
     });
@@ -4432,10 +4827,10 @@ function TreeComponent_div_47_Template(rf, ctx) {
 }
 function TreeComponent_div_55_img_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r22 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 110);
+    const _r30 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 121);
     \u0275\u0275listener("error", function TreeComponent_div_55_img_3_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r22);
+      \u0275\u0275restoreView(_r30);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onPhotoError(ctx_r1.selectedPerson.id));
     });
@@ -4460,14 +4855,14 @@ function TreeComponent_div_55_span_4_Template(rf, ctx) {
 }
 function TreeComponent_div_55_span_10_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 111);
+    \u0275\u0275elementStart(0, "span", 122);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
 function TreeComponent_div_55_span_11_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 112);
+    \u0275\u0275elementStart(0, "span", 123);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
@@ -4486,13 +4881,13 @@ function TreeComponent_div_55_div_13_span_8_Template(rf, ctx) {
 }
 function TreeComponent_div_55_div_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 113)(1, "span", 10);
+    \u0275\u0275elementStart(0, "div", 124)(1, "span", 10);
     \u0275\u0275text(2, "cake");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 114)(4, "span", 115);
+    \u0275\u0275elementStart(3, "div", 125)(4, "span", 126);
     \u0275\u0275text(5, "Naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 116);
+    \u0275\u0275elementStart(6, "span", 127);
     \u0275\u0275text(7);
     \u0275\u0275template(8, TreeComponent_div_55_div_13_span_8_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd()()();
@@ -4519,13 +4914,13 @@ function TreeComponent_div_55_div_14_span_8_Template(rf, ctx) {
 }
 function TreeComponent_div_55_div_14_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 113)(1, "span", 10);
+    \u0275\u0275elementStart(0, "div", 124)(1, "span", 10);
     \u0275\u0275text(2, "sentiment_very_dissatisfied");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 114)(4, "span", 115);
+    \u0275\u0275elementStart(3, "div", 125)(4, "span", 126);
     \u0275\u0275text(5, "D\xE9c\xE8s");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 116);
+    \u0275\u0275elementStart(6, "span", 127);
     \u0275\u0275text(7);
     \u0275\u0275template(8, TreeComponent_div_55_div_14_span_8_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd()()();
@@ -4540,13 +4935,13 @@ function TreeComponent_div_55_div_14_Template(rf, ctx) {
 }
 function TreeComponent_div_55_div_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 113)(1, "span", 10);
+    \u0275\u0275elementStart(0, "div", 124)(1, "span", 10);
     \u0275\u0275text(2, "hourglass_bottom");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 114)(4, "span", 115);
+    \u0275\u0275elementStart(3, "div", 125)(4, "span", 126);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 116);
+    \u0275\u0275elementStart(6, "span", 127);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()()();
   }
@@ -4560,24 +4955,24 @@ function TreeComponent_div_55_div_15_Template(rf, ctx) {
 }
 function TreeComponent_div_55_Template(rf, ctx) {
   if (rf & 1) {
-    const _r21 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 98)(1, "div", 99)(2, "div", 100);
-    \u0275\u0275template(3, TreeComponent_div_55_img_3_Template, 1, 1, "img", 101)(4, TreeComponent_div_55_span_4_Template, 2, 1, "span", 19);
+    const _r29 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 109)(1, "div", 110)(2, "div", 111);
+    \u0275\u0275template(3, TreeComponent_div_55_img_3_Template, 1, 1, "img", 112)(4, TreeComponent_div_55_span_4_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(5, "h2", 102);
+    \u0275\u0275elementStart(5, "h2", 113);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "div", 103)(8, "span", 104);
+    \u0275\u0275elementStart(7, "div", 114)(8, "span", 115);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(10, TreeComponent_div_55_span_10_Template, 2, 0, "span", 105)(11, TreeComponent_div_55_span_11_Template, 2, 0, "span", 106);
+    \u0275\u0275template(10, TreeComponent_div_55_span_10_Template, 2, 0, "span", 116)(11, TreeComponent_div_55_span_11_Template, 2, 0, "span", 117);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "div", 107);
-    \u0275\u0275template(13, TreeComponent_div_55_div_13_Template, 9, 2, "div", 108)(14, TreeComponent_div_55_div_14_Template, 9, 2, "div", 108)(15, TreeComponent_div_55_div_15_Template, 8, 2, "div", 108);
+    \u0275\u0275elementStart(12, "div", 118);
+    \u0275\u0275template(13, TreeComponent_div_55_div_13_Template, 9, 2, "div", 119)(14, TreeComponent_div_55_div_14_Template, 9, 2, "div", 119)(15, TreeComponent_div_55_div_15_Template, 8, 2, "div", 119);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "a", 109);
+    \u0275\u0275elementStart(16, "a", 120);
     \u0275\u0275listener("click", function TreeComponent_div_55_Template_a_click_16_listener() {
-      \u0275\u0275restoreView(_r21);
+      \u0275\u0275restoreView(_r29);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.closeDetail());
     });
@@ -4720,27 +5115,36 @@ var TreeComponent = class _TreeComponent {
       if (!person)
         return null;
       placedPersons.add(pid);
-      const myUnion = unions.find((u) => !placedUnions.has(u.id) && u.participants.some((pt) => pt.personneId === pid));
-      if (!myUnion) {
-        return { type: "solo", p1: person, isRoot: !childIds.has(pid), children: [] };
+      const myUnions = unions.filter((u) => !placedUnions.has(u.id) && u.participants.some((pt) => pt.personneId === pid)).sort((a, b) => (extractAnnee(a.dateDebut) ?? 0) - (extractAnnee(b.dateDebut) ?? 0));
+      if (myUnions.length === 0) {
+        return { type: "solo", p1: person, isRoot: !childIds.has(pid), children: [], unions: [] };
       }
-      placedUnions.add(myUnion.id);
-      const partnerPart = myUnion.participants.filter((pt) => pt.personneId !== pid).sort((a, b) => (a.ordre ?? 1) - (b.ordre ?? 1))[0];
-      let partner;
-      if (partnerPart && !placedPersons.has(partnerPart.personneId)) {
-        partner = personnes.find((p) => p.id === partnerPart.personneId);
-        if (partner)
-          placedPersons.add(partner.id);
+      if (myUnions.length === 1) {
+        const u = myUnions[0];
+        placedUnions.add(u.id);
+        const partnerPart = u.participants.filter((pt) => pt.personneId !== pid).sort((a, b) => (a.ordre ?? 1) - (b.ordre ?? 1))[0];
+        let partner;
+        if (partnerPart && !placedPersons.has(partnerPart.personneId)) {
+          partner = personnes.find((p) => p.id === partnerPart.personneId);
+          if (partner)
+            placedPersons.add(partner.id);
+        }
+        const children = u.filiations.map((f) => buildNode(f.enfantId)).filter((n) => n !== null);
+        return { type: "union", p1: person, p2: partner, union: u, isRoot: !childIds.has(pid), children };
       }
-      const children = myUnion.filiations.map((f) => buildNode(f.enfantId)).filter((n) => n !== null);
-      return {
-        type: "union",
-        p1: person,
-        p2: partner,
-        union: myUnion,
-        isRoot: !childIds.has(pid),
-        children
-      };
+      const unionBranches = myUnions.map((u) => {
+        placedUnions.add(u.id);
+        const partnerPart = u.participants.filter((pt) => pt.personneId !== pid).sort((a, b) => (a.ordre ?? 1) - (b.ordre ?? 1))[0];
+        let partner;
+        if (partnerPart && !placedPersons.has(partnerPart.personneId)) {
+          partner = personnes.find((p) => p.id === partnerPart.personneId);
+          if (partner)
+            placedPersons.add(partner.id);
+        }
+        const children = u.filiations.map((f) => buildNode(f.enfantId)).filter((n) => n !== null);
+        return { union: u, partner, children };
+      });
+      return { type: "multi", p1: person, isRoot: !childIds.has(pid), children: [], unions: unionBranches };
     };
     const rootCandidates = personnes.filter((p) => {
       if (childIds.has(p.id))
@@ -4828,7 +5232,26 @@ var TreeComponent = class _TreeComponent {
   }
   /** Demi-largeur approximative d'un nœud pour le calcul de la barre horizontale. */
   barInset(node) {
-    return node.type === "union" ? 155 : 70;
+    return node.type === "union" || node.type === "multi" ? 155 : 70;
+  }
+  // ── Statut d'une union (pour affichage polygamie / divorce / veuvage) ───
+  unionStatus(br) {
+    if (!br.union.dateFin)
+      return "active";
+    if (br.partner && !estVivant(br.partner))
+      return "widowed";
+    return "divorced";
+  }
+  unionHeartIcon(br) {
+    return this.unionStatus(br) === "divorced" ? "heart_broken" : "favorite";
+  }
+  unionStatusLabel(br) {
+    const s = this.unionStatus(br);
+    if (s === "divorced")
+      return "Divorc\xE9(e)";
+    if (s === "widowed")
+      return "Veuf/Veuve";
+    return "";
   }
   // ══════════════════════════════════════════════════════════════════════════
   // Détail & tooltip
@@ -5037,7 +5460,7 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.treeVisual = _t.first);
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.treeCanvas = _t.first);
     }
-  }, standalone: false, decls: 56, vars: 27, consts: [["treeCanvas", ""], ["treeVisual", ""], ["nodeRef", ""], [1, "tree-page"], [1, "tree-toolbar"], [1, "toolbar-left"], ["class", "badge badge-primary", 4, "ngIf"], ["class", "root-badge", 4, "ngIf"], [1, "toolbar-right"], ["title", "D\xE9zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "zoom-level"], ["title", "Zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], ["title", "R\xE9initialiser", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "btn-outline", "btn-sm", 3, "click", "disabled"], [2, "width", "1px", "height", "20px", "background", "var(--border)", "margin", "0 2px"], [1, "btn-ghost", "btn-sm", "tree-kiosk-btn", 3, "click", "title"], [1, "root-picker-wrap"], [1, "btn-ghost", "btn-sm", "root-pick-btn", 3, "click"], [4, "ngIf"], ["class", "root-dropdown", 3, "click", 4, "ngIf"], ["class", "root-overlay", 3, "click", 4, "ngIf"], [1, "tree-canvas", 3, "wheel", "mouseleave"], ["class", "loading-state", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "tree-visual", 3, "transform", "pointerdown", "pointermove", "pointerup", "pointercancel", 4, "ngIf"], ["class", "zoom-hint", 4, "ngIf"], ["class", "tree-tooltip", 3, "left", "top", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "detail-panel"], [1, "dp-header"], [1, "btn-icon", 3, "click"], ["class", "dp-body", 4, "ngIf"], [1, "badge", "badge-primary"], [1, "root-badge"], [1, "root-badge-name"], [1, "root-badge-clear", 3, "click"], [1, "root-dropdown", 3, "click"], [1, "root-search-bar"], ["type", "text", "placeholder", "Rechercher\u2026", 1, "root-search-input", 3, "ngModelChange", "ngModel"], [1, "root-list"], [1, "root-list-item", "root-list-all", 3, "click"], ["class", "root-list-item", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "root-list-item", 3, "click"], [1, "root-list-avatar"], [1, "root-overlay", 3, "click"], [1, "loading-state"], [1, "material-icons-round", "spin"], [1, "error-state"], [1, "empty-state"], [1, "tree-visual", 3, "pointerdown", "pointermove", "pointerup", "pointercancel"], [1, "ts-roots"], [4, "ngFor", "ngForOf"], [1, "ts-subtree"], ["class", "ts-solo-card", 3, "ts-root", "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], [1, "ts-couple"], [1, "ts-person", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar"], ["class", "ts-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ts-name"], [1, "ts-year"], ["class", "ts-heart", 4, "ngIf"], ["class", "ts-person", 3, "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-union-badge", 4, "ngIf"], [1, "ts-avatar-photo", 3, "error", "src", "alt"], [1, "ts-heart"], [1, "ts-hline"], [1, "ts-union-badge"], [1, "ts-solo-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-down"], ["class", "ts-branch", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "ts-branch"], [1, "ts-hbar"], [1, "ts-children-row"], ["class", "ts-child-col", 4, "ngFor", "ngForOf"], [1, "ts-child-col"], [1, "ts-up"], [1, "zoom-hint"], [1, "tree-tooltip"], [1, "tt-avatar"], ["class", "tt-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "tt-content"], [1, "tt-name"], ["class", "tt-dates", 4, "ngIf"], ["class", "tt-lieu", 4, "ngIf"], [1, "tt-badges"], [1, "tt-badge"], ["class", "tt-badge tt-alive", 4, "ngIf"], ["class", "tt-badge tt-dead", 4, "ngIf"], [1, "tt-hint"], [1, "tt-avatar-photo", 3, "error", "src"], [1, "tt-dates"], [1, "tt-lieu"], [1, "tt-badge", "tt-alive"], [1, "tt-badge", "tt-dead"], [1, "panel-overlay", 3, "click"], [1, "dp-body"], [1, "dp-avatar-wrap"], [1, "dp-avatar"], ["class", "dp-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "dp-name"], [1, "dp-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "dp-info-list"], ["class", "dp-info-item", 4, "ngIf"], [1, "btn-primary", "dp-link", 3, "click", "routerLink", "queryParams"], [1, "dp-avatar-photo", 3, "error", "src"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "dp-info-item"], [1, "dp-info-text"], [1, "dp-info-label"], [1, "dp-info-value"]], template: function TreeComponent_Template(rf, ctx) {
+  }, standalone: false, decls: 56, vars: 27, consts: [["treeCanvas", ""], ["treeVisual", ""], ["nodeRef", ""], [1, "tree-page"], [1, "tree-toolbar"], [1, "toolbar-left"], ["class", "badge badge-primary", 4, "ngIf"], ["class", "root-badge", 4, "ngIf"], [1, "toolbar-right"], ["title", "D\xE9zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "zoom-level"], ["title", "Zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], ["title", "R\xE9initialiser", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "btn-outline", "btn-sm", 3, "click", "disabled"], [2, "width", "1px", "height", "20px", "background", "var(--border)", "margin", "0 2px"], [1, "btn-ghost", "btn-sm", "tree-kiosk-btn", 3, "click", "title"], [1, "root-picker-wrap"], [1, "btn-ghost", "btn-sm", "root-pick-btn", 3, "click"], [4, "ngIf"], ["class", "root-dropdown", 3, "click", 4, "ngIf"], ["class", "root-overlay", 3, "click", 4, "ngIf"], [1, "tree-canvas", 3, "wheel", "mouseleave"], ["class", "loading-state", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "tree-visual", 3, "transform", "pointerdown", "pointermove", "pointerup", "pointercancel", 4, "ngIf"], ["class", "zoom-hint", 4, "ngIf"], ["class", "tree-tooltip", 3, "left", "top", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "detail-panel"], [1, "dp-header"], [1, "btn-icon", 3, "click"], ["class", "dp-body", 4, "ngIf"], [1, "badge", "badge-primary"], [1, "root-badge"], [1, "root-badge-name"], [1, "root-badge-clear", 3, "click"], [1, "root-dropdown", 3, "click"], [1, "root-search-bar"], ["type", "text", "placeholder", "Rechercher\u2026", 1, "root-search-input", 3, "ngModelChange", "ngModel"], [1, "root-list"], [1, "root-list-item", "root-list-all", 3, "click"], ["class", "root-list-item", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "root-list-item", 3, "click"], [1, "root-list-avatar"], [1, "root-overlay", 3, "click"], [1, "loading-state"], [1, "material-icons-round", "spin"], [1, "error-state"], [1, "empty-state"], [1, "tree-visual", 3, "pointerdown", "pointermove", "pointerup", "pointercancel"], [1, "ts-roots"], [4, "ngFor", "ngForOf"], [1, "ts-subtree"], ["class", "ts-solo-card", 3, "ts-root", "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], [1, "ts-couple"], [1, "ts-person", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar"], ["class", "ts-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ts-name"], [1, "ts-year"], ["class", "ts-heart", 4, "ngIf"], ["class", "ts-person", 3, "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-union-badge", 4, "ngIf"], [1, "ts-avatar-photo", 3, "error", "src", "alt"], [1, "ts-heart"], [1, "ts-hline"], [1, "ts-union-badge"], [1, "ts-multi-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar", "ts-avatar-lg"], [1, "ts-multi-badge"], [1, "ts-down"], [1, "ts-branch"], [1, "ts-hbar"], [1, "ts-children-row"], ["class", "ts-child-col", 4, "ngFor", "ngForOf"], [1, "ts-child-col"], [1, "ts-up"], [1, "ts-couple", "ts-union-branch"], [1, "ts-person", "ts-person-ref", 3, "click"], [1, "ts-avatar", "ts-avatar-ref"], ["class", "ts-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "ts-name-ref"], ["class", "ts-status-chip", 4, "ngIf"], [1, "ts-avatar-photo", 3, "error", "src"], [1, "ts-status-chip"], ["class", "ts-branch", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "ts-solo-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "zoom-hint"], [1, "tree-tooltip"], [1, "tt-avatar"], ["class", "tt-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "tt-content"], [1, "tt-name"], ["class", "tt-dates", 4, "ngIf"], ["class", "tt-lieu", 4, "ngIf"], [1, "tt-badges"], [1, "tt-badge"], ["class", "tt-badge tt-alive", 4, "ngIf"], ["class", "tt-badge tt-dead", 4, "ngIf"], [1, "tt-hint"], [1, "tt-avatar-photo", 3, "error", "src"], [1, "tt-dates"], [1, "tt-lieu"], [1, "tt-badge", "tt-alive"], [1, "tt-badge", "tt-dead"], [1, "panel-overlay", 3, "click"], [1, "dp-body"], [1, "dp-avatar-wrap"], [1, "dp-avatar"], ["class", "dp-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "dp-name"], [1, "dp-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "dp-info-list"], ["class", "dp-info-item", 4, "ngIf"], [1, "btn-primary", "dp-link", 3, "click", "routerLink", "queryParams"], [1, "dp-avatar-photo", 3, "error", "src"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "dp-info-item"], [1, "dp-info-text"], [1, "dp-info-label"], [1, "dp-info-value"]], template: function TreeComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 3)(1, "div", 4)(2, "div", 5)(3, "h2");
@@ -5186,325 +5609,435 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275advance(7);
       \u0275\u0275property("ngIf", ctx.selectedPerson);
     }
-  }, dependencies: [NgForOf, NgIf, NgTemplateOutlet, RouterLink, DefaultValueAccessor, NgControlStatus, NgModel, DecimalPipe], styles: ['@charset "UTF-8";\n\n\n\n.tree-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  margin: -28px -32px;\n}\n.tree-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 24px;\n  background: var(--white);\n  border-bottom: 1px solid var(--border);\n  gap: 16px;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-left[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 18px;\n  margin: 0;\n  white-space: nowrap;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n}\n.tree-kiosk-btn[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n.root-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  background: var(--primary-bg);\n  border: 1.5px solid var(--primary-border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--primary);\n}\n.root-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.root-badge-name[_ngcontent-%COMP%] {\n  max-width: 160px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.root-badge-clear[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  border: none;\n  background: var(--primary-border);\n  cursor: pointer;\n  padding: 0;\n}\n.root-badge-clear[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: var(--primary);\n}\n.root-badge-clear[_ngcontent-%COMP%]:hover {\n  background: var(--primary);\n}\n.root-badge-clear[_ngcontent-%COMP%]:hover   .material-icons-round[_ngcontent-%COMP%] {\n  color: #fff;\n}\n.root-picker-wrap[_ngcontent-%COMP%] {\n  position: relative;\n}\n.root-pick-btn.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.root-pick-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.root-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  z-index: 299;\n}\n.root-dropdown[_ngcontent-%COMP%] {\n  position: absolute;\n  top: calc(100% + 8px);\n  right: 0;\n  width: 280px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);\n  z-index: 300;\n  overflow: hidden;\n  animation: _ngcontent-%COMP%_root-drop-in 0.15s ease;\n}\n@keyframes _ngcontent-%COMP%_root-drop-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.root-search-bar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-bottom: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.root-search-bar[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.root-search-input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--text-primary);\n  font-family: inherit;\n}\n.root-search-input[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n.root-search-input[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.root-list[_ngcontent-%COMP%] {\n  max-height: 280px;\n  overflow-y: auto;\n  padding: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.root-list-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 10px;\n  border-radius: 9px;\n  border: none;\n  background: transparent;\n  text-align: left;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n  cursor: pointer;\n  font-family: inherit;\n  transition: background 0.12s;\n}\n.root-list-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.root-list-item[_ngcontent-%COMP%]:hover {\n  background: var(--bg-muted);\n}\n.root-list-item.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 700;\n}\n.root-list-all[_ngcontent-%COMP%] {\n  border-bottom: 1px solid var(--border);\n  border-radius: 0;\n  margin-bottom: 4px;\n  padding-bottom: 10px;\n}\n.root-list-avatar[_ngcontent-%COMP%] {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.root-list-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.root-list-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink, #EC4899);\n}\n.root-list-avatar[_ngcontent-%COMP%]:not(.male):not(.female) {\n  background: var(--text-muted);\n}\n.root-empty[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 20px;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.tree-kiosk[_ngcontent-%COMP%]   .tree-toolbar[_ngcontent-%COMP%] {\n  display: none;\n}\n.tree-kiosk[_ngcontent-%COMP%]   .tree-canvas[_ngcontent-%COMP%] {\n  padding: 0;\n}\n.tree-kiosk[_ngcontent-%COMP%]:hover   .tree-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 50;\n  animation: _ngcontent-%COMP%_tree-slide-down 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_tree-slide-down {\n  from {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n.zoom-level[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-muted);\n  min-width: 38px;\n  text-align: center;\n}\n.tree-canvas[_ngcontent-%COMP%] {\n  flex: 1;\n  background: #F0F4FF;\n  background-image:\n    radial-gradient(\n      circle,\n      #BFDBFE 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px 24px;\n  position: relative;\n}\n.tree-visual[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n  min-width: 500px;\n  transition: transform 0.15s ease;\n  transform-origin: top center;\n  cursor: grab;\n  touch-action: none;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.tree-visual[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.generation[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.gen-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  background: var(--white);\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  border: 1px solid var(--border);\n}\n.gen-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 80px;\n  flex-wrap: nowrap;\n  justify-content: center;\n}\n.gen-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-stem[_ngcontent-%COMP%] {\n  width: 2px;\n  border-radius: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n}\n.group-stem.stem-single[_ngcontent-%COMP%] {\n  height: 40px;\n}\n.group-stem.stem-multi[_ngcontent-%COMP%] {\n  height: 20px;\n}\n.group-items[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  position: relative;\n}\n.group-items.multi[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: var(--bar-l, 55px);\n  right: var(--bar-r, 55px);\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.group-items.multi[_ngcontent-%COMP%] {\n  background: rgba(219, 234, 254, 0.28);\n  border-radius: 14px;\n  padding-bottom: 8px;\n}\n.group-child-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-child-drop[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.down-connector[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  margin-top: 2px;\n  border-radius: 2px;\n}\n.generation[_ngcontent-%COMP%]    + .generation[_ngcontent-%COMP%] {\n  margin-top: 4px;\n}\n.union-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.solo-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.couple-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);\n  transition: var(--transition);\n}\n.couple-wrap.root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);\n}\n.couple-wrap.selected[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.couple-wrap[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.union-heart-connector[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.union-heart-connector[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.union-heart-connector[_ngcontent-%COMP%]   .union-hline[_ngcontent-%COMP%] {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.union-badge[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.union-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.tree-node[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  transition: var(--transition);\n  border-radius: 12px;\n}\n.tree-node[_ngcontent-%COMP%]:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.tree-node.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.tree-node.solo[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n}\n.tree-node.solo.root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.tree-node.solo[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.tree-node.solo.active[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.node-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.node-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.node-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.node-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.node-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.node-name[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  word-break: break-word;\n}\n.node-year[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n}\n.zoom-hint[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(15, 23, 42, 0.7);\n  color: #fff;\n  font-size: 12px;\n  padding: 6px 14px;\n  border-radius: var(--radius-full);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  pointer-events: none;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  z-index: 10;\n}\n.zoom-hint[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.tree-tooltip[_ngcontent-%COMP%] {\n  position: fixed;\n  z-index: 500;\n  pointer-events: none;\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  padding: 12px 14px;\n  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);\n  min-width: 220px;\n  max-width: 280px;\n  animation: _ngcontent-%COMP%_tt-in 0.15s ease;\n}\n@keyframes _ngcontent-%COMP%_tt-in {\n  from {\n    opacity: 0;\n    transform: translateY(6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.tt-avatar[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.tt-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.tt-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.tt-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.tt-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.tt-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  flex: 1;\n}\n.tt-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n  word-break: break-word;\n}\n.tt-dates[_ngcontent-%COMP%], \n.tt-lieu[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 11px;\n  color: var(--text-secondary);\n}\n.tt-dates[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%], \n.tt-lieu[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.tt-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  flex-wrap: wrap;\n  margin-top: 2px;\n}\n.tt-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  padding: 1px 7px;\n  border-radius: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  background: var(--bg-muted);\n  color: var(--text-muted);\n}\n.tt-badge.tt-m[_ngcontent-%COMP%] {\n  background: #eff6ff;\n  color: var(--primary);\n}\n.tt-badge.tt-f[_ngcontent-%COMP%] {\n  background: #fdf2f8;\n  color: var(--pink);\n}\n.tt-badge.tt-alive[_ngcontent-%COMP%] {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.tt-badge.tt-dead[_ngcontent-%COMP%] {\n  background: #f1f5f9;\n  color: #64748b;\n}\n.tt-hint[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-style: italic;\n}\n.panel-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.3);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.detail-panel[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 340px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.detail-panel.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.dp-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.dp-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  margin: 0;\n  color: var(--text-primary);\n}\n.dp-body[_ngcontent-%COMP%] {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 24px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.dp-avatar-wrap[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.dp-avatar[_ngcontent-%COMP%] {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n  font-weight: 700;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);\n}\n.dp-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.dp-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);\n}\n.dp-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.dp-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.dp-name[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  text-align: center;\n  margin: 0;\n  line-height: 1.3;\n}\n.dp-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n.dp-info-list[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  margin-top: 4px;\n}\n.dp-info-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  padding: 12px 16px;\n  border-bottom: 1px solid var(--border);\n}\n.dp-info-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.dp-info-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.dp-info-text[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.dp-info-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n}\n.dp-info-value[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-primary);\n  font-weight: 500;\n}\n.dp-link[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  text-decoration: none;\n  margin-top: 8px;\n}\n@media (max-width: 640px) {\n  .tree-toolbar[_ngcontent-%COMP%] {\n    padding: 12px 16px;\n  }\n  .toolbar-right[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n    min-width: 0;\n  }\n  .detail-panel[_ngcontent-%COMP%] {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 85vh;\n    transform: translateY(100%);\n  }\n  .detail-panel.open[_ngcontent-%COMP%] {\n    transform: translateY(0);\n  }\n  .zoom-hint[_ngcontent-%COMP%] {\n    bottom: 8px;\n    font-size: 11px;\n    padding: 5px 10px;\n  }\n}\n.ts-roots[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 60px;\n  padding: 40px;\n}\n.ts-subtree[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.ts-couple[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);\n  transition: var(--transition);\n}\n.ts-couple.ts-root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18);\n}\n.ts-couple.ts-selected[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-couple[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.ts-solo-card.ts-root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.ts-solo-card.ts-active[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-solo-card.male[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card.female[_ngcontent-%COMP%]:hover {\n  border-color: var(--pink);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-person[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  border-radius: 12px;\n  transition: var(--transition);\n}\n.ts-person[_ngcontent-%COMP%]:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.ts-person.ts-active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.ts-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.ts-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.ts-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink, #EC4899);\n}\n.ts-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.ts-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.ts-name[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  max-width: 110px;\n  word-break: break-word;\n}\n.ts-year[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n  white-space: nowrap;\n}\n.ts-heart[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.ts-heart[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.ts-hline[_ngcontent-%COMP%] {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.ts-union-badge[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.ts-union-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.ts-down[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  border-radius: 2px;\n  margin-top: 2px;\n}\n.ts-branch[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n}\n.ts-hbar[_ngcontent-%COMP%] {\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.ts-children-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 40px;\n}\n.ts-child-col[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ts-up[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n/*# sourceMappingURL=tree.component.css.map */'] });
+  }, dependencies: [NgForOf, NgIf, NgTemplateOutlet, RouterLink, DefaultValueAccessor, NgControlStatus, NgModel, DecimalPipe], styles: ['@charset "UTF-8";\n\n\n\n.tree-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  margin: -28px -32px;\n}\n.tree-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 24px;\n  background: var(--white);\n  border-bottom: 1px solid var(--border);\n  gap: 16px;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-left[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 18px;\n  margin: 0;\n  white-space: nowrap;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n}\n.tree-kiosk-btn[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n.root-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  background: var(--primary-bg);\n  border: 1.5px solid var(--primary-border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--primary);\n}\n.root-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.root-badge-name[_ngcontent-%COMP%] {\n  max-width: 160px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.root-badge-clear[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  border: none;\n  background: var(--primary-border);\n  cursor: pointer;\n  padding: 0;\n}\n.root-badge-clear[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: var(--primary);\n}\n.root-badge-clear[_ngcontent-%COMP%]:hover {\n  background: var(--primary);\n}\n.root-badge-clear[_ngcontent-%COMP%]:hover   .material-icons-round[_ngcontent-%COMP%] {\n  color: #fff;\n}\n.root-picker-wrap[_ngcontent-%COMP%] {\n  position: relative;\n}\n.root-pick-btn.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.root-pick-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.root-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  z-index: 299;\n}\n.root-dropdown[_ngcontent-%COMP%] {\n  position: absolute;\n  top: calc(100% + 8px);\n  right: 0;\n  width: 280px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);\n  z-index: 300;\n  overflow: hidden;\n  animation: _ngcontent-%COMP%_root-drop-in 0.15s ease;\n}\n@keyframes _ngcontent-%COMP%_root-drop-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.root-search-bar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-bottom: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.root-search-bar[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.root-search-input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--text-primary);\n  font-family: inherit;\n}\n.root-search-input[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n.root-search-input[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.root-list[_ngcontent-%COMP%] {\n  max-height: 280px;\n  overflow-y: auto;\n  padding: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.root-list-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 10px;\n  border-radius: 9px;\n  border: none;\n  background: transparent;\n  text-align: left;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n  cursor: pointer;\n  font-family: inherit;\n  transition: background 0.12s;\n}\n.root-list-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.root-list-item[_ngcontent-%COMP%]:hover {\n  background: var(--bg-muted);\n}\n.root-list-item.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 700;\n}\n.root-list-all[_ngcontent-%COMP%] {\n  border-bottom: 1px solid var(--border);\n  border-radius: 0;\n  margin-bottom: 4px;\n  padding-bottom: 10px;\n}\n.root-list-avatar[_ngcontent-%COMP%] {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.root-list-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.root-list-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink, #EC4899);\n}\n.root-list-avatar[_ngcontent-%COMP%]:not(.male):not(.female) {\n  background: var(--text-muted);\n}\n.root-empty[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 20px;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.tree-kiosk[_ngcontent-%COMP%]   .tree-toolbar[_ngcontent-%COMP%] {\n  display: none;\n}\n.tree-kiosk[_ngcontent-%COMP%]   .tree-canvas[_ngcontent-%COMP%] {\n  padding: 0;\n}\n.tree-kiosk[_ngcontent-%COMP%]:hover   .tree-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 50;\n  animation: _ngcontent-%COMP%_tree-slide-down 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_tree-slide-down {\n  from {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n.zoom-level[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-muted);\n  min-width: 38px;\n  text-align: center;\n}\n.tree-canvas[_ngcontent-%COMP%] {\n  flex: 1;\n  background: #F0F4FF;\n  background-image:\n    radial-gradient(\n      circle,\n      #BFDBFE 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px 24px;\n  position: relative;\n}\n.tree-visual[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n  min-width: 500px;\n  transition: transform 0.15s ease;\n  transform-origin: top center;\n  cursor: grab;\n  touch-action: none;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.tree-visual[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.generation[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.gen-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  background: var(--white);\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  border: 1px solid var(--border);\n}\n.gen-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 80px;\n  flex-wrap: nowrap;\n  justify-content: center;\n}\n.gen-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-stem[_ngcontent-%COMP%] {\n  width: 2px;\n  border-radius: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n}\n.group-stem.stem-single[_ngcontent-%COMP%] {\n  height: 40px;\n}\n.group-stem.stem-multi[_ngcontent-%COMP%] {\n  height: 20px;\n}\n.group-items[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  position: relative;\n}\n.group-items.multi[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: var(--bar-l, 55px);\n  right: var(--bar-r, 55px);\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.group-items.multi[_ngcontent-%COMP%] {\n  background: rgba(219, 234, 254, 0.28);\n  border-radius: 14px;\n  padding-bottom: 8px;\n}\n.group-child-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-child-drop[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.down-connector[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  margin-top: 2px;\n  border-radius: 2px;\n}\n.generation[_ngcontent-%COMP%]    + .generation[_ngcontent-%COMP%] {\n  margin-top: 4px;\n}\n.union-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.solo-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.couple-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);\n  transition: var(--transition);\n}\n.couple-wrap.root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);\n}\n.couple-wrap.selected[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.couple-wrap[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.union-heart-connector[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.union-heart-connector[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.union-heart-connector[_ngcontent-%COMP%]   .union-hline[_ngcontent-%COMP%] {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.union-badge[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.union-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.tree-node[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  transition: var(--transition);\n  border-radius: 12px;\n}\n.tree-node[_ngcontent-%COMP%]:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.tree-node.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.tree-node.solo[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n}\n.tree-node.solo.root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.tree-node.solo[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.tree-node.solo.active[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.node-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.node-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.node-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.node-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.node-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.node-name[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  word-break: break-word;\n}\n.node-year[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n}\n.zoom-hint[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(15, 23, 42, 0.7);\n  color: #fff;\n  font-size: 12px;\n  padding: 6px 14px;\n  border-radius: var(--radius-full);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  pointer-events: none;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  z-index: 10;\n}\n.zoom-hint[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.tree-tooltip[_ngcontent-%COMP%] {\n  position: fixed;\n  z-index: 500;\n  pointer-events: none;\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  padding: 12px 14px;\n  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);\n  min-width: 220px;\n  max-width: 280px;\n  animation: _ngcontent-%COMP%_tt-in 0.15s ease;\n}\n@keyframes _ngcontent-%COMP%_tt-in {\n  from {\n    opacity: 0;\n    transform: translateY(6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.tt-avatar[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.tt-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.tt-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.tt-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.tt-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.tt-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  flex: 1;\n}\n.tt-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n  word-break: break-word;\n}\n.tt-dates[_ngcontent-%COMP%], \n.tt-lieu[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 11px;\n  color: var(--text-secondary);\n}\n.tt-dates[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%], \n.tt-lieu[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.tt-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  flex-wrap: wrap;\n  margin-top: 2px;\n}\n.tt-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  padding: 1px 7px;\n  border-radius: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  background: var(--bg-muted);\n  color: var(--text-muted);\n}\n.tt-badge.tt-m[_ngcontent-%COMP%] {\n  background: #eff6ff;\n  color: var(--primary);\n}\n.tt-badge.tt-f[_ngcontent-%COMP%] {\n  background: #fdf2f8;\n  color: var(--pink);\n}\n.tt-badge.tt-alive[_ngcontent-%COMP%] {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.tt-badge.tt-dead[_ngcontent-%COMP%] {\n  background: #f1f5f9;\n  color: #64748b;\n}\n.tt-hint[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-style: italic;\n}\n.panel-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.3);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.detail-panel[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 340px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.detail-panel.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.dp-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.dp-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  margin: 0;\n  color: var(--text-primary);\n}\n.dp-body[_ngcontent-%COMP%] {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 24px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.dp-avatar-wrap[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.dp-avatar[_ngcontent-%COMP%] {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n  font-weight: 700;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);\n}\n.dp-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.dp-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);\n}\n.dp-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.dp-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.dp-name[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  text-align: center;\n  margin: 0;\n  line-height: 1.3;\n}\n.dp-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n.dp-info-list[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  margin-top: 4px;\n}\n.dp-info-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  padding: 12px 16px;\n  border-bottom: 1px solid var(--border);\n}\n.dp-info-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.dp-info-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.dp-info-text[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.dp-info-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n}\n.dp-info-value[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-primary);\n  font-weight: 500;\n}\n.dp-link[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  text-decoration: none;\n  margin-top: 8px;\n}\n.ts-multi-card[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 14px 20px;\n  min-width: 130px;\n  background: var(--primary-bg);\n  border: 2.5px solid var(--primary);\n  border-radius: 18px;\n  cursor: pointer;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);\n  transition: var(--transition);\n}\n.ts-multi-card.ts-active[_ngcontent-%COMP%] {\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.28);\n}\n.ts-multi-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25);\n}\n.ts-avatar-lg[_ngcontent-%COMP%] {\n  width: 56px !important;\n  height: 56px !important;\n  font-size: 18px !important;\n}\n.ts-multi-badge[_ngcontent-%COMP%] {\n  font-size: 10px;\n  font-weight: 700;\n  color: var(--primary);\n  background: rgba(59, 130, 246, 0.12);\n  border-radius: 10px;\n  padding: 2px 8px;\n}\n.ts-union-branch[_ngcontent-%COMP%] {\n  cursor: default;\n}\n.ts-union-active[_ngcontent-%COMP%] {\n  border-color: var(--primary-border);\n}\n.ts-union-divorced[_ngcontent-%COMP%] {\n  border-color: #D1D5DB;\n  opacity: 0.85;\n}\n.ts-union-widowed[_ngcontent-%COMP%] {\n  border-color: #E5E7EB;\n}\n.ts-person-ref[_ngcontent-%COMP%] {\n  width: 80px !important;\n  opacity: 0.75;\n}\n.ts-avatar-ref[_ngcontent-%COMP%] {\n  width: 34px !important;\n  height: 34px !important;\n  font-size: 11px !important;\n}\n.ts-name-ref[_ngcontent-%COMP%] {\n  font-size: 10px !important;\n  color: var(--text-muted);\n}\n.ts-heart-active[_ngcontent-%COMP%] {\n  color: #f43f5e !important;\n}\n.ts-heart-broken[_ngcontent-%COMP%] {\n  color: #9CA3AF !important;\n}\n.ts-heart-grey[_ngcontent-%COMP%] {\n  color: #9CA3AF !important;\n}\n.ts-hline-grey[_ngcontent-%COMP%] {\n  background: #D1D5DB !important;\n}\n.ts-badge-active[_ngcontent-%COMP%] {\n  background: var(--white);\n  color: var(--primary);\n  border-color: var(--primary-border);\n}\n.ts-badge-divorced[_ngcontent-%COMP%] {\n  background: #F9FAFB;\n  color: #6B7280;\n  border-color: #E5E7EB;\n}\n.ts-badge-divorced[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #9CA3AF !important;\n}\n.ts-badge-widowed[_ngcontent-%COMP%] {\n  background: #F3F4F6;\n  color: #4B5563;\n  border-color: #D1D5DB;\n}\n.ts-badge-widowed[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #6B7280 !important;\n}\n.ts-status-chip[_ngcontent-%COMP%] {\n  display: inline-block;\n  font-size: 9px;\n  font-weight: 700;\n  padding: 1px 6px;\n  border-radius: 8px;\n  background: rgba(0, 0, 0, 0.06);\n  margin-left: 2px;\n}\n@media (max-width: 640px) {\n  .tree-toolbar[_ngcontent-%COMP%] {\n    padding: 12px 16px;\n  }\n  .toolbar-right[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n    min-width: 0;\n  }\n  .detail-panel[_ngcontent-%COMP%] {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 85vh;\n    transform: translateY(100%);\n  }\n  .detail-panel.open[_ngcontent-%COMP%] {\n    transform: translateY(0);\n  }\n  .zoom-hint[_ngcontent-%COMP%] {\n    bottom: 8px;\n    font-size: 11px;\n    padding: 5px 10px;\n  }\n}\n.ts-roots[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 60px;\n  padding: 40px;\n}\n.ts-subtree[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.ts-couple[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);\n  transition: var(--transition);\n}\n.ts-couple.ts-root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18);\n}\n.ts-couple.ts-selected[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-couple[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.ts-solo-card.ts-root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.ts-solo-card.ts-active[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-solo-card.male[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card.female[_ngcontent-%COMP%]:hover {\n  border-color: var(--pink);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-person[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  border-radius: 12px;\n  transition: var(--transition);\n}\n.ts-person[_ngcontent-%COMP%]:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.ts-person.ts-active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.ts-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.ts-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.ts-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink, #EC4899);\n}\n.ts-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.ts-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.ts-name[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  max-width: 110px;\n  word-break: break-word;\n}\n.ts-year[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n  white-space: nowrap;\n}\n.ts-heart[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.ts-heart[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.ts-hline[_ngcontent-%COMP%] {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.ts-union-badge[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.ts-union-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.ts-down[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  border-radius: 2px;\n  margin-top: 2px;\n}\n.ts-branch[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n}\n.ts-hbar[_ngcontent-%COMP%] {\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.ts-children-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 40px;\n}\n.ts-child-col[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ts-up[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n/*# sourceMappingURL=tree.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(TreeComponent, [{
     type: Component,
-    args: [{ selector: "app-tree", standalone: false, template: `<div class="tree-page" [class.tree-kiosk]="isKiosk">
-
-  <!-- ===== TOOLBAR ===== -->
-  <div class="tree-toolbar">
-    <div class="toolbar-left">
-      <h2>Arbre familial</h2>
-      <span class="badge badge-primary" *ngIf="!loading">
-        {{ totalPersonnes }} membres \xB7 {{ totalGenerations }} g\xE9n\xE9ration{{ totalGenerations > 1 ? 's' : '' }}
-      </span>
-      <div class="root-badge" *ngIf="rootPersonId">
-        <span class="material-icons-round">account_tree</span>
-        <span class="root-badge-name">{{ rootPersonName }}</span>
-        <button class="root-badge-clear" (click)="setRoot(null)">
-          <span class="material-icons-round">close</span>
-        </button>
-      </div>
-    </div>
-    <div class="toolbar-right">
-      <button class="btn-ghost btn-sm" (click)="zoomOut()" title="D\xE9zoomer">
-        <span class="material-icons-round">zoom_out</span>
-      </button>
-      <span class="zoom-level">{{ (scale * 100) | number:'1.0-0' }}%</span>
-      <button class="btn-ghost btn-sm" (click)="zoomIn()" title="Zoomer">
-        <span class="material-icons-round">zoom_in</span>
-      </button>
-      <button class="btn-ghost btn-sm" (click)="resetView()" title="R\xE9initialiser">
-        <span class="material-icons-round">refresh</span>
-      </button>
-      <button class="btn-outline btn-sm" (click)="exportTree()" [disabled]="exporting">
-        <span class="material-icons-round">download</span>PNG
-      </button>
-      <button class="btn-outline btn-sm" (click)="exportTreePdf()" [disabled]="exporting">
-        <span class="material-icons-round">picture_as_pdf</span>PDF
-      </button>
-      <div style="width:1px;height:20px;background:var(--border);margin:0 2px"></div>
-      <button class="btn-ghost btn-sm tree-kiosk-btn" (click)="toggleKiosk()"
-              [title]="isKiosk ? 'Quitter' : 'Plein \xE9cran'">
-        <span class="material-icons-round">{{ isKiosk ? 'fullscreen_exit' : 'fullscreen' }}</span>
-      </button>
-
-      <!-- S\xE9lecteur de racine -->
-      <div class="root-picker-wrap">
-        <button class="btn-ghost btn-sm root-pick-btn" [class.active]="showRootPicker"
-                (click)="showRootPicker = !showRootPicker; rootSearchQuery = ''">
-          <span class="material-icons-round">my_location</span>
-          <span *ngIf="!rootPersonId">Racine</span>
-        </button>
-        <div class="root-dropdown" *ngIf="showRootPicker" (click)="$event.stopPropagation()">
-          <div class="root-search-bar">
-            <span class="material-icons-round">search</span>
-            <input type="text" [(ngModel)]="rootSearchQuery" placeholder="Rechercher\u2026" class="root-search-input" />
-          </div>
-          <div class="root-list">
-            <button class="root-list-item root-list-all" [class.active]="!rootPersonId" (click)="setRoot(null)">
-              <span class="material-icons-round">account_tree</span>Arbre complet
-            </button>
-            <button class="root-list-item" *ngFor="let p of rootCandidates"
-                    [class.active]="rootPersonId === p.id" (click)="setRoot(p)">
-              <div class="root-list-avatar" [class.male]="p.sexe==='M'" [class.female]="p.sexe==='F'">
-                {{ getInitiales(p) }}
-              </div>
-              <span>{{ getNomComplet(p) }}</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="root-overlay" *ngIf="showRootPicker" (click)="showRootPicker=false"></div>
-
-  <!-- ===== CANVAS ===== -->
-  <div class="tree-canvas" #treeCanvas (wheel)="onWheel($event)" (mouseleave)="clearTooltip()">
-
-    <div class="loading-state" *ngIf="loading">
-      <span class="material-icons-round spin">sync</span> Chargement de l'arbre...
-    </div>
-    <div class="error-state" *ngIf="erreur && !loading">
-      <span class="material-icons-round">error_outline</span>{{ erreur }}
-    </div>
-    <div class="empty-state" *ngIf="!loading && !erreur && treeRoots.length === 0">
-      <span class="material-icons-round">account_tree</span>
-      <h3>Arbre vide</h3>
-      <p>Ajoutez des membres et des unions pour construire l'arbre familial.</p>
-    </div>
-
-    <!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-         ARBRE R\xC9CURSIF
-         Pour chaque n\u0153ud : affiche la carte \u2192 si enfants \u2192 les affiche dessous
-         \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 -->
-    <div class="tree-visual"
-         #treeVisual
-         *ngIf="!loading && !erreur && treeRoots.length > 0"
-         [style.transform]="treeTransform"
-         (pointerdown)="startDrag($event)"
-         (pointermove)="drag($event)"
-         (pointerup)="endDrag($event)"
-         (pointercancel)="endDrag($event)">
-
-      <!-- Template r\xE9cursif -->
-      <ng-template #nodeRef let-node="node">
-        <div class="ts-subtree">
-
-          <!-- \u2500\u2500 Carte couple \u2500\u2500 -->
-          <ng-container *ngIf="node.type === 'union'">
-            <div class="ts-couple" [class.ts-root]="node.isRoot"
-                 [class.ts-selected]="selectedPerson && (selectedPerson.id===node.p1.id || selectedPerson.id===node.p2?.id)">
-
-              <!-- Personne 1 -->
-              <div class="ts-person"
-                   [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'"
-                   [class.ts-active]="selectedPerson?.id===node.p1.id"
-                   (mouseenter)="showTooltip(node.p1,$event)"
-                   (mousemove)="moveTooltip($event)"
-                   (mouseleave)="hideTooltip()"
-                   (click)="openDetail(node.p1)">
-                <div class="ts-avatar" [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'">
-                  <img *ngIf="getPhotoUrl(node.p1) && !failedPhotos.has(node.p1.id)"
-                       [src]="getPhotoUrl(node.p1)!" class="ts-avatar-photo"
-                       [alt]="getInitiales(node.p1)" (error)="onPhotoError(node.p1.id)" />
-                  <span *ngIf="!getPhotoUrl(node.p1) || failedPhotos.has(node.p1.id)">{{ getInitiales(node.p1) }}</span>
-                </div>
-                <span class="ts-name">{{ node.p1.prenoms }} {{ node.p1.nomUsage ?? node.p1.nomNaissance }}</span>
-                <span class="ts-year">{{ yearLabel(node.p1) }}</span>
-              </div>
-
-              <!-- C\u0153ur -->
-              <div class="ts-heart" *ngIf="node.p2">
-                <span class="material-icons-round">favorite</span>
-                <span class="ts-hline"></span>
-              </div>
-
-              <!-- Personne 2 -->
-              <div class="ts-person" *ngIf="node.p2"
-                   [class.male]="node.p2!.sexe==='M'" [class.female]="node.p2!.sexe==='F'"
-                   [class.ts-active]="selectedPerson?.id===node.p2!.id"
-                   (mouseenter)="showTooltip(node.p2!,$event)"
-                   (mousemove)="moveTooltip($event)"
-                   (mouseleave)="hideTooltip()"
-                   (click)="openDetail(node.p2!)">
-                <div class="ts-avatar" [class.male]="node.p2!.sexe==='M'" [class.female]="node.p2!.sexe==='F'">
-                  <img *ngIf="getPhotoUrl(node.p2!) && !failedPhotos.has(node.p2!.id)"
-                       [src]="getPhotoUrl(node.p2!)!" class="ts-avatar-photo"
-                       [alt]="getInitiales(node.p2!)" (error)="onPhotoError(node.p2!.id)" />
-                  <span *ngIf="!getPhotoUrl(node.p2!) || failedPhotos.has(node.p2!.id)">{{ getInitiales(node.p2!) }}</span>
-                </div>
-                <span class="ts-name">{{ node.p2!.prenoms }} {{ node.p2!.nomUsage ?? node.p2!.nomNaissance }}</span>
-                <span class="ts-year">{{ yearLabel(node.p2!) }}</span>
-              </div>
-            </div>
-
-            <!-- Badge type union -->
-            <div class="ts-union-badge" *ngIf="node.union?.type">
-              <span class="material-icons-round">favorite_border</span>
-              {{ typeLabel(node.union!.type) }}
-              <ng-container *ngIf="node.union!.dateDebut"> \xB7 {{ extractAnnee(node.union!.dateDebut) }}</ng-container>
-            </div>
-          </ng-container>
-
-          <!-- \u2500\u2500 Carte solo \u2500\u2500 -->
-          <div class="ts-solo-card" *ngIf="node.type === 'solo'"
-               [class.ts-root]="node.isRoot"
-               [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'"
-               [class.ts-active]="selectedPerson?.id===node.p1.id"
-               (mouseenter)="showTooltip(node.p1,$event)"
-               (mousemove)="moveTooltip($event)"
-               (mouseleave)="hideTooltip()"
-               (click)="openDetail(node.p1)">
-            <div class="ts-avatar" [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'">
-              <img *ngIf="getPhotoUrl(node.p1) && !failedPhotos.has(node.p1.id)"
-                   [src]="getPhotoUrl(node.p1)!" class="ts-avatar-photo"
-                   [alt]="getInitiales(node.p1)" (error)="onPhotoError(node.p1.id)" />
-              <span *ngIf="!getPhotoUrl(node.p1) || failedPhotos.has(node.p1.id)">{{ getInitiales(node.p1) }}</span>
-            </div>
-            <span class="ts-name">{{ node.p1.prenoms }} {{ node.p1.nomUsage ?? node.p1.nomNaissance }}</span>
-            <span class="ts-year">{{ yearLabel(node.p1) }}</span>
-          </div>
-
-          <!-- \u2500\u2500 Enfants (r\xE9cursif) \u2500\u2500 -->
-          <ng-container *ngIf="node.children.length > 0">
-            <!-- Tige descendante -->
-            <div class="ts-down"></div>
-
-            <!-- Enfant unique : pas de barre horizontale -->
-            <ng-container *ngIf="node.children.length === 1">
-              <ng-container [ngTemplateOutlet]="nodeRef"
-                            [ngTemplateOutletContext]="{ node: node.children[0] }">
-              </ng-container>
-            </ng-container>
-
-            <!-- Plusieurs enfants : barre + chutes + sous-arbres -->
-            <div class="ts-branch" *ngIf="node.children.length > 1">
-              <!-- Barre horizontale (du centre du 1er au centre du dernier) -->
-              <div class="ts-hbar"
-                   [style.marginLeft.px]="barInset(node.children[0])"
-                   [style.marginRight.px]="barInset(node.children[node.children.length-1])">
-              </div>
-              <!-- Rang\xE9e d'enfants -->
-              <div class="ts-children-row">
-                <div class="ts-child-col" *ngFor="let child of node.children">
-                  <div class="ts-up"></div>
-                  <ng-container [ngTemplateOutlet]="nodeRef"
-                                [ngTemplateOutletContext]="{ node: child }">
-                  </ng-container>
-                </div>
-              </div>
-            </div>
-
-          </ng-container>
-
-        </div>
-      </ng-template>
-
-      <!-- Racines de l'arbre -->
-      <div class="ts-roots">
-        <ng-container *ngFor="let root of treeRoots">
-          <ng-container [ngTemplateOutlet]="nodeRef"
-                        [ngTemplateOutletContext]="{ node: root }">
-          </ng-container>
-        </ng-container>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="zoom-hint" *ngIf="!loading && treeRoots.length > 0">
-    <span class="material-icons-round">info_outline</span>
-    Ctrl + molette pour zoomer \xB7 Glisser pour naviguer \xB7 Clic pour la fiche
-  </div>
-</div>
-
-<!-- ===== TOOLTIP ===== -->
-<div class="tree-tooltip" *ngIf="hoveredPerson"
-     [style.left.px]="tooltipX" [style.top.px]="tooltipY">
-  <div class="tt-avatar" [class.male]="hoveredPerson.sexe==='M'" [class.female]="hoveredPerson.sexe==='F'">
-    <img *ngIf="getPhotoUrl(hoveredPerson) && !failedPhotos.has(hoveredPerson.id)"
-         [src]="getPhotoUrl(hoveredPerson)!" class="tt-avatar-photo" (error)="onPhotoError(hoveredPerson.id)" />
-    <span *ngIf="!getPhotoUrl(hoveredPerson) || failedPhotos.has(hoveredPerson.id)">{{ getInitiales(hoveredPerson) }}</span>
-  </div>
-  <div class="tt-content">
-    <span class="tt-name">{{ getNomComplet(hoveredPerson) }}</span>
-    <span class="tt-dates" *ngIf="tooltipAge(hoveredPerson)">
-      <span class="material-icons-round">hourglass_bottom</span>{{ tooltipAge(hoveredPerson) }}
-    </span>
-    <span class="tt-lieu" *ngIf="hoveredPerson.lieuNaissance">
-      <span class="material-icons-round">place</span>{{ hoveredPerson.lieuNaissance }}
-    </span>
-    <div class="tt-badges">
-      <span class="tt-badge" [class.tt-m]="hoveredPerson.sexe==='M'" [class.tt-f]="hoveredPerson.sexe==='F'">
-        {{ hoveredPerson.sexe==='M' ? 'Homme' : hoveredPerson.sexe==='F' ? 'Femme' : 'Autre' }}
-      </span>
-      <span class="tt-badge tt-alive" *ngIf="estVivant(hoveredPerson)">Vivant(e)</span>
-      <span class="tt-badge tt-dead"  *ngIf="!estVivant(hoveredPerson)">D\xE9c\xE9d\xE9(e)</span>
-    </div>
-    <span class="tt-hint">Clic pour la fiche compl\xE8te</span>
-  </div>
-</div>
-
-<!-- ===== OVERLAY + DETAIL ===== -->
-<div class="panel-overlay" *ngIf="showDetail" (click)="closeDetail()"></div>
-<div class="detail-panel" [class.open]="showDetail">
-  <div class="dp-header">
-    <h3>Fiche membre</h3>
-    <button class="btn-icon" (click)="closeDetail()">
-      <span class="material-icons-round">close</span>
-    </button>
-  </div>
-  <div class="dp-body" *ngIf="selectedPerson">
-    <div class="dp-avatar-wrap">
-      <div class="dp-avatar" [class.male]="selectedPerson.sexe==='M'" [class.female]="selectedPerson.sexe==='F'">
-        <img *ngIf="getPhotoUrl(selectedPerson) && !failedPhotos.has(selectedPerson.id)"
-             [src]="getPhotoUrl(selectedPerson)!" class="dp-avatar-photo" (error)="onPhotoError(selectedPerson.id)" />
-        <span *ngIf="!getPhotoUrl(selectedPerson) || failedPhotos.has(selectedPerson.id)">{{ getInitiales(selectedPerson) }}</span>
-      </div>
-    </div>
-    <h2 class="dp-name">{{ getNomComplet(selectedPerson) }}</h2>
-    <div class="dp-badges">
-      <span class="pc-badge" [class.pc-badge-m]="selectedPerson.sexe==='M'" [class.pc-badge-f]="selectedPerson.sexe==='F'">
-        {{ selectedPerson.sexe==='M' ? 'Homme' : selectedPerson.sexe==='F' ? 'Femme' : 'Autre' }}
-      </span>
-      <span class="pc-badge pc-badge-alive" *ngIf="estVivant(selectedPerson)">Vivant(e)</span>
-      <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(selectedPerson)">D\xE9c\xE9d\xE9(e)</span>
-    </div>
-    <div class="dp-info-list">
-      <div class="dp-info-item" *ngIf="selectedPerson.dateNaissance || selectedPerson.lieuNaissance">
-        <span class="material-icons-round">cake</span>
-        <div class="dp-info-text">
-          <span class="dp-info-label">Naissance</span>
-          <span class="dp-info-value">
-            {{ selectedPerson.dateNaissance ?? '\u2014' }}
-            <span *ngIf="selectedPerson.lieuNaissance"> \xB7 {{ selectedPerson.lieuNaissance }}</span>
-          </span>
-        </div>
-      </div>
-      <div class="dp-info-item" *ngIf="!estVivant(selectedPerson)">
-        <span class="material-icons-round">sentiment_very_dissatisfied</span>
-        <div class="dp-info-text">
-          <span class="dp-info-label">D\xE9c\xE8s</span>
-          <span class="dp-info-value">{{ selectedPerson.dateDeces ?? '\u2014' }}<span *ngIf="selectedPerson.lieuDeces"> \xB7 {{ selectedPerson.lieuDeces }}</span></span>
-        </div>
-      </div>
-      <div class="dp-info-item" *ngIf="getAgeLabel(selectedPerson)">
-        <span class="material-icons-round">hourglass_bottom</span>
-        <div class="dp-info-text">
-          <span class="dp-info-label">{{ estVivant(selectedPerson) ? '\xC2ge' : 'Dur\xE9e de vie' }}</span>
-          <span class="dp-info-value">{{ getAgeLabel(selectedPerson) }}</span>
-        </div>
-      </div>
-    </div>
-    <a class="btn-primary dp-link" [routerLink]="['/app/personnes']" [queryParams]="{ id: selectedPerson.id }" (click)="closeDetail()">
-      <span class="material-icons-round">person</span>Voir le profil complet
-    </a>
-  </div>
-</div>
-`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/tree/tree.component.scss */\n.tree-page {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  margin: -28px -32px;\n}\n.tree-toolbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 24px;\n  background: var(--white);\n  border-bottom: 1px solid var(--border);\n  gap: 16px;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.tree-toolbar .toolbar-left {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.tree-toolbar .toolbar-left h2 {\n  font-size: 18px;\n  margin: 0;\n  white-space: nowrap;\n}\n.tree-toolbar .toolbar-right {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n}\n.tree-kiosk-btn {\n  color: var(--primary) !important;\n}\n.root-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  background: var(--primary-bg);\n  border: 1.5px solid var(--primary-border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--primary);\n}\n.root-badge .material-icons-round {\n  font-size: 15px !important;\n}\n.root-badge-name {\n  max-width: 160px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.root-badge-clear {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  border: none;\n  background: var(--primary-border);\n  cursor: pointer;\n  padding: 0;\n}\n.root-badge-clear .material-icons-round {\n  font-size: 12px !important;\n  color: var(--primary);\n}\n.root-badge-clear:hover {\n  background: var(--primary);\n}\n.root-badge-clear:hover .material-icons-round {\n  color: #fff;\n}\n.root-picker-wrap {\n  position: relative;\n}\n.root-pick-btn.active {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.root-pick-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.root-overlay {\n  position: fixed;\n  inset: 0;\n  z-index: 299;\n}\n.root-dropdown {\n  position: absolute;\n  top: calc(100% + 8px);\n  right: 0;\n  width: 280px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);\n  z-index: 300;\n  overflow: hidden;\n  animation: root-drop-in 0.15s ease;\n}\n@keyframes root-drop-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.root-search-bar {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-bottom: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.root-search-bar .material-icons-round {\n  font-size: 17px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.root-search-input {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--text-primary);\n  font-family: inherit;\n}\n.root-search-input:focus {\n  outline: none;\n}\n.root-search-input::placeholder {\n  color: var(--text-muted);\n}\n.root-list {\n  max-height: 280px;\n  overflow-y: auto;\n  padding: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.root-list-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 10px;\n  border-radius: 9px;\n  border: none;\n  background: transparent;\n  text-align: left;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n  cursor: pointer;\n  font-family: inherit;\n  transition: background 0.12s;\n}\n.root-list-item .material-icons-round {\n  font-size: 17px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.root-list-item:hover {\n  background: var(--bg-muted);\n}\n.root-list-item.active {\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 700;\n}\n.root-list-all {\n  border-bottom: 1px solid var(--border);\n  border-radius: 0;\n  margin-bottom: 4px;\n  padding-bottom: 10px;\n}\n.root-list-avatar {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.root-list-avatar.male {\n  background: var(--primary);\n}\n.root-list-avatar.female {\n  background: var(--pink, #EC4899);\n}\n.root-list-avatar:not(.male):not(.female) {\n  background: var(--text-muted);\n}\n.root-empty {\n  text-align: center;\n  padding: 20px;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.tree-kiosk .tree-toolbar {\n  display: none;\n}\n.tree-kiosk .tree-canvas {\n  padding: 0;\n}\n.tree-kiosk:hover .tree-toolbar {\n  display: flex;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 50;\n  animation: tree-slide-down 0.2s ease;\n}\n@keyframes tree-slide-down {\n  from {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n.zoom-level {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-muted);\n  min-width: 38px;\n  text-align: center;\n}\n.tree-canvas {\n  flex: 1;\n  background: #F0F4FF;\n  background-image:\n    radial-gradient(\n      circle,\n      #BFDBFE 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px 24px;\n  position: relative;\n}\n.tree-visual {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n  min-width: 500px;\n  transition: transform 0.15s ease;\n  transform-origin: top center;\n  cursor: grab;\n  touch-action: none;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.tree-visual:active {\n  cursor: grabbing;\n}\n.generation {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.gen-label {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  background: var(--white);\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  border: 1px solid var(--border);\n}\n.gen-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 80px;\n  flex-wrap: nowrap;\n  justify-content: center;\n}\n.gen-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-stem {\n  width: 2px;\n  border-radius: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n}\n.group-stem.stem-single {\n  height: 40px;\n}\n.group-stem.stem-multi {\n  height: 20px;\n}\n.group-items {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  position: relative;\n}\n.group-items.multi::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: var(--bar-l, 55px);\n  right: var(--bar-r, 55px);\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.group-items.multi {\n  background: rgba(219, 234, 254, 0.28);\n  border-radius: 14px;\n  padding-bottom: 8px;\n}\n.group-child-wrap {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-child-drop {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.down-connector {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  margin-top: 2px;\n  border-radius: 2px;\n}\n.generation + .generation {\n  margin-top: 4px;\n}\n.union-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.solo-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.couple-wrap {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);\n  transition: var(--transition);\n}\n.couple-wrap.root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);\n}\n.couple-wrap.selected {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.couple-wrap:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.union-heart-connector {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.union-heart-connector .material-icons-round {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.union-heart-connector .union-hline {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.union-badge {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.union-badge .material-icons-round {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.tree-node {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  transition: var(--transition);\n  border-radius: 12px;\n}\n.tree-node:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.tree-node.active {\n  background: var(--primary-bg);\n}\n.tree-node.solo {\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n}\n.tree-node.solo.root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.tree-node.solo:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.tree-node.solo.active {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.node-avatar {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.node-avatar.male {\n  background: var(--primary);\n}\n.node-avatar.female {\n  background: var(--pink);\n}\n.node-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.node-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.node-name {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  word-break: break-word;\n}\n.node-year {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n}\n.zoom-hint {\n  position: fixed;\n  bottom: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(15, 23, 42, 0.7);\n  color: #fff;\n  font-size: 12px;\n  padding: 6px 14px;\n  border-radius: var(--radius-full);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  pointer-events: none;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  z-index: 10;\n}\n.zoom-hint .material-icons-round {\n  font-size: 14px !important;\n}\n.tree-tooltip {\n  position: fixed;\n  z-index: 500;\n  pointer-events: none;\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  padding: 12px 14px;\n  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);\n  min-width: 220px;\n  max-width: 280px;\n  animation: tt-in 0.15s ease;\n}\n@keyframes tt-in {\n  from {\n    opacity: 0;\n    transform: translateY(6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.tt-avatar {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.tt-avatar.male {\n  background: var(--primary);\n}\n.tt-avatar.female {\n  background: var(--pink);\n}\n.tt-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.tt-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.tt-content {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  flex: 1;\n}\n.tt-name {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n  word-break: break-word;\n}\n.tt-dates,\n.tt-lieu {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 11px;\n  color: var(--text-secondary);\n}\n.tt-dates .material-icons-round,\n.tt-lieu .material-icons-round {\n  font-size: 13px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.tt-badges {\n  display: flex;\n  gap: 4px;\n  flex-wrap: wrap;\n  margin-top: 2px;\n}\n.tt-badge {\n  display: inline-flex;\n  align-items: center;\n  padding: 1px 7px;\n  border-radius: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  background: var(--bg-muted);\n  color: var(--text-muted);\n}\n.tt-badge.tt-m {\n  background: #eff6ff;\n  color: var(--primary);\n}\n.tt-badge.tt-f {\n  background: #fdf2f8;\n  color: var(--pink);\n}\n.tt-badge.tt-alive {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.tt-badge.tt-dead {\n  background: #f1f5f9;\n  color: #64748b;\n}\n.tt-hint {\n  font-size: 10px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-style: italic;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.3);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.detail-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 340px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.detail-panel.open {\n  transform: translateX(0);\n}\n.dp-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.dp-header h3 {\n  font-size: 16px;\n  font-weight: 700;\n  margin: 0;\n  color: var(--text-primary);\n}\n.dp-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 24px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.dp-avatar-wrap {\n  margin-bottom: 4px;\n}\n.dp-avatar {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n  font-weight: 700;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);\n}\n.dp-avatar.male {\n  background: var(--primary);\n}\n.dp-avatar.female {\n  background: var(--pink);\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);\n}\n.dp-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.dp-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.dp-name {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  text-align: center;\n  margin: 0;\n  line-height: 1.3;\n}\n.dp-badges {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n.dp-info-list {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  margin-top: 4px;\n}\n.dp-info-item {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  padding: 12px 16px;\n  border-bottom: 1px solid var(--border);\n}\n.dp-info-item:last-child {\n  border-bottom: none;\n}\n.dp-info-item .material-icons-round {\n  font-size: 18px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.dp-info-text {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.dp-info-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n}\n.dp-info-value {\n  font-size: 14px;\n  color: var(--text-primary);\n  font-weight: 500;\n}\n.dp-link {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  text-decoration: none;\n  margin-top: 8px;\n}\n@media (max-width: 640px) {\n  .tree-toolbar {\n    padding: 12px 16px;\n  }\n  .toolbar-right button {\n    min-width: 0;\n  }\n  .detail-panel {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 85vh;\n    transform: translateY(100%);\n  }\n  .detail-panel.open {\n    transform: translateY(0);\n  }\n  .zoom-hint {\n    bottom: 8px;\n    font-size: 11px;\n    padding: 5px 10px;\n  }\n}\n.ts-roots {\n  display: flex;\n  align-items: flex-start;\n  gap: 60px;\n  padding: 40px;\n}\n.ts-subtree {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.ts-couple {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);\n  transition: var(--transition);\n}\n.ts-couple.ts-root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18);\n}\n.ts-couple.ts-selected {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-couple:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.ts-solo-card.ts-root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.ts-solo-card.ts-active {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-solo-card.male:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card.female:hover {\n  border-color: var(--pink);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-person {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  border-radius: 12px;\n  transition: var(--transition);\n}\n.ts-person:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.ts-person.ts-active {\n  background: var(--primary-bg);\n}\n.ts-avatar {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.ts-avatar.male {\n  background: var(--primary);\n}\n.ts-avatar.female {\n  background: var(--pink, #EC4899);\n}\n.ts-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.ts-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.ts-name {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  max-width: 110px;\n  word-break: break-word;\n}\n.ts-year {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n  white-space: nowrap;\n}\n.ts-heart {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.ts-heart .material-icons-round {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.ts-hline {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.ts-union-badge {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.ts-union-badge .material-icons-round {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.ts-down {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  border-radius: 2px;\n  margin-top: 2px;\n}\n.ts-branch {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n}\n.ts-hbar {\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.ts-children-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 40px;\n}\n.ts-child-col {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ts-up {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n/*# sourceMappingURL=tree.component.css.map */\n'] }]
+    args: [{ selector: "app-tree", standalone: false, template: `<div class="tree-page" [class.tree-kiosk]="isKiosk">\r
+\r
+  <!-- ===== TOOLBAR ===== -->\r
+  <div class="tree-toolbar">\r
+    <div class="toolbar-left">\r
+      <h2>Arbre familial</h2>\r
+      <span class="badge badge-primary" *ngIf="!loading">\r
+        {{ totalPersonnes }} membres \xB7 {{ totalGenerations }} g\xE9n\xE9ration{{ totalGenerations > 1 ? 's' : '' }}\r
+      </span>\r
+      <div class="root-badge" *ngIf="rootPersonId">\r
+        <span class="material-icons-round">account_tree</span>\r
+        <span class="root-badge-name">{{ rootPersonName }}</span>\r
+        <button class="root-badge-clear" (click)="setRoot(null)">\r
+          <span class="material-icons-round">close</span>\r
+        </button>\r
+      </div>\r
+    </div>\r
+    <div class="toolbar-right">\r
+      <button class="btn-ghost btn-sm" (click)="zoomOut()" title="D\xE9zoomer">\r
+        <span class="material-icons-round">zoom_out</span>\r
+      </button>\r
+      <span class="zoom-level">{{ (scale * 100) | number:'1.0-0' }}%</span>\r
+      <button class="btn-ghost btn-sm" (click)="zoomIn()" title="Zoomer">\r
+        <span class="material-icons-round">zoom_in</span>\r
+      </button>\r
+      <button class="btn-ghost btn-sm" (click)="resetView()" title="R\xE9initialiser">\r
+        <span class="material-icons-round">refresh</span>\r
+      </button>\r
+      <button class="btn-outline btn-sm" (click)="exportTree()" [disabled]="exporting">\r
+        <span class="material-icons-round">download</span>PNG\r
+      </button>\r
+      <button class="btn-outline btn-sm" (click)="exportTreePdf()" [disabled]="exporting">\r
+        <span class="material-icons-round">picture_as_pdf</span>PDF\r
+      </button>\r
+      <div style="width:1px;height:20px;background:var(--border);margin:0 2px"></div>\r
+      <button class="btn-ghost btn-sm tree-kiosk-btn" (click)="toggleKiosk()"\r
+              [title]="isKiosk ? 'Quitter' : 'Plein \xE9cran'">\r
+        <span class="material-icons-round">{{ isKiosk ? 'fullscreen_exit' : 'fullscreen' }}</span>\r
+      </button>\r
+\r
+      <!-- S\xE9lecteur de racine -->\r
+      <div class="root-picker-wrap">\r
+        <button class="btn-ghost btn-sm root-pick-btn" [class.active]="showRootPicker"\r
+                (click)="showRootPicker = !showRootPicker; rootSearchQuery = ''">\r
+          <span class="material-icons-round">my_location</span>\r
+          <span *ngIf="!rootPersonId">Racine</span>\r
+        </button>\r
+        <div class="root-dropdown" *ngIf="showRootPicker" (click)="$event.stopPropagation()">\r
+          <div class="root-search-bar">\r
+            <span class="material-icons-round">search</span>\r
+            <input type="text" [(ngModel)]="rootSearchQuery" placeholder="Rechercher\u2026" class="root-search-input" />\r
+          </div>\r
+          <div class="root-list">\r
+            <button class="root-list-item root-list-all" [class.active]="!rootPersonId" (click)="setRoot(null)">\r
+              <span class="material-icons-round">account_tree</span>Arbre complet\r
+            </button>\r
+            <button class="root-list-item" *ngFor="let p of rootCandidates"\r
+                    [class.active]="rootPersonId === p.id" (click)="setRoot(p)">\r
+              <div class="root-list-avatar" [class.male]="p.sexe==='M'" [class.female]="p.sexe==='F'">\r
+                {{ getInitiales(p) }}\r
+              </div>\r
+              <span>{{ getNomComplet(p) }}</span>\r
+            </button>\r
+          </div>\r
+        </div>\r
+      </div>\r
+    </div>\r
+  </div>\r
+  <div class="root-overlay" *ngIf="showRootPicker" (click)="showRootPicker=false"></div>\r
+\r
+  <!-- ===== CANVAS ===== -->\r
+  <div class="tree-canvas" #treeCanvas (wheel)="onWheel($event)" (mouseleave)="clearTooltip()">\r
+\r
+    <div class="loading-state" *ngIf="loading">\r
+      <span class="material-icons-round spin">sync</span> Chargement de l'arbre...\r
+    </div>\r
+    <div class="error-state" *ngIf="erreur && !loading">\r
+      <span class="material-icons-round">error_outline</span>{{ erreur }}\r
+    </div>\r
+    <div class="empty-state" *ngIf="!loading && !erreur && treeRoots.length === 0">\r
+      <span class="material-icons-round">account_tree</span>\r
+      <h3>Arbre vide</h3>\r
+      <p>Ajoutez des membres et des unions pour construire l'arbre familial.</p>\r
+    </div>\r
+\r
+    <!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\r
+         ARBRE R\xC9CURSIF\r
+         Pour chaque n\u0153ud : affiche la carte \u2192 si enfants \u2192 les affiche dessous\r
+         \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 -->\r
+    <div class="tree-visual"\r
+         #treeVisual\r
+         *ngIf="!loading && !erreur && treeRoots.length > 0"\r
+         [style.transform]="treeTransform"\r
+         (pointerdown)="startDrag($event)"\r
+         (pointermove)="drag($event)"\r
+         (pointerup)="endDrag($event)"\r
+         (pointercancel)="endDrag($event)">\r
+\r
+      <!-- Template r\xE9cursif -->\r
+      <ng-template #nodeRef let-node="node">\r
+        <div class="ts-subtree">\r
+\r
+          <!-- \u2500\u2500 Carte couple \u2500\u2500 -->\r
+          <ng-container *ngIf="node.type === 'union'">\r
+            <div class="ts-couple" [class.ts-root]="node.isRoot"\r
+                 [class.ts-selected]="selectedPerson && (selectedPerson.id===node.p1.id || selectedPerson.id===node.p2?.id)">\r
+\r
+              <!-- Personne 1 -->\r
+              <div class="ts-person"\r
+                   [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'"\r
+                   [class.ts-active]="selectedPerson?.id===node.p1.id"\r
+                   (mouseenter)="showTooltip(node.p1,$event)"\r
+                   (mousemove)="moveTooltip($event)"\r
+                   (mouseleave)="hideTooltip()"\r
+                   (click)="openDetail(node.p1)">\r
+                <div class="ts-avatar" [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'">\r
+                  <img *ngIf="getPhotoUrl(node.p1) && !failedPhotos.has(node.p1.id)"\r
+                       [src]="getPhotoUrl(node.p1)!" class="ts-avatar-photo"\r
+                       [alt]="getInitiales(node.p1)" (error)="onPhotoError(node.p1.id)" />\r
+                  <span *ngIf="!getPhotoUrl(node.p1) || failedPhotos.has(node.p1.id)">{{ getInitiales(node.p1) }}</span>\r
+                </div>\r
+                <span class="ts-name">{{ node.p1.prenoms }} {{ node.p1.nomUsage ?? node.p1.nomNaissance }}</span>\r
+                <span class="ts-year">{{ yearLabel(node.p1) }}</span>\r
+              </div>\r
+\r
+              <!-- C\u0153ur -->\r
+              <div class="ts-heart" *ngIf="node.p2">\r
+                <span class="material-icons-round">favorite</span>\r
+                <span class="ts-hline"></span>\r
+              </div>\r
+\r
+              <!-- Personne 2 -->\r
+              <div class="ts-person" *ngIf="node.p2"\r
+                   [class.male]="node.p2!.sexe==='M'" [class.female]="node.p2!.sexe==='F'"\r
+                   [class.ts-active]="selectedPerson?.id===node.p2!.id"\r
+                   (mouseenter)="showTooltip(node.p2!,$event)"\r
+                   (mousemove)="moveTooltip($event)"\r
+                   (mouseleave)="hideTooltip()"\r
+                   (click)="openDetail(node.p2!)">\r
+                <div class="ts-avatar" [class.male]="node.p2!.sexe==='M'" [class.female]="node.p2!.sexe==='F'">\r
+                  <img *ngIf="getPhotoUrl(node.p2!) && !failedPhotos.has(node.p2!.id)"\r
+                       [src]="getPhotoUrl(node.p2!)!" class="ts-avatar-photo"\r
+                       [alt]="getInitiales(node.p2!)" (error)="onPhotoError(node.p2!.id)" />\r
+                  <span *ngIf="!getPhotoUrl(node.p2!) || failedPhotos.has(node.p2!.id)">{{ getInitiales(node.p2!) }}</span>\r
+                </div>\r
+                <span class="ts-name">{{ node.p2!.prenoms }} {{ node.p2!.nomUsage ?? node.p2!.nomNaissance }}</span>\r
+                <span class="ts-year">{{ yearLabel(node.p2!) }}</span>\r
+              </div>\r
+            </div>\r
+\r
+            <!-- Badge type union -->\r
+            <div class="ts-union-badge" *ngIf="node.union?.type">\r
+              <span class="material-icons-round">favorite_border</span>\r
+              {{ typeLabel(node.union!.type) }}\r
+              <ng-container *ngIf="node.union!.dateDebut"> \xB7 {{ extractAnnee(node.union!.dateDebut) }}</ng-container>\r
+            </div>\r
+          </ng-container>\r
+\r
+          <!-- \u2500\u2500 Personne avec PLUSIEURS UNIONS (polygamie, remariage\u2026) \u2500\u2500 -->\r
+          <ng-container *ngIf="node.type === 'multi'">\r
+            <div class="ts-multi-card"\r
+                 [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'"\r
+                 [class.ts-active]="selectedPerson?.id===node.p1.id"\r
+                 (mouseenter)="showTooltip(node.p1,$event)"\r
+                 (mousemove)="moveTooltip($event)"\r
+                 (mouseleave)="hideTooltip()"\r
+                 (click)="openDetail(node.p1)">\r
+              <div class="ts-avatar ts-avatar-lg" [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'">\r
+                <img *ngIf="getPhotoUrl(node.p1) && !failedPhotos.has(node.p1.id)"\r
+                     [src]="getPhotoUrl(node.p1)!" class="ts-avatar-photo"\r
+                     [alt]="getInitiales(node.p1)" (error)="onPhotoError(node.p1.id)" />\r
+                <span *ngIf="!getPhotoUrl(node.p1) || failedPhotos.has(node.p1.id)">{{ getInitiales(node.p1) }}</span>\r
+              </div>\r
+              <span class="ts-name">{{ node.p1.prenoms }} {{ node.p1.nomUsage ?? node.p1.nomNaissance }}</span>\r
+              <span class="ts-year">{{ yearLabel(node.p1) }}</span>\r
+              <span class="ts-multi-badge">{{ (node.unions?.length ?? 0) }} union{{ (node.unions?.length ?? 0) > 1 ? 's' : '' }}</span>\r
+            </div>\r
+\r
+            <div class="ts-down"></div>\r
+            <div class="ts-branch">\r
+              <div class="ts-hbar" [style.marginLeft.px]="155" [style.marginRight.px]="155"></div>\r
+              <div class="ts-children-row">\r
+                <div class="ts-child-col" *ngFor="let br of node.unions">\r
+                  <div class="ts-up"></div>\r
+                  <div class="ts-subtree">\r
+\r
+                    <!-- Couple de cette branche -->\r
+                    <div class="ts-couple ts-union-branch"\r
+                         [class.ts-union-active]="unionStatus(br)==='active'"\r
+                         [class.ts-union-divorced]="unionStatus(br)==='divorced'"\r
+                         [class.ts-union-widowed]="unionStatus(br)==='widowed'">\r
+\r
+                      <!-- R\xE9f\xE9rence compacte \xE0 la personne centrale -->\r
+                      <div class="ts-person ts-person-ref"\r
+                           [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'"\r
+                           (click)="openDetail(node.p1)">\r
+                        <div class="ts-avatar ts-avatar-ref" [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'">\r
+                          <img *ngIf="getPhotoUrl(node.p1) && !failedPhotos.has(node.p1.id)"\r
+                               [src]="getPhotoUrl(node.p1)!" class="ts-avatar-photo" (error)="onPhotoError(node.p1.id)" />\r
+                          <span *ngIf="!getPhotoUrl(node.p1) || failedPhotos.has(node.p1.id)">{{ getInitiales(node.p1) }}</span>\r
+                        </div>\r
+                        <span class="ts-name-ref">{{ node.p1.prenoms?.split(' ')[0] }}</span>\r
+                      </div>\r
+\r
+                      <!-- C\u0153ur avec statut visuel -->\r
+                      <div class="ts-heart" *ngIf="br.partner">\r
+                        <span class="material-icons-round"\r
+                              [class.ts-heart-active]="unionStatus(br)==='active'"\r
+                              [class.ts-heart-broken]="unionStatus(br)==='divorced'"\r
+                              [class.ts-heart-grey]="unionStatus(br)==='widowed'">\r
+                          {{ unionHeartIcon(br) }}\r
+                        </span>\r
+                        <span class="ts-hline" [class.ts-hline-grey]="unionStatus(br)!=='active'"></span>\r
+                      </div>\r
+\r
+                      <!-- Partenaire -->\r
+                      <div class="ts-person" *ngIf="br.partner"\r
+                           [class.male]="br.partner.sexe==='M'" [class.female]="br.partner.sexe==='F'"\r
+                           [class.ts-active]="selectedPerson?.id===br.partner.id"\r
+                           (mouseenter)="showTooltip(br.partner,$event)"\r
+                           (mousemove)="moveTooltip($event)"\r
+                           (mouseleave)="hideTooltip()"\r
+                           (click)="openDetail(br.partner)">\r
+                        <div class="ts-avatar" [class.male]="br.partner.sexe==='M'" [class.female]="br.partner.sexe==='F'">\r
+                          <img *ngIf="getPhotoUrl(br.partner) && !failedPhotos.has(br.partner.id)"\r
+                               [src]="getPhotoUrl(br.partner)!" class="ts-avatar-photo"\r
+                               [alt]="getInitiales(br.partner)" (error)="onPhotoError(br.partner.id)" />\r
+                          <span *ngIf="!getPhotoUrl(br.partner) || failedPhotos.has(br.partner.id)">{{ getInitiales(br.partner) }}</span>\r
+                        </div>\r
+                        <span class="ts-name">{{ br.partner.prenoms }} {{ br.partner.nomUsage ?? br.partner.nomNaissance }}</span>\r
+                        <span class="ts-year">{{ yearLabel(br.partner) }}</span>\r
+                      </div>\r
+                    </div>\r
+\r
+                    <!-- Badge union + statut -->\r
+                    <div class="ts-union-badge" [class]="'ts-badge-' + unionStatus(br)">\r
+                      <span class="material-icons-round">{{ unionHeartIcon(br) }}</span>\r
+                      {{ typeLabel(br.union.type) }}\r
+                      <ng-container *ngIf="br.union.dateDebut"> \xB7 {{ extractAnnee(br.union.dateDebut) }}</ng-container>\r
+                      <ng-container *ngIf="br.union.dateFin"> \u2013 {{ extractAnnee(br.union.dateFin) }}</ng-container>\r
+                      <span class="ts-status-chip" *ngIf="unionStatusLabel(br)">{{ unionStatusLabel(br) }}</span>\r
+                    </div>\r
+\r
+                    <!-- Enfants de cette union (r\xE9cursif) -->\r
+                    <ng-container *ngIf="br.children.length > 0">\r
+                      <div class="ts-down"></div>\r
+                      <ng-container *ngIf="br.children.length === 1">\r
+                        <ng-container [ngTemplateOutlet]="nodeRef" [ngTemplateOutletContext]="{ node: br.children[0] }"></ng-container>\r
+                      </ng-container>\r
+                      <div class="ts-branch" *ngIf="br.children.length > 1">\r
+                        <div class="ts-hbar"\r
+                             [style.marginLeft.px]="barInset(br.children[0])"\r
+                             [style.marginRight.px]="barInset(br.children[br.children.length-1])"></div>\r
+                        <div class="ts-children-row">\r
+                          <div class="ts-child-col" *ngFor="let child of br.children">\r
+                            <div class="ts-up"></div>\r
+                            <ng-container [ngTemplateOutlet]="nodeRef" [ngTemplateOutletContext]="{ node: child }"></ng-container>\r
+                          </div>\r
+                        </div>\r
+                      </div>\r
+                    </ng-container>\r
+\r
+                  </div>\r
+                </div>\r
+              </div>\r
+            </div>\r
+          </ng-container>\r
+\r
+          <!-- \u2500\u2500 Carte solo \u2500\u2500 -->\r
+          <div class="ts-solo-card" *ngIf="node.type === 'solo'"\r
+               [class.ts-root]="node.isRoot"\r
+               [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'"\r
+               [class.ts-active]="selectedPerson?.id===node.p1.id"\r
+               (mouseenter)="showTooltip(node.p1,$event)"\r
+               (mousemove)="moveTooltip($event)"\r
+               (mouseleave)="hideTooltip()"\r
+               (click)="openDetail(node.p1)">\r
+            <div class="ts-avatar" [class.male]="node.p1.sexe==='M'" [class.female]="node.p1.sexe==='F'">\r
+              <img *ngIf="getPhotoUrl(node.p1) && !failedPhotos.has(node.p1.id)"\r
+                   [src]="getPhotoUrl(node.p1)!" class="ts-avatar-photo"\r
+                   [alt]="getInitiales(node.p1)" (error)="onPhotoError(node.p1.id)" />\r
+              <span *ngIf="!getPhotoUrl(node.p1) || failedPhotos.has(node.p1.id)">{{ getInitiales(node.p1) }}</span>\r
+            </div>\r
+            <span class="ts-name">{{ node.p1.prenoms }} {{ node.p1.nomUsage ?? node.p1.nomNaissance }}</span>\r
+            <span class="ts-year">{{ yearLabel(node.p1) }}</span>\r
+          </div>\r
+\r
+          <!-- \u2500\u2500 Enfants (r\xE9cursif) \u2500\u2500 -->\r
+          <ng-container *ngIf="node.children.length > 0">\r
+            <!-- Tige descendante -->\r
+            <div class="ts-down"></div>\r
+\r
+            <!-- Enfant unique : pas de barre horizontale -->\r
+            <ng-container *ngIf="node.children.length === 1">\r
+              <ng-container [ngTemplateOutlet]="nodeRef"\r
+                            [ngTemplateOutletContext]="{ node: node.children[0] }">\r
+              </ng-container>\r
+            </ng-container>\r
+\r
+            <!-- Plusieurs enfants : barre + chutes + sous-arbres -->\r
+            <div class="ts-branch" *ngIf="node.children.length > 1">\r
+              <!-- Barre horizontale (du centre du 1er au centre du dernier) -->\r
+              <div class="ts-hbar"\r
+                   [style.marginLeft.px]="barInset(node.children[0])"\r
+                   [style.marginRight.px]="barInset(node.children[node.children.length-1])">\r
+              </div>\r
+              <!-- Rang\xE9e d'enfants -->\r
+              <div class="ts-children-row">\r
+                <div class="ts-child-col" *ngFor="let child of node.children">\r
+                  <div class="ts-up"></div>\r
+                  <ng-container [ngTemplateOutlet]="nodeRef"\r
+                                [ngTemplateOutletContext]="{ node: child }">\r
+                  </ng-container>\r
+                </div>\r
+              </div>\r
+            </div>\r
+\r
+          </ng-container>\r
+\r
+        </div>\r
+      </ng-template>\r
+\r
+      <!-- Racines de l'arbre -->\r
+      <div class="ts-roots">\r
+        <ng-container *ngFor="let root of treeRoots">\r
+          <ng-container [ngTemplateOutlet]="nodeRef"\r
+                        [ngTemplateOutletContext]="{ node: root }">\r
+          </ng-container>\r
+        </ng-container>\r
+      </div>\r
+\r
+    </div>\r
+  </div>\r
+\r
+  <div class="zoom-hint" *ngIf="!loading && treeRoots.length > 0">\r
+    <span class="material-icons-round">info_outline</span>\r
+    Ctrl + molette pour zoomer \xB7 Glisser pour naviguer \xB7 Clic pour la fiche\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== TOOLTIP ===== -->\r
+<div class="tree-tooltip" *ngIf="hoveredPerson"\r
+     [style.left.px]="tooltipX" [style.top.px]="tooltipY">\r
+  <div class="tt-avatar" [class.male]="hoveredPerson.sexe==='M'" [class.female]="hoveredPerson.sexe==='F'">\r
+    <img *ngIf="getPhotoUrl(hoveredPerson) && !failedPhotos.has(hoveredPerson.id)"\r
+         [src]="getPhotoUrl(hoveredPerson)!" class="tt-avatar-photo" (error)="onPhotoError(hoveredPerson.id)" />\r
+    <span *ngIf="!getPhotoUrl(hoveredPerson) || failedPhotos.has(hoveredPerson.id)">{{ getInitiales(hoveredPerson) }}</span>\r
+  </div>\r
+  <div class="tt-content">\r
+    <span class="tt-name">{{ getNomComplet(hoveredPerson) }}</span>\r
+    <span class="tt-dates" *ngIf="tooltipAge(hoveredPerson)">\r
+      <span class="material-icons-round">hourglass_bottom</span>{{ tooltipAge(hoveredPerson) }}\r
+    </span>\r
+    <span class="tt-lieu" *ngIf="hoveredPerson.lieuNaissance">\r
+      <span class="material-icons-round">place</span>{{ hoveredPerson.lieuNaissance }}\r
+    </span>\r
+    <div class="tt-badges">\r
+      <span class="tt-badge" [class.tt-m]="hoveredPerson.sexe==='M'" [class.tt-f]="hoveredPerson.sexe==='F'">\r
+        {{ hoveredPerson.sexe==='M' ? 'Homme' : hoveredPerson.sexe==='F' ? 'Femme' : 'Autre' }}\r
+      </span>\r
+      <span class="tt-badge tt-alive" *ngIf="estVivant(hoveredPerson)">Vivant(e)</span>\r
+      <span class="tt-badge tt-dead"  *ngIf="!estVivant(hoveredPerson)">D\xE9c\xE9d\xE9(e)</span>\r
+    </div>\r
+    <span class="tt-hint">Clic pour la fiche compl\xE8te</span>\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== OVERLAY + DETAIL ===== -->\r
+<div class="panel-overlay" *ngIf="showDetail" (click)="closeDetail()"></div>\r
+<div class="detail-panel" [class.open]="showDetail">\r
+  <div class="dp-header">\r
+    <h3>Fiche membre</h3>\r
+    <button class="btn-icon" (click)="closeDetail()">\r
+      <span class="material-icons-round">close</span>\r
+    </button>\r
+  </div>\r
+  <div class="dp-body" *ngIf="selectedPerson">\r
+    <div class="dp-avatar-wrap">\r
+      <div class="dp-avatar" [class.male]="selectedPerson.sexe==='M'" [class.female]="selectedPerson.sexe==='F'">\r
+        <img *ngIf="getPhotoUrl(selectedPerson) && !failedPhotos.has(selectedPerson.id)"\r
+             [src]="getPhotoUrl(selectedPerson)!" class="dp-avatar-photo" (error)="onPhotoError(selectedPerson.id)" />\r
+        <span *ngIf="!getPhotoUrl(selectedPerson) || failedPhotos.has(selectedPerson.id)">{{ getInitiales(selectedPerson) }}</span>\r
+      </div>\r
+    </div>\r
+    <h2 class="dp-name">{{ getNomComplet(selectedPerson) }}</h2>\r
+    <div class="dp-badges">\r
+      <span class="pc-badge" [class.pc-badge-m]="selectedPerson.sexe==='M'" [class.pc-badge-f]="selectedPerson.sexe==='F'">\r
+        {{ selectedPerson.sexe==='M' ? 'Homme' : selectedPerson.sexe==='F' ? 'Femme' : 'Autre' }}\r
+      </span>\r
+      <span class="pc-badge pc-badge-alive" *ngIf="estVivant(selectedPerson)">Vivant(e)</span>\r
+      <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(selectedPerson)">D\xE9c\xE9d\xE9(e)</span>\r
+    </div>\r
+    <div class="dp-info-list">\r
+      <div class="dp-info-item" *ngIf="selectedPerson.dateNaissance || selectedPerson.lieuNaissance">\r
+        <span class="material-icons-round">cake</span>\r
+        <div class="dp-info-text">\r
+          <span class="dp-info-label">Naissance</span>\r
+          <span class="dp-info-value">\r
+            {{ selectedPerson.dateNaissance ?? '\u2014' }}\r
+            <span *ngIf="selectedPerson.lieuNaissance"> \xB7 {{ selectedPerson.lieuNaissance }}</span>\r
+          </span>\r
+        </div>\r
+      </div>\r
+      <div class="dp-info-item" *ngIf="!estVivant(selectedPerson)">\r
+        <span class="material-icons-round">sentiment_very_dissatisfied</span>\r
+        <div class="dp-info-text">\r
+          <span class="dp-info-label">D\xE9c\xE8s</span>\r
+          <span class="dp-info-value">{{ selectedPerson.dateDeces ?? '\u2014' }}<span *ngIf="selectedPerson.lieuDeces"> \xB7 {{ selectedPerson.lieuDeces }}</span></span>\r
+        </div>\r
+      </div>\r
+      <div class="dp-info-item" *ngIf="getAgeLabel(selectedPerson)">\r
+        <span class="material-icons-round">hourglass_bottom</span>\r
+        <div class="dp-info-text">\r
+          <span class="dp-info-label">{{ estVivant(selectedPerson) ? '\xC2ge' : 'Dur\xE9e de vie' }}</span>\r
+          <span class="dp-info-value">{{ getAgeLabel(selectedPerson) }}</span>\r
+        </div>\r
+      </div>\r
+    </div>\r
+    <a class="btn-primary dp-link" [routerLink]="['/app/personnes']" [queryParams]="{ id: selectedPerson.id }" (click)="closeDetail()">\r
+      <span class="material-icons-round">person</span>Voir le profil complet\r
+    </a>\r
+  </div>\r
+</div>\r
+`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/tree/tree.component.scss */\n.tree-page {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  margin: -28px -32px;\n}\n.tree-toolbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 24px;\n  background: var(--white);\n  border-bottom: 1px solid var(--border);\n  gap: 16px;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.tree-toolbar .toolbar-left {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.tree-toolbar .toolbar-left h2 {\n  font-size: 18px;\n  margin: 0;\n  white-space: nowrap;\n}\n.tree-toolbar .toolbar-right {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n}\n.tree-kiosk-btn {\n  color: var(--primary) !important;\n}\n.root-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  background: var(--primary-bg);\n  border: 1.5px solid var(--primary-border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--primary);\n}\n.root-badge .material-icons-round {\n  font-size: 15px !important;\n}\n.root-badge-name {\n  max-width: 160px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.root-badge-clear {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  border: none;\n  background: var(--primary-border);\n  cursor: pointer;\n  padding: 0;\n}\n.root-badge-clear .material-icons-round {\n  font-size: 12px !important;\n  color: var(--primary);\n}\n.root-badge-clear:hover {\n  background: var(--primary);\n}\n.root-badge-clear:hover .material-icons-round {\n  color: #fff;\n}\n.root-picker-wrap {\n  position: relative;\n}\n.root-pick-btn.active {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.root-pick-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.root-overlay {\n  position: fixed;\n  inset: 0;\n  z-index: 299;\n}\n.root-dropdown {\n  position: absolute;\n  top: calc(100% + 8px);\n  right: 0;\n  width: 280px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);\n  z-index: 300;\n  overflow: hidden;\n  animation: root-drop-in 0.15s ease;\n}\n@keyframes root-drop-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.root-search-bar {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-bottom: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.root-search-bar .material-icons-round {\n  font-size: 17px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.root-search-input {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--text-primary);\n  font-family: inherit;\n}\n.root-search-input:focus {\n  outline: none;\n}\n.root-search-input::placeholder {\n  color: var(--text-muted);\n}\n.root-list {\n  max-height: 280px;\n  overflow-y: auto;\n  padding: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.root-list-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 10px;\n  border-radius: 9px;\n  border: none;\n  background: transparent;\n  text-align: left;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n  cursor: pointer;\n  font-family: inherit;\n  transition: background 0.12s;\n}\n.root-list-item .material-icons-round {\n  font-size: 17px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.root-list-item:hover {\n  background: var(--bg-muted);\n}\n.root-list-item.active {\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 700;\n}\n.root-list-all {\n  border-bottom: 1px solid var(--border);\n  border-radius: 0;\n  margin-bottom: 4px;\n  padding-bottom: 10px;\n}\n.root-list-avatar {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.root-list-avatar.male {\n  background: var(--primary);\n}\n.root-list-avatar.female {\n  background: var(--pink, #EC4899);\n}\n.root-list-avatar:not(.male):not(.female) {\n  background: var(--text-muted);\n}\n.root-empty {\n  text-align: center;\n  padding: 20px;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.tree-kiosk .tree-toolbar {\n  display: none;\n}\n.tree-kiosk .tree-canvas {\n  padding: 0;\n}\n.tree-kiosk:hover .tree-toolbar {\n  display: flex;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 50;\n  animation: tree-slide-down 0.2s ease;\n}\n@keyframes tree-slide-down {\n  from {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n.zoom-level {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-muted);\n  min-width: 38px;\n  text-align: center;\n}\n.tree-canvas {\n  flex: 1;\n  background: #F0F4FF;\n  background-image:\n    radial-gradient(\n      circle,\n      #BFDBFE 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px 24px;\n  position: relative;\n}\n.tree-visual {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n  min-width: 500px;\n  transition: transform 0.15s ease;\n  transform-origin: top center;\n  cursor: grab;\n  touch-action: none;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.tree-visual:active {\n  cursor: grabbing;\n}\n.generation {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.gen-label {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  background: var(--white);\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  border: 1px solid var(--border);\n}\n.gen-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 80px;\n  flex-wrap: nowrap;\n  justify-content: center;\n}\n.gen-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-stem {\n  width: 2px;\n  border-radius: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n}\n.group-stem.stem-single {\n  height: 40px;\n}\n.group-stem.stem-multi {\n  height: 20px;\n}\n.group-items {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  position: relative;\n}\n.group-items.multi::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: var(--bar-l, 55px);\n  right: var(--bar-r, 55px);\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.group-items.multi {\n  background: rgba(219, 234, 254, 0.28);\n  border-radius: 14px;\n  padding-bottom: 8px;\n}\n.group-child-wrap {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-child-drop {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.down-connector {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  margin-top: 2px;\n  border-radius: 2px;\n}\n.generation + .generation {\n  margin-top: 4px;\n}\n.union-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.solo-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.couple-wrap {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);\n  transition: var(--transition);\n}\n.couple-wrap.root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);\n}\n.couple-wrap.selected {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.couple-wrap:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.union-heart-connector {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.union-heart-connector .material-icons-round {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.union-heart-connector .union-hline {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.union-badge {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.union-badge .material-icons-round {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.tree-node {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  transition: var(--transition);\n  border-radius: 12px;\n}\n.tree-node:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.tree-node.active {\n  background: var(--primary-bg);\n}\n.tree-node.solo {\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n}\n.tree-node.solo.root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.tree-node.solo:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.tree-node.solo.active {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.node-avatar {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.node-avatar.male {\n  background: var(--primary);\n}\n.node-avatar.female {\n  background: var(--pink);\n}\n.node-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.node-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.node-name {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  word-break: break-word;\n}\n.node-year {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n}\n.zoom-hint {\n  position: fixed;\n  bottom: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(15, 23, 42, 0.7);\n  color: #fff;\n  font-size: 12px;\n  padding: 6px 14px;\n  border-radius: var(--radius-full);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  pointer-events: none;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  z-index: 10;\n}\n.zoom-hint .material-icons-round {\n  font-size: 14px !important;\n}\n.tree-tooltip {\n  position: fixed;\n  z-index: 500;\n  pointer-events: none;\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  padding: 12px 14px;\n  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);\n  min-width: 220px;\n  max-width: 280px;\n  animation: tt-in 0.15s ease;\n}\n@keyframes tt-in {\n  from {\n    opacity: 0;\n    transform: translateY(6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.tt-avatar {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.tt-avatar.male {\n  background: var(--primary);\n}\n.tt-avatar.female {\n  background: var(--pink);\n}\n.tt-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.tt-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.tt-content {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  flex: 1;\n}\n.tt-name {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n  word-break: break-word;\n}\n.tt-dates,\n.tt-lieu {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 11px;\n  color: var(--text-secondary);\n}\n.tt-dates .material-icons-round,\n.tt-lieu .material-icons-round {\n  font-size: 13px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.tt-badges {\n  display: flex;\n  gap: 4px;\n  flex-wrap: wrap;\n  margin-top: 2px;\n}\n.tt-badge {\n  display: inline-flex;\n  align-items: center;\n  padding: 1px 7px;\n  border-radius: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  background: var(--bg-muted);\n  color: var(--text-muted);\n}\n.tt-badge.tt-m {\n  background: #eff6ff;\n  color: var(--primary);\n}\n.tt-badge.tt-f {\n  background: #fdf2f8;\n  color: var(--pink);\n}\n.tt-badge.tt-alive {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.tt-badge.tt-dead {\n  background: #f1f5f9;\n  color: #64748b;\n}\n.tt-hint {\n  font-size: 10px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-style: italic;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.3);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.detail-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 340px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.detail-panel.open {\n  transform: translateX(0);\n}\n.dp-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.dp-header h3 {\n  font-size: 16px;\n  font-weight: 700;\n  margin: 0;\n  color: var(--text-primary);\n}\n.dp-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 24px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.dp-avatar-wrap {\n  margin-bottom: 4px;\n}\n.dp-avatar {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n  font-weight: 700;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);\n}\n.dp-avatar.male {\n  background: var(--primary);\n}\n.dp-avatar.female {\n  background: var(--pink);\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);\n}\n.dp-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.dp-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.dp-name {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  text-align: center;\n  margin: 0;\n  line-height: 1.3;\n}\n.dp-badges {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n.dp-info-list {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  margin-top: 4px;\n}\n.dp-info-item {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  padding: 12px 16px;\n  border-bottom: 1px solid var(--border);\n}\n.dp-info-item:last-child {\n  border-bottom: none;\n}\n.dp-info-item .material-icons-round {\n  font-size: 18px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.dp-info-text {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.dp-info-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n}\n.dp-info-value {\n  font-size: 14px;\n  color: var(--text-primary);\n  font-weight: 500;\n}\n.dp-link {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  text-decoration: none;\n  margin-top: 8px;\n}\n.ts-multi-card {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 14px 20px;\n  min-width: 130px;\n  background: var(--primary-bg);\n  border: 2.5px solid var(--primary);\n  border-radius: 18px;\n  cursor: pointer;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);\n  transition: var(--transition);\n}\n.ts-multi-card.ts-active {\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.28);\n}\n.ts-multi-card:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25);\n}\n.ts-avatar-lg {\n  width: 56px !important;\n  height: 56px !important;\n  font-size: 18px !important;\n}\n.ts-multi-badge {\n  font-size: 10px;\n  font-weight: 700;\n  color: var(--primary);\n  background: rgba(59, 130, 246, 0.12);\n  border-radius: 10px;\n  padding: 2px 8px;\n}\n.ts-union-branch {\n  cursor: default;\n}\n.ts-union-active {\n  border-color: var(--primary-border);\n}\n.ts-union-divorced {\n  border-color: #D1D5DB;\n  opacity: 0.85;\n}\n.ts-union-widowed {\n  border-color: #E5E7EB;\n}\n.ts-person-ref {\n  width: 80px !important;\n  opacity: 0.75;\n}\n.ts-avatar-ref {\n  width: 34px !important;\n  height: 34px !important;\n  font-size: 11px !important;\n}\n.ts-name-ref {\n  font-size: 10px !important;\n  color: var(--text-muted);\n}\n.ts-heart-active {\n  color: #f43f5e !important;\n}\n.ts-heart-broken {\n  color: #9CA3AF !important;\n}\n.ts-heart-grey {\n  color: #9CA3AF !important;\n}\n.ts-hline-grey {\n  background: #D1D5DB !important;\n}\n.ts-badge-active {\n  background: var(--white);\n  color: var(--primary);\n  border-color: var(--primary-border);\n}\n.ts-badge-divorced {\n  background: #F9FAFB;\n  color: #6B7280;\n  border-color: #E5E7EB;\n}\n.ts-badge-divorced .material-icons-round {\n  color: #9CA3AF !important;\n}\n.ts-badge-widowed {\n  background: #F3F4F6;\n  color: #4B5563;\n  border-color: #D1D5DB;\n}\n.ts-badge-widowed .material-icons-round {\n  color: #6B7280 !important;\n}\n.ts-status-chip {\n  display: inline-block;\n  font-size: 9px;\n  font-weight: 700;\n  padding: 1px 6px;\n  border-radius: 8px;\n  background: rgba(0, 0, 0, 0.06);\n  margin-left: 2px;\n}\n@media (max-width: 640px) {\n  .tree-toolbar {\n    padding: 12px 16px;\n  }\n  .toolbar-right button {\n    min-width: 0;\n  }\n  .detail-panel {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 85vh;\n    transform: translateY(100%);\n  }\n  .detail-panel.open {\n    transform: translateY(0);\n  }\n  .zoom-hint {\n    bottom: 8px;\n    font-size: 11px;\n    padding: 5px 10px;\n  }\n}\n.ts-roots {\n  display: flex;\n  align-items: flex-start;\n  gap: 60px;\n  padding: 40px;\n}\n.ts-subtree {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.ts-couple {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);\n  transition: var(--transition);\n}\n.ts-couple.ts-root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18);\n}\n.ts-couple.ts-selected {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-couple:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.ts-solo-card.ts-root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.ts-solo-card.ts-active {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-solo-card.male:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card.female:hover {\n  border-color: var(--pink);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-person {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  border-radius: 12px;\n  transition: var(--transition);\n}\n.ts-person:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.ts-person.ts-active {\n  background: var(--primary-bg);\n}\n.ts-avatar {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.ts-avatar.male {\n  background: var(--primary);\n}\n.ts-avatar.female {\n  background: var(--pink, #EC4899);\n}\n.ts-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.ts-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.ts-name {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  max-width: 110px;\n  word-break: break-word;\n}\n.ts-year {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n  white-space: nowrap;\n}\n.ts-heart {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.ts-heart .material-icons-round {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.ts-hline {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.ts-union-badge {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.ts-union-badge .material-icons-round {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.ts-down {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  border-radius: 2px;\n  margin-top: 2px;\n}\n.ts-branch {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n}\n.ts-hbar {\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.ts-children-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 40px;\n}\n.ts-child-col {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ts-up {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n/*# sourceMappingURL=tree.component.css.map */\n'] }]
   }], () => [{ type: ApiService }], { treeVisual: [{
     type: ViewChild,
     args: ["treeVisual", { static: false }]
@@ -5514,7 +6047,7 @@ var TreeComponent = class _TreeComponent {
   }] });
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TreeComponent, { className: "TreeComponent", filePath: "src/app/pages/tree/tree.component.ts", lineNumber: 28 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TreeComponent, { className: "TreeComponent", filePath: "src/app/pages/tree/tree.component.ts", lineNumber: 40 });
 })();
 
 // src/app/pages/stories/stories.component.ts
@@ -6084,20 +6617,35 @@ var JeuxComponent = class _JeuxComponent {
 })();
 
 // src/app/pages/unions/unions.component.ts
-var _c04 = () => [1, 2, 3, 4];
-function UnionsComponent_div_11_div_1_Template(rf, ctx) {
+var _c04 = () => [1, 2];
+function UnionsComponent_div_12_div_1_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 51);
-    \u0275\u0275element(1, "div", 52);
-    \u0275\u0275elementStart(2, "div", 53);
-    \u0275\u0275element(3, "div", 54)(4, "div", 55)(5, "div", 56);
+    \u0275\u0275elementStart(0, "div", 59);
+    \u0275\u0275element(1, "div", 60);
+    \u0275\u0275elementStart(2, "div", 61);
+    \u0275\u0275element(3, "div", 56)(4, "div", 57);
     \u0275\u0275elementEnd()();
   }
 }
-function UnionsComponent_div_11_Template(rf, ctx) {
+function UnionsComponent_div_12_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 49);
-    \u0275\u0275template(1, UnionsComponent_div_11_div_1_Template, 6, 0, "div", 50);
+    \u0275\u0275elementStart(0, "div", 52)(1, "div", 53);
+    \u0275\u0275element(2, "div", 54);
+    \u0275\u0275elementStart(3, "div", 55);
+    \u0275\u0275element(4, "div", 56)(5, "div", 57);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275template(6, UnionsComponent_div_12_div_1_div_6_Template, 5, 0, "div", 58);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    \u0275\u0275advance(6);
+    \u0275\u0275property("ngForOf", \u0275\u0275pureFunction0(1, _c04));
+  }
+}
+function UnionsComponent_div_12_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 50);
+    \u0275\u0275template(1, UnionsComponent_div_12_div_1_Template, 7, 2, "div", 51);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -6105,9 +6653,9 @@ function UnionsComponent_div_11_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", \u0275\u0275pureFunction0(1, _c04));
   }
 }
-function UnionsComponent_div_12_Template(rf, ctx) {
+function UnionsComponent_div_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 57)(1, "span", 6);
+    \u0275\u0275elementStart(0, "div", 62)(1, "span", 7);
     \u0275\u0275text(2, "error_outline");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -6116,539 +6664,383 @@ function UnionsComponent_div_12_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1(" ", ctx_r1.erreur, " ");
+    \u0275\u0275textInterpolate1("", ctx_r1.erreur, " ");
   }
 }
-function UnionsComponent_div_13_Template(rf, ctx) {
+function UnionsComponent_div_14_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 58)(1, "span", 6);
+    \u0275\u0275elementStart(0, "div", 63)(1, "span", 7);
     \u0275\u0275text(2, "favorite_border");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "h3");
     \u0275\u0275text(4, "Aucune union enregistr\xE9e");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(5, "p");
-    \u0275\u0275text(6, "Ajoutez la premi\xE8re union de votre famille.");
+    \u0275\u0275text(6, "Ajoutez le premier couple de votre famille.");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "button", 5);
-    \u0275\u0275listener("click", function UnionsComponent_div_13_Template_button_click_7_listener() {
+    \u0275\u0275elementStart(7, "button", 6);
+    \u0275\u0275listener("click", function UnionsComponent_div_14_Template_button_click_7_listener() {
       \u0275\u0275restoreView(_r3);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.openCreate());
     });
-    \u0275\u0275elementStart(8, "span", 6);
+    \u0275\u0275elementStart(8, "span", 7);
     \u0275\u0275text(9, "add");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(10, " Nouvelle union ");
+    \u0275\u0275text(10, "Nouveau couple ");
     \u0275\u0275elementEnd()();
   }
 }
-function UnionsComponent_div_14_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 59)(1, "div", 60)(2, "button", 61);
-    \u0275\u0275listener("click", function UnionsComponent_div_14_Template_button_click_2_listener() {
-      \u0275\u0275restoreView(_r4);
-      const ctx_r1 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r1.viewMode = "cards");
-    });
-    \u0275\u0275elementStart(3, "span", 6);
-    \u0275\u0275text(4, "grid_view");
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(5, "button", 62);
-    \u0275\u0275listener("click", function UnionsComponent_div_14_Template_button_click_5_listener() {
-      \u0275\u0275restoreView(_r4);
-      const ctx_r1 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r1.viewMode = "list");
-    });
-    \u0275\u0275elementStart(6, "span", 6);
-    \u0275\u0275text(7, "view_list");
-    \u0275\u0275elementEnd()()()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275advance(2);
-    \u0275\u0275classProp("active", ctx_r1.viewMode === "cards");
-    \u0275\u0275advance(3);
-    \u0275\u0275classProp("active", ctx_r1.viewMode === "list");
-  }
-}
-function UnionsComponent_div_15_div_1_img_10_Template(rf, ctx) {
+function UnionsComponent_div_15_div_1_img_4_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 84);
-    \u0275\u0275listener("error", function UnionsComponent_div_15_div_1_img_10_Template_img_error_0_listener() {
+    \u0275\u0275elementStart(0, "img", 78);
+    \u0275\u0275listener("error", function UnionsComponent_div_15_div_1_img_4_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r6);
-      const u_r7 = \u0275\u0275nextContext().$implicit;
+      const g_r5 = \u0275\u0275nextContext().$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(ctx_r1.getConjoint1(u_r7).id));
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(g_r5.chef.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const u_r7 = \u0275\u0275nextContext().$implicit;
+    const g_r5 = \u0275\u0275nextContext().$implicit;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r1.photoOf(ctx_r1.getConjoint1(u_r7)), \u0275\u0275sanitizeUrl)("alt", ctx_r1.nomComplet(ctx_r1.getConjoint1(u_r7)));
+    \u0275\u0275property("src", ctx_r1.photoOf(g_r5.chef), \u0275\u0275sanitizeUrl)("alt", ctx_r1.initiales(g_r5.chef));
   }
 }
-function UnionsComponent_div_15_div_1_div_11_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 85);
-    \u0275\u0275text(1);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    let tmp_6_0;
-    let tmp_7_0;
-    const u_r7 = \u0275\u0275nextContext().$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("male", ((tmp_6_0 = ctx_r1.getConjoint1(u_r7)) == null ? null : tmp_6_0.sexe) === "M")("female", ((tmp_7_0 = ctx_r1.getConjoint1(u_r7)) == null ? null : tmp_7_0.sexe) === "F");
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.initiales(ctx_r1.getConjoint1(u_r7)), " ");
-  }
-}
-function UnionsComponent_div_15_div_1_img_19_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 84);
-    \u0275\u0275listener("error", function UnionsComponent_div_15_div_1_img_19_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r8);
-      const u_r7 = \u0275\u0275nextContext().$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(ctx_r1.getConjoint2(u_r7).id));
-    });
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const u_r7 = \u0275\u0275nextContext().$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r1.photoOf(ctx_r1.getConjoint2(u_r7)), \u0275\u0275sanitizeUrl)("alt", ctx_r1.nomComplet(ctx_r1.getConjoint2(u_r7)));
-  }
-}
-function UnionsComponent_div_15_div_1_div_20_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 86);
-    \u0275\u0275text(1);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    let tmp_6_0;
-    let tmp_7_0;
-    const u_r7 = \u0275\u0275nextContext().$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("male", ((tmp_6_0 = ctx_r1.getConjoint2(u_r7)) == null ? null : tmp_6_0.sexe) === "M")("female", ((tmp_7_0 = ctx_r1.getConjoint2(u_r7)) == null ? null : tmp_7_0.sexe) === "F");
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.initiales(ctx_r1.getConjoint2(u_r7)), " ");
-  }
-}
-function UnionsComponent_div_15_div_1_div_25_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 79)(1, "span", 6);
-    \u0275\u0275text(2, "calendar_today");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span");
-    \u0275\u0275text(4);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const u_r7 = \u0275\u0275nextContext().$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate(ctx_r1.annee(u_r7.dateDebut) ?? u_r7.dateDebut);
-  }
-}
-function UnionsComponent_div_15_div_1_div_26_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 79)(1, "span", 6);
-    \u0275\u0275text(2, "location_on");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span");
-    \u0275\u0275text(4);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const u_r7 = \u0275\u0275nextContext().$implicit;
-    \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate(u_r7.lieuDebut);
-  }
-}
-function UnionsComponent_div_15_div_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 65);
-    \u0275\u0275element(1, "div", 66);
-    \u0275\u0275elementStart(2, "div", 67)(3, "span", 6);
-    \u0275\u0275text(4);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "span");
-    \u0275\u0275text(6);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "div", 68)(8, "div", 69)(9, "div", 70);
-    \u0275\u0275template(10, UnionsComponent_div_15_div_1_img_10_Template, 1, 2, "img", 71)(11, UnionsComponent_div_15_div_1_div_11_Template, 2, 5, "div", 72);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "div", 73)(13, "span", 74);
-    \u0275\u0275text(14);
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(15, "span", 75);
-    \u0275\u0275text(16, "favorite");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(17, "div", 69)(18, "div", 70);
-    \u0275\u0275template(19, UnionsComponent_div_15_div_1_img_19_Template, 1, 2, "img", 71)(20, UnionsComponent_div_15_div_1_div_20_Template, 2, 5, "div", 76);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(21, "div", 73)(22, "span", 74);
-    \u0275\u0275text(23);
-    \u0275\u0275elementEnd()()()();
-    \u0275\u0275elementStart(24, "div", 77);
-    \u0275\u0275template(25, UnionsComponent_div_15_div_1_div_25_Template, 5, 1, "div", 78)(26, UnionsComponent_div_15_div_1_div_26_Template, 5, 1, "div", 78);
-    \u0275\u0275elementStart(27, "div", 79)(28, "span", 6);
-    \u0275\u0275text(29, "child_care");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(30, "span");
-    \u0275\u0275text(31);
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(32, "div", 80)(33, "button", 81);
-    \u0275\u0275listener("click", function UnionsComponent_div_15_div_1_Template_button_click_33_listener() {
-      const u_r7 = \u0275\u0275restoreView(_r5).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.openEnfantPanel(u_r7));
-    });
-    \u0275\u0275elementStart(34, "span", 6);
-    \u0275\u0275text(35, "people_add");
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(36, "button", 82);
-    \u0275\u0275listener("click", function UnionsComponent_div_15_div_1_Template_button_click_36_listener() {
-      const u_r7 = \u0275\u0275restoreView(_r5).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.openEdit(u_r7));
-    });
-    \u0275\u0275elementStart(37, "span", 6);
-    \u0275\u0275text(38, "edit");
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(39, "button", 83);
-    \u0275\u0275listener("click", function UnionsComponent_div_15_div_1_Template_button_click_39_listener() {
-      const u_r7 = \u0275\u0275restoreView(_r5).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.confirmDelete(u_r7));
-    });
-    \u0275\u0275elementStart(40, "span", 6);
-    \u0275\u0275text(41, "delete");
-    \u0275\u0275elementEnd()()()();
-  }
-  if (rf & 2) {
-    let tmp_12_0;
-    let tmp_15_0;
-    const u_r7 = ctx.$implicit;
-    const i_r9 = ctx.index;
-    const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance();
-    \u0275\u0275classProp("color-1", i_r9 % 3 === 0)("color-2", i_r9 % 3 === 1)("color-3", i_r9 % 3 === 2);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngClass", ctx_r1.getTypeColor(u_r7.type));
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.getTypeIcon(u_r7.type));
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.getTypeLabel(u_r7.type));
-    \u0275\u0275advance(4);
-    \u0275\u0275property("ngIf", ctx_r1.photoOf(ctx_r1.getConjoint1(u_r7)) && !ctx_r1.failedPhotos.has(ctx_r1.getConjoint1(u_r7).id));
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.photoOf(ctx_r1.getConjoint1(u_r7)) || ctx_r1.failedPhotos.has(((tmp_12_0 = ctx_r1.getConjoint1(u_r7)) == null ? null : tmp_12_0.id) ?? ""));
-    \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(ctx_r1.nomComplet(ctx_r1.getConjoint1(u_r7)));
-    \u0275\u0275advance(5);
-    \u0275\u0275property("ngIf", ctx_r1.photoOf(ctx_r1.getConjoint2(u_r7)) && !ctx_r1.failedPhotos.has(ctx_r1.getConjoint2(u_r7).id));
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.photoOf(ctx_r1.getConjoint2(u_r7)) || ctx_r1.failedPhotos.has(((tmp_15_0 = ctx_r1.getConjoint2(u_r7)) == null ? null : tmp_15_0.id) ?? ""));
-    \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(ctx_r1.nomComplet(ctx_r1.getConjoint2(u_r7)));
-    \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", u_r7.dateDebut);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", u_r7.lieuDebut);
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate2("", u_r7.filiations.length, " enfant", u_r7.filiations.length > 1 ? "s" : "");
-  }
-}
-function UnionsComponent_div_15_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 63);
-    \u0275\u0275template(1, UnionsComponent_div_15_div_1_Template, 42, 19, "div", 64);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", ctx_r1.unions);
-  }
-}
-function UnionsComponent_div_16_div_12_img_4_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r11 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 112);
-    \u0275\u0275listener("error", function UnionsComponent_div_16_div_12_img_4_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r11);
-      const u_r12 = \u0275\u0275nextContext().$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(ctx_r1.getConjoint1(u_r12).id));
-    });
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const u_r12 = \u0275\u0275nextContext().$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r1.photoOf(ctx_r1.getConjoint1(u_r12)), \u0275\u0275sanitizeUrl)("alt", ctx_r1.nomComplet(ctx_r1.getConjoint1(u_r12)));
-  }
-}
-function UnionsComponent_div_16_div_12_div_5_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 113);
-    \u0275\u0275text(1);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    let tmp_5_0;
-    let tmp_6_0;
-    const u_r12 = \u0275\u0275nextContext().$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("male", ((tmp_5_0 = ctx_r1.getConjoint1(u_r12)) == null ? null : tmp_5_0.sexe) === "M")("female", ((tmp_6_0 = ctx_r1.getConjoint1(u_r12)) == null ? null : tmp_6_0.sexe) === "F");
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.initiales(ctx_r1.getConjoint1(u_r12)), " ");
-  }
-}
-function UnionsComponent_div_16_div_12_img_9_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 112);
-    \u0275\u0275listener("error", function UnionsComponent_div_16_div_12_img_9_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r13);
-      const u_r12 = \u0275\u0275nextContext().$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(ctx_r1.getConjoint2(u_r12).id));
-    });
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const u_r12 = \u0275\u0275nextContext().$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r1.photoOf(ctx_r1.getConjoint2(u_r12)), \u0275\u0275sanitizeUrl)("alt", ctx_r1.nomComplet(ctx_r1.getConjoint2(u_r12)));
-  }
-}
-function UnionsComponent_div_16_div_12_div_10_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 113);
-    \u0275\u0275text(1);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    let tmp_5_0;
-    let tmp_6_0;
-    const u_r12 = \u0275\u0275nextContext().$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("male", ((tmp_5_0 = ctx_r1.getConjoint2(u_r12)) == null ? null : tmp_5_0.sexe) === "M")("female", ((tmp_6_0 = ctx_r1.getConjoint2(u_r12)) == null ? null : tmp_6_0.sexe) === "F");
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.initiales(ctx_r1.getConjoint2(u_r12)), " ");
-  }
-}
-function UnionsComponent_div_16_div_12_span_22_Template(rf, ctx) {
+function UnionsComponent_div_15_div_1_span_5_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const u_r12 = \u0275\u0275nextContext().$implicit;
+    const g_r5 = \u0275\u0275nextContext().$implicit;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r1.annee(u_r12.dateDebut) ?? u_r12.dateDebut);
+    \u0275\u0275textInterpolate(ctx_r1.initiales(g_r5.chef));
   }
 }
-function UnionsComponent_div_16_div_12_span_23_Template(rf, ctx) {
+function UnionsComponent_div_15_div_1_span_11_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 114);
-    \u0275\u0275text(1, "\u2014");
+    \u0275\u0275elementStart(0, "span", 79);
+    \u0275\u0275text(1, "Polygamie");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_div_16_div_12_Template(rf, ctx) {
+function UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_img_1_Template(rf, ctx) {
   if (rf & 1) {
-    const _r10 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 95)(1, "div", 96)(2, "div", 97)(3, "div", 70);
-    \u0275\u0275template(4, UnionsComponent_div_16_div_12_img_4_Template, 1, 2, "img", 98)(5, UnionsComponent_div_16_div_12_div_5_Template, 2, 5, "div", 99);
+    const _r8 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 95);
+    \u0275\u0275listener("error", function UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_img_1_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r8);
+      const partner_r9 = \u0275\u0275nextContext().ngIf;
+      const ctx_r1 = \u0275\u0275nextContext(5);
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(partner_r9.id));
+    });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 100);
-    \u0275\u0275text(7, "favorite");
+  }
+  if (rf & 2) {
+    const partner_r9 = \u0275\u0275nextContext().ngIf;
+    const ctx_r1 = \u0275\u0275nextContext(5);
+    \u0275\u0275property("src", ctx_r1.photoOf(partner_r9), \u0275\u0275sanitizeUrl)("alt", ctx_r1.initiales(partner_r9));
+  }
+}
+function UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_span_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span");
+    \u0275\u0275text(1);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "div", 70);
-    \u0275\u0275template(9, UnionsComponent_div_16_div_12_img_9_Template, 1, 2, "img", 98)(10, UnionsComponent_div_16_div_12_div_10_Template, 2, 5, "div", 99);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(11, "div", 101)(12, "span", 102);
+  }
+  if (rf & 2) {
+    const partner_r9 = \u0275\u0275nextContext().ngIf;
+    const ctx_r1 = \u0275\u0275nextContext(5);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r1.initiales(partner_r9));
+  }
+}
+function UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275template(1, UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_img_1_Template, 1, 2, "img", 94)(2, UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_span_2_Template, 2, 1, "span", 69);
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const partner_r9 = ctx.ngIf;
+    const ctx_r1 = \u0275\u0275nextContext(5);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.photoOf(partner_r9) && !ctx_r1.failedPhotos.has(partner_r9.id));
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r1.photoOf(partner_r9) || ctx_r1.failedPhotos.has(partner_r9.id));
+  }
+}
+function UnionsComponent_div_15_div_1_div_19_div_1_span_8_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span");
+    \u0275\u0275text(1, "?");
+    \u0275\u0275elementEnd();
+  }
+}
+function UnionsComponent_div_15_div_1_div_19_div_1_ng_container_14_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275text(1);
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const u_r10 = \u0275\u0275nextContext().$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" \xB7 ", ctx_r1.annee(u_r10.dateDebut));
+  }
+}
+function UnionsComponent_div_15_div_1_div_19_div_1_ng_container_15_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275text(1);
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const u_r10 = \u0275\u0275nextContext().$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" \u2013 ", ctx_r1.annee(u_r10.dateFin));
+  }
+}
+function UnionsComponent_div_15_div_1_div_19_div_1_div_18_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 96)(1, "span", 7);
+    \u0275\u0275text(2, "child_care");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const u_r10 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1(" ", u_r10.filiations.length, " ");
+  }
+}
+function UnionsComponent_div_15_div_1_div_19_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r7 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 59)(1, "span", 81);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "span", 82);
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "div", 83)(6, "div", 84);
+    \u0275\u0275template(7, UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_Template, 3, 2, "ng-container", 69)(8, UnionsComponent_div_15_div_1_div_19_div_1_span_8_Template, 2, 0, "span", 69);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "div", 85)(10, "span", 86);
+    \u0275\u0275text(11);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "span", 87);
     \u0275\u0275text(13);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "span", 103);
-    \u0275\u0275text(15);
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(16, "div", 104)(17, "span", 105)(18, "span", 6);
-    \u0275\u0275text(19);
-    \u0275\u0275elementEnd();
-    \u0275\u0275text(20);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(21, "div", 106);
-    \u0275\u0275template(22, UnionsComponent_div_16_div_12_span_22_Template, 2, 1, "span", 107)(23, UnionsComponent_div_16_div_12_span_23_Template, 2, 0, "span", 108);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(24, "div", 109)(25, "span", 110)(26, "span", 6);
-    \u0275\u0275text(27, "child_care");
-    \u0275\u0275elementEnd();
-    \u0275\u0275text(28);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(29, "div", 111);
-    \u0275\u0275listener("click", function UnionsComponent_div_16_div_12_Template_div_click_29_listener($event) {
-      \u0275\u0275restoreView(_r10);
-      return \u0275\u0275resetView($event.stopPropagation());
+    \u0275\u0275template(14, UnionsComponent_div_15_div_1_div_19_div_1_ng_container_14_Template, 2, 1, "ng-container", 69)(15, UnionsComponent_div_15_div_1_div_19_div_1_ng_container_15_Template, 2, 1, "ng-container", 69);
+    \u0275\u0275elementStart(16, "span", 88);
+    \u0275\u0275text(17);
+    \u0275\u0275elementEnd()()()();
+    \u0275\u0275template(18, UnionsComponent_div_15_div_1_div_19_div_1_div_18_Template, 4, 1, "div", 89);
+    \u0275\u0275elementStart(19, "div", 90)(20, "button", 91);
+    \u0275\u0275listener("click", function UnionsComponent_div_15_div_1_div_19_div_1_Template_button_click_20_listener() {
+      const u_r10 = \u0275\u0275restoreView(_r7).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(4);
+      return \u0275\u0275resetView(ctx_r1.openEnfantPanel(u_r10));
     });
-    \u0275\u0275elementStart(30, "button", 81);
-    \u0275\u0275listener("click", function UnionsComponent_div_16_div_12_Template_button_click_30_listener() {
-      const u_r12 = \u0275\u0275restoreView(_r10).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.openEnfantPanel(u_r12));
-    });
-    \u0275\u0275elementStart(31, "span", 6);
-    \u0275\u0275text(32, "people_add");
+    \u0275\u0275elementStart(21, "span", 7);
+    \u0275\u0275text(22, "people_add");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(33, "button", 82);
-    \u0275\u0275listener("click", function UnionsComponent_div_16_div_12_Template_button_click_33_listener() {
-      const u_r12 = \u0275\u0275restoreView(_r10).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.openEdit(u_r12));
+    \u0275\u0275elementStart(23, "button", 92);
+    \u0275\u0275listener("click", function UnionsComponent_div_15_div_1_div_19_div_1_Template_button_click_23_listener() {
+      const u_r10 = \u0275\u0275restoreView(_r7).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(4);
+      return \u0275\u0275resetView(ctx_r1.openEdit(u_r10));
     });
-    \u0275\u0275elementStart(34, "span", 6);
-    \u0275\u0275text(35, "edit");
+    \u0275\u0275elementStart(24, "span", 7);
+    \u0275\u0275text(25, "edit");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(36, "button", 83);
-    \u0275\u0275listener("click", function UnionsComponent_div_16_div_12_Template_button_click_36_listener() {
-      const u_r12 = \u0275\u0275restoreView(_r10).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.confirmDelete(u_r12));
+    \u0275\u0275elementStart(26, "button", 93);
+    \u0275\u0275listener("click", function UnionsComponent_div_15_div_1_div_19_div_1_Template_button_click_26_listener() {
+      const u_r10 = \u0275\u0275restoreView(_r7).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(4);
+      return \u0275\u0275resetView(ctx_r1.confirmDelete(u_r10));
     });
-    \u0275\u0275elementStart(37, "span", 6);
-    \u0275\u0275text(38, "delete");
+    \u0275\u0275elementStart(27, "span", 7);
+    \u0275\u0275text(28, "delete");
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
-    let tmp_5_0;
-    let tmp_7_0;
-    const u_r12 = ctx.$implicit;
+    let tmp_13_0;
+    let tmp_14_0;
+    const u_r10 = ctx.$implicit;
+    const i_r11 = ctx.index;
+    const g_r5 = \u0275\u0275nextContext(2).$implicit;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(4);
-    \u0275\u0275property("ngIf", ctx_r1.photoOf(ctx_r1.getConjoint1(u_r12)) && !ctx_r1.failedPhotos.has(ctx_r1.getConjoint1(u_r12).id));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(i_r11 + 1);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.photoOf(ctx_r1.getConjoint1(u_r12)) || ctx_r1.failedPhotos.has(((tmp_5_0 = ctx_r1.getConjoint1(u_r12)) == null ? null : tmp_5_0.id) ?? ""));
-    \u0275\u0275advance(4);
-    \u0275\u0275property("ngIf", ctx_r1.photoOf(ctx_r1.getConjoint2(u_r12)) && !ctx_r1.failedPhotos.has(ctx_r1.getConjoint2(u_r12).id));
+    \u0275\u0275classProp("ug-active", ctx_r1.coupleStatus(u_r10) === "active")("ug-divorced", ctx_r1.coupleStatus(u_r10) === "divorced")("ug-widowed", ctx_r1.coupleStatus(u_r10) === "widowed");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.photoOf(ctx_r1.getConjoint2(u_r12)) || ctx_r1.failedPhotos.has(((tmp_7_0 = ctx_r1.getConjoint2(u_r12)) == null ? null : tmp_7_0.id) ?? ""));
+    \u0275\u0275textInterpolate1(" ", ctx_r1.coupleStatusIcon(u_r10), " ");
+    \u0275\u0275advance(2);
+    \u0275\u0275classProp("male", ((tmp_13_0 = ctx_r1.getPartner(u_r10, g_r5.chef.id)) == null ? null : tmp_13_0.sexe) === "M")("female", ((tmp_14_0 = ctx_r1.getPartner(u_r10, g_r5.chef.id)) == null ? null : tmp_14_0.sexe) === "F");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.getPartner(u_r10, g_r5.chef.id));
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r1.getPartner(u_r10, g_r5.chef.id));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(ctx_r1.nomComplet(ctx_r1.getConjoint1(u_r12)));
+    \u0275\u0275textInterpolate(ctx_r1.nomComplet(ctx_r1.getPartner(u_r10, g_r5.chef.id)));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1("& ", ctx_r1.nomComplet(ctx_r1.getConjoint2(u_r12)));
-    \u0275\u0275advance(2);
-    \u0275\u0275property("ngClass", ctx_r1.getTypeColor(u_r12.type));
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.getTypeIcon(u_r12.type));
+    \u0275\u0275textInterpolate1(" ", ctx_r1.getTypeLabel(u_r10.type), " ");
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.getTypeLabel(u_r12.type), " ");
-    \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", u_r12.dateDebut);
+    \u0275\u0275property("ngIf", u_r10.dateDebut);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !u_r12.dateDebut);
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate1(" ", u_r12.filiations.length, " ");
+    \u0275\u0275property("ngIf", u_r10.dateFin);
+    \u0275\u0275advance();
+    \u0275\u0275classProp("chip-active", ctx_r1.coupleStatus(u_r10) === "active")("chip-divorced", ctx_r1.coupleStatus(u_r10) === "divorced")("chip-widowed", ctx_r1.coupleStatus(u_r10) === "widowed");
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r1.coupleStatusLabel(u_r10), " ");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", u_r10.filiations.length > 0);
   }
 }
-function UnionsComponent_div_16_Template(rf, ctx) {
+function UnionsComponent_div_15_div_1_div_19_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 87)(1, "div", 88)(2, "span", 89);
-    \u0275\u0275text(3, "Couple");
+    \u0275\u0275elementStart(0, "div", 80);
+    \u0275\u0275template(1, UnionsComponent_div_15_div_1_div_19_div_1_Template, 29, 26, "div", 58);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 90);
-    \u0275\u0275text(5, "Type");
+  }
+  if (rf & 2) {
+    const g_r5 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", g_r5.couples);
+  }
+}
+function UnionsComponent_div_15_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 52)(1, "div", 65);
+    \u0275\u0275listener("click", function UnionsComponent_div_15_div_1_Template_div_click_1_listener() {
+      const g_r5 = \u0275\u0275restoreView(_r4).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.toggleGroup(g_r5.chef.id));
+    });
+    \u0275\u0275elementStart(2, "div", 66)(3, "div", 67);
+    \u0275\u0275template(4, UnionsComponent_div_15_div_1_img_4_Template, 1, 2, "img", 68)(5, UnionsComponent_div_15_div_1_span_5_Template, 2, 1, "span", 69);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 91);
-    \u0275\u0275text(7, "Depuis");
+    \u0275\u0275elementStart(6, "div", 70)(7, "span", 71);
+    \u0275\u0275text(8);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "span", 92);
-    \u0275\u0275text(9, "Enfants");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 93);
-    \u0275\u0275text(11, "Actions");
+    \u0275\u0275elementStart(9, "span", 72);
+    \u0275\u0275text(10);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(12, UnionsComponent_div_16_div_12_Template, 39, 12, "div", 94);
+    \u0275\u0275template(11, UnionsComponent_div_15_div_1_span_11_Template, 2, 0, "span", 73);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "div", 74)(13, "button", 75);
+    \u0275\u0275listener("click", function UnionsComponent_div_15_div_1_Template_button_click_13_listener($event) {
+      const g_r5 = \u0275\u0275restoreView(_r4).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      ctx_r1.openCreateForChef(g_r5.chef);
+      return \u0275\u0275resetView($event.stopPropagation());
+    });
+    \u0275\u0275elementStart(14, "span", 7);
+    \u0275\u0275text(15, "person_add");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(16, " Ajouter un couple ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(17, "span", 76);
+    \u0275\u0275text(18, " expand_more ");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275template(19, UnionsComponent_div_15_div_1_div_19_Template, 2, 1, "div", 77);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const g_r5 = ctx.$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275classProp("male", g_r5.chef.sexe === "M")("female", g_r5.chef.sexe === "F");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.photoOf(g_r5.chef) && !ctx_r1.failedPhotos.has(g_r5.chef.id));
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r1.photoOf(g_r5.chef) || ctx_r1.failedPhotos.has(g_r5.chef.id));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(ctx_r1.nomComplet(g_r5.chef));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate4(" ", g_r5.couples.length, " couple", g_r5.couples.length > 1 ? "s" : "", " \xB7 ", ctx_r1.totalEnfants(g_r5.couples), " enfant", ctx_r1.totalEnfants(g_r5.couples) > 1 ? "s" : "", " ");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", g_r5.couples.length > 1);
+    \u0275\u0275advance(6);
+    \u0275\u0275classProp("expanded", ctx_r1.isGroupExpanded(g_r5.chef.id));
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngIf", ctx_r1.isGroupExpanded(g_r5.chef.id));
+  }
+}
+function UnionsComponent_div_15_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 64);
+    \u0275\u0275template(1, UnionsComponent_div_15_div_1_Template, 20, 15, "div", 51);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275advance(12);
-    \u0275\u0275property("ngForOf", ctx_r1.unions);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", ctx_r1.groupedUnions);
   }
 }
-function UnionsComponent_div_17_Template(rf, ctx) {
+function UnionsComponent_div_16_Template(rf, ctx) {
   if (rf & 1) {
-    const _r14 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 115);
-    \u0275\u0275listener("click", function UnionsComponent_div_17_Template_div_click_0_listener() {
-      \u0275\u0275restoreView(_r14);
+    const _r12 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 97);
+    \u0275\u0275listener("click", function UnionsComponent_div_16_Template_div_click_0_listener() {
+      \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.closeAll());
     });
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_option_35_Template(rf, ctx) {
+function UnionsComponent_option_34_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 116);
+    \u0275\u0275elementStart(0, "option", 98);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const t_r15 = ctx.$implicit;
-    \u0275\u0275property("value", t_r15.val);
+    const t_r13 = ctx.$implicit;
+    \u0275\u0275property("value", t_r13.val);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(t_r15.label);
+    \u0275\u0275textInterpolate(t_r13.label);
   }
 }
-function UnionsComponent_div_39_Template(rf, ctx) {
+function UnionsComponent_div_41_span_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 117)(1, "span", 6);
-    \u0275\u0275text(2, "warning");
-    \u0275\u0275elementEnd();
-    \u0275\u0275text(3, " Plus de 2 participants s\xE9lectionn\xE9s ");
-    \u0275\u0275elementEnd();
-  }
-}
-function UnionsComponent_div_40_span_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r16 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "span", 120);
+    const _r14 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "span", 101);
     \u0275\u0275text(1);
-    \u0275\u0275elementStart(2, "button", 121);
-    \u0275\u0275listener("click", function UnionsComponent_div_40_span_1_Template_button_click_2_listener() {
-      const pid_r17 = \u0275\u0275restoreView(_r16).$implicit;
+    \u0275\u0275elementStart(2, "button", 102);
+    \u0275\u0275listener("click", function UnionsComponent_div_41_span_1_Template_button_click_2_listener() {
+      const pid_r15 = \u0275\u0275restoreView(_r14).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.toggleParticipant(pid_r17));
+      return \u0275\u0275resetView(ctx_r1.toggleParticipant(pid_r15));
     });
     \u0275\u0275text(3, "\xD7");
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const pid_r17 = ctx.$implicit;
+    const pid_r15 = ctx.$implicit;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.nomComplet(ctx_r1.getPersonneById(pid_r17)), " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r1.nomComplet(ctx_r1.getPersonneById(pid_r15)), " ");
   }
 }
-function UnionsComponent_div_40_Template(rf, ctx) {
+function UnionsComponent_div_41_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 118);
-    \u0275\u0275template(1, UnionsComponent_div_40_span_1_Template, 4, 1, "span", 119);
+    \u0275\u0275elementStart(0, "div", 99);
+    \u0275\u0275template(1, UnionsComponent_div_41_span_1_Template, 4, 1, "span", 100);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -6657,80 +7049,162 @@ function UnionsComponent_div_40_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r1.form.participantIds);
   }
 }
-function UnionsComponent_div_42_img_2_Template(rf, ctx) {
+function UnionsComponent_div_42_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    const _r20 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 112);
-    \u0275\u0275listener("error", function UnionsComponent_div_42_img_2_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r20);
-      const p_r19 = \u0275\u0275nextContext().$implicit;
-      const ctx_r1 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(p_r19.id));
-    });
+    \u0275\u0275elementStart(0, "div", 107)(1, "div", 108);
+    \u0275\u0275text(2);
     \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "div")(4, "span", 109);
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "span", 110);
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const p_r19 = \u0275\u0275nextContext().$implicit;
-    const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275property("src", ctx_r1.photoOf(p_r19), \u0275\u0275sanitizeUrl)("alt", ctx_r1.nomComplet(p_r19));
-  }
-}
-function UnionsComponent_div_42_div_3_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 113);
-    \u0275\u0275text(1);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const p_r19 = \u0275\u0275nextContext().$implicit;
-    const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275classProp("male", p_r19.sexe === "M")("female", p_r19.sexe === "F");
+    const w_r16 = ctx.$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.initiales(p_r19), " ");
-  }
-}
-function UnionsComponent_div_42_span_6_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 125);
-    \u0275\u0275text(1, "check_circle");
-    \u0275\u0275elementEnd();
+    \u0275\u0275classProp("male", w_r16.person.sexe === "M")("female", w_r16.person.sexe === "F");
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r1.initiales(w_r16.person), " ");
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(ctx_r1.nomComplet(w_r16.person));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(w_r16.hint);
   }
 }
 function UnionsComponent_div_42_Template(rf, ctx) {
   if (rf & 1) {
-    const _r18 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 122);
-    \u0275\u0275listener("click", function UnionsComponent_div_42_Template_div_click_0_listener() {
-      const p_r19 = \u0275\u0275restoreView(_r18).$implicit;
+    \u0275\u0275elementStart(0, "div", 103)(1, "div", 104)(2, "span", 7);
+    \u0275\u0275text(3, "info");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "strong");
+    \u0275\u0275text(5, "Unions multiples d\xE9tect\xE9es");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275template(6, UnionsComponent_div_42_div_6_Template, 8, 7, "div", 105);
+    \u0275\u0275elementStart(7, "p", 106)(8, "span", 7);
+    \u0275\u0275text(9, "auto_fix_high");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(10, " Type ajust\xE9 automatiquement \xE0 ");
+    \u0275\u0275elementStart(11, "strong");
+    \u0275\u0275text(12, "Polygamie");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(13, ". ");
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(6);
+    \u0275\u0275property("ngForOf", ctx_r1.multiUnionWarnings);
+  }
+}
+function UnionsComponent_div_44_img_2_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r19 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 119);
+    \u0275\u0275listener("error", function UnionsComponent_div_44_img_2_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r19);
+      const p_r18 = \u0275\u0275nextContext().$implicit;
       const ctx_r1 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r1.toggleParticipant(p_r19.id));
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(p_r18.id));
     });
-    \u0275\u0275elementStart(1, "div", 70);
-    \u0275\u0275template(2, UnionsComponent_div_42_img_2_Template, 1, 2, "img", 98)(3, UnionsComponent_div_42_div_3_Template, 2, 5, "div", 99);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 123);
-    \u0275\u0275text(5);
-    \u0275\u0275elementEnd();
-    \u0275\u0275template(6, UnionsComponent_div_42_span_6_Template, 2, 0, "span", 124);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r19 = ctx.$implicit;
+    const p_r18 = \u0275\u0275nextContext().$implicit;
     const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275classProp("selected", ctx_r1.isParticipant(p_r19.id));
-    \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r1.photoOf(p_r19) && !ctx_r1.failedPhotos.has(p_r19.id));
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.photoOf(p_r19) || ctx_r1.failedPhotos.has(p_r19.id));
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.nomComplet(p_r19));
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.isParticipant(p_r19.id));
+    \u0275\u0275property("src", ctx_r1.photoOf(p_r18), \u0275\u0275sanitizeUrl)("alt", ctx_r1.nomComplet(p_r18));
   }
 }
-function UnionsComponent_option_57_Template(rf, ctx) {
+function UnionsComponent_div_44_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 116);
+    \u0275\u0275elementStart(0, "div", 108);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const p_r18 = \u0275\u0275nextContext().$implicit;
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275classProp("male", p_r18.sexe === "M")("female", p_r18.sexe === "F");
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r1.initiales(p_r18), " ");
+  }
+}
+function UnionsComponent_div_44_span_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 120)(1, "span", 7);
+    \u0275\u0275text(2, "favorite");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const p_r18 = \u0275\u0275nextContext().$implicit;
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r1.getPersonUnionHint(p_r18.id), " ");
+  }
+}
+function UnionsComponent_div_44_span_8_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 121);
+    \u0275\u0275text(1, "check_circle");
+    \u0275\u0275elementEnd();
+  }
+}
+function UnionsComponent_div_44_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r17 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 111);
+    \u0275\u0275listener("click", function UnionsComponent_div_44_Template_div_click_0_listener() {
+      const p_r18 = \u0275\u0275restoreView(_r17).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.toggleParticipant(p_r18.id));
+    });
+    \u0275\u0275elementStart(1, "div", 112);
+    \u0275\u0275template(2, UnionsComponent_div_44_img_2_Template, 1, 2, "img", 113)(3, UnionsComponent_div_44_div_3_Template, 2, 5, "div", 114);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "div", 115)(5, "span", 116);
+    \u0275\u0275text(6);
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(7, UnionsComponent_div_44_span_7_Template, 4, 1, "span", 117);
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(8, UnionsComponent_div_44_span_8_Template, 2, 0, "span", 118);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const p_r18 = ctx.$implicit;
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275classProp("selected", ctx_r1.isParticipant(p_r18.id))("has-union", ctx_r1.getPersonActiveUnions(p_r18.id).length > 0 && !ctx_r1.isParticipant(p_r18.id));
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngIf", ctx_r1.photoOf(p_r18) && !ctx_r1.failedPhotos.has(p_r18.id));
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r1.photoOf(p_r18) || ctx_r1.failedPhotos.has(p_r18.id));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(ctx_r1.nomComplet(p_r18));
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.getPersonUnionHint(p_r18.id));
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.isParticipant(p_r18.id));
+  }
+}
+function UnionsComponent_option_59_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 98);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const m_r20 = ctx.$implicit;
+    \u0275\u0275property("value", m_r20.val);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(m_r20.label);
+  }
+}
+function UnionsComponent_option_84_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 98);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -6741,172 +7215,166 @@ function UnionsComponent_option_57_Template(rf, ctx) {
     \u0275\u0275textInterpolate(m_r21.label);
   }
 }
-function UnionsComponent_option_82_Template(rf, ctx) {
+function UnionsComponent_span_102_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 116);
-    \u0275\u0275text(1);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const m_r22 = ctx.$implicit;
-    \u0275\u0275property("value", m_r22.val);
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate(m_r22.label);
-  }
-}
-function UnionsComponent_span_100_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 126);
+    \u0275\u0275elementStart(0, "span", 122);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_div_117_img_2_Template(rf, ctx) {
+function UnionsComponent_span_103_Template(rf, ctx) {
   if (rf & 1) {
-    const _r25 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 112);
-    \u0275\u0275listener("error", function UnionsComponent_div_117_img_2_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r25);
-      const p_r24 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275elementStart(0, "span", 7);
+    \u0275\u0275text(1, "save");
+    \u0275\u0275elementEnd();
+  }
+}
+function UnionsComponent_div_120_img_2_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r24 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 119);
+    \u0275\u0275listener("error", function UnionsComponent_div_120_img_2_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r24);
+      const p_r23 = \u0275\u0275nextContext().$implicit;
       const ctx_r1 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(p_r24.id));
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(p_r23.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r24 = \u0275\u0275nextContext().$implicit;
+    const p_r23 = \u0275\u0275nextContext().$implicit;
     const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275property("src", ctx_r1.photoOf(p_r24), \u0275\u0275sanitizeUrl)("alt", ctx_r1.nomComplet(p_r24));
+    \u0275\u0275property("src", ctx_r1.photoOf(p_r23), \u0275\u0275sanitizeUrl)("alt", ctx_r1.nomComplet(p_r23));
   }
 }
-function UnionsComponent_div_117_div_3_Template(rf, ctx) {
+function UnionsComponent_div_120_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 113);
+    \u0275\u0275elementStart(0, "div", 108);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r24 = \u0275\u0275nextContext().$implicit;
+    const p_r23 = \u0275\u0275nextContext().$implicit;
     const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275classProp("male", p_r24.sexe === "M")("female", p_r24.sexe === "F");
+    \u0275\u0275classProp("male", p_r23.sexe === "M")("female", p_r23.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.initiales(p_r24), " ");
+    \u0275\u0275textInterpolate(ctx_r1.initiales(p_r23));
   }
 }
-function UnionsComponent_div_117_span_6_Template(rf, ctx) {
+function UnionsComponent_div_120_span_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 125);
+    \u0275\u0275elementStart(0, "span", 121);
     \u0275\u0275text(1, "check_circle");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_div_117_Template(rf, ctx) {
+function UnionsComponent_div_120_Template(rf, ctx) {
   if (rf & 1) {
-    const _r23 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 122);
-    \u0275\u0275listener("click", function UnionsComponent_div_117_Template_div_click_0_listener() {
-      const p_r24 = \u0275\u0275restoreView(_r23).$implicit;
+    const _r22 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 111);
+    \u0275\u0275listener("click", function UnionsComponent_div_120_Template_div_click_0_listener() {
+      const p_r23 = \u0275\u0275restoreView(_r22).$implicit;
       const ctx_r1 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r1.toggleEnfantSelection(p_r24.id));
+      return \u0275\u0275resetView(ctx_r1.toggleEnfantSelection(p_r23.id));
     });
-    \u0275\u0275elementStart(1, "div", 70);
-    \u0275\u0275template(2, UnionsComponent_div_117_img_2_Template, 1, 2, "img", 98)(3, UnionsComponent_div_117_div_3_Template, 2, 5, "div", 99);
+    \u0275\u0275elementStart(1, "div", 112);
+    \u0275\u0275template(2, UnionsComponent_div_120_img_2_Template, 1, 2, "img", 113)(3, UnionsComponent_div_120_div_3_Template, 2, 5, "div", 114);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 123);
+    \u0275\u0275elementStart(4, "span", 116);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(6, UnionsComponent_div_117_span_6_Template, 2, 0, "span", 124);
+    \u0275\u0275template(6, UnionsComponent_div_120_span_6_Template, 2, 0, "span", 118);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r24 = ctx.$implicit;
+    const p_r23 = ctx.$implicit;
     const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275classProp("selected", ctx_r1.isEnfantSelected(p_r24.id));
+    \u0275\u0275classProp("selected", ctx_r1.isEnfantSelected(p_r23.id));
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r1.photoOf(p_r24) && !ctx_r1.failedPhotos.has(p_r24.id));
+    \u0275\u0275property("ngIf", ctx_r1.photoOf(p_r23) && !ctx_r1.failedPhotos.has(p_r23.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.photoOf(p_r24) || ctx_r1.failedPhotos.has(p_r24.id));
+    \u0275\u0275property("ngIf", !ctx_r1.photoOf(p_r23) || ctx_r1.failedPhotos.has(p_r23.id));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.nomComplet(p_r24));
+    \u0275\u0275textInterpolate(ctx_r1.nomComplet(p_r23));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.isEnfantSelected(p_r24.id));
+    \u0275\u0275property("ngIf", ctx_r1.isEnfantSelected(p_r23.id));
   }
 }
-function UnionsComponent_div_118_Template(rf, ctx) {
+function UnionsComponent_div_121_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 127);
-    \u0275\u0275text(1, " Aucune personne disponible ");
+    \u0275\u0275elementStart(0, "div", 123);
+    \u0275\u0275text(1, "Aucune personne disponible");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_div_119_div_3_img_2_Template(rf, ctx) {
+function UnionsComponent_div_122_div_3_img_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r27 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 112);
-    \u0275\u0275listener("error", function UnionsComponent_div_119_div_3_img_2_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r27);
-      const f_r28 = \u0275\u0275nextContext().$implicit;
+    const _r26 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 119);
+    \u0275\u0275listener("error", function UnionsComponent_div_122_div_3_img_2_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r26);
+      const f_r27 = \u0275\u0275nextContext().$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(f_r28.enfant && ctx_r1.onPhotoError(f_r28.enfant.id));
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(f_r27.enfant.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const f_r28 = \u0275\u0275nextContext().$implicit;
+    const f_r27 = \u0275\u0275nextContext().$implicit;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r1.photoOf(f_r28.enfant), \u0275\u0275sanitizeUrl)("alt", ctx_r1.nomComplet(f_r28.enfant));
+    \u0275\u0275property("src", ctx_r1.photoOf(f_r27.enfant), \u0275\u0275sanitizeUrl)("alt", ctx_r1.nomComplet(f_r27.enfant));
   }
 }
-function UnionsComponent_div_119_div_3_div_3_Template(rf, ctx) {
+function UnionsComponent_div_122_div_3_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 113);
+    \u0275\u0275elementStart(0, "div", 108);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const f_r28 = \u0275\u0275nextContext().$implicit;
+    const f_r27 = \u0275\u0275nextContext().$implicit;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("male", f_r28.enfant.sexe === "M")("female", f_r28.enfant.sexe === "F");
+    \u0275\u0275classProp("male", f_r27.enfant.sexe === "M")("female", f_r27.enfant.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.initiales(f_r28.enfant), " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r1.initiales(f_r27.enfant), " ");
   }
 }
-function UnionsComponent_div_119_div_3_Template(rf, ctx) {
+function UnionsComponent_div_122_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r26 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 131)(1, "div", 70);
-    \u0275\u0275template(2, UnionsComponent_div_119_div_3_img_2_Template, 1, 2, "img", 98)(3, UnionsComponent_div_119_div_3_div_3_Template, 2, 5, "div", 99);
+    const _r25 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 127)(1, "div", 112);
+    \u0275\u0275template(2, UnionsComponent_div_122_div_3_img_2_Template, 1, 2, "img", 113)(3, UnionsComponent_div_122_div_3_div_3_Template, 2, 5, "div", 114);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 132);
+    \u0275\u0275elementStart(4, "span", 128);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "button", 133);
-    \u0275\u0275listener("click", function UnionsComponent_div_119_div_3_Template_button_click_6_listener() {
-      const f_r28 = \u0275\u0275restoreView(_r26).$implicit;
+    \u0275\u0275elementStart(6, "button", 129);
+    \u0275\u0275listener("click", function UnionsComponent_div_122_div_3_Template_button_click_6_listener() {
+      const f_r27 = \u0275\u0275restoreView(_r25).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.retirerEnfant(ctx_r1.enfantUnionTarget.id, f_r28.enfantId));
+      return \u0275\u0275resetView(ctx_r1.retirerEnfant(ctx_r1.enfantUnionTarget.id, f_r27.enfantId));
     });
-    \u0275\u0275elementStart(7, "span", 6);
+    \u0275\u0275elementStart(7, "span", 7);
     \u0275\u0275text(8, "remove_circle_outline");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const f_r28 = ctx.$implicit;
+    const f_r27 = ctx.$implicit;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r1.photoOf(f_r28.enfant) && !ctx_r1.failedPhotos.has((f_r28.enfant == null ? null : f_r28.enfant.id) ?? ""));
+    \u0275\u0275property("ngIf", ctx_r1.photoOf(f_r27.enfant) && !ctx_r1.failedPhotos.has(f_r27.enfant.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.photoOf(f_r28.enfant) || ctx_r1.failedPhotos.has((f_r28.enfant == null ? null : f_r28.enfant.id) ?? ""));
+    \u0275\u0275property("ngIf", !ctx_r1.photoOf(f_r27.enfant) || ctx_r1.failedPhotos.has(f_r27.enfant.id));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.nomComplet(f_r28.enfant));
+    \u0275\u0275textInterpolate(ctx_r1.nomComplet(f_r27.enfant));
   }
 }
-function UnionsComponent_div_119_Template(rf, ctx) {
+function UnionsComponent_div_122_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 128)(1, "div", 129);
+    \u0275\u0275elementStart(0, "div", 124)(1, "div", 125);
     \u0275\u0275text(2, "Enfants actuels");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(3, UnionsComponent_div_119_div_3_Template, 9, 3, "div", 130);
+    \u0275\u0275template(3, UnionsComponent_div_122_div_3_Template, 9, 3, "div", 126);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -6915,47 +7383,47 @@ function UnionsComponent_div_119_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r1.enfantUnionTarget.filiations);
   }
 }
-function UnionsComponent_span_124_Template(rf, ctx) {
+function UnionsComponent_span_127_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 126);
+    \u0275\u0275elementStart(0, "span", 122);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_div_126_span_13_Template(rf, ctx) {
+function UnionsComponent_div_129_span_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 126);
+    \u0275\u0275elementStart(0, "span", 122);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_div_126_Template(rf, ctx) {
+function UnionsComponent_div_129_Template(rf, ctx) {
   if (rf & 1) {
-    const _r29 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 134)(1, "div", 135)(2, "div", 136)(3, "span", 6);
+    const _r28 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 130)(1, "div", 131)(2, "div", 132)(3, "span", 7);
     \u0275\u0275text(4, "delete_forever");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(5, "h4");
-    \u0275\u0275text(6, "Supprimer cette union ?");
+    \u0275\u0275text(6, "Supprimer ce couple ?");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(7, "p");
     \u0275\u0275text(8, "Cette action est irr\xE9versible. Tous les liens de parent\xE9 associ\xE9s seront supprim\xE9s.");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "div", 137)(10, "button", 40);
-    \u0275\u0275listener("click", function UnionsComponent_div_126_Template_button_click_10_listener() {
-      \u0275\u0275restoreView(_r29);
+    \u0275\u0275elementStart(9, "div", 133)(10, "button", 39);
+    \u0275\u0275listener("click", function UnionsComponent_div_129_Template_button_click_10_listener() {
+      \u0275\u0275restoreView(_r28);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.closeAll());
     });
     \u0275\u0275text(11, "Annuler");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "button", 138);
-    \u0275\u0275listener("click", function UnionsComponent_div_126_Template_button_click_12_listener() {
-      \u0275\u0275restoreView(_r29);
+    \u0275\u0275elementStart(12, "button", 134);
+    \u0275\u0275listener("click", function UnionsComponent_div_129_Template_button_click_12_listener() {
+      \u0275\u0275restoreView(_r28);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.deleteUnion());
     });
-    \u0275\u0275template(13, UnionsComponent_div_126_span_13_Template, 2, 0, "span", 42);
+    \u0275\u0275template(13, UnionsComponent_div_129_span_13_Template, 2, 0, "span", 41);
     \u0275\u0275text(14);
     \u0275\u0275elementEnd()()()();
   }
@@ -6997,7 +7465,6 @@ var UnionsComponent = class _UnionsComponent {
   personnes = [];
   loading = true;
   erreur = null;
-  viewMode = "cards";
   getPhotoUrl = getPhotoUrl;
   failedPhotos = /* @__PURE__ */ new Set();
   onPhotoError(id) {
@@ -7006,26 +7473,77 @@ var UnionsComponent = class _UnionsComponent {
   photoOf(p) {
     return p ? getPhotoUrl(p) : null;
   }
-  // Panel form
+  // ── Groupes ────────────────────────────────────────────────────────────
+  expandedGroups = /* @__PURE__ */ new Set();
+  // IDs des chefs dont le groupe est déplié
+  /** Groupes de couples par chef de famille (personne avec ordre=0 le plus souvent) */
+  get groupedUnions() {
+    const chefCount = /* @__PURE__ */ new Map();
+    for (const u of this.unions) {
+      const p0 = u.participants.find((p) => p.ordre === 0);
+      if (p0)
+        chefCount.set(p0.personneId, (chefCount.get(p0.personneId) ?? 0) + 1);
+    }
+    const groupMap = /* @__PURE__ */ new Map();
+    for (const u of this.unions) {
+      const p0 = u.participants.find((p) => p.ordre === 0) ?? u.participants[0];
+      if (!p0)
+        continue;
+      const pid = p0.personneId;
+      if (!groupMap.has(pid)) {
+        groupMap.set(pid, { chef: p0.personne, couples: [] });
+        this.expandedGroups.add(pid);
+      }
+      groupMap.get(pid).couples.push(u);
+    }
+    return Array.from(groupMap.values()).sort((a, b) => b.couples.length - a.couples.length);
+  }
+  toggleGroup(chefId) {
+    if (this.expandedGroups.has(chefId))
+      this.expandedGroups.delete(chefId);
+    else
+      this.expandedGroups.add(chefId);
+  }
+  isGroupExpanded(chefId) {
+    return this.expandedGroups.has(chefId);
+  }
+  // ── Statut d'un couple ─────────────────────────────────────────────────
+  coupleStatus(u) {
+    if (!u.dateFin)
+      return "active";
+    const partner = u.participants.find((p) => p.ordre !== 0)?.personne;
+    if (partner && !estVivant(partner))
+      return "widowed";
+    return "divorced";
+  }
+  coupleStatusLabel(u) {
+    const s = this.coupleStatus(u);
+    if (s === "divorced")
+      return "Divorc\xE9(e)";
+    if (s === "widowed")
+      return "Veuf/Veuve";
+    return "Actif";
+  }
+  coupleStatusIcon(u) {
+    const s = this.coupleStatus(u);
+    return s === "active" ? "favorite" : s === "divorced" ? "heart_broken" : "favorite";
+  }
+  // ── Panels ─────────────────────────────────────────────────────────────
   showForm = false;
   editTarget = null;
-  // Panel suppression
   showDeleteConfirm = false;
   deleteTarget = null;
-  // Panel enfants
   showEnfantPanel = false;
   enfantUnionTarget = null;
   enfantsSelectionnes = [];
   searchEnfant = "";
-  // Flags
   saving = false;
   deleting = false;
   addingEnfant = false;
-  // Constantes exposées au template
   mois = MOIS2;
   typeUnion = TYPE_UNION;
-  // Formulaire
   form = this.emptyForm();
+  // ── Libellés ───────────────────────────────────────────────────────────
   typeLabel = {
     mariage: "Mariage",
     pacs: "PACS",
@@ -7033,14 +7551,6 @@ var UnionsComponent = class _UnionsComponent {
     fiancailles: "Fian\xE7ailles",
     adoption: "Adoption",
     polygamie: "Polygamie"
-  };
-  typeColorMap = {
-    mariage: "pink",
-    pacs: "accent",
-    union_libre: "primary",
-    fiancailles: "gold",
-    adoption: "green",
-    polygamie: "purple"
   };
   typeIconMap = {
     mariage: "favorite",
@@ -7058,10 +7568,7 @@ var UnionsComponent = class _UnionsComponent {
   }
   loadAll() {
     this.loading = true;
-    forkJoin({
-      unions: this.api.getUnions(),
-      personnes: this.api.getPersonnes()
-    }).subscribe({
+    forkJoin({ unions: this.api.getUnions(), personnes: this.api.getPersonnes() }).subscribe({
       next: ({ unions, personnes }) => {
         this.unions = unions;
         this.personnes = personnes;
@@ -7074,13 +7581,14 @@ var UnionsComponent = class _UnionsComponent {
     });
   }
   refreshUnions() {
-    this.api.getUnions().subscribe({
-      next: (data) => {
-        this.unions = data;
-      }
-    });
+    this.api.getUnions().subscribe({ next: (data) => {
+      this.unions = data;
+    } });
   }
-  /* ===== Helpers ===== */
+  // ── Helpers ─────────────────────────────────────────────────────────────
+  getPartner(u, chefId) {
+    return u.participants.find((p) => p.personneId !== chefId)?.personne ?? null;
+  }
   getConjoint1(u) {
     return u.participants.find((p) => p.ordre === 0)?.personne ?? null;
   }
@@ -7088,17 +7596,13 @@ var UnionsComponent = class _UnionsComponent {
     return u.participants.find((p) => p.ordre === 1)?.personne ?? null;
   }
   initiales(p) {
-    if (!p)
-      return "?";
-    return getInitiales(p);
+    return p ? getInitiales(p) : "?";
   }
   nomComplet(p) {
-    if (!p)
-      return "\u2014";
-    return getNomComplet(p);
+    return p ? getNomComplet(p) : "\u2014";
   }
-  annee(dateStr) {
-    return extractAnnee(dateStr);
+  annee(d) {
+    return extractAnnee(d);
   }
   getPersonneById(id) {
     return this.personnes.find((p) => p.id === id) ?? null;
@@ -7106,31 +7610,44 @@ var UnionsComponent = class _UnionsComponent {
   getTypeLabel(type) {
     return this.typeLabel[type ?? ""] ?? type ?? "Union";
   }
-  getTypeColor(type) {
-    return "banner-" + (this.typeColorMap[type ?? ""] ?? "primary");
-  }
   getTypeIcon(type) {
     return this.typeIconMap[type ?? ""] ?? "favorite";
   }
-  emptyForm() {
-    return {
-      type: "mariage",
-      debut_annee: "",
-      debut_mois: "",
-      debut_jour: "",
-      lieuDebut: "",
-      fin_annee: "",
-      fin_mois: "",
-      fin_jour: "",
-      lieuFin: "",
-      notes: "",
-      participantIds: []
-    };
+  totalEnfants(couples) {
+    return couples.reduce((s, u) => s + u.filiations.length, 0);
   }
-  /* ===== Form CRUD ===== */
+  // ── Unions multiples : avertissements ─────────────────────────────────
+  getPersonActiveUnions(personId) {
+    return this.unions.filter((u) => !u.dateFin && u.participants.some((pt) => pt.personneId === personId) && (!this.editTarget || u.id !== this.editTarget.id));
+  }
+  getPersonUnionHint(personId) {
+    const actives = this.getPersonActiveUnions(personId);
+    if (!actives.length)
+      return "";
+    return actives.map((u) => {
+      const partner = u.participants.find((pt) => pt.personneId !== personId);
+      const name = partner?.personne ? `${partner.personne.prenoms ?? ""} ${partner.personne.nomUsage ?? partner.personne.nomNaissance ?? ""}`.trim() : "\u2014";
+      return `${this.typeLabel[u.type ?? ""] ?? "Union"} avec ${name}`;
+    }).join(" \xB7 ");
+  }
+  get multiUnionWarnings() {
+    return this.form.participantIds.map((pid) => {
+      const person = this.getPersonneById(pid);
+      const hint = this.getPersonUnionHint(pid);
+      return person && hint ? { person, hint } : null;
+    }).filter((x) => x !== null);
+  }
+  // ── Ouverture des panels ───────────────────────────────────────────────
   openCreate() {
     this.editTarget = null;
     this.form = this.emptyForm();
+    this.showForm = true;
+  }
+  /** Crée un nouveau couple pour un chef de famille donné */
+  openCreateForChef(chef) {
+    this.editTarget = null;
+    this.form = this.emptyForm();
+    this.form.participantIds = [chef.id];
     this.showForm = true;
   }
   openEdit(u) {
@@ -7161,20 +7678,20 @@ var UnionsComponent = class _UnionsComponent {
     this.enfantUnionTarget = null;
     this.enfantsSelectionnes = [];
   }
-  splitDate(dateStr) {
-    if (!dateStr)
+  splitDate(d) {
+    if (!d)
       return ["", "", ""];
-    const parts = dateStr.split("-");
+    const parts = d.split("-");
     return [parts[0] ?? "", parts[1] ?? "", parts[2] ?? ""];
   }
-  buildDateStr(annee, mois, jour) {
-    if (!annee)
+  buildDateStr(a, m, j) {
+    if (!a)
       return null;
-    if (!mois)
-      return annee;
-    if (!jour)
-      return `${annee}-${mois}`;
-    return `${annee}-${mois}-${jour}`;
+    if (!m)
+      return a;
+    if (!j)
+      return `${a}-${m}`;
+    return `${a}-${m}-${j}`;
   }
   toggleParticipant(id) {
     const idx = this.form.participantIds.indexOf(id);
@@ -7182,6 +7699,9 @@ var UnionsComponent = class _UnionsComponent {
       this.form.participantIds.splice(idx, 1);
     } else {
       this.form.participantIds.push(id);
+      if (this.getPersonActiveUnions(id).length > 0 && this.form.type === "mariage") {
+        this.form.type = "polygamie";
+      }
     }
   }
   isParticipant(id) {
@@ -7212,7 +7732,6 @@ var UnionsComponent = class _UnionsComponent {
       }
     });
   }
-  /* ===== Suppression ===== */
   confirmDelete(u) {
     this.deleteTarget = u;
     this.showDeleteConfirm = true;
@@ -7232,7 +7751,6 @@ var UnionsComponent = class _UnionsComponent {
       }
     });
   }
-  /* ===== Enfants ===== */
   openEnfantPanel(u) {
     this.enfantUnionTarget = u;
     this.enfantsSelectionnes = [];
@@ -7247,32 +7765,29 @@ var UnionsComponent = class _UnionsComponent {
   get personnesDisponibles() {
     if (!this.enfantUnionTarget)
       return [];
-    const participantIds = this.enfantUnionTarget.participants.map((p) => p.personneId);
-    const enfantIds = this.enfantUnionTarget.filiations.map((f) => f.enfantId);
-    const exclus = /* @__PURE__ */ new Set([...participantIds, ...enfantIds]);
+    const exclus = /* @__PURE__ */ new Set([
+      ...this.enfantUnionTarget.participants.map((p) => p.personneId),
+      ...this.enfantUnionTarget.filiations.map((f) => f.enfantId)
+    ]);
     const q = this.searchEnfant.toLowerCase();
     return this.personnes.filter((p) => {
       if (exclus.has(p.id))
         return false;
-      if (!q)
-        return true;
-      const nom = getNomComplet(p).toLowerCase();
-      return nom.includes(q);
+      return !q || getNomComplet(p).toLowerCase().includes(q);
     });
   }
   toggleEnfantSelection(id) {
     const idx = this.enfantsSelectionnes.indexOf(id);
-    if (idx >= 0) {
+    if (idx >= 0)
       this.enfantsSelectionnes.splice(idx, 1);
-    } else {
+    else
       this.enfantsSelectionnes.push(id);
-    }
   }
   isEnfantSelected(id) {
     return this.enfantsSelectionnes.includes(id);
   }
   ajouterEnfants() {
-    if (!this.enfantUnionTarget || this.addingEnfant || this.enfantsSelectionnes.length === 0)
+    if (!this.enfantUnionTarget || this.addingEnfant || !this.enfantsSelectionnes.length)
       return;
     this.addingEnfant = true;
     const unionId = this.enfantUnionTarget.id;
@@ -7305,241 +7820,247 @@ var UnionsComponent = class _UnionsComponent {
         if (this.enfantUnionTarget?.id === unionId) {
           this.api.getUnions().subscribe((data) => {
             this.unions = data;
-            const updated = data.find((u) => u.id === unionId);
-            if (updated)
-              this.enfantUnionTarget = updated;
+            const u = data.find((u2) => u2.id === unionId);
+            if (u)
+              this.enfantUnionTarget = u;
           });
         }
       }
     });
   }
+  emptyForm() {
+    return { type: "mariage", debut_annee: "", debut_mois: "", debut_jour: "", lieuDebut: "", fin_annee: "", fin_mois: "", fin_jour: "", lieuFin: "", notes: "", participantIds: [] };
+  }
   static \u0275fac = function UnionsComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _UnionsComponent)(\u0275\u0275directiveInject(ApiService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _UnionsComponent, selectors: [["app-unions"]], standalone: false, decls: 127, vars: 43, consts: [["unionForm", "ngForm"], [1, "unions-page"], [1, "page-header"], [1, "page-title"], [1, "page-subtitle"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], ["class", "sk-grid", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "toolbar-right", 4, "ngIf"], ["class", "unions-grid", 4, "ngIf"], ["class", "ul-table", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel"], [1, "panel-header"], [1, "btn-icon", 3, "click"], [1, "panel-body"], [1, "form-section"], [1, "section-title"], [1, "form-group"], ["name", "type", 1, "form-control", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], ["class", "warning-msg", 4, "ngIf"], ["class", "participant-chips", 4, "ngIf"], [1, "person-select-list"], ["class", "person-select-item", 3, "selected", "click", 4, "ngFor", "ngForOf"], [1, "form-row"], ["type", "number", "name", "debut_annee", "placeholder", "2000", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "debut_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], ["type", "number", "name", "debut_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuDebut", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "optional"], ["type", "number", "name", "fin_annee", "placeholder", "2020", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "fin_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "number", "name", "fin_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuFin", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "notes", "rows", "3", "placeholder", "Notes compl\xE9mentaires...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], [1, "panel-subtitle"], [1, "search-bar", 2, "margin-bottom", "12px"], ["type", "text", "name", "searchEnfant", "placeholder", "Rechercher une personne...", 3, "ngModelChange", "ngModel"], ["class", "empty-list-msg", 4, "ngIf"], ["class", "current-children", 4, "ngIf"], ["class", "confirm-dialog", 4, "ngIf"], [1, "sk-grid"], ["class", "sk-card", 4, "ngFor", "ngForOf"], [1, "sk-card"], [1, "sk-card-banner"], [1, "sk-card-body"], [1, "sk-line", "sk-full"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "error-state"], [1, "empty-state"], [1, "toolbar-right"], [1, "view-toggle"], ["title", "Vue cartes", 1, "vt-btn", 3, "click"], ["title", "Vue liste", 1, "vt-btn", 3, "click"], [1, "unions-grid"], ["class", "union-card", 4, "ngFor", "ngForOf"], [1, "union-card"], [1, "pc-colorband"], [1, "union-type-banner", 3, "ngClass"], [1, "couple-row"], [1, "person-chip"], [1, "u-avatar-wrap"], ["class", "u-avatar-photo avatar avatar-md", 3, "src", "alt", "error", 4, "ngIf"], ["class", "avatar avatar-md", 3, "male", "female", 4, "ngIf"], [1, "person-info"], [1, "person-name"], [1, "material-icons-round", "link-icon"], ["class", "avatar avatar-md accent", 3, "male", "female", 4, "ngIf"], [1, "union-details"], ["class", "detail-item", 4, "ngIf"], [1, "detail-item"], [1, "card-actions"], ["title", "G\xE9rer les enfants", 1, "btn-icon", 3, "click"], ["title", "Modifier", 1, "btn-icon", 3, "click"], ["title", "Supprimer", 1, "btn-icon", "btn-icon-danger", 3, "click"], [1, "u-avatar-photo", "avatar", "avatar-md", 3, "error", "src", "alt"], [1, "avatar", "avatar-md"], [1, "avatar", "avatar-md", "accent"], [1, "ul-table"], [1, "ul-thead"], [1, "pl-th"], [1, "pl-th", "ul-th-type"], [1, "pl-th", "ul-th-date"], [1, "pl-th", "ul-th-enfants"], [1, "pl-th", "ul-th-actions"], ["class", "ul-row", 4, "ngFor", "ngForOf"], [1, "ul-row"], [1, "ul-cell", "ul-cell-couple"], [1, "ul-avatars"], ["class", "u-avatar-photo avatar avatar-sm", 3, "src", "alt", "error", 4, "ngIf"], ["class", "avatar avatar-sm", 3, "male", "female", 4, "ngIf"], [1, "material-icons-round", "ul-heart"], [1, "ul-names"], [1, "ul-name-primary"], [1, "ul-name-secondary"], [1, "ul-cell", "ul-cell-type"], [1, "union-type-badge", 3, "ngClass"], [1, "ul-cell", "ul-cell-date"], [4, "ngIf"], ["class", "pl-empty", 4, "ngIf"], [1, "ul-cell", "ul-cell-enfants"], [1, "ul-enfant-count"], [1, "ul-cell", "ul-cell-actions", 3, "click"], [1, "u-avatar-photo", "avatar", "avatar-sm", 3, "error", "src", "alt"], [1, "avatar", "avatar-sm"], [1, "pl-empty"], [1, "panel-overlay", 3, "click"], [3, "value"], [1, "warning-msg"], [1, "participant-chips"], ["class", "participant-chip", 4, "ngFor", "ngForOf"], [1, "participant-chip"], ["type", "button", 1, "chip-remove", 3, "click"], [1, "person-select-item", 3, "click"], [1, "person-select-name"], ["class", "material-icons-round check-icon", 4, "ngIf"], [1, "material-icons-round", "check-icon"], [1, "material-icons-round", "spin"], [1, "empty-list-msg"], [1, "current-children"], [1, "section-title", 2, "margin-top", "20px"], ["class", "child-item", 4, "ngFor", "ngForOf"], [1, "child-item"], [1, "child-name"], ["title", "Retirer", 1, "btn-icon", "btn-icon-danger", 3, "click"], [1, "confirm-dialog"], [1, "confirm-box"], [1, "confirm-icon"], [1, "confirm-actions"], [1, "btn-danger", 3, "click", "disabled"]], template: function UnionsComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _UnionsComponent, selectors: [["app-unions"]], standalone: false, decls: 130, vars: 43, consts: [["unionForm", "ngForm"], [1, "unions-page"], [1, "page-header"], [1, "header-row"], [1, "page-title"], [1, "page-subtitle"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], ["class", "sk-section", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "ug-groups", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel"], [1, "panel-header"], [1, "btn-icon", 3, "click"], [1, "panel-body"], [1, "form-section"], [1, "section-title"], [1, "form-group"], ["name", "type", 1, "form-control", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], ["class", "participant-chips", 4, "ngIf"], ["class", "multi-union-alert", 4, "ngIf"], [1, "person-select-list"], ["class", "person-select-item", 3, "selected", "has-union", "click", 4, "ngFor", "ngForOf"], [1, "form-row"], ["type", "number", "name", "debut_annee", "placeholder", "2000", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "debut_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], ["type", "number", "name", "debut_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuDebut", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "optional"], ["type", "number", "name", "fin_annee", "placeholder", "2020", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "fin_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "number", "name", "fin_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuFin", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "notes", "rows", "3", "placeholder", "Notes compl\xE9mentaires...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "panel-subtitle"], [1, "search-bar", 2, "margin-bottom", "12px"], ["type", "text", "placeholder", "Rechercher...", 3, "ngModelChange", "ngModel"], ["class", "person-select-item", 3, "selected", "click", 4, "ngFor", "ngForOf"], ["class", "empty-list-msg", 4, "ngIf"], ["class", "current-children", 4, "ngIf"], ["class", "confirm-dialog", 4, "ngIf"], [1, "sk-section"], ["class", "ug-group", 4, "ngFor", "ngForOf"], [1, "ug-group"], [1, "ug-group-header"], [1, "sk-avatar", "sk-av-md"], [2, "flex", "1", "display", "flex", "flex-direction", "column", "gap", "6px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], ["class", "ug-couple-row", 4, "ngFor", "ngForOf"], [1, "ug-couple-row"], [1, "sk-line", "sk-xs", 2, "width", "32px", "height", "32px", "border-radius", "50%"], [2, "flex", "1", "display", "flex", "flex-direction", "column", "gap", "5px"], [1, "error-state"], [1, "empty-state"], [1, "ug-groups"], [1, "ug-group-header", 3, "click"], [1, "ug-chef-left"], [1, "ug-chef-avatar"], ["class", "ug-chef-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], [4, "ngIf"], [1, "ug-chef-info"], [1, "ug-chef-name"], [1, "ug-chef-meta"], ["class", "badge ug-poly-badge", 4, "ngIf"], [1, "ug-group-actions"], [1, "btn-outline", "btn-sm", 3, "click"], [1, "material-icons-round", "ug-chevron"], ["class", "ug-couples", 4, "ngIf"], [1, "ug-chef-avatar-photo", 3, "error", "src", "alt"], [1, "badge", "ug-poly-badge"], [1, "ug-couples"], [1, "ug-couple-num"], [1, "material-icons-round", "ug-status-icon"], [1, "ug-partner-info"], [1, "ug-partner-avatar"], [1, "ug-partner-details"], [1, "ug-partner-name"], [1, "ug-partner-meta"], [1, "ug-status-chip"], ["class", "ug-children-count", 4, "ngIf"], [1, "ug-couple-actions"], ["title", "G\xE9rer les enfants", 1, "btn-icon", 3, "click"], ["title", "Modifier ce couple", 1, "btn-icon", 3, "click"], ["title", "Supprimer", 1, "btn-icon", "btn-icon-danger", 3, "click"], ["class", "ug-partner-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ug-partner-photo", 3, "error", "src", "alt"], [1, "ug-children-count"], [1, "panel-overlay", 3, "click"], [3, "value"], [1, "participant-chips"], ["class", "participant-chip", 4, "ngFor", "ngForOf"], [1, "participant-chip"], ["type", "button", 1, "chip-remove", 3, "click"], [1, "multi-union-alert"], [1, "multi-union-alert-header"], ["class", "multi-union-alert-row", 4, "ngFor", "ngForOf"], [1, "multi-union-alert-tip"], [1, "multi-union-alert-row"], [1, "avatar", "avatar-sm"], [1, "multi-union-alert-name"], [1, "multi-union-alert-hint"], [1, "person-select-item", 3, "click"], [1, "u-avatar-wrap"], ["class", "u-avatar-photo avatar avatar-sm", 3, "src", "alt", "error", 4, "ngIf"], ["class", "avatar avatar-sm", 3, "male", "female", 4, "ngIf"], [1, "person-select-info"], [1, "person-select-name"], ["class", "person-union-hint", 4, "ngIf"], ["class", "material-icons-round check-icon", 4, "ngIf"], [1, "u-avatar-photo", "avatar", "avatar-sm", 3, "error", "src", "alt"], [1, "person-union-hint"], [1, "material-icons-round", "check-icon"], [1, "material-icons-round", "spin"], [1, "empty-list-msg"], [1, "current-children"], [1, "section-title", 2, "margin-top", "20px"], ["class", "child-item", 4, "ngFor", "ngForOf"], [1, "child-item"], [1, "child-name"], [1, "btn-icon", "btn-icon-danger", 3, "click"], [1, "confirm-dialog"], [1, "confirm-box"], [1, "confirm-icon"], [1, "confirm-actions"], [1, "btn-danger", 3, "click", "disabled"]], template: function UnionsComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
-      \u0275\u0275elementStart(0, "div", 1)(1, "div", 2)(2, "div")(3, "h2", 3);
-      \u0275\u0275text(4, "Unions familiales");
+      \u0275\u0275elementStart(0, "div", 1)(1, "div", 2)(2, "div", 3)(3, "div")(4, "h2", 4);
+      \u0275\u0275text(5, "Unions familiales");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(5, "p", 4);
-      \u0275\u0275text(6);
+      \u0275\u0275elementStart(6, "p", 5);
+      \u0275\u0275text(7);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(7, "button", 5);
-      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_7_listener() {
+      \u0275\u0275elementStart(8, "button", 6);
+      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_8_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.openCreate());
       });
-      \u0275\u0275elementStart(8, "span", 6);
-      \u0275\u0275text(9, "add");
+      \u0275\u0275elementStart(9, "span", 7);
+      \u0275\u0275text(10, "add");
       \u0275\u0275elementEnd();
-      \u0275\u0275text(10, " Nouvelle union ");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275template(11, UnionsComponent_div_11_Template, 2, 2, "div", 7)(12, UnionsComponent_div_12_Template, 4, 1, "div", 8)(13, UnionsComponent_div_13_Template, 11, 0, "div", 9)(14, UnionsComponent_div_14_Template, 8, 4, "div", 10)(15, UnionsComponent_div_15_Template, 2, 1, "div", 11)(16, UnionsComponent_div_16_Template, 13, 1, "div", 12);
+      \u0275\u0275text(11, " Nouveau couple ");
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275template(12, UnionsComponent_div_12_Template, 2, 2, "div", 8)(13, UnionsComponent_div_13_Template, 4, 1, "div", 9)(14, UnionsComponent_div_14_Template, 11, 0, "div", 10)(15, UnionsComponent_div_15_Template, 2, 1, "div", 11);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(17, UnionsComponent_div_17_Template, 1, 0, "div", 13);
-      \u0275\u0275elementStart(18, "div", 14)(19, "div", 15)(20, "h3");
-      \u0275\u0275text(21);
+      \u0275\u0275template(16, UnionsComponent_div_16_Template, 1, 0, "div", 12);
+      \u0275\u0275elementStart(17, "div", 13)(18, "div", 14)(19, "h3");
+      \u0275\u0275text(20);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(22, "button", 16);
-      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_22_listener() {
+      \u0275\u0275elementStart(21, "button", 15);
+      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_21_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeAll());
       });
-      \u0275\u0275elementStart(23, "span", 6);
-      \u0275\u0275text(24, "close");
+      \u0275\u0275elementStart(22, "span", 7);
+      \u0275\u0275text(23, "close");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(25, "div", 17)(26, "form", null, 0)(28, "div", 18)(29, "div", 19);
-      \u0275\u0275text(30, "Type et participants");
+      \u0275\u0275elementStart(24, "div", 16)(25, "form", null, 0)(27, "div", 17)(28, "div", 18);
+      \u0275\u0275text(29, "Type de l'union");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(31, "div", 20)(32, "label");
-      \u0275\u0275text(33, "Type d'union");
+      \u0275\u0275elementStart(30, "div", 19)(31, "label");
+      \u0275\u0275text(32, "Type");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(34, "select", 21);
-      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_select_ngModelChange_34_listener($event) {
+      \u0275\u0275elementStart(33, "select", 20);
+      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_select_ngModelChange_33_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.type, $event) || (ctx.form.type = $event);
         return \u0275\u0275resetView($event);
       });
-      \u0275\u0275template(35, UnionsComponent_option_35_Template, 2, 2, "option", 22);
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(36, "div", 20)(37, "label");
-      \u0275\u0275text(38, "Participants");
-      \u0275\u0275elementEnd();
-      \u0275\u0275template(39, UnionsComponent_div_39_Template, 4, 0, "div", 23)(40, UnionsComponent_div_40_Template, 2, 1, "div", 24);
-      \u0275\u0275elementStart(41, "div", 25);
-      \u0275\u0275template(42, UnionsComponent_div_42_Template, 7, 6, "div", 26);
+      \u0275\u0275template(34, UnionsComponent_option_34_Template, 2, 2, "option", 21);
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(43, "div", 18)(44, "div", 19);
-      \u0275\u0275text(45, "D\xE9but de l'union");
+      \u0275\u0275elementStart(35, "div", 17)(36, "div", 18);
+      \u0275\u0275text(37, "Participants du couple");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(46, "div", 27)(47, "div", 20)(48, "label");
-      \u0275\u0275text(49, "Ann\xE9e");
+      \u0275\u0275elementStart(38, "div", 19)(39, "label");
+      \u0275\u0275text(40, "Membres s\xE9lectionn\xE9s (max. 2)");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(50, "input", 28);
-      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_50_listener($event) {
+      \u0275\u0275template(41, UnionsComponent_div_41_Template, 2, 1, "div", 22)(42, UnionsComponent_div_42_Template, 14, 1, "div", 23);
+      \u0275\u0275elementStart(43, "div", 24);
+      \u0275\u0275template(44, UnionsComponent_div_44_Template, 9, 9, "div", 25);
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275elementStart(45, "div", 17)(46, "div", 18);
+      \u0275\u0275text(47, "D\xE9but de l'union");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(48, "div", 26)(49, "div", 19)(50, "label");
+      \u0275\u0275text(51, "Ann\xE9e");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(52, "input", 27);
+      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_52_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.debut_annee, $event) || (ctx.form.debut_annee = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(51, "div", 20)(52, "label");
-      \u0275\u0275text(53, "Mois");
+      \u0275\u0275elementStart(53, "div", 19)(54, "label");
+      \u0275\u0275text(55, "Mois");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(54, "select", 29);
-      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_select_ngModelChange_54_listener($event) {
+      \u0275\u0275elementStart(56, "select", 28);
+      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_select_ngModelChange_56_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.debut_mois, $event) || (ctx.form.debut_mois = $event);
         return \u0275\u0275resetView($event);
       });
-      \u0275\u0275elementStart(55, "option", 30);
-      \u0275\u0275text(56, "\u2014");
+      \u0275\u0275elementStart(57, "option", 29);
+      \u0275\u0275text(58, "\u2014");
       \u0275\u0275elementEnd();
-      \u0275\u0275template(57, UnionsComponent_option_57_Template, 2, 2, "option", 22);
+      \u0275\u0275template(59, UnionsComponent_option_59_Template, 2, 2, "option", 21);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(58, "div", 20)(59, "label");
-      \u0275\u0275text(60, "Jour");
+      \u0275\u0275elementStart(60, "div", 19)(61, "label");
+      \u0275\u0275text(62, "Jour");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(61, "input", 31);
-      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_61_listener($event) {
+      \u0275\u0275elementStart(63, "input", 30);
+      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_63_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.debut_jour, $event) || (ctx.form.debut_jour = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(62, "div", 20)(63, "label");
-      \u0275\u0275text(64, "Lieu");
+      \u0275\u0275elementStart(64, "div", 19)(65, "label");
+      \u0275\u0275text(66, "Lieu");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(65, "input", 32);
-      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_65_listener($event) {
+      \u0275\u0275elementStart(67, "input", 31);
+      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_67_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.lieuDebut, $event) || (ctx.form.lieuDebut = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(66, "div", 18)(67, "div", 19);
-      \u0275\u0275text(68, "Fin de l'union ");
-      \u0275\u0275elementStart(69, "span", 33);
-      \u0275\u0275text(70, "(optionnel)");
+      \u0275\u0275elementStart(68, "div", 17)(69, "div", 18);
+      \u0275\u0275text(70, "Fin de l'union ");
+      \u0275\u0275elementStart(71, "span", 32);
+      \u0275\u0275text(72, "(si divorc\xE9\xB7e ou d\xE9c\xE9d\xE9\xB7e)");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(71, "div", 27)(72, "div", 20)(73, "label");
-      \u0275\u0275text(74, "Ann\xE9e");
+      \u0275\u0275elementStart(73, "div", 26)(74, "div", 19)(75, "label");
+      \u0275\u0275text(76, "Ann\xE9e");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(75, "input", 34);
-      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_75_listener($event) {
+      \u0275\u0275elementStart(77, "input", 33);
+      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_77_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.fin_annee, $event) || (ctx.form.fin_annee = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(76, "div", 20)(77, "label");
-      \u0275\u0275text(78, "Mois");
+      \u0275\u0275elementStart(78, "div", 19)(79, "label");
+      \u0275\u0275text(80, "Mois");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(79, "select", 35);
-      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_select_ngModelChange_79_listener($event) {
+      \u0275\u0275elementStart(81, "select", 34);
+      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_select_ngModelChange_81_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.fin_mois, $event) || (ctx.form.fin_mois = $event);
         return \u0275\u0275resetView($event);
       });
-      \u0275\u0275elementStart(80, "option", 30);
-      \u0275\u0275text(81, "\u2014");
+      \u0275\u0275elementStart(82, "option", 29);
+      \u0275\u0275text(83, "\u2014");
       \u0275\u0275elementEnd();
-      \u0275\u0275template(82, UnionsComponent_option_82_Template, 2, 2, "option", 22);
+      \u0275\u0275template(84, UnionsComponent_option_84_Template, 2, 2, "option", 21);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(83, "div", 20)(84, "label");
-      \u0275\u0275text(85, "Jour");
+      \u0275\u0275elementStart(85, "div", 19)(86, "label");
+      \u0275\u0275text(87, "Jour");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(86, "input", 36);
-      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_86_listener($event) {
+      \u0275\u0275elementStart(88, "input", 35);
+      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_88_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.fin_jour, $event) || (ctx.form.fin_jour = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(87, "div", 20)(88, "label");
-      \u0275\u0275text(89, "Lieu");
+      \u0275\u0275elementStart(89, "div", 19)(90, "label");
+      \u0275\u0275text(91, "Lieu");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(90, "input", 37);
-      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_90_listener($event) {
+      \u0275\u0275elementStart(92, "input", 36);
+      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_92_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.lieuFin, $event) || (ctx.form.lieuFin = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(91, "div", 18)(92, "div", 19);
-      \u0275\u0275text(93, "Notes");
+      \u0275\u0275elementStart(93, "div", 17)(94, "div", 18);
+      \u0275\u0275text(95, "Notes");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(94, "div", 20)(95, "textarea", 38);
-      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_textarea_ngModelChange_95_listener($event) {
+      \u0275\u0275elementStart(96, "div", 19)(97, "textarea", 37);
+      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_textarea_ngModelChange_97_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.notes, $event) || (ctx.form.notes = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()()()()();
-      \u0275\u0275elementStart(96, "div", 39)(97, "button", 40);
-      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_97_listener() {
+      \u0275\u0275elementStart(98, "div", 38)(99, "button", 39);
+      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_99_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeAll());
       });
-      \u0275\u0275text(98, "Annuler");
+      \u0275\u0275text(100, "Annuler");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(99, "button", 41);
-      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_99_listener() {
+      \u0275\u0275elementStart(101, "button", 40);
+      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_101_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.saveUnion());
       });
-      \u0275\u0275template(100, UnionsComponent_span_100_Template, 2, 0, "span", 42);
-      \u0275\u0275text(101);
+      \u0275\u0275template(102, UnionsComponent_span_102_Template, 2, 0, "span", 41)(103, UnionsComponent_span_103_Template, 2, 0, "span", 42);
+      \u0275\u0275text(104);
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(102, "div", 14)(103, "div", 15)(104, "h3");
-      \u0275\u0275text(105, "Ajouter des enfants");
+      \u0275\u0275elementStart(105, "div", 13)(106, "div", 14)(107, "h3");
+      \u0275\u0275text(108, "Enfants du couple");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(106, "button", 16);
-      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_106_listener() {
+      \u0275\u0275elementStart(109, "button", 15);
+      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_109_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeEnfantPanel());
       });
-      \u0275\u0275elementStart(107, "span", 6);
-      \u0275\u0275text(108, "close");
+      \u0275\u0275elementStart(110, "span", 7);
+      \u0275\u0275text(111, "close");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(109, "div", 17)(110, "p", 43);
-      \u0275\u0275text(111, "S\xE9lectionnez des membres existants de la famille");
+      \u0275\u0275elementStart(112, "div", 16)(113, "p", 43);
+      \u0275\u0275text(114, "S\xE9lectionnez les enfants issus de ce couple");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(112, "div", 44)(113, "span", 6);
-      \u0275\u0275text(114, "search");
+      \u0275\u0275elementStart(115, "div", 44)(116, "span", 7);
+      \u0275\u0275text(117, "search");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(115, "input", 45);
-      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_115_listener($event) {
+      \u0275\u0275elementStart(118, "input", 45);
+      \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_Template_input_ngModelChange_118_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.searchEnfant, $event) || (ctx.searchEnfant = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(116, "div", 25);
-      \u0275\u0275template(117, UnionsComponent_div_117_Template, 7, 6, "div", 26)(118, UnionsComponent_div_118_Template, 2, 0, "div", 46);
+      \u0275\u0275elementStart(119, "div", 24);
+      \u0275\u0275template(120, UnionsComponent_div_120_Template, 7, 6, "div", 46)(121, UnionsComponent_div_121_Template, 2, 0, "div", 47);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(119, UnionsComponent_div_119_Template, 4, 1, "div", 47);
+      \u0275\u0275template(122, UnionsComponent_div_122_Template, 4, 1, "div", 48);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(120, "div", 39)(121, "button", 40);
-      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_121_listener() {
+      \u0275\u0275elementStart(123, "div", 38)(124, "button", 39);
+      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_124_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeEnfantPanel());
       });
-      \u0275\u0275text(122, "Annuler");
+      \u0275\u0275text(125, "Annuler");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(123, "button", 41);
-      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_123_listener() {
+      \u0275\u0275elementStart(126, "button", 40);
+      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_126_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.ajouterEnfants());
       });
-      \u0275\u0275template(124, UnionsComponent_span_124_Template, 2, 0, "span", 42);
-      \u0275\u0275text(125);
+      \u0275\u0275template(127, UnionsComponent_span_127_Template, 2, 0, "span", 41);
+      \u0275\u0275text(128);
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(126, UnionsComponent_div_126_Template, 15, 3, "div", 48);
+      \u0275\u0275template(129, UnionsComponent_div_129_Template, 15, 3, "div", 49);
     }
     if (rf & 2) {
-      \u0275\u0275advance(6);
-      \u0275\u0275textInterpolate3("", ctx.unions.length, " union", ctx.unions.length > 1 ? "s" : "", " enregistr\xE9e", ctx.unions.length > 1 ? "s" : "");
+      \u0275\u0275advance(7);
+      \u0275\u0275textInterpolate4("", ctx.groupedUnions.length, " famille", ctx.groupedUnions.length > 1 ? "s" : "", " \xB7 ", ctx.unions.length, " couple", ctx.unions.length > 1 ? "s" : "");
       \u0275\u0275advance(5);
       \u0275\u0275property("ngIf", ctx.loading);
       \u0275\u0275advance();
@@ -7549,23 +8070,19 @@ var UnionsComponent = class _UnionsComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", !ctx.loading && !ctx.erreur && ctx.unions.length > 0);
       \u0275\u0275advance();
-      \u0275\u0275property("ngIf", !ctx.loading && !ctx.erreur && ctx.unions.length > 0 && ctx.viewMode === "cards");
-      \u0275\u0275advance();
-      \u0275\u0275property("ngIf", !ctx.loading && !ctx.erreur && ctx.unions.length > 0 && ctx.viewMode === "list");
-      \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.showForm || ctx.showDeleteConfirm || ctx.showEnfantPanel);
       \u0275\u0275advance();
       \u0275\u0275classProp("open", ctx.showForm);
       \u0275\u0275advance(3);
-      \u0275\u0275textInterpolate(ctx.editTarget ? "Modifier l'union" : "Nouvelle union");
+      \u0275\u0275textInterpolate(ctx.editTarget ? "Modifier le couple" : "Nouveau couple");
       \u0275\u0275advance(13);
       \u0275\u0275twoWayProperty("ngModel", ctx.form.type);
       \u0275\u0275advance();
       \u0275\u0275property("ngForOf", ctx.typeUnion);
-      \u0275\u0275advance(4);
-      \u0275\u0275property("ngIf", ctx.form.participantIds.length > 2);
-      \u0275\u0275advance();
+      \u0275\u0275advance(7);
       \u0275\u0275property("ngIf", ctx.form.participantIds.length > 0);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.multiUnionWarnings.length > 0);
       \u0275\u0275advance(2);
       \u0275\u0275property("ngForOf", ctx.personnes);
       \u0275\u0275advance(8);
@@ -7595,6 +8112,8 @@ var UnionsComponent = class _UnionsComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.saving);
       \u0275\u0275advance();
+      \u0275\u0275property("ngIf", !ctx.saving);
+      \u0275\u0275advance();
       \u0275\u0275textInterpolate1(" ", ctx.saving ? "Sauvegarde..." : "Sauvegarder", " ");
       \u0275\u0275advance();
       \u0275\u0275classProp("open", ctx.showEnfantPanel);
@@ -7615,7 +8134,7 @@ var UnionsComponent = class _UnionsComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.showDeleteConfirm);
     }
-  }, dependencies: [NgClass, NgForOf, NgIf, \u0275NgNoValidate, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor, SelectControlValueAccessor, NgControlStatus, NgControlStatusGroup, MinValidator, MaxValidator, NgModel, NgForm], styles: ['@charset "UTF-8";\n\n\n\n.unions-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.page-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.page-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 4px;\n}\n.page-subtitle[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.u-avatar-wrap[_ngcontent-%COMP%] {\n  position: relative;\n  flex-shrink: 0;\n}\n.u-avatar-photo[_ngcontent-%COMP%] {\n  object-fit: cover;\n  border-radius: 50%;\n  display: block;\n}\n.unions-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));\n  gap: 16px;\n}\n.toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n}\n.union-card[_ngcontent-%COMP%] {\n  position: relative;\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);\n  overflow: hidden;\n  transition: var(--transition);\n}\n.union-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);\n  transform: translateY(-2px);\n}\n.union-type-banner[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 16px;\n  font-size: 12px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.union-type-banner[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.union-type-banner.banner-pink[_ngcontent-%COMP%] {\n  background: #fdf2f8;\n  color: #db2777;\n}\n.union-type-banner.banner-accent[_ngcontent-%COMP%] {\n  background: #eef2ff;\n  color: var(--accent);\n}\n.union-type-banner.banner-primary[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.union-type-banner.banner-gold[_ngcontent-%COMP%] {\n  background: #fffbeb;\n  color: #b45309;\n}\n.union-type-banner.banner-green[_ngcontent-%COMP%] {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.union-type-banner.banner-purple[_ngcontent-%COMP%] {\n  background: #faf5ff;\n  color: #7c3aed;\n}\n.couple-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  gap: 8px;\n}\n.person-chip[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex: 1;\n  min-width: 0;\n}\n.person-info[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n}\n.person-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.link-icon[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #f43f5e;\n  flex-shrink: 0;\n}\n.avatar.accent[_ngcontent-%COMP%] {\n  background: var(--accent);\n}\n.union-details[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px 16px;\n  padding: 12px 16px 16px;\n  border-top: 1px solid var(--border);\n}\n.detail-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 12px;\n  color: var(--text-secondary);\n}\n.detail-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n  color: var(--text-muted);\n}\n.card-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  justify-content: flex-end;\n  padding: 8px 12px;\n  border-top: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.btn-icon-danger[_ngcontent-%COMP%] {\n  color: var(--error) !important;\n}\n.btn-icon-danger[_ngcontent-%COMP%]:hover {\n  background: #fef2f2 !important;\n}\n.panel-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.35);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.slide-panel[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.panel-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.panel-subtitle[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0 0 16px;\n}\n.panel-body[_ngcontent-%COMP%] {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.panel-footer[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.section-title[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n}\n.optional[_ngcontent-%COMP%] {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n.form-control[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 8px 12px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  transition: border-color 0.15s;\n}\n.form-control[_ngcontent-%COMP%]:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 2fr 2fr 1fr;\n  gap: 12px;\n}\n.person-select-list[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  max-height: 300px;\n  overflow-y: auto;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  padding: 4px;\n}\n.person-select-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 12px;\n  border-radius: 6px;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.person-select-item[_ngcontent-%COMP%]:hover {\n  background: var(--bg-muted);\n}\n.person-select-item.selected[_ngcontent-%COMP%] {\n  background: var(--primary-bg, #eff6ff);\n  border: 1px solid var(--primary-border, #bfdbfe);\n}\n.person-select-name[_ngcontent-%COMP%] {\n  flex: 1;\n  font-size: 14px;\n  color: var(--text-primary);\n}\n.check-icon[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--primary);\n}\n.participant-chips[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  margin-bottom: 10px;\n}\n.participant-chip[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  background: var(--primary-bg, #eff6ff);\n  border: 1px solid var(--primary-border, #bfdbfe);\n  border-radius: 20px;\n  font-size: 13px;\n  color: var(--primary);\n  font-weight: 500;\n}\n.chip-remove[_ngcontent-%COMP%] {\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 16px;\n  line-height: 1;\n  color: var(--primary);\n  padding: 0;\n  opacity: 0.7;\n}\n.chip-remove[_ngcontent-%COMP%]:hover {\n  opacity: 1;\n}\n.warning-msg[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 12px;\n  background: #fffbeb;\n  border: 1px solid #fcd34d;\n  border-radius: 8px;\n  font-size: 13px;\n  color: #92400e;\n  margin-bottom: 8px;\n}\n.warning-msg[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.current-children[_ngcontent-%COMP%] {\n  margin-top: 20px;\n}\n.child-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 0;\n  border-bottom: 1px solid var(--border);\n}\n.child-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.child-name[_ngcontent-%COMP%] {\n  flex: 1;\n  font-size: 14px;\n  color: var(--text-primary);\n}\n.empty-list-msg[_ngcontent-%COMP%] {\n  padding: 20px;\n  text-align: center;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.confirm-dialog[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 500;\n}\n.confirm-box[_ngcontent-%COMP%] {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  padding: 32px;\n  width: 400px;\n  max-width: 90vw;\n  box-shadow: var(--shadow-xl);\n  text-align: center;\n}\n.confirm-box[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 12px 0 8px;\n}\n.confirm-box[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-muted);\n  margin: 0 0 24px;\n  line-height: 1.5;\n}\n.confirm-icon[_ngcontent-%COMP%] {\n  width: 56px;\n  height: 56px;\n  border-radius: 50%;\n  background: #fef2f2;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 4px;\n}\n.confirm-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 28px !important;\n  color: var(--error);\n}\n.confirm-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  justify-content: center;\n}\n.union-type-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  padding: 3px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n  white-space: nowrap;\n}\n.union-type-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.union-type-badge.banner-pink[_ngcontent-%COMP%] {\n  background: #fdf2f8;\n  color: #db2777;\n}\n.union-type-badge.banner-accent[_ngcontent-%COMP%] {\n  background: #eef2ff;\n  color: var(--accent);\n}\n.union-type-badge.banner-primary[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.union-type-badge.banner-gold[_ngcontent-%COMP%] {\n  background: #fffbeb;\n  color: #b45309;\n}\n.union-type-badge.banner-green[_ngcontent-%COMP%] {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.union-type-badge.banner-purple[_ngcontent-%COMP%] {\n  background: #faf5ff;\n  color: #7c3aed;\n}\n.ul-table[_ngcontent-%COMP%] {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);\n  overflow: hidden;\n}\n.ul-thead[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 2fr 1fr 100px 80px 120px;\n  padding: 10px 16px;\n  background: var(--bg-muted, #f8fafc);\n  border-bottom: 1px solid var(--border);\n}\n.ul-row[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 2fr 1fr 100px 80px 120px;\n  padding: 12px 16px;\n  align-items: center;\n  border-bottom: 1px solid var(--border);\n  transition: background 0.12s;\n}\n.ul-row[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.ul-row[_ngcontent-%COMP%]:hover {\n  background: var(--bg-muted, #f8fafc);\n}\n.ul-cell[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  font-size: 13px;\n  color: var(--text-primary);\n}\n.ul-cell-couple[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  min-width: 0;\n}\n.ul-avatars[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  flex-shrink: 0;\n}\n.ul-heart[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n  color: #f43f5e;\n}\n.ul-names[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n}\n.ul-name-primary[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.ul-name-secondary[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-muted);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.ul-cell-date[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: var(--text-secondary);\n}\n.ul-enfant-count[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  color: var(--text-secondary);\n}\n.ul-enfant-count[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n  color: var(--text-muted);\n}\n.ul-cell-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 2px;\n  justify-content: flex-end;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_spin 1s linear infinite;\n}\n@media (max-width: 768px) {\n  .page-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .page-header[_ngcontent-%COMP%]   .btn-primary[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n  .unions-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .ul-thead[_ngcontent-%COMP%], \n   .ul-row[_ngcontent-%COMP%] {\n    grid-template-columns: 2fr 60px 80px;\n  }\n  .ul-th-type[_ngcontent-%COMP%], \n   .ul-th-date[_ngcontent-%COMP%], \n   .ul-cell-type[_ngcontent-%COMP%], \n   .ul-cell-date[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .slide-panel[_ngcontent-%COMP%] {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open[_ngcontent-%COMP%] {\n    transform: translateY(0);\n  }\n  .form-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer[_ngcontent-%COMP%] {\n    flex-direction: column-reverse;\n  }\n  .panel-footer[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n}\n@media (max-width: 480px) {\n  .ul-thead[_ngcontent-%COMP%], \n   .ul-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr 80px;\n  }\n  .ul-th-type[_ngcontent-%COMP%], \n   .ul-th-date[_ngcontent-%COMP%], \n   .ul-th-enfants[_ngcontent-%COMP%], \n   .ul-cell-type[_ngcontent-%COMP%], \n   .ul-cell-date[_ngcontent-%COMP%], \n   .ul-cell-enfants[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n/*# sourceMappingURL=unions.component.css.map */'] });
+  }, dependencies: [NgForOf, NgIf, \u0275NgNoValidate, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor, SelectControlValueAccessor, NgControlStatus, NgControlStatusGroup, MinValidator, MaxValidator, NgModel, NgForm], styles: ['@charset "UTF-8";\n\n\n\n.unions-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.page-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.page-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 4px;\n}\n.page-subtitle[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.u-avatar-wrap[_ngcontent-%COMP%] {\n  position: relative;\n  flex-shrink: 0;\n}\n.u-avatar-photo[_ngcontent-%COMP%] {\n  object-fit: cover;\n  border-radius: 50%;\n  display: block;\n}\n.ug-groups[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.ug-group[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1px solid var(--border-light, #E5E7EB);\n  border-radius: 18px;\n  overflow: hidden;\n  box-shadow: var(--shadow-sm);\n  transition: box-shadow 0.2s;\n}\n.ug-group[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n}\n.ug-group-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px 20px;\n  cursor: pointer;\n  background: var(--bg-muted, #F9FAFB);\n  border-bottom: 1px solid var(--border-light, #E5E7EB);\n  gap: 12px;\n}\n.ug-group-header[_ngcontent-%COMP%]:hover {\n  background: var(--primary-bg, #EFF6FF);\n}\n.ug-chef-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex: 1;\n  min-width: 0;\n}\n.ug-chef-avatar[_ngcontent-%COMP%] {\n  width: 46px;\n  height: 46px;\n  border-radius: 12px;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.ug-chef-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary, #3B82F6);\n}\n.ug-chef-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink, #EC4899);\n}\n.ug-chef-avatar[_ngcontent-%COMP%]:not(.male):not(.female) {\n  background: #9CA3AF;\n}\n.ug-chef-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  border-radius: 12px;\n}\n.ug-chef-info[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.ug-chef-name[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 700;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.ug-chef-meta[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.ug-poly-badge[_ngcontent-%COMP%] {\n  font-size: 10px;\n  padding: 2px 8px;\n  flex-shrink: 0;\n}\n.ug-group-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-shrink: 0;\n}\n.ug-chevron[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n  color: var(--text-muted);\n  transition: transform 0.2s;\n  cursor: pointer;\n}\n.ug-chevron.expanded[_ngcontent-%COMP%] {\n  transform: rotate(180deg);\n}\n.ug-couples[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n.ug-couple-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 20px;\n  border-bottom: 1px solid var(--border-light, #F3F4F6);\n  transition: background 0.12s;\n}\n.ug-couple-row[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.ug-couple-row[_ngcontent-%COMP%]:hover {\n  background: var(--bg-muted, #F9FAFB);\n}\n.ug-couple-num[_ngcontent-%COMP%] {\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  background: var(--border-light, #E5E7EB);\n  color: var(--text-muted);\n  font-size: 10px;\n  font-weight: 700;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.ug-status-icon[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  flex-shrink: 0;\n}\n.ug-status-icon.ug-active[_ngcontent-%COMP%] {\n  color: #f43f5e;\n}\n.ug-status-icon.ug-divorced[_ngcontent-%COMP%] {\n  color: #9CA3AF;\n}\n.ug-status-icon.ug-widowed[_ngcontent-%COMP%] {\n  color: #6B7280;\n}\n.ug-partner-info[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex: 1;\n  min-width: 0;\n}\n.ug-partner-avatar[_ngcontent-%COMP%] {\n  width: 36px;\n  height: 36px;\n  border-radius: 10px;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 12px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.ug-partner-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary, #3B82F6);\n}\n.ug-partner-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink, #EC4899);\n}\n.ug-partner-avatar[_ngcontent-%COMP%]:not(.male):not(.female) {\n  background: #9CA3AF;\n}\n.ug-partner-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  border-radius: 10px;\n}\n.ug-partner-details[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.ug-partner-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.ug-partner-meta[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: var(--text-muted);\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  flex-wrap: wrap;\n}\n.ug-status-chip[_ngcontent-%COMP%] {\n  font-size: 10px;\n  font-weight: 700;\n  padding: 1px 7px;\n  border-radius: 10px;\n}\n.ug-status-chip.chip-active[_ngcontent-%COMP%] {\n  background: #DCFCE7;\n  color: #15803D;\n}\n.ug-status-chip.chip-divorced[_ngcontent-%COMP%] {\n  background: #F3F4F6;\n  color: #6B7280;\n}\n.ug-status-chip.chip-widowed[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  color: #475569;\n}\n.ug-children-count[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary);\n  flex-shrink: 0;\n}\n.ug-children-count[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n  color: var(--text-muted);\n}\n.ug-couple-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  flex-shrink: 0;\n}\n.toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n}\n.union-card[_ngcontent-%COMP%] {\n  position: relative;\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);\n  overflow: hidden;\n  transition: var(--transition);\n}\n.union-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);\n  transform: translateY(-2px);\n}\n.union-type-banner[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 16px;\n  font-size: 12px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.union-type-banner[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.union-type-banner.banner-pink[_ngcontent-%COMP%] {\n  background: #fdf2f8;\n  color: #db2777;\n}\n.union-type-banner.banner-accent[_ngcontent-%COMP%] {\n  background: #eef2ff;\n  color: var(--accent);\n}\n.union-type-banner.banner-primary[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.union-type-banner.banner-gold[_ngcontent-%COMP%] {\n  background: #fffbeb;\n  color: #b45309;\n}\n.union-type-banner.banner-green[_ngcontent-%COMP%] {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.union-type-banner.banner-purple[_ngcontent-%COMP%] {\n  background: #faf5ff;\n  color: #7c3aed;\n}\n.couple-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  gap: 8px;\n}\n.person-chip[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex: 1;\n  min-width: 0;\n}\n.person-info[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n}\n.person-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.link-icon[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #f43f5e;\n  flex-shrink: 0;\n}\n.avatar.accent[_ngcontent-%COMP%] {\n  background: var(--accent);\n}\n.union-details[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px 16px;\n  padding: 12px 16px 16px;\n  border-top: 1px solid var(--border);\n}\n.detail-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 12px;\n  color: var(--text-secondary);\n}\n.detail-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n  color: var(--text-muted);\n}\n.card-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  justify-content: flex-end;\n  padding: 8px 12px;\n  border-top: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.btn-icon-danger[_ngcontent-%COMP%] {\n  color: var(--error) !important;\n}\n.btn-icon-danger[_ngcontent-%COMP%]:hover {\n  background: #fef2f2 !important;\n}\n.panel-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.35);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.slide-panel[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.panel-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.panel-subtitle[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0 0 16px;\n}\n.panel-body[_ngcontent-%COMP%] {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.panel-footer[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.section-title[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n}\n.optional[_ngcontent-%COMP%] {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n.form-control[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 8px 12px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  transition: border-color 0.15s;\n}\n.form-control[_ngcontent-%COMP%]:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 2fr 2fr 1fr;\n  gap: 12px;\n}\n.person-select-list[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  max-height: 300px;\n  overflow-y: auto;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  padding: 4px;\n}\n.person-select-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 12px;\n  border-radius: 6px;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.person-select-item[_ngcontent-%COMP%]:hover {\n  background: var(--bg-muted);\n}\n.person-select-item.selected[_ngcontent-%COMP%] {\n  background: var(--primary-bg, #eff6ff);\n  border: 1px solid var(--primary-border, #bfdbfe);\n}\n.person-select-item.has-union[_ngcontent-%COMP%] {\n  background: #FFFBEB;\n}\n.person-select-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.person-select-name[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-primary);\n}\n.person-union-hint[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 3px;\n  font-size: 11px;\n  color: #D97706;\n  font-weight: 500;\n}\n.person-union-hint[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: #D97706;\n}\n.multi-union-alert[_ngcontent-%COMP%] {\n  background: #FFFBEB;\n  border: 1.5px solid #FDE68A;\n  border-radius: 10px;\n  padding: 12px 14px;\n  margin-bottom: 10px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.multi-union-alert-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  font-size: 13px;\n  color: #92400E;\n}\n.multi-union-alert-header[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #D97706;\n}\n.multi-union-alert-header[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  font-weight: 700;\n}\n.multi-union-alert-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n  padding: 6px 0;\n  border-top: 1px solid #FDE68A;\n}\n.multi-union-alert-row[_ngcontent-%COMP%]:first-of-type {\n  border-top: none;\n}\n.multi-union-alert-name[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: #78350F;\n}\n.multi-union-alert-hint[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 11px;\n  color: #92400E;\n  margin-top: 1px;\n}\n.multi-union-alert-tip[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 11px;\n  color: #78350F;\n  margin: 0;\n  background: rgba(217, 119, 6, 0.1);\n  border-radius: 7px;\n  padding: 5px 8px;\n}\n.multi-union-alert-tip[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n  color: #D97706;\n}\n.multi-union-alert-tip[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  font-weight: 700;\n}\n.check-icon[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--primary);\n}\n.participant-chips[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  margin-bottom: 10px;\n}\n.participant-chip[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  background: var(--primary-bg, #eff6ff);\n  border: 1px solid var(--primary-border, #bfdbfe);\n  border-radius: 20px;\n  font-size: 13px;\n  color: var(--primary);\n  font-weight: 500;\n}\n.chip-remove[_ngcontent-%COMP%] {\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 16px;\n  line-height: 1;\n  color: var(--primary);\n  padding: 0;\n  opacity: 0.7;\n}\n.chip-remove[_ngcontent-%COMP%]:hover {\n  opacity: 1;\n}\n.warning-msg[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 12px;\n  background: #fffbeb;\n  border: 1px solid #fcd34d;\n  border-radius: 8px;\n  font-size: 13px;\n  color: #92400e;\n  margin-bottom: 8px;\n}\n.warning-msg[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.current-children[_ngcontent-%COMP%] {\n  margin-top: 20px;\n}\n.child-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 0;\n  border-bottom: 1px solid var(--border);\n}\n.child-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.child-name[_ngcontent-%COMP%] {\n  flex: 1;\n  font-size: 14px;\n  color: var(--text-primary);\n}\n.empty-list-msg[_ngcontent-%COMP%] {\n  padding: 20px;\n  text-align: center;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.confirm-dialog[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 500;\n}\n.confirm-box[_ngcontent-%COMP%] {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  padding: 32px;\n  width: 400px;\n  max-width: 90vw;\n  box-shadow: var(--shadow-xl);\n  text-align: center;\n}\n.confirm-box[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 12px 0 8px;\n}\n.confirm-box[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-muted);\n  margin: 0 0 24px;\n  line-height: 1.5;\n}\n.confirm-icon[_ngcontent-%COMP%] {\n  width: 56px;\n  height: 56px;\n  border-radius: 50%;\n  background: #fef2f2;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 4px;\n}\n.confirm-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 28px !important;\n  color: var(--error);\n}\n.confirm-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  justify-content: center;\n}\n.union-type-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  padding: 3px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n  white-space: nowrap;\n}\n.union-type-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.union-type-badge.banner-pink[_ngcontent-%COMP%] {\n  background: #fdf2f8;\n  color: #db2777;\n}\n.union-type-badge.banner-accent[_ngcontent-%COMP%] {\n  background: #eef2ff;\n  color: var(--accent);\n}\n.union-type-badge.banner-primary[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.union-type-badge.banner-gold[_ngcontent-%COMP%] {\n  background: #fffbeb;\n  color: #b45309;\n}\n.union-type-badge.banner-green[_ngcontent-%COMP%] {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.union-type-badge.banner-purple[_ngcontent-%COMP%] {\n  background: #faf5ff;\n  color: #7c3aed;\n}\n.ul-table[_ngcontent-%COMP%] {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);\n  overflow: hidden;\n}\n.ul-thead[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 2fr 1fr 100px 80px 120px;\n  padding: 10px 16px;\n  background: var(--bg-muted, #f8fafc);\n  border-bottom: 1px solid var(--border);\n}\n.ul-row[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 2fr 1fr 100px 80px 120px;\n  padding: 12px 16px;\n  align-items: center;\n  border-bottom: 1px solid var(--border);\n  transition: background 0.12s;\n}\n.ul-row[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.ul-row[_ngcontent-%COMP%]:hover {\n  background: var(--bg-muted, #f8fafc);\n}\n.ul-cell[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  font-size: 13px;\n  color: var(--text-primary);\n}\n.ul-cell-couple[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  min-width: 0;\n}\n.ul-avatars[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  flex-shrink: 0;\n}\n.ul-heart[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n  color: #f43f5e;\n}\n.ul-names[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n}\n.ul-name-primary[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.ul-name-secondary[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-muted);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.ul-cell-date[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: var(--text-secondary);\n}\n.ul-enfant-count[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  color: var(--text-secondary);\n}\n.ul-enfant-count[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n  color: var(--text-muted);\n}\n.ul-cell-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 2px;\n  justify-content: flex-end;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_spin 1s linear infinite;\n}\n@media (max-width: 768px) {\n  .page-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .page-header[_ngcontent-%COMP%]   .btn-primary[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n  .unions-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .ul-thead[_ngcontent-%COMP%], \n   .ul-row[_ngcontent-%COMP%] {\n    grid-template-columns: 2fr 60px 80px;\n  }\n  .ul-th-type[_ngcontent-%COMP%], \n   .ul-th-date[_ngcontent-%COMP%], \n   .ul-cell-type[_ngcontent-%COMP%], \n   .ul-cell-date[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .slide-panel[_ngcontent-%COMP%] {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open[_ngcontent-%COMP%] {\n    transform: translateY(0);\n  }\n  .form-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer[_ngcontent-%COMP%] {\n    flex-direction: column-reverse;\n  }\n  .panel-footer[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n}\n@media (max-width: 480px) {\n  .ul-thead[_ngcontent-%COMP%], \n   .ul-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr 80px;\n  }\n  .ul-th-type[_ngcontent-%COMP%], \n   .ul-th-date[_ngcontent-%COMP%], \n   .ul-th-enfants[_ngcontent-%COMP%], \n   .ul-cell-type[_ngcontent-%COMP%], \n   .ul-cell-date[_ngcontent-%COMP%], \n   .ul-cell-enfants[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n/*# sourceMappingURL=unions.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(UnionsComponent, [{
@@ -7624,218 +8143,159 @@ var UnionsComponent = class _UnionsComponent {
 
   <!-- En-t\xEAte -->
   <div class="page-header">
-    <div>
-      <h2 class="page-title">Unions familiales</h2>
-      <p class="page-subtitle">{{ unions.length }} union{{ unions.length > 1 ? 's' : '' }} enregistr\xE9e{{ unions.length > 1 ? 's' : '' }}</p>
+    <div class="header-row">
+      <div>
+        <h2 class="page-title">Unions familiales</h2>
+        <p class="page-subtitle">{{ groupedUnions.length }} famille{{ groupedUnions.length > 1 ? 's' : '' }} \xB7 {{ unions.length }} couple{{ unions.length > 1 ? 's' : '' }}</p>
+      </div>
+      <button class="btn-primary" (click)="openCreate()">
+        <span class="material-icons-round">add</span>
+        Nouveau couple
+      </button>
     </div>
-    <button class="btn-primary" (click)="openCreate()">
-      <span class="material-icons-round">add</span>
-      Nouvelle union
-    </button>
   </div>
 
-  <!-- Skeleton chargement -->
-  <div class="sk-grid" *ngIf="loading">
-    <div class="sk-card" *ngFor="let _ of [1,2,3,4]">
-      <div class="sk-card-banner"></div>
-      <div class="sk-card-body">
-        <div class="sk-line sk-full"></div>
-        <div class="sk-line sk-md"></div>
-        <div class="sk-line sk-sm"></div>
+  <!-- Skeleton -->
+  <div class="sk-section" *ngIf="loading">
+    <div class="ug-group" *ngFor="let _ of [1,2]">
+      <div class="ug-group-header">
+        <div class="sk-avatar sk-av-md"></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:6px">
+          <div class="sk-line sk-md"></div>
+          <div class="sk-line sk-sm"></div>
+        </div>
+      </div>
+      <div class="ug-couple-row" *ngFor="let __ of [1,2]">
+        <div class="sk-line sk-xs" style="width:32px;height:32px;border-radius:50%"></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:5px">
+          <div class="sk-line sk-md"></div>
+          <div class="sk-line sk-sm"></div>
+        </div>
       </div>
     </div>
   </div>
+
   <!-- Erreur -->
   <div class="error-state" *ngIf="erreur && !loading">
-    <span class="material-icons-round">error_outline</span>
-    {{ erreur }}
+    <span class="material-icons-round">error_outline</span>{{ erreur }}
   </div>
 
-  <!-- \xC9tat vide -->
+  <!-- Vide -->
   <div class="empty-state" *ngIf="!loading && !erreur && unions.length === 0">
     <span class="material-icons-round">favorite_border</span>
     <h3>Aucune union enregistr\xE9e</h3>
-    <p>Ajoutez la premi\xE8re union de votre famille.</p>
+    <p>Ajoutez le premier couple de votre famille.</p>
     <button class="btn-primary" (click)="openCreate()">
-      <span class="material-icons-round">add</span>
-      Nouvelle union
+      <span class="material-icons-round">add</span>Nouveau couple
     </button>
   </div>
 
-  <!-- Toolbar toggle vue -->
-  <div class="toolbar-right" *ngIf="!loading && !erreur && unions.length > 0">
-    <div class="view-toggle">
-      <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">
-        <span class="material-icons-round">grid_view</span>
-      </button>
-      <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">
-        <span class="material-icons-round">view_list</span>
-      </button>
-    </div>
-  </div>
+  <!-- ===== GROUPES ===== -->
+  <div class="ug-groups" *ngIf="!loading && !erreur && unions.length > 0">
 
-  <!-- ===== VUE CARTES ===== -->
-  <div class="unions-grid" *ngIf="!loading && !erreur && unions.length > 0 && viewMode === 'cards'">
-    <div class="union-card" *ngFor="let u of unions; let i = index">
+    <div class="ug-group" *ngFor="let g of groupedUnions">
 
-      <!-- Colorband style home -->
-      <div class="pc-colorband"
-           [class.color-1]="i % 3 === 0"
-           [class.color-2]="i % 3 === 1"
-           [class.color-3]="i % 3 === 2"></div>
+      <!-- En-t\xEAte du groupe -->
+      <div class="ug-group-header" (click)="toggleGroup(g.chef.id)">
+        <div class="ug-chef-left">
+          <!-- Avatar chef -->
+          <div class="ug-chef-avatar"
+               [class.male]="g.chef.sexe==='M'" [class.female]="g.chef.sexe==='F'">
+            <img *ngIf="photoOf(g.chef) && !failedPhotos.has(g.chef.id)"
+                 [src]="photoOf(g.chef)" class="ug-chef-avatar-photo"
+                 [alt]="initiales(g.chef)" (error)="onPhotoError(g.chef.id)" />
+            <span *ngIf="!photoOf(g.chef) || failedPhotos.has(g.chef.id)">{{ initiales(g.chef) }}</span>
+          </div>
 
-      <!-- Bandeau type -->
-      <div class="union-type-banner" [ngClass]="getTypeColor(u.type)">
-        <span class="material-icons-round">{{ getTypeIcon(u.type) }}</span>
-        <span>{{ getTypeLabel(u.type) }}</span>
+          <!-- Infos -->
+          <div class="ug-chef-info">
+            <span class="ug-chef-name">{{ nomComplet(g.chef) }}</span>
+            <span class="ug-chef-meta">
+              {{ g.couples.length }} couple{{ g.couples.length > 1 ? 's' : '' }}
+              \xB7 {{ totalEnfants(g.couples) }} enfant{{ totalEnfants(g.couples) > 1 ? 's' : '' }}
+            </span>
+          </div>
+
+          <!-- Badge polygamie -->
+          <span class="badge ug-poly-badge" *ngIf="g.couples.length > 1">Polygamie</span>
+        </div>
+
+        <div class="ug-group-actions">
+          <button class="btn-outline btn-sm" (click)="openCreateForChef(g.chef); $event.stopPropagation()">
+            <span class="material-icons-round">person_add</span>
+            Ajouter un couple
+          </button>
+          <span class="material-icons-round ug-chevron" [class.expanded]="isGroupExpanded(g.chef.id)">
+            expand_more
+          </span>
+        </div>
       </div>
 
-      <!-- Couple -->
-      <div class="couple-row">
-        <div class="person-chip">
-          <div class="u-avatar-wrap">
-            <img *ngIf="photoOf(getConjoint1(u)) && !failedPhotos.has(getConjoint1(u)!.id)"
-                 [src]="photoOf(getConjoint1(u))" class="u-avatar-photo avatar avatar-md"
-                 [alt]="nomComplet(getConjoint1(u))"
-                 (error)="onPhotoError(getConjoint1(u)!.id)" />
-            <div *ngIf="!photoOf(getConjoint1(u)) || failedPhotos.has(getConjoint1(u)?.id ?? '')"
-                 class="avatar avatar-md"
-                 [class.male]="getConjoint1(u)?.sexe === 'M'"
-                 [class.female]="getConjoint1(u)?.sexe === 'F'">
-              {{ initiales(getConjoint1(u)) }}
+      <!-- Couples de ce chef (accord\xE9on) -->
+      <div class="ug-couples" *ngIf="isGroupExpanded(g.chef.id)">
+        <div class="ug-couple-row" *ngFor="let u of g.couples; let i = index">
+
+          <!-- Num\xE9ro -->
+          <span class="ug-couple-num">{{ i + 1 }}</span>
+
+          <!-- Statut ic\xF4ne -->
+          <span class="material-icons-round ug-status-icon"
+                [class.ug-active]="coupleStatus(u)==='active'"
+                [class.ug-divorced]="coupleStatus(u)==='divorced'"
+                [class.ug-widowed]="coupleStatus(u)==='widowed'">
+            {{ coupleStatusIcon(u) }}
+          </span>
+
+          <!-- Partenaire -->
+          <div class="ug-partner-info">
+            <div class="ug-partner-avatar"
+                 [class.male]="getPartner(u, g.chef.id)?.sexe==='M'"
+                 [class.female]="getPartner(u, g.chef.id)?.sexe==='F'">
+              <ng-container *ngIf="getPartner(u, g.chef.id) as partner">
+                <img *ngIf="photoOf(partner) && !failedPhotos.has(partner.id)"
+                     [src]="photoOf(partner)" class="ug-partner-photo"
+                     [alt]="initiales(partner)" (error)="onPhotoError(partner.id)" />
+                <span *ngIf="!photoOf(partner) || failedPhotos.has(partner.id)">{{ initiales(partner) }}</span>
+              </ng-container>
+              <span *ngIf="!getPartner(u, g.chef.id)">?</span>
+            </div>
+            <div class="ug-partner-details">
+              <span class="ug-partner-name">{{ nomComplet(getPartner(u, g.chef.id)) }}</span>
+              <span class="ug-partner-meta">
+                {{ getTypeLabel(u.type) }}
+                <ng-container *ngIf="u.dateDebut"> \xB7 {{ annee(u.dateDebut) }}</ng-container>
+                <ng-container *ngIf="u.dateFin"> \u2013 {{ annee(u.dateFin) }}</ng-container>
+                <span class="ug-status-chip"
+                      [class.chip-active]="coupleStatus(u)==='active'"
+                      [class.chip-divorced]="coupleStatus(u)==='divorced'"
+                      [class.chip-widowed]="coupleStatus(u)==='widowed'">
+                  {{ coupleStatusLabel(u) }}
+                </span>
+              </span>
             </div>
           </div>
-          <div class="person-info">
-            <span class="person-name">{{ nomComplet(getConjoint1(u)) }}</span>
+
+          <!-- Enfants -->
+          <div class="ug-children-count" *ngIf="u.filiations.length > 0">
+            <span class="material-icons-round">child_care</span>
+            {{ u.filiations.length }}
           </div>
-        </div>
-        <span class="material-icons-round link-icon">favorite</span>
-        <div class="person-chip">
-          <div class="u-avatar-wrap">
-            <img *ngIf="photoOf(getConjoint2(u)) && !failedPhotos.has(getConjoint2(u)!.id)"
-                 [src]="photoOf(getConjoint2(u))" class="u-avatar-photo avatar avatar-md"
-                 [alt]="nomComplet(getConjoint2(u))"
-                 (error)="onPhotoError(getConjoint2(u)!.id)" />
-            <div *ngIf="!photoOf(getConjoint2(u)) || failedPhotos.has(getConjoint2(u)?.id ?? '')"
-                 class="avatar avatar-md accent"
-                 [class.male]="getConjoint2(u)?.sexe === 'M'"
-                 [class.female]="getConjoint2(u)?.sexe === 'F'">
-              {{ initiales(getConjoint2(u)) }}
-            </div>
-          </div>
-          <div class="person-info">
-            <span class="person-name">{{ nomComplet(getConjoint2(u)) }}</span>
+
+          <!-- Actions -->
+          <div class="ug-couple-actions">
+            <button class="btn-icon" title="G\xE9rer les enfants" (click)="openEnfantPanel(u)">
+              <span class="material-icons-round">people_add</span>
+            </button>
+            <button class="btn-icon" title="Modifier ce couple" (click)="openEdit(u)">
+              <span class="material-icons-round">edit</span>
+            </button>
+            <button class="btn-icon btn-icon-danger" title="Supprimer" (click)="confirmDelete(u)">
+              <span class="material-icons-round">delete</span>
+            </button>
           </div>
         </div>
       </div>
 
-      <!-- D\xE9tails -->
-      <div class="union-details">
-        <div class="detail-item" *ngIf="u.dateDebut">
-          <span class="material-icons-round">calendar_today</span>
-          <span>{{ annee(u.dateDebut) ?? u.dateDebut }}</span>
-        </div>
-        <div class="detail-item" *ngIf="u.lieuDebut">
-          <span class="material-icons-round">location_on</span>
-          <span>{{ u.lieuDebut }}</span>
-        </div>
-        <div class="detail-item">
-          <span class="material-icons-round">child_care</span>
-          <span>{{ u.filiations.length }} enfant{{ u.filiations.length > 1 ? 's' : '' }}</span>
-        </div>
-      </div>
-
-      <!-- Actions -->
-      <div class="card-actions">
-        <button class="btn-icon" title="G\xE9rer les enfants" (click)="openEnfantPanel(u)">
-          <span class="material-icons-round">people_add</span>
-        </button>
-        <button class="btn-icon" title="Modifier" (click)="openEdit(u)">
-          <span class="material-icons-round">edit</span>
-        </button>
-        <button class="btn-icon btn-icon-danger" title="Supprimer" (click)="confirmDelete(u)">
-          <span class="material-icons-round">delete</span>
-        </button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ===== VUE LISTE ===== -->
-  <div class="ul-table" *ngIf="!loading && !erreur && unions.length > 0 && viewMode === 'list'">
-    <!-- En-t\xEAte -->
-    <div class="ul-thead">
-      <span class="pl-th">Couple</span>
-      <span class="pl-th ul-th-type">Type</span>
-      <span class="pl-th ul-th-date">Depuis</span>
-      <span class="pl-th ul-th-enfants">Enfants</span>
-      <span class="pl-th ul-th-actions">Actions</span>
-    </div>
-    <!-- Lignes -->
-    <div class="ul-row" *ngFor="let u of unions">
-      <!-- Couple -->
-      <div class="ul-cell ul-cell-couple">
-        <div class="ul-avatars">
-          <div class="u-avatar-wrap">
-            <img *ngIf="photoOf(getConjoint1(u)) && !failedPhotos.has(getConjoint1(u)!.id)"
-                 [src]="photoOf(getConjoint1(u))" class="u-avatar-photo avatar avatar-sm"
-                 [alt]="nomComplet(getConjoint1(u))"
-                 (error)="onPhotoError(getConjoint1(u)!.id)" />
-            <div *ngIf="!photoOf(getConjoint1(u)) || failedPhotos.has(getConjoint1(u)?.id ?? '')"
-                 class="avatar avatar-sm"
-                 [class.male]="getConjoint1(u)?.sexe === 'M'" [class.female]="getConjoint1(u)?.sexe === 'F'">
-              {{ initiales(getConjoint1(u)) }}
-            </div>
-          </div>
-          <span class="material-icons-round ul-heart">favorite</span>
-          <div class="u-avatar-wrap">
-            <img *ngIf="photoOf(getConjoint2(u)) && !failedPhotos.has(getConjoint2(u)!.id)"
-                 [src]="photoOf(getConjoint2(u))" class="u-avatar-photo avatar avatar-sm"
-                 [alt]="nomComplet(getConjoint2(u))"
-                 (error)="onPhotoError(getConjoint2(u)!.id)" />
-            <div *ngIf="!photoOf(getConjoint2(u)) || failedPhotos.has(getConjoint2(u)?.id ?? '')"
-                 class="avatar avatar-sm"
-                 [class.male]="getConjoint2(u)?.sexe === 'M'" [class.female]="getConjoint2(u)?.sexe === 'F'">
-              {{ initiales(getConjoint2(u)) }}
-            </div>
-          </div>
-        </div>
-        <div class="ul-names">
-          <span class="ul-name-primary">{{ nomComplet(getConjoint1(u)) }}</span>
-          <span class="ul-name-secondary">& {{ nomComplet(getConjoint2(u)) }}</span>
-        </div>
-      </div>
-      <!-- Type -->
-      <div class="ul-cell ul-cell-type">
-        <span class="union-type-badge" [ngClass]="getTypeColor(u.type)">
-          <span class="material-icons-round">{{ getTypeIcon(u.type) }}</span>
-          {{ getTypeLabel(u.type) }}
-        </span>
-      </div>
-      <!-- Date -->
-      <div class="ul-cell ul-cell-date">
-        <span *ngIf="u.dateDebut">{{ annee(u.dateDebut) ?? u.dateDebut }}</span>
-        <span *ngIf="!u.dateDebut" class="pl-empty">\u2014</span>
-      </div>
-      <!-- Enfants -->
-      <div class="ul-cell ul-cell-enfants">
-        <span class="ul-enfant-count">
-          <span class="material-icons-round">child_care</span>
-          {{ u.filiations.length }}
-        </span>
-      </div>
-      <!-- Actions -->
-      <div class="ul-cell ul-cell-actions" (click)="$event.stopPropagation()">
-        <button class="btn-icon" title="G\xE9rer les enfants" (click)="openEnfantPanel(u)">
-          <span class="material-icons-round">people_add</span>
-        </button>
-        <button class="btn-icon" title="Modifier" (click)="openEdit(u)">
-          <span class="material-icons-round">edit</span>
-        </button>
-        <button class="btn-icon btn-icon-danger" title="Supprimer" (click)="confirmDelete(u)">
-          <span class="material-icons-round">delete</span>
-        </button>
-      </div>
     </div>
   </div>
 
@@ -7847,7 +8307,7 @@ var UnionsComponent = class _UnionsComponent {
 <!-- ===== PANNEAU FORMULAIRE ===== -->
 <div class="slide-panel" [class.open]="showForm">
   <div class="panel-header">
-    <h3>{{ editTarget ? 'Modifier l\\'union' : 'Nouvelle union' }}</h3>
+    <h3>{{ editTarget ? 'Modifier le couple' : 'Nouveau couple' }}</h3>
     <button class="btn-icon" (click)="closeAll()">
       <span class="material-icons-round">close</span>
     </button>
@@ -7856,33 +8316,57 @@ var UnionsComponent = class _UnionsComponent {
   <div class="panel-body">
     <form #unionForm="ngForm">
 
-      <!-- Section: Type et participants -->
+      <!-- Type -->
       <div class="form-section">
-        <div class="section-title">Type et participants</div>
-
+        <div class="section-title">Type de l'union</div>
         <div class="form-group">
-          <label>Type d'union</label>
+          <label>Type</label>
           <select name="type" [(ngModel)]="form.type" class="form-control">
             <option *ngFor="let t of typeUnion" [value]="t.val">{{ t.label }}</option>
           </select>
         </div>
+      </div>
+
+      <!-- Participants -->
+      <div class="form-section">
+        <div class="section-title">Participants du couple</div>
 
         <div class="form-group">
-          <label>Participants</label>
-          <div class="warning-msg" *ngIf="form.participantIds.length > 2">
-            <span class="material-icons-round">warning</span>
-            Plus de 2 participants s\xE9lectionn\xE9s
-          </div>
+          <label>Membres s\xE9lectionn\xE9s (max. 2)</label>
+
           <div class="participant-chips" *ngIf="form.participantIds.length > 0">
             <span class="participant-chip" *ngFor="let pid of form.participantIds">
               {{ nomComplet(getPersonneById(pid)) }}
               <button type="button" class="chip-remove" (click)="toggleParticipant(pid)">\xD7</button>
             </span>
           </div>
+
+          <!-- Alerte unions multiples -->
+          <div class="multi-union-alert" *ngIf="multiUnionWarnings.length > 0">
+            <div class="multi-union-alert-header">
+              <span class="material-icons-round">info</span>
+              <strong>Unions multiples d\xE9tect\xE9es</strong>
+            </div>
+            <div class="multi-union-alert-row" *ngFor="let w of multiUnionWarnings">
+              <div class="avatar avatar-sm" [class.male]="w.person.sexe==='M'" [class.female]="w.person.sexe==='F'">
+                {{ initiales(w.person) }}
+              </div>
+              <div>
+                <span class="multi-union-alert-name">{{ nomComplet(w.person) }}</span>
+                <span class="multi-union-alert-hint">{{ w.hint }}</span>
+              </div>
+            </div>
+            <p class="multi-union-alert-tip">
+              <span class="material-icons-round">auto_fix_high</span>
+              Type ajust\xE9 automatiquement \xE0 <strong>Polygamie</strong>.
+            </p>
+          </div>
+
           <div class="person-select-list">
             <div class="person-select-item"
                  *ngFor="let p of personnes"
                  [class.selected]="isParticipant(p.id)"
+                 [class.has-union]="getPersonActiveUnions(p.id).length > 0 && !isParticipant(p.id)"
                  (click)="toggleParticipant(p.id)">
               <div class="u-avatar-wrap">
                 <img *ngIf="photoOf(p) && !failedPhotos.has(p.id)"
@@ -7894,21 +8378,25 @@ var UnionsComponent = class _UnionsComponent {
                   {{ initiales(p) }}
                 </div>
               </div>
-              <span class="person-select-name">{{ nomComplet(p) }}</span>
+              <div class="person-select-info">
+                <span class="person-select-name">{{ nomComplet(p) }}</span>
+                <span class="person-union-hint" *ngIf="getPersonUnionHint(p.id)">
+                  <span class="material-icons-round">favorite</span>{{ getPersonUnionHint(p.id) }}
+                </span>
+              </div>
               <span class="material-icons-round check-icon" *ngIf="isParticipant(p.id)">check_circle</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Section: D\xE9but -->
+      <!-- D\xE9but -->
       <div class="form-section">
         <div class="section-title">D\xE9but de l'union</div>
         <div class="form-row">
           <div class="form-group">
             <label>Ann\xE9e</label>
-            <input type="number" name="debut_annee" [(ngModel)]="form.debut_annee"
-                   placeholder="2000" class="form-control" />
+            <input type="number" name="debut_annee" [(ngModel)]="form.debut_annee" placeholder="2000" class="form-control" />
           </div>
           <div class="form-group">
             <label>Mois</label>
@@ -7919,25 +8407,22 @@ var UnionsComponent = class _UnionsComponent {
           </div>
           <div class="form-group">
             <label>Jour</label>
-            <input type="number" name="debut_jour" [(ngModel)]="form.debut_jour"
-                   placeholder="1" min="1" max="31" class="form-control" />
+            <input type="number" name="debut_jour" [(ngModel)]="form.debut_jour" placeholder="1" min="1" max="31" class="form-control" />
           </div>
         </div>
         <div class="form-group">
           <label>Lieu</label>
-          <input type="text" name="lieuDebut" [(ngModel)]="form.lieuDebut"
-                 placeholder="Ville, pays..." class="form-control" />
+          <input type="text" name="lieuDebut" [(ngModel)]="form.lieuDebut" placeholder="Ville, pays..." class="form-control" />
         </div>
       </div>
 
-      <!-- Section: Fin -->
+      <!-- Fin (optionnel) -->
       <div class="form-section">
-        <div class="section-title">Fin de l'union <span class="optional">(optionnel)</span></div>
+        <div class="section-title">Fin de l'union <span class="optional">(si divorc\xE9\xB7e ou d\xE9c\xE9d\xE9\xB7e)</span></div>
         <div class="form-row">
           <div class="form-group">
             <label>Ann\xE9e</label>
-            <input type="number" name="fin_annee" [(ngModel)]="form.fin_annee"
-                   placeholder="2020" class="form-control" />
+            <input type="number" name="fin_annee" [(ngModel)]="form.fin_annee" placeholder="2020" class="form-control" />
           </div>
           <div class="form-group">
             <label>Mois</label>
@@ -7948,24 +8433,20 @@ var UnionsComponent = class _UnionsComponent {
           </div>
           <div class="form-group">
             <label>Jour</label>
-            <input type="number" name="fin_jour" [(ngModel)]="form.fin_jour"
-                   placeholder="1" min="1" max="31" class="form-control" />
+            <input type="number" name="fin_jour" [(ngModel)]="form.fin_jour" placeholder="1" min="1" max="31" class="form-control" />
           </div>
         </div>
         <div class="form-group">
           <label>Lieu</label>
-          <input type="text" name="lieuFin" [(ngModel)]="form.lieuFin"
-                 placeholder="Ville, pays..." class="form-control" />
+          <input type="text" name="lieuFin" [(ngModel)]="form.lieuFin" placeholder="Ville, pays..." class="form-control" />
         </div>
       </div>
 
-      <!-- Section: Notes -->
+      <!-- Notes -->
       <div class="form-section">
         <div class="section-title">Notes</div>
         <div class="form-group">
-          <textarea name="notes" [(ngModel)]="form.notes"
-                    rows="3" placeholder="Notes compl\xE9mentaires..."
-                    class="form-control"></textarea>
+          <textarea name="notes" [(ngModel)]="form.notes" rows="3" placeholder="Notes compl\xE9mentaires..." class="form-control"></textarea>
         </div>
       </div>
 
@@ -7976,6 +8457,7 @@ var UnionsComponent = class _UnionsComponent {
     <button class="btn-ghost" (click)="closeAll()">Annuler</button>
     <button class="btn-primary" (click)="saveUnion()" [disabled]="saving">
       <span class="material-icons-round spin" *ngIf="saving">sync</span>
+      <span class="material-icons-round" *ngIf="!saving">save</span>
       {{ saving ? 'Sauvegarde...' : 'Sauvegarder' }}
     </button>
   </div>
@@ -7984,73 +8466,52 @@ var UnionsComponent = class _UnionsComponent {
 <!-- ===== PANNEAU ENFANTS ===== -->
 <div class="slide-panel" [class.open]="showEnfantPanel">
   <div class="panel-header">
-    <h3>Ajouter des enfants</h3>
-    <button class="btn-icon" (click)="closeEnfantPanel()">
-      <span class="material-icons-round">close</span>
-    </button>
+    <h3>Enfants du couple</h3>
+    <button class="btn-icon" (click)="closeEnfantPanel()"><span class="material-icons-round">close</span></button>
   </div>
-
   <div class="panel-body">
-    <p class="panel-subtitle">S\xE9lectionnez des membres existants de la famille</p>
-
-    <!-- Recherche -->
+    <p class="panel-subtitle">S\xE9lectionnez les enfants issus de ce couple</p>
     <div class="search-bar" style="margin-bottom: 12px;">
       <span class="material-icons-round">search</span>
-      <input type="text" name="searchEnfant" [(ngModel)]="searchEnfant"
-             placeholder="Rechercher une personne..." />
+      <input type="text" [(ngModel)]="searchEnfant" placeholder="Rechercher..." />
     </div>
-
-    <!-- Liste personnes disponibles -->
     <div class="person-select-list">
-      <div class="person-select-item"
-           *ngFor="let p of personnesDisponibles"
-           [class.selected]="isEnfantSelected(p.id)"
-           (click)="toggleEnfantSelection(p.id)">
+      <div class="person-select-item" *ngFor="let p of personnesDisponibles"
+           [class.selected]="isEnfantSelected(p.id)" (click)="toggleEnfantSelection(p.id)">
         <div class="u-avatar-wrap">
           <img *ngIf="photoOf(p) && !failedPhotos.has(p.id)"
                [src]="photoOf(p)" class="u-avatar-photo avatar avatar-sm"
                [alt]="nomComplet(p)" (error)="onPhotoError(p.id)" />
-          <div *ngIf="!photoOf(p) || failedPhotos.has(p.id)"
-               class="avatar avatar-sm"
-               [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">
-            {{ initiales(p) }}
-          </div>
+          <div *ngIf="!photoOf(p) || failedPhotos.has(p.id)" class="avatar avatar-sm"
+               [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">{{ initiales(p) }}</div>
         </div>
         <span class="person-select-name">{{ nomComplet(p) }}</span>
         <span class="material-icons-round check-icon" *ngIf="isEnfantSelected(p.id)">check_circle</span>
       </div>
-      <div class="empty-list-msg" *ngIf="personnesDisponibles.length === 0">
-        Aucune personne disponible
-      </div>
+      <div class="empty-list-msg" *ngIf="personnesDisponibles.length === 0">Aucune personne disponible</div>
     </div>
-
-    <!-- Enfants actuels -->
     <div class="current-children" *ngIf="enfantUnionTarget && enfantUnionTarget.filiations.length > 0">
       <div class="section-title" style="margin-top: 20px;">Enfants actuels</div>
       <div class="child-item" *ngFor="let f of enfantUnionTarget.filiations">
         <div class="u-avatar-wrap">
-          <img *ngIf="photoOf(f.enfant) && !failedPhotos.has(f.enfant?.id ?? '')"
+          <img *ngIf="photoOf(f.enfant) && !failedPhotos.has(f.enfant.id)"
                [src]="photoOf(f.enfant)" class="u-avatar-photo avatar avatar-sm"
-               [alt]="nomComplet(f.enfant)" (error)="f.enfant && onPhotoError(f.enfant.id)" />
-          <div *ngIf="!photoOf(f.enfant) || failedPhotos.has(f.enfant?.id ?? '')"
-               class="avatar avatar-sm"
-               [class.male]="f.enfant.sexe === 'M'" [class.female]="f.enfant.sexe === 'F'">
+               [alt]="nomComplet(f.enfant)" (error)="onPhotoError(f.enfant.id)" />
+          <div *ngIf="!photoOf(f.enfant) || failedPhotos.has(f.enfant.id)"
+               class="avatar avatar-sm" [class.male]="f.enfant.sexe==='M'" [class.female]="f.enfant.sexe==='F'">
             {{ initiales(f.enfant) }}
           </div>
         </div>
         <span class="child-name">{{ nomComplet(f.enfant) }}</span>
-        <button class="btn-icon btn-icon-danger" title="Retirer"
-                (click)="retirerEnfant(enfantUnionTarget!.id, f.enfantId)">
+        <button class="btn-icon btn-icon-danger" (click)="retirerEnfant(enfantUnionTarget!.id, f.enfantId)">
           <span class="material-icons-round">remove_circle_outline</span>
         </button>
       </div>
     </div>
   </div>
-
   <div class="panel-footer">
     <button class="btn-ghost" (click)="closeEnfantPanel()">Annuler</button>
-    <button class="btn-primary" (click)="ajouterEnfants()"
-            [disabled]="addingEnfant || enfantsSelectionnes.length === 0">
+    <button class="btn-primary" (click)="ajouterEnfants()" [disabled]="addingEnfant || enfantsSelectionnes.length === 0">
       <span class="material-icons-round spin" *ngIf="addingEnfant">sync</span>
       Ajouter ({{ enfantsSelectionnes.length }} s\xE9lectionn\xE9{{ enfantsSelectionnes.length > 1 ? 's' : '' }})
     </button>
@@ -8060,10 +8521,8 @@ var UnionsComponent = class _UnionsComponent {
 <!-- ===== DIALOG SUPPRESSION ===== -->
 <div class="confirm-dialog" *ngIf="showDeleteConfirm">
   <div class="confirm-box">
-    <div class="confirm-icon">
-      <span class="material-icons-round">delete_forever</span>
-    </div>
-    <h4>Supprimer cette union ?</h4>
+    <div class="confirm-icon"><span class="material-icons-round">delete_forever</span></div>
+    <h4>Supprimer ce couple ?</h4>
     <p>Cette action est irr\xE9versible. Tous les liens de parent\xE9 associ\xE9s seront supprim\xE9s.</p>
     <div class="confirm-actions">
       <button class="btn-ghost" (click)="closeAll()">Annuler</button>
@@ -8074,11 +8533,11 @@ var UnionsComponent = class _UnionsComponent {
     </div>
   </div>
 </div>
-`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/unions/unions.component.scss */\n.unions-page {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.page-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.page-title {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 4px;\n}\n.page-subtitle {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.u-avatar-wrap {\n  position: relative;\n  flex-shrink: 0;\n}\n.u-avatar-photo {\n  object-fit: cover;\n  border-radius: 50%;\n  display: block;\n}\n.unions-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));\n  gap: 16px;\n}\n.toolbar-right {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n}\n.union-card {\n  position: relative;\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);\n  overflow: hidden;\n  transition: var(--transition);\n}\n.union-card:hover {\n  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);\n  transform: translateY(-2px);\n}\n.union-type-banner {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 16px;\n  font-size: 12px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.union-type-banner .material-icons-round {\n  font-size: 16px !important;\n}\n.union-type-banner.banner-pink {\n  background: #fdf2f8;\n  color: #db2777;\n}\n.union-type-banner.banner-accent {\n  background: #eef2ff;\n  color: var(--accent);\n}\n.union-type-banner.banner-primary {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.union-type-banner.banner-gold {\n  background: #fffbeb;\n  color: #b45309;\n}\n.union-type-banner.banner-green {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.union-type-banner.banner-purple {\n  background: #faf5ff;\n  color: #7c3aed;\n}\n.couple-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  gap: 8px;\n}\n.person-chip {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex: 1;\n  min-width: 0;\n}\n.person-info {\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n}\n.person-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.link-icon {\n  font-size: 18px !important;\n  color: #f43f5e;\n  flex-shrink: 0;\n}\n.avatar.accent {\n  background: var(--accent);\n}\n.union-details {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px 16px;\n  padding: 12px 16px 16px;\n  border-top: 1px solid var(--border);\n}\n.detail-item {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 12px;\n  color: var(--text-secondary);\n}\n.detail-item .material-icons-round {\n  font-size: 14px !important;\n  color: var(--text-muted);\n}\n.card-actions {\n  display: flex;\n  gap: 4px;\n  justify-content: flex-end;\n  padding: 8px 12px;\n  border-top: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.btn-icon-danger {\n  color: var(--error) !important;\n}\n.btn-icon-danger:hover {\n  background: #fef2f2 !important;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.35);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.slide-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open {\n  transform: translateX(0);\n}\n.panel-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header h3 {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.panel-subtitle {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0 0 16px;\n}\n.panel-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.panel-footer {\n  display: flex;\n  gap: 12px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section {\n  margin-bottom: 24px;\n}\n.section-title {\n  font-size: 12px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n}\n.optional {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n.form-control {\n  width: 100%;\n  padding: 8px 12px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  transition: border-color 0.15s;\n}\n.form-control:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row {\n  display: grid;\n  grid-template-columns: 2fr 2fr 1fr;\n  gap: 12px;\n}\n.person-select-list {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  max-height: 300px;\n  overflow-y: auto;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  padding: 4px;\n}\n.person-select-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 12px;\n  border-radius: 6px;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.person-select-item:hover {\n  background: var(--bg-muted);\n}\n.person-select-item.selected {\n  background: var(--primary-bg, #eff6ff);\n  border: 1px solid var(--primary-border, #bfdbfe);\n}\n.person-select-name {\n  flex: 1;\n  font-size: 14px;\n  color: var(--text-primary);\n}\n.check-icon {\n  font-size: 18px !important;\n  color: var(--primary);\n}\n.participant-chips {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  margin-bottom: 10px;\n}\n.participant-chip {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  background: var(--primary-bg, #eff6ff);\n  border: 1px solid var(--primary-border, #bfdbfe);\n  border-radius: 20px;\n  font-size: 13px;\n  color: var(--primary);\n  font-weight: 500;\n}\n.chip-remove {\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 16px;\n  line-height: 1;\n  color: var(--primary);\n  padding: 0;\n  opacity: 0.7;\n}\n.chip-remove:hover {\n  opacity: 1;\n}\n.warning-msg {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 12px;\n  background: #fffbeb;\n  border: 1px solid #fcd34d;\n  border-radius: 8px;\n  font-size: 13px;\n  color: #92400e;\n  margin-bottom: 8px;\n}\n.warning-msg .material-icons-round {\n  font-size: 16px !important;\n}\n.current-children {\n  margin-top: 20px;\n}\n.child-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 0;\n  border-bottom: 1px solid var(--border);\n}\n.child-item:last-child {\n  border-bottom: none;\n}\n.child-name {\n  flex: 1;\n  font-size: 14px;\n  color: var(--text-primary);\n}\n.empty-list-msg {\n  padding: 20px;\n  text-align: center;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.confirm-dialog {\n  position: fixed;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 500;\n}\n.confirm-box {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  padding: 32px;\n  width: 400px;\n  max-width: 90vw;\n  box-shadow: var(--shadow-xl);\n  text-align: center;\n}\n.confirm-box h4 {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 12px 0 8px;\n}\n.confirm-box p {\n  font-size: 14px;\n  color: var(--text-muted);\n  margin: 0 0 24px;\n  line-height: 1.5;\n}\n.confirm-icon {\n  width: 56px;\n  height: 56px;\n  border-radius: 50%;\n  background: #fef2f2;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 4px;\n}\n.confirm-icon .material-icons-round {\n  font-size: 28px !important;\n  color: var(--error);\n}\n.confirm-actions {\n  display: flex;\n  gap: 12px;\n  justify-content: center;\n}\n.union-type-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  padding: 3px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n  white-space: nowrap;\n}\n.union-type-badge .material-icons-round {\n  font-size: 13px !important;\n}\n.union-type-badge.banner-pink {\n  background: #fdf2f8;\n  color: #db2777;\n}\n.union-type-badge.banner-accent {\n  background: #eef2ff;\n  color: var(--accent);\n}\n.union-type-badge.banner-primary {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.union-type-badge.banner-gold {\n  background: #fffbeb;\n  color: #b45309;\n}\n.union-type-badge.banner-green {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.union-type-badge.banner-purple {\n  background: #faf5ff;\n  color: #7c3aed;\n}\n.ul-table {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);\n  overflow: hidden;\n}\n.ul-thead {\n  display: grid;\n  grid-template-columns: 2fr 1fr 100px 80px 120px;\n  padding: 10px 16px;\n  background: var(--bg-muted, #f8fafc);\n  border-bottom: 1px solid var(--border);\n}\n.ul-row {\n  display: grid;\n  grid-template-columns: 2fr 1fr 100px 80px 120px;\n  padding: 12px 16px;\n  align-items: center;\n  border-bottom: 1px solid var(--border);\n  transition: background 0.12s;\n}\n.ul-row:last-child {\n  border-bottom: none;\n}\n.ul-row:hover {\n  background: var(--bg-muted, #f8fafc);\n}\n.ul-cell {\n  display: flex;\n  align-items: center;\n  font-size: 13px;\n  color: var(--text-primary);\n}\n.ul-cell-couple {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  min-width: 0;\n}\n.ul-avatars {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  flex-shrink: 0;\n}\n.ul-heart {\n  font-size: 14px !important;\n  color: #f43f5e;\n}\n.ul-names {\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n}\n.ul-name-primary {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.ul-name-secondary {\n  font-size: 12px;\n  color: var(--text-muted);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.ul-cell-date {\n  font-size: 13px;\n  color: var(--text-secondary);\n}\n.ul-enfant-count {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  color: var(--text-secondary);\n}\n.ul-enfant-count .material-icons-round {\n  font-size: 15px !important;\n  color: var(--text-muted);\n}\n.ul-cell-actions {\n  display: flex;\n  gap: 2px;\n  justify-content: flex-end;\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin {\n  animation: spin 1s linear infinite;\n}\n@media (max-width: 768px) {\n  .page-header {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .page-header .btn-primary {\n    width: 100%;\n    justify-content: center;\n  }\n  .unions-grid {\n    grid-template-columns: 1fr;\n  }\n  .ul-thead,\n  .ul-row {\n    grid-template-columns: 2fr 60px 80px;\n  }\n  .ul-th-type,\n  .ul-th-date,\n  .ul-cell-type,\n  .ul-cell-date {\n    display: none;\n  }\n  .slide-panel {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open {\n    transform: translateY(0);\n  }\n  .form-row {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer {\n    flex-direction: column-reverse;\n  }\n  .panel-footer button {\n    width: 100%;\n    justify-content: center;\n  }\n}\n@media (max-width: 480px) {\n  .ul-thead,\n  .ul-row {\n    grid-template-columns: 1fr 80px;\n  }\n  .ul-th-type,\n  .ul-th-date,\n  .ul-th-enfants,\n  .ul-cell-type,\n  .ul-cell-date,\n  .ul-cell-enfants {\n    display: none;\n  }\n}\n/*# sourceMappingURL=unions.component.css.map */\n'] }]
+`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/unions/unions.component.scss */\n.unions-page {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.page-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.page-title {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 4px;\n}\n.page-subtitle {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.u-avatar-wrap {\n  position: relative;\n  flex-shrink: 0;\n}\n.u-avatar-photo {\n  object-fit: cover;\n  border-radius: 50%;\n  display: block;\n}\n.ug-groups {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.ug-group {\n  background: var(--white);\n  border: 1px solid var(--border-light, #E5E7EB);\n  border-radius: 18px;\n  overflow: hidden;\n  box-shadow: var(--shadow-sm);\n  transition: box-shadow 0.2s;\n}\n.ug-group:hover {\n  box-shadow: var(--shadow-md);\n}\n.ug-group-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px 20px;\n  cursor: pointer;\n  background: var(--bg-muted, #F9FAFB);\n  border-bottom: 1px solid var(--border-light, #E5E7EB);\n  gap: 12px;\n}\n.ug-group-header:hover {\n  background: var(--primary-bg, #EFF6FF);\n}\n.ug-chef-left {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex: 1;\n  min-width: 0;\n}\n.ug-chef-avatar {\n  width: 46px;\n  height: 46px;\n  border-radius: 12px;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.ug-chef-avatar.male {\n  background: var(--primary, #3B82F6);\n}\n.ug-chef-avatar.female {\n  background: var(--pink, #EC4899);\n}\n.ug-chef-avatar:not(.male):not(.female) {\n  background: #9CA3AF;\n}\n.ug-chef-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  border-radius: 12px;\n}\n.ug-chef-info {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.ug-chef-name {\n  font-size: 15px;\n  font-weight: 700;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.ug-chef-meta {\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.ug-poly-badge {\n  font-size: 10px;\n  padding: 2px 8px;\n  flex-shrink: 0;\n}\n.ug-group-actions {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-shrink: 0;\n}\n.ug-chevron {\n  font-size: 20px !important;\n  color: var(--text-muted);\n  transition: transform 0.2s;\n  cursor: pointer;\n}\n.ug-chevron.expanded {\n  transform: rotate(180deg);\n}\n.ug-couples {\n  display: flex;\n  flex-direction: column;\n}\n.ug-couple-row {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 20px;\n  border-bottom: 1px solid var(--border-light, #F3F4F6);\n  transition: background 0.12s;\n}\n.ug-couple-row:last-child {\n  border-bottom: none;\n}\n.ug-couple-row:hover {\n  background: var(--bg-muted, #F9FAFB);\n}\n.ug-couple-num {\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  background: var(--border-light, #E5E7EB);\n  color: var(--text-muted);\n  font-size: 10px;\n  font-weight: 700;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.ug-status-icon {\n  font-size: 18px !important;\n  flex-shrink: 0;\n}\n.ug-status-icon.ug-active {\n  color: #f43f5e;\n}\n.ug-status-icon.ug-divorced {\n  color: #9CA3AF;\n}\n.ug-status-icon.ug-widowed {\n  color: #6B7280;\n}\n.ug-partner-info {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex: 1;\n  min-width: 0;\n}\n.ug-partner-avatar {\n  width: 36px;\n  height: 36px;\n  border-radius: 10px;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 12px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.ug-partner-avatar.male {\n  background: var(--primary, #3B82F6);\n}\n.ug-partner-avatar.female {\n  background: var(--pink, #EC4899);\n}\n.ug-partner-avatar:not(.male):not(.female) {\n  background: #9CA3AF;\n}\n.ug-partner-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  border-radius: 10px;\n}\n.ug-partner-details {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.ug-partner-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.ug-partner-meta {\n  font-size: 11px;\n  color: var(--text-muted);\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  flex-wrap: wrap;\n}\n.ug-status-chip {\n  font-size: 10px;\n  font-weight: 700;\n  padding: 1px 7px;\n  border-radius: 10px;\n}\n.ug-status-chip.chip-active {\n  background: #DCFCE7;\n  color: #15803D;\n}\n.ug-status-chip.chip-divorced {\n  background: #F3F4F6;\n  color: #6B7280;\n}\n.ug-status-chip.chip-widowed {\n  background: #F1F5F9;\n  color: #475569;\n}\n.ug-children-count {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary);\n  flex-shrink: 0;\n}\n.ug-children-count .material-icons-round {\n  font-size: 16px !important;\n  color: var(--text-muted);\n}\n.ug-couple-actions {\n  display: flex;\n  gap: 4px;\n  flex-shrink: 0;\n}\n.toolbar-right {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n}\n.union-card {\n  position: relative;\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);\n  overflow: hidden;\n  transition: var(--transition);\n}\n.union-card:hover {\n  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);\n  transform: translateY(-2px);\n}\n.union-type-banner {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 16px;\n  font-size: 12px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.union-type-banner .material-icons-round {\n  font-size: 16px !important;\n}\n.union-type-banner.banner-pink {\n  background: #fdf2f8;\n  color: #db2777;\n}\n.union-type-banner.banner-accent {\n  background: #eef2ff;\n  color: var(--accent);\n}\n.union-type-banner.banner-primary {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.union-type-banner.banner-gold {\n  background: #fffbeb;\n  color: #b45309;\n}\n.union-type-banner.banner-green {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.union-type-banner.banner-purple {\n  background: #faf5ff;\n  color: #7c3aed;\n}\n.couple-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  gap: 8px;\n}\n.person-chip {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex: 1;\n  min-width: 0;\n}\n.person-info {\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n}\n.person-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.link-icon {\n  font-size: 18px !important;\n  color: #f43f5e;\n  flex-shrink: 0;\n}\n.avatar.accent {\n  background: var(--accent);\n}\n.union-details {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px 16px;\n  padding: 12px 16px 16px;\n  border-top: 1px solid var(--border);\n}\n.detail-item {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 12px;\n  color: var(--text-secondary);\n}\n.detail-item .material-icons-round {\n  font-size: 14px !important;\n  color: var(--text-muted);\n}\n.card-actions {\n  display: flex;\n  gap: 4px;\n  justify-content: flex-end;\n  padding: 8px 12px;\n  border-top: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.btn-icon-danger {\n  color: var(--error) !important;\n}\n.btn-icon-danger:hover {\n  background: #fef2f2 !important;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.35);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.slide-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open {\n  transform: translateX(0);\n}\n.panel-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header h3 {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.panel-subtitle {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0 0 16px;\n}\n.panel-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.panel-footer {\n  display: flex;\n  gap: 12px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section {\n  margin-bottom: 24px;\n}\n.section-title {\n  font-size: 12px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n}\n.optional {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n.form-control {\n  width: 100%;\n  padding: 8px 12px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  transition: border-color 0.15s;\n}\n.form-control:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row {\n  display: grid;\n  grid-template-columns: 2fr 2fr 1fr;\n  gap: 12px;\n}\n.person-select-list {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  max-height: 300px;\n  overflow-y: auto;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  padding: 4px;\n}\n.person-select-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 12px;\n  border-radius: 6px;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.person-select-item:hover {\n  background: var(--bg-muted);\n}\n.person-select-item.selected {\n  background: var(--primary-bg, #eff6ff);\n  border: 1px solid var(--primary-border, #bfdbfe);\n}\n.person-select-item.has-union {\n  background: #FFFBEB;\n}\n.person-select-info {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.person-select-name {\n  font-size: 14px;\n  color: var(--text-primary);\n}\n.person-union-hint {\n  display: flex;\n  align-items: center;\n  gap: 3px;\n  font-size: 11px;\n  color: #D97706;\n  font-weight: 500;\n}\n.person-union-hint .material-icons-round {\n  font-size: 12px !important;\n  color: #D97706;\n}\n.multi-union-alert {\n  background: #FFFBEB;\n  border: 1.5px solid #FDE68A;\n  border-radius: 10px;\n  padding: 12px 14px;\n  margin-bottom: 10px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.multi-union-alert-header {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  font-size: 13px;\n  color: #92400E;\n}\n.multi-union-alert-header .material-icons-round {\n  font-size: 18px !important;\n  color: #D97706;\n}\n.multi-union-alert-header strong {\n  font-weight: 700;\n}\n.multi-union-alert-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n  padding: 6px 0;\n  border-top: 1px solid #FDE68A;\n}\n.multi-union-alert-row:first-of-type {\n  border-top: none;\n}\n.multi-union-alert-name {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: #78350F;\n}\n.multi-union-alert-hint {\n  display: block;\n  font-size: 11px;\n  color: #92400E;\n  margin-top: 1px;\n}\n.multi-union-alert-tip {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 11px;\n  color: #78350F;\n  margin: 0;\n  background: rgba(217, 119, 6, 0.1);\n  border-radius: 7px;\n  padding: 5px 8px;\n}\n.multi-union-alert-tip .material-icons-round {\n  font-size: 14px !important;\n  color: #D97706;\n}\n.multi-union-alert-tip strong {\n  font-weight: 700;\n}\n.check-icon {\n  font-size: 18px !important;\n  color: var(--primary);\n}\n.participant-chips {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  margin-bottom: 10px;\n}\n.participant-chip {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  background: var(--primary-bg, #eff6ff);\n  border: 1px solid var(--primary-border, #bfdbfe);\n  border-radius: 20px;\n  font-size: 13px;\n  color: var(--primary);\n  font-weight: 500;\n}\n.chip-remove {\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 16px;\n  line-height: 1;\n  color: var(--primary);\n  padding: 0;\n  opacity: 0.7;\n}\n.chip-remove:hover {\n  opacity: 1;\n}\n.warning-msg {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 12px;\n  background: #fffbeb;\n  border: 1px solid #fcd34d;\n  border-radius: 8px;\n  font-size: 13px;\n  color: #92400e;\n  margin-bottom: 8px;\n}\n.warning-msg .material-icons-round {\n  font-size: 16px !important;\n}\n.current-children {\n  margin-top: 20px;\n}\n.child-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 0;\n  border-bottom: 1px solid var(--border);\n}\n.child-item:last-child {\n  border-bottom: none;\n}\n.child-name {\n  flex: 1;\n  font-size: 14px;\n  color: var(--text-primary);\n}\n.empty-list-msg {\n  padding: 20px;\n  text-align: center;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.confirm-dialog {\n  position: fixed;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 500;\n}\n.confirm-box {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  padding: 32px;\n  width: 400px;\n  max-width: 90vw;\n  box-shadow: var(--shadow-xl);\n  text-align: center;\n}\n.confirm-box h4 {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 12px 0 8px;\n}\n.confirm-box p {\n  font-size: 14px;\n  color: var(--text-muted);\n  margin: 0 0 24px;\n  line-height: 1.5;\n}\n.confirm-icon {\n  width: 56px;\n  height: 56px;\n  border-radius: 50%;\n  background: #fef2f2;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 4px;\n}\n.confirm-icon .material-icons-round {\n  font-size: 28px !important;\n  color: var(--error);\n}\n.confirm-actions {\n  display: flex;\n  gap: 12px;\n  justify-content: center;\n}\n.union-type-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  padding: 3px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n  white-space: nowrap;\n}\n.union-type-badge .material-icons-round {\n  font-size: 13px !important;\n}\n.union-type-badge.banner-pink {\n  background: #fdf2f8;\n  color: #db2777;\n}\n.union-type-badge.banner-accent {\n  background: #eef2ff;\n  color: var(--accent);\n}\n.union-type-badge.banner-primary {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.union-type-badge.banner-gold {\n  background: #fffbeb;\n  color: #b45309;\n}\n.union-type-badge.banner-green {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.union-type-badge.banner-purple {\n  background: #faf5ff;\n  color: #7c3aed;\n}\n.ul-table {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);\n  overflow: hidden;\n}\n.ul-thead {\n  display: grid;\n  grid-template-columns: 2fr 1fr 100px 80px 120px;\n  padding: 10px 16px;\n  background: var(--bg-muted, #f8fafc);\n  border-bottom: 1px solid var(--border);\n}\n.ul-row {\n  display: grid;\n  grid-template-columns: 2fr 1fr 100px 80px 120px;\n  padding: 12px 16px;\n  align-items: center;\n  border-bottom: 1px solid var(--border);\n  transition: background 0.12s;\n}\n.ul-row:last-child {\n  border-bottom: none;\n}\n.ul-row:hover {\n  background: var(--bg-muted, #f8fafc);\n}\n.ul-cell {\n  display: flex;\n  align-items: center;\n  font-size: 13px;\n  color: var(--text-primary);\n}\n.ul-cell-couple {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  min-width: 0;\n}\n.ul-avatars {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  flex-shrink: 0;\n}\n.ul-heart {\n  font-size: 14px !important;\n  color: #f43f5e;\n}\n.ul-names {\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n}\n.ul-name-primary {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.ul-name-secondary {\n  font-size: 12px;\n  color: var(--text-muted);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.ul-cell-date {\n  font-size: 13px;\n  color: var(--text-secondary);\n}\n.ul-enfant-count {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  color: var(--text-secondary);\n}\n.ul-enfant-count .material-icons-round {\n  font-size: 15px !important;\n  color: var(--text-muted);\n}\n.ul-cell-actions {\n  display: flex;\n  gap: 2px;\n  justify-content: flex-end;\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin {\n  animation: spin 1s linear infinite;\n}\n@media (max-width: 768px) {\n  .page-header {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .page-header .btn-primary {\n    width: 100%;\n    justify-content: center;\n  }\n  .unions-grid {\n    grid-template-columns: 1fr;\n  }\n  .ul-thead,\n  .ul-row {\n    grid-template-columns: 2fr 60px 80px;\n  }\n  .ul-th-type,\n  .ul-th-date,\n  .ul-cell-type,\n  .ul-cell-date {\n    display: none;\n  }\n  .slide-panel {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open {\n    transform: translateY(0);\n  }\n  .form-row {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer {\n    flex-direction: column-reverse;\n  }\n  .panel-footer button {\n    width: 100%;\n    justify-content: center;\n  }\n}\n@media (max-width: 480px) {\n  .ul-thead,\n  .ul-row {\n    grid-template-columns: 1fr 80px;\n  }\n  .ul-th-type,\n  .ul-th-date,\n  .ul-th-enfants,\n  .ul-cell-type,\n  .ul-cell-date,\n  .ul-cell-enfants {\n    display: none;\n  }\n}\n/*# sourceMappingURL=unions.component.css.map */\n'] }]
   }], () => [{ type: ApiService }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(UnionsComponent, { className: "UnionsComponent", filePath: "src/app/pages/unions/unions.component.ts", lineNumber: 51 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(UnionsComponent, { className: "UnionsComponent", filePath: "src/app/pages/unions/unions.component.ts", lineNumber: 52 });
 })();
 
 // src/app/pages/admin/admin.component.ts
@@ -9137,387 +9596,387 @@ _Acc\xE8s lecture seule uniquement_`;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AdminComponent, [{
     type: Component,
-    args: [{ selector: "app-admin", standalone: false, template: `<div class="admin-page">
-
-  <!-- ===== HERO ===== -->
-  <div class="adm-hero">
-    <div class="adm-hero-bg"></div>
-    <div class="adm-hero-content">
-      <div class="adm-hero-left">
-        <div class="adm-hero-icon">
-          <span class="material-icons-round">admin_panel_settings</span>
-        </div>
-        <div>
-          <p class="adm-hero-eyebrow">Administration</p>
-          <h1 class="adm-hero-title">{{ famille?.nom || 'Famille' }}</h1>
-          <div class="adm-hero-code" *ngIf="famille?.code">
-            <span class="material-icons-round">key</span>
-            <span class="adm-code-val">{{ famille.code }}</span>
-            <button class="adm-copy-code" (click)="copyFamilleCode()" [title]="viewonlyCopied === 'familleCode' ? 'Copi\xE9 !' : 'Copier le code'">
-              <span class="material-icons-round">{{ viewonlyCopied === 'familleCode' ? 'check' : 'content_copy' }}</span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="adm-hero-stats">
-        <div class="adm-hstat">
-          <span class="adm-hstat-val">{{ membres.length }}</span>
-          <span class="adm-hstat-lbl">Membres</span>
-        </div>
-        <div class="adm-hstat-sep"></div>
-        <div class="adm-hstat">
-          <span class="adm-hstat-val">{{ countRole('admin') }}</span>
-          <span class="adm-hstat-lbl">Admins</span>
-        </div>
-        <div class="adm-hstat-sep"></div>
-        <div class="adm-hstat">
-          <span class="adm-hstat-val">{{ countRole('gestionnaire') }}</span>
-          <span class="adm-hstat-lbl">Gestionnaires</span>
-        </div>
-        <div class="adm-hstat-sep"></div>
-        <div class="adm-hstat">
-          <span class="adm-hstat-val">{{ countRole('viewonly') }}</span>
-          <span class="adm-hstat-lbl">Lecture seule</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Skeleton chargement -->
-  <div class="sk-section" *ngIf="loading">
-    <!-- Stats skeleton -->
-    <div style="display:flex;gap:16px;flex-wrap:wrap">
-      <div class="sk-stat" *ngFor="let _ of [1,2,3]" style="flex:1;min-width:120px">
-        <div class="sk-stat-icon"></div>
-        <div class="sk-stat-body">
-          <div class="sk-line sk-lg"></div>
-          <div class="sk-line sk-sm"></div>
-        </div>
-      </div>
-    </div>
-    <!-- Tableau membres skeleton -->
-    <div style="background:#fff;border:1px solid #E5E7EB;border-radius:14px;overflow:hidden;margin-top:8px">
-      <div class="sk-row" *ngFor="let _ of [1,2,3,4,5]" style="padding:14px 22px;border-bottom:1px solid #F3F4F6">
-        <div class="sk-avatar-sq sk-av-md"></div>
-        <div class="sk-row-content">
-          <div class="sk-line sk-md"></div>
-          <div class="sk-line sk-sm"></div>
-        </div>
-        <div class="sk-line sk-xs"></div>
-      </div>
-    </div>
-  </div>
-  <div class="error-state" *ngIf="erreur && !loading">
-    <span class="material-icons-round">error_outline</span>{{ erreur }}
-  </div>
-
-  <!-- Toast succ\xE8s -->
-  <div class="adm-toast" *ngIf="saveSuccess">
-    <span class="material-icons-round">check_circle</span>{{ saveSuccess }}
-  </div>
-
-  <ng-container *ngIf="!loading && !erreur">
-
-    <!-- ===== GRILLE PRINCIPALE ===== -->
-    <div class="adm-main-grid">
-
-      <!-- \u2500\u2500 COLONNE MEMBRES \u2500\u2500 -->
-      <div class="adm-card adm-card-members">
-
-        <!-- En-t\xEAte -->
-        <div class="adm-card-head">
-          <div class="adm-card-title">
-            <span class="material-icons-round">group</span>
-            Comptes membres
-            <span class="adm-count-badge">{{ filteredMembres.length }}/{{ membres.length }}</span>
-          </div>
-          <button class="btn-primary btn-sm" (click)="showCreateForm = true">
-            <span class="material-icons-round">person_add</span>
-            Nouveau
-          </button>
-        </div>
-
-        <!-- Barre de recherche -->
-        <div class="adm-search-bar">
-          <span class="material-icons-round adm-search-icon">search</span>
-          <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher un membre\u2026" class="adm-search-input" />
-          <button class="adm-search-clear" *ngIf="searchQuery" (click)="searchQuery = ''">
-            <span class="material-icons-round">close</span>
-          </button>
-        </div>
-
-        <!-- Filtres r\xF4le -->
-        <div class="adm-role-filters">
-          <button class="adm-filter-btn" *ngFor="let f of roleFilters"
-                  [class.active]="roleFilter === f.key"
-                  (click)="roleFilter = f.key">
-            <span class="material-icons-round">{{ f.icon }}</span>
-            {{ f.label }}
-            <span class="adm-filter-count" *ngIf="f.key !== 'tous'">{{ countRole(f.key) }}</span>
-          </button>
-        </div>
-
-        <!-- Liste membres -->
-        <div class="adm-members-list">
-
-          <div class="adm-member-row" *ngFor="let m of filteredMembres; trackBy: trackById">
-
-            <!-- Avatar + Infos -->
-            <div class="adm-member-left">
-              <div class="adm-avatar" [class]="'adm-avatar--' + getRoleColor(m.role)">
-                {{ userInitiales(m.user) }}
-              </div>
-              <div class="adm-member-info">
-                <span class="adm-member-name">{{ m.user?.prenom }} {{ m.user?.nom }}</span>
-                <span class="adm-member-contact">{{ m.user?.email || m.user?.telephone || '\u2014' }}</span>
-              </div>
-            </div>
-
-            <!-- S\xE9lecteur de r\xF4le -->
-            <div class="adm-role-cell">
-              <div class="adm-role-select-wrap" *ngIf="m.role !== 'admin'; else adminBadge">
-                <select class="adm-role-select"
-                        [(ngModel)]="editingRole[m.user?.id]"
-                        [disabled]="roleChanging === m.user?.id"
-                        [class]="'role-' + editingRole[m.user?.id]">
-                  <option *ngFor="let r of roles" [value]="r.val">{{ r.label }}</option>
-                </select>
-
-                <!-- Confirmation inline -->
-                <ng-container *ngIf="hasRoleChanged(m.user?.id)">
-                  <button class="adm-confirm-btn adm-confirm-yes"
-                          [disabled]="roleChanging === m.user?.id"
-                          (click)="confirmRoleChange(m.user?.id)"
-                          title="Confirmer le changement">
-                    <span class="material-icons-round spin" *ngIf="roleChanging === m.user?.id">sync</span>
-                    <span class="material-icons-round" *ngIf="roleChanging !== m.user?.id">check</span>
-                  </button>
-                  <button class="adm-confirm-btn adm-confirm-no"
-                          [disabled]="roleChanging === m.user?.id"
-                          (click)="cancelRoleChange(m.user?.id)"
-                          title="Annuler">
-                    <span class="material-icons-round">close</span>
-                  </button>
-                </ng-container>
-              </div>
-
-              <ng-template #adminBadge>
-                <div class="adm-admin-badge">
-                  <span class="material-icons-round">verified</span>
-                  Administrateur
-                </div>
-              </ng-template>
-            </div>
-
-          </div>
-
-          <!-- Vide -->
-          <div class="adm-empty" *ngIf="filteredMembres.length === 0">
-            <span class="material-icons-round">manage_search</span>
-            <p>Aucun membre trouv\xE9</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- \u2500\u2500 COLONNE DROITE \u2500\u2500 -->
-      <div class="adm-right-col">
-
-        <!-- Acc\xE8s consultation -->
-        <div class="adm-card adm-card-viewonly" *ngIf="viewonlyCreds">
-          <div class="adm-card-head">
-            <div class="adm-card-title">
-              <span class="material-icons-round">visibility</span>
-              Acc\xE8s lecture seule
-            </div>
-            <button class="btn-icon" (click)="showViewonlyPassword = !showViewonlyPassword"
-                    [title]="showViewonlyPassword ? 'Masquer' : 'Afficher'">
-              <span class="material-icons-round">{{ showViewonlyPassword ? 'visibility_off' : 'visibility' }}</span>
-            </button>
-          </div>
-
-          <p class="adm-viewonly-desc">
-            Partagez ces identifiants pour un acc\xE8s en consultation uniquement, sans compte personnel.
-          </p>
-
-          <!-- QR + Identifiants -->
-          <div class="adm-viewonly-body">
-            <img [src]="viewonlyQrUrl" alt="QR code" class="adm-viewonly-qr" />
-            <div class="adm-cred-rows">
-              <div class="adm-cred-row">
-                <span class="adm-cred-label">Code famille</span>
-                <span class="adm-cred-val">{{ viewonlyCreds.familleCode }}</span>
-                <button class="adm-cred-copy" (click)="copyViewonly('code')">
-                  <span class="material-icons-round">{{ viewonlyCopied === 'code' ? 'check' : 'content_copy' }}</span>
-                </button>
-              </div>
-              <div class="adm-cred-row">
-                <span class="adm-cred-label">Identifiant</span>
-                <span class="adm-cred-val">{{ viewonlyCreds.viewonlyUsername }}</span>
-                <button class="adm-cred-copy" (click)="copyViewonly('username')">
-                  <span class="material-icons-round">{{ viewonlyCopied === 'username' ? 'check' : 'content_copy' }}</span>
-                </button>
-              </div>
-              <div class="adm-cred-row">
-                <span class="adm-cred-label">Mot de passe</span>
-                <span class="adm-cred-val">{{ showViewonlyPassword ? viewonlyCreds.viewonlyPassword : '\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022' }}</span>
-                <button class="adm-cred-copy" (click)="copyViewonly('password')">
-                  <span class="material-icons-round">{{ viewonlyCopied === 'password' ? 'check' : 'content_copy' }}</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Partage -->
-          <div class="adm-share-btns">
-            <button class="adm-share-wa" (click)="shareViewonlyWhatsApp()">
-              <svg style="width:16px;height:16px;flex-shrink:0" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-              </svg>
-              WhatsApp
-            </button>
-            <button class="adm-share-copy" (click)="shareViewonly()">
-              <span class="material-icons-round">{{ viewonlyCopied === 'share' ? 'check' : 'share' }}</span>
-              {{ viewonlyCopied === 'share' ? 'Copi\xE9 !' : 'Partager' }}
-            </button>
-          </div>
-        </div>
-
-        <!-- Infos famille -->
-        <div class="adm-card adm-card-info">
-          <div class="adm-card-head">
-            <div class="adm-card-title">
-              <span class="material-icons-round">info</span>
-              Informations famille
-            </div>
-          </div>
-          <div class="adm-info-rows">
-            <div class="adm-info-row">
-              <span class="adm-info-label">Nom</span>
-              <span class="adm-info-val">{{ famille?.nom || '\u2014' }}</span>
-            </div>
-            <div class="adm-info-row">
-              <span class="adm-info-label">Code d'acc\xE8s</span>
-              <span class="adm-info-val adm-info-code">{{ famille?.code || '\u2014' }}</span>
-            </div>
-            <div class="adm-info-row">
-              <span class="adm-info-label">Total membres</span>
-              <span class="adm-info-val">{{ membres.length }}</span>
-            </div>
-            <div class="adm-info-row">
-              <span class="adm-info-label">Profils arbre</span>
-              <span class="adm-info-val">{{ personnes.length }}</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ===== ZONE DANGER ===== -->
-    <div class="adm-card adm-danger-card">
-      <div class="adm-card-head">
-        <div class="adm-card-title adm-danger-title">
-          <span class="material-icons-round">warning</span>
-          Zone de danger
-        </div>
-      </div>
-      <div class="adm-danger-row">
-        <div>
-          <span class="adm-danger-label">R\xE9initialiser l'acc\xE8s lecture seule</span>
-          <span class="adm-danger-sub">G\xE9n\xE8re de nouveaux identifiants \u2014 les anciens ne fonctionneront plus</span>
-        </div>
-        <button class="adm-danger-btn" disabled title="Bient\xF4t disponible">
-          <span class="material-icons-round">refresh</span>R\xE9initialiser
-        </button>
-      </div>
-    </div>
-
-  </ng-container>
-</div>
-
-<!-- ===== OVERLAY ===== -->
-<div class="panel-overlay" *ngIf="showCreateForm" (click)="showCreateForm = false"></div>
-
-<!-- ===== PANNEAU CR\xC9ATION ===== -->
-<div class="slide-panel" [class.open]="showCreateForm">
-  <div class="panel-header">
-    <div class="panel-header-title">
-      <span class="material-icons-round">person_add</span>
-      <h3>Nouveau compte membre</h3>
-    </div>
-    <button class="btn-icon" (click)="showCreateForm = false">
-      <span class="material-icons-round">close</span>
-    </button>
-  </div>
-
-  <div class="panel-body">
-
-    <div class="form-section">
-      <div class="section-title">Identit\xE9</div>
-      <div class="form-row-2">
-        <div class="form-group">
-          <label>Pr\xE9nom <span class="required">*</span></label>
-          <input type="text" name="prenom" [(ngModel)]="createForm.prenom"
-                 required placeholder="Pr\xE9nom" class="form-control" />
-        </div>
-        <div class="form-group">
-          <label>Nom <span class="required">*</span></label>
-          <input type="text" name="nom" [(ngModel)]="createForm.nom"
-                 required placeholder="Nom de famille" class="form-control" />
-        </div>
-      </div>
-    </div>
-
-    <div class="form-section">
-      <div class="section-title">Connexion</div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" [(ngModel)]="createForm.email"
-               placeholder="exemple@email.com" class="form-control" />
-      </div>
-      <div class="form-group">
-        <label>T\xE9l\xE9phone</label>
-        <input type="tel" name="telephone" [(ngModel)]="createForm.telephone"
-               placeholder="+221 77 000 00 00" class="form-control" />
-      </div>
-      <div class="form-group">
-        <label>Mot de passe <span class="required">*</span></label>
-        <input type="password" name="password" [(ngModel)]="createForm.password"
-               required placeholder="Mot de passe" class="form-control" />
-      </div>
-    </div>
-
-    <div class="form-section">
-      <div class="section-title">R\xF4le et association</div>
-      <div class="form-group">
-        <label>R\xF4le</label>
-        <select name="role" [(ngModel)]="createForm.role" class="form-control">
-          <option *ngFor="let r of roles" [value]="r.val">{{ r.label }}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Associer \xE0 une personne <span class="optional">(optionnel)</span></label>
-        <select name="personneId" [(ngModel)]="createForm.personneId" class="form-control">
-          <option value="">\u2014 Aucune association \u2014</option>
-          <option *ngFor="let p of personnes" [value]="p.id">
-            {{ p.prenoms }} {{ p.nomUsage ?? p.nomNaissance }}
-          </option>
-        </select>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="panel-footer">
-    <button class="btn-ghost" (click)="showCreateForm = false">Annuler</button>
-    <button class="btn-primary" (click)="createMember()" [disabled]="saving">
-      <span class="material-icons-round spin" *ngIf="saving">sync</span>
-      <span class="material-icons-round" *ngIf="!saving">person_add</span>
-      {{ saving ? 'Cr\xE9ation\u2026' : 'Cr\xE9er le compte' }}
-    </button>
-  </div>
-</div>
+    args: [{ selector: "app-admin", standalone: false, template: `<div class="admin-page">\r
+\r
+  <!-- ===== HERO ===== -->\r
+  <div class="adm-hero">\r
+    <div class="adm-hero-bg"></div>\r
+    <div class="adm-hero-content">\r
+      <div class="adm-hero-left">\r
+        <div class="adm-hero-icon">\r
+          <span class="material-icons-round">admin_panel_settings</span>\r
+        </div>\r
+        <div>\r
+          <p class="adm-hero-eyebrow">Administration</p>\r
+          <h1 class="adm-hero-title">{{ famille?.nom || 'Famille' }}</h1>\r
+          <div class="adm-hero-code" *ngIf="famille?.code">\r
+            <span class="material-icons-round">key</span>\r
+            <span class="adm-code-val">{{ famille.code }}</span>\r
+            <button class="adm-copy-code" (click)="copyFamilleCode()" [title]="viewonlyCopied === 'familleCode' ? 'Copi\xE9 !' : 'Copier le code'">\r
+              <span class="material-icons-round">{{ viewonlyCopied === 'familleCode' ? 'check' : 'content_copy' }}</span>\r
+            </button>\r
+          </div>\r
+        </div>\r
+      </div>\r
+      <div class="adm-hero-stats">\r
+        <div class="adm-hstat">\r
+          <span class="adm-hstat-val">{{ membres.length }}</span>\r
+          <span class="adm-hstat-lbl">Membres</span>\r
+        </div>\r
+        <div class="adm-hstat-sep"></div>\r
+        <div class="adm-hstat">\r
+          <span class="adm-hstat-val">{{ countRole('admin') }}</span>\r
+          <span class="adm-hstat-lbl">Admins</span>\r
+        </div>\r
+        <div class="adm-hstat-sep"></div>\r
+        <div class="adm-hstat">\r
+          <span class="adm-hstat-val">{{ countRole('gestionnaire') }}</span>\r
+          <span class="adm-hstat-lbl">Gestionnaires</span>\r
+        </div>\r
+        <div class="adm-hstat-sep"></div>\r
+        <div class="adm-hstat">\r
+          <span class="adm-hstat-val">{{ countRole('viewonly') }}</span>\r
+          <span class="adm-hstat-lbl">Lecture seule</span>\r
+        </div>\r
+      </div>\r
+    </div>\r
+  </div>\r
+\r
+  <!-- Skeleton chargement -->\r
+  <div class="sk-section" *ngIf="loading">\r
+    <!-- Stats skeleton -->\r
+    <div style="display:flex;gap:16px;flex-wrap:wrap">\r
+      <div class="sk-stat" *ngFor="let _ of [1,2,3]" style="flex:1;min-width:120px">\r
+        <div class="sk-stat-icon"></div>\r
+        <div class="sk-stat-body">\r
+          <div class="sk-line sk-lg"></div>\r
+          <div class="sk-line sk-sm"></div>\r
+        </div>\r
+      </div>\r
+    </div>\r
+    <!-- Tableau membres skeleton -->\r
+    <div style="background:#fff;border:1px solid #E5E7EB;border-radius:14px;overflow:hidden;margin-top:8px">\r
+      <div class="sk-row" *ngFor="let _ of [1,2,3,4,5]" style="padding:14px 22px;border-bottom:1px solid #F3F4F6">\r
+        <div class="sk-avatar-sq sk-av-md"></div>\r
+        <div class="sk-row-content">\r
+          <div class="sk-line sk-md"></div>\r
+          <div class="sk-line sk-sm"></div>\r
+        </div>\r
+        <div class="sk-line sk-xs"></div>\r
+      </div>\r
+    </div>\r
+  </div>\r
+  <div class="error-state" *ngIf="erreur && !loading">\r
+    <span class="material-icons-round">error_outline</span>{{ erreur }}\r
+  </div>\r
+\r
+  <!-- Toast succ\xE8s -->\r
+  <div class="adm-toast" *ngIf="saveSuccess">\r
+    <span class="material-icons-round">check_circle</span>{{ saveSuccess }}\r
+  </div>\r
+\r
+  <ng-container *ngIf="!loading && !erreur">\r
+\r
+    <!-- ===== GRILLE PRINCIPALE ===== -->\r
+    <div class="adm-main-grid">\r
+\r
+      <!-- \u2500\u2500 COLONNE MEMBRES \u2500\u2500 -->\r
+      <div class="adm-card adm-card-members">\r
+\r
+        <!-- En-t\xEAte -->\r
+        <div class="adm-card-head">\r
+          <div class="adm-card-title">\r
+            <span class="material-icons-round">group</span>\r
+            Comptes membres\r
+            <span class="adm-count-badge">{{ filteredMembres.length }}/{{ membres.length }}</span>\r
+          </div>\r
+          <button class="btn-primary btn-sm" (click)="showCreateForm = true">\r
+            <span class="material-icons-round">person_add</span>\r
+            Nouveau\r
+          </button>\r
+        </div>\r
+\r
+        <!-- Barre de recherche -->\r
+        <div class="adm-search-bar">\r
+          <span class="material-icons-round adm-search-icon">search</span>\r
+          <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher un membre\u2026" class="adm-search-input" />\r
+          <button class="adm-search-clear" *ngIf="searchQuery" (click)="searchQuery = ''">\r
+            <span class="material-icons-round">close</span>\r
+          </button>\r
+        </div>\r
+\r
+        <!-- Filtres r\xF4le -->\r
+        <div class="adm-role-filters">\r
+          <button class="adm-filter-btn" *ngFor="let f of roleFilters"\r
+                  [class.active]="roleFilter === f.key"\r
+                  (click)="roleFilter = f.key">\r
+            <span class="material-icons-round">{{ f.icon }}</span>\r
+            {{ f.label }}\r
+            <span class="adm-filter-count" *ngIf="f.key !== 'tous'">{{ countRole(f.key) }}</span>\r
+          </button>\r
+        </div>\r
+\r
+        <!-- Liste membres -->\r
+        <div class="adm-members-list">\r
+\r
+          <div class="adm-member-row" *ngFor="let m of filteredMembres; trackBy: trackById">\r
+\r
+            <!-- Avatar + Infos -->\r
+            <div class="adm-member-left">\r
+              <div class="adm-avatar" [class]="'adm-avatar--' + getRoleColor(m.role)">\r
+                {{ userInitiales(m.user) }}\r
+              </div>\r
+              <div class="adm-member-info">\r
+                <span class="adm-member-name">{{ m.user?.prenom }} {{ m.user?.nom }}</span>\r
+                <span class="adm-member-contact">{{ m.user?.email || m.user?.telephone || '\u2014' }}</span>\r
+              </div>\r
+            </div>\r
+\r
+            <!-- S\xE9lecteur de r\xF4le -->\r
+            <div class="adm-role-cell">\r
+              <div class="adm-role-select-wrap" *ngIf="m.role !== 'admin'; else adminBadge">\r
+                <select class="adm-role-select"\r
+                        [(ngModel)]="editingRole[m.user?.id]"\r
+                        [disabled]="roleChanging === m.user?.id"\r
+                        [class]="'role-' + editingRole[m.user?.id]">\r
+                  <option *ngFor="let r of roles" [value]="r.val">{{ r.label }}</option>\r
+                </select>\r
+\r
+                <!-- Confirmation inline -->\r
+                <ng-container *ngIf="hasRoleChanged(m.user?.id)">\r
+                  <button class="adm-confirm-btn adm-confirm-yes"\r
+                          [disabled]="roleChanging === m.user?.id"\r
+                          (click)="confirmRoleChange(m.user?.id)"\r
+                          title="Confirmer le changement">\r
+                    <span class="material-icons-round spin" *ngIf="roleChanging === m.user?.id">sync</span>\r
+                    <span class="material-icons-round" *ngIf="roleChanging !== m.user?.id">check</span>\r
+                  </button>\r
+                  <button class="adm-confirm-btn adm-confirm-no"\r
+                          [disabled]="roleChanging === m.user?.id"\r
+                          (click)="cancelRoleChange(m.user?.id)"\r
+                          title="Annuler">\r
+                    <span class="material-icons-round">close</span>\r
+                  </button>\r
+                </ng-container>\r
+              </div>\r
+\r
+              <ng-template #adminBadge>\r
+                <div class="adm-admin-badge">\r
+                  <span class="material-icons-round">verified</span>\r
+                  Administrateur\r
+                </div>\r
+              </ng-template>\r
+            </div>\r
+\r
+          </div>\r
+\r
+          <!-- Vide -->\r
+          <div class="adm-empty" *ngIf="filteredMembres.length === 0">\r
+            <span class="material-icons-round">manage_search</span>\r
+            <p>Aucun membre trouv\xE9</p>\r
+          </div>\r
+\r
+        </div>\r
+      </div>\r
+\r
+      <!-- \u2500\u2500 COLONNE DROITE \u2500\u2500 -->\r
+      <div class="adm-right-col">\r
+\r
+        <!-- Acc\xE8s consultation -->\r
+        <div class="adm-card adm-card-viewonly" *ngIf="viewonlyCreds">\r
+          <div class="adm-card-head">\r
+            <div class="adm-card-title">\r
+              <span class="material-icons-round">visibility</span>\r
+              Acc\xE8s lecture seule\r
+            </div>\r
+            <button class="btn-icon" (click)="showViewonlyPassword = !showViewonlyPassword"\r
+                    [title]="showViewonlyPassword ? 'Masquer' : 'Afficher'">\r
+              <span class="material-icons-round">{{ showViewonlyPassword ? 'visibility_off' : 'visibility' }}</span>\r
+            </button>\r
+          </div>\r
+\r
+          <p class="adm-viewonly-desc">\r
+            Partagez ces identifiants pour un acc\xE8s en consultation uniquement, sans compte personnel.\r
+          </p>\r
+\r
+          <!-- QR + Identifiants -->\r
+          <div class="adm-viewonly-body">\r
+            <img [src]="viewonlyQrUrl" alt="QR code" class="adm-viewonly-qr" />\r
+            <div class="adm-cred-rows">\r
+              <div class="adm-cred-row">\r
+                <span class="adm-cred-label">Code famille</span>\r
+                <span class="adm-cred-val">{{ viewonlyCreds.familleCode }}</span>\r
+                <button class="adm-cred-copy" (click)="copyViewonly('code')">\r
+                  <span class="material-icons-round">{{ viewonlyCopied === 'code' ? 'check' : 'content_copy' }}</span>\r
+                </button>\r
+              </div>\r
+              <div class="adm-cred-row">\r
+                <span class="adm-cred-label">Identifiant</span>\r
+                <span class="adm-cred-val">{{ viewonlyCreds.viewonlyUsername }}</span>\r
+                <button class="adm-cred-copy" (click)="copyViewonly('username')">\r
+                  <span class="material-icons-round">{{ viewonlyCopied === 'username' ? 'check' : 'content_copy' }}</span>\r
+                </button>\r
+              </div>\r
+              <div class="adm-cred-row">\r
+                <span class="adm-cred-label">Mot de passe</span>\r
+                <span class="adm-cred-val">{{ showViewonlyPassword ? viewonlyCreds.viewonlyPassword : '\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022' }}</span>\r
+                <button class="adm-cred-copy" (click)="copyViewonly('password')">\r
+                  <span class="material-icons-round">{{ viewonlyCopied === 'password' ? 'check' : 'content_copy' }}</span>\r
+                </button>\r
+              </div>\r
+            </div>\r
+          </div>\r
+\r
+          <!-- Partage -->\r
+          <div class="adm-share-btns">\r
+            <button class="adm-share-wa" (click)="shareViewonlyWhatsApp()">\r
+              <svg style="width:16px;height:16px;flex-shrink:0" viewBox="0 0 24 24" fill="currentColor">\r
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>\r
+              </svg>\r
+              WhatsApp\r
+            </button>\r
+            <button class="adm-share-copy" (click)="shareViewonly()">\r
+              <span class="material-icons-round">{{ viewonlyCopied === 'share' ? 'check' : 'share' }}</span>\r
+              {{ viewonlyCopied === 'share' ? 'Copi\xE9 !' : 'Partager' }}\r
+            </button>\r
+          </div>\r
+        </div>\r
+\r
+        <!-- Infos famille -->\r
+        <div class="adm-card adm-card-info">\r
+          <div class="adm-card-head">\r
+            <div class="adm-card-title">\r
+              <span class="material-icons-round">info</span>\r
+              Informations famille\r
+            </div>\r
+          </div>\r
+          <div class="adm-info-rows">\r
+            <div class="adm-info-row">\r
+              <span class="adm-info-label">Nom</span>\r
+              <span class="adm-info-val">{{ famille?.nom || '\u2014' }}</span>\r
+            </div>\r
+            <div class="adm-info-row">\r
+              <span class="adm-info-label">Code d'acc\xE8s</span>\r
+              <span class="adm-info-val adm-info-code">{{ famille?.code || '\u2014' }}</span>\r
+            </div>\r
+            <div class="adm-info-row">\r
+              <span class="adm-info-label">Total membres</span>\r
+              <span class="adm-info-val">{{ membres.length }}</span>\r
+            </div>\r
+            <div class="adm-info-row">\r
+              <span class="adm-info-label">Profils arbre</span>\r
+              <span class="adm-info-val">{{ personnes.length }}</span>\r
+            </div>\r
+          </div>\r
+        </div>\r
+\r
+      </div>\r
+    </div>\r
+\r
+    <!-- ===== ZONE DANGER ===== -->\r
+    <div class="adm-card adm-danger-card">\r
+      <div class="adm-card-head">\r
+        <div class="adm-card-title adm-danger-title">\r
+          <span class="material-icons-round">warning</span>\r
+          Zone de danger\r
+        </div>\r
+      </div>\r
+      <div class="adm-danger-row">\r
+        <div>\r
+          <span class="adm-danger-label">R\xE9initialiser l'acc\xE8s lecture seule</span>\r
+          <span class="adm-danger-sub">G\xE9n\xE8re de nouveaux identifiants \u2014 les anciens ne fonctionneront plus</span>\r
+        </div>\r
+        <button class="adm-danger-btn" disabled title="Bient\xF4t disponible">\r
+          <span class="material-icons-round">refresh</span>R\xE9initialiser\r
+        </button>\r
+      </div>\r
+    </div>\r
+\r
+  </ng-container>\r
+</div>\r
+\r
+<!-- ===== OVERLAY ===== -->\r
+<div class="panel-overlay" *ngIf="showCreateForm" (click)="showCreateForm = false"></div>\r
+\r
+<!-- ===== PANNEAU CR\xC9ATION ===== -->\r
+<div class="slide-panel" [class.open]="showCreateForm">\r
+  <div class="panel-header">\r
+    <div class="panel-header-title">\r
+      <span class="material-icons-round">person_add</span>\r
+      <h3>Nouveau compte membre</h3>\r
+    </div>\r
+    <button class="btn-icon" (click)="showCreateForm = false">\r
+      <span class="material-icons-round">close</span>\r
+    </button>\r
+  </div>\r
+\r
+  <div class="panel-body">\r
+\r
+    <div class="form-section">\r
+      <div class="section-title">Identit\xE9</div>\r
+      <div class="form-row-2">\r
+        <div class="form-group">\r
+          <label>Pr\xE9nom <span class="required">*</span></label>\r
+          <input type="text" name="prenom" [(ngModel)]="createForm.prenom"\r
+                 required placeholder="Pr\xE9nom" class="form-control" />\r
+        </div>\r
+        <div class="form-group">\r
+          <label>Nom <span class="required">*</span></label>\r
+          <input type="text" name="nom" [(ngModel)]="createForm.nom"\r
+                 required placeholder="Nom de famille" class="form-control" />\r
+        </div>\r
+      </div>\r
+    </div>\r
+\r
+    <div class="form-section">\r
+      <div class="section-title">Connexion</div>\r
+      <div class="form-group">\r
+        <label>Email</label>\r
+        <input type="email" name="email" [(ngModel)]="createForm.email"\r
+               placeholder="exemple@email.com" class="form-control" />\r
+      </div>\r
+      <div class="form-group">\r
+        <label>T\xE9l\xE9phone</label>\r
+        <input type="tel" name="telephone" [(ngModel)]="createForm.telephone"\r
+               placeholder="+221 77 000 00 00" class="form-control" />\r
+      </div>\r
+      <div class="form-group">\r
+        <label>Mot de passe <span class="required">*</span></label>\r
+        <input type="password" name="password" [(ngModel)]="createForm.password"\r
+               required placeholder="Mot de passe" class="form-control" />\r
+      </div>\r
+    </div>\r
+\r
+    <div class="form-section">\r
+      <div class="section-title">R\xF4le et association</div>\r
+      <div class="form-group">\r
+        <label>R\xF4le</label>\r
+        <select name="role" [(ngModel)]="createForm.role" class="form-control">\r
+          <option *ngFor="let r of roles" [value]="r.val">{{ r.label }}</option>\r
+        </select>\r
+      </div>\r
+      <div class="form-group">\r
+        <label>Associer \xE0 une personne <span class="optional">(optionnel)</span></label>\r
+        <select name="personneId" [(ngModel)]="createForm.personneId" class="form-control">\r
+          <option value="">\u2014 Aucune association \u2014</option>\r
+          <option *ngFor="let p of personnes" [value]="p.id">\r
+            {{ p.prenoms }} {{ p.nomUsage ?? p.nomNaissance }}\r
+          </option>\r
+        </select>\r
+      </div>\r
+    </div>\r
+\r
+  </div>\r
+\r
+  <div class="panel-footer">\r
+    <button class="btn-ghost" (click)="showCreateForm = false">Annuler</button>\r
+    <button class="btn-primary" (click)="createMember()" [disabled]="saving">\r
+      <span class="material-icons-round spin" *ngIf="saving">sync</span>\r
+      <span class="material-icons-round" *ngIf="!saving">person_add</span>\r
+      {{ saving ? 'Cr\xE9ation\u2026' : 'Cr\xE9er le compte' }}\r
+    </button>\r
+  </div>\r
+</div>\r
 `, styles: ['@charset "UTF-8";\n\n/* src/app/pages/admin/admin.component.scss */\n.admin-page {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.adm-hero {\n  position: relative;\n  border-radius: 20px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #0f172a 0%,\n      #1e3a8a 55%,\n      var(--primary, #2563EB) 100%);\n  padding: 32px 36px;\n  color: #fff;\n}\n.adm-hero-bg {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.05) 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  pointer-events: none;\n}\n.adm-hero-content {\n  position: relative;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.adm-hero-left {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  flex-wrap: wrap;\n}\n.adm-hero-icon {\n  width: 64px;\n  height: 64px;\n  border-radius: 18px;\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.25);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.adm-hero-icon .material-icons-round {\n  font-size: 32px !important;\n  color: #fff;\n}\n.adm-hero-eyebrow {\n  font-size: 11px;\n  color: rgba(255, 255, 255, 0.55);\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n  margin: 0 0 4px;\n}\n.adm-hero-title {\n  font-size: 26px;\n  font-weight: 800;\n  color: #fff;\n  margin: 0 0 8px;\n  letter-spacing: -0.3px;\n}\n.adm-hero-code {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  background: rgba(255, 255, 255, 0.12);\n  border: 1px solid rgba(255, 255, 255, 0.2);\n  border-radius: 10px;\n  padding: 5px 12px;\n}\n.adm-hero-code .material-icons-round {\n  font-size: 14px !important;\n  color: rgba(255, 255, 255, 0.7);\n}\n.adm-code-val {\n  font-size: 13px;\n  font-weight: 700;\n  font-family: monospace;\n  color: #fff;\n  letter-spacing: 2px;\n}\n.adm-copy-code {\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 2px;\n  color: rgba(255, 255, 255, 0.7);\n  display: flex;\n  align-items: center;\n}\n.adm-copy-code .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-copy-code:hover {\n  color: #fff;\n}\n.adm-hero-stats {\n  display: flex;\n  align-items: center;\n  gap: 24px;\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 16px;\n  padding: 16px 24px;\n  flex-shrink: 0;\n}\n.adm-hstat {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n}\n.adm-hstat-val {\n  font-size: 26px;\n  font-weight: 800;\n  color: #fff;\n  line-height: 1;\n}\n.adm-hstat-lbl {\n  font-size: 10px;\n  color: rgba(255, 255, 255, 0.55);\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n}\n.adm-hstat-sep {\n  width: 1px;\n  height: 36px;\n  background: rgba(255, 255, 255, 0.2);\n}\n.adm-toast {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-radius: 12px;\n  background: #ECFDF5;\n  color: #065F46;\n  border: 1px solid #A7F3D0;\n  font-size: 13px;\n  font-weight: 500;\n  animation: toast-in 0.2s ease;\n}\n.adm-toast .material-icons-round {\n  font-size: 18px !important;\n}\n@keyframes toast-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.adm-main-grid {\n  display: grid;\n  grid-template-columns: 1fr 340px;\n  gap: 20px;\n  align-items: start;\n}\n.adm-right-col {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.adm-card {\n  background: var(--white, #fff);\n  border: 1px solid var(--border, #E5E7EB);\n  border-radius: 18px;\n  overflow: hidden;\n}\n.adm-card-head {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 22px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  gap: 12px;\n}\n.adm-card-title {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 14px;\n  font-weight: 700;\n  color: var(--text-primary, #1F2937);\n}\n.adm-card-title .material-icons-round {\n  font-size: 19px !important;\n  color: var(--primary, #2563EB);\n}\n.adm-count-badge {\n  font-size: 11px;\n  font-weight: 600;\n  background: var(--primary-bg, #EFF6FF);\n  color: var(--primary, #2563EB);\n  border: 1px solid var(--primary-border, #BFDBFE);\n  padding: 2px 8px;\n  border-radius: 20px;\n}\n.adm-search-bar {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  background: var(--bg-muted, #F9FAFB);\n}\n.adm-search-icon {\n  font-size: 18px !important;\n  color: var(--text-muted, #9CA3AF);\n}\n.adm-search-input {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 14px;\n  color: var(--text-primary, #1F2937);\n  font-family: inherit;\n}\n.adm-search-input:focus {\n  outline: none;\n}\n.adm-search-input::placeholder {\n  color: var(--text-muted, #9CA3AF);\n}\n.adm-search-clear {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 24px;\n  height: 24px;\n  border-radius: 50%;\n  border: none;\n  background: var(--border, #E5E7EB);\n  cursor: pointer;\n  color: var(--text-muted);\n}\n.adm-search-clear .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-search-clear:hover {\n  background: var(--text-muted);\n  color: #fff;\n}\n.adm-role-filters {\n  display: flex;\n  gap: 6px;\n  padding: 12px 18px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  overflow-x: auto;\n  scrollbar-width: none;\n}\n.adm-role-filters::-webkit-scrollbar {\n  display: none;\n}\n.adm-filter-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 5px 12px;\n  border-radius: 20px;\n  border: 1.5px solid var(--border, #E5E7EB);\n  background: var(--white, #fff);\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  white-space: nowrap;\n  font-family: inherit;\n  transition: all 0.15s;\n}\n.adm-filter-btn .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-filter-btn.active {\n  background: var(--primary-bg, #EFF6FF);\n  border-color: var(--primary, #2563EB);\n  color: var(--primary, #2563EB);\n}\n.adm-filter-btn:hover:not(.active) {\n  border-color: var(--primary, #2563EB);\n}\n.adm-filter-count {\n  background: var(--border, #E5E7EB);\n  color: var(--text-secondary);\n  font-size: 10px;\n  font-weight: 700;\n  padding: 0 5px;\n  border-radius: 10px;\n  min-width: 16px;\n  text-align: center;\n}\n.active .adm-filter-count {\n  background: var(--primary, #2563EB);\n  color: #fff;\n}\n.adm-members-list {\n  display: flex;\n  flex-direction: column;\n}\n.adm-member-row {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 13px 22px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  transition: background 0.12s;\n}\n.adm-member-row:last-child {\n  border-bottom: none;\n}\n.adm-member-row:hover {\n  background: var(--bg-muted, #F9FAFB);\n}\n.adm-member-left {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex: 1;\n  min-width: 0;\n}\n.adm-avatar {\n  width: 38px;\n  height: 38px;\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.adm-avatar--red {\n  background:\n    linear-gradient(\n      135deg,\n      #F87171,\n      #DC2626);\n}\n.adm-avatar--blue {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #2563EB);\n}\n.adm-avatar--green {\n  background:\n    linear-gradient(\n      135deg,\n      #34D399,\n      #059669);\n}\n.adm-avatar--gray {\n  background:\n    linear-gradient(\n      135deg,\n      #9CA3AF,\n      #6B7280);\n}\n.adm-member-info {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  min-width: 0;\n}\n.adm-member-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary, #1F2937);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.adm-member-contact {\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.adm-role-cell {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-shrink: 0;\n}\n.adm-role-select-wrap {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.adm-role-select {\n  padding: 5px 8px;\n  border-radius: 8px;\n  border: 1.5px solid var(--border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-primary);\n  background: var(--white);\n  cursor: pointer;\n  font-family: inherit;\n  transition: border-color 0.15s;\n}\n.adm-role-select:focus {\n  outline: none;\n  border-color: var(--primary);\n}\n.adm-role-select.role-admin {\n  border-color: #FECACA;\n  color: #DC2626;\n  background: #FEF2F2;\n}\n.adm-role-select.role-gestionnaire {\n  border-color: var(--primary-border);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.adm-role-select.role-membre {\n  border-color: #A7F3D0;\n  color: #059669;\n  background: #ECFDF5;\n}\n.adm-role-select.role-viewonly {\n  border-color: #E5E7EB;\n  color: #6B7280;\n  background: #F3F4F6;\n}\n.adm-confirm-btn {\n  width: 28px;\n  height: 28px;\n  border-radius: 7px;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: all 0.15s;\n  flex-shrink: 0;\n}\n.adm-confirm-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.adm-confirm-btn.adm-confirm-yes {\n  background: #ECFDF5;\n  color: #059669;\n}\n.adm-confirm-btn.adm-confirm-yes:hover {\n  background: #059669;\n  color: #fff;\n}\n.adm-confirm-btn.adm-confirm-yes:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.adm-confirm-btn.adm-confirm-no {\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.adm-confirm-btn.adm-confirm-no:hover {\n  background: #DC2626;\n  color: #fff;\n}\n.adm-confirm-btn.adm-confirm-no:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.adm-admin-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 12px;\n  font-weight: 600;\n  color: #D97706;\n  background: #FFFBEB;\n  border: 1px solid #FDE68A;\n  padding: 4px 10px;\n  border-radius: 8px;\n}\n.adm-admin-badge .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-empty {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n  padding: 40px 24px;\n  color: var(--text-muted);\n}\n.adm-empty .material-icons-round {\n  font-size: 36px !important;\n  opacity: 0.3;\n}\n.adm-empty p {\n  font-size: 14px;\n  margin: 0;\n}\n.adm-card-viewonly {\n  border-color: #BFDBFE;\n  background:\n    linear-gradient(\n      180deg,\n      #EFF6FF 0%,\n      #fff 40%);\n}\n.adm-viewonly-desc {\n  font-size: 12px;\n  color: var(--text-secondary);\n  margin: 0;\n  padding: 0 22px 14px;\n  line-height: 1.5;\n}\n.adm-viewonly-body {\n  display: flex;\n  gap: 16px;\n  align-items: flex-start;\n  padding: 0 22px 16px;\n}\n.adm-viewonly-qr {\n  width: 80px;\n  height: 80px;\n  border-radius: 10px;\n  border: 1.5px solid var(--primary-border, #BFDBFE);\n  flex-shrink: 0;\n}\n.adm-cred-rows {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  flex: 1;\n}\n.adm-cred-row {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1px solid var(--border);\n  border-radius: 8px;\n  padding: 7px 10px;\n}\n.adm-cred-label {\n  font-size: 10px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n  min-width: 68px;\n}\n.adm-cred-val {\n  flex: 1;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-primary);\n  font-family: monospace;\n  letter-spacing: 0.3px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.adm-cred-copy {\n  width: 24px;\n  height: 24px;\n  border-radius: 6px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: var(--text-muted);\n  transition: all 0.15s;\n}\n.adm-cred-copy .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-cred-copy:hover {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.adm-share-btns {\n  display: flex;\n  gap: 8px;\n  padding: 0 22px 20px;\n}\n.adm-share-wa {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex: 1;\n  padding: 10px 14px;\n  border-radius: 10px;\n  border: 1.5px solid #86EFAC;\n  background: #DCFCE7;\n  color: #15803D;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  justify-content: center;\n}\n.adm-share-wa:hover {\n  background: #25D366;\n  color: #fff;\n  border-color: #25D366;\n}\n.adm-share-copy {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex: 1;\n  padding: 10px 14px;\n  border-radius: 10px;\n  border: 1.5px solid var(--border);\n  background: var(--white);\n  color: var(--text-secondary);\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  justify-content: center;\n}\n.adm-share-copy .material-icons-round {\n  font-size: 16px !important;\n}\n.adm-share-copy:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n.adm-info-rows {\n  display: flex;\n  flex-direction: column;\n}\n.adm-info-row {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 11px 22px;\n  border-bottom: 1px solid var(--border);\n}\n.adm-info-row:last-child {\n  border-bottom: none;\n}\n.adm-info-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted);\n  min-width: 110px;\n}\n.adm-info-val {\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n}\n.adm-info-val.adm-info-code {\n  font-family: monospace;\n  font-weight: 700;\n  color: var(--primary);\n  letter-spacing: 1px;\n}\n.adm-danger-card {\n  border-color: #FECACA;\n  background: #FFFBFB;\n}\n.adm-danger-title {\n  color: #DC2626 !important;\n}\n.adm-danger-title .material-icons-round {\n  color: #DC2626 !important;\n}\n.adm-danger-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 18px 22px;\n  flex-wrap: wrap;\n}\n.adm-danger-label {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  margin-bottom: 2px;\n}\n.adm-danger-sub {\n  display: block;\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.adm-danger-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 16px;\n  border-radius: 10px;\n  border: 1.5px solid #FECACA;\n  background: #FEF2F2;\n  color: #DC2626;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  white-space: nowrap;\n}\n.adm-danger-btn .material-icons-round {\n  font-size: 16px !important;\n}\n.adm-danger-btn:hover:not(:disabled) {\n  background: #DC2626;\n  color: #fff;\n  border-color: #DC2626;\n}\n.adm-danger-btn:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.4);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.slide-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.12);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open {\n  transform: translateX(0);\n}\n.panel-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header-title {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.panel-header-title .material-icons-round {\n  font-size: 20px !important;\n  color: var(--primary);\n}\n.panel-header-title h3 {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.panel-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n}\n.panel-footer {\n  display: flex;\n  gap: 10px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section {\n  margin-bottom: 24px;\n}\n.section-title {\n  font-size: 11px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n}\n.form-group {\n  margin-bottom: 14px;\n}\n.form-group label {\n  display: block;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary);\n  margin-bottom: 6px;\n}\n.form-control {\n  width: 100%;\n  padding: 9px 12px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 13px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  font-family: inherit;\n  transition: border-color 0.15s;\n}\n.form-control:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row-2 {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.required {\n  color: var(--error, #EF4444);\n}\n.optional {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n@media (max-width: 900px) {\n  .adm-main-grid {\n    grid-template-columns: 1fr;\n  }\n  .adm-right-col {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 16px;\n  }\n}\n@media (max-width: 640px) {\n  .adm-hero {\n    padding: 24px 20px;\n  }\n  .adm-hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .adm-hero-title {\n    font-size: 20px;\n  }\n  .adm-hero-stats {\n    width: 100%;\n    justify-content: space-around;\n    padding: 12px 16px;\n    gap: 12px;\n  }\n  .adm-hstat-val {\n    font-size: 20px;\n  }\n  .adm-right-col {\n    grid-template-columns: 1fr;\n  }\n  .adm-member-row {\n    padding: 12px 16px;\n    gap: 10px;\n  }\n  .adm-member-contact {\n    display: none;\n  }\n  .adm-viewonly-body {\n    flex-direction: column;\n  }\n  .adm-viewonly-qr {\n    display: none;\n  }\n  .adm-danger-row {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 10px;\n  }\n  .adm-danger-btn {\n    width: 100%;\n    justify-content: center;\n  }\n  .slide-panel {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open {\n    transform: translateY(0);\n  }\n  .form-row-2 {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer {\n    flex-direction: column-reverse;\n  }\n  .panel-footer button {\n    width: 100%;\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=admin.component.css.map */\n'] }]
   }], () => [{ type: ApiService }], null);
 })();
@@ -10390,321 +10849,321 @@ var ProfilComponent = class _ProfilComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ProfilComponent, [{
     type: Component,
-    args: [{ selector: "app-profil", standalone: false, template: `<div class="profil-page">
-
-  <!-- Skeleton chargement -->
-  <div class="sk-section" *ngIf="loading">
-    <div class="sk-hero"></div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px">
-      <div *ngFor="let _ of [1,2,3,4]" style="background:#fff;border:1px solid #E5E7EB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px">
-        <div class="sk-line sk-md"></div>
-        <div class="sk-line sk-full"></div>
-        <div class="sk-line sk-full"></div>
-        <div class="sk-line sk-sm"></div>
-      </div>
-    </div>
-  </div>
-
-  <ng-container *ngIf="!loading && user">
-
-    <!-- ===== HERO ===== -->
-    <div class="profil-hero">
-      <div class="hero-bg"></div>
-      <div class="hero-content">
-        <div class="hero-avatar-wrap">
-          <div class="hero-avatar">{{ initiales }}</div>
-          <span class="hero-status-dot"></span>
-        </div>
-        <div class="hero-info">
-          <h1 class="hero-name">{{ user.prenom }} {{ user.nom }}</h1>
-          <div class="hero-meta">
-            <span class="role-badge" [class]="roleClass">{{ roleLabel }}</span>
-            <span class="hero-contact" *ngIf="user.email">
-              <span class="material-icons-round">mail</span>{{ user.email }}
-            </span>
-            <span class="hero-contact" *ngIf="user.telephone">
-              <span class="material-icons-round">phone</span>{{ user.telephone }}
-            </span>
-          </div>
-        </div>
-        <div class="hero-actions">
-          <button class="btn-outline btn-sm" (click)="openEdit()" *ngIf="!editMode">
-            <span class="material-icons-round">edit</span>Modifier
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== SUCC\xC8S GLOBAL ===== -->
-    <div class="alert alert-success" *ngIf="editSuccess">
-      <span class="material-icons-round">check_circle</span>
-      Profil mis \xE0 jour avec succ\xE8s !
-    </div>
-    <div class="alert alert-success" *ngIf="pwSuccess">
-      <span class="material-icons-round">lock</span>
-      Mot de passe chang\xE9 avec succ\xE8s !
-    </div>
-
-    <div class="profil-grid">
-
-      <!-- ===== INFORMATIONS PERSONNELLES ===== -->
-      <div class="profil-card span-2">
-        <div class="card-header">
-          <div class="card-title">
-            <span class="material-icons-round">person</span>
-            Informations personnelles
-          </div>
-          <button class="btn-ghost btn-sm" (click)="openEdit()" *ngIf="!editMode">
-            <span class="material-icons-round">edit</span>Modifier
-          </button>
-        </div>
-
-        <!-- Affichage -->
-        <div class="info-grid" *ngIf="!editMode">
-          <div class="info-item">
-            <span class="info-label">Pr\xE9nom</span>
-            <span class="info-value">{{ user.prenom }}</span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">Nom</span>
-            <span class="info-value">{{ user.nom }}</span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">Email</span>
-            <span class="info-value">{{ user.email || '\u2014' }}</span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">T\xE9l\xE9phone</span>
-            <span class="info-value">{{ user.telephone || '\u2014' }}</span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">R\xF4le</span>
-            <span class="role-badge" [class]="roleClass">{{ roleLabel }}</span>
-          </div>
-        </div>
-
-        <!-- Formulaire d'\xE9dition -->
-        <div class="edit-form" *ngIf="editMode">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Pr\xE9nom <span class="required">*</span></label>
-              <input type="text" [(ngModel)]="editForm.prenom" placeholder="Pr\xE9nom" />
-            </div>
-            <div class="form-group">
-              <label>Nom <span class="required">*</span></label>
-              <input type="text" [(ngModel)]="editForm.nom" placeholder="Nom" />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" [(ngModel)]="editForm.email" placeholder="votre@email.com" />
-            </div>
-            <div class="form-group">
-              <label>T\xE9l\xE9phone</label>
-              <input type="tel" [(ngModel)]="editForm.telephone" placeholder="+221 77 000 00 00" />
-            </div>
-          </div>
-          <div class="alert alert-error" *ngIf="editError">
-            <span class="material-icons-round">error_outline</span>{{ editError }}
-          </div>
-          <div class="form-actions">
-            <button class="btn-ghost btn-sm" (click)="cancelEdit()" [disabled]="editSaving">Annuler</button>
-            <button class="btn-primary btn-sm" (click)="saveProfile()" [disabled]="editSaving">
-              <span class="material-icons-round" *ngIf="!editSaving">save</span>
-              <span class="material-icons-round spin" *ngIf="editSaving">sync</span>
-              {{ editSaving ? 'Sauvegarde\u2026' : 'Enregistrer' }}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== MA FAMILLE ===== -->
-      <div class="profil-card" *ngIf="famille">
-        <div class="card-header">
-          <div class="card-title">
-            <span class="material-icons-round">groups</span>
-            Ma famille
-          </div>
-        </div>
-        <div class="famille-hero">
-          <div class="famille-icon">
-            <span class="material-icons-round">account_tree</span>
-          </div>
-          <div>
-            <h3 class="famille-nom">{{ famille.nom }}</h3>
-            <div class="famille-code-wrap">
-              <span class="famille-code">{{ famille.code }}</span>
-              <button class="btn-icon copy-btn" (click)="copyCode()" [title]="codeCopied ? 'Copi\xE9 !' : 'Copier le code'">
-                <span class="material-icons-round">{{ codeCopied ? 'check' : 'content_copy' }}</span>
-              </button>
-            </div>
-            <p class="famille-hint">Partagez ce code pour inviter des membres</p>
-          </div>
-        </div>
-        <div class="famille-stats">
-          <div class="fstat">
-            <span class="fstat-val">{{ famille.totalMembres }}</span>
-            <span class="fstat-lbl">Membres</span>
-          </div>
-          <div class="fstat-divider"></div>
-          <div class="fstat">
-            <span class="fstat-val">{{ famille.totalUnions }}</span>
-            <span class="fstat-lbl">Unions</span>
-          </div>
-          <div class="fstat-divider"></div>
-          <div class="fstat">
-            <span class="role-badge" [class]="roleClass">{{ roleLabel }}</span>
-            <span class="fstat-lbl">Mon r\xF4le</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== S\xC9CURIT\xC9 ===== -->
-      <div class="profil-card">
-        <div class="card-header">
-          <div class="card-title">
-            <span class="material-icons-round">security</span>
-            S\xE9curit\xE9
-          </div>
-        </div>
-
-        <div class="security-items" *ngIf="!showPwSection">
-          <div class="security-item">
-            <div class="security-item-left">
-              <span class="security-icon material-icons-round">lock</span>
-              <div>
-                <span class="security-label">Mot de passe</span>
-                <span class="security-sub">\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022</span>
-              </div>
-            </div>
-            <button class="btn-outline btn-sm" (click)="showPwSection = true">Changer</button>
-          </div>
-          <div class="security-item">
-            <div class="security-item-left">
-              <span class="security-icon material-icons-round">verified_user</span>
-              <div>
-                <span class="security-label">Compte actif</span>
-                <span class="security-sub security-ok">Connect\xE9</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="pw-form" *ngIf="showPwSection">
-          <div class="form-group">
-            <label>Mot de passe actuel</label>
-            <input type="password" [(ngModel)]="pwForm.ancien" placeholder="\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022" />
-          </div>
-          <div class="form-group">
-            <label>Nouveau mot de passe</label>
-            <input type="password" [(ngModel)]="pwForm.nouveau" placeholder="Minimum 6 caract\xE8res" />
-          </div>
-          <div class="form-group">
-            <label>Confirmer le nouveau mot de passe</label>
-            <input type="password" [(ngModel)]="pwForm.confirm" placeholder="R\xE9p\xE9tez le mot de passe" />
-          </div>
-          <div class="alert alert-error" *ngIf="pwError">
-            <span class="material-icons-round">error_outline</span>{{ pwError }}
-          </div>
-          <div class="form-actions">
-            <button class="btn-ghost btn-sm" (click)="showPwSection = false; pwError = ''" [disabled]="pwSaving">Annuler</button>
-            <button class="btn-primary btn-sm" (click)="savePassword()" [disabled]="pwSaving">
-              <span class="material-icons-round" *ngIf="!pwSaving">lock</span>
-              <span class="material-icons-round spin" *ngIf="pwSaving">sync</span>
-              {{ pwSaving ? 'En cours\u2026' : 'Changer' }}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== NAVIGATION RAPIDE ===== -->
-      <div class="profil-card">
-        <div class="card-header">
-          <div class="card-title">
-            <span class="material-icons-round">apps</span>
-            Navigation rapide
-          </div>
-        </div>
-        <div class="quick-nav">
-          <a class="qnav-item" routerLink="/app/home">
-            <span class="qnav-icon material-icons-round">home</span>
-            <span>Accueil</span>
-          </a>
-          <a class="qnav-item" routerLink="/app/tree">
-            <span class="qnav-icon material-icons-round">account_tree</span>
-            <span>Arbre familial</span>
-          </a>
-          <a class="qnav-item" routerLink="/app/personnes">
-            <span class="qnav-icon material-icons-round">people</span>
-            <span>Membres</span>
-          </a>
-          <a class="qnav-item" routerLink="/app/unions">
-            <span class="qnav-icon material-icons-round">favorite</span>
-            <span>Unions</span>
-          </a>
-          <a class="qnav-item" routerLink="/app/stories">
-            <span class="qnav-icon material-icons-round">collections_bookmark</span>
-            <span>Stories</span>
-          </a>
-          <a class="qnav-item" routerLink="/app/timeline">
-            <span class="qnav-icon material-icons-round">timeline</span>
-            <span>Timeline</span>
-          </a>
-          <a class="qnav-item qnav-admin" routerLink="/app/admin" *ngIf="user.role === 'admin' || user.role === 'gestionnaire'">
-            <span class="qnav-icon material-icons-round">admin_panel_settings</span>
-            <span>Administration</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- ===== TH\xC8ME ===== -->
-      <div class="profil-card">
-        <div class="card-header">
-          <div class="card-title">
-            <span class="material-icons-round">palette</span>
-            Th\xE8me de couleur
-          </div>
-        </div>
-        <div class="theme-grid">
-          <button
-            class="theme-btn"
-            *ngFor="let t of theme.themes"
-            [class.active]="theme.current === t.name"
-            [style.background]="t.color"
-            (click)="theme.applyColor(t.name)"
-            [title]="t.label">
-            <span class="material-icons-round" *ngIf="theme.current === t.name">check</span>
-          </button>
-        </div>
-        <p class="theme-hint">Choisissez la couleur principale de l'interface</p>
-      </div>
-
-      <!-- ===== ZONE DANGER ===== -->
-      <div class="profil-card danger-card span-2">
-        <div class="card-header">
-          <div class="card-title danger-title">
-            <span class="material-icons-round">warning</span>
-            Zone de danger
-          </div>
-        </div>
-        <div class="danger-actions">
-          <div class="danger-item">
-            <div>
-              <span class="danger-label">Se d\xE9connecter</span>
-              <span class="danger-sub">Vous serez redirig\xE9 vers la page de connexion</span>
-            </div>
-            <button class="btn-danger" (click)="logout()">
-              <span class="material-icons-round">logout</span>D\xE9connexion
-            </button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </ng-container>
-
-</div>
+    args: [{ selector: "app-profil", standalone: false, template: `<div class="profil-page">\r
+\r
+  <!-- Skeleton chargement -->\r
+  <div class="sk-section" *ngIf="loading">\r
+    <div class="sk-hero"></div>\r
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px">\r
+      <div *ngFor="let _ of [1,2,3,4]" style="background:#fff;border:1px solid #E5E7EB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px">\r
+        <div class="sk-line sk-md"></div>\r
+        <div class="sk-line sk-full"></div>\r
+        <div class="sk-line sk-full"></div>\r
+        <div class="sk-line sk-sm"></div>\r
+      </div>\r
+    </div>\r
+  </div>\r
+\r
+  <ng-container *ngIf="!loading && user">\r
+\r
+    <!-- ===== HERO ===== -->\r
+    <div class="profil-hero">\r
+      <div class="hero-bg"></div>\r
+      <div class="hero-content">\r
+        <div class="hero-avatar-wrap">\r
+          <div class="hero-avatar">{{ initiales }}</div>\r
+          <span class="hero-status-dot"></span>\r
+        </div>\r
+        <div class="hero-info">\r
+          <h1 class="hero-name">{{ user.prenom }} {{ user.nom }}</h1>\r
+          <div class="hero-meta">\r
+            <span class="role-badge" [class]="roleClass">{{ roleLabel }}</span>\r
+            <span class="hero-contact" *ngIf="user.email">\r
+              <span class="material-icons-round">mail</span>{{ user.email }}\r
+            </span>\r
+            <span class="hero-contact" *ngIf="user.telephone">\r
+              <span class="material-icons-round">phone</span>{{ user.telephone }}\r
+            </span>\r
+          </div>\r
+        </div>\r
+        <div class="hero-actions">\r
+          <button class="btn-outline btn-sm" (click)="openEdit()" *ngIf="!editMode">\r
+            <span class="material-icons-round">edit</span>Modifier\r
+          </button>\r
+        </div>\r
+      </div>\r
+    </div>\r
+\r
+    <!-- ===== SUCC\xC8S GLOBAL ===== -->\r
+    <div class="alert alert-success" *ngIf="editSuccess">\r
+      <span class="material-icons-round">check_circle</span>\r
+      Profil mis \xE0 jour avec succ\xE8s !\r
+    </div>\r
+    <div class="alert alert-success" *ngIf="pwSuccess">\r
+      <span class="material-icons-round">lock</span>\r
+      Mot de passe chang\xE9 avec succ\xE8s !\r
+    </div>\r
+\r
+    <div class="profil-grid">\r
+\r
+      <!-- ===== INFORMATIONS PERSONNELLES ===== -->\r
+      <div class="profil-card span-2">\r
+        <div class="card-header">\r
+          <div class="card-title">\r
+            <span class="material-icons-round">person</span>\r
+            Informations personnelles\r
+          </div>\r
+          <button class="btn-ghost btn-sm" (click)="openEdit()" *ngIf="!editMode">\r
+            <span class="material-icons-round">edit</span>Modifier\r
+          </button>\r
+        </div>\r
+\r
+        <!-- Affichage -->\r
+        <div class="info-grid" *ngIf="!editMode">\r
+          <div class="info-item">\r
+            <span class="info-label">Pr\xE9nom</span>\r
+            <span class="info-value">{{ user.prenom }}</span>\r
+          </div>\r
+          <div class="info-item">\r
+            <span class="info-label">Nom</span>\r
+            <span class="info-value">{{ user.nom }}</span>\r
+          </div>\r
+          <div class="info-item">\r
+            <span class="info-label">Email</span>\r
+            <span class="info-value">{{ user.email || '\u2014' }}</span>\r
+          </div>\r
+          <div class="info-item">\r
+            <span class="info-label">T\xE9l\xE9phone</span>\r
+            <span class="info-value">{{ user.telephone || '\u2014' }}</span>\r
+          </div>\r
+          <div class="info-item">\r
+            <span class="info-label">R\xF4le</span>\r
+            <span class="role-badge" [class]="roleClass">{{ roleLabel }}</span>\r
+          </div>\r
+        </div>\r
+\r
+        <!-- Formulaire d'\xE9dition -->\r
+        <div class="edit-form" *ngIf="editMode">\r
+          <div class="form-row">\r
+            <div class="form-group">\r
+              <label>Pr\xE9nom <span class="required">*</span></label>\r
+              <input type="text" [(ngModel)]="editForm.prenom" placeholder="Pr\xE9nom" />\r
+            </div>\r
+            <div class="form-group">\r
+              <label>Nom <span class="required">*</span></label>\r
+              <input type="text" [(ngModel)]="editForm.nom" placeholder="Nom" />\r
+            </div>\r
+          </div>\r
+          <div class="form-row">\r
+            <div class="form-group">\r
+              <label>Email</label>\r
+              <input type="email" [(ngModel)]="editForm.email" placeholder="votre@email.com" />\r
+            </div>\r
+            <div class="form-group">\r
+              <label>T\xE9l\xE9phone</label>\r
+              <input type="tel" [(ngModel)]="editForm.telephone" placeholder="+221 77 000 00 00" />\r
+            </div>\r
+          </div>\r
+          <div class="alert alert-error" *ngIf="editError">\r
+            <span class="material-icons-round">error_outline</span>{{ editError }}\r
+          </div>\r
+          <div class="form-actions">\r
+            <button class="btn-ghost btn-sm" (click)="cancelEdit()" [disabled]="editSaving">Annuler</button>\r
+            <button class="btn-primary btn-sm" (click)="saveProfile()" [disabled]="editSaving">\r
+              <span class="material-icons-round" *ngIf="!editSaving">save</span>\r
+              <span class="material-icons-round spin" *ngIf="editSaving">sync</span>\r
+              {{ editSaving ? 'Sauvegarde\u2026' : 'Enregistrer' }}\r
+            </button>\r
+          </div>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- ===== MA FAMILLE ===== -->\r
+      <div class="profil-card" *ngIf="famille">\r
+        <div class="card-header">\r
+          <div class="card-title">\r
+            <span class="material-icons-round">groups</span>\r
+            Ma famille\r
+          </div>\r
+        </div>\r
+        <div class="famille-hero">\r
+          <div class="famille-icon">\r
+            <span class="material-icons-round">account_tree</span>\r
+          </div>\r
+          <div>\r
+            <h3 class="famille-nom">{{ famille.nom }}</h3>\r
+            <div class="famille-code-wrap">\r
+              <span class="famille-code">{{ famille.code }}</span>\r
+              <button class="btn-icon copy-btn" (click)="copyCode()" [title]="codeCopied ? 'Copi\xE9 !' : 'Copier le code'">\r
+                <span class="material-icons-round">{{ codeCopied ? 'check' : 'content_copy' }}</span>\r
+              </button>\r
+            </div>\r
+            <p class="famille-hint">Partagez ce code pour inviter des membres</p>\r
+          </div>\r
+        </div>\r
+        <div class="famille-stats">\r
+          <div class="fstat">\r
+            <span class="fstat-val">{{ famille.totalMembres }}</span>\r
+            <span class="fstat-lbl">Membres</span>\r
+          </div>\r
+          <div class="fstat-divider"></div>\r
+          <div class="fstat">\r
+            <span class="fstat-val">{{ famille.totalUnions }}</span>\r
+            <span class="fstat-lbl">Unions</span>\r
+          </div>\r
+          <div class="fstat-divider"></div>\r
+          <div class="fstat">\r
+            <span class="role-badge" [class]="roleClass">{{ roleLabel }}</span>\r
+            <span class="fstat-lbl">Mon r\xF4le</span>\r
+          </div>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- ===== S\xC9CURIT\xC9 ===== -->\r
+      <div class="profil-card">\r
+        <div class="card-header">\r
+          <div class="card-title">\r
+            <span class="material-icons-round">security</span>\r
+            S\xE9curit\xE9\r
+          </div>\r
+        </div>\r
+\r
+        <div class="security-items" *ngIf="!showPwSection">\r
+          <div class="security-item">\r
+            <div class="security-item-left">\r
+              <span class="security-icon material-icons-round">lock</span>\r
+              <div>\r
+                <span class="security-label">Mot de passe</span>\r
+                <span class="security-sub">\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022</span>\r
+              </div>\r
+            </div>\r
+            <button class="btn-outline btn-sm" (click)="showPwSection = true">Changer</button>\r
+          </div>\r
+          <div class="security-item">\r
+            <div class="security-item-left">\r
+              <span class="security-icon material-icons-round">verified_user</span>\r
+              <div>\r
+                <span class="security-label">Compte actif</span>\r
+                <span class="security-sub security-ok">Connect\xE9</span>\r
+              </div>\r
+            </div>\r
+          </div>\r
+        </div>\r
+\r
+        <div class="pw-form" *ngIf="showPwSection">\r
+          <div class="form-group">\r
+            <label>Mot de passe actuel</label>\r
+            <input type="password" [(ngModel)]="pwForm.ancien" placeholder="\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022" />\r
+          </div>\r
+          <div class="form-group">\r
+            <label>Nouveau mot de passe</label>\r
+            <input type="password" [(ngModel)]="pwForm.nouveau" placeholder="Minimum 6 caract\xE8res" />\r
+          </div>\r
+          <div class="form-group">\r
+            <label>Confirmer le nouveau mot de passe</label>\r
+            <input type="password" [(ngModel)]="pwForm.confirm" placeholder="R\xE9p\xE9tez le mot de passe" />\r
+          </div>\r
+          <div class="alert alert-error" *ngIf="pwError">\r
+            <span class="material-icons-round">error_outline</span>{{ pwError }}\r
+          </div>\r
+          <div class="form-actions">\r
+            <button class="btn-ghost btn-sm" (click)="showPwSection = false; pwError = ''" [disabled]="pwSaving">Annuler</button>\r
+            <button class="btn-primary btn-sm" (click)="savePassword()" [disabled]="pwSaving">\r
+              <span class="material-icons-round" *ngIf="!pwSaving">lock</span>\r
+              <span class="material-icons-round spin" *ngIf="pwSaving">sync</span>\r
+              {{ pwSaving ? 'En cours\u2026' : 'Changer' }}\r
+            </button>\r
+          </div>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- ===== NAVIGATION RAPIDE ===== -->\r
+      <div class="profil-card">\r
+        <div class="card-header">\r
+          <div class="card-title">\r
+            <span class="material-icons-round">apps</span>\r
+            Navigation rapide\r
+          </div>\r
+        </div>\r
+        <div class="quick-nav">\r
+          <a class="qnav-item" routerLink="/app/home">\r
+            <span class="qnav-icon material-icons-round">home</span>\r
+            <span>Accueil</span>\r
+          </a>\r
+          <a class="qnav-item" routerLink="/app/tree">\r
+            <span class="qnav-icon material-icons-round">account_tree</span>\r
+            <span>Arbre familial</span>\r
+          </a>\r
+          <a class="qnav-item" routerLink="/app/personnes">\r
+            <span class="qnav-icon material-icons-round">people</span>\r
+            <span>Membres</span>\r
+          </a>\r
+          <a class="qnav-item" routerLink="/app/unions">\r
+            <span class="qnav-icon material-icons-round">favorite</span>\r
+            <span>Unions</span>\r
+          </a>\r
+          <a class="qnav-item" routerLink="/app/stories">\r
+            <span class="qnav-icon material-icons-round">collections_bookmark</span>\r
+            <span>Stories</span>\r
+          </a>\r
+          <a class="qnav-item" routerLink="/app/timeline">\r
+            <span class="qnav-icon material-icons-round">timeline</span>\r
+            <span>Timeline</span>\r
+          </a>\r
+          <a class="qnav-item qnav-admin" routerLink="/app/admin" *ngIf="user.role === 'admin' || user.role === 'gestionnaire'">\r
+            <span class="qnav-icon material-icons-round">admin_panel_settings</span>\r
+            <span>Administration</span>\r
+          </a>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- ===== TH\xC8ME ===== -->\r
+      <div class="profil-card">\r
+        <div class="card-header">\r
+          <div class="card-title">\r
+            <span class="material-icons-round">palette</span>\r
+            Th\xE8me de couleur\r
+          </div>\r
+        </div>\r
+        <div class="theme-grid">\r
+          <button\r
+            class="theme-btn"\r
+            *ngFor="let t of theme.themes"\r
+            [class.active]="theme.current === t.name"\r
+            [style.background]="t.color"\r
+            (click)="theme.applyColor(t.name)"\r
+            [title]="t.label">\r
+            <span class="material-icons-round" *ngIf="theme.current === t.name">check</span>\r
+          </button>\r
+        </div>\r
+        <p class="theme-hint">Choisissez la couleur principale de l'interface</p>\r
+      </div>\r
+\r
+      <!-- ===== ZONE DANGER ===== -->\r
+      <div class="profil-card danger-card span-2">\r
+        <div class="card-header">\r
+          <div class="card-title danger-title">\r
+            <span class="material-icons-round">warning</span>\r
+            Zone de danger\r
+          </div>\r
+        </div>\r
+        <div class="danger-actions">\r
+          <div class="danger-item">\r
+            <div>\r
+              <span class="danger-label">Se d\xE9connecter</span>\r
+              <span class="danger-sub">Vous serez redirig\xE9 vers la page de connexion</span>\r
+            </div>\r
+            <button class="btn-danger" (click)="logout()">\r
+              <span class="material-icons-round">logout</span>D\xE9connexion\r
+            </button>\r
+          </div>\r
+        </div>\r
+      </div>\r
+\r
+    </div>\r
+  </ng-container>\r
+\r
+</div>\r
 `, styles: ['@charset "UTF-8";\n\n/* src/app/pages/profil/profil.component.scss */\n.profil-page {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.profil-hero {\n  position: relative;\n  border-radius: 24px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #1a0533 0%,\n      #2d1b69 50%,\n      var(--primary, #3B82F6) 100%);\n  padding: 36px 40px;\n  color: #fff;\n}\n.hero-bg {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.05) 1px,\n      transparent 1px);\n  background-size: 30px 30px;\n  pointer-events: none;\n}\n.hero-content {\n  position: relative;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.hero-avatar-wrap {\n  position: relative;\n  flex-shrink: 0;\n}\n.hero-avatar {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  background:\n    linear-gradient(\n      135deg,\n      rgba(255, 255, 255, 0.25),\n      rgba(255, 255, 255, 0.1));\n  border: 3px solid rgba(255, 255, 255, 0.35);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 32px;\n  font-weight: 800;\n  color: #fff;\n  letter-spacing: -1px;\n}\n.hero-status-dot {\n  position: absolute;\n  bottom: 4px;\n  right: 4px;\n  width: 14px;\n  height: 14px;\n  background: #10B981;\n  border-radius: 50%;\n  border: 2px solid rgba(255, 255, 255, 0.8);\n}\n.hero-info {\n  flex: 1;\n  min-width: 0;\n}\n.hero-name {\n  font-size: 28px;\n  font-weight: 800;\n  color: #fff;\n  margin: 0 0 10px;\n  letter-spacing: -0.3px;\n}\n.hero-meta {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.hero-contact {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.7);\n}\n.hero-contact .material-icons-round {\n  font-size: 15px !important;\n}\n.hero-actions {\n  display: flex;\n  gap: 8px;\n  flex-shrink: 0;\n}\n.hero-actions .btn-outline {\n  background: rgba(255, 255, 255, 0.15);\n  border-color: rgba(255, 255, 255, 0.4);\n  color: #fff;\n}\n.hero-actions .btn-outline:hover {\n  background: rgba(255, 255, 255, 0.25);\n}\n.role-badge {\n  display: inline-flex;\n  align-items: center;\n  padding: 3px 12px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  background: rgba(255, 255, 255, 0.15);\n  color: #fff;\n  border: 1px solid rgba(255, 255, 255, 0.3);\n}\n.role-badge.role-admin {\n  background: #FEF2F2;\n  color: #DC2626;\n  border-color: #FECACA;\n}\n.role-badge.role-gestionnaire {\n  background: var(--primary-bg, #EFF6FF);\n  color: var(--primary, #2563EB);\n  border-color: var(--primary-border, #BFDBFE);\n}\n.role-badge.role-membre {\n  background: #ECFDF5;\n  color: #059669;\n  border-color: #A7F3D0;\n}\n.role-badge.role-viewonly {\n  background: #F3F4F6;\n  color: #6B7280;\n  border-color: #E5E7EB;\n}\n.alert {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 16px;\n  border-radius: 12px;\n  font-size: 13px;\n  font-weight: 500;\n}\n.alert .material-icons-round {\n  font-size: 18px !important;\n  flex-shrink: 0;\n}\n.alert.alert-success {\n  background: #ECFDF5;\n  color: #065F46;\n  border: 1px solid #A7F3D0;\n}\n.alert.alert-error {\n  background: #FEF2F2;\n  color: #991B1B;\n  border: 1px solid #FECACA;\n}\n.profil-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 20px;\n}\n.profil-card {\n  background: var(--white, #fff);\n  border: 1px solid var(--border, #E5E7EB);\n  border-radius: 18px;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n}\n.profil-card.span-2 {\n  grid-column: span 2;\n}\n.card-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.card-title {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 15px;\n  font-weight: 700;\n  color: var(--text-primary, #1F2937);\n}\n.card-title .material-icons-round {\n  font-size: 20px !important;\n  color: var(--primary, #3B82F6);\n}\n.info-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 16px;\n}\n.info-item {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.info-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted, #9CA3AF);\n}\n.info-value {\n  font-size: 14px;\n  color: var(--text-primary, #1F2937);\n  font-weight: 500;\n}\n.edit-form {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.form-row {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 16px;\n}\n.form-group {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.form-group label {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary, #6B7280);\n}\n.form-group label .required {\n  color: #EF4444;\n}\n.form-group input {\n  width: 100%;\n  padding: 9px 12px;\n  border: 1.5px solid var(--border, #E5E7EB);\n  border-radius: 10px;\n  font-size: 13px;\n  font-family: inherit;\n  color: var(--text-primary, #1F2937);\n  background: var(--white, #fff);\n  transition: border-color 0.15s;\n  box-sizing: border-box;\n}\n.form-group input:focus {\n  outline: none;\n  border-color: var(--primary, #3B82F6);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);\n}\n.form-actions {\n  display: flex;\n  justify-content: flex-end;\n  gap: 8px;\n}\n.famille-hero {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 16px;\n  background: var(--primary-bg, #EFF6FF);\n  border-radius: 14px;\n  border: 1px solid var(--primary-border, #BFDBFE);\n}\n.famille-icon {\n  width: 52px;\n  height: 52px;\n  border-radius: 14px;\n  background: var(--primary, #3B82F6);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.famille-icon .material-icons-round {\n  font-size: 26px !important;\n  color: #fff;\n}\n.famille-nom {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary, #1F2937);\n  margin: 0 0 6px;\n}\n.famille-code-wrap {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  margin-bottom: 4px;\n}\n.famille-code {\n  font-size: 13px;\n  font-weight: 700;\n  font-family: monospace;\n  color: var(--primary, #3B82F6);\n  background: rgba(59, 130, 246, 0.1);\n  padding: 2px 10px;\n  border-radius: 8px;\n  letter-spacing: 1px;\n}\n.copy-btn {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n}\n.copy-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.famille-hint {\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n  margin: 0;\n}\n.famille-stats {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  background: var(--bg-muted, #F9FAFB);\n  border-radius: 14px;\n  border: 1px solid var(--border, #E5E7EB);\n  padding: 16px 20px;\n  gap: 20px;\n}\n.fstat {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 4px;\n  flex: 1;\n}\n.fstat-val {\n  font-size: 24px;\n  font-weight: 800;\n  color: var(--text-primary, #1F2937);\n  line-height: 1;\n}\n.fstat-lbl {\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n}\n.fstat-divider {\n  width: 1px;\n  height: 36px;\n  background: var(--border, #E5E7EB);\n  flex-shrink: 0;\n}\n.security-items {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border, #E5E7EB);\n  border-radius: 12px;\n  overflow: hidden;\n}\n.security-item {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n  padding: 14px 16px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n}\n.security-item:last-child {\n  border-bottom: none;\n}\n.security-item-left {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.security-icon {\n  font-size: 20px !important;\n  color: var(--text-muted, #9CA3AF);\n}\n.security-label {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary, #1F2937);\n}\n.security-sub {\n  display: block;\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n}\n.security-sub.security-ok {\n  color: #10B981;\n}\n.pw-form {\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n}\n.quick-nav {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 8px;\n}\n.qnav-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 14px;\n  border-radius: 12px;\n  border: 1px solid var(--border, #E5E7EB);\n  background: var(--white, #fff);\n  color: var(--text-primary, #1F2937);\n  font-size: 13px;\n  font-weight: 500;\n  text-decoration: none;\n  transition: all 0.15s;\n}\n.qnav-item:hover {\n  border-color: var(--primary, #3B82F6);\n  background: var(--primary-bg, #EFF6FF);\n  color: var(--primary, #3B82F6);\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.12);\n  text-decoration: none;\n}\n.qnav-item.qnav-admin {\n  border-color: #FECACA;\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.qnav-item.qnav-admin:hover {\n  background: #FEE2E2;\n  border-color: #FCA5A5;\n}\n.qnav-icon {\n  font-size: 18px !important;\n  color: var(--primary, #3B82F6);\n}\n.qnav-admin .qnav-icon {\n  color: #DC2626;\n}\n.theme-grid {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.theme-btn {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: 3px solid transparent;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: transform 0.15s, box-shadow 0.15s;\n}\n.theme-btn.active {\n  border-color: rgba(0, 0, 0, 0.25);\n  box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(0, 0, 0, 0.2);\n}\n.theme-btn:hover {\n  transform: scale(1.15);\n}\n.theme-btn .material-icons-round {\n  font-size: 16px !important;\n  color: #fff;\n}\n.theme-hint {\n  font-size: 12px;\n  color: var(--text-muted, #9CA3AF);\n  margin: 0;\n}\n.danger-card {\n  border-color: #FECACA;\n  background: #FFFBFB;\n}\n.danger-title {\n  color: #DC2626 !important;\n}\n.danger-title .material-icons-round {\n  color: #DC2626 !important;\n}\n.danger-actions {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid #FECACA;\n  border-radius: 12px;\n  overflow: hidden;\n}\n.danger-item {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 16px 20px;\n  border-bottom: 1px solid #FECACA;\n}\n.danger-item:last-child {\n  border-bottom: none;\n}\n.danger-label {\n  display: block;\n  font-size: 14px;\n  font-weight: 600;\n  color: var(--text-primary, #1F2937);\n  margin-bottom: 3px;\n}\n.danger-sub {\n  display: block;\n  font-size: 12px;\n  color: var(--text-muted, #9CA3AF);\n}\n.btn-danger {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 18px;\n  border-radius: 10px;\n  border: 1.5px solid #FECACA;\n  background: #FEF2F2;\n  color: #DC2626;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  white-space: nowrap;\n}\n.btn-danger .material-icons-round {\n  font-size: 17px !important;\n}\n.btn-danger:hover {\n  background: #DC2626;\n  color: #fff;\n  border-color: #DC2626;\n}\n@media (max-width: 768px) {\n  .profil-page {\n    gap: 16px;\n  }\n  .profil-hero {\n    padding: 24px 20px;\n    border-radius: 16px;\n  }\n  .hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 16px;\n  }\n  .hero-avatar {\n    width: 72px;\n    height: 72px;\n    font-size: 24px;\n  }\n  .hero-name {\n    font-size: 20px;\n  }\n  .hero-meta {\n    gap: 8px;\n    flex-wrap: wrap;\n  }\n  .hero-actions {\n    width: 100%;\n  }\n  .hero-actions .btn-outline {\n    flex: 1;\n    justify-content: center;\n  }\n  .profil-grid {\n    grid-template-columns: 1fr;\n  }\n  .profil-card {\n    padding: 18px;\n  }\n  .profil-card.span-2 {\n    grid-column: span 1;\n  }\n  .info-grid {\n    grid-template-columns: 1fr 1fr;\n  }\n  .form-row {\n    grid-template-columns: 1fr;\n  }\n  .quick-nav {\n    grid-template-columns: 1fr 1fr;\n  }\n  .famille-hero {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .famille-stats {\n    flex-wrap: wrap;\n    gap: 12px;\n    padding: 14px;\n  }\n  .fstat {\n    flex: 0 0 auto;\n  }\n  .fstat-val {\n    font-size: 20px;\n  }\n  .danger-item {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 10px;\n  }\n  .btn-danger {\n    width: 100%;\n    justify-content: center;\n  }\n}\n@media (max-width: 480px) {\n  .profil-hero {\n    padding: 20px 16px;\n  }\n  .hero-name {\n    font-size: 18px;\n  }\n  .hero-meta {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 4px;\n  }\n  .hero-contact {\n    font-size: 12px;\n  }\n  .profil-card {\n    padding: 14px;\n    gap: 14px;\n  }\n  .info-grid {\n    grid-template-columns: 1fr;\n  }\n  .quick-nav {\n    grid-template-columns: 1fr;\n  }\n  .theme-grid {\n    gap: 8px;\n  }\n  .theme-btn {\n    width: 32px;\n    height: 32px;\n  }\n  .famille-stats {\n    flex-direction: column;\n    gap: 0;\n  }\n  .fstat {\n    width: 100%;\n    flex-direction: row;\n    justify-content: space-between;\n    padding: 10px 0;\n    border-bottom: 1px solid var(--border, #E5E7EB);\n  }\n  .fstat:last-child {\n    border-bottom: none;\n  }\n  .fstat-divider {\n    display: none;\n  }\n  .fstat-val {\n    font-size: 18px;\n  }\n}\n/*# sourceMappingURL=profil.component.css.map */\n'] }]
   }], () => [{ type: AuthService }, { type: ApiService }, { type: ThemeService }, { type: Router }, { type: HttpClient }], null);
 })();
@@ -10956,94 +11415,94 @@ Code d'acc\xE8s : *${this.familleCode}*
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(InviterComponent, [{
     type: Component,
-    args: [{ selector: "app-inviter", standalone: false, template: `<div class="page-header">
-  <div class="header-row">
-    <div>
-      <h2>Inviter des membres</h2>
-      <p>Partagez le code ou le QR code pour inviter vos proches \xE0 rejoindre <strong>{{ familleNom }}</strong></p>
-    </div>
-  </div>
-</div>
-
-<div class="loading-state" *ngIf="loading">
-  <span class="material-icons-round spin">sync</span> Chargement...
-</div>
-
-<div class="inv-grid" *ngIf="!loading">
-
-  <!-- QR + CODE -->
-  <div class="inv-card inv-card-qr">
-    <div class="inv-qr-frame">
-      <img [src]="qrUrl" alt="QR code famille" class="inv-qr" *ngIf="familleCode" />
-      <p class="inv-qr-caption">Scanner avec l'appareil photo</p>
-    </div>
-    <div class="inv-or"><span>ou entrer le code</span></div>
-    <div class="inv-code-section">
-      <p class="inv-label">Code d'acc\xE8s famille</p>
-      <div class="inv-code-row">
-        <span class="inv-code">{{ familleCode }}</span>
-        <button class="inv-icon-btn" (click)="copyCode()" [title]="codeCopied ? 'Copi\xE9 !' : 'Copier'">
-          <span class="material-icons-round">{{ codeCopied ? 'check' : 'content_copy' }}</span>
-        </button>
-      </div>
-      <p class="inv-hint" [style.color]="codeCopied ? '#059669' : null">
-        {{ codeCopied ? 'Code copi\xE9 !' : '\xC0 entrer dans l\\'app lors de l\\'inscription' }}
-      </p>
-    </div>
-  </div>
-
-  <!-- PARTAGE -->
-  <div class="inv-card">
-    <h3 class="inv-card-title">
-      <span class="material-icons-round">share</span>
-      Partager l'invitation
-    </h3>
-    <p class="inv-card-sub">Envoyez directement \xE0 vos contacts</p>
-    <div class="inv-share-list">
-      <button class="inv-share-btn inv-wa" (click)="shareWhatsApp()">
-        <svg style="width:20px;height:20px;flex-shrink:0" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-        </svg>
-        WhatsApp
-      </button>
-      <button class="inv-share-btn inv-native" (click)="shareNative()">
-        <span class="material-icons-round">ios_share</span>
-        Partager via\u2026
-      </button>
-      <button class="inv-share-btn inv-copy" (click)="copyMessage()">
-        <span class="material-icons-round">{{ messageCopied ? 'check' : 'content_copy' }}</span>
-        {{ messageCopied ? 'Copi\xE9 !' : 'Copier le message' }}
-      </button>
-    </div>
-  </div>
-
-  <!-- INSTRUCTIONS -->
-  <div class="inv-card">
-    <h3 class="inv-card-title">
-      <span class="material-icons-round">help_outline</span>
-      Comment rejoindre ?
-    </h3>
-    <ol class="inv-steps">
-      <li class="inv-step">
-        <div class="inv-step-num">1</div>
-        <div><strong>T\xE9l\xE9chargez</strong> l'application Mam Buudu</div>
-      </li>
-      <li class="inv-step">
-        <div class="inv-step-num">2</div>
-        <div><strong>Cr\xE9ez</strong> votre compte avec nom et num\xE9ro</div>
-      </li>
-      <li class="inv-step">
-        <div class="inv-step-num">3</div>
-        <div>Entrez le code <span class="inv-inline-code">{{ familleCode }}</span></div>
-      </li>
-      <li class="inv-step">
-        <div class="inv-step-num">4</div>
-        <div><strong>Bienvenue</strong> dans la famille {{ familleNom }} !</div>
-      </li>
-    </ol>
-  </div>
-
-</div>
+    args: [{ selector: "app-inviter", standalone: false, template: `<div class="page-header">\r
+  <div class="header-row">\r
+    <div>\r
+      <h2>Inviter des membres</h2>\r
+      <p>Partagez le code ou le QR code pour inviter vos proches \xE0 rejoindre <strong>{{ familleNom }}</strong></p>\r
+    </div>\r
+  </div>\r
+</div>\r
+\r
+<div class="loading-state" *ngIf="loading">\r
+  <span class="material-icons-round spin">sync</span> Chargement...\r
+</div>\r
+\r
+<div class="inv-grid" *ngIf="!loading">\r
+\r
+  <!-- QR + CODE -->\r
+  <div class="inv-card inv-card-qr">\r
+    <div class="inv-qr-frame">\r
+      <img [src]="qrUrl" alt="QR code famille" class="inv-qr" *ngIf="familleCode" />\r
+      <p class="inv-qr-caption">Scanner avec l'appareil photo</p>\r
+    </div>\r
+    <div class="inv-or"><span>ou entrer le code</span></div>\r
+    <div class="inv-code-section">\r
+      <p class="inv-label">Code d'acc\xE8s famille</p>\r
+      <div class="inv-code-row">\r
+        <span class="inv-code">{{ familleCode }}</span>\r
+        <button class="inv-icon-btn" (click)="copyCode()" [title]="codeCopied ? 'Copi\xE9 !' : 'Copier'">\r
+          <span class="material-icons-round">{{ codeCopied ? 'check' : 'content_copy' }}</span>\r
+        </button>\r
+      </div>\r
+      <p class="inv-hint" [style.color]="codeCopied ? '#059669' : null">\r
+        {{ codeCopied ? 'Code copi\xE9 !' : '\xC0 entrer dans l\\'app lors de l\\'inscription' }}\r
+      </p>\r
+    </div>\r
+  </div>\r
+\r
+  <!-- PARTAGE -->\r
+  <div class="inv-card">\r
+    <h3 class="inv-card-title">\r
+      <span class="material-icons-round">share</span>\r
+      Partager l'invitation\r
+    </h3>\r
+    <p class="inv-card-sub">Envoyez directement \xE0 vos contacts</p>\r
+    <div class="inv-share-list">\r
+      <button class="inv-share-btn inv-wa" (click)="shareWhatsApp()">\r
+        <svg style="width:20px;height:20px;flex-shrink:0" viewBox="0 0 24 24" fill="currentColor">\r
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>\r
+        </svg>\r
+        WhatsApp\r
+      </button>\r
+      <button class="inv-share-btn inv-native" (click)="shareNative()">\r
+        <span class="material-icons-round">ios_share</span>\r
+        Partager via\u2026\r
+      </button>\r
+      <button class="inv-share-btn inv-copy" (click)="copyMessage()">\r
+        <span class="material-icons-round">{{ messageCopied ? 'check' : 'content_copy' }}</span>\r
+        {{ messageCopied ? 'Copi\xE9 !' : 'Copier le message' }}\r
+      </button>\r
+    </div>\r
+  </div>\r
+\r
+  <!-- INSTRUCTIONS -->\r
+  <div class="inv-card">\r
+    <h3 class="inv-card-title">\r
+      <span class="material-icons-round">help_outline</span>\r
+      Comment rejoindre ?\r
+    </h3>\r
+    <ol class="inv-steps">\r
+      <li class="inv-step">\r
+        <div class="inv-step-num">1</div>\r
+        <div><strong>T\xE9l\xE9chargez</strong> l'application Mam Buudu</div>\r
+      </li>\r
+      <li class="inv-step">\r
+        <div class="inv-step-num">2</div>\r
+        <div><strong>Cr\xE9ez</strong> votre compte avec nom et num\xE9ro</div>\r
+      </li>\r
+      <li class="inv-step">\r
+        <div class="inv-step-num">3</div>\r
+        <div>Entrez le code <span class="inv-inline-code">{{ familleCode }}</span></div>\r
+      </li>\r
+      <li class="inv-step">\r
+        <div class="inv-step-num">4</div>\r
+        <div><strong>Bienvenue</strong> dans la famille {{ familleNom }} !</div>\r
+      </li>\r
+    </ol>\r
+  </div>\r
+\r
+</div>\r
 `, styles: ['/* src/app/pages/inviter/inviter.component.scss */\n.inv-grid {\n  display: grid;\n  grid-template-columns: auto 1fr 1fr;\n  gap: 20px;\n  align-items: start;\n  margin-top: 24px;\n}\n.inv-card {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: var(--radius-lg);\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  box-shadow: var(--shadow-sm);\n}\n.inv-card-title {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 15px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.inv-card-title .material-icons-round {\n  font-size: 19px !important;\n  color: var(--primary);\n}\n.inv-card-sub {\n  font-size: 12px;\n  color: var(--text-muted);\n  margin: -8px 0 0;\n}\n.inv-card-qr {\n  align-items: center;\n  min-width: 260px;\n}\n.inv-qr-frame {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 10px;\n  padding: 16px;\n  background: var(--primary-bg);\n  border-radius: var(--radius-lg);\n  border: 1.5px dashed var(--primary-border);\n  width: 100%;\n}\n.inv-qr {\n  width: 180px;\n  height: 180px;\n  border-radius: 10px;\n  display: block;\n}\n.inv-qr-caption {\n  font-size: 11px;\n  color: var(--text-muted);\n  text-align: center;\n  margin: 0;\n}\n.inv-or {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.inv-or::before,\n.inv-or::after {\n  content: "";\n  flex: 1;\n  height: 1px;\n  background: var(--border);\n}\n.inv-code-section {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  align-items: center;\n}\n.inv-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted);\n  margin: 0;\n}\n.inv-code-row {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.inv-code {\n  font-size: 22px;\n  font-weight: 800;\n  font-family: monospace;\n  color: var(--primary);\n  letter-spacing: 3px;\n  background: var(--primary-bg);\n  padding: 8px 16px;\n  border-radius: var(--radius-md);\n}\n.inv-icon-btn {\n  width: 36px;\n  height: 36px;\n  border-radius: var(--radius-md);\n  border: 1.5px solid var(--primary-border);\n  background: var(--white);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: all 0.15s;\n}\n.inv-icon-btn .material-icons-round {\n  font-size: 17px !important;\n  color: var(--primary);\n}\n.inv-icon-btn:hover {\n  background: var(--primary-bg);\n}\n.inv-hint {\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n  text-align: center;\n}\n.inv-share-list {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n.inv-share-btn {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 16px;\n  border-radius: var(--radius-md);\n  border: 1.5px solid;\n  font-size: 14px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n}\n.inv-wa {\n  background: #DCFCE7;\n  border-color: #86EFAC;\n  color: #15803D;\n}\n.inv-wa:hover {\n  background: #25D366;\n  color: #fff;\n  border-color: #25D366;\n}\n.inv-native {\n  background: var(--primary-bg);\n  border-color: var(--primary-border);\n  color: var(--primary);\n}\n.inv-native .material-icons-round {\n  font-size: 19px !important;\n}\n.inv-native:hover {\n  background: var(--primary);\n  color: #fff;\n}\n.inv-copy {\n  background: var(--white);\n  border-color: var(--border);\n  color: var(--text-secondary);\n}\n.inv-copy .material-icons-round {\n  font-size: 19px !important;\n}\n.inv-copy:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n.inv-steps {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n}\n.inv-step {\n  display: flex;\n  gap: 14px;\n  align-items: flex-start;\n  font-size: 13px;\n  color: var(--text-secondary);\n  line-height: 1.5;\n}\n.inv-step strong {\n  color: var(--text-primary);\n}\n.inv-step-num {\n  width: 26px;\n  height: 26px;\n  border-radius: 50%;\n  background: var(--primary);\n  color: #fff;\n  font-size: 12px;\n  font-weight: 700;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.inv-inline-code {\n  font-family: monospace;\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--primary);\n  background: var(--primary-bg);\n  padding: 1px 8px;\n  border-radius: 6px;\n}\n@media (max-width: 900px) {\n  .inv-grid {\n    grid-template-columns: 1fr 1fr;\n  }\n  .inv-card-qr {\n    grid-column: span 2;\n    flex-direction: row;\n    flex-wrap: wrap;\n    gap: 24px;\n    align-items: flex-start;\n  }\n  .inv-qr-frame {\n    width: auto;\n  }\n  .inv-code-section {\n    align-items: flex-start;\n  }\n}\n@media (max-width: 640px) {\n  .inv-grid {\n    grid-template-columns: 1fr;\n  }\n  .inv-card-qr {\n    grid-column: span 1;\n    flex-direction: column;\n    align-items: center;\n  }\n  .inv-code-section {\n    align-items: center;\n  }\n}\n/*# sourceMappingURL=inviter.component.css.map */\n'] }]
   }], () => [{ type: ApiService }], null);
 })();
@@ -11122,4 +11581,4 @@ var ShellModule = class _ShellModule {
 export {
   ShellModule
 };
-//# sourceMappingURL=chunk-4KOZY6C6.js.map
+//# sourceMappingURL=chunk-D3CQ65UI.js.map
