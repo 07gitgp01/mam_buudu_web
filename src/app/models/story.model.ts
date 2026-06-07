@@ -14,7 +14,7 @@ export interface Story {
   caption:   string;          // texte principal — "caption" aligne avec Flutter
   tag:       string | null;   // catégorie web (Souvenir, Événement…)
   mediaUrl:  string | null;   // URL Cloudinary (photo ou vidéo)
-  mediaType: 'photo' | 'video' | 'text' | null;
+  mediaType: 'photo' | 'video' | 'text' | 'audio' | null;
 
   // Expiration (null = permanent pour le web, ISO string pour le mobile)
   expiresAt: string | null;

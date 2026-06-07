@@ -5,10 +5,128 @@
     <span class="material-icons-round">menu</span>
   </button>
 
-  <!-- Titre de la page -->
-  <div class="page-title">
+  <!-- Titre de la page (caché quand search est ouvert sur mobile) -->
+  <div class="page-title" [class.hidden-mobile]="searchOpen">
     <span class="material-icons-round page-icon">{{ currentPage.icon }}</span>
     <h3>{{ currentPage.label }}</h3>
+  </div>
+
+  <!-- ===== BARRE DE RECHERCHE GLOBALE ===== -->
+  <div class="search-wrap" [class.open]="searchOpen">
+
+    <!-- Bouton loupe (fermée) -->
+    <button class="btn-icon search-trigger" *ngIf="!searchOpen" (click)="openSearch()" title="Rechercher">
+      <span class="material-icons-round">search</span>
+    </button>
+
+    <!-- Input de recherche (ouverte) -->
+    <div class="search-box" *ngIf="searchOpen">
+      <span class="material-icons-round search-box-icon">search</span>
+      <input
+        #searchInput
+        class="search-input"
+        type="text"
+        placeholder="Rechercher un membre, une story…"
+        [(ngModel)]="searchQuery"
+        (ngModelChange)="onSearchInput($event)"
+        (click)="$event.stopPropagation()"
+        autofocus
+      />
+      <button class="search-clear-btn" *ngIf="searchQuery" (click)="searchQuery=''; onSearchInput('')">
+        <span class="material-icons-round">close</span>
+      </button>
+      <button class="search-close-btn" (click)="closeSearch()">
+        <span class="material-icons-round">keyboard_return</span>
+      </button>
+    </div>
+
+    <!-- Dropdown résultats -->
+    <div class="search-dropdown" *ngIf="searchOpen && searchQuery.length >= 2" (click)="$event.stopPropagation()">
+
+      <!-- Chargement -->
+      <div class="search-loading" *ngIf="searchLoading">
+        <div class="sk-line sk-full" style="height:14px;border-radius:6px"></div>
+        <div class="sk-line sk-md" style="height:14px;border-radius:6px"></div>
+        <div class="sk-line sk-sm" style="height:14px;border-radius:6px"></div>
+      </div>
+
+      <!-- Aucun résultat -->
+      <div class="search-empty" *ngIf="!searchLoading && !hasResults">
+        <span class="material-icons-round">search_off</span>
+        <span>Aucun résultat pour « {{ searchQuery }} »</span>
+      </div>
+
+      <!-- ── Membres ── -->
+      <ng-container *ngIf="!searchLoading && searchResults.personnes.length > 0">
+        <div class="search-section-label">
+          <span class="material-icons-round">people</span>
+          Membres
+        </div>
+        <button class="search-result-item"
+                *ngFor="let p of searchResults.personnes"
+                (click)="goToPersonne(p.id)">
+          <div class="sr-avatar" [class.sr-avatar-m]="p.sexe === 'M'" [class.sr-avatar-f]="p.sexe === 'F'">
+            <img *ngIf="p.photoUrl" [src]="p.photoUrl" [alt]="getNomPersonne(p)" />
+            <span *ngIf="!p.photoUrl">{{ getInitialesPersonne(p) }}</span>
+          </div>
+          <div class="sr-info">
+            <span class="sr-name">{{ getNomPersonne(p) }}</span>
+            <span class="sr-sub" *ngIf="p.lieuNaissance">{{ p.lieuNaissance }}</span>
+            <span class="sr-sub" *ngIf="p.dateNaissance && !p.lieuNaissance">{{ p.dateNaissance }}</span>
+          </div>
+          <span class="material-icons-round sr-arrow">arrow_forward</span>
+        </button>
+      </ng-container>
+
+      <!-- ── Stories ── -->
+      <ng-container *ngIf="!searchLoading && searchResults.stories.length > 0">
+        <div class="search-section-label">
+          <span class="material-icons-round">collections_bookmark</span>
+          Stories
+        </div>
+        <button class="search-result-item"
+                *ngFor="let s of searchResults.stories"
+                (click)="goToStory(s.id)">
+          <div class="sr-icon sr-icon-story">
+            <span class="material-icons-round">auto_stories</span>
+          </div>
+          <div class="sr-info">
+            <span class="sr-name">{{ s.titre || s.caption || 'Story' }}</span>
+            <span class="sr-sub sr-tag" *ngIf="s.tag">{{ s.tag }}</span>
+          </div>
+          <span class="material-icons-round sr-arrow">arrow_forward</span>
+        </button>
+      </ng-container>
+
+      <!-- ── Unions ── -->
+      <ng-container *ngIf="!searchLoading && searchResults.unions.length > 0">
+        <div class="search-section-label">
+          <span class="material-icons-round">favorite</span>
+          Unions
+        </div>
+        <button class="search-result-item"
+                *ngFor="let u of searchResults.unions"
+                (click)="goToUnion(u.id)">
+          <div class="sr-icon sr-icon-union">
+            <span class="material-icons-round">favorite</span>
+          </div>
+          <div class="sr-info">
+            <span class="sr-name">
+              {{ u.participants?.[0]?.personne ? getNomPersonne(u.participants[0].personne) : '' }}
+              <ng-container *ngIf="u.participants?.[1]?.personne"> &amp; {{ getNomPersonne(u.participants[1].personne) }}</ng-container>
+            </span>
+            <span class="sr-sub">{{ u.type }} · {{ u.dateDebut || '?' }}</span>
+          </div>
+          <span class="material-icons-round sr-arrow">arrow_forward</span>
+        </button>
+      </ng-container>
+
+      <!-- Footer compteur -->
+      <div class="search-footer" *ngIf="!searchLoading && hasResults">
+        {{ totalResults }} résultat{{ totalResults > 1 ? 's' : '' }}
+      </div>
+
+    </div>
   </div>
 
   <!-- Actions à droite -->

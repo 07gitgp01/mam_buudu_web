@@ -1,0 +1,436 @@
+{\rtf1\ansi\deff0
+{\fonttbl
+{\f0\froman\fcharset0 Times New Roman;}
+{\f1\fswiss\fcharset0 Arial;}
+{\f2\fmodern\fcharset0 Courier New;}
+}
+{\colortbl;\red0\green0\blue0;\red124\green58\blue237;\red59\green130\blue246;\red5\green150\blue105;\red220\green38\blue38;\red245\green158\blue11;\red15\green23\blue42;}
+
+\paperw11906\paperh16838\margl1440\margr1440\margt1440\margb1440
+
+{\pard\sa200\sb200\qc\f1\fs44\b\cf2 MAM BUUDU\par}
+{\pard\sa100\qc\f1\fs28\b\cf3 Arbre G\'e9n\'e9alogique Familial\par}
+{\pard\sa100\qc\f1\fs20\cf0 Document Strat\'e9gique \emdash{} Roadmap & Perspectives Commerciales\par}
+{\pard\sa400\qc\f1\fs18\i\cf0 R\'e9dig\'e par : Lead Developer \emdash{} Version 1.0 \emdash{} Juin 2026\par}
+
+\pard\sa100\sb400\f1\fs32\b\cf2 1. BILAN DE L\'92\'c9TAT ACTUEL\par
+\pard\sa200\f1\fs20\b0\cf0
+
+L\'92application Mam Buudu est une plateforme web de g\'e9n\'e9alogie familiale con\'e7ue pour les familles africaines (principalement burkinab\`e, s\'e9n\'e9galaises et de la diaspora). Elle dispose de deux modules distincts :
+
+\pard\sa100\li400\f1\fs20\b\cf3 Module Gestionnaire (admin/gestionnaire)\par
+\pard\sa60\li600\f1\fs20\b0\cf0 - Arbre g\'e9n\'e9alogique interactif avec rendu r\'e9cursif\par
+- Gestion des membres (CRUD complet)\par
+- Gestion des unions avec support polygamie\par
+- Stories familiales\par
+- Timeline chronologique\par
+- Jeux familiaux (placeholder)\par
+- Administration des comptes\par
+- Profil utilisateur\par
+- Page d\'92invitation avec QR code\par
+- Barre de chargement globale\par
+- Squelettes de chargement (skeletons)\par
+
+\pard\sa100\li400\f1\fs20\b\cf3 Module Famille (viewonly)\par
+\pard\sa60\li600\f1\fs20\b0\cf0 - Acc\'e8s lecture seule pour les membres\par
+- Arbre g\'e9n\'e9alogique identique au mode gestionnaire\par
+- Membres, Stories, Timeline, Profil\par
+- Topbar avec menu utilisateur\par
+- Sidebar avec th\'e8me\par
+
+\pard\sa100\li400\f1\fs20\b\cf4 Points forts d\'e9j\`a impl\'e9ment\'e9s\par
+\pard\sa60\li600\f1\fs20\b0\cf0 \bullet{} Arbre r\'e9cursif avec support polygamie (noeud \'ab multi \'bb)\par
+\bullet{} Gestion des unions multiples avec statut (actif/divorc\'e9/veuf)\par
+\bullet{} Boutons raccourcis dans l\'92arbre (+Enfant, +\'c9pouse)\par
+\bullet{} Export PDF/PNG de l\'92arbre\par
+\bullet{} Mode kiosque plein \'e9cran\par
+\bullet{} S\'e9lection de racine dans l\'92arbre\par
+\bullet{} Upload de photos de profil\par
+\bullet{} Syst\'e8me de th\'e8mes de couleur\par
+\bullet{} Intercepteur HTTP global (loading bar)\par
+\bullet{} D\'e9ploiement GitHub Pages\par
+
+\pard\sa100\sb400\f1\fs32\b\cf2 2. CE QUI MANQUE POUR UNE APP COMPL\'c8TE\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 2.1 STORIES \emdash{} Totalement \`a compl\'e9ter\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+Le module Stories existe mais est un placeholder. Il faut impl\'e9menter :
+
+\pard\sa60\li600\f1\fs20\cf5\b CRITIQUE\cf0\b0 \emdash{} Cr\'e9ation/\'e9dition de stories (texte + photos)\par
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Stories audio : enregistrements vocaux des anciens (essentiel pour la culture orale africaine)\par
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Lecture/affichage des stories\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Galerie photos par story\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Vid\'e9o courte (Reels familiaux)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} R\'e9actions (ဈ4{}ና92{}ኅ57{}) sans commentaires publics\par
+\pard\sa60\li600\f1\fs20 \emdash{} Association d\'92une story \`a une personne / une \'e9poque\par
+\pard\sa60\li600\f1\fs20 \emdash{} Stories priv\'e9es vs. visibles par tous\par
+\pard\sa60\li600\f1\fs20 \emdash{} S\'e9ries / collections th\'e9matiques\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 2.2 TIMELINE \emdash{} \`a connecter aux vraies donn\'e9es\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+La timeline est actuellement statique. Il faut :
+
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} API pour les \'e9v\'e9nements familiaux (naissances, d\'e9c\'e8s, mariages auto-g\'e9n\'e9r\'e9s)\par
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} CRUD \'e9v\'e9nements personnalis\'e9s (baptem, circoncision, d\'e9placement, guerre...)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Filtres par personne, par p\'e9riode, par type d\'92\'e9v\'e9nement\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Vue carte g\'e9ographique (o\'f9 vivaient les anc\'eatres)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Export timeline en PDF illustr\'e9\par
+\pard\sa60\li600\f1\fs20 \emdash{} Partage d\'92un \'e9v\'e9nement sur WhatsApp\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 2.3 JEUX FAMILIAUX \emdash{} Compl\`etement vide\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+Le module Jeux est un placeholder total. C\'92est pourtant un levier d\'92engagement fort :
+
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Quiz : \'ab Qui est cet anc\'eatre ? \'bb (photo + 4 choix)\par
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Compl\'e9ter l\'92arbre (jeu collaboratif, qui peut ajouter le plus de membres ?)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Calculateur de degr\'e9 de parent\'e9 entre 2 membres\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Devinette g\'e9n\'e9ration : retrouver la g\'e9n\'e9ration d\'92un membre\par
+\pard\sa60\li600\f1\fs20 \emdash{} D\'e9fi : \'ab Compil\'e9 de famille \'bb (compl\'e9ter 80 % des profils)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Classement gamification (points, badges)\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 2.4 NOTIFICATIONS & ALERTES\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+Aucune notification n\'92est impl\'e9ment\'e9e :
+
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Email automatique anniversaires (naissance, d\'e9c\'e8s)\par
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Notification in-app (cloche dans la topbar \emdash{} actuellement statique)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Push notifications web (Service Worker / PWA)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} R\'e9capitulatif hebdomadaire par email\par
+\pard\sa60\li600\f1\fs20 \emdash{} Alerte quand un nouveau membre rejoint\par
+\pard\sa60\li600\f1\fs20 \emdash{} Alerte quand une story est ajout\'e9e\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 2.5 IMPORT / EXPORT\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Export GEDCOM (standard universel g\'e9n\'e9alogie, compatible Ancestry, FamilySearch, etc.)\par
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Import GEDCOM (r\'e9cup\'e9rer des arbres existants)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Export Excel de la liste des membres\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Livre de famille PDF illustr\'e9 (g\'e9n\'e9r\'e9 automatiquement avec toutes les infos)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Export cartes de voeux num\'e9riques pour anniversaires\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 2.6 DOCUMENTS & ARCHIVES\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Upload de documents par personne (acte de naissance, passeport, dipl\^ome)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Album photos par personne (pas seulement photo de profil)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Galerie photo famille (album partag\'e9)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Archivage vid\'e9os historiques\par
+\pard\sa60\li600\f1\fs20 \emdash{} Scanner de vieux documents (int\'e9gration Google Drive)\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 2.7 RECHERCHE & NAVIGATION\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Recherche globale (trouver un membre dans toute l\'92app en tapant son nom)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Vue carte g\'e9ographique (d\'e9placer les \'e9pingles sur une carte du monde)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Filtres avanc\'e9s dans la liste membres\par
+\pard\sa60\li600\f1\fs20 \emdash{} Navigation dans l\'92arbre par g\'e9n\'e9ration (aller directement \`a G\'e9n. 3)\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 2.8 S\'c9CURIT\'c9 & AUTHENTIFICATION\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} R\'e9initialisation de mot de passe par email (\'ab Mot de passe oubli\'e9 \'bb) absent\par
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} V\'e9rification email \`a l\'92inscription\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Double authentification (2FA) par SMS ou TOTP\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Contr\^ole de confidentialit\'e9 par membre (qui voit quoi)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Audit log des actions admin\par
+\pard\sa60\li600\f1\fs20 \emdash{} Politique RGPD / NDPR (droit \`a l\'92oubli, export des donn\'e9es)\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 2.9 LANDING PAGE & MARKETING\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Landing page publique attractive (vitrine du produit avant connexion)\par
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Page de tarification\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Blog / SEO (contenu sur la g\'e9n\'e9alogie africaine)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Page \'ab Familles en vedette \'bb (t\'e9moignages)\par
+\pard\sa60\li600\f1\fs20 \emdash{} FAQ, Support en ligne\par
+\pard\sa60\li600\f1\fs20 \emdash{} Page famille publique optionnelle (URL partag\'e9e)\par
+
+\pard\sa100\sb400\f1\fs32\b\cf2 3. VERSION MOBILE \emdash{} PRIORIT\'c9 ABSOLUE\par
+
+\pard\sa100\f1\fs20\b0\cf0
+La majorit\'e9 des utilisateurs africains acc\'e8dent \`a internet via smartphone. Une app mobile native est\b indispensable\b0 pour le march\'e9 cible.
+
+\pard\sa100\sb200\f1\fs26\b\cf3 3.1 Choix technologique recommand\'e9\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\b Flutter\b0{} (Dart) est recommand\'e9 pour :
+\pard\sa60\li600\f1\fs20 \bullet{} Un seul code pour iOS + Android\par
+\pard\sa60\li600\f1\fs20 \bullet{} Performances natives\par
+\pard\sa60\li600\f1\fs20 \bullet{} Rendu de l\'92arbre g\'e9n\'e9alogique avec InteractiveViewer\par
+\pard\sa60\li600\f1\fs20 \bullet{} Upload photos depuis galerie/cam\'e9ra\par
+\pard\sa60\li600\f1\fs20 \bullet{} Mode hors-ligne avec Hive ou SQLite\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 3.2 Fonctionnalit\'e9s sp\'e9cifiques mobile\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Push notifications anniversaires (le matin automatiquement)\par
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Scan QR code pour rejoindre une famille\par
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Upload photo depuis cam\'e9ra ou galerie\par
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Mode hors-ligne (arbre consultable sans internet)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Authentification biom\'e9trique (Face ID, empreinte)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Partage direct vers WhatsApp, Telegram\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Widget anniversaires sur \'e9cran d\'92accueil\par
+\pard\sa60\li600\f1\fs20 \emdash{} Enregistrement audio de r\'e9cits (micro du t\'e9l\'e9phone)\par
+\pard\sa60\li600\f1\fs20 \emdash{} App iOS + Android publi\'e9es sur App Store et Play Store\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 3.3 PWA (Progressive Web App) \emdash{} \'e9tape interm\'e9diaire\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+Avant le d\'e9veloppement Flutter, transformer l\'92app Angular en PWA :
+\pard\sa60\li600\f1\fs20 \bullet{} \cf5\b CRITIQUE\cf0\b0 \emdash{} ng add @angular/pwa (Service Worker + manifest)\par
+\pard\sa60\li600\f1\fs20 \bullet{} Bouton \'ab Installer l\'92app \'bb sur mobile\par
+\pard\sa60\li600\f1\fs20 \bullet{} Acc\'e8s hors-ligne aux derni\'e8res donn\'e9es\par
+\pard\sa60\li600\f1\fs20 \bullet{} Ic\^one sur \'e9cran d\'92accueil\par
+\pard\sa60\li600\f1\fs20 \bullet{} Splash screen\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 3.4 Adaptation responsive web \`a am\'e9liorer\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\pard\sa60\li600\f1\fs20 \emdash{} Arbre g\'e9n\'e9alogique sur mobile (zoom/pinch-to-zoom natif)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Bottom navigation bar plus ergonomique\par
+\pard\sa60\li600\f1\fs20 \emdash{} Formulaires optimis\'e9s touch (champs plus grands)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Mode paysage pour l\'92arbre\par
+
+\pard\sa100\sb400\f1\fs32\b\cf2 4. INFRASTRUCTURE TECHNIQUE \emdash{} CE QUI MANQUE\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 4.1 Backend (API)\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} Syst\'e8me d\'92emails transactionnels (Sendgrid, Mailgun) : aucun email n\'92est envoy\'e9\par
+\pard\sa60\li600\f1\fs20 \cf5\b CRITIQUE\cf0\b0 \emdash{} R\'e9initialisation mot de passe via email\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} WebSocket / Server-Sent Events (mises \`a jour temps r\'e9el de l\'92arbre)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Pagination des API (performances avec grandes familles)\par
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} API GEDCOM import/export\par
+\pard\sa60\li600\f1\fs20 \emdash{} CDN pour les images (Cloudinary ou AWS S3)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Backup automatique des donn\'e9es\par
+\pard\sa60\li600\f1\fs20 \emdash{} Rate limiting et protection DDoS\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 4.2 Performance\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\pard\sa60\li600\f1\fs20 \emdash{} Lazy loading des images\par
+\pard\sa60\li600\f1\fs20 \emdash{} Virtualisation pour arbres de + de 500 membres\par
+\pard\sa60\li600\f1\fs20 \emdash{} Cache Redis pour les requ\'eates fr\'e9quentes\par
+\pard\sa60\li600\f1\fs20 \emdash{} Compression des images (WebP)\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 4.3 Internationalisation\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\pard\sa60\li600\f1\fs20 \cf6\b IMPORTANT\cf0\b0 \emdash{} Anglais (diaspora anglophone)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Hausa, Dioula, Moor\'e9 (langues locales africaines)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Arabe (Maghreb, Mauritanie)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Portugais (Lusophonie africaine)\par
+
+\pard\sa100\sb400\f1\fs32\b\cf2 5. MON\'c9TISATION \emdash{} COMMENT GAGNER DE L\'92ARGENT\par
+
+\pard\sa100\f1\fs20\b0\cf0
+Mam Buudu s\'92adresse \`a un march\'e9 de niche \`a fort potentiel : les familles africaines de la diaspora (+ de 40 millions de personnes en Europe, Am\'e9rique du Nord, Australie) ont un fort attachement culturel \`a leur histoire et un pouvoir d\'92achat \'e9lev\'e9.
+
+\pard\sa100\sb200\f1\fs26\b\cf3 5.1 Mod\'e8le Freemium (recommand\'e9)\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\trowd\trgaph100\trleft0
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx2500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx5500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx7500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx9500
+\pard\intbl\f1\fs18\b Offre\cell Gratuit\cell Premium (3 000 F/mois)\cell Famille+ (8 000 F/mois)\cell\row
+
+\trowd\trgaph100\trleft0
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx2500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx5500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx7500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx9500
+\pard\intbl\f1\fs18\b0 Membres\cell 50\cell 500\cell Illimit\'e9\cell\row
+
+\trowd\trgaph100\trleft0
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx2500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx5500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx7500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx9500
+\pard\intbl\f1\fs18\b0 Stockage\cell 500 Mo\cell 5 Go\cell 50 Go\cell\row
+
+\trowd\trgaph100\trleft0
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx2500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx5500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx7500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx9500
+\pard\intbl\f1\fs18\b0 Export PDF\cell Non\cell Oui\cell Oui + Book\cell\row
+
+\trowd\trgaph100\trleft0
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx2500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx5500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx7500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx9500
+\pard\intbl\f1\fs18\b0 Stories audio\cell Non\cell Oui\cell Oui\cell\row
+
+\trowd\trgaph100\trleft0
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx2500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx5500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx7500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx9500
+\pard\intbl\f1\fs18\b0 App mobile\cell Non\cell Oui\cell Oui\cell\row
+
+\trowd\trgaph100\trleft0
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx2500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx5500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx7500
+\clbrdrt\brdrw15\brdrs\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\cellx9500
+\pard\intbl\f1\fs18\b0 Emails anniv.\cell Non\cell Oui\cell Oui + SMS\cell\row
+
+\pard\sa200\f1\fs20\b0\cf0
+
+\pard\sa100\sb200\f1\fs26\b\cf3 5.2 Autres sources de revenus\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\b Livre de famille imprim\'e9 (physique)\b0\par
+\pard\sa60\li600\f1\fs20 \emdash{} G\'e9n\'e9rer un beau livre avec photos, arbre, stories, timeline\par
+\pard\sa60\li600\f1\fs20 \emdash{} Impression via partenaire (Lulu Press, Blurb)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Prix : 15 000 \emdash{} 50 000 F CFA (25\emdash{}80 \'80) par livre\par
+\pard\sa60\li600\f1\fs20 \emdash{} Fort potentiel : cadeaux baptemes, mariages, fun\'e9railles\par
+
+\pard\sa60\li400\f1\fs20\b Partenariats institutionnels (B2B)\b0\par
+\pard\sa60\li600\f1\fs20 \emdash{} \'c9glises, mosqu\'e9es, associations de village : abonnement annuel\par
+\pard\sa60\li600\f1\fs20 \emdash{} Mairies rurales (num\'e9risation de l\'92\'e9tat civil)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Associations de diaspora (maintenir le lien avec le pays)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Prix : 50 000 \emdash{} 500 000 F CFA / an selon taille\par
+
+\pard\sa60\li400\f1\fs20\b White Label\b0\par
+\pard\sa60\li600\f1\fs20 \emdash{} Revendre la plateforme sous d\'92autres marques (Ghana, S\'e9n\'e9gal, C\^ote d\'92Ivoire)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Licence annuelle : 500 000 \emdash{} 2 000 000 F CFA\par
+
+\pard\sa60\li400\f1\fs20\b Services de g\'e9n\'e9alogie\b0\par
+\pard\sa60\li600\f1\fs20 \emdash{} Recherche d\'92anc\'eatres sur demande (service humain + IA)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Prix : 50 000 \emdash{} 200 000 F CFA par arbre construit\par
+
+\pard\sa60\li400\f1\fs20\b Publicit\'e9 cibl\'e9e (diaspora)\b0\par
+\pard\sa60\li600\f1\fs20 \emdash{} Transferts d\'92argent (Wave, Orange Money, WorldRemit)\par
+\pard\sa60\li600\f1\fs20 \emdash{} Assurances vie et obsques\par
+\pard\sa60\li600\f1\fs20 \emdash{} Voyages retour au pays\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 5.3 Projection financi\'e8re (ann\'e9e 1)\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\pard\sa60\li600\f1\fs20 \bullet{} 200 familles x 3 000 F/mois = \b 600 000 F/mois (900 \'80)\b0\par
+\pard\sa60\li600\f1\fs20 \bullet{} 50 familles Premium x 8 000 F/mois = \b 400 000 F/mois (600 \'80)\b0\par
+\pard\sa60\li600\f1\fs20 \bullet{} 20 livres/mois x 25 000 F = \b 500 000 F/mois (750 \'80)\b0\par
+\pard\sa60\li600\f1\fs20 \bullet{} 2 contrats B2B x 150 000 F/an = \b 300 000 F/mois (450 \'80)\b0\par
+\pard\sa60\li600\f1\fs20 \b Total ann\'e9e 1 : environ 22 000 \'80 \emdash{} 35 000 \'80\b0\par
+\pard\sa60\li600\f1\fs20 \b Ann\'e9e 3 (avec mobile + croissance) : 100 000 \'80+\b0\par
+
+\pard\sa100\sb400\f1\fs32\b\cf2 6. FEUILLE DE ROUTE (ROADMAP)\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 Phase 1 \emdash{} Fondations (1-3 mois)\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+\pard\sa40\li600\f1\fs20 靅{} Arbre g\'e9n\'e9alogique interactif (fait)\par
+\pard\sa40\li600\f1\fs20 靅{} Gestion membres + unions + polygamie (fait)\par
+\pard\sa40\li600\f1\fs20 靅{} Photos de profil (fait)\par
+\pard\sa40\li600\f1\fs20 靄{} \b R\'e9initialisation mot de passe par email\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b V\'e9rification email \`a l\'92inscription\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Landing page marketing\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b PWA (installation mobile)\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Emails transactionnels\b0\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 Phase 2 \emdash{} Engagement (3-6 mois)\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+\pard\sa40\li600\f1\fs20 靄{} \b Stories avec photos et audio\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Timeline connecte aux vraies donn\'e9es\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Notifications anniversaires (email + push)\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Jeux : Quiz g\'e9n\'e9alogique\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Albums photos par personne\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Recherche globale\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Export GEDCOM\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Syst\'e8me freemium + paiement\b0\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 Phase 3 \emdash{} Mobile & Scale (6-12 mois)\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+\pard\sa40\li600\f1\fs20 靄{} \b App Flutter iOS + Android\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Mode hors-ligne\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Livre famille PDF illustr\'e9\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Vue carte g\'e9ographique\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Contr\^oles confidentialit\'e9 avanc\'e9s\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b IA : suggestion de membres similaires\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Partenariats B2B\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Multi-langues (anglais, hausa)\b0\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 Phase 4 \emdash{} Expansion (12-24 mois)\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+\pard\sa40\li600\f1\fs20 靄{} \b White label\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b API publique pour d\'e9veloppeurs\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Reconnaissance de photos IA (qui est cette personne ?)\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b Connexion avec FamilySearch, Ancestry\b0\par
+\pard\sa40\li600\f1\fs20 靄{} \b\'c9dition Ghana, S\'e9n\'e9gal, C\^ote d\'92Ivoire\b0\par
+
+\pard\sa100\sb400\f1\fs32\b\cf2 7. MARCH\'c9 & POSITIONNEMENT\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 7.1 Marche cible\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\b Primaire :\b0{} Diaspora ouest-africaine (France, Belgique, USA, Canada, Italie)\par
+\pard\sa40\li600\f1\fs20 \bullet{} 3-5 millions de Burkinab\`e en diaspora\par
+\pard\sa40\li600\f1\fs20 \bullet{} 6-7 millions de S\'e9n\'e9galais en diaspora\par
+\pard\sa40\li600\f1\fs20 \bullet{} Transferts d\'92argent : 9 milliards $US/an vers l\'92AOF\par
+
+\b Secondaire :\b0{} Familles sur place (Burkina, S\'e9n\'e9gal, Mali, Niger, C\^ote d\'92Ivoire)\par
+\b Tertiaire :\b0{} Institutions (\'e9glises, mosqu\'e9es, associations de village)\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 7.2 Avantage concurrentiel\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\pard\sa40\li600\f1\fs20 \bullet{} \b Seul\b0{} outil de g\'e9n\'e9alogie con\'e7u pour les familles polygames\par
+\pard\sa40\li600\f1\fs20 \bullet{} Support des langues et noms africains (noms compos\'e9s, accents)\par
+\pard\sa40\li600\f1\fs20 \bullet{} Interface adapt\'e9e aux bas d\'e9bits (skeleton loading, PWA)\par
+\pard\sa40\li600\f1\fs20 \bullet{} Stories audio (tradition orale africaine num\'e9ris\'e9e)\par
+\pard\sa40\li600\f1\fs20 \bullet{} Ancestry.com et FamilySearch ne comprennent pas la g\'e9n\'e9alogie africaine\par
+
+\pard\sa100\sb200\f1\fs26\b\cf3 7.3 Canaux d\'92acquisition\par
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\pard\sa40\li600\f1\fs20 錒{} \b WhatsApp\b0{} \emdash{} le vrai canal roi en Afrique (groupes familiaux)\par
+\pard\sa40\li600\f1\fs20 錓{} \b Associations diaspora\b0{} \emdash{} partenariats avec foyers culturels\par
+\pard\sa40\li600\f1\fs20 錔{} \b TikTok / YouTube\b0{} \emdash{} contenu \'e9ducatif (comment retrouver ses anc\'eatres)\par
+\pard\sa40\li600\f1\fs20 錕{} \b C\'e9r\'e9monies\b0{} \emdash{} pr\'e9senter l\'92app aux baptemes, mariages\par
+\pard\sa40\li600\f1\fs20 錖{} \b Influenceurs diaspora\b0{} \emdash{} bloggers, youtubeurs afro\par
+
+\pard\sa100\sb400\f1\fs32\b\cf2 8. ESTIMATION EFFORT DE D\'c9VELOPPEMENT\par
+
+\pard\sa60\li400\f1\fs20\b0\cf0
+
+\b Stories compl\'e8tes :\b0{} 3\emdash{}4 semaines (dev front + back)\par
+\b Timeline CRUD :\b0{} 1\emdash{}2 semaines\par
+\b Jeux (quiz) :\b0{} 2 semaines\par
+\b Notifications email :\b0{} 1 semaine (int\'e9gration Sendgrid)\par
+\b PWA :\b0{} 3 jours\par
+\b GEDCOM import/export :\b0{} 2 semaines\par
+\b Albums photos :\b0{} 1 semaine\par
+\b Recherche globale :\b0{} 1 semaine\par
+\b R\'e9init. mot de passe :\b0{} 3 jours\par
+\b Landing page :\b0{} 1 semaine (design + dev)\par
+\b Syst\'e8me paiement (Stripe/CinetPay) :\b0{} 2 semaines\par
+\b App Flutter MVP :\b0{} 3\emdash{}4 mois (1 d\'e9veloppeur)\par
+\par
+\b TOTAL phase 1+2 : environ 3\emdash{}4 mois de travail (1 dev full-stack)\b0\par
+\b TOTAL phase 3 (mobile) : 4\emdash{}6 mois suppl\'e9mentaires\b0\par
+
+\pard\sa100\sb400\f1\fs32\b\cf2 9. CONCLUSION\par
+
+\pard\sa100\f1\fs20\b0\cf0
+Mam Buudu a une base solide et un positionnement unique sur un march\'e9 non servi. Les fonctionnalit\'e9s c\'e9ur (arbre, membres, unions) sont robustes. L\'92app manque principalement de :
+
+\pard\sa60\li400\f1\fs20 1. \b Contenu vivant\b0{} (stories, timeline r\'e9elle, jeux)\par
+\pard\sa60\li400\f1\fs20 2. \b Communication\b0{} (notifications, emails)\par
+\pard\sa60\li400\f1\fs20 3. \b Mobile natif\b0{} (le march\'e9 africain est mobile-first)\par
+\pard\sa60\li400\f1\fs20 4. \b Mon\'e9tisation\b0{} (aucun syst\'e8me de paiement en place)\par
+\pard\sa60\li400\f1\fs20 5. \b Visibilit\'e9\b0{} (landing page, SEO, r\'e9seaux sociaux)\par
+
+\pard\sa200\f1\fs20\cf0
+\b Le potentiel est r\'e9el. La prochaine \'e9tape critique : d\'e9ployer la PWA, lancer les stories audio, activer le syst\'e8me freemium avec paiement mobile (CinetPay / Orange Money), et cibler les groupes WhatsApp de la diaspora burkinab\'e8 en France.\b0\par
+
+\pard\sa200\f1\fs18\i\cf0\qr
+Document g\'e9n\'e9r\'e9 par le Lead Developer Mam Buudu \emdash{} Juin 2026\par
+Confidentiel \emdash{} Usage interne\par
+}

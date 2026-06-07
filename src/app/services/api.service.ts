@@ -61,6 +61,12 @@ export class ApiService {
     return this.http.post<{ mediaUrl: string; mediaType: string }>(`${this.base}/api/uploads/story-media`, formData);
   }
 
+  uploadStoryAudio(blob: Blob): Observable<{ mediaUrl: string; mediaType: string; duration: number | null }> {
+    const formData = new FormData();
+    formData.append('audio', blob, 'enregistrement.webm');
+    return this.http.post<any>(`${this.base}/api/uploads/story-audio`, formData);
+  }
+
   deletePhoto(personneId: string): Observable<void> {
     return this.http.delete<void>(`${this.base}/api/uploads/photo/${personneId}`);
   }
@@ -161,6 +167,35 @@ export class ApiService {
   pullChanges(since: string): Observable<any> {
     return this.http.get<any>(`${this.base}/api/sync/pull`, {
       params: new HttpParams().set('since', since),
+    });
+  }
+
+  /* === Albums photos === */
+  getPhotos(personneId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.base}/api/photos/${personneId}`);
+  }
+
+  uploadAlbumPhoto(personneId: string, file: File, meta?: { caption?: string; datePrise?: string; lieuPrise?: string }): Observable<any> {
+    const fd = new FormData();
+    fd.append('photo', file);
+    if (meta?.caption)   fd.append('caption',   meta.caption);
+    if (meta?.datePrise) fd.append('datePrise',  meta.datePrise);
+    if (meta?.lieuPrise) fd.append('lieuPrise',  meta.lieuPrise);
+    return this.http.post<any>(`${this.base}/api/photos/${personneId}`, fd);
+  }
+
+  deleteAlbumPhoto(photoId: string): Observable<void> {
+    return this.http.delete<void>(`${this.base}/api/photos/${photoId}`);
+  }
+
+  updateAlbumPhoto(photoId: string, data: { caption?: string; datePrise?: string; lieuPrise?: string }): Observable<any> {
+    return this.http.patch<any>(`${this.base}/api/photos/${photoId}`, data);
+  }
+
+  /* === Recherche globale === */
+  search(q: string): Observable<{ personnes: any[]; stories: any[]; unions: any[] }> {
+    return this.http.get<any>(`${this.base}/api/search`, {
+      params: new HttpParams().set('q', q),
     });
   }
 }

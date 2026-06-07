@@ -84,6 +84,15 @@ export class PersonnesComponent implements OnInit {
   showDetail = false;
   detailTarget: Personne | null = null;
 
+  /* ---- Album photos ---- */
+  albumPhotos:    any[]    = [];
+  albumLoading  = false;
+  albumUploading = false;
+  albumLightbox: any | null = null;
+  albumUploadFile: File | null = null;
+  albumUploadPreview: string | null = null;
+  albumMeta = { caption: '', datePrise: '', lieuPrise: '' };
+
   /* ---- Vue ---- */
   viewMode: 'cards' | 'list' = 'cards';
 
@@ -212,6 +221,56 @@ export class PersonnesComponent implements OnInit {
   openDetail(p: Personne): void {
     this.detailTarget = p;
     this.showDetail = true;
+    this.loadAlbum(p.id);
+  }
+
+  loadAlbum(personneId: string): void {
+    this.albumPhotos  = [];
+    this.albumLoading = true;
+    this.api.getPhotos(personneId).subscribe({
+      next:  photos => { this.albumPhotos = photos; this.albumLoading = false; },
+      error: ()     => { this.albumLoading = false; },
+    });
+  }
+
+  onAlbumFileSelected(event: Event): void {
+    const file = (event.target as HTMLInputElement).files?.[0];
+    if (!file) return;
+    this.albumUploadFile = file;
+    const reader = new FileReader();
+    reader.onload = e => { this.albumUploadPreview = e.target?.result as string; };
+    reader.readAsDataURL(file);
+  }
+
+  uploadAlbumPhoto(): void {
+    if (!this.albumUploadFile || !this.detailTarget || this.albumUploading) return;
+    this.albumUploading = true;
+    this.api.uploadAlbumPhoto(this.detailTarget.id, this.albumUploadFile, {
+      caption:   this.albumMeta.caption   || undefined,
+      datePrise: this.albumMeta.datePrise || undefined,
+      lieuPrise: this.albumMeta.lieuPrise || undefined,
+    }).subscribe({
+      next: photo => {
+        this.albumPhotos  = [photo, ...this.albumPhotos];
+        this.albumUploading    = false;
+        this.albumUploadFile   = null;
+        this.albumUploadPreview = null;
+        this.albumMeta = { caption: '', datePrise: '', lieuPrise: '' };
+      },
+      error: () => { this.albumUploading = false; },
+    });
+  }
+
+  cancelAlbumUpload(): void {
+    this.albumUploadFile    = null;
+    this.albumUploadPreview = null;
+    this.albumMeta = { caption: '', datePrise: '', lieuPrise: '' };
+  }
+
+  deleteAlbumPhoto(photo: any): void {
+    this.api.deleteAlbumPhoto(photo.id).subscribe({
+      next: () => { this.albumPhotos = this.albumPhotos.filter(p => p.id !== photo.id); },
+    });
   }
 
   confirmDelete(p: Personne, event?: Event): void {
