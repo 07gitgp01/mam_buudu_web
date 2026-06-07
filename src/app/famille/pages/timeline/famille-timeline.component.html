@@ -3,11 +3,14 @@
   <div class="ft-header">
     <div>
       <h2 class="ft-title">Ligne du temps</h2>
-      <p class="ft-subtitle">Les grands moments de l'histoire familiale</p>
+      <p class="ft-subtitle" *ngIf="!loading">
+        {{ events.length }} événement{{ events.length > 1 ? 's' : '' }} familiaux
+      </p>
     </div>
   </div>
 
-  <div class="ft-filtres">
+  <!-- Filtres -->
+  <div class="ft-filtres" *ngIf="!loading">
     <button class="ft-filtre" *ngFor="let f of filtres"
             [class.active]="filtreActif === f.key"
             (click)="filtreActif = f.key">
@@ -16,27 +19,52 @@
     </button>
   </div>
 
-  <div class="ft-timeline">
-    <div class="ft-line"></div>
-
-    <div class="ft-event" *ngFor="let e of eventsFiltres; let i = index" [class.right]="i % 2 === 0">
-      <div class="ft-event-dot" [style.background]="typeConfig(e.type).color">
-        <span class="material-icons-round">{{ typeConfig(e.type).icon }}</span>
-      </div>
-
-      <div class="ft-event-card">
-        <div class="ft-event-date">{{ e.date }}</div>
-        <div class="ft-event-type-badge"
-             [style.background]="typeConfig(e.type).bg"
-             [style.color]="typeConfig(e.type).color">
-          <span class="material-icons-round">{{ typeConfig(e.type).icon }}</span>
-          {{ typeConfig(e.type).label }}
+  <!-- Skeleton -->
+  <ng-container *ngIf="loading">
+    <div class="ft-filtres">
+      <div class="sk-line" *ngFor="let _ of [1,2,3,4]" style="width:80px;height:34px;border-radius:30px"></div>
+    </div>
+    <div class="ft-timeline">
+      <div class="ft-line"></div>
+      <div class="ft-event" *ngFor="let _ of [1,2,3,4]; let i = index" [class.right]="i % 2 === 0">
+        <div class="ft-event-dot" style="background:#E5E7EB">
+          <span class="material-icons-round" style="color:#9CA3AF">radio_button_unchecked</span>
         </div>
-        <h3 class="ft-event-title">{{ e.titre }}</h3>
-        <p class="ft-event-desc">{{ e.description }}</p>
-        <div class="ft-event-author">
-          <span class="material-icons-round">person</span>
-          {{ e.auteur }}
+        <div class="ft-event-card" style="display:flex;flex-direction:column;gap:8px">
+          <div class="sk-line sk-sm" style="width:60px"></div>
+          <div class="sk-line sk-xs" style="width:80px"></div>
+          <div class="sk-line sk-md"></div>
+          <div class="sk-line sk-full"></div>
+          <div class="sk-line sk-full"></div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- Timeline réelle -->
+  <ng-container *ngIf="!loading">
+    <div class="ft-timeline" *ngIf="eventsFiltres.length > 0">
+      <div class="ft-line"></div>
+
+      <div class="ft-event" *ngFor="let e of eventsFiltres; let i = index" [class.right]="i % 2 === 0">
+        <div class="ft-event-dot" [style.background]="typeConfig(e.type).color">
+          <span class="material-icons-round">{{ typeConfig(e.type).icon }}</span>
+        </div>
+
+        <div class="ft-event-card">
+          <div class="ft-event-date">{{ e.date }}</div>
+          <div class="ft-event-type-badge"
+               [style.background]="typeConfig(e.type).bg"
+               [style.color]="typeConfig(e.type).color">
+            <span class="material-icons-round">{{ typeConfig(e.type).icon }}</span>
+            {{ typeConfig(e.type).label }}
+          </div>
+          <h3 class="ft-event-title">{{ e.titre }}</h3>
+          <p class="ft-event-desc">{{ e.description }}</p>
+          <div class="ft-event-author" *ngIf="e.personne">
+            <span class="material-icons-round">person</span>
+            {{ e.personne }}
+          </div>
         </div>
       </div>
     </div>
@@ -45,6 +73,6 @@
       <span class="material-icons-round">timeline</span>
       <p>Aucun événement pour ce filtre</p>
     </div>
-  </div>
+  </ng-container>
 
 </div>

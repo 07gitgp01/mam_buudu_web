@@ -1,71 +1,205 @@
 <div class="fs-page">
 
+  <!-- En-tête -->
   <div class="fs-header">
     <div>
       <h2 class="fs-title">Stories familiales</h2>
-      <p class="fs-subtitle">{{ storiesFiltrees.length }} histoire{{ storiesFiltrees.length > 1 ? 's' : '' }} partagée{{ storiesFiltrees.length > 1 ? 's' : '' }}</p>
+      <p class="fs-subtitle" *ngIf="!loading">
+        {{ storiesFiltrees.length }} histoire{{ storiesFiltrees.length > 1 ? 's' : '' }} partagée{{ storiesFiltrees.length > 1 ? 's' : '' }}
+      </p>
     </div>
+    <button class="fs-new-btn" (click)="openForm()">
+      <span class="material-icons-round">add</span>
+      Partager
+    </button>
   </div>
 
-  <div class="fs-toolbar">
-    <div class="search-bar">
-      <span class="material-icons-round">search</span>
-      <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher une story..." />
+  <!-- Skeleton chargement -->
+  <ng-container *ngIf="loading">
+    <div class="fs-sk-grid">
+      <div class="fs-sk-card" *ngFor="let _ of [1,2,3,4,5,6]">
+        <div class="fs-sk-header">
+          <div class="sk-avatar-sq sk-av-md"></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:6px">
+            <div class="sk-line sk-md"></div>
+            <div class="sk-line sk-sm"></div>
+          </div>
+          <div class="sk-line sk-xs"></div>
+        </div>
+        <div style="padding:0 20px 16px;display:flex;flex-direction:column;gap:8px">
+          <div class="sk-line sk-lg"></div>
+          <div class="sk-line sk-full"></div>
+          <div class="sk-line sk-full"></div>
+          <div class="sk-line" style="width:55%"></div>
+        </div>
+      </div>
     </div>
-    <div class="fs-tags">
-      <button class="fs-tag-btn" *ngFor="let t of tags"
-              [class.active]="selectedTag === t"
-              (click)="selectedTag = t">
-        {{ t === 'tous' ? 'Toutes' : t }}
+  </ng-container>
+
+  <!-- Contenu chargé -->
+  <ng-container *ngIf="!loading">
+
+    <!-- Toolbar -->
+    <div class="fs-toolbar">
+      <div class="fs-search-bar">
+        <span class="material-icons-round">search</span>
+        <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher une story..." />
+        <button class="fs-search-clear" *ngIf="searchQuery" (click)="searchQuery = ''">
+          <span class="material-icons-round">close</span>
+        </button>
+      </div>
+      <div class="fs-tags">
+        <button class="fs-tag-btn" *ngFor="let t of tags"
+                [class.active]="selectedTag === t"
+                (click)="selectedTag = t">
+          {{ t === 'tous' ? 'Toutes' : t }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Grille stories -->
+    <div class="fs-grid" *ngIf="storiesFiltrees.length > 0">
+      <div class="fs-card" *ngFor="let s of storiesFiltrees">
+
+        <div class="fs-card-header">
+          <div class="fs-author">
+            <div class="fs-author-avatar"
+                 [class.male]="s.auteurSexe === 'M'"
+                 [class.female]="s.auteurSexe === 'F'">
+              {{ initiales(s) }}
+            </div>
+            <div class="fs-author-info">
+              <span class="fs-author-name">{{ nomComplet(s) }}</span>
+              <span class="fs-author-date">{{ formatDate(s.createdAt) }}</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span class="fs-tag-badge"
+                  [style.background]="tagColor(s.tag ?? '').bg"
+                  [style.color]="tagColor(s.tag ?? '').color">
+              {{ s.tag }}
+            </span>
+            <button class="fs-delete-btn" *ngIf="isMyStory(s)" (click)="deleteStory(s.id)" title="Supprimer">
+              <span class="material-icons-round">delete_outline</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="fs-card-media" *ngIf="s.mediaUrl">
+          <img *ngIf="s.mediaType === 'photo'" [src]="s.mediaUrl" class="fs-card-media-img" loading="lazy" alt="" />
+          <video *ngIf="s.mediaType === 'video'" [src]="s.mediaUrl" class="fs-card-media-video" controls></video>
+        </div>
+
+        <div class="fs-card-body">
+          <h3 class="fs-card-title" *ngIf="s.titre">{{ s.titre }}</h3>
+          <p class="fs-card-text" *ngIf="s.caption">{{ s.caption }}</p>
+        </div>
+
+        <div class="fs-card-footer">
+          <button class="fs-action-btn" [class.liked]="s.isLikedByMe" (click)="toggleLike(s)">
+            <span class="material-icons-round">{{ s.isLikedByMe ? 'favorite' : 'favorite_border' }}</span>
+            <span>{{ s.likesCount }}</span>
+          </button>
+          <button class="fs-action-btn">
+            <span class="material-icons-round">chat_bubble_outline</span>
+            <span>{{ s.commentairesCount }}</span>
+          </button>
+          <button class="fs-action-btn fs-share-btn">
+            <span class="material-icons-round">share</span>
+            <span>Partager</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Empty state -->
+    <div class="empty-state" *ngIf="storiesFiltrees.length === 0">
+      <span class="material-icons-round">auto_stories</span>
+      <h3>Aucune story trouvée</h3>
+      <p *ngIf="searchQuery || selectedTag !== 'tous'">Essayez un autre filtre ou terme de recherche.</p>
+      <p *ngIf="!searchQuery && selectedTag === 'tous'">Partagez le premier souvenir de la famille !</p>
+      <button class="fs-new-btn" *ngIf="!searchQuery && selectedTag === 'tous'" (click)="openForm()">
+        <span class="material-icons-round">add</span>
+        Partager une story
+      </button>
+    </div>
+
+  </ng-container>
+
+</div>
+
+<!-- ===== MODAL CRÉER STORY ===== -->
+<div class="fs-modal-overlay" *ngIf="showForm" (click)="showForm = false">
+  <div class="fs-modal" (click)="$event.stopPropagation()">
+    <div class="fs-modal-head">
+      <h3>
+        <span class="material-icons-round">auto_stories</span>
+        Partager une story
+      </h3>
+      <button class="fs-modal-close" (click)="showForm = false">
+        <span class="material-icons-round">close</span>
+      </button>
+    </div>
+
+    <div class="fs-modal-body">
+
+      <!-- Média -->
+      <div class="fs-form-group">
+        <label>Photo ou vidéo <span class="fs-optional">(optionnel)</span></label>
+        <div class="fs-media-preview" *ngIf="form.mediaPreview">
+          <img *ngIf="form.mediaType === 'photo'" [src]="form.mediaPreview" class="fs-media-img" alt="" />
+          <video *ngIf="form.mediaType === 'video'" [src]="form.mediaPreview" class="fs-media-video" controls></video>
+          <button class="fs-media-remove" type="button" (click)="removeMedia()">
+            <span class="material-icons-round">close</span>
+          </button>
+        </div>
+        <label class="fs-media-picker" *ngIf="!form.mediaPreview">
+          <input type="file" accept="image/*,video/*" (change)="onMediaSelected($event)" hidden />
+          <span class="material-icons-round">add_photo_alternate</span>
+          <span>Ajouter une photo ou vidéo</span>
+        </label>
+      </div>
+
+      <div class="fs-form-group">
+        <label>Titre <span class="fs-optional">(optionnel)</span></label>
+        <input type="text" [(ngModel)]="form.titre"
+               placeholder="Ex : Mariage de tante Kadiatou…"
+               class="fs-input" />
+      </div>
+
+      <div class="fs-form-group">
+        <label>Catégorie</label>
+        <div class="fs-tag-picker">
+          <button class="fs-tag-pick"
+                  *ngFor="let t of tagOptions"
+                  [class.selected]="form.tag === t"
+                  [style.background]="form.tag === t ? tagColor(t).bg : ''"
+                  [style.color]="form.tag === t ? tagColor(t).color : ''"
+                  [style.borderColor]="form.tag === t ? tagColor(t).color : ''"
+                  (click)="form.tag = t">
+            {{ t }}
+          </button>
+        </div>
+      </div>
+
+      <div class="fs-form-group">
+        <label>Votre histoire *</label>
+        <textarea [(ngModel)]="form.caption" rows="5"
+                  placeholder="Racontez ce beau moment à toute la famille…"
+                  class="fs-input fs-textarea"></textarea>
+      </div>
+    </div>
+
+    <div class="fs-modal-foot">
+      <button class="fs-btn-cancel" (click)="showForm = false">Annuler</button>
+      <button class="fs-btn-submit"
+              [disabled]="saving || (!form.caption.trim() && !form.mediaFile)"
+              (click)="submitForm()">
+        <span class="material-icons-round spin" *ngIf="saving">sync</span>
+        <span class="material-icons-round" *ngIf="!saving">send</span>
+        {{ saving ? 'Publication…' : 'Publier' }}
       </button>
     </div>
   </div>
-
-  <div class="fs-grid" *ngIf="storiesFiltrees.length > 0">
-    <div class="fs-card" *ngFor="let s of storiesFiltrees">
-      <div class="fs-card-header">
-        <div class="fs-author">
-          <div class="fs-author-avatar" [class.male]="s.sexe === 'M'" [class.female]="s.sexe === 'F'">
-            {{ s.initiales }}
-          </div>
-          <div class="fs-author-info">
-            <span class="fs-author-name">{{ s.auteur }}</span>
-            <span class="fs-author-date">{{ s.date }}</span>
-          </div>
-        </div>
-        <span class="fs-tag-badge"
-              [style.background]="tagColor(s.tag).bg"
-              [style.color]="tagColor(s.tag).color">
-          {{ s.tag }}
-        </span>
-      </div>
-
-      <div class="fs-card-body">
-        <h3 class="fs-card-title">{{ s.titre }}</h3>
-        <p class="fs-card-text">{{ s.contenu }}</p>
-      </div>
-
-      <div class="fs-card-footer">
-        <button class="fs-action-btn" [class.liked]="s.liked" (click)="toggleLike(s)">
-          <span class="material-icons-round">{{ s.liked ? 'favorite' : 'favorite_border' }}</span>
-          <span>{{ s.likes }}</span>
-        </button>
-        <button class="fs-action-btn">
-          <span class="material-icons-round">chat_bubble_outline</span>
-          <span>{{ s.commentaires }}</span>
-        </button>
-        <button class="fs-action-btn fs-share-btn">
-          <span class="material-icons-round">share</span>
-          <span>Partager</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="empty-state" *ngIf="storiesFiltrees.length === 0">
-    <span class="material-icons-round">auto_stories</span>
-    <h3>Aucune story trouvée</h3>
-    <p>Essayez un autre filtre ou terme de recherche.</p>
-  </div>
-
 </div>

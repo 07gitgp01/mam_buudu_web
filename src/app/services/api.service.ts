@@ -5,6 +5,7 @@ import { API_BASE_URL } from '../core/api.config';
 import { Personne } from '../models/personne.model';
 import { Union } from '../models/union.model';
 import { Famille } from '../models/utilisateur.model';
+import { Story } from '../models/story.model';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
@@ -54,6 +55,12 @@ export class ApiService {
     return this.http.post<{ photoUrl: string }>(`${this.base}/api/uploads/photo/${personneId}`, formData);
   }
 
+  uploadStoryMedia(file: File): Observable<{ mediaUrl: string; mediaType: string }> {
+    const formData = new FormData();
+    formData.append('media', file);
+    return this.http.post<{ mediaUrl: string; mediaType: string }>(`${this.base}/api/uploads/story-media`, formData);
+  }
+
   deletePhoto(personneId: string): Observable<void> {
     return this.http.delete<void>(`${this.base}/api/uploads/photo/${personneId}`);
   }
@@ -101,6 +108,53 @@ export class ApiService {
 
   getViewonlyCredentials(): Observable<{ viewonlyUsername: string; viewonlyPassword: string; familleCode: string }> {
     return this.http.get<any>(`${this.base}/api/auth/viewonly-credentials`);
+  }
+
+  /* === Stories === */
+  getStories(): Observable<Story[]> {
+    return this.http.get<Story[]>(`${this.base}/api/stories`);
+  }
+
+  createStory(data: { titre?: string; caption: string; tag?: string; mediaUrl?: string; mediaType?: string; expiresAt?: string; privacy?: string }): Observable<Story> {
+    return this.http.post<Story>(`${this.base}/api/stories`, data);
+  }
+
+  deleteStory(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.base}/api/stories/${id}`);
+  }
+
+  // Réactions (emoji ou ❤️ simple)
+  reactToStory(id: string, emoji = '❤️'): Observable<void> {
+    return this.http.post<void>(`${this.base}/api/stories/${id}/react`, { emoji });
+  }
+
+  removeReactionFromStory(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.base}/api/stories/${id}/react`);
+  }
+
+  // Compat anciens appels like/unlike → redirigés vers react
+  likeStory(id: string): Observable<void> {
+    return this.reactToStory(id, '❤️');
+  }
+
+  unlikeStory(id: string): Observable<void> {
+    return this.removeReactionFromStory(id);
+  }
+
+  markStoryViewed(id: string): Observable<void> {
+    return this.http.post<void>(`${this.base}/api/stories/${id}/view`, {});
+  }
+
+  getStoryComments(id: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.base}/api/stories/${id}/comments`);
+  }
+
+  addStoryComment(id: string, content: string, parentId?: string): Observable<any> {
+    return this.http.post<any>(`${this.base}/api/stories/${id}/comments`, { content, parentId });
+  }
+
+  deleteStoryComment(storyId: string, commentId: string): Observable<void> {
+    return this.http.delete<void>(`${this.base}/api/stories/${storyId}/comments/${commentId}`);
   }
 
   /* === Sync === */

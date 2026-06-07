@@ -1,4 +1,4 @@
-<div class="page-header">
+<div class="page-header" *ngIf="gameState === 'menu'">
   <div class="header-row">
     <div>
       <h2>Jeux familiaux</h2>
@@ -7,51 +7,187 @@
   </div>
 </div>
 
-<!-- STATS JOUEUR -->
-<div class="player-stats mb-32">
-  <div class="player-stat" *ngFor="let s of stats" [class]="'player-stat--' + s.color">
-    <span class="material-icons-round">{{ s.icon }}</span>
-    <div>
-      <span class="stat-val">{{ s.value }}</span>
-      <span class="stat-lbl">{{ s.label }}</span>
+<!-- ===== MENU ===== -->
+<ng-container *ngIf="gameState === 'menu'">
+
+  <!-- Skeleton chargement -->
+  <div class="jeux-grid" *ngIf="loading">
+    <div class="jeu-card jeu-card--blue jeu-sk" *ngFor="let _ of [1,2,3,4,5,6]">
+      <div class="sk-avatar" style="width:52px;height:52px;border-radius:16px"></div>
+      <div class="jeu-body" style="display:flex;flex-direction:column;gap:8px;flex:1">
+        <div class="sk-line sk-md"></div>
+        <div class="sk-line sk-full"></div>
+        <div class="sk-line" style="width:65%"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto">
+        <div class="sk-line sk-xs" style="width:56px;height:22px;border-radius:20px"></div>
+        <div class="sk-line sk-xs" style="width:64px;height:32px;border-radius:20px"></div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- GRILLE DES JEUX -->
-<div class="section-header mb-16">
-  <h3>Choisir un jeu</h3>
-  <span class="badge badge-primary">{{ jeux.length }} jeux disponibles</span>
-</div>
+  <!-- Grille des jeux -->
+  <div class="jeux-grid" *ngIf="!loading">
+    <div class="jeu-card" *ngFor="let j of jeux" [class]="'jeu-card--' + j.colorClass"
+         [class.jeu-locked]="!j.disponible">
 
-<div class="jeux-grid">
-  <div class="jeu-card" *ngFor="let j of jeux" [class]="'jeu-card--' + j.color">
-
-    <div class="jeu-icon">
-      <span class="material-icons-round">{{ j.icon }}</span>
-    </div>
-
-    <div class="jeu-body">
-      <h4>{{ j.titre }}</h4>
-      <p>{{ j.description }}</p>
-    </div>
-
-    <div class="jeu-meta">
-      <div class="jeu-info">
-        <span class="badge" [class]="j.difficulte === 'Facile' ? 'badge-success' : j.difficulte === 'Moyen' ? 'badge-warning' : 'badge-error'">
-          {{ j.difficulte }}
-        </span>
-        <span class="jeu-points">
-          <span class="material-icons-round">stars</span>
-          {{ j.points }} pts
-        </span>
-        <span class="jeu-joueurs">
-          <span class="material-icons-round">people</span>
-          {{ j.joueurs }}
+      <div class="jeu-icon">
+        <span class="material-icons-round">{{ j.icon }}</span>
+        <span class="jeu-lock-badge" *ngIf="!j.disponible">
+          <span class="material-icons-round">lock</span>
         </span>
       </div>
-      <button class="btn-primary btn-sm">Jouer</button>
+
+      <div class="jeu-body">
+        <h4>{{ j.titre }}</h4>
+        <p>{{ j.description }}</p>
+      </div>
+
+      <div class="jeu-meta">
+        <div class="jeu-info">
+          <span class="badge" [class]="j.difficulte === 'Facile' ? 'badge-success' : j.difficulte === 'Difficile' ? 'badge-error' : 'badge-warning'">
+            {{ j.difficulte }}
+          </span>
+          <span class="jeu-points">
+            <span class="material-icons-round">stars</span>
+            {{ j.points }} pts
+          </span>
+        </div>
+        <button class="btn-primary btn-sm"
+                *ngIf="j.disponible"
+                (click)="lancerJeu(j.id)">
+          Jouer
+        </button>
+        <span class="jeu-soon" *ngIf="!j.disponible">Bientôt</span>
+      </div>
+    </div>
+  </div>
+
+</ng-container>
+
+<!-- ===== QUIZ EN COURS ===== -->
+<ng-container *ngIf="gameState === 'playing' && currentQuestion">
+
+  <div class="quiz-container">
+
+    <!-- Header quiz -->
+    <div class="quiz-header">
+      <div class="quiz-header-left">
+        <button class="quiz-back-btn" (click)="rejouer()">
+          <span class="material-icons-round">arrow_back</span>
+        </button>
+        <span class="quiz-title">Quiz Familial</span>
+      </div>
+      <div class="quiz-score-chip">
+        <span class="material-icons-round">stars</span>
+        {{ score }} pts
+      </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-fill" [style.width.%]="(currentIdx / totalQuestions) * 100"></div>
+    </div>
+    <div class="quiz-progress-label">
+      Question {{ currentIdx + 1 }} / {{ totalQuestions }}
+    </div>
+
+    <!-- Timer + question -->
+    <div class="quiz-question-area">
+      <div class="quiz-timer" [class.danger]="timer <= 5">
+        <svg viewBox="0 0 36 36" class="quiz-timer-svg">
+          <circle cx="18" cy="18" r="15" fill="none" stroke="#E5E7EB" stroke-width="3"/>
+          <circle cx="18" cy="18" r="15" fill="none"
+                  [attr.stroke]="timer <= 5 ? '#EF4444' : '#2563EB'"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  [attr.stroke-dasharray]="94.2"
+                  [attr.stroke-dashoffset]="94.2 - (timer / 15) * 94.2"
+                  transform="rotate(-90 18 18)"/>
+        </svg>
+        <span class="quiz-timer-val" [class.danger]="timer <= 5">{{ timer }}</span>
+      </div>
+
+      <div class="quiz-question">
+        {{ currentQuestion.question }}
+      </div>
+    </div>
+
+    <!-- Options de réponse -->
+    <div class="quiz-options">
+      <button class="quiz-option"
+              *ngFor="let opt of currentQuestion.options; let i = index"
+              [class]="optionClass(opt)"
+              [disabled]="answered"
+              (click)="choisirReponse(opt)">
+        <span class="quiz-option-letter">{{ ['A','B','C','D'][i] }}</span>
+        {{ opt }}
+        <span class="quiz-option-icon" *ngIf="answered && opt === currentQuestion.reponse">
+          <span class="material-icons-round">check_circle</span>
+        </span>
+        <span class="quiz-option-icon" *ngIf="answered && opt === selectedAnswer && opt !== currentQuestion.reponse">
+          <span class="material-icons-round">cancel</span>
+        </span>
+      </button>
+    </div>
+
+    <!-- Explication + bouton suivant -->
+    <div class="quiz-feedback" *ngIf="answered">
+      <div class="quiz-feedback-text" *ngIf="currentQuestion.explication">
+        <span class="material-icons-round">info</span>
+        {{ currentQuestion.explication }}
+      </div>
+      <button class="btn-primary quiz-next-btn" (click)="question_suivante()">
+        {{ currentIdx < totalQuestions - 1 ? 'Question suivante' : 'Voir le résultat' }}
+        <span class="material-icons-round">arrow_forward</span>
+      </button>
+    </div>
+
+    <!-- Timeout -->
+    <div class="quiz-timeout" *ngIf="answered && selectedAnswer === ''">
+      <span class="material-icons-round">timer_off</span>
+      Temps écoulé !
     </div>
 
   </div>
-</div>
+
+</ng-container>
+
+<!-- ===== RÉSULTATS ===== -->
+<ng-container *ngIf="gameState === 'result'">
+  <div class="quiz-result">
+
+    <div class="result-trophy" [class.gold]="score >= totalQuestions * 8" [class.silver]="score >= totalQuestions * 5 && score < totalQuestions * 8">
+      <span class="material-icons-round">emoji_events</span>
+    </div>
+
+    <h2 class="result-label">{{ scoreLabel }}</h2>
+
+    <div class="result-score">
+      <span class="result-score-val">{{ score }}</span>
+      <span class="result-score-max"> / {{ totalQuestions * 10 }} pts</span>
+    </div>
+
+    <div class="result-stats">
+      <div class="result-stat">
+        <span class="material-icons-round">quiz</span>
+        <span>{{ totalQuestions }} questions</span>
+      </div>
+      <div class="result-stat">
+        <span class="material-icons-round">check_circle</span>
+        <span>{{ score > 0 ? (score / 10 | number:'1.0-0') : 0 }} correctes</span>
+      </div>
+    </div>
+
+    <div class="result-actions">
+      <button class="btn-secondary" (click)="rejouer()">
+        <span class="material-icons-round">arrow_back</span>
+        Retour
+      </button>
+      <button class="btn-primary" (click)="lancerJeu('quiz')">
+        <span class="material-icons-round">replay</span>
+        Rejouer
+      </button>
+    </div>
+  </div>
+</ng-container>

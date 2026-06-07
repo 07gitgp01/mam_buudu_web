@@ -4,65 +4,220 @@
       <h2>Stories familiales</h2>
       <p>Partagez des moments forts avec votre famille</p>
     </div>
-    <button class="btn-primary">
+    <button class="btn-primary" (click)="openForm()">
       <span class="material-icons-round">add</span>
       Nouvelle story
     </button>
   </div>
 </div>
 
-<!-- STORIES CIRCLES (style Instagram) -->
-<div class="stories-circles mb-32">
-  <div class="story-circle add-story">
-    <div class="story-avatar add">
-      <span class="material-icons-round">add</span>
+<!-- ===== SKELETON ===== -->
+<ng-container *ngIf="loading">
+  <div class="sk-circles">
+    <div class="sk-circle-item" *ngFor="let _ of [1,2,3,4,5]">
+      <div class="sk-avatar sk-av-lg"></div>
+      <div class="sk-line sk-xs" style="width:48px;margin:6px auto 0"></div>
     </div>
-    <span class="story-author">Ma story</span>
   </div>
-  <div class="story-circle" *ngFor="let s of stories">
-    <div class="story-avatar" [class.female]="s.genre === 'F'" [class.male]="s.genre === 'M'">
-      {{ s.initiales }}
-    </div>
-    <span class="story-author">{{ s.auteur.split(' ')[0] }}</span>
-  </div>
-</div>
-
-<!-- FEED DES STORIES -->
-<div class="stories-feed">
-  <div class="story-card" *ngFor="let s of stories">
-
-    <div class="story-card-header">
-      <div class="story-meta">
-        <div class="avatar avatar-md" [class.female]="s.genre === 'F'" [class.male]="s.genre === 'M'">
-          {{ s.initiales }}
+  <div class="stories-sk-grid mt-16">
+    <div class="story-card" *ngFor="let _ of [1,2,3,4,5,6]">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 20px 14px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="sk-avatar-sq sk-av-md"></div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div class="sk-line sk-md"></div>
+            <div class="sk-line sk-sm"></div>
+          </div>
         </div>
-        <div>
-          <span class="story-name">{{ s.auteur }}</span>
-          <span class="story-date">{{ s.date }}</span>
+        <div class="sk-line sk-xs"></div>
+      </div>
+      <div style="padding:0 20px 16px;display:flex;flex-direction:column;gap:8px">
+        <div class="sk-line sk-lg"></div>
+        <div class="sk-line sk-full"></div>
+        <div class="sk-line sk-full"></div>
+        <div class="sk-line" style="width:55%"></div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<!-- ===== CONTENU PRINCIPAL ===== -->
+<ng-container *ngIf="!loading">
+
+  <!-- Cercles story style Instagram -->
+  <div class="stories-circles mb-24">
+    <div class="story-circle add-story" (click)="openForm()">
+      <div class="story-avatar add">
+        <span class="material-icons-round">add</span>
+      </div>
+      <span class="story-label">Ma story</span>
+    </div>
+    <div class="story-circle" *ngFor="let s of stories.slice(0, 8)">
+      <div class="story-avatar" [class.female]="s.auteurSexe === 'F'" [class.male]="s.auteurSexe === 'M'">
+        {{ initiales(s) }}
+      </div>
+      <span class="story-label">{{ s.auteurPrenom }}</span>
+    </div>
+  </div>
+
+  <!-- Toolbar recherche + filtres -->
+  <div class="stories-toolbar mb-20">
+    <div class="story-search">
+      <span class="material-icons-round">search</span>
+      <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher une story…" />
+      <button class="search-clear" *ngIf="searchQuery" (click)="searchQuery = ''">
+        <span class="material-icons-round">close</span>
+      </button>
+    </div>
+    <div class="story-tag-row">
+      <button class="story-tag-btn"
+              *ngFor="let t of tags"
+              [class.active]="selectedTag === t"
+              (click)="selectedTag = t">
+        {{ t === 'tous' ? 'Toutes' : t }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Grille stories -->
+  <div class="stories-grid" *ngIf="storiesFiltrees.length > 0">
+    <div class="story-card" *ngFor="let s of storiesFiltrees">
+
+      <div class="story-card-header">
+        <div class="sc-author">
+          <div class="sc-avatar" [class.male]="s.auteurSexe === 'M'" [class.female]="s.auteurSexe === 'F'">
+            {{ initiales(s) }}
+          </div>
+          <div class="sc-author-info">
+            <span class="story-name">{{ nomComplet(s) }}</span>
+            <span class="story-date">{{ formatDate(s.createdAt) }}</span>
+          </div>
+        </div>
+        <div class="story-header-right">
+          <span class="story-tag-badge" [style.background]="tagColor(s.tag ?? '').bg" [style.color]="tagColor(s.tag ?? '').color">
+            {{ s.tag }}
+          </span>
+          <button class="story-delete-btn" *ngIf="isMyStory(s)" (click)="deleteStory(s.id)" title="Supprimer">
+            <span class="material-icons-round">delete_outline</span>
+          </button>
         </div>
       </div>
-      <span class="badge" [class]="getTagClass(s.tag)">{{ s.tag }}</span>
+
+      <div class="story-media" *ngIf="s.mediaUrl">
+        <img *ngIf="s.mediaType === 'photo'" [src]="s.mediaUrl" class="story-media-img" loading="lazy" alt="" />
+        <video *ngIf="s.mediaType === 'video'" [src]="s.mediaUrl" class="story-media-video" controls></video>
+      </div>
+
+      <div class="story-card-body">
+        <h4 *ngIf="s.titre">{{ s.titre }}</h4>
+        <p *ngIf="s.caption">{{ s.caption }}</p>
+      </div>
+
+      <div class="story-card-footer">
+        <button class="reaction-btn" [class.liked]="s.isLikedByMe" (click)="toggleLike(s)">
+          <span class="material-icons-round">{{ s.isLikedByMe ? 'favorite' : 'favorite_border' }}</span>
+          {{ s.likesCount }}
+        </button>
+        <button class="reaction-btn">
+          <span class="material-icons-round">chat_bubble_outline</span>
+          {{ s.commentairesCount }}
+        </button>
+        <button class="reaction-btn reaction-share">
+          <span class="material-icons-round">share</span>
+          Partager
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Empty state -->
+  <div class="empty-state" *ngIf="storiesFiltrees.length === 0">
+    <span class="material-icons-round">auto_stories</span>
+    <h3>Aucune story</h3>
+    <p *ngIf="searchQuery || selectedTag !== 'tous'">Essayez un autre filtre ou terme de recherche.</p>
+    <p *ngIf="!searchQuery && selectedTag === 'tous'">Soyez le premier à partager un souvenir de la famille !</p>
+    <button class="btn-primary" *ngIf="!searchQuery && selectedTag === 'tous'" (click)="openForm()">
+      <span class="material-icons-round">add</span>
+      Créer une story
+    </button>
+  </div>
+
+</ng-container>
+
+<!-- ===== MODAL CRÉER STORY ===== -->
+<div class="modal-overlay" *ngIf="showForm" (click)="showForm = false">
+  <div class="story-modal" (click)="$event.stopPropagation()">
+    <div class="story-modal-head">
+      <h3>
+        <span class="material-icons-round">auto_stories</span>
+        Nouvelle story
+      </h3>
+      <button class="modal-close-btn" (click)="showForm = false">
+        <span class="material-icons-round">close</span>
+      </button>
     </div>
 
-    <div class="story-card-body">
-      <h4>{{ s.titre }}</h4>
-      <p>{{ s.contenu }}</p>
+    <div class="story-modal-body">
+
+      <!-- Média -->
+      <div class="form-group">
+        <label class="form-label">Photo ou vidéo <span class="form-optional">(optionnel)</span></label>
+        <div class="media-preview" *ngIf="form.mediaPreview">
+          <img *ngIf="form.mediaType === 'photo'" [src]="form.mediaPreview" class="media-preview-img" alt="" />
+          <video *ngIf="form.mediaType === 'video'" [src]="form.mediaPreview" class="media-preview-video" controls></video>
+          <button class="media-remove-btn" type="button" (click)="removeMedia()">
+            <span class="material-icons-round">close</span>
+          </button>
+        </div>
+        <label class="media-picker" *ngIf="!form.mediaPreview">
+          <input type="file" accept="image/*,video/*" (change)="onMediaSelected($event)" hidden />
+          <span class="material-icons-round">add_photo_alternate</span>
+          <span>Ajouter une photo ou vidéo</span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Titre <span class="form-optional">(optionnel)</span></label>
+        <input type="text"
+               [(ngModel)]="form.titre"
+               placeholder="Ex : Mariage de tonton Amadou…"
+               class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Catégorie</label>
+        <div class="tag-picker">
+          <button class="tag-pick-btn"
+                  *ngFor="let t of tagOptions"
+                  [class.selected]="form.tag === t"
+                  [style.background]="form.tag === t ? tagColor(t).bg : ''"
+                  [style.color]="form.tag === t ? tagColor(t).color : ''"
+                  [style.borderColor]="form.tag === t ? tagColor(t).color : ''"
+                  (click)="form.tag = t">
+            {{ t }}
+          </button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Votre histoire *</label>
+        <textarea [(ngModel)]="form.caption"
+                  rows="5"
+                  placeholder="Racontez ce moment important pour la famille…"
+                  class="form-control form-textarea"></textarea>
+      </div>
     </div>
 
-    <div class="story-card-footer">
-      <button class="reaction-btn">
-        <span class="material-icons-round">favorite_border</span>
-        {{ s.likes }}
-      </button>
-      <button class="reaction-btn">
-        <span class="material-icons-round">chat_bubble_outline</span>
-        {{ s.commentaires }}
-      </button>
-      <button class="reaction-btn">
-        <span class="material-icons-round">share</span>
-        Partager
+    <div class="story-modal-foot">
+      <button class="btn-secondary" (click)="showForm = false">Annuler</button>
+      <button class="btn-primary"
+              [disabled]="saving || (!form.caption.trim() && !form.mediaFile)"
+              (click)="submitForm()">
+        <span class="material-icons-round spin" *ngIf="saving">sync</span>
+        <span class="material-icons-round" *ngIf="!saving">send</span>
+        {{ saving ? 'Publication…' : 'Publier' }}
       </button>
     </div>
-
   </div>
 </div>

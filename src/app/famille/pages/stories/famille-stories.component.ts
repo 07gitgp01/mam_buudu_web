@@ -1,18 +1,8 @@
-import { Component } from '@angular/core';
-
-interface Story {
-  id: string;
-  auteur: string;
-  initiales: string;
-  sexe: 'M' | 'F';
-  titre: string;
-  contenu: string;
-  date: string;
-  likes: number;
-  commentaires: number;
-  tag: string;
-  liked: boolean;
-}
+import { Component, OnInit } from '@angular/core';
+import { catchError, of } from 'rxjs';
+import { Story, STORY_TAGS, STORY_TAG_COLORS } from '../../../models/story.model';
+import { ApiService } from '../../../services/api.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-famille-stories',
@@ -20,46 +10,134 @@ interface Story {
   styleUrl: './famille-stories.component.scss',
   standalone: false,
 })
-export class FamilleStoriesComponent {
+export class FamilleStoriesComponent implements OnInit {
+  loading = true;
+  stories: Story[] = [];
+
   searchQuery = '';
   selectedTag = 'tous';
+  readonly tags = ['tous', ...STORY_TAGS];
+  readonly tagOptions = [...STORY_TAGS];
+  readonly tagColors = STORY_TAG_COLORS;
 
-  tags = ['tous', 'Souvenir', 'Événement', 'Culture', 'Succès', 'Patrimoine', 'Naissance'];
+  showForm = false;
+  saving = false;
+  form: { titre: string; caption: string; tag: string; mediaFile: File | null; mediaPreview: string | null; mediaType: 'photo' | 'video' | null } =
+    { titre: '', caption: '', tag: 'Souvenir', mediaFile: null, mediaPreview: null, mediaType: null };
 
-  stories: Story[] = [
-    { id: '1', auteur: 'Ibrahim Diallo',    initiales: 'ID', sexe: 'M', titre: 'Photo de famille 1985',     contenu: 'Je viens de retrouver cette magnifique photo de la fête de l\'Aïd en 1985. Grand-père Moussa était si fier ce jour-là... Nous étions plus de 40 personnes réunies dans la grande cour.',       date: 'Il y a 2h',    likes: 14, commentaires: 5,  tag: 'Souvenir',   liked: false },
-    { id: '2', auteur: 'Fatoumata Konaté',  initiales: 'FK', sexe: 'F', titre: 'Mariage de oncle Oumar',    contenu: 'Les préparatifs du mariage de oncle Oumar avancent bien. Toute la famille sera réunie le mois prochain à Conakry. Les tantes ont déjà commencé à confectionner les tenues traditionnelles.',      date: 'Il y a 5h',    likes: 28, commentaires: 11, tag: 'Événement',  liked: true  },
-    { id: '3', auteur: 'Aminata Camara',    initiales: 'AC', sexe: 'F', titre: 'Recette de la grand-mère',  contenu: 'Grand-mère Aminata nous a partagé sa recette secrète du tiguadèguè. Une tradition familiale transmise de génération en génération. Il ne faut jamais oublier nos racines culinaires.',           date: 'Hier',         likes: 41, commentaires: 16, tag: 'Culture',    liked: false },
-    { id: '4', auteur: 'Seydou Baldé',      initiales: 'SB', sexe: 'M', titre: 'Succès académique !',       contenu: 'Fier d\'annoncer que je viens d\'obtenir mon Master en Informatique avec mention Très Bien ! Merci à toute la famille pour votre soutien sans faille tout au long de ces deux années difficiles.',   date: 'Il y a 2j',    likes: 56, commentaires: 23, tag: 'Succès',     liked: true  },
-    { id: '5', auteur: 'Mariam Traoré',     initiales: 'MT', sexe: 'F', titre: 'Village ancestral de Labé', contenu: 'J\'ai visité notre village ancestral à Labé en Guinée. Les anciens m\'ont raconté des histoires incroyables sur nos origines et les migrations de notre famille au fil des siècles.',              date: 'Il y a 3j',    likes: 33, commentaires: 9,  tag: 'Patrimoine', liked: false },
-    { id: '6', auteur: 'Oumar Diallo',      initiales: 'OD', sexe: 'M', titre: 'Bienvenue petite Kadiatou', contenu: 'C\'est avec une immense joie que nous accueillons la petite Kadiatou dans notre famille. Elle pèse 3,2kg, est en parfaite santé et a les yeux de sa grand-mère. Alhamdulillah !',                 date: 'Il y a 1sem',  likes: 72, commentaires: 31, tag: 'Naissance',  liked: false },
-    { id: '7', auteur: 'Kadiatou Sow',      initiales: 'KS', sexe: 'F', titre: 'Les photos de 1972',        contenu: 'J\'ai numérisé les anciennes photos de 1972. On peut y voir nos grands-parents jeunes, lors d\'une cérémonie au village. Ces visages nous rappellent d\'où nous venons.',                          date: 'Il y a 2sem',  likes: 45, commentaires: 18, tag: 'Souvenir',   liked: true  },
-    { id: '8', auteur: 'Mamadou Kouyaté',   initiales: 'MK', sexe: 'M', titre: 'Promotion au travail',      contenu: 'Je suis heureux de partager que j\'ai été promu directeur régional. C\'est le fruit de nombreuses années de travail et de la bénédiction de toute la famille. Baraka !',                            date: 'Il y a 3sem',  likes: 89, commentaires: 34, tag: 'Succès',     liked: false },
-  ];
+  constructor(private api: ApiService, public auth: AuthService) {}
+
+  ngOnInit(): void { this.load(); }
+
+  load(): void {
+    this.loading = true;
+    this.api.getStories().pipe(catchError(() => of([]))).subscribe(data => {
+      this.stories = data;
+      this.loading = false;
+    });
+  }
 
   get storiesFiltrees(): Story[] {
     return this.stories.filter(s => {
       const matchTag = this.selectedTag === 'tous' || s.tag === this.selectedTag;
       const q = this.searchQuery.toLowerCase();
-      const matchSearch = !q || s.titre.toLowerCase().includes(q) || s.contenu.toLowerCase().includes(q) || s.auteur.toLowerCase().includes(q);
+      const matchSearch = !q ||
+        (s.titre ?? '').toLowerCase().includes(q) ||
+        s.caption.toLowerCase().includes(q) ||
+        this.nomComplet(s).toLowerCase().includes(q);
       return matchTag && matchSearch;
     });
   }
 
+  initiales(s: Story): string {
+    return ((s.auteurPrenom?.[0] ?? '') + (s.auteurNom?.[0] ?? '')).toUpperCase();
+  }
+
+  nomComplet(s: Story): string {
+    return `${s.auteurPrenom ?? ''} ${s.auteurNom ?? ''}`.trim();
+  }
+
+  formatDate(dateStr: string): string {
+    if (!dateStr) return '';
+    const d = new Date(dateStr);
+    const diff = Math.floor((Date.now() - d.getTime()) / 1000);
+    if (diff < 60) return 'À l\'instant';
+    if (diff < 3600) return `Il y a ${Math.floor(diff / 60)} min`;
+    if (diff < 86400) return `Il y a ${Math.floor(diff / 3600)} h`;
+    if (diff < 604800) return `Il y a ${Math.floor(diff / 86400)} j`;
+    return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+  }
+
   toggleLike(s: Story): void {
-    s.liked = !s.liked;
-    s.likes += s.liked ? 1 : -1;
+    if (s.isLikedByMe) {
+      this.api.unlikeStory(s.id).subscribe();
+      s.likesCount--;
+      s.isLikedByMe = false;
+    } else {
+      this.api.likeStory(s.id).subscribe();
+      s.likesCount++;
+      s.isLikedByMe = true;
+    }
+  }
+
+  openForm(): void {
+    this.form = { titre: '', caption: '', tag: 'Souvenir', mediaFile: null, mediaPreview: null, mediaType: null };
+    this.showForm = true;
+  }
+
+  onMediaSelected(event: Event): void {
+    const file = (event.target as HTMLInputElement).files?.[0];
+    if (!file) return;
+    this.form.mediaFile = file;
+    this.form.mediaType = file.type.startsWith('video/') ? 'video' : 'photo';
+    const reader = new FileReader();
+    reader.onload = e => { this.form.mediaPreview = e.target?.result as string; };
+    reader.readAsDataURL(file);
+  }
+
+  removeMedia(): void {
+    this.form.mediaFile = null;
+    this.form.mediaPreview = null;
+    this.form.mediaType = null;
+  }
+
+  submitForm(): void {
+    if (!this.form.caption.trim() && !this.form.mediaFile) return;
+    this.saving = true;
+    const publish = (mediaUrl?: string, mediaType?: string) => {
+      this.api.createStory({
+        titre:   this.form.titre || undefined,
+        caption: this.form.caption,
+        tag:     this.form.tag || undefined,
+        mediaUrl,
+        mediaType,
+      }).subscribe({
+        next: s => { this.stories.unshift(s); this.showForm = false; this.saving = false; },
+        error: () => { this.saving = false; }
+      });
+    };
+    if (this.form.mediaFile) {
+      this.api.uploadStoryMedia(this.form.mediaFile).subscribe({
+        next: ({ mediaUrl, mediaType }) => publish(mediaUrl, mediaType),
+        error: () => { this.saving = false; }
+      });
+    } else {
+      publish();
+    }
+  }
+
+  deleteStory(id: string): void {
+    if (!confirm('Supprimer cette story ?')) return;
+    this.api.deleteStory(id).subscribe(() => {
+      this.stories = this.stories.filter(s => s.id !== id);
+    });
+  }
+
+  isMyStory(s: Story): boolean {
+    return s.auteurId === this.auth.getUser()?.id;
   }
 
   tagColor(tag: string): { bg: string; color: string } {
-    const map: Record<string, { bg: string; color: string }> = {
-      Souvenir:   { bg: '#EFF6FF', color: '#2563EB'  },
-      Événement:  { bg: '#F5F3FF', color: '#7C3AED'  },
-      Culture:    { bg: '#FDF2F8', color: '#DB2777'  },
-      Succès:     { bg: '#ECFDF5', color: '#059669'  },
-      Patrimoine: { bg: '#FFFBEB', color: '#D97706'  },
-      Naissance:  { bg: '#FFF1F2', color: '#E11D48'  },
-    };
-    return map[tag] ?? { bg: '#F3F4F6', color: '#6B7280' };
+    return this.tagColors[tag] ?? { bg: '#F3F4F6', color: '#6B7280' };
   }
 }

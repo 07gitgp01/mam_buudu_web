@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Personne, getInitiales, estVivant, extractAnnee, getAgeLabel, getNomComplet, getPhotoUrl } from '../../models/personne.model';
 import { ApiService } from '../../services/api.service';
-import { AuthService } from '../../services/auth.service';
+import { AuthService, AuthUser } from '../../services/auth.service';
 import { forkJoin } from 'rxjs';
 
 @Component({
@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   getNomComplet = getNomComplet;
   getPhotoUrl   = getPhotoUrl;
 
+  user: AuthUser | null = null;
   nomFamille = '';
   familleCode = '';
   loading = true;
@@ -47,6 +48,7 @@ export class HomeComponent implements OnInit {
   constructor(private api: ApiService, private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
+    this.user = this.auth.getUser();
     forkJoin({
       personnes: this.api.getPersonnes(),
       unions:    this.api.getUnions(),
