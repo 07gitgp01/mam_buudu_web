@@ -1,0 +1,41 @@
+<div class="auth-wrap">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <span class="material-icons-round">account_tree</span>
+      <span>Mam Buudu</span>
+    </div>
+
+    <!-- Chargement -->
+    <ng-container *ngIf="state === 'loading'">
+      <div class="state-icon loading">
+        <span class="spinner-lg"></span>
+      </div>
+      <h1 class="auth-title">Vérification en cours…</h1>
+      <p class="auth-subtitle">Nous confirmons votre adresse email.</p>
+    </ng-container>
+
+    <!-- Succès -->
+    <ng-container *ngIf="state === 'success'">
+      <div class="state-icon success">
+        <span class="material-icons-round">verified</span>
+      </div>
+      <h1 class="auth-title">Email vérifié !</h1>
+      <p class="auth-subtitle">Votre adresse email a été confirmée avec succès. Votre compte est maintenant entièrement actif.</p>
+    </ng-container>
+
+    <!-- Erreur -->
+    <ng-container *ngIf="state === 'error'">
+      <div class="state-icon error">
+        <span class="material-icons-round">error_outline</span>
+      </div>
+      <h1 class="auth-title">Lien invalide</h1>
+      <p class="auth-subtitle">{{ erreur }}</p>
+    </ng-container>
+
+    <div class="auth-footer">
+      <a routerLink="/auth/login" class="auth-link">
+        <span class="material-icons-round">arrow_back</span>Retour à la connexion
+      </a>
+    </div>
+  </div>
+</div>

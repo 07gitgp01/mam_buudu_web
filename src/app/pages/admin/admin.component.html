@@ -244,6 +244,73 @@
           </div>
         </div>
 
+        <!-- Abonnement -->
+        <div class="adm-card adm-card-plan" *ngIf="subscription">
+          <div class="adm-card-head">
+            <div class="adm-card-title">
+              <span class="material-icons-round">workspace_premium</span>
+              Abonnement
+            </div>
+            <span class="adm-plan-badge" [class.adm-plan-badge--paid]="subscription.plan?.prix > 0">
+              {{ subscription.plan?.label ?? 'Gratuit' }}
+            </span>
+          </div>
+
+          <!-- Barre d'utilisation -->
+          <div class="adm-quota-wrap">
+            <div class="adm-quota-labels">
+              <span>{{ subscription.current }} membre{{ subscription.current > 1 ? 's' : '' }} dans l'arbre</span>
+              <span *ngIf="subscription.limit !== null">/ {{ subscription.limit }}</span>
+              <span *ngIf="subscription.limit === null">/ illimité</span>
+            </div>
+            <div class="adm-quota-bar">
+              <div class="adm-quota-fill"
+                   [style.width.%]="subscription.pourcentage"
+                   [class.adm-quota-warn]="subscription.pourcentage >= 80"
+                   [class.adm-quota-full]="subscription.pourcentage >= 100">
+              </div>
+            </div>
+            <p class="adm-quota-alert" *ngIf="subscription.pourcentage >= 80 && subscription.limit !== null">
+              <span class="material-icons-round">warning</span>
+              {{ subscription.pourcentage >= 100 ? 'Limite atteinte — passez à un plan supérieur pour continuer.' : 'Vous approchez de la limite de votre plan.' }}
+            </p>
+          </div>
+
+          <!-- Bouton upgrade -->
+          <button class="adm-upgrade-btn" (click)="showPlanModal = true" *ngIf="subscription.plan?.prix === 0">
+            <span class="material-icons-round">bolt</span>
+            Passer à Premium
+          </button>
+          <button class="adm-manage-btn" (click)="showPlanModal = true" *ngIf="subscription.plan?.prix > 0">
+            <span class="material-icons-round">manage_accounts</span>
+            Gérer l'abonnement
+          </button>
+        </div>
+
+        <!-- Export GEDCOM -->
+        <div class="adm-card adm-card-export">
+          <div class="adm-card-head">
+            <div class="adm-card-title">
+              <span class="material-icons-round">download</span>
+              Export généalogie
+            </div>
+          </div>
+          <p class="adm-export-desc">
+            Exportez tout l'arbre familial au format <strong>GEDCOM 5.5.1</strong> — le standard universel des logiciels de généalogie (Ancestry, MyHeritage, Geneanet…).
+          </p>
+          <div class="adm-export-stats">
+            <div class="adm-export-stat">
+              <span class="material-icons-round">people</span>
+              <span>{{ personnes.length }} personne{{ personnes.length > 1 ? 's' : '' }}</span>
+            </div>
+          </div>
+          <button class="adm-export-btn" (click)="exportGedcom()" [disabled]="gedcomExporting">
+            <span class="material-icons-round spin" *ngIf="gedcomExporting">sync</span>
+            <span class="material-icons-round" *ngIf="!gedcomExporting">download</span>
+            {{ gedcomExporting ? 'Génération…' : 'Télécharger le fichier .ged' }}
+          </button>
+        </div>
+
         <!-- Infos famille -->
         <div class="adm-card adm-card-info">
           <div class="adm-card-head">
@@ -296,6 +363,68 @@
 
   </ng-container>
 </div>
+
+<!-- ===== MODAL PLANS ===== -->
+@if (showPlanModal) {
+  <div class="plan-modal-overlay" (click)="showPlanModal = false">
+    <div class="plan-modal" (click)="$event.stopPropagation()">
+      <div class="plan-modal-head">
+        <div>
+          <h3>Choisir un plan</h3>
+          <p>Tous les paiements sont sécurisés via CinetPay</p>
+        </div>
+        <button class="btn-icon" (click)="showPlanModal = false">
+          <span class="material-icons-round">close</span>
+        </button>
+      </div>
+
+      <div class="plan-cards">
+        <div class="plan-card"
+             *ngFor="let plan of plans"
+             [class.plan-card--current]="isCurrentPlan(plan.id)"
+             [class.plan-card--popular]="plan.nom === 'premium'">
+
+          <div class="plan-card-badge" *ngIf="plan.nom === 'premium'">⭐ Populaire</div>
+          <div class="plan-card-badge plan-card-badge--current" *ngIf="isCurrentPlan(plan.id)">Plan actuel</div>
+
+          <div class="plan-card-header">
+            <h4>{{ plan.label }}</h4>
+            <div class="plan-price">
+              <span class="plan-price-amount">{{ plan.prix | number }}</span>
+              <span class="plan-price-unit">{{ plan.prix === 0 ? 'FCFA' : 'FCFA/mois' }}</span>
+            </div>
+            <p class="plan-limit">
+              {{ plan.maxPersonnes === null ? 'Membres illimités' : plan.maxPersonnes + ' membres max' }}
+            </p>
+          </div>
+
+          <ul class="plan-features">
+            <li *ngFor="let f of planFeatures(plan)">
+              <span class="material-icons-round">check_circle</span>
+              {{ f }}
+            </li>
+          </ul>
+
+          <button class="plan-choose-btn"
+                  [class.plan-choose-btn--current]="isCurrentPlan(plan.id)"
+                  [class.plan-choose-btn--premium]="plan.nom === 'premium'"
+                  [class.plan-choose-btn--plus]="plan.nom === 'famille_plus'"
+                  [disabled]="isCurrentPlan(plan.id) || checkoutLoading !== null || plan.prix === 0"
+                  (click)="choosePlan(plan.id)">
+            <span class="material-icons-round spin" *ngIf="checkoutLoading === plan.id">sync</span>
+            <span class="material-icons-round" *ngIf="checkoutLoading !== plan.id && !isCurrentPlan(plan.id) && plan.prix > 0">bolt</span>
+            {{ isCurrentPlan(plan.id) ? 'Plan actuel' : plan.prix === 0 ? 'Gratuit' : checkoutLoading === plan.id ? 'Redirection…' : 'Choisir ce plan' }}
+          </button>
+        </div>
+      </div>
+
+      <p class="plan-modal-note">
+        <span class="material-icons-round">lock</span>
+        Paiement sécurisé via CinetPay · Orange Money, Wave, Moov Money acceptés
+      </p>
+    </div>
+  </div>
+}
 
 <!-- ===== OVERLAY ===== -->
 <div class="panel-overlay" *ngIf="showCreateForm" (click)="showCreateForm = false"></div>

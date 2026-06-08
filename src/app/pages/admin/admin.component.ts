@@ -26,6 +26,13 @@ export class AdminComponent implements OnInit {
   loading = true;
   erreur: string | null = null;
   saveSuccess = '';
+  gedcomExporting = false;
+
+  /* ── Abonnement ── */
+  subscription: any = null;
+  plans: any[] = [];
+  showPlanModal  = false;
+  checkoutLoading: string | null = null;
 
   viewonlyCreds: { viewonlyUsername: string; viewonlyPassword: string; familleCode: string } | null = null;
   showViewonlyPassword = false;
@@ -70,15 +77,19 @@ export class AdminComponent implements OnInit {
   private loadAll(): void {
     this.loading = true;
     forkJoin({
-      famille:  this.api.getFamilleDetails(),
-      personnes: this.api.getPersonnes(),
-      creds:    this.api.getViewonlyCredentials(),
+      famille:      this.api.getFamilleDetails(),
+      personnes:    this.api.getPersonnes(),
+      creds:        this.api.getViewonlyCredentials(),
+      subscription: this.api.getSubscription(),
+      plans:        this.api.getPlans(),
     }).subscribe({
-      next: ({ famille, personnes, creds }) => {
-        this.famille   = famille.famille ?? famille;
-        this.membres   = famille.membres ?? [];
-        this.personnes = personnes;
+      next: ({ famille, personnes, creds, subscription, plans }) => {
+        this.famille       = famille.famille ?? famille;
+        this.membres       = famille.membres ?? [];
+        this.personnes     = personnes;
         this.viewonlyCreds = creds;
+        this.subscription  = subscription;
+        this.plans         = plans;
         this.initEditingRoles();
         this.loading = false;
       },
@@ -222,6 +233,50 @@ export class AdminComponent implements OnInit {
     navigator.clipboard.writeText(this.famille.code).then(() => {
       this.viewonlyCopied = 'familleCode';
       setTimeout(() => { this.viewonlyCopied = null; }, 1500);
+    });
+  }
+
+  // ── Abonnement ───────────────────────────────────────
+  get isCurrentPlan(): (planId: string) => boolean {
+    return (planId: string) => this.subscription?.plan?.id === planId;
+  }
+
+  choosePlan(planId: string): void {
+    if (planId === 'plan_gratuit' || this.checkoutLoading) return;
+    this.checkoutLoading = planId;
+    this.api.checkoutPlan(planId).subscribe({
+      next: ({ paymentUrl }) => {
+        this.checkoutLoading = null;
+        window.location.href = paymentUrl;
+      },
+      error: (err) => {
+        this.checkoutLoading = null;
+        alert(err?.error?.error ?? 'Erreur lors de l\'initialisation du paiement.');
+      },
+    });
+  }
+
+  planFeatures(plan: any): string[] {
+    return Array.isArray(plan.features) ? plan.features : [];
+  }
+
+  // ── Export GEDCOM ────────────────────────────────────
+  exportGedcom(): void {
+    if (this.gedcomExporting) return;
+    this.gedcomExporting = true;
+    this.api.exportGedcom().subscribe({
+      next: (blob) => {
+        const url = URL.createObjectURL(blob);
+        const a   = document.createElement('a');
+        a.href     = url;
+        a.download = `${(this.famille?.nom ?? 'famille').replace(/\s+/g, '_')}_mam_buudu.ged`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        this.gedcomExporting = false;
+      },
+      error: () => { this.gedcomExporting = false; },
     });
   }
 

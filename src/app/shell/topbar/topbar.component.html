@@ -138,10 +138,45 @@
     </button>
 
     <!-- Bouton notifications -->
-    <button class="btn-icon notif-btn">
-      <span class="material-icons-round">notifications_none</span>
-      <span class="notif-badge">3</span>
-    </button>
+    <div class="notif-wrap" (click)="$event.stopPropagation()">
+      <button class="btn-icon notif-btn" (click)="toggleNotif($event)" title="Notifications">
+        <span class="material-icons-round">{{ notifCount > 0 ? 'notifications' : 'notifications_none' }}</span>
+        <span class="notif-badge" *ngIf="notifCount > 0">{{ notifCount > 9 ? '9+' : notifCount }}</span>
+      </button>
+
+      <!-- Panel notifications -->
+      @if (notifOpen) {
+        <div class="notif-panel">
+          <div class="notif-panel-head">
+            <span>Notifications</span>
+            <span class="notif-panel-count" *ngIf="notifItems.length > 0">{{ notifItems.length }}</span>
+          </div>
+
+          <!-- Vide -->
+          <div class="notif-empty" *ngIf="notifItems.length === 0">
+            <span class="material-icons-round">notifications_none</span>
+            <span>Aucune notification</span>
+          </div>
+
+          <!-- Liste -->
+          <div class="notif-list" *ngIf="notifItems.length > 0">
+            <div class="notif-item" *ngFor="let n of notifItems" [class.notif-unread]="!n.lue">
+              <div class="notif-item-icon" [class.notif-anniversaire]="n.type === 'anniversaire'">
+                <span class="material-icons-round">{{ notifIcon(n.type) }}</span>
+              </div>
+              <div class="notif-item-body">
+                <p class="notif-item-titre">{{ n.titre }}</p>
+                <p class="notif-item-msg">{{ n.message }}</p>
+                <span class="notif-item-date">{{ formatNotifDate(n.createdAt) }}</span>
+              </div>
+              <button class="notif-delete-btn" (click)="deleteNotif(n.id, $event)" title="Supprimer">
+                <span class="material-icons-round">close</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
 
     <!-- Avatar + menu user -->
     <div class="user-menu-wrap" (click)="showUserMenu = !showUserMenu">

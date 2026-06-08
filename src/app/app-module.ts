@@ -1,6 +1,7 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { NgModule, provideBrowserGlobalErrorListeners, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
@@ -10,7 +11,14 @@ import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [App, LandingComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
+  ],
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(withInterceptors([jwtInterceptor, loadingInterceptor])),

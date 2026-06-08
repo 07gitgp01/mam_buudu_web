@@ -192,6 +192,41 @@ export class ApiService {
     return this.http.patch<any>(`${this.base}/api/photos/${photoId}`, data);
   }
 
+  /* === Abonnement & plans === */
+  getSubscription(): Observable<any> {
+    return this.http.get<any>(`${this.base}/api/subscription`);
+  }
+
+  getPlans(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.base}/api/subscription/plans`);
+  }
+
+  checkoutPlan(planId: string): Observable<{ paymentUrl: string; transactionId: string }> {
+    return this.http.post<any>(`${this.base}/api/subscription/checkout`, { planId });
+  }
+
+  /* === Export === */
+  exportGedcom(): Observable<Blob> {
+    return this.http.get(`${this.base}/api/export/gedcom`, { responseType: 'blob' });
+  }
+
+  /* === Notifications === */
+  getNotifications(): Observable<{ notifications: any[]; nonLues: number }> {
+    return this.http.get<any>(`${this.base}/api/notifications`);
+  }
+
+  markNotificationRead(id: string): Observable<void> {
+    return this.http.patch<void>(`${this.base}/api/notifications/${id}/lire`, {});
+  }
+
+  markAllNotificationsRead(): Observable<void> {
+    return this.http.patch<void>(`${this.base}/api/notifications/tout-lire`, {});
+  }
+
+  deleteNotification(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.base}/api/notifications/${id}`);
+  }
+
   /* === Recherche globale === */
   search(q: string): Observable<{ personnes: any[]; stories: any[]; unions: any[] }> {
     return this.http.get<any>(`${this.base}/api/search`, {

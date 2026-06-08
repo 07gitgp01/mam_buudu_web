@@ -1,0 +1,103 @@
+:host { display: block; }
+
+.auth-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  background: linear-gradient(145deg, #0A1FA8 0%, #1445F5 55%, #2563EB 100%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: #fff;
+  border-radius: 22px;
+  padding: 40px 36px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  text-align: center;
+  animation: cardFadeIn 0.4s ease both;
+}
+
+.auth-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #1445F5;
+  .material-icons-round { font-size: 28px !important; }
+}
+
+.state-icon {
+  margin: 0 auto 20px;
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .material-icons-round { font-size: 36px !important; }
+
+  &.loading {
+    background: #EEF2FF;
+  }
+  &.success {
+    background: #ECFDF5;
+    .material-icons-round { color: #059669; }
+  }
+  &.error {
+    background: #FEF2F2;
+    .material-icons-round { color: #DC2626; }
+  }
+}
+
+.spinner-lg {
+  width: 36px; height: 36px;
+  border: 3px solid #C7D2FE;
+  border-top-color: #1445F5;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+.auth-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 10px;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: #6B7280;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.auth-footer { margin-top: 8px; }
+
+.auth-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6B7280;
+  text-decoration: none;
+  transition: color 0.15s;
+  .material-icons-round { font-size: 16px !important; }
+  &:hover { color: #1445F5; }
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 480px) {
+  .auth-card { padding: 28px 20px; border-radius: 18px; }
+}

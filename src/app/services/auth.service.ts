@@ -70,6 +70,22 @@ export class AuthService {
       .pipe(tap((res) => this.save(res.token, res.user)));
   }
 
+  forgotPassword(email: string): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(`${API_BASE_URL}/api/auth/forgot-password`, { email });
+  }
+
+  resetPassword(token: string, password: string): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(`${API_BASE_URL}/api/auth/reset-password`, { token, password });
+  }
+
+  sendVerificationEmail(): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(`${API_BASE_URL}/api/auth/send-verification-email`, {});
+  }
+
+  verifyEmail(token: string): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(`${API_BASE_URL}/api/auth/verify-email`, { token });
+  }
+
   logout(): void {
     localStorage.removeItem('mb_token');
     localStorage.removeItem('mb_user');

@@ -1,6 +1,6 @@
-import { Component, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, HostListener, ElementRef, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { filter, Subject, debounceTime, distinctUntilChanged, switchMap, of } from 'rxjs';
+import { filter, Subject, debounceTime, distinctUntilChanged, switchMap, of, Subscription, interval } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 import { ApiService } from '../../services/api.service';
 
@@ -29,10 +29,16 @@ export interface SearchResults {
   styleUrl: './topbar.component.scss',
   standalone: false,
 })
-export class TopbarComponent {
+export class TopbarComponent implements OnInit, OnDestroy {
   currentPage = PAGE_LABELS['/app/home'];
   showUserMenu = false;
   @Output() menuToggle = new EventEmitter<void>();
+
+  /* ── Notifications ── */
+  notifOpen    = false;
+  notifCount   = 0;
+  notifItems:  any[] = [];
+  private notifSub: Subscription | null = null;
 
   /* ── Recherche ── */
   searchOpen   = false;
@@ -57,6 +63,7 @@ export class TopbarComponent {
     if (!this.el.nativeElement.contains(event.target)) {
       this.showUserMenu = false;
       this.searchOpen   = false;
+      this.notifOpen    = false;
     }
   }
 
@@ -100,6 +107,66 @@ export class TopbarComponent {
       },
       error: () => { this.searchLoading = false; },
     });
+  }
+
+  ngOnInit(): void {
+    this.loadNotifications();
+    // Recharge toutes les 5 minutes
+    this.notifSub = interval(5 * 60 * 1000).subscribe(() => this.loadNotifications());
+  }
+
+  ngOnDestroy(): void {
+    this.notifSub?.unsubscribe();
+  }
+
+  loadNotifications(): void {
+    this.api.getNotifications().subscribe({
+      next: ({ notifications, nonLues }) => {
+        this.notifItems = notifications;
+        this.notifCount = nonLues;
+      },
+      error: () => {},
+    });
+  }
+
+  toggleNotif(event: MouseEvent): void {
+    event.stopPropagation();
+    this.notifOpen    = !this.notifOpen;
+    this.showUserMenu = false;
+    this.searchOpen   = false;
+    if (this.notifOpen && this.notifCount > 0) {
+      // Marquer tout comme lu après 1s
+      setTimeout(() => {
+        this.api.markAllNotificationsRead().subscribe(() => {
+          this.notifCount = 0;
+          this.notifItems.forEach(n => n.lue = true);
+        });
+      }, 1000);
+    }
+  }
+
+  deleteNotif(id: string, event: MouseEvent): void {
+    event.stopPropagation();
+    this.api.deleteNotification(id).subscribe(() => {
+      this.notifItems = this.notifItems.filter(n => n.id !== id);
+    });
+  }
+
+  notifIcon(type: string): string {
+    const icons: Record<string, string> = {
+      anniversaire: 'cake',
+      bienvenue:    'waving_hand',
+    };
+    return icons[type] ?? 'notifications';
+  }
+
+  formatNotifDate(dateStr: string): string {
+    const d    = new Date(dateStr);
+    const diff = Math.floor((Date.now() - d.getTime()) / 1000);
+    if (diff < 60)    return 'À l\'instant';
+    if (diff < 3600)  return `Il y a ${Math.floor(diff / 60)} min`;
+    if (diff < 86400) return `Il y a ${Math.floor(diff / 3600)} h`;
+    return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
   }
 
   get user() { return this.auth.getUser(); }
