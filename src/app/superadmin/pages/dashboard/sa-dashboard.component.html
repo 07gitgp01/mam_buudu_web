@@ -1,0 +1,94 @@
+<div class="sa-page">
+  <div class="sa-page-header">
+    <h1>Tableau de bord</h1>
+    <p>Vue d'ensemble de la plateforme Mam Buudu</p>
+  </div>
+
+  @if (loading) {
+    <div class="sa-loading">Chargement...</div>
+  } @else {
+
+    <!-- Stat cards -->
+    <div class="sa-stats-grid">
+      <div class="sa-stat-card">
+        <div class="sa-stat-icon blue"><span class="material-icons-round">family_restroom</span></div>
+        <div class="sa-stat-body">
+          <div class="sa-stat-value">{{ stats.totalFamilles | number }}</div>
+          <div class="sa-stat-label">Familles</div>
+          <div class="sa-stat-sub">+{{ stats.newFamillesMonth }} ce mois</div>
+        </div>
+      </div>
+      <div class="sa-stat-card">
+        <div class="sa-stat-icon purple"><span class="material-icons-round">group</span></div>
+        <div class="sa-stat-body">
+          <div class="sa-stat-value">{{ stats.totalUsers | number }}</div>
+          <div class="sa-stat-label">Utilisateurs</div>
+          <div class="sa-stat-sub">+{{ stats.newUsersWeek }} cette semaine</div>
+        </div>
+      </div>
+      <div class="sa-stat-card">
+        <div class="sa-stat-icon green"><span class="material-icons-round">credit_card</span></div>
+        <div class="sa-stat-body">
+          <div class="sa-stat-value">{{ stats.totalSubscriptions }}</div>
+          <div class="sa-stat-label">Abonnements actifs</div>
+        </div>
+      </div>
+      <div class="sa-stat-card">
+        <div class="sa-stat-icon orange"><span class="material-icons-round">payments</span></div>
+        <div class="sa-stat-body">
+          <div class="sa-stat-value">{{ stats.revenueMois | number }} <small>FCFA</small></div>
+          <div class="sa-stat-label">Revenus ce mois</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Revenue chart + Activity feed -->
+    <div class="sa-dash-grid">
+
+      <!-- Revenue CSS bar chart -->
+      <div class="sa-card">
+        <div class="sa-card-header">
+          <span class="material-icons-round">bar_chart</span>
+          <h3>Revenus mensuels (12 mois)</h3>
+        </div>
+        <div class="sa-chart">
+          @for (m of revenue; track m.label) {
+            <div class="sa-bar-col">
+              <div class="sa-bar-val">{{ m.montant > 0 ? (m.montant | number) : '' }}</div>
+              <div class="sa-bar-wrap">
+                <div class="sa-bar" [style.height]="barHeight(m.montant)" [class.sa-bar-active]="m.montant > 0"></div>
+              </div>
+              <div class="sa-bar-label">{{ m.label }}</div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Activity feed -->
+      <div class="sa-card">
+        <div class="sa-card-header">
+          <span class="material-icons-round">bolt</span>
+          <h3>Activité récente</h3>
+        </div>
+        <div class="sa-feed">
+          @for (item of activity; track item.at) {
+            <div class="sa-feed-item">
+              <div class="sa-feed-dot" [style.background]="activityColor(item.type)">
+                <span class="material-icons-round">{{ item.icon }}</span>
+              </div>
+              <div class="sa-feed-body">
+                <div class="sa-feed-label">{{ item.label }}</div>
+                @if (item.sub) { <div class="sa-feed-sub">{{ item.sub }}</div> }
+              </div>
+              <div class="sa-feed-time">{{ timeAgo(item.at) }}</div>
+            </div>
+          }
+          @if (activity.length === 0) {
+            <div class="sa-empty">Aucune activité récente</div>
+          }
+        </div>
+      </div>
+
+    </div>
+  }
+</div>

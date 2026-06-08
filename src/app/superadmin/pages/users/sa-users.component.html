@@ -1,0 +1,93 @@
+<div class="sa-page">
+  <div class="sa-page-header">
+    <div class="sa-header-row">
+      <div>
+        <h1>Utilisateurs</h1>
+        <p>{{ data?.total ?? '...' }} comptes</p>
+      </div>
+      <button class="sa-export-btn" (click)="exportCsv()">
+        <span class="material-icons-round">download</span> Export CSV
+      </button>
+    </div>
+  </div>
+
+  <div class="sa-toolbar">
+    <div class="sa-search">
+      <span class="material-icons-round">search</span>
+      <input type="text" [(ngModel)]="q" (keyup.enter)="search()" placeholder="Email, nom, téléphone..."/>
+    </div>
+    <select [(ngModel)]="filterRole" (change)="search()">
+      <option value="">Tous</option>
+      <option value="superadmin">Superadmin</option>
+      <option value="platform_admin">Platform admin</option>
+      <option value="support">Support</option>
+      <option value="none">Sans rôle plateforme</option>
+    </select>
+  </div>
+
+  @if (loading) {
+    <div class="sa-loading">Chargement...</div>
+  } @else {
+    <div class="sa-table-wrap">
+      <table class="sa-table">
+        <thead>
+          <tr>
+            <th>Utilisateur</th>
+            <th>Contact</th>
+            <th>Familles</th>
+            <th>Rôle plateforme</th>
+            <th>Statut</th>
+            <th>Créé</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (u of data?.users; track u.id) {
+            <tr [class.suspended]="u.suspended">
+              <td>
+                <strong>{{ u.prenom }} {{ u.nom }}</strong>
+                @if (u.platformRole) {
+                  <span class="sa-badge purple ml">{{ u.platformRole }}</span>
+                }
+              </td>
+              <td>{{ u.email || u.telephone }}</td>
+              <td>{{ u._count?.familleMembres }}</td>
+              <td>
+                <select class="sa-role-select" [ngModel]="u.platformRole" (ngModelChange)="setRole(u, $event || null)"
+                        [disabled]="actionLoading === u.id">
+                  <option value="">— Aucun —</option>
+                  @for (r of platformRoles; track r) {
+                    <option [value]="r">{{ r }}</option>
+                  }
+                </select>
+              </td>
+              <td>
+                <span class="sa-badge" [class.green]="!u.suspended" [class.red]="u.suspended">
+                  {{ u.suspended ? 'suspendu' : 'actif' }}
+                </span>
+              </td>
+              <td>{{ u.createdAt | date:'dd/MM/yy' }}</td>
+              <td>
+                <div class="sa-actions">
+                  <button class="sa-act-btn" (click)="toggleSuspend(u)" [disabled]="actionLoading === u.id"
+                          [title]="u.suspended ? 'Réactiver' : 'Suspendre'">
+                    <span class="material-icons-round">{{ u.suspended ? 'lock_open' : 'lock' }}</span>
+                  </button>
+                  <button class="sa-act-btn danger" (click)="delete(u)" [disabled]="actionLoading === u.id">
+                    <span class="material-icons-round">delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sa-pagination">
+      <button [disabled]="page <= 1" (click)="page = page - 1; load()">&#8249; Précédent</button>
+      <span>Page {{ page }} / {{ data?.pages }}</span>
+      <button [disabled]="page >= data?.pages" (click)="page = page + 1; load()">Suivant &#8250;</button>
+    </div>
+  }
+</div>

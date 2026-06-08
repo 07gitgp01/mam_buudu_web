@@ -1,0 +1,147 @@
+.sa-login-page {
+  min-height: 100vh;
+  background: #0F172A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sa-login-card {
+  background: #1E293B;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 40px;
+  width: 380px;
+  text-align: center;
+}
+
+.sa-login-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+
+  .material-icons-round {
+    font-size: 32px;
+    color: #6366F1;
+  }
+}
+
+h1 {
+  color: #fff;
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+
+.sa-login-sub {
+  color: #64748B;
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+.sa-form-group {
+  text-align: left;
+  margin-bottom: 16px;
+
+  label {
+    display: block;
+    color: #94A3B8;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+}
+
+.sa-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0F172A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0 12px;
+
+  .material-icons-round {
+    color: #475569;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 0;
+
+    &::placeholder {
+      color: #475569;
+    }
+
+    &.err {
+      color: #EF4444;
+    }
+  }
+}
+
+.sa-eye {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #475569;
+  padding: 0;
+  display: flex;
+}
+
+.sa-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #EF4444;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.sa-btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: #6366F1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #4F46E5;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.sa-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

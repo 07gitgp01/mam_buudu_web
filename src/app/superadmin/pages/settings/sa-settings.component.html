@@ -1,0 +1,107 @@
+<div class="sa-page">
+  <div class="sa-page-header">
+    <h1>Paramètres plateforme</h1>
+    <p>Configuration globale de Mam Buudu</p>
+  </div>
+
+  <div class="sa-defaults-bar">
+    <span class="sa-defaults-label">Paramètres suggérés :</span>
+    @for (d of defaults; track d.key) {
+      <button class="sa-default-chip" (click)="applyDefault(d)"
+              [disabled]="hasDefault(d.key)"
+              [title]="'Ajouter ' + d.key">
+        + {{ d.label }}
+      </button>
+    }
+  </div>
+
+  @if (loading) {
+    <div class="sa-loading">Chargement...</div>
+  } @else {
+    <div class="sa-table-wrap">
+      <table class="sa-table">
+        <thead>
+          <tr>
+            <th>Clé</th>
+            <th>Label</th>
+            <th>Valeur</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (s of settings; track s.key) {
+            <tr>
+              <td><code>{{ s.key }}</code></td>
+              <td>{{ s.label || '—' }}</td>
+              <td>
+                @if (s.editing) {
+                  <input class="sa-inline-input" [(ngModel)]="s.editValue"/>
+                } @else {
+                  <span class="sa-setting-val"
+                        [class.bool-true]="s.value === 'true'"
+                        [class.bool-false]="s.value === 'false'">
+                    {{ s.value }}
+                  </span>
+                }
+              </td>
+              <td>
+                <div class="sa-actions">
+                  @if (s.editing) {
+                    <button class="sa-act-btn green" (click)="save(s)" [disabled]="s.saving">
+                      <span class="material-icons-round">check</span>
+                    </button>
+                    <button class="sa-act-btn" (click)="cancelEdit(s)">
+                      <span class="material-icons-round">close</span>
+                    </button>
+                  } @else {
+                    <button class="sa-act-btn" (click)="startEdit(s)" title="Modifier">
+                      <span class="material-icons-round">edit</span>
+                    </button>
+                    <button class="sa-act-btn danger" (click)="deleteSetting(s)" title="Supprimer">
+                      <span class="material-icons-round">delete</span>
+                    </button>
+                  }
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sa-add-setting">
+      <h3>Ajouter un paramètre</h3>
+      <div class="sa-add-row">
+        <input class="sa-add-input" [(ngModel)]="newKey" placeholder="clé (ex: max_upload_mb)"/>
+        <input class="sa-add-input" [(ngModel)]="newLabel" placeholder="Label (optionnel)"/>
+        <input class="sa-add-input" [(ngModel)]="newValue" placeholder="valeur"/>
+        <button class="sa-btn-add" (click)="addSetting()" [disabled]="!newKey || !newValue || adding">
+          <span class="material-icons-round">add</span>Ajouter
+        </button>
+      </div>
+    </div>
+
+    <!-- Broadcast section -->
+    <div class="sa-broadcast-card">
+      <div class="sa-broadcast-header">
+        <span class="material-icons-round">campaign</span>
+        <h3>Notification globale</h3>
+        <span class="sa-broadcast-warn">Envoyée à tous les membres de toutes les familles</span>
+      </div>
+      <div class="sa-broadcast-fields">
+        <input [(ngModel)]="broadcastTitre" placeholder="Titre de la notification" class="sa-add-input"/>
+        <textarea [(ngModel)]="broadcastMsg" placeholder="Message..." rows="3" class="sa-textarea"></textarea>
+      </div>
+      @if (broadcastDone) {
+        <div class="sa-broadcast-success">
+          <span class="material-icons-round">check_circle</span> {{ broadcastDone }}
+        </div>
+      }
+      <button class="sa-btn-broadcast" (click)="sendBroadcast()" [disabled]="!broadcastTitre || !broadcastMsg || broadcasting">
+        @if (broadcasting) { <span class="sa-spinner-sm"></span> } @else {
+          <span class="material-icons-round">send</span> Envoyer à tous
+        }
+      </button>
+    </div>
+  }
+</div>

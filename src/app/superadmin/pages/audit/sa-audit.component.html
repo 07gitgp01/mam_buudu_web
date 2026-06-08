@@ -1,0 +1,62 @@
+<div class="sa-page">
+  <div class="sa-page-header">
+    <h1>Journal d'audit</h1>
+    <p>Toutes les actions effectuées par les administrateurs plateforme</p>
+  </div>
+
+  @if (loading) {
+    <div class="sa-loading">Chargement...</div>
+  } @else {
+    <div class="sa-table-wrap">
+      <table class="sa-table">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Administrateur</th>
+            <th>Cible</th>
+            <th>Détails</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (log of data?.logs; track log.id) {
+            <tr>
+              <td>
+                <div class="sa-action-badge" [style.background]="getMeta(log.action).color + '18'"
+                     [style.color]="getMeta(log.action).color">
+                  <span class="material-icons-round">{{ getMeta(log.action).icon }}</span>
+                  {{ getMeta(log.action).label }}
+                </div>
+              </td>
+              <td>
+                @if (log.admin) {
+                  <strong>{{ log.admin.prenom }} {{ log.admin.nom }}</strong>
+                  <div class="sa-sub">{{ log.admin.email }}</div>
+                } @else {
+                  <span class="sa-muted">—</span>
+                }
+              </td>
+              <td>
+                @if (log.targetType) {
+                  <span class="sa-target-type">{{ log.targetType }}</span>
+                  @if (log.targetId) { <code>{{ log.targetId | slice:0:8 }}...</code> }
+                } @else { <span class="sa-muted">—</span> }
+              </td>
+              <td class="sa-details-cell">{{ formatDetails(log.details) }}</td>
+              <td class="sa-date-cell">{{ formatDate(log.createdAt) }}</td>
+            </tr>
+          }
+          @if (!data?.logs?.length) {
+            <tr><td colspan="5" class="sa-empty-row">Aucune action enregistrée</td></tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sa-pagination">
+      <button [disabled]="page <= 1" (click)="page = page - 1; load()">‹ Précédent</button>
+      <span>Page {{ page }} / {{ data?.pages }}</span>
+      <button [disabled]="page >= data?.pages" (click)="page = page + 1; load()">Suivant ›</button>
+    </div>
+  }
+</div>

@@ -1,0 +1,176 @@
+<div class="sa-page">
+  <div class="sa-page-header">
+    <div class="sa-header-row">
+      <div>
+        <h1>Familles</h1>
+        <p>{{ data?.total ?? '...' }} familles enregistrées</p>
+      </div>
+      <button class="sa-export-btn" (click)="exportCsv()">
+        <span class="material-icons-round">download</span> Export CSV
+      </button>
+    </div>
+  </div>
+
+  <div class="sa-toolbar">
+    <div class="sa-search">
+      <span class="material-icons-round">search</span>
+      <input type="text" [(ngModel)]="q" (keyup.enter)="search()" placeholder="Rechercher par nom..."/>
+    </div>
+    <select [(ngModel)]="statut" (change)="search()">
+      <option value="">Tous les statuts</option>
+      <option value="actif">Actifs</option>
+      <option value="suspendu">Suspendus</option>
+    </select>
+  </div>
+
+  @if (loading) {
+    <div class="sa-loading">Chargement...</div>
+  } @else {
+    <div class="sa-table-wrap">
+      <table class="sa-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Famille</th>
+            <th>Code</th>
+            <th>Membres</th>
+            <th>Personnes</th>
+            <th>Plan</th>
+            <th>Statut</th>
+            <th>Créée</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (f of data?.familles; track f.id) {
+            <tr [class.sa-row-suspended]="f.statut === 'suspendu'">
+              <!-- Expand toggle -->
+              <td class="sa-expand-cell">
+                <button class="sa-expand-btn" (click)="toggleDetail(f)">
+                  <span class="material-icons-round">{{ expandedId === f.id ? 'expand_less' : 'expand_more' }}</span>
+                </button>
+              </td>
+              <td><strong>{{ f.nom }}</strong></td>
+              <td><code>{{ f.codeUnique }}</code></td>
+              <td>{{ f._count?.membres }}</td>
+              <td>{{ f._count?.personnes }}</td>
+              <td>
+                @if (f.subscription?.plan) {
+                  <span class="sa-badge plan">{{ f.subscription.plan.label }}</span>
+                } @else {
+                  <span class="sa-badge grey">Gratuit</span>
+                }
+              </td>
+              <td>
+                <span class="sa-badge" [class.green]="f.statut === 'actif'" [class.red]="f.statut === 'suspendu'">
+                  {{ f.statut }}
+                </span>
+              </td>
+              <td>{{ f.createdAt | date:'dd/MM/yyyy' }}</td>
+              <td>
+                <div class="sa-actions">
+                  <button class="sa-act-btn blue" (click)="openAssign(f)" title="Assigner un plan">
+                    <span class="material-icons-round">workspace_premium</span>
+                  </button>
+                  <button class="sa-act-btn" (click)="toggleStatut(f)" [disabled]="actionLoading === f.id"
+                          [title]="f.statut === 'actif' ? 'Suspendre' : 'Réactiver'">
+                    <span class="material-icons-round">{{ f.statut === 'actif' ? 'pause_circle' : 'play_circle' }}</span>
+                  </button>
+                  <button class="sa-act-btn danger" (click)="delete(f)" [disabled]="actionLoading === f.id" title="Supprimer">
+                    <span class="material-icons-round">delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Detail row -->
+            @if (expandedId === f.id) {
+              <tr class="sa-detail-row">
+                <td colspan="9">
+                  @if (detailLoading) {
+                    <div class="sa-detail-loading">Chargement...</div>
+                  } @else if (detailData) {
+                    <div class="sa-detail-panel">
+                      <div class="sa-detail-section">
+                        <strong>Membres ({{ detailData.membres?.length }})</strong>
+                        <div class="sa-membres-list">
+                          @for (m of detailData.membres; track m.id) {
+                            <div class="sa-membre-chip">
+                              <span class="material-icons-round">person</span>
+                              <span>{{ m.user?.prenom }} {{ m.user?.nom }}</span>
+                              <span class="sa-role-badge">{{ m.role }}</span>
+                            </div>
+                          }
+                        </div>
+                      </div>
+                      <div class="sa-detail-section">
+                        <strong>Contenu</strong>
+                        <div class="sa-detail-counts">
+                          <span><span class="material-icons-round">people</span>{{ detailData._count?.personnes }} personnes</span>
+                          <span><span class="material-icons-round">auto_stories</span>{{ detailData._count?.stories }} stories</span>
+                          <span><span class="material-icons-round">photo_library</span>{{ detailData._count?.photos }} photos</span>
+                        </div>
+                      </div>
+                      @if (detailData.subscription) {
+                        <div class="sa-detail-section">
+                          <strong>Abonnement</strong>
+                          <div class="sa-detail-sub">
+                            Plan : <span class="sa-badge plan">{{ detailData.subscription.plan?.label }}</span>
+                            · Statut : {{ detailData.subscription.statut }}
+                            · Début : {{ detailData.subscription.dateDebut | date:'dd/MM/yyyy' }}
+                            @if (detailData.subscription.dateFin) { · Fin : {{ detailData.subscription.dateFin | date:'dd/MM/yyyy' }} }
+                          </div>
+                        </div>
+                      }
+                    </div>
+                  }
+                </td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sa-pagination">
+      <button [disabled]="page <= 1" (click)="page = page - 1; load()">‹ Précédent</button>
+      <span>Page {{ page }} / {{ data?.pages }}</span>
+      <button [disabled]="page >= data?.pages" (click)="page = page + 1; load()">Suivant ›</button>
+    </div>
+  }
+</div>
+
+<!-- Assign Plan Modal -->
+@if (assignModal) {
+  <div class="sa-modal-overlay" (click)="closeAssign()">
+    <div class="sa-modal" (click)="$event.stopPropagation()">
+      <div class="sa-modal-header">
+        <h3>Assigner un plan — {{ assignModal.famille.nom }}</h3>
+        <button class="sa-modal-close" (click)="closeAssign()">
+          <span class="material-icons-round">close</span>
+        </button>
+      </div>
+      <div class="sa-modal-body">
+        <div class="sa-field">
+          <label>Plan</label>
+          <select [(ngModel)]="assignModal.planId">
+            <option value="">— Choisir un plan —</option>
+            @for (p of plans; track p.id) {
+              <option [value]="p.id">{{ p.label }} ({{ p.prix === 0 ? 'Gratuit' : (p.prix | number) + ' FCFA/mois' }})</option>
+            }
+          </select>
+        </div>
+        <div class="sa-field">
+          <label>Date de fin (optionnel — vide = indéfini)</label>
+          <input type="date" [(ngModel)]="assignModal.dateFin"/>
+        </div>
+      </div>
+      <div class="sa-modal-footer">
+        <button class="sa-btn-cancel" (click)="closeAssign()">Annuler</button>
+        <button class="sa-btn-confirm" (click)="confirmAssign()" [disabled]="!assignModal.planId || assigning">
+          @if (assigning) { <span class="sa-spinner-sm"></span> } @else { Assigner }
+        </button>
+      </div>
+    </div>
+  </div>
+}

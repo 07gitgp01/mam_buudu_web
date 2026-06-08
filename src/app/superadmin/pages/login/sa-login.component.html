@@ -1,0 +1,37 @@
+<div class="sa-login-page">
+  <div class="sa-login-card">
+    <div class="sa-login-icon">
+      <span class="material-icons-round">admin_panel_settings</span>
+    </div>
+    <h1>Administration</h1>
+    <p class="sa-login-sub">Mam Buudu Platform</p>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="sa-form-group">
+        <label>Email</label>
+        <div class="sa-input">
+          <span class="material-icons-round">email</span>
+          <input type="email" formControlName="email" placeholder="admin@mam-buudu.com"
+                 [class.err]="f['email'].invalid && f['email'].touched"/>
+        </div>
+      </div>
+      <div class="sa-form-group">
+        <label>Mot de passe</label>
+        <div class="sa-input">
+          <span class="material-icons-round">lock</span>
+          <input [type]="showPassword ? 'text' : 'password'" formControlName="password"
+                 [class.err]="f['password'].invalid && f['password'].touched"/>
+          <button type="button" class="sa-eye" (click)="showPassword = !showPassword">
+            <span class="material-icons-round">{{ showPassword ? 'visibility_off' : 'visibility' }}</span>
+          </button>
+        </div>
+      </div>
+      @if (errorMsg) {
+        <div class="sa-error">{{ errorMsg }}</div>
+      }
+      <button type="submit" class="sa-btn-submit" [disabled]="loading">
+        @if (loading) { <span class="sa-spinner"></span> } @else { Connexion }
+      </button>
+    </form>
+  </div>
+</div>

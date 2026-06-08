@@ -1,0 +1,65 @@
+<div class="sa-page">
+  <div class="sa-page-header">
+    <h1>Abonnements</h1>
+    <p>{{ data?.total ?? '...' }} abonnements</p>
+  </div>
+
+  <div class="sa-toolbar">
+    <select [(ngModel)]="statut" (change)="page = 1; load()">
+      <option value="">Tous</option>
+      <option value="actif">Actifs</option>
+      <option value="expire">Expirés</option>
+      <option value="annule">Annulés</option>
+    </select>
+  </div>
+
+  @if (loading) {
+    <div class="sa-loading">Chargement...</div>
+  } @else {
+    <div class="sa-table-wrap">
+      <table class="sa-table">
+        <thead>
+          <tr>
+            <th>Famille</th>
+            <th>Plan</th>
+            <th>Statut</th>
+            <th>Début</th>
+            <th>Fin</th>
+            <th>Dernier paiement</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (s of data?.subscriptions; track s.id) {
+            <tr>
+              <td>
+                <strong>{{ s.famille?.nom }}</strong><br/>
+                <code>{{ s.famille?.codeUnique }}</code>
+              </td>
+              <td><span class="sa-badge plan">{{ s.plan?.label }}</span></td>
+              <td>
+                <span class="sa-badge" [class.green]="s.statut === 'actif'" [class.red]="s.statut !== 'actif'">
+                  {{ s.statut }}
+                </span>
+              </td>
+              <td>{{ s.dateDebut | date:'dd/MM/yy' }}</td>
+              <td>{{ s.dateFin ? (s.dateFin | date:'dd/MM/yy') : '∞' }}</td>
+              <td>
+                @if (s.paiements?.[0]) {
+                  {{ s.paiements[0].montant | number }} FCFA · {{ s.paiements[0].createdAt | date:'dd/MM/yy' }}
+                } @else {
+                  —
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sa-pagination">
+      <button [disabled]="page <= 1" (click)="page = page - 1; load()">&#8249;</button>
+      <span>Page {{ page }} / {{ data?.pages }}</span>
+      <button [disabled]="page >= data?.pages" (click)="page = page + 1; load()">&#8250;</button>
+    </div>
+  }
+</div>

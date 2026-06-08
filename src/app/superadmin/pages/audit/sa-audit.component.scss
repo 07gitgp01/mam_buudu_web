@@ -1,0 +1,31 @@
+.sa-page { }
+.sa-page-header { margin-bottom: 24px; h1 { font-size: 22px; font-weight: 700; color: #0F172A; margin: 0 0 4px; } p { color: #64748B; font-size: 14px; margin: 0; } }
+.sa-loading { color: #64748B; padding: 40px; text-align: center; }
+.sa-table-wrap { background: #fff; border-radius: 12px; overflow: auto; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.sa-table {
+  width: 100%; border-collapse: collapse; font-size: 13px;
+  th { padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 600; color: #94A3B8; text-transform: uppercase; letter-spacing: .06em; border-bottom: 1px solid #F1F5F9; }
+  td { padding: 12px 16px; border-bottom: 1px solid #F8FAFC; color: #374151; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  code { background: #F1F5F9; padding: 2px 5px; border-radius: 4px; font-size: 11px; color: #64748B; margin-left: 4px; }
+}
+.sa-action-badge {
+  display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px;
+  border-radius: 20px; font-size: 12px; font-weight: 600;
+  .material-icons-round { font-size: 14px; }
+}
+.sa-sub { font-size: 11px; color: #94A3B8; margin-top: 2px; }
+.sa-muted { color: #94A3B8; }
+.sa-target-type {
+  display: inline-block; background: #F1F5F9; color: #6366F1;
+  padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-right: 4px;
+}
+.sa-details-cell { max-width: 260px; color: #64748B; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sa-date-cell { color: #94A3B8; font-size: 12px; white-space: nowrap; }
+.sa-empty-row { text-align: center; color: #94A3B8; padding: 40px !important; }
+.sa-pagination {
+  display: flex; align-items: center; justify-content: center; gap: 16px; padding: 16px; font-size: 13px; color: #64748B;
+  button { padding: 6px 14px; border: 1px solid #E2E8F0; border-radius: 6px; background: #fff; cursor: pointer; font-size: 13px;
+    &:hover:not(:disabled) { border-color: #6366F1; color: #6366F1; }
+    &:disabled { opacity: 0.4; cursor: not-allowed; } }
+}

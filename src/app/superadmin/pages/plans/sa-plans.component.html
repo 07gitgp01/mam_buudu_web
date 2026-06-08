@@ -1,0 +1,121 @@
+<div class="sa-page">
+  <div class="sa-page-header">
+    <div class="sa-header-row">
+      <div>
+        <h1>Plans d'abonnement</h1>
+        <p>Gérer les plans de la plateforme</p>
+      </div>
+      <button class="sa-btn-primary" (click)="showCreateForm = !showCreateForm">
+        <span class="material-icons-round">{{ showCreateForm ? 'close' : 'add' }}</span>
+        {{ showCreateForm ? 'Annuler' : 'Nouveau plan' }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Create form -->
+  @if (showCreateForm) {
+    <div class="sa-create-card">
+      <h3>Créer un nouveau plan</h3>
+      <form [formGroup]="createForm" (ngSubmit)="submitCreate()">
+        <div class="sa-form-grid">
+          <div class="sa-field">
+            <label>ID (slug unique)</label>
+            <input formControlName="id" placeholder="ex: plan_premium"/>
+            @if (createForm.get('id')!.invalid && createForm.get('id')!.touched) {
+              <span class="sa-ferr">Requis, lettres minuscules/chiffres/tiret bas uniquement</span>
+            }
+          </div>
+          <div class="sa-field">
+            <label>Nom technique</label>
+            <input formControlName="nom" placeholder="ex: premium"/>
+          </div>
+          <div class="sa-field">
+            <label>Label affiché</label>
+            <input formControlName="label" placeholder="ex: Premium"/>
+          </div>
+          <div class="sa-field">
+            <label>Prix (FCFA/mois)</label>
+            <input type="number" formControlName="prix" min="0"/>
+          </div>
+          <div class="sa-field">
+            <label>Max personnes (vide = illimité)</label>
+            <input type="number" formControlName="maxPersonnes" placeholder="illimité"/>
+          </div>
+          <div class="sa-field sa-field-full">
+            <label>Fonctionnalités (séparées par virgule)</label>
+            <input formControlName="featuresRaw" placeholder="Arbre illimité, Albums photos, Stories..."/>
+          </div>
+        </div>
+        <div class="sa-create-actions">
+          <button type="submit" class="sa-btn-primary" [disabled]="creating">
+            @if (creating) { <span class="sa-spinner-sm"></span> } @else { Créer le plan }
+          </button>
+        </div>
+      </form>
+    </div>
+  }
+
+  @if (loading) {
+    <div class="sa-loading">Chargement...</div>
+  } @else {
+    <div class="sa-plans-grid">
+      @for (p of plans; track p.id) {
+        <div class="sa-plan-card" [class.sa-plan-free]="p.prix === 0">
+          <div class="sa-plan-head">
+            <div>
+              <div class="sa-plan-label">{{ p.label }}</div>
+              <code class="sa-plan-id">{{ p.id }}</code>
+            </div>
+            <div class="sa-plan-prix">
+              {{ p.prix === 0 ? 'Gratuit' : (p.prix | number) + ' FCFA' }}
+              @if (p.prix > 0) { <small>/mois</small> }
+            </div>
+          </div>
+
+          <div class="sa-plan-meta">
+            <span class="sa-badge blue">{{ p._count?.subscriptions ?? 0 }} abonnés</span>
+            @if (p.maxPersonnes) {
+              <span class="sa-badge grey">Max {{ p.maxPersonnes }} pers.</span>
+            } @else {
+              <span class="sa-badge green">Illimité</span>
+            }
+          </div>
+
+          @if (!p._editing) {
+            <ul class="sa-plan-features">
+              @for (f of p.features; track f) {
+                <li><span class="material-icons-round">check_circle</span>{{ f }}</li>
+              }
+            </ul>
+            <div class="sa-plan-actions">
+              <button class="sa-act-btn" (click)="startEdit(p)" title="Modifier">
+                <span class="material-icons-round">edit</span> Modifier
+              </button>
+              <button class="sa-act-btn danger" (click)="deletePlan(p)" [disabled]="actionLoading === p.id" title="Supprimer">
+                <span class="material-icons-round">delete</span>
+              </button>
+            </div>
+          } @else {
+            <!-- Inline edit -->
+            <div class="sa-plan-edit">
+              <label>Label</label>
+              <input [(ngModel)]="p._editLabel"/>
+              <label>Prix (FCFA)</label>
+              <input type="number" [(ngModel)]="p._editPrix" min="0"/>
+              <label>Max personnes (vide = illimité)</label>
+              <input type="number" [(ngModel)]="p._editMax"/>
+              <label>Fonctionnalités (virgule)</label>
+              <input [(ngModel)]="p._editFeats"/>
+            </div>
+            <div class="sa-plan-actions">
+              <button class="sa-act-btn green" (click)="saveEdit(p)" [disabled]="actionLoading === p.id">
+                <span class="material-icons-round">check</span> Enregistrer
+              </button>
+              <button class="sa-act-btn" (click)="cancelEdit(p)">Annuler</button>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  }
+</div>
