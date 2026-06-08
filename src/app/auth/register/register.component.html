@@ -22,23 +22,29 @@
       <div class="al-steps">
         <div class="al-step" [class.al-step-active]="step === 1" [class.al-step-done]="step > 1">
           <div class="als-num">
-            <span class="material-icons-round" *ngIf="step > 1">check</span>
-            <span *ngIf="step <= 1">1</span>
+            @if (step > 1) {
+              <span class="material-icons-round">check</span>
+            } @else {
+              <span>1</span>
+            }
           </div>
           <div class="als-info">
-            <strong>Vérification email</strong>
-            <span>Confirmation de votre adresse</span>
+            <strong>Vérification</strong>
+            <span>Email ou téléphone</span>
           </div>
         </div>
         <div class="als-connector" [class.done]="step > 1"></div>
         <div class="al-step" [class.al-step-active]="step === 2" [class.al-step-done]="step > 2">
           <div class="als-num">
-            <span class="material-icons-round" *ngIf="step > 2">check</span>
-            <span *ngIf="step <= 2">2</span>
+            @if (step > 2) {
+              <span class="material-icons-round">check</span>
+            } @else {
+              <span>2</span>
+            }
           </div>
           <div class="als-info">
             <strong>Code OTP</strong>
-            <span>Entrez le code reçu par email</span>
+            <span>Entrez le code reçu</span>
           </div>
         </div>
         <div class="als-connector" [class.done]="step > 2"></div>
@@ -62,16 +68,22 @@
       <div class="step-indicator">
         <div class="si-step" [class.si-active]="step === 1" [class.si-done]="step > 1">
           <div class="si-circle">
-            <span class="material-icons-round" *ngIf="step > 1">check</span>
-            <span *ngIf="step <= 1">1</span>
+            @if (step > 1) {
+              <span class="material-icons-round">check</span>
+            } @else {
+              <span>1</span>
+            }
           </div>
-          <span class="si-label">Email</span>
+          <span class="si-label">Contact</span>
         </div>
         <div class="si-line" [class.si-line-done]="step > 1"></div>
         <div class="si-step" [class.si-active]="step === 2" [class.si-done]="step > 2">
           <div class="si-circle">
-            <span class="material-icons-round" *ngIf="step > 2">check</span>
-            <span *ngIf="step <= 2">2</span>
+            @if (step > 2) {
+              <span class="material-icons-round">check</span>
+            } @else {
+              <span>2</span>
+            }
           </div>
           <span class="si-label">Code</span>
         </div>
@@ -82,35 +94,62 @@
         </div>
       </div>
 
-      <!-- ═════ ÉTAPE 1 — Email ═════ -->
+      <!-- ═════ ÉTAPE 1 — Contact (email ou tel) ═════ -->
       @if (step === 1) {
         <div class="auth-card-header">
-          <div class="auth-card-icon"><span class="material-icons-round">mark_email_unread</span></div>
-          <h2>Vérifiez votre adresse email</h2>
+          <div class="auth-card-icon">
+            <span class="material-icons-round">{{ contactType === 'email' ? 'mark_email_unread' : 'phone_iphone' }}</span>
+          </div>
+          <h2>Vérifiez votre identité</h2>
           <p>Nous vous enverrons un code à 6 chiffres pour confirmer votre identité.</p>
         </div>
 
-        <form [formGroup]="emailForm" (ngSubmit)="sendOtp()">
+        <!-- Toggle email / téléphone -->
+        <div class="contact-toggle">
+          <button type="button" class="ct-btn" [class.ct-active]="contactType === 'email'" (click)="setContactType('email')">
+            <span class="material-icons-round">email</span>Email
+          </button>
+          <button type="button" class="ct-btn" [class.ct-active]="contactType === 'tel'" (click)="setContactType('tel')">
+            <span class="material-icons-round">phone</span>Téléphone
+          </button>
+        </div>
+
+        <form [formGroup]="contactForm" (ngSubmit)="sendOtp()">
           <div class="form-group">
-            <label>Adresse email</label>
+            <label>{{ contactType === 'email' ? 'Adresse email' : 'Numéro de téléphone' }}</label>
             <div class="input-wrapper">
-              <span class="material-icons-round">email</span>
-              <input type="email" formControlName="email" placeholder="votre@email.com"
-                     [class.input-error]="fe['email'].invalid && fe['email'].touched" autofocus/>
+              <span class="material-icons-round">{{ contactType === 'email' ? 'email' : 'phone' }}</span>
+              @if (contactType === 'email') {
+                <input type="email" formControlName="contact" placeholder="votre@email.com"
+                       [class.input-error]="fc['contact'].invalid && fc['contact'].touched" autofocus/>
+              } @else {
+                <input type="tel" formControlName="contact" placeholder="+221 77 000 00 00"
+                       [class.input-error]="fc['contact'].invalid && fc['contact'].touched"/>
+              }
             </div>
-            <span class="field-error" *ngIf="fe['email'].invalid && fe['email'].touched">Adresse email invalide</span>
+            @if (fc['contact'].invalid && fc['contact'].touched) {
+              <span class="field-error">
+                {{ contactType === 'email' ? 'Adresse email invalide' : 'Numéro invalide (format : +221…)' }}
+              </span>
+            }
+            @if (contactType === 'tel') {
+              <span class="field-hint">Entrez votre numéro avec l'indicatif pays (+221, +223…)</span>
+            }
           </div>
 
-          <div class="alert-error-box" *ngIf="errorMsg">
-            <span class="material-icons-round">error_outline</span>{{ errorMsg }}
-          </div>
+          @if (errorMsg) {
+            <div class="alert-error-box">
+              <span class="material-icons-round">error_outline</span>{{ errorMsg }}
+            </div>
+          }
 
           <button type="submit" class="btn-submit" [disabled]="loading">
-            <span class="btn-spinner" *ngIf="loading"></span>
-            <ng-container *ngIf="!loading">
+            @if (loading) {
+              <span class="btn-spinner"></span>
+            } @else {
               <span class="material-icons-round">send</span>
               Envoyer le code
-            </ng-container>
+            }
           </button>
         </form>
       }
@@ -120,7 +159,7 @@
         <div class="auth-card-header">
           <div class="auth-card-icon otp-icon"><span class="material-icons-round">pin</span></div>
           <h2>Entrez votre code</h2>
-          <p>Un code à 6 chiffres a été envoyé à <strong>{{ verifiedEmail }}</strong>.</p>
+          <p>Un code à 6 chiffres a été envoyé à <strong>{{ verifiedContact }}</strong>.</p>
         </div>
 
         <form [formGroup]="otpForm" (ngSubmit)="verifyOtp()">
@@ -132,15 +171,21 @@
                      maxlength="6" inputmode="numeric" autocomplete="one-time-code"
                      [class.input-error]="fo['code'].invalid && fo['code'].touched"/>
             </div>
-            <span class="field-error" *ngIf="fo['code'].invalid && fo['code'].touched">Code à 6 chiffres requis</span>
+            @if (fo['code'].invalid && fo['code'].touched) {
+              <span class="field-error">Code à 6 chiffres requis</span>
+            }
           </div>
 
-          <div class="alert-error-box" *ngIf="errorMsg">
-            <span class="material-icons-round">error_outline</span>{{ errorMsg }}
-          </div>
-          <div class="alert-success-box" *ngIf="successMsg">
-            <span class="material-icons-round">check_circle</span>{{ successMsg }}
-          </div>
+          @if (errorMsg) {
+            <div class="alert-error-box">
+              <span class="material-icons-round">error_outline</span>{{ errorMsg }}
+            </div>
+          }
+          @if (successMsg) {
+            <div class="alert-success-box">
+              <span class="material-icons-round">check_circle</span>{{ successMsg }}
+            </div>
+          }
 
           <div class="otp-resend">
             <button type="button" class="btn-link" (click)="resendOtp()" [disabled]="otpCountdown > 0 || loading">
@@ -150,7 +195,9 @@
                 Renvoyer le code
               }
             </button>
-            <button type="button" class="btn-link" (click)="step = 1">Changer d'email</button>
+            <button type="button" class="btn-link" (click)="step = 1">
+              Changer {{ contactType === 'email' ? "d'email" : 'de numéro' }}
+            </button>
           </div>
 
           <div class="form-actions">
@@ -158,10 +205,11 @@
               <span class="material-icons-round">arrow_back</span>Retour
             </button>
             <button type="submit" class="btn-submit btn-submit-flex" [disabled]="loading">
-              <span class="btn-spinner" *ngIf="loading"></span>
-              <ng-container *ngIf="!loading">
+              @if (loading) {
+                <span class="btn-spinner"></span>
+              } @else {
                 <span class="material-icons-round">verified</span>Vérifier
-              </ng-container>
+              }
             </button>
           </div>
         </form>
@@ -172,9 +220,12 @@
         <div class="auth-card-header">
           <div class="auth-card-icon"><span class="material-icons-round">family_restroom</span></div>
           <h2>Créer votre espace familial</h2>
-          <p>Email vérifié : <strong class="email-verified-badge">
-            <span class="material-icons-round">verified</span>{{ verifiedEmail }}
-          </strong></p>
+          <p>
+            {{ contactType === 'email' ? 'Email' : 'Téléphone' }} vérifié :
+            <strong class="email-verified-badge">
+              <span class="material-icons-round">verified</span>{{ verifiedContact }}
+            </strong>
+          </p>
         </div>
 
         <form [formGroup]="mainForm" (ngSubmit)="submit()">
@@ -187,11 +238,15 @@
               <input type="text" formControlName="nomFamille" placeholder="Ex : Famille Diallo"
                      [class.input-error]="fm['nomFamille'].invalid && fm['nomFamille'].touched"/>
             </div>
-            <span class="field-error" *ngIf="fm['nomFamille'].invalid && fm['nomFamille'].touched">Nom requis (2 car. min.)</span>
-            <div class="code-preview" *ngIf="familleCodePreview">
-              <span class="material-icons-round">tag</span>
-              Code famille : <strong>{{ familleCodePreview }}</strong>
-            </div>
+            @if (fm['nomFamille'].invalid && fm['nomFamille'].touched) {
+              <span class="field-error">Nom requis (2 car. min.)</span>
+            }
+            @if (familleCodePreview) {
+              <div class="code-preview">
+                <span class="material-icons-round">tag</span>
+                Code famille : <strong>{{ familleCodePreview }}</strong>
+              </div>
+            }
           </div>
 
           <!-- Prénom + Nom -->
@@ -203,7 +258,9 @@
                 <input type="text" formControlName="prenom" placeholder="Votre prénom"
                        [class.input-error]="fm['prenom'].invalid && fm['prenom'].touched"/>
               </div>
-              <span class="field-error" *ngIf="fm['prenom'].invalid && fm['prenom'].touched">Requis</span>
+              @if (fm['prenom'].invalid && fm['prenom'].touched) {
+                <span class="field-error">Requis</span>
+              }
             </div>
             <div class="form-group">
               <label>Nom</label>
@@ -212,7 +269,9 @@
                 <input type="text" formControlName="nom" placeholder="Votre nom"
                        [class.input-error]="fm['nom'].invalid && fm['nom'].touched"/>
               </div>
-              <span class="field-error" *ngIf="fm['nom'].invalid && fm['nom'].touched">Requis</span>
+              @if (fm['nom'].invalid && fm['nom'].touched) {
+                <span class="field-error">Requis</span>
+              }
             </div>
           </div>
 
@@ -230,16 +289,20 @@
                 </button>
               </div>
             </div>
-            <div class="pwd-strength" *ngIf="passwordStrength.level > 0">
-              <div class="pwd-bars">
-                <div class="pwd-bar" [style.background]="passwordStrength.level >= 1 ? passwordStrength.color : ''"></div>
-                <div class="pwd-bar" [style.background]="passwordStrength.level >= 2 ? passwordStrength.color : ''"></div>
-                <div class="pwd-bar" [style.background]="passwordStrength.level >= 3 ? passwordStrength.color : ''"></div>
-                <div class="pwd-bar" [style.background]="passwordStrength.level >= 4 ? passwordStrength.color : ''"></div>
+            @if (passwordStrength.level > 0) {
+              <div class="pwd-strength">
+                <div class="pwd-bars">
+                  <div class="pwd-bar" [style.background]="passwordStrength.level >= 1 ? passwordStrength.color : ''"></div>
+                  <div class="pwd-bar" [style.background]="passwordStrength.level >= 2 ? passwordStrength.color : ''"></div>
+                  <div class="pwd-bar" [style.background]="passwordStrength.level >= 3 ? passwordStrength.color : ''"></div>
+                  <div class="pwd-bar" [style.background]="passwordStrength.level >= 4 ? passwordStrength.color : ''"></div>
+                </div>
+                <span class="pwd-label" [style.color]="passwordStrength.color">{{ passwordStrength.label }}</span>
               </div>
-              <span class="pwd-label" [style.color]="passwordStrength.color">{{ passwordStrength.label }}</span>
-            </div>
-            <span class="field-error" *ngIf="fm['password'].invalid && fm['password'].touched">8 caractères minimum</span>
+            }
+            @if (fm['password'].invalid && fm['password'].touched) {
+              <span class="field-error">8 caractères minimum</span>
+            }
           </div>
 
           <!-- Question secrète -->
@@ -250,10 +313,14 @@
               <select formControlName="questionSecrete"
                       [class.input-error]="fm['questionSecrete'].invalid && fm['questionSecrete'].touched">
                 <option value="">-- Choisir une question --</option>
-                <option *ngFor="let q of questions" [value]="q">{{ q }}</option>
+                @for (q of questions; track q) {
+                  <option [value]="q">{{ q }}</option>
+                }
               </select>
             </div>
-            <span class="field-error" *ngIf="fm['questionSecrete'].invalid && fm['questionSecrete'].touched">Veuillez choisir une question</span>
+            @if (fm['questionSecrete'].invalid && fm['questionSecrete'].touched) {
+              <span class="field-error">Veuillez choisir une question</span>
+            }
           </div>
 
           <div class="form-group">
@@ -263,19 +330,24 @@
               <input type="text" formControlName="reponseSecrete" placeholder="Votre réponse"
                      [class.input-error]="fm['reponseSecrete'].invalid && fm['reponseSecrete'].touched"/>
             </div>
-            <span class="field-error" *ngIf="fm['reponseSecrete'].invalid && fm['reponseSecrete'].touched">La réponse est requise</span>
+            @if (fm['reponseSecrete'].invalid && fm['reponseSecrete'].touched) {
+              <span class="field-error">La réponse est requise</span>
+            }
           </div>
 
-          <div class="alert-error-box" *ngIf="errorMsg">
-            <span class="material-icons-round">error_outline</span>{{ errorMsg }}
-          </div>
+          @if (errorMsg) {
+            <div class="alert-error-box">
+              <span class="material-icons-round">error_outline</span>{{ errorMsg }}
+            </div>
+          }
 
           <button type="submit" class="btn-submit" [disabled]="loading">
-            <span class="btn-spinner" *ngIf="loading"></span>
-            <ng-container *ngIf="!loading">
+            @if (loading) {
+              <span class="btn-spinner"></span>
+            } @else {
               <span class="material-icons-round">rocket_launch</span>
               Créer mon espace
-            </ng-container>
+            }
           </button>
 
         </form>

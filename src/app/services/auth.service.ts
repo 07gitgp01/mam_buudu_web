@@ -71,12 +71,14 @@ export class AuthService {
       .pipe(tap((res) => this.save(res.token, res.user)));
   }
 
-  sendOtp(email: string): Observable<{ message: string }> {
-    return this.http.post<{ message: string }>(`${API_BASE_URL}/api/auth/send-otp`, { email });
+  sendOtp(contact: string, type: 'email' | 'telephone'): Observable<{ message: string }> {
+    const body = type === 'email' ? { email: contact } : { telephone: contact };
+    return this.http.post<{ message: string }>(`${API_BASE_URL}/api/auth/send-otp`, body);
   }
 
-  verifyOtp(email: string, code: string): Observable<{ registrationToken: string }> {
-    return this.http.post<{ registrationToken: string }>(`${API_BASE_URL}/api/auth/verify-otp`, { email, code });
+  verifyOtp(contact: string, type: 'email' | 'telephone', code: string): Observable<{ registrationToken: string }> {
+    const body = type === 'email' ? { email: contact, code } : { telephone: contact, code };
+    return this.http.post<{ registrationToken: string }>(`${API_BASE_URL}/api/auth/verify-otp`, body);
   }
 
   forgotPassword(email: string): Observable<{ message: string }> {

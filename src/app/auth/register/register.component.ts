@@ -10,22 +10,23 @@ import { AuthService } from '../../services/auth.service';
   standalone: false,
 })
 export class RegisterComponent {
-  // Étape 1 : email → OTP
+  // Étape 1 : contact (email ou tel) → OTP
   // Étape 2 : code OTP
   // Étape 3 : reste des infos + création du compte
   step = 1;
 
-  emailForm: FormGroup;
-  otpForm:   FormGroup;
-  mainForm:  FormGroup;
+  contactType: 'email' | 'tel' = 'email';
 
-  loading     = false;
-  errorMsg    = '';
-  successMsg  = '';
+  contactForm: FormGroup;
+  otpForm:     FormGroup;
+  mainForm:    FormGroup;
+
+  loading      = false;
+  errorMsg     = '';
+  successMsg   = '';
   showPassword = false;
 
-  // Données transitoires
-  verifiedEmail       = '';
+  verifiedContact     = '';   // email ou numéro vérifié
   registrationToken   = '';
   otpCountdown        = 0;
   private countdownId: ReturnType<typeof setInterval> | null = null;
@@ -33,8 +34,8 @@ export class RegisterComponent {
   readonly questions = [
     'Quel est le prénom de votre mère ?',
     'Quel est le nom de votre ville natale ?',
-    'Quel est le nom de votre animal de compagnie d\'enfance ?',
-    'Quel est le prénom de votre meilleur(e) ami(e) d\'enfance ?',
+    "Quel est le nom de votre animal de compagnie d'enfance ?",
+    "Quel est le prénom de votre meilleur(e) ami(e) d'enfance ?",
     'Quel est le nom de votre école primaire ?',
   ];
 
@@ -43,8 +44,8 @@ export class RegisterComponent {
     private auth:   AuthService,
     private router: Router,
   ) {
-    this.emailForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+    this.contactForm = this.fb.group({
+      contact: ['', [Validators.required, Validators.email]],
     });
 
     this.otpForm = this.fb.group({
@@ -61,26 +62,43 @@ export class RegisterComponent {
     });
   }
 
-  get fe() { return this.emailForm.controls; }
-  get fo() { return this.otpForm.controls;   }
-  get fm() { return this.mainForm.controls;  }
+  get fc() { return this.contactForm.controls; }
+  get fo() { return this.otpForm.controls;     }
+  get fm() { return this.mainForm.controls;    }
+
+  setContactType(type: 'email' | 'tel'): void {
+    if (type === this.contactType) return;
+    this.contactType = type;
+    this.errorMsg    = '';
+    const ctrl = this.contactForm.get('contact')!;
+    ctrl.reset('');
+    if (type === 'email') {
+      ctrl.setValidators([Validators.required, Validators.email]);
+    } else {
+      ctrl.setValidators([Validators.required, Validators.pattern(/^[+0-9][\d\s\-()+]{6,20}$/)]);
+    }
+    ctrl.updateValueAndValidity();
+  }
 
   // ── Étape 1 : envoyer OTP ────────────────────────────────────────────────────
   sendOtp(): void {
-    this.emailForm.markAllAsTouched();
-    if (this.emailForm.invalid) return;
+    this.contactForm.markAllAsTouched();
+    if (this.contactForm.invalid) return;
 
     this.loading  = true;
     this.errorMsg = '';
-    this.auth.sendOtp(this.emailForm.value.email).subscribe({
+    const contact = this.contactForm.value.contact;
+    const type    = this.contactType === 'tel' ? 'telephone' : 'email';
+
+    this.auth.sendOtp(contact, type).subscribe({
       next: () => {
-        this.verifiedEmail = this.emailForm.value.email;
-        this.loading       = false;
-        this.step          = 2;
+        this.verifiedContact = contact;
+        this.loading         = false;
+        this.step            = 2;
         this.startCountdown(60);
       },
       error: (err) => {
-        this.errorMsg = err?.error?.error ?? 'Erreur lors de l\'envoi. Réessayez.';
+        this.errorMsg = err?.error?.error ?? "Erreur lors de l'envoi. Réessayez.";
         this.loading  = false;
       },
     });
@@ -88,10 +106,12 @@ export class RegisterComponent {
 
   resendOtp(): void {
     if (this.otpCountdown > 0) return;
-    this.loading     = true;
-    this.errorMsg    = '';
-    this.successMsg  = '';
-    this.auth.sendOtp(this.verifiedEmail).subscribe({
+    this.loading    = true;
+    this.errorMsg   = '';
+    this.successMsg = '';
+    const type      = this.contactType === 'tel' ? 'telephone' : 'email';
+
+    this.auth.sendOtp(this.verifiedContact, type).subscribe({
       next: () => {
         this.loading    = false;
         this.successMsg = 'Nouveau code envoyé !';
@@ -124,7 +144,9 @@ export class RegisterComponent {
 
     this.loading  = true;
     this.errorMsg = '';
-    this.auth.verifyOtp(this.verifiedEmail, this.otpForm.value.code).subscribe({
+    const type    = this.contactType === 'tel' ? 'telephone' : 'email';
+
+    this.auth.verifyOtp(this.verifiedContact, type, this.otpForm.value.code).subscribe({
       next: ({ registrationToken }) => {
         this.registrationToken = registrationToken;
         this.loading           = false;
@@ -145,9 +167,11 @@ export class RegisterComponent {
     this.loading  = true;
     this.errorMsg = '';
 
-    const payload = {
+    const isEmail  = this.contactType === 'email';
+    const payload  = {
       ...this.mainForm.value,
-      email:             this.verifiedEmail,
+      email:             isEmail ? this.verifiedContact : undefined,
+      telephone:         !isEmail ? this.verifiedContact : undefined,
       registrationToken: this.registrationToken,
     };
 
@@ -171,7 +195,7 @@ export class RegisterComponent {
     if (score <= 1) return { level: 1, label: 'Faible',  color: '#EF4444' };
     if (score === 2) return { level: 2, label: 'Moyen',   color: '#F59E0B' };
     if (score === 3) return { level: 3, label: 'Bon',     color: '#10B981' };
-    return { level: 4, label: 'Fort', color: '#059669' };
+    return                { level: 4, label: 'Fort',     color: '#059669' };
   }
 
   get familleCodePreview(): string {
