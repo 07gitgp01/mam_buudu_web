@@ -10,26 +10,12 @@ import { AuthService } from '../../services/auth.service';
   standalone: false,
 })
 export class RegisterComponent {
-  // Étape 1 : contact (email ou tel) → OTP
-  // Étape 2 : code OTP
-  // Étape 3 : reste des infos + création du compte
-  step = 1;
+  form: FormGroup;
 
   contactType: 'email' | 'tel' = 'email';
-
-  contactForm: FormGroup;
-  otpForm:     FormGroup;
-  mainForm:    FormGroup;
-
   loading      = false;
   errorMsg     = '';
-  successMsg   = '';
   showPassword = false;
-
-  verifiedContact     = '';   // email ou numéro vérifié
-  registrationToken   = '';
-  otpCountdown        = 0;
-  private countdownId: ReturnType<typeof setInterval> | null = null;
 
   readonly questions = [
     'Quel est le prénom de votre mère ?',
@@ -44,15 +30,8 @@ export class RegisterComponent {
     private auth:   AuthService,
     private router: Router,
   ) {
-    this.contactForm = this.fb.group({
-      contact: ['', [Validators.required, Validators.email]],
-    });
-
-    this.otpForm = this.fb.group({
-      code: ['', [Validators.required, Validators.pattern(/^\d{6}$/)]],
-    });
-
-    this.mainForm = this.fb.group({
+    this.form = this.fb.group({
+      contact:         ['', [Validators.required, Validators.email]],
       nomFamille:      ['', [Validators.required, Validators.minLength(2)]],
       prenom:          ['', Validators.required],
       nom:             ['', Validators.required],
@@ -62,117 +41,36 @@ export class RegisterComponent {
     });
   }
 
-  get fc() { return this.contactForm.controls; }
-  get fo() { return this.otpForm.controls;     }
-  get fm() { return this.mainForm.controls;    }
+  get f() { return this.form.controls; }
 
   setContactType(type: 'email' | 'tel'): void {
     if (type === this.contactType) return;
     this.contactType = type;
     this.errorMsg    = '';
-    const ctrl = this.contactForm.get('contact')!;
+    const ctrl = this.form.get('contact')!;
     ctrl.reset('');
-    if (type === 'email') {
-      ctrl.setValidators([Validators.required, Validators.email]);
-    } else {
-      ctrl.setValidators([Validators.required, Validators.pattern(/^[+0-9][\d\s\-()+]{6,20}$/)]);
-    }
+    ctrl.setValidators(
+      type === 'email'
+        ? [Validators.required, Validators.email]
+        : [Validators.required, Validators.pattern(/^[+0-9][\d\s\-()+]{6,20}$/)]
+    );
     ctrl.updateValueAndValidity();
   }
 
-  // ── Étape 1 : envoyer OTP ────────────────────────────────────────────────────
-  sendOtp(): void {
-    this.contactForm.markAllAsTouched();
-    if (this.contactForm.invalid) return;
-
-    this.loading  = true;
-    this.errorMsg = '';
-    const contact = this.contactForm.value.contact;
-    const type    = this.contactType === 'tel' ? 'telephone' : 'email';
-
-    this.auth.sendOtp(contact, type).subscribe({
-      next: () => {
-        this.verifiedContact = contact;
-        this.loading         = false;
-        this.step            = 2;
-        this.startCountdown(60);
-      },
-      error: (err) => {
-        this.errorMsg = err?.error?.error ?? "Erreur lors de l'envoi. Réessayez.";
-        this.loading  = false;
-      },
-    });
-  }
-
-  resendOtp(): void {
-    if (this.otpCountdown > 0) return;
-    this.loading    = true;
-    this.errorMsg   = '';
-    this.successMsg = '';
-    const type      = this.contactType === 'tel' ? 'telephone' : 'email';
-
-    this.auth.sendOtp(this.verifiedContact, type).subscribe({
-      next: () => {
-        this.loading    = false;
-        this.successMsg = 'Nouveau code envoyé !';
-        this.otpForm.reset();
-        this.startCountdown(60);
-      },
-      error: (err) => {
-        this.errorMsg = err?.error?.error ?? 'Erreur lors du renvoi.';
-        this.loading  = false;
-      },
-    });
-  }
-
-  private startCountdown(seconds: number): void {
-    this.otpCountdown = seconds;
-    if (this.countdownId) clearInterval(this.countdownId);
-    this.countdownId = setInterval(() => {
-      this.otpCountdown--;
-      if (this.otpCountdown <= 0) {
-        clearInterval(this.countdownId!);
-        this.countdownId = null;
-      }
-    }, 1000);
-  }
-
-  // ── Étape 2 : vérifier OTP ───────────────────────────────────────────────────
-  verifyOtp(): void {
-    this.otpForm.markAllAsTouched();
-    if (this.otpForm.invalid) return;
-
-    this.loading  = true;
-    this.errorMsg = '';
-    const type    = this.contactType === 'tel' ? 'telephone' : 'email';
-
-    this.auth.verifyOtp(this.verifiedContact, type, this.otpForm.value.code).subscribe({
-      next: ({ registrationToken }) => {
-        this.registrationToken = registrationToken;
-        this.loading           = false;
-        this.step              = 3;
-      },
-      error: (err) => {
-        this.errorMsg = err?.error?.error ?? 'Code incorrect ou expiré.';
-        this.loading  = false;
-      },
-    });
-  }
-
-  // ── Étape 3 : créer le compte ────────────────────────────────────────────────
   submit(): void {
-    this.mainForm.markAllAsTouched();
-    if (this.mainForm.invalid) return;
+    this.form.markAllAsTouched();
+    if (this.form.invalid) return;
 
     this.loading  = true;
     this.errorMsg = '';
 
-    const isEmail  = this.contactType === 'email';
-    const payload  = {
-      ...this.mainForm.value,
-      email:             isEmail ? this.verifiedContact : undefined,
-      telephone:         !isEmail ? this.verifiedContact : undefined,
-      registrationToken: this.registrationToken,
+    const isEmail = this.contactType === 'email';
+    const { contact, nomFamille, prenom, nom, password, questionSecrete, reponseSecrete } = this.form.value;
+
+    const payload = {
+      nomFamille, prenom, nom, password, questionSecrete, reponseSecrete,
+      email:     isEmail ? contact : undefined,
+      telephone: !isEmail ? contact : undefined,
     };
 
     this.auth.register(payload).subscribe({
@@ -185,8 +83,8 @@ export class RegisterComponent {
   }
 
   get passwordStrength(): { level: number; label: string; color: string } {
-    const pwd = this.mainForm.get('password')?.value ?? '';
-    if (pwd.length < 1) return { level: 0, label: '', color: '' };
+    const pwd = this.form.get('password')?.value ?? '';
+    if (!pwd) return { level: 0, label: '', color: '' };
     let score = 0;
     if (pwd.length >= 8) score++;
     if (/[A-Z]/.test(pwd)) score++;
@@ -199,7 +97,7 @@ export class RegisterComponent {
   }
 
   get familleCodePreview(): string {
-    const nom = this.mainForm.get('nomFamille')?.value ?? '';
+    const nom = this.form.get('nomFamille')?.value ?? '';
     if (!nom || nom.trim().length < 2) return '';
     const clean = nom.trim().toUpperCase().replace(/\s+/g, '-').replace(/[^A-Z0-9-]/g, '');
     return `${clean}-${new Date().getFullYear()}`;

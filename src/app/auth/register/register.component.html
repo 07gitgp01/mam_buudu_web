@@ -8,55 +8,30 @@
       <div class="al-dots"></div>
     </div>
     <div class="al-content">
-
       <div class="al-brand">
-        <div class="al-brand-icon">
-          <span class="material-icons-round">account_tree</span>
-        </div>
+        <div class="al-brand-icon"><span class="material-icons-round">account_tree</span></div>
         <span class="al-brand-name">Mam Buudu</span>
       </div>
-
       <h1 class="al-title">Créez l'espace<br/>familial de votre<br/>famille</h1>
       <p class="al-subtitle">Quelques minutes suffisent pour démarrer votre arbre généalogique.</p>
-
-      <div class="al-steps">
-        <div class="al-step" [class.al-step-active]="step === 1" [class.al-step-done]="step > 1">
-          <div class="als-num">
-            @if (step > 1) {
-              <span class="material-icons-round">check</span>
-            } @else {
-              <span>1</span>
-            }
-          </div>
-          <div class="als-info">
-            <strong>Vérification</strong>
-            <span>Email ou téléphone</span>
-          </div>
+      <div class="al-features">
+        <div class="al-feature">
+          <span class="material-icons-round">family_restroom</span>
+          <span>Arbre généalogique interactif</span>
         </div>
-        <div class="als-connector" [class.done]="step > 1"></div>
-        <div class="al-step" [class.al-step-active]="step === 2" [class.al-step-done]="step > 2">
-          <div class="als-num">
-            @if (step > 2) {
-              <span class="material-icons-round">check</span>
-            } @else {
-              <span>2</span>
-            }
-          </div>
-          <div class="als-info">
-            <strong>Code OTP</strong>
-            <span>Entrez le code reçu</span>
-          </div>
+        <div class="al-feature">
+          <span class="material-icons-round">photo_library</span>
+          <span>Albums photos familiaux</span>
         </div>
-        <div class="als-connector" [class.done]="step > 2"></div>
-        <div class="al-step" [class.al-step-active]="step === 3">
-          <div class="als-num">3</div>
-          <div class="als-info">
-            <strong>Votre profil</strong>
-            <span>Nom, famille, mot de passe</span>
-          </div>
+        <div class="al-feature">
+          <span class="material-icons-round">auto_stories</span>
+          <span>Stories et souvenirs</span>
+        </div>
+        <div class="al-feature">
+          <span class="material-icons-round">lock</span>
+          <span>Espace privé et sécurisé</span>
         </div>
       </div>
-
     </div>
   </aside>
 
@@ -64,47 +39,15 @@
   <main class="auth-right">
     <div class="auth-card">
 
-      <!-- Indicateur d'étapes -->
-      <div class="step-indicator">
-        <div class="si-step" [class.si-active]="step === 1" [class.si-done]="step > 1">
-          <div class="si-circle">
-            @if (step > 1) {
-              <span class="material-icons-round">check</span>
-            } @else {
-              <span>1</span>
-            }
-          </div>
-          <span class="si-label">Contact</span>
-        </div>
-        <div class="si-line" [class.si-line-done]="step > 1"></div>
-        <div class="si-step" [class.si-active]="step === 2" [class.si-done]="step > 2">
-          <div class="si-circle">
-            @if (step > 2) {
-              <span class="material-icons-round">check</span>
-            } @else {
-              <span>2</span>
-            }
-          </div>
-          <span class="si-label">Code</span>
-        </div>
-        <div class="si-line" [class.si-line-done]="step > 2"></div>
-        <div class="si-step" [class.si-active]="step === 3">
-          <div class="si-circle">3</div>
-          <span class="si-label">Profil</span>
-        </div>
+      <div class="auth-card-header">
+        <div class="auth-card-icon"><span class="material-icons-round">family_restroom</span></div>
+        <h2>Créer mon espace familial</h2>
+        <p>Rejoignez des milliers de familles sur Mam Buudu.</p>
       </div>
 
-      <!-- ═════ ÉTAPE 1 — Contact (email ou tel) ═════ -->
-      @if (step === 1) {
-        <div class="auth-card-header">
-          <div class="auth-card-icon">
-            <span class="material-icons-round">{{ contactType === 'email' ? 'mark_email_unread' : 'phone_iphone' }}</span>
-          </div>
-          <h2>Vérifiez votre identité</h2>
-          <p>Nous vous enverrons un code à 6 chiffres pour confirmer votre identité.</p>
-        </div>
+      <form [formGroup]="form" (ngSubmit)="submit()">
 
-        <!-- Toggle email / téléphone -->
+        <!-- Contact : email ou téléphone -->
         <div class="contact-toggle">
           <button type="button" class="ct-btn" [class.ct-active]="contactType === 'email'" (click)="setContactType('email')">
             <span class="material-icons-round">email</span>Email
@@ -114,244 +57,146 @@
           </button>
         </div>
 
-        <form [formGroup]="contactForm" (ngSubmit)="sendOtp()">
-          <div class="form-group">
-            <label>{{ contactType === 'email' ? 'Adresse email' : 'Numéro de téléphone' }}</label>
-            <div class="input-wrapper">
-              <span class="material-icons-round">{{ contactType === 'email' ? 'email' : 'phone' }}</span>
-              @if (contactType === 'email') {
-                <input type="email" formControlName="contact" placeholder="votre@email.com"
-                       [class.input-error]="fc['contact'].invalid && fc['contact'].touched" autofocus/>
-              } @else {
-                <input type="tel" formControlName="contact" placeholder="+221 77 000 00 00"
-                       [class.input-error]="fc['contact'].invalid && fc['contact'].touched"/>
-              }
-            </div>
-            @if (fc['contact'].invalid && fc['contact'].touched) {
-              <span class="field-error">
-                {{ contactType === 'email' ? 'Adresse email invalide' : 'Numéro invalide (format : +221…)' }}
-              </span>
-            }
-            @if (contactType === 'tel') {
-              <span class="field-hint">Entrez votre numéro avec l'indicatif pays (+221, +223…)</span>
+        <div class="form-group">
+          <label>{{ contactType === 'email' ? 'Adresse email' : 'Numéro de téléphone' }}</label>
+          <div class="input-wrapper">
+            <span class="material-icons-round">{{ contactType === 'email' ? 'email' : 'phone' }}</span>
+            @if (contactType === 'email') {
+              <input type="email" formControlName="contact" placeholder="votre@email.com"
+                     [class.input-error]="f['contact'].invalid && f['contact'].touched"/>
+            } @else {
+              <input type="tel" formControlName="contact" placeholder="+221 77 000 00 00"
+                     [class.input-error]="f['contact'].invalid && f['contact'].touched"/>
             }
           </div>
-
-          @if (errorMsg) {
-            <div class="alert-error-box">
-              <span class="material-icons-round">error_outline</span>{{ errorMsg }}
-            </div>
+          @if (f['contact'].invalid && f['contact'].touched) {
+            <span class="field-error">
+              {{ contactType === 'email' ? 'Adresse email invalide' : 'Numéro invalide' }}
+            </span>
           }
-
-          <button type="submit" class="btn-submit" [disabled]="loading">
-            @if (loading) {
-              <span class="btn-spinner"></span>
-            } @else {
-              <span class="material-icons-round">send</span>
-              Envoyer le code
-            }
-          </button>
-        </form>
-      }
-
-      <!-- ═════ ÉTAPE 2 — OTP ═════ -->
-      @if (step === 2) {
-        <div class="auth-card-header">
-          <div class="auth-card-icon otp-icon"><span class="material-icons-round">pin</span></div>
-          <h2>Entrez votre code</h2>
-          <p>Un code à 6 chiffres a été envoyé à <strong>{{ verifiedContact }}</strong>.</p>
         </div>
 
-        <form [formGroup]="otpForm" (ngSubmit)="verifyOtp()">
-          <div class="form-group">
-            <label>Code de vérification</label>
-            <div class="input-wrapper otp-input-wrap">
-              <span class="material-icons-round">dialpad</span>
-              <input type="text" formControlName="code" placeholder="000000"
-                     maxlength="6" inputmode="numeric" autocomplete="one-time-code"
-                     [class.input-error]="fo['code'].invalid && fo['code'].touched"/>
-            </div>
-            @if (fo['code'].invalid && fo['code'].touched) {
-              <span class="field-error">Code à 6 chiffres requis</span>
-            }
+        <!-- Nom famille -->
+        <div class="form-group">
+          <label>Nom de la famille</label>
+          <div class="input-wrapper">
+            <span class="material-icons-round">group</span>
+            <input type="text" formControlName="nomFamille" placeholder="Ex : Famille Diallo"
+                   [class.input-error]="f['nomFamille'].invalid && f['nomFamille'].touched"/>
           </div>
-
-          @if (errorMsg) {
-            <div class="alert-error-box">
-              <span class="material-icons-round">error_outline</span>{{ errorMsg }}
+          @if (f['nomFamille'].invalid && f['nomFamille'].touched) {
+            <span class="field-error">Nom requis (2 car. min.)</span>
+          }
+          @if (familleCodePreview) {
+            <div class="code-preview">
+              <span class="material-icons-round">tag</span>
+              Code famille : <strong>{{ familleCodePreview }}</strong>
             </div>
           }
-          @if (successMsg) {
-            <div class="alert-success-box">
-              <span class="material-icons-round">check_circle</span>{{ successMsg }}
-            </div>
-          }
-
-          <div class="otp-resend">
-            <button type="button" class="btn-link" (click)="resendOtp()" [disabled]="otpCountdown > 0 || loading">
-              @if (otpCountdown > 0) {
-                Renvoyer dans {{ otpCountdown }}s
-              } @else {
-                Renvoyer le code
-              }
-            </button>
-            <button type="button" class="btn-link" (click)="step = 1">
-              Changer {{ contactType === 'email' ? "d'email" : 'de numéro' }}
-            </button>
-          </div>
-
-          <div class="form-actions">
-            <button type="button" class="btn-back" (click)="step = 1">
-              <span class="material-icons-round">arrow_back</span>Retour
-            </button>
-            <button type="submit" class="btn-submit btn-submit-flex" [disabled]="loading">
-              @if (loading) {
-                <span class="btn-spinner"></span>
-              } @else {
-                <span class="material-icons-round">verified</span>Vérifier
-              }
-            </button>
-          </div>
-        </form>
-      }
-
-      <!-- ═════ ÉTAPE 3 — Profil + Sécurité ═════ -->
-      @if (step === 3) {
-        <div class="auth-card-header">
-          <div class="auth-card-icon"><span class="material-icons-round">family_restroom</span></div>
-          <h2>Créer votre espace familial</h2>
-          <p>
-            {{ contactType === 'email' ? 'Email' : 'Téléphone' }} vérifié :
-            <strong class="email-verified-badge">
-              <span class="material-icons-round">verified</span>{{ verifiedContact }}
-            </strong>
-          </p>
         </div>
 
-        <form [formGroup]="mainForm" (ngSubmit)="submit()">
-
-          <!-- Nom famille -->
+        <!-- Prénom + Nom -->
+        <div class="form-row">
           <div class="form-group">
-            <label>Nom de la famille</label>
+            <label>Prénom</label>
             <div class="input-wrapper">
-              <span class="material-icons-round">group</span>
-              <input type="text" formControlName="nomFamille" placeholder="Ex : Famille Diallo"
-                     [class.input-error]="fm['nomFamille'].invalid && fm['nomFamille'].touched"/>
+              <span class="material-icons-round">badge</span>
+              <input type="text" formControlName="prenom" placeholder="Votre prénom"
+                     [class.input-error]="f['prenom'].invalid && f['prenom'].touched"/>
             </div>
-            @if (fm['nomFamille'].invalid && fm['nomFamille'].touched) {
-              <span class="field-error">Nom requis (2 car. min.)</span>
-            }
-            @if (familleCodePreview) {
-              <div class="code-preview">
-                <span class="material-icons-round">tag</span>
-                Code famille : <strong>{{ familleCodePreview }}</strong>
-              </div>
+            @if (f['prenom'].invalid && f['prenom'].touched) {
+              <span class="field-error">Requis</span>
             }
           </div>
-
-          <!-- Prénom + Nom -->
-          <div class="form-row">
-            <div class="form-group">
-              <label>Prénom</label>
-              <div class="input-wrapper">
-                <span class="material-icons-round">badge</span>
-                <input type="text" formControlName="prenom" placeholder="Votre prénom"
-                       [class.input-error]="fm['prenom'].invalid && fm['prenom'].touched"/>
-              </div>
-              @if (fm['prenom'].invalid && fm['prenom'].touched) {
-                <span class="field-error">Requis</span>
-              }
-            </div>
-            <div class="form-group">
-              <label>Nom</label>
-              <div class="input-wrapper">
-                <span class="material-icons-round">badge</span>
-                <input type="text" formControlName="nom" placeholder="Votre nom"
-                       [class.input-error]="fm['nom'].invalid && fm['nom'].touched"/>
-              </div>
-              @if (fm['nom'].invalid && fm['nom'].touched) {
-                <span class="field-error">Requis</span>
-              }
-            </div>
-          </div>
-
-          <!-- Mot de passe -->
           <div class="form-group">
-            <label>Mot de passe</label>
+            <label>Nom</label>
             <div class="input-wrapper">
-              <span class="material-icons-round">lock</span>
-              <input [type]="showPassword ? 'text' : 'password'" formControlName="password"
-                     placeholder="8 caractères minimum"
-                     [class.input-error]="fm['password'].invalid && fm['password'].touched"/>
-              <div class="input-suffix">
-                <button type="button" class="btn-icon-eye" (click)="showPassword = !showPassword">
-                  <span class="material-icons-round">{{ showPassword ? 'visibility_off' : 'visibility' }}</span>
-                </button>
+              <span class="material-icons-round">badge</span>
+              <input type="text" formControlName="nom" placeholder="Votre nom"
+                     [class.input-error]="f['nom'].invalid && f['nom'].touched"/>
+            </div>
+            @if (f['nom'].invalid && f['nom'].touched) {
+              <span class="field-error">Requis</span>
+            }
+          </div>
+        </div>
+
+        <!-- Mot de passe -->
+        <div class="form-group">
+          <label>Mot de passe</label>
+          <div class="input-wrapper">
+            <span class="material-icons-round">lock</span>
+            <input [type]="showPassword ? 'text' : 'password'" formControlName="password"
+                   placeholder="8 caractères minimum"
+                   [class.input-error]="f['password'].invalid && f['password'].touched"/>
+            <div class="input-suffix">
+              <button type="button" class="btn-icon-eye" (click)="showPassword = !showPassword">
+                <span class="material-icons-round">{{ showPassword ? 'visibility_off' : 'visibility' }}</span>
+              </button>
+            </div>
+          </div>
+          @if (passwordStrength.level > 0) {
+            <div class="pwd-strength">
+              <div class="pwd-bars">
+                <div class="pwd-bar" [style.background]="passwordStrength.level >= 1 ? passwordStrength.color : ''"></div>
+                <div class="pwd-bar" [style.background]="passwordStrength.level >= 2 ? passwordStrength.color : ''"></div>
+                <div class="pwd-bar" [style.background]="passwordStrength.level >= 3 ? passwordStrength.color : ''"></div>
+                <div class="pwd-bar" [style.background]="passwordStrength.level >= 4 ? passwordStrength.color : ''"></div>
               </div>
-            </div>
-            @if (passwordStrength.level > 0) {
-              <div class="pwd-strength">
-                <div class="pwd-bars">
-                  <div class="pwd-bar" [style.background]="passwordStrength.level >= 1 ? passwordStrength.color : ''"></div>
-                  <div class="pwd-bar" [style.background]="passwordStrength.level >= 2 ? passwordStrength.color : ''"></div>
-                  <div class="pwd-bar" [style.background]="passwordStrength.level >= 3 ? passwordStrength.color : ''"></div>
-                  <div class="pwd-bar" [style.background]="passwordStrength.level >= 4 ? passwordStrength.color : ''"></div>
-                </div>
-                <span class="pwd-label" [style.color]="passwordStrength.color">{{ passwordStrength.label }}</span>
-              </div>
-            }
-            @if (fm['password'].invalid && fm['password'].touched) {
-              <span class="field-error">8 caractères minimum</span>
-            }
-          </div>
-
-          <!-- Question secrète -->
-          <div class="form-group">
-            <label>Question secrète <span class="label-hint">(récupération de compte)</span></label>
-            <div class="input-wrapper input-wrapper-select">
-              <span class="material-icons-round">help_outline</span>
-              <select formControlName="questionSecrete"
-                      [class.input-error]="fm['questionSecrete'].invalid && fm['questionSecrete'].touched">
-                <option value="">-- Choisir une question --</option>
-                @for (q of questions; track q) {
-                  <option [value]="q">{{ q }}</option>
-                }
-              </select>
-            </div>
-            @if (fm['questionSecrete'].invalid && fm['questionSecrete'].touched) {
-              <span class="field-error">Veuillez choisir une question</span>
-            }
-          </div>
-
-          <div class="form-group">
-            <label>Réponse secrète</label>
-            <div class="input-wrapper">
-              <span class="material-icons-round">key</span>
-              <input type="text" formControlName="reponseSecrete" placeholder="Votre réponse"
-                     [class.input-error]="fm['reponseSecrete'].invalid && fm['reponseSecrete'].touched"/>
-            </div>
-            @if (fm['reponseSecrete'].invalid && fm['reponseSecrete'].touched) {
-              <span class="field-error">La réponse est requise</span>
-            }
-          </div>
-
-          @if (errorMsg) {
-            <div class="alert-error-box">
-              <span class="material-icons-round">error_outline</span>{{ errorMsg }}
+              <span class="pwd-label" [style.color]="passwordStrength.color">{{ passwordStrength.label }}</span>
             </div>
           }
+          @if (f['password'].invalid && f['password'].touched) {
+            <span class="field-error">8 caractères minimum</span>
+          }
+        </div>
 
-          <button type="submit" class="btn-submit" [disabled]="loading">
-            @if (loading) {
-              <span class="btn-spinner"></span>
-            } @else {
-              <span class="material-icons-round">rocket_launch</span>
-              Créer mon espace
-            }
-          </button>
+        <!-- Question secrète -->
+        <div class="form-group">
+          <label>Question secrète <span class="label-hint">(récupération de compte)</span></label>
+          <div class="input-wrapper input-wrapper-select">
+            <span class="material-icons-round">help_outline</span>
+            <select formControlName="questionSecrete"
+                    [class.input-error]="f['questionSecrete'].invalid && f['questionSecrete'].touched">
+              <option value="">-- Choisir une question --</option>
+              @for (q of questions; track q) {
+                <option [value]="q">{{ q }}</option>
+              }
+            </select>
+          </div>
+          @if (f['questionSecrete'].invalid && f['questionSecrete'].touched) {
+            <span class="field-error">Veuillez choisir une question</span>
+          }
+        </div>
 
-        </form>
-      }
+        <div class="form-group">
+          <label>Réponse secrète</label>
+          <div class="input-wrapper">
+            <span class="material-icons-round">key</span>
+            <input type="text" formControlName="reponseSecrete" placeholder="Votre réponse"
+                   [class.input-error]="f['reponseSecrete'].invalid && f['reponseSecrete'].touched"/>
+          </div>
+          @if (f['reponseSecrete'].invalid && f['reponseSecrete'].touched) {
+            <span class="field-error">La réponse est requise</span>
+          }
+        </div>
+
+        @if (errorMsg) {
+          <div class="alert-error-box">
+            <span class="material-icons-round">error_outline</span>{{ errorMsg }}
+          </div>
+        }
+
+        <button type="submit" class="btn-submit" [disabled]="loading">
+          @if (loading) {
+            <span class="btn-spinner"></span>
+          } @else {
+            <span class="material-icons-round">rocket_launch</span>
+            Créer mon espace
+          }
+        </button>
+
+      </form>
 
       <div class="auth-footer">
         <p>Déjà un compte ? <a routerLink="/auth/login">Se connecter</a></p>
