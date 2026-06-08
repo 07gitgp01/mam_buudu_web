@@ -227,6 +227,23 @@ export class ApiService {
     return this.http.delete<void>(`${this.base}/api/notifications/${id}`);
   }
 
+  /* === Timeline (événements personnalisés) === */
+  getTimelineEvents(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.base}/api/timeline`);
+  }
+
+  createTimelineEvent(data: { titre: string; description?: string; type: string; date: string; personne?: string }): Observable<any> {
+    return this.http.post<any>(`${this.base}/api/timeline`, data);
+  }
+
+  updateTimelineEvent(id: string, data: { titre: string; description?: string; type: string; date: string; personne?: string }): Observable<any> {
+    return this.http.put<any>(`${this.base}/api/timeline/${id}`, data);
+  }
+
+  deleteTimelineEvent(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.base}/api/timeline/${id}`);
+  }
+
   /* === Recherche globale === */
   search(q: string): Observable<{ personnes: any[]; stories: any[]; unions: any[] }> {
     return this.http.get<any>(`${this.base}/api/search`, {

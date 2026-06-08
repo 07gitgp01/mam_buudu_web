@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { forkJoin } from 'rxjs';
+import { forkJoin, finalize } from 'rxjs';
 import { catchError, of } from 'rxjs';
 import { ApiService } from '../../services/api.service';
 import { getNomComplet, extractAnnee } from '../../models/personne.model';
@@ -61,9 +61,10 @@ export class TimelineComponent implements OnInit {
 
   ngOnInit(): void {
     forkJoin({
-      personnes: this.api.getPersonnes().pipe(catchError(() => of([]))),
-      unions:    this.api.getUnions().pipe(catchError(() => of([]))),
-    }).subscribe(({ personnes, unions }) => {
+      personnes:     this.api.getPersonnes().pipe(catchError(() => of([]))),
+      unions:        this.api.getUnions().pipe(catchError(() => of([]))),
+      customDbEvents: this.api.getTimelineEvents().pipe(catchError(() => of([]))),
+    }).subscribe(({ personnes, unions, customDbEvents }) => {
       const events: TimelineEvent[] = [];
 
       for (const p of personnes) {
@@ -108,9 +109,9 @@ export class TimelineComponent implements OnInit {
           const annee = extractAnnee(u.dateDebut);
           if (annee) {
             const membres = u.participants
-              .map(pt => personnes.find(p => p.id === pt.personneId))
+              .map((pt: any) => personnes.find((p: any) => p.id === pt.personneId))
               .filter(Boolean)
-              .map(p => getNomComplet(p!))
+              .map((p: any) => getNomComplet(p!))
               .join(' & ');
             events.push({
               id: `mariage-${u.id}`,
@@ -125,6 +126,18 @@ export class TimelineComponent implements OnInit {
           }
         }
       }
+
+      // Événements personnalisés depuis la base
+      this.customEvents = customDbEvents.map((e: any) => ({
+        id: e.id,
+        annee: extractAnnee(e.date) ?? 0,
+        date: this.formatDateLabel(e.date),
+        type: e.type as EventType,
+        titre: e.titre,
+        description: e.description ?? '',
+        personne: e.personne ?? '',
+        source: 'custom' as const,
+      }));
 
       this.events = [...events, ...this.customEvents]
         .sort((a, b) => this.triDesc ? b.annee - a.annee : a.annee - b.annee);
@@ -164,24 +177,40 @@ export class TimelineComponent implements OnInit {
     if (!this.form.titre.trim() || !this.form.date.trim()) return;
     const annee = extractAnnee(this.form.date);
     if (!annee) return;
-    const ev: TimelineEvent = {
-      id: `custom-${Date.now()}`,
-      annee,
-      date: this.formatDateLabel(this.form.date),
-      type: this.form.type,
-      titre: this.form.titre,
-      description: this.form.description,
-      personne: this.form.personne,
-      source: 'custom',
-    };
-    this.customEvents.push(ev);
-    this.events = [...this.events, ev].sort((a, b) => this.triDesc ? b.annee - a.annee : a.annee - b.annee);
-    this.showForm = false;
+
+    this.saving = true;
+    this.api.createTimelineEvent({
+      titre:       this.form.titre,
+      description: this.form.description || undefined,
+      type:        this.form.type,
+      date:        this.form.date,
+      personne:    this.form.personne || undefined,
+    }).pipe(finalize(() => this.saving = false)).subscribe({
+      next: (created) => {
+        const ev: TimelineEvent = {
+          id:          created.id,
+          annee,
+          date:        this.formatDateLabel(this.form.date),
+          type:        this.form.type,
+          titre:       this.form.titre,
+          description: this.form.description,
+          personne:    this.form.personne,
+          source:      'custom',
+        };
+        this.customEvents.push(ev);
+        this.events = [...this.events, ev].sort((a, b) => this.triDesc ? b.annee - a.annee : a.annee - b.annee);
+        this.showForm = false;
+      },
+    });
   }
 
   deleteEvent(ev: TimelineEvent): void {
     if (ev.source !== 'custom') return;
-    this.customEvents = this.customEvents.filter(e => e.id !== ev.id);
-    this.events = this.events.filter(e => e.id !== ev.id);
+    this.api.deleteTimelineEvent(ev.id).subscribe({
+      next: () => {
+        this.customEvents = this.customEvents.filter(e => e.id !== ev.id);
+        this.events       = this.events.filter(e => e.id !== ev.id);
+      },
+    });
   }
 }
