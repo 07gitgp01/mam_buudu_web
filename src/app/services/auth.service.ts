@@ -71,6 +71,14 @@ export class AuthService {
       .pipe(tap((res) => this.save(res.token, res.user)));
   }
 
+  sendOtp(email: string): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(`${API_BASE_URL}/api/auth/send-otp`, { email });
+  }
+
+  verifyOtp(email: string, code: string): Observable<{ registrationToken: string }> {
+    return this.http.post<{ registrationToken: string }>(`${API_BASE_URL}/api/auth/verify-otp`, { email, code });
+  }
+
   forgotPassword(email: string): Observable<{ message: string }> {
     return this.http.post<{ message: string }>(`${API_BASE_URL}/api/auth/forgot-password`, { email });
   }

@@ -26,32 +26,28 @@
             <span *ngIf="step <= 1">1</span>
           </div>
           <div class="als-info">
-            <strong>Votre identité</strong>
-            <span>Nom de famille, email, mot de passe</span>
+            <strong>Vérification email</strong>
+            <span>Confirmation de votre adresse</span>
           </div>
         </div>
         <div class="als-connector" [class.done]="step > 1"></div>
-        <div class="al-step" [class.al-step-active]="step === 2">
-          <div class="als-num">2</div>
+        <div class="al-step" [class.al-step-active]="step === 2" [class.al-step-done]="step > 2">
+          <div class="als-num">
+            <span class="material-icons-round" *ngIf="step > 2">check</span>
+            <span *ngIf="step <= 2">2</span>
+          </div>
           <div class="als-info">
-            <strong>Sécurité</strong>
-            <span>Question secrète de récupération</span>
+            <strong>Code OTP</strong>
+            <span>Entrez le code reçu par email</span>
           </div>
         </div>
-      </div>
-
-      <div class="al-what-next">
-        <div class="awn-item">
-          <div class="awn-icon"><span class="material-icons-round">vpn_key</span></div>
-          <span>Code famille unique généré automatiquement</span>
-        </div>
-        <div class="awn-item">
-          <div class="awn-icon"><span class="material-icons-round">group_add</span></div>
-          <span>Invitez vos proches avec votre code</span>
-        </div>
-        <div class="awn-item">
-          <div class="awn-icon"><span class="material-icons-round">account_tree</span></div>
-          <span>Construisez votre arbre généalogique</span>
+        <div class="als-connector" [class.done]="step > 2"></div>
+        <div class="al-step" [class.al-step-active]="step === 3">
+          <div class="als-num">3</div>
+          <div class="als-info">
+            <strong>Votre profil</strong>
+            <span>Nom, famille, mot de passe</span>
+          </div>
         </div>
       </div>
 
@@ -62,14 +58,6 @@
   <main class="auth-right">
     <div class="auth-card">
 
-      <div class="auth-card-header">
-        <div class="auth-card-icon">
-          <span class="material-icons-round">{{ step === 1 ? 'family_restroom' : 'security' }}</span>
-        </div>
-        <h2>{{ step === 1 ? 'Créer un espace familial' : 'Sécurisez votre compte' }}</h2>
-        <p>{{ step === 1 ? 'Étape 1 sur 2 — Vos informations' : 'Étape 2 sur 2 — Question de sécurité' }}</p>
-      </div>
-
       <!-- Indicateur d'étapes -->
       <div class="step-indicator">
         <div class="si-step" [class.si-active]="step === 1" [class.si-done]="step > 1">
@@ -77,19 +65,119 @@
             <span class="material-icons-round" *ngIf="step > 1">check</span>
             <span *ngIf="step <= 1">1</span>
           </div>
-          <span class="si-label">Identité</span>
+          <span class="si-label">Email</span>
         </div>
         <div class="si-line" [class.si-line-done]="step > 1"></div>
-        <div class="si-step" [class.si-active]="step === 2">
-          <div class="si-circle">2</div>
-          <span class="si-label">Sécurité</span>
+        <div class="si-step" [class.si-active]="step === 2" [class.si-done]="step > 2">
+          <div class="si-circle">
+            <span class="material-icons-round" *ngIf="step > 2">check</span>
+            <span *ngIf="step <= 2">2</span>
+          </div>
+          <span class="si-label">Code</span>
+        </div>
+        <div class="si-line" [class.si-line-done]="step > 2"></div>
+        <div class="si-step" [class.si-active]="step === 3">
+          <div class="si-circle">3</div>
+          <span class="si-label">Profil</span>
         </div>
       </div>
 
-      <form [formGroup]="form" (ngSubmit)="submit()">
+      <!-- ═════ ÉTAPE 1 — Email ═════ -->
+      @if (step === 1) {
+        <div class="auth-card-header">
+          <div class="auth-card-icon"><span class="material-icons-round">mark_email_unread</span></div>
+          <h2>Vérifiez votre adresse email</h2>
+          <p>Nous vous enverrons un code à 6 chiffres pour confirmer votre identité.</p>
+        </div>
 
-        <!-- ═════ ÉTAPE 1 ═════ -->
-        <div class="step-panel" *ngIf="step === 1">
+        <form [formGroup]="emailForm" (ngSubmit)="sendOtp()">
+          <div class="form-group">
+            <label>Adresse email</label>
+            <div class="input-wrapper">
+              <span class="material-icons-round">email</span>
+              <input type="email" formControlName="email" placeholder="votre@email.com"
+                     [class.input-error]="fe['email'].invalid && fe['email'].touched" autofocus/>
+            </div>
+            <span class="field-error" *ngIf="fe['email'].invalid && fe['email'].touched">Adresse email invalide</span>
+          </div>
+
+          <div class="alert-error-box" *ngIf="errorMsg">
+            <span class="material-icons-round">error_outline</span>{{ errorMsg }}
+          </div>
+
+          <button type="submit" class="btn-submit" [disabled]="loading">
+            <span class="btn-spinner" *ngIf="loading"></span>
+            <ng-container *ngIf="!loading">
+              <span class="material-icons-round">send</span>
+              Envoyer le code
+            </ng-container>
+          </button>
+        </form>
+      }
+
+      <!-- ═════ ÉTAPE 2 — OTP ═════ -->
+      @if (step === 2) {
+        <div class="auth-card-header">
+          <div class="auth-card-icon otp-icon"><span class="material-icons-round">pin</span></div>
+          <h2>Entrez votre code</h2>
+          <p>Un code à 6 chiffres a été envoyé à <strong>{{ verifiedEmail }}</strong>.</p>
+        </div>
+
+        <form [formGroup]="otpForm" (ngSubmit)="verifyOtp()">
+          <div class="form-group">
+            <label>Code de vérification</label>
+            <div class="input-wrapper otp-input-wrap">
+              <span class="material-icons-round">dialpad</span>
+              <input type="text" formControlName="code" placeholder="000000"
+                     maxlength="6" inputmode="numeric" autocomplete="one-time-code"
+                     [class.input-error]="fo['code'].invalid && fo['code'].touched"/>
+            </div>
+            <span class="field-error" *ngIf="fo['code'].invalid && fo['code'].touched">Code à 6 chiffres requis</span>
+          </div>
+
+          <div class="alert-error-box" *ngIf="errorMsg">
+            <span class="material-icons-round">error_outline</span>{{ errorMsg }}
+          </div>
+          <div class="alert-success-box" *ngIf="successMsg">
+            <span class="material-icons-round">check_circle</span>{{ successMsg }}
+          </div>
+
+          <div class="otp-resend">
+            <button type="button" class="btn-link" (click)="resendOtp()" [disabled]="otpCountdown > 0 || loading">
+              @if (otpCountdown > 0) {
+                Renvoyer dans {{ otpCountdown }}s
+              } @else {
+                Renvoyer le code
+              }
+            </button>
+            <button type="button" class="btn-link" (click)="step = 1">Changer d'email</button>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-back" (click)="step = 1">
+              <span class="material-icons-round">arrow_back</span>Retour
+            </button>
+            <button type="submit" class="btn-submit btn-submit-flex" [disabled]="loading">
+              <span class="btn-spinner" *ngIf="loading"></span>
+              <ng-container *ngIf="!loading">
+                <span class="material-icons-round">verified</span>Vérifier
+              </ng-container>
+            </button>
+          </div>
+        </form>
+      }
+
+      <!-- ═════ ÉTAPE 3 — Profil + Sécurité ═════ -->
+      @if (step === 3) {
+        <div class="auth-card-header">
+          <div class="auth-card-icon"><span class="material-icons-round">family_restroom</span></div>
+          <h2>Créer votre espace familial</h2>
+          <p>Email vérifié : <strong class="email-verified-badge">
+            <span class="material-icons-round">verified</span>{{ verifiedEmail }}
+          </strong></p>
+        </div>
+
+        <form [formGroup]="mainForm" (ngSubmit)="submit()">
 
           <!-- Nom famille -->
           <div class="form-group">
@@ -97,9 +185,9 @@
             <div class="input-wrapper">
               <span class="material-icons-round">group</span>
               <input type="text" formControlName="nomFamille" placeholder="Ex : Famille Diallo"
-                     [class.input-error]="f['nomFamille'].invalid && f['nomFamille'].touched"/>
+                     [class.input-error]="fm['nomFamille'].invalid && fm['nomFamille'].touched"/>
             </div>
-            <span class="field-error" *ngIf="f['nomFamille'].invalid && f['nomFamille'].touched">Nom requis (2 car. min.)</span>
+            <span class="field-error" *ngIf="fm['nomFamille'].invalid && fm['nomFamille'].touched">Nom requis (2 car. min.)</span>
             <div class="code-preview" *ngIf="familleCodePreview">
               <span class="material-icons-round">tag</span>
               Code famille : <strong>{{ familleCodePreview }}</strong>
@@ -113,40 +201,29 @@
               <div class="input-wrapper">
                 <span class="material-icons-round">badge</span>
                 <input type="text" formControlName="prenom" placeholder="Votre prénom"
-                       [class.input-error]="f['prenom'].invalid && f['prenom'].touched"/>
+                       [class.input-error]="fm['prenom'].invalid && fm['prenom'].touched"/>
               </div>
-              <span class="field-error" *ngIf="f['prenom'].invalid && f['prenom'].touched">Requis</span>
+              <span class="field-error" *ngIf="fm['prenom'].invalid && fm['prenom'].touched">Requis</span>
             </div>
             <div class="form-group">
               <label>Nom</label>
               <div class="input-wrapper">
                 <span class="material-icons-round">badge</span>
                 <input type="text" formControlName="nom" placeholder="Votre nom"
-                       [class.input-error]="f['nom'].invalid && f['nom'].touched"/>
+                       [class.input-error]="fm['nom'].invalid && fm['nom'].touched"/>
               </div>
-              <span class="field-error" *ngIf="f['nom'].invalid && f['nom'].touched">Requis</span>
+              <span class="field-error" *ngIf="fm['nom'].invalid && fm['nom'].touched">Requis</span>
             </div>
           </div>
 
-          <!-- Email -->
-          <div class="form-group">
-            <label>Email</label>
-            <div class="input-wrapper">
-              <span class="material-icons-round">email</span>
-              <input type="email" formControlName="email" placeholder="votre@email.com"
-                     [class.input-error]="f['email'].invalid && f['email'].touched"/>
-            </div>
-            <span class="field-error" *ngIf="f['email'].invalid && f['email'].touched">Adresse email invalide</span>
-          </div>
-
-          <!-- Mot de passe + jauge -->
+          <!-- Mot de passe -->
           <div class="form-group">
             <label>Mot de passe</label>
             <div class="input-wrapper">
               <span class="material-icons-round">lock</span>
               <input [type]="showPassword ? 'text' : 'password'" formControlName="password"
                      placeholder="8 caractères minimum"
-                     [class.input-error]="f['password'].invalid && f['password'].touched"/>
+                     [class.input-error]="fm['password'].invalid && fm['password'].touched"/>
               <div class="input-suffix">
                 <button type="button" class="btn-icon-eye" (click)="showPassword = !showPassword">
                   <span class="material-icons-round">{{ showPassword ? 'visibility_off' : 'visibility' }}</span>
@@ -162,76 +239,47 @@
               </div>
               <span class="pwd-label" [style.color]="passwordStrength.color">{{ passwordStrength.label }}</span>
             </div>
-            <span class="field-error" *ngIf="f['password'].invalid && f['password'].touched">8 caractères minimum</span>
+            <span class="field-error" *ngIf="fm['password'].invalid && fm['password'].touched">8 caractères minimum</span>
           </div>
 
-          <button type="button" class="btn-submit" (click)="nextStep()">
-            <span class="material-icons-round">arrow_forward</span>
-            Continuer
-          </button>
-
-        </div>
-
-        <!-- ═════ ÉTAPE 2 ═════ -->
-        <div class="step-panel" *ngIf="step === 2">
-
-          <div class="step2-info">
-            <div class="s2i-icon">
-              <span class="material-icons-round">security</span>
-            </div>
-            <div class="s2i-text">
-              <strong>Pourquoi une question secrète ?</strong>
-              <p>Elle vous permet de récupérer votre compte si vous oubliez votre mot de passe. Mémorisez bien votre réponse.</p>
-            </div>
-          </div>
-
+          <!-- Question secrète -->
           <div class="form-group">
-            <label>Question secrète</label>
+            <label>Question secrète <span class="label-hint">(récupération de compte)</span></label>
             <div class="input-wrapper input-wrapper-select">
               <span class="material-icons-round">help_outline</span>
               <select formControlName="questionSecrete"
-                      [class.input-error]="f['questionSecrete'].invalid && f['questionSecrete'].touched">
+                      [class.input-error]="fm['questionSecrete'].invalid && fm['questionSecrete'].touched">
                 <option value="">-- Choisir une question --</option>
                 <option *ngFor="let q of questions" [value]="q">{{ q }}</option>
               </select>
             </div>
-            <span class="field-error" *ngIf="f['questionSecrete'].invalid && f['questionSecrete'].touched">Veuillez choisir une question</span>
+            <span class="field-error" *ngIf="fm['questionSecrete'].invalid && fm['questionSecrete'].touched">Veuillez choisir une question</span>
           </div>
 
           <div class="form-group">
             <label>Réponse secrète</label>
             <div class="input-wrapper">
               <span class="material-icons-round">key</span>
-              <input type="text" formControlName="reponseSecrete"
-                     placeholder="Votre réponse"
-                     [class.input-error]="f['reponseSecrete'].invalid && f['reponseSecrete'].touched"/>
+              <input type="text" formControlName="reponseSecrete" placeholder="Votre réponse"
+                     [class.input-error]="fm['reponseSecrete'].invalid && fm['reponseSecrete'].touched"/>
             </div>
-            <span class="field-error" *ngIf="f['reponseSecrete'].invalid && f['reponseSecrete'].touched">La réponse est requise</span>
-            <span class="field-hint">Sensible à la casse — mémorisez-la bien.</span>
+            <span class="field-error" *ngIf="fm['reponseSecrete'].invalid && fm['reponseSecrete'].touched">La réponse est requise</span>
           </div>
 
           <div class="alert-error-box" *ngIf="errorMsg">
-            <span class="material-icons-round">error_outline</span>
-            {{ errorMsg }}
+            <span class="material-icons-round">error_outline</span>{{ errorMsg }}
           </div>
 
-          <div class="form-actions">
-            <button type="button" class="btn-back" (click)="step = 1">
-              <span class="material-icons-round">arrow_back</span>
-              Retour
-            </button>
-            <button type="submit" class="btn-submit btn-submit-flex" [disabled]="loading">
-              <span class="btn-spinner" *ngIf="loading"></span>
-              <ng-container *ngIf="!loading">
-                <span class="material-icons-round">rocket_launch</span>
-                Créer mon espace
-              </ng-container>
-            </button>
-          </div>
+          <button type="submit" class="btn-submit" [disabled]="loading">
+            <span class="btn-spinner" *ngIf="loading"></span>
+            <ng-container *ngIf="!loading">
+              <span class="material-icons-round">rocket_launch</span>
+              Créer mon espace
+            </ng-container>
+          </button>
 
-        </div>
-
-      </form>
+        </form>
+      }
 
       <div class="auth-footer">
         <p>Déjà un compte ? <a routerLink="/auth/login">Se connecter</a></p>
