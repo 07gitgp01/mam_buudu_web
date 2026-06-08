@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a0533"/>
+      <stop offset="55%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fond arrondi -->
+  <rect width="32" height="32" rx="8" fill="url(#bg)"/>
+
+  <!-- Noeud racine (ancêtre) -->
+  <circle cx="16" cy="7.5" r="3.8" fill="white"/>
+
+  <!-- Tronc vertical -->
+  <rect x="15.2" y="11.3" width="1.6" height="4.7" fill="white" rx="0.8"/>
+
+  <!-- Barre horizontale -->
+  <rect x="8" y="16" width="16" height="1.8" rx="0.9" fill="white"/>
+
+  <!-- Branches vers les enfants -->
+  <rect x="8.9" y="17.8" width="1.6" height="3.8" fill="white" rx="0.8"/>
+  <rect x="21.5" y="17.8" width="1.6" height="3.8" fill="white" rx="0.8"/>
+
+  <!-- Noeud enfant gauche -->
+  <circle cx="9.7" cy="24.5" r="3.2" fill="rgba(255,255,255,0.88)"/>
+
+  <!-- Noeud enfant droit -->
+  <circle cx="22.3" cy="24.5" r="3.2" fill="rgba(255,255,255,0.88)"/>
+</svg>
