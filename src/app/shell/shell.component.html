@@ -3,6 +3,22 @@
   <div class="global-loading-fill"></div>
 </div>
 
+<!-- Bandeau email non vérifié -->
+@if (showEmailBanner) {
+  <div class="email-banner">
+    <span class="material-icons-round">mail_outline</span>
+    @if (!emailSent) {
+      <span>Votre adresse email n'est pas vérifiée.
+        <button class="email-banner-btn" (click)="sendVerification()" [disabled]="sending">
+          {{ sending ? 'Envoi…' : 'Renvoyer l\'email' }}
+        </button>
+      </span>
+    } @else {
+      <span>Email envoyé ! Vérifiez votre boîte de réception.</span>
+    }
+  </div>
+}
+
 <div class="shell" [class.sidebar-open]="sidebarOpen">
   <div class="mob-backdrop" *ngIf="sidebarOpen" (click)="sidebarOpen=false"></div>
   <app-sidebar [mobileOpen]="sidebarOpen" (mobileClose)="sidebarOpen=false"></app-sidebar>

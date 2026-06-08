@@ -154,8 +154,16 @@ export class TopbarComponent implements OnInit, OnDestroy {
 
   notifIcon(type: string): string {
     const icons: Record<string, string> = {
-      anniversaire: 'cake',
-      bienvenue:    'waving_hand',
+      anniversaire:        'cake',
+      bienvenue:           'waving_hand',
+      nouveau_membre:      'person_add',
+      nouveau_membre_arbre:'family_restroom',
+      nouvelle_union:      'favorite',
+      nouvelle_story:      'auto_stories',
+      reaction_story:      'favorite_border',
+      commentaire_story:   'chat_bubble_outline',
+      photo_ajoutee:       'add_a_photo',
+      paiement_confirme:   'verified',
     };
     return icons[type] ?? 'notifications';
   }

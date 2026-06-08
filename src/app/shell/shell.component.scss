@@ -21,6 +21,37 @@
   100% { width: 0%;   margin-left: 100%; }
 }
 
+/* ===== BANDEAU EMAIL ===== */
+.email-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: #fef3c7;
+  border-bottom: 1px solid #fcd34d;
+  color: #92400e;
+  font-size: 13.5px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+
+  .material-icons-round { font-size: 18px; color: #d97706; }
+
+  .email-banner-btn {
+    margin-left: 8px;
+    padding: 3px 12px;
+    background: #d97706;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 12.5px;
+    cursor: pointer;
+    font-weight: 500;
+    &:hover:not(:disabled) { background: #b45309; }
+    &:disabled { opacity: 0.6; cursor: default; }
+  }
+}
+
 .shell {
   display: flex;
   height: 100vh;
