@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { clientGuard } from '../core/client.guard';
+import { roleGuard } from '../core/role.guard';
 import { FamilleLoginComponent } from './auth/famille-login.component';
 import { FamilleShellComponent } from './shell/famille-shell.component';
 import { FamilleHomeComponent } from './pages/home/famille-home.component';
@@ -16,7 +17,7 @@ const routes: Routes = [
   {
     path: '',
     component: FamilleShellComponent,
-    canActivate: [clientGuard],
+    canActivate: [clientGuard, roleGuard(['membre', 'viewonly'])],
     children: [
       { path: '',        redirectTo: 'home', pathMatch: 'full' },
       { path: 'home',     component: FamilleHomeComponent     },

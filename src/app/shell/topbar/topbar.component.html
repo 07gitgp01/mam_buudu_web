@@ -207,7 +207,7 @@
             <span class="material-icons-round">language</span>
             Page d'accueil
           </a>
-          <a class="dropdown-item" routerLink="/app/admin">
+          <a class="dropdown-item" routerLink="/app/admin" *ngIf="canAdminister">
             <span class="material-icons-round">admin_panel_settings</span>
             Administration
           </a>

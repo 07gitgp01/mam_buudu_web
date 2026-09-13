@@ -179,6 +179,11 @@ export class TopbarComponent implements OnInit, OnDestroy {
 
   get user() { return this.auth.getUser(); }
 
+  get canAdminister(): boolean {
+    const role = this.user?.role;
+    return role === 'admin' || role === 'gestionnaire';
+  }
+
   get initiales(): string {
     const u = this.user;
     if (!u) return 'MB';

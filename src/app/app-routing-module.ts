@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { authGuard } from './core/auth.guard';
+import { roleGuard } from './core/role.guard';
 import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [
@@ -11,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'app',
-    canActivate: [authGuard],
+    canActivate: [authGuard, roleGuard(['admin', 'gestionnaire'])],
     loadChildren: () => import('./shell/shell.module').then((m) => m.ShellModule),
   },
   {
