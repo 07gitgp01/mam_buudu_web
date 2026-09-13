@@ -32,10 +32,10 @@
           @for (s of data?.subscriptions; track s.id) {
             <tr>
               <td>
-                <strong>{{ s.famille?.nom }}</strong><br/>
-                <code>{{ s.famille?.codeUnique }}</code>
+                <strong>{{ s.famille.nom }}</strong><br/>
+                <code>{{ s.famille.codeUnique }}</code>
               </td>
-              <td><span class="sa-badge plan">{{ s.plan?.label }}</span></td>
+              <td><span class="sa-badge plan">{{ s.plan.label }}</span></td>
               <td>
                 <span class="sa-badge" [class.green]="s.statut === 'actif'" [class.red]="s.statut !== 'actif'">
                   {{ s.statut }}
@@ -44,7 +44,7 @@
               <td>{{ s.dateDebut | date:'dd/MM/yy' }}</td>
               <td>{{ s.dateFin ? (s.dateFin | date:'dd/MM/yy') : '∞' }}</td>
               <td>
-                @if (s.paiements?.[0]) {
+                @if (s.paiements[0]) {
                   {{ s.paiements[0].montant | number }} FCFA · {{ s.paiements[0].createdAt | date:'dd/MM/yy' }}
                 } @else {
                   —

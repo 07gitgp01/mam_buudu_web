@@ -52,8 +52,8 @@
               </td>
               <td><strong>{{ f.nom }}</strong></td>
               <td><code>{{ f.codeUnique }}</code></td>
-              <td>{{ f._count?.membres }}</td>
-              <td>{{ f._count?.personnes }}</td>
+              <td>{{ f._count.membres }}</td>
+              <td>{{ f._count.personnes }}</td>
               <td>
                 @if (f.subscription?.plan) {
                   <span class="sa-badge plan">{{ f.subscription?.plan?.label }}</span>
@@ -97,7 +97,7 @@
                           @for (m of detailData.membres; track m.id) {
                             <div class="sa-membre-chip">
                               <span class="material-icons-round">person</span>
-                              <span>{{ m.user?.prenom }} {{ m.user?.nom }}</span>
+                              <span>{{ m.user.prenom }} {{ m.user.nom }}</span>
                               <span class="sa-role-badge">{{ m.role }}</span>
                             </div>
                           }
@@ -106,16 +106,16 @@
                       <div class="sa-detail-section">
                         <strong>Contenu</strong>
                         <div class="sa-detail-counts">
-                          <span><span class="material-icons-round">people</span>{{ detailData._count?.personnes }} personnes</span>
-                          <span><span class="material-icons-round">auto_stories</span>{{ detailData._count?.stories }} stories</span>
-                          <span><span class="material-icons-round">photo_library</span>{{ detailData._count?.photos }} photos</span>
+                          <span><span class="material-icons-round">people</span>{{ detailData._count.personnes }} personnes</span>
+                          <span><span class="material-icons-round">auto_stories</span>{{ detailData._count.stories }} stories</span>
+                          <span><span class="material-icons-round">photo_library</span>{{ detailData._count.photos }} photos</span>
                         </div>
                       </div>
                       @if (detailData.subscription) {
                         <div class="sa-detail-section">
                           <strong>Abonnement</strong>
                           <div class="sa-detail-sub">
-                            Plan : <span class="sa-badge plan">{{ detailData.subscription.plan?.label }}</span>
+                            Plan : <span class="sa-badge plan">{{ detailData.subscription.plan.label }}</span>
                             · Statut : {{ detailData.subscription.statut }}
                             · Début : {{ detailData.subscription.dateDebut | date:'dd/MM/yyyy' }}
                             @if (detailData.subscription.dateFin) { · Fin : {{ detailData.subscription.dateFin | date:'dd/MM/yyyy' }} }

@@ -268,12 +268,12 @@
         <div class="section-title">Naissance</div>
         <div class="form-row">
           <div class="form-group">
-            <label>Année</label>
-            <input type="number" name="nais_annee" [(ngModel)]="form.nais_annee" placeholder="1960" min="1850" [max]="currentYear" class="form-control" />
+            <label>Année <span class="required">*</span></label>
+            <input type="number" name="nais_annee" [(ngModel)]="form.nais_annee" placeholder="1960" min="1850" [max]="currentYear" class="form-control" required />
           </div>
           <div class="form-group">
-            <label>Mois</label>
-            <select name="nais_mois" [(ngModel)]="form.nais_mois" class="form-control">
+            <label>Mois <span class="required">*</span></label>
+            <select name="nais_mois" [(ngModel)]="form.nais_mois" class="form-control" required>
               <option value="">—</option>
               <option *ngFor="let m of mois" [value]="m.val">{{ m.label }}</option>
             </select>
@@ -425,6 +425,15 @@
           <span class="detail-value">{{ p.lieuDeces }}</span>
         </div>
       </div>
+    </div>
+
+    <!-- Famille -->
+    <div class="detail-section">
+      <div class="section-title">Famille</div>
+      <a class="btn-outline btn-sm" [routerLink]="['/app/unions']" [queryParams]="{ parentId: p.id }">
+        <span class="material-icons-round">child_care</span>
+        Ajouter un enfant
+      </a>
     </div>
 
     <!-- Biographie -->

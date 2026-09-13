@@ -51,7 +51,7 @@
                 }
               </td>
               <td>{{ u.email || u.telephone }}</td>
-              <td>{{ u._count?.familleMembres }}</td>
+              <td>{{ u._count.familleMembres }}</td>
               <td>
                 <select class="sa-role-select" [ngModel]="u.platformRole" (ngModelChange)="setRole(u, $event || null)"
                         [disabled]="actionLoading === u.id">

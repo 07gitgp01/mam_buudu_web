@@ -847,7 +847,7 @@ function SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_3_
   if (rf & 2) {
     const m_r5 = ctx.$implicit;
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate2("", m_r5.user == null ? null : m_r5.user.prenom, " ", m_r5.user == null ? null : m_r5.user.nom);
+    \u0275\u0275textInterpolate2("", m_r5.user.prenom, " ", m_r5.user.nom);
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(m_r5.role);
   }
@@ -880,7 +880,7 @@ function SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_3_
   if (rf & 2) {
     const ctx_r3 = \u0275\u0275nextContext(5);
     \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate(ctx_r3.detailData.subscription.plan == null ? null : ctx_r3.detailData.subscription.plan.label);
+    \u0275\u0275textInterpolate(ctx_r3.detailData.subscription.plan.label);
     \u0275\u0275advance();
     \u0275\u0275textInterpolate2(" \xB7 Statut : ", ctx_r3.detailData.subscription.statut, " \xB7 D\xE9but : ", \u0275\u0275pipeBind2(8, 4, ctx_r3.detailData.subscription.dateDebut, "dd/MM/yyyy"), " ");
     \u0275\u0275advance(2);
@@ -923,11 +923,11 @@ function SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_3_
     \u0275\u0275advance(2);
     \u0275\u0275repeater(ctx_r3.detailData.membres);
     \u0275\u0275advance(9);
-    \u0275\u0275textInterpolate1("", ctx_r3.detailData._count == null ? null : ctx_r3.detailData._count.personnes, " personnes");
+    \u0275\u0275textInterpolate1("", ctx_r3.detailData._count.personnes, " personnes");
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate1("", ctx_r3.detailData._count == null ? null : ctx_r3.detailData._count.stories, " stories");
+    \u0275\u0275textInterpolate1("", ctx_r3.detailData._count.stories, " stories");
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate1("", ctx_r3.detailData._count == null ? null : ctx_r3.detailData._count.photos, " photos");
+    \u0275\u0275textInterpolate1("", ctx_r3.detailData._count.photos, " photos");
     \u0275\u0275advance();
     \u0275\u0275conditional(ctx_r3.detailData.subscription ? 23 : -1);
   }
@@ -1018,9 +1018,9 @@ function SaFamillesComponent_Conditional_25_For_23_Template(rf, ctx) {
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(f_r3.codeUnique);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(f_r3._count == null ? null : f_r3._count.membres);
+    \u0275\u0275textInterpolate(f_r3._count.membres);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(f_r3._count == null ? null : f_r3._count.personnes);
+    \u0275\u0275textInterpolate(f_r3._count.personnes);
     \u0275\u0275advance(2);
     \u0275\u0275conditional((f_r3.subscription == null ? null : f_r3.subscription.plan) ? 16 : 17);
     \u0275\u0275advance(3);
@@ -1451,8 +1451,8 @@ var SaFamillesComponent = class _SaFamillesComponent {
               </td>\r
               <td><strong>{{ f.nom }}</strong></td>\r
               <td><code>{{ f.codeUnique }}</code></td>\r
-              <td>{{ f._count?.membres }}</td>\r
-              <td>{{ f._count?.personnes }}</td>\r
+              <td>{{ f._count.membres }}</td>\r
+              <td>{{ f._count.personnes }}</td>\r
               <td>\r
                 @if (f.subscription?.plan) {\r
                   <span class="sa-badge plan">{{ f.subscription?.plan?.label }}</span>\r
@@ -1496,7 +1496,7 @@ var SaFamillesComponent = class _SaFamillesComponent {
                           @for (m of detailData.membres; track m.id) {\r
                             <div class="sa-membre-chip">\r
                               <span class="material-icons-round">person</span>\r
-                              <span>{{ m.user?.prenom }} {{ m.user?.nom }}</span>\r
+                              <span>{{ m.user.prenom }} {{ m.user.nom }}</span>\r
                               <span class="sa-role-badge">{{ m.role }}</span>\r
                             </div>\r
                           }\r
@@ -1505,16 +1505,16 @@ var SaFamillesComponent = class _SaFamillesComponent {
                       <div class="sa-detail-section">\r
                         <strong>Contenu</strong>\r
                         <div class="sa-detail-counts">\r
-                          <span><span class="material-icons-round">people</span>{{ detailData._count?.personnes }} personnes</span>\r
-                          <span><span class="material-icons-round">auto_stories</span>{{ detailData._count?.stories }} stories</span>\r
-                          <span><span class="material-icons-round">photo_library</span>{{ detailData._count?.photos }} photos</span>\r
+                          <span><span class="material-icons-round">people</span>{{ detailData._count.personnes }} personnes</span>\r
+                          <span><span class="material-icons-round">auto_stories</span>{{ detailData._count.stories }} stories</span>\r
+                          <span><span class="material-icons-round">photo_library</span>{{ detailData._count.photos }} photos</span>\r
                         </div>\r
                       </div>\r
                       @if (detailData.subscription) {\r
                         <div class="sa-detail-section">\r
                           <strong>Abonnement</strong>\r
                           <div class="sa-detail-sub">\r
-                            Plan : <span class="sa-badge plan">{{ detailData.subscription.plan?.label }}</span>\r
+                            Plan : <span class="sa-badge plan">{{ detailData.subscription.plan.label }}</span>\r
                             \xB7 Statut : {{ detailData.subscription.statut }}\r
                             \xB7 D\xE9but : {{ detailData.subscription.dateDebut | date:'dd/MM/yyyy' }}\r
                             @if (detailData.subscription.dateFin) { \xB7 Fin : {{ detailData.subscription.dateFin | date:'dd/MM/yyyy' }} }\r
@@ -1676,7 +1676,7 @@ function SaUsersComponent_Conditional_29_For_20_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(u_r3.email || u_r3.telephone);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(u_r3._count == null ? null : u_r3._count.familleMembres);
+    \u0275\u0275textInterpolate(u_r3._count.familleMembres);
     \u0275\u0275advance(2);
     \u0275\u0275property("ngModel", u_r3.platformRole)("disabled", ctx_r3.actionLoading === u_r3.id);
     \u0275\u0275advance(3);
@@ -1965,7 +1965,7 @@ var SaUsersComponent = class _SaUsersComponent {
                 }\r
               </td>\r
               <td>{{ u.email || u.telephone }}</td>\r
-              <td>{{ u._count?.familleMembres }}</td>\r
+              <td>{{ u._count.familleMembres }}</td>\r
               <td>\r
                 <select class="sa-role-select" [ngModel]="u.platformRole" (ngModelChange)="setRole(u, $event || null)"\r
                         [disabled]="actionLoading === u.id">\r
@@ -2067,11 +2067,11 @@ function SaSubscriptionsComponent_Conditional_17_For_18_Template(rf, ctx) {
   if (rf & 2) {
     const s_r2 = ctx.$implicit;
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(s_r2.famille == null ? null : s_r2.famille.nom);
+    \u0275\u0275textInterpolate(s_r2.famille.nom);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(s_r2.famille == null ? null : s_r2.famille.codeUnique);
+    \u0275\u0275textInterpolate(s_r2.famille.codeUnique);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(s_r2.plan == null ? null : s_r2.plan.label);
+    \u0275\u0275textInterpolate(s_r2.plan.label);
     \u0275\u0275advance(2);
     \u0275\u0275classProp("green", s_r2.statut === "actif")("red", s_r2.statut !== "actif");
     \u0275\u0275advance();
@@ -2081,7 +2081,7 @@ function SaSubscriptionsComponent_Conditional_17_For_18_Template(rf, ctx) {
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(s_r2.dateFin ? \u0275\u0275pipeBind2(18, 14, s_r2.dateFin, "dd/MM/yy") : "\u221E");
     \u0275\u0275advance(3);
-    \u0275\u0275conditional((s_r2.paiements == null ? null : s_r2.paiements[0]) ? 20 : 21);
+    \u0275\u0275conditional(s_r2.paiements[0] ? 20 : 21);
   }
 }
 function SaSubscriptionsComponent_Conditional_17_Template(rf, ctx) {
@@ -2248,10 +2248,10 @@ var SaSubscriptionsComponent = class _SaSubscriptionsComponent {
           @for (s of data?.subscriptions; track s.id) {\r
             <tr>\r
               <td>\r
-                <strong>{{ s.famille?.nom }}</strong><br/>\r
-                <code>{{ s.famille?.codeUnique }}</code>\r
+                <strong>{{ s.famille.nom }}</strong><br/>\r
+                <code>{{ s.famille.codeUnique }}</code>\r
               </td>\r
-              <td><span class="sa-badge plan">{{ s.plan?.label }}</span></td>\r
+              <td><span class="sa-badge plan">{{ s.plan.label }}</span></td>\r
               <td>\r
                 <span class="sa-badge" [class.green]="s.statut === 'actif'" [class.red]="s.statut !== 'actif'">\r
                   {{ s.statut }}\r
@@ -2260,7 +2260,7 @@ var SaSubscriptionsComponent = class _SaSubscriptionsComponent {
               <td>{{ s.dateDebut | date:'dd/MM/yy' }}</td>\r
               <td>{{ s.dateFin ? (s.dateFin | date:'dd/MM/yy') : '\u221E' }}</td>\r
               <td>\r
-                @if (s.paiements?.[0]) {\r
+                @if (s.paiements[0]) {\r
                   {{ s.paiements[0].montant | number }} FCFA \xB7 {{ s.paiements[0].createdAt | date:'dd/MM/yy' }}\r
                 } @else {\r
                   \u2014\r
@@ -3899,4 +3899,4 @@ var SuperAdminModule = class _SuperAdminModule {
 export {
   SuperAdminModule
 };
-//# sourceMappingURL=chunk-FGXZWTIQ.js.map
+//# sourceMappingURL=chunk-SWAO5CSK.js.map

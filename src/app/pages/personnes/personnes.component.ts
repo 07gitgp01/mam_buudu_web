@@ -301,6 +301,10 @@ export class PersonnesComponent implements OnInit {
       this.formErreur = 'Le prénom et le nom de naissance sont requis.';
       return;
     }
+    if (!this.form.nais_annee || !this.form.nais_mois) {
+      this.formErreur = 'L\'année et le mois de naissance sont requis.';
+      return;
+    }
     this.formErreur = null;
     this.saving = true;
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { forkJoin, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Union } from '../../models/union.model';
@@ -152,7 +153,7 @@ export class UnionsComponent implements OnInit {
     fiancailles: 'ring_volume', adoption: 'child_care', polygamie: 'group',
   };
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private route: ActivatedRoute) {}
 
   ngOnInit(): void { this.loadAll(); }
 
@@ -161,9 +162,30 @@ export class UnionsComponent implements OnInit {
     forkJoin({ unions: this.api.getUnions(), personnes: this.api.getPersonnes() }).subscribe({
       next: ({ unions, personnes }) => {
         this.unions = unions; this.personnes = personnes; this.loading = false;
+        this.handleParentIdParam();
       },
       error: () => { this.erreur = 'Impossible de charger les données.'; this.loading = false; },
     });
+  }
+
+  /** Arrivée depuis "Ajouter un enfant" sur la fiche d'une personne (?parentId=...) */
+  private handleParentIdParam(): void {
+    const parentId = this.route.snapshot.queryParams['parentId'];
+    if (!parentId) return;
+
+    const personne = this.personnes.find(p => p.id === parentId);
+    if (!personne) return;
+
+    const unionsDuParent = this.unions.filter(u => u.participants.some(p => p.personneId === parentId));
+
+    if (unionsDuParent.length === 0) {
+      this.openCreateForChef(personne);
+    } else if (unionsDuParent.length === 1) {
+      this.expandedGroups.add(parentId);
+      this.openEnfantPanel(unionsDuParent[0]);
+    } else {
+      this.expandedGroups.add(parentId);
+    }
   }
 
   private refreshUnions(): void {
