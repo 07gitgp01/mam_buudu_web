@@ -52,7 +52,7 @@
   <!-- ===== GROUPES ===== -->
   <div class="ug-groups" *ngIf="!loading && !erreur && unions.length > 0">
 
-    <div class="ug-group" *ngFor="let g of groupedUnions">
+    <div class="ug-group" *ngFor="let g of groupedUnions; trackBy: trackByChefId">
 
       <!-- En-tête du groupe -->
       <div class="ug-group-header" (click)="toggleGroup(g.chef.id)">
@@ -92,7 +92,7 @@
 
       <!-- Couples de ce chef (accordéon) -->
       <div class="ug-couples" *ngIf="isGroupExpanded(g.chef.id)">
-        <div class="ug-couple-row" *ngFor="let u of g.couples; let i = index">
+        <div class="ug-couple-row" *ngFor="let u of g.couples; let i = index; trackBy: trackByUnionId">
 
           <!-- Numéro -->
           <span class="ug-couple-num">{{ i + 1 }}</span>
@@ -223,7 +223,7 @@
 
           <div class="person-select-list">
             <div class="person-select-item"
-                 *ngFor="let p of personnes"
+                 *ngFor="let p of personnes; trackBy: trackByPersonneId"
                  [class.selected]="isParticipant(p.id)"
                  [class.has-union]="getPersonActiveUnions(p.id).length > 0 && !isParticipant(p.id)"
                  (click)="toggleParticipant(p.id)">
@@ -312,6 +312,9 @@
     </form>
   </div>
 
+  <div class="error-state" *ngIf="formErreur">
+    <span class="material-icons-round">error_outline</span>{{ formErreur }}
+  </div>
   <div class="panel-footer">
     <button class="btn-ghost" (click)="closeAll()">Annuler</button>
     <button class="btn-primary" (click)="saveUnion()" [disabled]="saving">
@@ -377,7 +380,7 @@
       </div>
     </ng-container>
     <div class="person-select-list" *ngIf="!showCreateChild">
-      <div class="person-select-item" *ngFor="let p of personnesDisponibles"
+      <div class="person-select-item" *ngFor="let p of personnesDisponibles; trackBy: trackByPersonneId"
            [class.selected]="isEnfantSelected(p.id)" (click)="toggleEnfantSelection(p.id)">
         <div class="u-avatar-wrap">
           <img *ngIf="photoOf(p) && !failedPhotos.has(p.id)"
@@ -393,7 +396,7 @@
     </div>
     <div class="current-children" *ngIf="enfantUnionTarget && enfantUnionTarget.filiations.length > 0">
       <div class="section-title" style="margin-top: 20px;">Enfants actuels</div>
-      <div class="child-item" *ngFor="let f of enfantUnionTarget.filiations">
+      <div class="child-item" *ngFor="let f of enfantUnionTarget.filiations; trackBy: trackByFiliationId">
         <div class="u-avatar-wrap">
           <img *ngIf="photoOf(f.enfant) && !failedPhotos.has(f.enfant.id)"
                [src]="photoOf(f.enfant)" class="u-avatar-photo avatar avatar-sm"
@@ -409,6 +412,9 @@
         </button>
       </div>
     </div>
+  </div>
+  <div class="error-state" *ngIf="enfantErreur">
+    <span class="material-icons-round">error_outline</span>{{ enfantErreur }}
   </div>
   <div class="panel-footer">
     <button class="btn-ghost" (click)="closeEnfantPanel()">Annuler</button>

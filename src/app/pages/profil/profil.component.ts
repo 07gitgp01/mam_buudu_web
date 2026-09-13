@@ -4,8 +4,6 @@ import { forkJoin } from 'rxjs';
 import { AuthService, AuthUser } from '../../services/auth.service';
 import { ApiService } from '../../services/api.service';
 import { ThemeService } from '../../services/theme.service';
-import { HttpClient } from '@angular/common/http';
-import { API_BASE_URL } from '../../core/api.config';
 
 interface FamilleInfo {
   id:   string;
@@ -46,7 +44,6 @@ export class ProfilComponent implements OnInit {
     private api: ApiService,
     public theme: ThemeService,
     private router: Router,
-    private http: HttpClient,
   ) {}
 
   ngOnInit(): void {
@@ -131,8 +128,8 @@ export class ProfilComponent implements OnInit {
     }
     this.editSaving = true;
     this.editError = '';
-    this.http.patch<any>(`${API_BASE_URL}/api/auth/me`, this.editForm).subscribe({
-      next: (res) => {
+    this.api.updateProfile(this.editForm).subscribe({
+      next: () => {
         const updated: AuthUser = {
           ...this.user!,
           prenom:    this.editForm.prenom,
@@ -140,7 +137,7 @@ export class ProfilComponent implements OnInit {
           email:     this.editForm.email || undefined,
           telephone: this.editForm.telephone || undefined,
         };
-        (this.auth as any).save(localStorage.getItem('mb_token')!, updated);
+        this.auth.updateUser(updated);
         this.user = updated;
         this.editSaving = false;
         this.editSuccess = true;
@@ -169,7 +166,7 @@ export class ProfilComponent implements OnInit {
     }
     this.pwSaving = true;
     this.pwError = '';
-    this.http.post(`${API_BASE_URL}/api/auth/change-password`, {
+    this.api.changePassword({
       ancienPassword:  this.pwForm.ancien,
       nouveauPassword: this.pwForm.nouveau,
     }).subscribe({

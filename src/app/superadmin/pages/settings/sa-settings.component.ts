@@ -35,7 +35,7 @@ export class SaSettingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.sa.getSettings().subscribe({
-      next: (s: Setting[]) => { this.settings = s; this.loading = false; },
+      next: (s) => { this.settings = s; this.loading = false; },
       error: () => { this.loading = false; },
     });
   }
@@ -46,7 +46,7 @@ export class SaSettingsComponent implements OnInit {
   save(s: Setting): void {
     s.saving = true;
     this.sa.patchSetting(s.key, s.editValue!, s.label).subscribe({
-      next: (updated: any) => { s.value = updated.value; s.editing = false; s.saving = false; },
+      next: (updated) => { s.value = updated.value; s.editing = false; s.saving = false; },
       error: () => { s.saving = false; },
     });
   }
@@ -55,7 +55,7 @@ export class SaSettingsComponent implements OnInit {
     if (!this.newKey || !this.newValue) return;
     this.adding = true;
     this.sa.patchSetting(this.newKey, this.newValue, this.newLabel).subscribe({
-      next: (s: Setting) => {
+      next: (s) => {
         this.settings.push(s);
         this.newKey = '';
         this.newValue = '';
@@ -77,7 +77,7 @@ export class SaSettingsComponent implements OnInit {
     const exists = this.settings.find(s => s.key === d.key);
     if (exists) return;
     this.sa.patchSetting(d.key, d.value, d.label).subscribe({
-      next: (s: Setting) => { this.settings.push(s); },
+      next: (s) => { this.settings.push(s); },
     });
   }
 
@@ -96,7 +96,7 @@ export class SaSettingsComponent implements OnInit {
     if (!confirm(`Envoyer cette notification à TOUS les utilisateurs de la plateforme ?`)) return;
     this.broadcasting = true;
     this.sa.broadcast(this.broadcastTitre, this.broadcastMsg).subscribe({
-      next: (r: any) => {
+      next: (r) => {
         this.broadcastDone = `Envoyé à ${r.sent} membres`;
         this.broadcastTitre = ''; this.broadcastMsg = '';
         this.broadcasting = false;

@@ -37,6 +37,8 @@ export class FamilleStoriesComponent implements OnInit {
     });
   }
 
+  trackById(_: number, item: Story): string { return item.id; }
+
   get storiesFiltrees(): Story[] {
     return this.stories.filter(s => {
       const matchTag = this.selectedTag === 'tous' || s.tag === this.selectedTag;

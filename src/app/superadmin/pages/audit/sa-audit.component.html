@@ -4,6 +4,28 @@
     <p>Toutes les actions effectuées par les administrateurs plateforme</p>
   </div>
 
+  <div class="sa-toolbar sa-audit-filters">
+    <select [(ngModel)]="filterAdminId" (change)="applyFilters()">
+      <option value="">Tous les administrateurs</option>
+      @for (a of data?.admins; track a.id) {
+        <option [value]="a.id">{{ a.prenom }} {{ a.nom }}</option>
+      }
+    </select>
+    <select [(ngModel)]="filterAction" (change)="applyFilters()">
+      <option value="">Toutes les actions</option>
+      @for (k of actionKeys; track k) {
+        <option [value]="k">{{ getMeta(k).label }}</option>
+      }
+    </select>
+    <input type="date" [(ngModel)]="filterDateDebut" (change)="applyFilters()" title="Depuis le" />
+    <input type="date" [(ngModel)]="filterDateFin" (change)="applyFilters()" title="Jusqu'au" />
+    @if (filterAdminId || filterAction || filterDateDebut || filterDateFin) {
+      <button class="sa-filter-reset" (click)="resetFilters()">
+        <span class="material-icons-round">close</span> Réinitialiser
+      </button>
+    }
+  </div>
+
   @if (loading) {
     <div class="sa-loading">Chargement...</div>
   } @else {
@@ -56,7 +78,7 @@
     <div class="sa-pagination">
       <button [disabled]="page <= 1" (click)="page = page - 1; load()">‹ Précédent</button>
       <span>Page {{ page }} / {{ data?.pages }}</span>
-      <button [disabled]="page >= data?.pages" (click)="page = page + 1; load()">Suivant ›</button>
+      <button [disabled]="page >= (data?.pages ?? 1)" (click)="page = page + 1; load()">Suivant ›</button>
     </div>
   }
 </div>

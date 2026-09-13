@@ -6,6 +6,7 @@ import { Personne } from '../models/personne.model';
 import { Union } from '../models/union.model';
 import { Famille } from '../models/utilisateur.model';
 import { Story } from '../models/story.model';
+import { Membre, Plan, Subscription, NotificationItem } from '../models/plateforme.model';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
@@ -14,8 +15,8 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   /* === Famille === */
-  getCurrentFamille(): Observable<{ famille: Famille; membres: any[] }> {
-    return this.http.get<any>(`${this.base}/api/familles/current`);
+  getCurrentFamille(): Observable<{ famille: Famille; membres: Membre[] }> {
+    return this.http.get<{ famille: Famille; membres: Membre[] }>(`${this.base}/api/familles/current`);
   }
 
   searchFamilles(nom: string): Observable<Famille[]> {
@@ -100,20 +101,32 @@ export class ApiService {
     return this.http.delete<void>(`${this.base}/api/unions/${unionId}/enfants/${enfantId}`);
   }
 
-  getFamilleDetails(): Observable<any> {
-    return this.http.get<any>(`${this.base}/api/familles/current`);
+  getFamilleDetails(): Observable<{ famille: Famille; membres: Membre[] }> {
+    return this.http.get<{ famille: Famille; membres: Membre[] }>(`${this.base}/api/familles/current`);
   }
 
-  changeMemberRole(userId: string, role: string): Observable<any> {
-    return this.http.patch<any>(`${this.base}/api/familles/membres/${userId}/role`, { role });
+  changeMemberRole(userId: string, role: string): Observable<{ message: string; userId: string; role: string }> {
+    return this.http.patch<{ message: string; userId: string; role: string }>(`${this.base}/api/familles/membres/${userId}/role`, { role });
   }
 
-  createMemberAccount(data: { telephone?: string; email?: string; password: string; nom: string; prenom: string; role: string; personneId?: string }): Observable<any> {
-    return this.http.post<any>(`${this.base}/api/auth/membres/create`, data);
+  createMemberAccount(data: { telephone?: string; email?: string; password: string; nom: string; prenom: string; role: string; personneId?: string }): Observable<{ message: string; membre: Membre['user'] & { role: string } }> {
+    return this.http.post<{ message: string; membre: Membre['user'] & { role: string } }>(`${this.base}/api/auth/membres/create`, data);
   }
 
   getViewonlyCredentials(): Observable<{ viewonlyUsername: string; viewonlyPassword: string; familleCode: string }> {
     return this.http.get<any>(`${this.base}/api/auth/viewonly-credentials`);
+  }
+
+  regenerateViewonlyPassword(): Observable<{ viewonlyUsername: string; viewonlyPassword: string; familleCode: string }> {
+    return this.http.post<any>(`${this.base}/api/auth/viewonly-credentials/regenerate`, {});
+  }
+
+  updateProfile(data: { prenom: string; nom: string; email?: string; telephone?: string }): Observable<any> {
+    return this.http.patch<any>(`${this.base}/api/auth/me`, data);
+  }
+
+  changePassword(data: { ancienPassword: string; nouveauPassword: string }): Observable<any> {
+    return this.http.post<any>(`${this.base}/api/auth/change-password`, data);
   }
 
   /* === Stories === */
@@ -193,16 +206,16 @@ export class ApiService {
   }
 
   /* === Abonnement & plans === */
-  getSubscription(): Observable<any> {
-    return this.http.get<any>(`${this.base}/api/subscription`);
+  getSubscription(): Observable<Subscription> {
+    return this.http.get<Subscription>(`${this.base}/api/subscription`);
   }
 
-  getPlans(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.base}/api/subscription/plans`);
+  getPlans(): Observable<Plan[]> {
+    return this.http.get<Plan[]>(`${this.base}/api/subscription/plans`);
   }
 
   checkoutPlan(planId: string): Observable<{ paymentUrl: string; transactionId: string }> {
-    return this.http.post<any>(`${this.base}/api/subscription/checkout`, { planId });
+    return this.http.post<{ paymentUrl: string; transactionId: string }>(`${this.base}/api/subscription/checkout`, { planId });
   }
 
   /* === Export === */
@@ -211,8 +224,8 @@ export class ApiService {
   }
 
   /* === Notifications === */
-  getNotifications(): Observable<{ notifications: any[]; nonLues: number }> {
-    return this.http.get<any>(`${this.base}/api/notifications`);
+  getNotifications(): Observable<{ notifications: NotificationItem[]; nonLues: number }> {
+    return this.http.get<{ notifications: NotificationItem[]; nonLues: number }>(`${this.base}/api/notifications`);
   }
 
   markNotificationRead(id: string): Observable<void> {

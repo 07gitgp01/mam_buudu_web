@@ -8,7 +8,7 @@
       </div>
       <span class="brand-text">Mam Buudu</span>
     </div>
-    <button class="toggle-btn" (click)="toggle()" [title]="isExpanded ? 'Réduire' : 'Agrandir'">
+    <button class="toggle-btn" (click)="toggle()" [title]="isExpanded ? 'Réduire' : 'Agrandir'" [attr.aria-label]="isExpanded ? 'Réduire le menu' : 'Agrandir le menu'">
       <span class="material-icons-round">{{ isExpanded ? 'menu_open' : 'menu' }}</span>
     </button>
   </div>
@@ -21,6 +21,7 @@
       routerLinkActive="active"
       class="nav-item"
       [title]="!isExpanded ? item.label : ''"
+      [attr.aria-label]="item.label"
       (click)="mobileClose.emit()"
     >
       <span class="nav-icon material-icons-round">{{ item.icon }}</span>
@@ -42,6 +43,7 @@
         [class.active]="themeService.current === t.name"
         (click)="themeService.applyColor(t.name)"
         [title]="t.label"
+        [attr.aria-label]="'Thème ' + t.label"
       ></button>
     </div>
   </div>
@@ -54,6 +56,7 @@
       routerLink="/"
       class="nav-item nav-home-link"
       [title]="!isExpanded ? 'Page d\'accueil' : ''"
+      aria-label="Page d'accueil"
       (click)="mobileClose.emit()"
     >
       <span class="nav-icon material-icons-round">language</span>
@@ -66,13 +69,14 @@
       routerLinkActive="active"
       class="nav-item"
       [title]="!isExpanded ? 'Admin' : ''"
+      aria-label="Administration"
       (click)="mobileClose.emit()"
     >
       <span class="nav-icon material-icons-round">admin_panel_settings</span>
       <span class="nav-label" *ngIf="isExpanded">Administration</span>
     </a>
 
-    <button class="nav-item nav-btn logout-btn" (click)="logout()" [title]="!isExpanded ? 'Déconnexion' : ''">
+    <button class="nav-item nav-btn logout-btn" (click)="logout()" [title]="!isExpanded ? 'Déconnexion' : ''" aria-label="Déconnexion">
       <span class="nav-icon material-icons-round">logout</span>
       <span class="nav-label" *ngIf="isExpanded">Déconnexion</span>
     </button>

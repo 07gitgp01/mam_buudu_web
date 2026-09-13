@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../services/api.service';
+import { QrcodeService } from '../../../services/qrcode.service';
 
 @Component({
   selector: 'app-famille-inviter',
@@ -13,8 +14,9 @@ export class FamilleInviterComponent implements OnInit {
   loading = true;
   codeCopied = false;
   messageCopied = false;
+  qrUrl = '';
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private qrcode: QrcodeService) {}
 
   ngOnInit(): void {
     this.api.getCurrentFamille().subscribe({
@@ -23,14 +25,13 @@ export class FamilleInviterComponent implements OnInit {
         this.familleNom  = famille.nom ?? '';
         this.familleCode = famille.code ?? famille.codeUnique ?? '';
         this.loading = false;
+        if (this.familleCode) {
+          this.qrcode.generate(this.familleCode, { size: 220, color: '#7c3aed', bgcolor: '#f5f3ff' })
+            .then(url => this.qrUrl = url);
+        }
       },
       error: () => { this.loading = false; },
     });
-  }
-
-  get qrUrl(): string {
-    if (!this.familleCode) return '';
-    return `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(this.familleCode)}&bgcolor=f5f3ff&color=7c3aed&format=png&margin=10`;
   }
 
   get whatsappMsg(): string {

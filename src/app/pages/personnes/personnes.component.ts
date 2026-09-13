@@ -71,6 +71,7 @@ export class PersonnesComponent implements OnInit {
   editTarget: Personne | null = null;
   form: PersonneForm = this.emptyForm();
   saving = false;
+  formErreur: string | null = null;
 
   /* ---- Photo ---- */
   selectedFile: File | null = null;
@@ -105,6 +106,9 @@ export class PersonnesComponent implements OnInit {
   mois = MOIS;
   sexeOptions = SEXE_OPTIONS;
   currentYear = new Date().getFullYear();
+
+  trackById(_: number, item: Personne): string { return item.id; }
+  trackByPhotoId(_: number, item: any): string { return item.id; }
 
   /* ---- Helpers ---- */
   getInitiales  = getInitiales;
@@ -169,6 +173,7 @@ export class PersonnesComponent implements OnInit {
     this.selectedFile = null;
     this.photoPreview = null;
     this.photoToDelete = false;
+    this.formErreur = null;
     this.showForm = true;
   }
 
@@ -193,6 +198,7 @@ export class PersonnesComponent implements OnInit {
     this.selectedFile = null;
     this.photoPreview = p.photoUrl;
     this.photoToDelete = false;
+    this.formErreur = null;
     this.showForm = true;
   }
 
@@ -290,6 +296,12 @@ export class PersonnesComponent implements OnInit {
 
   savePersonne(): void {
     if (this.saving) return;
+
+    if (!this.form.prenoms.trim() || !this.form.nomNaissance.trim()) {
+      this.formErreur = 'Le prénom et le nom de naissance sont requis.';
+      return;
+    }
+    this.formErreur = null;
     this.saving = true;
 
     const body = {

@@ -1,6 +1,6 @@
 import {
   LoginComponent
-} from "./chunk-CA7LHNI5.js";
+} from "./chunk-2723XT3Y.js";
 import {
   DefaultValueAccessor,
   FormBuilder,
@@ -18,7 +18,7 @@ import {
 } from "./chunk-ESHQL2TU.js";
 import {
   AuthService
-} from "./chunk-FQNE2UNS.js";
+} from "./chunk-VLIH72YP.js";
 import {
   ActivatedRoute,
   CommonModule,
@@ -543,214 +543,214 @@ var RegisterComponent = class _RegisterComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RegisterComponent, [{
     type: Component,
-    args: [{ selector: "app-register", standalone: false, template: `<div class="auth-page">
-
-  <!-- \u2550\u2550\u2550 PANNEAU GAUCHE \u2550\u2550\u2550 -->
-  <aside class="auth-left">
-    <div class="al-bg">
-      <div class="al-blob al-blob-1"></div>
-      <div class="al-blob al-blob-2"></div>
-      <div class="al-dots"></div>
-    </div>
-    <div class="al-content">
-      <div class="al-brand">
-        <div class="al-brand-icon"><span class="material-icons-round">account_tree</span></div>
-        <span class="al-brand-name">Mam Buudu</span>
-      </div>
-      <h1 class="al-title">Cr\xE9ez l'espace<br/>familial de votre<br/>famille</h1>
-      <p class="al-subtitle">Quelques minutes suffisent pour d\xE9marrer votre arbre g\xE9n\xE9alogique.</p>
-      <div class="al-features">
-        <div class="al-feature">
-          <span class="material-icons-round">family_restroom</span>
-          <span>Arbre g\xE9n\xE9alogique interactif</span>
-        </div>
-        <div class="al-feature">
-          <span class="material-icons-round">photo_library</span>
-          <span>Albums photos familiaux</span>
-        </div>
-        <div class="al-feature">
-          <span class="material-icons-round">auto_stories</span>
-          <span>Stories et souvenirs</span>
-        </div>
-        <div class="al-feature">
-          <span class="material-icons-round">lock</span>
-          <span>Espace priv\xE9 et s\xE9curis\xE9</span>
-        </div>
-      </div>
-    </div>
-  </aside>
-
-  <!-- \u2550\u2550\u2550 PANNEAU DROIT \u2550\u2550\u2550 -->
-  <main class="auth-right">
-    <div class="auth-card">
-
-      <div class="auth-card-header">
-        <div class="auth-card-icon"><span class="material-icons-round">family_restroom</span></div>
-        <h2>Cr\xE9er mon espace familial</h2>
-        <p>Rejoignez des milliers de familles sur Mam Buudu.</p>
-      </div>
-
-      <form [formGroup]="form" (ngSubmit)="submit()">
-
-        <!-- Contact : email ou t\xE9l\xE9phone -->
-        <div class="contact-toggle">
-          <button type="button" class="ct-btn" [class.ct-active]="contactType === 'email'" (click)="setContactType('email')">
-            <span class="material-icons-round">email</span>Email
-          </button>
-          <button type="button" class="ct-btn" [class.ct-active]="contactType === 'tel'" (click)="setContactType('tel')">
-            <span class="material-icons-round">phone</span>T\xE9l\xE9phone
-          </button>
-        </div>
-
-        <div class="form-group">
-          <label>{{ contactType === 'email' ? 'Adresse email' : 'Num\xE9ro de t\xE9l\xE9phone' }}</label>
-          <div class="input-wrapper">
-            <span class="material-icons-round">{{ contactType === 'email' ? 'email' : 'phone' }}</span>
-            @if (contactType === 'email') {
-              <input type="email" formControlName="contact" placeholder="votre@email.com"
-                     [class.input-error]="f['contact'].invalid && f['contact'].touched"/>
-            } @else {
-              <input type="tel" formControlName="contact" placeholder="+221 77 000 00 00"
-                     [class.input-error]="f['contact'].invalid && f['contact'].touched"/>
-            }
-          </div>
-          @if (f['contact'].invalid && f['contact'].touched) {
-            <span class="field-error">
-              {{ contactType === 'email' ? 'Adresse email invalide' : 'Num\xE9ro invalide' }}
-            </span>
-          }
-        </div>
-
-        <!-- Nom famille -->
-        <div class="form-group">
-          <label>Nom de la famille</label>
-          <div class="input-wrapper">
-            <span class="material-icons-round">group</span>
-            <input type="text" formControlName="nomFamille" placeholder="Ex : Famille Diallo"
-                   [class.input-error]="f['nomFamille'].invalid && f['nomFamille'].touched"/>
-          </div>
-          @if (f['nomFamille'].invalid && f['nomFamille'].touched) {
-            <span class="field-error">Nom requis (2 car. min.)</span>
-          }
-          @if (familleCodePreview) {
-            <div class="code-preview">
-              <span class="material-icons-round">tag</span>
-              Code famille : <strong>{{ familleCodePreview }}</strong>
-            </div>
-          }
-        </div>
-
-        <!-- Pr\xE9nom + Nom -->
-        <div class="form-row">
-          <div class="form-group">
-            <label>Pr\xE9nom</label>
-            <div class="input-wrapper">
-              <span class="material-icons-round">badge</span>
-              <input type="text" formControlName="prenom" placeholder="Votre pr\xE9nom"
-                     [class.input-error]="f['prenom'].invalid && f['prenom'].touched"/>
-            </div>
-            @if (f['prenom'].invalid && f['prenom'].touched) {
-              <span class="field-error">Requis</span>
-            }
-          </div>
-          <div class="form-group">
-            <label>Nom</label>
-            <div class="input-wrapper">
-              <span class="material-icons-round">badge</span>
-              <input type="text" formControlName="nom" placeholder="Votre nom"
-                     [class.input-error]="f['nom'].invalid && f['nom'].touched"/>
-            </div>
-            @if (f['nom'].invalid && f['nom'].touched) {
-              <span class="field-error">Requis</span>
-            }
-          </div>
-        </div>
-
-        <!-- Mot de passe -->
-        <div class="form-group">
-          <label>Mot de passe</label>
-          <div class="input-wrapper">
-            <span class="material-icons-round">lock</span>
-            <input [type]="showPassword ? 'text' : 'password'" formControlName="password"
-                   placeholder="8 caract\xE8res minimum"
-                   [class.input-error]="f['password'].invalid && f['password'].touched"/>
-            <div class="input-suffix">
-              <button type="button" class="btn-icon-eye" (click)="showPassword = !showPassword">
-                <span class="material-icons-round">{{ showPassword ? 'visibility_off' : 'visibility' }}</span>
-              </button>
-            </div>
-          </div>
-          @if (passwordStrength.level > 0) {
-            <div class="pwd-strength">
-              <div class="pwd-bars">
-                <div class="pwd-bar" [style.background]="passwordStrength.level >= 1 ? passwordStrength.color : ''"></div>
-                <div class="pwd-bar" [style.background]="passwordStrength.level >= 2 ? passwordStrength.color : ''"></div>
-                <div class="pwd-bar" [style.background]="passwordStrength.level >= 3 ? passwordStrength.color : ''"></div>
-                <div class="pwd-bar" [style.background]="passwordStrength.level >= 4 ? passwordStrength.color : ''"></div>
-              </div>
-              <span class="pwd-label" [style.color]="passwordStrength.color">{{ passwordStrength.label }}</span>
-            </div>
-          }
-          @if (f['password'].invalid && f['password'].touched) {
-            <span class="field-error">8 caract\xE8res minimum</span>
-          }
-        </div>
-
-        <!-- Question secr\xE8te -->
-        <div class="form-group">
-          <label>Question secr\xE8te <span class="label-hint">(r\xE9cup\xE9ration de compte)</span></label>
-          <div class="input-wrapper input-wrapper-select">
-            <span class="material-icons-round">help_outline</span>
-            <select formControlName="questionSecrete"
-                    [class.input-error]="f['questionSecrete'].invalid && f['questionSecrete'].touched">
-              <option value="">-- Choisir une question --</option>
-              @for (q of questions; track q) {
-                <option [value]="q">{{ q }}</option>
-              }
-            </select>
-          </div>
-          @if (f['questionSecrete'].invalid && f['questionSecrete'].touched) {
-            <span class="field-error">Veuillez choisir une question</span>
-          }
-        </div>
-
-        <div class="form-group">
-          <label>R\xE9ponse secr\xE8te</label>
-          <div class="input-wrapper">
-            <span class="material-icons-round">key</span>
-            <input type="text" formControlName="reponseSecrete" placeholder="Votre r\xE9ponse"
-                   [class.input-error]="f['reponseSecrete'].invalid && f['reponseSecrete'].touched"/>
-          </div>
-          @if (f['reponseSecrete'].invalid && f['reponseSecrete'].touched) {
-            <span class="field-error">La r\xE9ponse est requise</span>
-          }
-        </div>
-
-        @if (errorMsg) {
-          <div class="alert-error-box">
-            <span class="material-icons-round">error_outline</span>{{ errorMsg }}
-          </div>
-        }
-
-        <button type="submit" class="btn-submit" [disabled]="loading">
-          @if (loading) {
-            <span class="btn-spinner"></span>
-          } @else {
-            <span class="material-icons-round">rocket_launch</span>
-            Cr\xE9er mon espace
-          }
-        </button>
-
-      </form>
-
-      <div class="auth-footer">
-        <p>D\xE9j\xE0 un compte ? <a routerLink="/auth/login">Se connecter</a></p>
-      </div>
-
-    </div>
-  </main>
-
-</div>
+    args: [{ selector: "app-register", standalone: false, template: `<div class="auth-page">\r
+\r
+  <!-- \u2550\u2550\u2550 PANNEAU GAUCHE \u2550\u2550\u2550 -->\r
+  <aside class="auth-left">\r
+    <div class="al-bg">\r
+      <div class="al-blob al-blob-1"></div>\r
+      <div class="al-blob al-blob-2"></div>\r
+      <div class="al-dots"></div>\r
+    </div>\r
+    <div class="al-content">\r
+      <div class="al-brand">\r
+        <div class="al-brand-icon"><span class="material-icons-round">account_tree</span></div>\r
+        <span class="al-brand-name">Mam Buudu</span>\r
+      </div>\r
+      <h1 class="al-title">Cr\xE9ez l'espace<br/>familial de votre<br/>famille</h1>\r
+      <p class="al-subtitle">Quelques minutes suffisent pour d\xE9marrer votre arbre g\xE9n\xE9alogique.</p>\r
+      <div class="al-features">\r
+        <div class="al-feature">\r
+          <span class="material-icons-round">family_restroom</span>\r
+          <span>Arbre g\xE9n\xE9alogique interactif</span>\r
+        </div>\r
+        <div class="al-feature">\r
+          <span class="material-icons-round">photo_library</span>\r
+          <span>Albums photos familiaux</span>\r
+        </div>\r
+        <div class="al-feature">\r
+          <span class="material-icons-round">auto_stories</span>\r
+          <span>Stories et souvenirs</span>\r
+        </div>\r
+        <div class="al-feature">\r
+          <span class="material-icons-round">lock</span>\r
+          <span>Espace priv\xE9 et s\xE9curis\xE9</span>\r
+        </div>\r
+      </div>\r
+    </div>\r
+  </aside>\r
+\r
+  <!-- \u2550\u2550\u2550 PANNEAU DROIT \u2550\u2550\u2550 -->\r
+  <main class="auth-right">\r
+    <div class="auth-card">\r
+\r
+      <div class="auth-card-header">\r
+        <div class="auth-card-icon"><span class="material-icons-round">family_restroom</span></div>\r
+        <h2>Cr\xE9er mon espace familial</h2>\r
+        <p>Rejoignez des milliers de familles sur Mam Buudu.</p>\r
+      </div>\r
+\r
+      <form [formGroup]="form" (ngSubmit)="submit()">\r
+\r
+        <!-- Contact : email ou t\xE9l\xE9phone -->\r
+        <div class="contact-toggle">\r
+          <button type="button" class="ct-btn" [class.ct-active]="contactType === 'email'" (click)="setContactType('email')">\r
+            <span class="material-icons-round">email</span>Email\r
+          </button>\r
+          <button type="button" class="ct-btn" [class.ct-active]="contactType === 'tel'" (click)="setContactType('tel')">\r
+            <span class="material-icons-round">phone</span>T\xE9l\xE9phone\r
+          </button>\r
+        </div>\r
+\r
+        <div class="form-group">\r
+          <label>{{ contactType === 'email' ? 'Adresse email' : 'Num\xE9ro de t\xE9l\xE9phone' }}</label>\r
+          <div class="input-wrapper">\r
+            <span class="material-icons-round">{{ contactType === 'email' ? 'email' : 'phone' }}</span>\r
+            @if (contactType === 'email') {\r
+              <input type="email" formControlName="contact" placeholder="votre@email.com"\r
+                     [class.input-error]="f['contact'].invalid && f['contact'].touched"/>\r
+            } @else {\r
+              <input type="tel" formControlName="contact" placeholder="+221 77 000 00 00"\r
+                     [class.input-error]="f['contact'].invalid && f['contact'].touched"/>\r
+            }\r
+          </div>\r
+          @if (f['contact'].invalid && f['contact'].touched) {\r
+            <span class="field-error">\r
+              {{ contactType === 'email' ? 'Adresse email invalide' : 'Num\xE9ro invalide' }}\r
+            </span>\r
+          }\r
+        </div>\r
+\r
+        <!-- Nom famille -->\r
+        <div class="form-group">\r
+          <label>Nom de la famille</label>\r
+          <div class="input-wrapper">\r
+            <span class="material-icons-round">group</span>\r
+            <input type="text" formControlName="nomFamille" placeholder="Ex : Famille Diallo"\r
+                   [class.input-error]="f['nomFamille'].invalid && f['nomFamille'].touched"/>\r
+          </div>\r
+          @if (f['nomFamille'].invalid && f['nomFamille'].touched) {\r
+            <span class="field-error">Nom requis (2 car. min.)</span>\r
+          }\r
+          @if (familleCodePreview) {\r
+            <div class="code-preview">\r
+              <span class="material-icons-round">tag</span>\r
+              Code famille : <strong>{{ familleCodePreview }}</strong>\r
+            </div>\r
+          }\r
+        </div>\r
+\r
+        <!-- Pr\xE9nom + Nom -->\r
+        <div class="form-row">\r
+          <div class="form-group">\r
+            <label>Pr\xE9nom</label>\r
+            <div class="input-wrapper">\r
+              <span class="material-icons-round">badge</span>\r
+              <input type="text" formControlName="prenom" placeholder="Votre pr\xE9nom"\r
+                     [class.input-error]="f['prenom'].invalid && f['prenom'].touched"/>\r
+            </div>\r
+            @if (f['prenom'].invalid && f['prenom'].touched) {\r
+              <span class="field-error">Requis</span>\r
+            }\r
+          </div>\r
+          <div class="form-group">\r
+            <label>Nom</label>\r
+            <div class="input-wrapper">\r
+              <span class="material-icons-round">badge</span>\r
+              <input type="text" formControlName="nom" placeholder="Votre nom"\r
+                     [class.input-error]="f['nom'].invalid && f['nom'].touched"/>\r
+            </div>\r
+            @if (f['nom'].invalid && f['nom'].touched) {\r
+              <span class="field-error">Requis</span>\r
+            }\r
+          </div>\r
+        </div>\r
+\r
+        <!-- Mot de passe -->\r
+        <div class="form-group">\r
+          <label>Mot de passe</label>\r
+          <div class="input-wrapper">\r
+            <span class="material-icons-round">lock</span>\r
+            <input [type]="showPassword ? 'text' : 'password'" formControlName="password"\r
+                   placeholder="8 caract\xE8res minimum"\r
+                   [class.input-error]="f['password'].invalid && f['password'].touched"/>\r
+            <div class="input-suffix">\r
+              <button type="button" class="btn-icon-eye" (click)="showPassword = !showPassword">\r
+                <span class="material-icons-round">{{ showPassword ? 'visibility_off' : 'visibility' }}</span>\r
+              </button>\r
+            </div>\r
+          </div>\r
+          @if (passwordStrength.level > 0) {\r
+            <div class="pwd-strength">\r
+              <div class="pwd-bars">\r
+                <div class="pwd-bar" [style.background]="passwordStrength.level >= 1 ? passwordStrength.color : ''"></div>\r
+                <div class="pwd-bar" [style.background]="passwordStrength.level >= 2 ? passwordStrength.color : ''"></div>\r
+                <div class="pwd-bar" [style.background]="passwordStrength.level >= 3 ? passwordStrength.color : ''"></div>\r
+                <div class="pwd-bar" [style.background]="passwordStrength.level >= 4 ? passwordStrength.color : ''"></div>\r
+              </div>\r
+              <span class="pwd-label" [style.color]="passwordStrength.color">{{ passwordStrength.label }}</span>\r
+            </div>\r
+          }\r
+          @if (f['password'].invalid && f['password'].touched) {\r
+            <span class="field-error">8 caract\xE8res minimum</span>\r
+          }\r
+        </div>\r
+\r
+        <!-- Question secr\xE8te -->\r
+        <div class="form-group">\r
+          <label>Question secr\xE8te <span class="label-hint">(r\xE9cup\xE9ration de compte)</span></label>\r
+          <div class="input-wrapper input-wrapper-select">\r
+            <span class="material-icons-round">help_outline</span>\r
+            <select formControlName="questionSecrete"\r
+                    [class.input-error]="f['questionSecrete'].invalid && f['questionSecrete'].touched">\r
+              <option value="">-- Choisir une question --</option>\r
+              @for (q of questions; track q) {\r
+                <option [value]="q">{{ q }}</option>\r
+              }\r
+            </select>\r
+          </div>\r
+          @if (f['questionSecrete'].invalid && f['questionSecrete'].touched) {\r
+            <span class="field-error">Veuillez choisir une question</span>\r
+          }\r
+        </div>\r
+\r
+        <div class="form-group">\r
+          <label>R\xE9ponse secr\xE8te</label>\r
+          <div class="input-wrapper">\r
+            <span class="material-icons-round">key</span>\r
+            <input type="text" formControlName="reponseSecrete" placeholder="Votre r\xE9ponse"\r
+                   [class.input-error]="f['reponseSecrete'].invalid && f['reponseSecrete'].touched"/>\r
+          </div>\r
+          @if (f['reponseSecrete'].invalid && f['reponseSecrete'].touched) {\r
+            <span class="field-error">La r\xE9ponse est requise</span>\r
+          }\r
+        </div>\r
+\r
+        @if (errorMsg) {\r
+          <div class="alert-error-box">\r
+            <span class="material-icons-round">error_outline</span>{{ errorMsg }}\r
+          </div>\r
+        }\r
+\r
+        <button type="submit" class="btn-submit" [disabled]="loading">\r
+          @if (loading) {\r
+            <span class="btn-spinner"></span>\r
+          } @else {\r
+            <span class="material-icons-round">rocket_launch</span>\r
+            Cr\xE9er mon espace\r
+          }\r
+        </button>\r
+\r
+      </form>\r
+\r
+      <div class="auth-footer">\r
+        <p>D\xE9j\xE0 un compte ? <a routerLink="/auth/login">Se connecter</a></p>\r
+      </div>\r
+\r
+    </div>\r
+  </main>\r
+\r
+</div>\r
 `, styles: ['@charset "UTF-8";\n\n/* src/app/auth/register/register.component.scss */\n.auth-page {\n  display: flex;\n  min-height: 100vh;\n}\n.auth-left {\n  width: 42%;\n  min-height: 100vh;\n  background:\n    linear-gradient(\n      145deg,\n      #0A1FA8 0%,\n      #1445F5 55%,\n      #2563EB 100%);\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n}\n.al-bg {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n}\n.al-blob {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0.12;\n  background: #fff;\n}\n.al-blob-1 {\n  width: 340px;\n  height: 340px;\n  top: -80px;\n  right: -100px;\n}\n.al-blob-2 {\n  width: 220px;\n  height: 220px;\n  bottom: -60px;\n  left: -60px;\n}\n.al-dots {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.15) 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n}\n.al-content {\n  position: relative;\n  z-index: 1;\n  padding: 48px 44px;\n  display: flex;\n  flex-direction: column;\n  gap: 28px;\n  width: 100%;\n  max-width: 420px;\n}\n.al-brand {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.al-brand-icon {\n  width: 38px;\n  height: 38px;\n  background: rgba(255, 255, 255, 0.18);\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.al-brand-icon .material-icons-round {\n  color: #fff;\n  font-size: 20px;\n}\n.al-brand-name {\n  color: #fff;\n  font-size: 17px;\n  font-weight: 700;\n  letter-spacing: 0.2px;\n}\n.al-title {\n  color: #fff;\n  font-size: 26px;\n  font-weight: 800;\n  line-height: 1.28;\n  margin: 0;\n}\n.al-subtitle {\n  color: rgba(255, 255, 255, 0.72);\n  font-size: 14px;\n  line-height: 1.6;\n  margin: 0;\n}\n.al-steps {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  background: rgba(255, 255, 255, 0.08);\n  border-radius: 16px;\n  padding: 20px;\n}\n.al-step {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n  padding: 4px 0;\n  opacity: 0.55;\n  transition: opacity 0.25s ease;\n}\n.al-step.al-step-active {\n  opacity: 1;\n}\n.al-step.al-step-done {\n  opacity: 0.9;\n}\n.al-step .als-num {\n  width: 30px;\n  height: 30px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.18);\n  color: #fff;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  flex-shrink: 0;\n  transition: background 0.25s ease;\n}\n.al-step .als-num .material-icons-round {\n  font-size: 16px;\n}\n.al-step.al-step-active .als-num {\n  background: rgba(255, 255, 255, 0.9);\n  color: #1445F5;\n}\n.al-step.al-step-done .als-num {\n  background: #10B981;\n}\n.al-step .als-info {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.al-step .als-info strong {\n  color: #fff;\n  font-size: 13px;\n  font-weight: 600;\n}\n.al-step .als-info span {\n  color: rgba(255, 255, 255, 0.65);\n  font-size: 12px;\n}\n.als-connector {\n  width: 2px;\n  height: 24px;\n  background: rgba(255, 255, 255, 0.2);\n  margin: 4px 0 4px 14px;\n  transition: background 0.3s ease;\n}\n.als-connector.done {\n  background: #10B981;\n}\n.al-what-next {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.awn-item {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.awn-item .awn-icon {\n  width: 32px;\n  height: 32px;\n  background: rgba(255, 255, 255, 0.12);\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.awn-item .awn-icon .material-icons-round {\n  color: rgba(255, 255, 255, 0.85);\n  font-size: 17px;\n}\n.awn-item span {\n  color: rgba(255, 255, 255, 0.72);\n  font-size: 13px;\n  line-height: 1.4;\n}\n.auth-right {\n  flex: 1;\n  background: #EEF2FF;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 40px 24px;\n  min-height: 100vh;\n}\n.auth-card {\n  background: #fff;\n  border-radius: 22px;\n  padding: 40px 40px 32px;\n  width: 100%;\n  max-width: 480px;\n  box-shadow: 0 8px 40px rgba(20, 69, 245, 0.12);\n  animation: cardFadeIn 0.45s ease both;\n}\n@keyframes cardFadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(18px);\n  }\n}\n.auth-card-header {\n  text-align: center;\n  margin-bottom: 24px;\n}\n.auth-card-icon {\n  width: 52px;\n  height: 52px;\n  background:\n    linear-gradient(\n      135deg,\n      rgba(20, 69, 245, 0.12),\n      rgba(37, 99, 235, 0.08));\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 14px;\n}\n.auth-card-icon .material-icons-round {\n  color: #1445F5;\n  font-size: 26px;\n}\n.auth-card-header h2 {\n  font-size: 21px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 6px;\n}\n.auth-card-header p {\n  font-size: 13px;\n  color: #64748B;\n  margin: 0;\n}\n.step-indicator {\n  display: flex;\n  align-items: center;\n  margin-bottom: 28px;\n}\n.si-step {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n}\n.si-step .si-circle {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  background: #E2E8F0;\n  color: #94A3B8;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  transition: all 0.3s ease;\n}\n.si-step .si-circle .material-icons-round {\n  font-size: 17px;\n}\n.si-step .si-label {\n  font-size: 11px;\n  color: #94A3B8;\n  font-weight: 500;\n}\n.si-step.si-active .si-circle {\n  background:\n    linear-gradient(\n      135deg,\n      #1445F5,\n      #2563EB);\n  color: #fff;\n  box-shadow: 0 2px 10px rgba(20, 69, 245, 0.3);\n}\n.si-step.si-active .si-label {\n  color: #1445F5;\n  font-weight: 600;\n}\n.si-step.si-done .si-circle {\n  background: #10B981;\n  color: #fff;\n}\n.si-step.si-done .si-label {\n  color: #10B981;\n}\n.si-line {\n  flex: 1;\n  height: 2px;\n  background: #E2E8F0;\n  margin: 0 12px;\n  margin-bottom: 22px;\n  border-radius: 2px;\n  transition: background 0.3s ease;\n}\n.si-line.si-line-done {\n  background: #10B981;\n}\n.form-group {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  margin-bottom: 16px;\n}\n.form-group label {\n  font-size: 13px;\n  font-weight: 600;\n  color: #374151;\n}\n.form-row {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.form-row .form-group {\n  margin-bottom: 16px;\n}\n.input-wrapper {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  background: #F8FAFC;\n  border: 1.5px solid #E2E8F0;\n  border-radius: 12px;\n  padding: 0 14px;\n  height: 46px;\n  transition: border-color 0.2s, box-shadow 0.2s;\n}\n.input-wrapper > .material-icons-round:first-child {\n  color: #94A3B8;\n  font-size: 18px;\n  flex-shrink: 0;\n}\n.input-wrapper input,\n.input-wrapper select {\n  flex: 1;\n  border: none;\n  background: transparent;\n  outline: none;\n  font-size: 14px;\n  color: #1E293B;\n  height: 100%;\n}\n.input-wrapper input::placeholder,\n.input-wrapper select::placeholder {\n  color: #CBD5E1;\n}\n.input-wrapper select {\n  cursor: pointer;\n}\n.input-wrapper:focus-within {\n  border-color: #1445F5;\n  box-shadow: 0 0 0 3px rgba(20, 69, 245, 0.1);\n  background: #fff;\n}\n.input-wrapper.input-wrapper-select {\n  padding-right: 10px;\n}\n.input-suffix {\n  display: flex;\n  align-items: center;\n  margin-left: auto;\n}\n.btn-icon-eye {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  border-radius: 6px;\n  color: #94A3B8;\n  transition: color 0.15s, background 0.15s;\n}\n.btn-icon-eye:hover {\n  color: #1445F5;\n  background: rgba(20, 69, 245, 0.07);\n}\n.btn-icon-eye .material-icons-round {\n  font-size: 18px;\n}\n.input-error {\n  border-color: #EF4444 !important;\n}\n.field-error {\n  font-size: 12px;\n  color: #EF4444;\n}\n.field-hint {\n  font-size: 12px;\n  color: #94A3B8;\n}\n.code-preview {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  background: #EFF6FF;\n  border: 1px solid #BFDBFE;\n  border-radius: 8px;\n  padding: 8px 12px;\n  font-size: 13px;\n  color: #1D4ED8;\n  animation: fadeSlideIn 0.25s ease both;\n}\n.code-preview .material-icons-round {\n  font-size: 16px;\n  color: #3B82F6;\n  flex-shrink: 0;\n}\n.code-preview strong {\n  font-family: "Courier New", monospace;\n  font-weight: 700;\n  letter-spacing: 0.5px;\n  color: #1445F5;\n}\n.pwd-strength {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-top: 2px;\n  animation: fadeSlideIn 0.2s ease both;\n}\n.pwd-bars {\n  display: flex;\n  gap: 4px;\n  flex: 1;\n}\n.pwd-bar {\n  flex: 1;\n  height: 4px;\n  border-radius: 4px;\n  background: #E2E8F0;\n  transition: background 0.3s ease;\n}\n.pwd-label {\n  font-size: 12px;\n  font-weight: 600;\n  min-width: 36px;\n  text-align: right;\n  transition: color 0.2s;\n}\n.step-panel {\n  animation: stepFadeIn 0.3s ease both;\n}\n@keyframes stepFadeIn {\n  from {\n    opacity: 0;\n    transform: translateX(12px);\n  }\n}\n@keyframes fadeSlideIn {\n  from {\n    opacity: 0;\n    transform: translateY(-4px);\n  }\n}\n.step2-info {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n  background:\n    linear-gradient(\n      135deg,\n      #EFF6FF 0%,\n      #F0FDF4 100%);\n  border: 1px solid #BFDBFE;\n  border-radius: 14px;\n  padding: 16px;\n  margin-bottom: 20px;\n}\n.step2-info .s2i-icon {\n  width: 40px;\n  height: 40px;\n  background:\n    linear-gradient(\n      135deg,\n      rgba(20, 69, 245, 0.12),\n      rgba(16, 185, 129, 0.1));\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.step2-info .s2i-icon .material-icons-round {\n  color: #1445F5;\n  font-size: 20px;\n}\n.step2-info .s2i-text {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.step2-info .s2i-text strong {\n  font-size: 13px;\n  font-weight: 700;\n  color: #1E293B;\n}\n.step2-info .s2i-text p {\n  font-size: 12px;\n  color: #64748B;\n  margin: 0;\n  line-height: 1.5;\n}\n.alert-error-box {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  background: #FEF2F2;\n  border: 1px solid #FECACA;\n  border-radius: 10px;\n  padding: 12px 14px;\n  font-size: 13px;\n  color: #DC2626;\n  margin-bottom: 16px;\n}\n.alert-error-box .material-icons-round {\n  font-size: 18px;\n  flex-shrink: 0;\n}\n.btn-submit {\n  width: 100%;\n  height: 48px;\n  background:\n    linear-gradient(\n      135deg,\n      #1445F5,\n      #2563EB);\n  color: #fff;\n  border: none;\n  border-radius: 13px;\n  font-size: 15px;\n  font-weight: 600;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  box-shadow: 0 4px 16px rgba(20, 69, 245, 0.35);\n  transition: transform 0.15s, box-shadow 0.15s;\n}\n.btn-submit .material-icons-round {\n  font-size: 20px;\n}\n.btn-submit:hover:not(:disabled) {\n  transform: translateY(-1px);\n  box-shadow: 0 6px 20px rgba(20, 69, 245, 0.42);\n}\n.btn-submit:disabled {\n  opacity: 0.65;\n  cursor: not-allowed;\n  transform: none;\n}\n.btn-submit-flex {\n  width: auto;\n  flex: 1;\n}\n.btn-back {\n  height: 48px;\n  padding: 0 20px;\n  background: transparent;\n  border: 1.5px solid #E2E8F0;\n  border-radius: 13px;\n  font-size: 14px;\n  font-weight: 600;\n  color: #64748B;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  transition:\n    background 0.15s,\n    border-color 0.15s,\n    color 0.15s;\n}\n.btn-back .material-icons-round {\n  font-size: 18px;\n}\n.btn-back:hover {\n  background: #F1F5F9;\n  border-color: #CBD5E1;\n  color: #374151;\n}\n.form-actions {\n  display: flex;\n  gap: 12px;\n  align-items: center;\n}\n.btn-spinner {\n  width: 18px;\n  height: 18px;\n  border: 2px solid rgba(255, 255, 255, 0.35);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: spin 0.6s linear infinite;\n}\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.auth-footer {\n  margin-top: 24px;\n  text-align: center;\n}\n.auth-footer p {\n  font-size: 13px;\n  color: #64748B;\n  margin: 0;\n}\n.auth-footer a {\n  color: #1445F5;\n  font-weight: 600;\n  text-decoration: none;\n}\n.auth-footer a:hover {\n  text-decoration: underline;\n}\n@media (max-width: 860px) {\n  .auth-left {\n    display: none;\n  }\n  .auth-right {\n    background:\n      linear-gradient(\n        145deg,\n        #0A1FA8 0%,\n        #1445F5 55%,\n        #2563EB 100%);\n    padding: 24px 16px;\n    align-items: flex-start;\n    padding-top: 40px;\n  }\n  .auth-card {\n    box-shadow: 0 8px 48px rgba(0, 0, 0, 0.25);\n  }\n}\n@media (max-width: 480px) {\n  .auth-card {\n    padding: 28px 20px 24px;\n  }\n  .form-row {\n    grid-template-columns: 1fr;\n  }\n}\n.contact-toggle {\n  display: flex;\n  gap: 8px;\n  margin-bottom: 20px;\n}\n.ct-btn {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 10px 16px;\n  border: 2px solid #E2E8F0;\n  border-radius: 10px;\n  background: #F8FAFC;\n  color: #64748B;\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.ct-btn .material-icons-round {\n  font-size: 18px;\n}\n.ct-btn:hover {\n  border-color: #1445F5;\n  color: #1445F5;\n  background: rgba(20, 69, 245, 0.05);\n}\n.ct-btn.ct-active {\n  border-color: #1445F5;\n  background: rgba(20, 69, 245, 0.08);\n  color: #1445F5;\n  font-weight: 600;\n}\n/*# sourceMappingURL=register.component.css.map */\n'] }]
   }], () => [{ type: FormBuilder }, { type: AuthService }, { type: Router }], null);
 })();
@@ -1509,4 +1509,4 @@ var AuthModule = class _AuthModule {
 export {
   AuthModule
 };
-//# sourceMappingURL=chunk-M6DCLXMR.js.map
+//# sourceMappingURL=chunk-PYMUSLR4.js.map

@@ -281,7 +281,7 @@ var SaShellComponent = class _SaShellComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SaShellComponent, [{
     type: Component,
-    args: [{ selector: "sa-shell", standalone: false, template: '<div class="sa-layout">\n  <nav class="sa-sidebar">\n    <div class="sa-logo">\n      <span class="material-icons-round">admin_panel_settings</span>\n      <span>Admin</span>\n    </div>\n    <ul class="sa-nav">\n      @for (item of navItems; track item.path) {\n        <li>\n          <a [routerLink]="item.path" routerLinkActive="active">\n            <span class="material-icons-round">{{ item.icon }}</span>\n            <span>{{ item.label }}</span>\n          </a>\n        </li>\n      }\n    </ul>\n    <button class="sa-logout" (click)="logout()">\n      <span class="material-icons-round">logout</span>\n      D\xE9connexion\n    </button>\n  </nav>\n  <main class="sa-main">\n    <router-outlet></router-outlet>\n  </main>\n</div>\n', styles: ["/* src/app/superadmin/shell/sa-shell.component.scss */\n.sa-layout {\n  display: flex;\n  min-height: 100vh;\n  background: #F1F5F9;\n}\n.sa-sidebar {\n  width: 240px;\n  min-height: 100vh;\n  background: #0F172A;\n  display: flex;\n  flex-direction: column;\n  padding: 0;\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  z-index: 100;\n}\n.sa-logo {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 20px 20px 16px;\n  color: #fff;\n  font-size: 16px;\n  font-weight: 700;\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\n}\n.sa-logo .material-icons-round {\n  color: #6366F1;\n  font-size: 28px;\n}\n.sa-nav {\n  list-style: none;\n  padding: 12px 0;\n  margin: 0;\n  flex: 1;\n  overflow-y: auto;\n}\n.sa-nav li a {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 20px;\n  color: #94A3B8;\n  text-decoration: none;\n  font-size: 14px;\n  font-weight: 500;\n  transition: all 0.15s;\n}\n.sa-nav li a .material-icons-round {\n  font-size: 20px;\n}\n.sa-nav li a:hover {\n  color: #fff;\n  background: rgba(255, 255, 255, 0.06);\n}\n.sa-nav li a.active {\n  color: #fff;\n  background: rgba(99, 102, 241, 0.2);\n  border-right: 3px solid #6366F1;\n}\n.sa-logout {\n  margin: 12px 16px;\n  padding: 10px 16px;\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  color: #EF4444;\n  background: transparent;\n  border: 1px solid rgba(239, 68, 68, 0.3);\n  border-radius: 8px;\n  font-size: 14px;\n  cursor: pointer;\n  transition: all 0.15s;\n}\n.sa-logout .material-icons-round {\n  font-size: 18px;\n}\n.sa-logout:hover {\n  background: rgba(239, 68, 68, 0.1);\n}\n.sa-main {\n  margin-left: 240px;\n  flex: 1;\n  min-height: 100vh;\n  padding: 32px;\n}\n/*# sourceMappingURL=sa-shell.component.css.map */\n"] }]
+    args: [{ selector: "sa-shell", standalone: false, template: '<div class="sa-layout">\r\n  <nav class="sa-sidebar">\r\n    <div class="sa-logo">\r\n      <span class="material-icons-round">admin_panel_settings</span>\r\n      <span>Admin</span>\r\n    </div>\r\n    <ul class="sa-nav">\r\n      @for (item of navItems; track item.path) {\r\n        <li>\r\n          <a [routerLink]="item.path" routerLinkActive="active">\r\n            <span class="material-icons-round">{{ item.icon }}</span>\r\n            <span>{{ item.label }}</span>\r\n          </a>\r\n        </li>\r\n      }\r\n    </ul>\r\n    <button class="sa-logout" (click)="logout()">\r\n      <span class="material-icons-round">logout</span>\r\n      D\xE9connexion\r\n    </button>\r\n  </nav>\r\n  <main class="sa-main">\r\n    <router-outlet></router-outlet>\r\n  </main>\r\n</div>\r\n', styles: ["/* src/app/superadmin/shell/sa-shell.component.scss */\n.sa-layout {\n  display: flex;\n  min-height: 100vh;\n  background: #F1F5F9;\n}\n.sa-sidebar {\n  width: 240px;\n  min-height: 100vh;\n  background: #0F172A;\n  display: flex;\n  flex-direction: column;\n  padding: 0;\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  z-index: 100;\n}\n.sa-logo {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 20px 20px 16px;\n  color: #fff;\n  font-size: 16px;\n  font-weight: 700;\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\n}\n.sa-logo .material-icons-round {\n  color: #6366F1;\n  font-size: 28px;\n}\n.sa-nav {\n  list-style: none;\n  padding: 12px 0;\n  margin: 0;\n  flex: 1;\n  overflow-y: auto;\n}\n.sa-nav li a {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 20px;\n  color: #94A3B8;\n  text-decoration: none;\n  font-size: 14px;\n  font-weight: 500;\n  transition: all 0.15s;\n}\n.sa-nav li a .material-icons-round {\n  font-size: 20px;\n}\n.sa-nav li a:hover {\n  color: #fff;\n  background: rgba(255, 255, 255, 0.06);\n}\n.sa-nav li a.active {\n  color: #fff;\n  background: rgba(99, 102, 241, 0.2);\n  border-right: 3px solid #6366F1;\n}\n.sa-logout {\n  margin: 12px 16px;\n  padding: 10px 16px;\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  color: #EF4444;\n  background: transparent;\n  border: 1px solid rgba(239, 68, 68, 0.3);\n  border-radius: 8px;\n  font-size: 14px;\n  cursor: pointer;\n  transition: all 0.15s;\n}\n.sa-logout .material-icons-round {\n  font-size: 18px;\n}\n.sa-logout:hover {\n  background: rgba(239, 68, 68, 0.1);\n}\n.sa-main {\n  margin-left: 240px;\n  flex: 1;\n  min-height: 100vh;\n  padding: 32px;\n}\n/*# sourceMappingURL=sa-shell.component.css.map */\n"] }]
   }], () => [{ type: SuperAdminService }, { type: Router }], null);
 })();
 (() => {
@@ -414,43 +414,43 @@ var SaLoginComponent = class _SaLoginComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SaLoginComponent, [{
     type: Component,
-    args: [{ selector: "sa-login", standalone: false, template: `<div class="sa-login-page">
-  <div class="sa-login-card">
-    <div class="sa-login-icon">
-      <span class="material-icons-round">admin_panel_settings</span>
-    </div>
-    <h1>Administration</h1>
-    <p class="sa-login-sub">Mam Buudu Platform</p>
-
-    <form [formGroup]="form" (ngSubmit)="submit()">
-      <div class="sa-form-group">
-        <label>Email</label>
-        <div class="sa-input">
-          <span class="material-icons-round">email</span>
-          <input type="email" formControlName="email" placeholder="admin@mam-buudu.com"
-                 [class.err]="f['email'].invalid && f['email'].touched"/>
-        </div>
-      </div>
-      <div class="sa-form-group">
-        <label>Mot de passe</label>
-        <div class="sa-input">
-          <span class="material-icons-round">lock</span>
-          <input [type]="showPassword ? 'text' : 'password'" formControlName="password"
-                 [class.err]="f['password'].invalid && f['password'].touched"/>
-          <button type="button" class="sa-eye" (click)="showPassword = !showPassword">
-            <span class="material-icons-round">{{ showPassword ? 'visibility_off' : 'visibility' }}</span>
-          </button>
-        </div>
-      </div>
-      @if (errorMsg) {
-        <div class="sa-error">{{ errorMsg }}</div>
-      }
-      <button type="submit" class="sa-btn-submit" [disabled]="loading">
-        @if (loading) { <span class="sa-spinner"></span> } @else { Connexion }
-      </button>
-    </form>
-  </div>
-</div>
+    args: [{ selector: "sa-login", standalone: false, template: `<div class="sa-login-page">\r
+  <div class="sa-login-card">\r
+    <div class="sa-login-icon">\r
+      <span class="material-icons-round">admin_panel_settings</span>\r
+    </div>\r
+    <h1>Administration</h1>\r
+    <p class="sa-login-sub">Mam Buudu Platform</p>\r
+\r
+    <form [formGroup]="form" (ngSubmit)="submit()">\r
+      <div class="sa-form-group">\r
+        <label>Email</label>\r
+        <div class="sa-input">\r
+          <span class="material-icons-round">email</span>\r
+          <input type="email" formControlName="email" placeholder="admin@mam-buudu.com"\r
+                 [class.err]="f['email'].invalid && f['email'].touched"/>\r
+        </div>\r
+      </div>\r
+      <div class="sa-form-group">\r
+        <label>Mot de passe</label>\r
+        <div class="sa-input">\r
+          <span class="material-icons-round">lock</span>\r
+          <input [type]="showPassword ? 'text' : 'password'" formControlName="password"\r
+                 [class.err]="f['password'].invalid && f['password'].touched"/>\r
+          <button type="button" class="sa-eye" (click)="showPassword = !showPassword">\r
+            <span class="material-icons-round">{{ showPassword ? 'visibility_off' : 'visibility' }}</span>\r
+          </button>\r
+        </div>\r
+      </div>\r
+      @if (errorMsg) {\r
+        <div class="sa-error">{{ errorMsg }}</div>\r
+      }\r
+      <button type="submit" class="sa-btn-submit" [disabled]="loading">\r
+        @if (loading) { <span class="sa-spinner"></span> } @else { Connexion }\r
+      </button>\r
+    </form>\r
+  </div>\r
+</div>\r
 `, styles: ["/* src/app/superadmin/pages/login/sa-login.component.scss */\n.sa-login-page {\n  min-height: 100vh;\n  background: #0F172A;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.sa-login-card {\n  background: #1E293B;\n  border: 1px solid rgba(255, 255, 255, 0.08);\n  border-radius: 16px;\n  padding: 40px;\n  width: 380px;\n  text-align: center;\n}\n.sa-login-icon {\n  width: 64px;\n  height: 64px;\n  background: rgba(99, 102, 241, 0.15);\n  border-radius: 16px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 20px;\n}\n.sa-login-icon .material-icons-round {\n  font-size: 32px;\n  color: #6366F1;\n}\nh1 {\n  color: #fff;\n  font-size: 22px;\n  margin: 0 0 4px;\n}\n.sa-login-sub {\n  color: #64748B;\n  font-size: 13px;\n  margin-bottom: 28px;\n}\n.sa-form-group {\n  text-align: left;\n  margin-bottom: 16px;\n}\n.sa-form-group label {\n  display: block;\n  color: #94A3B8;\n  font-size: 13px;\n  margin-bottom: 6px;\n}\n.sa-input {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #0F172A;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 8px;\n  padding: 0 12px;\n}\n.sa-input .material-icons-round {\n  color: #475569;\n  font-size: 18px;\n  flex-shrink: 0;\n}\n.sa-input input {\n  flex: 1;\n  background: transparent;\n  border: none;\n  outline: none;\n  color: #fff;\n  font-size: 14px;\n  padding: 10px 0;\n}\n.sa-input input::placeholder {\n  color: #475569;\n}\n.sa-input input.err {\n  color: #EF4444;\n}\n.sa-eye {\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  color: #475569;\n  padding: 0;\n  display: flex;\n}\n.sa-error {\n  background: rgba(239, 68, 68, 0.1);\n  border: 1px solid rgba(239, 68, 68, 0.3);\n  color: #EF4444;\n  border-radius: 8px;\n  padding: 10px;\n  font-size: 13px;\n  margin-bottom: 12px;\n}\n.sa-btn-submit {\n  width: 100%;\n  padding: 12px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 15px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.2s;\n}\n.sa-btn-submit:hover {\n  background: #4F46E5;\n}\n.sa-btn-submit:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-spinner {\n  display: inline-block;\n  width: 16px;\n  height: 16px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: spin 0.7s linear infinite;\n}\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n/*# sourceMappingURL=sa-login.component.css.map */\n"] }]
   }], () => [{ type: FormBuilder }, { type: SuperAdminService }, { type: Router }], null);
 })();
@@ -689,107 +689,107 @@ var SaDashboardComponent = class _SaDashboardComponent {
     }
     if (rf & 2) {
       \u0275\u0275advance(6);
-      \u0275\u0275conditional(ctx.loading ? 6 : 7);
+      \u0275\u0275conditional(ctx.loading ? 6 : ctx.stats ? 7 : -1);
     }
   }, dependencies: [DecimalPipe], styles: ["\n\n.sa-page-header[_ngcontent-%COMP%] {\n  margin-bottom: 28px;\n}\n.sa-page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #64748B;\n  margin: 0;\n  font-size: 14px;\n}\n.sa-loading[_ngcontent-%COMP%] {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-stats-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));\n  gap: 20px;\n}\n.sa-stat-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n  gap: 16px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-stat-icon[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.sa-stat-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 24px;\n}\n.sa-stat-icon.blue[_ngcontent-%COMP%] {\n  background: #EFF6FF;\n}\n.sa-stat-icon.blue[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #2563EB;\n}\n.sa-stat-icon.purple[_ngcontent-%COMP%] {\n  background: #F5F3FF;\n}\n.sa-stat-icon.purple[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #7C3AED;\n}\n.sa-stat-icon.green[_ngcontent-%COMP%] {\n  background: #ECFDF5;\n}\n.sa-stat-icon.green[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #059669;\n}\n.sa-stat-icon.orange[_ngcontent-%COMP%] {\n  background: #FFF7ED;\n}\n.sa-stat-icon.orange[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #EA580C;\n}\n.sa-stat-value[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 700;\n  color: #0F172A;\n}\n.sa-stat-label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #64748B;\n  margin: 2px 0;\n}\n.sa-stat-sub[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #10B981;\n}\n.sa-stat-value[_ngcontent-%COMP%]   small[_ngcontent-%COMP%] {\n  font-size: 14px;\n  font-weight: 400;\n}\n.sa-dash-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 380px;\n  gap: 20px;\n  margin-top: 20px;\n}\n@media (max-width: 900px) {\n  .sa-dash-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n.sa-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-card-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 20px;\n}\n.sa-card-header[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #6366F1;\n  font-size: 20px;\n}\n.sa-card-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n}\n.sa-chart[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-end;\n  gap: 6px;\n  height: 160px;\n  padding-bottom: 28px;\n  position: relative;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-bar-col[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n  height: 100%;\n}\n.sa-bar-val[_ngcontent-%COMP%] {\n  font-size: 9px;\n  color: #94A3B8;\n  writing-mode: vertical-rl;\n  transform: rotate(180deg);\n  height: 30px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.sa-bar-wrap[_ngcontent-%COMP%] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n}\n.sa-bar[_ngcontent-%COMP%] {\n  width: 80%;\n  border-radius: 4px 4px 0 0;\n  background: #E2E8F0;\n  transition: height 0.3s ease;\n}\n.sa-bar.sa-bar-active[_ngcontent-%COMP%] {\n  background: #6366F1;\n}\n.sa-bar-label[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: #94A3B8;\n  text-align: center;\n  white-space: nowrap;\n}\n.sa-feed[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  max-height: 320px;\n  overflow-y: auto;\n}\n.sa-feed-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n  padding: 10px 0;\n  border-bottom: 1px solid #F8FAFC;\n}\n.sa-feed-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.sa-feed-dot[_ngcontent-%COMP%] {\n  width: 32px;\n  height: 32px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.sa-feed-dot[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #fff;\n}\n.sa-feed-body[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.sa-feed-label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #0F172A;\n  font-weight: 500;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.sa-feed-sub[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #94A3B8;\n}\n.sa-feed-time[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #94A3B8;\n  white-space: nowrap;\n  flex-shrink: 0;\n}\n.sa-empty[_ngcontent-%COMP%] {\n  padding: 20px;\n  text-align: center;\n  color: #94A3B8;\n  font-size: 13px;\n}\n/*# sourceMappingURL=sa-dashboard.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SaDashboardComponent, [{
     type: Component,
-    args: [{ selector: "sa-dashboard", standalone: false, template: `<div class="sa-page">
-  <div class="sa-page-header">
-    <h1>Tableau de bord</h1>
-    <p>Vue d'ensemble de la plateforme Mam Buudu</p>
-  </div>
-
-  @if (loading) {
-    <div class="sa-loading">Chargement...</div>
-  } @else {
-
-    <!-- Stat cards -->
-    <div class="sa-stats-grid">
-      <div class="sa-stat-card">
-        <div class="sa-stat-icon blue"><span class="material-icons-round">family_restroom</span></div>
-        <div class="sa-stat-body">
-          <div class="sa-stat-value">{{ stats.totalFamilles | number }}</div>
-          <div class="sa-stat-label">Familles</div>
-          <div class="sa-stat-sub">+{{ stats.newFamillesMonth }} ce mois</div>
-        </div>
-      </div>
-      <div class="sa-stat-card">
-        <div class="sa-stat-icon purple"><span class="material-icons-round">group</span></div>
-        <div class="sa-stat-body">
-          <div class="sa-stat-value">{{ stats.totalUsers | number }}</div>
-          <div class="sa-stat-label">Utilisateurs</div>
-          <div class="sa-stat-sub">+{{ stats.newUsersWeek }} cette semaine</div>
-        </div>
-      </div>
-      <div class="sa-stat-card">
-        <div class="sa-stat-icon green"><span class="material-icons-round">credit_card</span></div>
-        <div class="sa-stat-body">
-          <div class="sa-stat-value">{{ stats.totalSubscriptions }}</div>
-          <div class="sa-stat-label">Abonnements actifs</div>
-        </div>
-      </div>
-      <div class="sa-stat-card">
-        <div class="sa-stat-icon orange"><span class="material-icons-round">payments</span></div>
-        <div class="sa-stat-body">
-          <div class="sa-stat-value">{{ stats.revenueMois | number }} <small>FCFA</small></div>
-          <div class="sa-stat-label">Revenus ce mois</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Revenue chart + Activity feed -->
-    <div class="sa-dash-grid">
-
-      <!-- Revenue CSS bar chart -->
-      <div class="sa-card">
-        <div class="sa-card-header">
-          <span class="material-icons-round">bar_chart</span>
-          <h3>Revenus mensuels (12 mois)</h3>
-        </div>
-        <div class="sa-chart">
-          @for (m of revenue; track m.label) {
-            <div class="sa-bar-col">
-              <div class="sa-bar-val">{{ m.montant > 0 ? (m.montant | number) : '' }}</div>
-              <div class="sa-bar-wrap">
-                <div class="sa-bar" [style.height]="barHeight(m.montant)" [class.sa-bar-active]="m.montant > 0"></div>
-              </div>
-              <div class="sa-bar-label">{{ m.label }}</div>
-            </div>
-          }
-        </div>
-      </div>
-
-      <!-- Activity feed -->
-      <div class="sa-card">
-        <div class="sa-card-header">
-          <span class="material-icons-round">bolt</span>
-          <h3>Activit\xE9 r\xE9cente</h3>
-        </div>
-        <div class="sa-feed">
-          @for (item of activity; track item.at) {
-            <div class="sa-feed-item">
-              <div class="sa-feed-dot" [style.background]="activityColor(item.type)">
-                <span class="material-icons-round">{{ item.icon }}</span>
-              </div>
-              <div class="sa-feed-body">
-                <div class="sa-feed-label">{{ item.label }}</div>
-                @if (item.sub) { <div class="sa-feed-sub">{{ item.sub }}</div> }
-              </div>
-              <div class="sa-feed-time">{{ timeAgo(item.at) }}</div>
-            </div>
-          }
-          @if (activity.length === 0) {
-            <div class="sa-empty">Aucune activit\xE9 r\xE9cente</div>
-          }
-        </div>
-      </div>
-
-    </div>
-  }
-</div>
+    args: [{ selector: "sa-dashboard", standalone: false, template: `<div class="sa-page">\r
+  <div class="sa-page-header">\r
+    <h1>Tableau de bord</h1>\r
+    <p>Vue d'ensemble de la plateforme Mam Buudu</p>\r
+  </div>\r
+\r
+  @if (loading) {\r
+    <div class="sa-loading">Chargement...</div>\r
+  } @else if (stats) {\r
+\r
+    <!-- Stat cards -->\r
+    <div class="sa-stats-grid">\r
+      <div class="sa-stat-card">\r
+        <div class="sa-stat-icon blue"><span class="material-icons-round">family_restroom</span></div>\r
+        <div class="sa-stat-body">\r
+          <div class="sa-stat-value">{{ stats.totalFamilles | number }}</div>\r
+          <div class="sa-stat-label">Familles</div>\r
+          <div class="sa-stat-sub">+{{ stats.newFamillesMonth }} ce mois</div>\r
+        </div>\r
+      </div>\r
+      <div class="sa-stat-card">\r
+        <div class="sa-stat-icon purple"><span class="material-icons-round">group</span></div>\r
+        <div class="sa-stat-body">\r
+          <div class="sa-stat-value">{{ stats.totalUsers | number }}</div>\r
+          <div class="sa-stat-label">Utilisateurs</div>\r
+          <div class="sa-stat-sub">+{{ stats.newUsersWeek }} cette semaine</div>\r
+        </div>\r
+      </div>\r
+      <div class="sa-stat-card">\r
+        <div class="sa-stat-icon green"><span class="material-icons-round">credit_card</span></div>\r
+        <div class="sa-stat-body">\r
+          <div class="sa-stat-value">{{ stats.totalSubscriptions }}</div>\r
+          <div class="sa-stat-label">Abonnements actifs</div>\r
+        </div>\r
+      </div>\r
+      <div class="sa-stat-card">\r
+        <div class="sa-stat-icon orange"><span class="material-icons-round">payments</span></div>\r
+        <div class="sa-stat-body">\r
+          <div class="sa-stat-value">{{ stats.revenueMois | number }} <small>FCFA</small></div>\r
+          <div class="sa-stat-label">Revenus ce mois</div>\r
+        </div>\r
+      </div>\r
+    </div>\r
+\r
+    <!-- Revenue chart + Activity feed -->\r
+    <div class="sa-dash-grid">\r
+\r
+      <!-- Revenue CSS bar chart -->\r
+      <div class="sa-card">\r
+        <div class="sa-card-header">\r
+          <span class="material-icons-round">bar_chart</span>\r
+          <h3>Revenus mensuels (12 mois)</h3>\r
+        </div>\r
+        <div class="sa-chart">\r
+          @for (m of revenue; track m.label) {\r
+            <div class="sa-bar-col">\r
+              <div class="sa-bar-val">{{ m.montant > 0 ? (m.montant | number) : '' }}</div>\r
+              <div class="sa-bar-wrap">\r
+                <div class="sa-bar" [style.height]="barHeight(m.montant)" [class.sa-bar-active]="m.montant > 0"></div>\r
+              </div>\r
+              <div class="sa-bar-label">{{ m.label }}</div>\r
+            </div>\r
+          }\r
+        </div>\r
+      </div>\r
+\r
+      <!-- Activity feed -->\r
+      <div class="sa-card">\r
+        <div class="sa-card-header">\r
+          <span class="material-icons-round">bolt</span>\r
+          <h3>Activit\xE9 r\xE9cente</h3>\r
+        </div>\r
+        <div class="sa-feed">\r
+          @for (item of activity; track item.at) {\r
+            <div class="sa-feed-item">\r
+              <div class="sa-feed-dot" [style.background]="activityColor(item.type)">\r
+                <span class="material-icons-round">{{ item.icon }}</span>\r
+              </div>\r
+              <div class="sa-feed-body">\r
+                <div class="sa-feed-label">{{ item.label }}</div>\r
+                @if (item.sub) { <div class="sa-feed-sub">{{ item.sub }}</div> }\r
+              </div>\r
+              <div class="sa-feed-time">{{ timeAgo(item.at) }}</div>\r
+            </div>\r
+          }\r
+          @if (activity.length === 0) {\r
+            <div class="sa-empty">Aucune activit\xE9 r\xE9cente</div>\r
+          }\r
+        </div>\r
+      </div>\r
+\r
+    </div>\r
+  }\r
+</div>\r
 `, styles: ["/* src/app/superadmin/pages/dashboard/sa-dashboard.component.scss */\n.sa-page-header {\n  margin-bottom: 28px;\n}\n.sa-page-header h1 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header p {\n  color: #64748B;\n  margin: 0;\n  font-size: 14px;\n}\n.sa-loading {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-stats-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));\n  gap: 20px;\n}\n.sa-stat-card {\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n  gap: 16px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-stat-icon {\n  width: 48px;\n  height: 48px;\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.sa-stat-icon .material-icons-round {\n  font-size: 24px;\n}\n.sa-stat-icon.blue {\n  background: #EFF6FF;\n}\n.sa-stat-icon.blue .material-icons-round {\n  color: #2563EB;\n}\n.sa-stat-icon.purple {\n  background: #F5F3FF;\n}\n.sa-stat-icon.purple .material-icons-round {\n  color: #7C3AED;\n}\n.sa-stat-icon.green {\n  background: #ECFDF5;\n}\n.sa-stat-icon.green .material-icons-round {\n  color: #059669;\n}\n.sa-stat-icon.orange {\n  background: #FFF7ED;\n}\n.sa-stat-icon.orange .material-icons-round {\n  color: #EA580C;\n}\n.sa-stat-value {\n  font-size: 24px;\n  font-weight: 700;\n  color: #0F172A;\n}\n.sa-stat-label {\n  font-size: 13px;\n  color: #64748B;\n  margin: 2px 0;\n}\n.sa-stat-sub {\n  font-size: 12px;\n  color: #10B981;\n}\n.sa-stat-value small {\n  font-size: 14px;\n  font-weight: 400;\n}\n.sa-dash-grid {\n  display: grid;\n  grid-template-columns: 1fr 380px;\n  gap: 20px;\n  margin-top: 20px;\n}\n@media (max-width: 900px) {\n  .sa-dash-grid {\n    grid-template-columns: 1fr;\n  }\n}\n.sa-card {\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-card-header {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 20px;\n}\n.sa-card-header .material-icons-round {\n  color: #6366F1;\n  font-size: 20px;\n}\n.sa-card-header h3 {\n  margin: 0;\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n}\n.sa-chart {\n  display: flex;\n  align-items: flex-end;\n  gap: 6px;\n  height: 160px;\n  padding-bottom: 28px;\n  position: relative;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-bar-col {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n  height: 100%;\n}\n.sa-bar-val {\n  font-size: 9px;\n  color: #94A3B8;\n  writing-mode: vertical-rl;\n  transform: rotate(180deg);\n  height: 30px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.sa-bar-wrap {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n}\n.sa-bar {\n  width: 80%;\n  border-radius: 4px 4px 0 0;\n  background: #E2E8F0;\n  transition: height 0.3s ease;\n}\n.sa-bar.sa-bar-active {\n  background: #6366F1;\n}\n.sa-bar-label {\n  font-size: 10px;\n  color: #94A3B8;\n  text-align: center;\n  white-space: nowrap;\n}\n.sa-feed {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  max-height: 320px;\n  overflow-y: auto;\n}\n.sa-feed-item {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n  padding: 10px 0;\n  border-bottom: 1px solid #F8FAFC;\n}\n.sa-feed-item:last-child {\n  border-bottom: none;\n}\n.sa-feed-dot {\n  width: 32px;\n  height: 32px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.sa-feed-dot .material-icons-round {\n  font-size: 16px;\n  color: #fff;\n}\n.sa-feed-body {\n  flex: 1;\n  min-width: 0;\n}\n.sa-feed-label {\n  font-size: 13px;\n  color: #0F172A;\n  font-weight: 500;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.sa-feed-sub {\n  font-size: 12px;\n  color: #94A3B8;\n}\n.sa-feed-time {\n  font-size: 11px;\n  color: #94A3B8;\n  white-space: nowrap;\n  flex-shrink: 0;\n}\n.sa-empty {\n  padding: 20px;\n  text-align: center;\n  color: #94A3B8;\n  font-size: 13px;\n}\n/*# sourceMappingURL=sa-dashboard.component.css.map */\n"] }]
   }], () => [{ type: SuperAdminService }], null);
 })();
@@ -815,7 +815,7 @@ function SaFamillesComponent_Conditional_25_For_23_Conditional_16_Template(rf, c
   if (rf & 2) {
     const f_r3 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(f_r3.subscription.plan.label);
+    \u0275\u0275textInterpolate(f_r3.subscription == null ? null : f_r3.subscription.plan == null ? null : f_r3.subscription.plan.label);
   }
 }
 function SaFamillesComponent_Conditional_25_For_23_Conditional_17_Template(rf, ctx) {
@@ -1102,7 +1102,7 @@ function SaFamillesComponent_Conditional_25_Template(rf, ctx) {
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate2("Page ", ctx_r3.page, " / ", ctx_r3.data == null ? null : ctx_r3.data.pages);
     \u0275\u0275advance();
-    \u0275\u0275property("disabled", ctx_r3.page >= (ctx_r3.data == null ? null : ctx_r3.data.pages));
+    \u0275\u0275property("disabled", ctx_r3.page >= ((ctx_r3.data == null ? null : ctx_r3.data.pages) ?? 1));
   }
 }
 function SaFamillesComponent_Conditional_26_For_16_Template(rf, ctx) {
@@ -1249,6 +1249,10 @@ var SaFamillesComponent = class _SaFamillesComponent {
       next: (d) => {
         this.data = d;
         this.loading = false;
+        if (d.pages > 0 && this.page > d.pages) {
+          this.page = d.pages;
+          this.load();
+        }
       },
       error: () => this.loading = false
     });
@@ -1259,6 +1263,9 @@ var SaFamillesComponent = class _SaFamillesComponent {
   }
   toggleStatut(f) {
     const newStatut = f.statut === "actif" ? "suspendu" : "actif";
+    const message = newStatut === "suspendu" ? `Suspendre la famille "${f.nom}" ? Tous ses membres perdront imm\xE9diatement l'acc\xE8s.` : `R\xE9activer la famille "${f.nom}" ?`;
+    if (!confirm(message))
+      return;
     this.actionLoading = f.id;
     this.sa.patchFamille(f.id, { statut: newStatut }).subscribe({
       next: (updated) => {
@@ -1281,7 +1288,7 @@ var SaFamillesComponent = class _SaFamillesComponent {
     });
   }
   openAssign(f) {
-    this.assignModal = { famille: f, planId: f.subscription?.planId ?? "", dateFin: "" };
+    this.assignModal = { famille: f, planId: f.subscription?.plan?.id ?? "", dateFin: "" };
   }
   closeAssign() {
     this.assignModal = null;
@@ -1292,7 +1299,7 @@ var SaFamillesComponent = class _SaFamillesComponent {
     this.assigning = true;
     this.sa.assignPlan(this.assignModal.famille.id, this.assignModal.planId, this.assignModal.dateFin || void 0).subscribe({
       next: (sub) => {
-        const f = this.data.familles.find((x) => x.id === this.assignModal.famille.id);
+        const f = this.data?.familles.find((x) => x.id === this.assignModal.famille.id);
         if (f)
           f.subscription = sub;
         this.assignModal = null;
@@ -1390,187 +1397,187 @@ var SaFamillesComponent = class _SaFamillesComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SaFamillesComponent, [{
     type: Component,
-    args: [{ selector: "sa-familles", standalone: false, template: `<div class="sa-page">
-  <div class="sa-page-header">
-    <div class="sa-header-row">
-      <div>
-        <h1>Familles</h1>
-        <p>{{ data?.total ?? '...' }} familles enregistr\xE9es</p>
-      </div>
-      <button class="sa-export-btn" (click)="exportCsv()">
-        <span class="material-icons-round">download</span> Export CSV
-      </button>
-    </div>
-  </div>
-
-  <div class="sa-toolbar">
-    <div class="sa-search">
-      <span class="material-icons-round">search</span>
-      <input type="text" [(ngModel)]="q" (keyup.enter)="search()" placeholder="Rechercher par nom..."/>
-    </div>
-    <select [(ngModel)]="statut" (change)="search()">
-      <option value="">Tous les statuts</option>
-      <option value="actif">Actifs</option>
-      <option value="suspendu">Suspendus</option>
-    </select>
-  </div>
-
-  @if (loading) {
-    <div class="sa-loading">Chargement...</div>
-  } @else {
-    <div class="sa-table-wrap">
-      <table class="sa-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Famille</th>
-            <th>Code</th>
-            <th>Membres</th>
-            <th>Personnes</th>
-            <th>Plan</th>
-            <th>Statut</th>
-            <th>Cr\xE9\xE9e</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          @for (f of data?.familles; track f.id) {
-            <tr [class.sa-row-suspended]="f.statut === 'suspendu'">
-              <!-- Expand toggle -->
-              <td class="sa-expand-cell">
-                <button class="sa-expand-btn" (click)="toggleDetail(f)">
-                  <span class="material-icons-round">{{ expandedId === f.id ? 'expand_less' : 'expand_more' }}</span>
-                </button>
-              </td>
-              <td><strong>{{ f.nom }}</strong></td>
-              <td><code>{{ f.codeUnique }}</code></td>
-              <td>{{ f._count?.membres }}</td>
-              <td>{{ f._count?.personnes }}</td>
-              <td>
-                @if (f.subscription?.plan) {
-                  <span class="sa-badge plan">{{ f.subscription.plan.label }}</span>
-                } @else {
-                  <span class="sa-badge grey">Gratuit</span>
-                }
-              </td>
-              <td>
-                <span class="sa-badge" [class.green]="f.statut === 'actif'" [class.red]="f.statut === 'suspendu'">
-                  {{ f.statut }}
-                </span>
-              </td>
-              <td>{{ f.createdAt | date:'dd/MM/yyyy' }}</td>
-              <td>
-                <div class="sa-actions">
-                  <button class="sa-act-btn blue" (click)="openAssign(f)" title="Assigner un plan">
-                    <span class="material-icons-round">workspace_premium</span>
-                  </button>
-                  <button class="sa-act-btn" (click)="toggleStatut(f)" [disabled]="actionLoading === f.id"
-                          [title]="f.statut === 'actif' ? 'Suspendre' : 'R\xE9activer'">
-                    <span class="material-icons-round">{{ f.statut === 'actif' ? 'pause_circle' : 'play_circle' }}</span>
-                  </button>
-                  <button class="sa-act-btn danger" (click)="delete(f)" [disabled]="actionLoading === f.id" title="Supprimer">
-                    <span class="material-icons-round">delete</span>
-                  </button>
-                </div>
-              </td>
-            </tr>
-
-            <!-- Detail row -->
-            @if (expandedId === f.id) {
-              <tr class="sa-detail-row">
-                <td colspan="9">
-                  @if (detailLoading) {
-                    <div class="sa-detail-loading">Chargement...</div>
-                  } @else if (detailData) {
-                    <div class="sa-detail-panel">
-                      <div class="sa-detail-section">
-                        <strong>Membres ({{ detailData.membres?.length }})</strong>
-                        <div class="sa-membres-list">
-                          @for (m of detailData.membres; track m.id) {
-                            <div class="sa-membre-chip">
-                              <span class="material-icons-round">person</span>
-                              <span>{{ m.user?.prenom }} {{ m.user?.nom }}</span>
-                              <span class="sa-role-badge">{{ m.role }}</span>
-                            </div>
-                          }
-                        </div>
-                      </div>
-                      <div class="sa-detail-section">
-                        <strong>Contenu</strong>
-                        <div class="sa-detail-counts">
-                          <span><span class="material-icons-round">people</span>{{ detailData._count?.personnes }} personnes</span>
-                          <span><span class="material-icons-round">auto_stories</span>{{ detailData._count?.stories }} stories</span>
-                          <span><span class="material-icons-round">photo_library</span>{{ detailData._count?.photos }} photos</span>
-                        </div>
-                      </div>
-                      @if (detailData.subscription) {
-                        <div class="sa-detail-section">
-                          <strong>Abonnement</strong>
-                          <div class="sa-detail-sub">
-                            Plan : <span class="sa-badge plan">{{ detailData.subscription.plan?.label }}</span>
-                            \xB7 Statut : {{ detailData.subscription.statut }}
-                            \xB7 D\xE9but : {{ detailData.subscription.dateDebut | date:'dd/MM/yyyy' }}
-                            @if (detailData.subscription.dateFin) { \xB7 Fin : {{ detailData.subscription.dateFin | date:'dd/MM/yyyy' }} }
-                          </div>
-                        </div>
-                      }
-                    </div>
-                  }
-                </td>
-              </tr>
-            }
-          }
-        </tbody>
-      </table>
-    </div>
-
-    <div class="sa-pagination">
-      <button [disabled]="page <= 1" (click)="page = page - 1; load()">\u2039 Pr\xE9c\xE9dent</button>
-      <span>Page {{ page }} / {{ data?.pages }}</span>
-      <button [disabled]="page >= data?.pages" (click)="page = page + 1; load()">Suivant \u203A</button>
-    </div>
-  }
-</div>
-
-<!-- Assign Plan Modal -->
-@if (assignModal) {
-  <div class="sa-modal-overlay" (click)="closeAssign()">
-    <div class="sa-modal" (click)="$event.stopPropagation()">
-      <div class="sa-modal-header">
-        <h3>Assigner un plan \u2014 {{ assignModal.famille.nom }}</h3>
-        <button class="sa-modal-close" (click)="closeAssign()">
-          <span class="material-icons-round">close</span>
-        </button>
-      </div>
-      <div class="sa-modal-body">
-        <div class="sa-field">
-          <label>Plan</label>
-          <select [(ngModel)]="assignModal.planId">
-            <option value="">\u2014 Choisir un plan \u2014</option>
-            @for (p of plans; track p.id) {
-              <option [value]="p.id">{{ p.label }} ({{ p.prix === 0 ? 'Gratuit' : (p.prix | number) + ' FCFA/mois' }})</option>
-            }
-          </select>
-        </div>
-        <div class="sa-field">
-          <label>Date de fin (optionnel \u2014 vide = ind\xE9fini)</label>
-          <input type="date" [(ngModel)]="assignModal.dateFin"/>
-        </div>
-      </div>
-      <div class="sa-modal-footer">
-        <button class="sa-btn-cancel" (click)="closeAssign()">Annuler</button>
-        <button class="sa-btn-confirm" (click)="confirmAssign()" [disabled]="!assignModal.planId || assigning">
-          @if (assigning) { <span class="sa-spinner-sm"></span> } @else { Assigner }
-        </button>
-      </div>
-    </div>
-  </div>
-}
+    args: [{ selector: "sa-familles", standalone: false, template: `<div class="sa-page">\r
+  <div class="sa-page-header">\r
+    <div class="sa-header-row">\r
+      <div>\r
+        <h1>Familles</h1>\r
+        <p>{{ data?.total ?? '...' }} familles enregistr\xE9es</p>\r
+      </div>\r
+      <button class="sa-export-btn" (click)="exportCsv()">\r
+        <span class="material-icons-round">download</span> Export CSV\r
+      </button>\r
+    </div>\r
+  </div>\r
+\r
+  <div class="sa-toolbar">\r
+    <div class="sa-search">\r
+      <span class="material-icons-round">search</span>\r
+      <input type="text" [(ngModel)]="q" (keyup.enter)="search()" placeholder="Rechercher par nom..."/>\r
+    </div>\r
+    <select [(ngModel)]="statut" (change)="search()">\r
+      <option value="">Tous les statuts</option>\r
+      <option value="actif">Actifs</option>\r
+      <option value="suspendu">Suspendus</option>\r
+    </select>\r
+  </div>\r
+\r
+  @if (loading) {\r
+    <div class="sa-loading">Chargement...</div>\r
+  } @else {\r
+    <div class="sa-table-wrap">\r
+      <table class="sa-table">\r
+        <thead>\r
+          <tr>\r
+            <th></th>\r
+            <th>Famille</th>\r
+            <th>Code</th>\r
+            <th>Membres</th>\r
+            <th>Personnes</th>\r
+            <th>Plan</th>\r
+            <th>Statut</th>\r
+            <th>Cr\xE9\xE9e</th>\r
+            <th>Actions</th>\r
+          </tr>\r
+        </thead>\r
+        <tbody>\r
+          @for (f of data?.familles; track f.id) {\r
+            <tr [class.sa-row-suspended]="f.statut === 'suspendu'">\r
+              <!-- Expand toggle -->\r
+              <td class="sa-expand-cell">\r
+                <button class="sa-expand-btn" (click)="toggleDetail(f)">\r
+                  <span class="material-icons-round">{{ expandedId === f.id ? 'expand_less' : 'expand_more' }}</span>\r
+                </button>\r
+              </td>\r
+              <td><strong>{{ f.nom }}</strong></td>\r
+              <td><code>{{ f.codeUnique }}</code></td>\r
+              <td>{{ f._count?.membres }}</td>\r
+              <td>{{ f._count?.personnes }}</td>\r
+              <td>\r
+                @if (f.subscription?.plan) {\r
+                  <span class="sa-badge plan">{{ f.subscription?.plan?.label }}</span>\r
+                } @else {\r
+                  <span class="sa-badge grey">Gratuit</span>\r
+                }\r
+              </td>\r
+              <td>\r
+                <span class="sa-badge" [class.green]="f.statut === 'actif'" [class.red]="f.statut === 'suspendu'">\r
+                  {{ f.statut }}\r
+                </span>\r
+              </td>\r
+              <td>{{ f.createdAt | date:'dd/MM/yyyy' }}</td>\r
+              <td>\r
+                <div class="sa-actions">\r
+                  <button class="sa-act-btn blue" (click)="openAssign(f)" title="Assigner un plan">\r
+                    <span class="material-icons-round">workspace_premium</span>\r
+                  </button>\r
+                  <button class="sa-act-btn" (click)="toggleStatut(f)" [disabled]="actionLoading === f.id"\r
+                          [title]="f.statut === 'actif' ? 'Suspendre' : 'R\xE9activer'">\r
+                    <span class="material-icons-round">{{ f.statut === 'actif' ? 'pause_circle' : 'play_circle' }}</span>\r
+                  </button>\r
+                  <button class="sa-act-btn danger" (click)="delete(f)" [disabled]="actionLoading === f.id" title="Supprimer">\r
+                    <span class="material-icons-round">delete</span>\r
+                  </button>\r
+                </div>\r
+              </td>\r
+            </tr>\r
+\r
+            <!-- Detail row -->\r
+            @if (expandedId === f.id) {\r
+              <tr class="sa-detail-row">\r
+                <td colspan="9">\r
+                  @if (detailLoading) {\r
+                    <div class="sa-detail-loading">Chargement...</div>\r
+                  } @else if (detailData) {\r
+                    <div class="sa-detail-panel">\r
+                      <div class="sa-detail-section">\r
+                        <strong>Membres ({{ detailData.membres?.length }})</strong>\r
+                        <div class="sa-membres-list">\r
+                          @for (m of detailData.membres; track m.id) {\r
+                            <div class="sa-membre-chip">\r
+                              <span class="material-icons-round">person</span>\r
+                              <span>{{ m.user?.prenom }} {{ m.user?.nom }}</span>\r
+                              <span class="sa-role-badge">{{ m.role }}</span>\r
+                            </div>\r
+                          }\r
+                        </div>\r
+                      </div>\r
+                      <div class="sa-detail-section">\r
+                        <strong>Contenu</strong>\r
+                        <div class="sa-detail-counts">\r
+                          <span><span class="material-icons-round">people</span>{{ detailData._count?.personnes }} personnes</span>\r
+                          <span><span class="material-icons-round">auto_stories</span>{{ detailData._count?.stories }} stories</span>\r
+                          <span><span class="material-icons-round">photo_library</span>{{ detailData._count?.photos }} photos</span>\r
+                        </div>\r
+                      </div>\r
+                      @if (detailData.subscription) {\r
+                        <div class="sa-detail-section">\r
+                          <strong>Abonnement</strong>\r
+                          <div class="sa-detail-sub">\r
+                            Plan : <span class="sa-badge plan">{{ detailData.subscription.plan?.label }}</span>\r
+                            \xB7 Statut : {{ detailData.subscription.statut }}\r
+                            \xB7 D\xE9but : {{ detailData.subscription.dateDebut | date:'dd/MM/yyyy' }}\r
+                            @if (detailData.subscription.dateFin) { \xB7 Fin : {{ detailData.subscription.dateFin | date:'dd/MM/yyyy' }} }\r
+                          </div>\r
+                        </div>\r
+                      }\r
+                    </div>\r
+                  }\r
+                </td>\r
+              </tr>\r
+            }\r
+          }\r
+        </tbody>\r
+      </table>\r
+    </div>\r
+\r
+    <div class="sa-pagination">\r
+      <button [disabled]="page <= 1" (click)="page = page - 1; load()">\u2039 Pr\xE9c\xE9dent</button>\r
+      <span>Page {{ page }} / {{ data?.pages }}</span>\r
+      <button [disabled]="page >= (data?.pages ?? 1)" (click)="page = page + 1; load()">Suivant \u203A</button>\r
+    </div>\r
+  }\r
+</div>\r
+\r
+<!-- Assign Plan Modal -->\r
+@if (assignModal) {\r
+  <div class="sa-modal-overlay" (click)="closeAssign()">\r
+    <div class="sa-modal" (click)="$event.stopPropagation()">\r
+      <div class="sa-modal-header">\r
+        <h3>Assigner un plan \u2014 {{ assignModal.famille.nom }}</h3>\r
+        <button class="sa-modal-close" (click)="closeAssign()">\r
+          <span class="material-icons-round">close</span>\r
+        </button>\r
+      </div>\r
+      <div class="sa-modal-body">\r
+        <div class="sa-field">\r
+          <label>Plan</label>\r
+          <select [(ngModel)]="assignModal.planId">\r
+            <option value="">\u2014 Choisir un plan \u2014</option>\r
+            @for (p of plans; track p.id) {\r
+              <option [value]="p.id">{{ p.label }} ({{ p.prix === 0 ? 'Gratuit' : (p.prix | number) + ' FCFA/mois' }})</option>\r
+            }\r
+          </select>\r
+        </div>\r
+        <div class="sa-field">\r
+          <label>Date de fin (optionnel \u2014 vide = ind\xE9fini)</label>\r
+          <input type="date" [(ngModel)]="assignModal.dateFin"/>\r
+        </div>\r
+      </div>\r
+      <div class="sa-modal-footer">\r
+        <button class="sa-btn-cancel" (click)="closeAssign()">Annuler</button>\r
+        <button class="sa-btn-confirm" (click)="confirmAssign()" [disabled]="!assignModal.planId || assigning">\r
+          @if (assigning) { <span class="sa-spinner-sm"></span> } @else { Assigner }\r
+        </button>\r
+      </div>\r
+    </div>\r
+  </div>\r
+}\r
 `, styles: ["/* src/app/superadmin/pages/familles/sa-familles.component.scss */\n.sa-header-row {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  gap: 12px;\n}\n.sa-export-btn {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n  cursor: pointer;\n  transition: all 0.15s;\n  flex-shrink: 0;\n}\n.sa-export-btn .material-icons-round {\n  font-size: 16px;\n}\n.sa-export-btn:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-row-suspended td {\n  opacity: 0.55;\n}\n.sa-expand-cell {\n  width: 32px;\n  padding-right: 0 !important;\n}\n.sa-expand-btn {\n  width: 28px;\n  height: 28px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #94A3B8;\n  border-radius: 6px;\n}\n.sa-expand-btn .material-icons-round {\n  font-size: 20px;\n}\n.sa-expand-btn:hover {\n  background: #F1F5F9;\n  color: #374151;\n}\n.sa-act-btn.blue:hover {\n  border-color: #3B82F6;\n  color: #3B82F6;\n  background: #EFF6FF;\n}\n.sa-detail-row td {\n  background: #F8FAFC !important;\n  padding: 0 !important;\n}\n.sa-detail-loading {\n  padding: 16px;\n  color: #94A3B8;\n  font-size: 13px;\n}\n.sa-detail-panel {\n  display: flex;\n  gap: 24px;\n  flex-wrap: wrap;\n  padding: 16px 20px;\n}\n.sa-detail-section {\n  min-width: 200px;\n}\n.sa-detail-section strong {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n  display: block;\n  margin-bottom: 8px;\n}\n.sa-membres-list {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.sa-membre-chip {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: #fff;\n  border: 1px solid #E2E8F0;\n  border-radius: 20px;\n  padding: 4px 10px;\n  font-size: 12px;\n  color: #374151;\n}\n.sa-membre-chip .material-icons-round {\n  font-size: 14px;\n  color: #94A3B8;\n}\n.sa-role-badge {\n  background: #F1F5F9;\n  color: #6366F1;\n  padding: 1px 6px;\n  border-radius: 10px;\n  font-size: 10px;\n  font-weight: 600;\n  margin-left: 2px;\n}\n.sa-detail-counts {\n  display: flex;\n  gap: 16px;\n  flex-wrap: wrap;\n}\n.sa-detail-counts span {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  color: #374151;\n}\n.sa-detail-counts span .material-icons-round {\n  font-size: 16px;\n  color: #94A3B8;\n}\n.sa-detail-sub {\n  font-size: 13px;\n  color: #374151;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.sa-modal-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  z-index: 1000;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.sa-modal {\n  background: #fff;\n  border-radius: 16px;\n  width: 440px;\n  max-width: 95vw;\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);\n  overflow: hidden;\n}\n.sa-modal-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 20px 0;\n}\n.sa-modal-header h3 {\n  font-size: 16px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0;\n}\n.sa-modal-close {\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #94A3B8;\n  display: flex;\n}\n.sa-modal-close .material-icons-round {\n  font-size: 22px;\n}\n.sa-modal-close:hover {\n  color: #374151;\n}\n.sa-modal-body {\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n}\n.sa-field {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.sa-field label {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 500;\n}\n.sa-field select,\n.sa-field input {\n  padding: 9px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-field select:focus,\n.sa-field input:focus {\n  border-color: #6366F1;\n}\n.sa-modal-footer {\n  padding: 0 20px 20px;\n  display: flex;\n  gap: 10px;\n  justify-content: flex-end;\n}\n.sa-btn-cancel {\n  padding: 9px 16px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n  cursor: pointer;\n}\n.sa-btn-cancel:hover {\n  border-color: #94A3B8;\n}\n.sa-btn-confirm {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 20px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n}\n.sa-btn-confirm:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-btn-confirm:hover:not(:disabled) {\n  background: #4F46E5;\n}\n.sa-spinner-sm {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: spin 0.7s linear infinite;\n}\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.sa-page-header {\n  margin-bottom: 24px;\n}\n.sa-page-header h1 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header p {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-toolbar {\n  display: flex;\n  gap: 12px;\n  margin-bottom: 20px;\n  align-items: center;\n}\n.sa-toolbar select {\n  padding: 8px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 14px;\n  color: #374151;\n}\n.sa-search {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  padding: 0 12px;\n  flex: 1;\n  max-width: 360px;\n}\n.sa-search .material-icons-round {\n  color: #94A3B8;\n  font-size: 18px;\n}\n.sa-search input {\n  border: none;\n  outline: none;\n  padding: 9px 0;\n  font-size: 14px;\n  flex: 1;\n}\n.sa-table-wrap {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table th {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table td {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table tr:last-child td {\n  border-bottom: none;\n}\n.sa-table tr.suspended td {\n  opacity: 0.5;\n}\n.sa-table code {\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 12px;\n  color: #6366F1;\n}\n.sa-badge {\n  display: inline-block;\n  padding: 2px 8px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.sa-badge.green {\n  background: #DCFCE7;\n  color: #16A34A;\n}\n.sa-badge.red {\n  background: #FEE2E2;\n  color: #DC2626;\n}\n.sa-badge.purple {\n  background: #F5F3FF;\n  color: #7C3AED;\n}\n.sa-badge.grey {\n  background: #F1F5F9;\n  color: #64748B;\n}\n.sa-badge.plan {\n  background: #EFF6FF;\n  color: #2563EB;\n}\n.sa-badge.ml {\n  margin-left: 6px;\n}\n.sa-actions {\n  display: flex;\n  gap: 6px;\n}\n.sa-act-btn {\n  width: 32px;\n  height: 32px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  transition: all 0.15s;\n}\n.sa-act-btn .material-icons-round {\n  font-size: 16px;\n}\n.sa-act-btn:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-pagination {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  padding: 16px;\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-pagination button {\n  padding: 6px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n.sa-pagination button:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-pagination button:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-familles.component.css.map */\n"] }]
   }], () => [{ type: SuperAdminService }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SaFamillesComponent, { className: "SaFamillesComponent", filePath: "src/app/superadmin/pages/familles/sa-familles.component.ts", lineNumber: 6 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SaFamillesComponent, { className: "SaFamillesComponent", filePath: "src/app/superadmin/pages/familles/sa-familles.component.ts", lineNumber: 7 });
 })();
 
 // src/app/superadmin/pages/users/sa-users.component.ts
@@ -1746,7 +1753,7 @@ function SaUsersComponent_Conditional_29_Template(rf, ctx) {
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate2("Page ", ctx_r3.page, " / ", ctx_r3.data == null ? null : ctx_r3.data.pages);
     \u0275\u0275advance();
-    \u0275\u0275property("disabled", ctx_r3.page >= (ctx_r3.data == null ? null : ctx_r3.data.pages));
+    \u0275\u0275property("disabled", ctx_r3.page >= ((ctx_r3.data == null ? null : ctx_r3.data.pages) ?? 1));
   }
 }
 var SaUsersComponent = class _SaUsersComponent {
@@ -1770,6 +1777,10 @@ var SaUsersComponent = class _SaUsersComponent {
       next: (d) => {
         this.data = d;
         this.loading = false;
+        if (d.pages > 0 && this.page > d.pages) {
+          this.page = d.pages;
+          this.load();
+        }
       },
       error: () => {
         this.loading = false;
@@ -1781,6 +1792,10 @@ var SaUsersComponent = class _SaUsersComponent {
     this.load();
   }
   setRole(u, role) {
+    const nom = `${u.prenom} ${u.nom}`;
+    const message = role === "superadmin" ? `Donner les pleins pouvoirs superadmin \xE0 "${nom}" ? Cette personne pourra tout g\xE9rer sur la plateforme, y compris supprimer des familles et des comptes.` : role ? `Attribuer le r\xF4le "${role}" \xE0 "${nom}" ?` : `Retirer le r\xF4le plateforme de "${nom}" ?`;
+    if (!confirm(message))
+      return;
     this.actionLoading = u.id;
     this.sa.patchUser(u.id, { platformRole: role }).subscribe({
       next: (updated) => {
@@ -1793,6 +1808,10 @@ var SaUsersComponent = class _SaUsersComponent {
     });
   }
   toggleSuspend(u) {
+    const nom = `${u.prenom} ${u.nom}`;
+    const message = u.suspended ? `R\xE9activer le compte de "${nom}" ?` : `Suspendre le compte de "${nom}" ? La personne perdra imm\xE9diatement l'acc\xE8s \xE0 la plateforme.`;
+    if (!confirm(message))
+      return;
     this.actionLoading = u.id;
     this.sa.patchUser(u.id, { suspended: !u.suspended }).subscribe({
       next: (updated) => {
@@ -1893,104 +1912,104 @@ var SaUsersComponent = class _SaUsersComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SaUsersComponent, [{
     type: Component,
-    args: [{ selector: "sa-users", standalone: false, template: `<div class="sa-page">
-  <div class="sa-page-header">
-    <div class="sa-header-row">
-      <div>
-        <h1>Utilisateurs</h1>
-        <p>{{ data?.total ?? '...' }} comptes</p>
-      </div>
-      <button class="sa-export-btn" (click)="exportCsv()">
-        <span class="material-icons-round">download</span> Export CSV
-      </button>
-    </div>
-  </div>
-
-  <div class="sa-toolbar">
-    <div class="sa-search">
-      <span class="material-icons-round">search</span>
-      <input type="text" [(ngModel)]="q" (keyup.enter)="search()" placeholder="Email, nom, t\xE9l\xE9phone..."/>
-    </div>
-    <select [(ngModel)]="filterRole" (change)="search()">
-      <option value="">Tous</option>
-      <option value="superadmin">Superadmin</option>
-      <option value="platform_admin">Platform admin</option>
-      <option value="support">Support</option>
-      <option value="none">Sans r\xF4le plateforme</option>
-    </select>
-  </div>
-
-  @if (loading) {
-    <div class="sa-loading">Chargement...</div>
-  } @else {
-    <div class="sa-table-wrap">
-      <table class="sa-table">
-        <thead>
-          <tr>
-            <th>Utilisateur</th>
-            <th>Contact</th>
-            <th>Familles</th>
-            <th>R\xF4le plateforme</th>
-            <th>Statut</th>
-            <th>Cr\xE9\xE9</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          @for (u of data?.users; track u.id) {
-            <tr [class.suspended]="u.suspended">
-              <td>
-                <strong>{{ u.prenom }} {{ u.nom }}</strong>
-                @if (u.platformRole) {
-                  <span class="sa-badge purple ml">{{ u.platformRole }}</span>
-                }
-              </td>
-              <td>{{ u.email || u.telephone }}</td>
-              <td>{{ u._count?.familleMembres }}</td>
-              <td>
-                <select class="sa-role-select" [ngModel]="u.platformRole" (ngModelChange)="setRole(u, $event || null)"
-                        [disabled]="actionLoading === u.id">
-                  <option value="">\u2014 Aucun \u2014</option>
-                  @for (r of platformRoles; track r) {
-                    <option [value]="r">{{ r }}</option>
-                  }
-                </select>
-              </td>
-              <td>
-                <span class="sa-badge" [class.green]="!u.suspended" [class.red]="u.suspended">
-                  {{ u.suspended ? 'suspendu' : 'actif' }}
-                </span>
-              </td>
-              <td>{{ u.createdAt | date:'dd/MM/yy' }}</td>
-              <td>
-                <div class="sa-actions">
-                  <button class="sa-act-btn" (click)="toggleSuspend(u)" [disabled]="actionLoading === u.id"
-                          [title]="u.suspended ? 'R\xE9activer' : 'Suspendre'">
-                    <span class="material-icons-round">{{ u.suspended ? 'lock_open' : 'lock' }}</span>
-                  </button>
-                  <button class="sa-act-btn danger" (click)="delete(u)" [disabled]="actionLoading === u.id">
-                    <span class="material-icons-round">delete</span>
-                  </button>
-                </div>
-              </td>
-            </tr>
-          }
-        </tbody>
-      </table>
-    </div>
-
-    <div class="sa-pagination">
-      <button [disabled]="page <= 1" (click)="page = page - 1; load()">&#8249; Pr\xE9c\xE9dent</button>
-      <span>Page {{ page }} / {{ data?.pages }}</span>
-      <button [disabled]="page >= data?.pages" (click)="page = page + 1; load()">Suivant &#8250;</button>
-    </div>
-  }
-</div>
+    args: [{ selector: "sa-users", standalone: false, template: `<div class="sa-page">\r
+  <div class="sa-page-header">\r
+    <div class="sa-header-row">\r
+      <div>\r
+        <h1>Utilisateurs</h1>\r
+        <p>{{ data?.total ?? '...' }} comptes</p>\r
+      </div>\r
+      <button class="sa-export-btn" (click)="exportCsv()">\r
+        <span class="material-icons-round">download</span> Export CSV\r
+      </button>\r
+    </div>\r
+  </div>\r
+\r
+  <div class="sa-toolbar">\r
+    <div class="sa-search">\r
+      <span class="material-icons-round">search</span>\r
+      <input type="text" [(ngModel)]="q" (keyup.enter)="search()" placeholder="Email, nom, t\xE9l\xE9phone..."/>\r
+    </div>\r
+    <select [(ngModel)]="filterRole" (change)="search()">\r
+      <option value="">Tous</option>\r
+      <option value="superadmin">Superadmin</option>\r
+      <option value="platform_admin">Platform admin</option>\r
+      <option value="support">Support</option>\r
+      <option value="none">Sans r\xF4le plateforme</option>\r
+    </select>\r
+  </div>\r
+\r
+  @if (loading) {\r
+    <div class="sa-loading">Chargement...</div>\r
+  } @else {\r
+    <div class="sa-table-wrap">\r
+      <table class="sa-table">\r
+        <thead>\r
+          <tr>\r
+            <th>Utilisateur</th>\r
+            <th>Contact</th>\r
+            <th>Familles</th>\r
+            <th>R\xF4le plateforme</th>\r
+            <th>Statut</th>\r
+            <th>Cr\xE9\xE9</th>\r
+            <th>Actions</th>\r
+          </tr>\r
+        </thead>\r
+        <tbody>\r
+          @for (u of data?.users; track u.id) {\r
+            <tr [class.suspended]="u.suspended">\r
+              <td>\r
+                <strong>{{ u.prenom }} {{ u.nom }}</strong>\r
+                @if (u.platformRole) {\r
+                  <span class="sa-badge purple ml">{{ u.platformRole }}</span>\r
+                }\r
+              </td>\r
+              <td>{{ u.email || u.telephone }}</td>\r
+              <td>{{ u._count?.familleMembres }}</td>\r
+              <td>\r
+                <select class="sa-role-select" [ngModel]="u.platformRole" (ngModelChange)="setRole(u, $event || null)"\r
+                        [disabled]="actionLoading === u.id">\r
+                  <option value="">\u2014 Aucun \u2014</option>\r
+                  @for (r of platformRoles; track r) {\r
+                    <option [value]="r">{{ r }}</option>\r
+                  }\r
+                </select>\r
+              </td>\r
+              <td>\r
+                <span class="sa-badge" [class.green]="!u.suspended" [class.red]="u.suspended">\r
+                  {{ u.suspended ? 'suspendu' : 'actif' }}\r
+                </span>\r
+              </td>\r
+              <td>{{ u.createdAt | date:'dd/MM/yy' }}</td>\r
+              <td>\r
+                <div class="sa-actions">\r
+                  <button class="sa-act-btn" (click)="toggleSuspend(u)" [disabled]="actionLoading === u.id"\r
+                          [title]="u.suspended ? 'R\xE9activer' : 'Suspendre'">\r
+                    <span class="material-icons-round">{{ u.suspended ? 'lock_open' : 'lock' }}</span>\r
+                  </button>\r
+                  <button class="sa-act-btn danger" (click)="delete(u)" [disabled]="actionLoading === u.id">\r
+                    <span class="material-icons-round">delete</span>\r
+                  </button>\r
+                </div>\r
+              </td>\r
+            </tr>\r
+          }\r
+        </tbody>\r
+      </table>\r
+    </div>\r
+\r
+    <div class="sa-pagination">\r
+      <button [disabled]="page <= 1" (click)="page = page - 1; load()">&#8249; Pr\xE9c\xE9dent</button>\r
+      <span>Page {{ page }} / {{ data?.pages }}</span>\r
+      <button [disabled]="page >= (data?.pages ?? 1)" (click)="page = page + 1; load()">Suivant &#8250;</button>\r
+    </div>\r
+  }\r
+</div>\r
 `, styles: ["/* src/app/superadmin/pages/users/sa-users.component.scss */\n.sa-header-row {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  gap: 12px;\n}\n.sa-export-btn {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 14px;\n  flex-shrink: 0;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n  cursor: pointer;\n  transition: all 0.15s;\n}\n.sa-export-btn .material-icons-round {\n  font-size: 16px;\n}\n.sa-export-btn:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-page-header {\n  margin-bottom: 24px;\n}\n.sa-page-header h1 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header p {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-toolbar {\n  display: flex;\n  gap: 12px;\n  margin-bottom: 20px;\n  align-items: center;\n}\n.sa-toolbar select {\n  padding: 8px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 14px;\n  color: #374151;\n}\n.sa-search {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  padding: 0 12px;\n  flex: 1;\n  max-width: 360px;\n}\n.sa-search .material-icons-round {\n  color: #94A3B8;\n  font-size: 18px;\n}\n.sa-search input {\n  border: none;\n  outline: none;\n  padding: 9px 0;\n  font-size: 14px;\n  flex: 1;\n}\n.sa-table-wrap {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table th {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table td {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table tr:last-child td {\n  border-bottom: none;\n}\n.sa-table tr.suspended td {\n  opacity: 0.5;\n}\n.sa-table code {\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 12px;\n  color: #6366F1;\n}\n.sa-badge {\n  display: inline-block;\n  padding: 2px 8px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.sa-badge.green {\n  background: #DCFCE7;\n  color: #16A34A;\n}\n.sa-badge.red {\n  background: #FEE2E2;\n  color: #DC2626;\n}\n.sa-badge.purple {\n  background: #F5F3FF;\n  color: #7C3AED;\n}\n.sa-badge.grey {\n  background: #F1F5F9;\n  color: #64748B;\n}\n.sa-badge.plan {\n  background: #EFF6FF;\n  color: #2563EB;\n}\n.sa-badge.ml {\n  margin-left: 6px;\n}\n.sa-actions {\n  display: flex;\n  gap: 6px;\n}\n.sa-act-btn {\n  width: 32px;\n  height: 32px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  transition: all 0.15s;\n}\n.sa-act-btn .material-icons-round {\n  font-size: 16px;\n}\n.sa-act-btn:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-pagination {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  padding: 16px;\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-pagination button {\n  padding: 6px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n.sa-pagination button:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-pagination button:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-role-select {\n  padding: 4px 8px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  font-size: 12px;\n  background: #fff;\n  color: #374151;\n}\n/*# sourceMappingURL=sa-users.component.css.map */\n"] }]
   }], () => [{ type: SuperAdminService }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SaUsersComponent, { className: "SaUsersComponent", filePath: "src/app/superadmin/pages/users/sa-users.component.ts", lineNumber: 10 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SaUsersComponent, { className: "SaUsersComponent", filePath: "src/app/superadmin/pages/users/sa-users.component.ts", lineNumber: 11 });
 })();
 
 // src/app/superadmin/pages/subscriptions/sa-subscriptions.component.ts
@@ -2120,7 +2139,7 @@ function SaSubscriptionsComponent_Conditional_17_Template(rf, ctx) {
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate2("Page ", ctx_r2.page, " / ", ctx_r2.data == null ? null : ctx_r2.data.pages);
     \u0275\u0275advance();
-    \u0275\u0275property("disabled", ctx_r2.page >= (ctx_r2.data == null ? null : ctx_r2.data.pages));
+    \u0275\u0275property("disabled", ctx_r2.page >= ((ctx_r2.data == null ? null : ctx_r2.data.pages) ?? 1));
   }
 }
 var SaSubscriptionsComponent = class _SaSubscriptionsComponent {
@@ -2195,76 +2214,76 @@ var SaSubscriptionsComponent = class _SaSubscriptionsComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SaSubscriptionsComponent, [{
     type: Component,
-    args: [{ selector: "sa-subscriptions", standalone: false, template: `<div class="sa-page">
-  <div class="sa-page-header">
-    <h1>Abonnements</h1>
-    <p>{{ data?.total ?? '...' }} abonnements</p>
-  </div>
-
-  <div class="sa-toolbar">
-    <select [(ngModel)]="statut" (change)="page = 1; load()">
-      <option value="">Tous</option>
-      <option value="actif">Actifs</option>
-      <option value="expire">Expir\xE9s</option>
-      <option value="annule">Annul\xE9s</option>
-    </select>
-  </div>
-
-  @if (loading) {
-    <div class="sa-loading">Chargement...</div>
-  } @else {
-    <div class="sa-table-wrap">
-      <table class="sa-table">
-        <thead>
-          <tr>
-            <th>Famille</th>
-            <th>Plan</th>
-            <th>Statut</th>
-            <th>D\xE9but</th>
-            <th>Fin</th>
-            <th>Dernier paiement</th>
-          </tr>
-        </thead>
-        <tbody>
-          @for (s of data?.subscriptions; track s.id) {
-            <tr>
-              <td>
-                <strong>{{ s.famille?.nom }}</strong><br/>
-                <code>{{ s.famille?.codeUnique }}</code>
-              </td>
-              <td><span class="sa-badge plan">{{ s.plan?.label }}</span></td>
-              <td>
-                <span class="sa-badge" [class.green]="s.statut === 'actif'" [class.red]="s.statut !== 'actif'">
-                  {{ s.statut }}
-                </span>
-              </td>
-              <td>{{ s.dateDebut | date:'dd/MM/yy' }}</td>
-              <td>{{ s.dateFin ? (s.dateFin | date:'dd/MM/yy') : '\u221E' }}</td>
-              <td>
-                @if (s.paiements?.[0]) {
-                  {{ s.paiements[0].montant | number }} FCFA \xB7 {{ s.paiements[0].createdAt | date:'dd/MM/yy' }}
-                } @else {
-                  \u2014
-                }
-              </td>
-            </tr>
-          }
-        </tbody>
-      </table>
-    </div>
-
-    <div class="sa-pagination">
-      <button [disabled]="page <= 1" (click)="page = page - 1; load()">&#8249;</button>
-      <span>Page {{ page }} / {{ data?.pages }}</span>
-      <button [disabled]="page >= data?.pages" (click)="page = page + 1; load()">&#8250;</button>
-    </div>
-  }
-</div>
+    args: [{ selector: "sa-subscriptions", standalone: false, template: `<div class="sa-page">\r
+  <div class="sa-page-header">\r
+    <h1>Abonnements</h1>\r
+    <p>{{ data?.total ?? '...' }} abonnements</p>\r
+  </div>\r
+\r
+  <div class="sa-toolbar">\r
+    <select [(ngModel)]="statut" (change)="page = 1; load()">\r
+      <option value="">Tous</option>\r
+      <option value="actif">Actifs</option>\r
+      <option value="expire">Expir\xE9s</option>\r
+      <option value="annule">Annul\xE9s</option>\r
+    </select>\r
+  </div>\r
+\r
+  @if (loading) {\r
+    <div class="sa-loading">Chargement...</div>\r
+  } @else {\r
+    <div class="sa-table-wrap">\r
+      <table class="sa-table">\r
+        <thead>\r
+          <tr>\r
+            <th>Famille</th>\r
+            <th>Plan</th>\r
+            <th>Statut</th>\r
+            <th>D\xE9but</th>\r
+            <th>Fin</th>\r
+            <th>Dernier paiement</th>\r
+          </tr>\r
+        </thead>\r
+        <tbody>\r
+          @for (s of data?.subscriptions; track s.id) {\r
+            <tr>\r
+              <td>\r
+                <strong>{{ s.famille?.nom }}</strong><br/>\r
+                <code>{{ s.famille?.codeUnique }}</code>\r
+              </td>\r
+              <td><span class="sa-badge plan">{{ s.plan?.label }}</span></td>\r
+              <td>\r
+                <span class="sa-badge" [class.green]="s.statut === 'actif'" [class.red]="s.statut !== 'actif'">\r
+                  {{ s.statut }}\r
+                </span>\r
+              </td>\r
+              <td>{{ s.dateDebut | date:'dd/MM/yy' }}</td>\r
+              <td>{{ s.dateFin ? (s.dateFin | date:'dd/MM/yy') : '\u221E' }}</td>\r
+              <td>\r
+                @if (s.paiements?.[0]) {\r
+                  {{ s.paiements[0].montant | number }} FCFA \xB7 {{ s.paiements[0].createdAt | date:'dd/MM/yy' }}\r
+                } @else {\r
+                  \u2014\r
+                }\r
+              </td>\r
+            </tr>\r
+          }\r
+        </tbody>\r
+      </table>\r
+    </div>\r
+\r
+    <div class="sa-pagination">\r
+      <button [disabled]="page <= 1" (click)="page = page - 1; load()">&#8249;</button>\r
+      <span>Page {{ page }} / {{ data?.pages }}</span>\r
+      <button [disabled]="page >= (data?.pages ?? 1)" (click)="page = page + 1; load()">&#8250;</button>\r
+    </div>\r
+  }\r
+</div>\r
 `, styles: ["/* src/app/superadmin/pages/subscriptions/sa-subscriptions.component.scss */\n.sa-page-header {\n  margin-bottom: 24px;\n}\n.sa-page-header h1 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header p {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-toolbar {\n  display: flex;\n  gap: 12px;\n  margin-bottom: 20px;\n  align-items: center;\n}\n.sa-toolbar select {\n  padding: 8px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 14px;\n  color: #374151;\n}\n.sa-table-wrap {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table th {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table td {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table tr:last-child td {\n  border-bottom: none;\n}\n.sa-table code {\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 12px;\n  color: #6366F1;\n}\n.sa-badge {\n  display: inline-block;\n  padding: 2px 8px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.sa-badge.green {\n  background: #DCFCE7;\n  color: #16A34A;\n}\n.sa-badge.red {\n  background: #FEE2E2;\n  color: #DC2626;\n}\n.sa-badge.plan {\n  background: #EFF6FF;\n  color: #2563EB;\n}\n.sa-pagination {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  padding: 16px;\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-pagination button {\n  padding: 6px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n.sa-pagination button:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-pagination button:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-subscriptions.component.css.map */\n"] }]
   }], () => [{ type: SuperAdminService }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SaSubscriptionsComponent, { className: "SaSubscriptionsComponent", filePath: "src/app/superadmin/pages/subscriptions/sa-subscriptions.component.ts", lineNumber: 10 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SaSubscriptionsComponent, { className: "SaSubscriptionsComponent", filePath: "src/app/superadmin/pages/subscriptions/sa-subscriptions.component.ts", lineNumber: 11 });
 })();
 
 // src/app/superadmin/pages/settings/sa-settings.component.ts
@@ -2688,113 +2707,113 @@ var SaSettingsComponent = class _SaSettingsComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SaSettingsComponent, [{
     type: Component,
-    args: [{ selector: "sa-settings", standalone: false, template: `<div class="sa-page">
-  <div class="sa-page-header">
-    <h1>Param\xE8tres plateforme</h1>
-    <p>Configuration globale de Mam Buudu</p>
-  </div>
-
-  <div class="sa-defaults-bar">
-    <span class="sa-defaults-label">Param\xE8tres sugg\xE9r\xE9s :</span>
-    @for (d of defaults; track d.key) {
-      <button class="sa-default-chip" (click)="applyDefault(d)"
-              [disabled]="hasDefault(d.key)"
-              [title]="'Ajouter ' + d.key">
-        + {{ d.label }}
-      </button>
-    }
-  </div>
-
-  @if (loading) {
-    <div class="sa-loading">Chargement...</div>
-  } @else {
-    <div class="sa-table-wrap">
-      <table class="sa-table">
-        <thead>
-          <tr>
-            <th>Cl\xE9</th>
-            <th>Label</th>
-            <th>Valeur</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          @for (s of settings; track s.key) {
-            <tr>
-              <td><code>{{ s.key }}</code></td>
-              <td>{{ s.label || '\u2014' }}</td>
-              <td>
-                @if (s.editing) {
-                  <input class="sa-inline-input" [(ngModel)]="s.editValue"/>
-                } @else {
-                  <span class="sa-setting-val"
-                        [class.bool-true]="s.value === 'true'"
-                        [class.bool-false]="s.value === 'false'">
-                    {{ s.value }}
-                  </span>
-                }
-              </td>
-              <td>
-                <div class="sa-actions">
-                  @if (s.editing) {
-                    <button class="sa-act-btn green" (click)="save(s)" [disabled]="s.saving">
-                      <span class="material-icons-round">check</span>
-                    </button>
-                    <button class="sa-act-btn" (click)="cancelEdit(s)">
-                      <span class="material-icons-round">close</span>
-                    </button>
-                  } @else {
-                    <button class="sa-act-btn" (click)="startEdit(s)" title="Modifier">
-                      <span class="material-icons-round">edit</span>
-                    </button>
-                    <button class="sa-act-btn danger" (click)="deleteSetting(s)" title="Supprimer">
-                      <span class="material-icons-round">delete</span>
-                    </button>
-                  }
-                </div>
-              </td>
-            </tr>
-          }
-        </tbody>
-      </table>
-    </div>
-
-    <div class="sa-add-setting">
-      <h3>Ajouter un param\xE8tre</h3>
-      <div class="sa-add-row">
-        <input class="sa-add-input" [(ngModel)]="newKey" placeholder="cl\xE9 (ex: max_upload_mb)"/>
-        <input class="sa-add-input" [(ngModel)]="newLabel" placeholder="Label (optionnel)"/>
-        <input class="sa-add-input" [(ngModel)]="newValue" placeholder="valeur"/>
-        <button class="sa-btn-add" (click)="addSetting()" [disabled]="!newKey || !newValue || adding">
-          <span class="material-icons-round">add</span>Ajouter
-        </button>
-      </div>
-    </div>
-
-    <!-- Broadcast section -->
-    <div class="sa-broadcast-card">
-      <div class="sa-broadcast-header">
-        <span class="material-icons-round">campaign</span>
-        <h3>Notification globale</h3>
-        <span class="sa-broadcast-warn">Envoy\xE9e \xE0 tous les membres de toutes les familles</span>
-      </div>
-      <div class="sa-broadcast-fields">
-        <input [(ngModel)]="broadcastTitre" placeholder="Titre de la notification" class="sa-add-input"/>
-        <textarea [(ngModel)]="broadcastMsg" placeholder="Message..." rows="3" class="sa-textarea"></textarea>
-      </div>
-      @if (broadcastDone) {
-        <div class="sa-broadcast-success">
-          <span class="material-icons-round">check_circle</span> {{ broadcastDone }}
-        </div>
-      }
-      <button class="sa-btn-broadcast" (click)="sendBroadcast()" [disabled]="!broadcastTitre || !broadcastMsg || broadcasting">
-        @if (broadcasting) { <span class="sa-spinner-sm"></span> } @else {
-          <span class="material-icons-round">send</span> Envoyer \xE0 tous
-        }
-      </button>
-    </div>
-  }
-</div>
+    args: [{ selector: "sa-settings", standalone: false, template: `<div class="sa-page">\r
+  <div class="sa-page-header">\r
+    <h1>Param\xE8tres plateforme</h1>\r
+    <p>Configuration globale de Mam Buudu</p>\r
+  </div>\r
+\r
+  <div class="sa-defaults-bar">\r
+    <span class="sa-defaults-label">Param\xE8tres sugg\xE9r\xE9s :</span>\r
+    @for (d of defaults; track d.key) {\r
+      <button class="sa-default-chip" (click)="applyDefault(d)"\r
+              [disabled]="hasDefault(d.key)"\r
+              [title]="'Ajouter ' + d.key">\r
+        + {{ d.label }}\r
+      </button>\r
+    }\r
+  </div>\r
+\r
+  @if (loading) {\r
+    <div class="sa-loading">Chargement...</div>\r
+  } @else {\r
+    <div class="sa-table-wrap">\r
+      <table class="sa-table">\r
+        <thead>\r
+          <tr>\r
+            <th>Cl\xE9</th>\r
+            <th>Label</th>\r
+            <th>Valeur</th>\r
+            <th>Actions</th>\r
+          </tr>\r
+        </thead>\r
+        <tbody>\r
+          @for (s of settings; track s.key) {\r
+            <tr>\r
+              <td><code>{{ s.key }}</code></td>\r
+              <td>{{ s.label || '\u2014' }}</td>\r
+              <td>\r
+                @if (s.editing) {\r
+                  <input class="sa-inline-input" [(ngModel)]="s.editValue"/>\r
+                } @else {\r
+                  <span class="sa-setting-val"\r
+                        [class.bool-true]="s.value === 'true'"\r
+                        [class.bool-false]="s.value === 'false'">\r
+                    {{ s.value }}\r
+                  </span>\r
+                }\r
+              </td>\r
+              <td>\r
+                <div class="sa-actions">\r
+                  @if (s.editing) {\r
+                    <button class="sa-act-btn green" (click)="save(s)" [disabled]="s.saving">\r
+                      <span class="material-icons-round">check</span>\r
+                    </button>\r
+                    <button class="sa-act-btn" (click)="cancelEdit(s)">\r
+                      <span class="material-icons-round">close</span>\r
+                    </button>\r
+                  } @else {\r
+                    <button class="sa-act-btn" (click)="startEdit(s)" title="Modifier">\r
+                      <span class="material-icons-round">edit</span>\r
+                    </button>\r
+                    <button class="sa-act-btn danger" (click)="deleteSetting(s)" title="Supprimer">\r
+                      <span class="material-icons-round">delete</span>\r
+                    </button>\r
+                  }\r
+                </div>\r
+              </td>\r
+            </tr>\r
+          }\r
+        </tbody>\r
+      </table>\r
+    </div>\r
+\r
+    <div class="sa-add-setting">\r
+      <h3>Ajouter un param\xE8tre</h3>\r
+      <div class="sa-add-row">\r
+        <input class="sa-add-input" [(ngModel)]="newKey" placeholder="cl\xE9 (ex: max_upload_mb)"/>\r
+        <input class="sa-add-input" [(ngModel)]="newLabel" placeholder="Label (optionnel)"/>\r
+        <input class="sa-add-input" [(ngModel)]="newValue" placeholder="valeur"/>\r
+        <button class="sa-btn-add" (click)="addSetting()" [disabled]="!newKey || !newValue || adding">\r
+          <span class="material-icons-round">add</span>Ajouter\r
+        </button>\r
+      </div>\r
+    </div>\r
+\r
+    <!-- Broadcast section -->\r
+    <div class="sa-broadcast-card">\r
+      <div class="sa-broadcast-header">\r
+        <span class="material-icons-round">campaign</span>\r
+        <h3>Notification globale</h3>\r
+        <span class="sa-broadcast-warn">Envoy\xE9e \xE0 tous les membres de toutes les familles</span>\r
+      </div>\r
+      <div class="sa-broadcast-fields">\r
+        <input [(ngModel)]="broadcastTitre" placeholder="Titre de la notification" class="sa-add-input"/>\r
+        <textarea [(ngModel)]="broadcastMsg" placeholder="Message..." rows="3" class="sa-textarea"></textarea>\r
+      </div>\r
+      @if (broadcastDone) {\r
+        <div class="sa-broadcast-success">\r
+          <span class="material-icons-round">check_circle</span> {{ broadcastDone }}\r
+        </div>\r
+      }\r
+      <button class="sa-btn-broadcast" (click)="sendBroadcast()" [disabled]="!broadcastTitre || !broadcastMsg || broadcasting">\r
+        @if (broadcasting) { <span class="sa-spinner-sm"></span> } @else {\r
+          <span class="material-icons-round">send</span> Envoyer \xE0 tous\r
+        }\r
+      </button>\r
+    </div>\r
+  }\r
+</div>\r
 `, styles: ["/* src/app/superadmin/pages/settings/sa-settings.component.scss */\n.sa-page-header {\n  margin-bottom: 24px;\n}\n.sa-page-header h1 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header p {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-table-wrap {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table th {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table td {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table tr:last-child td {\n  border-bottom: none;\n}\n.sa-table code {\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 12px;\n  color: #6366F1;\n}\n.sa-actions {\n  display: flex;\n  gap: 6px;\n}\n.sa-act-btn {\n  width: 32px;\n  height: 32px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  transition: all 0.15s;\n}\n.sa-act-btn .material-icons-round {\n  font-size: 16px;\n}\n.sa-act-btn:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-defaults-bar {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  margin-bottom: 20px;\n}\n.sa-defaults-bar .sa-defaults-label {\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-default-chip {\n  padding: 4px 12px;\n  border: 1px dashed #CBD5E1;\n  border-radius: 20px;\n  background: #fff;\n  font-size: 12px;\n  color: #64748B;\n  cursor: pointer;\n}\n.sa-default-chip:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-default-chip:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-add-setting {\n  margin-top: 24px;\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-add-setting h3 {\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0 0 16px;\n}\n.sa-add-row {\n  display: flex;\n  gap: 10px;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.sa-add-input {\n  flex: 1;\n  min-width: 150px;\n  padding: 9px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  font-size: 13px;\n  color: #374151;\n  outline: none;\n}\n.sa-add-input:focus {\n  border-color: #6366F1;\n}\n.sa-btn-add {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 16px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n}\n.sa-btn-add .material-icons-round {\n  font-size: 16px;\n}\n.sa-btn-add:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-inline-input {\n  padding: 4px 8px;\n  border: 1px solid #6366F1;\n  border-radius: 6px;\n  font-size: 13px;\n  outline: none;\n  width: 200px;\n}\n.sa-setting-val.bool-true {\n  color: #16A34A;\n  font-weight: 600;\n}\n.sa-setting-val.bool-false {\n  color: #DC2626;\n  font-weight: 600;\n}\n.sa-broadcast-card {\n  margin-top: 24px;\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  border-left: 3px solid #EF4444;\n}\n.sa-broadcast-header {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 16px;\n}\n.sa-broadcast-header .material-icons-round {\n  color: #EF4444;\n  font-size: 22px;\n}\n.sa-broadcast-header h3 {\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0;\n}\n.sa-broadcast-warn {\n  font-size: 12px;\n  color: #EF4444;\n  background: #FEF2F2;\n  padding: 2px 8px;\n  border-radius: 20px;\n}\n.sa-broadcast-fields {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  margin-bottom: 12px;\n}\n.sa-textarea {\n  width: 100%;\n  padding: 9px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  font-size: 13px;\n  color: #374151;\n  outline: none;\n  resize: vertical;\n  font-family: inherit;\n}\n.sa-textarea:focus {\n  border-color: #EF4444;\n}\n.sa-broadcast-success {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  background: #DCFCE7;\n  color: #16A34A;\n  padding: 8px 12px;\n  border-radius: 8px;\n  font-size: 13px;\n  margin-bottom: 10px;\n}\n.sa-broadcast-success .material-icons-round {\n  font-size: 18px;\n}\n.sa-btn-broadcast {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 18px;\n  background: #EF4444;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.sa-btn-broadcast .material-icons-round {\n  font-size: 16px;\n}\n.sa-btn-broadcast:hover:not(:disabled) {\n  background: #DC2626;\n}\n.sa-btn-broadcast:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-spinner-sm {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: spin 0.7s linear infinite;\n}\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n/*# sourceMappingURL=sa-settings.component.css.map */\n"] }]
   }], () => [{ type: SuperAdminService }], null);
 })();
@@ -3138,7 +3157,7 @@ var SaPlansComponent = class _SaPlansComponent {
     p._editLabel = p.label;
     p._editPrix = p.prix;
     p._editMax = p.maxPersonnes;
-    p._editFeats = p.features.join(", ");
+    p._editFeats = (p.features ?? []).join(", ");
   }
   cancelEdit(p) {
     p._editing = false;
@@ -3146,7 +3165,7 @@ var SaPlansComponent = class _SaPlansComponent {
   saveEdit(p) {
     this.actionLoading = p.id;
     const features = p._editFeats.split(",").map((s) => s.trim()).filter(Boolean);
-    this.sa.patchPlan(p.id, { label: p._editLabel, prix: +p._editPrix, maxPersonnes: p._editMax ? +p._editMax : null, features }).subscribe({
+    this.sa.patchPlan(p.id, { label: p._editLabel, prix: +(p._editPrix ?? p.prix), maxPersonnes: p._editMax ? +p._editMax : null, features }).subscribe({
       next: (updated) => {
         Object.assign(p, updated);
         p._editing = false;
@@ -3223,168 +3242,211 @@ var SaPlansComponent = class _SaPlansComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SaPlansComponent, [{
     type: Component,
-    args: [{ selector: "sa-plans", standalone: false, template: `<div class="sa-page">
-  <div class="sa-page-header">
-    <div class="sa-header-row">
-      <div>
-        <h1>Plans d'abonnement</h1>
-        <p>G\xE9rer les plans de la plateforme</p>
-      </div>
-      <button class="sa-btn-primary" (click)="showCreateForm = !showCreateForm">
-        <span class="material-icons-round">{{ showCreateForm ? 'close' : 'add' }}</span>
-        {{ showCreateForm ? 'Annuler' : 'Nouveau plan' }}
-      </button>
-    </div>
-  </div>
-
-  <!-- Create form -->
-  @if (showCreateForm) {
-    <div class="sa-create-card">
-      <h3>Cr\xE9er un nouveau plan</h3>
-      <form [formGroup]="createForm" (ngSubmit)="submitCreate()">
-        <div class="sa-form-grid">
-          <div class="sa-field">
-            <label>ID (slug unique)</label>
-            <input formControlName="id" placeholder="ex: plan_premium"/>
-            @if (createForm.get('id')!.invalid && createForm.get('id')!.touched) {
-              <span class="sa-ferr">Requis, lettres minuscules/chiffres/tiret bas uniquement</span>
-            }
-          </div>
-          <div class="sa-field">
-            <label>Nom technique</label>
-            <input formControlName="nom" placeholder="ex: premium"/>
-          </div>
-          <div class="sa-field">
-            <label>Label affich\xE9</label>
-            <input formControlName="label" placeholder="ex: Premium"/>
-          </div>
-          <div class="sa-field">
-            <label>Prix (FCFA/mois)</label>
-            <input type="number" formControlName="prix" min="0"/>
-          </div>
-          <div class="sa-field">
-            <label>Max personnes (vide = illimit\xE9)</label>
-            <input type="number" formControlName="maxPersonnes" placeholder="illimit\xE9"/>
-          </div>
-          <div class="sa-field sa-field-full">
-            <label>Fonctionnalit\xE9s (s\xE9par\xE9es par virgule)</label>
-            <input formControlName="featuresRaw" placeholder="Arbre illimit\xE9, Albums photos, Stories..."/>
-          </div>
-        </div>
-        <div class="sa-create-actions">
-          <button type="submit" class="sa-btn-primary" [disabled]="creating">
-            @if (creating) { <span class="sa-spinner-sm"></span> } @else { Cr\xE9er le plan }
-          </button>
-        </div>
-      </form>
-    </div>
-  }
-
-  @if (loading) {
-    <div class="sa-loading">Chargement...</div>
-  } @else {
-    <div class="sa-plans-grid">
-      @for (p of plans; track p.id) {
-        <div class="sa-plan-card" [class.sa-plan-free]="p.prix === 0">
-          <div class="sa-plan-head">
-            <div>
-              <div class="sa-plan-label">{{ p.label }}</div>
-              <code class="sa-plan-id">{{ p.id }}</code>
-            </div>
-            <div class="sa-plan-prix">
-              {{ p.prix === 0 ? 'Gratuit' : (p.prix | number) + ' FCFA' }}
-              @if (p.prix > 0) { <small>/mois</small> }
-            </div>
-          </div>
-
-          <div class="sa-plan-meta">
-            <span class="sa-badge blue">{{ p._count?.subscriptions ?? 0 }} abonn\xE9s</span>
-            @if (p.maxPersonnes) {
-              <span class="sa-badge grey">Max {{ p.maxPersonnes }} pers.</span>
-            } @else {
-              <span class="sa-badge green">Illimit\xE9</span>
-            }
-          </div>
-
-          @if (!p._editing) {
-            <ul class="sa-plan-features">
-              @for (f of p.features; track f) {
-                <li><span class="material-icons-round">check_circle</span>{{ f }}</li>
-              }
-            </ul>
-            <div class="sa-plan-actions">
-              <button class="sa-act-btn" (click)="startEdit(p)" title="Modifier">
-                <span class="material-icons-round">edit</span> Modifier
-              </button>
-              <button class="sa-act-btn danger" (click)="deletePlan(p)" [disabled]="actionLoading === p.id" title="Supprimer">
-                <span class="material-icons-round">delete</span>
-              </button>
-            </div>
-          } @else {
-            <!-- Inline edit -->
-            <div class="sa-plan-edit">
-              <label>Label</label>
-              <input [(ngModel)]="p._editLabel"/>
-              <label>Prix (FCFA)</label>
-              <input type="number" [(ngModel)]="p._editPrix" min="0"/>
-              <label>Max personnes (vide = illimit\xE9)</label>
-              <input type="number" [(ngModel)]="p._editMax"/>
-              <label>Fonctionnalit\xE9s (virgule)</label>
-              <input [(ngModel)]="p._editFeats"/>
-            </div>
-            <div class="sa-plan-actions">
-              <button class="sa-act-btn green" (click)="saveEdit(p)" [disabled]="actionLoading === p.id">
-                <span class="material-icons-round">check</span> Enregistrer
-              </button>
-              <button class="sa-act-btn" (click)="cancelEdit(p)">Annuler</button>
-            </div>
-          }
-        </div>
-      }
-    </div>
-  }
-</div>
+    args: [{ selector: "sa-plans", standalone: false, template: `<div class="sa-page">\r
+  <div class="sa-page-header">\r
+    <div class="sa-header-row">\r
+      <div>\r
+        <h1>Plans d'abonnement</h1>\r
+        <p>G\xE9rer les plans de la plateforme</p>\r
+      </div>\r
+      <button class="sa-btn-primary" (click)="showCreateForm = !showCreateForm">\r
+        <span class="material-icons-round">{{ showCreateForm ? 'close' : 'add' }}</span>\r
+        {{ showCreateForm ? 'Annuler' : 'Nouveau plan' }}\r
+      </button>\r
+    </div>\r
+  </div>\r
+\r
+  <!-- Create form -->\r
+  @if (showCreateForm) {\r
+    <div class="sa-create-card">\r
+      <h3>Cr\xE9er un nouveau plan</h3>\r
+      <form [formGroup]="createForm" (ngSubmit)="submitCreate()">\r
+        <div class="sa-form-grid">\r
+          <div class="sa-field">\r
+            <label>ID (slug unique)</label>\r
+            <input formControlName="id" placeholder="ex: plan_premium"/>\r
+            @if (createForm.get('id')!.invalid && createForm.get('id')!.touched) {\r
+              <span class="sa-ferr">Requis, lettres minuscules/chiffres/tiret bas uniquement</span>\r
+            }\r
+          </div>\r
+          <div class="sa-field">\r
+            <label>Nom technique</label>\r
+            <input formControlName="nom" placeholder="ex: premium"/>\r
+          </div>\r
+          <div class="sa-field">\r
+            <label>Label affich\xE9</label>\r
+            <input formControlName="label" placeholder="ex: Premium"/>\r
+          </div>\r
+          <div class="sa-field">\r
+            <label>Prix (FCFA/mois)</label>\r
+            <input type="number" formControlName="prix" min="0"/>\r
+          </div>\r
+          <div class="sa-field">\r
+            <label>Max personnes (vide = illimit\xE9)</label>\r
+            <input type="number" formControlName="maxPersonnes" placeholder="illimit\xE9"/>\r
+          </div>\r
+          <div class="sa-field sa-field-full">\r
+            <label>Fonctionnalit\xE9s (s\xE9par\xE9es par virgule)</label>\r
+            <input formControlName="featuresRaw" placeholder="Arbre illimit\xE9, Albums photos, Stories..."/>\r
+          </div>\r
+        </div>\r
+        <div class="sa-create-actions">\r
+          <button type="submit" class="sa-btn-primary" [disabled]="creating">\r
+            @if (creating) { <span class="sa-spinner-sm"></span> } @else { Cr\xE9er le plan }\r
+          </button>\r
+        </div>\r
+      </form>\r
+    </div>\r
+  }\r
+\r
+  @if (loading) {\r
+    <div class="sa-loading">Chargement...</div>\r
+  } @else {\r
+    <div class="sa-plans-grid">\r
+      @for (p of plans; track p.id) {\r
+        <div class="sa-plan-card" [class.sa-plan-free]="p.prix === 0">\r
+          <div class="sa-plan-head">\r
+            <div>\r
+              <div class="sa-plan-label">{{ p.label }}</div>\r
+              <code class="sa-plan-id">{{ p.id }}</code>\r
+            </div>\r
+            <div class="sa-plan-prix">\r
+              {{ p.prix === 0 ? 'Gratuit' : (p.prix | number) + ' FCFA' }}\r
+              @if (p.prix > 0) { <small>/mois</small> }\r
+            </div>\r
+          </div>\r
+\r
+          <div class="sa-plan-meta">\r
+            <span class="sa-badge blue">{{ p._count?.subscriptions ?? 0 }} abonn\xE9s</span>\r
+            @if (p.maxPersonnes) {\r
+              <span class="sa-badge grey">Max {{ p.maxPersonnes }} pers.</span>\r
+            } @else {\r
+              <span class="sa-badge green">Illimit\xE9</span>\r
+            }\r
+          </div>\r
+\r
+          @if (!p._editing) {\r
+            <ul class="sa-plan-features">\r
+              @for (f of p.features; track f) {\r
+                <li><span class="material-icons-round">check_circle</span>{{ f }}</li>\r
+              }\r
+            </ul>\r
+            <div class="sa-plan-actions">\r
+              <button class="sa-act-btn" (click)="startEdit(p)" title="Modifier">\r
+                <span class="material-icons-round">edit</span> Modifier\r
+              </button>\r
+              <button class="sa-act-btn danger" (click)="deletePlan(p)" [disabled]="actionLoading === p.id" title="Supprimer">\r
+                <span class="material-icons-round">delete</span>\r
+              </button>\r
+            </div>\r
+          } @else {\r
+            <!-- Inline edit -->\r
+            <div class="sa-plan-edit">\r
+              <label>Label</label>\r
+              <input [(ngModel)]="p._editLabel"/>\r
+              <label>Prix (FCFA)</label>\r
+              <input type="number" [(ngModel)]="p._editPrix" min="0"/>\r
+              <label>Max personnes (vide = illimit\xE9)</label>\r
+              <input type="number" [(ngModel)]="p._editMax"/>\r
+              <label>Fonctionnalit\xE9s (virgule)</label>\r
+              <input [(ngModel)]="p._editFeats"/>\r
+            </div>\r
+            <div class="sa-plan-actions">\r
+              <button class="sa-act-btn green" (click)="saveEdit(p)" [disabled]="actionLoading === p.id">\r
+                <span class="material-icons-round">check</span> Enregistrer\r
+              </button>\r
+              <button class="sa-act-btn" (click)="cancelEdit(p)">Annuler</button>\r
+            </div>\r
+          }\r
+        </div>\r
+      }\r
+    </div>\r
+  }\r
+</div>\r
 `, styles: ["/* src/app/superadmin/pages/plans/sa-plans.component.scss */\n.sa-page-header {\n  margin-bottom: 24px;\n}\n.sa-page-header p {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-header-row {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n}\n.sa-page-header h1 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-loading {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-btn-primary {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 16px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 14px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.sa-btn-primary .material-icons-round {\n  font-size: 18px;\n}\n.sa-btn-primary:hover {\n  background: #4F46E5;\n}\n.sa-btn-primary:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-create-card {\n  background: #fff;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  margin-bottom: 24px;\n  border-left: 3px solid #6366F1;\n}\n.sa-create-card h3 {\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0 0 16px;\n}\n.sa-form-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));\n  gap: 12px;\n}\n.sa-field {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.sa-field label {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 500;\n}\n.sa-field input {\n  padding: 8px 10px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-field input:focus {\n  border-color: #6366F1;\n}\n.sa-field.sa-field-full {\n  grid-column: 1/-1;\n}\n.sa-ferr {\n  font-size: 11px;\n  color: #EF4444;\n}\n.sa-create-actions {\n  margin-top: 16px;\n}\n.sa-spinner-sm {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: spin 0.7s linear infinite;\n}\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.sa-plans-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));\n  gap: 20px;\n}\n.sa-plan-card {\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  border-top: 3px solid #6366F1;\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.sa-plan-card.sa-plan-free {\n  border-top-color: #94A3B8;\n}\n.sa-plan-head {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n}\n.sa-plan-label {\n  font-size: 16px;\n  font-weight: 700;\n  color: #0F172A;\n}\n.sa-plan-id {\n  font-size: 11px;\n  color: #94A3B8;\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n}\n.sa-plan-prix {\n  font-size: 20px;\n  font-weight: 700;\n  color: #6366F1;\n  white-space: nowrap;\n}\n.sa-plan-prix small {\n  font-size: 12px;\n  color: #94A3B8;\n  font-weight: 400;\n}\n.sa-plan-meta {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.sa-plan-features {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  flex: 1;\n}\n.sa-plan-features li {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  color: #374151;\n  padding: 3px 0;\n}\n.sa-plan-features li .material-icons-round {\n  font-size: 16px;\n  color: #10B981;\n}\n.sa-plan-actions {\n  display: flex;\n  gap: 8px;\n}\n.sa-plan-edit {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.sa-plan-edit label {\n  font-size: 11px;\n  color: #64748B;\n  font-weight: 500;\n  margin-top: 4px;\n}\n.sa-plan-edit input {\n  padding: 6px 8px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-plan-edit input:focus {\n  border-color: #6366F1;\n}\n.sa-badge {\n  display: inline-block;\n  padding: 2px 8px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.sa-badge.blue {\n  background: #EFF6FF;\n  color: #2563EB;\n}\n.sa-badge.green {\n  background: #DCFCE7;\n  color: #16A34A;\n}\n.sa-badge.grey {\n  background: #F1F5F9;\n  color: #64748B;\n}\n.sa-act-btn {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  padding: 6px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  font-size: 12px;\n  transition: all 0.15s;\n}\n.sa-act-btn .material-icons-round {\n  font-size: 14px;\n}\n.sa-act-btn:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-plans.component.css.map */\n"] }]
   }], () => [{ type: SuperAdminService }, { type: FormBuilder }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SaPlansComponent, { className: "SaPlansComponent", filePath: "src/app/superadmin/pages/plans/sa-plans.component.ts", lineNumber: 6 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SaPlansComponent, { className: "SaPlansComponent", filePath: "src/app/superadmin/pages/plans/sa-plans.component.ts", lineNumber: 15 });
 })();
 
 // src/app/superadmin/pages/audit/sa-audit.component.ts
 var _forTrack08 = ($index, $item) => $item.id;
-function SaAuditComponent_Conditional_6_Template(rf, ctx) {
+function SaAuditComponent_For_11_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 2);
+    \u0275\u0275elementStart(0, "option", 5);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const a_r1 = ctx.$implicit;
+    \u0275\u0275property("value", a_r1.id);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate2("", a_r1.prenom, " ", a_r1.nom);
+  }
+}
+function SaAuditComponent_For_16_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 5);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const k_r2 = ctx.$implicit;
+    const ctx_r2 = \u0275\u0275nextContext();
+    \u0275\u0275property("value", k_r2);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r2.getMeta(k_r2).label);
+  }
+}
+function SaAuditComponent_Conditional_19_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "button", 10);
+    \u0275\u0275listener("click", function SaAuditComponent_Conditional_19_Template_button_click_0_listener() {
+      \u0275\u0275restoreView(_r4);
+      const ctx_r2 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r2.resetFilters());
+    });
+    \u0275\u0275elementStart(1, "span", 11);
+    \u0275\u0275text(2, "close");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3, " R\xE9initialiser ");
+    \u0275\u0275elementEnd();
+  }
+}
+function SaAuditComponent_Conditional_20_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 9);
     \u0275\u0275text(1, "Chargement...");
     \u0275\u0275elementEnd();
   }
 }
-function SaAuditComponent_Conditional_7_For_16_Conditional_7_Template(rf, ctx) {
+function SaAuditComponent_Conditional_21_For_16_Conditional_7_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "strong");
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(2, "div", 12);
+    \u0275\u0275elementStart(2, "div", 20);
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const log_r2 = \u0275\u0275nextContext().$implicit;
+    const log_r6 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate2("", log_r2.admin.prenom, " ", log_r2.admin.nom);
+    \u0275\u0275textInterpolate2("", log_r6.admin.prenom, " ", log_r6.admin.nom);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(log_r2.admin.email);
+    \u0275\u0275textInterpolate(log_r6.admin.email);
   }
 }
-function SaAuditComponent_Conditional_7_For_16_Conditional_8_Template(rf, ctx) {
+function SaAuditComponent_Conditional_21_For_16_Conditional_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 9);
+    \u0275\u0275elementStart(0, "span", 17);
     \u0275\u0275text(1, "\u2014");
     \u0275\u0275elementEnd();
   }
 }
-function SaAuditComponent_Conditional_7_For_16_Conditional_10_Conditional_2_Template(rf, ctx) {
+function SaAuditComponent_Conditional_21_For_16_Conditional_10_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "code");
     \u0275\u0275text(1);
@@ -3392,83 +3454,83 @@ function SaAuditComponent_Conditional_7_For_16_Conditional_10_Conditional_2_Temp
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const log_r2 = \u0275\u0275nextContext(2).$implicit;
+    const log_r6 = \u0275\u0275nextContext(2).$implicit;
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1("", \u0275\u0275pipeBind3(2, 1, log_r2.targetId, 0, 8), "...");
+    \u0275\u0275textInterpolate1("", \u0275\u0275pipeBind3(2, 1, log_r6.targetId, 0, 8), "...");
   }
 }
-function SaAuditComponent_Conditional_7_For_16_Conditional_10_Template(rf, ctx) {
+function SaAuditComponent_Conditional_21_For_16_Conditional_10_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 13);
+    \u0275\u0275elementStart(0, "span", 21);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
-    \u0275\u0275conditionalCreate(2, SaAuditComponent_Conditional_7_For_16_Conditional_10_Conditional_2_Template, 3, 5, "code");
+    \u0275\u0275conditionalCreate(2, SaAuditComponent_Conditional_21_For_16_Conditional_10_Conditional_2_Template, 3, 5, "code");
   }
   if (rf & 2) {
-    const log_r2 = \u0275\u0275nextContext().$implicit;
+    const log_r6 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(log_r2.targetType);
+    \u0275\u0275textInterpolate(log_r6.targetType);
     \u0275\u0275advance();
-    \u0275\u0275conditional(log_r2.targetId ? 2 : -1);
+    \u0275\u0275conditional(log_r6.targetId ? 2 : -1);
   }
 }
-function SaAuditComponent_Conditional_7_For_16_Conditional_11_Template(rf, ctx) {
+function SaAuditComponent_Conditional_21_For_16_Conditional_11_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 9);
+    \u0275\u0275elementStart(0, "span", 17);
     \u0275\u0275text(1, "\u2014");
     \u0275\u0275elementEnd();
   }
 }
-function SaAuditComponent_Conditional_7_For_16_Template(rf, ctx) {
+function SaAuditComponent_Conditional_21_For_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "tr")(1, "td")(2, "div", 7)(3, "span", 8);
+    \u0275\u0275elementStart(0, "tr")(1, "td")(2, "div", 16)(3, "span", 11);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
     \u0275\u0275text(5);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(6, "td");
-    \u0275\u0275conditionalCreate(7, SaAuditComponent_Conditional_7_For_16_Conditional_7_Template, 4, 3)(8, SaAuditComponent_Conditional_7_For_16_Conditional_8_Template, 2, 0, "span", 9);
+    \u0275\u0275conditionalCreate(7, SaAuditComponent_Conditional_21_For_16_Conditional_7_Template, 4, 3)(8, SaAuditComponent_Conditional_21_For_16_Conditional_8_Template, 2, 0, "span", 17);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(9, "td");
-    \u0275\u0275conditionalCreate(10, SaAuditComponent_Conditional_7_For_16_Conditional_10_Template, 3, 2)(11, SaAuditComponent_Conditional_7_For_16_Conditional_11_Template, 2, 0, "span", 9);
+    \u0275\u0275conditionalCreate(10, SaAuditComponent_Conditional_21_For_16_Conditional_10_Template, 3, 2)(11, SaAuditComponent_Conditional_21_For_16_Conditional_11_Template, 2, 0, "span", 17);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "td", 10);
+    \u0275\u0275elementStart(12, "td", 18);
     \u0275\u0275text(13);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "td", 11);
+    \u0275\u0275elementStart(14, "td", 19);
     \u0275\u0275text(15);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const log_r2 = ctx.$implicit;
+    const log_r6 = ctx.$implicit;
     const ctx_r2 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(2);
-    \u0275\u0275styleProp("background", ctx_r2.getMeta(log_r2.action).color + "18")("color", ctx_r2.getMeta(log_r2.action).color);
+    \u0275\u0275styleProp("background", ctx_r2.getMeta(log_r6.action).color + "18")("color", ctx_r2.getMeta(log_r6.action).color);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r2.getMeta(log_r2.action).icon);
+    \u0275\u0275textInterpolate(ctx_r2.getMeta(log_r6.action).icon);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r2.getMeta(log_r2.action).label, " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r2.getMeta(log_r6.action).label, " ");
     \u0275\u0275advance(2);
-    \u0275\u0275conditional(log_r2.admin ? 7 : 8);
+    \u0275\u0275conditional(log_r6.admin ? 7 : 8);
     \u0275\u0275advance(3);
-    \u0275\u0275conditional(log_r2.targetType ? 10 : 11);
+    \u0275\u0275conditional(log_r6.targetType ? 10 : 11);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(ctx_r2.formatDetails(log_r2.details));
+    \u0275\u0275textInterpolate(ctx_r2.formatDetails(log_r6.details));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r2.formatDate(log_r2.createdAt));
+    \u0275\u0275textInterpolate(ctx_r2.formatDate(log_r6.createdAt));
   }
 }
-function SaAuditComponent_Conditional_7_Conditional_17_Template(rf, ctx) {
+function SaAuditComponent_Conditional_21_Conditional_17_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "tr")(1, "td", 14);
+    \u0275\u0275elementStart(0, "tr")(1, "td", 22);
     \u0275\u0275text(2, "Aucune action enregistr\xE9e");
     \u0275\u0275elementEnd()();
   }
 }
-function SaAuditComponent_Conditional_7_Template(rf, ctx) {
+function SaAuditComponent_Conditional_21_Template(rf, ctx) {
   if (rf & 1) {
-    const _r1 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 3)(1, "table", 4)(2, "thead")(3, "tr")(4, "th");
+    const _r5 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 12)(1, "table", 13)(2, "thead")(3, "tr")(4, "th");
     \u0275\u0275text(5, "Action");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "th");
@@ -3484,12 +3546,12 @@ function SaAuditComponent_Conditional_7_Template(rf, ctx) {
     \u0275\u0275text(13, "Date");
     \u0275\u0275elementEnd()()();
     \u0275\u0275elementStart(14, "tbody");
-    \u0275\u0275repeaterCreate(15, SaAuditComponent_Conditional_7_For_16_Template, 16, 10, "tr", null, _forTrack08);
-    \u0275\u0275conditionalCreate(17, SaAuditComponent_Conditional_7_Conditional_17_Template, 3, 0, "tr");
+    \u0275\u0275repeaterCreate(15, SaAuditComponent_Conditional_21_For_16_Template, 16, 10, "tr", null, _forTrack08);
+    \u0275\u0275conditionalCreate(17, SaAuditComponent_Conditional_21_Conditional_17_Template, 3, 0, "tr");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(18, "div", 5)(19, "button", 6);
-    \u0275\u0275listener("click", function SaAuditComponent_Conditional_7_Template_button_click_19_listener() {
-      \u0275\u0275restoreView(_r1);
+    \u0275\u0275elementStart(18, "div", 14)(19, "button", 15);
+    \u0275\u0275listener("click", function SaAuditComponent_Conditional_21_Template_button_click_19_listener() {
+      \u0275\u0275restoreView(_r5);
       const ctx_r2 = \u0275\u0275nextContext();
       ctx_r2.page = ctx_r2.page - 1;
       return \u0275\u0275resetView(ctx_r2.load());
@@ -3499,9 +3561,9 @@ function SaAuditComponent_Conditional_7_Template(rf, ctx) {
     \u0275\u0275elementStart(21, "span");
     \u0275\u0275text(22);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(23, "button", 6);
-    \u0275\u0275listener("click", function SaAuditComponent_Conditional_7_Template_button_click_23_listener() {
-      \u0275\u0275restoreView(_r1);
+    \u0275\u0275elementStart(23, "button", 15);
+    \u0275\u0275listener("click", function SaAuditComponent_Conditional_21_Template_button_click_23_listener() {
+      \u0275\u0275restoreView(_r5);
       const ctx_r2 = \u0275\u0275nextContext();
       ctx_r2.page = ctx_r2.page + 1;
       return \u0275\u0275resetView(ctx_r2.load());
@@ -3520,7 +3582,7 @@ function SaAuditComponent_Conditional_7_Template(rf, ctx) {
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate2("Page ", ctx_r2.page, " / ", ctx_r2.data == null ? null : ctx_r2.data.pages);
     \u0275\u0275advance();
-    \u0275\u0275property("disabled", ctx_r2.page >= (ctx_r2.data == null ? null : ctx_r2.data.pages));
+    \u0275\u0275property("disabled", ctx_r2.page >= ((ctx_r2.data == null ? null : ctx_r2.data.pages) ?? 1));
   }
 }
 var SaAuditComponent = class _SaAuditComponent {
@@ -3528,6 +3590,10 @@ var SaAuditComponent = class _SaAuditComponent {
   data = null;
   loading = true;
   page = 1;
+  filterAdminId = "";
+  filterAction = "";
+  filterDateDebut = "";
+  filterDateFin = "";
   actionLabels = {
     assign_plan: { label: "Plan assign\xE9", color: "#3B82F6", icon: "workspace_premium" },
     suspend_famille: { label: "Famille suspendue", color: "#F59E0B", icon: "pause_circle" },
@@ -3536,8 +3602,11 @@ var SaAuditComponent = class _SaAuditComponent {
     change_role: { label: "R\xF4le modifi\xE9", color: "#8B5CF6", icon: "manage_accounts" },
     broadcast: { label: "Broadcast envoy\xE9", color: "#10B981", icon: "campaign" },
     change_setting: { label: "Param\xE8tre modifi\xE9", color: "#6366F1", icon: "settings" },
-    delete_plan: { label: "Plan supprim\xE9", color: "#EF4444", icon: "delete" }
+    delete_plan: { label: "Plan supprim\xE9", color: "#EF4444", icon: "delete" },
+    edit_plan: { label: "Plan modifi\xE9", color: "#6366F1", icon: "workspace_premium" },
+    delete_setting: { label: "Param\xE8tre supprim\xE9", color: "#EF4444", icon: "settings" }
   };
+  actionKeys = Object.keys(this.actionLabels);
   constructor(sa) {
     this.sa = sa;
   }
@@ -3546,13 +3615,38 @@ var SaAuditComponent = class _SaAuditComponent {
   }
   load() {
     this.loading = true;
-    this.sa.getAudit({ page: this.page }).subscribe({
+    const params = { page: this.page };
+    if (this.filterAdminId)
+      params["adminId"] = this.filterAdminId;
+    if (this.filterAction)
+      params["action"] = this.filterAction;
+    if (this.filterDateDebut)
+      params["dateDebut"] = this.filterDateDebut;
+    if (this.filterDateFin)
+      params["dateFin"] = this.filterDateFin;
+    this.sa.getAudit(params).subscribe({
       next: (d) => {
         this.data = d;
         this.loading = false;
+        if (d.pages > 0 && this.page > d.pages) {
+          this.page = d.pages;
+          this.load();
+        }
       },
       error: () => this.loading = false
     });
+  }
+  applyFilters() {
+    this.page = 1;
+    this.load();
+  }
+  resetFilters() {
+    this.filterAdminId = "";
+    this.filterAction = "";
+    this.filterDateDebut = "";
+    this.filterDateFin = "";
+    this.page = 1;
+    this.load();
   }
   getMeta(action) {
     return this.actionLabels[action] ?? { label: action, color: "#94A3B8", icon: "info" };
@@ -3568,7 +3662,7 @@ var SaAuditComponent = class _SaAuditComponent {
   static \u0275fac = function SaAuditComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _SaAuditComponent)(\u0275\u0275directiveInject(SuperAdminService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SaAuditComponent, selectors: [["sa-audit"]], standalone: false, decls: 8, vars: 1, consts: [[1, "sa-page"], [1, "sa-page-header"], [1, "sa-loading"], [1, "sa-table-wrap"], [1, "sa-table"], [1, "sa-pagination"], [3, "click", "disabled"], [1, "sa-action-badge"], [1, "material-icons-round"], [1, "sa-muted"], [1, "sa-details-cell"], [1, "sa-date-cell"], [1, "sa-sub"], [1, "sa-target-type"], ["colspan", "5", 1, "sa-empty-row"]], template: function SaAuditComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SaAuditComponent, selectors: [["sa-audit"]], standalone: false, decls: 22, vars: 6, consts: [[1, "sa-page"], [1, "sa-page-header"], [1, "sa-toolbar", "sa-audit-filters"], [3, "ngModelChange", "change", "ngModel"], ["value", ""], [3, "value"], ["type", "date", "title", "Depuis le", 3, "ngModelChange", "change", "ngModel"], ["type", "date", "title", "Jusqu'au", 3, "ngModelChange", "change", "ngModel"], [1, "sa-filter-reset"], [1, "sa-loading"], [1, "sa-filter-reset", 3, "click"], [1, "material-icons-round"], [1, "sa-table-wrap"], [1, "sa-table"], [1, "sa-pagination"], [3, "click", "disabled"], [1, "sa-action-badge"], [1, "sa-muted"], [1, "sa-details-cell"], [1, "sa-date-cell"], [1, "sa-sub"], [1, "sa-target-type"], ["colspan", "5", 1, "sa-empty-row"]], template: function SaAuditComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h1");
       \u0275\u0275text(3, "Journal d'audit");
@@ -3576,85 +3670,167 @@ var SaAuditComponent = class _SaAuditComponent {
       \u0275\u0275elementStart(4, "p");
       \u0275\u0275text(5, "Toutes les actions effectu\xE9es par les administrateurs plateforme");
       \u0275\u0275elementEnd()();
-      \u0275\u0275conditionalCreate(6, SaAuditComponent_Conditional_6_Template, 2, 0, "div", 2)(7, SaAuditComponent_Conditional_7_Template, 25, 5);
+      \u0275\u0275elementStart(6, "div", 2)(7, "select", 3);
+      \u0275\u0275twoWayListener("ngModelChange", function SaAuditComponent_Template_select_ngModelChange_7_listener($event) {
+        \u0275\u0275twoWayBindingSet(ctx.filterAdminId, $event) || (ctx.filterAdminId = $event);
+        return $event;
+      });
+      \u0275\u0275listener("change", function SaAuditComponent_Template_select_change_7_listener() {
+        return ctx.applyFilters();
+      });
+      \u0275\u0275elementStart(8, "option", 4);
+      \u0275\u0275text(9, "Tous les administrateurs");
+      \u0275\u0275elementEnd();
+      \u0275\u0275repeaterCreate(10, SaAuditComponent_For_11_Template, 2, 3, "option", 5, _forTrack08);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(12, "select", 3);
+      \u0275\u0275twoWayListener("ngModelChange", function SaAuditComponent_Template_select_ngModelChange_12_listener($event) {
+        \u0275\u0275twoWayBindingSet(ctx.filterAction, $event) || (ctx.filterAction = $event);
+        return $event;
+      });
+      \u0275\u0275listener("change", function SaAuditComponent_Template_select_change_12_listener() {
+        return ctx.applyFilters();
+      });
+      \u0275\u0275elementStart(13, "option", 4);
+      \u0275\u0275text(14, "Toutes les actions");
+      \u0275\u0275elementEnd();
+      \u0275\u0275repeaterCreate(15, SaAuditComponent_For_16_Template, 2, 2, "option", 5, \u0275\u0275repeaterTrackByIdentity);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(17, "input", 6);
+      \u0275\u0275twoWayListener("ngModelChange", function SaAuditComponent_Template_input_ngModelChange_17_listener($event) {
+        \u0275\u0275twoWayBindingSet(ctx.filterDateDebut, $event) || (ctx.filterDateDebut = $event);
+        return $event;
+      });
+      \u0275\u0275listener("change", function SaAuditComponent_Template_input_change_17_listener() {
+        return ctx.applyFilters();
+      });
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(18, "input", 7);
+      \u0275\u0275twoWayListener("ngModelChange", function SaAuditComponent_Template_input_ngModelChange_18_listener($event) {
+        \u0275\u0275twoWayBindingSet(ctx.filterDateFin, $event) || (ctx.filterDateFin = $event);
+        return $event;
+      });
+      \u0275\u0275listener("change", function SaAuditComponent_Template_input_change_18_listener() {
+        return ctx.applyFilters();
+      });
+      \u0275\u0275elementEnd();
+      \u0275\u0275conditionalCreate(19, SaAuditComponent_Conditional_19_Template, 4, 0, "button", 8);
+      \u0275\u0275elementEnd();
+      \u0275\u0275conditionalCreate(20, SaAuditComponent_Conditional_20_Template, 2, 0, "div", 9)(21, SaAuditComponent_Conditional_21_Template, 25, 5);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
-      \u0275\u0275advance(6);
-      \u0275\u0275conditional(ctx.loading ? 6 : 7);
+      \u0275\u0275advance(7);
+      \u0275\u0275twoWayProperty("ngModel", ctx.filterAdminId);
+      \u0275\u0275advance(3);
+      \u0275\u0275repeater(ctx.data == null ? null : ctx.data.admins);
+      \u0275\u0275advance(2);
+      \u0275\u0275twoWayProperty("ngModel", ctx.filterAction);
+      \u0275\u0275advance(3);
+      \u0275\u0275repeater(ctx.actionKeys);
+      \u0275\u0275advance(2);
+      \u0275\u0275twoWayProperty("ngModel", ctx.filterDateDebut);
+      \u0275\u0275advance();
+      \u0275\u0275twoWayProperty("ngModel", ctx.filterDateFin);
+      \u0275\u0275advance();
+      \u0275\u0275conditional(ctx.filterAdminId || ctx.filterAction || ctx.filterDateDebut || ctx.filterDateFin ? 19 : -1);
+      \u0275\u0275advance();
+      \u0275\u0275conditional(ctx.loading ? 20 : 21);
     }
-  }, dependencies: [SlicePipe], styles: ["\n\n.sa-page-header[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.sa-page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading[_ngcontent-%COMP%] {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-table-wrap[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table[_ngcontent-%COMP%] {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:last-child   td[_ngcontent-%COMP%] {\n  border-bottom: none;\n}\n.sa-table[_ngcontent-%COMP%]   code[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  padding: 2px 5px;\n  border-radius: 4px;\n  font-size: 11px;\n  color: #64748B;\n  margin-left: 4px;\n}\n.sa-action-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  font-size: 12px;\n  font-weight: 600;\n}\n.sa-action-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px;\n}\n.sa-sub[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #94A3B8;\n  margin-top: 2px;\n}\n.sa-muted[_ngcontent-%COMP%] {\n  color: #94A3B8;\n}\n.sa-target-type[_ngcontent-%COMP%] {\n  display: inline-block;\n  background: #F1F5F9;\n  color: #6366F1;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 11px;\n  font-weight: 600;\n  margin-right: 4px;\n}\n.sa-details-cell[_ngcontent-%COMP%] {\n  max-width: 260px;\n  color: #64748B;\n  font-size: 12px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.sa-date-cell[_ngcontent-%COMP%] {\n  color: #94A3B8;\n  font-size: 12px;\n  white-space: nowrap;\n}\n.sa-empty-row[_ngcontent-%COMP%] {\n  text-align: center;\n  color: #94A3B8;\n  padding: 40px !important;\n}\n.sa-pagination[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  padding: 16px;\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  padding: 6px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-audit.component.css.map */"] });
+  }, dependencies: [NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, SlicePipe], styles: ["\n\n.sa-page-header[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.sa-page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading[_ngcontent-%COMP%] {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-audit-filters[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  align-items: center;\n  margin-bottom: 20px;\n}\n.sa-audit-filters[_ngcontent-%COMP%]   select[_ngcontent-%COMP%], \n.sa-audit-filters[_ngcontent-%COMP%]   input[type=date][_ngcontent-%COMP%] {\n  padding: 8px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n}\n.sa-filter-reset[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  padding: 7px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  color: #64748B;\n  font-size: 13px;\n  cursor: pointer;\n}\n.sa-filter-reset[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px;\n}\n.sa-filter-reset[_ngcontent-%COMP%]:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n}\n.sa-table-wrap[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table[_ngcontent-%COMP%] {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:last-child   td[_ngcontent-%COMP%] {\n  border-bottom: none;\n}\n.sa-table[_ngcontent-%COMP%]   code[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  padding: 2px 5px;\n  border-radius: 4px;\n  font-size: 11px;\n  color: #64748B;\n  margin-left: 4px;\n}\n.sa-action-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  font-size: 12px;\n  font-weight: 600;\n}\n.sa-action-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px;\n}\n.sa-sub[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #94A3B8;\n  margin-top: 2px;\n}\n.sa-muted[_ngcontent-%COMP%] {\n  color: #94A3B8;\n}\n.sa-target-type[_ngcontent-%COMP%] {\n  display: inline-block;\n  background: #F1F5F9;\n  color: #6366F1;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 11px;\n  font-weight: 600;\n  margin-right: 4px;\n}\n.sa-details-cell[_ngcontent-%COMP%] {\n  max-width: 260px;\n  color: #64748B;\n  font-size: 12px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.sa-date-cell[_ngcontent-%COMP%] {\n  color: #94A3B8;\n  font-size: 12px;\n  white-space: nowrap;\n}\n.sa-empty-row[_ngcontent-%COMP%] {\n  text-align: center;\n  color: #94A3B8;\n  padding: 40px !important;\n}\n.sa-pagination[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  padding: 16px;\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  padding: 6px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-audit.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SaAuditComponent, [{
     type: Component,
-    args: [{ selector: "sa-audit", standalone: false, template: `<div class="sa-page">
-  <div class="sa-page-header">
-    <h1>Journal d'audit</h1>
-    <p>Toutes les actions effectu\xE9es par les administrateurs plateforme</p>
-  </div>
-
-  @if (loading) {
-    <div class="sa-loading">Chargement...</div>
-  } @else {
-    <div class="sa-table-wrap">
-      <table class="sa-table">
-        <thead>
-          <tr>
-            <th>Action</th>
-            <th>Administrateur</th>
-            <th>Cible</th>
-            <th>D\xE9tails</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          @for (log of data?.logs; track log.id) {
-            <tr>
-              <td>
-                <div class="sa-action-badge" [style.background]="getMeta(log.action).color + '18'"
-                     [style.color]="getMeta(log.action).color">
-                  <span class="material-icons-round">{{ getMeta(log.action).icon }}</span>
-                  {{ getMeta(log.action).label }}
-                </div>
-              </td>
-              <td>
-                @if (log.admin) {
-                  <strong>{{ log.admin.prenom }} {{ log.admin.nom }}</strong>
-                  <div class="sa-sub">{{ log.admin.email }}</div>
-                } @else {
-                  <span class="sa-muted">\u2014</span>
-                }
-              </td>
-              <td>
-                @if (log.targetType) {
-                  <span class="sa-target-type">{{ log.targetType }}</span>
-                  @if (log.targetId) { <code>{{ log.targetId | slice:0:8 }}...</code> }
-                } @else { <span class="sa-muted">\u2014</span> }
-              </td>
-              <td class="sa-details-cell">{{ formatDetails(log.details) }}</td>
-              <td class="sa-date-cell">{{ formatDate(log.createdAt) }}</td>
-            </tr>
-          }
-          @if (!data?.logs?.length) {
-            <tr><td colspan="5" class="sa-empty-row">Aucune action enregistr\xE9e</td></tr>
-          }
-        </tbody>
-      </table>
-    </div>
-
-    <div class="sa-pagination">
-      <button [disabled]="page <= 1" (click)="page = page - 1; load()">\u2039 Pr\xE9c\xE9dent</button>
-      <span>Page {{ page }} / {{ data?.pages }}</span>
-      <button [disabled]="page >= data?.pages" (click)="page = page + 1; load()">Suivant \u203A</button>
-    </div>
-  }
-</div>
-`, styles: ["/* src/app/superadmin/pages/audit/sa-audit.component.scss */\n.sa-page-header {\n  margin-bottom: 24px;\n}\n.sa-page-header h1 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header p {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-table-wrap {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table th {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table td {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table tr:last-child td {\n  border-bottom: none;\n}\n.sa-table code {\n  background: #F1F5F9;\n  padding: 2px 5px;\n  border-radius: 4px;\n  font-size: 11px;\n  color: #64748B;\n  margin-left: 4px;\n}\n.sa-action-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  font-size: 12px;\n  font-weight: 600;\n}\n.sa-action-badge .material-icons-round {\n  font-size: 14px;\n}\n.sa-sub {\n  font-size: 11px;\n  color: #94A3B8;\n  margin-top: 2px;\n}\n.sa-muted {\n  color: #94A3B8;\n}\n.sa-target-type {\n  display: inline-block;\n  background: #F1F5F9;\n  color: #6366F1;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 11px;\n  font-weight: 600;\n  margin-right: 4px;\n}\n.sa-details-cell {\n  max-width: 260px;\n  color: #64748B;\n  font-size: 12px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.sa-date-cell {\n  color: #94A3B8;\n  font-size: 12px;\n  white-space: nowrap;\n}\n.sa-empty-row {\n  text-align: center;\n  color: #94A3B8;\n  padding: 40px !important;\n}\n.sa-pagination {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  padding: 16px;\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-pagination button {\n  padding: 6px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n.sa-pagination button:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-pagination button:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-audit.component.css.map */\n"] }]
+    args: [{ selector: "sa-audit", standalone: false, template: `<div class="sa-page">\r
+  <div class="sa-page-header">\r
+    <h1>Journal d'audit</h1>\r
+    <p>Toutes les actions effectu\xE9es par les administrateurs plateforme</p>\r
+  </div>\r
+\r
+  <div class="sa-toolbar sa-audit-filters">\r
+    <select [(ngModel)]="filterAdminId" (change)="applyFilters()">\r
+      <option value="">Tous les administrateurs</option>\r
+      @for (a of data?.admins; track a.id) {\r
+        <option [value]="a.id">{{ a.prenom }} {{ a.nom }}</option>\r
+      }\r
+    </select>\r
+    <select [(ngModel)]="filterAction" (change)="applyFilters()">\r
+      <option value="">Toutes les actions</option>\r
+      @for (k of actionKeys; track k) {\r
+        <option [value]="k">{{ getMeta(k).label }}</option>\r
+      }\r
+    </select>\r
+    <input type="date" [(ngModel)]="filterDateDebut" (change)="applyFilters()" title="Depuis le" />\r
+    <input type="date" [(ngModel)]="filterDateFin" (change)="applyFilters()" title="Jusqu'au" />\r
+    @if (filterAdminId || filterAction || filterDateDebut || filterDateFin) {\r
+      <button class="sa-filter-reset" (click)="resetFilters()">\r
+        <span class="material-icons-round">close</span> R\xE9initialiser\r
+      </button>\r
+    }\r
+  </div>\r
+\r
+  @if (loading) {\r
+    <div class="sa-loading">Chargement...</div>\r
+  } @else {\r
+    <div class="sa-table-wrap">\r
+      <table class="sa-table">\r
+        <thead>\r
+          <tr>\r
+            <th>Action</th>\r
+            <th>Administrateur</th>\r
+            <th>Cible</th>\r
+            <th>D\xE9tails</th>\r
+            <th>Date</th>\r
+          </tr>\r
+        </thead>\r
+        <tbody>\r
+          @for (log of data?.logs; track log.id) {\r
+            <tr>\r
+              <td>\r
+                <div class="sa-action-badge" [style.background]="getMeta(log.action).color + '18'"\r
+                     [style.color]="getMeta(log.action).color">\r
+                  <span class="material-icons-round">{{ getMeta(log.action).icon }}</span>\r
+                  {{ getMeta(log.action).label }}\r
+                </div>\r
+              </td>\r
+              <td>\r
+                @if (log.admin) {\r
+                  <strong>{{ log.admin.prenom }} {{ log.admin.nom }}</strong>\r
+                  <div class="sa-sub">{{ log.admin.email }}</div>\r
+                } @else {\r
+                  <span class="sa-muted">\u2014</span>\r
+                }\r
+              </td>\r
+              <td>\r
+                @if (log.targetType) {\r
+                  <span class="sa-target-type">{{ log.targetType }}</span>\r
+                  @if (log.targetId) { <code>{{ log.targetId | slice:0:8 }}...</code> }\r
+                } @else { <span class="sa-muted">\u2014</span> }\r
+              </td>\r
+              <td class="sa-details-cell">{{ formatDetails(log.details) }}</td>\r
+              <td class="sa-date-cell">{{ formatDate(log.createdAt) }}</td>\r
+            </tr>\r
+          }\r
+          @if (!data?.logs?.length) {\r
+            <tr><td colspan="5" class="sa-empty-row">Aucune action enregistr\xE9e</td></tr>\r
+          }\r
+        </tbody>\r
+      </table>\r
+    </div>\r
+\r
+    <div class="sa-pagination">\r
+      <button [disabled]="page <= 1" (click)="page = page - 1; load()">\u2039 Pr\xE9c\xE9dent</button>\r
+      <span>Page {{ page }} / {{ data?.pages }}</span>\r
+      <button [disabled]="page >= (data?.pages ?? 1)" (click)="page = page + 1; load()">Suivant \u203A</button>\r
+    </div>\r
+  }\r
+</div>\r
+`, styles: ["/* src/app/superadmin/pages/audit/sa-audit.component.scss */\n.sa-page-header {\n  margin-bottom: 24px;\n}\n.sa-page-header h1 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header p {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-audit-filters {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  align-items: center;\n  margin-bottom: 20px;\n}\n.sa-audit-filters select,\n.sa-audit-filters input[type=date] {\n  padding: 8px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n}\n.sa-filter-reset {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  padding: 7px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  color: #64748B;\n  font-size: 13px;\n  cursor: pointer;\n}\n.sa-filter-reset .material-icons-round {\n  font-size: 15px;\n}\n.sa-filter-reset:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n}\n.sa-table-wrap {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table th {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table td {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table tr:last-child td {\n  border-bottom: none;\n}\n.sa-table code {\n  background: #F1F5F9;\n  padding: 2px 5px;\n  border-radius: 4px;\n  font-size: 11px;\n  color: #64748B;\n  margin-left: 4px;\n}\n.sa-action-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  font-size: 12px;\n  font-weight: 600;\n}\n.sa-action-badge .material-icons-round {\n  font-size: 14px;\n}\n.sa-sub {\n  font-size: 11px;\n  color: #94A3B8;\n  margin-top: 2px;\n}\n.sa-muted {\n  color: #94A3B8;\n}\n.sa-target-type {\n  display: inline-block;\n  background: #F1F5F9;\n  color: #6366F1;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 11px;\n  font-weight: 600;\n  margin-right: 4px;\n}\n.sa-details-cell {\n  max-width: 260px;\n  color: #64748B;\n  font-size: 12px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.sa-date-cell {\n  color: #94A3B8;\n  font-size: 12px;\n  white-space: nowrap;\n}\n.sa-empty-row {\n  text-align: center;\n  color: #94A3B8;\n  padding: 40px !important;\n}\n.sa-pagination {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  padding: 16px;\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-pagination button {\n  padding: 6px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n.sa-pagination button:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-pagination button:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-audit.component.css.map */\n"] }]
   }], () => [{ type: SuperAdminService }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SaAuditComponent, { className: "SaAuditComponent", filePath: "src/app/superadmin/pages/audit/sa-audit.component.ts", lineNumber: 5 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SaAuditComponent, { className: "SaAuditComponent", filePath: "src/app/superadmin/pages/audit/sa-audit.component.ts", lineNumber: 6 });
 })();
 
 // src/app/superadmin/superadmin-routing.module.ts
@@ -3723,4 +3899,4 @@ var SuperAdminModule = class _SuperAdminModule {
 export {
   SuperAdminModule
 };
-//# sourceMappingURL=chunk-OXCOKT2F.js.map
+//# sourceMappingURL=chunk-FGXZWTIQ.js.map

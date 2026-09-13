@@ -56,7 +56,7 @@
               <td>{{ f._count?.personnes }}</td>
               <td>
                 @if (f.subscription?.plan) {
-                  <span class="sa-badge plan">{{ f.subscription.plan.label }}</span>
+                  <span class="sa-badge plan">{{ f.subscription?.plan?.label }}</span>
                 } @else {
                   <span class="sa-badge grey">Gratuit</span>
                 }
@@ -135,7 +135,7 @@
     <div class="sa-pagination">
       <button [disabled]="page <= 1" (click)="page = page - 1; load()">‹ Précédent</button>
       <span>Page {{ page }} / {{ data?.pages }}</span>
-      <button [disabled]="page >= data?.pages" (click)="page = page + 1; load()">Suivant ›</button>
+      <button [disabled]="page >= (data?.pages ?? 1)" (click)="page = page + 1; load()">Suivant ›</button>
     </div>
   }
 </div>

@@ -111,6 +111,12 @@ export class AuthService {
     return this.userSubject.value;
   }
 
+  /** Met à jour l'utilisateur stocké (ex. après modification du profil), sans toucher au token. */
+  updateUser(user: AuthUser): void {
+    localStorage.setItem('mb_user', JSON.stringify(user));
+    this.userSubject.next(user);
+  }
+
   private save(token: string, user: AuthUser): void {
     localStorage.setItem('mb_token', token);
     localStorage.setItem('mb_user', JSON.stringify(user));

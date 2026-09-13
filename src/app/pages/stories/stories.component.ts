@@ -61,6 +61,8 @@ export class StoriesComponent implements OnInit, OnDestroy {
     });
   }
 
+  trackById(_: number, item: Story): string { return item.id; }
+
   initiales(s: Story): string {
     return ((s.auteurPrenom?.[0] ?? '') + (s.auteurNom?.[0] ?? '')).toUpperCase();
   }

@@ -53,6 +53,7 @@
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
 }
 .optional { font-weight: 400; text-transform: none; letter-spacing: 0; font-size: 11px; }
+.required { color: #DC2626; }
 .form-control {
   width: 100%; padding: 8px 12px; border: 1px solid var(--border);
   border-radius: var(--radius-md, 8px); font-size: 14px; color: var(--text-primary);

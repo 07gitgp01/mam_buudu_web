@@ -1,7 +1,7 @@
 <header class="topbar">
 
   <!-- Bouton hamburger (mobile seulement) -->
-  <button class="btn-icon btn-menu" (click)="menuToggle.emit()" title="Menu">
+  <button class="btn-icon btn-menu" (click)="menuToggle.emit()" title="Menu" aria-label="Ouvrir le menu">
     <span class="material-icons-round">menu</span>
   </button>
 
@@ -15,7 +15,7 @@
   <div class="search-wrap" [class.open]="searchOpen">
 
     <!-- Bouton loupe (fermée) -->
-    <button class="btn-icon search-trigger" *ngIf="!searchOpen" (click)="openSearch()" title="Rechercher">
+    <button class="btn-icon search-trigger" *ngIf="!searchOpen" (click)="openSearch()" title="Rechercher" aria-label="Rechercher">
       <span class="material-icons-round">search</span>
     </button>
 
@@ -32,10 +32,10 @@
         (click)="$event.stopPropagation()"
         autofocus
       />
-      <button class="search-clear-btn" *ngIf="searchQuery" (click)="searchQuery=''; onSearchInput('')">
+      <button class="search-clear-btn" *ngIf="searchQuery" (click)="searchQuery=''; onSearchInput('')" aria-label="Effacer la recherche">
         <span class="material-icons-round">close</span>
       </button>
-      <button class="search-close-btn" (click)="closeSearch()">
+      <button class="search-close-btn" (click)="closeSearch()" aria-label="Fermer la recherche">
         <span class="material-icons-round">keyboard_return</span>
       </button>
     </div>
@@ -63,7 +63,7 @@
           Membres
         </div>
         <button class="search-result-item"
-                *ngFor="let p of searchResults.personnes"
+                *ngFor="let p of searchResults.personnes; trackBy: trackByPersonneId"
                 (click)="goToPersonne(p.id)">
           <div class="sr-avatar" [class.sr-avatar-m]="p.sexe === 'M'" [class.sr-avatar-f]="p.sexe === 'F'">
             <img *ngIf="p.photoUrl" [src]="p.photoUrl" [alt]="getNomPersonne(p)" />
@@ -85,7 +85,7 @@
           Stories
         </div>
         <button class="search-result-item"
-                *ngFor="let s of searchResults.stories"
+                *ngFor="let s of searchResults.stories; trackBy: trackByStoryId"
                 (click)="goToStory(s.id)">
           <div class="sr-icon sr-icon-story">
             <span class="material-icons-round">auto_stories</span>
@@ -105,7 +105,7 @@
           Unions
         </div>
         <button class="search-result-item"
-                *ngFor="let u of searchResults.unions"
+                *ngFor="let u of searchResults.unions; trackBy: trackByUnionId"
                 (click)="goToUnion(u.id)">
           <div class="sr-icon sr-icon-union">
             <span class="material-icons-round">favorite</span>
@@ -133,13 +133,13 @@
   <div class="topbar-actions">
 
     <!-- Bouton actualiser -->
-    <button class="btn-icon btn-refresh" (click)="refresh()" title="Actualiser les données">
+    <button class="btn-icon btn-refresh" (click)="refresh()" title="Actualiser les données" aria-label="Actualiser les données">
       <span class="material-icons-round">sync</span>
     </button>
 
     <!-- Bouton notifications -->
     <div class="notif-wrap" (click)="$event.stopPropagation()">
-      <button class="btn-icon notif-btn" (click)="toggleNotif($event)" title="Notifications">
+      <button class="btn-icon notif-btn" (click)="toggleNotif($event)" title="Notifications" aria-label="Notifications">
         <span class="material-icons-round">{{ notifCount > 0 ? 'notifications' : 'notifications_none' }}</span>
         <span class="notif-badge" *ngIf="notifCount > 0">{{ notifCount > 9 ? '9+' : notifCount }}</span>
       </button>
@@ -160,7 +160,7 @@
 
           <!-- Liste -->
           <div class="notif-list" *ngIf="notifItems.length > 0">
-            <div class="notif-item" *ngFor="let n of notifItems" [class.notif-unread]="!n.lue">
+            <div class="notif-item" *ngFor="let n of notifItems; trackBy: trackByNotifId" [class.notif-unread]="!n.lue">
               <div class="notif-item-icon" [class.notif-anniversaire]="n.type === 'anniversaire'">
                 <span class="material-icons-round">{{ notifIcon(n.type) }}</span>
               </div>
@@ -169,7 +169,7 @@
                 <p class="notif-item-msg">{{ n.message }}</p>
                 <span class="notif-item-date">{{ formatNotifDate(n.createdAt) }}</span>
               </div>
-              <button class="notif-delete-btn" (click)="deleteNotif(n.id, $event)" title="Supprimer">
+              <button class="notif-delete-btn" (click)="deleteNotif(n.id, $event)" title="Supprimer" aria-label="Supprimer la notification">
                 <span class="material-icons-round">close</span>
               </button>
             </div>

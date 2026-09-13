@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { forkJoin } from 'rxjs';
-import { SuperAdminService } from '../../services/superadmin.service';
+import { SuperAdminService, SaStats, SaActivityItem } from '../../services/superadmin.service';
 
 @Component({ selector: 'sa-dashboard', templateUrl: './sa-dashboard.component.html', styleUrl: './sa-dashboard.component.scss', standalone: false })
 export class SaDashboardComponent implements OnInit {
-  stats: any    = null;
-  revenue: any[] = [];
-  activity: any[] = [];
+  stats: SaStats | null = null;
+  revenue: { label: string; montant: number }[] = [];
+  activity: SaActivityItem[] = [];
   loading = true;
 
   constructor(private sa: SuperAdminService) {}

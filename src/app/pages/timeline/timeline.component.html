@@ -55,7 +55,7 @@
   <div class="tl-timeline" *ngIf="eventsFiltres.length > 0">
     <div class="tl-line"></div>
 
-    <div class="tl-event" *ngFor="let ev of eventsFiltres; let i = index" [class.right]="i % 2 === 0">
+    <div class="tl-event" *ngFor="let ev of eventsFiltres; let i = index; trackBy: trackById" [class.right]="i % 2 === 0">
 
       <div class="tl-event-dot" [style.background]="typeConfig(ev.type).color">
         <span class="material-icons-round">{{ typeConfig(ev.type).icon }}</span>

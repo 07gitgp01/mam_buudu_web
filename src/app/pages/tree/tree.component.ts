@@ -61,6 +61,10 @@ export class TreeComponent implements OnInit, OnDestroy {
   get totalPersonnes(): number { return this.allPersonnes.length; }
   get totalGenerations(): number { return this.treeDepth(this.treeRoots); }
 
+  trackByNode(_: number, node: TreeNode): string { return node.p1.id; }
+  trackByPersonneId(_: number, p: Personne): string { return p.id; }
+  trackByBranch(_: number, branch: UnionBranch): string { return branch.union?.id ?? branch.partner?.id ?? String(_); }
+
   private treeDepth(nodes: TreeNode[]): number {
     if (!nodes.length) return 0;
     return 1 + Math.max(...nodes.map(n => this.treeDepth(n.children)));

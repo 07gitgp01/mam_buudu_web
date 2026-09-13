@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { filter, Subject, debounceTime, distinctUntilChanged, switchMap, of, Subscription, interval } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 import { ApiService } from '../../services/api.service';
+import { NotificationItem } from '../../models/plateforme.model';
 
 const PAGE_LABELS: Record<string, { label: string; icon: string }> = {
   '/app/home':      { label: 'Accueil',         icon: 'home' },
@@ -37,7 +38,7 @@ export class TopbarComponent implements OnInit, OnDestroy {
   /* ── Notifications ── */
   notifOpen    = false;
   notifCount   = 0;
-  notifItems:  any[] = [];
+  notifItems:  NotificationItem[] = [];
   private notifSub: Subscription | null = null;
 
   /* ── Recherche ── */
@@ -176,6 +177,11 @@ export class TopbarComponent implements OnInit, OnDestroy {
     if (diff < 86400) return `Il y a ${Math.floor(diff / 3600)} h`;
     return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
   }
+
+  trackByPersonneId(_: number, item: any): string { return item.id; }
+  trackByStoryId(_: number, item: any): string { return item.id; }
+  trackByUnionId(_: number, item: any): string { return item.id; }
+  trackByNotifId(_: number, item: NotificationItem): string { return item.id; }
 
   get user() { return this.auth.getUser(); }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { forkJoin } from 'rxjs';
+import { forkJoin, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { Union } from '../../models/union.model';
 import {
   Personne, getInitiales, extractAnnee, getNomComplet,
@@ -136,6 +137,7 @@ export class UnionsComponent implements OnInit {
   createChildSaving = false;
 
   saving = false; deleting = false; addingEnfant = false;
+  formErreur: string | null = null;
 
   mois = MOIS; typeUnion = TYPE_UNION;
   form: FormData = this.emptyForm();
@@ -178,6 +180,11 @@ export class UnionsComponent implements OnInit {
 
   initiales(p: Personne | null): string { return p ? getInitiales(p) : '?'; }
   nomComplet(p: Personne | null): string { return p ? getNomComplet(p) : '—'; }
+
+  trackByChefId(_: number, g: UnionGroup): string { return g.chef.id; }
+  trackByUnionId(_: number, u: Union): string { return u.id; }
+  trackByPersonneId(_: number, p: Personne): string { return p.id; }
+  trackByFiliationId(_: number, f: any): string { return f.enfantId; }
   annee(d: string | null): number | null { return extractAnnee(d); }
   getPersonneById(id: string): Personne | null { return this.personnes.find(p => p.id === id) ?? null; }
   getTypeLabel(type: string | null): string { return this.typeLabel[type ?? ''] ?? type ?? 'Union'; }
@@ -220,6 +227,7 @@ export class UnionsComponent implements OnInit {
   openCreate(): void {
     this.editTarget = null;
     this.form = this.emptyForm();
+    this.formErreur = null;
     this.showForm = true;
   }
 
@@ -228,6 +236,7 @@ export class UnionsComponent implements OnInit {
     this.editTarget = null;
     this.form = this.emptyForm();
     this.form.participantIds = [chef.id];
+    this.formErreur = null;
     this.showForm = true;
   }
 
@@ -242,6 +251,7 @@ export class UnionsComponent implements OnInit {
       notes: u.notes ?? '',
       participantIds: u.participants.map(p => p.personneId),
     };
+    this.formErreur = null;
     this.showForm = true;
   }
 
@@ -280,6 +290,12 @@ export class UnionsComponent implements OnInit {
 
   saveUnion(): void {
     if (this.saving) return;
+
+    if (this.form.participantIds.length === 0) {
+      this.formErreur = 'Sélectionnez au moins un participant pour cette union.';
+      return;
+    }
+    this.formErreur = null;
     this.saving = true;
     const body = {
       type: this.form.type,
@@ -318,12 +334,14 @@ export class UnionsComponent implements OnInit {
     this.enfantUnionTarget = u; this.enfantsSelectionnes = [];
     this.searchEnfant = ''; this.showCreateChild = false;
     this.createChildForm = { prenoms: '', nomNaissance: '', nomUsage: '', sexe: 'M', dateNaissance: '' };
+    this.enfantErreur = null;
     this.showEnfantPanel = true;
   }
 
   closeEnfantPanel(): void {
     this.showEnfantPanel = false; this.enfantUnionTarget = null;
     this.enfantsSelectionnes = []; this.showCreateChild = false;
+    this.enfantErreur = null;
   }
 
   /** Crée un nouveau membre et l'ajoute directement comme enfant */
@@ -377,23 +395,43 @@ export class UnionsComponent implements OnInit {
 
   isEnfantSelected(id: string): boolean { return this.enfantsSelectionnes.includes(id); }
 
+  enfantErreur: string | null = null;
+
   ajouterEnfants(): void {
     if (!this.enfantUnionTarget || this.addingEnfant || !this.enfantsSelectionnes.length) return;
     this.addingEnfant = true;
+    this.enfantErreur = null;
     const unionId = this.enfantUnionTarget.id;
     const ids = [...this.enfantsSelectionnes];
-    let completed = 0;
-    ids.forEach(enfantId => {
-      this.api.addEnfantToUnion(unionId, enfantId).subscribe({
-        next: () => { completed++; if (completed === ids.length) { this.addingEnfant = false; this.closeEnfantPanel(); this.refreshUnions(); } },
-        error: () => { completed++; if (completed === ids.length) { this.addingEnfant = false; this.refreshUnions(); } },
-      });
+
+    forkJoin(
+      ids.map(enfantId =>
+        this.api.addEnfantToUnion(unionId, enfantId).pipe(
+          map(() => ({ enfantId, ok: true as const })),
+          catchError(() => of({ enfantId, ok: false as const })),
+        )
+      )
+    ).subscribe(results => {
+      this.addingEnfant = false;
+      const echecs = results.filter(r => !r.ok);
+      if (echecs.length > 0) {
+        const noms = echecs.map(e => {
+          const p = this.personnes.find(p => p.id === e.enfantId);
+          return p ? getNomComplet(p) : e.enfantId;
+        });
+        this.enfantErreur = `Échec de l'ajout pour : ${noms.join(', ')}`;
+        this.enfantsSelectionnes = echecs.map(e => e.enfantId);
+      } else {
+        this.closeEnfantPanel();
+      }
+      this.refreshUnions();
     });
   }
 
   retirerEnfant(unionId: string, enfantId: string): void {
     this.api.removeEnfantFromUnion(unionId, enfantId).subscribe({
       next: () => { this.refreshUnions(); if (this.enfantUnionTarget?.id === unionId) { this.api.getUnions().subscribe(data => { this.unions = data; const u = data.find(u => u.id === unionId); if (u) this.enfantUnionTarget = u; }); } },
+      error: () => { this.enfantErreur = "Erreur lors du retrait de l'enfant."; },
     });
   }
 

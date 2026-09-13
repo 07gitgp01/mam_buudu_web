@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { forkJoin } from 'rxjs';
 import { Personne } from '../../models/personne.model';
+import { Famille } from '../../models/utilisateur.model';
+import { Membre, Plan, Subscription } from '../../models/plateforme.model';
 import { ApiService } from '../../services/api.service';
+import { QrcodeService } from '../../services/qrcode.service';
 
 const ROLE_LABELS: Record<string, string> = {
   admin:        'Administrateur',
@@ -19,8 +22,8 @@ const ROLE_ORDER = ['admin', 'gestionnaire', 'membre', 'viewonly'];
   standalone: false,
 })
 export class AdminComponent implements OnInit {
-  famille: any = null;
-  membres: any[] = [];
+  famille: Famille | null = null;
+  membres: Membre[] = [];
   personnes: Personne[] = [];
 
   loading = true;
@@ -29,14 +32,15 @@ export class AdminComponent implements OnInit {
   gedcomExporting = false;
 
   /* ── Abonnement ── */
-  subscription: any = null;
-  plans: any[] = [];
+  subscription: Subscription | null = null;
+  plans: Plan[] = [];
   showPlanModal  = false;
   checkoutLoading: string | null = null;
 
   viewonlyCreds: { viewonlyUsername: string; viewonlyPassword: string; familleCode: string } | null = null;
   showViewonlyPassword = false;
   viewonlyCopied: string | null = null;
+  regeneratingViewonly = false;
 
   showCreateForm = false;
   saving = false;
@@ -70,7 +74,9 @@ export class AdminComponent implements OnInit {
 
   readonly ROLE_ORDER = ROLE_ORDER;
 
-  constructor(private api: ApiService) {}
+  viewonlyQrUrl = '';
+
+  constructor(private api: ApiService, private qrcode: QrcodeService) {}
 
   ngOnInit(): void { this.loadAll(); }
 
@@ -92,6 +98,10 @@ export class AdminComponent implements OnInit {
         this.plans         = plans;
         this.initEditingRoles();
         this.loading = false;
+        if (creds?.familleCode) {
+          this.qrcode.generate(creds.familleCode, { size: 150, color: '#2563eb', bgcolor: '#eff6ff' })
+            .then(url => this.viewonlyQrUrl = url);
+        }
       },
       error: () => {
         this.erreur = 'Impossible de charger les données.';
@@ -132,7 +142,7 @@ export class AdminComponent implements OnInit {
     this.api.changeMemberRole(userId, newRole).subscribe({
       next: () => {
         const m = this.membres.find(x => x.user?.id === userId);
-        if (m) m.role = newRole;
+        if (m) m.role = newRole as Membre['role'];
         this.roleChanging = null;
         this.saveSuccess = 'Rôle modifié avec succès';
         setTimeout(() => (this.saveSuccess = ''), 3000);
@@ -192,10 +202,6 @@ export class AdminComponent implements OnInit {
   }
 
   // ── Viewonly ─────────────────────────────────────────
-  get viewonlyQrUrl(): string {
-    if (!this.viewonlyCreds?.familleCode) return '';
-    return `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(this.viewonlyCreds.familleCode)}&bgcolor=eff6ff&color=2563eb&format=png&margin=8`;
-  }
 
   copyViewonly(field: 'code' | 'username' | 'password'): void {
     const c = this.viewonlyCreds;
@@ -207,8 +213,16 @@ export class AdminComponent implements OnInit {
     });
   }
 
+  private confirmShareWarning(): boolean {
+    return confirm(
+      "Ce mot de passe donne accès à tout l'arbre familial en lecture seule. " +
+      "Une fois partagé sur WhatsApp ou un autre canal non chiffré côté destinataire, il ne peut plus être retiré — " +
+      "seule une régénération invalidera l'ancien mot de passe. Continuer ?"
+    );
+  }
+
   shareViewonly(): void {
-    if (!this.viewonlyCreds) return;
+    if (!this.viewonlyCreds || !this.confirmShareWarning()) return;
     const { familleCode, viewonlyUsername, viewonlyPassword } = this.viewonlyCreds;
     const famNom = this.famille?.nom ?? 'Famille';
     const text = `🏠 Accès consultation — ${famNom}\n\nConnectez-vous sur Mam Buudu :\n\n• Code famille : ${familleCode}\n• Identifiant  : ${viewonlyUsername}\n• Mot de passe : ${viewonlyPassword}\n\n⚠️ Accès lecture seule uniquement.`;
@@ -222,10 +236,26 @@ export class AdminComponent implements OnInit {
   }
 
   shareViewonlyWhatsApp(): void {
-    if (!this.viewonlyCreds) return;
+    if (!this.viewonlyCreds || !this.confirmShareWarning()) return;
     const { familleCode, viewonlyUsername, viewonlyPassword } = this.viewonlyCreds;
     const msg = `🏠 Accès consultation famille *${this.famille?.nom ?? ''}* sur Mam Buudu\n\n• Code : *${familleCode}*\n• Login : *${viewonlyUsername}*\n• Mot de passe : *${viewonlyPassword}*\n\n_Accès lecture seule uniquement_`;
     window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  regenerateViewonlyPassword(): void {
+    if (this.regeneratingViewonly) return;
+    if (!confirm("Régénérer le mot de passe lecture seule ? L'ancien mot de passe cessera immédiatement de fonctionner pour toute personne à qui il a été partagé.")) return;
+
+    this.regeneratingViewonly = true;
+    this.api.regenerateViewonlyPassword().subscribe({
+      next: (creds) => {
+        this.viewonlyCreds = creds;
+        this.regeneratingViewonly = false;
+        this.saveSuccess = 'Mot de passe lecture seule régénéré';
+        setTimeout(() => (this.saveSuccess = ''), 3000);
+      },
+      error: () => { this.regeneratingViewonly = false; },
+    });
   }
 
   copyFamilleCode(): void {
@@ -297,5 +327,5 @@ export class AdminComponent implements OnInit {
     return { admin: 'red', gestionnaire: 'blue', membre: 'green', viewonly: 'gray' }[role] ?? 'gray';
   }
 
-  trackById(_: number, item: any): string { return item.user?.id; }
+  trackById(_: number, item: Membre): string { return item.user?.id; }
 }

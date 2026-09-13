@@ -105,6 +105,8 @@ export class FamilleTimelineComponent implements OnInit {
     });
   }
 
+  trackById(_: number, item: TimelineEvent): string { return item.id; }
+
   get eventsFiltres(): TimelineEvent[] {
     if (this.filtreActif === 'tous') return this.events;
     return this.events.filter(e => e.type === this.filtreActif);

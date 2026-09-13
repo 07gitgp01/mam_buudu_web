@@ -79,6 +79,9 @@ export class FamilleHomeComponent implements OnInit {
     return Math.round(((withDate + withLieu) / (this.toutes.length * 2)) * 100);
   }
 
+  trackByPersonneId(_: number, item: Personne): string { return item.id; }
+  trackByAnniversaire(_: number, item: { p: Personne }): string { return item.p.id; }
+
   get anniversairesProches(): { p: Personne; jours: number; dateStr: string }[] {
     const today = new Date();
     today.setHours(0, 0, 0, 0);

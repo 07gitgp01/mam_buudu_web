@@ -145,6 +145,8 @@ export class TimelineComponent implements OnInit {
     });
   }
 
+  trackById(_: number, item: TimelineEvent): string { return item.id; }
+
   get eventsFiltres(): TimelineEvent[] {
     const list = this.triDesc ? this.events : [...this.events].reverse();
     if (this.filtreActif === 'tous') return list;

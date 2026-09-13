@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { AuthService, AuthUser } from '../../../services/auth.service';
 import { ApiService } from '../../../services/api.service';
 import { ThemeService } from '../../../services/theme.service';
-import { API_BASE_URL } from '../../../core/api.config';
 import { forkJoin } from 'rxjs';
 
 @Component({
@@ -39,7 +37,6 @@ export class FamilleProfilComponent implements OnInit {
     private api: ApiService,
     public theme: ThemeService,
     private router: Router,
-    private http: HttpClient,
   ) {}
 
   ngOnInit(): void {
@@ -93,10 +90,10 @@ export class FamilleProfilComponent implements OnInit {
     if (!this.editForm.prenom.trim() || !this.editForm.nom.trim()) { this.editError = 'Le prénom et le nom sont requis.'; return; }
     this.editSaving = true;
     this.editError = '';
-    this.http.patch<any>(`${API_BASE_URL}/api/auth/me`, this.editForm).subscribe({
+    this.api.updateProfile(this.editForm).subscribe({
       next: () => {
         const updated: AuthUser = { ...this.user!, prenom: this.editForm.prenom, nom: this.editForm.nom, email: this.editForm.email || undefined, telephone: this.editForm.telephone || undefined };
-        (this.auth as any).save(localStorage.getItem('mb_token')!, updated);
+        this.auth.updateUser(updated);
         this.user = updated;
         this.editSaving = false;
         this.editSuccess = true;
@@ -113,7 +110,7 @@ export class FamilleProfilComponent implements OnInit {
     if (this.pwForm.nouveau.length < 6) { this.pwError = 'Minimum 6 caractères.'; return; }
     this.pwSaving = true;
     this.pwError = '';
-    this.http.post(`${API_BASE_URL}/api/auth/change-password`, { ancienPassword: this.pwForm.ancien, nouveauPassword: this.pwForm.nouveau }).subscribe({
+    this.api.changePassword({ ancienPassword: this.pwForm.ancien, nouveauPassword: this.pwForm.nouveau }).subscribe({
       next: () => {
         this.pwSaving = false; this.pwSuccess = true;
         this.pwForm = { ancien: '', nouveau: '', confirm: '' };

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SuperAdminService } from '../../services/superadmin.service';
+import { SaSubscriptionRow } from '../../models/superadmin.model';
 
 @Component({
   selector: 'sa-subscriptions',
@@ -8,7 +9,7 @@ import { SuperAdminService } from '../../services/superadmin.service';
   standalone: false,
 })
 export class SaSubscriptionsComponent implements OnInit {
-  data: any = null;
+  data: { subscriptions: SaSubscriptionRow[]; total: number; page: number; pages: number } | null = null;
   loading = true;
   page = 1;
   statut = '';
@@ -20,7 +21,7 @@ export class SaSubscriptionsComponent implements OnInit {
   load(): void {
     this.loading = true;
     this.sa.getSubscriptions({ page: this.page, statut: this.statut }).subscribe({
-      next: (d: any) => { this.data = d; this.loading = false; },
+      next: (d) => { this.data = d; this.loading = false; },
       error: () => { this.loading = false; },
     });
   }

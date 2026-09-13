@@ -64,7 +64,7 @@
 
   <!-- ===== VUE CARTES ===== -->
   <div class="pc-grid" *ngIf="!loading && !erreur && personnesFiltrees.length > 0 && viewMode === 'cards'">
-    <div class="pc-card" *ngFor="let p of personnesFiltrees; let i = index"
+    <div class="pc-card" *ngFor="let p of personnesFiltrees; let i = index; trackBy: trackById"
          [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'"
          (click)="openDetail(p)">
 
@@ -130,7 +130,7 @@
       <span class="pl-th pl-th-actions">Actions</span>
     </div>
     <!-- Rows -->
-    <div class="pl-row" *ngFor="let p of personnesFiltrees" (click)="openDetail(p)">
+    <div class="pl-row" *ngFor="let p of personnesFiltrees; trackBy: trackById" (click)="openDetail(p)">
       <!-- Avatar + nom -->
       <div class="pl-cell pl-cell-person">
         <div class="pl-avatar-wrap">
@@ -171,13 +171,13 @@
       </div>
       <!-- Actions -->
       <div class="pl-cell pl-cell-actions" (click)="$event.stopPropagation()">
-        <button class="btn-icon" title="Voir" (click)="openDetail(p)">
+        <button class="btn-icon" title="Voir" aria-label="Voir le profil" (click)="openDetail(p)">
           <span class="material-icons-round">visibility</span>
         </button>
-        <button class="btn-icon" title="Modifier" (click)="openEdit(p, $event)">
+        <button class="btn-icon" title="Modifier" aria-label="Modifier" (click)="openEdit(p, $event)">
           <span class="material-icons-round">edit</span>
         </button>
-        <button class="btn-icon btn-icon-danger" title="Supprimer" (click)="confirmDelete(p, $event)">
+        <button class="btn-icon btn-icon-danger" title="Supprimer" aria-label="Supprimer" (click)="confirmDelete(p, $event)">
           <span class="material-icons-round">delete</span>
         </button>
       </div>
@@ -196,7 +196,7 @@
       <h3>{{ editTarget ? 'Modifier le membre' : 'Nouveau membre' }}</h3>
       <p class="panel-header-sub" *ngIf="editTarget">{{ getNomComplet(editTarget) }}</p>
     </div>
-    <button class="btn-icon" (click)="closeAll()">
+    <button class="btn-icon" title="Fermer" aria-label="Fermer" (click)="closeAll()">
       <span class="material-icons-round">close</span>
     </button>
   </div>
@@ -237,14 +237,14 @@
         <div class="section-title">Identité</div>
 
         <div class="form-group">
-          <label>Prénom(s)</label>
-          <input type="text" name="prenoms" [(ngModel)]="form.prenoms" placeholder="Jean-Baptiste, Marie..." class="form-control" />
+          <label>Prénom(s) <span class="required">*</span></label>
+          <input type="text" name="prenoms" [(ngModel)]="form.prenoms" placeholder="Jean-Baptiste, Marie..." class="form-control" required />
         </div>
 
         <div class="form-row-2">
           <div class="form-group">
-            <label>Nom de naissance</label>
-            <input type="text" name="nomNaissance" [(ngModel)]="form.nomNaissance" placeholder="Dupont" class="form-control" />
+            <label>Nom de naissance <span class="required">*</span></label>
+            <input type="text" name="nomNaissance" [(ngModel)]="form.nomNaissance" placeholder="Dupont" class="form-control" required />
           </div>
           <div class="form-group">
             <label>Nom d'usage <span class="optional">(optionnel)</span></label>
@@ -340,6 +340,9 @@
     </form>
   </div>
 
+  <div class="error-state" *ngIf="formErreur">
+    <span class="material-icons-round">error_outline</span>{{ formErreur }}
+  </div>
   <div class="panel-footer">
     <button class="btn-ghost" (click)="closeAll()">Annuler</button>
     <button class="btn-primary" (click)="savePersonne()" [disabled]="saving">
@@ -357,7 +360,7 @@
       <p class="panel-header-sub">{{ getAgeLabel(detailTarget) }}</p>
     </div>
     <div class="panel-header-actions">
-      <button class="btn-icon" title="Modifier" (click)="openEdit(detailTarget!); showDetail = false">
+      <button class="btn-icon" title="Modifier" aria-label="Modifier" (click)="openEdit(detailTarget!); showDetail = false">
         <span class="material-icons-round">edit</span>
       </button>
       <button class="btn-icon" (click)="closeAll()">
@@ -450,7 +453,7 @@
 
       <!-- Galerie -->
       <div class="album-grid" *ngIf="!albumLoading && albumPhotos.length > 0">
-        <div class="album-thumb" *ngFor="let ph of albumPhotos" (click)="albumLightbox = ph">
+        <div class="album-thumb" *ngFor="let ph of albumPhotos; trackBy: trackByPhotoId" (click)="albumLightbox = ph">
           <img [src]="ph.url" [alt]="ph.caption || 'Photo'" loading="lazy" />
           <div class="album-thumb-overlay">
             <button class="album-delete-btn" (click)="$event.stopPropagation(); deleteAlbumPhoto(ph)" title="Supprimer">

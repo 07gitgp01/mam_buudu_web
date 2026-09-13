@@ -1,13 +1,13 @@
 import {
   roleGuard
-} from "./chunk-UTEEPMVE.js";
+} from "./chunk-DBSPYNLN.js";
 import {
   LoadingService,
   ThemeService
 } from "./chunk-IWM4FSC5.js";
 import {
   AuthService
-} from "./chunk-FQNE2UNS.js";
+} from "./chunk-VLIH72YP.js";
 import {
   ApplicationRef,
   BrowserModule,
@@ -1888,20 +1888,20 @@ var routes = [
   { path: "", component: LandingComponent, pathMatch: "full" },
   {
     path: "auth",
-    loadChildren: () => import("./chunk-M6DCLXMR.js").then((m) => m.AuthModule)
+    loadChildren: () => import("./chunk-PYMUSLR4.js").then((m) => m.AuthModule)
   },
   {
     path: "app",
     canActivate: [authGuard, roleGuard(["admin", "gestionnaire"])],
-    loadChildren: () => import("./chunk-N5JJG7CE.js").then((m) => m.ShellModule)
+    loadChildren: () => import("./chunk-6NTQSL7T.js").then((m) => m.ShellModule)
   },
   {
     path: "famille",
-    loadChildren: () => import("./chunk-NNF72IDD.js").then((m) => m.FamilleModule)
+    loadChildren: () => import("./chunk-AXRHJMO3.js").then((m) => m.FamilleModule)
   },
   {
     path: "superadmin",
-    loadChildren: () => import("./chunk-OXCOKT2F.js").then((m) => m.SuperAdminModule)
+    loadChildren: () => import("./chunk-FGXZWTIQ.js").then((m) => m.SuperAdminModule)
   },
   { path: "**", redirectTo: "" }
 ];
@@ -1958,6 +1958,9 @@ var App = class _App {
 
 // src/app/core/jwt.interceptor.ts
 var jwtInterceptor = (req, next) => {
+  if (req.url.includes("/api/superadmin")) {
+    return next(req);
+  }
   const token = localStorage.getItem("mb_token");
   if (token) {
     req = req.clone({ setHeaders: { Authorization: `Bearer ${token}` } });

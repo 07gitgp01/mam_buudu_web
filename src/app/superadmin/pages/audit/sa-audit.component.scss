@@ -1,6 +1,20 @@
 .sa-page { }
 .sa-page-header { margin-bottom: 24px; h1 { font-size: 22px; font-weight: 700; color: #0F172A; margin: 0 0 4px; } p { color: #64748B; font-size: 14px; margin: 0; } }
 .sa-loading { color: #64748B; padding: 40px; text-align: center; }
+.sa-audit-filters {
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 20px;
+  select, input[type="date"] {
+    padding: 8px 12px; border: 1px solid #E2E8F0; border-radius: 8px;
+    background: #fff; font-size: 13px; color: #374151;
+  }
+}
+.sa-filter-reset {
+  display: flex; align-items: center; gap: 4px;
+  padding: 7px 12px; border: 1px solid #E2E8F0; border-radius: 8px;
+  background: #fff; color: #64748B; font-size: 13px; cursor: pointer;
+  .material-icons-round { font-size: 15px; }
+  &:hover { border-color: #EF4444; color: #EF4444; }
+}
 .sa-table-wrap { background: #fff; border-radius: 12px; overflow: auto; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
 .sa-table {
   width: 100%; border-collapse: collapse; font-size: 13px;

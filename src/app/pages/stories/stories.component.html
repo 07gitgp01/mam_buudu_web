@@ -52,7 +52,7 @@
       </div>
       <span class="story-label">Ma story</span>
     </div>
-    <div class="story-circle" *ngFor="let s of stories.slice(0, 8)">
+    <div class="story-circle" *ngFor="let s of stories.slice(0, 8); trackBy: trackById">
       <div class="story-avatar" [class.female]="s.auteurSexe === 'F'" [class.male]="s.auteurSexe === 'M'">
         {{ initiales(s) }}
       </div>
@@ -81,7 +81,7 @@
 
   <!-- Grille stories -->
   <div class="stories-grid" *ngIf="storiesFiltrees.length > 0">
-    <div class="story-card" *ngFor="let s of storiesFiltrees">
+    <div class="story-card" *ngFor="let s of storiesFiltrees; trackBy: trackById">
 
       <div class="story-card-header">
         <div class="sc-author">

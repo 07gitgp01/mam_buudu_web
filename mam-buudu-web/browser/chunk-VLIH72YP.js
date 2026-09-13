@@ -61,6 +61,11 @@ var AuthService = class _AuthService {
   getUser() {
     return this.userSubject.value;
   }
+  /** Met à jour l'utilisateur stocké (ex. après modification du profil), sans toucher au token. */
+  updateUser(user) {
+    localStorage.setItem("mb_user", JSON.stringify(user));
+    this.userSubject.next(user);
+  }
   save(token, user) {
     localStorage.setItem("mb_token", token);
     localStorage.setItem("mb_user", JSON.stringify(user));
@@ -85,4 +90,4 @@ var AuthService = class _AuthService {
 export {
   AuthService
 };
-//# sourceMappingURL=chunk-FQNE2UNS.js.map
+//# sourceMappingURL=chunk-VLIH72YP.js.map

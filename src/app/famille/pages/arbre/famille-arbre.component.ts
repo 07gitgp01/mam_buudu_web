@@ -50,6 +50,10 @@ export class FamilleArbreComponent implements OnInit, OnDestroy {
   get totalPersonnes(): number { return this._allPersonnes.length; }
   get totalGenerations(): number { return this.treeDepth(this.treeRoots); }
 
+  trackByNode(_: number, node: TreeNode): string { return node.p1.id; }
+  trackByBranch(_: number, branch: UnionBranch): string { return branch.union?.id ?? branch.partner?.id ?? String(_); }
+  trackByPersonneId(_: number, p: Personne): string { return p.id; }
+
   private _allPersonnes: Personne[] = [];
   private _allUnions:    Union[]    = [];
 

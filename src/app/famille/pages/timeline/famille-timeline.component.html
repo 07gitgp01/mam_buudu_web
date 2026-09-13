@@ -46,7 +46,7 @@
     <div class="ft-timeline" *ngIf="eventsFiltres.length > 0">
       <div class="ft-line"></div>
 
-      <div class="ft-event" *ngFor="let e of eventsFiltres; let i = index" [class.right]="i % 2 === 0">
+      <div class="ft-event" *ngFor="let e of eventsFiltres; let i = index; trackBy: trackById" [class.right]="i % 2 === 0">
         <div class="ft-event-dot" [style.background]="typeConfig(e.type).color">
           <span class="material-icons-round">{{ typeConfig(e.type).icon }}</span>
         </div>

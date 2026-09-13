@@ -49,6 +49,8 @@ export class FamilleMembresComponent implements OnInit {
     });
   }
 
+  trackById(_: number, item: Personne): string { return item.id; }
+
   get personnesFiltrees(): Personne[] {
     return this.toutes.filter(p => {
       const q   = this.searchQuery.toLowerCase();

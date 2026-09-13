@@ -59,7 +59,7 @@
 
     <!-- Grille stories -->
     <div class="fs-grid" *ngIf="storiesFiltrees.length > 0">
-      <div class="fs-card" *ngFor="let s of storiesFiltrees">
+      <div class="fs-card" *ngFor="let s of storiesFiltrees; trackBy: trackById">
 
         <div class="fs-card-header">
           <div class="fs-author">

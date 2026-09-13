@@ -7,6 +7,7 @@ import {
 import "./chunk-7YWLATDR.js";
 import {
   ApiService,
+  QrcodeService,
   STORY_TAGS,
   STORY_TAG_COLORS,
   estVivant,
@@ -15,7 +16,7 @@ import {
   getInitiales,
   getNomComplet,
   getPhotoUrl
-} from "./chunk-S4O4LH3N.js";
+} from "./chunk-FDMPEDZ5.js";
 import {
   LoadingService,
   ThemeService
@@ -40,9 +41,8 @@ import {
 } from "./chunk-ESHQL2TU.js";
 import {
   AuthService
-} from "./chunk-FQNE2UNS.js";
+} from "./chunk-VLIH72YP.js";
 import {
-  API_BASE_URL,
   ActivatedRoute,
   AsyncPipe,
   CommonModule,
@@ -51,7 +51,6 @@ import {
   ElementRef,
   EventEmitter,
   HostListener,
-  HttpClient,
   Input,
   NavigationEnd,
   NgForOf,
@@ -74,6 +73,7 @@ import {
   finalize,
   forkJoin,
   interval,
+  map,
   of,
   setClassMetadata,
   switchMap,
@@ -175,6 +175,7 @@ function SidebarComponent_a_7_Template(rf, ctx) {
     const item_r3 = ctx.$implicit;
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275property("routerLink", item_r3.route)("title", !ctx_r1.isExpanded ? item_r3.label : "");
+    \u0275\u0275attribute("aria-label", item_r3.label);
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(item_r3.icon);
     \u0275\u0275advance();
@@ -198,6 +199,7 @@ function SidebarComponent_div_9_button_4_Template(rf, ctx) {
     \u0275\u0275styleProp("background", t_r5.color);
     \u0275\u0275classProp("active", ctx_r1.themeService.current === t_r5.name);
     \u0275\u0275property("title", t_r5.label);
+    \u0275\u0275attribute("aria-label", "Th\xE8me " + t_r5.label);
   }
 }
 function SidebarComponent_div_9_Template(rf, ctx) {
@@ -206,7 +208,7 @@ function SidebarComponent_div_9_Template(rf, ctx) {
     \u0275\u0275text(2, "Th\xE8me");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "div", 26);
-    \u0275\u0275template(4, SidebarComponent_div_9_button_4_Template, 1, 5, "button", 27);
+    \u0275\u0275template(4, SidebarComponent_div_9_button_4_Template, 1, 6, "button", 27);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -327,7 +329,7 @@ var SidebarComponent = class _SidebarComponent {
   static \u0275fac = function SidebarComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _SidebarComponent)(\u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(ThemeService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SidebarComponent, selectors: [["app-sidebar"]], inputs: { mobileOpen: "mobileOpen" }, outputs: { mobileClose: "mobileClose" }, standalone: false, decls: 26, vars: 19, consts: [[1, "sidebar"], [1, "sidebar-header"], ["class", "brand", 4, "ngIf"], [1, "toggle-btn", 3, "click", "title"], [1, "material-icons-round"], [1, "nav-section"], ["routerLinkActive", "active", "class", "nav-item", 3, "routerLink", "title", "click", 4, "ngFor", "ngForOf"], [1, "sidebar-spacer"], ["class", "theme-picker", 4, "ngIf"], [1, "separator"], ["routerLink", "/", 1, "nav-item", "nav-home-link", 3, "click", "title"], [1, "nav-icon", "material-icons-round"], ["class", "nav-label", 4, "ngIf"], ["routerLink", "/app/admin", "routerLinkActive", "active", "class", "nav-item", 3, "title", "click", 4, "ngIf"], [1, "nav-item", "nav-btn", "logout-btn", 3, "click", "title"], ["routerLink", "/app/profil", "title", "Mon profil", 1, "user-section", 3, "click"], [1, "avatar", "avatar-sm"], ["class", "user-info", 4, "ngIf"], ["class", "material-icons-round user-profile-arrow", 4, "ngIf"], [1, "brand"], [1, "brand-icon-wrap"], [1, "brand-text"], ["routerLinkActive", "active", 1, "nav-item", 3, "click", "routerLink", "title"], [1, "nav-label"], [1, "theme-picker"], [1, "theme-picker-label"], [1, "theme-dots"], ["class", "theme-dot", 3, "background", "active", "title", "click", 4, "ngFor", "ngForOf"], [1, "theme-dot", 3, "click", "title"], ["routerLink", "/app/admin", "routerLinkActive", "active", 1, "nav-item", 3, "click", "title"], [1, "user-info"], [1, "user-name"], [1, "user-role", "badge", "badge-primary"], [1, "material-icons-round", "user-profile-arrow"]], template: function SidebarComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SidebarComponent, selectors: [["app-sidebar"]], inputs: { mobileOpen: "mobileOpen" }, outputs: { mobileClose: "mobileClose" }, standalone: false, decls: 26, vars: 20, consts: [[1, "sidebar"], [1, "sidebar-header"], ["class", "brand", 4, "ngIf"], [1, "toggle-btn", 3, "click", "title"], [1, "material-icons-round"], [1, "nav-section"], ["routerLinkActive", "active", "class", "nav-item", 3, "routerLink", "title", "click", 4, "ngFor", "ngForOf"], [1, "sidebar-spacer"], ["class", "theme-picker", 4, "ngIf"], [1, "separator"], ["routerLink", "/", "aria-label", "Page d'accueil", 1, "nav-item", "nav-home-link", 3, "click", "title"], [1, "nav-icon", "material-icons-round"], ["class", "nav-label", 4, "ngIf"], ["routerLink", "/app/admin", "routerLinkActive", "active", "class", "nav-item", "aria-label", "Administration", 3, "title", "click", 4, "ngIf"], ["aria-label", "D\xE9connexion", 1, "nav-item", "nav-btn", "logout-btn", 3, "click", "title"], ["routerLink", "/app/profil", "title", "Mon profil", 1, "user-section", 3, "click"], [1, "avatar", "avatar-sm"], ["class", "user-info", 4, "ngIf"], ["class", "material-icons-round user-profile-arrow", 4, "ngIf"], [1, "brand"], [1, "brand-icon-wrap"], [1, "brand-text"], ["routerLinkActive", "active", 1, "nav-item", 3, "click", "routerLink", "title"], [1, "nav-label"], [1, "theme-picker"], [1, "theme-picker-label"], [1, "theme-dots"], ["class", "theme-dot", 3, "background", "active", "title", "click", 4, "ngFor", "ngForOf"], [1, "theme-dot", 3, "click", "title"], ["routerLink", "/app/admin", "routerLinkActive", "active", "aria-label", "Administration", 1, "nav-item", 3, "click", "title"], [1, "user-info"], [1, "user-name"], [1, "user-role", "badge", "badge-primary"], [1, "material-icons-round", "user-profile-arrow"]], template: function SidebarComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "nav", 0)(1, "div", 1);
       \u0275\u0275template(2, SidebarComponent_div_2_Template, 6, 0, "div", 2);
@@ -339,7 +341,7 @@ var SidebarComponent = class _SidebarComponent {
       \u0275\u0275text(5);
       \u0275\u0275elementEnd()()();
       \u0275\u0275elementStart(6, "div", 5);
-      \u0275\u0275template(7, SidebarComponent_a_7_Template, 4, 4, "a", 6);
+      \u0275\u0275template(7, SidebarComponent_a_7_Template, 4, 5, "a", 6);
       \u0275\u0275elementEnd();
       \u0275\u0275element(8, "div", 7);
       \u0275\u0275template(9, SidebarComponent_div_9_Template, 5, 1, "div", 8);
@@ -379,6 +381,7 @@ var SidebarComponent = class _SidebarComponent {
       \u0275\u0275property("ngIf", ctx.isExpanded);
       \u0275\u0275advance();
       \u0275\u0275property("title", ctx.isExpanded ? "R\xE9duire" : "Agrandir");
+      \u0275\u0275attribute("aria-label", ctx.isExpanded ? "R\xE9duire le menu" : "Agrandir le menu");
       \u0275\u0275advance(2);
       \u0275\u0275textInterpolate(ctx.isExpanded ? "menu_open" : "menu");
       \u0275\u0275advance(2);
@@ -409,97 +412,101 @@ var SidebarComponent = class _SidebarComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SidebarComponent, [{
     type: Component,
-    args: [{ selector: "app-sidebar", standalone: false, template: `<nav class="sidebar" [class.expanded]="isExpanded" [class.mobile-open]="mobileOpen">
-
-  <!-- ===== EN-T\xCATE ===== -->
-  <div class="sidebar-header">
-    <div class="brand" *ngIf="isExpanded">
-      <div class="brand-icon-wrap">
-        <span class="material-icons-round">account_tree</span>
-      </div>
-      <span class="brand-text">Mam Buudu</span>
-    </div>
-    <button class="toggle-btn" (click)="toggle()" [title]="isExpanded ? 'R\xE9duire' : 'Agrandir'">
-      <span class="material-icons-round">{{ isExpanded ? 'menu_open' : 'menu' }}</span>
-    </button>
-  </div>
-
-  <!-- ===== NAVIGATION PRINCIPALE ===== -->
-  <div class="nav-section">
-    <a
-      *ngFor="let item of navItems"
-      [routerLink]="item.route"
-      routerLinkActive="active"
-      class="nav-item"
-      [title]="!isExpanded ? item.label : ''"
-      (click)="mobileClose.emit()"
-    >
-      <span class="nav-icon material-icons-round">{{ item.icon }}</span>
-      <span class="nav-label" *ngIf="isExpanded">{{ item.label }}</span>
-    </a>
-  </div>
-
-  <!-- ===== S\xC9PARATEUR ===== -->
-  <div class="sidebar-spacer"></div>
-
-  <!-- ===== S\xC9LECTEUR DE TH\xC8ME ===== -->
-  <div class="theme-picker" *ngIf="isExpanded">
-    <span class="theme-picker-label">Th\xE8me</span>
-    <div class="theme-dots">
-      <button
-        class="theme-dot"
-        *ngFor="let t of themeService.themes"
-        [style.background]="t.color"
-        [class.active]="themeService.current === t.name"
-        (click)="themeService.applyColor(t.name)"
-        [title]="t.label"
-      ></button>
-    </div>
-  </div>
-
-  <div class="separator"></div>
-
-  <!-- ===== SECTION ADMIN / D\xC9CONNEXION ===== -->
-  <div class="nav-section">
-    <a
-      routerLink="/"
-      class="nav-item nav-home-link"
-      [title]="!isExpanded ? 'Page d\\'accueil' : ''"
-      (click)="mobileClose.emit()"
-    >
-      <span class="nav-icon material-icons-round">language</span>
-      <span class="nav-label" *ngIf="isExpanded">Page d'accueil</span>
-    </a>
-
-    <a
-      *ngIf="canAdminister"
-      routerLink="/app/admin"
-      routerLinkActive="active"
-      class="nav-item"
-      [title]="!isExpanded ? 'Admin' : ''"
-      (click)="mobileClose.emit()"
-    >
-      <span class="nav-icon material-icons-round">admin_panel_settings</span>
-      <span class="nav-label" *ngIf="isExpanded">Administration</span>
-    </a>
-
-    <button class="nav-item nav-btn logout-btn" (click)="logout()" [title]="!isExpanded ? 'D\xE9connexion' : ''">
-      <span class="nav-icon material-icons-round">logout</span>
-      <span class="nav-label" *ngIf="isExpanded">D\xE9connexion</span>
-    </button>
-  </div>
-
-  <!-- ===== PROFIL UTILISATEUR ===== -->
-  <a class="user-section" [class.collapsed]="!isExpanded" routerLink="/app/profil" (click)="mobileClose.emit()" title="Mon profil">
-    <div class="avatar avatar-sm">{{ initiales }}</div>
-    <div class="user-info" *ngIf="isExpanded">
-      <span class="user-name">{{ user?.prenom }} {{ user?.nom }}</span>
-      <span class="user-role badge badge-primary">{{ user?.role }}</span>
-    </div>
-    <span class="material-icons-round user-profile-arrow" *ngIf="isExpanded">chevron_right</span>
-  </a>
-
-</nav>
+    args: [{ selector: "app-sidebar", standalone: false, template: `<nav class="sidebar" [class.expanded]="isExpanded" [class.mobile-open]="mobileOpen">\r
+\r
+  <!-- ===== EN-T\xCATE ===== -->\r
+  <div class="sidebar-header">\r
+    <div class="brand" *ngIf="isExpanded">\r
+      <div class="brand-icon-wrap">\r
+        <span class="material-icons-round">account_tree</span>\r
+      </div>\r
+      <span class="brand-text">Mam Buudu</span>\r
+    </div>\r
+    <button class="toggle-btn" (click)="toggle()" [title]="isExpanded ? 'R\xE9duire' : 'Agrandir'" [attr.aria-label]="isExpanded ? 'R\xE9duire le menu' : 'Agrandir le menu'">\r
+      <span class="material-icons-round">{{ isExpanded ? 'menu_open' : 'menu' }}</span>\r
+    </button>\r
+  </div>\r
+\r
+  <!-- ===== NAVIGATION PRINCIPALE ===== -->\r
+  <div class="nav-section">\r
+    <a\r
+      *ngFor="let item of navItems"\r
+      [routerLink]="item.route"\r
+      routerLinkActive="active"\r
+      class="nav-item"\r
+      [title]="!isExpanded ? item.label : ''"\r
+      [attr.aria-label]="item.label"\r
+      (click)="mobileClose.emit()"\r
+    >\r
+      <span class="nav-icon material-icons-round">{{ item.icon }}</span>\r
+      <span class="nav-label" *ngIf="isExpanded">{{ item.label }}</span>\r
+    </a>\r
+  </div>\r
+\r
+  <!-- ===== S\xC9PARATEUR ===== -->\r
+  <div class="sidebar-spacer"></div>\r
+\r
+  <!-- ===== S\xC9LECTEUR DE TH\xC8ME ===== -->\r
+  <div class="theme-picker" *ngIf="isExpanded">\r
+    <span class="theme-picker-label">Th\xE8me</span>\r
+    <div class="theme-dots">\r
+      <button\r
+        class="theme-dot"\r
+        *ngFor="let t of themeService.themes"\r
+        [style.background]="t.color"\r
+        [class.active]="themeService.current === t.name"\r
+        (click)="themeService.applyColor(t.name)"\r
+        [title]="t.label"\r
+        [attr.aria-label]="'Th\xE8me ' + t.label"\r
+      ></button>\r
+    </div>\r
+  </div>\r
+\r
+  <div class="separator"></div>\r
+\r
+  <!-- ===== SECTION ADMIN / D\xC9CONNEXION ===== -->\r
+  <div class="nav-section">\r
+    <a\r
+      routerLink="/"\r
+      class="nav-item nav-home-link"\r
+      [title]="!isExpanded ? 'Page d\\'accueil' : ''"\r
+      aria-label="Page d'accueil"\r
+      (click)="mobileClose.emit()"\r
+    >\r
+      <span class="nav-icon material-icons-round">language</span>\r
+      <span class="nav-label" *ngIf="isExpanded">Page d'accueil</span>\r
+    </a>\r
+\r
+    <a\r
+      *ngIf="canAdminister"\r
+      routerLink="/app/admin"\r
+      routerLinkActive="active"\r
+      class="nav-item"\r
+      [title]="!isExpanded ? 'Admin' : ''"\r
+      aria-label="Administration"\r
+      (click)="mobileClose.emit()"\r
+    >\r
+      <span class="nav-icon material-icons-round">admin_panel_settings</span>\r
+      <span class="nav-label" *ngIf="isExpanded">Administration</span>\r
+    </a>\r
+\r
+    <button class="nav-item nav-btn logout-btn" (click)="logout()" [title]="!isExpanded ? 'D\xE9connexion' : ''" aria-label="D\xE9connexion">\r
+      <span class="nav-icon material-icons-round">logout</span>\r
+      <span class="nav-label" *ngIf="isExpanded">D\xE9connexion</span>\r
+    </button>\r
+  </div>\r
+\r
+  <!-- ===== PROFIL UTILISATEUR ===== -->\r
+  <a class="user-section" [class.collapsed]="!isExpanded" routerLink="/app/profil" (click)="mobileClose.emit()" title="Mon profil">\r
+    <div class="avatar avatar-sm">{{ initiales }}</div>\r
+    <div class="user-info" *ngIf="isExpanded">\r
+      <span class="user-name">{{ user?.prenom }} {{ user?.nom }}</span>\r
+      <span class="user-role badge badge-primary">{{ user?.role }}</span>\r
+    </div>\r
+    <span class="material-icons-round user-profile-arrow" *ngIf="isExpanded">chevron_right</span>\r
+  </a>\r
+\r
+</nav>\r
 `, styles: ['@charset "UTF-8";\n\n/* src/app/shell/sidebar/sidebar.component.scss */\n.sidebar {\n  width: var(--sidebar-collapsed);\n  height: 100vh;\n  background: var(--sb-bg, #F8FAFC);\n  border-right: 1px solid var(--sb-divider, rgba(0, 0, 0, 0.08));\n  display: flex;\n  flex-direction: column;\n  flex-shrink: 0;\n  transition: width var(--transition-slow);\n  overflow: hidden;\n  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08);\n  position: relative;\n  z-index: 100;\n}\n.sidebar.expanded {\n  width: var(--sidebar-expanded);\n}\n.sidebar-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 10px 14px 12px;\n  min-height: 64px;\n  border-bottom: 1px solid var(--sb-divider, rgba(0, 0, 0, 0.08));\n  flex-shrink: 0;\n}\n.brand {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  overflow: hidden;\n  flex: 1;\n}\n.brand-icon-wrap {\n  width: 32px;\n  height: 32px;\n  background: var(--sb-icon-wrap, rgba(0, 0, 0, 0.07));\n  border-radius: var(--radius-sm);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.brand-icon-wrap .material-icons-round {\n  color: var(--primary);\n  font-size: 18px !important;\n}\n.brand-text {\n  font-size: 15px;\n  font-weight: 700;\n  color: var(--sb-text-hi, #1E293B);\n  white-space: nowrap;\n  letter-spacing: -0.2px;\n}\n.toggle-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 32px;\n  height: 32px;\n  border: none;\n  background: transparent;\n  border-radius: var(--radius-sm);\n  cursor: pointer;\n  color: var(--sb-toggle-color, #64748B);\n  transition: var(--transition);\n  flex-shrink: 0;\n}\n.toggle-btn:hover {\n  background: var(--sb-hover-bg, rgba(0, 0, 0, 0.05));\n  color: var(--sb-text-hi, #1E293B);\n}\n.toggle-btn .material-icons-round {\n  font-size: 20px !important;\n}\n.sidebar:not(.expanded) .sidebar-header {\n  justify-content: center;\n  padding: 14px 0;\n}\n.nav-section {\n  padding: 8px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  flex-shrink: 0;\n}\n.nav-item {\n  display: flex;\n  align-items: center;\n  gap: 11px;\n  padding: 10px 12px;\n  border-radius: 12px;\n  color: var(--sb-text-mid, #475569);\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  white-space: nowrap;\n  text-decoration: none;\n  transition: background var(--transition), color var(--transition);\n  border: none;\n  background: transparent;\n  font-family: inherit;\n  width: 100%;\n  text-align: left;\n}\n.nav-item .nav-icon {\n  font-size: 20px !important;\n  flex-shrink: 0;\n  opacity: 0.7;\n  transition: opacity var(--transition);\n}\n.nav-item .nav-label {\n  flex: 1;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.nav-item:hover {\n  background: var(--sb-hover-bg, rgba(0, 0, 0, 0.05));\n  color: var(--sb-text-hi, #1E293B);\n  text-decoration: none;\n}\n.nav-item:hover .nav-icon {\n  opacity: 1;\n}\n.nav-item.active {\n  background: var(--sb-active-bg, rgba(0, 0, 0, 0.07));\n  color: var(--sb-text-hi, #1E293B);\n  font-weight: 600;\n  box-shadow: inset 3px 0 0 var(--sb-active-mark, var(--primary));\n}\n.nav-item.active .nav-icon {\n  opacity: 1;\n  color: var(--sb-active-mark, var(--primary));\n}\n.sidebar:not(.expanded) .nav-item {\n  justify-content: center;\n  padding: 10px 0;\n}\n.nav-home-link {\n  color: var(--sb-text-lo, #94A3B8) !important;\n}\n.nav-home-link .nav-icon {\n  opacity: 1 !important;\n  color: var(--sb-text-lo, #94A3B8) !important;\n}\n.nav-home-link:hover {\n  background: var(--sb-hover-bg, rgba(0, 0, 0, 0.05)) !important;\n  color: var(--sb-text-mid, #475569) !important;\n}\n.nav-home-link:hover .nav-icon {\n  color: var(--sb-text-mid, #475569) !important;\n}\n.logout-btn:hover {\n  background: var(--sb-logout-hover-bg, rgba(239, 68, 68, 0.1)) !important;\n  color: var(--sb-logout-hover-text, #DC2626) !important;\n}\n.logout-btn:hover .nav-icon {\n  color: var(--sb-logout-hover-text, #DC2626) !important;\n  opacity: 1;\n}\n.theme-picker {\n  padding: 10px 16px 4px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.theme-picker-label {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--sb-text-lo, #94A3B8);\n  text-transform: uppercase;\n  letter-spacing: 0.6px;\n}\n.theme-dots {\n  display: flex;\n  gap: 8px;\n  align-items: center;\n}\n.theme-dot {\n  width: 22px;\n  height: 22px;\n  border-radius: 50%;\n  border: 2.5px solid transparent;\n  cursor: pointer;\n  transition: transform 0.15s, border-color 0.15s;\n  flex-shrink: 0;\n  padding: 0;\n}\n.theme-dot:hover {\n  transform: scale(1.2);\n}\n.theme-dot.active {\n  border-color: var(--sb-text-hi, #1E293B);\n  transform: scale(1.15);\n  box-shadow: 0 0 0 2px var(--sb-divider, rgba(0, 0, 0, 0.08));\n}\n.sidebar-spacer {\n  flex: 1;\n}\n.separator {\n  height: 1px;\n  background: var(--sb-divider, rgba(0, 0, 0, 0.08));\n  margin: 4px 10px 8px;\n  flex-shrink: 0;\n}\n.user-section {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 14px;\n  border-top: 1px solid var(--sb-divider, rgba(0, 0, 0, 0.08));\n  flex-shrink: 0;\n  min-height: 60px;\n  text-decoration: none;\n  cursor: pointer;\n  transition: background 0.15s;\n  border-radius: 0 0 var(--radius-lg, 12px) var(--radius-lg, 12px);\n}\n.user-section:hover {\n  background: rgba(0, 0, 0, 0.04);\n  text-decoration: none;\n}\n.user-section.collapsed {\n  justify-content: center;\n  padding: 12px 0;\n}\n.user-profile-arrow {\n  font-size: 16px !important;\n  color: var(--sb-text-muted, #94A3B8);\n  flex-shrink: 0;\n  opacity: 0;\n  transition: opacity 0.15s;\n}\n.user-section:hover .user-profile-arrow {\n  opacity: 1;\n}\n.user-info {\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n  overflow: hidden;\n  flex: 1;\n}\n.user-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--sb-text-hi, #1E293B);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.user-role {\n  font-size: 10px;\n  align-self: flex-start;\n}\n@media (max-width: 768px) {\n  .sidebar {\n    position: fixed;\n    top: 0;\n    left: 0;\n    height: 100vh;\n    width: 260px !important;\n    transform: translateX(-100%);\n    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n    z-index: 300;\n    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.18);\n  }\n  .sidebar .brand {\n    display: flex;\n  }\n  .sidebar .nav-label {\n    display: block !important;\n  }\n  .sidebar .nav-item {\n    justify-content: flex-start !important;\n    padding: 12px 16px !important;\n  }\n  .sidebar .sidebar-header {\n    justify-content: space-between !important;\n    padding: 14px 12px !important;\n  }\n  .sidebar .theme-picker {\n    display: flex;\n  }\n  .sidebar .user-section {\n    justify-content: flex-start !important;\n    padding: 12px 14px !important;\n  }\n  .sidebar .user-info {\n    display: flex;\n  }\n  .sidebar.mobile-open {\n    transform: translateX(0);\n  }\n}\n/*# sourceMappingURL=sidebar.component.css.map */\n'] }]
   }], () => [{ type: AuthService }, { type: Router }, { type: ThemeService }], { mobileOpen: [{
     type: Input
@@ -703,7 +710,7 @@ function TopbarComponent_div_12_ng_container_3_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(5);
-    \u0275\u0275property("ngForOf", ctx_r1.searchResults.personnes);
+    \u0275\u0275property("ngForOf", ctx_r1.searchResults.personnes)("ngForTrackBy", ctx_r1.trackByPersonneId);
   }
 }
 function TopbarComponent_div_12_ng_container_4_button_5_span_7_Template(rf, ctx) {
@@ -761,7 +768,7 @@ function TopbarComponent_div_12_ng_container_4_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(5);
-    \u0275\u0275property("ngForOf", ctx_r1.searchResults.stories);
+    \u0275\u0275property("ngForOf", ctx_r1.searchResults.stories)("ngForTrackBy", ctx_r1.trackByStoryId);
   }
 }
 function TopbarComponent_div_12_ng_container_5_button_5_ng_container_7_Template(rf, ctx) {
@@ -825,7 +832,7 @@ function TopbarComponent_div_12_ng_container_5_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(5);
-    \u0275\u0275property("ngForOf", ctx_r1.searchResults.unions);
+    \u0275\u0275property("ngForOf", ctx_r1.searchResults.unions)("ngForTrackBy", ctx_r1.trackByUnionId);
   }
 }
 function TopbarComponent_div_12_div_6_Template(rf, ctx) {
@@ -848,7 +855,7 @@ function TopbarComponent_div_12_Template(rf, ctx) {
       \u0275\u0275restoreView(_r5);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275template(1, TopbarComponent_div_12_div_1_Template, 4, 0, "div", 32)(2, TopbarComponent_div_12_div_2_Template, 5, 1, "div", 33)(3, TopbarComponent_div_12_ng_container_3_Template, 6, 1, "ng-container", 34)(4, TopbarComponent_div_12_ng_container_4_Template, 6, 1, "ng-container", 34)(5, TopbarComponent_div_12_ng_container_5_Template, 6, 1, "ng-container", 34)(6, TopbarComponent_div_12_div_6_Template, 2, 2, "div", 35);
+    \u0275\u0275template(1, TopbarComponent_div_12_div_1_Template, 4, 0, "div", 32)(2, TopbarComponent_div_12_div_2_Template, 5, 1, "div", 33)(3, TopbarComponent_div_12_ng_container_3_Template, 6, 2, "ng-container", 34)(4, TopbarComponent_div_12_ng_container_4_Template, 6, 2, "ng-container", 34)(5, TopbarComponent_div_12_ng_container_5_Template, 6, 2, "ng-container", 34)(6, TopbarComponent_div_12_div_6_Template, 2, 2, "div", 35);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -951,7 +958,7 @@ function TopbarComponent_Conditional_22_div_6_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", ctx_r1.notifItems);
+    \u0275\u0275property("ngForOf", ctx_r1.notifItems)("ngForTrackBy", ctx_r1.trackByNotifId);
   }
 }
 function TopbarComponent_Conditional_22_Template(rf, ctx) {
@@ -961,7 +968,7 @@ function TopbarComponent_Conditional_22_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275template(4, TopbarComponent_Conditional_22_span_4_Template, 2, 1, "span", 59);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(5, TopbarComponent_Conditional_22_div_5_Template, 5, 0, "div", 60)(6, TopbarComponent_Conditional_22_div_6_Template, 2, 1, "div", 61);
+    \u0275\u0275template(5, TopbarComponent_Conditional_22_div_5_Template, 5, 0, "div", 60)(6, TopbarComponent_Conditional_22_div_6_Template, 2, 2, "div", 61);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -1173,6 +1180,18 @@ var TopbarComponent = class _TopbarComponent {
       return `Il y a ${Math.floor(diff / 3600)} h`;
     return d.toLocaleDateString("fr-FR", { day: "numeric", month: "short" });
   }
+  trackByPersonneId(_, item) {
+    return item.id;
+  }
+  trackByStoryId(_, item) {
+    return item.id;
+  }
+  trackByUnionId(_, item) {
+    return item.id;
+  }
+  trackByNotifId(_, item) {
+    return item.id;
+  }
   get user() {
     return this.auth.getUser();
   }
@@ -1235,7 +1254,7 @@ var TopbarComponent = class _TopbarComponent {
         return ctx.onEscape();
       }, \u0275\u0275resolveDocument);
     }
-  }, outputs: { menuToggle: "menuToggle" }, standalone: false, decls: 35, vars: 17, consts: [["searchInput", ""], [1, "topbar"], ["title", "Menu", 1, "btn-icon", "btn-menu", 3, "click"], [1, "material-icons-round"], [1, "page-title"], [1, "material-icons-round", "page-icon"], [1, "search-wrap"], ["class", "btn-icon search-trigger", "title", "Rechercher", 3, "click", 4, "ngIf"], ["class", "search-box", 4, "ngIf"], ["class", "search-dropdown", 3, "click", 4, "ngIf"], [1, "topbar-actions"], ["title", "Actualiser les donn\xE9es", 1, "btn-icon", "btn-refresh", 3, "click"], [1, "notif-wrap", 3, "click"], ["title", "Notifications", 1, "btn-icon", "notif-btn", 3, "click"], ["class", "notif-badge", 4, "ngIf"], [1, "notif-panel"], [1, "user-menu-wrap", 3, "click"], [1, "user-btn"], [1, "avatar", "avatar-sm"], [1, "user-btn-info"], [1, "user-btn-name"], [1, "user-btn-role"], [1, "material-icons-round", "chevron"], [1, "user-dropdown"], ["title", "Rechercher", 1, "btn-icon", "search-trigger", 3, "click"], [1, "search-box"], [1, "material-icons-round", "search-box-icon"], ["type", "text", "placeholder", "Rechercher un membre, une story\u2026", "autofocus", "", 1, "search-input", 3, "ngModelChange", "click", "ngModel"], ["class", "search-clear-btn", 3, "click", 4, "ngIf"], [1, "search-close-btn", 3, "click"], [1, "search-clear-btn", 3, "click"], [1, "search-dropdown", 3, "click"], ["class", "search-loading", 4, "ngIf"], ["class", "search-empty", 4, "ngIf"], [4, "ngIf"], ["class", "search-footer", 4, "ngIf"], [1, "search-loading"], [1, "sk-line", "sk-full", 2, "height", "14px", "border-radius", "6px"], [1, "sk-line", "sk-md", 2, "height", "14px", "border-radius", "6px"], [1, "sk-line", "sk-sm", 2, "height", "14px", "border-radius", "6px"], [1, "search-empty"], [1, "search-section-label"], ["class", "search-result-item", 3, "click", 4, "ngFor", "ngForOf"], [1, "search-result-item", 3, "click"], [1, "sr-avatar"], [3, "src", "alt", 4, "ngIf"], [1, "sr-info"], [1, "sr-name"], ["class", "sr-sub", 4, "ngIf"], [1, "material-icons-round", "sr-arrow"], [3, "src", "alt"], [1, "sr-sub"], [1, "sr-icon", "sr-icon-story"], ["class", "sr-sub sr-tag", 4, "ngIf"], [1, "sr-sub", "sr-tag"], [1, "sr-icon", "sr-icon-union"], [1, "search-footer"], [1, "notif-badge"], [1, "notif-panel-head"], ["class", "notif-panel-count", 4, "ngIf"], ["class", "notif-empty", 4, "ngIf"], ["class", "notif-list", 4, "ngIf"], [1, "notif-panel-count"], [1, "notif-empty"], [1, "notif-list"], ["class", "notif-item", 3, "notif-unread", 4, "ngFor", "ngForOf"], [1, "notif-item"], [1, "notif-item-icon"], [1, "notif-item-body"], [1, "notif-item-titre"], [1, "notif-item-msg"], [1, "notif-item-date"], ["title", "Supprimer", 1, "notif-delete-btn", 3, "click"], [1, "dropdown-header"], [1, "avatar", "avatar-md"], [1, "dd-name"], [1, "dd-email"], [1, "dropdown-divider"], ["routerLink", "/app/profil", 1, "dropdown-item"], ["routerLink", "/", 1, "dropdown-item"], ["class", "dropdown-item", "routerLink", "/app/admin", 4, "ngIf"], [1, "dropdown-item", "danger", 3, "click"], ["routerLink", "/app/admin", 1, "dropdown-item"]], template: function TopbarComponent_Template(rf, ctx) {
+  }, outputs: { menuToggle: "menuToggle" }, standalone: false, decls: 35, vars: 17, consts: [["searchInput", ""], [1, "topbar"], ["title", "Menu", "aria-label", "Ouvrir le menu", 1, "btn-icon", "btn-menu", 3, "click"], [1, "material-icons-round"], [1, "page-title"], [1, "material-icons-round", "page-icon"], [1, "search-wrap"], ["class", "btn-icon search-trigger", "title", "Rechercher", "aria-label", "Rechercher", 3, "click", 4, "ngIf"], ["class", "search-box", 4, "ngIf"], ["class", "search-dropdown", 3, "click", 4, "ngIf"], [1, "topbar-actions"], ["title", "Actualiser les donn\xE9es", "aria-label", "Actualiser les donn\xE9es", 1, "btn-icon", "btn-refresh", 3, "click"], [1, "notif-wrap", 3, "click"], ["title", "Notifications", "aria-label", "Notifications", 1, "btn-icon", "notif-btn", 3, "click"], ["class", "notif-badge", 4, "ngIf"], [1, "notif-panel"], [1, "user-menu-wrap", 3, "click"], [1, "user-btn"], [1, "avatar", "avatar-sm"], [1, "user-btn-info"], [1, "user-btn-name"], [1, "user-btn-role"], [1, "material-icons-round", "chevron"], [1, "user-dropdown"], ["title", "Rechercher", "aria-label", "Rechercher", 1, "btn-icon", "search-trigger", 3, "click"], [1, "search-box"], [1, "material-icons-round", "search-box-icon"], ["type", "text", "placeholder", "Rechercher un membre, une story\u2026", "autofocus", "", 1, "search-input", 3, "ngModelChange", "click", "ngModel"], ["class", "search-clear-btn", "aria-label", "Effacer la recherche", 3, "click", 4, "ngIf"], ["aria-label", "Fermer la recherche", 1, "search-close-btn", 3, "click"], ["aria-label", "Effacer la recherche", 1, "search-clear-btn", 3, "click"], [1, "search-dropdown", 3, "click"], ["class", "search-loading", 4, "ngIf"], ["class", "search-empty", 4, "ngIf"], [4, "ngIf"], ["class", "search-footer", 4, "ngIf"], [1, "search-loading"], [1, "sk-line", "sk-full", 2, "height", "14px", "border-radius", "6px"], [1, "sk-line", "sk-md", 2, "height", "14px", "border-radius", "6px"], [1, "sk-line", "sk-sm", 2, "height", "14px", "border-radius", "6px"], [1, "search-empty"], [1, "search-section-label"], ["class", "search-result-item", 3, "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "search-result-item", 3, "click"], [1, "sr-avatar"], [3, "src", "alt", 4, "ngIf"], [1, "sr-info"], [1, "sr-name"], ["class", "sr-sub", 4, "ngIf"], [1, "material-icons-round", "sr-arrow"], [3, "src", "alt"], [1, "sr-sub"], [1, "sr-icon", "sr-icon-story"], ["class", "sr-sub sr-tag", 4, "ngIf"], [1, "sr-sub", "sr-tag"], [1, "sr-icon", "sr-icon-union"], [1, "search-footer"], [1, "notif-badge"], [1, "notif-panel-head"], ["class", "notif-panel-count", 4, "ngIf"], ["class", "notif-empty", 4, "ngIf"], ["class", "notif-list", 4, "ngIf"], [1, "notif-panel-count"], [1, "notif-empty"], [1, "notif-list"], ["class", "notif-item", 3, "notif-unread", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "notif-item"], [1, "notif-item-icon"], [1, "notif-item-body"], [1, "notif-item-titre"], [1, "notif-item-msg"], [1, "notif-item-date"], ["title", "Supprimer", "aria-label", "Supprimer la notification", 1, "notif-delete-btn", 3, "click"], [1, "dropdown-header"], [1, "avatar", "avatar-md"], [1, "dd-name"], [1, "dd-email"], [1, "dropdown-divider"], ["routerLink", "/app/profil", 1, "dropdown-item"], ["routerLink", "/", 1, "dropdown-item"], ["class", "dropdown-item", "routerLink", "/app/admin", 4, "ngIf"], [1, "dropdown-item", "danger", 3, "click"], ["routerLink", "/app/admin", 1, "dropdown-item"]], template: function TopbarComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "header", 1)(1, "button", 2);
       \u0275\u0275listener("click", function TopbarComponent_Template_button_click_1_listener() {
@@ -1332,7 +1351,7 @@ var TopbarComponent = class _TopbarComponent {
     args: [{ selector: "app-topbar", standalone: false, template: `<header class="topbar">\r
 \r
   <!-- Bouton hamburger (mobile seulement) -->\r
-  <button class="btn-icon btn-menu" (click)="menuToggle.emit()" title="Menu">\r
+  <button class="btn-icon btn-menu" (click)="menuToggle.emit()" title="Menu" aria-label="Ouvrir le menu">\r
     <span class="material-icons-round">menu</span>\r
   </button>\r
 \r
@@ -1346,7 +1365,7 @@ var TopbarComponent = class _TopbarComponent {
   <div class="search-wrap" [class.open]="searchOpen">\r
 \r
     <!-- Bouton loupe (ferm\xE9e) -->\r
-    <button class="btn-icon search-trigger" *ngIf="!searchOpen" (click)="openSearch()" title="Rechercher">\r
+    <button class="btn-icon search-trigger" *ngIf="!searchOpen" (click)="openSearch()" title="Rechercher" aria-label="Rechercher">\r
       <span class="material-icons-round">search</span>\r
     </button>\r
 \r
@@ -1363,10 +1382,10 @@ var TopbarComponent = class _TopbarComponent {
         (click)="$event.stopPropagation()"\r
         autofocus\r
       />\r
-      <button class="search-clear-btn" *ngIf="searchQuery" (click)="searchQuery=''; onSearchInput('')">\r
+      <button class="search-clear-btn" *ngIf="searchQuery" (click)="searchQuery=''; onSearchInput('')" aria-label="Effacer la recherche">\r
         <span class="material-icons-round">close</span>\r
       </button>\r
-      <button class="search-close-btn" (click)="closeSearch()">\r
+      <button class="search-close-btn" (click)="closeSearch()" aria-label="Fermer la recherche">\r
         <span class="material-icons-round">keyboard_return</span>\r
       </button>\r
     </div>\r
@@ -1394,7 +1413,7 @@ var TopbarComponent = class _TopbarComponent {
           Membres\r
         </div>\r
         <button class="search-result-item"\r
-                *ngFor="let p of searchResults.personnes"\r
+                *ngFor="let p of searchResults.personnes; trackBy: trackByPersonneId"\r
                 (click)="goToPersonne(p.id)">\r
           <div class="sr-avatar" [class.sr-avatar-m]="p.sexe === 'M'" [class.sr-avatar-f]="p.sexe === 'F'">\r
             <img *ngIf="p.photoUrl" [src]="p.photoUrl" [alt]="getNomPersonne(p)" />\r
@@ -1416,7 +1435,7 @@ var TopbarComponent = class _TopbarComponent {
           Stories\r
         </div>\r
         <button class="search-result-item"\r
-                *ngFor="let s of searchResults.stories"\r
+                *ngFor="let s of searchResults.stories; trackBy: trackByStoryId"\r
                 (click)="goToStory(s.id)">\r
           <div class="sr-icon sr-icon-story">\r
             <span class="material-icons-round">auto_stories</span>\r
@@ -1436,7 +1455,7 @@ var TopbarComponent = class _TopbarComponent {
           Unions\r
         </div>\r
         <button class="search-result-item"\r
-                *ngFor="let u of searchResults.unions"\r
+                *ngFor="let u of searchResults.unions; trackBy: trackByUnionId"\r
                 (click)="goToUnion(u.id)">\r
           <div class="sr-icon sr-icon-union">\r
             <span class="material-icons-round">favorite</span>\r
@@ -1464,13 +1483,13 @@ var TopbarComponent = class _TopbarComponent {
   <div class="topbar-actions">\r
 \r
     <!-- Bouton actualiser -->\r
-    <button class="btn-icon btn-refresh" (click)="refresh()" title="Actualiser les donn\xE9es">\r
+    <button class="btn-icon btn-refresh" (click)="refresh()" title="Actualiser les donn\xE9es" aria-label="Actualiser les donn\xE9es">\r
       <span class="material-icons-round">sync</span>\r
     </button>\r
 \r
     <!-- Bouton notifications -->\r
     <div class="notif-wrap" (click)="$event.stopPropagation()">\r
-      <button class="btn-icon notif-btn" (click)="toggleNotif($event)" title="Notifications">\r
+      <button class="btn-icon notif-btn" (click)="toggleNotif($event)" title="Notifications" aria-label="Notifications">\r
         <span class="material-icons-round">{{ notifCount > 0 ? 'notifications' : 'notifications_none' }}</span>\r
         <span class="notif-badge" *ngIf="notifCount > 0">{{ notifCount > 9 ? '9+' : notifCount }}</span>\r
       </button>\r
@@ -1491,7 +1510,7 @@ var TopbarComponent = class _TopbarComponent {
 \r
           <!-- Liste -->\r
           <div class="notif-list" *ngIf="notifItems.length > 0">\r
-            <div class="notif-item" *ngFor="let n of notifItems" [class.notif-unread]="!n.lue">\r
+            <div class="notif-item" *ngFor="let n of notifItems; trackBy: trackByNotifId" [class.notif-unread]="!n.lue">\r
               <div class="notif-item-icon" [class.notif-anniversaire]="n.type === 'anniversaire'">\r
                 <span class="material-icons-round">{{ notifIcon(n.type) }}</span>\r
               </div>\r
@@ -1500,7 +1519,7 @@ var TopbarComponent = class _TopbarComponent {
                 <p class="notif-item-msg">{{ n.message }}</p>\r
                 <span class="notif-item-date">{{ formatNotifDate(n.createdAt) }}</span>\r
               </div>\r
-              <button class="notif-delete-btn" (click)="deleteNotif(n.id, $event)" title="Supprimer">\r
+              <button class="notif-delete-btn" (click)="deleteNotif(n.id, $event)" title="Supprimer" aria-label="Supprimer la notification">\r
                 <span class="material-icons-round">close</span>\r
               </button>\r
             </div>\r
@@ -1565,7 +1584,7 @@ var TopbarComponent = class _TopbarComponent {
   }] });
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TopbarComponent, { className: "TopbarComponent", filePath: "src/app/shell/topbar/topbar.component.ts", lineNumber: 32 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TopbarComponent, { className: "TopbarComponent", filePath: "src/app/shell/topbar/topbar.component.ts", lineNumber: 33 });
 })();
 
 // src/app/shell/shell.component.ts
@@ -1924,7 +1943,7 @@ function HomeComponent_div_41_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275advance(7);
-    \u0275\u0275property("ngForOf", ctx_r0.anniversairesProches);
+    \u0275\u0275property("ngForOf", ctx_r0.anniversairesProches)("ngForTrackBy", ctx_r0.trackByAnniversaire);
   }
 }
 function HomeComponent_div_42_div_5_Template(rf, ctx) {
@@ -2111,7 +2130,7 @@ function HomeComponent_div_44_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", ctx_r0.recentPersonnes);
+    \u0275\u0275property("ngForOf", ctx_r0.recentPersonnes)("ngForTrackBy", ctx_r0.trackByPersonneId);
   }
 }
 function HomeComponent_div_45_div_12_img_3_Template(rf, ctx) {
@@ -2260,7 +2279,7 @@ function HomeComponent_div_45_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275advance(12);
-    \u0275\u0275property("ngForOf", ctx_r0.recentPersonnes);
+    \u0275\u0275property("ngForOf", ctx_r0.recentPersonnes)("ngForTrackBy", ctx_r0.trackByPersonneId);
   }
 }
 function HomeComponent_div_46_Template(rf, ctx) {
@@ -2353,6 +2372,12 @@ var HomeComponent = class _HomeComponent {
     const withLieu = this.toutes.filter((p) => !!p.lieuNaissance).length;
     return Math.round((withDate + withLieu) / (this.toutes.length * 2) * 100);
   }
+  trackByPersonneId(_, item) {
+    return item.id;
+  }
+  trackByAnniversaire(_, item) {
+    return item.p.id;
+  }
   get anniversairesProches() {
     const today = /* @__PURE__ */ new Date();
     today.setHours(0, 0, 0, 0);
@@ -2379,7 +2404,7 @@ Code : *${this.familleCode}*`;
   static \u0275fac = function HomeComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HomeComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HomeComponent, selectors: [["app-home"]], standalone: false, decls: 47, vars: 15, consts: [[1, "home-hero"], [1, "home-hero-bg"], [1, "home-hero-content"], ["class", "home-hero-left", 4, "ngIf"], [1, "home-hero-right"], [1, "home-hero-stats"], [1, "home-hero-stat"], [1, "hhs-value"], [1, "hhs-label"], [1, "home-hero-divider"], [1, "home-hero-btns"], [1, "home-invite-btn", 3, "click"], [1, "material-icons-round"], ["routerLink", "/app/personnes", 1, "home-add-btn"], ["class", "home-completion", 4, "ngIf"], ["class", "stats-grid mb-16", 4, "ngIf"], [1, "section-header", "mb-16"], [1, "quick-actions", "mb-32"], ["class", "quick-action", 3, "routerLink", "class", 4, "ngFor", "ngForOf"], ["class", "mb-32", 4, "ngIf"], ["class", "skeleton-section mb-32", 4, "ngIf"], ["class", "section-header mb-16", 4, "ngIf"], ["class", "pc-grid", 4, "ngIf"], ["class", "pl-table", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "home-hero-left"], [1, "home-user-avatar"], [1, "home-greeting"], [1, "home-family-name"], [1, "home-completion"], [1, "home-completion-label"], [1, "home-completion-bar"], [1, "home-completion-fill"], [1, "stats-grid", "mb-16"], ["class", "sk-stat", 4, "ngFor", "ngForOf"], [1, "sk-stat"], [1, "sk-stat-icon"], [1, "sk-stat-body"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-sm"], ["class", "stat-card", 3, "class", 4, "ngFor", "ngForOf"], [1, "stat-card"], [1, "stat-icon-wrap"], [1, "stat-body"], [1, "stat-value"], [1, "stat-label"], [1, "quick-action", 3, "routerLink"], [1, "mb-32"], [1, "material-icons-round", 2, "vertical-align", "middle", "color", "#DB2777", "font-size", "20px!important"], [1, "bday-row"], ["class", "bday-card", 4, "ngFor", "ngForOf"], [1, "bday-card"], [1, "bday-avatar"], [1, "bday-info"], [1, "bday-name"], [1, "bday-date"], [1, "bday-badge"], [1, "skeleton-section", "mb-32"], [1, "skeleton-header"], [1, "skeleton-bar", "skeleton-bar-title"], [1, "skeleton-bar", "skeleton-bar-sm"], [1, "skeleton-grid"], ["class", "skeleton-card", 4, "ngFor", "ngForOf"], [1, "skeleton-card"], [1, "skeleton-card-top"], [1, "skeleton-card-body"], [1, "skeleton-bar"], [1, "skeleton-bar", "skeleton-bar-xs"], [1, "section-actions"], [1, "view-toggle"], ["title", "Vue cartes", 1, "vt-btn", 3, "click"], ["title", "Vue liste", 1, "vt-btn", 3, "click"], ["routerLink", "/app/personnes", 1, "btn-secondary", "btn-sm"], [1, "pc-grid"], ["class", "pc-card", 3, "pc-male", "pc-female", 4, "ngFor", "ngForOf"], [1, "pc-card"], [1, "pc-card-banner"], [1, "pc-colorband"], [1, "pc-live-dot"], [1, "pc-avatar-ring"], ["class", "pc-avatar pc-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pc-avatar pc-avatar-initials", 4, "ngIf"], [1, "pc-card-body"], [1, "pc-name"], [1, "pc-age"], ["class", "pc-loc", 4, "ngIf"], [1, "pc-badges"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "pc-card-actions"], [1, "pc-act"], [1, "pc-act", 3, "routerLink", "queryParams"], [1, "pc-avatar", "pc-avatar-photo", 3, "error", "src", "alt"], [1, "pc-avatar", "pc-avatar-initials"], [1, "pc-loc"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "pl-table"], [1, "pl-thead"], [1, "pl-th", "pl-th-person"], [1, "pl-th", "pl-th-genre"], [1, "pl-th", "pl-th-lieu"], [1, "pl-th", "pl-th-statut"], [1, "pl-th", "pl-th-actions"], ["class", "pl-row", 4, "ngFor", "ngForOf"], [1, "pl-row"], [1, "pl-cell", "pl-cell-person"], [1, "pl-avatar-wrap"], ["class", "pl-avatar pl-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pl-avatar pl-avatar-initials", 3, "male", "female", 4, "ngIf"], [1, "pl-status-dot"], [1, "pl-person-info"], [1, "pl-person-name"], [1, "pl-person-age"], [1, "pl-cell", "pl-cell-genre"], [1, "pc-badge"], [1, "pl-cell", "pl-cell-lieu"], ["class", "pl-lieu", 4, "ngIf"], ["class", "pl-empty", 4, "ngIf"], [1, "pl-cell", "pl-cell-statut"], [1, "pl-cell", "pl-cell-actions"], ["title", "Voir", 1, "btn-icon", 3, "routerLink", "queryParams"], [1, "pl-avatar", "pl-avatar-photo", 3, "error", "src", "alt"], [1, "pl-avatar", "pl-avatar-initials"], [1, "pl-lieu"], [1, "pl-empty"], [1, "empty-state"]], template: function HomeComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HomeComponent, selectors: [["app-home"]], standalone: false, decls: 47, vars: 15, consts: [[1, "home-hero"], [1, "home-hero-bg"], [1, "home-hero-content"], ["class", "home-hero-left", 4, "ngIf"], [1, "home-hero-right"], [1, "home-hero-stats"], [1, "home-hero-stat"], [1, "hhs-value"], [1, "hhs-label"], [1, "home-hero-divider"], [1, "home-hero-btns"], [1, "home-invite-btn", 3, "click"], [1, "material-icons-round"], ["routerLink", "/app/personnes", 1, "home-add-btn"], ["class", "home-completion", 4, "ngIf"], ["class", "stats-grid mb-16", 4, "ngIf"], [1, "section-header", "mb-16"], [1, "quick-actions", "mb-32"], ["class", "quick-action", 3, "routerLink", "class", 4, "ngFor", "ngForOf"], ["class", "mb-32", 4, "ngIf"], ["class", "skeleton-section mb-32", 4, "ngIf"], ["class", "section-header mb-16", 4, "ngIf"], ["class", "pc-grid", 4, "ngIf"], ["class", "pl-table", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "home-hero-left"], [1, "home-user-avatar"], [1, "home-greeting"], [1, "home-family-name"], [1, "home-completion"], [1, "home-completion-label"], [1, "home-completion-bar"], [1, "home-completion-fill"], [1, "stats-grid", "mb-16"], ["class", "sk-stat", 4, "ngFor", "ngForOf"], [1, "sk-stat"], [1, "sk-stat-icon"], [1, "sk-stat-body"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-sm"], ["class", "stat-card", 3, "class", 4, "ngFor", "ngForOf"], [1, "stat-card"], [1, "stat-icon-wrap"], [1, "stat-body"], [1, "stat-value"], [1, "stat-label"], [1, "quick-action", 3, "routerLink"], [1, "mb-32"], [1, "material-icons-round", 2, "vertical-align", "middle", "color", "#DB2777", "font-size", "20px!important"], [1, "bday-row"], ["class", "bday-card", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "bday-card"], [1, "bday-avatar"], [1, "bday-info"], [1, "bday-name"], [1, "bday-date"], [1, "bday-badge"], [1, "skeleton-section", "mb-32"], [1, "skeleton-header"], [1, "skeleton-bar", "skeleton-bar-title"], [1, "skeleton-bar", "skeleton-bar-sm"], [1, "skeleton-grid"], ["class", "skeleton-card", 4, "ngFor", "ngForOf"], [1, "skeleton-card"], [1, "skeleton-card-top"], [1, "skeleton-card-body"], [1, "skeleton-bar"], [1, "skeleton-bar", "skeleton-bar-xs"], [1, "section-actions"], [1, "view-toggle"], ["title", "Vue cartes", 1, "vt-btn", 3, "click"], ["title", "Vue liste", 1, "vt-btn", 3, "click"], ["routerLink", "/app/personnes", 1, "btn-secondary", "btn-sm"], [1, "pc-grid"], ["class", "pc-card", 3, "pc-male", "pc-female", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pc-card"], [1, "pc-card-banner"], [1, "pc-colorband"], [1, "pc-live-dot"], [1, "pc-avatar-ring"], ["class", "pc-avatar pc-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pc-avatar pc-avatar-initials", 4, "ngIf"], [1, "pc-card-body"], [1, "pc-name"], [1, "pc-age"], ["class", "pc-loc", 4, "ngIf"], [1, "pc-badges"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "pc-card-actions"], [1, "pc-act"], [1, "pc-act", 3, "routerLink", "queryParams"], [1, "pc-avatar", "pc-avatar-photo", 3, "error", "src", "alt"], [1, "pc-avatar", "pc-avatar-initials"], [1, "pc-loc"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "pl-table"], [1, "pl-thead"], [1, "pl-th", "pl-th-person"], [1, "pl-th", "pl-th-genre"], [1, "pl-th", "pl-th-lieu"], [1, "pl-th", "pl-th-statut"], [1, "pl-th", "pl-th-actions"], ["class", "pl-row", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pl-row"], [1, "pl-cell", "pl-cell-person"], [1, "pl-avatar-wrap"], ["class", "pl-avatar pl-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pl-avatar pl-avatar-initials", 3, "male", "female", 4, "ngIf"], [1, "pl-status-dot"], [1, "pl-person-info"], [1, "pl-person-name"], [1, "pl-person-age"], [1, "pl-cell", "pl-cell-genre"], [1, "pc-badge"], [1, "pl-cell", "pl-cell-lieu"], ["class", "pl-lieu", 4, "ngIf"], ["class", "pl-empty", 4, "ngIf"], [1, "pl-cell", "pl-cell-statut"], [1, "pl-cell", "pl-cell-actions"], ["title", "Voir", 1, "btn-icon", 3, "routerLink", "queryParams"], [1, "pl-avatar", "pl-avatar-photo", 3, "error", "src", "alt"], [1, "pl-avatar", "pl-avatar-initials"], [1, "pl-lieu"], [1, "pl-empty"], [1, "empty-state"]], template: function HomeComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0);
       \u0275\u0275element(1, "div", 1);
@@ -2428,7 +2453,7 @@ Code : *${this.familleCode}*`;
       \u0275\u0275elementStart(39, "div", 17);
       \u0275\u0275template(40, HomeComponent_a_40_Template, 5, 5, "a", 18);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(41, HomeComponent_div_41_Template, 8, 1, "div", 19)(42, HomeComponent_div_42_Template, 6, 2, "div", 20)(43, HomeComponent_div_43_Template, 13, 4, "div", 21)(44, HomeComponent_div_44_Template, 2, 1, "div", 22)(45, HomeComponent_div_45_Template, 13, 1, "div", 23)(46, HomeComponent_div_46_Template, 7, 0, "div", 24);
+      \u0275\u0275template(41, HomeComponent_div_41_Template, 8, 2, "div", 19)(42, HomeComponent_div_42_Template, 6, 2, "div", 20)(43, HomeComponent_div_43_Template, 13, 4, "div", 21)(44, HomeComponent_div_44_Template, 2, 2, "div", 22)(45, HomeComponent_div_45_Template, 13, 2, "div", 23)(46, HomeComponent_div_46_Template, 7, 0, "div", 24);
     }
     if (rf & 2) {
       \u0275\u0275advance(3);
@@ -2570,7 +2595,7 @@ Code : *${this.familleCode}*`;
     <h3><span class="material-icons-round" style="vertical-align:middle;color:#DB2777;font-size:20px!important">cake</span> Anniversaires \xE0 venir</h3>\r
   </div>\r
   <div class="bday-row">\r
-    <div class="bday-card" *ngFor="let b of anniversairesProches">\r
+    <div class="bday-card" *ngFor="let b of anniversairesProches; trackBy: trackByAnniversaire">\r
       <div class="bday-avatar" [class.male]="b.p.sexe === 'M'" [class.female]="b.p.sexe === 'F'">\r
         {{ getInitiales(b.p) }}\r
       </div>\r
@@ -2621,7 +2646,7 @@ Code : *${this.familleCode}*`;
 \r
 <!-- ===== VUE CARTES ===== -->\r
 <div class="pc-grid" *ngIf="!loading && recentPersonnes.length > 0 && viewMode === 'cards'">\r
-  <div class="pc-card" *ngFor="let p of recentPersonnes; let i = index"\r
+  <div class="pc-card" *ngFor="let p of recentPersonnes; let i = index; trackBy: trackByPersonneId"\r
        [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'">\r
     <div class="pc-card-banner">\r
       <div class="pc-colorband"\r
@@ -2671,7 +2696,7 @@ Code : *${this.familleCode}*`;
     <span class="pl-th pl-th-statut">Statut</span>\r
     <span class="pl-th pl-th-actions">Actions</span>\r
   </div>\r
-  <div class="pl-row" *ngFor="let p of recentPersonnes">\r
+  <div class="pl-row" *ngFor="let p of recentPersonnes; trackBy: trackByPersonneId">\r
     <div class="pl-cell pl-cell-person">\r
       <div class="pl-avatar-wrap">\r
         <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
@@ -2729,7 +2754,7 @@ var _c12 = () => [1, 2, 3, 4];
 function PersonnesComponent_button_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r2 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 71);
+    \u0275\u0275elementStart(0, "button", 73);
     \u0275\u0275listener("click", function PersonnesComponent_button_18_Template_button_click_0_listener() {
       const f_r3 = \u0275\u0275restoreView(_r2).$implicit;
       const ctx_r3 = \u0275\u0275nextContext();
@@ -2748,17 +2773,17 @@ function PersonnesComponent_button_18_Template(rf, ctx) {
 }
 function PersonnesComponent_div_26_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 74);
-    \u0275\u0275element(1, "div", 75);
-    \u0275\u0275elementStart(2, "div", 76);
-    \u0275\u0275element(3, "div", 77)(4, "div", 78)(5, "div", 79);
+    \u0275\u0275elementStart(0, "div", 76);
+    \u0275\u0275element(1, "div", 77);
+    \u0275\u0275elementStart(2, "div", 78);
+    \u0275\u0275element(3, "div", 79)(4, "div", 80)(5, "div", 81);
     \u0275\u0275elementEnd()();
   }
 }
 function PersonnesComponent_div_26_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 72);
-    \u0275\u0275template(1, PersonnesComponent_div_26_div_1_Template, 6, 0, "div", 73);
+    \u0275\u0275elementStart(0, "div", 74);
+    \u0275\u0275template(1, PersonnesComponent_div_26_div_1_Template, 6, 0, "div", 75);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -2768,7 +2793,7 @@ function PersonnesComponent_div_26_Template(rf, ctx) {
 }
 function PersonnesComponent_div_27_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 80)(1, "span", 6);
+    \u0275\u0275elementStart(0, "div", 82)(1, "span", 6);
     \u0275\u0275text(2, "error_outline");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -2783,7 +2808,7 @@ function PersonnesComponent_div_27_Template(rf, ctx) {
 function PersonnesComponent_div_28_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 81)(1, "span", 6);
+    \u0275\u0275elementStart(0, "div", 83)(1, "span", 6);
     \u0275\u0275text(2, "person_search");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "h3");
@@ -2808,7 +2833,7 @@ function PersonnesComponent_div_28_Template(rf, ctx) {
 function PersonnesComponent_div_29_div_1_img_5_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 102);
+    \u0275\u0275elementStart(0, "img", 104);
     \u0275\u0275listener("error", function PersonnesComponent_div_29_div_1_img_5_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r8);
       const p_r7 = \u0275\u0275nextContext().$implicit;
@@ -2825,7 +2850,7 @@ function PersonnesComponent_div_29_div_1_img_5_Template(rf, ctx) {
 }
 function PersonnesComponent_div_29_div_1_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 103);
+    \u0275\u0275elementStart(0, "div", 105);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -2838,7 +2863,7 @@ function PersonnesComponent_div_29_div_1_div_6_Template(rf, ctx) {
 }
 function PersonnesComponent_div_29_div_1_div_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 104)(1, "span", 6);
+    \u0275\u0275elementStart(0, "div", 106)(1, "span", 6);
     \u0275\u0275text(2, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -2852,14 +2877,14 @@ function PersonnesComponent_div_29_div_1_div_12_Template(rf, ctx) {
 }
 function PersonnesComponent_div_29_div_1_span_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 105);
+    \u0275\u0275elementStart(0, "span", 107);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
 function PersonnesComponent_div_29_div_1_span_17_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 106);
+    \u0275\u0275elementStart(0, "span", 108);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
@@ -2867,30 +2892,30 @@ function PersonnesComponent_div_29_div_1_span_17_Template(rf, ctx) {
 function PersonnesComponent_div_29_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 84);
+    \u0275\u0275elementStart(0, "div", 86);
     \u0275\u0275listener("click", function PersonnesComponent_div_29_div_1_Template_div_click_0_listener() {
       const p_r7 = \u0275\u0275restoreView(_r6).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r3.openDetail(p_r7));
     });
-    \u0275\u0275elementStart(1, "div", 85);
-    \u0275\u0275element(2, "div", 86)(3, "span", 87);
-    \u0275\u0275elementStart(4, "div", 88);
-    \u0275\u0275template(5, PersonnesComponent_div_29_div_1_img_5_Template, 1, 2, "img", 89)(6, PersonnesComponent_div_29_div_1_div_6_Template, 2, 1, "div", 90);
+    \u0275\u0275elementStart(1, "div", 87);
+    \u0275\u0275element(2, "div", 88)(3, "span", 89);
+    \u0275\u0275elementStart(4, "div", 90);
+    \u0275\u0275template(5, PersonnesComponent_div_29_div_1_img_5_Template, 1, 2, "img", 91)(6, PersonnesComponent_div_29_div_1_div_6_Template, 2, 1, "div", 92);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "div", 91)(8, "h4", 92);
+    \u0275\u0275elementStart(7, "div", 93)(8, "h4", 94);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 93);
+    \u0275\u0275elementStart(10, "span", 95);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(12, PersonnesComponent_div_29_div_1_div_12_Template, 4, 1, "div", 94);
-    \u0275\u0275elementStart(13, "div", 95)(14, "span", 96);
+    \u0275\u0275template(12, PersonnesComponent_div_29_div_1_div_12_Template, 4, 1, "div", 96);
+    \u0275\u0275elementStart(13, "div", 97)(14, "span", 98);
     \u0275\u0275text(15);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(16, PersonnesComponent_div_29_div_1_span_16_Template, 2, 0, "span", 97)(17, PersonnesComponent_div_29_div_1_span_17_Template, 2, 0, "span", 98);
+    \u0275\u0275template(16, PersonnesComponent_div_29_div_1_span_16_Template, 2, 0, "span", 99)(17, PersonnesComponent_div_29_div_1_span_17_Template, 2, 0, "span", 100);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(18, "div", 99)(19, "button", 100);
+    \u0275\u0275elementStart(18, "div", 101)(19, "button", 102);
     \u0275\u0275listener("click", function PersonnesComponent_div_29_div_1_Template_button_click_19_listener($event) {
       const p_r7 = \u0275\u0275restoreView(_r6).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
@@ -2902,7 +2927,7 @@ function PersonnesComponent_div_29_div_1_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275text(22, "Voir ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(23, "button", 100);
+    \u0275\u0275elementStart(23, "button", 102);
     \u0275\u0275listener("click", function PersonnesComponent_div_29_div_1_Template_button_click_23_listener($event) {
       const p_r7 = \u0275\u0275restoreView(_r6).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
@@ -2913,7 +2938,7 @@ function PersonnesComponent_div_29_div_1_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275text(26, "\xC9diter ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "button", 101);
+    \u0275\u0275elementStart(27, "button", 103);
     \u0275\u0275listener("click", function PersonnesComponent_div_29_div_1_Template_button_click_27_listener($event) {
       const p_r7 = \u0275\u0275restoreView(_r6).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
@@ -2956,20 +2981,20 @@ function PersonnesComponent_div_29_div_1_Template(rf, ctx) {
 }
 function PersonnesComponent_div_29_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 82);
-    \u0275\u0275template(1, PersonnesComponent_div_29_div_1_Template, 30, 28, "div", 83);
+    \u0275\u0275elementStart(0, "div", 84);
+    \u0275\u0275template(1, PersonnesComponent_div_29_div_1_Template, 30, 28, "div", 85);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r3 = \u0275\u0275nextContext();
     \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", ctx_r3.personnesFiltrees);
+    \u0275\u0275property("ngForOf", ctx_r3.personnesFiltrees)("ngForTrackBy", ctx_r3.trackById);
   }
 }
 function PersonnesComponent_div_30_div_12_img_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r12 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 132);
+    \u0275\u0275elementStart(0, "img", 134);
     \u0275\u0275listener("error", function PersonnesComponent_div_30_div_12_img_3_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r12);
       const p_r11 = \u0275\u0275nextContext().$implicit;
@@ -2986,7 +3011,7 @@ function PersonnesComponent_div_30_div_12_img_3_Template(rf, ctx) {
 }
 function PersonnesComponent_div_30_div_12_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 133);
+    \u0275\u0275elementStart(0, "div", 135);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3000,7 +3025,7 @@ function PersonnesComponent_div_30_div_12_div_4_Template(rf, ctx) {
 }
 function PersonnesComponent_div_30_div_12_span_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 134)(1, "span", 6);
+    \u0275\u0275elementStart(0, "span", 136)(1, "span", 6);
     \u0275\u0275text(2, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -3014,21 +3039,21 @@ function PersonnesComponent_div_30_div_12_span_15_Template(rf, ctx) {
 }
 function PersonnesComponent_div_30_div_12_span_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 135);
+    \u0275\u0275elementStart(0, "span", 137);
     \u0275\u0275text(1, "\u2014");
     \u0275\u0275elementEnd();
   }
 }
 function PersonnesComponent_div_30_div_12_span_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 105);
+    \u0275\u0275elementStart(0, "span", 107);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
 function PersonnesComponent_div_30_div_12_span_19_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 106);
+    \u0275\u0275elementStart(0, "span", 108);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
@@ -3036,37 +3061,37 @@ function PersonnesComponent_div_30_div_12_span_19_Template(rf, ctx) {
 function PersonnesComponent_div_30_div_12_Template(rf, ctx) {
   if (rf & 1) {
     const _r10 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 115);
+    \u0275\u0275elementStart(0, "div", 117);
     \u0275\u0275listener("click", function PersonnesComponent_div_30_div_12_Template_div_click_0_listener() {
       const p_r11 = \u0275\u0275restoreView(_r10).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r3.openDetail(p_r11));
     });
-    \u0275\u0275elementStart(1, "div", 116)(2, "div", 117);
-    \u0275\u0275template(3, PersonnesComponent_div_30_div_12_img_3_Template, 1, 2, "img", 118)(4, PersonnesComponent_div_30_div_12_div_4_Template, 2, 5, "div", 119);
-    \u0275\u0275element(5, "span", 120);
+    \u0275\u0275elementStart(1, "div", 118)(2, "div", 119);
+    \u0275\u0275template(3, PersonnesComponent_div_30_div_12_img_3_Template, 1, 2, "img", 120)(4, PersonnesComponent_div_30_div_12_div_4_Template, 2, 5, "div", 121);
+    \u0275\u0275element(5, "span", 122);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div", 121)(7, "span", 122);
+    \u0275\u0275elementStart(6, "div", 123)(7, "span", 124);
     \u0275\u0275text(8);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "span", 123);
+    \u0275\u0275elementStart(9, "span", 125);
     \u0275\u0275text(10);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(11, "div", 124)(12, "span", 96);
+    \u0275\u0275elementStart(11, "div", 126)(12, "span", 98);
     \u0275\u0275text(13);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(14, "div", 125);
-    \u0275\u0275template(15, PersonnesComponent_div_30_div_12_span_15_Template, 4, 1, "span", 126)(16, PersonnesComponent_div_30_div_12_span_16_Template, 2, 0, "span", 127);
+    \u0275\u0275elementStart(14, "div", 127);
+    \u0275\u0275template(15, PersonnesComponent_div_30_div_12_span_15_Template, 4, 1, "span", 128)(16, PersonnesComponent_div_30_div_12_span_16_Template, 2, 0, "span", 129);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(17, "div", 128);
-    \u0275\u0275template(18, PersonnesComponent_div_30_div_12_span_18_Template, 2, 0, "span", 97)(19, PersonnesComponent_div_30_div_12_span_19_Template, 2, 0, "span", 98);
+    \u0275\u0275elementStart(17, "div", 130);
+    \u0275\u0275template(18, PersonnesComponent_div_30_div_12_span_18_Template, 2, 0, "span", 99)(19, PersonnesComponent_div_30_div_12_span_19_Template, 2, 0, "span", 100);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "div", 129);
+    \u0275\u0275elementStart(20, "div", 131);
     \u0275\u0275listener("click", function PersonnesComponent_div_30_div_12_Template_div_click_20_listener($event) {
       \u0275\u0275restoreView(_r10);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275elementStart(21, "button", 130);
+    \u0275\u0275elementStart(21, "button", 132);
     \u0275\u0275listener("click", function PersonnesComponent_div_30_div_12_Template_button_click_21_listener() {
       const p_r11 = \u0275\u0275restoreView(_r10).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
@@ -3075,7 +3100,7 @@ function PersonnesComponent_div_30_div_12_Template(rf, ctx) {
     \u0275\u0275elementStart(22, "span", 6);
     \u0275\u0275text(23, "visibility");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(24, "button", 66);
+    \u0275\u0275elementStart(24, "button", 67);
     \u0275\u0275listener("click", function PersonnesComponent_div_30_div_12_Template_button_click_24_listener($event) {
       const p_r11 = \u0275\u0275restoreView(_r10).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
@@ -3084,7 +3109,7 @@ function PersonnesComponent_div_30_div_12_Template(rf, ctx) {
     \u0275\u0275elementStart(25, "span", 6);
     \u0275\u0275text(26, "edit");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(27, "button", 131);
+    \u0275\u0275elementStart(27, "button", 133);
     \u0275\u0275listener("click", function PersonnesComponent_div_30_div_12_Template_button_click_27_listener($event) {
       const p_r11 = \u0275\u0275restoreView(_r10).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
@@ -3125,34 +3150,34 @@ function PersonnesComponent_div_30_div_12_Template(rf, ctx) {
 }
 function PersonnesComponent_div_30_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 107)(1, "div", 108)(2, "span", 109);
+    \u0275\u0275elementStart(0, "div", 109)(1, "div", 110)(2, "span", 111);
     \u0275\u0275text(3, "Personne");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 110);
+    \u0275\u0275elementStart(4, "span", 112);
     \u0275\u0275text(5, "Genre");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 111);
+    \u0275\u0275elementStart(6, "span", 113);
     \u0275\u0275text(7, "Lieu de naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "span", 112);
+    \u0275\u0275elementStart(8, "span", 114);
     \u0275\u0275text(9, "Statut");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 113);
+    \u0275\u0275elementStart(10, "span", 115);
     \u0275\u0275text(11, "Actions");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(12, PersonnesComponent_div_30_div_12_Template, 30, 19, "div", 114);
+    \u0275\u0275template(12, PersonnesComponent_div_30_div_12_Template, 30, 19, "div", 116);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r3 = \u0275\u0275nextContext();
     \u0275\u0275advance(12);
-    \u0275\u0275property("ngForOf", ctx_r3.personnesFiltrees);
+    \u0275\u0275property("ngForOf", ctx_r3.personnesFiltrees)("ngForTrackBy", ctx_r3.trackById);
   }
 }
 function PersonnesComponent_div_31_Template(rf, ctx) {
   if (rf & 1) {
     const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 136);
+    \u0275\u0275elementStart(0, "div", 138);
     \u0275\u0275listener("click", function PersonnesComponent_div_31_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r13);
       const ctx_r3 = \u0275\u0275nextContext();
@@ -3163,7 +3188,7 @@ function PersonnesComponent_div_31_Template(rf, ctx) {
 }
 function PersonnesComponent_p_37_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "p", 137);
+    \u0275\u0275elementStart(0, "p", 139);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3176,7 +3201,7 @@ function PersonnesComponent_p_37_Template(rf, ctx) {
 function PersonnesComponent_img_49_Template(rf, ctx) {
   if (rf & 1) {
     const _r14 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 138);
+    \u0275\u0275elementStart(0, "img", 140);
     \u0275\u0275listener("error", function PersonnesComponent_img_49_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r14);
       const ctx_r3 = \u0275\u0275nextContext();
@@ -3191,7 +3216,7 @@ function PersonnesComponent_img_49_Template(rf, ctx) {
 }
 function PersonnesComponent_div_50_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 139);
+    \u0275\u0275elementStart(0, "div", 141);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3205,7 +3230,7 @@ function PersonnesComponent_div_50_Template(rf, ctx) {
 function PersonnesComponent_button_51_Template(rf, ctx) {
   if (rf & 1) {
     const _r15 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 140);
+    \u0275\u0275elementStart(0, "button", 142);
     \u0275\u0275listener("click", function PersonnesComponent_button_51_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r15);
       const ctx_r3 = \u0275\u0275nextContext();
@@ -3216,11 +3241,11 @@ function PersonnesComponent_button_51_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
   }
 }
-function PersonnesComponent_label_82_Template(rf, ctx) {
+function PersonnesComponent_label_86_Template(rf, ctx) {
   if (rf & 1) {
     const _r16 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "label", 141)(1, "input", 142);
-    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_label_82_Template_input_ngModelChange_1_listener($event) {
+    \u0275\u0275elementStart(0, "label", 143)(1, "input", 144);
+    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_label_86_Template_input_ngModelChange_1_listener($event) {
       \u0275\u0275restoreView(_r16);
       const ctx_r3 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r3.form.sexe, $event) || (ctx_r3.form.sexe = $event);
@@ -3241,9 +3266,9 @@ function PersonnesComponent_label_82_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", s_r17.label, " ");
   }
 }
-function PersonnesComponent_option_97_Template(rf, ctx) {
+function PersonnesComponent_option_101_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 143);
+    \u0275\u0275elementStart(0, "option", 145);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3254,9 +3279,9 @@ function PersonnesComponent_option_97_Template(rf, ctx) {
     \u0275\u0275textInterpolate(m_r18.label);
   }
 }
-function PersonnesComponent_div_114_option_12_Template(rf, ctx) {
+function PersonnesComponent_div_118_option_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 143);
+    \u0275\u0275elementStart(0, "option", 145);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3267,14 +3292,14 @@ function PersonnesComponent_div_114_option_12_Template(rf, ctx) {
     \u0275\u0275textInterpolate(m_r20.label);
   }
 }
-function PersonnesComponent_div_114_Template(rf, ctx) {
+function PersonnesComponent_div_118_Template(rf, ctx) {
   if (rf & 1) {
     const _r19 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div")(1, "div", 46)(2, "div", 38)(3, "label");
+    \u0275\u0275elementStart(0, "div")(1, "div", 47)(2, "div", 38)(3, "label");
     \u0275\u0275text(4, "Ann\xE9e");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "input", 144);
-    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_114_Template_input_ngModelChange_5_listener($event) {
+    \u0275\u0275elementStart(5, "input", 146);
+    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_118_Template_input_ngModelChange_5_listener($event) {
       \u0275\u0275restoreView(_r19);
       const ctx_r3 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r3.form.deces_annee, $event) || (ctx_r3.form.deces_annee = $event);
@@ -3284,23 +3309,23 @@ function PersonnesComponent_div_114_Template(rf, ctx) {
     \u0275\u0275elementStart(6, "div", 38)(7, "label");
     \u0275\u0275text(8, "Mois");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "select", 145);
-    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_114_Template_select_ngModelChange_9_listener($event) {
+    \u0275\u0275elementStart(9, "select", 147);
+    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_118_Template_select_ngModelChange_9_listener($event) {
       \u0275\u0275restoreView(_r19);
       const ctx_r3 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r3.form.deces_mois, $event) || (ctx_r3.form.deces_mois = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275elementStart(10, "option", 49);
+    \u0275\u0275elementStart(10, "option", 50);
     \u0275\u0275text(11, "\u2014");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(12, PersonnesComponent_div_114_option_12_Template, 2, 2, "option", 50);
+    \u0275\u0275template(12, PersonnesComponent_div_118_option_12_Template, 2, 2, "option", 51);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(13, "div", 38)(14, "label");
     \u0275\u0275text(15, "Jour");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "input", 146);
-    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_114_Template_input_ngModelChange_16_listener($event) {
+    \u0275\u0275elementStart(16, "input", 148);
+    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_118_Template_input_ngModelChange_16_listener($event) {
       \u0275\u0275restoreView(_r19);
       const ctx_r3 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r3.form.deces_jour, $event) || (ctx_r3.form.deces_jour = $event);
@@ -3310,8 +3335,8 @@ function PersonnesComponent_div_114_Template(rf, ctx) {
     \u0275\u0275elementStart(17, "div", 38)(18, "label");
     \u0275\u0275text(19, "Lieu de d\xE9c\xE8s");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "input", 147);
-    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_114_Template_input_ngModelChange_20_listener($event) {
+    \u0275\u0275elementStart(20, "input", 149);
+    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_118_Template_input_ngModelChange_20_listener($event) {
       \u0275\u0275restoreView(_r19);
       const ctx_r3 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r3.form.lieuDeces, $event) || (ctx_r3.form.lieuDeces = $event);
@@ -3334,19 +3359,33 @@ function PersonnesComponent_div_114_Template(rf, ctx) {
     \u0275\u0275twoWayProperty("ngModel", ctx_r3.form.lieuDeces);
   }
 }
-function PersonnesComponent_span_130_Template(rf, ctx) {
+function PersonnesComponent_div_130_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 148);
+    \u0275\u0275elementStart(0, "div", 82)(1, "span", 6);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r3 = \u0275\u0275nextContext();
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r3.formErreur, " ");
+  }
+}
+function PersonnesComponent_span_135_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 150);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function PersonnesComponent_div_134_Template(rf, ctx) {
+function PersonnesComponent_div_139_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div")(1, "h3");
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "p", 137);
+    \u0275\u0275elementStart(3, "p", 139);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3358,11 +3397,11 @@ function PersonnesComponent_div_134_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r3.getAgeLabel(ctx_r3.detailTarget));
   }
 }
-function PersonnesComponent_div_142_img_2_Template(rf, ctx) {
+function PersonnesComponent_div_147_img_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r21 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 164);
-    \u0275\u0275listener("error", function PersonnesComponent_div_142_img_2_Template_img_error_0_listener() {
+    \u0275\u0275elementStart(0, "img", 166);
+    \u0275\u0275listener("error", function PersonnesComponent_div_147_img_2_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r21);
       const p_r22 = \u0275\u0275nextContext().ngIf;
       const ctx_r3 = \u0275\u0275nextContext();
@@ -3376,9 +3415,9 @@ function PersonnesComponent_div_142_img_2_Template(rf, ctx) {
     \u0275\u0275property("src", ctx_r3.getPhotoUrl(p_r22), \u0275\u0275sanitizeUrl)("alt", ctx_r3.getNomComplet(p_r22));
   }
 }
-function PersonnesComponent_div_142_div_3_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 165);
+    \u0275\u0275elementStart(0, "div", 167);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3390,12 +3429,12 @@ function PersonnesComponent_div_142_div_3_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", ctx_r3.getInitiales(p_r22), " ");
   }
 }
-function PersonnesComponent_div_142_div_16_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 166)(1, "span", 167);
+    \u0275\u0275elementStart(0, "div", 168)(1, "span", 169);
     \u0275\u0275text(2, "Nom de naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 168);
+    \u0275\u0275elementStart(3, "span", 170);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3405,12 +3444,12 @@ function PersonnesComponent_div_142_div_16_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.nomNaissance);
   }
 }
-function PersonnesComponent_div_142_div_17_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_17_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 166)(1, "span", 167);
+    \u0275\u0275elementStart(0, "div", 168)(1, "span", 169);
     \u0275\u0275text(2, "Nom d'usage");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 168);
+    \u0275\u0275elementStart(3, "span", 170);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3420,12 +3459,12 @@ function PersonnesComponent_div_142_div_17_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.nomUsage);
   }
 }
-function PersonnesComponent_div_142_div_18_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 166)(1, "span", 167);
+    \u0275\u0275elementStart(0, "div", 168)(1, "span", 169);
     \u0275\u0275text(2, "Date de naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 168);
+    \u0275\u0275elementStart(3, "span", 170);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3435,12 +3474,12 @@ function PersonnesComponent_div_142_div_18_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.dateNaissance);
   }
 }
-function PersonnesComponent_div_142_div_19_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_19_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 166)(1, "span", 167);
+    \u0275\u0275elementStart(0, "div", 168)(1, "span", 169);
     \u0275\u0275text(2, "Lieu de naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 168);
+    \u0275\u0275elementStart(3, "span", 170);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3450,12 +3489,12 @@ function PersonnesComponent_div_142_div_19_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.lieuNaissance);
   }
 }
-function PersonnesComponent_div_142_div_20_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_20_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 166)(1, "span", 167);
+    \u0275\u0275elementStart(0, "div", 168)(1, "span", 169);
     \u0275\u0275text(2, "Date de d\xE9c\xE8s");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 168);
+    \u0275\u0275elementStart(3, "span", 170);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3465,12 +3504,12 @@ function PersonnesComponent_div_142_div_20_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.dateDeces);
   }
 }
-function PersonnesComponent_div_142_div_21_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_21_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 166)(1, "span", 167);
+    \u0275\u0275elementStart(0, "div", 168)(1, "span", 169);
     \u0275\u0275text(2, "Lieu de d\xE9c\xE8s");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 168);
+    \u0275\u0275elementStart(3, "span", 170);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3480,12 +3519,12 @@ function PersonnesComponent_div_142_div_21_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.lieuDeces);
   }
 }
-function PersonnesComponent_div_142_div_22_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_22_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 155)(1, "div", 28);
+    \u0275\u0275elementStart(0, "div", 157)(1, "div", 28);
     \u0275\u0275text(2, "Biographie");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "p", 169);
+    \u0275\u0275elementStart(3, "p", 171);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3495,12 +3534,12 @@ function PersonnesComponent_div_142_div_22_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.biographie);
   }
 }
-function PersonnesComponent_div_142_div_23_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_23_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 155)(1, "div", 28);
+    \u0275\u0275elementStart(0, "div", 157)(1, "div", 28);
     \u0275\u0275text(2, "Notes");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "p", 169);
+    \u0275\u0275elementStart(3, "p", 171);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3510,9 +3549,9 @@ function PersonnesComponent_div_142_div_23_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.notes);
   }
 }
-function PersonnesComponent_div_142_span_28_Template(rf, ctx) {
+function PersonnesComponent_div_147_span_28_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 170);
+    \u0275\u0275elementStart(0, "span", 172);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3522,15 +3561,15 @@ function PersonnesComponent_div_142_span_28_Template(rf, ctx) {
     \u0275\u0275textInterpolate2("", ctx_r3.albumPhotos.length, " photo", ctx_r3.albumPhotos.length > 1 ? "s" : "");
   }
 }
-function PersonnesComponent_div_142_div_29_div_1_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_29_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "div", 173);
+    \u0275\u0275element(0, "div", 175);
   }
 }
-function PersonnesComponent_div_142_div_29_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_29_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 171);
-    \u0275\u0275template(1, PersonnesComponent_div_142_div_29_div_1_Template, 1, 0, "div", 172);
+    \u0275\u0275elementStart(0, "div", 173);
+    \u0275\u0275template(1, PersonnesComponent_div_147_div_29_div_1_Template, 1, 0, "div", 174);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -3538,9 +3577,9 @@ function PersonnesComponent_div_142_div_29_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", \u0275\u0275pureFunction0(1, _c12));
   }
 }
-function PersonnesComponent_div_142_div_30_div_1_div_6_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_30_div_1_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 180);
+    \u0275\u0275elementStart(0, "div", 182);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3550,18 +3589,18 @@ function PersonnesComponent_div_142_div_30_div_1_div_6_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ph_r24.caption);
   }
 }
-function PersonnesComponent_div_142_div_30_div_1_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_30_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r23 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 175);
-    \u0275\u0275listener("click", function PersonnesComponent_div_142_div_30_div_1_Template_div_click_0_listener() {
+    \u0275\u0275elementStart(0, "div", 177);
+    \u0275\u0275listener("click", function PersonnesComponent_div_147_div_30_div_1_Template_div_click_0_listener() {
       const ph_r24 = \u0275\u0275restoreView(_r23).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r3.albumLightbox = ph_r24);
     });
-    \u0275\u0275element(1, "img", 176);
-    \u0275\u0275elementStart(2, "div", 177)(3, "button", 178);
-    \u0275\u0275listener("click", function PersonnesComponent_div_142_div_30_div_1_Template_button_click_3_listener($event) {
+    \u0275\u0275element(1, "img", 178);
+    \u0275\u0275elementStart(2, "div", 179)(3, "button", 180);
+    \u0275\u0275listener("click", function PersonnesComponent_div_147_div_30_div_1_Template_button_click_3_listener($event) {
       const ph_r24 = \u0275\u0275restoreView(_r23).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(3);
       $event.stopPropagation();
@@ -3570,7 +3609,7 @@ function PersonnesComponent_div_142_div_30_div_1_Template(rf, ctx) {
     \u0275\u0275elementStart(4, "span", 6);
     \u0275\u0275text(5, "delete");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275template(6, PersonnesComponent_div_142_div_30_div_1_div_6_Template, 2, 1, "div", 179);
+    \u0275\u0275template(6, PersonnesComponent_div_147_div_30_div_1_div_6_Template, 2, 1, "div", 181);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -3581,29 +3620,29 @@ function PersonnesComponent_div_142_div_30_div_1_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ph_r24.caption);
   }
 }
-function PersonnesComponent_div_142_div_30_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_30_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 171);
-    \u0275\u0275template(1, PersonnesComponent_div_142_div_30_div_1_Template, 7, 3, "div", 174);
+    \u0275\u0275elementStart(0, "div", 173);
+    \u0275\u0275template(1, PersonnesComponent_div_147_div_30_div_1_Template, 7, 3, "div", 176);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r3 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", ctx_r3.albumPhotos);
+    \u0275\u0275property("ngForOf", ctx_r3.albumPhotos)("ngForTrackBy", ctx_r3.trackByPhotoId);
   }
 }
-function PersonnesComponent_div_142_div_31_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_31_Template(rf, ctx) {
   if (rf & 1) {
     const _r25 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 181)(1, "label", 182)(2, "span", 6);
+    \u0275\u0275elementStart(0, "div", 183)(1, "label", 184)(2, "span", 6);
     \u0275\u0275text(3, "add_photo_alternate");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(4, "span");
     \u0275\u0275text(5, "Ajouter une photo");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "input", 183);
-    \u0275\u0275listener("change", function PersonnesComponent_div_142_div_31_Template_input_change_6_listener($event) {
+    \u0275\u0275elementStart(6, "input", 185);
+    \u0275\u0275listener("change", function PersonnesComponent_div_147_div_31_Template_input_change_6_listener($event) {
       \u0275\u0275restoreView(_r25);
       const ctx_r3 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r3.onAlbumFileSelected($event));
@@ -3611,71 +3650,71 @@ function PersonnesComponent_div_142_div_31_Template(rf, ctx) {
     \u0275\u0275elementEnd()()();
   }
 }
-function PersonnesComponent_div_142_div_32_span_10_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_32_span_10_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 6);
     \u0275\u0275text(1, "upload");
     \u0275\u0275elementEnd();
   }
 }
-function PersonnesComponent_div_142_div_32_span_11_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_32_span_11_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1, "Envoi\u2026");
     \u0275\u0275elementEnd();
   }
 }
-function PersonnesComponent_div_142_div_32_span_12_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_32_span_12_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1, "Envoyer");
     \u0275\u0275elementEnd();
   }
 }
-function PersonnesComponent_div_142_div_32_Template(rf, ctx) {
+function PersonnesComponent_div_147_div_32_Template(rf, ctx) {
   if (rf & 1) {
     const _r26 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 184);
-    \u0275\u0275element(1, "img", 185);
-    \u0275\u0275elementStart(2, "div", 186)(3, "input", 187);
-    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_142_div_32_Template_input_ngModelChange_3_listener($event) {
+    \u0275\u0275elementStart(0, "div", 186);
+    \u0275\u0275element(1, "img", 187);
+    \u0275\u0275elementStart(2, "div", 188)(3, "input", 189);
+    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_147_div_32_Template_input_ngModelChange_3_listener($event) {
       \u0275\u0275restoreView(_r26);
       const ctx_r3 = \u0275\u0275nextContext(2);
       \u0275\u0275twoWayBindingSet(ctx_r3.albumMeta.caption, $event) || (ctx_r3.albumMeta.caption = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "input", 188);
-    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_142_div_32_Template_input_ngModelChange_4_listener($event) {
+    \u0275\u0275elementStart(4, "input", 190);
+    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_147_div_32_Template_input_ngModelChange_4_listener($event) {
       \u0275\u0275restoreView(_r26);
       const ctx_r3 = \u0275\u0275nextContext(2);
       \u0275\u0275twoWayBindingSet(ctx_r3.albumMeta.datePrise, $event) || (ctx_r3.albumMeta.datePrise = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "input", 189);
-    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_142_div_32_Template_input_ngModelChange_5_listener($event) {
+    \u0275\u0275elementStart(5, "input", 191);
+    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_147_div_32_Template_input_ngModelChange_5_listener($event) {
       \u0275\u0275restoreView(_r26);
       const ctx_r3 = \u0275\u0275nextContext(2);
       \u0275\u0275twoWayBindingSet(ctx_r3.albumMeta.lieuPrise, $event) || (ctx_r3.albumMeta.lieuPrise = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div", 190)(7, "button", 191);
-    \u0275\u0275listener("click", function PersonnesComponent_div_142_div_32_Template_button_click_7_listener() {
+    \u0275\u0275elementStart(6, "div", 192)(7, "button", 193);
+    \u0275\u0275listener("click", function PersonnesComponent_div_147_div_32_Template_button_click_7_listener() {
       \u0275\u0275restoreView(_r26);
       const ctx_r3 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r3.cancelAlbumUpload());
     });
     \u0275\u0275text(8, "Annuler");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "button", 192);
-    \u0275\u0275listener("click", function PersonnesComponent_div_142_div_32_Template_button_click_9_listener() {
+    \u0275\u0275elementStart(9, "button", 194);
+    \u0275\u0275listener("click", function PersonnesComponent_div_147_div_32_Template_button_click_9_listener() {
       \u0275\u0275restoreView(_r26);
       const ctx_r3 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r3.uploadAlbumPhoto());
     });
-    \u0275\u0275template(10, PersonnesComponent_div_142_div_32_span_10_Template, 2, 0, "span", 193)(11, PersonnesComponent_div_142_div_32_span_11_Template, 2, 0, "span", 57)(12, PersonnesComponent_div_142_div_32_span_12_Template, 2, 0, "span", 57);
+    \u0275\u0275template(10, PersonnesComponent_div_147_div_32_span_10_Template, 2, 0, "span", 195)(11, PersonnesComponent_div_147_div_32_span_11_Template, 2, 0, "span", 58)(12, PersonnesComponent_div_147_div_32_span_12_Template, 2, 0, "span", 58);
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
@@ -3698,32 +3737,32 @@ function PersonnesComponent_div_142_div_32_Template(rf, ctx) {
     \u0275\u0275property("ngIf", !ctx_r3.albumUploading);
   }
 }
-function PersonnesComponent_div_142_Template(rf, ctx) {
+function PersonnesComponent_div_147_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 26)(1, "div", 149);
-    \u0275\u0275template(2, PersonnesComponent_div_142_img_2_Template, 1, 2, "img", 150)(3, PersonnesComponent_div_142_div_3_Template, 2, 5, "div", 151);
-    \u0275\u0275elementStart(4, "div", 152)(5, "h2");
+    \u0275\u0275elementStart(0, "div", 26)(1, "div", 151);
+    \u0275\u0275template(2, PersonnesComponent_div_147_img_2_Template, 1, 2, "img", 152)(3, PersonnesComponent_div_147_div_3_Template, 2, 5, "div", 153);
+    \u0275\u0275elementStart(4, "div", 154)(5, "h2");
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "div", 153)(8, "span", 154);
+    \u0275\u0275elementStart(7, "div", 155)(8, "span", 156);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 154);
+    \u0275\u0275elementStart(10, "span", 156);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd()()()();
-    \u0275\u0275elementStart(12, "div", 155)(13, "div", 28);
+    \u0275\u0275elementStart(12, "div", 157)(13, "div", 28);
     \u0275\u0275text(14, "Informations");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(15, "div", 156);
-    \u0275\u0275template(16, PersonnesComponent_div_142_div_16_Template, 5, 1, "div", 157)(17, PersonnesComponent_div_142_div_17_Template, 5, 1, "div", 157)(18, PersonnesComponent_div_142_div_18_Template, 5, 1, "div", 157)(19, PersonnesComponent_div_142_div_19_Template, 5, 1, "div", 157)(20, PersonnesComponent_div_142_div_20_Template, 5, 1, "div", 157)(21, PersonnesComponent_div_142_div_21_Template, 5, 1, "div", 157);
+    \u0275\u0275elementStart(15, "div", 158);
+    \u0275\u0275template(16, PersonnesComponent_div_147_div_16_Template, 5, 1, "div", 159)(17, PersonnesComponent_div_147_div_17_Template, 5, 1, "div", 159)(18, PersonnesComponent_div_147_div_18_Template, 5, 1, "div", 159)(19, PersonnesComponent_div_147_div_19_Template, 5, 1, "div", 159)(20, PersonnesComponent_div_147_div_20_Template, 5, 1, "div", 159)(21, PersonnesComponent_div_147_div_21_Template, 5, 1, "div", 159);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(22, PersonnesComponent_div_142_div_22_Template, 5, 1, "div", 158)(23, PersonnesComponent_div_142_div_23_Template, 5, 1, "div", 158);
-    \u0275\u0275elementStart(24, "div", 155)(25, "div", 159)(26, "div", 28);
+    \u0275\u0275template(22, PersonnesComponent_div_147_div_22_Template, 5, 1, "div", 160)(23, PersonnesComponent_div_147_div_23_Template, 5, 1, "div", 160);
+    \u0275\u0275elementStart(24, "div", 157)(25, "div", 161)(26, "div", 28);
     \u0275\u0275text(27, "Album photos");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(28, PersonnesComponent_div_142_span_28_Template, 2, 2, "span", 160);
+    \u0275\u0275template(28, PersonnesComponent_div_147_span_28_Template, 2, 2, "span", 162);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(29, PersonnesComponent_div_142_div_29_Template, 2, 2, "div", 161)(30, PersonnesComponent_div_142_div_30_Template, 2, 1, "div", 161)(31, PersonnesComponent_div_142_div_31_Template, 7, 0, "div", 162)(32, PersonnesComponent_div_142_div_32_Template, 13, 8, "div", 163);
+    \u0275\u0275template(29, PersonnesComponent_div_147_div_29_Template, 2, 2, "div", 163)(30, PersonnesComponent_div_147_div_30_Template, 2, 2, "div", 163)(31, PersonnesComponent_div_147_div_31_Template, 7, 0, "div", 164)(32, PersonnesComponent_div_147_div_32_Template, 13, 8, "div", 165);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -3771,7 +3810,7 @@ function PersonnesComponent_div_142_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r3.albumUploadFile);
   }
 }
-function PersonnesComponent_div_150_div_3_p_1_Template(rf, ctx) {
+function PersonnesComponent_div_155_div_3_p_1_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "p");
     \u0275\u0275text(1);
@@ -3783,7 +3822,7 @@ function PersonnesComponent_div_150_div_3_p_1_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r3.albumLightbox.caption);
   }
 }
-function PersonnesComponent_div_150_div_3_p_2_span_1_Template(rf, ctx) {
+function PersonnesComponent_div_155_div_3_p_2_span_1_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span")(1, "span", 6);
     \u0275\u0275text(2, "calendar_today");
@@ -3797,7 +3836,7 @@ function PersonnesComponent_div_150_div_3_p_2_span_1_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r3.albumLightbox.datePrise);
   }
 }
-function PersonnesComponent_div_150_div_3_p_2_span_2_Template(rf, ctx) {
+function PersonnesComponent_div_155_div_3_p_2_span_2_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span")(1, "span", 6);
     \u0275\u0275text(2, "place");
@@ -3811,10 +3850,10 @@ function PersonnesComponent_div_150_div_3_p_2_span_2_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r3.albumLightbox.lieuPrise);
   }
 }
-function PersonnesComponent_div_150_div_3_p_2_Template(rf, ctx) {
+function PersonnesComponent_div_155_div_3_p_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "p", 201);
-    \u0275\u0275template(1, PersonnesComponent_div_150_div_3_p_2_span_1_Template, 4, 1, "span", 57)(2, PersonnesComponent_div_150_div_3_p_2_span_2_Template, 4, 1, "span", 57);
+    \u0275\u0275elementStart(0, "p", 203);
+    \u0275\u0275template(1, PersonnesComponent_div_155_div_3_p_2_span_1_Template, 4, 1, "span", 58)(2, PersonnesComponent_div_155_div_3_p_2_span_2_Template, 4, 1, "span", 58);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -3825,10 +3864,10 @@ function PersonnesComponent_div_150_div_3_p_2_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r3.albumLightbox.lieuPrise);
   }
 }
-function PersonnesComponent_div_150_div_3_Template(rf, ctx) {
+function PersonnesComponent_div_155_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 199);
-    \u0275\u0275template(1, PersonnesComponent_div_150_div_3_p_1_Template, 2, 1, "p", 57)(2, PersonnesComponent_div_150_div_3_p_2_Template, 3, 2, "p", 200);
+    \u0275\u0275elementStart(0, "div", 201);
+    \u0275\u0275template(1, PersonnesComponent_div_155_div_3_p_1_Template, 2, 1, "p", 58)(2, PersonnesComponent_div_155_div_3_p_2_Template, 3, 2, "p", 202);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -3839,24 +3878,24 @@ function PersonnesComponent_div_150_div_3_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r3.albumLightbox.datePrise || ctx_r3.albumLightbox.lieuPrise);
   }
 }
-function PersonnesComponent_div_150_Template(rf, ctx) {
+function PersonnesComponent_div_155_Template(rf, ctx) {
   if (rf & 1) {
     const _r27 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 194);
-    \u0275\u0275listener("click", function PersonnesComponent_div_150_Template_div_click_0_listener() {
+    \u0275\u0275elementStart(0, "div", 196);
+    \u0275\u0275listener("click", function PersonnesComponent_div_155_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r27);
       const ctx_r3 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r3.albumLightbox = null);
     });
-    \u0275\u0275elementStart(1, "div", 195);
-    \u0275\u0275listener("click", function PersonnesComponent_div_150_Template_div_click_1_listener($event) {
+    \u0275\u0275elementStart(1, "div", 197);
+    \u0275\u0275listener("click", function PersonnesComponent_div_155_Template_div_click_1_listener($event) {
       \u0275\u0275restoreView(_r27);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275element(2, "img", 196);
-    \u0275\u0275template(3, PersonnesComponent_div_150_div_3_Template, 3, 2, "div", 197);
-    \u0275\u0275elementStart(4, "button", 198);
-    \u0275\u0275listener("click", function PersonnesComponent_div_150_Template_button_click_4_listener() {
+    \u0275\u0275element(2, "img", 198);
+    \u0275\u0275template(3, PersonnesComponent_div_155_div_3_Template, 3, 2, "div", 199);
+    \u0275\u0275elementStart(4, "button", 200);
+    \u0275\u0275listener("click", function PersonnesComponent_div_155_Template_button_click_4_listener() {
       \u0275\u0275restoreView(_r27);
       const ctx_r3 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r3.albumLightbox = null);
@@ -3873,17 +3912,17 @@ function PersonnesComponent_div_150_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r3.albumLightbox.caption || ctx_r3.albumLightbox.datePrise || ctx_r3.albumLightbox.lieuPrise);
   }
 }
-function PersonnesComponent_div_151_span_13_Template(rf, ctx) {
+function PersonnesComponent_div_156_span_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 148);
+    \u0275\u0275elementStart(0, "span", 150);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function PersonnesComponent_div_151_Template(rf, ctx) {
+function PersonnesComponent_div_156_Template(rf, ctx) {
   if (rf & 1) {
     const _r28 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 202)(1, "div", 203)(2, "div", 204)(3, "span", 6);
+    \u0275\u0275elementStart(0, "div", 204)(1, "div", 205)(2, "div", 206)(3, "span", 6);
     \u0275\u0275text(4, "delete_forever");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(5, "h4");
@@ -3892,21 +3931,21 @@ function PersonnesComponent_div_151_Template(rf, ctx) {
     \u0275\u0275elementStart(7, "p");
     \u0275\u0275text(8, "Cette action est irr\xE9versible. Toutes les relations associ\xE9es seront \xE9galement supprim\xE9es.");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "div", 205)(10, "button", 61);
-    \u0275\u0275listener("click", function PersonnesComponent_div_151_Template_button_click_10_listener() {
+    \u0275\u0275elementStart(9, "div", 207)(10, "button", 62);
+    \u0275\u0275listener("click", function PersonnesComponent_div_156_Template_button_click_10_listener() {
       \u0275\u0275restoreView(_r28);
       const ctx_r3 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r3.closeAll());
     });
     \u0275\u0275text(11, "Annuler");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "button", 206);
-    \u0275\u0275listener("click", function PersonnesComponent_div_151_Template_button_click_12_listener() {
+    \u0275\u0275elementStart(12, "button", 208);
+    \u0275\u0275listener("click", function PersonnesComponent_div_156_Template_button_click_12_listener() {
       \u0275\u0275restoreView(_r28);
       const ctx_r3 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r3.deletePersonne());
     });
-    \u0275\u0275template(13, PersonnesComponent_div_151_span_13_Template, 2, 0, "span", 63);
+    \u0275\u0275template(13, PersonnesComponent_div_156_span_13_Template, 2, 0, "span", 64);
     \u0275\u0275text(14);
     \u0275\u0275elementEnd()()()();
   }
@@ -3963,6 +4002,7 @@ var PersonnesComponent = class _PersonnesComponent {
   editTarget = null;
   form = this.emptyForm();
   saving = false;
+  formErreur = null;
   /* ---- Photo ---- */
   selectedFile = null;
   photoPreview = null;
@@ -3992,6 +4032,12 @@ var PersonnesComponent = class _PersonnesComponent {
   mois = MOIS;
   sexeOptions = SEXE_OPTIONS;
   currentYear = (/* @__PURE__ */ new Date()).getFullYear();
+  trackById(_, item) {
+    return item.id;
+  }
+  trackByPhotoId(_, item) {
+    return item.id;
+  }
   /* ---- Helpers ---- */
   getInitiales = getInitiales;
   getAgeLabel = getAgeLabel;
@@ -4062,6 +4108,7 @@ var PersonnesComponent = class _PersonnesComponent {
     this.selectedFile = null;
     this.photoPreview = null;
     this.photoToDelete = false;
+    this.formErreur = null;
     this.showForm = true;
   }
   openEdit(p, event) {
@@ -4089,6 +4136,7 @@ var PersonnesComponent = class _PersonnesComponent {
     this.selectedFile = null;
     this.photoPreview = p.photoUrl;
     this.photoToDelete = false;
+    this.formErreur = null;
     this.showForm = true;
   }
   onFileSelect(event) {
@@ -4190,6 +4238,11 @@ var PersonnesComponent = class _PersonnesComponent {
   savePersonne() {
     if (this.saving)
       return;
+    if (!this.form.prenoms.trim() || !this.form.nomNaissance.trim()) {
+      this.formErreur = "Le pr\xE9nom et le nom de naissance sont requis.";
+      return;
+    }
+    this.formErreur = null;
     this.saving = true;
     const body = {
       prenoms: this.form.prenoms || null,
@@ -4267,7 +4320,7 @@ var PersonnesComponent = class _PersonnesComponent {
   static \u0275fac = function PersonnesComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _PersonnesComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(ActivatedRoute), \u0275\u0275directiveInject(NgZone));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _PersonnesComponent, selectors: [["app-personnes"]], standalone: false, decls: 152, vars: 47, consts: [["personneForm", "ngForm"], [1, "personnes-page"], [1, "page-header"], [1, "page-title"], [1, "page-subtitle"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], [1, "toolbar"], [1, "search-bar"], ["type", "text", "placeholder", "Rechercher par nom, pr\xE9nom, lieu...", 3, "ngModelChange", "ngModel"], [1, "toolbar-right"], [1, "chip-group"], ["class", "chip", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "view-toggle"], ["title", "Vue cartes", 1, "vt-btn", 3, "click"], ["title", "Vue liste", 1, "vt-btn", 3, "click"], ["class", "sk-grid", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "pc-grid", 4, "ngIf"], ["class", "pl-table", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel"], [1, "panel-header"], ["class", "panel-header-sub", 4, "ngIf"], [1, "btn-icon", 3, "click"], [1, "panel-body"], [1, "form-section"], [1, "section-title"], [1, "photo-upload-area"], [1, "photo-preview-wrap"], ["class", "photo-preview-img", "alt", "Aper\xE7u", 3, "src", "error", 4, "ngIf"], ["class", "photo-placeholder", 3, "male", "female", 4, "ngIf"], ["class", "photo-remove-btn", "type", "button", "title", "Supprimer la photo", 3, "click", 4, "ngIf"], [1, "photo-actions"], ["for", "photoInput", 1, "btn-photo-pick"], ["id", "photoInput", "type", "file", "accept", "image/jpeg,image/png,image/webp", 2, "display", "none", 3, "change"], [1, "photo-hint"], [1, "form-group"], ["type", "text", "name", "prenoms", "placeholder", "Jean-Baptiste, Marie...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-row-2"], ["type", "text", "name", "nomNaissance", "placeholder", "Dupont", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "optional"], ["type", "text", "name", "nomUsage", "placeholder", "Nom apr\xE8s mariage...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "radio-group"], ["class", "radio-option", 3, "selected", 4, "ngFor", "ngForOf"], [1, "form-row"], ["type", "number", "name", "nais_annee", "placeholder", "1960", "min", "1850", 1, "form-control", 3, "ngModelChange", "ngModel", "max"], ["name", "nais_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["type", "number", "name", "nais_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuNaissance", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "toggle-wrap"], ["type", "checkbox", "name", "estDecede", 3, "ngModelChange", "ngModel"], [1, "toggle"], [1, "toggle-label"], [4, "ngIf"], ["name", "biographie", "rows", "4", "placeholder", "Parcours de vie, anecdotes...", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "notes", "rows", "2", "placeholder", "Notes compl\xE9mentaires...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], [1, "slide-panel", "slide-panel-wide"], [1, "panel-header-actions"], ["title", "Modifier", 1, "btn-icon", 3, "click"], ["class", "panel-body", 4, "ngIf"], [1, "btn-danger", 3, "click"], ["class", "lightbox-overlay", 3, "click", 4, "ngIf"], ["class", "confirm-dialog", 4, "ngIf"], [1, "chip", 3, "click"], [1, "sk-grid"], ["class", "sk-card", 4, "ngFor", "ngForOf"], [1, "sk-card"], [1, "sk-card-banner"], [1, "sk-card-body"], [1, "sk-line", "sk-full"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "error-state"], [1, "empty-state"], [1, "pc-grid"], ["class", "pc-card", 3, "pc-male", "pc-female", "click", 4, "ngFor", "ngForOf"], [1, "pc-card", 3, "click"], [1, "pc-card-banner"], [1, "pc-colorband"], [1, "pc-live-dot"], [1, "pc-avatar-ring"], ["class", "pc-avatar pc-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pc-avatar pc-avatar-initials", 4, "ngIf"], [1, "pc-card-body"], [1, "pc-name"], [1, "pc-age"], ["class", "pc-loc", 4, "ngIf"], [1, "pc-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "pc-card-actions"], [1, "pc-act", 3, "click"], [1, "pc-act", "pc-act-danger", 3, "click"], [1, "pc-avatar", "pc-avatar-photo", 3, "error", "src", "alt"], [1, "pc-avatar", "pc-avatar-initials"], [1, "pc-loc"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "pl-table"], [1, "pl-thead"], [1, "pl-th", "pl-th-person"], [1, "pl-th", "pl-th-genre"], [1, "pl-th", "pl-th-lieu"], [1, "pl-th", "pl-th-statut"], [1, "pl-th", "pl-th-actions"], ["class", "pl-row", 3, "click", 4, "ngFor", "ngForOf"], [1, "pl-row", 3, "click"], [1, "pl-cell", "pl-cell-person"], [1, "pl-avatar-wrap"], ["class", "pl-avatar pl-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pl-avatar pl-avatar-initials", 3, "male", "female", 4, "ngIf"], [1, "pl-status-dot"], [1, "pl-person-info"], [1, "pl-person-name"], [1, "pl-person-age"], [1, "pl-cell", "pl-cell-genre"], [1, "pl-cell", "pl-cell-lieu"], ["class", "pl-lieu", 4, "ngIf"], ["class", "pl-empty", 4, "ngIf"], [1, "pl-cell", "pl-cell-statut"], [1, "pl-cell", "pl-cell-actions", 3, "click"], ["title", "Voir", 1, "btn-icon", 3, "click"], ["title", "Supprimer", 1, "btn-icon", "btn-icon-danger", 3, "click"], [1, "pl-avatar", "pl-avatar-photo", 3, "error", "src", "alt"], [1, "pl-avatar", "pl-avatar-initials"], [1, "pl-lieu"], [1, "pl-empty"], [1, "panel-overlay", 3, "click"], [1, "panel-header-sub"], ["alt", "Aper\xE7u", 1, "photo-preview-img", 3, "error", "src"], [1, "photo-placeholder"], ["type", "button", "title", "Supprimer la photo", 1, "photo-remove-btn", 3, "click"], [1, "radio-option"], ["type", "radio", 3, "ngModelChange", "name", "value", "ngModel"], [3, "value"], ["type", "number", "name", "deces_annee", "placeholder", "2020", "min", "1850", 1, "form-control", 3, "ngModelChange", "ngModel", "max"], ["name", "deces_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "number", "name", "deces_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuDeces", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "material-icons-round", "spin"], [1, "detail-hero"], ["class", "avatar avatar-xl photo-avatar", 3, "src", "alt", "error", 4, "ngIf"], ["class", "avatar avatar-xl", 3, "female", "male", 4, "ngIf"], [1, "detail-hero-info"], [1, "detail-badges"], [1, "badge"], [1, "detail-section"], [1, "detail-grid"], ["class", "detail-item", 4, "ngIf"], ["class", "detail-section", 4, "ngIf"], [1, "album-header"], ["class", "album-count", 4, "ngIf"], ["class", "album-grid", 4, "ngIf"], ["class", "album-upload-wrap", 4, "ngIf"], ["class", "album-preview-wrap", 4, "ngIf"], [1, "avatar", "avatar-xl", "photo-avatar", 3, "error", "src", "alt"], [1, "avatar", "avatar-xl"], [1, "detail-item"], [1, "detail-label"], [1, "detail-value"], [1, "detail-bio"], [1, "album-count"], [1, "album-grid"], ["class", "album-sk", 4, "ngFor", "ngForOf"], [1, "album-sk"], ["class", "album-thumb", 3, "click", 4, "ngFor", "ngForOf"], [1, "album-thumb", 3, "click"], ["loading", "lazy", 3, "src", "alt"], [1, "album-thumb-overlay"], ["title", "Supprimer", 1, "album-delete-btn", 3, "click"], ["class", "album-thumb-caption", 4, "ngIf"], [1, "album-thumb-caption"], [1, "album-upload-wrap"], [1, "album-upload-trigger"], ["type", "file", "accept", "image/*", "hidden", "", 3, "change"], [1, "album-preview-wrap"], ["alt", "Aper\xE7u", 1, "album-preview-img", 3, "src"], [1, "album-meta-fields"], ["type", "text", "placeholder", "L\xE9gende (optionnel)", 1, "form-control", "form-control-sm", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Date (ex : 1998 ou 1998-06)", 1, "form-control", "form-control-sm", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Lieu de la photo", 1, "form-control", "form-control-sm", 3, "ngModelChange", "ngModel"], [1, "album-preview-btns"], [1, "btn-ghost", "btn-sm", 3, "click"], [1, "btn-primary", "btn-sm", 3, "click", "disabled"], ["class", "material-icons-round", 4, "ngIf"], [1, "lightbox-overlay", 3, "click"], [1, "lightbox-box", 3, "click"], [1, "lightbox-img", 3, "src", "alt"], ["class", "lightbox-info", 4, "ngIf"], [1, "lightbox-close", 3, "click"], [1, "lightbox-info"], ["class", "lightbox-meta", 4, "ngIf"], [1, "lightbox-meta"], [1, "confirm-dialog"], [1, "confirm-box"], [1, "confirm-icon"], [1, "confirm-actions"], [1, "btn-danger", 3, "click", "disabled"]], template: function PersonnesComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _PersonnesComponent, selectors: [["app-personnes"]], standalone: false, decls: 157, vars: 48, consts: [["personneForm", "ngForm"], [1, "personnes-page"], [1, "page-header"], [1, "page-title"], [1, "page-subtitle"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], [1, "toolbar"], [1, "search-bar"], ["type", "text", "placeholder", "Rechercher par nom, pr\xE9nom, lieu...", 3, "ngModelChange", "ngModel"], [1, "toolbar-right"], [1, "chip-group"], ["class", "chip", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "view-toggle"], ["title", "Vue cartes", 1, "vt-btn", 3, "click"], ["title", "Vue liste", 1, "vt-btn", 3, "click"], ["class", "sk-grid", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "pc-grid", 4, "ngIf"], ["class", "pl-table", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel"], [1, "panel-header"], ["class", "panel-header-sub", 4, "ngIf"], ["title", "Fermer", "aria-label", "Fermer", 1, "btn-icon", 3, "click"], [1, "panel-body"], [1, "form-section"], [1, "section-title"], [1, "photo-upload-area"], [1, "photo-preview-wrap"], ["class", "photo-preview-img", "alt", "Aper\xE7u", 3, "src", "error", 4, "ngIf"], ["class", "photo-placeholder", 3, "male", "female", 4, "ngIf"], ["class", "photo-remove-btn", "type", "button", "title", "Supprimer la photo", 3, "click", 4, "ngIf"], [1, "photo-actions"], ["for", "photoInput", 1, "btn-photo-pick"], ["id", "photoInput", "type", "file", "accept", "image/jpeg,image/png,image/webp", 2, "display", "none", 3, "change"], [1, "photo-hint"], [1, "form-group"], [1, "required"], ["type", "text", "name", "prenoms", "placeholder", "Jean-Baptiste, Marie...", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-row-2"], ["type", "text", "name", "nomNaissance", "placeholder", "Dupont", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "optional"], ["type", "text", "name", "nomUsage", "placeholder", "Nom apr\xE8s mariage...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "radio-group"], ["class", "radio-option", 3, "selected", 4, "ngFor", "ngForOf"], [1, "form-row"], ["type", "number", "name", "nais_annee", "placeholder", "1960", "min", "1850", 1, "form-control", 3, "ngModelChange", "ngModel", "max"], ["name", "nais_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["type", "number", "name", "nais_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuNaissance", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "toggle-wrap"], ["type", "checkbox", "name", "estDecede", 3, "ngModelChange", "ngModel"], [1, "toggle"], [1, "toggle-label"], [4, "ngIf"], ["name", "biographie", "rows", "4", "placeholder", "Parcours de vie, anecdotes...", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "notes", "rows", "2", "placeholder", "Notes compl\xE9mentaires...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], [1, "slide-panel", "slide-panel-wide"], [1, "panel-header-actions"], ["title", "Modifier", "aria-label", "Modifier", 1, "btn-icon", 3, "click"], [1, "btn-icon", 3, "click"], ["class", "panel-body", 4, "ngIf"], [1, "btn-danger", 3, "click"], ["class", "lightbox-overlay", 3, "click", 4, "ngIf"], ["class", "confirm-dialog", 4, "ngIf"], [1, "chip", 3, "click"], [1, "sk-grid"], ["class", "sk-card", 4, "ngFor", "ngForOf"], [1, "sk-card"], [1, "sk-card-banner"], [1, "sk-card-body"], [1, "sk-line", "sk-full"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "error-state"], [1, "empty-state"], [1, "pc-grid"], ["class", "pc-card", 3, "pc-male", "pc-female", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pc-card", 3, "click"], [1, "pc-card-banner"], [1, "pc-colorband"], [1, "pc-live-dot"], [1, "pc-avatar-ring"], ["class", "pc-avatar pc-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pc-avatar pc-avatar-initials", 4, "ngIf"], [1, "pc-card-body"], [1, "pc-name"], [1, "pc-age"], ["class", "pc-loc", 4, "ngIf"], [1, "pc-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "pc-card-actions"], [1, "pc-act", 3, "click"], [1, "pc-act", "pc-act-danger", 3, "click"], [1, "pc-avatar", "pc-avatar-photo", 3, "error", "src", "alt"], [1, "pc-avatar", "pc-avatar-initials"], [1, "pc-loc"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "pl-table"], [1, "pl-thead"], [1, "pl-th", "pl-th-person"], [1, "pl-th", "pl-th-genre"], [1, "pl-th", "pl-th-lieu"], [1, "pl-th", "pl-th-statut"], [1, "pl-th", "pl-th-actions"], ["class", "pl-row", 3, "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pl-row", 3, "click"], [1, "pl-cell", "pl-cell-person"], [1, "pl-avatar-wrap"], ["class", "pl-avatar pl-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pl-avatar pl-avatar-initials", 3, "male", "female", 4, "ngIf"], [1, "pl-status-dot"], [1, "pl-person-info"], [1, "pl-person-name"], [1, "pl-person-age"], [1, "pl-cell", "pl-cell-genre"], [1, "pl-cell", "pl-cell-lieu"], ["class", "pl-lieu", 4, "ngIf"], ["class", "pl-empty", 4, "ngIf"], [1, "pl-cell", "pl-cell-statut"], [1, "pl-cell", "pl-cell-actions", 3, "click"], ["title", "Voir", "aria-label", "Voir le profil", 1, "btn-icon", 3, "click"], ["title", "Supprimer", "aria-label", "Supprimer", 1, "btn-icon", "btn-icon-danger", 3, "click"], [1, "pl-avatar", "pl-avatar-photo", 3, "error", "src", "alt"], [1, "pl-avatar", "pl-avatar-initials"], [1, "pl-lieu"], [1, "pl-empty"], [1, "panel-overlay", 3, "click"], [1, "panel-header-sub"], ["alt", "Aper\xE7u", 1, "photo-preview-img", 3, "error", "src"], [1, "photo-placeholder"], ["type", "button", "title", "Supprimer la photo", 1, "photo-remove-btn", 3, "click"], [1, "radio-option"], ["type", "radio", 3, "ngModelChange", "name", "value", "ngModel"], [3, "value"], ["type", "number", "name", "deces_annee", "placeholder", "2020", "min", "1850", 1, "form-control", 3, "ngModelChange", "ngModel", "max"], ["name", "deces_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "number", "name", "deces_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuDeces", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "material-icons-round", "spin"], [1, "detail-hero"], ["class", "avatar avatar-xl photo-avatar", 3, "src", "alt", "error", 4, "ngIf"], ["class", "avatar avatar-xl", 3, "female", "male", 4, "ngIf"], [1, "detail-hero-info"], [1, "detail-badges"], [1, "badge"], [1, "detail-section"], [1, "detail-grid"], ["class", "detail-item", 4, "ngIf"], ["class", "detail-section", 4, "ngIf"], [1, "album-header"], ["class", "album-count", 4, "ngIf"], ["class", "album-grid", 4, "ngIf"], ["class", "album-upload-wrap", 4, "ngIf"], ["class", "album-preview-wrap", 4, "ngIf"], [1, "avatar", "avatar-xl", "photo-avatar", 3, "error", "src", "alt"], [1, "avatar", "avatar-xl"], [1, "detail-item"], [1, "detail-label"], [1, "detail-value"], [1, "detail-bio"], [1, "album-count"], [1, "album-grid"], ["class", "album-sk", 4, "ngFor", "ngForOf"], [1, "album-sk"], ["class", "album-thumb", 3, "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "album-thumb", 3, "click"], ["loading", "lazy", 3, "src", "alt"], [1, "album-thumb-overlay"], ["title", "Supprimer", 1, "album-delete-btn", 3, "click"], ["class", "album-thumb-caption", 4, "ngIf"], [1, "album-thumb-caption"], [1, "album-upload-wrap"], [1, "album-upload-trigger"], ["type", "file", "accept", "image/*", "hidden", "", 3, "change"], [1, "album-preview-wrap"], ["alt", "Aper\xE7u", 1, "album-preview-img", 3, "src"], [1, "album-meta-fields"], ["type", "text", "placeholder", "L\xE9gende (optionnel)", 1, "form-control", "form-control-sm", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Date (ex : 1998 ou 1998-06)", 1, "form-control", "form-control-sm", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Lieu de la photo", 1, "form-control", "form-control-sm", 3, "ngModelChange", "ngModel"], [1, "album-preview-btns"], [1, "btn-ghost", "btn-sm", 3, "click"], [1, "btn-primary", "btn-sm", 3, "click", "disabled"], ["class", "material-icons-round", 4, "ngIf"], [1, "lightbox-overlay", 3, "click"], [1, "lightbox-box", 3, "click"], [1, "lightbox-img", 3, "src", "alt"], ["class", "lightbox-info", 4, "ngIf"], [1, "lightbox-close", 3, "click"], [1, "lightbox-info"], ["class", "lightbox-meta", 4, "ngIf"], [1, "lightbox-meta"], [1, "confirm-dialog"], [1, "confirm-box"], [1, "confirm-icon"], [1, "confirm-actions"], [1, "btn-danger", 3, "click", "disabled"]], template: function PersonnesComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 1)(1, "div", 2)(2, "div")(3, "h2", 3);
@@ -4315,7 +4368,7 @@ var PersonnesComponent = class _PersonnesComponent {
       \u0275\u0275elementStart(24, "span", 6);
       \u0275\u0275text(25, "view_list");
       \u0275\u0275elementEnd()()()()();
-      \u0275\u0275template(26, PersonnesComponent_div_26_Template, 2, 2, "div", 16)(27, PersonnesComponent_div_27_Template, 4, 1, "div", 17)(28, PersonnesComponent_div_28_Template, 11, 0, "div", 18)(29, PersonnesComponent_div_29_Template, 2, 1, "div", 19)(30, PersonnesComponent_div_30_Template, 13, 1, "div", 20);
+      \u0275\u0275template(26, PersonnesComponent_div_26_Template, 2, 2, "div", 16)(27, PersonnesComponent_div_27_Template, 4, 1, "div", 17)(28, PersonnesComponent_div_28_Template, 11, 0, "div", 18)(29, PersonnesComponent_div_29_Template, 2, 2, "div", 19)(30, PersonnesComponent_div_30_Template, 13, 2, "div", 20);
       \u0275\u0275elementEnd();
       \u0275\u0275template(31, PersonnesComponent_div_31_Template, 1, 0, "div", 21);
       \u0275\u0275elementStart(32, "div", 22)(33, "div", 23)(34, "div")(35, "h3");
@@ -4355,181 +4408,186 @@ var PersonnesComponent = class _PersonnesComponent {
       \u0275\u0275text(62, "Identit\xE9");
       \u0275\u0275elementEnd();
       \u0275\u0275elementStart(63, "div", 38)(64, "label");
-      \u0275\u0275text(65, "Pr\xE9nom(s)");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(66, "input", 39);
-      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_66_listener($event) {
+      \u0275\u0275text(65, "Pr\xE9nom(s) ");
+      \u0275\u0275elementStart(66, "span", 39);
+      \u0275\u0275text(67, "*");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(68, "input", 40);
+      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_68_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.prenoms, $event) || (ctx.form.prenoms = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(67, "div", 40)(68, "div", 38)(69, "label");
-      \u0275\u0275text(70, "Nom de naissance");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(71, "input", 41);
-      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_71_listener($event) {
+      \u0275\u0275elementStart(69, "div", 41)(70, "div", 38)(71, "label");
+      \u0275\u0275text(72, "Nom de naissance ");
+      \u0275\u0275elementStart(73, "span", 39);
+      \u0275\u0275text(74, "*");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(75, "input", 42);
+      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_75_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.nomNaissance, $event) || (ctx.form.nomNaissance = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(72, "div", 38)(73, "label");
-      \u0275\u0275text(74, "Nom d'usage ");
-      \u0275\u0275elementStart(75, "span", 42);
-      \u0275\u0275text(76, "(optionnel)");
+      \u0275\u0275elementStart(76, "div", 38)(77, "label");
+      \u0275\u0275text(78, "Nom d'usage ");
+      \u0275\u0275elementStart(79, "span", 43);
+      \u0275\u0275text(80, "(optionnel)");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(77, "input", 43);
-      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_77_listener($event) {
+      \u0275\u0275elementStart(81, "input", 44);
+      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_81_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.nomUsage, $event) || (ctx.form.nomUsage = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(78, "div", 38)(79, "label");
-      \u0275\u0275text(80, "Sexe");
+      \u0275\u0275elementStart(82, "div", 38)(83, "label");
+      \u0275\u0275text(84, "Sexe");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(81, "div", 44);
-      \u0275\u0275template(82, PersonnesComponent_label_82_Template, 3, 6, "label", 45);
+      \u0275\u0275elementStart(85, "div", 45);
+      \u0275\u0275template(86, PersonnesComponent_label_86_Template, 3, 6, "label", 46);
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(83, "div", 27)(84, "div", 28);
-      \u0275\u0275text(85, "Naissance");
+      \u0275\u0275elementStart(87, "div", 27)(88, "div", 28);
+      \u0275\u0275text(89, "Naissance");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(86, "div", 46)(87, "div", 38)(88, "label");
-      \u0275\u0275text(89, "Ann\xE9e");
+      \u0275\u0275elementStart(90, "div", 47)(91, "div", 38)(92, "label");
+      \u0275\u0275text(93, "Ann\xE9e");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(90, "input", 47);
-      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_90_listener($event) {
+      \u0275\u0275elementStart(94, "input", 48);
+      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_94_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.nais_annee, $event) || (ctx.form.nais_annee = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(91, "div", 38)(92, "label");
-      \u0275\u0275text(93, "Mois");
+      \u0275\u0275elementStart(95, "div", 38)(96, "label");
+      \u0275\u0275text(97, "Mois");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(94, "select", 48);
-      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_select_ngModelChange_94_listener($event) {
+      \u0275\u0275elementStart(98, "select", 49);
+      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_select_ngModelChange_98_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.nais_mois, $event) || (ctx.form.nais_mois = $event);
         return \u0275\u0275resetView($event);
       });
-      \u0275\u0275elementStart(95, "option", 49);
-      \u0275\u0275text(96, "\u2014");
+      \u0275\u0275elementStart(99, "option", 50);
+      \u0275\u0275text(100, "\u2014");
       \u0275\u0275elementEnd();
-      \u0275\u0275template(97, PersonnesComponent_option_97_Template, 2, 2, "option", 50);
+      \u0275\u0275template(101, PersonnesComponent_option_101_Template, 2, 2, "option", 51);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(98, "div", 38)(99, "label");
-      \u0275\u0275text(100, "Jour");
+      \u0275\u0275elementStart(102, "div", 38)(103, "label");
+      \u0275\u0275text(104, "Jour");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(101, "input", 51);
-      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_101_listener($event) {
+      \u0275\u0275elementStart(105, "input", 52);
+      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_105_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.nais_jour, $event) || (ctx.form.nais_jour = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(102, "div", 38)(103, "label");
-      \u0275\u0275text(104, "Lieu de naissance");
+      \u0275\u0275elementStart(106, "div", 38)(107, "label");
+      \u0275\u0275text(108, "Lieu de naissance");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(105, "input", 52);
-      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_105_listener($event) {
+      \u0275\u0275elementStart(109, "input", 53);
+      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_109_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.lieuNaissance, $event) || (ctx.form.lieuNaissance = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(106, "div", 27)(107, "div", 28);
-      \u0275\u0275text(108, " D\xE9c\xE8s ");
-      \u0275\u0275elementStart(109, "label", 53)(110, "input", 54);
-      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_110_listener($event) {
+      \u0275\u0275elementStart(110, "div", 27)(111, "div", 28);
+      \u0275\u0275text(112, " D\xE9c\xE8s ");
+      \u0275\u0275elementStart(113, "label", 54)(114, "input", 55);
+      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_input_ngModelChange_114_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.estDecede, $event) || (ctx.form.estDecede = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd();
-      \u0275\u0275element(111, "span", 55);
-      \u0275\u0275elementStart(112, "span", 56);
-      \u0275\u0275text(113);
+      \u0275\u0275element(115, "span", 56);
+      \u0275\u0275elementStart(116, "span", 57);
+      \u0275\u0275text(117);
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(114, PersonnesComponent_div_114_Template, 21, 6, "div", 57);
+      \u0275\u0275template(118, PersonnesComponent_div_118_Template, 21, 6, "div", 58);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(115, "div", 27)(116, "div", 28);
-      \u0275\u0275text(117, "Biographie ");
-      \u0275\u0275elementStart(118, "span", 42);
-      \u0275\u0275text(119, "(optionnel)");
+      \u0275\u0275elementStart(119, "div", 27)(120, "div", 28);
+      \u0275\u0275text(121, "Biographie ");
+      \u0275\u0275elementStart(122, "span", 43);
+      \u0275\u0275text(123, "(optionnel)");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(120, "div", 38)(121, "textarea", 58);
-      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_textarea_ngModelChange_121_listener($event) {
+      \u0275\u0275elementStart(124, "div", 38)(125, "textarea", 59);
+      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_textarea_ngModelChange_125_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.biographie, $event) || (ctx.form.biographie = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(122, "div", 38)(123, "label");
-      \u0275\u0275text(124, "Notes");
+      \u0275\u0275elementStart(126, "div", 38)(127, "label");
+      \u0275\u0275text(128, "Notes");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(125, "textarea", 59);
-      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_textarea_ngModelChange_125_listener($event) {
+      \u0275\u0275elementStart(129, "textarea", 60);
+      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_textarea_ngModelChange_129_listener($event) {
         \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.form.notes, $event) || (ctx.form.notes = $event);
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()()()()();
-      \u0275\u0275elementStart(126, "div", 60)(127, "button", 61);
-      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_127_listener() {
+      \u0275\u0275template(130, PersonnesComponent_div_130_Template, 4, 1, "div", 17);
+      \u0275\u0275elementStart(131, "div", 61)(132, "button", 62);
+      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_132_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeAll());
       });
-      \u0275\u0275text(128, "Annuler");
+      \u0275\u0275text(133, "Annuler");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(129, "button", 62);
-      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_129_listener() {
+      \u0275\u0275elementStart(134, "button", 63);
+      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_134_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.savePersonne());
       });
-      \u0275\u0275template(130, PersonnesComponent_span_130_Template, 2, 0, "span", 63);
-      \u0275\u0275text(131);
+      \u0275\u0275template(135, PersonnesComponent_span_135_Template, 2, 0, "span", 64);
+      \u0275\u0275text(136);
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(132, "div", 64)(133, "div", 23);
-      \u0275\u0275template(134, PersonnesComponent_div_134_Template, 5, 2, "div", 57);
-      \u0275\u0275elementStart(135, "div", 65)(136, "button", 66);
-      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_136_listener() {
+      \u0275\u0275elementStart(137, "div", 65)(138, "div", 23);
+      \u0275\u0275template(139, PersonnesComponent_div_139_Template, 5, 2, "div", 58);
+      \u0275\u0275elementStart(140, "div", 66)(141, "button", 67);
+      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_141_listener() {
         \u0275\u0275restoreView(_r1);
         ctx.openEdit(ctx.detailTarget);
         return \u0275\u0275resetView(ctx.showDetail = false);
       });
-      \u0275\u0275elementStart(137, "span", 6);
-      \u0275\u0275text(138, "edit");
+      \u0275\u0275elementStart(142, "span", 6);
+      \u0275\u0275text(143, "edit");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(139, "button", 25);
-      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_139_listener() {
+      \u0275\u0275elementStart(144, "button", 68);
+      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_144_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeAll());
       });
-      \u0275\u0275elementStart(140, "span", 6);
-      \u0275\u0275text(141, "close");
+      \u0275\u0275elementStart(145, "span", 6);
+      \u0275\u0275text(146, "close");
       \u0275\u0275elementEnd()()()();
-      \u0275\u0275template(142, PersonnesComponent_div_142_Template, 33, 28, "div", 67);
-      \u0275\u0275elementStart(143, "div", 60)(144, "button", 68);
-      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_144_listener() {
+      \u0275\u0275template(147, PersonnesComponent_div_147_Template, 33, 28, "div", 69);
+      \u0275\u0275elementStart(148, "div", 61)(149, "button", 70);
+      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_149_listener() {
         \u0275\u0275restoreView(_r1);
         ctx.confirmDelete(ctx.detailTarget, void 0);
         return \u0275\u0275resetView(ctx.showDetail = false);
       });
-      \u0275\u0275elementStart(145, "span", 6);
-      \u0275\u0275text(146, "delete");
+      \u0275\u0275elementStart(150, "span", 6);
+      \u0275\u0275text(151, "delete");
       \u0275\u0275elementEnd();
-      \u0275\u0275text(147, " Supprimer ");
+      \u0275\u0275text(152, " Supprimer ");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(148, "button", 61);
-      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_148_listener() {
+      \u0275\u0275elementStart(153, "button", 62);
+      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_153_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeAll());
       });
-      \u0275\u0275text(149, "Fermer");
+      \u0275\u0275text(154, "Fermer");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(150, PersonnesComponent_div_150_Template, 7, 3, "div", 69)(151, PersonnesComponent_div_151_Template, 15, 4, "div", 70);
+      \u0275\u0275template(155, PersonnesComponent_div_155_Template, 7, 3, "div", 71)(156, PersonnesComponent_div_156_Template, 15, 4, "div", 72);
     }
     if (rf & 2) {
       \u0275\u0275advance(6);
@@ -4568,9 +4626,9 @@ var PersonnesComponent = class _PersonnesComponent {
       \u0275\u0275property("ngIf", ctx.photoPreview);
       \u0275\u0275advance(5);
       \u0275\u0275textInterpolate1(" ", ctx.photoPreview ? "Changer la photo" : "Ajouter une photo", " ");
-      \u0275\u0275advance(10);
+      \u0275\u0275advance(12);
       \u0275\u0275twoWayProperty("ngModel", ctx.form.prenoms);
-      \u0275\u0275advance(5);
+      \u0275\u0275advance(7);
       \u0275\u0275twoWayProperty("ngModel", ctx.form.nomNaissance);
       \u0275\u0275advance(6);
       \u0275\u0275twoWayProperty("ngModel", ctx.form.nomUsage);
@@ -4597,6 +4655,8 @@ var PersonnesComponent = class _PersonnesComponent {
       \u0275\u0275twoWayProperty("ngModel", ctx.form.biographie);
       \u0275\u0275advance(4);
       \u0275\u0275twoWayProperty("ngModel", ctx.form.notes);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.formErreur);
       \u0275\u0275advance(4);
       \u0275\u0275property("disabled", ctx.saving);
       \u0275\u0275advance();
@@ -4614,7 +4674,7 @@ var PersonnesComponent = class _PersonnesComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.showDeleteConfirm);
     }
-  }, dependencies: [NgForOf, NgIf, \u0275NgNoValidate, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor, CheckboxControlValueAccessor, SelectControlValueAccessor, RadioControlValueAccessor, NgControlStatus, NgControlStatusGroup, MinValidator, MaxValidator, NgModel, NgForm], styles: ['@charset "UTF-8";\n\n\n\n.personnes-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.page-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.page-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 4px;\n}\n.page-subtitle[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.toolbar[_ngcontent-%COMP%]   .search-bar[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 220px;\n}\n.toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.panel-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.35);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.slide-panel[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.slide-panel.slide-panel-wide[_ngcontent-%COMP%] {\n  width: 540px;\n}\n.panel-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 2px;\n}\n.panel-header-sub[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.panel-header-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  align-items: center;\n}\n.panel-body[_ngcontent-%COMP%] {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.panel-footer[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.section-title[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.optional[_ngcontent-%COMP%] {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n.form-control[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 8px 12px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  transition: border-color 0.15s;\n  font-family: inherit;\n}\n.form-control[_ngcontent-%COMP%]:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 2fr 2fr 1fr;\n  gap: 12px;\n}\n.form-row-2[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.radio-group[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n}\n.radio-option[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 14px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: all 0.15s;\n}\n.radio-option[_ngcontent-%COMP%]   input[type=radio][_ngcontent-%COMP%] {\n  display: none;\n}\n.radio-option.selected[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 500;\n}\n.radio-option[_ngcontent-%COMP%]:hover:not(.selected) {\n  border-color: var(--primary-border);\n  background: var(--bg-muted);\n}\n.toggle-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  cursor: pointer;\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  text-transform: none;\n  letter-spacing: 0;\n}\n.toggle-wrap[_ngcontent-%COMP%]   input[type=checkbox][_ngcontent-%COMP%] {\n  display: none;\n}\n.toggle[_ngcontent-%COMP%] {\n  width: 36px;\n  height: 20px;\n  border-radius: 10px;\n  background: var(--border);\n  position: relative;\n  transition: background 0.2s;\n  flex-shrink: 0;\n}\n.toggle[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  top: 3px;\n  left: 3px;\n  width: 14px;\n  height: 14px;\n  border-radius: 50%;\n  background: white;\n  transition: transform 0.2s;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n}\n.toggle-wrap[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:checked    + .toggle[_ngcontent-%COMP%] {\n  background: var(--error, #ef4444);\n}\n.toggle-wrap[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:checked    + .toggle[_ngcontent-%COMP%]::after {\n  transform: translateX(16px);\n}\n.toggle-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 500;\n}\n.detail-hero[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  padding: 8px 0 24px;\n  border-bottom: 1px solid var(--border);\n  margin-bottom: 24px;\n}\n.detail-hero[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 8px;\n}\n.detail-hero-info[_ngcontent-%COMP%] {\n  flex: 1;\n}\n.detail-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.detail-section[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.detail-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px 24px;\n}\n.detail-item[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.detail-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted);\n}\n.detail-value[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-primary);\n}\n.detail-bio[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-secondary);\n  line-height: 1.6;\n  margin: 0;\n  white-space: pre-wrap;\n}\n.album-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 12px;\n}\n.album-count[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  background: var(--bg-muted);\n  padding: 2px 8px;\n  border-radius: 10px;\n}\n.album-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  gap: 8px;\n  margin-bottom: 12px;\n}\n.album-sk[_ngcontent-%COMP%] {\n  aspect-ratio: 1;\n  border-radius: 10px;\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 400px 100%;\n  animation: skeleton-shimmer 1.4s infinite;\n}\n.album-thumb[_ngcontent-%COMP%] {\n  position: relative;\n  aspect-ratio: 1;\n  border-radius: 10px;\n  overflow: hidden;\n  cursor: pointer;\n  background: var(--bg-muted);\n}\n.album-thumb[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  transition: transform 0.25s;\n}\n.album-thumb[_ngcontent-%COMP%]:hover   img[_ngcontent-%COMP%] {\n  transform: scale(1.06);\n}\n.album-thumb[_ngcontent-%COMP%]:hover   .album-thumb-overlay[_ngcontent-%COMP%] {\n  opacity: 1;\n}\n.album-thumb-overlay[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.35);\n  display: flex;\n  align-items: flex-start;\n  justify-content: flex-end;\n  padding: 6px;\n  opacity: 0;\n  transition: opacity 0.2s;\n}\n.album-delete-btn[_ngcontent-%COMP%] {\n  width: 26px;\n  height: 26px;\n  border-radius: 8px;\n  border: none;\n  background: rgba(255, 255, 255, 0.9);\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: var(--error);\n}\n.album-delete-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.album-delete-btn[_ngcontent-%COMP%]:hover {\n  background: #fff;\n}\n.album-thumb-caption[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: rgba(0, 0, 0, 0.55);\n  color: #fff;\n  font-size: 10px;\n  padding: 4px 6px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.album-upload-wrap[_ngcontent-%COMP%] {\n  margin-top: 4px;\n}\n.album-upload-trigger[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 9px 16px;\n  border-radius: var(--radius-md);\n  border: 1.5px dashed var(--border);\n  background: var(--bg-muted);\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.album-upload-trigger[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--primary);\n}\n.album-upload-trigger[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.album-preview-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 14px;\n  align-items: flex-start;\n  margin-top: 4px;\n}\n.album-preview-img[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 100px;\n  object-fit: cover;\n  border-radius: 10px;\n  border: 1px solid var(--border-light);\n  flex-shrink: 0;\n}\n.album-meta-fields[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.album-preview-btns[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n  margin-top: 2px;\n}\n.form-control-sm[_ngcontent-%COMP%] {\n  padding: 7px 11px;\n  font-size: 13px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md);\n  font-family: inherit;\n  color: var(--text-primary);\n  background: var(--white);\n  outline: none;\n  transition: border-color 0.15s;\n}\n.form-control-sm[_ngcontent-%COMP%]:focus {\n  border-color: var(--primary);\n}\n.form-control-sm[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.lightbox-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.85);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 2000;\n  padding: 20px;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  animation: _ngcontent-%COMP%_fadeIn 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n.lightbox-box[_ngcontent-%COMP%] {\n  position: relative;\n  max-width: 90vw;\n  max-height: 90vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n}\n.lightbox-img[_ngcontent-%COMP%] {\n  max-width: 100%;\n  max-height: 80vh;\n  border-radius: 12px;\n  object-fit: contain;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);\n}\n.lightbox-info[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.9);\n  text-align: center;\n}\n.lightbox-info[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 14px;\n}\n.lightbox-meta[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  justify-content: center;\n  font-size: 12px !important;\n  color: rgba(255, 255, 255, 0.65) !important;\n}\n.lightbox-meta[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.lightbox-meta[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.lightbox-close[_ngcontent-%COMP%] {\n  position: absolute;\n  top: -40px;\n  right: 0;\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  background: rgba(0, 0, 0, 0.5);\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.lightbox-close[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n}\n.lightbox-close[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.2);\n}\n.confirm-dialog[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 500;\n}\n.confirm-box[_ngcontent-%COMP%] {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  padding: 32px;\n  width: 400px;\n  max-width: 90vw;\n  box-shadow: var(--shadow-xl);\n  text-align: center;\n}\n.confirm-box[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 12px 0 8px;\n}\n.confirm-box[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-muted);\n  margin: 0 0 24px;\n  line-height: 1.5;\n}\n.confirm-icon[_ngcontent-%COMP%] {\n  width: 56px;\n  height: 56px;\n  border-radius: 50%;\n  background: #fef2f2;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 4px;\n}\n.confirm-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 28px !important;\n  color: var(--error, #ef4444);\n}\n.confirm-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  justify-content: center;\n}\n.badge-gray[_ngcontent-%COMP%] {\n  background: var(--bg-muted);\n  color: var(--text-muted);\n  border-color: var(--border);\n}\n.badge-success[_ngcontent-%COMP%] {\n  background: #f0fdf4;\n  color: #16a34a;\n  border-color: #bbf7d0;\n}\n.avatar.female[_ngcontent-%COMP%] {\n  background: #fce7f3;\n  color: #db2777;\n}\n.avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.avatar-xl[_ngcontent-%COMP%] {\n  width: 72px;\n  height: 72px;\n  font-size: 26px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  background: var(--primary-bg);\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.avatar-xl.photo-avatar[_ngcontent-%COMP%] {\n  display: block;\n}\n.photo-avatar[_ngcontent-%COMP%] {\n  object-fit: cover;\n  object-position: center;\n  background: var(--border-light);\n}\n.photo-upload-area[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n}\n.photo-preview-wrap[_ngcontent-%COMP%] {\n  position: relative;\n  flex-shrink: 0;\n}\n.photo-preview-img[_ngcontent-%COMP%] {\n  width: 80px;\n  height: 80px;\n  border-radius: 20px;\n  object-fit: cover;\n  object-position: center;\n  border: 2px solid var(--border);\n  display: block;\n}\n.photo-placeholder[_ngcontent-%COMP%] {\n  width: 80px;\n  height: 80px;\n  border-radius: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 24px;\n  font-weight: 700;\n  background: var(--primary-bg);\n  color: var(--primary);\n  border: 2px dashed var(--border);\n  text-transform: uppercase;\n}\n.photo-placeholder.male[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.photo-placeholder.female[_ngcontent-%COMP%] {\n  background: #fce7f3;\n  color: #db2777;\n  border-color: #fbcfe8;\n}\n.photo-remove-btn[_ngcontent-%COMP%] {\n  position: absolute;\n  top: -6px;\n  right: -6px;\n  width: 22px;\n  height: 22px;\n  border-radius: 50%;\n  background: #ef4444;\n  border: 2px solid #fff;\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  transition: background 0.15s;\n}\n.photo-remove-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.photo-remove-btn[_ngcontent-%COMP%]:hover {\n  background: #dc2626;\n}\n.photo-actions[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.btn-photo-pick[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 9px 16px;\n  border: 1.5px solid var(--primary-border);\n  border-radius: var(--radius-md);\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: all 0.15s;\n  font-family: inherit;\n}\n.btn-photo-pick[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.btn-photo-pick[_ngcontent-%COMP%]:hover {\n  background: var(--primary-border);\n}\n.photo-hint[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_spin 1s linear infinite;\n}\n@media (max-width: 768px) {\n  .page-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .page-header[_ngcontent-%COMP%]   .btn-primary[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n  .toolbar[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: stretch;\n  }\n  .toolbar[_ngcontent-%COMP%]   .search-bar[_ngcontent-%COMP%] {\n    min-width: unset;\n  }\n  .toolbar-right[_ngcontent-%COMP%] {\n    justify-content: space-between;\n  }\n  .slide-panel[_ngcontent-%COMP%], \n   .slide-panel.slide-panel-wide[_ngcontent-%COMP%] {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open[_ngcontent-%COMP%], \n   .slide-panel.slide-panel-wide.open[_ngcontent-%COMP%] {\n    transform: translateY(0);\n  }\n  .form-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .form-row-2[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .detail-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer[_ngcontent-%COMP%] {\n    flex-direction: column-reverse;\n  }\n  .panel-footer[_ngcontent-%COMP%]   .btn-primary[_ngcontent-%COMP%], \n   .panel-footer[_ngcontent-%COMP%]   .btn-ghost[_ngcontent-%COMP%], \n   .panel-footer[_ngcontent-%COMP%]   .btn-danger[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=personnes.component.css.map */'] });
+  }, dependencies: [NgForOf, NgIf, \u0275NgNoValidate, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor, CheckboxControlValueAccessor, SelectControlValueAccessor, RadioControlValueAccessor, NgControlStatus, NgControlStatusGroup, RequiredValidator, MinValidator, MaxValidator, NgModel, NgForm], styles: ['@charset "UTF-8";\n\n\n\n.personnes-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.page-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.page-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 4px;\n}\n.page-subtitle[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.toolbar[_ngcontent-%COMP%]   .search-bar[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 220px;\n}\n.toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.panel-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.35);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.slide-panel[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.slide-panel.slide-panel-wide[_ngcontent-%COMP%] {\n  width: 540px;\n}\n.panel-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 2px;\n}\n.panel-header-sub[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.panel-header-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  align-items: center;\n}\n.panel-body[_ngcontent-%COMP%] {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.panel-footer[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.section-title[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.optional[_ngcontent-%COMP%] {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n.required[_ngcontent-%COMP%] {\n  color: #DC2626;\n}\n.form-control[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 8px 12px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  transition: border-color 0.15s;\n  font-family: inherit;\n}\n.form-control[_ngcontent-%COMP%]:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 2fr 2fr 1fr;\n  gap: 12px;\n}\n.form-row-2[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.radio-group[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n}\n.radio-option[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 14px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: all 0.15s;\n}\n.radio-option[_ngcontent-%COMP%]   input[type=radio][_ngcontent-%COMP%] {\n  display: none;\n}\n.radio-option.selected[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 500;\n}\n.radio-option[_ngcontent-%COMP%]:hover:not(.selected) {\n  border-color: var(--primary-border);\n  background: var(--bg-muted);\n}\n.toggle-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  cursor: pointer;\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  text-transform: none;\n  letter-spacing: 0;\n}\n.toggle-wrap[_ngcontent-%COMP%]   input[type=checkbox][_ngcontent-%COMP%] {\n  display: none;\n}\n.toggle[_ngcontent-%COMP%] {\n  width: 36px;\n  height: 20px;\n  border-radius: 10px;\n  background: var(--border);\n  position: relative;\n  transition: background 0.2s;\n  flex-shrink: 0;\n}\n.toggle[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  top: 3px;\n  left: 3px;\n  width: 14px;\n  height: 14px;\n  border-radius: 50%;\n  background: white;\n  transition: transform 0.2s;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n}\n.toggle-wrap[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:checked    + .toggle[_ngcontent-%COMP%] {\n  background: var(--error, #ef4444);\n}\n.toggle-wrap[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:checked    + .toggle[_ngcontent-%COMP%]::after {\n  transform: translateX(16px);\n}\n.toggle-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 500;\n}\n.detail-hero[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  padding: 8px 0 24px;\n  border-bottom: 1px solid var(--border);\n  margin-bottom: 24px;\n}\n.detail-hero[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 8px;\n}\n.detail-hero-info[_ngcontent-%COMP%] {\n  flex: 1;\n}\n.detail-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.detail-section[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.detail-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px 24px;\n}\n.detail-item[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.detail-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted);\n}\n.detail-value[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-primary);\n}\n.detail-bio[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-secondary);\n  line-height: 1.6;\n  margin: 0;\n  white-space: pre-wrap;\n}\n.album-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 12px;\n}\n.album-count[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  background: var(--bg-muted);\n  padding: 2px 8px;\n  border-radius: 10px;\n}\n.album-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  gap: 8px;\n  margin-bottom: 12px;\n}\n.album-sk[_ngcontent-%COMP%] {\n  aspect-ratio: 1;\n  border-radius: 10px;\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 400px 100%;\n  animation: skeleton-shimmer 1.4s infinite;\n}\n.album-thumb[_ngcontent-%COMP%] {\n  position: relative;\n  aspect-ratio: 1;\n  border-radius: 10px;\n  overflow: hidden;\n  cursor: pointer;\n  background: var(--bg-muted);\n}\n.album-thumb[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  transition: transform 0.25s;\n}\n.album-thumb[_ngcontent-%COMP%]:hover   img[_ngcontent-%COMP%] {\n  transform: scale(1.06);\n}\n.album-thumb[_ngcontent-%COMP%]:hover   .album-thumb-overlay[_ngcontent-%COMP%] {\n  opacity: 1;\n}\n.album-thumb-overlay[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.35);\n  display: flex;\n  align-items: flex-start;\n  justify-content: flex-end;\n  padding: 6px;\n  opacity: 0;\n  transition: opacity 0.2s;\n}\n.album-delete-btn[_ngcontent-%COMP%] {\n  width: 26px;\n  height: 26px;\n  border-radius: 8px;\n  border: none;\n  background: rgba(255, 255, 255, 0.9);\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: var(--error);\n}\n.album-delete-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.album-delete-btn[_ngcontent-%COMP%]:hover {\n  background: #fff;\n}\n.album-thumb-caption[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: rgba(0, 0, 0, 0.55);\n  color: #fff;\n  font-size: 10px;\n  padding: 4px 6px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.album-upload-wrap[_ngcontent-%COMP%] {\n  margin-top: 4px;\n}\n.album-upload-trigger[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 9px 16px;\n  border-radius: var(--radius-md);\n  border: 1.5px dashed var(--border);\n  background: var(--bg-muted);\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.album-upload-trigger[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--primary);\n}\n.album-upload-trigger[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.album-preview-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 14px;\n  align-items: flex-start;\n  margin-top: 4px;\n}\n.album-preview-img[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 100px;\n  object-fit: cover;\n  border-radius: 10px;\n  border: 1px solid var(--border-light);\n  flex-shrink: 0;\n}\n.album-meta-fields[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.album-preview-btns[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n  margin-top: 2px;\n}\n.form-control-sm[_ngcontent-%COMP%] {\n  padding: 7px 11px;\n  font-size: 13px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md);\n  font-family: inherit;\n  color: var(--text-primary);\n  background: var(--white);\n  outline: none;\n  transition: border-color 0.15s;\n}\n.form-control-sm[_ngcontent-%COMP%]:focus {\n  border-color: var(--primary);\n}\n.form-control-sm[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.lightbox-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.85);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 2000;\n  padding: 20px;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  animation: _ngcontent-%COMP%_fadeIn 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n.lightbox-box[_ngcontent-%COMP%] {\n  position: relative;\n  max-width: 90vw;\n  max-height: 90vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n}\n.lightbox-img[_ngcontent-%COMP%] {\n  max-width: 100%;\n  max-height: 80vh;\n  border-radius: 12px;\n  object-fit: contain;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);\n}\n.lightbox-info[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.9);\n  text-align: center;\n}\n.lightbox-info[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 14px;\n}\n.lightbox-meta[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  justify-content: center;\n  font-size: 12px !important;\n  color: rgba(255, 255, 255, 0.65) !important;\n}\n.lightbox-meta[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.lightbox-meta[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.lightbox-close[_ngcontent-%COMP%] {\n  position: absolute;\n  top: -40px;\n  right: 0;\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  background: rgba(0, 0, 0, 0.5);\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.lightbox-close[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n}\n.lightbox-close[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.2);\n}\n.confirm-dialog[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 500;\n}\n.confirm-box[_ngcontent-%COMP%] {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  padding: 32px;\n  width: 400px;\n  max-width: 90vw;\n  box-shadow: var(--shadow-xl);\n  text-align: center;\n}\n.confirm-box[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 12px 0 8px;\n}\n.confirm-box[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-muted);\n  margin: 0 0 24px;\n  line-height: 1.5;\n}\n.confirm-icon[_ngcontent-%COMP%] {\n  width: 56px;\n  height: 56px;\n  border-radius: 50%;\n  background: #fef2f2;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 4px;\n}\n.confirm-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 28px !important;\n  color: var(--error, #ef4444);\n}\n.confirm-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  justify-content: center;\n}\n.badge-gray[_ngcontent-%COMP%] {\n  background: var(--bg-muted);\n  color: var(--text-muted);\n  border-color: var(--border);\n}\n.badge-success[_ngcontent-%COMP%] {\n  background: #f0fdf4;\n  color: #16a34a;\n  border-color: #bbf7d0;\n}\n.avatar.female[_ngcontent-%COMP%] {\n  background: #fce7f3;\n  color: #db2777;\n}\n.avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.avatar-xl[_ngcontent-%COMP%] {\n  width: 72px;\n  height: 72px;\n  font-size: 26px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  background: var(--primary-bg);\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.avatar-xl.photo-avatar[_ngcontent-%COMP%] {\n  display: block;\n}\n.photo-avatar[_ngcontent-%COMP%] {\n  object-fit: cover;\n  object-position: center;\n  background: var(--border-light);\n}\n.photo-upload-area[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n}\n.photo-preview-wrap[_ngcontent-%COMP%] {\n  position: relative;\n  flex-shrink: 0;\n}\n.photo-preview-img[_ngcontent-%COMP%] {\n  width: 80px;\n  height: 80px;\n  border-radius: 20px;\n  object-fit: cover;\n  object-position: center;\n  border: 2px solid var(--border);\n  display: block;\n}\n.photo-placeholder[_ngcontent-%COMP%] {\n  width: 80px;\n  height: 80px;\n  border-radius: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 24px;\n  font-weight: 700;\n  background: var(--primary-bg);\n  color: var(--primary);\n  border: 2px dashed var(--border);\n  text-transform: uppercase;\n}\n.photo-placeholder.male[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.photo-placeholder.female[_ngcontent-%COMP%] {\n  background: #fce7f3;\n  color: #db2777;\n  border-color: #fbcfe8;\n}\n.photo-remove-btn[_ngcontent-%COMP%] {\n  position: absolute;\n  top: -6px;\n  right: -6px;\n  width: 22px;\n  height: 22px;\n  border-radius: 50%;\n  background: #ef4444;\n  border: 2px solid #fff;\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  transition: background 0.15s;\n}\n.photo-remove-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.photo-remove-btn[_ngcontent-%COMP%]:hover {\n  background: #dc2626;\n}\n.photo-actions[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.btn-photo-pick[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 9px 16px;\n  border: 1.5px solid var(--primary-border);\n  border-radius: var(--radius-md);\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: all 0.15s;\n  font-family: inherit;\n}\n.btn-photo-pick[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.btn-photo-pick[_ngcontent-%COMP%]:hover {\n  background: var(--primary-border);\n}\n.photo-hint[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_spin 1s linear infinite;\n}\n@media (max-width: 768px) {\n  .page-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .page-header[_ngcontent-%COMP%]   .btn-primary[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n  .toolbar[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: stretch;\n  }\n  .toolbar[_ngcontent-%COMP%]   .search-bar[_ngcontent-%COMP%] {\n    min-width: unset;\n  }\n  .toolbar-right[_ngcontent-%COMP%] {\n    justify-content: space-between;\n  }\n  .slide-panel[_ngcontent-%COMP%], \n   .slide-panel.slide-panel-wide[_ngcontent-%COMP%] {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open[_ngcontent-%COMP%], \n   .slide-panel.slide-panel-wide.open[_ngcontent-%COMP%] {\n    transform: translateY(0);\n  }\n  .form-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .form-row-2[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .detail-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer[_ngcontent-%COMP%] {\n    flex-direction: column-reverse;\n  }\n  .panel-footer[_ngcontent-%COMP%]   .btn-primary[_ngcontent-%COMP%], \n   .panel-footer[_ngcontent-%COMP%]   .btn-ghost[_ngcontent-%COMP%], \n   .panel-footer[_ngcontent-%COMP%]   .btn-danger[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=personnes.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PersonnesComponent, [{
@@ -4685,7 +4745,7 @@ var PersonnesComponent = class _PersonnesComponent {
 \r
   <!-- ===== VUE CARTES ===== -->\r
   <div class="pc-grid" *ngIf="!loading && !erreur && personnesFiltrees.length > 0 && viewMode === 'cards'">\r
-    <div class="pc-card" *ngFor="let p of personnesFiltrees; let i = index"\r
+    <div class="pc-card" *ngFor="let p of personnesFiltrees; let i = index; trackBy: trackById"\r
          [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'"\r
          (click)="openDetail(p)">\r
 \r
@@ -4751,7 +4811,7 @@ var PersonnesComponent = class _PersonnesComponent {
       <span class="pl-th pl-th-actions">Actions</span>\r
     </div>\r
     <!-- Rows -->\r
-    <div class="pl-row" *ngFor="let p of personnesFiltrees" (click)="openDetail(p)">\r
+    <div class="pl-row" *ngFor="let p of personnesFiltrees; trackBy: trackById" (click)="openDetail(p)">\r
       <!-- Avatar + nom -->\r
       <div class="pl-cell pl-cell-person">\r
         <div class="pl-avatar-wrap">\r
@@ -4792,13 +4852,13 @@ var PersonnesComponent = class _PersonnesComponent {
       </div>\r
       <!-- Actions -->\r
       <div class="pl-cell pl-cell-actions" (click)="$event.stopPropagation()">\r
-        <button class="btn-icon" title="Voir" (click)="openDetail(p)">\r
+        <button class="btn-icon" title="Voir" aria-label="Voir le profil" (click)="openDetail(p)">\r
           <span class="material-icons-round">visibility</span>\r
         </button>\r
-        <button class="btn-icon" title="Modifier" (click)="openEdit(p, $event)">\r
+        <button class="btn-icon" title="Modifier" aria-label="Modifier" (click)="openEdit(p, $event)">\r
           <span class="material-icons-round">edit</span>\r
         </button>\r
-        <button class="btn-icon btn-icon-danger" title="Supprimer" (click)="confirmDelete(p, $event)">\r
+        <button class="btn-icon btn-icon-danger" title="Supprimer" aria-label="Supprimer" (click)="confirmDelete(p, $event)">\r
           <span class="material-icons-round">delete</span>\r
         </button>\r
       </div>\r
@@ -4817,7 +4877,7 @@ var PersonnesComponent = class _PersonnesComponent {
       <h3>{{ editTarget ? 'Modifier le membre' : 'Nouveau membre' }}</h3>\r
       <p class="panel-header-sub" *ngIf="editTarget">{{ getNomComplet(editTarget) }}</p>\r
     </div>\r
-    <button class="btn-icon" (click)="closeAll()">\r
+    <button class="btn-icon" title="Fermer" aria-label="Fermer" (click)="closeAll()">\r
       <span class="material-icons-round">close</span>\r
     </button>\r
   </div>\r
@@ -4858,14 +4918,14 @@ var PersonnesComponent = class _PersonnesComponent {
         <div class="section-title">Identit\xE9</div>\r
 \r
         <div class="form-group">\r
-          <label>Pr\xE9nom(s)</label>\r
-          <input type="text" name="prenoms" [(ngModel)]="form.prenoms" placeholder="Jean-Baptiste, Marie..." class="form-control" />\r
+          <label>Pr\xE9nom(s) <span class="required">*</span></label>\r
+          <input type="text" name="prenoms" [(ngModel)]="form.prenoms" placeholder="Jean-Baptiste, Marie..." class="form-control" required />\r
         </div>\r
 \r
         <div class="form-row-2">\r
           <div class="form-group">\r
-            <label>Nom de naissance</label>\r
-            <input type="text" name="nomNaissance" [(ngModel)]="form.nomNaissance" placeholder="Dupont" class="form-control" />\r
+            <label>Nom de naissance <span class="required">*</span></label>\r
+            <input type="text" name="nomNaissance" [(ngModel)]="form.nomNaissance" placeholder="Dupont" class="form-control" required />\r
           </div>\r
           <div class="form-group">\r
             <label>Nom d'usage <span class="optional">(optionnel)</span></label>\r
@@ -4961,6 +5021,9 @@ var PersonnesComponent = class _PersonnesComponent {
     </form>\r
   </div>\r
 \r
+  <div class="error-state" *ngIf="formErreur">\r
+    <span class="material-icons-round">error_outline</span>{{ formErreur }}\r
+  </div>\r
   <div class="panel-footer">\r
     <button class="btn-ghost" (click)="closeAll()">Annuler</button>\r
     <button class="btn-primary" (click)="savePersonne()" [disabled]="saving">\r
@@ -4978,7 +5041,7 @@ var PersonnesComponent = class _PersonnesComponent {
       <p class="panel-header-sub">{{ getAgeLabel(detailTarget) }}</p>\r
     </div>\r
     <div class="panel-header-actions">\r
-      <button class="btn-icon" title="Modifier" (click)="openEdit(detailTarget!); showDetail = false">\r
+      <button class="btn-icon" title="Modifier" aria-label="Modifier" (click)="openEdit(detailTarget!); showDetail = false">\r
         <span class="material-icons-round">edit</span>\r
       </button>\r
       <button class="btn-icon" (click)="closeAll()">\r
@@ -5071,7 +5134,7 @@ var PersonnesComponent = class _PersonnesComponent {
 \r
       <!-- Galerie -->\r
       <div class="album-grid" *ngIf="!albumLoading && albumPhotos.length > 0">\r
-        <div class="album-thumb" *ngFor="let ph of albumPhotos" (click)="albumLightbox = ph">\r
+        <div class="album-thumb" *ngFor="let ph of albumPhotos; trackBy: trackByPhotoId" (click)="albumLightbox = ph">\r
           <img [src]="ph.url" [alt]="ph.caption || 'Photo'" loading="lazy" />\r
           <div class="album-thumb-overlay">\r
             <button class="album-delete-btn" (click)="$event.stopPropagation(); deleteAlbumPhoto(ph)" title="Supprimer">\r
@@ -5155,7 +5218,7 @@ var PersonnesComponent = class _PersonnesComponent {
     </div>\r
   </div>\r
 </div>\r
-`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/personnes/personnes.component.scss */\n.personnes-page {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.page-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.page-title {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 4px;\n}\n.page-subtitle {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.toolbar {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.toolbar .search-bar {\n  flex: 1;\n  min-width: 220px;\n}\n.toolbar-right {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.35);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.slide-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open {\n  transform: translateX(0);\n}\n.slide-panel.slide-panel-wide {\n  width: 540px;\n}\n.panel-header {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header h3 {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 2px;\n}\n.panel-header-sub {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.panel-header-actions {\n  display: flex;\n  gap: 4px;\n  align-items: center;\n}\n.panel-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.panel-footer {\n  display: flex;\n  gap: 12px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section {\n  margin-bottom: 24px;\n}\n.section-title {\n  font-size: 12px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.optional {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n.form-control {\n  width: 100%;\n  padding: 8px 12px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  transition: border-color 0.15s;\n  font-family: inherit;\n}\n.form-control:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row {\n  display: grid;\n  grid-template-columns: 2fr 2fr 1fr;\n  gap: 12px;\n}\n.form-row-2 {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.radio-group {\n  display: flex;\n  gap: 8px;\n}\n.radio-option {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 14px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: all 0.15s;\n}\n.radio-option input[type=radio] {\n  display: none;\n}\n.radio-option.selected {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 500;\n}\n.radio-option:hover:not(.selected) {\n  border-color: var(--primary-border);\n  background: var(--bg-muted);\n}\n.toggle-wrap {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  cursor: pointer;\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  text-transform: none;\n  letter-spacing: 0;\n}\n.toggle-wrap input[type=checkbox] {\n  display: none;\n}\n.toggle {\n  width: 36px;\n  height: 20px;\n  border-radius: 10px;\n  background: var(--border);\n  position: relative;\n  transition: background 0.2s;\n  flex-shrink: 0;\n}\n.toggle::after {\n  content: "";\n  position: absolute;\n  top: 3px;\n  left: 3px;\n  width: 14px;\n  height: 14px;\n  border-radius: 50%;\n  background: white;\n  transition: transform 0.2s;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n}\n.toggle-wrap input:checked + .toggle {\n  background: var(--error, #ef4444);\n}\n.toggle-wrap input:checked + .toggle::after {\n  transform: translateX(16px);\n}\n.toggle-label {\n  font-size: 12px;\n  font-weight: 500;\n}\n.detail-hero {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  padding: 8px 0 24px;\n  border-bottom: 1px solid var(--border);\n  margin-bottom: 24px;\n}\n.detail-hero h2 {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 8px;\n}\n.detail-hero-info {\n  flex: 1;\n}\n.detail-badges {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.detail-section {\n  margin-bottom: 24px;\n}\n.detail-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px 24px;\n}\n.detail-item {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.detail-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted);\n}\n.detail-value {\n  font-size: 14px;\n  color: var(--text-primary);\n}\n.detail-bio {\n  font-size: 14px;\n  color: var(--text-secondary);\n  line-height: 1.6;\n  margin: 0;\n  white-space: pre-wrap;\n}\n.album-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 12px;\n}\n.album-count {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  background: var(--bg-muted);\n  padding: 2px 8px;\n  border-radius: 10px;\n}\n.album-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  gap: 8px;\n  margin-bottom: 12px;\n}\n.album-sk {\n  aspect-ratio: 1;\n  border-radius: 10px;\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 400px 100%;\n  animation: skeleton-shimmer 1.4s infinite;\n}\n.album-thumb {\n  position: relative;\n  aspect-ratio: 1;\n  border-radius: 10px;\n  overflow: hidden;\n  cursor: pointer;\n  background: var(--bg-muted);\n}\n.album-thumb img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  transition: transform 0.25s;\n}\n.album-thumb:hover img {\n  transform: scale(1.06);\n}\n.album-thumb:hover .album-thumb-overlay {\n  opacity: 1;\n}\n.album-thumb-overlay {\n  position: absolute;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.35);\n  display: flex;\n  align-items: flex-start;\n  justify-content: flex-end;\n  padding: 6px;\n  opacity: 0;\n  transition: opacity 0.2s;\n}\n.album-delete-btn {\n  width: 26px;\n  height: 26px;\n  border-radius: 8px;\n  border: none;\n  background: rgba(255, 255, 255, 0.9);\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: var(--error);\n}\n.album-delete-btn .material-icons-round {\n  font-size: 14px !important;\n}\n.album-delete-btn:hover {\n  background: #fff;\n}\n.album-thumb-caption {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: rgba(0, 0, 0, 0.55);\n  color: #fff;\n  font-size: 10px;\n  padding: 4px 6px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.album-upload-wrap {\n  margin-top: 4px;\n}\n.album-upload-trigger {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 9px 16px;\n  border-radius: var(--radius-md);\n  border: 1.5px dashed var(--border);\n  background: var(--bg-muted);\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.album-upload-trigger .material-icons-round {\n  font-size: 18px !important;\n  color: var(--primary);\n}\n.album-upload-trigger:hover {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.album-preview-wrap {\n  display: flex;\n  gap: 14px;\n  align-items: flex-start;\n  margin-top: 4px;\n}\n.album-preview-img {\n  width: 100px;\n  height: 100px;\n  object-fit: cover;\n  border-radius: 10px;\n  border: 1px solid var(--border-light);\n  flex-shrink: 0;\n}\n.album-meta-fields {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.album-preview-btns {\n  display: flex;\n  gap: 8px;\n  margin-top: 2px;\n}\n.form-control-sm {\n  padding: 7px 11px;\n  font-size: 13px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md);\n  font-family: inherit;\n  color: var(--text-primary);\n  background: var(--white);\n  outline: none;\n  transition: border-color 0.15s;\n}\n.form-control-sm:focus {\n  border-color: var(--primary);\n}\n.form-control-sm::placeholder {\n  color: var(--text-muted);\n}\n.lightbox-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.85);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 2000;\n  padding: 20px;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  animation: fadeIn 0.2s ease;\n}\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n.lightbox-box {\n  position: relative;\n  max-width: 90vw;\n  max-height: 90vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n}\n.lightbox-img {\n  max-width: 100%;\n  max-height: 80vh;\n  border-radius: 12px;\n  object-fit: contain;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);\n}\n.lightbox-info {\n  color: rgba(255, 255, 255, 0.9);\n  text-align: center;\n}\n.lightbox-info p {\n  margin: 0;\n  font-size: 14px;\n}\n.lightbox-meta {\n  display: flex;\n  gap: 16px;\n  justify-content: center;\n  font-size: 12px !important;\n  color: rgba(255, 255, 255, 0.65) !important;\n}\n.lightbox-meta span {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.lightbox-meta .material-icons-round {\n  font-size: 13px !important;\n}\n.lightbox-close {\n  position: absolute;\n  top: -40px;\n  right: 0;\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  background: rgba(0, 0, 0, 0.5);\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.lightbox-close .material-icons-round {\n  font-size: 20px !important;\n}\n.lightbox-close:hover {\n  background: rgba(255, 255, 255, 0.2);\n}\n.confirm-dialog {\n  position: fixed;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 500;\n}\n.confirm-box {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  padding: 32px;\n  width: 400px;\n  max-width: 90vw;\n  box-shadow: var(--shadow-xl);\n  text-align: center;\n}\n.confirm-box h4 {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 12px 0 8px;\n}\n.confirm-box p {\n  font-size: 14px;\n  color: var(--text-muted);\n  margin: 0 0 24px;\n  line-height: 1.5;\n}\n.confirm-icon {\n  width: 56px;\n  height: 56px;\n  border-radius: 50%;\n  background: #fef2f2;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 4px;\n}\n.confirm-icon .material-icons-round {\n  font-size: 28px !important;\n  color: var(--error, #ef4444);\n}\n.confirm-actions {\n  display: flex;\n  gap: 12px;\n  justify-content: center;\n}\n.badge-gray {\n  background: var(--bg-muted);\n  color: var(--text-muted);\n  border-color: var(--border);\n}\n.badge-success {\n  background: #f0fdf4;\n  color: #16a34a;\n  border-color: #bbf7d0;\n}\n.avatar.female {\n  background: #fce7f3;\n  color: #db2777;\n}\n.avatar.male {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.avatar-xl {\n  width: 72px;\n  height: 72px;\n  font-size: 26px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  background: var(--primary-bg);\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.avatar-xl.photo-avatar {\n  display: block;\n}\n.photo-avatar {\n  object-fit: cover;\n  object-position: center;\n  background: var(--border-light);\n}\n.photo-upload-area {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n}\n.photo-preview-wrap {\n  position: relative;\n  flex-shrink: 0;\n}\n.photo-preview-img {\n  width: 80px;\n  height: 80px;\n  border-radius: 20px;\n  object-fit: cover;\n  object-position: center;\n  border: 2px solid var(--border);\n  display: block;\n}\n.photo-placeholder {\n  width: 80px;\n  height: 80px;\n  border-radius: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 24px;\n  font-weight: 700;\n  background: var(--primary-bg);\n  color: var(--primary);\n  border: 2px dashed var(--border);\n  text-transform: uppercase;\n}\n.photo-placeholder.male {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.photo-placeholder.female {\n  background: #fce7f3;\n  color: #db2777;\n  border-color: #fbcfe8;\n}\n.photo-remove-btn {\n  position: absolute;\n  top: -6px;\n  right: -6px;\n  width: 22px;\n  height: 22px;\n  border-radius: 50%;\n  background: #ef4444;\n  border: 2px solid #fff;\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  transition: background 0.15s;\n}\n.photo-remove-btn .material-icons-round {\n  font-size: 13px !important;\n}\n.photo-remove-btn:hover {\n  background: #dc2626;\n}\n.photo-actions {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.btn-photo-pick {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 9px 16px;\n  border: 1.5px solid var(--primary-border);\n  border-radius: var(--radius-md);\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: all 0.15s;\n  font-family: inherit;\n}\n.btn-photo-pick .material-icons-round {\n  font-size: 18px !important;\n}\n.btn-photo-pick:hover {\n  background: var(--primary-border);\n}\n.photo-hint {\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin {\n  animation: spin 1s linear infinite;\n}\n@media (max-width: 768px) {\n  .page-header {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .page-header .btn-primary {\n    width: 100%;\n    justify-content: center;\n  }\n  .toolbar {\n    flex-direction: column;\n    align-items: stretch;\n  }\n  .toolbar .search-bar {\n    min-width: unset;\n  }\n  .toolbar-right {\n    justify-content: space-between;\n  }\n  .slide-panel,\n  .slide-panel.slide-panel-wide {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open,\n  .slide-panel.slide-panel-wide.open {\n    transform: translateY(0);\n  }\n  .form-row {\n    grid-template-columns: 1fr;\n  }\n  .form-row-2 {\n    grid-template-columns: 1fr;\n  }\n  .detail-grid {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer {\n    flex-direction: column-reverse;\n  }\n  .panel-footer .btn-primary,\n  .panel-footer .btn-ghost,\n  .panel-footer .btn-danger {\n    width: 100%;\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=personnes.component.css.map */\n'] }]
+`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/personnes/personnes.component.scss */\n.personnes-page {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.page-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.page-title {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 4px;\n}\n.page-subtitle {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.toolbar {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.toolbar .search-bar {\n  flex: 1;\n  min-width: 220px;\n}\n.toolbar-right {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.35);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.slide-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open {\n  transform: translateX(0);\n}\n.slide-panel.slide-panel-wide {\n  width: 540px;\n}\n.panel-header {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header h3 {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 2px;\n}\n.panel-header-sub {\n  font-size: 13px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.panel-header-actions {\n  display: flex;\n  gap: 4px;\n  align-items: center;\n}\n.panel-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.panel-footer {\n  display: flex;\n  gap: 12px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section {\n  margin-bottom: 24px;\n}\n.section-title {\n  font-size: 12px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.optional {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n.required {\n  color: #DC2626;\n}\n.form-control {\n  width: 100%;\n  padding: 8px 12px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  transition: border-color 0.15s;\n  font-family: inherit;\n}\n.form-control:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row {\n  display: grid;\n  grid-template-columns: 2fr 2fr 1fr;\n  gap: 12px;\n}\n.form-row-2 {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.radio-group {\n  display: flex;\n  gap: 8px;\n}\n.radio-option {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 14px;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 14px;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: all 0.15s;\n}\n.radio-option input[type=radio] {\n  display: none;\n}\n.radio-option.selected {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 500;\n}\n.radio-option:hover:not(.selected) {\n  border-color: var(--primary-border);\n  background: var(--bg-muted);\n}\n.toggle-wrap {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  cursor: pointer;\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  text-transform: none;\n  letter-spacing: 0;\n}\n.toggle-wrap input[type=checkbox] {\n  display: none;\n}\n.toggle {\n  width: 36px;\n  height: 20px;\n  border-radius: 10px;\n  background: var(--border);\n  position: relative;\n  transition: background 0.2s;\n  flex-shrink: 0;\n}\n.toggle::after {\n  content: "";\n  position: absolute;\n  top: 3px;\n  left: 3px;\n  width: 14px;\n  height: 14px;\n  border-radius: 50%;\n  background: white;\n  transition: transform 0.2s;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n}\n.toggle-wrap input:checked + .toggle {\n  background: var(--error, #ef4444);\n}\n.toggle-wrap input:checked + .toggle::after {\n  transform: translateX(16px);\n}\n.toggle-label {\n  font-size: 12px;\n  font-weight: 500;\n}\n.detail-hero {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  padding: 8px 0 24px;\n  border-bottom: 1px solid var(--border);\n  margin-bottom: 24px;\n}\n.detail-hero h2 {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0 0 8px;\n}\n.detail-hero-info {\n  flex: 1;\n}\n.detail-badges {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.detail-section {\n  margin-bottom: 24px;\n}\n.detail-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px 24px;\n}\n.detail-item {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.detail-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted);\n}\n.detail-value {\n  font-size: 14px;\n  color: var(--text-primary);\n}\n.detail-bio {\n  font-size: 14px;\n  color: var(--text-secondary);\n  line-height: 1.6;\n  margin: 0;\n  white-space: pre-wrap;\n}\n.album-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 12px;\n}\n.album-count {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  background: var(--bg-muted);\n  padding: 2px 8px;\n  border-radius: 10px;\n}\n.album-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  gap: 8px;\n  margin-bottom: 12px;\n}\n.album-sk {\n  aspect-ratio: 1;\n  border-radius: 10px;\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 400px 100%;\n  animation: skeleton-shimmer 1.4s infinite;\n}\n.album-thumb {\n  position: relative;\n  aspect-ratio: 1;\n  border-radius: 10px;\n  overflow: hidden;\n  cursor: pointer;\n  background: var(--bg-muted);\n}\n.album-thumb img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  transition: transform 0.25s;\n}\n.album-thumb:hover img {\n  transform: scale(1.06);\n}\n.album-thumb:hover .album-thumb-overlay {\n  opacity: 1;\n}\n.album-thumb-overlay {\n  position: absolute;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.35);\n  display: flex;\n  align-items: flex-start;\n  justify-content: flex-end;\n  padding: 6px;\n  opacity: 0;\n  transition: opacity 0.2s;\n}\n.album-delete-btn {\n  width: 26px;\n  height: 26px;\n  border-radius: 8px;\n  border: none;\n  background: rgba(255, 255, 255, 0.9);\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: var(--error);\n}\n.album-delete-btn .material-icons-round {\n  font-size: 14px !important;\n}\n.album-delete-btn:hover {\n  background: #fff;\n}\n.album-thumb-caption {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: rgba(0, 0, 0, 0.55);\n  color: #fff;\n  font-size: 10px;\n  padding: 4px 6px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.album-upload-wrap {\n  margin-top: 4px;\n}\n.album-upload-trigger {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 9px 16px;\n  border-radius: var(--radius-md);\n  border: 1.5px dashed var(--border);\n  background: var(--bg-muted);\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.album-upload-trigger .material-icons-round {\n  font-size: 18px !important;\n  color: var(--primary);\n}\n.album-upload-trigger:hover {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.album-preview-wrap {\n  display: flex;\n  gap: 14px;\n  align-items: flex-start;\n  margin-top: 4px;\n}\n.album-preview-img {\n  width: 100px;\n  height: 100px;\n  object-fit: cover;\n  border-radius: 10px;\n  border: 1px solid var(--border-light);\n  flex-shrink: 0;\n}\n.album-meta-fields {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.album-preview-btns {\n  display: flex;\n  gap: 8px;\n  margin-top: 2px;\n}\n.form-control-sm {\n  padding: 7px 11px;\n  font-size: 13px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md);\n  font-family: inherit;\n  color: var(--text-primary);\n  background: var(--white);\n  outline: none;\n  transition: border-color 0.15s;\n}\n.form-control-sm:focus {\n  border-color: var(--primary);\n}\n.form-control-sm::placeholder {\n  color: var(--text-muted);\n}\n.lightbox-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.85);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 2000;\n  padding: 20px;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  animation: fadeIn 0.2s ease;\n}\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n.lightbox-box {\n  position: relative;\n  max-width: 90vw;\n  max-height: 90vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n}\n.lightbox-img {\n  max-width: 100%;\n  max-height: 80vh;\n  border-radius: 12px;\n  object-fit: contain;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);\n}\n.lightbox-info {\n  color: rgba(255, 255, 255, 0.9);\n  text-align: center;\n}\n.lightbox-info p {\n  margin: 0;\n  font-size: 14px;\n}\n.lightbox-meta {\n  display: flex;\n  gap: 16px;\n  justify-content: center;\n  font-size: 12px !important;\n  color: rgba(255, 255, 255, 0.65) !important;\n}\n.lightbox-meta span {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.lightbox-meta .material-icons-round {\n  font-size: 13px !important;\n}\n.lightbox-close {\n  position: absolute;\n  top: -40px;\n  right: 0;\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  background: rgba(0, 0, 0, 0.5);\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.lightbox-close .material-icons-round {\n  font-size: 20px !important;\n}\n.lightbox-close:hover {\n  background: rgba(255, 255, 255, 0.2);\n}\n.confirm-dialog {\n  position: fixed;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 500;\n}\n.confirm-box {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  padding: 32px;\n  width: 400px;\n  max-width: 90vw;\n  box-shadow: var(--shadow-xl);\n  text-align: center;\n}\n.confirm-box h4 {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 12px 0 8px;\n}\n.confirm-box p {\n  font-size: 14px;\n  color: var(--text-muted);\n  margin: 0 0 24px;\n  line-height: 1.5;\n}\n.confirm-icon {\n  width: 56px;\n  height: 56px;\n  border-radius: 50%;\n  background: #fef2f2;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 4px;\n}\n.confirm-icon .material-icons-round {\n  font-size: 28px !important;\n  color: var(--error, #ef4444);\n}\n.confirm-actions {\n  display: flex;\n  gap: 12px;\n  justify-content: center;\n}\n.badge-gray {\n  background: var(--bg-muted);\n  color: var(--text-muted);\n  border-color: var(--border);\n}\n.badge-success {\n  background: #f0fdf4;\n  color: #16a34a;\n  border-color: #bbf7d0;\n}\n.avatar.female {\n  background: #fce7f3;\n  color: #db2777;\n}\n.avatar.male {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.avatar-xl {\n  width: 72px;\n  height: 72px;\n  font-size: 26px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  background: var(--primary-bg);\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.avatar-xl.photo-avatar {\n  display: block;\n}\n.photo-avatar {\n  object-fit: cover;\n  object-position: center;\n  background: var(--border-light);\n}\n.photo-upload-area {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n}\n.photo-preview-wrap {\n  position: relative;\n  flex-shrink: 0;\n}\n.photo-preview-img {\n  width: 80px;\n  height: 80px;\n  border-radius: 20px;\n  object-fit: cover;\n  object-position: center;\n  border: 2px solid var(--border);\n  display: block;\n}\n.photo-placeholder {\n  width: 80px;\n  height: 80px;\n  border-radius: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 24px;\n  font-weight: 700;\n  background: var(--primary-bg);\n  color: var(--primary);\n  border: 2px dashed var(--border);\n  text-transform: uppercase;\n}\n.photo-placeholder.male {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.photo-placeholder.female {\n  background: #fce7f3;\n  color: #db2777;\n  border-color: #fbcfe8;\n}\n.photo-remove-btn {\n  position: absolute;\n  top: -6px;\n  right: -6px;\n  width: 22px;\n  height: 22px;\n  border-radius: 50%;\n  background: #ef4444;\n  border: 2px solid #fff;\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  transition: background 0.15s;\n}\n.photo-remove-btn .material-icons-round {\n  font-size: 13px !important;\n}\n.photo-remove-btn:hover {\n  background: #dc2626;\n}\n.photo-actions {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.btn-photo-pick {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 9px 16px;\n  border: 1.5px solid var(--primary-border);\n  border-radius: var(--radius-md);\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: all 0.15s;\n  font-family: inherit;\n}\n.btn-photo-pick .material-icons-round {\n  font-size: 18px !important;\n}\n.btn-photo-pick:hover {\n  background: var(--primary-border);\n}\n.photo-hint {\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin {\n  animation: spin 1s linear infinite;\n}\n@media (max-width: 768px) {\n  .page-header {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .page-header .btn-primary {\n    width: 100%;\n    justify-content: center;\n  }\n  .toolbar {\n    flex-direction: column;\n    align-items: stretch;\n  }\n  .toolbar .search-bar {\n    min-width: unset;\n  }\n  .toolbar-right {\n    justify-content: space-between;\n  }\n  .slide-panel,\n  .slide-panel.slide-panel-wide {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open,\n  .slide-panel.slide-panel-wide.open {\n    transform: translateY(0);\n  }\n  .form-row {\n    grid-template-columns: 1fr;\n  }\n  .form-row-2 {\n    grid-template-columns: 1fr;\n  }\n  .detail-grid {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer {\n    flex-direction: column-reverse;\n  }\n  .panel-footer .btn-primary,\n  .panel-footer .btn-ghost,\n  .panel-footer .btn-danger {\n    width: 100%;\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=personnes.component.css.map */\n'] }]
   }], () => [{ type: ApiService }, { type: ActivatedRoute }, { type: NgZone }], null);
 })();
 (() => {
@@ -5281,7 +5344,7 @@ function TreeComponent_div_37_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275classProp("active", !ctx_r1.rootPersonId);
     \u0275\u0275advance(4);
-    \u0275\u0275property("ngForOf", ctx_r1.rootCandidates);
+    \u0275\u0275property("ngForOf", ctx_r1.rootCandidates)("ngForTrackBy", ctx_r1.trackByPersonneId);
   }
 }
 function TreeComponent_div_38_Template(rf, ctx) {
@@ -5813,14 +5876,14 @@ function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_1
     \u0275\u0275advance();
     \u0275\u0275styleProp("margin-left", ctx_r1.barInset(br_r18.children[0]), "px")("margin-right", ctx_r1.barInset(br_r18.children[br_r18.children.length - 1]), "px");
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngForOf", br_r18.children);
+    \u0275\u0275property("ngForOf", br_r18.children)("ngForTrackBy", ctx_r1.trackByNode);
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
     \u0275\u0275element(1, "div", 89);
-    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_ng_container_2_Template, 2, 4, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_div_3_Template, 4, 5, "div", 104);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_ng_container_2_Template, 2, 4, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_div_3_Template, 4, 6, "div", 104);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
@@ -5960,7 +6023,7 @@ function TreeComponent_div_44_ng_template_2_ng_container_2_Template(rf, ctx) {
     \u0275\u0275advance(3);
     \u0275\u0275styleProp("margin-left", 155, "px")("margin-right", 155, "px");
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngForOf", node_r10.unions);
+    \u0275\u0275property("ngForOf", node_r10.unions)("ngForTrackBy", ctx_r1.trackByBranch);
   }
 }
 function TreeComponent_div_44_ng_template_2_div_3_img_2_Template(rf, ctx) {
@@ -6103,14 +6166,14 @@ function TreeComponent_div_44_ng_template_2_ng_container_5_div_3_Template(rf, ct
     \u0275\u0275advance();
     \u0275\u0275styleProp("margin-left", ctx_r1.barInset(node_r10.children[0]), "px")("margin-right", ctx_r1.barInset(node_r10.children[node_r10.children.length - 1]), "px");
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngForOf", node_r10.children);
+    \u0275\u0275property("ngForOf", node_r10.children)("ngForTrackBy", ctx_r1.trackByNode);
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_5_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
     \u0275\u0275element(1, "div", 89);
-    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_5_ng_container_2_Template, 2, 4, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_ng_container_5_div_3_Template, 4, 5, "div", 104);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_5_ng_container_2_Template, 2, 4, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_ng_container_5_div_3_Template, 4, 6, "div", 104);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
@@ -6124,7 +6187,7 @@ function TreeComponent_div_44_ng_template_2_ng_container_5_Template(rf, ctx) {
 function TreeComponent_div_44_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 67);
-    \u0275\u0275template(1, TreeComponent_div_44_ng_template_2_ng_container_1_Template, 22, 22, "ng-container", 19)(2, TreeComponent_div_44_ng_template_2_ng_container_2_Template, 16, 22, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_div_3_Template, 8, 17, "div", 68)(4, TreeComponent_div_44_ng_template_2_div_4_Template, 5, 0, "div", 69)(5, TreeComponent_div_44_ng_template_2_ng_container_5_Template, 4, 2, "ng-container", 19);
+    \u0275\u0275template(1, TreeComponent_div_44_ng_template_2_ng_container_1_Template, 22, 22, "ng-container", 19)(2, TreeComponent_div_44_ng_template_2_ng_container_2_Template, 16, 23, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_div_3_Template, 8, 17, "div", 68)(4, TreeComponent_div_44_ng_template_2_div_4_Template, 5, 0, "div", 69)(5, TreeComponent_div_44_ng_template_2_ng_container_5_Template, 4, 2, "ng-container", 19);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -6185,7 +6248,7 @@ function TreeComponent_div_44_Template(rf, ctx) {
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275styleProp("transform", ctx_r1.treeTransform);
     \u0275\u0275advance(5);
-    \u0275\u0275property("ngForOf", ctx_r1.treeRoots);
+    \u0275\u0275property("ngForOf", ctx_r1.treeRoots)("ngForTrackBy", ctx_r1.trackByNode);
   }
 }
 function TreeComponent_div_45_Template(rf, ctx) {
@@ -6430,7 +6493,7 @@ function TreeComponent_ng_container_69_Template(rf, ctx) {
     \u0275\u0275advance(4);
     \u0275\u0275twoWayProperty("ngModel", ctx_r1.quickAddSearch);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngForOf", ctx_r1.quickAddPersonnes);
+    \u0275\u0275property("ngForOf", ctx_r1.quickAddPersonnes)("ngForTrackBy", ctx_r1.trackByPersonneId);
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r1.quickAddPersonnes.length === 0);
   }
@@ -6740,6 +6803,15 @@ var TreeComponent = class _TreeComponent {
   get totalGenerations() {
     return this.treeDepth(this.treeRoots);
   }
+  trackByNode(_, node) {
+    return node.p1.id;
+  }
+  trackByPersonneId(_, p) {
+    return p.id;
+  }
+  trackByBranch(_, branch) {
+    return branch.union?.id ?? branch.partner?.id ?? String(_);
+  }
   treeDepth(nodes) {
     if (!nodes.length)
       return 0;
@@ -7007,7 +7079,7 @@ var TreeComponent = class _TreeComponent {
     return `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
   }
   typeLabel(type) {
-    const map = {
+    const map2 = {
       mariage: "Mariage",
       pacs: "PACS",
       union_libre: "Union libre",
@@ -7015,7 +7087,7 @@ var TreeComponent = class _TreeComponent {
       adoption: "Adoption",
       polygamie: "Polygamie"
     };
-    return map[type ?? ""] ?? type ?? "";
+    return map2[type ?? ""] ?? type ?? "";
   }
   yearLabel(p) {
     const n = extractAnnee(p.dateNaissance);
@@ -7255,7 +7327,7 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.treeVisual = _t.first);
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.treeCanvas = _t.first);
     }
-  }, standalone: false, decls: 87, vars: 43, consts: [["treeCanvas", ""], ["treeVisual", ""], ["nodeRef", ""], [1, "tree-page"], [1, "tree-toolbar"], [1, "toolbar-left"], ["class", "badge badge-primary", 4, "ngIf"], ["class", "root-badge", 4, "ngIf"], [1, "toolbar-right"], ["title", "D\xE9zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "zoom-level"], ["title", "Zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], ["title", "R\xE9initialiser", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "btn-outline", "btn-sm", 3, "click", "disabled"], [2, "width", "1px", "height", "20px", "background", "var(--border)", "margin", "0 2px"], [1, "btn-ghost", "btn-sm", "tree-kiosk-btn", 3, "click", "title"], [1, "root-picker-wrap"], [1, "btn-ghost", "btn-sm", "root-pick-btn", 3, "click"], [4, "ngIf"], ["class", "root-dropdown", 3, "click", 4, "ngIf"], ["class", "root-overlay", 3, "click", 4, "ngIf"], [1, "tree-canvas", 3, "wheel", "mouseleave"], ["class", "loading-state", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "tree-visual", 3, "transform", "pointerdown", "pointermove", "pointerup", "pointercancel", 4, "ngIf"], ["class", "zoom-hint", 4, "ngIf"], ["class", "tree-tooltip", 3, "left", "top", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel", "qa-panel"], [1, "panel-header"], [2, "display", "flex", "align-items", "center", "gap", "8px"], [1, "material-icons-round", 2, "color", "var(--primary)"], [1, "btn-icon", 3, "click"], ["class", "qa-for-whom", 4, "ngIf"], [1, "qa-tabs"], [1, "qa-tab", 3, "click"], [1, "panel-body"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "detail-panel"], [1, "dp-header"], ["class", "dp-body", 4, "ngIf"], [1, "badge", "badge-primary"], [1, "root-badge"], [1, "root-badge-name"], [1, "root-badge-clear", 3, "click"], [1, "root-dropdown", 3, "click"], [1, "root-search-bar"], ["type", "text", "placeholder", "Rechercher\u2026", 1, "root-search-input", 3, "ngModelChange", "ngModel"], [1, "root-list"], [1, "root-list-item", "root-list-all", 3, "click"], ["class", "root-list-item", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "root-list-item", 3, "click"], [1, "root-list-avatar"], [1, "root-overlay", 3, "click"], [1, "loading-state"], [1, "material-icons-round", "spin"], [1, "error-state"], [1, "empty-state"], [1, "tree-visual", 3, "pointerdown", "pointermove", "pointerup", "pointercancel"], [1, "ts-roots"], [4, "ngFor", "ngForOf"], [1, "ts-subtree"], ["class", "ts-solo-card", 3, "ts-root", "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-quick-btns", 4, "ngIf"], [1, "ts-couple"], [1, "ts-person", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar"], ["class", "ts-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ts-name"], [1, "ts-year"], ["class", "ts-heart", 4, "ngIf"], ["class", "ts-person", 3, "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-union-badge", 4, "ngIf"], [1, "ts-quick-btns"], ["title", "Ajouter un enfant", 1, "ts-quick-btn", "ts-qb-child", 3, "click"], ["title", "Ajouter une \xE9pouse", 1, "ts-quick-btn", "ts-qb-partner", 3, "click"], [1, "ts-avatar-photo", 3, "error", "src", "alt"], [1, "ts-heart"], [1, "ts-hline"], [1, "ts-union-badge"], [1, "ts-multi-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar", "ts-avatar-lg"], [1, "ts-multi-badge"], [1, "ts-down"], [1, "ts-branch"], [1, "ts-hbar"], [1, "ts-children-row"], ["class", "ts-child-col", 4, "ngFor", "ngForOf"], [1, "ts-child-col"], [1, "ts-up"], [1, "ts-couple", "ts-union-branch"], [1, "ts-person", "ts-person-ref", 3, "click"], [1, "ts-avatar", "ts-avatar-ref"], ["class", "ts-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "ts-name-ref"], ["class", "ts-status-chip", 4, "ngIf"], [1, "ts-avatar-photo", 3, "error", "src"], [1, "ts-status-chip"], ["class", "ts-branch", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "ts-solo-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], ["title", "Ajouter un(e) partenaire", 1, "ts-quick-btn", "ts-qb-partner", 3, "click"], [1, "zoom-hint"], [1, "tree-tooltip"], [1, "tt-avatar"], ["class", "tt-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "tt-content"], [1, "tt-name"], ["class", "tt-dates", 4, "ngIf"], ["class", "tt-lieu", 4, "ngIf"], [1, "tt-badges"], [1, "tt-badge"], ["class", "tt-badge tt-alive", 4, "ngIf"], ["class", "tt-badge tt-dead", 4, "ngIf"], [1, "tt-hint"], [1, "tt-avatar-photo", 3, "error", "src"], [1, "tt-dates"], [1, "tt-lieu"], [1, "tt-badge", "tt-alive"], [1, "tt-badge", "tt-dead"], [1, "panel-overlay", 3, "click"], [1, "qa-for-whom"], [1, "material-icons-round", 2, "font-size", "16px!important", "color", "var(--text-muted)"], [1, "avatar", "avatar-sm"], [2, "font-size", "13px", "font-weight", "600", "color", "var(--text-primary)"], [1, "search-bar", 2, "margin-bottom", "10px"], ["type", "text", "placeholder", "Rechercher un membre...", 3, "ngModelChange", "ngModel"], [1, "person-select-list"], ["class", "person-select-item", 3, "selected", "click", 4, "ngFor", "ngForOf"], ["class", "empty-list-msg", 4, "ngIf"], [1, "person-select-item", 3, "click"], [1, "person-select-name"], ["class", "material-icons-round check-icon", 4, "ngIf"], [1, "material-icons-round", "check-icon"], [1, "empty-list-msg"], [1, "form-group"], [2, "color", "#EF4444"], ["type", "text", "placeholder", "Pr\xE9nom(s)", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-control", 3, "ngModelChange", "ngModel"], ["value", "M"], ["value", "F"], ["type", "number", "placeholder", "1990", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "dp-body"], [1, "dp-avatar-wrap"], [1, "dp-avatar"], ["class", "dp-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "dp-name"], [1, "dp-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "dp-info-list"], ["class", "dp-info-item", 4, "ngIf"], [1, "btn-primary", "dp-link", 3, "click", "routerLink", "queryParams"], [1, "dp-avatar-photo", 3, "error", "src"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "dp-info-item"], [1, "dp-info-text"], [1, "dp-info-label"], [1, "dp-info-value"]], template: function TreeComponent_Template(rf, ctx) {
+  }, standalone: false, decls: 87, vars: 43, consts: [["treeCanvas", ""], ["treeVisual", ""], ["nodeRef", ""], [1, "tree-page"], [1, "tree-toolbar"], [1, "toolbar-left"], ["class", "badge badge-primary", 4, "ngIf"], ["class", "root-badge", 4, "ngIf"], [1, "toolbar-right"], ["title", "D\xE9zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "zoom-level"], ["title", "Zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], ["title", "R\xE9initialiser", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "btn-outline", "btn-sm", 3, "click", "disabled"], [2, "width", "1px", "height", "20px", "background", "var(--border)", "margin", "0 2px"], [1, "btn-ghost", "btn-sm", "tree-kiosk-btn", 3, "click", "title"], [1, "root-picker-wrap"], [1, "btn-ghost", "btn-sm", "root-pick-btn", 3, "click"], [4, "ngIf"], ["class", "root-dropdown", 3, "click", 4, "ngIf"], ["class", "root-overlay", 3, "click", 4, "ngIf"], [1, "tree-canvas", 3, "wheel", "mouseleave"], ["class", "loading-state", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "tree-visual", 3, "transform", "pointerdown", "pointermove", "pointerup", "pointercancel", 4, "ngIf"], ["class", "zoom-hint", 4, "ngIf"], ["class", "tree-tooltip", 3, "left", "top", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel", "qa-panel"], [1, "panel-header"], [2, "display", "flex", "align-items", "center", "gap", "8px"], [1, "material-icons-round", 2, "color", "var(--primary)"], [1, "btn-icon", 3, "click"], ["class", "qa-for-whom", 4, "ngIf"], [1, "qa-tabs"], [1, "qa-tab", 3, "click"], [1, "panel-body"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "detail-panel"], [1, "dp-header"], ["class", "dp-body", 4, "ngIf"], [1, "badge", "badge-primary"], [1, "root-badge"], [1, "root-badge-name"], [1, "root-badge-clear", 3, "click"], [1, "root-dropdown", 3, "click"], [1, "root-search-bar"], ["type", "text", "placeholder", "Rechercher\u2026", 1, "root-search-input", 3, "ngModelChange", "ngModel"], [1, "root-list"], [1, "root-list-item", "root-list-all", 3, "click"], ["class", "root-list-item", 3, "active", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "root-list-item", 3, "click"], [1, "root-list-avatar"], [1, "root-overlay", 3, "click"], [1, "loading-state"], [1, "material-icons-round", "spin"], [1, "error-state"], [1, "empty-state"], [1, "tree-visual", 3, "pointerdown", "pointermove", "pointerup", "pointercancel"], [1, "ts-roots"], [4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "ts-subtree"], ["class", "ts-solo-card", 3, "ts-root", "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-quick-btns", 4, "ngIf"], [1, "ts-couple"], [1, "ts-person", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar"], ["class", "ts-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ts-name"], [1, "ts-year"], ["class", "ts-heart", 4, "ngIf"], ["class", "ts-person", 3, "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-union-badge", 4, "ngIf"], [1, "ts-quick-btns"], ["title", "Ajouter un enfant", 1, "ts-quick-btn", "ts-qb-child", 3, "click"], ["title", "Ajouter une \xE9pouse", 1, "ts-quick-btn", "ts-qb-partner", 3, "click"], [1, "ts-avatar-photo", 3, "error", "src", "alt"], [1, "ts-heart"], [1, "ts-hline"], [1, "ts-union-badge"], [1, "ts-multi-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar", "ts-avatar-lg"], [1, "ts-multi-badge"], [1, "ts-down"], [1, "ts-branch"], [1, "ts-hbar"], [1, "ts-children-row"], ["class", "ts-child-col", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "ts-child-col"], [1, "ts-up"], [1, "ts-couple", "ts-union-branch"], [1, "ts-person", "ts-person-ref", 3, "click"], [1, "ts-avatar", "ts-avatar-ref"], ["class", "ts-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "ts-name-ref"], ["class", "ts-status-chip", 4, "ngIf"], [1, "ts-avatar-photo", 3, "error", "src"], [1, "ts-status-chip"], ["class", "ts-branch", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "ts-solo-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], ["title", "Ajouter un(e) partenaire", 1, "ts-quick-btn", "ts-qb-partner", 3, "click"], [1, "zoom-hint"], [1, "tree-tooltip"], [1, "tt-avatar"], ["class", "tt-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "tt-content"], [1, "tt-name"], ["class", "tt-dates", 4, "ngIf"], ["class", "tt-lieu", 4, "ngIf"], [1, "tt-badges"], [1, "tt-badge"], ["class", "tt-badge tt-alive", 4, "ngIf"], ["class", "tt-badge tt-dead", 4, "ngIf"], [1, "tt-hint"], [1, "tt-avatar-photo", 3, "error", "src"], [1, "tt-dates"], [1, "tt-lieu"], [1, "tt-badge", "tt-alive"], [1, "tt-badge", "tt-dead"], [1, "panel-overlay", 3, "click"], [1, "qa-for-whom"], [1, "material-icons-round", 2, "font-size", "16px!important", "color", "var(--text-muted)"], [1, "avatar", "avatar-sm"], [2, "font-size", "13px", "font-weight", "600", "color", "var(--text-primary)"], [1, "search-bar", 2, "margin-bottom", "10px"], ["type", "text", "placeholder", "Rechercher un membre...", 3, "ngModelChange", "ngModel"], [1, "person-select-list"], ["class", "person-select-item", 3, "selected", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "empty-list-msg", 4, "ngIf"], [1, "person-select-item", 3, "click"], [1, "person-select-name"], ["class", "material-icons-round check-icon", 4, "ngIf"], [1, "material-icons-round", "check-icon"], [1, "empty-list-msg"], [1, "form-group"], [2, "color", "#EF4444"], ["type", "text", "placeholder", "Pr\xE9nom(s)", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-control", 3, "ngModelChange", "ngModel"], ["value", "M"], ["value", "F"], ["type", "number", "placeholder", "1990", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "dp-body"], [1, "dp-avatar-wrap"], [1, "dp-avatar"], ["class", "dp-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "dp-name"], [1, "dp-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "dp-info-list"], ["class", "dp-info-item", 4, "ngIf"], [1, "btn-primary", "dp-link", 3, "click", "routerLink", "queryParams"], [1, "dp-avatar-photo", 3, "error", "src"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "dp-info-item"], [1, "dp-info-text"], [1, "dp-info-label"], [1, "dp-info-value"]], template: function TreeComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 3)(1, "div", 4)(2, "div", 5)(3, "h2");
@@ -7331,7 +7403,7 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275elementEnd();
       \u0275\u0275template(36, TreeComponent_span_36_Template, 2, 0, "span", 19);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(37, TreeComponent_div_37_Template, 11, 4, "div", 20);
+      \u0275\u0275template(37, TreeComponent_div_37_Template, 11, 5, "div", 20);
       \u0275\u0275elementEnd()()();
       \u0275\u0275template(38, TreeComponent_div_38_Template, 1, 0, "div", 21);
       \u0275\u0275elementStart(39, "div", 22, 0);
@@ -7342,7 +7414,7 @@ var TreeComponent = class _TreeComponent {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.clearTooltip());
       });
-      \u0275\u0275template(41, TreeComponent_div_41_Template, 4, 0, "div", 23)(42, TreeComponent_div_42_Template, 4, 1, "div", 24)(43, TreeComponent_div_43_Template, 7, 0, "div", 25)(44, TreeComponent_div_44_Template, 6, 3, "div", 26);
+      \u0275\u0275template(41, TreeComponent_div_41_Template, 4, 0, "div", 23)(42, TreeComponent_div_42_Template, 4, 1, "div", 24)(43, TreeComponent_div_43_Template, 7, 0, "div", 25)(44, TreeComponent_div_44_Template, 6, 4, "div", 26);
       \u0275\u0275elementEnd();
       \u0275\u0275template(45, TreeComponent_div_45_Template, 4, 0, "div", 27);
       \u0275\u0275elementEnd();
@@ -7383,7 +7455,7 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275text(67, " Cr\xE9er un nouveau ");
       \u0275\u0275elementEnd()();
       \u0275\u0275elementStart(68, "div", 38);
-      \u0275\u0275template(69, TreeComponent_ng_container_69_Template, 8, 3, "ng-container", 19)(70, TreeComponent_ng_container_70_Template, 25, 4, "ng-container", 19);
+      \u0275\u0275template(69, TreeComponent_ng_container_69_Template, 8, 4, "ng-container", 19)(70, TreeComponent_ng_container_70_Template, 25, 4, "ng-container", 19);
       \u0275\u0275elementEnd();
       \u0275\u0275elementStart(71, "div", 39)(72, "button", 40);
       \u0275\u0275listener("click", function TreeComponent_Template_button_click_72_listener() {
@@ -7545,7 +7617,7 @@ var TreeComponent = class _TreeComponent {
             <button class="root-list-item root-list-all" [class.active]="!rootPersonId" (click)="setRoot(null)">\r
               <span class="material-icons-round">account_tree</span>Arbre complet\r
             </button>\r
-            <button class="root-list-item" *ngFor="let p of rootCandidates"\r
+            <button class="root-list-item" *ngFor="let p of rootCandidates; trackBy: trackByPersonneId"\r
                     [class.active]="rootPersonId === p.id" (click)="setRoot(p)">\r
               <div class="root-list-avatar" [class.male]="p.sexe==='M'" [class.female]="p.sexe==='F'">\r
                 {{ getInitiales(p) }}\r
@@ -7685,7 +7757,7 @@ var TreeComponent = class _TreeComponent {
             <div class="ts-branch">\r
               <div class="ts-hbar" [style.marginLeft.px]="155" [style.marginRight.px]="155"></div>\r
               <div class="ts-children-row">\r
-                <div class="ts-child-col" *ngFor="let br of node.unions">\r
+                <div class="ts-child-col" *ngFor="let br of node.unions; trackBy: trackByBranch">\r
                   <div class="ts-up"></div>\r
                   <div class="ts-subtree">\r
 \r
@@ -7757,7 +7829,7 @@ var TreeComponent = class _TreeComponent {
                              [style.marginLeft.px]="barInset(br.children[0])"\r
                              [style.marginRight.px]="barInset(br.children[br.children.length-1])"></div>\r
                         <div class="ts-children-row">\r
-                          <div class="ts-child-col" *ngFor="let child of br.children">\r
+                          <div class="ts-child-col" *ngFor="let child of br.children; trackBy: trackByNode">\r
                             <div class="ts-up"></div>\r
                             <ng-container [ngTemplateOutlet]="nodeRef" [ngTemplateOutletContext]="{ node: child }"></ng-container>\r
                           </div>\r
@@ -7819,7 +7891,7 @@ var TreeComponent = class _TreeComponent {
               </div>\r
               <!-- Rang\xE9e d'enfants -->\r
               <div class="ts-children-row">\r
-                <div class="ts-child-col" *ngFor="let child of node.children">\r
+                <div class="ts-child-col" *ngFor="let child of node.children; trackBy: trackByNode">\r
                   <div class="ts-up"></div>\r
                   <ng-container [ngTemplateOutlet]="nodeRef"\r
                                 [ngTemplateOutletContext]="{ node: child }">\r
@@ -7835,7 +7907,7 @@ var TreeComponent = class _TreeComponent {
 \r
       <!-- Racines de l'arbre -->\r
       <div class="ts-roots">\r
-        <ng-container *ngFor="let root of treeRoots">\r
+        <ng-container *ngFor="let root of treeRoots; trackBy: trackByNode">\r
           <ng-container [ngTemplateOutlet]="nodeRef"\r
                         [ngTemplateOutletContext]="{ node: root }">\r
           </ng-container>\r
@@ -7927,7 +7999,7 @@ var TreeComponent = class _TreeComponent {
       </div>\r
       <div class="person-select-list">\r
         <div class="person-select-item"\r
-             *ngFor="let p of quickAddPersonnes"\r
+             *ngFor="let p of quickAddPersonnes; trackBy: trackByPersonneId"\r
              [class.selected]="quickAddSelected === p.id"\r
              (click)="quickAddSelected = p.id">\r
           <div class="avatar avatar-sm" [class.male]="p.sexe==='M'" [class.female]="p.sexe==='F'">\r
@@ -8143,7 +8215,7 @@ function StoriesComponent_ng_container_12_button_16_Template(rf, ctx) {
 function StoriesComponent_ng_container_12_div_17_div_1_button_13_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 58);
+    \u0275\u0275elementStart(0, "button", 59);
     \u0275\u0275listener("click", function StoriesComponent_ng_container_12_div_17_div_1_button_13_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r8);
       const s_r9 = \u0275\u0275nextContext().$implicit;
@@ -8157,7 +8229,7 @@ function StoriesComponent_ng_container_12_div_17_div_1_button_13_Template(rf, ct
 }
 function StoriesComponent_ng_container_12_div_17_div_1_div_14_img_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "img", 63);
+    \u0275\u0275element(0, "img", 64);
   }
   if (rf & 2) {
     const s_r9 = \u0275\u0275nextContext(2).$implicit;
@@ -8166,7 +8238,7 @@ function StoriesComponent_ng_container_12_div_17_div_1_div_14_img_1_Template(rf,
 }
 function StoriesComponent_ng_container_12_div_17_div_1_div_14_video_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "video", 64);
+    \u0275\u0275element(0, "video", 65);
   }
   if (rf & 2) {
     const s_r9 = \u0275\u0275nextContext(2).$implicit;
@@ -8175,13 +8247,13 @@ function StoriesComponent_ng_container_12_div_17_div_1_div_14_video_2_Template(r
 }
 function StoriesComponent_ng_container_12_div_17_div_1_div_14_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 65)(1, "div", 66)(2, "span", 3);
+    \u0275\u0275elementStart(0, "div", 66)(1, "div", 67)(2, "span", 3);
     \u0275\u0275text(3, "mic");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(4, "div", 67)(5, "span", 68);
+    \u0275\u0275elementStart(4, "div", 68)(5, "span", 69);
     \u0275\u0275text(6, "R\xE9cit vocal");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(7, "audio", 69);
+    \u0275\u0275element(7, "audio", 70);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -8192,8 +8264,8 @@ function StoriesComponent_ng_container_12_div_17_div_1_div_14_div_3_Template(rf,
 }
 function StoriesComponent_ng_container_12_div_17_div_1_div_14_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 59);
-    \u0275\u0275template(1, StoriesComponent_ng_container_12_div_17_div_1_div_14_img_1_Template, 1, 1, "img", 60)(2, StoriesComponent_ng_container_12_div_17_div_1_div_14_video_2_Template, 1, 1, "video", 61)(3, StoriesComponent_ng_container_12_div_17_div_1_div_14_div_3_Template, 8, 1, "div", 62);
+    \u0275\u0275elementStart(0, "div", 60);
+    \u0275\u0275template(1, StoriesComponent_ng_container_12_div_17_div_1_div_14_img_1_Template, 1, 1, "img", 61)(2, StoriesComponent_ng_container_12_div_17_div_1_div_14_video_2_Template, 1, 1, "video", 62)(3, StoriesComponent_ng_container_12_div_17_div_1_div_14_div_3_Template, 8, 1, "div", 63);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -8233,25 +8305,25 @@ function StoriesComponent_ng_container_12_div_17_div_1_p_17_Template(rf, ctx) {
 function StoriesComponent_ng_container_12_div_17_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 13)(1, "div", 43)(2, "div", 44)(3, "div", 45);
+    \u0275\u0275elementStart(0, "div", 13)(1, "div", 44)(2, "div", 45)(3, "div", 46);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "div", 46)(6, "span", 47);
+    \u0275\u0275elementStart(5, "div", 47)(6, "span", 48);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "span", 48);
+    \u0275\u0275elementStart(8, "span", 49);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(10, "div", 49)(11, "span", 50);
+    \u0275\u0275elementStart(10, "div", 50)(11, "span", 51);
     \u0275\u0275text(12);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(13, StoriesComponent_ng_container_12_div_17_div_1_button_13_Template, 3, 0, "button", 51);
+    \u0275\u0275template(13, StoriesComponent_ng_container_12_div_17_div_1_button_13_Template, 3, 0, "button", 52);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(14, StoriesComponent_ng_container_12_div_17_div_1_div_14_Template, 4, 3, "div", 52);
-    \u0275\u0275elementStart(15, "div", 53);
+    \u0275\u0275template(14, StoriesComponent_ng_container_12_div_17_div_1_div_14_Template, 4, 3, "div", 53);
+    \u0275\u0275elementStart(15, "div", 54);
     \u0275\u0275template(16, StoriesComponent_ng_container_12_div_17_div_1_h4_16_Template, 2, 1, "h4", 4)(17, StoriesComponent_ng_container_12_div_17_div_1_p_17_Template, 2, 1, "p", 4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(18, "div", 54)(19, "button", 55);
+    \u0275\u0275elementStart(18, "div", 55)(19, "button", 56);
     \u0275\u0275listener("click", function StoriesComponent_ng_container_12_div_17_div_1_Template_button_click_19_listener() {
       const s_r9 = \u0275\u0275restoreView(_r7).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -8262,12 +8334,12 @@ function StoriesComponent_ng_container_12_div_17_div_1_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275text(22);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(23, "button", 56)(24, "span", 3);
+    \u0275\u0275elementStart(23, "button", 57)(24, "span", 3);
     \u0275\u0275text(25, "chat_bubble_outline");
     \u0275\u0275elementEnd();
     \u0275\u0275text(26);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "button", 57)(28, "span", 3);
+    \u0275\u0275elementStart(27, "button", 58)(28, "span", 3);
     \u0275\u0275text(29, "share");
     \u0275\u0275elementEnd();
     \u0275\u0275text(30, " Partager ");
@@ -8309,13 +8381,13 @@ function StoriesComponent_ng_container_12_div_17_div_1_Template(rf, ctx) {
 function StoriesComponent_ng_container_12_div_17_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 42);
-    \u0275\u0275template(1, StoriesComponent_ng_container_12_div_17_div_1_Template, 31, 21, "div", 9);
+    \u0275\u0275template(1, StoriesComponent_ng_container_12_div_17_div_1_Template, 31, 21, "div", 43);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", ctx_r1.storiesFiltrees);
+    \u0275\u0275property("ngForOf", ctx_r1.storiesFiltrees)("ngForTrackBy", ctx_r1.trackById);
   }
 }
 function StoriesComponent_ng_container_12_div_18_p_5_Template(rf, ctx) {
@@ -8350,13 +8422,13 @@ function StoriesComponent_ng_container_12_div_18_button_7_Template(rf, ctx) {
 }
 function StoriesComponent_ng_container_12_div_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 70)(1, "span", 3);
+    \u0275\u0275elementStart(0, "div", 71)(1, "span", 3);
     \u0275\u0275text(2, "auto_stories");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "h3");
     \u0275\u0275text(4, "Aucune story");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(5, StoriesComponent_ng_container_12_div_18_p_5_Template, 2, 0, "p", 4)(6, StoriesComponent_ng_container_12_div_18_p_6_Template, 2, 0, "p", 4)(7, StoriesComponent_ng_container_12_div_18_button_7_Template, 4, 0, "button", 71);
+    \u0275\u0275template(5, StoriesComponent_ng_container_12_div_18_p_5_Template, 2, 0, "p", 4)(6, StoriesComponent_ng_container_12_div_18_p_6_Template, 2, 0, "p", 4)(7, StoriesComponent_ng_container_12_div_18_button_7_Template, 4, 0, "button", 72);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -8403,13 +8475,13 @@ function StoriesComponent_ng_container_12_Template(rf, ctx) {
     \u0275\u0275elementStart(15, "div", 34);
     \u0275\u0275template(16, StoriesComponent_ng_container_12_button_16_Template, 2, 3, "button", 35);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(17, StoriesComponent_ng_container_12_div_17_Template, 2, 1, "div", 36)(18, StoriesComponent_ng_container_12_div_18_Template, 8, 3, "div", 37);
+    \u0275\u0275template(17, StoriesComponent_ng_container_12_div_17_Template, 2, 2, "div", 36)(18, StoriesComponent_ng_container_12_div_18_Template, 8, 3, "div", 37);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275advance(8);
-    \u0275\u0275property("ngForOf", ctx_r1.stories.slice(0, 8));
+    \u0275\u0275property("ngForOf", ctx_r1.stories.slice(0, 8))("ngForTrackBy", ctx_r1.trackById);
     \u0275\u0275advance(5);
     \u0275\u0275twoWayProperty("ngModel", ctx_r1.searchQuery);
     \u0275\u0275advance();
@@ -8424,7 +8496,7 @@ function StoriesComponent_ng_container_12_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_11_div_5_img_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "img", 96);
+    \u0275\u0275element(0, "img", 97);
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(4);
@@ -8433,7 +8505,7 @@ function StoriesComponent_div_13_div_11_div_5_img_1_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_11_div_5_video_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "video", 97);
+    \u0275\u0275element(0, "video", 98);
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(4);
@@ -8443,9 +8515,9 @@ function StoriesComponent_div_13_div_11_div_5_video_2_Template(rf, ctx) {
 function StoriesComponent_div_13_div_11_div_5_Template(rf, ctx) {
   if (rf & 1) {
     const _r12 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 92);
-    \u0275\u0275template(1, StoriesComponent_div_13_div_11_div_5_img_1_Template, 1, 1, "img", 93)(2, StoriesComponent_div_13_div_11_div_5_video_2_Template, 1, 1, "video", 94);
-    \u0275\u0275elementStart(3, "button", 95);
+    \u0275\u0275elementStart(0, "div", 93);
+    \u0275\u0275template(1, StoriesComponent_div_13_div_11_div_5_img_1_Template, 1, 1, "img", 94)(2, StoriesComponent_div_13_div_11_div_5_video_2_Template, 1, 1, "video", 95);
+    \u0275\u0275elementStart(3, "button", 96);
     \u0275\u0275listener("click", function StoriesComponent_div_13_div_11_div_5_Template_button_click_3_listener() {
       \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -8466,7 +8538,7 @@ function StoriesComponent_div_13_div_11_div_5_Template(rf, ctx) {
 function StoriesComponent_div_13_div_11_label_6_Template(rf, ctx) {
   if (rf & 1) {
     const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "label", 98)(1, "input", 99);
+    \u0275\u0275elementStart(0, "label", 99)(1, "input", 100);
     \u0275\u0275listener("change", function StoriesComponent_div_13_div_11_label_6_Template_input_change_1_listener($event) {
       \u0275\u0275restoreView(_r13);
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -8483,12 +8555,12 @@ function StoriesComponent_div_13_div_11_label_6_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_11_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 78)(1, "label", 79);
+    \u0275\u0275elementStart(0, "div", 79)(1, "label", 80);
     \u0275\u0275text(2, "Photo ou vid\xE9o ");
-    \u0275\u0275elementStart(3, "span", 80);
+    \u0275\u0275elementStart(3, "span", 81);
     \u0275\u0275text(4, "(optionnel)");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(5, StoriesComponent_div_13_div_11_div_5_Template, 6, 2, "div", 90)(6, StoriesComponent_div_13_div_11_label_6_Template, 6, 0, "label", 91);
+    \u0275\u0275template(5, StoriesComponent_div_13_div_11_div_5_Template, 6, 2, "div", 91)(6, StoriesComponent_div_13_div_11_label_6_Template, 6, 0, "label", 92);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -8502,7 +8574,7 @@ function StoriesComponent_div_13_div_11_Template(rf, ctx) {
 function StoriesComponent_div_13_div_12_button_5_Template(rf, ctx) {
   if (rf & 1) {
     const _r14 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 103);
+    \u0275\u0275elementStart(0, "button", 104);
     \u0275\u0275listener("click", function StoriesComponent_div_13_div_12_button_5_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r14);
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -8519,15 +8591,15 @@ function StoriesComponent_div_13_div_12_button_5_Template(rf, ctx) {
 function StoriesComponent_div_13_div_12_div_6_Template(rf, ctx) {
   if (rf & 1) {
     const _r15 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 104);
-    \u0275\u0275element(1, "div", 105);
-    \u0275\u0275elementStart(2, "span", 106);
+    \u0275\u0275elementStart(0, "div", 105);
+    \u0275\u0275element(1, "div", 106);
+    \u0275\u0275elementStart(2, "span", 107);
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 107);
+    \u0275\u0275elementStart(4, "span", 108);
     \u0275\u0275text(5, "Enregistrement en cours\u2026");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "button", 108);
+    \u0275\u0275elementStart(6, "button", 109);
     \u0275\u0275listener("click", function StoriesComponent_div_13_div_12_div_6_Template_button_click_6_listener() {
       \u0275\u0275restoreView(_r15);
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -8548,14 +8620,14 @@ function StoriesComponent_div_13_div_12_div_6_Template(rf, ctx) {
 function StoriesComponent_div_13_div_12_div_7_Template(rf, ctx) {
   if (rf & 1) {
     const _r16 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 109)(1, "div", 110)(2, "span", 3);
+    \u0275\u0275elementStart(0, "div", 110)(1, "div", 111)(2, "span", 3);
     \u0275\u0275text(3, "mic");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(4, "span");
     \u0275\u0275text(5);
     \u0275\u0275elementEnd()();
-    \u0275\u0275element(6, "audio", 111);
-    \u0275\u0275elementStart(7, "button", 112);
+    \u0275\u0275element(6, "audio", 112);
+    \u0275\u0275elementStart(7, "button", 113);
     \u0275\u0275listener("click", function StoriesComponent_div_13_div_12_div_7_Template_button_click_7_listener() {
       \u0275\u0275restoreView(_r16);
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -8577,12 +8649,12 @@ function StoriesComponent_div_13_div_12_div_7_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 78)(1, "label", 79);
+    \u0275\u0275elementStart(0, "div", 79)(1, "label", 80);
     \u0275\u0275text(2, " R\xE9cit audio ");
-    \u0275\u0275elementStart(3, "span", 80);
+    \u0275\u0275elementStart(3, "span", 81);
     \u0275\u0275text(4, "(optionnel)");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(5, StoriesComponent_div_13_div_12_button_5_Template, 5, 0, "button", 100)(6, StoriesComponent_div_13_div_12_div_6_Template, 10, 1, "div", 101)(7, StoriesComponent_div_13_div_12_div_7_Template, 11, 2, "div", 102);
+    \u0275\u0275template(5, StoriesComponent_div_13_div_12_button_5_Template, 5, 0, "button", 101)(6, StoriesComponent_div_13_div_12_div_6_Template, 10, 1, "div", 102)(7, StoriesComponent_div_13_div_12_div_7_Template, 11, 2, "div", 103);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -8598,7 +8670,7 @@ function StoriesComponent_div_13_div_12_Template(rf, ctx) {
 function StoriesComponent_div_13_button_23_Template(rf, ctx) {
   if (rf & 1) {
     const _r17 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 113);
+    \u0275\u0275elementStart(0, "button", 114);
     \u0275\u0275listener("click", function StoriesComponent_div_13_button_23_Template_button_click_0_listener() {
       const t_r18 = \u0275\u0275restoreView(_r17).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -8618,7 +8690,7 @@ function StoriesComponent_div_13_button_23_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_span_32_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 114);
+    \u0275\u0275elementStart(0, "span", 115);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
@@ -8633,23 +8705,23 @@ function StoriesComponent_div_13_span_33_Template(rf, ctx) {
 function StoriesComponent_div_13_Template(rf, ctx) {
   if (rf & 1) {
     const _r11 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 72);
+    \u0275\u0275elementStart(0, "div", 73);
     \u0275\u0275listener("click", function StoriesComponent_div_13_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r11);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.showForm = false);
     });
-    \u0275\u0275elementStart(1, "div", 73);
+    \u0275\u0275elementStart(1, "div", 74);
     \u0275\u0275listener("click", function StoriesComponent_div_13_Template_div_click_1_listener($event) {
       \u0275\u0275restoreView(_r11);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275elementStart(2, "div", 74)(3, "h3")(4, "span", 3);
+    \u0275\u0275elementStart(2, "div", 75)(3, "h3")(4, "span", 3);
     \u0275\u0275text(5, "auto_stories");
     \u0275\u0275elementEnd();
     \u0275\u0275text(6, " Nouvelle story ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "button", 75);
+    \u0275\u0275elementStart(7, "button", 76);
     \u0275\u0275listener("click", function StoriesComponent_div_13_Template_button_click_7_listener() {
       \u0275\u0275restoreView(_r11);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -8658,14 +8730,14 @@ function StoriesComponent_div_13_Template(rf, ctx) {
     \u0275\u0275elementStart(8, "span", 3);
     \u0275\u0275text(9, "close");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(10, "div", 76);
-    \u0275\u0275template(11, StoriesComponent_div_13_div_11_Template, 7, 2, "div", 77)(12, StoriesComponent_div_13_div_12_Template, 8, 3, "div", 77);
-    \u0275\u0275elementStart(13, "div", 78)(14, "label", 79);
+    \u0275\u0275elementStart(10, "div", 77);
+    \u0275\u0275template(11, StoriesComponent_div_13_div_11_Template, 7, 2, "div", 78)(12, StoriesComponent_div_13_div_12_Template, 8, 3, "div", 78);
+    \u0275\u0275elementStart(13, "div", 79)(14, "label", 80);
     \u0275\u0275text(15, "Titre ");
-    \u0275\u0275elementStart(16, "span", 80);
+    \u0275\u0275elementStart(16, "span", 81);
     \u0275\u0275text(17, "(optionnel)");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(18, "input", 81);
+    \u0275\u0275elementStart(18, "input", 82);
     \u0275\u0275twoWayListener("ngModelChange", function StoriesComponent_div_13_Template_input_ngModelChange_18_listener($event) {
       \u0275\u0275restoreView(_r11);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -8673,16 +8745,16 @@ function StoriesComponent_div_13_Template(rf, ctx) {
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(19, "div", 78)(20, "label", 79);
+    \u0275\u0275elementStart(19, "div", 79)(20, "label", 80);
     \u0275\u0275text(21, "Cat\xE9gorie");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(22, "div", 82);
-    \u0275\u0275template(23, StoriesComponent_div_13_button_23_Template, 2, 9, "button", 83);
+    \u0275\u0275elementStart(22, "div", 83);
+    \u0275\u0275template(23, StoriesComponent_div_13_button_23_Template, 2, 9, "button", 84);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(24, "div", 78)(25, "label", 79);
+    \u0275\u0275elementStart(24, "div", 79)(25, "label", 80);
     \u0275\u0275text(26, "Votre histoire *");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "textarea", 84);
+    \u0275\u0275elementStart(27, "textarea", 85);
     \u0275\u0275twoWayListener("ngModelChange", function StoriesComponent_div_13_Template_textarea_ngModelChange_27_listener($event) {
       \u0275\u0275restoreView(_r11);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -8690,7 +8762,7 @@ function StoriesComponent_div_13_Template(rf, ctx) {
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(28, "div", 85)(29, "button", 86);
+    \u0275\u0275elementStart(28, "div", 86)(29, "button", 87);
     \u0275\u0275listener("click", function StoriesComponent_div_13_Template_button_click_29_listener() {
       \u0275\u0275restoreView(_r11);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -8698,13 +8770,13 @@ function StoriesComponent_div_13_Template(rf, ctx) {
     });
     \u0275\u0275text(30, "Annuler");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(31, "button", 87);
+    \u0275\u0275elementStart(31, "button", 88);
     \u0275\u0275listener("click", function StoriesComponent_div_13_Template_button_click_31_listener() {
       \u0275\u0275restoreView(_r11);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.submitForm());
     });
-    \u0275\u0275template(32, StoriesComponent_div_13_span_32_Template, 2, 0, "span", 88)(33, StoriesComponent_div_13_span_33_Template, 2, 0, "span", 89);
+    \u0275\u0275template(32, StoriesComponent_div_13_span_32_Template, 2, 0, "span", 89)(33, StoriesComponent_div_13_span_33_Template, 2, 0, "span", 90);
     \u0275\u0275text(34);
     \u0275\u0275elementEnd()()()();
   }
@@ -8775,6 +8847,9 @@ var StoriesComponent = class _StoriesComponent {
       const matchSearch = !q || (s.titre ?? "").toLowerCase().includes(q) || s.caption.toLowerCase().includes(q) || this.nomComplet(s).toLowerCase().includes(q);
       return matchTag && matchSearch;
     });
+  }
+  trackById(_, item) {
+    return item.id;
   }
   initiales(s) {
     return ((s.auteurPrenom?.[0] ?? "") + (s.auteurNom?.[0] ?? "")).toUpperCase();
@@ -8946,7 +9021,7 @@ var StoriesComponent = class _StoriesComponent {
   static \u0275fac = function StoriesComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _StoriesComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(AuthService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _StoriesComponent, selectors: [["app-stories"]], standalone: false, decls: 14, vars: 3, consts: [[1, "page-header"], [1, "header-row"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], [4, "ngIf"], ["class", "modal-overlay", 3, "click", 4, "ngIf"], [1, "sk-circles"], ["class", "sk-circle-item", 4, "ngFor", "ngForOf"], [1, "stories-sk-grid", "mt-16"], ["class", "story-card", 4, "ngFor", "ngForOf"], [1, "sk-circle-item"], [1, "sk-avatar", "sk-av-lg"], [1, "sk-line", "sk-xs", 2, "width", "48px", "margin", "6px auto 0"], [1, "story-card"], [2, "display", "flex", "align-items", "center", "justify-content", "space-between", "padding", "18px 20px 14px"], [2, "display", "flex", "align-items", "center", "gap", "10px"], [1, "sk-avatar-sq", "sk-av-md"], [2, "display", "flex", "flex-direction", "column", "gap", "6px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "sk-line", "sk-xs"], [2, "padding", "0 20px 16px", "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "55%"], [1, "stories-circles", "mb-24"], [1, "story-circle", "add-story", 3, "click"], [1, "story-avatar", "add"], [1, "story-label"], ["class", "story-circle", 4, "ngFor", "ngForOf"], [1, "stories-toolbar", "mb-20"], [1, "story-search"], ["type", "text", "placeholder", "Rechercher une story\u2026", 3, "ngModelChange", "ngModel"], ["class", "search-clear", 3, "click", 4, "ngIf"], [1, "story-tag-row"], ["class", "story-tag-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], ["class", "stories-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "story-circle"], [1, "story-avatar"], [1, "search-clear", 3, "click"], [1, "story-tag-btn", 3, "click"], [1, "stories-grid"], [1, "story-card-header"], [1, "sc-author"], [1, "sc-avatar"], [1, "sc-author-info"], [1, "story-name"], [1, "story-date"], [1, "story-header-right"], [1, "story-tag-badge"], ["class", "story-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "story-media", 4, "ngIf"], [1, "story-card-body"], [1, "story-card-footer"], [1, "reaction-btn", 3, "click"], [1, "reaction-btn"], [1, "reaction-btn", "reaction-share"], ["title", "Supprimer", 1, "story-delete-btn", 3, "click"], [1, "story-media"], ["class", "story-media-img", "loading", "lazy", "alt", "", 3, "src", 4, "ngIf"], ["class", "story-media-video", "controls", "", 3, "src", 4, "ngIf"], ["class", "story-audio-player", 4, "ngIf"], ["loading", "lazy", "alt", "", 1, "story-media-img", 3, "src"], ["controls", "", 1, "story-media-video", 3, "src"], [1, "story-audio-player"], [1, "sap-icon"], [1, "sap-content"], [1, "sap-label"], ["controls", "", 1, "sap-audio", 3, "src"], [1, "empty-state"], ["class", "btn-primary", 3, "click", 4, "ngIf"], [1, "modal-overlay", 3, "click"], [1, "story-modal", 3, "click"], [1, "story-modal-head"], [1, "modal-close-btn", 3, "click"], [1, "story-modal-body"], ["class", "form-group", 4, "ngIf"], [1, "form-group"], [1, "form-label"], [1, "form-optional"], ["type", "text", "placeholder", "Ex : Mariage de tonton Amadou\u2026", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "tag-picker"], ["class", "tag-pick-btn", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], ["rows", "5", "placeholder", "Racontez ce moment important pour la famille\u2026", 1, "form-control", "form-textarea", 3, "ngModelChange", "ngModel"], [1, "story-modal-foot"], [1, "btn-secondary", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], ["class", "media-preview", 4, "ngIf"], ["class", "media-picker", 4, "ngIf"], [1, "media-preview"], ["class", "media-preview-img", "alt", "", 3, "src", 4, "ngIf"], ["class", "media-preview-video", "controls", "", 3, "src", 4, "ngIf"], ["type", "button", 1, "media-remove-btn", 3, "click"], ["alt", "", 1, "media-preview-img", 3, "src"], ["controls", "", 1, "media-preview-video", 3, "src"], [1, "media-picker"], ["type", "file", "accept", "image/*,video/*", "hidden", "", 3, "change"], ["class", "audio-record-btn", "type", "button", 3, "click", 4, "ngIf"], ["class", "audio-recording-wrap", 4, "ngIf"], ["class", "audio-preview-wrap", 4, "ngIf"], ["type", "button", 1, "audio-record-btn", 3, "click"], [1, "audio-recording-wrap"], [1, "audio-rec-dot"], [1, "audio-rec-timer"], [1, "audio-rec-label"], ["type", "button", 1, "audio-stop-btn", 3, "click"], [1, "audio-preview-wrap"], [1, "audio-preview-info"], ["controls", "", 1, "audio-preview-player", 3, "src"], ["type", "button", 1, "audio-reset-btn", 3, "click"], [1, "tag-pick-btn", 3, "click"], [1, "material-icons-round", "spin"]], template: function StoriesComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _StoriesComponent, selectors: [["app-stories"]], standalone: false, decls: 14, vars: 3, consts: [[1, "page-header"], [1, "header-row"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], [4, "ngIf"], ["class", "modal-overlay", 3, "click", 4, "ngIf"], [1, "sk-circles"], ["class", "sk-circle-item", 4, "ngFor", "ngForOf"], [1, "stories-sk-grid", "mt-16"], ["class", "story-card", 4, "ngFor", "ngForOf"], [1, "sk-circle-item"], [1, "sk-avatar", "sk-av-lg"], [1, "sk-line", "sk-xs", 2, "width", "48px", "margin", "6px auto 0"], [1, "story-card"], [2, "display", "flex", "align-items", "center", "justify-content", "space-between", "padding", "18px 20px 14px"], [2, "display", "flex", "align-items", "center", "gap", "10px"], [1, "sk-avatar-sq", "sk-av-md"], [2, "display", "flex", "flex-direction", "column", "gap", "6px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "sk-line", "sk-xs"], [2, "padding", "0 20px 16px", "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "55%"], [1, "stories-circles", "mb-24"], [1, "story-circle", "add-story", 3, "click"], [1, "story-avatar", "add"], [1, "story-label"], ["class", "story-circle", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "stories-toolbar", "mb-20"], [1, "story-search"], ["type", "text", "placeholder", "Rechercher une story\u2026", 3, "ngModelChange", "ngModel"], ["class", "search-clear", 3, "click", 4, "ngIf"], [1, "story-tag-row"], ["class", "story-tag-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], ["class", "stories-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "story-circle"], [1, "story-avatar"], [1, "search-clear", 3, "click"], [1, "story-tag-btn", 3, "click"], [1, "stories-grid"], ["class", "story-card", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "story-card-header"], [1, "sc-author"], [1, "sc-avatar"], [1, "sc-author-info"], [1, "story-name"], [1, "story-date"], [1, "story-header-right"], [1, "story-tag-badge"], ["class", "story-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "story-media", 4, "ngIf"], [1, "story-card-body"], [1, "story-card-footer"], [1, "reaction-btn", 3, "click"], [1, "reaction-btn"], [1, "reaction-btn", "reaction-share"], ["title", "Supprimer", 1, "story-delete-btn", 3, "click"], [1, "story-media"], ["class", "story-media-img", "loading", "lazy", "alt", "", 3, "src", 4, "ngIf"], ["class", "story-media-video", "controls", "", 3, "src", 4, "ngIf"], ["class", "story-audio-player", 4, "ngIf"], ["loading", "lazy", "alt", "", 1, "story-media-img", 3, "src"], ["controls", "", 1, "story-media-video", 3, "src"], [1, "story-audio-player"], [1, "sap-icon"], [1, "sap-content"], [1, "sap-label"], ["controls", "", 1, "sap-audio", 3, "src"], [1, "empty-state"], ["class", "btn-primary", 3, "click", 4, "ngIf"], [1, "modal-overlay", 3, "click"], [1, "story-modal", 3, "click"], [1, "story-modal-head"], [1, "modal-close-btn", 3, "click"], [1, "story-modal-body"], ["class", "form-group", 4, "ngIf"], [1, "form-group"], [1, "form-label"], [1, "form-optional"], ["type", "text", "placeholder", "Ex : Mariage de tonton Amadou\u2026", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "tag-picker"], ["class", "tag-pick-btn", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], ["rows", "5", "placeholder", "Racontez ce moment important pour la famille\u2026", 1, "form-control", "form-textarea", 3, "ngModelChange", "ngModel"], [1, "story-modal-foot"], [1, "btn-secondary", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], ["class", "media-preview", 4, "ngIf"], ["class", "media-picker", 4, "ngIf"], [1, "media-preview"], ["class", "media-preview-img", "alt", "", 3, "src", 4, "ngIf"], ["class", "media-preview-video", "controls", "", 3, "src", 4, "ngIf"], ["type", "button", 1, "media-remove-btn", 3, "click"], ["alt", "", 1, "media-preview-img", 3, "src"], ["controls", "", 1, "media-preview-video", 3, "src"], [1, "media-picker"], ["type", "file", "accept", "image/*,video/*", "hidden", "", 3, "change"], ["class", "audio-record-btn", "type", "button", 3, "click", 4, "ngIf"], ["class", "audio-recording-wrap", 4, "ngIf"], ["class", "audio-preview-wrap", 4, "ngIf"], ["type", "button", 1, "audio-record-btn", 3, "click"], [1, "audio-recording-wrap"], [1, "audio-rec-dot"], [1, "audio-rec-timer"], [1, "audio-rec-label"], ["type", "button", 1, "audio-stop-btn", 3, "click"], [1, "audio-preview-wrap"], [1, "audio-preview-info"], ["controls", "", 1, "audio-preview-player", 3, "src"], ["type", "button", 1, "audio-reset-btn", 3, "click"], [1, "tag-pick-btn", 3, "click"], [1, "material-icons-round", "spin"]], template: function StoriesComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div")(3, "h2");
       \u0275\u0275text(4, "Stories familiales");
@@ -8963,7 +9038,7 @@ var StoriesComponent = class _StoriesComponent {
       \u0275\u0275elementEnd();
       \u0275\u0275text(10, " Nouvelle story ");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(11, StoriesComponent_ng_container_11_Template, 5, 4, "ng-container", 4)(12, StoriesComponent_ng_container_12_Template, 19, 6, "ng-container", 4)(13, StoriesComponent_div_13_Template, 35, 9, "div", 5);
+      \u0275\u0275template(11, StoriesComponent_ng_container_11_Template, 5, 4, "ng-container", 4)(12, StoriesComponent_ng_container_12_Template, 19, 7, "ng-container", 4)(13, StoriesComponent_div_13_Template, 35, 9, "div", 5);
     }
     if (rf & 2) {
       \u0275\u0275advance(11);
@@ -9032,7 +9107,7 @@ var StoriesComponent = class _StoriesComponent {
       </div>\r
       <span class="story-label">Ma story</span>\r
     </div>\r
-    <div class="story-circle" *ngFor="let s of stories.slice(0, 8)">\r
+    <div class="story-circle" *ngFor="let s of stories.slice(0, 8); trackBy: trackById">\r
       <div class="story-avatar" [class.female]="s.auteurSexe === 'F'" [class.male]="s.auteurSexe === 'M'">\r
         {{ initiales(s) }}\r
       </div>\r
@@ -9061,7 +9136,7 @@ var StoriesComponent = class _StoriesComponent {
 \r
   <!-- Grille stories -->\r
   <div class="stories-grid" *ngIf="storiesFiltrees.length > 0">\r
-    <div class="story-card" *ngFor="let s of storiesFiltrees">\r
+    <div class="story-card" *ngFor="let s of storiesFiltrees; trackBy: trackById">\r
 \r
       <div class="story-card-header">\r
         <div class="sc-author">\r
@@ -9333,7 +9408,7 @@ function TimelineComponent_ng_container_17_Template(rf, ctx) {
 function TimelineComponent_ng_container_18_div_1_div_2_button_14_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 37);
+    \u0275\u0275elementStart(0, "button", 38);
     \u0275\u0275listener("click", function TimelineComponent_ng_container_18_div_1_div_2_button_14_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r5);
       const ev_r6 = \u0275\u0275nextContext().$implicit;
@@ -9347,7 +9422,7 @@ function TimelineComponent_ng_container_18_div_1_div_2_button_14_Template(rf, ct
 }
 function TimelineComponent_ng_container_18_div_1_div_2_p_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "p", 38);
+    \u0275\u0275elementStart(0, "p", 39);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -9359,7 +9434,7 @@ function TimelineComponent_ng_container_18_div_1_div_2_p_15_Template(rf, ctx) {
 }
 function TimelineComponent_ng_container_18_div_1_div_2_div_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 39)(1, "span", 4);
+    \u0275\u0275elementStart(0, "div", 40)(1, "span", 4);
     \u0275\u0275text(2, "person");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -9373,23 +9448,23 @@ function TimelineComponent_ng_container_18_div_1_div_2_div_16_Template(rf, ctx) 
 }
 function TimelineComponent_ng_container_18_div_1_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 17)(1, "div", 28)(2, "span", 4);
+    \u0275\u0275elementStart(0, "div", 17)(1, "div", 29)(2, "span", 4);
     \u0275\u0275text(3);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(4, "div", 29)(5, "div", 30);
+    \u0275\u0275elementStart(4, "div", 30)(5, "div", 31);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "div", 31)(8, "span", 4);
+    \u0275\u0275elementStart(7, "div", 32)(8, "span", 4);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd();
     \u0275\u0275text(10);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(11, "div", 32)(12, "h3", 33);
+    \u0275\u0275elementStart(11, "div", 33)(12, "h3", 34);
     \u0275\u0275text(13);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(14, TimelineComponent_ng_container_18_div_1_div_2_button_14_Template, 3, 0, "button", 34);
+    \u0275\u0275template(14, TimelineComponent_ng_container_18_div_1_div_2_button_14_Template, 3, 0, "button", 35);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(15, TimelineComponent_ng_container_18_div_1_div_2_p_15_Template, 2, 1, "p", 35)(16, TimelineComponent_ng_container_18_div_1_div_2_div_16_Template, 4, 1, "div", 36);
+    \u0275\u0275template(15, TimelineComponent_ng_container_18_div_1_div_2_p_15_Template, 2, 1, "p", 36)(16, TimelineComponent_ng_container_18_div_1_div_2_div_16_Template, 4, 1, "div", 37);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -9423,13 +9498,13 @@ function TimelineComponent_ng_container_18_div_1_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 13);
     \u0275\u0275element(1, "div", 14);
-    \u0275\u0275template(2, TimelineComponent_ng_container_18_div_1_div_2_Template, 17, 16, "div", 15);
+    \u0275\u0275template(2, TimelineComponent_ng_container_18_div_1_div_2_Template, 17, 16, "div", 28);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r2 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngForOf", ctx_r2.eventsFiltres);
+    \u0275\u0275property("ngForOf", ctx_r2.eventsFiltres)("ngForTrackBy", ctx_r2.trackById);
   }
 }
 function TimelineComponent_ng_container_18_div_2_p_5_Template(rf, ctx) {
@@ -9464,13 +9539,13 @@ function TimelineComponent_ng_container_18_div_2_button_7_Template(rf, ctx) {
 }
 function TimelineComponent_ng_container_18_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 40)(1, "span", 4);
+    \u0275\u0275elementStart(0, "div", 41)(1, "span", 4);
     \u0275\u0275text(2, "timeline");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "h3");
     \u0275\u0275text(4, "Aucun \xE9v\xE9nement");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(5, TimelineComponent_ng_container_18_div_2_p_5_Template, 2, 0, "p", 7)(6, TimelineComponent_ng_container_18_div_2_p_6_Template, 2, 0, "p", 7)(7, TimelineComponent_ng_container_18_div_2_button_7_Template, 4, 0, "button", 41);
+    \u0275\u0275template(5, TimelineComponent_ng_container_18_div_2_p_5_Template, 2, 0, "p", 7)(6, TimelineComponent_ng_container_18_div_2_p_6_Template, 2, 0, "p", 7)(7, TimelineComponent_ng_container_18_div_2_button_7_Template, 4, 0, "button", 42);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -9486,7 +9561,7 @@ function TimelineComponent_ng_container_18_div_2_Template(rf, ctx) {
 function TimelineComponent_ng_container_18_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275template(1, TimelineComponent_ng_container_18_div_1_Template, 3, 1, "div", 26)(2, TimelineComponent_ng_container_18_div_2_Template, 8, 3, "div", 27);
+    \u0275\u0275template(1, TimelineComponent_ng_container_18_div_1_Template, 3, 2, "div", 26)(2, TimelineComponent_ng_container_18_div_2_Template, 8, 3, "div", 27);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
@@ -9500,7 +9575,7 @@ function TimelineComponent_ng_container_18_Template(rf, ctx) {
 function TimelineComponent_div_19_button_15_Template(rf, ctx) {
   if (rf & 1) {
     const _r10 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 58);
+    \u0275\u0275elementStart(0, "button", 59);
     \u0275\u0275listener("click", function TimelineComponent_div_19_button_15_Template_button_click_0_listener() {
       const t_r11 = \u0275\u0275restoreView(_r10).$implicit;
       const ctx_r2 = \u0275\u0275nextContext(2);
@@ -9526,23 +9601,23 @@ function TimelineComponent_div_19_button_15_Template(rf, ctx) {
 function TimelineComponent_div_19_Template(rf, ctx) {
   if (rf & 1) {
     const _r9 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 42);
+    \u0275\u0275elementStart(0, "div", 43);
     \u0275\u0275listener("click", function TimelineComponent_div_19_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.showForm = false);
     });
-    \u0275\u0275elementStart(1, "div", 43);
+    \u0275\u0275elementStart(1, "div", 44);
     \u0275\u0275listener("click", function TimelineComponent_div_19_Template_div_click_1_listener($event) {
       \u0275\u0275restoreView(_r9);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275elementStart(2, "div", 44)(3, "h3")(4, "span", 4);
+    \u0275\u0275elementStart(2, "div", 45)(3, "h3")(4, "span", 4);
     \u0275\u0275text(5, "add_circle");
     \u0275\u0275elementEnd();
     \u0275\u0275text(6, " Ajouter un \xE9v\xE9nement ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "button", 45);
+    \u0275\u0275elementStart(7, "button", 46);
     \u0275\u0275listener("click", function TimelineComponent_div_19_Template_button_click_7_listener() {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
@@ -9551,16 +9626,16 @@ function TimelineComponent_div_19_Template(rf, ctx) {
     \u0275\u0275elementStart(8, "span", 4);
     \u0275\u0275text(9, "close");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(10, "div", 46)(11, "div", 47)(12, "label", 48);
+    \u0275\u0275elementStart(10, "div", 47)(11, "div", 48)(12, "label", 49);
     \u0275\u0275text(13, "Type d'\xE9v\xE9nement");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "div", 49);
-    \u0275\u0275template(15, TimelineComponent_div_19_button_15_Template, 4, 10, "button", 50);
+    \u0275\u0275elementStart(14, "div", 50);
+    \u0275\u0275template(15, TimelineComponent_div_19_button_15_Template, 4, 10, "button", 51);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(16, "div", 47)(17, "label", 48);
+    \u0275\u0275elementStart(16, "div", 48)(17, "label", 49);
     \u0275\u0275text(18, "Titre *");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(19, "input", 51);
+    \u0275\u0275elementStart(19, "input", 52);
     \u0275\u0275twoWayListener("ngModelChange", function TimelineComponent_div_19_Template_input_ngModelChange_19_listener($event) {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
@@ -9568,10 +9643,10 @@ function TimelineComponent_div_19_Template(rf, ctx) {
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(20, "div", 47)(21, "label", 48);
+    \u0275\u0275elementStart(20, "div", 48)(21, "label", 49);
     \u0275\u0275text(22, "Date *");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(23, "input", 52);
+    \u0275\u0275elementStart(23, "input", 53);
     \u0275\u0275twoWayListener("ngModelChange", function TimelineComponent_div_19_Template_input_ngModelChange_23_listener($event) {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
@@ -9579,10 +9654,10 @@ function TimelineComponent_div_19_Template(rf, ctx) {
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(24, "div", 47)(25, "label", 48);
+    \u0275\u0275elementStart(24, "div", 48)(25, "label", 49);
     \u0275\u0275text(26, "Personne concern\xE9e");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "input", 53);
+    \u0275\u0275elementStart(27, "input", 54);
     \u0275\u0275twoWayListener("ngModelChange", function TimelineComponent_div_19_Template_input_ngModelChange_27_listener($event) {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
@@ -9590,10 +9665,10 @@ function TimelineComponent_div_19_Template(rf, ctx) {
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(28, "div", 47)(29, "label", 48);
+    \u0275\u0275elementStart(28, "div", 48)(29, "label", 49);
     \u0275\u0275text(30, "Description");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(31, "textarea", 54);
+    \u0275\u0275elementStart(31, "textarea", 55);
     \u0275\u0275twoWayListener("ngModelChange", function TimelineComponent_div_19_Template_textarea_ngModelChange_31_listener($event) {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
@@ -9601,7 +9676,7 @@ function TimelineComponent_div_19_Template(rf, ctx) {
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(32, "div", 55)(33, "button", 56);
+    \u0275\u0275elementStart(32, "div", 56)(33, "button", 57);
     \u0275\u0275listener("click", function TimelineComponent_div_19_Template_button_click_33_listener() {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
@@ -9609,7 +9684,7 @@ function TimelineComponent_div_19_Template(rf, ctx) {
     });
     \u0275\u0275text(34, "Annuler");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(35, "button", 57);
+    \u0275\u0275elementStart(35, "button", 58);
     \u0275\u0275listener("click", function TimelineComponent_div_19_Template_button_click_35_listener() {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
@@ -9745,6 +9820,9 @@ var TimelineComponent = class _TimelineComponent {
       this.loading = false;
     });
   }
+  trackById(_, item) {
+    return item.id;
+  }
   get eventsFiltres() {
     const list = this.triDesc ? this.events : [...this.events].reverse();
     if (this.filtreActif === "tous")
@@ -9815,7 +9893,7 @@ var TimelineComponent = class _TimelineComponent {
   static \u0275fac = function TimelineComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _TimelineComponent)(\u0275\u0275directiveInject(ApiService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TimelineComponent, selectors: [["app-timeline"]], standalone: false, decls: 20, vars: 6, consts: [[1, "page-header"], [1, "header-row"], [2, "display", "flex", "gap", "10px", "align-items", "center"], ["title", "Changer l'ordre", 1, "btn-secondary", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "btn-primary", 3, "click"], ["class", "tl-filtres", 4, "ngIf"], [4, "ngIf"], ["class", "modal-overlay", 3, "click", 4, "ngIf"], [1, "tl-filtres"], ["class", "tl-filtre-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "tl-filtre-btn", 3, "click"], ["class", "sk-line sk-sm", "style", "width:90px;height:34px;border-radius:30px", 4, "ngFor", "ngForOf"], [1, "tl-timeline"], [1, "tl-line"], ["class", "tl-event", 3, "right", 4, "ngFor", "ngForOf"], [1, "sk-line", "sk-sm", 2, "width", "90px", "height", "34px", "border-radius", "30px"], [1, "tl-event"], [1, "tl-event-dot", 2, "background", "#E5E7EB"], [1, "material-icons-round", 2, "color", "#D1D5DB"], [1, "tl-event-card", 2, "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-xs", 2, "width", "60px"], [1, "sk-line", "sk-xs", 2, "width", "90px", "height", "22px", "border-radius", "20px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "65%"], ["class", "tl-timeline", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "tl-event-dot"], [1, "tl-event-card"], [1, "tl-event-date"], [1, "tl-event-type-badge"], [1, "tl-event-card-head"], [1, "tl-event-title"], ["class", "ev-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "tl-event-desc", 4, "ngIf"], ["class", "tl-event-author", 4, "ngIf"], ["title", "Supprimer", 1, "ev-delete-btn", 3, "click"], [1, "tl-event-desc"], [1, "tl-event-author"], [1, "empty-state"], ["class", "btn-primary", 3, "click", 4, "ngIf"], [1, "modal-overlay", 3, "click"], [1, "tl-modal", 3, "click"], [1, "tl-modal-head"], [1, "modal-close-btn", 3, "click"], [1, "tl-modal-body"], [1, "form-group"], [1, "form-label"], [1, "tl-type-picker"], ["class", "tl-type-btn", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], ["type", "text", "placeholder", "Ex : Dipl\xF4me de Fatou\u2026", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "2024 ou 2024-06 ou 2024-06-15", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom du membre", 1, "form-control", 3, "ngModelChange", "ngModel"], ["rows", "3", "placeholder", "D\xE9tails de l'\xE9v\xE9nement\u2026", 1, "form-control", "form-textarea", 3, "ngModelChange", "ngModel"], [1, "tl-modal-foot"], [1, "btn-secondary", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], [1, "tl-type-btn", 3, "click"]], template: function TimelineComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TimelineComponent, selectors: [["app-timeline"]], standalone: false, decls: 20, vars: 6, consts: [[1, "page-header"], [1, "header-row"], [2, "display", "flex", "gap", "10px", "align-items", "center"], ["title", "Changer l'ordre", 1, "btn-secondary", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "btn-primary", 3, "click"], ["class", "tl-filtres", 4, "ngIf"], [4, "ngIf"], ["class", "modal-overlay", 3, "click", 4, "ngIf"], [1, "tl-filtres"], ["class", "tl-filtre-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "tl-filtre-btn", 3, "click"], ["class", "sk-line sk-sm", "style", "width:90px;height:34px;border-radius:30px", 4, "ngFor", "ngForOf"], [1, "tl-timeline"], [1, "tl-line"], ["class", "tl-event", 3, "right", 4, "ngFor", "ngForOf"], [1, "sk-line", "sk-sm", 2, "width", "90px", "height", "34px", "border-radius", "30px"], [1, "tl-event"], [1, "tl-event-dot", 2, "background", "#E5E7EB"], [1, "material-icons-round", 2, "color", "#D1D5DB"], [1, "tl-event-card", 2, "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-xs", 2, "width", "60px"], [1, "sk-line", "sk-xs", 2, "width", "90px", "height", "22px", "border-radius", "20px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "65%"], ["class", "tl-timeline", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "tl-event", 3, "right", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "tl-event-dot"], [1, "tl-event-card"], [1, "tl-event-date"], [1, "tl-event-type-badge"], [1, "tl-event-card-head"], [1, "tl-event-title"], ["class", "ev-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "tl-event-desc", 4, "ngIf"], ["class", "tl-event-author", 4, "ngIf"], ["title", "Supprimer", 1, "ev-delete-btn", 3, "click"], [1, "tl-event-desc"], [1, "tl-event-author"], [1, "empty-state"], ["class", "btn-primary", 3, "click", 4, "ngIf"], [1, "modal-overlay", 3, "click"], [1, "tl-modal", 3, "click"], [1, "tl-modal-head"], [1, "modal-close-btn", 3, "click"], [1, "tl-modal-body"], [1, "form-group"], [1, "form-label"], [1, "tl-type-picker"], ["class", "tl-type-btn", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], ["type", "text", "placeholder", "Ex : Dipl\xF4me de Fatou\u2026", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "2024 ou 2024-06 ou 2024-06-15", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom du membre", 1, "form-control", 3, "ngModelChange", "ngModel"], ["rows", "3", "placeholder", "D\xE9tails de l'\xE9v\xE9nement\u2026", 1, "form-control", "form-textarea", 3, "ngModelChange", "ngModel"], [1, "tl-modal-foot"], [1, "btn-secondary", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], [1, "tl-type-btn", 3, "click"]], template: function TimelineComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div")(3, "h2");
       \u0275\u0275text(4, "Timeline familiale");
@@ -9919,7 +9997,7 @@ var TimelineComponent = class _TimelineComponent {
   <div class="tl-timeline" *ngIf="eventsFiltres.length > 0">\r
     <div class="tl-line"></div>\r
 \r
-    <div class="tl-event" *ngFor="let ev of eventsFiltres; let i = index" [class.right]="i % 2 === 0">\r
+    <div class="tl-event" *ngFor="let ev of eventsFiltres; let i = index; trackBy: trackById" [class.right]="i % 2 === 0">\r
 \r
       <div class="tl-event-dot" [style.background]="typeConfig(ev.type).color">\r
         <span class="material-icons-round">{{ typeConfig(ev.type).icon }}</span>\r
@@ -10891,7 +10969,7 @@ function UnionsComponent_div_14_Template(rf, ctx) {
 function UnionsComponent_div_15_div_1_img_4_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 77);
+    \u0275\u0275elementStart(0, "img", 78);
     \u0275\u0275listener("error", function UnionsComponent_div_15_div_1_img_4_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r6);
       const g_r5 = \u0275\u0275nextContext().$implicit;
@@ -10921,7 +10999,7 @@ function UnionsComponent_div_15_div_1_span_5_Template(rf, ctx) {
 }
 function UnionsComponent_div_15_div_1_span_11_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 78);
+    \u0275\u0275elementStart(0, "span", 79);
     \u0275\u0275text(1, "Polygamie");
     \u0275\u0275elementEnd();
   }
@@ -10929,7 +11007,7 @@ function UnionsComponent_div_15_div_1_span_11_Template(rf, ctx) {
 function UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_img_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 94);
+    \u0275\u0275elementStart(0, "img", 96);
     \u0275\u0275listener("error", function UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_img_1_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r8);
       const partner_r9 = \u0275\u0275nextContext().ngIf;
@@ -10960,7 +11038,7 @@ function UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_span_2_Templat
 function UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275template(1, UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_img_1_Template, 1, 2, "img", 93)(2, UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_span_2_Template, 2, 1, "span", 46);
+    \u0275\u0275template(1, UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_img_1_Template, 1, 2, "img", 95)(2, UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_span_2_Template, 2, 1, "span", 46);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
@@ -11007,7 +11085,7 @@ function UnionsComponent_div_15_div_1_div_19_div_1_ng_container_15_Template(rf, 
 }
 function UnionsComponent_div_15_div_1_div_19_div_1_div_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 95)(1, "span", 7);
+    \u0275\u0275elementStart(0, "div", 97)(1, "span", 7);
     \u0275\u0275text(2, "child_care");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -11022,26 +11100,26 @@ function UnionsComponent_div_15_div_1_div_19_div_1_div_18_Template(rf, ctx) {
 function UnionsComponent_div_15_div_1_div_19_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 59)(1, "span", 80);
+    \u0275\u0275elementStart(0, "div", 59)(1, "span", 82);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 81);
+    \u0275\u0275elementStart(3, "span", 83);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "div", 82)(6, "div", 83);
+    \u0275\u0275elementStart(5, "div", 84)(6, "div", 85);
     \u0275\u0275template(7, UnionsComponent_div_15_div_1_div_19_div_1_ng_container_7_Template, 3, 2, "ng-container", 46)(8, UnionsComponent_div_15_div_1_div_19_div_1_span_8_Template, 2, 0, "span", 46);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "div", 84)(10, "span", 85);
+    \u0275\u0275elementStart(9, "div", 86)(10, "span", 87);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "span", 86);
+    \u0275\u0275elementStart(12, "span", 88);
     \u0275\u0275text(13);
     \u0275\u0275template(14, UnionsComponent_div_15_div_1_div_19_div_1_ng_container_14_Template, 2, 1, "ng-container", 46)(15, UnionsComponent_div_15_div_1_div_19_div_1_ng_container_15_Template, 2, 1, "ng-container", 46);
-    \u0275\u0275elementStart(16, "span", 87);
+    \u0275\u0275elementStart(16, "span", 89);
     \u0275\u0275text(17);
     \u0275\u0275elementEnd()()()();
-    \u0275\u0275template(18, UnionsComponent_div_15_div_1_div_19_div_1_div_18_Template, 4, 1, "div", 88);
-    \u0275\u0275elementStart(19, "div", 89)(20, "button", 90);
+    \u0275\u0275template(18, UnionsComponent_div_15_div_1_div_19_div_1_div_18_Template, 4, 1, "div", 90);
+    \u0275\u0275elementStart(19, "div", 91)(20, "button", 92);
     \u0275\u0275listener("click", function UnionsComponent_div_15_div_1_div_19_div_1_Template_button_click_20_listener() {
       const u_r10 = \u0275\u0275restoreView(_r7).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(4);
@@ -11050,7 +11128,7 @@ function UnionsComponent_div_15_div_1_div_19_div_1_Template(rf, ctx) {
     \u0275\u0275elementStart(21, "span", 7);
     \u0275\u0275text(22, "people_add");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(23, "button", 91);
+    \u0275\u0275elementStart(23, "button", 93);
     \u0275\u0275listener("click", function UnionsComponent_div_15_div_1_div_19_div_1_Template_button_click_23_listener() {
       const u_r10 = \u0275\u0275restoreView(_r7).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(4);
@@ -11059,7 +11137,7 @@ function UnionsComponent_div_15_div_1_div_19_div_1_Template(rf, ctx) {
     \u0275\u0275elementStart(24, "span", 7);
     \u0275\u0275text(25, "edit");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(26, "button", 92);
+    \u0275\u0275elementStart(26, "button", 94);
     \u0275\u0275listener("click", function UnionsComponent_div_15_div_1_div_19_div_1_Template_button_click_26_listener() {
       const u_r10 = \u0275\u0275restoreView(_r7).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(4);
@@ -11106,37 +11184,38 @@ function UnionsComponent_div_15_div_1_div_19_div_1_Template(rf, ctx) {
 }
 function UnionsComponent_div_15_div_1_div_19_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 79);
-    \u0275\u0275template(1, UnionsComponent_div_15_div_1_div_19_div_1_Template, 29, 26, "div", 58);
+    \u0275\u0275elementStart(0, "div", 80);
+    \u0275\u0275template(1, UnionsComponent_div_15_div_1_div_19_div_1_Template, 29, 26, "div", 81);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const g_r5 = \u0275\u0275nextContext().$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", g_r5.couples);
+    \u0275\u0275property("ngForOf", g_r5.couples)("ngForTrackBy", ctx_r1.trackByUnionId);
   }
 }
 function UnionsComponent_div_15_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 52)(1, "div", 65);
+    \u0275\u0275elementStart(0, "div", 52)(1, "div", 66);
     \u0275\u0275listener("click", function UnionsComponent_div_15_div_1_Template_div_click_1_listener() {
       const g_r5 = \u0275\u0275restoreView(_r4).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.toggleGroup(g_r5.chef.id));
     });
-    \u0275\u0275elementStart(2, "div", 66)(3, "div", 67);
-    \u0275\u0275template(4, UnionsComponent_div_15_div_1_img_4_Template, 1, 2, "img", 68)(5, UnionsComponent_div_15_div_1_span_5_Template, 2, 1, "span", 46);
+    \u0275\u0275elementStart(2, "div", 67)(3, "div", 68);
+    \u0275\u0275template(4, UnionsComponent_div_15_div_1_img_4_Template, 1, 2, "img", 69)(5, UnionsComponent_div_15_div_1_span_5_Template, 2, 1, "span", 46);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div", 69)(7, "span", 70);
+    \u0275\u0275elementStart(6, "div", 70)(7, "span", 71);
     \u0275\u0275text(8);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "span", 71);
+    \u0275\u0275elementStart(9, "span", 72);
     \u0275\u0275text(10);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(11, UnionsComponent_div_15_div_1_span_11_Template, 2, 0, "span", 72);
+    \u0275\u0275template(11, UnionsComponent_div_15_div_1_span_11_Template, 2, 0, "span", 73);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "div", 73)(13, "button", 74);
+    \u0275\u0275elementStart(12, "div", 74)(13, "button", 75);
     \u0275\u0275listener("click", function UnionsComponent_div_15_div_1_Template_button_click_13_listener($event) {
       const g_r5 = \u0275\u0275restoreView(_r4).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -11148,10 +11227,10 @@ function UnionsComponent_div_15_div_1_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275text(16, " Ajouter un couple ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(17, "span", 75);
+    \u0275\u0275elementStart(17, "span", 76);
     \u0275\u0275text(18, " expand_more ");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275template(19, UnionsComponent_div_15_div_1_div_19_Template, 2, 1, "div", 76);
+    \u0275\u0275template(19, UnionsComponent_div_15_div_1_div_19_Template, 2, 2, "div", 77);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -11178,19 +11257,19 @@ function UnionsComponent_div_15_div_1_Template(rf, ctx) {
 function UnionsComponent_div_15_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 64);
-    \u0275\u0275template(1, UnionsComponent_div_15_div_1_Template, 20, 15, "div", 51);
+    \u0275\u0275template(1, UnionsComponent_div_15_div_1_Template, 20, 15, "div", 65);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", ctx_r1.groupedUnions);
+    \u0275\u0275property("ngForOf", ctx_r1.groupedUnions)("ngForTrackBy", ctx_r1.trackByChefId);
   }
 }
 function UnionsComponent_div_16_Template(rf, ctx) {
   if (rf & 1) {
     const _r12 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 96);
+    \u0275\u0275elementStart(0, "div", 98);
     \u0275\u0275listener("click", function UnionsComponent_div_16_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -11201,7 +11280,7 @@ function UnionsComponent_div_16_Template(rf, ctx) {
 }
 function UnionsComponent_option_34_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 97);
+    \u0275\u0275elementStart(0, "option", 99);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -11215,9 +11294,9 @@ function UnionsComponent_option_34_Template(rf, ctx) {
 function UnionsComponent_div_41_span_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r14 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "span", 100);
+    \u0275\u0275elementStart(0, "span", 102);
     \u0275\u0275text(1);
-    \u0275\u0275elementStart(2, "button", 101);
+    \u0275\u0275elementStart(2, "button", 103);
     \u0275\u0275listener("click", function UnionsComponent_div_41_span_1_Template_button_click_2_listener() {
       const pid_r15 = \u0275\u0275restoreView(_r14).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -11235,8 +11314,8 @@ function UnionsComponent_div_41_span_1_Template(rf, ctx) {
 }
 function UnionsComponent_div_41_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 98);
-    \u0275\u0275template(1, UnionsComponent_div_41_span_1_Template, 4, 1, "span", 99);
+    \u0275\u0275elementStart(0, "div", 100);
+    \u0275\u0275template(1, UnionsComponent_div_41_span_1_Template, 4, 1, "span", 101);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -11247,13 +11326,13 @@ function UnionsComponent_div_41_Template(rf, ctx) {
 }
 function UnionsComponent_div_42_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 106)(1, "div", 107);
+    \u0275\u0275elementStart(0, "div", 108)(1, "div", 109);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div")(4, "span", 108);
+    \u0275\u0275elementStart(3, "div")(4, "span", 110);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 109);
+    \u0275\u0275elementStart(6, "span", 111);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()()();
   }
@@ -11272,14 +11351,14 @@ function UnionsComponent_div_42_div_6_Template(rf, ctx) {
 }
 function UnionsComponent_div_42_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 102)(1, "div", 103)(2, "span", 7);
+    \u0275\u0275elementStart(0, "div", 104)(1, "div", 105)(2, "span", 7);
     \u0275\u0275text(3, "info");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(4, "strong");
     \u0275\u0275text(5, "Unions multiples d\xE9tect\xE9es");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(6, UnionsComponent_div_42_div_6_Template, 8, 7, "div", 104);
-    \u0275\u0275elementStart(7, "p", 105)(8, "span", 7);
+    \u0275\u0275template(6, UnionsComponent_div_42_div_6_Template, 8, 7, "div", 106);
+    \u0275\u0275elementStart(7, "p", 107)(8, "span", 7);
     \u0275\u0275text(9, "auto_fix_high");
     \u0275\u0275elementEnd();
     \u0275\u0275text(10, " Type ajust\xE9 automatiquement \xE0 ");
@@ -11298,7 +11377,7 @@ function UnionsComponent_div_42_Template(rf, ctx) {
 function UnionsComponent_div_44_img_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r19 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 118);
+    \u0275\u0275elementStart(0, "img", 120);
     \u0275\u0275listener("error", function UnionsComponent_div_44_img_2_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r19);
       const p_r18 = \u0275\u0275nextContext().$implicit;
@@ -11315,7 +11394,7 @@ function UnionsComponent_div_44_img_2_Template(rf, ctx) {
 }
 function UnionsComponent_div_44_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 107);
+    \u0275\u0275elementStart(0, "div", 109);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -11329,7 +11408,7 @@ function UnionsComponent_div_44_div_3_Template(rf, ctx) {
 }
 function UnionsComponent_div_44_span_7_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 119)(1, "span", 7);
+    \u0275\u0275elementStart(0, "span", 121)(1, "span", 7);
     \u0275\u0275text(2, "favorite");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -11344,7 +11423,7 @@ function UnionsComponent_div_44_span_7_Template(rf, ctx) {
 }
 function UnionsComponent_div_44_span_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 120);
+    \u0275\u0275elementStart(0, "span", 122);
     \u0275\u0275text(1, "check_circle");
     \u0275\u0275elementEnd();
   }
@@ -11352,21 +11431,21 @@ function UnionsComponent_div_44_span_8_Template(rf, ctx) {
 function UnionsComponent_div_44_Template(rf, ctx) {
   if (rf & 1) {
     const _r17 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 110);
+    \u0275\u0275elementStart(0, "div", 112);
     \u0275\u0275listener("click", function UnionsComponent_div_44_Template_div_click_0_listener() {
       const p_r18 = \u0275\u0275restoreView(_r17).$implicit;
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.toggleParticipant(p_r18.id));
     });
-    \u0275\u0275elementStart(1, "div", 111);
-    \u0275\u0275template(2, UnionsComponent_div_44_img_2_Template, 1, 2, "img", 112)(3, UnionsComponent_div_44_div_3_Template, 2, 5, "div", 113);
+    \u0275\u0275elementStart(1, "div", 113);
+    \u0275\u0275template(2, UnionsComponent_div_44_img_2_Template, 1, 2, "img", 114)(3, UnionsComponent_div_44_div_3_Template, 2, 5, "div", 115);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "div", 114)(5, "span", 115);
+    \u0275\u0275elementStart(4, "div", 116)(5, "span", 117);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(7, UnionsComponent_div_44_span_7_Template, 4, 1, "span", 116);
+    \u0275\u0275template(7, UnionsComponent_div_44_span_7_Template, 4, 1, "span", 118);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(8, UnionsComponent_div_44_span_8_Template, 2, 0, "span", 117);
+    \u0275\u0275template(8, UnionsComponent_div_44_span_8_Template, 2, 0, "span", 119);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -11387,7 +11466,7 @@ function UnionsComponent_div_44_Template(rf, ctx) {
 }
 function UnionsComponent_option_59_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 97);
+    \u0275\u0275elementStart(0, "option", 99);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -11400,7 +11479,7 @@ function UnionsComponent_option_59_Template(rf, ctx) {
 }
 function UnionsComponent_option_84_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 97);
+    \u0275\u0275elementStart(0, "option", 99);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -11411,57 +11490,71 @@ function UnionsComponent_option_84_Template(rf, ctx) {
     \u0275\u0275textInterpolate(m_r21.label);
   }
 }
-function UnionsComponent_span_102_Template(rf, ctx) {
+function UnionsComponent_div_98_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 121);
+    \u0275\u0275elementStart(0, "div", 62)(1, "span", 7);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r1.formErreur, " ");
+  }
+}
+function UnionsComponent_span_103_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 123);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_span_103_Template(rf, ctx) {
+function UnionsComponent_span_104_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 7);
     \u0275\u0275text(1, "save");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_div_119_span_27_Template(rf, ctx) {
+function UnionsComponent_div_120_span_27_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 121);
+    \u0275\u0275elementStart(0, "span", 123);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_div_119_span_28_Template(rf, ctx) {
+function UnionsComponent_div_120_span_28_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 7);
     \u0275\u0275text(1, "child_care");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_div_119_Template(rf, ctx) {
+function UnionsComponent_div_120_Template(rf, ctx) {
   if (rf & 1) {
     const _r22 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 122)(1, "div", 19)(2, "label");
+    \u0275\u0275elementStart(0, "div", 124)(1, "div", 19)(2, "label");
     \u0275\u0275text(3, "Pr\xE9nom(s) ");
-    \u0275\u0275elementStart(4, "span", 123);
+    \u0275\u0275elementStart(4, "span", 125);
     \u0275\u0275text(5, "*");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(6, "input", 124);
-    \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_div_119_Template_input_ngModelChange_6_listener($event) {
+    \u0275\u0275elementStart(6, "input", 126);
+    \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_div_120_Template_input_ngModelChange_6_listener($event) {
       \u0275\u0275restoreView(_r22);
       const ctx_r1 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r1.createChildForm.prenoms, $event) || (ctx_r1.createChildForm.prenoms = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "div", 125)(8, "div", 19)(9, "label");
+    \u0275\u0275elementStart(7, "div", 127)(8, "div", 19)(9, "label");
     \u0275\u0275text(10, "Nom ");
-    \u0275\u0275elementStart(11, "span", 123);
+    \u0275\u0275elementStart(11, "span", 125);
     \u0275\u0275text(12, "*");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(13, "input", 126);
-    \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_div_119_Template_input_ngModelChange_13_listener($event) {
+    \u0275\u0275elementStart(13, "input", 128);
+    \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_div_120_Template_input_ngModelChange_13_listener($event) {
       \u0275\u0275restoreView(_r22);
       const ctx_r1 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r1.createChildForm.nomNaissance, $event) || (ctx_r1.createChildForm.nomNaissance = $event);
@@ -11471,37 +11564,37 @@ function UnionsComponent_div_119_Template(rf, ctx) {
     \u0275\u0275elementStart(14, "div", 19)(15, "label");
     \u0275\u0275text(16, "Sexe");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(17, "select", 127);
-    \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_div_119_Template_select_ngModelChange_17_listener($event) {
+    \u0275\u0275elementStart(17, "select", 129);
+    \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_div_120_Template_select_ngModelChange_17_listener($event) {
       \u0275\u0275restoreView(_r22);
       const ctx_r1 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r1.createChildForm.sexe, $event) || (ctx_r1.createChildForm.sexe = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275elementStart(18, "option", 128);
+    \u0275\u0275elementStart(18, "option", 130);
     \u0275\u0275text(19, "Homme");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "option", 129);
+    \u0275\u0275elementStart(20, "option", 131);
     \u0275\u0275text(21, "Femme");
     \u0275\u0275elementEnd()()()();
     \u0275\u0275elementStart(22, "div", 19)(23, "label");
     \u0275\u0275text(24, "Ann\xE9e de naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(25, "input", 130);
-    \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_div_119_Template_input_ngModelChange_25_listener($event) {
+    \u0275\u0275elementStart(25, "input", 132);
+    \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_div_120_Template_input_ngModelChange_25_listener($event) {
       \u0275\u0275restoreView(_r22);
       const ctx_r1 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r1.createChildForm.dateNaissance, $event) || (ctx_r1.createChildForm.dateNaissance = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(26, "button", 131);
-    \u0275\u0275listener("click", function UnionsComponent_div_119_Template_button_click_26_listener() {
+    \u0275\u0275elementStart(26, "button", 133);
+    \u0275\u0275listener("click", function UnionsComponent_div_120_Template_button_click_26_listener() {
       \u0275\u0275restoreView(_r22);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.createAndAddChild());
     });
-    \u0275\u0275template(27, UnionsComponent_div_119_span_27_Template, 2, 0, "span", 41)(28, UnionsComponent_div_119_span_28_Template, 2, 0, "span", 42);
+    \u0275\u0275template(27, UnionsComponent_div_120_span_27_Template, 2, 0, "span", 41)(28, UnionsComponent_div_120_span_28_Template, 2, 0, "span", 42);
     \u0275\u0275text(29);
     \u0275\u0275elementEnd()();
   }
@@ -11525,15 +11618,15 @@ function UnionsComponent_div_119_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", ctx_r1.createChildSaving ? "Cr\xE9ation..." : "Cr\xE9er et ajouter comme enfant", " ");
   }
 }
-function UnionsComponent_ng_container_120_Template(rf, ctx) {
+function UnionsComponent_ng_container_121_Template(rf, ctx) {
   if (rf & 1) {
     const _r23 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "div", 132)(2, "span", 7);
+    \u0275\u0275elementStart(1, "div", 134)(2, "span", 7);
     \u0275\u0275text(3, "search");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "input", 133);
-    \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_ng_container_120_Template_input_ngModelChange_4_listener($event) {
+    \u0275\u0275elementStart(4, "input", 135);
+    \u0275\u0275twoWayListener("ngModelChange", function UnionsComponent_ng_container_121_Template_input_ngModelChange_4_listener($event) {
       \u0275\u0275restoreView(_r23);
       const ctx_r1 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r1.searchEnfant, $event) || (ctx_r1.searchEnfant = $event);
@@ -11548,11 +11641,11 @@ function UnionsComponent_ng_container_120_Template(rf, ctx) {
     \u0275\u0275twoWayProperty("ngModel", ctx_r1.searchEnfant);
   }
 }
-function UnionsComponent_div_121_div_1_img_2_Template(rf, ctx) {
+function UnionsComponent_div_122_div_1_img_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r26 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 118);
-    \u0275\u0275listener("error", function UnionsComponent_div_121_div_1_img_2_Template_img_error_0_listener() {
+    \u0275\u0275elementStart(0, "img", 120);
+    \u0275\u0275listener("error", function UnionsComponent_div_122_div_1_img_2_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r26);
       const p_r25 = \u0275\u0275nextContext().$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -11566,9 +11659,9 @@ function UnionsComponent_div_121_div_1_img_2_Template(rf, ctx) {
     \u0275\u0275property("src", ctx_r1.photoOf(p_r25), \u0275\u0275sanitizeUrl)("alt", ctx_r1.nomComplet(p_r25));
   }
 }
-function UnionsComponent_div_121_div_1_div_3_Template(rf, ctx) {
+function UnionsComponent_div_122_div_1_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 107);
+    \u0275\u0275elementStart(0, "div", 109);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -11580,29 +11673,29 @@ function UnionsComponent_div_121_div_1_div_3_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r1.initiales(p_r25));
   }
 }
-function UnionsComponent_div_121_div_1_span_6_Template(rf, ctx) {
+function UnionsComponent_div_122_div_1_span_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 120);
+    \u0275\u0275elementStart(0, "span", 122);
     \u0275\u0275text(1, "check_circle");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_div_121_div_1_Template(rf, ctx) {
+function UnionsComponent_div_122_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r24 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 110);
-    \u0275\u0275listener("click", function UnionsComponent_div_121_div_1_Template_div_click_0_listener() {
+    \u0275\u0275elementStart(0, "div", 112);
+    \u0275\u0275listener("click", function UnionsComponent_div_122_div_1_Template_div_click_0_listener() {
       const p_r25 = \u0275\u0275restoreView(_r24).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.toggleEnfantSelection(p_r25.id));
     });
-    \u0275\u0275elementStart(1, "div", 111);
-    \u0275\u0275template(2, UnionsComponent_div_121_div_1_img_2_Template, 1, 2, "img", 112)(3, UnionsComponent_div_121_div_1_div_3_Template, 2, 5, "div", 113);
+    \u0275\u0275elementStart(1, "div", 113);
+    \u0275\u0275template(2, UnionsComponent_div_122_div_1_img_2_Template, 1, 2, "img", 114)(3, UnionsComponent_div_122_div_1_div_3_Template, 2, 5, "div", 115);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 115);
+    \u0275\u0275elementStart(4, "span", 117);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(6, UnionsComponent_div_121_div_1_span_6_Template, 2, 0, "span", 117);
+    \u0275\u0275template(6, UnionsComponent_div_122_div_1_span_6_Template, 2, 0, "span", 119);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -11619,32 +11712,32 @@ function UnionsComponent_div_121_div_1_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r1.isEnfantSelected(p_r25.id));
   }
 }
-function UnionsComponent_div_121_div_2_Template(rf, ctx) {
+function UnionsComponent_div_122_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 136);
+    \u0275\u0275elementStart(0, "div", 138);
     \u0275\u0275text(1, "Aucune personne disponible");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_div_121_Template(rf, ctx) {
+function UnionsComponent_div_122_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 24);
-    \u0275\u0275template(1, UnionsComponent_div_121_div_1_Template, 7, 6, "div", 134)(2, UnionsComponent_div_121_div_2_Template, 2, 0, "div", 135);
+    \u0275\u0275template(1, UnionsComponent_div_122_div_1_Template, 7, 6, "div", 136)(2, UnionsComponent_div_122_div_2_Template, 2, 0, "div", 137);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", ctx_r1.personnesDisponibles);
+    \u0275\u0275property("ngForOf", ctx_r1.personnesDisponibles)("ngForTrackBy", ctx_r1.trackByPersonneId);
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r1.personnesDisponibles.length === 0);
   }
 }
-function UnionsComponent_div_122_div_3_img_2_Template(rf, ctx) {
+function UnionsComponent_div_123_div_3_img_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r28 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 118);
-    \u0275\u0275listener("error", function UnionsComponent_div_122_div_3_img_2_Template_img_error_0_listener() {
+    \u0275\u0275elementStart(0, "img", 120);
+    \u0275\u0275listener("error", function UnionsComponent_div_123_div_3_img_2_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r28);
       const f_r29 = \u0275\u0275nextContext().$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -11658,9 +11751,9 @@ function UnionsComponent_div_122_div_3_img_2_Template(rf, ctx) {
     \u0275\u0275property("src", ctx_r1.photoOf(f_r29.enfant), \u0275\u0275sanitizeUrl)("alt", ctx_r1.nomComplet(f_r29.enfant));
   }
 }
-function UnionsComponent_div_122_div_3_div_3_Template(rf, ctx) {
+function UnionsComponent_div_123_div_3_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 107);
+    \u0275\u0275elementStart(0, "div", 109);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -11672,17 +11765,17 @@ function UnionsComponent_div_122_div_3_div_3_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", ctx_r1.initiales(f_r29.enfant), " ");
   }
 }
-function UnionsComponent_div_122_div_3_Template(rf, ctx) {
+function UnionsComponent_div_123_div_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r27 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 140)(1, "div", 111);
-    \u0275\u0275template(2, UnionsComponent_div_122_div_3_img_2_Template, 1, 2, "img", 112)(3, UnionsComponent_div_122_div_3_div_3_Template, 2, 5, "div", 113);
+    \u0275\u0275elementStart(0, "div", 142)(1, "div", 113);
+    \u0275\u0275template(2, UnionsComponent_div_123_div_3_img_2_Template, 1, 2, "img", 114)(3, UnionsComponent_div_123_div_3_div_3_Template, 2, 5, "div", 115);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 141);
+    \u0275\u0275elementStart(4, "span", 143);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "button", 142);
-    \u0275\u0275listener("click", function UnionsComponent_div_122_div_3_Template_button_click_6_listener() {
+    \u0275\u0275elementStart(6, "button", 144);
+    \u0275\u0275listener("click", function UnionsComponent_div_123_div_3_Template_button_click_6_listener() {
       const f_r29 = \u0275\u0275restoreView(_r27).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.retirerEnfant(ctx_r1.enfantUnionTarget.id, f_r29.enfantId));
@@ -11702,38 +11795,52 @@ function UnionsComponent_div_122_div_3_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r1.nomComplet(f_r29.enfant));
   }
 }
-function UnionsComponent_div_122_Template(rf, ctx) {
+function UnionsComponent_div_123_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 137)(1, "div", 138);
+    \u0275\u0275elementStart(0, "div", 139)(1, "div", 140);
     \u0275\u0275text(2, "Enfants actuels");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(3, UnionsComponent_div_122_div_3_Template, 9, 3, "div", 139);
+    \u0275\u0275template(3, UnionsComponent_div_123_div_3_Template, 9, 3, "div", 141);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275advance(3);
-    \u0275\u0275property("ngForOf", ctx_r1.enfantUnionTarget.filiations);
+    \u0275\u0275property("ngForOf", ctx_r1.enfantUnionTarget.filiations)("ngForTrackBy", ctx_r1.trackByFiliationId);
   }
 }
-function UnionsComponent_span_127_Template(rf, ctx) {
+function UnionsComponent_div_124_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 121);
+    \u0275\u0275elementStart(0, "div", 62)(1, "span", 7);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r1.enfantErreur, " ");
+  }
+}
+function UnionsComponent_span_129_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 123);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_div_129_span_13_Template(rf, ctx) {
+function UnionsComponent_div_131_span_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 121);
+    \u0275\u0275elementStart(0, "span", 123);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function UnionsComponent_div_129_Template(rf, ctx) {
+function UnionsComponent_div_131_Template(rf, ctx) {
   if (rf & 1) {
     const _r30 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 143)(1, "div", 144)(2, "div", 145)(3, "span", 7);
+    \u0275\u0275elementStart(0, "div", 145)(1, "div", 146)(2, "div", 147)(3, "span", 7);
     \u0275\u0275text(4, "delete_forever");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(5, "h4");
@@ -11742,21 +11849,21 @@ function UnionsComponent_div_129_Template(rf, ctx) {
     \u0275\u0275elementStart(7, "p");
     \u0275\u0275text(8, "Cette action est irr\xE9versible. Tous les liens de parent\xE9 associ\xE9s seront supprim\xE9s.");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "div", 146)(10, "button", 39);
-    \u0275\u0275listener("click", function UnionsComponent_div_129_Template_button_click_10_listener() {
+    \u0275\u0275elementStart(9, "div", 148)(10, "button", 39);
+    \u0275\u0275listener("click", function UnionsComponent_div_131_Template_button_click_10_listener() {
       \u0275\u0275restoreView(_r30);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.closeAll());
     });
     \u0275\u0275text(11, "Annuler");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "button", 147);
-    \u0275\u0275listener("click", function UnionsComponent_div_129_Template_button_click_12_listener() {
+    \u0275\u0275elementStart(12, "button", 149);
+    \u0275\u0275listener("click", function UnionsComponent_div_131_Template_button_click_12_listener() {
       \u0275\u0275restoreView(_r30);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.deleteUnion());
     });
-    \u0275\u0275template(13, UnionsComponent_div_129_span_13_Template, 2, 0, "span", 41);
+    \u0275\u0275template(13, UnionsComponent_div_131_span_13_Template, 2, 0, "span", 41);
     \u0275\u0275text(14);
     \u0275\u0275elementEnd()()()();
   }
@@ -11877,6 +11984,7 @@ var UnionsComponent = class _UnionsComponent {
   saving = false;
   deleting = false;
   addingEnfant = false;
+  formErreur = null;
   mois = MOIS2;
   typeUnion = TYPE_UNION;
   form = this.emptyForm();
@@ -11938,6 +12046,18 @@ var UnionsComponent = class _UnionsComponent {
   nomComplet(p) {
     return p ? getNomComplet(p) : "\u2014";
   }
+  trackByChefId(_, g) {
+    return g.chef.id;
+  }
+  trackByUnionId(_, u) {
+    return u.id;
+  }
+  trackByPersonneId(_, p) {
+    return p.id;
+  }
+  trackByFiliationId(_, f) {
+    return f.enfantId;
+  }
   annee(d) {
     return extractAnnee(d);
   }
@@ -11978,6 +12098,7 @@ var UnionsComponent = class _UnionsComponent {
   openCreate() {
     this.editTarget = null;
     this.form = this.emptyForm();
+    this.formErreur = null;
     this.showForm = true;
   }
   /** Crée un nouveau couple pour un chef de famille donné */
@@ -11985,6 +12106,7 @@ var UnionsComponent = class _UnionsComponent {
     this.editTarget = null;
     this.form = this.emptyForm();
     this.form.participantIds = [chef.id];
+    this.formErreur = null;
     this.showForm = true;
   }
   openEdit(u) {
@@ -12004,6 +12126,7 @@ var UnionsComponent = class _UnionsComponent {
       notes: u.notes ?? "",
       participantIds: u.participants.map((p) => p.personneId)
     };
+    this.formErreur = null;
     this.showForm = true;
   }
   closeAll() {
@@ -12047,6 +12170,11 @@ var UnionsComponent = class _UnionsComponent {
   saveUnion() {
     if (this.saving)
       return;
+    if (this.form.participantIds.length === 0) {
+      this.formErreur = "S\xE9lectionnez au moins un participant pour cette union.";
+      return;
+    }
+    this.formErreur = null;
     this.saving = true;
     const body = {
       type: this.form.type,
@@ -12094,6 +12222,7 @@ var UnionsComponent = class _UnionsComponent {
     this.searchEnfant = "";
     this.showCreateChild = false;
     this.createChildForm = { prenoms: "", nomNaissance: "", nomUsage: "", sexe: "M", dateNaissance: "" };
+    this.enfantErreur = null;
     this.showEnfantPanel = true;
   }
   closeEnfantPanel() {
@@ -12101,6 +12230,7 @@ var UnionsComponent = class _UnionsComponent {
     this.enfantUnionTarget = null;
     this.enfantsSelectionnes = [];
     this.showCreateChild = false;
+    this.enfantErreur = null;
   }
   /** Crée un nouveau membre et l'ajoute directement comme enfant */
   createAndAddChild() {
@@ -12161,31 +12291,28 @@ var UnionsComponent = class _UnionsComponent {
   isEnfantSelected(id) {
     return this.enfantsSelectionnes.includes(id);
   }
+  enfantErreur = null;
   ajouterEnfants() {
     if (!this.enfantUnionTarget || this.addingEnfant || !this.enfantsSelectionnes.length)
       return;
     this.addingEnfant = true;
+    this.enfantErreur = null;
     const unionId = this.enfantUnionTarget.id;
     const ids = [...this.enfantsSelectionnes];
-    let completed = 0;
-    ids.forEach((enfantId) => {
-      this.api.addEnfantToUnion(unionId, enfantId).subscribe({
-        next: () => {
-          completed++;
-          if (completed === ids.length) {
-            this.addingEnfant = false;
-            this.closeEnfantPanel();
-            this.refreshUnions();
-          }
-        },
-        error: () => {
-          completed++;
-          if (completed === ids.length) {
-            this.addingEnfant = false;
-            this.refreshUnions();
-          }
-        }
-      });
+    forkJoin(ids.map((enfantId) => this.api.addEnfantToUnion(unionId, enfantId).pipe(map(() => ({ enfantId, ok: true })), catchError(() => of({ enfantId, ok: false }))))).subscribe((results) => {
+      this.addingEnfant = false;
+      const echecs = results.filter((r) => !r.ok);
+      if (echecs.length > 0) {
+        const noms = echecs.map((e) => {
+          const p = this.personnes.find((p2) => p2.id === e.enfantId);
+          return p ? getNomComplet(p) : e.enfantId;
+        });
+        this.enfantErreur = `\xC9chec de l'ajout pour : ${noms.join(", ")}`;
+        this.enfantsSelectionnes = echecs.map((e) => e.enfantId);
+      } else {
+        this.closeEnfantPanel();
+      }
+      this.refreshUnions();
     });
   }
   retirerEnfant(unionId, enfantId) {
@@ -12200,6 +12327,9 @@ var UnionsComponent = class _UnionsComponent {
               this.enfantUnionTarget = u;
           });
         }
+      },
+      error: () => {
+        this.enfantErreur = "Erreur lors du retrait de l'enfant.";
       }
     });
   }
@@ -12209,7 +12339,7 @@ var UnionsComponent = class _UnionsComponent {
   static \u0275fac = function UnionsComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _UnionsComponent)(\u0275\u0275directiveInject(ApiService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _UnionsComponent, selectors: [["app-unions"]], standalone: false, decls: 130, vars: 45, consts: [["unionForm", "ngForm"], [1, "unions-page"], [1, "page-header"], [1, "header-row"], [1, "page-title"], [1, "page-subtitle"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], ["class", "sk-section", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "ug-groups", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel"], [1, "panel-header"], [1, "btn-icon", 3, "click"], [1, "panel-body"], [1, "form-section"], [1, "section-title"], [1, "form-group"], ["name", "type", 1, "form-control", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], ["class", "participant-chips", 4, "ngIf"], ["class", "multi-union-alert", 4, "ngIf"], [1, "person-select-list"], ["class", "person-select-item", 3, "selected", "has-union", "click", 4, "ngFor", "ngForOf"], [1, "form-row"], ["type", "number", "name", "debut_annee", "placeholder", "2000", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "debut_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], ["type", "number", "name", "debut_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuDebut", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "optional"], ["type", "number", "name", "fin_annee", "placeholder", "2020", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "fin_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "number", "name", "fin_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuFin", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "notes", "rows", "3", "placeholder", "Notes compl\xE9mentaires...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "panel-subtitle"], [1, "qa-create-toggle", 3, "click"], ["class", "qa-create-form", 4, "ngIf"], [4, "ngIf"], ["class", "person-select-list", 4, "ngIf"], ["class", "current-children", 4, "ngIf"], ["class", "confirm-dialog", 4, "ngIf"], [1, "sk-section"], ["class", "ug-group", 4, "ngFor", "ngForOf"], [1, "ug-group"], [1, "ug-group-header"], [1, "sk-avatar", "sk-av-md"], [2, "flex", "1", "display", "flex", "flex-direction", "column", "gap", "6px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], ["class", "ug-couple-row", 4, "ngFor", "ngForOf"], [1, "ug-couple-row"], [1, "sk-line", "sk-xs", 2, "width", "32px", "height", "32px", "border-radius", "50%"], [2, "flex", "1", "display", "flex", "flex-direction", "column", "gap", "5px"], [1, "error-state"], [1, "empty-state"], [1, "ug-groups"], [1, "ug-group-header", 3, "click"], [1, "ug-chef-left"], [1, "ug-chef-avatar"], ["class", "ug-chef-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ug-chef-info"], [1, "ug-chef-name"], [1, "ug-chef-meta"], ["class", "badge ug-poly-badge", 4, "ngIf"], [1, "ug-group-actions"], [1, "btn-outline", "btn-sm", 3, "click"], [1, "material-icons-round", "ug-chevron"], ["class", "ug-couples", 4, "ngIf"], [1, "ug-chef-avatar-photo", 3, "error", "src", "alt"], [1, "badge", "ug-poly-badge"], [1, "ug-couples"], [1, "ug-couple-num"], [1, "material-icons-round", "ug-status-icon"], [1, "ug-partner-info"], [1, "ug-partner-avatar"], [1, "ug-partner-details"], [1, "ug-partner-name"], [1, "ug-partner-meta"], [1, "ug-status-chip"], ["class", "ug-children-count", 4, "ngIf"], [1, "ug-couple-actions"], ["title", "G\xE9rer les enfants", 1, "btn-icon", 3, "click"], ["title", "Modifier ce couple", 1, "btn-icon", 3, "click"], ["title", "Supprimer", 1, "btn-icon", "btn-icon-danger", 3, "click"], ["class", "ug-partner-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ug-partner-photo", 3, "error", "src", "alt"], [1, "ug-children-count"], [1, "panel-overlay", 3, "click"], [3, "value"], [1, "participant-chips"], ["class", "participant-chip", 4, "ngFor", "ngForOf"], [1, "participant-chip"], ["type", "button", 1, "chip-remove", 3, "click"], [1, "multi-union-alert"], [1, "multi-union-alert-header"], ["class", "multi-union-alert-row", 4, "ngFor", "ngForOf"], [1, "multi-union-alert-tip"], [1, "multi-union-alert-row"], [1, "avatar", "avatar-sm"], [1, "multi-union-alert-name"], [1, "multi-union-alert-hint"], [1, "person-select-item", 3, "click"], [1, "u-avatar-wrap"], ["class", "u-avatar-photo avatar avatar-sm", 3, "src", "alt", "error", 4, "ngIf"], ["class", "avatar avatar-sm", 3, "male", "female", 4, "ngIf"], [1, "person-select-info"], [1, "person-select-name"], ["class", "person-union-hint", 4, "ngIf"], ["class", "material-icons-round check-icon", 4, "ngIf"], [1, "u-avatar-photo", "avatar", "avatar-sm", 3, "error", "src", "alt"], [1, "person-union-hint"], [1, "material-icons-round", "check-icon"], [1, "material-icons-round", "spin"], [1, "qa-create-form"], [2, "color", "#EF4444"], ["type", "text", "placeholder", "Pr\xE9nom(s)", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-row-2"], ["type", "text", "placeholder", "Nom", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-control", 3, "ngModelChange", "ngModel"], ["value", "M"], ["value", "F"], ["type", "number", "placeholder", "2000", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "btn-primary", 2, "width", "100%", 3, "click", "disabled"], [1, "search-bar", 2, "margin", "10px 0 10px"], ["type", "text", "placeholder", "Rechercher...", 3, "ngModelChange", "ngModel"], ["class", "person-select-item", 3, "selected", "click", 4, "ngFor", "ngForOf"], ["class", "empty-list-msg", 4, "ngIf"], [1, "empty-list-msg"], [1, "current-children"], [1, "section-title", 2, "margin-top", "20px"], ["class", "child-item", 4, "ngFor", "ngForOf"], [1, "child-item"], [1, "child-name"], [1, "btn-icon", "btn-icon-danger", 3, "click"], [1, "confirm-dialog"], [1, "confirm-box"], [1, "confirm-icon"], [1, "confirm-actions"], [1, "btn-danger", 3, "click", "disabled"]], template: function UnionsComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _UnionsComponent, selectors: [["app-unions"]], standalone: false, decls: 132, vars: 48, consts: [["unionForm", "ngForm"], [1, "unions-page"], [1, "page-header"], [1, "header-row"], [1, "page-title"], [1, "page-subtitle"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], ["class", "sk-section", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "ug-groups", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel"], [1, "panel-header"], [1, "btn-icon", 3, "click"], [1, "panel-body"], [1, "form-section"], [1, "section-title"], [1, "form-group"], ["name", "type", 1, "form-control", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], ["class", "participant-chips", 4, "ngIf"], ["class", "multi-union-alert", 4, "ngIf"], [1, "person-select-list"], ["class", "person-select-item", 3, "selected", "has-union", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "form-row"], ["type", "number", "name", "debut_annee", "placeholder", "2000", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "debut_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], ["type", "number", "name", "debut_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuDebut", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "optional"], ["type", "number", "name", "fin_annee", "placeholder", "2020", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "fin_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "number", "name", "fin_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuFin", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "notes", "rows", "3", "placeholder", "Notes compl\xE9mentaires...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "panel-subtitle"], [1, "qa-create-toggle", 3, "click"], ["class", "qa-create-form", 4, "ngIf"], [4, "ngIf"], ["class", "person-select-list", 4, "ngIf"], ["class", "current-children", 4, "ngIf"], ["class", "confirm-dialog", 4, "ngIf"], [1, "sk-section"], ["class", "ug-group", 4, "ngFor", "ngForOf"], [1, "ug-group"], [1, "ug-group-header"], [1, "sk-avatar", "sk-av-md"], [2, "flex", "1", "display", "flex", "flex-direction", "column", "gap", "6px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], ["class", "ug-couple-row", 4, "ngFor", "ngForOf"], [1, "ug-couple-row"], [1, "sk-line", "sk-xs", 2, "width", "32px", "height", "32px", "border-radius", "50%"], [2, "flex", "1", "display", "flex", "flex-direction", "column", "gap", "5px"], [1, "error-state"], [1, "empty-state"], [1, "ug-groups"], ["class", "ug-group", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "ug-group-header", 3, "click"], [1, "ug-chef-left"], [1, "ug-chef-avatar"], ["class", "ug-chef-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ug-chef-info"], [1, "ug-chef-name"], [1, "ug-chef-meta"], ["class", "badge ug-poly-badge", 4, "ngIf"], [1, "ug-group-actions"], [1, "btn-outline", "btn-sm", 3, "click"], [1, "material-icons-round", "ug-chevron"], ["class", "ug-couples", 4, "ngIf"], [1, "ug-chef-avatar-photo", 3, "error", "src", "alt"], [1, "badge", "ug-poly-badge"], [1, "ug-couples"], ["class", "ug-couple-row", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "ug-couple-num"], [1, "material-icons-round", "ug-status-icon"], [1, "ug-partner-info"], [1, "ug-partner-avatar"], [1, "ug-partner-details"], [1, "ug-partner-name"], [1, "ug-partner-meta"], [1, "ug-status-chip"], ["class", "ug-children-count", 4, "ngIf"], [1, "ug-couple-actions"], ["title", "G\xE9rer les enfants", 1, "btn-icon", 3, "click"], ["title", "Modifier ce couple", 1, "btn-icon", 3, "click"], ["title", "Supprimer", 1, "btn-icon", "btn-icon-danger", 3, "click"], ["class", "ug-partner-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ug-partner-photo", 3, "error", "src", "alt"], [1, "ug-children-count"], [1, "panel-overlay", 3, "click"], [3, "value"], [1, "participant-chips"], ["class", "participant-chip", 4, "ngFor", "ngForOf"], [1, "participant-chip"], ["type", "button", 1, "chip-remove", 3, "click"], [1, "multi-union-alert"], [1, "multi-union-alert-header"], ["class", "multi-union-alert-row", 4, "ngFor", "ngForOf"], [1, "multi-union-alert-tip"], [1, "multi-union-alert-row"], [1, "avatar", "avatar-sm"], [1, "multi-union-alert-name"], [1, "multi-union-alert-hint"], [1, "person-select-item", 3, "click"], [1, "u-avatar-wrap"], ["class", "u-avatar-photo avatar avatar-sm", 3, "src", "alt", "error", 4, "ngIf"], ["class", "avatar avatar-sm", 3, "male", "female", 4, "ngIf"], [1, "person-select-info"], [1, "person-select-name"], ["class", "person-union-hint", 4, "ngIf"], ["class", "material-icons-round check-icon", 4, "ngIf"], [1, "u-avatar-photo", "avatar", "avatar-sm", 3, "error", "src", "alt"], [1, "person-union-hint"], [1, "material-icons-round", "check-icon"], [1, "material-icons-round", "spin"], [1, "qa-create-form"], [2, "color", "#EF4444"], ["type", "text", "placeholder", "Pr\xE9nom(s)", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-row-2"], ["type", "text", "placeholder", "Nom", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-control", 3, "ngModelChange", "ngModel"], ["value", "M"], ["value", "F"], ["type", "number", "placeholder", "2000", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "btn-primary", 2, "width", "100%", 3, "click", "disabled"], [1, "search-bar", 2, "margin", "10px 0 10px"], ["type", "text", "placeholder", "Rechercher...", 3, "ngModelChange", "ngModel"], ["class", "person-select-item", 3, "selected", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "empty-list-msg", 4, "ngIf"], [1, "empty-list-msg"], [1, "current-children"], [1, "section-title", 2, "margin-top", "20px"], ["class", "child-item", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "child-item"], [1, "child-name"], [1, "btn-icon", "btn-icon-danger", 3, "click"], [1, "confirm-dialog"], [1, "confirm-box"], [1, "confirm-icon"], [1, "confirm-actions"], [1, "btn-danger", 3, "click", "disabled"]], template: function UnionsComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 1)(1, "div", 2)(2, "div", 3)(3, "div")(4, "h2", 4);
@@ -12228,7 +12358,7 @@ var UnionsComponent = class _UnionsComponent {
       \u0275\u0275elementEnd();
       \u0275\u0275text(11, " Nouveau couple ");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(12, UnionsComponent_div_12_Template, 2, 2, "div", 8)(13, UnionsComponent_div_13_Template, 4, 1, "div", 9)(14, UnionsComponent_div_14_Template, 11, 0, "div", 10)(15, UnionsComponent_div_15_Template, 2, 1, "div", 11);
+      \u0275\u0275template(12, UnionsComponent_div_12_Template, 2, 2, "div", 8)(13, UnionsComponent_div_13_Template, 4, 1, "div", 9)(14, UnionsComponent_div_14_Template, 11, 0, "div", 10)(15, UnionsComponent_div_15_Template, 2, 2, "div", 11);
       \u0275\u0275elementEnd();
       \u0275\u0275template(16, UnionsComponent_div_16_Template, 1, 0, "div", 12);
       \u0275\u0275elementStart(17, "div", 13)(18, "div", 14)(19, "h3");
@@ -12372,63 +12502,65 @@ var UnionsComponent = class _UnionsComponent {
         return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd()()()()();
-      \u0275\u0275elementStart(98, "div", 38)(99, "button", 39);
-      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_99_listener() {
+      \u0275\u0275template(98, UnionsComponent_div_98_Template, 4, 1, "div", 9);
+      \u0275\u0275elementStart(99, "div", 38)(100, "button", 39);
+      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_100_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeAll());
       });
-      \u0275\u0275text(100, "Annuler");
+      \u0275\u0275text(101, "Annuler");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(101, "button", 40);
-      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_101_listener() {
+      \u0275\u0275elementStart(102, "button", 40);
+      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_102_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.saveUnion());
       });
-      \u0275\u0275template(102, UnionsComponent_span_102_Template, 2, 0, "span", 41)(103, UnionsComponent_span_103_Template, 2, 0, "span", 42);
-      \u0275\u0275text(104);
+      \u0275\u0275template(103, UnionsComponent_span_103_Template, 2, 0, "span", 41)(104, UnionsComponent_span_104_Template, 2, 0, "span", 42);
+      \u0275\u0275text(105);
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(105, "div", 13)(106, "div", 14)(107, "h3");
-      \u0275\u0275text(108, "Enfants du couple");
+      \u0275\u0275elementStart(106, "div", 13)(107, "div", 14)(108, "h3");
+      \u0275\u0275text(109, "Enfants du couple");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(109, "button", 15);
-      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_109_listener() {
+      \u0275\u0275elementStart(110, "button", 15);
+      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_110_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeEnfantPanel());
       });
-      \u0275\u0275elementStart(110, "span", 7);
-      \u0275\u0275text(111, "close");
+      \u0275\u0275elementStart(111, "span", 7);
+      \u0275\u0275text(112, "close");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(112, "div", 16)(113, "p", 43);
-      \u0275\u0275text(114, "S\xE9lectionnez ou cr\xE9ez les enfants de ce couple");
+      \u0275\u0275elementStart(113, "div", 16)(114, "p", 43);
+      \u0275\u0275text(115, "S\xE9lectionnez ou cr\xE9ez les enfants de ce couple");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(115, "button", 44);
-      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_115_listener() {
+      \u0275\u0275elementStart(116, "button", 44);
+      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_116_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.showCreateChild = !ctx.showCreateChild);
       });
-      \u0275\u0275elementStart(116, "span", 7);
-      \u0275\u0275text(117);
-      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(117, "span", 7);
       \u0275\u0275text(118);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(119, UnionsComponent_div_119_Template, 30, 8, "div", 45)(120, UnionsComponent_ng_container_120_Template, 5, 1, "ng-container", 46)(121, UnionsComponent_div_121_Template, 3, 2, "div", 47)(122, UnionsComponent_div_122_Template, 4, 1, "div", 48);
+      \u0275\u0275text(119);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(123, "div", 38)(124, "button", 39);
-      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_124_listener() {
+      \u0275\u0275template(120, UnionsComponent_div_120_Template, 30, 8, "div", 45)(121, UnionsComponent_ng_container_121_Template, 5, 1, "ng-container", 46)(122, UnionsComponent_div_122_Template, 3, 3, "div", 47)(123, UnionsComponent_div_123_Template, 4, 2, "div", 48);
+      \u0275\u0275elementEnd();
+      \u0275\u0275template(124, UnionsComponent_div_124_Template, 4, 1, "div", 9);
+      \u0275\u0275elementStart(125, "div", 38)(126, "button", 39);
+      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_126_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeEnfantPanel());
       });
-      \u0275\u0275text(125, "Annuler");
+      \u0275\u0275text(127, "Annuler");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(126, "button", 40);
-      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_126_listener() {
+      \u0275\u0275elementStart(128, "button", 40);
+      \u0275\u0275listener("click", function UnionsComponent_Template_button_click_128_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.ajouterEnfants());
       });
-      \u0275\u0275template(127, UnionsComponent_span_127_Template, 2, 0, "span", 41);
-      \u0275\u0275text(128);
+      \u0275\u0275template(129, UnionsComponent_span_129_Template, 2, 0, "span", 41);
+      \u0275\u0275text(130);
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(129, UnionsComponent_div_129_Template, 15, 3, "div", 49);
+      \u0275\u0275template(131, UnionsComponent_div_131_Template, 15, 3, "div", 49);
     }
     if (rf & 2) {
       \u0275\u0275advance(7);
@@ -12456,7 +12588,7 @@ var UnionsComponent = class _UnionsComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.multiUnionWarnings.length > 0);
       \u0275\u0275advance(2);
-      \u0275\u0275property("ngForOf", ctx.personnes);
+      \u0275\u0275property("ngForOf", ctx.personnes)("ngForTrackBy", ctx.trackByPersonneId);
       \u0275\u0275advance(8);
       \u0275\u0275twoWayProperty("ngModel", ctx.form.debut_annee);
       \u0275\u0275advance(4);
@@ -12479,6 +12611,8 @@ var UnionsComponent = class _UnionsComponent {
       \u0275\u0275twoWayProperty("ngModel", ctx.form.lieuFin);
       \u0275\u0275advance(5);
       \u0275\u0275twoWayProperty("ngModel", ctx.form.notes);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.formErreur);
       \u0275\u0275advance(4);
       \u0275\u0275property("disabled", ctx.saving);
       \u0275\u0275advance();
@@ -12501,6 +12635,8 @@ var UnionsComponent = class _UnionsComponent {
       \u0275\u0275property("ngIf", !ctx.showCreateChild);
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.enfantUnionTarget && ctx.enfantUnionTarget.filiations.length > 0);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.enfantErreur);
       \u0275\u0275advance(4);
       \u0275\u0275property("disabled", ctx.addingEnfant || ctx.enfantsSelectionnes.length === 0);
       \u0275\u0275advance();
@@ -12569,7 +12705,7 @@ var UnionsComponent = class _UnionsComponent {
   <!-- ===== GROUPES ===== -->\r
   <div class="ug-groups" *ngIf="!loading && !erreur && unions.length > 0">\r
 \r
-    <div class="ug-group" *ngFor="let g of groupedUnions">\r
+    <div class="ug-group" *ngFor="let g of groupedUnions; trackBy: trackByChefId">\r
 \r
       <!-- En-t\xEAte du groupe -->\r
       <div class="ug-group-header" (click)="toggleGroup(g.chef.id)">\r
@@ -12609,7 +12745,7 @@ var UnionsComponent = class _UnionsComponent {
 \r
       <!-- Couples de ce chef (accord\xE9on) -->\r
       <div class="ug-couples" *ngIf="isGroupExpanded(g.chef.id)">\r
-        <div class="ug-couple-row" *ngFor="let u of g.couples; let i = index">\r
+        <div class="ug-couple-row" *ngFor="let u of g.couples; let i = index; trackBy: trackByUnionId">\r
 \r
           <!-- Num\xE9ro -->\r
           <span class="ug-couple-num">{{ i + 1 }}</span>\r
@@ -12740,7 +12876,7 @@ var UnionsComponent = class _UnionsComponent {
 \r
           <div class="person-select-list">\r
             <div class="person-select-item"\r
-                 *ngFor="let p of personnes"\r
+                 *ngFor="let p of personnes; trackBy: trackByPersonneId"\r
                  [class.selected]="isParticipant(p.id)"\r
                  [class.has-union]="getPersonActiveUnions(p.id).length > 0 && !isParticipant(p.id)"\r
                  (click)="toggleParticipant(p.id)">\r
@@ -12829,6 +12965,9 @@ var UnionsComponent = class _UnionsComponent {
     </form>\r
   </div>\r
 \r
+  <div class="error-state" *ngIf="formErreur">\r
+    <span class="material-icons-round">error_outline</span>{{ formErreur }}\r
+  </div>\r
   <div class="panel-footer">\r
     <button class="btn-ghost" (click)="closeAll()">Annuler</button>\r
     <button class="btn-primary" (click)="saveUnion()" [disabled]="saving">\r
@@ -12894,7 +13033,7 @@ var UnionsComponent = class _UnionsComponent {
       </div>\r
     </ng-container>\r
     <div class="person-select-list" *ngIf="!showCreateChild">\r
-      <div class="person-select-item" *ngFor="let p of personnesDisponibles"\r
+      <div class="person-select-item" *ngFor="let p of personnesDisponibles; trackBy: trackByPersonneId"\r
            [class.selected]="isEnfantSelected(p.id)" (click)="toggleEnfantSelection(p.id)">\r
         <div class="u-avatar-wrap">\r
           <img *ngIf="photoOf(p) && !failedPhotos.has(p.id)"\r
@@ -12910,7 +13049,7 @@ var UnionsComponent = class _UnionsComponent {
     </div>\r
     <div class="current-children" *ngIf="enfantUnionTarget && enfantUnionTarget.filiations.length > 0">\r
       <div class="section-title" style="margin-top: 20px;">Enfants actuels</div>\r
-      <div class="child-item" *ngFor="let f of enfantUnionTarget.filiations">\r
+      <div class="child-item" *ngFor="let f of enfantUnionTarget.filiations; trackBy: trackByFiliationId">\r
         <div class="u-avatar-wrap">\r
           <img *ngIf="photoOf(f.enfant) && !failedPhotos.has(f.enfant.id)"\r
                [src]="photoOf(f.enfant)" class="u-avatar-photo avatar avatar-sm"\r
@@ -12926,6 +13065,9 @@ var UnionsComponent = class _UnionsComponent {
         </button>\r
       </div>\r
     </div>\r
+  </div>\r
+  <div class="error-state" *ngIf="enfantErreur">\r
+    <span class="material-icons-round">error_outline</span>{{ enfantErreur }}\r
   </div>\r
   <div class="panel-footer">\r
     <button class="btn-ghost" (click)="closeEnfantPanel()">Annuler</button>\r
@@ -12955,7 +13097,7 @@ var UnionsComponent = class _UnionsComponent {
   }], () => [{ type: ApiService }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(UnionsComponent, { className: "UnionsComponent", filePath: "src/app/pages/unions/unions.component.ts", lineNumber: 52 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(UnionsComponent, { className: "UnionsComponent", filePath: "src/app/pages/unions/unions.component.ts", lineNumber: 53 });
 })();
 
 // src/app/pages/admin/admin.component.ts
@@ -12983,7 +13125,7 @@ function AdminComponent_div_13_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate(ctx_r1.famille.code);
+    \u0275\u0275textInterpolate(ctx_r1.famille == null ? null : ctx_r1.famille.code);
     \u0275\u0275advance();
     \u0275\u0275property("title", ctx_r1.viewonlyCopied === "familleCode" ? "Copi\xE9 !" : "Copier le code");
     \u0275\u0275advance(2);
@@ -13343,7 +13485,18 @@ function AdminComponent_ng_container_41_div_25_Template(rf, ctx) {
     \u0275\u0275text(45);
     \u0275\u0275elementEnd();
     \u0275\u0275text(46);
-    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(47, "button", 137);
+    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_25_Template_button_click_47_listener() {
+      \u0275\u0275restoreView(_r12);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.regenerateViewonlyPassword());
+    });
+    \u0275\u0275elementStart(48, "span", 7);
+    \u0275\u0275text(49, "autorenew");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(50);
+    \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
@@ -13369,6 +13522,10 @@ function AdminComponent_ng_container_41_div_25_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r1.viewonlyCopied === "share" ? "check" : "share");
     \u0275\u0275advance();
     \u0275\u0275textInterpolate1(" ", ctx_r1.viewonlyCopied === "share" ? "Copi\xE9 !" : "Partager", " ");
+    \u0275\u0275advance();
+    \u0275\u0275property("disabled", ctx_r1.regeneratingViewonly);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1(" ", ctx_r1.regeneratingViewonly ? "R\xE9g\xE9n\xE9ration..." : "R\xE9g\xE9n\xE9rer le mot de passe", " ");
   }
 }
 function AdminComponent_ng_container_41_div_26_span_12_Template(rf, ctx) {
@@ -13392,7 +13549,7 @@ function AdminComponent_ng_container_41_div_26_span_13_Template(rf, ctx) {
 }
 function AdminComponent_ng_container_41_div_26_p_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "p", 146)(1, "span", 7);
+    \u0275\u0275elementStart(0, "p", 147)(1, "span", 7);
     \u0275\u0275text(2, "warning");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -13407,7 +13564,7 @@ function AdminComponent_ng_container_41_div_26_p_16_Template(rf, ctx) {
 function AdminComponent_ng_container_41_div_26_button_17_Template(rf, ctx) {
   if (rf & 1) {
     const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 147);
+    \u0275\u0275elementStart(0, "button", 148);
     \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_26_button_17_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r13);
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -13423,7 +13580,7 @@ function AdminComponent_ng_container_41_div_26_button_17_Template(rf, ctx) {
 function AdminComponent_ng_container_41_div_26_button_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r14 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 148);
+    \u0275\u0275elementStart(0, "button", 149);
     \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_26_button_18_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r14);
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -13438,31 +13595,31 @@ function AdminComponent_ng_container_41_div_26_button_18_Template(rf, ctx) {
 }
 function AdminComponent_ng_container_41_div_26_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 137)(1, "div", 69)(2, "div", 70)(3, "span", 7);
+    \u0275\u0275elementStart(0, "div", 138)(1, "div", 69)(2, "div", 70)(3, "span", 7);
     \u0275\u0275text(4, "workspace_premium");
     \u0275\u0275elementEnd();
     \u0275\u0275text(5, " Abonnement ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 138);
+    \u0275\u0275elementStart(6, "span", 139);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(8, "div", 139)(9, "div", 140)(10, "span");
+    \u0275\u0275elementStart(8, "div", 140)(9, "div", 141)(10, "span");
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
     \u0275\u0275template(12, AdminComponent_ng_container_41_div_26_span_12_Template, 2, 1, "span", 19)(13, AdminComponent_ng_container_41_div_26_span_13_Template, 2, 0, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "div", 141);
-    \u0275\u0275element(15, "div", 142);
+    \u0275\u0275elementStart(14, "div", 142);
+    \u0275\u0275element(15, "div", 143);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(16, AdminComponent_ng_container_41_div_26_p_16_Template, 4, 1, "p", 143);
+    \u0275\u0275template(16, AdminComponent_ng_container_41_div_26_p_16_Template, 4, 1, "p", 144);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(17, AdminComponent_ng_container_41_div_26_button_17_Template, 4, 0, "button", 144)(18, AdminComponent_ng_container_41_div_26_button_18_Template, 4, 0, "button", 145);
+    \u0275\u0275template(17, AdminComponent_ng_container_41_div_26_button_17_Template, 4, 0, "button", 145)(18, AdminComponent_ng_container_41_div_26_button_18_Template, 4, 0, "button", 146);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(6);
-    \u0275\u0275classProp("adm-plan-badge--paid", (ctx_r1.subscription.plan == null ? null : ctx_r1.subscription.plan.prix) > 0);
+    \u0275\u0275classProp("adm-plan-badge--paid", !!ctx_r1.subscription.plan && ctx_r1.subscription.plan.prix > 0);
     \u0275\u0275advance();
     \u0275\u0275textInterpolate1(" ", (ctx_r1.subscription.plan == null ? null : ctx_r1.subscription.plan.label) ?? "Gratuit", " ");
     \u0275\u0275advance(4);
@@ -13479,7 +13636,7 @@ function AdminComponent_ng_container_41_div_26_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", (ctx_r1.subscription.plan == null ? null : ctx_r1.subscription.plan.prix) === 0);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", (ctx_r1.subscription.plan == null ? null : ctx_r1.subscription.plan.prix) > 0);
+    \u0275\u0275property("ngIf", ctx_r1.subscription.plan && ctx_r1.subscription.plan.prix > 0);
   }
 }
 function AdminComponent_ng_container_41_span_45_Template(rf, ctx) {
@@ -13538,7 +13695,7 @@ function AdminComponent_ng_container_41_Template(rf, ctx) {
     \u0275\u0275template(22, AdminComponent_ng_container_41_div_22_Template, 13, 8, "div", 80)(23, AdminComponent_ng_container_41_div_23_Template, 5, 0, "div", 81);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(24, "div", 82);
-    \u0275\u0275template(25, AdminComponent_ng_container_41_div_25_Template, 47, 11, "div", 83)(26, AdminComponent_ng_container_41_div_26_Template, 19, 16, "div", 84);
+    \u0275\u0275template(25, AdminComponent_ng_container_41_div_25_Template, 51, 13, "div", 83)(26, AdminComponent_ng_container_41_div_26_Template, 19, 16, "div", 84);
     \u0275\u0275elementStart(27, "div", 85)(28, "div", 69)(29, "div", 70)(30, "span", 7);
     \u0275\u0275text(31, "download");
     \u0275\u0275elementEnd();
@@ -13653,14 +13810,14 @@ function AdminComponent_ng_container_41_Template(rf, ctx) {
 }
 function AdminComponent_Conditional_42_div_12_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 166);
+    \u0275\u0275elementStart(0, "div", 167);
     \u0275\u0275text(1, "\u2B50 Populaire");
     \u0275\u0275elementEnd();
   }
 }
 function AdminComponent_Conditional_42_div_12_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 167);
+    \u0275\u0275elementStart(0, "div", 168);
     \u0275\u0275text(1, "Plan actuel");
     \u0275\u0275elementEnd();
   }
@@ -13696,25 +13853,25 @@ function AdminComponent_Conditional_42_div_12_span_18_Template(rf, ctx) {
 function AdminComponent_Conditional_42_div_12_Template(rf, ctx) {
   if (rf & 1) {
     const _r16 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 155);
-    \u0275\u0275template(1, AdminComponent_Conditional_42_div_12_div_1_Template, 2, 0, "div", 156)(2, AdminComponent_Conditional_42_div_12_div_2_Template, 2, 0, "div", 157);
-    \u0275\u0275elementStart(3, "div", 158)(4, "h4");
+    \u0275\u0275elementStart(0, "div", 156);
+    \u0275\u0275template(1, AdminComponent_Conditional_42_div_12_div_1_Template, 2, 0, "div", 157)(2, AdminComponent_Conditional_42_div_12_div_2_Template, 2, 0, "div", 158);
+    \u0275\u0275elementStart(3, "div", 159)(4, "h4");
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div", 159)(7, "span", 160);
+    \u0275\u0275elementStart(6, "div", 160)(7, "span", 161);
     \u0275\u0275text(8);
     \u0275\u0275pipe(9, "number");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 161);
+    \u0275\u0275elementStart(10, "span", 162);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(12, "p", 162);
+    \u0275\u0275elementStart(12, "p", 163);
     \u0275\u0275text(13);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(14, "ul", 163);
-    \u0275\u0275template(15, AdminComponent_Conditional_42_div_12_li_15_Template, 4, 1, "li", 164);
+    \u0275\u0275elementStart(14, "ul", 164);
+    \u0275\u0275template(15, AdminComponent_Conditional_42_div_12_li_15_Template, 4, 1, "li", 165);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "button", 165);
+    \u0275\u0275elementStart(16, "button", 166);
     \u0275\u0275listener("click", function AdminComponent_Conditional_42_div_12_Template_button_click_16_listener() {
       const plan_r18 = \u0275\u0275restoreView(_r16).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -13756,18 +13913,18 @@ function AdminComponent_Conditional_42_div_12_Template(rf, ctx) {
 function AdminComponent_Conditional_42_Template(rf, ctx) {
   if (rf & 1) {
     const _r15 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 149);
+    \u0275\u0275elementStart(0, "div", 150);
     \u0275\u0275listener("click", function AdminComponent_Conditional_42_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r15);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.showPlanModal = false);
     });
-    \u0275\u0275elementStart(1, "div", 150);
+    \u0275\u0275elementStart(1, "div", 151);
     \u0275\u0275listener("click", function AdminComponent_Conditional_42_Template_div_click_1_listener($event) {
       \u0275\u0275restoreView(_r15);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275elementStart(2, "div", 151)(3, "div")(4, "h3");
+    \u0275\u0275elementStart(2, "div", 152)(3, "div")(4, "h3");
     \u0275\u0275text(5, "Choisir un plan");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "p");
@@ -13782,10 +13939,10 @@ function AdminComponent_Conditional_42_Template(rf, ctx) {
     \u0275\u0275elementStart(9, "span", 7);
     \u0275\u0275text(10, "close");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(11, "div", 152);
-    \u0275\u0275template(12, AdminComponent_Conditional_42_div_12_Template, 20, 23, "div", 153);
+    \u0275\u0275elementStart(11, "div", 153);
+    \u0275\u0275template(12, AdminComponent_Conditional_42_div_12_Template, 20, 23, "div", 154);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(13, "p", 154)(14, "span", 7);
+    \u0275\u0275elementStart(13, "p", 155)(14, "span", 7);
     \u0275\u0275text(15, "lock");
     \u0275\u0275elementEnd();
     \u0275\u0275text(16, " Paiement s\xE9curis\xE9 via CinetPay \xB7 Orange Money, Wave, Moov Money accept\xE9s ");
@@ -13800,7 +13957,7 @@ function AdminComponent_Conditional_42_Template(rf, ctx) {
 function AdminComponent_div_43_Template(rf, ctx) {
   if (rf & 1) {
     const _r19 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 168);
+    \u0275\u0275elementStart(0, "div", 169);
     \u0275\u0275listener("click", function AdminComponent_div_43_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r19);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -13858,6 +14015,7 @@ var ROLE_LABELS = {
 var ROLE_ORDER = ["admin", "gestionnaire", "membre", "viewonly"];
 var AdminComponent = class _AdminComponent {
   api;
+  qrcode;
   famille = null;
   membres = [];
   personnes = [];
@@ -13873,6 +14031,7 @@ var AdminComponent = class _AdminComponent {
   viewonlyCreds = null;
   showViewonlyPassword = false;
   viewonlyCopied = null;
+  regeneratingViewonly = false;
   showCreateForm = false;
   saving = false;
   roleChanging = null;
@@ -13904,8 +14063,10 @@ var AdminComponent = class _AdminComponent {
     { val: "viewonly", label: "Lecture seule" }
   ];
   ROLE_ORDER = ROLE_ORDER;
-  constructor(api) {
+  viewonlyQrUrl = "";
+  constructor(api, qrcode) {
     this.api = api;
+    this.qrcode = qrcode;
   }
   ngOnInit() {
     this.loadAll();
@@ -13928,6 +14089,9 @@ var AdminComponent = class _AdminComponent {
         this.plans = plans;
         this.initEditingRoles();
         this.loading = false;
+        if (creds?.familleCode) {
+          this.qrcode.generate(creds.familleCode, { size: 150, color: "#2563eb", bgcolor: "#eff6ff" }).then((url) => this.viewonlyQrUrl = url);
+        }
       },
       error: () => {
         this.erreur = "Impossible de charger les donn\xE9es.";
@@ -14035,11 +14199,6 @@ var AdminComponent = class _AdminComponent {
     };
   }
   // ── Viewonly ─────────────────────────────────────────
-  get viewonlyQrUrl() {
-    if (!this.viewonlyCreds?.familleCode)
-      return "";
-    return `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(this.viewonlyCreds.familleCode)}&bgcolor=eff6ff&color=2563eb&format=png&margin=8`;
-  }
   copyViewonly(field) {
     const c = this.viewonlyCreds;
     if (!c)
@@ -14052,8 +14211,11 @@ var AdminComponent = class _AdminComponent {
       }, 1500);
     });
   }
+  confirmShareWarning() {
+    return confirm("Ce mot de passe donne acc\xE8s \xE0 tout l'arbre familial en lecture seule. Une fois partag\xE9 sur WhatsApp ou un autre canal non chiffr\xE9 c\xF4t\xE9 destinataire, il ne peut plus \xEAtre retir\xE9 \u2014 seule une r\xE9g\xE9n\xE9ration invalidera l'ancien mot de passe. Continuer ?");
+  }
   shareViewonly() {
-    if (!this.viewonlyCreds)
+    if (!this.viewonlyCreds || !this.confirmShareWarning())
       return;
     const { familleCode, viewonlyUsername, viewonlyPassword } = this.viewonlyCreds;
     const famNom = this.famille?.nom ?? "Famille";
@@ -14077,7 +14239,7 @@ Connectez-vous sur Mam Buudu :
     }
   }
   shareViewonlyWhatsApp() {
-    if (!this.viewonlyCreds)
+    if (!this.viewonlyCreds || !this.confirmShareWarning())
       return;
     const { familleCode, viewonlyUsername, viewonlyPassword } = this.viewonlyCreds;
     const msg = `\u{1F3E0} Acc\xE8s consultation famille *${this.famille?.nom ?? ""}* sur Mam Buudu
@@ -14088,6 +14250,24 @@ Connectez-vous sur Mam Buudu :
 
 _Acc\xE8s lecture seule uniquement_`;
     window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
+  }
+  regenerateViewonlyPassword() {
+    if (this.regeneratingViewonly)
+      return;
+    if (!confirm("R\xE9g\xE9n\xE9rer le mot de passe lecture seule ? L'ancien mot de passe cessera imm\xE9diatement de fonctionner pour toute personne \xE0 qui il a \xE9t\xE9 partag\xE9."))
+      return;
+    this.regeneratingViewonly = true;
+    this.api.regenerateViewonlyPassword().subscribe({
+      next: (creds) => {
+        this.viewonlyCreds = creds;
+        this.regeneratingViewonly = false;
+        this.saveSuccess = "Mot de passe lecture seule r\xE9g\xE9n\xE9r\xE9";
+        setTimeout(() => this.saveSuccess = "", 3e3);
+      },
+      error: () => {
+        this.regeneratingViewonly = false;
+      }
+    });
   }
   copyFamilleCode() {
     if (!this.famille?.code)
@@ -14162,9 +14342,9 @@ _Acc\xE8s lecture seule uniquement_`;
     return item.user?.id;
   }
   static \u0275fac = function AdminComponent_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _AdminComponent)(\u0275\u0275directiveInject(ApiService));
+    return new (__ngFactoryType__ || _AdminComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(QrcodeService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AdminComponent, selectors: [["app-admin"]], standalone: false, decls: 112, vars: 27, consts: [["adminBadge", ""], [1, "admin-page"], [1, "adm-hero"], [1, "adm-hero-bg"], [1, "adm-hero-content"], [1, "adm-hero-left"], [1, "adm-hero-icon"], [1, "material-icons-round"], [1, "adm-hero-eyebrow"], [1, "adm-hero-title"], ["class", "adm-hero-code", 4, "ngIf"], [1, "adm-hero-stats"], [1, "adm-hstat"], [1, "adm-hstat-val"], [1, "adm-hstat-lbl"], [1, "adm-hstat-sep"], ["class", "sk-section", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "adm-toast", 4, "ngIf"], [4, "ngIf"], [1, "plan-modal-overlay"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel"], [1, "panel-header"], [1, "panel-header-title"], [1, "btn-icon", 3, "click"], [1, "panel-body"], [1, "form-section"], [1, "section-title"], [1, "form-row-2"], [1, "form-group"], [1, "required"], ["type", "text", "name", "prenom", "required", "", "placeholder", "Pr\xE9nom", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "nom", "required", "", "placeholder", "Nom de famille", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "email", "name", "email", "placeholder", "exemple@email.com", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "tel", "name", "telephone", "placeholder", "+221 77 000 00 00", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "password", "name", "password", "required", "", "placeholder", "Mot de passe", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "role", 1, "form-control", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [1, "optional"], ["name", "personneId", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "adm-hero-code"], [1, "adm-code-val"], [1, "adm-copy-code", 3, "click", "title"], [1, "sk-section"], [2, "display", "flex", "gap", "16px", "flex-wrap", "wrap"], ["class", "sk-stat", "style", "flex:1;min-width:120px", 4, "ngFor", "ngForOf"], [2, "background", "#fff", "border", "1px solid #E5E7EB", "border-radius", "14px", "overflow", "hidden", "margin-top", "8px"], ["class", "sk-row", "style", "padding:14px 22px;border-bottom:1px solid #F3F4F6", 4, "ngFor", "ngForOf"], [1, "sk-stat", 2, "flex", "1", "min-width", "120px"], [1, "sk-stat-icon"], [1, "sk-stat-body"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-sm"], [1, "sk-row", 2, "padding", "14px 22px", "border-bottom", "1px solid #F3F4F6"], [1, "sk-avatar-sq", "sk-av-md"], [1, "sk-row-content"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-xs"], [1, "error-state"], [1, "adm-toast"], [1, "adm-main-grid"], [1, "adm-card", "adm-card-members"], [1, "adm-card-head"], [1, "adm-card-title"], [1, "adm-count-badge"], [1, "btn-primary", "btn-sm", 3, "click"], [1, "adm-search-bar"], [1, "material-icons-round", "adm-search-icon"], ["type", "text", "placeholder", "Rechercher un membre\u2026", 1, "adm-search-input", 3, "ngModelChange", "ngModel"], ["class", "adm-search-clear", 3, "click", 4, "ngIf"], [1, "adm-role-filters"], ["class", "adm-filter-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "adm-members-list"], ["class", "adm-member-row", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "adm-empty", 4, "ngIf"], [1, "adm-right-col"], ["class", "adm-card adm-card-viewonly", 4, "ngIf"], ["class", "adm-card adm-card-plan", 4, "ngIf"], [1, "adm-card", "adm-card-export"], [1, "adm-export-desc"], [1, "adm-export-stats"], [1, "adm-export-stat"], [1, "adm-export-btn", 3, "click", "disabled"], [1, "adm-card", "adm-card-info"], [1, "adm-info-rows"], [1, "adm-info-row"], [1, "adm-info-label"], [1, "adm-info-val"], [1, "adm-info-val", "adm-info-code"], [1, "adm-card", "adm-danger-card"], [1, "adm-card-title", "adm-danger-title"], [1, "adm-danger-row"], [1, "adm-danger-label"], [1, "adm-danger-sub"], ["disabled", "", "title", "Bient\xF4t disponible", 1, "adm-danger-btn"], [1, "adm-search-clear", 3, "click"], [1, "adm-filter-btn", 3, "click"], ["class", "adm-filter-count", 4, "ngIf"], [1, "adm-filter-count"], [1, "adm-member-row"], [1, "adm-member-left"], [1, "adm-avatar"], [1, "adm-member-info"], [1, "adm-member-name"], [1, "adm-member-contact"], [1, "adm-role-cell"], ["class", "adm-role-select-wrap", 4, "ngIf", "ngIfElse"], [1, "adm-role-select-wrap"], [1, "adm-role-select", 3, "ngModelChange", "ngModel", "disabled"], [3, "value"], ["title", "Confirmer le changement", 1, "adm-confirm-btn", "adm-confirm-yes", 3, "click", "disabled"], ["title", "Annuler", 1, "adm-confirm-btn", "adm-confirm-no", 3, "click", "disabled"], [1, "material-icons-round", "spin"], [1, "adm-admin-badge"], [1, "adm-empty"], [1, "adm-card", "adm-card-viewonly"], [1, "btn-icon", 3, "click", "title"], [1, "adm-viewonly-desc"], [1, "adm-viewonly-body"], ["alt", "QR code", 1, "adm-viewonly-qr", 3, "src"], [1, "adm-cred-rows"], [1, "adm-cred-row"], [1, "adm-cred-label"], [1, "adm-cred-val"], [1, "adm-cred-copy", 3, "click"], [1, "adm-share-btns"], [1, "adm-share-wa", 3, "click"], ["viewBox", "0 0 24 24", "fill", "currentColor", 2, "width", "16px", "height", "16px", "flex-shrink", "0"], ["d", "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"], [1, "adm-share-copy", 3, "click"], [1, "adm-card", "adm-card-plan"], [1, "adm-plan-badge"], [1, "adm-quota-wrap"], [1, "adm-quota-labels"], [1, "adm-quota-bar"], [1, "adm-quota-fill"], ["class", "adm-quota-alert", 4, "ngIf"], ["class", "adm-upgrade-btn", 3, "click", 4, "ngIf"], ["class", "adm-manage-btn", 3, "click", 4, "ngIf"], [1, "adm-quota-alert"], [1, "adm-upgrade-btn", 3, "click"], [1, "adm-manage-btn", 3, "click"], [1, "plan-modal-overlay", 3, "click"], [1, "plan-modal", 3, "click"], [1, "plan-modal-head"], [1, "plan-cards"], ["class", "plan-card", 3, "plan-card--current", "plan-card--popular", 4, "ngFor", "ngForOf"], [1, "plan-modal-note"], [1, "plan-card"], ["class", "plan-card-badge", 4, "ngIf"], ["class", "plan-card-badge plan-card-badge--current", 4, "ngIf"], [1, "plan-card-header"], [1, "plan-price"], [1, "plan-price-amount"], [1, "plan-price-unit"], [1, "plan-limit"], [1, "plan-features"], [4, "ngFor", "ngForOf"], [1, "plan-choose-btn", 3, "click", "disabled"], [1, "plan-card-badge"], [1, "plan-card-badge", "plan-card-badge--current"], [1, "panel-overlay", 3, "click"]], template: function AdminComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AdminComponent, selectors: [["app-admin"]], standalone: false, decls: 112, vars: 27, consts: [["adminBadge", ""], [1, "admin-page"], [1, "adm-hero"], [1, "adm-hero-bg"], [1, "adm-hero-content"], [1, "adm-hero-left"], [1, "adm-hero-icon"], [1, "material-icons-round"], [1, "adm-hero-eyebrow"], [1, "adm-hero-title"], ["class", "adm-hero-code", 4, "ngIf"], [1, "adm-hero-stats"], [1, "adm-hstat"], [1, "adm-hstat-val"], [1, "adm-hstat-lbl"], [1, "adm-hstat-sep"], ["class", "sk-section", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "adm-toast", 4, "ngIf"], [4, "ngIf"], [1, "plan-modal-overlay"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel"], [1, "panel-header"], [1, "panel-header-title"], [1, "btn-icon", 3, "click"], [1, "panel-body"], [1, "form-section"], [1, "section-title"], [1, "form-row-2"], [1, "form-group"], [1, "required"], ["type", "text", "name", "prenom", "required", "", "placeholder", "Pr\xE9nom", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "nom", "required", "", "placeholder", "Nom de famille", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "email", "name", "email", "placeholder", "exemple@email.com", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "tel", "name", "telephone", "placeholder", "+221 77 000 00 00", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "password", "name", "password", "required", "", "placeholder", "Mot de passe", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "role", 1, "form-control", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [1, "optional"], ["name", "personneId", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "adm-hero-code"], [1, "adm-code-val"], [1, "adm-copy-code", 3, "click", "title"], [1, "sk-section"], [2, "display", "flex", "gap", "16px", "flex-wrap", "wrap"], ["class", "sk-stat", "style", "flex:1;min-width:120px", 4, "ngFor", "ngForOf"], [2, "background", "#fff", "border", "1px solid #E5E7EB", "border-radius", "14px", "overflow", "hidden", "margin-top", "8px"], ["class", "sk-row", "style", "padding:14px 22px;border-bottom:1px solid #F3F4F6", 4, "ngFor", "ngForOf"], [1, "sk-stat", 2, "flex", "1", "min-width", "120px"], [1, "sk-stat-icon"], [1, "sk-stat-body"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-sm"], [1, "sk-row", 2, "padding", "14px 22px", "border-bottom", "1px solid #F3F4F6"], [1, "sk-avatar-sq", "sk-av-md"], [1, "sk-row-content"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-xs"], [1, "error-state"], [1, "adm-toast"], [1, "adm-main-grid"], [1, "adm-card", "adm-card-members"], [1, "adm-card-head"], [1, "adm-card-title"], [1, "adm-count-badge"], [1, "btn-primary", "btn-sm", 3, "click"], [1, "adm-search-bar"], [1, "material-icons-round", "adm-search-icon"], ["type", "text", "placeholder", "Rechercher un membre\u2026", 1, "adm-search-input", 3, "ngModelChange", "ngModel"], ["class", "adm-search-clear", 3, "click", 4, "ngIf"], [1, "adm-role-filters"], ["class", "adm-filter-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "adm-members-list"], ["class", "adm-member-row", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "adm-empty", 4, "ngIf"], [1, "adm-right-col"], ["class", "adm-card adm-card-viewonly", 4, "ngIf"], ["class", "adm-card adm-card-plan", 4, "ngIf"], [1, "adm-card", "adm-card-export"], [1, "adm-export-desc"], [1, "adm-export-stats"], [1, "adm-export-stat"], [1, "adm-export-btn", 3, "click", "disabled"], [1, "adm-card", "adm-card-info"], [1, "adm-info-rows"], [1, "adm-info-row"], [1, "adm-info-label"], [1, "adm-info-val"], [1, "adm-info-val", "adm-info-code"], [1, "adm-card", "adm-danger-card"], [1, "adm-card-title", "adm-danger-title"], [1, "adm-danger-row"], [1, "adm-danger-label"], [1, "adm-danger-sub"], ["disabled", "", "title", "Bient\xF4t disponible", 1, "adm-danger-btn"], [1, "adm-search-clear", 3, "click"], [1, "adm-filter-btn", 3, "click"], ["class", "adm-filter-count", 4, "ngIf"], [1, "adm-filter-count"], [1, "adm-member-row"], [1, "adm-member-left"], [1, "adm-avatar"], [1, "adm-member-info"], [1, "adm-member-name"], [1, "adm-member-contact"], [1, "adm-role-cell"], ["class", "adm-role-select-wrap", 4, "ngIf", "ngIfElse"], [1, "adm-role-select-wrap"], [1, "adm-role-select", 3, "ngModelChange", "ngModel", "disabled"], [3, "value"], ["title", "Confirmer le changement", 1, "adm-confirm-btn", "adm-confirm-yes", 3, "click", "disabled"], ["title", "Annuler", 1, "adm-confirm-btn", "adm-confirm-no", 3, "click", "disabled"], [1, "material-icons-round", "spin"], [1, "adm-admin-badge"], [1, "adm-empty"], [1, "adm-card", "adm-card-viewonly"], [1, "btn-icon", 3, "click", "title"], [1, "adm-viewonly-desc"], [1, "adm-viewonly-body"], ["alt", "QR code", 1, "adm-viewonly-qr", 3, "src"], [1, "adm-cred-rows"], [1, "adm-cred-row"], [1, "adm-cred-label"], [1, "adm-cred-val"], [1, "adm-cred-copy", 3, "click"], [1, "adm-share-btns"], [1, "adm-share-wa", 3, "click"], ["viewBox", "0 0 24 24", "fill", "currentColor", 2, "width", "16px", "height", "16px", "flex-shrink", "0"], ["d", "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"], [1, "adm-share-copy", 3, "click"], [1, "adm-viewonly-regen", 3, "click", "disabled"], [1, "adm-card", "adm-card-plan"], [1, "adm-plan-badge"], [1, "adm-quota-wrap"], [1, "adm-quota-labels"], [1, "adm-quota-bar"], [1, "adm-quota-fill"], ["class", "adm-quota-alert", 4, "ngIf"], ["class", "adm-upgrade-btn", 3, "click", 4, "ngIf"], ["class", "adm-manage-btn", 3, "click", 4, "ngIf"], [1, "adm-quota-alert"], [1, "adm-upgrade-btn", 3, "click"], [1, "adm-manage-btn", 3, "click"], [1, "plan-modal-overlay", 3, "click"], [1, "plan-modal", 3, "click"], [1, "plan-modal-head"], [1, "plan-cards"], ["class", "plan-card", 3, "plan-card--current", "plan-card--popular", 4, "ngFor", "ngForOf"], [1, "plan-modal-note"], [1, "plan-card"], ["class", "plan-card-badge", 4, "ngIf"], ["class", "plan-card-badge plan-card-badge--current", 4, "ngIf"], [1, "plan-card-header"], [1, "plan-price"], [1, "plan-price-amount"], [1, "plan-price-unit"], [1, "plan-limit"], [1, "plan-features"], [4, "ngFor", "ngForOf"], [1, "plan-choose-btn", 3, "click", "disabled"], [1, "plan-card-badge"], [1, "plan-card-badge", "plan-card-badge--current"], [1, "panel-overlay", 3, "click"]], template: function AdminComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 1)(1, "div", 2);
       \u0275\u0275element(2, "div", 3);
@@ -14376,7 +14556,7 @@ _Acc\xE8s lecture seule uniquement_`;
       \u0275\u0275advance();
       \u0275\u0275textInterpolate1(" ", ctx.saving ? "Cr\xE9ation\u2026" : "Cr\xE9er le compte", " ");
     }
-  }, dependencies: [NgForOf, NgIf, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, RequiredValidator, NgModel, DecimalPipe], styles: ['@charset "UTF-8";\n\n\n\n.admin-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.adm-hero[_ngcontent-%COMP%] {\n  position: relative;\n  border-radius: 20px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #0f172a 0%,\n      #1e3a8a 55%,\n      var(--primary, #2563EB) 100%);\n  padding: 32px 36px;\n  color: #fff;\n}\n.adm-hero-bg[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.05) 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  pointer-events: none;\n}\n.adm-hero-content[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.adm-hero-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  flex-wrap: wrap;\n}\n.adm-hero-icon[_ngcontent-%COMP%] {\n  width: 64px;\n  height: 64px;\n  border-radius: 18px;\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.25);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.adm-hero-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 32px !important;\n  color: #fff;\n}\n.adm-hero-eyebrow[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: rgba(255, 255, 255, 0.55);\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n  margin: 0 0 4px;\n}\n.adm-hero-title[_ngcontent-%COMP%] {\n  font-size: 26px;\n  font-weight: 800;\n  color: #fff;\n  margin: 0 0 8px;\n  letter-spacing: -0.3px;\n}\n.adm-hero-code[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  background: rgba(255, 255, 255, 0.12);\n  border: 1px solid rgba(255, 255, 255, 0.2);\n  border-radius: 10px;\n  padding: 5px 12px;\n}\n.adm-hero-code[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n  color: rgba(255, 255, 255, 0.7);\n}\n.adm-code-val[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 700;\n  font-family: monospace;\n  color: #fff;\n  letter-spacing: 2px;\n}\n.adm-copy-code[_ngcontent-%COMP%] {\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 2px;\n  color: rgba(255, 255, 255, 0.7);\n  display: flex;\n  align-items: center;\n}\n.adm-copy-code[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.adm-copy-code[_ngcontent-%COMP%]:hover {\n  color: #fff;\n}\n.adm-hero-stats[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 24px;\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 16px;\n  padding: 16px 24px;\n  flex-shrink: 0;\n}\n.adm-hstat[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n}\n.adm-hstat-val[_ngcontent-%COMP%] {\n  font-size: 26px;\n  font-weight: 800;\n  color: #fff;\n  line-height: 1;\n}\n.adm-hstat-lbl[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: rgba(255, 255, 255, 0.55);\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n}\n.adm-hstat-sep[_ngcontent-%COMP%] {\n  width: 1px;\n  height: 36px;\n  background: rgba(255, 255, 255, 0.2);\n}\n.adm-toast[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-radius: 12px;\n  background: #ECFDF5;\n  color: #065F46;\n  border: 1px solid #A7F3D0;\n  font-size: 13px;\n  font-weight: 500;\n  animation: _ngcontent-%COMP%_toast-in 0.2s ease;\n}\n.adm-toast[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n@keyframes _ngcontent-%COMP%_toast-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.adm-main-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 340px;\n  gap: 20px;\n  align-items: start;\n}\n.adm-right-col[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.adm-card[_ngcontent-%COMP%] {\n  background: var(--white, #fff);\n  border: 1px solid var(--border, #E5E7EB);\n  border-radius: 18px;\n  overflow: hidden;\n}\n.adm-card-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 22px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  gap: 12px;\n}\n.adm-card-title[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 14px;\n  font-weight: 700;\n  color: var(--text-primary, #1F2937);\n}\n.adm-card-title[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 19px !important;\n  color: var(--primary, #2563EB);\n}\n.adm-count-badge[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  background: var(--primary-bg, #EFF6FF);\n  color: var(--primary, #2563EB);\n  border: 1px solid var(--primary-border, #BFDBFE);\n  padding: 2px 8px;\n  border-radius: 20px;\n}\n.adm-search-bar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  background: var(--bg-muted, #F9FAFB);\n}\n.adm-search-icon[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--text-muted, #9CA3AF);\n}\n.adm-search-input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 14px;\n  color: var(--text-primary, #1F2937);\n  font-family: inherit;\n}\n.adm-search-input[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n.adm-search-input[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted, #9CA3AF);\n}\n.adm-search-clear[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 24px;\n  height: 24px;\n  border-radius: 50%;\n  border: none;\n  background: var(--border, #E5E7EB);\n  cursor: pointer;\n  color: var(--text-muted);\n}\n.adm-search-clear[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.adm-search-clear[_ngcontent-%COMP%]:hover {\n  background: var(--text-muted);\n  color: #fff;\n}\n.adm-role-filters[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  padding: 12px 18px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  overflow-x: auto;\n  scrollbar-width: none;\n}\n.adm-role-filters[_ngcontent-%COMP%]::-webkit-scrollbar {\n  display: none;\n}\n.adm-filter-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 5px 12px;\n  border-radius: 20px;\n  border: 1.5px solid var(--border, #E5E7EB);\n  background: var(--white, #fff);\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  white-space: nowrap;\n  font-family: inherit;\n  transition: all 0.15s;\n}\n.adm-filter-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.adm-filter-btn.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg, #EFF6FF);\n  border-color: var(--primary, #2563EB);\n  color: var(--primary, #2563EB);\n}\n.adm-filter-btn[_ngcontent-%COMP%]:hover:not(.active) {\n  border-color: var(--primary, #2563EB);\n}\n.adm-filter-count[_ngcontent-%COMP%] {\n  background: var(--border, #E5E7EB);\n  color: var(--text-secondary);\n  font-size: 10px;\n  font-weight: 700;\n  padding: 0 5px;\n  border-radius: 10px;\n  min-width: 16px;\n  text-align: center;\n}\n.active[_ngcontent-%COMP%]   .adm-filter-count[_ngcontent-%COMP%] {\n  background: var(--primary, #2563EB);\n  color: #fff;\n}\n.adm-members-list[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n.adm-member-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 13px 22px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  transition: background 0.12s;\n}\n.adm-member-row[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.adm-member-row[_ngcontent-%COMP%]:hover {\n  background: var(--bg-muted, #F9FAFB);\n}\n.adm-member-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex: 1;\n  min-width: 0;\n}\n.adm-avatar[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.adm-avatar--red[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #F87171,\n      #DC2626);\n}\n.adm-avatar--blue[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #2563EB);\n}\n.adm-avatar--green[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #34D399,\n      #059669);\n}\n.adm-avatar--gray[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #9CA3AF,\n      #6B7280);\n}\n.adm-member-info[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  min-width: 0;\n}\n.adm-member-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary, #1F2937);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.adm-member-contact[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.adm-role-cell[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-shrink: 0;\n}\n.adm-role-select-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.adm-role-select[_ngcontent-%COMP%] {\n  padding: 5px 8px;\n  border-radius: 8px;\n  border: 1.5px solid var(--border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-primary);\n  background: var(--white);\n  cursor: pointer;\n  font-family: inherit;\n  transition: border-color 0.15s;\n}\n.adm-role-select[_ngcontent-%COMP%]:focus {\n  outline: none;\n  border-color: var(--primary);\n}\n.adm-role-select.role-admin[_ngcontent-%COMP%] {\n  border-color: #FECACA;\n  color: #DC2626;\n  background: #FEF2F2;\n}\n.adm-role-select.role-gestionnaire[_ngcontent-%COMP%] {\n  border-color: var(--primary-border);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.adm-role-select.role-membre[_ngcontent-%COMP%] {\n  border-color: #A7F3D0;\n  color: #059669;\n  background: #ECFDF5;\n}\n.adm-role-select.role-viewonly[_ngcontent-%COMP%] {\n  border-color: #E5E7EB;\n  color: #6B7280;\n  background: #F3F4F6;\n}\n.adm-confirm-btn[_ngcontent-%COMP%] {\n  width: 28px;\n  height: 28px;\n  border-radius: 7px;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: all 0.15s;\n  flex-shrink: 0;\n}\n.adm-confirm-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.adm-confirm-btn.adm-confirm-yes[_ngcontent-%COMP%] {\n  background: #ECFDF5;\n  color: #059669;\n}\n.adm-confirm-btn.adm-confirm-yes[_ngcontent-%COMP%]:hover {\n  background: #059669;\n  color: #fff;\n}\n.adm-confirm-btn.adm-confirm-yes[_ngcontent-%COMP%]:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.adm-confirm-btn.adm-confirm-no[_ngcontent-%COMP%] {\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.adm-confirm-btn.adm-confirm-no[_ngcontent-%COMP%]:hover {\n  background: #DC2626;\n  color: #fff;\n}\n.adm-confirm-btn.adm-confirm-no[_ngcontent-%COMP%]:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.adm-admin-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 12px;\n  font-weight: 600;\n  color: #D97706;\n  background: #FFFBEB;\n  border: 1px solid #FDE68A;\n  padding: 4px 10px;\n  border-radius: 8px;\n}\n.adm-admin-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.adm-empty[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n  padding: 40px 24px;\n  color: var(--text-muted);\n}\n.adm-empty[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 36px !important;\n  opacity: 0.3;\n}\n.adm-empty[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  margin: 0;\n}\n.adm-card-viewonly[_ngcontent-%COMP%] {\n  border-color: #BFDBFE;\n  background:\n    linear-gradient(\n      180deg,\n      #EFF6FF 0%,\n      #fff 40%);\n}\n.adm-viewonly-desc[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-secondary);\n  margin: 0;\n  padding: 0 22px 14px;\n  line-height: 1.5;\n}\n.adm-viewonly-body[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  align-items: flex-start;\n  padding: 0 22px 16px;\n}\n.adm-viewonly-qr[_ngcontent-%COMP%] {\n  width: 80px;\n  height: 80px;\n  border-radius: 10px;\n  border: 1.5px solid var(--primary-border, #BFDBFE);\n  flex-shrink: 0;\n}\n.adm-cred-rows[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  flex: 1;\n}\n.adm-cred-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1px solid var(--border);\n  border-radius: 8px;\n  padding: 7px 10px;\n}\n.adm-cred-label[_ngcontent-%COMP%] {\n  font-size: 10px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n  min-width: 68px;\n}\n.adm-cred-val[_ngcontent-%COMP%] {\n  flex: 1;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-primary);\n  font-family: monospace;\n  letter-spacing: 0.3px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.adm-cred-copy[_ngcontent-%COMP%] {\n  width: 24px;\n  height: 24px;\n  border-radius: 6px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: var(--text-muted);\n  transition: all 0.15s;\n}\n.adm-cred-copy[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.adm-cred-copy[_ngcontent-%COMP%]:hover {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.adm-share-btns[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n  padding: 0 22px 20px;\n}\n.adm-share-wa[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex: 1;\n  padding: 10px 14px;\n  border-radius: 10px;\n  border: 1.5px solid #86EFAC;\n  background: #DCFCE7;\n  color: #15803D;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  justify-content: center;\n}\n.adm-share-wa[_ngcontent-%COMP%]:hover {\n  background: #25D366;\n  color: #fff;\n  border-color: #25D366;\n}\n.adm-share-copy[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex: 1;\n  padding: 10px 14px;\n  border-radius: 10px;\n  border: 1.5px solid var(--border);\n  background: var(--white);\n  color: var(--text-secondary);\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  justify-content: center;\n}\n.adm-share-copy[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.adm-share-copy[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n.adm-card-plan[_ngcontent-%COMP%] {\n  border-color: #E9D5FF;\n  background:\n    linear-gradient(\n      180deg,\n      #F5F3FF 0%,\n      #fff 40%);\n}\n.adm-plan-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  padding: 3px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 700;\n  background: #F3F4F6;\n  color: #6B7280;\n}\n.adm-plan-badge--paid[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n}\n.adm-quota-wrap[_ngcontent-%COMP%] {\n  padding: 0 22px 16px;\n}\n.adm-quota-labels[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  justify-content: space-between;\n  font-size: 12px;\n  color: var(--text-secondary);\n  margin-bottom: 6px;\n  font-weight: 500;\n}\n.adm-quota-bar[_ngcontent-%COMP%] {\n  height: 6px;\n  border-radius: 3px;\n  background: var(--border);\n  overflow: hidden;\n}\n.adm-quota-fill[_ngcontent-%COMP%] {\n  height: 100%;\n  border-radius: 3px;\n  background:\n    linear-gradient(\n      90deg,\n      #7C3AED,\n      #A855F7);\n  transition: width 0.6s ease;\n}\n.adm-quota-fill.adm-quota-warn[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      90deg,\n      #D97706,\n      #F59E0B);\n}\n.adm-quota-fill.adm-quota-full[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      90deg,\n      #DC2626,\n      #EF4444);\n}\n.adm-quota-alert[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  margin: 8px 0 0;\n  font-size: 11px;\n  color: #D97706;\n  font-weight: 600;\n}\n.adm-quota-alert[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.adm-upgrade-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  margin: 0 22px 22px;\n  padding: 10px 18px;\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n  border: none;\n  border-radius: var(--radius-lg);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: opacity 0.2s;\n  width: calc(100% - 44px);\n}\n.adm-upgrade-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.adm-upgrade-btn[_ngcontent-%COMP%]:hover {\n  opacity: 0.9;\n}\n.adm-manage-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  margin: 0 22px 22px;\n  padding: 10px 18px;\n  background: var(--bg-muted);\n  color: var(--text-secondary);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: var(--transition);\n  width: calc(100% - 44px);\n}\n.adm-manage-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.adm-manage-btn[_ngcontent-%COMP%]:hover {\n  background: var(--border);\n  color: var(--text-primary);\n}\n.plan-modal-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 400;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n  animation: _ngcontent-%COMP%_fadeIn 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n.plan-modal[_ngcontent-%COMP%] {\n  background: var(--white);\n  border-radius: 20px;\n  width: 100%;\n  max-width: 760px;\n  max-height: 90vh;\n  overflow-y: auto;\n  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);\n  animation: _ngcontent-%COMP%_slideUp 0.25s ease;\n}\n@keyframes _ngcontent-%COMP%_slideUp {\n  from {\n    opacity: 0;\n    transform: translateY(24px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.plan-modal-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 12px;\n  padding: 24px 28px 20px;\n  border-bottom: 1px solid var(--border);\n}\n.plan-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0 0 4px;\n  font-size: 18px;\n  color: var(--text-primary);\n}\n.plan-modal-head[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.plan-cards[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 16px;\n  padding: 24px 28px;\n}\n.plan-card[_ngcontent-%COMP%] {\n  border: 2px solid var(--border);\n  border-radius: 16px;\n  padding: 20px 18px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  position: relative;\n  transition: border-color 0.2s;\n}\n.plan-card[_ngcontent-%COMP%]:hover {\n  border-color: #C4B5FD;\n}\n.plan-card--current[_ngcontent-%COMP%] {\n  border-color: #7C3AED;\n  background: #F5F3FF;\n}\n.plan-card--popular[_ngcontent-%COMP%] {\n  border-color: #7C3AED;\n  box-shadow: 0 4px 24px rgba(124, 58, 237, 0.15);\n}\n.plan-card-badge[_ngcontent-%COMP%] {\n  position: absolute;\n  top: -10px;\n  left: 50%;\n  transform: translateX(-50%);\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n  font-size: 10px;\n  font-weight: 700;\n  padding: 3px 12px;\n  border-radius: 20px;\n  white-space: nowrap;\n}\n.plan-card-badge--current[_ngcontent-%COMP%] {\n  background: #059669;\n}\n.plan-card-header[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.plan-card-header[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  margin: 0 0 8px;\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n}\n.plan-price[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: baseline;\n  justify-content: center;\n  gap: 4px;\n  margin-bottom: 4px;\n}\n.plan-price-amount[_ngcontent-%COMP%] {\n  font-size: 28px;\n  font-weight: 800;\n  color: var(--text-primary);\n}\n.plan-price-unit[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: var(--text-muted);\n  font-weight: 500;\n}\n.plan-limit[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n  font-weight: 600;\n}\n.plan-features[_ngcontent-%COMP%] {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  flex: 1;\n}\n.plan-features[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 6px;\n  font-size: 12px;\n  color: var(--text-secondary);\n  line-height: 1.4;\n}\n.plan-features[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n  color: #059669;\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.plan-choose-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 10px 14px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  background: var(--bg-muted);\n  color: var(--text-secondary);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: var(--transition);\n}\n.plan-choose-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.plan-choose-btn--current[_ngcontent-%COMP%] {\n  border-color: #7C3AED;\n  color: #7C3AED;\n  background: #F5F3FF;\n  cursor: default;\n}\n.plan-choose-btn--premium[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n  border: none;\n}\n.plan-choose-btn--premium[_ngcontent-%COMP%]:hover:not(:disabled) {\n  opacity: 0.9;\n}\n.plan-choose-btn--plus[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #1e3a8a,\n      #1d4ed8);\n  color: #fff;\n  border: none;\n}\n.plan-choose-btn--plus[_ngcontent-%COMP%]:hover:not(:disabled) {\n  opacity: 0.9;\n}\n.plan-choose-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.plan-modal-note[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 16px 28px;\n  border-top: 1px solid var(--border);\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.plan-modal-note[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n  color: #059669;\n}\n.adm-card-export[_ngcontent-%COMP%] {\n  border-color: #D1FAE5;\n  background:\n    linear-gradient(\n      180deg,\n      #ECFDF5 0%,\n      #fff 40%);\n}\n.adm-export-desc[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-secondary);\n  margin: 0;\n  padding: 0 22px 14px;\n  line-height: 1.6;\n}\n.adm-export-stats[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  padding: 0 22px 14px;\n}\n.adm-export-stat[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary);\n}\n.adm-export-stat[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n  color: #059669;\n}\n.adm-export-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  margin: 0 22px 22px;\n  padding: 10px 18px;\n  background: #059669;\n  color: #fff;\n  border: none;\n  border-radius: var(--radius-lg);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: var(--transition);\n  width: calc(100% - 44px);\n}\n.adm-export-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.adm-export-btn[_ngcontent-%COMP%]:hover:not(:disabled) {\n  background: #047857;\n}\n.adm-export-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.adm-info-rows[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n.adm-info-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 11px 22px;\n  border-bottom: 1px solid var(--border);\n}\n.adm-info-row[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.adm-info-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted);\n  min-width: 110px;\n}\n.adm-info-val[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n}\n.adm-info-val.adm-info-code[_ngcontent-%COMP%] {\n  font-family: monospace;\n  font-weight: 700;\n  color: var(--primary);\n  letter-spacing: 1px;\n}\n.adm-danger-card[_ngcontent-%COMP%] {\n  border-color: #FECACA;\n  background: #FFFBFB;\n}\n.adm-danger-title[_ngcontent-%COMP%] {\n  color: #DC2626 !important;\n}\n.adm-danger-title[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #DC2626 !important;\n}\n.adm-danger-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 18px 22px;\n  flex-wrap: wrap;\n}\n.adm-danger-label[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  margin-bottom: 2px;\n}\n.adm-danger-sub[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.adm-danger-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 16px;\n  border-radius: 10px;\n  border: 1.5px solid #FECACA;\n  background: #FEF2F2;\n  color: #DC2626;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  white-space: nowrap;\n}\n.adm-danger-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.adm-danger-btn[_ngcontent-%COMP%]:hover:not(:disabled) {\n  background: #DC2626;\n  color: #fff;\n  border-color: #DC2626;\n}\n.adm-danger-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.panel-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.4);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.slide-panel[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.12);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.panel-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header-title[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.panel-header-title[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n  color: var(--primary);\n}\n.panel-header-title[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.panel-body[_ngcontent-%COMP%] {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n}\n.panel-footer[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 10px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.section-title[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n}\n.form-group[_ngcontent-%COMP%] {\n  margin-bottom: 14px;\n}\n.form-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary);\n  margin-bottom: 6px;\n}\n.form-control[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 9px 12px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 13px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  font-family: inherit;\n  transition: border-color 0.15s;\n}\n.form-control[_ngcontent-%COMP%]:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row-2[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.required[_ngcontent-%COMP%] {\n  color: var(--error, #EF4444);\n}\n.optional[_ngcontent-%COMP%] {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n@media (max-width: 900px) {\n  .adm-main-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .adm-right-col[_ngcontent-%COMP%] {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 16px;\n  }\n}\n@media (max-width: 700px) {\n  .plan-cards[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .plan-modal[_ngcontent-%COMP%] {\n    border-radius: 20px 20px 0 0;\n    margin-top: auto;\n  }\n  .plan-modal-overlay[_ngcontent-%COMP%] {\n    align-items: flex-end;\n    padding: 0;\n  }\n}\n@media (max-width: 640px) {\n  .adm-hero[_ngcontent-%COMP%] {\n    padding: 24px 20px;\n  }\n  .adm-hero-content[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .adm-hero-title[_ngcontent-%COMP%] {\n    font-size: 20px;\n  }\n  .adm-hero-stats[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: space-around;\n    padding: 12px 16px;\n    gap: 12px;\n  }\n  .adm-hstat-val[_ngcontent-%COMP%] {\n    font-size: 20px;\n  }\n  .adm-right-col[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .adm-member-row[_ngcontent-%COMP%] {\n    padding: 12px 16px;\n    gap: 10px;\n  }\n  .adm-member-contact[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .adm-viewonly-body[_ngcontent-%COMP%] {\n    flex-direction: column;\n  }\n  .adm-viewonly-qr[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .adm-danger-row[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 10px;\n  }\n  .adm-danger-btn[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n  .slide-panel[_ngcontent-%COMP%] {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open[_ngcontent-%COMP%] {\n    transform: translateY(0);\n  }\n  .form-row-2[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer[_ngcontent-%COMP%] {\n    flex-direction: column-reverse;\n  }\n  .panel-footer[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=admin.component.css.map */'] });
+  }, dependencies: [NgForOf, NgIf, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, RequiredValidator, NgModel, DecimalPipe], styles: ['@charset "UTF-8";\n\n\n\n.admin-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.adm-hero[_ngcontent-%COMP%] {\n  position: relative;\n  border-radius: 20px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #0f172a 0%,\n      #1e3a8a 55%,\n      var(--primary, #2563EB) 100%);\n  padding: 32px 36px;\n  color: #fff;\n}\n.adm-hero-bg[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.05) 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  pointer-events: none;\n}\n.adm-hero-content[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.adm-hero-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  flex-wrap: wrap;\n}\n.adm-hero-icon[_ngcontent-%COMP%] {\n  width: 64px;\n  height: 64px;\n  border-radius: 18px;\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.25);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.adm-hero-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 32px !important;\n  color: #fff;\n}\n.adm-hero-eyebrow[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: rgba(255, 255, 255, 0.55);\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n  margin: 0 0 4px;\n}\n.adm-hero-title[_ngcontent-%COMP%] {\n  font-size: 26px;\n  font-weight: 800;\n  color: #fff;\n  margin: 0 0 8px;\n  letter-spacing: -0.3px;\n}\n.adm-hero-code[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  background: rgba(255, 255, 255, 0.12);\n  border: 1px solid rgba(255, 255, 255, 0.2);\n  border-radius: 10px;\n  padding: 5px 12px;\n}\n.adm-hero-code[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n  color: rgba(255, 255, 255, 0.7);\n}\n.adm-code-val[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 700;\n  font-family: monospace;\n  color: #fff;\n  letter-spacing: 2px;\n}\n.adm-copy-code[_ngcontent-%COMP%] {\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 2px;\n  color: rgba(255, 255, 255, 0.7);\n  display: flex;\n  align-items: center;\n}\n.adm-copy-code[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.adm-copy-code[_ngcontent-%COMP%]:hover {\n  color: #fff;\n}\n.adm-hero-stats[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 24px;\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 16px;\n  padding: 16px 24px;\n  flex-shrink: 0;\n}\n.adm-hstat[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n}\n.adm-hstat-val[_ngcontent-%COMP%] {\n  font-size: 26px;\n  font-weight: 800;\n  color: #fff;\n  line-height: 1;\n}\n.adm-hstat-lbl[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: rgba(255, 255, 255, 0.55);\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n}\n.adm-hstat-sep[_ngcontent-%COMP%] {\n  width: 1px;\n  height: 36px;\n  background: rgba(255, 255, 255, 0.2);\n}\n.adm-toast[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-radius: 12px;\n  background: #ECFDF5;\n  color: #065F46;\n  border: 1px solid #A7F3D0;\n  font-size: 13px;\n  font-weight: 500;\n  animation: _ngcontent-%COMP%_toast-in 0.2s ease;\n}\n.adm-toast[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n@keyframes _ngcontent-%COMP%_toast-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.adm-main-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 340px;\n  gap: 20px;\n  align-items: start;\n}\n.adm-right-col[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.adm-card[_ngcontent-%COMP%] {\n  background: var(--white, #fff);\n  border: 1px solid var(--border, #E5E7EB);\n  border-radius: 18px;\n  overflow: hidden;\n}\n.adm-card-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 22px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  gap: 12px;\n}\n.adm-card-title[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 14px;\n  font-weight: 700;\n  color: var(--text-primary, #1F2937);\n}\n.adm-card-title[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 19px !important;\n  color: var(--primary, #2563EB);\n}\n.adm-count-badge[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  background: var(--primary-bg, #EFF6FF);\n  color: var(--primary, #2563EB);\n  border: 1px solid var(--primary-border, #BFDBFE);\n  padding: 2px 8px;\n  border-radius: 20px;\n}\n.adm-search-bar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  background: var(--bg-muted, #F9FAFB);\n}\n.adm-search-icon[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--text-muted, #9CA3AF);\n}\n.adm-search-input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 14px;\n  color: var(--text-primary, #1F2937);\n  font-family: inherit;\n}\n.adm-search-input[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n.adm-search-input[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted, #9CA3AF);\n}\n.adm-search-clear[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 24px;\n  height: 24px;\n  border-radius: 50%;\n  border: none;\n  background: var(--border, #E5E7EB);\n  cursor: pointer;\n  color: var(--text-muted);\n}\n.adm-search-clear[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.adm-search-clear[_ngcontent-%COMP%]:hover {\n  background: var(--text-muted);\n  color: #fff;\n}\n.adm-role-filters[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  padding: 12px 18px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  overflow-x: auto;\n  scrollbar-width: none;\n}\n.adm-role-filters[_ngcontent-%COMP%]::-webkit-scrollbar {\n  display: none;\n}\n.adm-filter-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 5px 12px;\n  border-radius: 20px;\n  border: 1.5px solid var(--border, #E5E7EB);\n  background: var(--white, #fff);\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  white-space: nowrap;\n  font-family: inherit;\n  transition: all 0.15s;\n}\n.adm-filter-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.adm-filter-btn.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg, #EFF6FF);\n  border-color: var(--primary, #2563EB);\n  color: var(--primary, #2563EB);\n}\n.adm-filter-btn[_ngcontent-%COMP%]:hover:not(.active) {\n  border-color: var(--primary, #2563EB);\n}\n.adm-filter-count[_ngcontent-%COMP%] {\n  background: var(--border, #E5E7EB);\n  color: var(--text-secondary);\n  font-size: 10px;\n  font-weight: 700;\n  padding: 0 5px;\n  border-radius: 10px;\n  min-width: 16px;\n  text-align: center;\n}\n.active[_ngcontent-%COMP%]   .adm-filter-count[_ngcontent-%COMP%] {\n  background: var(--primary, #2563EB);\n  color: #fff;\n}\n.adm-members-list[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n.adm-member-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 13px 22px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  transition: background 0.12s;\n}\n.adm-member-row[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.adm-member-row[_ngcontent-%COMP%]:hover {\n  background: var(--bg-muted, #F9FAFB);\n}\n.adm-member-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex: 1;\n  min-width: 0;\n}\n.adm-avatar[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.adm-avatar--red[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #F87171,\n      #DC2626);\n}\n.adm-avatar--blue[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #2563EB);\n}\n.adm-avatar--green[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #34D399,\n      #059669);\n}\n.adm-avatar--gray[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #9CA3AF,\n      #6B7280);\n}\n.adm-member-info[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  min-width: 0;\n}\n.adm-member-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary, #1F2937);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.adm-member-contact[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.adm-role-cell[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-shrink: 0;\n}\n.adm-role-select-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.adm-role-select[_ngcontent-%COMP%] {\n  padding: 5px 8px;\n  border-radius: 8px;\n  border: 1.5px solid var(--border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-primary);\n  background: var(--white);\n  cursor: pointer;\n  font-family: inherit;\n  transition: border-color 0.15s;\n}\n.adm-role-select[_ngcontent-%COMP%]:focus {\n  outline: none;\n  border-color: var(--primary);\n}\n.adm-role-select.role-admin[_ngcontent-%COMP%] {\n  border-color: #FECACA;\n  color: #DC2626;\n  background: #FEF2F2;\n}\n.adm-role-select.role-gestionnaire[_ngcontent-%COMP%] {\n  border-color: var(--primary-border);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.adm-role-select.role-membre[_ngcontent-%COMP%] {\n  border-color: #A7F3D0;\n  color: #059669;\n  background: #ECFDF5;\n}\n.adm-role-select.role-viewonly[_ngcontent-%COMP%] {\n  border-color: #E5E7EB;\n  color: #6B7280;\n  background: #F3F4F6;\n}\n.adm-confirm-btn[_ngcontent-%COMP%] {\n  width: 28px;\n  height: 28px;\n  border-radius: 7px;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: all 0.15s;\n  flex-shrink: 0;\n}\n.adm-confirm-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.adm-confirm-btn.adm-confirm-yes[_ngcontent-%COMP%] {\n  background: #ECFDF5;\n  color: #059669;\n}\n.adm-confirm-btn.adm-confirm-yes[_ngcontent-%COMP%]:hover {\n  background: #059669;\n  color: #fff;\n}\n.adm-confirm-btn.adm-confirm-yes[_ngcontent-%COMP%]:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.adm-confirm-btn.adm-confirm-no[_ngcontent-%COMP%] {\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.adm-confirm-btn.adm-confirm-no[_ngcontent-%COMP%]:hover {\n  background: #DC2626;\n  color: #fff;\n}\n.adm-confirm-btn.adm-confirm-no[_ngcontent-%COMP%]:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.adm-admin-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 12px;\n  font-weight: 600;\n  color: #D97706;\n  background: #FFFBEB;\n  border: 1px solid #FDE68A;\n  padding: 4px 10px;\n  border-radius: 8px;\n}\n.adm-admin-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.adm-empty[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n  padding: 40px 24px;\n  color: var(--text-muted);\n}\n.adm-empty[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 36px !important;\n  opacity: 0.3;\n}\n.adm-empty[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  margin: 0;\n}\n.adm-card-viewonly[_ngcontent-%COMP%] {\n  border-color: #BFDBFE;\n  background:\n    linear-gradient(\n      180deg,\n      #EFF6FF 0%,\n      #fff 40%);\n}\n.adm-viewonly-desc[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-secondary);\n  margin: 0;\n  padding: 0 22px 14px;\n  line-height: 1.5;\n}\n.adm-viewonly-body[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  align-items: flex-start;\n  padding: 0 22px 16px;\n}\n.adm-viewonly-qr[_ngcontent-%COMP%] {\n  width: 80px;\n  height: 80px;\n  border-radius: 10px;\n  border: 1.5px solid var(--primary-border, #BFDBFE);\n  flex-shrink: 0;\n}\n.adm-cred-rows[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  flex: 1;\n}\n.adm-cred-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1px solid var(--border);\n  border-radius: 8px;\n  padding: 7px 10px;\n}\n.adm-cred-label[_ngcontent-%COMP%] {\n  font-size: 10px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n  min-width: 68px;\n}\n.adm-cred-val[_ngcontent-%COMP%] {\n  flex: 1;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-primary);\n  font-family: monospace;\n  letter-spacing: 0.3px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.adm-cred-copy[_ngcontent-%COMP%] {\n  width: 24px;\n  height: 24px;\n  border-radius: 6px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: var(--text-muted);\n  transition: all 0.15s;\n}\n.adm-cred-copy[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.adm-cred-copy[_ngcontent-%COMP%]:hover {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.adm-share-btns[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n  padding: 0 22px 20px;\n}\n.adm-share-wa[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex: 1;\n  padding: 10px 14px;\n  border-radius: 10px;\n  border: 1.5px solid #86EFAC;\n  background: #DCFCE7;\n  color: #15803D;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  justify-content: center;\n}\n.adm-share-wa[_ngcontent-%COMP%]:hover {\n  background: #25D366;\n  color: #fff;\n  border-color: #25D366;\n}\n.adm-share-copy[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex: 1;\n  padding: 10px 14px;\n  border-radius: 10px;\n  border: 1.5px solid var(--border);\n  background: var(--white);\n  color: var(--text-secondary);\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  justify-content: center;\n}\n.adm-share-copy[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.adm-share-copy[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n.adm-viewonly-regen[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  justify-content: center;\n  width: calc(100% - 44px);\n  margin: 0 22px 20px;\n  padding: 9px 14px;\n  border-radius: 10px;\n  border: 1.5px dashed var(--border);\n  background: transparent;\n  color: var(--text-secondary);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n}\n.adm-viewonly-regen[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.adm-viewonly-regen[_ngcontent-%COMP%]:hover:not(:disabled) {\n  border-color: #DC2626;\n  color: #DC2626;\n}\n.adm-viewonly-regen[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: default;\n}\n.adm-card-plan[_ngcontent-%COMP%] {\n  border-color: #E9D5FF;\n  background:\n    linear-gradient(\n      180deg,\n      #F5F3FF 0%,\n      #fff 40%);\n}\n.adm-plan-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  padding: 3px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 700;\n  background: #F3F4F6;\n  color: #6B7280;\n}\n.adm-plan-badge--paid[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n}\n.adm-quota-wrap[_ngcontent-%COMP%] {\n  padding: 0 22px 16px;\n}\n.adm-quota-labels[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  justify-content: space-between;\n  font-size: 12px;\n  color: var(--text-secondary);\n  margin-bottom: 6px;\n  font-weight: 500;\n}\n.adm-quota-bar[_ngcontent-%COMP%] {\n  height: 6px;\n  border-radius: 3px;\n  background: var(--border);\n  overflow: hidden;\n}\n.adm-quota-fill[_ngcontent-%COMP%] {\n  height: 100%;\n  border-radius: 3px;\n  background:\n    linear-gradient(\n      90deg,\n      #7C3AED,\n      #A855F7);\n  transition: width 0.6s ease;\n}\n.adm-quota-fill.adm-quota-warn[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      90deg,\n      #D97706,\n      #F59E0B);\n}\n.adm-quota-fill.adm-quota-full[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      90deg,\n      #DC2626,\n      #EF4444);\n}\n.adm-quota-alert[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  margin: 8px 0 0;\n  font-size: 11px;\n  color: #D97706;\n  font-weight: 600;\n}\n.adm-quota-alert[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.adm-upgrade-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  margin: 0 22px 22px;\n  padding: 10px 18px;\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n  border: none;\n  border-radius: var(--radius-lg);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: opacity 0.2s;\n  width: calc(100% - 44px);\n}\n.adm-upgrade-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.adm-upgrade-btn[_ngcontent-%COMP%]:hover {\n  opacity: 0.9;\n}\n.adm-manage-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  margin: 0 22px 22px;\n  padding: 10px 18px;\n  background: var(--bg-muted);\n  color: var(--text-secondary);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: var(--transition);\n  width: calc(100% - 44px);\n}\n.adm-manage-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.adm-manage-btn[_ngcontent-%COMP%]:hover {\n  background: var(--border);\n  color: var(--text-primary);\n}\n.plan-modal-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 400;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n  animation: _ngcontent-%COMP%_fadeIn 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n.plan-modal[_ngcontent-%COMP%] {\n  background: var(--white);\n  border-radius: 20px;\n  width: 100%;\n  max-width: 760px;\n  max-height: 90vh;\n  overflow-y: auto;\n  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);\n  animation: _ngcontent-%COMP%_slideUp 0.25s ease;\n}\n@keyframes _ngcontent-%COMP%_slideUp {\n  from {\n    opacity: 0;\n    transform: translateY(24px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.plan-modal-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 12px;\n  padding: 24px 28px 20px;\n  border-bottom: 1px solid var(--border);\n}\n.plan-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0 0 4px;\n  font-size: 18px;\n  color: var(--text-primary);\n}\n.plan-modal-head[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.plan-cards[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 16px;\n  padding: 24px 28px;\n}\n.plan-card[_ngcontent-%COMP%] {\n  border: 2px solid var(--border);\n  border-radius: 16px;\n  padding: 20px 18px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  position: relative;\n  transition: border-color 0.2s;\n}\n.plan-card[_ngcontent-%COMP%]:hover {\n  border-color: #C4B5FD;\n}\n.plan-card--current[_ngcontent-%COMP%] {\n  border-color: #7C3AED;\n  background: #F5F3FF;\n}\n.plan-card--popular[_ngcontent-%COMP%] {\n  border-color: #7C3AED;\n  box-shadow: 0 4px 24px rgba(124, 58, 237, 0.15);\n}\n.plan-card-badge[_ngcontent-%COMP%] {\n  position: absolute;\n  top: -10px;\n  left: 50%;\n  transform: translateX(-50%);\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n  font-size: 10px;\n  font-weight: 700;\n  padding: 3px 12px;\n  border-radius: 20px;\n  white-space: nowrap;\n}\n.plan-card-badge--current[_ngcontent-%COMP%] {\n  background: #059669;\n}\n.plan-card-header[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.plan-card-header[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  margin: 0 0 8px;\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n}\n.plan-price[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: baseline;\n  justify-content: center;\n  gap: 4px;\n  margin-bottom: 4px;\n}\n.plan-price-amount[_ngcontent-%COMP%] {\n  font-size: 28px;\n  font-weight: 800;\n  color: var(--text-primary);\n}\n.plan-price-unit[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: var(--text-muted);\n  font-weight: 500;\n}\n.plan-limit[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n  font-weight: 600;\n}\n.plan-features[_ngcontent-%COMP%] {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  flex: 1;\n}\n.plan-features[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 6px;\n  font-size: 12px;\n  color: var(--text-secondary);\n  line-height: 1.4;\n}\n.plan-features[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n  color: #059669;\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.plan-choose-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 10px 14px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  background: var(--bg-muted);\n  color: var(--text-secondary);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: var(--transition);\n}\n.plan-choose-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.plan-choose-btn--current[_ngcontent-%COMP%] {\n  border-color: #7C3AED;\n  color: #7C3AED;\n  background: #F5F3FF;\n  cursor: default;\n}\n.plan-choose-btn--premium[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n  border: none;\n}\n.plan-choose-btn--premium[_ngcontent-%COMP%]:hover:not(:disabled) {\n  opacity: 0.9;\n}\n.plan-choose-btn--plus[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #1e3a8a,\n      #1d4ed8);\n  color: #fff;\n  border: none;\n}\n.plan-choose-btn--plus[_ngcontent-%COMP%]:hover:not(:disabled) {\n  opacity: 0.9;\n}\n.plan-choose-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.plan-modal-note[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 16px 28px;\n  border-top: 1px solid var(--border);\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.plan-modal-note[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n  color: #059669;\n}\n.adm-card-export[_ngcontent-%COMP%] {\n  border-color: #D1FAE5;\n  background:\n    linear-gradient(\n      180deg,\n      #ECFDF5 0%,\n      #fff 40%);\n}\n.adm-export-desc[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-secondary);\n  margin: 0;\n  padding: 0 22px 14px;\n  line-height: 1.6;\n}\n.adm-export-stats[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  padding: 0 22px 14px;\n}\n.adm-export-stat[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary);\n}\n.adm-export-stat[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n  color: #059669;\n}\n.adm-export-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  margin: 0 22px 22px;\n  padding: 10px 18px;\n  background: #059669;\n  color: #fff;\n  border: none;\n  border-radius: var(--radius-lg);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: var(--transition);\n  width: calc(100% - 44px);\n}\n.adm-export-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.adm-export-btn[_ngcontent-%COMP%]:hover:not(:disabled) {\n  background: #047857;\n}\n.adm-export-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.adm-info-rows[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n.adm-info-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 11px 22px;\n  border-bottom: 1px solid var(--border);\n}\n.adm-info-row[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.adm-info-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted);\n  min-width: 110px;\n}\n.adm-info-val[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n}\n.adm-info-val.adm-info-code[_ngcontent-%COMP%] {\n  font-family: monospace;\n  font-weight: 700;\n  color: var(--primary);\n  letter-spacing: 1px;\n}\n.adm-danger-card[_ngcontent-%COMP%] {\n  border-color: #FECACA;\n  background: #FFFBFB;\n}\n.adm-danger-title[_ngcontent-%COMP%] {\n  color: #DC2626 !important;\n}\n.adm-danger-title[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #DC2626 !important;\n}\n.adm-danger-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 18px 22px;\n  flex-wrap: wrap;\n}\n.adm-danger-label[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  margin-bottom: 2px;\n}\n.adm-danger-sub[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.adm-danger-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 16px;\n  border-radius: 10px;\n  border: 1.5px solid #FECACA;\n  background: #FEF2F2;\n  color: #DC2626;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  white-space: nowrap;\n}\n.adm-danger-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.adm-danger-btn[_ngcontent-%COMP%]:hover:not(:disabled) {\n  background: #DC2626;\n  color: #fff;\n  border-color: #DC2626;\n}\n.adm-danger-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.panel-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.4);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.slide-panel[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.12);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.panel-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header-title[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.panel-header-title[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n  color: var(--primary);\n}\n.panel-header-title[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.panel-body[_ngcontent-%COMP%] {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n}\n.panel-footer[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 10px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.section-title[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n}\n.form-group[_ngcontent-%COMP%] {\n  margin-bottom: 14px;\n}\n.form-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary);\n  margin-bottom: 6px;\n}\n.form-control[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 9px 12px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 13px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  font-family: inherit;\n  transition: border-color 0.15s;\n}\n.form-control[_ngcontent-%COMP%]:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row-2[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.required[_ngcontent-%COMP%] {\n  color: var(--error, #EF4444);\n}\n.optional[_ngcontent-%COMP%] {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n@media (max-width: 900px) {\n  .adm-main-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .adm-right-col[_ngcontent-%COMP%] {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 16px;\n  }\n}\n@media (max-width: 700px) {\n  .plan-cards[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .plan-modal[_ngcontent-%COMP%] {\n    border-radius: 20px 20px 0 0;\n    margin-top: auto;\n  }\n  .plan-modal-overlay[_ngcontent-%COMP%] {\n    align-items: flex-end;\n    padding: 0;\n  }\n}\n@media (max-width: 640px) {\n  .adm-hero[_ngcontent-%COMP%] {\n    padding: 24px 20px;\n  }\n  .adm-hero-content[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .adm-hero-title[_ngcontent-%COMP%] {\n    font-size: 20px;\n  }\n  .adm-hero-stats[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: space-around;\n    padding: 12px 16px;\n    gap: 12px;\n  }\n  .adm-hstat-val[_ngcontent-%COMP%] {\n    font-size: 20px;\n  }\n  .adm-right-col[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .adm-member-row[_ngcontent-%COMP%] {\n    padding: 12px 16px;\n    gap: 10px;\n  }\n  .adm-member-contact[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .adm-viewonly-body[_ngcontent-%COMP%] {\n    flex-direction: column;\n  }\n  .adm-viewonly-qr[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .adm-danger-row[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 10px;\n  }\n  .adm-danger-btn[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n  .slide-panel[_ngcontent-%COMP%] {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open[_ngcontent-%COMP%] {\n    transform: translateY(0);\n  }\n  .form-row-2[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer[_ngcontent-%COMP%] {\n    flex-direction: column-reverse;\n  }\n  .panel-footer[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=admin.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AdminComponent, [{
@@ -14396,7 +14576,7 @@ _Acc\xE8s lecture seule uniquement_`;
           <h1 class="adm-hero-title">{{ famille?.nom || 'Famille' }}</h1>\r
           <div class="adm-hero-code" *ngIf="famille?.code">\r
             <span class="material-icons-round">key</span>\r
-            <span class="adm-code-val">{{ famille.code }}</span>\r
+            <span class="adm-code-val">{{ famille?.code }}</span>\r
             <button class="adm-copy-code" (click)="copyFamilleCode()" [title]="viewonlyCopied === 'familleCode' ? 'Copi\xE9 !' : 'Copier le code'">\r
               <span class="material-icons-round">{{ viewonlyCopied === 'familleCode' ? 'check' : 'content_copy' }}</span>\r
             </button>\r
@@ -14625,6 +14805,11 @@ _Acc\xE8s lecture seule uniquement_`;
               {{ viewonlyCopied === 'share' ? 'Copi\xE9 !' : 'Partager' }}\r
             </button>\r
           </div>\r
+\r
+          <button class="adm-viewonly-regen" (click)="regenerateViewonlyPassword()" [disabled]="regeneratingViewonly">\r
+            <span class="material-icons-round">autorenew</span>\r
+            {{ regeneratingViewonly ? 'R\xE9g\xE9n\xE9ration...' : 'R\xE9g\xE9n\xE9rer le mot de passe' }}\r
+          </button>\r
         </div>\r
 \r
         <!-- Abonnement -->\r
@@ -14634,7 +14819,7 @@ _Acc\xE8s lecture seule uniquement_`;
               <span class="material-icons-round">workspace_premium</span>\r
               Abonnement\r
             </div>\r
-            <span class="adm-plan-badge" [class.adm-plan-badge--paid]="subscription.plan?.prix > 0">\r
+            <span class="adm-plan-badge" [class.adm-plan-badge--paid]="!!subscription.plan && subscription.plan.prix > 0">\r
               {{ subscription.plan?.label ?? 'Gratuit' }}\r
             </span>\r
           </div>\r
@@ -14664,7 +14849,7 @@ _Acc\xE8s lecture seule uniquement_`;
             <span class="material-icons-round">bolt</span>\r
             Passer \xE0 Premium\r
           </button>\r
-          <button class="adm-manage-btn" (click)="showPlanModal = true" *ngIf="subscription.plan?.prix > 0">\r
+          <button class="adm-manage-btn" (click)="showPlanModal = true" *ngIf="subscription.plan && subscription.plan.prix > 0">\r
             <span class="material-icons-round">manage_accounts</span>\r
             G\xE9rer l'abonnement\r
           </button>\r
@@ -14891,11 +15076,11 @@ _Acc\xE8s lecture seule uniquement_`;
     </button>\r
   </div>\r
 </div>\r
-`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/admin/admin.component.scss */\n.admin-page {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.adm-hero {\n  position: relative;\n  border-radius: 20px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #0f172a 0%,\n      #1e3a8a 55%,\n      var(--primary, #2563EB) 100%);\n  padding: 32px 36px;\n  color: #fff;\n}\n.adm-hero-bg {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.05) 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  pointer-events: none;\n}\n.adm-hero-content {\n  position: relative;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.adm-hero-left {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  flex-wrap: wrap;\n}\n.adm-hero-icon {\n  width: 64px;\n  height: 64px;\n  border-radius: 18px;\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.25);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.adm-hero-icon .material-icons-round {\n  font-size: 32px !important;\n  color: #fff;\n}\n.adm-hero-eyebrow {\n  font-size: 11px;\n  color: rgba(255, 255, 255, 0.55);\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n  margin: 0 0 4px;\n}\n.adm-hero-title {\n  font-size: 26px;\n  font-weight: 800;\n  color: #fff;\n  margin: 0 0 8px;\n  letter-spacing: -0.3px;\n}\n.adm-hero-code {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  background: rgba(255, 255, 255, 0.12);\n  border: 1px solid rgba(255, 255, 255, 0.2);\n  border-radius: 10px;\n  padding: 5px 12px;\n}\n.adm-hero-code .material-icons-round {\n  font-size: 14px !important;\n  color: rgba(255, 255, 255, 0.7);\n}\n.adm-code-val {\n  font-size: 13px;\n  font-weight: 700;\n  font-family: monospace;\n  color: #fff;\n  letter-spacing: 2px;\n}\n.adm-copy-code {\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 2px;\n  color: rgba(255, 255, 255, 0.7);\n  display: flex;\n  align-items: center;\n}\n.adm-copy-code .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-copy-code:hover {\n  color: #fff;\n}\n.adm-hero-stats {\n  display: flex;\n  align-items: center;\n  gap: 24px;\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 16px;\n  padding: 16px 24px;\n  flex-shrink: 0;\n}\n.adm-hstat {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n}\n.adm-hstat-val {\n  font-size: 26px;\n  font-weight: 800;\n  color: #fff;\n  line-height: 1;\n}\n.adm-hstat-lbl {\n  font-size: 10px;\n  color: rgba(255, 255, 255, 0.55);\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n}\n.adm-hstat-sep {\n  width: 1px;\n  height: 36px;\n  background: rgba(255, 255, 255, 0.2);\n}\n.adm-toast {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-radius: 12px;\n  background: #ECFDF5;\n  color: #065F46;\n  border: 1px solid #A7F3D0;\n  font-size: 13px;\n  font-weight: 500;\n  animation: toast-in 0.2s ease;\n}\n.adm-toast .material-icons-round {\n  font-size: 18px !important;\n}\n@keyframes toast-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.adm-main-grid {\n  display: grid;\n  grid-template-columns: 1fr 340px;\n  gap: 20px;\n  align-items: start;\n}\n.adm-right-col {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.adm-card {\n  background: var(--white, #fff);\n  border: 1px solid var(--border, #E5E7EB);\n  border-radius: 18px;\n  overflow: hidden;\n}\n.adm-card-head {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 22px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  gap: 12px;\n}\n.adm-card-title {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 14px;\n  font-weight: 700;\n  color: var(--text-primary, #1F2937);\n}\n.adm-card-title .material-icons-round {\n  font-size: 19px !important;\n  color: var(--primary, #2563EB);\n}\n.adm-count-badge {\n  font-size: 11px;\n  font-weight: 600;\n  background: var(--primary-bg, #EFF6FF);\n  color: var(--primary, #2563EB);\n  border: 1px solid var(--primary-border, #BFDBFE);\n  padding: 2px 8px;\n  border-radius: 20px;\n}\n.adm-search-bar {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  background: var(--bg-muted, #F9FAFB);\n}\n.adm-search-icon {\n  font-size: 18px !important;\n  color: var(--text-muted, #9CA3AF);\n}\n.adm-search-input {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 14px;\n  color: var(--text-primary, #1F2937);\n  font-family: inherit;\n}\n.adm-search-input:focus {\n  outline: none;\n}\n.adm-search-input::placeholder {\n  color: var(--text-muted, #9CA3AF);\n}\n.adm-search-clear {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 24px;\n  height: 24px;\n  border-radius: 50%;\n  border: none;\n  background: var(--border, #E5E7EB);\n  cursor: pointer;\n  color: var(--text-muted);\n}\n.adm-search-clear .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-search-clear:hover {\n  background: var(--text-muted);\n  color: #fff;\n}\n.adm-role-filters {\n  display: flex;\n  gap: 6px;\n  padding: 12px 18px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  overflow-x: auto;\n  scrollbar-width: none;\n}\n.adm-role-filters::-webkit-scrollbar {\n  display: none;\n}\n.adm-filter-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 5px 12px;\n  border-radius: 20px;\n  border: 1.5px solid var(--border, #E5E7EB);\n  background: var(--white, #fff);\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  white-space: nowrap;\n  font-family: inherit;\n  transition: all 0.15s;\n}\n.adm-filter-btn .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-filter-btn.active {\n  background: var(--primary-bg, #EFF6FF);\n  border-color: var(--primary, #2563EB);\n  color: var(--primary, #2563EB);\n}\n.adm-filter-btn:hover:not(.active) {\n  border-color: var(--primary, #2563EB);\n}\n.adm-filter-count {\n  background: var(--border, #E5E7EB);\n  color: var(--text-secondary);\n  font-size: 10px;\n  font-weight: 700;\n  padding: 0 5px;\n  border-radius: 10px;\n  min-width: 16px;\n  text-align: center;\n}\n.active .adm-filter-count {\n  background: var(--primary, #2563EB);\n  color: #fff;\n}\n.adm-members-list {\n  display: flex;\n  flex-direction: column;\n}\n.adm-member-row {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 13px 22px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  transition: background 0.12s;\n}\n.adm-member-row:last-child {\n  border-bottom: none;\n}\n.adm-member-row:hover {\n  background: var(--bg-muted, #F9FAFB);\n}\n.adm-member-left {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex: 1;\n  min-width: 0;\n}\n.adm-avatar {\n  width: 38px;\n  height: 38px;\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.adm-avatar--red {\n  background:\n    linear-gradient(\n      135deg,\n      #F87171,\n      #DC2626);\n}\n.adm-avatar--blue {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #2563EB);\n}\n.adm-avatar--green {\n  background:\n    linear-gradient(\n      135deg,\n      #34D399,\n      #059669);\n}\n.adm-avatar--gray {\n  background:\n    linear-gradient(\n      135deg,\n      #9CA3AF,\n      #6B7280);\n}\n.adm-member-info {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  min-width: 0;\n}\n.adm-member-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary, #1F2937);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.adm-member-contact {\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.adm-role-cell {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-shrink: 0;\n}\n.adm-role-select-wrap {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.adm-role-select {\n  padding: 5px 8px;\n  border-radius: 8px;\n  border: 1.5px solid var(--border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-primary);\n  background: var(--white);\n  cursor: pointer;\n  font-family: inherit;\n  transition: border-color 0.15s;\n}\n.adm-role-select:focus {\n  outline: none;\n  border-color: var(--primary);\n}\n.adm-role-select.role-admin {\n  border-color: #FECACA;\n  color: #DC2626;\n  background: #FEF2F2;\n}\n.adm-role-select.role-gestionnaire {\n  border-color: var(--primary-border);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.adm-role-select.role-membre {\n  border-color: #A7F3D0;\n  color: #059669;\n  background: #ECFDF5;\n}\n.adm-role-select.role-viewonly {\n  border-color: #E5E7EB;\n  color: #6B7280;\n  background: #F3F4F6;\n}\n.adm-confirm-btn {\n  width: 28px;\n  height: 28px;\n  border-radius: 7px;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: all 0.15s;\n  flex-shrink: 0;\n}\n.adm-confirm-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.adm-confirm-btn.adm-confirm-yes {\n  background: #ECFDF5;\n  color: #059669;\n}\n.adm-confirm-btn.adm-confirm-yes:hover {\n  background: #059669;\n  color: #fff;\n}\n.adm-confirm-btn.adm-confirm-yes:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.adm-confirm-btn.adm-confirm-no {\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.adm-confirm-btn.adm-confirm-no:hover {\n  background: #DC2626;\n  color: #fff;\n}\n.adm-confirm-btn.adm-confirm-no:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.adm-admin-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 12px;\n  font-weight: 600;\n  color: #D97706;\n  background: #FFFBEB;\n  border: 1px solid #FDE68A;\n  padding: 4px 10px;\n  border-radius: 8px;\n}\n.adm-admin-badge .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-empty {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n  padding: 40px 24px;\n  color: var(--text-muted);\n}\n.adm-empty .material-icons-round {\n  font-size: 36px !important;\n  opacity: 0.3;\n}\n.adm-empty p {\n  font-size: 14px;\n  margin: 0;\n}\n.adm-card-viewonly {\n  border-color: #BFDBFE;\n  background:\n    linear-gradient(\n      180deg,\n      #EFF6FF 0%,\n      #fff 40%);\n}\n.adm-viewonly-desc {\n  font-size: 12px;\n  color: var(--text-secondary);\n  margin: 0;\n  padding: 0 22px 14px;\n  line-height: 1.5;\n}\n.adm-viewonly-body {\n  display: flex;\n  gap: 16px;\n  align-items: flex-start;\n  padding: 0 22px 16px;\n}\n.adm-viewonly-qr {\n  width: 80px;\n  height: 80px;\n  border-radius: 10px;\n  border: 1.5px solid var(--primary-border, #BFDBFE);\n  flex-shrink: 0;\n}\n.adm-cred-rows {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  flex: 1;\n}\n.adm-cred-row {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1px solid var(--border);\n  border-radius: 8px;\n  padding: 7px 10px;\n}\n.adm-cred-label {\n  font-size: 10px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n  min-width: 68px;\n}\n.adm-cred-val {\n  flex: 1;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-primary);\n  font-family: monospace;\n  letter-spacing: 0.3px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.adm-cred-copy {\n  width: 24px;\n  height: 24px;\n  border-radius: 6px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: var(--text-muted);\n  transition: all 0.15s;\n}\n.adm-cred-copy .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-cred-copy:hover {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.adm-share-btns {\n  display: flex;\n  gap: 8px;\n  padding: 0 22px 20px;\n}\n.adm-share-wa {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex: 1;\n  padding: 10px 14px;\n  border-radius: 10px;\n  border: 1.5px solid #86EFAC;\n  background: #DCFCE7;\n  color: #15803D;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  justify-content: center;\n}\n.adm-share-wa:hover {\n  background: #25D366;\n  color: #fff;\n  border-color: #25D366;\n}\n.adm-share-copy {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex: 1;\n  padding: 10px 14px;\n  border-radius: 10px;\n  border: 1.5px solid var(--border);\n  background: var(--white);\n  color: var(--text-secondary);\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  justify-content: center;\n}\n.adm-share-copy .material-icons-round {\n  font-size: 16px !important;\n}\n.adm-share-copy:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n.adm-card-plan {\n  border-color: #E9D5FF;\n  background:\n    linear-gradient(\n      180deg,\n      #F5F3FF 0%,\n      #fff 40%);\n}\n.adm-plan-badge {\n  display: inline-flex;\n  align-items: center;\n  padding: 3px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 700;\n  background: #F3F4F6;\n  color: #6B7280;\n}\n.adm-plan-badge--paid {\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n}\n.adm-quota-wrap {\n  padding: 0 22px 16px;\n}\n.adm-quota-labels {\n  display: flex;\n  gap: 4px;\n  justify-content: space-between;\n  font-size: 12px;\n  color: var(--text-secondary);\n  margin-bottom: 6px;\n  font-weight: 500;\n}\n.adm-quota-bar {\n  height: 6px;\n  border-radius: 3px;\n  background: var(--border);\n  overflow: hidden;\n}\n.adm-quota-fill {\n  height: 100%;\n  border-radius: 3px;\n  background:\n    linear-gradient(\n      90deg,\n      #7C3AED,\n      #A855F7);\n  transition: width 0.6s ease;\n}\n.adm-quota-fill.adm-quota-warn {\n  background:\n    linear-gradient(\n      90deg,\n      #D97706,\n      #F59E0B);\n}\n.adm-quota-fill.adm-quota-full {\n  background:\n    linear-gradient(\n      90deg,\n      #DC2626,\n      #EF4444);\n}\n.adm-quota-alert {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  margin: 8px 0 0;\n  font-size: 11px;\n  color: #D97706;\n  font-weight: 600;\n}\n.adm-quota-alert .material-icons-round {\n  font-size: 13px !important;\n}\n.adm-upgrade-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  margin: 0 22px 22px;\n  padding: 10px 18px;\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n  border: none;\n  border-radius: var(--radius-lg);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: opacity 0.2s;\n  width: calc(100% - 44px);\n}\n.adm-upgrade-btn .material-icons-round {\n  font-size: 17px !important;\n}\n.adm-upgrade-btn:hover {\n  opacity: 0.9;\n}\n.adm-manage-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  margin: 0 22px 22px;\n  padding: 10px 18px;\n  background: var(--bg-muted);\n  color: var(--text-secondary);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: var(--transition);\n  width: calc(100% - 44px);\n}\n.adm-manage-btn .material-icons-round {\n  font-size: 17px !important;\n}\n.adm-manage-btn:hover {\n  background: var(--border);\n  color: var(--text-primary);\n}\n.plan-modal-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 400;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n  animation: fadeIn 0.2s ease;\n}\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n.plan-modal {\n  background: var(--white);\n  border-radius: 20px;\n  width: 100%;\n  max-width: 760px;\n  max-height: 90vh;\n  overflow-y: auto;\n  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);\n  animation: slideUp 0.25s ease;\n}\n@keyframes slideUp {\n  from {\n    opacity: 0;\n    transform: translateY(24px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.plan-modal-head {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 12px;\n  padding: 24px 28px 20px;\n  border-bottom: 1px solid var(--border);\n}\n.plan-modal-head h3 {\n  margin: 0 0 4px;\n  font-size: 18px;\n  color: var(--text-primary);\n}\n.plan-modal-head p {\n  margin: 0;\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.plan-cards {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 16px;\n  padding: 24px 28px;\n}\n.plan-card {\n  border: 2px solid var(--border);\n  border-radius: 16px;\n  padding: 20px 18px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  position: relative;\n  transition: border-color 0.2s;\n}\n.plan-card:hover {\n  border-color: #C4B5FD;\n}\n.plan-card--current {\n  border-color: #7C3AED;\n  background: #F5F3FF;\n}\n.plan-card--popular {\n  border-color: #7C3AED;\n  box-shadow: 0 4px 24px rgba(124, 58, 237, 0.15);\n}\n.plan-card-badge {\n  position: absolute;\n  top: -10px;\n  left: 50%;\n  transform: translateX(-50%);\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n  font-size: 10px;\n  font-weight: 700;\n  padding: 3px 12px;\n  border-radius: 20px;\n  white-space: nowrap;\n}\n.plan-card-badge--current {\n  background: #059669;\n}\n.plan-card-header {\n  text-align: center;\n}\n.plan-card-header h4 {\n  margin: 0 0 8px;\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n}\n.plan-price {\n  display: flex;\n  align-items: baseline;\n  justify-content: center;\n  gap: 4px;\n  margin-bottom: 4px;\n}\n.plan-price-amount {\n  font-size: 28px;\n  font-weight: 800;\n  color: var(--text-primary);\n}\n.plan-price-unit {\n  font-size: 11px;\n  color: var(--text-muted);\n  font-weight: 500;\n}\n.plan-limit {\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n  font-weight: 600;\n}\n.plan-features {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  flex: 1;\n}\n.plan-features li {\n  display: flex;\n  align-items: flex-start;\n  gap: 6px;\n  font-size: 12px;\n  color: var(--text-secondary);\n  line-height: 1.4;\n}\n.plan-features li .material-icons-round {\n  font-size: 14px !important;\n  color: #059669;\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.plan-choose-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 10px 14px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  background: var(--bg-muted);\n  color: var(--text-secondary);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: var(--transition);\n}\n.plan-choose-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.plan-choose-btn--current {\n  border-color: #7C3AED;\n  color: #7C3AED;\n  background: #F5F3FF;\n  cursor: default;\n}\n.plan-choose-btn--premium {\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n  border: none;\n}\n.plan-choose-btn--premium:hover:not(:disabled) {\n  opacity: 0.9;\n}\n.plan-choose-btn--plus {\n  background:\n    linear-gradient(\n      135deg,\n      #1e3a8a,\n      #1d4ed8);\n  color: #fff;\n  border: none;\n}\n.plan-choose-btn--plus:hover:not(:disabled) {\n  opacity: 0.9;\n}\n.plan-choose-btn:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.plan-modal-note {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 16px 28px;\n  border-top: 1px solid var(--border);\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.plan-modal-note .material-icons-round {\n  font-size: 13px !important;\n  color: #059669;\n}\n.adm-card-export {\n  border-color: #D1FAE5;\n  background:\n    linear-gradient(\n      180deg,\n      #ECFDF5 0%,\n      #fff 40%);\n}\n.adm-export-desc {\n  font-size: 12px;\n  color: var(--text-secondary);\n  margin: 0;\n  padding: 0 22px 14px;\n  line-height: 1.6;\n}\n.adm-export-stats {\n  display: flex;\n  gap: 16px;\n  padding: 0 22px 14px;\n}\n.adm-export-stat {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary);\n}\n.adm-export-stat .material-icons-round {\n  font-size: 15px !important;\n  color: #059669;\n}\n.adm-export-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  margin: 0 22px 22px;\n  padding: 10px 18px;\n  background: #059669;\n  color: #fff;\n  border: none;\n  border-radius: var(--radius-lg);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: var(--transition);\n  width: calc(100% - 44px);\n}\n.adm-export-btn .material-icons-round {\n  font-size: 17px !important;\n}\n.adm-export-btn:hover:not(:disabled) {\n  background: #047857;\n}\n.adm-export-btn:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.adm-info-rows {\n  display: flex;\n  flex-direction: column;\n}\n.adm-info-row {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 11px 22px;\n  border-bottom: 1px solid var(--border);\n}\n.adm-info-row:last-child {\n  border-bottom: none;\n}\n.adm-info-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted);\n  min-width: 110px;\n}\n.adm-info-val {\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n}\n.adm-info-val.adm-info-code {\n  font-family: monospace;\n  font-weight: 700;\n  color: var(--primary);\n  letter-spacing: 1px;\n}\n.adm-danger-card {\n  border-color: #FECACA;\n  background: #FFFBFB;\n}\n.adm-danger-title {\n  color: #DC2626 !important;\n}\n.adm-danger-title .material-icons-round {\n  color: #DC2626 !important;\n}\n.adm-danger-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 18px 22px;\n  flex-wrap: wrap;\n}\n.adm-danger-label {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  margin-bottom: 2px;\n}\n.adm-danger-sub {\n  display: block;\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.adm-danger-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 16px;\n  border-radius: 10px;\n  border: 1.5px solid #FECACA;\n  background: #FEF2F2;\n  color: #DC2626;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  white-space: nowrap;\n}\n.adm-danger-btn .material-icons-round {\n  font-size: 16px !important;\n}\n.adm-danger-btn:hover:not(:disabled) {\n  background: #DC2626;\n  color: #fff;\n  border-color: #DC2626;\n}\n.adm-danger-btn:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.4);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.slide-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.12);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open {\n  transform: translateX(0);\n}\n.panel-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header-title {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.panel-header-title .material-icons-round {\n  font-size: 20px !important;\n  color: var(--primary);\n}\n.panel-header-title h3 {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.panel-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n}\n.panel-footer {\n  display: flex;\n  gap: 10px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section {\n  margin-bottom: 24px;\n}\n.section-title {\n  font-size: 11px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n}\n.form-group {\n  margin-bottom: 14px;\n}\n.form-group label {\n  display: block;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary);\n  margin-bottom: 6px;\n}\n.form-control {\n  width: 100%;\n  padding: 9px 12px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 13px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  font-family: inherit;\n  transition: border-color 0.15s;\n}\n.form-control:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row-2 {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.required {\n  color: var(--error, #EF4444);\n}\n.optional {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n@media (max-width: 900px) {\n  .adm-main-grid {\n    grid-template-columns: 1fr;\n  }\n  .adm-right-col {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 16px;\n  }\n}\n@media (max-width: 700px) {\n  .plan-cards {\n    grid-template-columns: 1fr;\n  }\n  .plan-modal {\n    border-radius: 20px 20px 0 0;\n    margin-top: auto;\n  }\n  .plan-modal-overlay {\n    align-items: flex-end;\n    padding: 0;\n  }\n}\n@media (max-width: 640px) {\n  .adm-hero {\n    padding: 24px 20px;\n  }\n  .adm-hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .adm-hero-title {\n    font-size: 20px;\n  }\n  .adm-hero-stats {\n    width: 100%;\n    justify-content: space-around;\n    padding: 12px 16px;\n    gap: 12px;\n  }\n  .adm-hstat-val {\n    font-size: 20px;\n  }\n  .adm-right-col {\n    grid-template-columns: 1fr;\n  }\n  .adm-member-row {\n    padding: 12px 16px;\n    gap: 10px;\n  }\n  .adm-member-contact {\n    display: none;\n  }\n  .adm-viewonly-body {\n    flex-direction: column;\n  }\n  .adm-viewonly-qr {\n    display: none;\n  }\n  .adm-danger-row {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 10px;\n  }\n  .adm-danger-btn {\n    width: 100%;\n    justify-content: center;\n  }\n  .slide-panel {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open {\n    transform: translateY(0);\n  }\n  .form-row-2 {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer {\n    flex-direction: column-reverse;\n  }\n  .panel-footer button {\n    width: 100%;\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=admin.component.css.map */\n'] }]
-  }], () => [{ type: ApiService }], null);
+`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/admin/admin.component.scss */\n.admin-page {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.adm-hero {\n  position: relative;\n  border-radius: 20px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #0f172a 0%,\n      #1e3a8a 55%,\n      var(--primary, #2563EB) 100%);\n  padding: 32px 36px;\n  color: #fff;\n}\n.adm-hero-bg {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.05) 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  pointer-events: none;\n}\n.adm-hero-content {\n  position: relative;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.adm-hero-left {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  flex-wrap: wrap;\n}\n.adm-hero-icon {\n  width: 64px;\n  height: 64px;\n  border-radius: 18px;\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.25);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.adm-hero-icon .material-icons-round {\n  font-size: 32px !important;\n  color: #fff;\n}\n.adm-hero-eyebrow {\n  font-size: 11px;\n  color: rgba(255, 255, 255, 0.55);\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n  margin: 0 0 4px;\n}\n.adm-hero-title {\n  font-size: 26px;\n  font-weight: 800;\n  color: #fff;\n  margin: 0 0 8px;\n  letter-spacing: -0.3px;\n}\n.adm-hero-code {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  background: rgba(255, 255, 255, 0.12);\n  border: 1px solid rgba(255, 255, 255, 0.2);\n  border-radius: 10px;\n  padding: 5px 12px;\n}\n.adm-hero-code .material-icons-round {\n  font-size: 14px !important;\n  color: rgba(255, 255, 255, 0.7);\n}\n.adm-code-val {\n  font-size: 13px;\n  font-weight: 700;\n  font-family: monospace;\n  color: #fff;\n  letter-spacing: 2px;\n}\n.adm-copy-code {\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 2px;\n  color: rgba(255, 255, 255, 0.7);\n  display: flex;\n  align-items: center;\n}\n.adm-copy-code .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-copy-code:hover {\n  color: #fff;\n}\n.adm-hero-stats {\n  display: flex;\n  align-items: center;\n  gap: 24px;\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 16px;\n  padding: 16px 24px;\n  flex-shrink: 0;\n}\n.adm-hstat {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n}\n.adm-hstat-val {\n  font-size: 26px;\n  font-weight: 800;\n  color: #fff;\n  line-height: 1;\n}\n.adm-hstat-lbl {\n  font-size: 10px;\n  color: rgba(255, 255, 255, 0.55);\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n}\n.adm-hstat-sep {\n  width: 1px;\n  height: 36px;\n  background: rgba(255, 255, 255, 0.2);\n}\n.adm-toast {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-radius: 12px;\n  background: #ECFDF5;\n  color: #065F46;\n  border: 1px solid #A7F3D0;\n  font-size: 13px;\n  font-weight: 500;\n  animation: toast-in 0.2s ease;\n}\n.adm-toast .material-icons-round {\n  font-size: 18px !important;\n}\n@keyframes toast-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.adm-main-grid {\n  display: grid;\n  grid-template-columns: 1fr 340px;\n  gap: 20px;\n  align-items: start;\n}\n.adm-right-col {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.adm-card {\n  background: var(--white, #fff);\n  border: 1px solid var(--border, #E5E7EB);\n  border-radius: 18px;\n  overflow: hidden;\n}\n.adm-card-head {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 22px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  gap: 12px;\n}\n.adm-card-title {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 14px;\n  font-weight: 700;\n  color: var(--text-primary, #1F2937);\n}\n.adm-card-title .material-icons-round {\n  font-size: 19px !important;\n  color: var(--primary, #2563EB);\n}\n.adm-count-badge {\n  font-size: 11px;\n  font-weight: 600;\n  background: var(--primary-bg, #EFF6FF);\n  color: var(--primary, #2563EB);\n  border: 1px solid var(--primary-border, #BFDBFE);\n  padding: 2px 8px;\n  border-radius: 20px;\n}\n.adm-search-bar {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  background: var(--bg-muted, #F9FAFB);\n}\n.adm-search-icon {\n  font-size: 18px !important;\n  color: var(--text-muted, #9CA3AF);\n}\n.adm-search-input {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 14px;\n  color: var(--text-primary, #1F2937);\n  font-family: inherit;\n}\n.adm-search-input:focus {\n  outline: none;\n}\n.adm-search-input::placeholder {\n  color: var(--text-muted, #9CA3AF);\n}\n.adm-search-clear {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 24px;\n  height: 24px;\n  border-radius: 50%;\n  border: none;\n  background: var(--border, #E5E7EB);\n  cursor: pointer;\n  color: var(--text-muted);\n}\n.adm-search-clear .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-search-clear:hover {\n  background: var(--text-muted);\n  color: #fff;\n}\n.adm-role-filters {\n  display: flex;\n  gap: 6px;\n  padding: 12px 18px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  overflow-x: auto;\n  scrollbar-width: none;\n}\n.adm-role-filters::-webkit-scrollbar {\n  display: none;\n}\n.adm-filter-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 5px 12px;\n  border-radius: 20px;\n  border: 1.5px solid var(--border, #E5E7EB);\n  background: var(--white, #fff);\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  white-space: nowrap;\n  font-family: inherit;\n  transition: all 0.15s;\n}\n.adm-filter-btn .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-filter-btn.active {\n  background: var(--primary-bg, #EFF6FF);\n  border-color: var(--primary, #2563EB);\n  color: var(--primary, #2563EB);\n}\n.adm-filter-btn:hover:not(.active) {\n  border-color: var(--primary, #2563EB);\n}\n.adm-filter-count {\n  background: var(--border, #E5E7EB);\n  color: var(--text-secondary);\n  font-size: 10px;\n  font-weight: 700;\n  padding: 0 5px;\n  border-radius: 10px;\n  min-width: 16px;\n  text-align: center;\n}\n.active .adm-filter-count {\n  background: var(--primary, #2563EB);\n  color: #fff;\n}\n.adm-members-list {\n  display: flex;\n  flex-direction: column;\n}\n.adm-member-row {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 13px 22px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n  transition: background 0.12s;\n}\n.adm-member-row:last-child {\n  border-bottom: none;\n}\n.adm-member-row:hover {\n  background: var(--bg-muted, #F9FAFB);\n}\n.adm-member-left {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex: 1;\n  min-width: 0;\n}\n.adm-avatar {\n  width: 38px;\n  height: 38px;\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.adm-avatar--red {\n  background:\n    linear-gradient(\n      135deg,\n      #F87171,\n      #DC2626);\n}\n.adm-avatar--blue {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #2563EB);\n}\n.adm-avatar--green {\n  background:\n    linear-gradient(\n      135deg,\n      #34D399,\n      #059669);\n}\n.adm-avatar--gray {\n  background:\n    linear-gradient(\n      135deg,\n      #9CA3AF,\n      #6B7280);\n}\n.adm-member-info {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  min-width: 0;\n}\n.adm-member-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary, #1F2937);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.adm-member-contact {\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.adm-role-cell {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-shrink: 0;\n}\n.adm-role-select-wrap {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.adm-role-select {\n  padding: 5px 8px;\n  border-radius: 8px;\n  border: 1.5px solid var(--border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-primary);\n  background: var(--white);\n  cursor: pointer;\n  font-family: inherit;\n  transition: border-color 0.15s;\n}\n.adm-role-select:focus {\n  outline: none;\n  border-color: var(--primary);\n}\n.adm-role-select.role-admin {\n  border-color: #FECACA;\n  color: #DC2626;\n  background: #FEF2F2;\n}\n.adm-role-select.role-gestionnaire {\n  border-color: var(--primary-border);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.adm-role-select.role-membre {\n  border-color: #A7F3D0;\n  color: #059669;\n  background: #ECFDF5;\n}\n.adm-role-select.role-viewonly {\n  border-color: #E5E7EB;\n  color: #6B7280;\n  background: #F3F4F6;\n}\n.adm-confirm-btn {\n  width: 28px;\n  height: 28px;\n  border-radius: 7px;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: all 0.15s;\n  flex-shrink: 0;\n}\n.adm-confirm-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.adm-confirm-btn.adm-confirm-yes {\n  background: #ECFDF5;\n  color: #059669;\n}\n.adm-confirm-btn.adm-confirm-yes:hover {\n  background: #059669;\n  color: #fff;\n}\n.adm-confirm-btn.adm-confirm-yes:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.adm-confirm-btn.adm-confirm-no {\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.adm-confirm-btn.adm-confirm-no:hover {\n  background: #DC2626;\n  color: #fff;\n}\n.adm-confirm-btn.adm-confirm-no:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.adm-admin-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 12px;\n  font-weight: 600;\n  color: #D97706;\n  background: #FFFBEB;\n  border: 1px solid #FDE68A;\n  padding: 4px 10px;\n  border-radius: 8px;\n}\n.adm-admin-badge .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-empty {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n  padding: 40px 24px;\n  color: var(--text-muted);\n}\n.adm-empty .material-icons-round {\n  font-size: 36px !important;\n  opacity: 0.3;\n}\n.adm-empty p {\n  font-size: 14px;\n  margin: 0;\n}\n.adm-card-viewonly {\n  border-color: #BFDBFE;\n  background:\n    linear-gradient(\n      180deg,\n      #EFF6FF 0%,\n      #fff 40%);\n}\n.adm-viewonly-desc {\n  font-size: 12px;\n  color: var(--text-secondary);\n  margin: 0;\n  padding: 0 22px 14px;\n  line-height: 1.5;\n}\n.adm-viewonly-body {\n  display: flex;\n  gap: 16px;\n  align-items: flex-start;\n  padding: 0 22px 16px;\n}\n.adm-viewonly-qr {\n  width: 80px;\n  height: 80px;\n  border-radius: 10px;\n  border: 1.5px solid var(--primary-border, #BFDBFE);\n  flex-shrink: 0;\n}\n.adm-cred-rows {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  flex: 1;\n}\n.adm-cred-row {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1px solid var(--border);\n  border-radius: 8px;\n  padding: 7px 10px;\n}\n.adm-cred-label {\n  font-size: 10px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n  min-width: 68px;\n}\n.adm-cred-val {\n  flex: 1;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-primary);\n  font-family: monospace;\n  letter-spacing: 0.3px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.adm-cred-copy {\n  width: 24px;\n  height: 24px;\n  border-radius: 6px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: var(--text-muted);\n  transition: all 0.15s;\n}\n.adm-cred-copy .material-icons-round {\n  font-size: 14px !important;\n}\n.adm-cred-copy:hover {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.adm-share-btns {\n  display: flex;\n  gap: 8px;\n  padding: 0 22px 20px;\n}\n.adm-share-wa {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex: 1;\n  padding: 10px 14px;\n  border-radius: 10px;\n  border: 1.5px solid #86EFAC;\n  background: #DCFCE7;\n  color: #15803D;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  justify-content: center;\n}\n.adm-share-wa:hover {\n  background: #25D366;\n  color: #fff;\n  border-color: #25D366;\n}\n.adm-share-copy {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex: 1;\n  padding: 10px 14px;\n  border-radius: 10px;\n  border: 1.5px solid var(--border);\n  background: var(--white);\n  color: var(--text-secondary);\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  justify-content: center;\n}\n.adm-share-copy .material-icons-round {\n  font-size: 16px !important;\n}\n.adm-share-copy:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n.adm-viewonly-regen {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  justify-content: center;\n  width: calc(100% - 44px);\n  margin: 0 22px 20px;\n  padding: 9px 14px;\n  border-radius: 10px;\n  border: 1.5px dashed var(--border);\n  background: transparent;\n  color: var(--text-secondary);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n}\n.adm-viewonly-regen .material-icons-round {\n  font-size: 16px !important;\n}\n.adm-viewonly-regen:hover:not(:disabled) {\n  border-color: #DC2626;\n  color: #DC2626;\n}\n.adm-viewonly-regen:disabled {\n  opacity: 0.6;\n  cursor: default;\n}\n.adm-card-plan {\n  border-color: #E9D5FF;\n  background:\n    linear-gradient(\n      180deg,\n      #F5F3FF 0%,\n      #fff 40%);\n}\n.adm-plan-badge {\n  display: inline-flex;\n  align-items: center;\n  padding: 3px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 700;\n  background: #F3F4F6;\n  color: #6B7280;\n}\n.adm-plan-badge--paid {\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n}\n.adm-quota-wrap {\n  padding: 0 22px 16px;\n}\n.adm-quota-labels {\n  display: flex;\n  gap: 4px;\n  justify-content: space-between;\n  font-size: 12px;\n  color: var(--text-secondary);\n  margin-bottom: 6px;\n  font-weight: 500;\n}\n.adm-quota-bar {\n  height: 6px;\n  border-radius: 3px;\n  background: var(--border);\n  overflow: hidden;\n}\n.adm-quota-fill {\n  height: 100%;\n  border-radius: 3px;\n  background:\n    linear-gradient(\n      90deg,\n      #7C3AED,\n      #A855F7);\n  transition: width 0.6s ease;\n}\n.adm-quota-fill.adm-quota-warn {\n  background:\n    linear-gradient(\n      90deg,\n      #D97706,\n      #F59E0B);\n}\n.adm-quota-fill.adm-quota-full {\n  background:\n    linear-gradient(\n      90deg,\n      #DC2626,\n      #EF4444);\n}\n.adm-quota-alert {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  margin: 8px 0 0;\n  font-size: 11px;\n  color: #D97706;\n  font-weight: 600;\n}\n.adm-quota-alert .material-icons-round {\n  font-size: 13px !important;\n}\n.adm-upgrade-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  margin: 0 22px 22px;\n  padding: 10px 18px;\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n  border: none;\n  border-radius: var(--radius-lg);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: opacity 0.2s;\n  width: calc(100% - 44px);\n}\n.adm-upgrade-btn .material-icons-round {\n  font-size: 17px !important;\n}\n.adm-upgrade-btn:hover {\n  opacity: 0.9;\n}\n.adm-manage-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  margin: 0 22px 22px;\n  padding: 10px 18px;\n  background: var(--bg-muted);\n  color: var(--text-secondary);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: var(--transition);\n  width: calc(100% - 44px);\n}\n.adm-manage-btn .material-icons-round {\n  font-size: 17px !important;\n}\n.adm-manage-btn:hover {\n  background: var(--border);\n  color: var(--text-primary);\n}\n.plan-modal-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 400;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n  animation: fadeIn 0.2s ease;\n}\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n.plan-modal {\n  background: var(--white);\n  border-radius: 20px;\n  width: 100%;\n  max-width: 760px;\n  max-height: 90vh;\n  overflow-y: auto;\n  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);\n  animation: slideUp 0.25s ease;\n}\n@keyframes slideUp {\n  from {\n    opacity: 0;\n    transform: translateY(24px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.plan-modal-head {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 12px;\n  padding: 24px 28px 20px;\n  border-bottom: 1px solid var(--border);\n}\n.plan-modal-head h3 {\n  margin: 0 0 4px;\n  font-size: 18px;\n  color: var(--text-primary);\n}\n.plan-modal-head p {\n  margin: 0;\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.plan-cards {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 16px;\n  padding: 24px 28px;\n}\n.plan-card {\n  border: 2px solid var(--border);\n  border-radius: 16px;\n  padding: 20px 18px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  position: relative;\n  transition: border-color 0.2s;\n}\n.plan-card:hover {\n  border-color: #C4B5FD;\n}\n.plan-card--current {\n  border-color: #7C3AED;\n  background: #F5F3FF;\n}\n.plan-card--popular {\n  border-color: #7C3AED;\n  box-shadow: 0 4px 24px rgba(124, 58, 237, 0.15);\n}\n.plan-card-badge {\n  position: absolute;\n  top: -10px;\n  left: 50%;\n  transform: translateX(-50%);\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n  font-size: 10px;\n  font-weight: 700;\n  padding: 3px 12px;\n  border-radius: 20px;\n  white-space: nowrap;\n}\n.plan-card-badge--current {\n  background: #059669;\n}\n.plan-card-header {\n  text-align: center;\n}\n.plan-card-header h4 {\n  margin: 0 0 8px;\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n}\n.plan-price {\n  display: flex;\n  align-items: baseline;\n  justify-content: center;\n  gap: 4px;\n  margin-bottom: 4px;\n}\n.plan-price-amount {\n  font-size: 28px;\n  font-weight: 800;\n  color: var(--text-primary);\n}\n.plan-price-unit {\n  font-size: 11px;\n  color: var(--text-muted);\n  font-weight: 500;\n}\n.plan-limit {\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n  font-weight: 600;\n}\n.plan-features {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  flex: 1;\n}\n.plan-features li {\n  display: flex;\n  align-items: flex-start;\n  gap: 6px;\n  font-size: 12px;\n  color: var(--text-secondary);\n  line-height: 1.4;\n}\n.plan-features li .material-icons-round {\n  font-size: 14px !important;\n  color: #059669;\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.plan-choose-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 10px 14px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  background: var(--bg-muted);\n  color: var(--text-secondary);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: var(--transition);\n}\n.plan-choose-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.plan-choose-btn--current {\n  border-color: #7C3AED;\n  color: #7C3AED;\n  background: #F5F3FF;\n  cursor: default;\n}\n.plan-choose-btn--premium {\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #6D28D9);\n  color: #fff;\n  border: none;\n}\n.plan-choose-btn--premium:hover:not(:disabled) {\n  opacity: 0.9;\n}\n.plan-choose-btn--plus {\n  background:\n    linear-gradient(\n      135deg,\n      #1e3a8a,\n      #1d4ed8);\n  color: #fff;\n  border: none;\n}\n.plan-choose-btn--plus:hover:not(:disabled) {\n  opacity: 0.9;\n}\n.plan-choose-btn:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.plan-modal-note {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 16px 28px;\n  border-top: 1px solid var(--border);\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n}\n.plan-modal-note .material-icons-round {\n  font-size: 13px !important;\n  color: #059669;\n}\n.adm-card-export {\n  border-color: #D1FAE5;\n  background:\n    linear-gradient(\n      180deg,\n      #ECFDF5 0%,\n      #fff 40%);\n}\n.adm-export-desc {\n  font-size: 12px;\n  color: var(--text-secondary);\n  margin: 0;\n  padding: 0 22px 14px;\n  line-height: 1.6;\n}\n.adm-export-stats {\n  display: flex;\n  gap: 16px;\n  padding: 0 22px 14px;\n}\n.adm-export-stat {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary);\n}\n.adm-export-stat .material-icons-round {\n  font-size: 15px !important;\n  color: #059669;\n}\n.adm-export-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  margin: 0 22px 22px;\n  padding: 10px 18px;\n  background: #059669;\n  color: #fff;\n  border: none;\n  border-radius: var(--radius-lg);\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: var(--transition);\n  width: calc(100% - 44px);\n}\n.adm-export-btn .material-icons-round {\n  font-size: 17px !important;\n}\n.adm-export-btn:hover:not(:disabled) {\n  background: #047857;\n}\n.adm-export-btn:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.adm-info-rows {\n  display: flex;\n  flex-direction: column;\n}\n.adm-info-row {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 11px 22px;\n  border-bottom: 1px solid var(--border);\n}\n.adm-info-row:last-child {\n  border-bottom: none;\n}\n.adm-info-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted);\n  min-width: 110px;\n}\n.adm-info-val {\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n}\n.adm-info-val.adm-info-code {\n  font-family: monospace;\n  font-weight: 700;\n  color: var(--primary);\n  letter-spacing: 1px;\n}\n.adm-danger-card {\n  border-color: #FECACA;\n  background: #FFFBFB;\n}\n.adm-danger-title {\n  color: #DC2626 !important;\n}\n.adm-danger-title .material-icons-round {\n  color: #DC2626 !important;\n}\n.adm-danger-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 18px 22px;\n  flex-wrap: wrap;\n}\n.adm-danger-label {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  margin-bottom: 2px;\n}\n.adm-danger-sub {\n  display: block;\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.adm-danger-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 16px;\n  border-radius: 10px;\n  border: 1.5px solid #FECACA;\n  background: #FEF2F2;\n  color: #DC2626;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  white-space: nowrap;\n}\n.adm-danger-btn .material-icons-round {\n  font-size: 16px !important;\n}\n.adm-danger-btn:hover:not(:disabled) {\n  background: #DC2626;\n  color: #fff;\n  border-color: #DC2626;\n}\n.adm-danger-btn:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.4);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.slide-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 480px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.12);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.slide-panel.open {\n  transform: translateX(0);\n}\n.panel-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.panel-header-title {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.panel-header-title .material-icons-round {\n  font-size: 20px !important;\n  color: var(--primary);\n}\n.panel-header-title h3 {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.panel-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n}\n.panel-footer {\n  display: flex;\n  gap: 10px;\n  justify-content: flex-end;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border);\n  flex-shrink: 0;\n  background: var(--white);\n}\n.form-section {\n  margin-bottom: 24px;\n}\n.section-title {\n  font-size: 11px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--text-muted);\n  margin-bottom: 12px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--border);\n}\n.form-group {\n  margin-bottom: 14px;\n}\n.form-group label {\n  display: block;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary);\n  margin-bottom: 6px;\n}\n.form-control {\n  width: 100%;\n  padding: 9px 12px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md, 8px);\n  font-size: 13px;\n  color: var(--text-primary);\n  background: var(--white);\n  box-sizing: border-box;\n  font-family: inherit;\n  transition: border-color 0.15s;\n}\n.form-control:focus {\n  outline: none;\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px var(--primary-bg);\n}\n.form-row-2 {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.required {\n  color: var(--error, #EF4444);\n}\n.optional {\n  font-weight: 400;\n  text-transform: none;\n  letter-spacing: 0;\n  font-size: 11px;\n}\n@media (max-width: 900px) {\n  .adm-main-grid {\n    grid-template-columns: 1fr;\n  }\n  .adm-right-col {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 16px;\n  }\n}\n@media (max-width: 700px) {\n  .plan-cards {\n    grid-template-columns: 1fr;\n  }\n  .plan-modal {\n    border-radius: 20px 20px 0 0;\n    margin-top: auto;\n  }\n  .plan-modal-overlay {\n    align-items: flex-end;\n    padding: 0;\n  }\n}\n@media (max-width: 640px) {\n  .adm-hero {\n    padding: 24px 20px;\n  }\n  .adm-hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .adm-hero-title {\n    font-size: 20px;\n  }\n  .adm-hero-stats {\n    width: 100%;\n    justify-content: space-around;\n    padding: 12px 16px;\n    gap: 12px;\n  }\n  .adm-hstat-val {\n    font-size: 20px;\n  }\n  .adm-right-col {\n    grid-template-columns: 1fr;\n  }\n  .adm-member-row {\n    padding: 12px 16px;\n    gap: 10px;\n  }\n  .adm-member-contact {\n    display: none;\n  }\n  .adm-viewonly-body {\n    flex-direction: column;\n  }\n  .adm-viewonly-qr {\n    display: none;\n  }\n  .adm-danger-row {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 10px;\n  }\n  .adm-danger-btn {\n    width: 100%;\n    justify-content: center;\n  }\n  .slide-panel {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 92vh;\n    transform: translateY(100%);\n  }\n  .slide-panel.open {\n    transform: translateY(0);\n  }\n  .form-row-2 {\n    grid-template-columns: 1fr;\n  }\n  .panel-footer {\n    flex-direction: column-reverse;\n  }\n  .panel-footer button {\n    width: 100%;\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=admin.component.css.map */\n'] }]
+  }], () => [{ type: ApiService }, { type: QrcodeService }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AdminComponent, { className: "AdminComponent", filePath: "src/app/pages/admin/admin.component.ts", lineNumber: 21 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AdminComponent, { className: "AdminComponent", filePath: "src/app/pages/admin/admin.component.ts", lineNumber: 24 });
 })();
 
 // src/app/pages/profil/profil.component.ts
@@ -15576,7 +15761,6 @@ var ProfilComponent = class _ProfilComponent {
   api;
   theme;
   router;
-  http;
   user = null;
   famille = null;
   loading = true;
@@ -15592,12 +15776,11 @@ var ProfilComponent = class _ProfilComponent {
   pwSuccess = false;
   pwError = "";
   showPwSection = false;
-  constructor(auth, api, theme, router, http) {
+  constructor(auth, api, theme, router) {
     this.auth = auth;
     this.api = api;
     this.theme = theme;
     this.router = router;
-    this.http = http;
   }
   ngOnInit() {
     this.user = this.auth.getUser();
@@ -15637,22 +15820,22 @@ var ProfilComponent = class _ProfilComponent {
     return `${this.user.prenom.charAt(0)}${this.user.nom.charAt(0)}`.toUpperCase();
   }
   get roleLabel() {
-    const map = {
+    const map2 = {
       admin: "Administrateur",
       gestionnaire: "Gestionnaire",
       membre: "Membre",
       viewonly: "Lecture seule"
     };
-    return map[this.user?.role ?? ""] ?? this.user?.role ?? "\u2014";
+    return map2[this.user?.role ?? ""] ?? this.user?.role ?? "\u2014";
   }
   get roleClass() {
-    const map = {
+    const map2 = {
       admin: "role-admin",
       gestionnaire: "role-gestionnaire",
       membre: "role-membre",
       viewonly: "role-viewonly"
     };
-    return map[this.user?.role ?? ""] ?? "";
+    return map2[this.user?.role ?? ""] ?? "";
   }
   openEdit() {
     this.editError = "";
@@ -15677,15 +15860,15 @@ var ProfilComponent = class _ProfilComponent {
     }
     this.editSaving = true;
     this.editError = "";
-    this.http.patch(`${API_BASE_URL}/api/auth/me`, this.editForm).subscribe({
-      next: (res) => {
+    this.api.updateProfile(this.editForm).subscribe({
+      next: () => {
         const updated = __spreadProps(__spreadValues({}, this.user), {
           prenom: this.editForm.prenom,
           nom: this.editForm.nom,
           email: this.editForm.email || void 0,
           telephone: this.editForm.telephone || void 0
         });
-        this.auth.save(localStorage.getItem("mb_token"), updated);
+        this.auth.updateUser(updated);
         this.user = updated;
         this.editSaving = false;
         this.editSuccess = true;
@@ -15713,7 +15896,7 @@ var ProfilComponent = class _ProfilComponent {
     }
     this.pwSaving = true;
     this.pwError = "";
-    this.http.post(`${API_BASE_URL}/api/auth/change-password`, {
+    this.api.changePassword({
       ancienPassword: this.pwForm.ancien,
       nouveauPassword: this.pwForm.nouveau
     }).subscribe({
@@ -15744,7 +15927,7 @@ var ProfilComponent = class _ProfilComponent {
   }
   codeCopied = false;
   static \u0275fac = function ProfilComponent_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _ProfilComponent)(\u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(ThemeService), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(HttpClient));
+    return new (__ngFactoryType__ || _ProfilComponent)(\u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(ThemeService), \u0275\u0275directiveInject(Router));
   };
   static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ProfilComponent, selectors: [["app-profil"]], standalone: false, decls: 3, vars: 2, consts: [[1, "profil-page"], ["class", "sk-section", 4, "ngIf"], [4, "ngIf"], [1, "sk-section"], [1, "sk-hero"], [2, "display", "grid", "grid-template-columns", "1fr 1fr", "gap", "20px", "margin-top", "8px"], ["style", "background:#fff;border:1px solid #E5E7EB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px", 4, "ngFor", "ngForOf"], [2, "background", "#fff", "border", "1px solid #E5E7EB", "border-radius", "16px", "padding", "24px", "display", "flex", "flex-direction", "column", "gap", "14px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-full"], [1, "sk-line", "sk-sm"], [1, "profil-hero"], [1, "hero-bg"], [1, "hero-content"], [1, "hero-avatar-wrap"], [1, "hero-avatar"], [1, "hero-status-dot"], [1, "hero-info"], [1, "hero-name"], [1, "hero-meta"], [1, "role-badge"], ["class", "hero-contact", 4, "ngIf"], [1, "hero-actions"], ["class", "btn-outline btn-sm", 3, "click", 4, "ngIf"], ["class", "alert alert-success", 4, "ngIf"], [1, "profil-grid"], [1, "profil-card", "span-2"], [1, "card-header"], [1, "card-title"], [1, "material-icons-round"], ["class", "btn-ghost btn-sm", 3, "click", 4, "ngIf"], ["class", "info-grid", 4, "ngIf"], ["class", "edit-form", 4, "ngIf"], ["class", "profil-card", 4, "ngIf"], [1, "profil-card"], ["class", "security-items", 4, "ngIf"], ["class", "pw-form", 4, "ngIf"], [1, "quick-nav"], ["routerLink", "/app/home", 1, "qnav-item"], [1, "qnav-icon", "material-icons-round"], ["routerLink", "/app/tree", 1, "qnav-item"], ["routerLink", "/app/personnes", 1, "qnav-item"], ["routerLink", "/app/unions", 1, "qnav-item"], ["routerLink", "/app/stories", 1, "qnav-item"], ["routerLink", "/app/timeline", 1, "qnav-item"], ["class", "qnav-item qnav-admin", "routerLink", "/app/admin", 4, "ngIf"], [1, "theme-grid"], ["class", "theme-btn", 3, "active", "background", "title", "click", 4, "ngFor", "ngForOf"], [1, "theme-hint"], [1, "profil-card", "danger-card", "span-2"], [1, "card-title", "danger-title"], [1, "danger-actions"], [1, "danger-item"], [1, "danger-label"], [1, "danger-sub"], [1, "btn-danger", 3, "click"], [1, "hero-contact"], [1, "btn-outline", "btn-sm", 3, "click"], [1, "alert", "alert-success"], [1, "btn-ghost", "btn-sm", 3, "click"], [1, "info-grid"], [1, "info-item"], [1, "info-label"], [1, "info-value"], [1, "edit-form"], [1, "form-row"], [1, "form-group"], [1, "required"], ["type", "text", "placeholder", "Pr\xE9nom", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom", 3, "ngModelChange", "ngModel"], ["type", "email", "placeholder", "votre@email.com", 3, "ngModelChange", "ngModel"], ["type", "tel", "placeholder", "+221 77 000 00 00", 3, "ngModelChange", "ngModel"], ["class", "alert alert-error", 4, "ngIf"], [1, "form-actions"], [1, "btn-ghost", "btn-sm", 3, "click", "disabled"], [1, "btn-primary", "btn-sm", 3, "click", "disabled"], ["class", "material-icons-round", 4, "ngIf"], ["class", "material-icons-round spin", 4, "ngIf"], [1, "alert", "alert-error"], [1, "material-icons-round", "spin"], [1, "famille-hero"], [1, "famille-icon"], [1, "famille-nom"], [1, "famille-code-wrap"], [1, "famille-code"], [1, "btn-icon", "copy-btn", 3, "click", "title"], [1, "famille-hint"], [1, "famille-stats"], [1, "fstat"], [1, "fstat-val"], [1, "fstat-lbl"], [1, "fstat-divider"], [1, "security-items"], [1, "security-item"], [1, "security-item-left"], [1, "security-icon", "material-icons-round"], [1, "security-label"], [1, "security-sub"], [1, "security-sub", "security-ok"], [1, "pw-form"], ["type", "password", "placeholder", "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022", 3, "ngModelChange", "ngModel"], ["type", "password", "placeholder", "Minimum 6 caract\xE8res", 3, "ngModelChange", "ngModel"], ["type", "password", "placeholder", "R\xE9p\xE9tez le mot de passe", 3, "ngModelChange", "ngModel"], ["routerLink", "/app/admin", 1, "qnav-item", "qnav-admin"], [1, "theme-btn", 3, "click", "title"]], template: function ProfilComponent_Template(rf, ctx) {
     if (rf & 1) {
@@ -16079,10 +16262,10 @@ var ProfilComponent = class _ProfilComponent {
 \r
 </div>\r
 `, styles: ['@charset "UTF-8";\n\n/* src/app/pages/profil/profil.component.scss */\n.profil-page {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.profil-hero {\n  position: relative;\n  border-radius: 24px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #1a0533 0%,\n      #2d1b69 50%,\n      var(--primary, #3B82F6) 100%);\n  padding: 36px 40px;\n  color: #fff;\n}\n.hero-bg {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.05) 1px,\n      transparent 1px);\n  background-size: 30px 30px;\n  pointer-events: none;\n}\n.hero-content {\n  position: relative;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.hero-avatar-wrap {\n  position: relative;\n  flex-shrink: 0;\n}\n.hero-avatar {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  background:\n    linear-gradient(\n      135deg,\n      rgba(255, 255, 255, 0.25),\n      rgba(255, 255, 255, 0.1));\n  border: 3px solid rgba(255, 255, 255, 0.35);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 32px;\n  font-weight: 800;\n  color: #fff;\n  letter-spacing: -1px;\n}\n.hero-status-dot {\n  position: absolute;\n  bottom: 4px;\n  right: 4px;\n  width: 14px;\n  height: 14px;\n  background: #10B981;\n  border-radius: 50%;\n  border: 2px solid rgba(255, 255, 255, 0.8);\n}\n.hero-info {\n  flex: 1;\n  min-width: 0;\n}\n.hero-name {\n  font-size: 28px;\n  font-weight: 800;\n  color: #fff;\n  margin: 0 0 10px;\n  letter-spacing: -0.3px;\n}\n.hero-meta {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.hero-contact {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.7);\n}\n.hero-contact .material-icons-round {\n  font-size: 15px !important;\n}\n.hero-actions {\n  display: flex;\n  gap: 8px;\n  flex-shrink: 0;\n}\n.hero-actions .btn-outline {\n  background: rgba(255, 255, 255, 0.15);\n  border-color: rgba(255, 255, 255, 0.4);\n  color: #fff;\n}\n.hero-actions .btn-outline:hover {\n  background: rgba(255, 255, 255, 0.25);\n}\n.role-badge {\n  display: inline-flex;\n  align-items: center;\n  padding: 3px 12px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  background: rgba(255, 255, 255, 0.15);\n  color: #fff;\n  border: 1px solid rgba(255, 255, 255, 0.3);\n}\n.role-badge.role-admin {\n  background: #FEF2F2;\n  color: #DC2626;\n  border-color: #FECACA;\n}\n.role-badge.role-gestionnaire {\n  background: var(--primary-bg, #EFF6FF);\n  color: var(--primary, #2563EB);\n  border-color: var(--primary-border, #BFDBFE);\n}\n.role-badge.role-membre {\n  background: #ECFDF5;\n  color: #059669;\n  border-color: #A7F3D0;\n}\n.role-badge.role-viewonly {\n  background: #F3F4F6;\n  color: #6B7280;\n  border-color: #E5E7EB;\n}\n.alert {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 16px;\n  border-radius: 12px;\n  font-size: 13px;\n  font-weight: 500;\n}\n.alert .material-icons-round {\n  font-size: 18px !important;\n  flex-shrink: 0;\n}\n.alert.alert-success {\n  background: #ECFDF5;\n  color: #065F46;\n  border: 1px solid #A7F3D0;\n}\n.alert.alert-error {\n  background: #FEF2F2;\n  color: #991B1B;\n  border: 1px solid #FECACA;\n}\n.profil-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 20px;\n}\n.profil-card {\n  background: var(--white, #fff);\n  border: 1px solid var(--border, #E5E7EB);\n  border-radius: 18px;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n}\n.profil-card.span-2 {\n  grid-column: span 2;\n}\n.card-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.card-title {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 15px;\n  font-weight: 700;\n  color: var(--text-primary, #1F2937);\n}\n.card-title .material-icons-round {\n  font-size: 20px !important;\n  color: var(--primary, #3B82F6);\n}\n.info-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 16px;\n}\n.info-item {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.info-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted, #9CA3AF);\n}\n.info-value {\n  font-size: 14px;\n  color: var(--text-primary, #1F2937);\n  font-weight: 500;\n}\n.edit-form {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.form-row {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 16px;\n}\n.form-group {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.form-group label {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary, #6B7280);\n}\n.form-group label .required {\n  color: #EF4444;\n}\n.form-group input {\n  width: 100%;\n  padding: 9px 12px;\n  border: 1.5px solid var(--border, #E5E7EB);\n  border-radius: 10px;\n  font-size: 13px;\n  font-family: inherit;\n  color: var(--text-primary, #1F2937);\n  background: var(--white, #fff);\n  transition: border-color 0.15s;\n  box-sizing: border-box;\n}\n.form-group input:focus {\n  outline: none;\n  border-color: var(--primary, #3B82F6);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);\n}\n.form-actions {\n  display: flex;\n  justify-content: flex-end;\n  gap: 8px;\n}\n.famille-hero {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 16px;\n  background: var(--primary-bg, #EFF6FF);\n  border-radius: 14px;\n  border: 1px solid var(--primary-border, #BFDBFE);\n}\n.famille-icon {\n  width: 52px;\n  height: 52px;\n  border-radius: 14px;\n  background: var(--primary, #3B82F6);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.famille-icon .material-icons-round {\n  font-size: 26px !important;\n  color: #fff;\n}\n.famille-nom {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary, #1F2937);\n  margin: 0 0 6px;\n}\n.famille-code-wrap {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  margin-bottom: 4px;\n}\n.famille-code {\n  font-size: 13px;\n  font-weight: 700;\n  font-family: monospace;\n  color: var(--primary, #3B82F6);\n  background: rgba(59, 130, 246, 0.1);\n  padding: 2px 10px;\n  border-radius: 8px;\n  letter-spacing: 1px;\n}\n.copy-btn {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n}\n.copy-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.famille-hint {\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n  margin: 0;\n}\n.famille-stats {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  background: var(--bg-muted, #F9FAFB);\n  border-radius: 14px;\n  border: 1px solid var(--border, #E5E7EB);\n  padding: 16px 20px;\n  gap: 20px;\n}\n.fstat {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 4px;\n  flex: 1;\n}\n.fstat-val {\n  font-size: 24px;\n  font-weight: 800;\n  color: var(--text-primary, #1F2937);\n  line-height: 1;\n}\n.fstat-lbl {\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n}\n.fstat-divider {\n  width: 1px;\n  height: 36px;\n  background: var(--border, #E5E7EB);\n  flex-shrink: 0;\n}\n.security-items {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border, #E5E7EB);\n  border-radius: 12px;\n  overflow: hidden;\n}\n.security-item {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n  padding: 14px 16px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n}\n.security-item:last-child {\n  border-bottom: none;\n}\n.security-item-left {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.security-icon {\n  font-size: 20px !important;\n  color: var(--text-muted, #9CA3AF);\n}\n.security-label {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary, #1F2937);\n}\n.security-sub {\n  display: block;\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n}\n.security-sub.security-ok {\n  color: #10B981;\n}\n.pw-form {\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n}\n.quick-nav {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 8px;\n}\n.qnav-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 14px;\n  border-radius: 12px;\n  border: 1px solid var(--border, #E5E7EB);\n  background: var(--white, #fff);\n  color: var(--text-primary, #1F2937);\n  font-size: 13px;\n  font-weight: 500;\n  text-decoration: none;\n  transition: all 0.15s;\n}\n.qnav-item:hover {\n  border-color: var(--primary, #3B82F6);\n  background: var(--primary-bg, #EFF6FF);\n  color: var(--primary, #3B82F6);\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.12);\n  text-decoration: none;\n}\n.qnav-item.qnav-admin {\n  border-color: #FECACA;\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.qnav-item.qnav-admin:hover {\n  background: #FEE2E2;\n  border-color: #FCA5A5;\n}\n.qnav-icon {\n  font-size: 18px !important;\n  color: var(--primary, #3B82F6);\n}\n.qnav-admin .qnav-icon {\n  color: #DC2626;\n}\n.theme-grid {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.theme-btn {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: 3px solid transparent;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: transform 0.15s, box-shadow 0.15s;\n}\n.theme-btn.active {\n  border-color: rgba(0, 0, 0, 0.25);\n  box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(0, 0, 0, 0.2);\n}\n.theme-btn:hover {\n  transform: scale(1.15);\n}\n.theme-btn .material-icons-round {\n  font-size: 16px !important;\n  color: #fff;\n}\n.theme-hint {\n  font-size: 12px;\n  color: var(--text-muted, #9CA3AF);\n  margin: 0;\n}\n.danger-card {\n  border-color: #FECACA;\n  background: #FFFBFB;\n}\n.danger-title {\n  color: #DC2626 !important;\n}\n.danger-title .material-icons-round {\n  color: #DC2626 !important;\n}\n.danger-actions {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid #FECACA;\n  border-radius: 12px;\n  overflow: hidden;\n}\n.danger-item {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 16px 20px;\n  border-bottom: 1px solid #FECACA;\n}\n.danger-item:last-child {\n  border-bottom: none;\n}\n.danger-label {\n  display: block;\n  font-size: 14px;\n  font-weight: 600;\n  color: var(--text-primary, #1F2937);\n  margin-bottom: 3px;\n}\n.danger-sub {\n  display: block;\n  font-size: 12px;\n  color: var(--text-muted, #9CA3AF);\n}\n.btn-danger {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 18px;\n  border-radius: 10px;\n  border: 1.5px solid #FECACA;\n  background: #FEF2F2;\n  color: #DC2626;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  white-space: nowrap;\n}\n.btn-danger .material-icons-round {\n  font-size: 17px !important;\n}\n.btn-danger:hover {\n  background: #DC2626;\n  color: #fff;\n  border-color: #DC2626;\n}\n@media (max-width: 768px) {\n  .profil-page {\n    gap: 16px;\n  }\n  .profil-hero {\n    padding: 24px 20px;\n    border-radius: 16px;\n  }\n  .hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 16px;\n  }\n  .hero-avatar {\n    width: 72px;\n    height: 72px;\n    font-size: 24px;\n  }\n  .hero-name {\n    font-size: 20px;\n  }\n  .hero-meta {\n    gap: 8px;\n    flex-wrap: wrap;\n  }\n  .hero-actions {\n    width: 100%;\n  }\n  .hero-actions .btn-outline {\n    flex: 1;\n    justify-content: center;\n  }\n  .profil-grid {\n    grid-template-columns: 1fr;\n  }\n  .profil-card {\n    padding: 18px;\n  }\n  .profil-card.span-2 {\n    grid-column: span 1;\n  }\n  .info-grid {\n    grid-template-columns: 1fr 1fr;\n  }\n  .form-row {\n    grid-template-columns: 1fr;\n  }\n  .quick-nav {\n    grid-template-columns: 1fr 1fr;\n  }\n  .famille-hero {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .famille-stats {\n    flex-wrap: wrap;\n    gap: 12px;\n    padding: 14px;\n  }\n  .fstat {\n    flex: 0 0 auto;\n  }\n  .fstat-val {\n    font-size: 20px;\n  }\n  .danger-item {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 10px;\n  }\n  .btn-danger {\n    width: 100%;\n    justify-content: center;\n  }\n}\n@media (max-width: 480px) {\n  .profil-hero {\n    padding: 20px 16px;\n  }\n  .hero-name {\n    font-size: 18px;\n  }\n  .hero-meta {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 4px;\n  }\n  .hero-contact {\n    font-size: 12px;\n  }\n  .profil-card {\n    padding: 14px;\n    gap: 14px;\n  }\n  .info-grid {\n    grid-template-columns: 1fr;\n  }\n  .quick-nav {\n    grid-template-columns: 1fr;\n  }\n  .theme-grid {\n    gap: 8px;\n  }\n  .theme-btn {\n    width: 32px;\n    height: 32px;\n  }\n  .famille-stats {\n    flex-direction: column;\n    gap: 0;\n  }\n  .fstat {\n    width: 100%;\n    flex-direction: row;\n    justify-content: space-between;\n    padding: 10px 0;\n    border-bottom: 1px solid var(--border, #E5E7EB);\n  }\n  .fstat:last-child {\n    border-bottom: none;\n  }\n  .fstat-divider {\n    display: none;\n  }\n  .fstat-val {\n    font-size: 18px;\n  }\n}\n/*# sourceMappingURL=profil.component.css.map */\n'] }]
-  }], () => [{ type: AuthService }, { type: ApiService }, { type: ThemeService }, { type: Router }, { type: HttpClient }], null);
+  }], () => [{ type: AuthService }, { type: ApiService }, { type: ThemeService }, { type: Router }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ProfilComponent, { className: "ProfilComponent", filePath: "src/app/pages/profil/profil.component.ts", lineNumber: 25 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ProfilComponent, { className: "ProfilComponent", filePath: "src/app/pages/profil/profil.component.ts", lineNumber: 23 });
 })();
 
 // src/app/pages/inviter/inviter.component.ts
@@ -16240,13 +16423,16 @@ function InviterComponent_div_10_Template(rf, ctx) {
 }
 var InviterComponent = class _InviterComponent {
   api;
+  qrcode;
   familleNom = "";
   familleCode = "";
   loading = true;
   codeCopied = false;
   messageCopied = false;
-  constructor(api) {
+  qrUrl = "";
+  constructor(api, qrcode) {
     this.api = api;
+    this.qrcode = qrcode;
   }
   ngOnInit() {
     this.api.getCurrentFamille().subscribe({
@@ -16255,16 +16441,14 @@ var InviterComponent = class _InviterComponent {
         this.familleNom = famille.nom ?? "";
         this.familleCode = famille.code ?? famille.codeUnique ?? "";
         this.loading = false;
+        if (this.familleCode) {
+          this.qrcode.generate(this.familleCode, { size: 220, color: "#2563eb", bgcolor: "#eff6ff" }).then((url) => this.qrUrl = url);
+        }
       },
       error: () => {
         this.loading = false;
       }
     });
-  }
-  get qrUrl() {
-    if (!this.familleCode)
-      return "";
-    return `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(this.familleCode)}&bgcolor=eff6ff&color=2563eb&format=png&margin=10`;
   }
   get whatsappMsg() {
     return `Rejoignez l'arbre familial de la famille *${this.familleNom}* sur Mam Buudu \u{1F333}
@@ -16302,7 +16486,7 @@ Code d'acc\xE8s : *${this.familleCode}*
     }
   }
   static \u0275fac = function InviterComponent_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _InviterComponent)(\u0275\u0275directiveInject(ApiService));
+    return new (__ngFactoryType__ || _InviterComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(QrcodeService));
   };
   static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _InviterComponent, selectors: [["app-inviter"]], standalone: false, decls: 11, vars: 3, consts: [[1, "page-header"], [1, "header-row"], ["class", "loading-state", 4, "ngIf"], ["class", "inv-grid", 4, "ngIf"], [1, "loading-state"], [1, "material-icons-round", "spin"], [1, "inv-grid"], [1, "inv-card", "inv-card-qr"], [1, "inv-qr-frame"], ["alt", "QR code famille", "class", "inv-qr", 3, "src", 4, "ngIf"], [1, "inv-qr-caption"], [1, "inv-or"], [1, "inv-code-section"], [1, "inv-label"], [1, "inv-code-row"], [1, "inv-code"], [1, "inv-icon-btn", 3, "click", "title"], [1, "material-icons-round"], [1, "inv-hint"], [1, "inv-card"], [1, "inv-card-title"], [1, "inv-card-sub"], [1, "inv-share-list"], [1, "inv-share-btn", "inv-wa", 3, "click"], ["viewBox", "0 0 24 24", "fill", "currentColor", 2, "width", "20px", "height", "20px", "flex-shrink", "0"], ["d", "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"], [1, "inv-share-btn", "inv-native", 3, "click"], [1, "inv-share-btn", "inv-copy", 3, "click"], [1, "inv-steps"], [1, "inv-step"], [1, "inv-step-num"], [1, "inv-inline-code"], ["alt", "QR code famille", 1, "inv-qr", 3, "src"]], template: function InviterComponent_Template(rf, ctx) {
     if (rf & 1) {
@@ -16418,10 +16602,10 @@ Code d'acc\xE8s : *${this.familleCode}*
 \r
 </div>\r
 `, styles: ['/* src/app/pages/inviter/inviter.component.scss */\n.inv-grid {\n  display: grid;\n  grid-template-columns: auto 1fr 1fr;\n  gap: 20px;\n  align-items: start;\n  margin-top: 24px;\n}\n.inv-card {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: var(--radius-lg);\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  box-shadow: var(--shadow-sm);\n}\n.inv-card-title {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 15px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.inv-card-title .material-icons-round {\n  font-size: 19px !important;\n  color: var(--primary);\n}\n.inv-card-sub {\n  font-size: 12px;\n  color: var(--text-muted);\n  margin: -8px 0 0;\n}\n.inv-card-qr {\n  align-items: center;\n  min-width: 260px;\n}\n.inv-qr-frame {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 10px;\n  padding: 16px;\n  background: var(--primary-bg);\n  border-radius: var(--radius-lg);\n  border: 1.5px dashed var(--primary-border);\n  width: 100%;\n}\n.inv-qr {\n  width: 180px;\n  height: 180px;\n  border-radius: 10px;\n  display: block;\n}\n.inv-qr-caption {\n  font-size: 11px;\n  color: var(--text-muted);\n  text-align: center;\n  margin: 0;\n}\n.inv-or {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.inv-or::before,\n.inv-or::after {\n  content: "";\n  flex: 1;\n  height: 1px;\n  background: var(--border);\n}\n.inv-code-section {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  align-items: center;\n}\n.inv-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted);\n  margin: 0;\n}\n.inv-code-row {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.inv-code {\n  font-size: 22px;\n  font-weight: 800;\n  font-family: monospace;\n  color: var(--primary);\n  letter-spacing: 3px;\n  background: var(--primary-bg);\n  padding: 8px 16px;\n  border-radius: var(--radius-md);\n}\n.inv-icon-btn {\n  width: 36px;\n  height: 36px;\n  border-radius: var(--radius-md);\n  border: 1.5px solid var(--primary-border);\n  background: var(--white);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: all 0.15s;\n}\n.inv-icon-btn .material-icons-round {\n  font-size: 17px !important;\n  color: var(--primary);\n}\n.inv-icon-btn:hover {\n  background: var(--primary-bg);\n}\n.inv-hint {\n  font-size: 11px;\n  color: var(--text-muted);\n  margin: 0;\n  text-align: center;\n}\n.inv-share-list {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n.inv-share-btn {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 16px;\n  border-radius: var(--radius-md);\n  border: 1.5px solid;\n  font-size: 14px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n}\n.inv-wa {\n  background: #DCFCE7;\n  border-color: #86EFAC;\n  color: #15803D;\n}\n.inv-wa:hover {\n  background: #25D366;\n  color: #fff;\n  border-color: #25D366;\n}\n.inv-native {\n  background: var(--primary-bg);\n  border-color: var(--primary-border);\n  color: var(--primary);\n}\n.inv-native .material-icons-round {\n  font-size: 19px !important;\n}\n.inv-native:hover {\n  background: var(--primary);\n  color: #fff;\n}\n.inv-copy {\n  background: var(--white);\n  border-color: var(--border);\n  color: var(--text-secondary);\n}\n.inv-copy .material-icons-round {\n  font-size: 19px !important;\n}\n.inv-copy:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n.inv-steps {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n}\n.inv-step {\n  display: flex;\n  gap: 14px;\n  align-items: flex-start;\n  font-size: 13px;\n  color: var(--text-secondary);\n  line-height: 1.5;\n}\n.inv-step strong {\n  color: var(--text-primary);\n}\n.inv-step-num {\n  width: 26px;\n  height: 26px;\n  border-radius: 50%;\n  background: var(--primary);\n  color: #fff;\n  font-size: 12px;\n  font-weight: 700;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.inv-inline-code {\n  font-family: monospace;\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--primary);\n  background: var(--primary-bg);\n  padding: 1px 8px;\n  border-radius: 6px;\n}\n@media (max-width: 900px) {\n  .inv-grid {\n    grid-template-columns: 1fr 1fr;\n  }\n  .inv-card-qr {\n    grid-column: span 2;\n    flex-direction: row;\n    flex-wrap: wrap;\n    gap: 24px;\n    align-items: flex-start;\n  }\n  .inv-qr-frame {\n    width: auto;\n  }\n  .inv-code-section {\n    align-items: flex-start;\n  }\n}\n@media (max-width: 640px) {\n  .inv-grid {\n    grid-template-columns: 1fr;\n  }\n  .inv-card-qr {\n    grid-column: span 1;\n    flex-direction: column;\n    align-items: center;\n  }\n  .inv-code-section {\n    align-items: center;\n  }\n}\n/*# sourceMappingURL=inviter.component.css.map */\n'] }]
-  }], () => [{ type: ApiService }], null);
+  }], () => [{ type: ApiService }, { type: QrcodeService }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(InviterComponent, { className: "InviterComponent", filePath: "src/app/pages/inviter/inviter.component.ts", lineNumber: 10 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(InviterComponent, { className: "InviterComponent", filePath: "src/app/pages/inviter/inviter.component.ts", lineNumber: 11 });
 })();
 
 // src/app/shell/shell-routing.module.ts
@@ -16495,4 +16679,4 @@ var ShellModule = class _ShellModule {
 export {
   ShellModule
 };
-//# sourceMappingURL=chunk-N5JJG7CE.js.map
+//# sourceMappingURL=chunk-6NTQSL7T.js.map

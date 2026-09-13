@@ -1,6 +1,6 @@
 import {
   AuthService
-} from "./chunk-FQNE2UNS.js";
+} from "./chunk-VLIH72YP.js";
 import {
   Router,
   inject
@@ -22,4 +22,4 @@ function roleGuard(allowedRoles) {
 export {
   roleGuard
 };
-//# sourceMappingURL=chunk-UTEEPMVE.js.map
+//# sourceMappingURL=chunk-DBSPYNLN.js.map

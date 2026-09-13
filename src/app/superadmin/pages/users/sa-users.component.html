@@ -87,7 +87,7 @@
     <div class="sa-pagination">
       <button [disabled]="page <= 1" (click)="page = page - 1; load()">&#8249; Précédent</button>
       <span>Page {{ page }} / {{ data?.pages }}</span>
-      <button [disabled]="page >= data?.pages" (click)="page = page + 1; load()">Suivant &#8250;</button>
+      <button [disabled]="page >= (data?.pages ?? 1)" (click)="page = page + 1; load()">Suivant &#8250;</button>
     </div>
   }
 </div>

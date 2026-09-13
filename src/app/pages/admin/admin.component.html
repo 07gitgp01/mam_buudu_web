@@ -13,7 +13,7 @@
           <h1 class="adm-hero-title">{{ famille?.nom || 'Famille' }}</h1>
           <div class="adm-hero-code" *ngIf="famille?.code">
             <span class="material-icons-round">key</span>
-            <span class="adm-code-val">{{ famille.code }}</span>
+            <span class="adm-code-val">{{ famille?.code }}</span>
             <button class="adm-copy-code" (click)="copyFamilleCode()" [title]="viewonlyCopied === 'familleCode' ? 'Copié !' : 'Copier le code'">
               <span class="material-icons-round">{{ viewonlyCopied === 'familleCode' ? 'check' : 'content_copy' }}</span>
             </button>
@@ -242,6 +242,11 @@
               {{ viewonlyCopied === 'share' ? 'Copié !' : 'Partager' }}
             </button>
           </div>
+
+          <button class="adm-viewonly-regen" (click)="regenerateViewonlyPassword()" [disabled]="regeneratingViewonly">
+            <span class="material-icons-round">autorenew</span>
+            {{ regeneratingViewonly ? 'Régénération...' : 'Régénérer le mot de passe' }}
+          </button>
         </div>
 
         <!-- Abonnement -->
@@ -251,7 +256,7 @@
               <span class="material-icons-round">workspace_premium</span>
               Abonnement
             </div>
-            <span class="adm-plan-badge" [class.adm-plan-badge--paid]="subscription.plan?.prix > 0">
+            <span class="adm-plan-badge" [class.adm-plan-badge--paid]="!!subscription.plan && subscription.plan.prix > 0">
               {{ subscription.plan?.label ?? 'Gratuit' }}
             </span>
           </div>
@@ -281,7 +286,7 @@
             <span class="material-icons-round">bolt</span>
             Passer à Premium
           </button>
-          <button class="adm-manage-btn" (click)="showPlanModal = true" *ngIf="subscription.plan?.prix > 0">
+          <button class="adm-manage-btn" (click)="showPlanModal = true" *ngIf="subscription.plan && subscription.plan.prix > 0">
             <span class="material-icons-round">manage_accounts</span>
             Gérer l'abonnement
           </button>

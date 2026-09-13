@@ -54,7 +54,7 @@
             <button class="root-list-item root-list-all" [class.active]="!rootPersonId" (click)="setRoot(null)">
               <span class="material-icons-round">account_tree</span>Arbre complet
             </button>
-            <button class="root-list-item" *ngFor="let p of rootCandidates"
+            <button class="root-list-item" *ngFor="let p of rootCandidates; trackBy: trackByPersonneId"
                     [class.active]="rootPersonId === p.id" (click)="setRoot(p)">
               <div class="root-list-avatar" [class.male]="p.sexe==='M'" [class.female]="p.sexe==='F'">
                 {{ getInitiales(p) }}
@@ -194,7 +194,7 @@
             <div class="ts-branch">
               <div class="ts-hbar" [style.marginLeft.px]="155" [style.marginRight.px]="155"></div>
               <div class="ts-children-row">
-                <div class="ts-child-col" *ngFor="let br of node.unions">
+                <div class="ts-child-col" *ngFor="let br of node.unions; trackBy: trackByBranch">
                   <div class="ts-up"></div>
                   <div class="ts-subtree">
 
@@ -266,7 +266,7 @@
                              [style.marginLeft.px]="barInset(br.children[0])"
                              [style.marginRight.px]="barInset(br.children[br.children.length-1])"></div>
                         <div class="ts-children-row">
-                          <div class="ts-child-col" *ngFor="let child of br.children">
+                          <div class="ts-child-col" *ngFor="let child of br.children; trackBy: trackByNode">
                             <div class="ts-up"></div>
                             <ng-container [ngTemplateOutlet]="nodeRef" [ngTemplateOutletContext]="{ node: child }"></ng-container>
                           </div>
@@ -328,7 +328,7 @@
               </div>
               <!-- Rangée d'enfants -->
               <div class="ts-children-row">
-                <div class="ts-child-col" *ngFor="let child of node.children">
+                <div class="ts-child-col" *ngFor="let child of node.children; trackBy: trackByNode">
                   <div class="ts-up"></div>
                   <ng-container [ngTemplateOutlet]="nodeRef"
                                 [ngTemplateOutletContext]="{ node: child }">
@@ -344,7 +344,7 @@
 
       <!-- Racines de l'arbre -->
       <div class="ts-roots">
-        <ng-container *ngFor="let root of treeRoots">
+        <ng-container *ngFor="let root of treeRoots; trackBy: trackByNode">
           <ng-container [ngTemplateOutlet]="nodeRef"
                         [ngTemplateOutletContext]="{ node: root }">
           </ng-container>
@@ -436,7 +436,7 @@
       </div>
       <div class="person-select-list">
         <div class="person-select-item"
-             *ngFor="let p of quickAddPersonnes"
+             *ngFor="let p of quickAddPersonnes; trackBy: trackByPersonneId"
              [class.selected]="quickAddSelected === p.id"
              (click)="quickAddSelected = p.id">
           <div class="avatar avatar-sm" [class.male]="p.sexe==='M'" [class.female]="p.sexe==='F'">

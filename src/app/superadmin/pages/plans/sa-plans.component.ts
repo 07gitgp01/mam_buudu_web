@@ -1,10 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SuperAdminService } from '../../services/superadmin.service';
+import { SaPlan } from '../../models/superadmin.model';
+
+interface EditablePlan extends SaPlan {
+  _editing?: boolean;
+  _editLabel?: string;
+  _editPrix?: number;
+  _editMax?: number | null;
+  _editFeats?: string;
+}
 
 @Component({ selector: 'sa-plans', templateUrl: './sa-plans.component.html', styleUrl: './sa-plans.component.scss', standalone: false })
 export class SaPlansComponent implements OnInit {
-  plans: any[] = [];
+  plans: EditablePlan[] = [];
   loading = true;
   showCreateForm = false;
   createForm!: FormGroup;
@@ -31,19 +40,19 @@ export class SaPlansComponent implements OnInit {
     this.sa.getPlans().subscribe({ next: (p) => { this.plans = p; this.loading = false; }, error: () => this.loading = false });
   }
 
-  startEdit(p: any): void {
+  startEdit(p: EditablePlan): void {
     p._editing = true;
     p._editLabel = p.label;
     p._editPrix  = p.prix;
     p._editMax   = p.maxPersonnes;
-    p._editFeats = (p.features as string[]).join(', ');
+    p._editFeats = (p.features ?? []).join(', ');
   }
-  cancelEdit(p: any): void { p._editing = false; }
+  cancelEdit(p: EditablePlan): void { p._editing = false; }
 
-  saveEdit(p: any): void {
+  saveEdit(p: EditablePlan): void {
     this.actionLoading = p.id;
     const features = (p._editFeats as string).split(',').map((s: string) => s.trim()).filter(Boolean);
-    this.sa.patchPlan(p.id, { label: p._editLabel, prix: +p._editPrix, maxPersonnes: p._editMax ? +p._editMax : null, features }).subscribe({
+    this.sa.patchPlan(p.id, { label: p._editLabel, prix: +(p._editPrix ?? p.prix), maxPersonnes: p._editMax ? +p._editMax : null, features }).subscribe({
       next: (updated) => {
         Object.assign(p, updated);
         p._editing = false;
@@ -53,7 +62,7 @@ export class SaPlansComponent implements OnInit {
     });
   }
 
-  deletePlan(p: any): void {
+  deletePlan(p: EditablePlan): void {
     if (!confirm(`Supprimer le plan "${p.label}" ? Les abonnements existants seront affectés.`)) return;
     this.actionLoading = p.id;
     this.sa.deletePlan(p.id).subscribe({
