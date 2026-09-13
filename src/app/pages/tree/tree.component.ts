@@ -111,6 +111,7 @@ export class TreeComponent implements OnInit, OnDestroy {
   quickAddSearch   = '';
   quickAddSelected = '';
   quickAddSaving   = false;
+  quickAddErreur: string | null = null;
   quickCreateForm  = { prenoms: '', nomNaissance: '', nomUsage: '', sexe: 'M', dateNaissance: '' };
 
   // ── Mode kiosque ─────────────────────────────────────────────────────────
@@ -296,12 +297,14 @@ export class TreeComponent implements OnInit, OnDestroy {
       sexe: mode === 'partner' ? (node.p1.sexe === 'M' ? 'F' : 'M') : 'M',
       dateNaissance: '',
     };
+    this.quickAddErreur = null;
     this.showQuickAdd = true;
   }
 
   closeQuickAdd(): void {
     this.showQuickAdd = false; this.quickAddTarget = null;
     this.quickAddMode = null; this.quickAddSelected = '';
+    this.quickAddErreur = null;
   }
 
   get quickAddPersonnes(): Personne[] {
@@ -328,6 +331,16 @@ export class TreeComponent implements OnInit, OnDestroy {
 
   saveQuickAdd(): void {
     if (this.quickAddSaving || !this.quickAddTarget || !this.quickAddMode) return;
+
+    if (this.quickAddTab === 'select' && !this.quickAddSelected) {
+      this.quickAddErreur = 'Sélectionnez un membre.';
+      return;
+    }
+    if (this.quickAddTab === 'create' && (!this.quickCreateForm.prenoms.trim() || !this.quickCreateForm.nomNaissance.trim())) {
+      this.quickAddErreur = 'Le prénom et le nom de naissance sont requis.';
+      return;
+    }
+    this.quickAddErreur = null;
     this.quickAddSaving = true;
 
     const personObs = this.quickAddTab === 'select'
@@ -359,7 +372,10 @@ export class TreeComponent implements OnInit, OnDestroy {
         this.quickAddSaving = false;
         this.closeQuickAdd();
       },
-      error: () => { this.quickAddSaving = false; },
+      error: (err) => {
+        this.quickAddSaving = false;
+        this.quickAddErreur = err?.error?.error ?? "Erreur lors de l'ajout.";
+      },
     });
   }
 

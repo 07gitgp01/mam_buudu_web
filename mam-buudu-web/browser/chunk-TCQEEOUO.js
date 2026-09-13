@@ -3258,7 +3258,7 @@ function FamilleStoriesComponent_ng_container_11_Template(rf, ctx) {
 }
 function FamilleStoriesComponent_div_12_div_16_img_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "img", 84);
+    \u0275\u0275element(0, "img", 85);
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext(3);
@@ -3267,7 +3267,7 @@ function FamilleStoriesComponent_div_12_div_16_img_1_Template(rf, ctx) {
 }
 function FamilleStoriesComponent_div_12_div_16_video_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "video", 85);
+    \u0275\u0275element(0, "video", 86);
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext(3);
@@ -3277,9 +3277,9 @@ function FamilleStoriesComponent_div_12_div_16_video_2_Template(rf, ctx) {
 function FamilleStoriesComponent_div_12_div_16_Template(rf, ctx) {
   if (rf & 1) {
     const _r11 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 80);
-    \u0275\u0275template(1, FamilleStoriesComponent_div_12_div_16_img_1_Template, 1, 1, "img", 81)(2, FamilleStoriesComponent_div_12_div_16_video_2_Template, 1, 1, "video", 82);
-    \u0275\u0275elementStart(3, "button", 83);
+    \u0275\u0275elementStart(0, "div", 81);
+    \u0275\u0275template(1, FamilleStoriesComponent_div_12_div_16_img_1_Template, 1, 1, "img", 82)(2, FamilleStoriesComponent_div_12_div_16_video_2_Template, 1, 1, "video", 83);
+    \u0275\u0275elementStart(3, "button", 84);
     \u0275\u0275listener("click", function FamilleStoriesComponent_div_12_div_16_Template_button_click_3_listener() {
       \u0275\u0275restoreView(_r11);
       const ctx_r0 = \u0275\u0275nextContext(2);
@@ -3300,7 +3300,7 @@ function FamilleStoriesComponent_div_12_div_16_Template(rf, ctx) {
 function FamilleStoriesComponent_div_12_label_17_Template(rf, ctx) {
   if (rf & 1) {
     const _r12 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "label", 86)(1, "input", 87);
+    \u0275\u0275elementStart(0, "label", 87)(1, "input", 88);
     \u0275\u0275listener("change", function FamilleStoriesComponent_div_12_label_17_Template_input_change_1_listener($event) {
       \u0275\u0275restoreView(_r12);
       const ctx_r0 = \u0275\u0275nextContext(2);
@@ -3318,7 +3318,7 @@ function FamilleStoriesComponent_div_12_label_17_Template(rf, ctx) {
 function FamilleStoriesComponent_div_12_button_28_Template(rf, ctx) {
   if (rf & 1) {
     const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 88);
+    \u0275\u0275elementStart(0, "button", 89);
     \u0275\u0275listener("click", function FamilleStoriesComponent_div_12_button_28_Template_button_click_0_listener() {
       const t_r14 = \u0275\u0275restoreView(_r13).$implicit;
       const ctx_r0 = \u0275\u0275nextContext(2);
@@ -3336,14 +3336,28 @@ function FamilleStoriesComponent_div_12_button_28_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", t_r14, " ");
   }
 }
-function FamilleStoriesComponent_div_12_span_37_Template(rf, ctx) {
+function FamilleStoriesComponent_div_12_div_35_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 89);
+    \u0275\u0275elementStart(0, "div", 90)(1, "span", 5);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r0.formErreur, " ");
+  }
+}
+function FamilleStoriesComponent_div_12_span_40_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 91);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function FamilleStoriesComponent_div_12_span_38_Template(rf, ctx) {
+function FamilleStoriesComponent_div_12_span_41_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 5);
     \u0275\u0275text(1, "send");
@@ -3405,32 +3419,35 @@ function FamilleStoriesComponent_div_12_Template(rf, ctx) {
     \u0275\u0275template(28, FamilleStoriesComponent_div_12_button_28_Template, 2, 9, "button", 73);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(29, "div", 67)(30, "label");
-    \u0275\u0275text(31, "Votre histoire *");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(32, "textarea", 74);
-    \u0275\u0275twoWayListener("ngModelChange", function FamilleStoriesComponent_div_12_Template_textarea_ngModelChange_32_listener($event) {
+    \u0275\u0275text(31, "Votre histoire ");
+    \u0275\u0275elementStart(32, "span", 68);
+    \u0275\u0275text(33, "(texte ou m\xE9dia requis)");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(34, "textarea", 74);
+    \u0275\u0275twoWayListener("ngModelChange", function FamilleStoriesComponent_div_12_Template_textarea_ngModelChange_34_listener($event) {
       \u0275\u0275restoreView(_r10);
       const ctx_r0 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r0.form.caption, $event) || (ctx_r0.form.caption = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(33, "div", 75)(34, "button", 76);
-    \u0275\u0275listener("click", function FamilleStoriesComponent_div_12_Template_button_click_34_listener() {
+    \u0275\u0275template(35, FamilleStoriesComponent_div_12_div_35_Template, 4, 1, "div", 75);
+    \u0275\u0275elementStart(36, "div", 76)(37, "button", 77);
+    \u0275\u0275listener("click", function FamilleStoriesComponent_div_12_Template_button_click_37_listener() {
       \u0275\u0275restoreView(_r10);
       const ctx_r0 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r0.showForm = false);
     });
-    \u0275\u0275text(35, "Annuler");
+    \u0275\u0275text(38, "Annuler");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(36, "button", 77);
-    \u0275\u0275listener("click", function FamilleStoriesComponent_div_12_Template_button_click_36_listener() {
+    \u0275\u0275elementStart(39, "button", 78);
+    \u0275\u0275listener("click", function FamilleStoriesComponent_div_12_Template_button_click_39_listener() {
       \u0275\u0275restoreView(_r10);
       const ctx_r0 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r0.submitForm());
     });
-    \u0275\u0275template(37, FamilleStoriesComponent_div_12_span_37_Template, 2, 0, "span", 78)(38, FamilleStoriesComponent_div_12_span_38_Template, 2, 0, "span", 79);
-    \u0275\u0275text(39);
+    \u0275\u0275template(40, FamilleStoriesComponent_div_12_span_40_Template, 2, 0, "span", 79)(41, FamilleStoriesComponent_div_12_span_41_Template, 2, 0, "span", 80);
+    \u0275\u0275text(42);
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
@@ -3443,8 +3460,10 @@ function FamilleStoriesComponent_div_12_Template(rf, ctx) {
     \u0275\u0275twoWayProperty("ngModel", ctx_r0.form.titre);
     \u0275\u0275advance(5);
     \u0275\u0275property("ngForOf", ctx_r0.tagOptions);
-    \u0275\u0275advance(4);
+    \u0275\u0275advance(6);
     \u0275\u0275twoWayProperty("ngModel", ctx_r0.form.caption);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.formErreur);
     \u0275\u0275advance(4);
     \u0275\u0275property("disabled", ctx_r0.saving || !ctx_r0.form.caption.trim() && !ctx_r0.form.mediaFile);
     \u0275\u0275advance();
@@ -3467,6 +3486,7 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
   tagColors = STORY_TAG_COLORS;
   showForm = false;
   saving = false;
+  formErreur = null;
   form = { titre: "", caption: "", tag: "Souvenir", mediaFile: null, mediaPreview: null, mediaType: null };
   constructor(api, auth) {
     this.api = api;
@@ -3527,6 +3547,7 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
   }
   openForm() {
     this.form = { titre: "", caption: "", tag: "Souvenir", mediaFile: null, mediaPreview: null, mediaType: null };
+    this.formErreur = null;
     this.showForm = true;
   }
   onMediaSelected(event) {
@@ -3547,8 +3568,11 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
     this.form.mediaType = null;
   }
   submitForm() {
-    if (!this.form.caption.trim() && !this.form.mediaFile)
+    if (!this.form.caption.trim() && !this.form.mediaFile) {
+      this.formErreur = "Ajoutez un texte ou un m\xE9dia pour publier une story.";
       return;
+    }
+    this.formErreur = null;
     this.saving = true;
     const publish = (mediaUrl, mediaType) => {
       this.api.createStory({
@@ -3563,8 +3587,9 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
           this.showForm = false;
           this.saving = false;
         },
-        error: () => {
+        error: (err) => {
           this.saving = false;
+          this.formErreur = err?.error?.error ?? "Erreur lors de la publication.";
         }
       });
     };
@@ -3573,6 +3598,7 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
         next: ({ mediaUrl, mediaType }) => publish(mediaUrl, mediaType),
         error: () => {
           this.saving = false;
+          this.formErreur = "Erreur lors de l'envoi du m\xE9dia.";
         }
       });
     } else {
@@ -3582,8 +3608,13 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
   deleteStory(id) {
     if (!confirm("Supprimer cette story ?"))
       return;
-    this.api.deleteStory(id).subscribe(() => {
-      this.stories = this.stories.filter((s) => s.id !== id);
+    this.api.deleteStory(id).subscribe({
+      next: () => {
+        this.stories = this.stories.filter((s) => s.id !== id);
+      },
+      error: () => {
+        this.formErreur = "Erreur lors de la suppression de la story.";
+      }
     });
   }
   isMyStory(s) {
@@ -3595,7 +3626,7 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
   static \u0275fac = function FamilleStoriesComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _FamilleStoriesComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(AuthService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FamilleStoriesComponent, selectors: [["app-famille-stories"]], standalone: false, decls: 13, vars: 4, consts: [[1, "fs-page"], [1, "fs-header"], [1, "fs-title"], ["class", "fs-subtitle", 4, "ngIf"], [1, "fs-new-btn", 3, "click"], [1, "material-icons-round"], [4, "ngIf"], ["class", "fs-modal-overlay", 3, "click", 4, "ngIf"], [1, "fs-subtitle"], [1, "fs-sk-grid"], ["class", "fs-sk-card", 4, "ngFor", "ngForOf"], [1, "fs-sk-card"], [1, "fs-sk-header"], [1, "sk-avatar-sq", "sk-av-md"], [2, "flex", "1", "display", "flex", "flex-direction", "column", "gap", "6px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "sk-line", "sk-xs"], [2, "padding", "0 20px 16px", "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "55%"], [1, "fs-toolbar"], [1, "fs-search-bar"], ["type", "text", "placeholder", "Rechercher une story...", 3, "ngModelChange", "ngModel"], ["class", "fs-search-clear", 3, "click", 4, "ngIf"], [1, "fs-tags"], ["class", "fs-tag-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], ["class", "fs-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "fs-search-clear", 3, "click"], [1, "fs-tag-btn", 3, "click"], [1, "fs-grid"], ["class", "fs-card", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "fs-card"], [1, "fs-card-header"], [1, "fs-author"], [1, "fs-author-avatar"], [1, "fs-author-info"], [1, "fs-author-name"], [1, "fs-author-date"], [2, "display", "flex", "align-items", "center", "gap", "6px"], [1, "fs-tag-badge"], ["class", "fs-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "fs-card-media", 4, "ngIf"], [1, "fs-card-body"], ["class", "fs-card-title", 4, "ngIf"], ["class", "fs-card-text", 4, "ngIf"], [1, "fs-card-footer"], [1, "fs-action-btn", 3, "click"], [1, "fs-action-btn"], [1, "fs-action-btn", "fs-share-btn"], ["title", "Supprimer", 1, "fs-delete-btn", 3, "click"], [1, "fs-card-media"], ["class", "fs-card-media-img", "loading", "lazy", "alt", "", 3, "src", 4, "ngIf"], ["class", "fs-card-media-video", "controls", "", 3, "src", 4, "ngIf"], ["loading", "lazy", "alt", "", 1, "fs-card-media-img", 3, "src"], ["controls", "", 1, "fs-card-media-video", 3, "src"], [1, "fs-card-title"], [1, "fs-card-text"], [1, "empty-state"], ["class", "fs-new-btn", 3, "click", 4, "ngIf"], [1, "fs-modal-overlay", 3, "click"], [1, "fs-modal", 3, "click"], [1, "fs-modal-head"], [1, "fs-modal-close", 3, "click"], [1, "fs-modal-body"], [1, "fs-form-group"], [1, "fs-optional"], ["class", "fs-media-preview", 4, "ngIf"], ["class", "fs-media-picker", 4, "ngIf"], ["type", "text", "placeholder", "Ex : Mariage de tante Kadiatou\u2026", 1, "fs-input", 3, "ngModelChange", "ngModel"], [1, "fs-tag-picker"], ["class", "fs-tag-pick", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], ["rows", "5", "placeholder", "Racontez ce beau moment \xE0 toute la famille\u2026", 1, "fs-input", "fs-textarea", 3, "ngModelChange", "ngModel"], [1, "fs-modal-foot"], [1, "fs-btn-cancel", 3, "click"], [1, "fs-btn-submit", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "fs-media-preview"], ["class", "fs-media-img", "alt", "", 3, "src", 4, "ngIf"], ["class", "fs-media-video", "controls", "", 3, "src", 4, "ngIf"], ["type", "button", 1, "fs-media-remove", 3, "click"], ["alt", "", 1, "fs-media-img", 3, "src"], ["controls", "", 1, "fs-media-video", 3, "src"], [1, "fs-media-picker"], ["type", "file", "accept", "image/*,video/*", "hidden", "", 3, "change"], [1, "fs-tag-pick", 3, "click"], [1, "material-icons-round", "spin"]], template: function FamilleStoriesComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FamilleStoriesComponent, selectors: [["app-famille-stories"]], standalone: false, decls: 13, vars: 4, consts: [[1, "fs-page"], [1, "fs-header"], [1, "fs-title"], ["class", "fs-subtitle", 4, "ngIf"], [1, "fs-new-btn", 3, "click"], [1, "material-icons-round"], [4, "ngIf"], ["class", "fs-modal-overlay", 3, "click", 4, "ngIf"], [1, "fs-subtitle"], [1, "fs-sk-grid"], ["class", "fs-sk-card", 4, "ngFor", "ngForOf"], [1, "fs-sk-card"], [1, "fs-sk-header"], [1, "sk-avatar-sq", "sk-av-md"], [2, "flex", "1", "display", "flex", "flex-direction", "column", "gap", "6px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "sk-line", "sk-xs"], [2, "padding", "0 20px 16px", "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "55%"], [1, "fs-toolbar"], [1, "fs-search-bar"], ["type", "text", "placeholder", "Rechercher une story...", 3, "ngModelChange", "ngModel"], ["class", "fs-search-clear", 3, "click", 4, "ngIf"], [1, "fs-tags"], ["class", "fs-tag-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], ["class", "fs-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "fs-search-clear", 3, "click"], [1, "fs-tag-btn", 3, "click"], [1, "fs-grid"], ["class", "fs-card", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "fs-card"], [1, "fs-card-header"], [1, "fs-author"], [1, "fs-author-avatar"], [1, "fs-author-info"], [1, "fs-author-name"], [1, "fs-author-date"], [2, "display", "flex", "align-items", "center", "gap", "6px"], [1, "fs-tag-badge"], ["class", "fs-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "fs-card-media", 4, "ngIf"], [1, "fs-card-body"], ["class", "fs-card-title", 4, "ngIf"], ["class", "fs-card-text", 4, "ngIf"], [1, "fs-card-footer"], [1, "fs-action-btn", 3, "click"], [1, "fs-action-btn"], [1, "fs-action-btn", "fs-share-btn"], ["title", "Supprimer", 1, "fs-delete-btn", 3, "click"], [1, "fs-card-media"], ["class", "fs-card-media-img", "loading", "lazy", "alt", "", 3, "src", 4, "ngIf"], ["class", "fs-card-media-video", "controls", "", 3, "src", 4, "ngIf"], ["loading", "lazy", "alt", "", 1, "fs-card-media-img", 3, "src"], ["controls", "", 1, "fs-card-media-video", 3, "src"], [1, "fs-card-title"], [1, "fs-card-text"], [1, "empty-state"], ["class", "fs-new-btn", 3, "click", 4, "ngIf"], [1, "fs-modal-overlay", 3, "click"], [1, "fs-modal", 3, "click"], [1, "fs-modal-head"], [1, "fs-modal-close", 3, "click"], [1, "fs-modal-body"], [1, "fs-form-group"], [1, "fs-optional"], ["class", "fs-media-preview", 4, "ngIf"], ["class", "fs-media-picker", 4, "ngIf"], ["type", "text", "placeholder", "Ex : Mariage de tante Kadiatou\u2026", 1, "fs-input", 3, "ngModelChange", "ngModel"], [1, "fs-tag-picker"], ["class", "fs-tag-pick", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], ["rows", "5", "placeholder", "Racontez ce beau moment \xE0 toute la famille\u2026", 1, "fs-input", "fs-textarea", 3, "ngModelChange", "ngModel"], ["class", "error-state", "style", "margin:0 20px 12px", 4, "ngIf"], [1, "fs-modal-foot"], [1, "fs-btn-cancel", 3, "click"], [1, "fs-btn-submit", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "fs-media-preview"], ["class", "fs-media-img", "alt", "", 3, "src", 4, "ngIf"], ["class", "fs-media-video", "controls", "", 3, "src", 4, "ngIf"], ["type", "button", 1, "fs-media-remove", 3, "click"], ["alt", "", 1, "fs-media-img", 3, "src"], ["controls", "", 1, "fs-media-video", 3, "src"], [1, "fs-media-picker"], ["type", "file", "accept", "image/*,video/*", "hidden", "", 3, "change"], [1, "fs-tag-pick", 3, "click"], [1, "error-state", 2, "margin", "0 20px 12px"], [1, "material-icons-round", "spin"]], template: function FamilleStoriesComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div")(3, "h2", 2);
       \u0275\u0275text(4, "Stories familiales");
@@ -3613,7 +3644,7 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
       \u0275\u0275elementEnd()();
       \u0275\u0275template(10, FamilleStoriesComponent_ng_container_10_Template, 3, 2, "ng-container", 6)(11, FamilleStoriesComponent_ng_container_11_Template, 11, 5, "ng-container", 6);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(12, FamilleStoriesComponent_div_12_Template, 40, 9, "div", 7);
+      \u0275\u0275template(12, FamilleStoriesComponent_div_12_Template, 43, 10, "div", 7);
     }
     if (rf & 2) {
       \u0275\u0275advance(5);
@@ -3816,11 +3847,15 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
       </div>\r
 \r
       <div class="fs-form-group">\r
-        <label>Votre histoire *</label>\r
+        <label>Votre histoire <span class="fs-optional">(texte ou m\xE9dia requis)</span></label>\r
         <textarea [(ngModel)]="form.caption" rows="5"\r
                   placeholder="Racontez ce beau moment \xE0 toute la famille\u2026"\r
                   class="fs-input fs-textarea"></textarea>\r
       </div>\r
+    </div>\r
+\r
+    <div class="error-state" *ngIf="formErreur" style="margin:0 20px 12px">\r
+      <span class="material-icons-round">error_outline</span>{{ formErreur }}\r
     </div>\r
 \r
     <div class="fs-modal-foot">\r
@@ -8082,4 +8117,4 @@ var FamilleModule = class _FamilleModule {
 export {
   FamilleModule
 };
-//# sourceMappingURL=chunk-AXRHJMO3.js.map
+//# sourceMappingURL=chunk-TCQEEOUO.js.map

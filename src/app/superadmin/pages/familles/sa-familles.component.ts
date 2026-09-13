@@ -11,11 +11,13 @@ export class SaFamillesComponent implements OnInit {
   page = 1;
   statut = '';
   actionLoading = '';
+  actionErreur: string | null = null;
 
   // Assign-plan modal
   assignModal: { famille: SaFamille; planId: string; dateFin: string } | null = null;
   plans: SaPlan[] = [];
   assigning = false;
+  assignErreur: string | null = null;
 
   // Detail expand
   expandedId: string | null = null;
@@ -53,28 +55,35 @@ export class SaFamillesComponent implements OnInit {
     if (!confirm(message)) return;
 
     this.actionLoading = f.id;
+    this.actionErreur = null;
     this.sa.patchFamille(f.id, { statut: newStatut }).subscribe({
       next: (updated) => { f.statut = updated.statut; this.actionLoading = ''; },
-      error: () => this.actionLoading = '',
+      error: (err) => { this.actionLoading = ''; this.actionErreur = err?.error?.error ?? 'Erreur lors du changement de statut.'; },
     });
   }
 
   delete(f: SaFamille): void {
     if (!confirm(`Supprimer définitivement la famille "${f.nom}" ? Cette action est irréversible.`)) return;
     this.actionLoading = f.id;
+    this.actionErreur = null;
     this.sa.deleteFamille(f.id).subscribe({
       next: () => { this.load(); this.actionLoading = ''; },
-      error: () => this.actionLoading = '',
+      error: (err) => { this.actionLoading = ''; this.actionErreur = err?.error?.error ?? 'Erreur lors de la suppression.'; },
     });
   }
 
   openAssign(f: SaFamille): void {
     this.assignModal = { famille: f, planId: f.subscription?.plan?.id ?? '', dateFin: '' };
+    this.assignErreur = null;
   }
   closeAssign(): void { this.assignModal = null; }
 
   confirmAssign(): void {
     if (!this.assignModal || !this.assignModal.planId) return;
+    const planLabel = this.plans.find(p => p.id === this.assignModal!.planId)?.label ?? this.assignModal.planId;
+    if (!confirm(`Assigner le plan "${planLabel}" à "${this.assignModal.famille.nom}" ? Cela modifie sa facturation.`)) return;
+
+    this.assignErreur = null;
     this.assigning = true;
     this.sa.assignPlan(this.assignModal.famille.id, this.assignModal.planId, this.assignModal.dateFin || undefined).subscribe({
       next: (sub) => {
@@ -83,7 +92,7 @@ export class SaFamillesComponent implements OnInit {
         this.assignModal = null;
         this.assigning = false;
       },
-      error: () => this.assigning = false,
+      error: (err) => { this.assigning = false; this.assignErreur = err?.error?.error ?? "Erreur lors de l'assignation du plan."; },
     });
   }
 

@@ -22,6 +22,7 @@ export class FamilleStoriesComponent implements OnInit {
 
   showForm = false;
   saving = false;
+  formErreur: string | null = null;
   form: { titre: string; caption: string; tag: string; mediaFile: File | null; mediaPreview: string | null; mediaType: 'photo' | 'video' | null } =
     { titre: '', caption: '', tag: 'Souvenir', mediaFile: null, mediaPreview: null, mediaType: null };
 
@@ -84,6 +85,7 @@ export class FamilleStoriesComponent implements OnInit {
 
   openForm(): void {
     this.form = { titre: '', caption: '', tag: 'Souvenir', mediaFile: null, mediaPreview: null, mediaType: null };
+    this.formErreur = null;
     this.showForm = true;
   }
 
@@ -104,7 +106,11 @@ export class FamilleStoriesComponent implements OnInit {
   }
 
   submitForm(): void {
-    if (!this.form.caption.trim() && !this.form.mediaFile) return;
+    if (!this.form.caption.trim() && !this.form.mediaFile) {
+      this.formErreur = 'Ajoutez un texte ou un média pour publier une story.';
+      return;
+    }
+    this.formErreur = null;
     this.saving = true;
     const publish = (mediaUrl?: string, mediaType?: string) => {
       this.api.createStory({
@@ -115,13 +121,13 @@ export class FamilleStoriesComponent implements OnInit {
         mediaType,
       }).subscribe({
         next: s => { this.stories.unshift(s); this.showForm = false; this.saving = false; },
-        error: () => { this.saving = false; }
+        error: (err) => { this.saving = false; this.formErreur = err?.error?.error ?? 'Erreur lors de la publication.'; }
       });
     };
     if (this.form.mediaFile) {
       this.api.uploadStoryMedia(this.form.mediaFile).subscribe({
         next: ({ mediaUrl, mediaType }) => publish(mediaUrl, mediaType),
-        error: () => { this.saving = false; }
+        error: () => { this.saving = false; this.formErreur = "Erreur lors de l'envoi du média."; }
       });
     } else {
       publish();
@@ -130,8 +136,9 @@ export class FamilleStoriesComponent implements OnInit {
 
   deleteStory(id: string): void {
     if (!confirm('Supprimer cette story ?')) return;
-    this.api.deleteStory(id).subscribe(() => {
-      this.stories = this.stories.filter(s => s.id !== id);
+    this.api.deleteStory(id).subscribe({
+      next: () => { this.stories = this.stories.filter(s => s.id !== id); },
+      error: () => { this.formErreur = 'Erreur lors de la suppression de la story.'; },
     });
   }
 

@@ -23,6 +23,8 @@ export class SaSettingsComponent implements OnInit {
   newValue = '';
   newLabel = '';
   adding = false;
+  addErreur: string | null = null;
+  settingsErreur: string | null = null;
 
   readonly defaults = [
     { key: 'inscription_ouverte',   value: 'true',                   label: 'Inscriptions ouvertes' },
@@ -40,19 +42,28 @@ export class SaSettingsComponent implements OnInit {
     });
   }
 
-  startEdit(s: Setting): void { s.editValue = s.value; s.editing = true; }
+  startEdit(s: Setting): void { s.editValue = s.value; s.editing = true; this.settingsErreur = null; }
   cancelEdit(s: Setting): void { s.editing = false; }
 
   save(s: Setting): void {
+    if (!s.editValue?.trim()) {
+      this.settingsErreur = 'La valeur ne peut pas être vide.';
+      return;
+    }
+    this.settingsErreur = null;
     s.saving = true;
     this.sa.patchSetting(s.key, s.editValue!, s.label).subscribe({
       next: (updated) => { s.value = updated.value; s.editing = false; s.saving = false; },
-      error: () => { s.saving = false; },
+      error: (err) => { s.saving = false; this.settingsErreur = err?.error?.error ?? 'Erreur lors de la sauvegarde.'; },
     });
   }
 
   addSetting(): void {
-    if (!this.newKey || !this.newValue) return;
+    if (!this.newKey.trim() || !this.newValue.trim()) {
+      this.addErreur = 'La clé et la valeur sont requises.';
+      return;
+    }
+    this.addErreur = null;
     this.adding = true;
     this.sa.patchSetting(this.newKey, this.newValue, this.newLabel).subscribe({
       next: (s) => {
@@ -62,7 +73,7 @@ export class SaSettingsComponent implements OnInit {
         this.newLabel = '';
         this.adding = false;
       },
-      error: () => { this.adding = false; },
+      error: (err) => { this.adding = false; this.addErreur = err?.error?.error ?? 'Erreur lors de l\'ajout.'; },
     });
   }
 
@@ -70,6 +81,7 @@ export class SaSettingsComponent implements OnInit {
     if (!confirm(`Supprimer le paramètre "${s.key}" ?`)) return;
     this.sa.deleteSetting(s.key).subscribe({
       next: () => { this.settings = this.settings.filter(x => x.key !== s.key); },
+      error: () => { this.settingsErreur = 'Erreur lors de la suppression du paramètre.'; },
     });
   }
 
@@ -78,6 +90,7 @@ export class SaSettingsComponent implements OnInit {
     if (exists) return;
     this.sa.patchSetting(d.key, d.value, d.label).subscribe({
       next: (s) => { this.settings.push(s); },
+      error: () => { this.settingsErreur = "Erreur lors de l'application du paramètre par défaut."; },
     });
   }
 
@@ -90,10 +103,15 @@ export class SaSettingsComponent implements OnInit {
   broadcastMsg   = '';
   broadcasting   = false;
   broadcastDone  = '';
+  broadcastErreur: string | null = null;
 
   sendBroadcast(): void {
-    if (!this.broadcastTitre || !this.broadcastMsg) return;
+    if (!this.broadcastTitre.trim() || !this.broadcastMsg.trim()) {
+      this.broadcastErreur = 'Le titre et le message sont requis.';
+      return;
+    }
     if (!confirm(`Envoyer cette notification à TOUS les utilisateurs de la plateforme ?`)) return;
+    this.broadcastErreur = null;
     this.broadcasting = true;
     this.sa.broadcast(this.broadcastTitre, this.broadcastMsg).subscribe({
       next: (r) => {
@@ -102,7 +120,7 @@ export class SaSettingsComponent implements OnInit {
         this.broadcasting = false;
         setTimeout(() => this.broadcastDone = '', 5000);
       },
-      error: () => this.broadcasting = false,
+      error: (err) => { this.broadcasting = false; this.broadcastErreur = err?.error?.error ?? "Erreur lors de l'envoi."; },
     });
   }
 }

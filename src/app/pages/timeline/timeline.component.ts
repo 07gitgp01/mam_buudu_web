@@ -40,6 +40,7 @@ export class TimelineComponent implements OnInit {
 
   showForm = false;
   saving = false;
+  formErreur: string | null = null;
   form: { titre: string; description: string; type: EventType; date: string; personne: string } = {
     titre: '', description: '', type: 'autre', date: '', personne: ''
   };
@@ -172,13 +173,21 @@ export class TimelineComponent implements OnInit {
 
   openForm(): void {
     this.form = { titre: '', description: '', type: 'autre', date: '', personne: '' };
+    this.formErreur = null;
     this.showForm = true;
   }
 
   submitForm(): void {
-    if (!this.form.titre.trim() || !this.form.date.trim()) return;
+    if (!this.form.titre.trim() || !this.form.date.trim()) {
+      this.formErreur = 'Le titre et la date sont requis.';
+      return;
+    }
     const annee = extractAnnee(this.form.date);
-    if (!annee) return;
+    if (!annee) {
+      this.formErreur = 'Date invalide.';
+      return;
+    }
+    this.formErreur = null;
 
     this.saving = true;
     this.api.createTimelineEvent({
@@ -203,16 +212,19 @@ export class TimelineComponent implements OnInit {
         this.events = [...this.events, ev].sort((a, b) => this.triDesc ? b.annee - a.annee : a.annee - b.annee);
         this.showForm = false;
       },
+      error: (err) => { this.formErreur = err?.error?.error ?? "Erreur lors de la création de l'événement."; },
     });
   }
 
   deleteEvent(ev: TimelineEvent): void {
     if (ev.source !== 'custom') return;
+    if (!confirm(`Supprimer l'événement "${ev.titre}" ?`)) return;
     this.api.deleteTimelineEvent(ev.id).subscribe({
       next: () => {
         this.customEvents = this.customEvents.filter(e => e.id !== ev.id);
         this.events       = this.events.filter(e => e.id !== ev.id);
       },
+      error: () => { this.formErreur = "Erreur lors de la suppression de l'événement."; },
     });
   }
 }

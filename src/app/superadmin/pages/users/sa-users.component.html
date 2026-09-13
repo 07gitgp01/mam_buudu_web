@@ -25,6 +25,12 @@
     </select>
   </div>
 
+  @if (actionErreur) {
+    <div class="error-state" style="margin-bottom:16px">
+      <span class="material-icons-round">error_outline</span>{{ actionErreur }}
+    </div>
+  }
+
   @if (loading) {
     <div class="sa-loading">Chargement...</div>
   } @else {

@@ -27,6 +27,7 @@
   &.sa-field-full { grid-column: 1 / -1; }
 }
 .sa-ferr { font-size: 11px; color: #EF4444; }
+.required { color: #EF4444; }
 .sa-create-actions { margin-top: 16px; }
 .sa-spinner-sm { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }

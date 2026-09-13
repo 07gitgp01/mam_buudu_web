@@ -11,6 +11,7 @@ import {
   NgSelectOption,
   NumberValueAccessor,
   ReactiveFormsModule,
+  RequiredValidator,
   SelectControlValueAccessor,
   Validators,
   ɵNgNoValidate,
@@ -801,46 +802,60 @@ var SaDashboardComponent = class _SaDashboardComponent {
 var _forTrack03 = ($index, $item) => $item.id;
 function SaFamillesComponent_Conditional_24_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 12);
+    \u0275\u0275elementStart(0, "div", 12)(1, "span", 4);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r0.actionErreur, " ");
+  }
+}
+function SaFamillesComponent_Conditional_25_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 13);
     \u0275\u0275text(1, "Chargement...");
     \u0275\u0275elementEnd();
   }
 }
-function SaFamillesComponent_Conditional_25_For_23_Conditional_16_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_26_For_23_Conditional_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 20);
+    \u0275\u0275elementStart(0, "span", 21);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const f_r3 = \u0275\u0275nextContext().$implicit;
+    const f_r4 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(f_r3.subscription == null ? null : f_r3.subscription.plan == null ? null : f_r3.subscription.plan.label);
+    \u0275\u0275textInterpolate(f_r4.subscription == null ? null : f_r4.subscription.plan == null ? null : f_r4.subscription.plan.label);
   }
 }
-function SaFamillesComponent_Conditional_25_For_23_Conditional_17_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_26_For_23_Conditional_17_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 21);
+    \u0275\u0275elementStart(0, "span", 22);
     \u0275\u0275text(1, "Gratuit");
     \u0275\u0275elementEnd();
   }
 }
-function SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_2_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_26_For_23_Conditional_35_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 29);
+    \u0275\u0275elementStart(0, "div", 30);
     \u0275\u0275text(1, "Chargement...");
     \u0275\u0275elementEnd();
   }
 }
-function SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_3_For_6_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_26_For_23_Conditional_35_Conditional_3_For_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 33)(1, "span", 4);
+    \u0275\u0275elementStart(0, "div", 34)(1, "span", 4);
     \u0275\u0275text(2, "person");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "span");
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "span", 35);
+    \u0275\u0275elementStart(5, "span", 36);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd()();
   }
@@ -852,53 +867,53 @@ function SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_3_
     \u0275\u0275textInterpolate(m_r5.role);
   }
 }
-function SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_3_Conditional_23_Conditional_9_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_26_For_23_Conditional_35_Conditional_3_Conditional_23_Conditional_9_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275text(0);
     \u0275\u0275pipe(1, "date");
   }
   if (rf & 2) {
-    const ctx_r3 = \u0275\u0275nextContext(6);
-    \u0275\u0275textInterpolate1(" \xB7 Fin : ", \u0275\u0275pipeBind2(1, 1, ctx_r3.detailData.subscription.dateFin, "dd/MM/yyyy"), " ");
+    const ctx_r0 = \u0275\u0275nextContext(6);
+    \u0275\u0275textInterpolate1(" \xB7 Fin : ", \u0275\u0275pipeBind2(1, 1, ctx_r0.detailData.subscription.dateFin, "dd/MM/yyyy"), " ");
   }
 }
-function SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_3_Conditional_23_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_26_For_23_Conditional_35_Conditional_3_Conditional_23_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 31)(1, "strong");
+    \u0275\u0275elementStart(0, "div", 32)(1, "strong");
     \u0275\u0275text(2, "Abonnement");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 36);
+    \u0275\u0275elementStart(3, "div", 37);
     \u0275\u0275text(4, " Plan : ");
-    \u0275\u0275elementStart(5, "span", 20);
+    \u0275\u0275elementStart(5, "span", 21);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
     \u0275\u0275text(7);
     \u0275\u0275pipe(8, "date");
-    \u0275\u0275conditionalCreate(9, SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_3_Conditional_23_Conditional_9_Template, 2, 4);
+    \u0275\u0275conditionalCreate(9, SaFamillesComponent_Conditional_26_For_23_Conditional_35_Conditional_3_Conditional_23_Conditional_9_Template, 2, 4);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const ctx_r3 = \u0275\u0275nextContext(5);
+    const ctx_r0 = \u0275\u0275nextContext(5);
     \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate(ctx_r3.detailData.subscription.plan.label);
+    \u0275\u0275textInterpolate(ctx_r0.detailData.subscription.plan.label);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate2(" \xB7 Statut : ", ctx_r3.detailData.subscription.statut, " \xB7 D\xE9but : ", \u0275\u0275pipeBind2(8, 4, ctx_r3.detailData.subscription.dateDebut, "dd/MM/yyyy"), " ");
+    \u0275\u0275textInterpolate2(" \xB7 Statut : ", ctx_r0.detailData.subscription.statut, " \xB7 D\xE9but : ", \u0275\u0275pipeBind2(8, 4, ctx_r0.detailData.subscription.dateDebut, "dd/MM/yyyy"), " ");
     \u0275\u0275advance(2);
-    \u0275\u0275conditional(ctx_r3.detailData.subscription.dateFin ? 9 : -1);
+    \u0275\u0275conditional(ctx_r0.detailData.subscription.dateFin ? 9 : -1);
   }
 }
-function SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_3_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_26_For_23_Conditional_35_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 30)(1, "div", 31)(2, "strong");
+    \u0275\u0275elementStart(0, "div", 31)(1, "div", 32)(2, "strong");
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "div", 32);
-    \u0275\u0275repeaterCreate(5, SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_3_For_6_Template, 7, 3, "div", 33, _forTrack03);
+    \u0275\u0275elementStart(4, "div", 33);
+    \u0275\u0275repeaterCreate(5, SaFamillesComponent_Conditional_26_For_23_Conditional_35_Conditional_3_For_6_Template, 7, 3, "div", 34, _forTrack03);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "div", 31)(8, "strong");
+    \u0275\u0275elementStart(7, "div", 32)(8, "strong");
     \u0275\u0275text(9, "Contenu");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "div", 34)(11, "span")(12, "span", 4);
+    \u0275\u0275elementStart(10, "div", 35)(11, "span")(12, "span", 4);
     \u0275\u0275text(13, "people");
     \u0275\u0275elementEnd();
     \u0275\u0275text(14);
@@ -913,45 +928,45 @@ function SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_3_
     \u0275\u0275elementEnd();
     \u0275\u0275text(22);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275conditionalCreate(23, SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_3_Conditional_23_Template, 10, 7, "div", 31);
+    \u0275\u0275conditionalCreate(23, SaFamillesComponent_Conditional_26_For_23_Conditional_35_Conditional_3_Conditional_23_Template, 10, 7, "div", 32);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const ctx_r3 = \u0275\u0275nextContext(4);
+    const ctx_r0 = \u0275\u0275nextContext(4);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1("Membres (", ctx_r3.detailData.membres == null ? null : ctx_r3.detailData.membres.length, ")");
+    \u0275\u0275textInterpolate1("Membres (", ctx_r0.detailData.membres == null ? null : ctx_r0.detailData.membres.length, ")");
     \u0275\u0275advance(2);
-    \u0275\u0275repeater(ctx_r3.detailData.membres);
+    \u0275\u0275repeater(ctx_r0.detailData.membres);
     \u0275\u0275advance(9);
-    \u0275\u0275textInterpolate1("", ctx_r3.detailData._count.personnes, " personnes");
+    \u0275\u0275textInterpolate1("", ctx_r0.detailData._count.personnes, " personnes");
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate1("", ctx_r3.detailData._count.stories, " stories");
+    \u0275\u0275textInterpolate1("", ctx_r0.detailData._count.stories, " stories");
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate1("", ctx_r3.detailData._count.photos, " photos");
+    \u0275\u0275textInterpolate1("", ctx_r0.detailData._count.photos, " photos");
     \u0275\u0275advance();
-    \u0275\u0275conditional(ctx_r3.detailData.subscription ? 23 : -1);
+    \u0275\u0275conditional(ctx_r0.detailData.subscription ? 23 : -1);
   }
 }
-function SaFamillesComponent_Conditional_25_For_23_Conditional_35_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_26_For_23_Conditional_35_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "tr", 27)(1, "td", 28);
-    \u0275\u0275conditionalCreate(2, SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_2_Template, 2, 0, "div", 29)(3, SaFamillesComponent_Conditional_25_For_23_Conditional_35_Conditional_3_Template, 24, 5, "div", 30);
+    \u0275\u0275elementStart(0, "tr", 28)(1, "td", 29);
+    \u0275\u0275conditionalCreate(2, SaFamillesComponent_Conditional_26_For_23_Conditional_35_Conditional_2_Template, 2, 0, "div", 30)(3, SaFamillesComponent_Conditional_26_For_23_Conditional_35_Conditional_3_Template, 24, 5, "div", 31);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const ctx_r3 = \u0275\u0275nextContext(3);
+    const ctx_r0 = \u0275\u0275nextContext(3);
     \u0275\u0275advance(2);
-    \u0275\u0275conditional(ctx_r3.detailLoading ? 2 : ctx_r3.detailData ? 3 : -1);
+    \u0275\u0275conditional(ctx_r0.detailLoading ? 2 : ctx_r0.detailData ? 3 : -1);
   }
 }
-function SaFamillesComponent_Conditional_25_For_23_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_26_For_23_Template(rf, ctx) {
   if (rf & 1) {
-    const _r2 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "tr")(1, "td", 18)(2, "button", 19);
-    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_25_For_23_Template_button_click_2_listener() {
-      const f_r3 = \u0275\u0275restoreView(_r2).$implicit;
-      const ctx_r3 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r3.toggleDetail(f_r3));
+    const _r3 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "tr")(1, "td", 19)(2, "button", 20);
+    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_26_For_23_Template_button_click_2_listener() {
+      const f_r4 = \u0275\u0275restoreView(_r3).$implicit;
+      const ctx_r0 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r0.toggleDetail(f_r4));
     });
     \u0275\u0275elementStart(3, "span", 4);
     \u0275\u0275text(4);
@@ -969,80 +984,80 @@ function SaFamillesComponent_Conditional_25_For_23_Template(rf, ctx) {
     \u0275\u0275text(14);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(15, "td");
-    \u0275\u0275conditionalCreate(16, SaFamillesComponent_Conditional_25_For_23_Conditional_16_Template, 2, 1, "span", 20)(17, SaFamillesComponent_Conditional_25_For_23_Conditional_17_Template, 2, 0, "span", 21);
+    \u0275\u0275conditionalCreate(16, SaFamillesComponent_Conditional_26_For_23_Conditional_16_Template, 2, 1, "span", 21)(17, SaFamillesComponent_Conditional_26_For_23_Conditional_17_Template, 2, 0, "span", 22);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(18, "td")(19, "span", 22);
+    \u0275\u0275elementStart(18, "td")(19, "span", 23);
     \u0275\u0275text(20);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(21, "td");
     \u0275\u0275text(22);
     \u0275\u0275pipe(23, "date");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(24, "td")(25, "div", 23)(26, "button", 24);
-    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_25_For_23_Template_button_click_26_listener() {
-      const f_r3 = \u0275\u0275restoreView(_r2).$implicit;
-      const ctx_r3 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r3.openAssign(f_r3));
+    \u0275\u0275elementStart(24, "td")(25, "div", 24)(26, "button", 25);
+    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_26_For_23_Template_button_click_26_listener() {
+      const f_r4 = \u0275\u0275restoreView(_r3).$implicit;
+      const ctx_r0 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r0.openAssign(f_r4));
     });
     \u0275\u0275elementStart(27, "span", 4);
     \u0275\u0275text(28, "workspace_premium");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(29, "button", 25);
-    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_25_For_23_Template_button_click_29_listener() {
-      const f_r3 = \u0275\u0275restoreView(_r2).$implicit;
-      const ctx_r3 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r3.toggleStatut(f_r3));
+    \u0275\u0275elementStart(29, "button", 26);
+    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_26_For_23_Template_button_click_29_listener() {
+      const f_r4 = \u0275\u0275restoreView(_r3).$implicit;
+      const ctx_r0 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r0.toggleStatut(f_r4));
     });
     \u0275\u0275elementStart(30, "span", 4);
     \u0275\u0275text(31);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(32, "button", 26);
-    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_25_For_23_Template_button_click_32_listener() {
-      const f_r3 = \u0275\u0275restoreView(_r2).$implicit;
-      const ctx_r3 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r3.delete(f_r3));
+    \u0275\u0275elementStart(32, "button", 27);
+    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_26_For_23_Template_button_click_32_listener() {
+      const f_r4 = \u0275\u0275restoreView(_r3).$implicit;
+      const ctx_r0 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r0.delete(f_r4));
     });
     \u0275\u0275elementStart(33, "span", 4);
     \u0275\u0275text(34, "delete");
     \u0275\u0275elementEnd()()()()();
-    \u0275\u0275conditionalCreate(35, SaFamillesComponent_Conditional_25_For_23_Conditional_35_Template, 4, 1, "tr", 27);
+    \u0275\u0275conditionalCreate(35, SaFamillesComponent_Conditional_26_For_23_Conditional_35_Template, 4, 1, "tr", 28);
   }
   if (rf & 2) {
-    const f_r3 = ctx.$implicit;
-    const ctx_r3 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("sa-row-suspended", f_r3.statut === "suspendu");
+    const f_r4 = ctx.$implicit;
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275classProp("sa-row-suspended", f_r4.statut === "suspendu");
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate(ctx_r3.expandedId === f_r3.id ? "expand_less" : "expand_more");
+    \u0275\u0275textInterpolate(ctx_r0.expandedId === f_r4.id ? "expand_less" : "expand_more");
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(f_r3.nom);
+    \u0275\u0275textInterpolate(f_r4.nom);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(f_r3.codeUnique);
+    \u0275\u0275textInterpolate(f_r4.codeUnique);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(f_r3._count.membres);
+    \u0275\u0275textInterpolate(f_r4._count.membres);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(f_r3._count.personnes);
+    \u0275\u0275textInterpolate(f_r4._count.personnes);
     \u0275\u0275advance(2);
-    \u0275\u0275conditional((f_r3.subscription == null ? null : f_r3.subscription.plan) ? 16 : 17);
+    \u0275\u0275conditional((f_r4.subscription == null ? null : f_r4.subscription.plan) ? 16 : 17);
     \u0275\u0275advance(3);
-    \u0275\u0275classProp("green", f_r3.statut === "actif")("red", f_r3.statut === "suspendu");
+    \u0275\u0275classProp("green", f_r4.statut === "actif")("red", f_r4.statut === "suspendu");
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", f_r3.statut, " ");
+    \u0275\u0275textInterpolate1(" ", f_r4.statut, " ");
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(23, 19, f_r3.createdAt, "dd/MM/yyyy"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(23, 19, f_r4.createdAt, "dd/MM/yyyy"));
     \u0275\u0275advance(7);
-    \u0275\u0275property("disabled", ctx_r3.actionLoading === f_r3.id)("title", f_r3.statut === "actif" ? "Suspendre" : "R\xE9activer");
+    \u0275\u0275property("disabled", ctx_r0.actionLoading === f_r4.id)("title", f_r4.statut === "actif" ? "Suspendre" : "R\xE9activer");
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(f_r3.statut === "actif" ? "pause_circle" : "play_circle");
+    \u0275\u0275textInterpolate(f_r4.statut === "actif" ? "pause_circle" : "play_circle");
     \u0275\u0275advance();
-    \u0275\u0275property("disabled", ctx_r3.actionLoading === f_r3.id);
+    \u0275\u0275property("disabled", ctx_r0.actionLoading === f_r4.id);
     \u0275\u0275advance(3);
-    \u0275\u0275conditional(ctx_r3.expandedId === f_r3.id ? 35 : -1);
+    \u0275\u0275conditional(ctx_r0.expandedId === f_r4.id ? 35 : -1);
   }
 }
-function SaFamillesComponent_Conditional_25_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_26_Template(rf, ctx) {
   if (rf & 1) {
-    const _r1 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 14)(1, "table", 15)(2, "thead")(3, "tr");
+    const _r2 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 15)(1, "table", 16)(2, "thead")(3, "tr");
     \u0275\u0275element(4, "th");
     \u0275\u0275elementStart(5, "th");
     \u0275\u0275text(6, "Famille");
@@ -1069,45 +1084,45 @@ function SaFamillesComponent_Conditional_25_Template(rf, ctx) {
     \u0275\u0275text(20, "Actions");
     \u0275\u0275elementEnd()()();
     \u0275\u0275elementStart(21, "tbody");
-    \u0275\u0275repeaterCreate(22, SaFamillesComponent_Conditional_25_For_23_Template, 36, 22, null, null, _forTrack03);
+    \u0275\u0275repeaterCreate(22, SaFamillesComponent_Conditional_26_For_23_Template, 36, 22, null, null, _forTrack03);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(24, "div", 16)(25, "button", 17);
-    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_25_Template_button_click_25_listener() {
-      \u0275\u0275restoreView(_r1);
-      const ctx_r3 = \u0275\u0275nextContext();
-      ctx_r3.page = ctx_r3.page - 1;
-      return \u0275\u0275resetView(ctx_r3.load());
+    \u0275\u0275elementStart(24, "div", 17)(25, "button", 18);
+    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_26_Template_button_click_25_listener() {
+      \u0275\u0275restoreView(_r2);
+      const ctx_r0 = \u0275\u0275nextContext();
+      ctx_r0.page = ctx_r0.page - 1;
+      return \u0275\u0275resetView(ctx_r0.load());
     });
     \u0275\u0275text(26, "\u2039 Pr\xE9c\xE9dent");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(27, "span");
     \u0275\u0275text(28);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(29, "button", 17);
-    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_25_Template_button_click_29_listener() {
-      \u0275\u0275restoreView(_r1);
-      const ctx_r3 = \u0275\u0275nextContext();
-      ctx_r3.page = ctx_r3.page + 1;
-      return \u0275\u0275resetView(ctx_r3.load());
+    \u0275\u0275elementStart(29, "button", 18);
+    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_26_Template_button_click_29_listener() {
+      \u0275\u0275restoreView(_r2);
+      const ctx_r0 = \u0275\u0275nextContext();
+      ctx_r0.page = ctx_r0.page + 1;
+      return \u0275\u0275resetView(ctx_r0.load());
     });
     \u0275\u0275text(30, "Suivant \u203A");
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const ctx_r3 = \u0275\u0275nextContext();
+    const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275advance(22);
-    \u0275\u0275repeater(ctx_r3.data == null ? null : ctx_r3.data.familles);
+    \u0275\u0275repeater(ctx_r0.data == null ? null : ctx_r0.data.familles);
     \u0275\u0275advance(3);
-    \u0275\u0275property("disabled", ctx_r3.page <= 1);
+    \u0275\u0275property("disabled", ctx_r0.page <= 1);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate2("Page ", ctx_r3.page, " / ", ctx_r3.data == null ? null : ctx_r3.data.pages);
+    \u0275\u0275textInterpolate2("Page ", ctx_r0.page, " / ", ctx_r0.data == null ? null : ctx_r0.data.pages);
     \u0275\u0275advance();
-    \u0275\u0275property("disabled", ctx_r3.page >= ((ctx_r3.data == null ? null : ctx_r3.data.pages) ?? 1));
+    \u0275\u0275property("disabled", ctx_r0.page >= ((ctx_r0.data == null ? null : ctx_r0.data.pages) ?? 1));
   }
 }
-function SaFamillesComponent_Conditional_26_For_16_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_27_For_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 44);
+    \u0275\u0275elementStart(0, "option", 46);
     \u0275\u0275text(1);
     \u0275\u0275pipe(2, "number");
     \u0275\u0275elementEnd();
@@ -1119,99 +1134,119 @@ function SaFamillesComponent_Conditional_26_For_16_Template(rf, ctx) {
     \u0275\u0275textInterpolate2("", p_r7.label, " (", p_r7.prix === 0 ? "Gratuit" : \u0275\u0275pipeBind1(2, 3, p_r7.prix) + " FCFA/mois", ")");
   }
 }
-function SaFamillesComponent_Conditional_26_Conditional_25_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_27_Conditional_23_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "span", 49);
+    \u0275\u0275elementStart(0, "div", 48)(1, "span", 4);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r0.assignErreur, " ");
   }
 }
-function SaFamillesComponent_Conditional_26_Conditional_26_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_27_Conditional_28_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "span", 52);
+  }
+}
+function SaFamillesComponent_Conditional_27_Conditional_29_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275text(0, " Assigner ");
   }
 }
-function SaFamillesComponent_Conditional_26_Template(rf, ctx) {
+function SaFamillesComponent_Conditional_27_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 37);
-    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_26_Template_div_click_0_listener() {
+    \u0275\u0275elementStart(0, "div", 38);
+    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_27_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r6);
-      const ctx_r3 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r3.closeAssign());
+      const ctx_r0 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r0.closeAssign());
     });
-    \u0275\u0275elementStart(1, "div", 38);
-    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_26_Template_div_click_1_listener($event) {
+    \u0275\u0275elementStart(1, "div", 39);
+    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_27_Template_div_click_1_listener($event) {
       \u0275\u0275restoreView(_r6);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275elementStart(2, "div", 39)(3, "h3");
+    \u0275\u0275elementStart(2, "div", 40)(3, "h3");
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "button", 40);
-    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_26_Template_button_click_5_listener() {
+    \u0275\u0275elementStart(5, "button", 41);
+    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_27_Template_button_click_5_listener() {
       \u0275\u0275restoreView(_r6);
-      const ctx_r3 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r3.closeAssign());
+      const ctx_r0 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r0.closeAssign());
     });
     \u0275\u0275elementStart(6, "span", 4);
     \u0275\u0275text(7, "close");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(8, "div", 41)(9, "div", 42)(10, "label");
-    \u0275\u0275text(11, "Plan");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "select", 43);
-    \u0275\u0275twoWayListener("ngModelChange", function SaFamillesComponent_Conditional_26_Template_select_ngModelChange_12_listener($event) {
-      \u0275\u0275restoreView(_r6);
-      const ctx_r3 = \u0275\u0275nextContext();
-      \u0275\u0275twoWayBindingSet(ctx_r3.assignModal.planId, $event) || (ctx_r3.assignModal.planId = $event);
-      return \u0275\u0275resetView($event);
-    });
-    \u0275\u0275elementStart(13, "option", 9);
-    \u0275\u0275text(14, "\u2014 Choisir un plan \u2014");
-    \u0275\u0275elementEnd();
-    \u0275\u0275repeaterCreate(15, SaFamillesComponent_Conditional_26_For_16_Template, 3, 5, "option", 44, _forTrack03);
+    \u0275\u0275elementStart(8, "div", 42)(9, "div", 43)(10, "label");
+    \u0275\u0275text(11, "Plan ");
+    \u0275\u0275elementStart(12, "span", 44);
+    \u0275\u0275text(13, "*");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(17, "div", 42)(18, "label");
-    \u0275\u0275text(19, "Date de fin (optionnel \u2014 vide = ind\xE9fini)");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "input", 45);
-    \u0275\u0275twoWayListener("ngModelChange", function SaFamillesComponent_Conditional_26_Template_input_ngModelChange_20_listener($event) {
+    \u0275\u0275elementStart(14, "select", 45);
+    \u0275\u0275twoWayListener("ngModelChange", function SaFamillesComponent_Conditional_27_Template_select_ngModelChange_14_listener($event) {
       \u0275\u0275restoreView(_r6);
-      const ctx_r3 = \u0275\u0275nextContext();
-      \u0275\u0275twoWayBindingSet(ctx_r3.assignModal.dateFin, $event) || (ctx_r3.assignModal.dateFin = $event);
+      const ctx_r0 = \u0275\u0275nextContext();
+      \u0275\u0275twoWayBindingSet(ctx_r0.assignModal.planId, $event) || (ctx_r0.assignModal.planId = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(21, "div", 46)(22, "button", 47);
-    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_26_Template_button_click_22_listener() {
-      \u0275\u0275restoreView(_r6);
-      const ctx_r3 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r3.closeAssign());
-    });
-    \u0275\u0275text(23, "Annuler");
+    \u0275\u0275elementStart(15, "option", 9);
+    \u0275\u0275text(16, "\u2014 Choisir un plan \u2014");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(24, "button", 48);
-    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_26_Template_button_click_24_listener() {
+    \u0275\u0275repeaterCreate(17, SaFamillesComponent_Conditional_27_For_18_Template, 3, 5, "option", 46, _forTrack03);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(19, "div", 43)(20, "label");
+    \u0275\u0275text(21, "Date de fin (optionnel \u2014 vide = ind\xE9fini)");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(22, "input", 47);
+    \u0275\u0275twoWayListener("ngModelChange", function SaFamillesComponent_Conditional_27_Template_input_ngModelChange_22_listener($event) {
       \u0275\u0275restoreView(_r6);
-      const ctx_r3 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r3.confirmAssign());
+      const ctx_r0 = \u0275\u0275nextContext();
+      \u0275\u0275twoWayBindingSet(ctx_r0.assignModal.dateFin, $event) || (ctx_r0.assignModal.dateFin = $event);
+      return \u0275\u0275resetView($event);
     });
-    \u0275\u0275conditionalCreate(25, SaFamillesComponent_Conditional_26_Conditional_25_Template, 1, 0, "span", 49)(26, SaFamillesComponent_Conditional_26_Conditional_26_Template, 1, 0);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275conditionalCreate(23, SaFamillesComponent_Conditional_27_Conditional_23_Template, 4, 1, "div", 48);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(24, "div", 49)(25, "button", 50);
+    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_27_Template_button_click_25_listener() {
+      \u0275\u0275restoreView(_r6);
+      const ctx_r0 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r0.closeAssign());
+    });
+    \u0275\u0275text(26, "Annuler");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(27, "button", 51);
+    \u0275\u0275listener("click", function SaFamillesComponent_Conditional_27_Template_button_click_27_listener() {
+      \u0275\u0275restoreView(_r6);
+      const ctx_r0 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r0.confirmAssign());
+    });
+    \u0275\u0275conditionalCreate(28, SaFamillesComponent_Conditional_27_Conditional_28_Template, 1, 0, "span", 52)(29, SaFamillesComponent_Conditional_27_Conditional_29_Template, 1, 0);
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
-    const ctx_r3 = \u0275\u0275nextContext();
+    const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate1("Assigner un plan \u2014 ", ctx_r3.assignModal.famille.nom);
-    \u0275\u0275advance(8);
-    \u0275\u0275twoWayProperty("ngModel", ctx_r3.assignModal.planId);
+    \u0275\u0275textInterpolate1("Assigner un plan \u2014 ", ctx_r0.assignModal.famille.nom);
+    \u0275\u0275advance(10);
+    \u0275\u0275twoWayProperty("ngModel", ctx_r0.assignModal.planId);
     \u0275\u0275advance(3);
-    \u0275\u0275repeater(ctx_r3.plans);
+    \u0275\u0275repeater(ctx_r0.plans);
     \u0275\u0275advance(5);
-    \u0275\u0275twoWayProperty("ngModel", ctx_r3.assignModal.dateFin);
-    \u0275\u0275advance(4);
-    \u0275\u0275property("disabled", !ctx_r3.assignModal.planId || ctx_r3.assigning);
+    \u0275\u0275twoWayProperty("ngModel", ctx_r0.assignModal.dateFin);
     \u0275\u0275advance();
-    \u0275\u0275conditional(ctx_r3.assigning ? 25 : 26);
+    \u0275\u0275conditional(ctx_r0.assignErreur ? 23 : -1);
+    \u0275\u0275advance(4);
+    \u0275\u0275property("disabled", !ctx_r0.assignModal.planId || ctx_r0.assigning);
+    \u0275\u0275advance();
+    \u0275\u0275conditional(ctx_r0.assigning ? 28 : 29);
   }
 }
 var SaFamillesComponent = class _SaFamillesComponent {
@@ -1222,10 +1257,12 @@ var SaFamillesComponent = class _SaFamillesComponent {
   page = 1;
   statut = "";
   actionLoading = "";
+  actionErreur = null;
   // Assign-plan modal
   assignModal = null;
   plans = [];
   assigning = false;
+  assignErreur = null;
   // Detail expand
   expandedId = null;
   detailData = null;
@@ -1267,28 +1304,37 @@ var SaFamillesComponent = class _SaFamillesComponent {
     if (!confirm(message))
       return;
     this.actionLoading = f.id;
+    this.actionErreur = null;
     this.sa.patchFamille(f.id, { statut: newStatut }).subscribe({
       next: (updated) => {
         f.statut = updated.statut;
         this.actionLoading = "";
       },
-      error: () => this.actionLoading = ""
+      error: (err) => {
+        this.actionLoading = "";
+        this.actionErreur = err?.error?.error ?? "Erreur lors du changement de statut.";
+      }
     });
   }
   delete(f) {
     if (!confirm(`Supprimer d\xE9finitivement la famille "${f.nom}" ? Cette action est irr\xE9versible.`))
       return;
     this.actionLoading = f.id;
+    this.actionErreur = null;
     this.sa.deleteFamille(f.id).subscribe({
       next: () => {
         this.load();
         this.actionLoading = "";
       },
-      error: () => this.actionLoading = ""
+      error: (err) => {
+        this.actionLoading = "";
+        this.actionErreur = err?.error?.error ?? "Erreur lors de la suppression.";
+      }
     });
   }
   openAssign(f) {
     this.assignModal = { famille: f, planId: f.subscription?.plan?.id ?? "", dateFin: "" };
+    this.assignErreur = null;
   }
   closeAssign() {
     this.assignModal = null;
@@ -1296,6 +1342,10 @@ var SaFamillesComponent = class _SaFamillesComponent {
   confirmAssign() {
     if (!this.assignModal || !this.assignModal.planId)
       return;
+    const planLabel = this.plans.find((p) => p.id === this.assignModal.planId)?.label ?? this.assignModal.planId;
+    if (!confirm(`Assigner le plan "${planLabel}" \xE0 "${this.assignModal.famille.nom}" ? Cela modifie sa facturation.`))
+      return;
+    this.assignErreur = null;
     this.assigning = true;
     this.sa.assignPlan(this.assignModal.famille.id, this.assignModal.planId, this.assignModal.dateFin || void 0).subscribe({
       next: (sub) => {
@@ -1305,7 +1355,10 @@ var SaFamillesComponent = class _SaFamillesComponent {
         this.assignModal = null;
         this.assigning = false;
       },
-      error: () => this.assigning = false
+      error: (err) => {
+        this.assigning = false;
+        this.assignErreur = err?.error?.error ?? "Erreur lors de l'assignation du plan.";
+      }
     });
   }
   toggleDetail(f) {
@@ -1330,7 +1383,7 @@ var SaFamillesComponent = class _SaFamillesComponent {
   static \u0275fac = function SaFamillesComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _SaFamillesComponent)(\u0275\u0275directiveInject(SuperAdminService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SaFamillesComponent, selectors: [["sa-familles"]], standalone: false, decls: 27, vars: 5, consts: [[1, "sa-page"], [1, "sa-page-header"], [1, "sa-header-row"], [1, "sa-export-btn", 3, "click"], [1, "material-icons-round"], [1, "sa-toolbar"], [1, "sa-search"], ["type", "text", "placeholder", "Rechercher par nom...", 3, "ngModelChange", "keyup.enter", "ngModel"], [3, "ngModelChange", "change", "ngModel"], ["value", ""], ["value", "actif"], ["value", "suspendu"], [1, "sa-loading"], [1, "sa-modal-overlay"], [1, "sa-table-wrap"], [1, "sa-table"], [1, "sa-pagination"], [3, "click", "disabled"], [1, "sa-expand-cell"], [1, "sa-expand-btn", 3, "click"], [1, "sa-badge", "plan"], [1, "sa-badge", "grey"], [1, "sa-badge"], [1, "sa-actions"], ["title", "Assigner un plan", 1, "sa-act-btn", "blue", 3, "click"], [1, "sa-act-btn", 3, "click", "disabled", "title"], ["title", "Supprimer", 1, "sa-act-btn", "danger", 3, "click", "disabled"], [1, "sa-detail-row"], ["colspan", "9"], [1, "sa-detail-loading"], [1, "sa-detail-panel"], [1, "sa-detail-section"], [1, "sa-membres-list"], [1, "sa-membre-chip"], [1, "sa-detail-counts"], [1, "sa-role-badge"], [1, "sa-detail-sub"], [1, "sa-modal-overlay", 3, "click"], [1, "sa-modal", 3, "click"], [1, "sa-modal-header"], [1, "sa-modal-close", 3, "click"], [1, "sa-modal-body"], [1, "sa-field"], [3, "ngModelChange", "ngModel"], [3, "value"], ["type", "date", 3, "ngModelChange", "ngModel"], [1, "sa-modal-footer"], [1, "sa-btn-cancel", 3, "click"], [1, "sa-btn-confirm", 3, "click", "disabled"], [1, "sa-spinner-sm"]], template: function SaFamillesComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SaFamillesComponent, selectors: [["sa-familles"]], standalone: false, decls: 28, vars: 6, consts: [[1, "sa-page"], [1, "sa-page-header"], [1, "sa-header-row"], [1, "sa-export-btn", 3, "click"], [1, "material-icons-round"], [1, "sa-toolbar"], [1, "sa-search"], ["type", "text", "placeholder", "Rechercher par nom...", 3, "ngModelChange", "keyup.enter", "ngModel"], [3, "ngModelChange", "change", "ngModel"], ["value", ""], ["value", "actif"], ["value", "suspendu"], [1, "error-state", 2, "margin-bottom", "16px"], [1, "sa-loading"], [1, "sa-modal-overlay"], [1, "sa-table-wrap"], [1, "sa-table"], [1, "sa-pagination"], [3, "click", "disabled"], [1, "sa-expand-cell"], [1, "sa-expand-btn", 3, "click"], [1, "sa-badge", "plan"], [1, "sa-badge", "grey"], [1, "sa-badge"], [1, "sa-actions"], ["title", "Assigner un plan", 1, "sa-act-btn", "blue", 3, "click"], [1, "sa-act-btn", 3, "click", "disabled", "title"], ["title", "Supprimer", 1, "sa-act-btn", "danger", 3, "click", "disabled"], [1, "sa-detail-row"], ["colspan", "9"], [1, "sa-detail-loading"], [1, "sa-detail-panel"], [1, "sa-detail-section"], [1, "sa-membres-list"], [1, "sa-membre-chip"], [1, "sa-detail-counts"], [1, "sa-role-badge"], [1, "sa-detail-sub"], [1, "sa-modal-overlay", 3, "click"], [1, "sa-modal", 3, "click"], [1, "sa-modal-header"], [1, "sa-modal-close", 3, "click"], [1, "sa-modal-body"], [1, "sa-field"], [1, "required"], ["required", "", 3, "ngModelChange", "ngModel"], [3, "value"], ["type", "date", 3, "ngModelChange", "ngModel"], [1, "error-state"], [1, "sa-modal-footer"], [1, "sa-btn-cancel", 3, "click"], [1, "sa-btn-confirm", 3, "click", "disabled"], [1, "sa-spinner-sm"]], template: function SaFamillesComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div")(4, "h1");
       \u0275\u0275text(5, "Familles");
@@ -1376,9 +1429,10 @@ var SaFamillesComponent = class _SaFamillesComponent {
       \u0275\u0275elementStart(22, "option", 11);
       \u0275\u0275text(23, "Suspendus");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275conditionalCreate(24, SaFamillesComponent_Conditional_24_Template, 2, 0, "div", 12)(25, SaFamillesComponent_Conditional_25_Template, 31, 4);
+      \u0275\u0275conditionalCreate(24, SaFamillesComponent_Conditional_24_Template, 4, 1, "div", 12);
+      \u0275\u0275conditionalCreate(25, SaFamillesComponent_Conditional_25_Template, 2, 0, "div", 13)(26, SaFamillesComponent_Conditional_26_Template, 31, 4);
       \u0275\u0275elementEnd();
-      \u0275\u0275conditionalCreate(26, SaFamillesComponent_Conditional_26_Template, 27, 5, "div", 13);
+      \u0275\u0275conditionalCreate(27, SaFamillesComponent_Conditional_27_Template, 30, 6, "div", 14);
     }
     if (rf & 2) {
       \u0275\u0275advance(7);
@@ -1388,11 +1442,13 @@ var SaFamillesComponent = class _SaFamillesComponent {
       \u0275\u0275advance();
       \u0275\u0275twoWayProperty("ngModel", ctx.statut);
       \u0275\u0275advance(7);
-      \u0275\u0275conditional(ctx.loading ? 24 : 25);
+      \u0275\u0275conditional(ctx.actionErreur ? 24 : -1);
+      \u0275\u0275advance();
+      \u0275\u0275conditional(ctx.loading ? 25 : 26);
       \u0275\u0275advance(2);
-      \u0275\u0275conditional(ctx.assignModal ? 26 : -1);
+      \u0275\u0275conditional(ctx.assignModal ? 27 : -1);
     }
-  }, dependencies: [NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, DecimalPipe, DatePipe], styles: ["\n\n.sa-header-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  gap: 12px;\n}\n.sa-export-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n  cursor: pointer;\n  transition: all 0.15s;\n  flex-shrink: 0;\n}\n.sa-export-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n.sa-export-btn[_ngcontent-%COMP%]:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-row-suspended[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  opacity: 0.55;\n}\n.sa-expand-cell[_ngcontent-%COMP%] {\n  width: 32px;\n  padding-right: 0 !important;\n}\n.sa-expand-btn[_ngcontent-%COMP%] {\n  width: 28px;\n  height: 28px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #94A3B8;\n  border-radius: 6px;\n}\n.sa-expand-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px;\n}\n.sa-expand-btn[_ngcontent-%COMP%]:hover {\n  background: #F1F5F9;\n  color: #374151;\n}\n.sa-act-btn.blue[_ngcontent-%COMP%]:hover {\n  border-color: #3B82F6;\n  color: #3B82F6;\n  background: #EFF6FF;\n}\n.sa-detail-row[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  background: #F8FAFC !important;\n  padding: 0 !important;\n}\n.sa-detail-loading[_ngcontent-%COMP%] {\n  padding: 16px;\n  color: #94A3B8;\n  font-size: 13px;\n}\n.sa-detail-panel[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 24px;\n  flex-wrap: wrap;\n  padding: 16px 20px;\n}\n.sa-detail-section[_ngcontent-%COMP%] {\n  min-width: 200px;\n}\n.sa-detail-section[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n  display: block;\n  margin-bottom: 8px;\n}\n.sa-membres-list[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.sa-membre-chip[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: #fff;\n  border: 1px solid #E2E8F0;\n  border-radius: 20px;\n  padding: 4px 10px;\n  font-size: 12px;\n  color: #374151;\n}\n.sa-membre-chip[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #94A3B8;\n}\n.sa-role-badge[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  color: #6366F1;\n  padding: 1px 6px;\n  border-radius: 10px;\n  font-size: 10px;\n  font-weight: 600;\n  margin-left: 2px;\n}\n.sa-detail-counts[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  flex-wrap: wrap;\n}\n.sa-detail-counts[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  color: #374151;\n}\n.sa-detail-counts[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #94A3B8;\n}\n.sa-detail-sub[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #374151;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.sa-modal-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  z-index: 1000;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.sa-modal[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 16px;\n  width: 440px;\n  max-width: 95vw;\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);\n  overflow: hidden;\n}\n.sa-modal-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 20px 0;\n}\n.sa-modal-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0;\n}\n.sa-modal-close[_ngcontent-%COMP%] {\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #94A3B8;\n  display: flex;\n}\n.sa-modal-close[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 22px;\n}\n.sa-modal-close[_ngcontent-%COMP%]:hover {\n  color: #374151;\n}\n.sa-modal-body[_ngcontent-%COMP%] {\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n}\n.sa-field[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.sa-field[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 500;\n}\n.sa-field[_ngcontent-%COMP%]   select[_ngcontent-%COMP%], \n.sa-field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  padding: 9px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-field[_ngcontent-%COMP%]   select[_ngcontent-%COMP%]:focus, \n.sa-field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:focus {\n  border-color: #6366F1;\n}\n.sa-modal-footer[_ngcontent-%COMP%] {\n  padding: 0 20px 20px;\n  display: flex;\n  gap: 10px;\n  justify-content: flex-end;\n}\n.sa-btn-cancel[_ngcontent-%COMP%] {\n  padding: 9px 16px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n  cursor: pointer;\n}\n.sa-btn-cancel[_ngcontent-%COMP%]:hover {\n  border-color: #94A3B8;\n}\n.sa-btn-confirm[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 20px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n}\n.sa-btn-confirm[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-btn-confirm[_ngcontent-%COMP%]:hover:not(:disabled) {\n  background: #4F46E5;\n}\n.sa-spinner-sm[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.7s linear infinite;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.sa-page-header[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.sa-page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading[_ngcontent-%COMP%] {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  margin-bottom: 20px;\n  align-items: center;\n}\n.sa-toolbar[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  padding: 8px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 14px;\n  color: #374151;\n}\n.sa-search[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  padding: 0 12px;\n  flex: 1;\n  max-width: 360px;\n}\n.sa-search[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #94A3B8;\n  font-size: 18px;\n}\n.sa-search[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  border: none;\n  outline: none;\n  padding: 9px 0;\n  font-size: 14px;\n  flex: 1;\n}\n.sa-table-wrap[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table[_ngcontent-%COMP%] {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:last-child   td[_ngcontent-%COMP%] {\n  border-bottom: none;\n}\n.sa-table[_ngcontent-%COMP%]   tr.suspended[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  opacity: 0.5;\n}\n.sa-table[_ngcontent-%COMP%]   code[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 12px;\n  color: #6366F1;\n}\n.sa-badge[_ngcontent-%COMP%] {\n  display: inline-block;\n  padding: 2px 8px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.sa-badge.green[_ngcontent-%COMP%] {\n  background: #DCFCE7;\n  color: #16A34A;\n}\n.sa-badge.red[_ngcontent-%COMP%] {\n  background: #FEE2E2;\n  color: #DC2626;\n}\n.sa-badge.purple[_ngcontent-%COMP%] {\n  background: #F5F3FF;\n  color: #7C3AED;\n}\n.sa-badge.grey[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  color: #64748B;\n}\n.sa-badge.plan[_ngcontent-%COMP%] {\n  background: #EFF6FF;\n  color: #2563EB;\n}\n.sa-badge.ml[_ngcontent-%COMP%] {\n  margin-left: 6px;\n}\n.sa-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n}\n.sa-act-btn[_ngcontent-%COMP%] {\n  width: 32px;\n  height: 32px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  transition: all 0.15s;\n}\n.sa-act-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n.sa-act-btn[_ngcontent-%COMP%]:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger[_ngcontent-%COMP%]:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green[_ngcontent-%COMP%]:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-pagination[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  padding: 16px;\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  padding: 6px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-familles.component.css.map */"] });
+  }, dependencies: [NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, RequiredValidator, NgModel, DecimalPipe, DatePipe], styles: ["\n\n.required[_ngcontent-%COMP%] {\n  color: #EF4444;\n}\n.sa-header-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  gap: 12px;\n}\n.sa-export-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n  cursor: pointer;\n  transition: all 0.15s;\n  flex-shrink: 0;\n}\n.sa-export-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n.sa-export-btn[_ngcontent-%COMP%]:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-row-suspended[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  opacity: 0.55;\n}\n.sa-expand-cell[_ngcontent-%COMP%] {\n  width: 32px;\n  padding-right: 0 !important;\n}\n.sa-expand-btn[_ngcontent-%COMP%] {\n  width: 28px;\n  height: 28px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #94A3B8;\n  border-radius: 6px;\n}\n.sa-expand-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px;\n}\n.sa-expand-btn[_ngcontent-%COMP%]:hover {\n  background: #F1F5F9;\n  color: #374151;\n}\n.sa-act-btn.blue[_ngcontent-%COMP%]:hover {\n  border-color: #3B82F6;\n  color: #3B82F6;\n  background: #EFF6FF;\n}\n.sa-detail-row[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  background: #F8FAFC !important;\n  padding: 0 !important;\n}\n.sa-detail-loading[_ngcontent-%COMP%] {\n  padding: 16px;\n  color: #94A3B8;\n  font-size: 13px;\n}\n.sa-detail-panel[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 24px;\n  flex-wrap: wrap;\n  padding: 16px 20px;\n}\n.sa-detail-section[_ngcontent-%COMP%] {\n  min-width: 200px;\n}\n.sa-detail-section[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n  display: block;\n  margin-bottom: 8px;\n}\n.sa-membres-list[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.sa-membre-chip[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: #fff;\n  border: 1px solid #E2E8F0;\n  border-radius: 20px;\n  padding: 4px 10px;\n  font-size: 12px;\n  color: #374151;\n}\n.sa-membre-chip[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #94A3B8;\n}\n.sa-role-badge[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  color: #6366F1;\n  padding: 1px 6px;\n  border-radius: 10px;\n  font-size: 10px;\n  font-weight: 600;\n  margin-left: 2px;\n}\n.sa-detail-counts[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  flex-wrap: wrap;\n}\n.sa-detail-counts[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  color: #374151;\n}\n.sa-detail-counts[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #94A3B8;\n}\n.sa-detail-sub[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #374151;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.sa-modal-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  z-index: 1000;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.sa-modal[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 16px;\n  width: 440px;\n  max-width: 95vw;\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);\n  overflow: hidden;\n}\n.sa-modal-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 20px 0;\n}\n.sa-modal-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0;\n}\n.sa-modal-close[_ngcontent-%COMP%] {\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #94A3B8;\n  display: flex;\n}\n.sa-modal-close[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 22px;\n}\n.sa-modal-close[_ngcontent-%COMP%]:hover {\n  color: #374151;\n}\n.sa-modal-body[_ngcontent-%COMP%] {\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n}\n.sa-field[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.sa-field[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 500;\n}\n.sa-field[_ngcontent-%COMP%]   select[_ngcontent-%COMP%], \n.sa-field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  padding: 9px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-field[_ngcontent-%COMP%]   select[_ngcontent-%COMP%]:focus, \n.sa-field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:focus {\n  border-color: #6366F1;\n}\n.sa-modal-footer[_ngcontent-%COMP%] {\n  padding: 0 20px 20px;\n  display: flex;\n  gap: 10px;\n  justify-content: flex-end;\n}\n.sa-btn-cancel[_ngcontent-%COMP%] {\n  padding: 9px 16px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n  cursor: pointer;\n}\n.sa-btn-cancel[_ngcontent-%COMP%]:hover {\n  border-color: #94A3B8;\n}\n.sa-btn-confirm[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 20px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n}\n.sa-btn-confirm[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-btn-confirm[_ngcontent-%COMP%]:hover:not(:disabled) {\n  background: #4F46E5;\n}\n.sa-spinner-sm[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.7s linear infinite;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.sa-page-header[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.sa-page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading[_ngcontent-%COMP%] {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  margin-bottom: 20px;\n  align-items: center;\n}\n.sa-toolbar[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  padding: 8px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 14px;\n  color: #374151;\n}\n.sa-search[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  padding: 0 12px;\n  flex: 1;\n  max-width: 360px;\n}\n.sa-search[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #94A3B8;\n  font-size: 18px;\n}\n.sa-search[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  border: none;\n  outline: none;\n  padding: 9px 0;\n  font-size: 14px;\n  flex: 1;\n}\n.sa-table-wrap[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table[_ngcontent-%COMP%] {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:last-child   td[_ngcontent-%COMP%] {\n  border-bottom: none;\n}\n.sa-table[_ngcontent-%COMP%]   tr.suspended[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  opacity: 0.5;\n}\n.sa-table[_ngcontent-%COMP%]   code[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 12px;\n  color: #6366F1;\n}\n.sa-badge[_ngcontent-%COMP%] {\n  display: inline-block;\n  padding: 2px 8px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.sa-badge.green[_ngcontent-%COMP%] {\n  background: #DCFCE7;\n  color: #16A34A;\n}\n.sa-badge.red[_ngcontent-%COMP%] {\n  background: #FEE2E2;\n  color: #DC2626;\n}\n.sa-badge.purple[_ngcontent-%COMP%] {\n  background: #F5F3FF;\n  color: #7C3AED;\n}\n.sa-badge.grey[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  color: #64748B;\n}\n.sa-badge.plan[_ngcontent-%COMP%] {\n  background: #EFF6FF;\n  color: #2563EB;\n}\n.sa-badge.ml[_ngcontent-%COMP%] {\n  margin-left: 6px;\n}\n.sa-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n}\n.sa-act-btn[_ngcontent-%COMP%] {\n  width: 32px;\n  height: 32px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  transition: all 0.15s;\n}\n.sa-act-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n.sa-act-btn[_ngcontent-%COMP%]:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger[_ngcontent-%COMP%]:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green[_ngcontent-%COMP%]:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-pagination[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  padding: 16px;\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  padding: 6px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-familles.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SaFamillesComponent, [{
@@ -1421,6 +1477,12 @@ var SaFamillesComponent = class _SaFamillesComponent {
       <option value="suspendu">Suspendus</option>\r
     </select>\r
   </div>\r
+\r
+  @if (actionErreur) {\r
+    <div class="error-state" style="margin-bottom:16px">\r
+      <span class="material-icons-round">error_outline</span>{{ actionErreur }}\r
+    </div>\r
+  }\r
 \r
   @if (loading) {\r
     <div class="sa-loading">Chargement...</div>\r
@@ -1551,8 +1613,8 @@ var SaFamillesComponent = class _SaFamillesComponent {
       </div>\r
       <div class="sa-modal-body">\r
         <div class="sa-field">\r
-          <label>Plan</label>\r
-          <select [(ngModel)]="assignModal.planId">\r
+          <label>Plan <span class="required">*</span></label>\r
+          <select [(ngModel)]="assignModal.planId" required>\r
             <option value="">\u2014 Choisir un plan \u2014</option>\r
             @for (p of plans; track p.id) {\r
               <option [value]="p.id">{{ p.label }} ({{ p.prix === 0 ? 'Gratuit' : (p.prix | number) + ' FCFA/mois' }})</option>\r
@@ -1563,6 +1625,11 @@ var SaFamillesComponent = class _SaFamillesComponent {
           <label>Date de fin (optionnel \u2014 vide = ind\xE9fini)</label>\r
           <input type="date" [(ngModel)]="assignModal.dateFin"/>\r
         </div>\r
+        @if (assignErreur) {\r
+          <div class="error-state">\r
+            <span class="material-icons-round">error_outline</span>{{ assignErreur }}\r
+          </div>\r
+        }\r
       </div>\r
       <div class="sa-modal-footer">\r
         <button class="sa-btn-cancel" (click)="closeAssign()">Annuler</button>\r
@@ -1573,7 +1640,7 @@ var SaFamillesComponent = class _SaFamillesComponent {
     </div>\r
   </div>\r
 }\r
-`, styles: ["/* src/app/superadmin/pages/familles/sa-familles.component.scss */\n.sa-header-row {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  gap: 12px;\n}\n.sa-export-btn {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n  cursor: pointer;\n  transition: all 0.15s;\n  flex-shrink: 0;\n}\n.sa-export-btn .material-icons-round {\n  font-size: 16px;\n}\n.sa-export-btn:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-row-suspended td {\n  opacity: 0.55;\n}\n.sa-expand-cell {\n  width: 32px;\n  padding-right: 0 !important;\n}\n.sa-expand-btn {\n  width: 28px;\n  height: 28px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #94A3B8;\n  border-radius: 6px;\n}\n.sa-expand-btn .material-icons-round {\n  font-size: 20px;\n}\n.sa-expand-btn:hover {\n  background: #F1F5F9;\n  color: #374151;\n}\n.sa-act-btn.blue:hover {\n  border-color: #3B82F6;\n  color: #3B82F6;\n  background: #EFF6FF;\n}\n.sa-detail-row td {\n  background: #F8FAFC !important;\n  padding: 0 !important;\n}\n.sa-detail-loading {\n  padding: 16px;\n  color: #94A3B8;\n  font-size: 13px;\n}\n.sa-detail-panel {\n  display: flex;\n  gap: 24px;\n  flex-wrap: wrap;\n  padding: 16px 20px;\n}\n.sa-detail-section {\n  min-width: 200px;\n}\n.sa-detail-section strong {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n  display: block;\n  margin-bottom: 8px;\n}\n.sa-membres-list {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.sa-membre-chip {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: #fff;\n  border: 1px solid #E2E8F0;\n  border-radius: 20px;\n  padding: 4px 10px;\n  font-size: 12px;\n  color: #374151;\n}\n.sa-membre-chip .material-icons-round {\n  font-size: 14px;\n  color: #94A3B8;\n}\n.sa-role-badge {\n  background: #F1F5F9;\n  color: #6366F1;\n  padding: 1px 6px;\n  border-radius: 10px;\n  font-size: 10px;\n  font-weight: 600;\n  margin-left: 2px;\n}\n.sa-detail-counts {\n  display: flex;\n  gap: 16px;\n  flex-wrap: wrap;\n}\n.sa-detail-counts span {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  color: #374151;\n}\n.sa-detail-counts span .material-icons-round {\n  font-size: 16px;\n  color: #94A3B8;\n}\n.sa-detail-sub {\n  font-size: 13px;\n  color: #374151;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.sa-modal-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  z-index: 1000;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.sa-modal {\n  background: #fff;\n  border-radius: 16px;\n  width: 440px;\n  max-width: 95vw;\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);\n  overflow: hidden;\n}\n.sa-modal-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 20px 0;\n}\n.sa-modal-header h3 {\n  font-size: 16px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0;\n}\n.sa-modal-close {\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #94A3B8;\n  display: flex;\n}\n.sa-modal-close .material-icons-round {\n  font-size: 22px;\n}\n.sa-modal-close:hover {\n  color: #374151;\n}\n.sa-modal-body {\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n}\n.sa-field {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.sa-field label {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 500;\n}\n.sa-field select,\n.sa-field input {\n  padding: 9px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-field select:focus,\n.sa-field input:focus {\n  border-color: #6366F1;\n}\n.sa-modal-footer {\n  padding: 0 20px 20px;\n  display: flex;\n  gap: 10px;\n  justify-content: flex-end;\n}\n.sa-btn-cancel {\n  padding: 9px 16px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n  cursor: pointer;\n}\n.sa-btn-cancel:hover {\n  border-color: #94A3B8;\n}\n.sa-btn-confirm {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 20px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n}\n.sa-btn-confirm:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-btn-confirm:hover:not(:disabled) {\n  background: #4F46E5;\n}\n.sa-spinner-sm {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: spin 0.7s linear infinite;\n}\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.sa-page-header {\n  margin-bottom: 24px;\n}\n.sa-page-header h1 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header p {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-toolbar {\n  display: flex;\n  gap: 12px;\n  margin-bottom: 20px;\n  align-items: center;\n}\n.sa-toolbar select {\n  padding: 8px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 14px;\n  color: #374151;\n}\n.sa-search {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  padding: 0 12px;\n  flex: 1;\n  max-width: 360px;\n}\n.sa-search .material-icons-round {\n  color: #94A3B8;\n  font-size: 18px;\n}\n.sa-search input {\n  border: none;\n  outline: none;\n  padding: 9px 0;\n  font-size: 14px;\n  flex: 1;\n}\n.sa-table-wrap {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table th {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table td {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table tr:last-child td {\n  border-bottom: none;\n}\n.sa-table tr.suspended td {\n  opacity: 0.5;\n}\n.sa-table code {\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 12px;\n  color: #6366F1;\n}\n.sa-badge {\n  display: inline-block;\n  padding: 2px 8px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.sa-badge.green {\n  background: #DCFCE7;\n  color: #16A34A;\n}\n.sa-badge.red {\n  background: #FEE2E2;\n  color: #DC2626;\n}\n.sa-badge.purple {\n  background: #F5F3FF;\n  color: #7C3AED;\n}\n.sa-badge.grey {\n  background: #F1F5F9;\n  color: #64748B;\n}\n.sa-badge.plan {\n  background: #EFF6FF;\n  color: #2563EB;\n}\n.sa-badge.ml {\n  margin-left: 6px;\n}\n.sa-actions {\n  display: flex;\n  gap: 6px;\n}\n.sa-act-btn {\n  width: 32px;\n  height: 32px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  transition: all 0.15s;\n}\n.sa-act-btn .material-icons-round {\n  font-size: 16px;\n}\n.sa-act-btn:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-pagination {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  padding: 16px;\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-pagination button {\n  padding: 6px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n.sa-pagination button:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-pagination button:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-familles.component.css.map */\n"] }]
+`, styles: ["/* src/app/superadmin/pages/familles/sa-familles.component.scss */\n.required {\n  color: #EF4444;\n}\n.sa-header-row {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  gap: 12px;\n}\n.sa-export-btn {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n  cursor: pointer;\n  transition: all 0.15s;\n  flex-shrink: 0;\n}\n.sa-export-btn .material-icons-round {\n  font-size: 16px;\n}\n.sa-export-btn:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-row-suspended td {\n  opacity: 0.55;\n}\n.sa-expand-cell {\n  width: 32px;\n  padding-right: 0 !important;\n}\n.sa-expand-btn {\n  width: 28px;\n  height: 28px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #94A3B8;\n  border-radius: 6px;\n}\n.sa-expand-btn .material-icons-round {\n  font-size: 20px;\n}\n.sa-expand-btn:hover {\n  background: #F1F5F9;\n  color: #374151;\n}\n.sa-act-btn.blue:hover {\n  border-color: #3B82F6;\n  color: #3B82F6;\n  background: #EFF6FF;\n}\n.sa-detail-row td {\n  background: #F8FAFC !important;\n  padding: 0 !important;\n}\n.sa-detail-loading {\n  padding: 16px;\n  color: #94A3B8;\n  font-size: 13px;\n}\n.sa-detail-panel {\n  display: flex;\n  gap: 24px;\n  flex-wrap: wrap;\n  padding: 16px 20px;\n}\n.sa-detail-section {\n  min-width: 200px;\n}\n.sa-detail-section strong {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n  display: block;\n  margin-bottom: 8px;\n}\n.sa-membres-list {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.sa-membre-chip {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: #fff;\n  border: 1px solid #E2E8F0;\n  border-radius: 20px;\n  padding: 4px 10px;\n  font-size: 12px;\n  color: #374151;\n}\n.sa-membre-chip .material-icons-round {\n  font-size: 14px;\n  color: #94A3B8;\n}\n.sa-role-badge {\n  background: #F1F5F9;\n  color: #6366F1;\n  padding: 1px 6px;\n  border-radius: 10px;\n  font-size: 10px;\n  font-weight: 600;\n  margin-left: 2px;\n}\n.sa-detail-counts {\n  display: flex;\n  gap: 16px;\n  flex-wrap: wrap;\n}\n.sa-detail-counts span {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  color: #374151;\n}\n.sa-detail-counts span .material-icons-round {\n  font-size: 16px;\n  color: #94A3B8;\n}\n.sa-detail-sub {\n  font-size: 13px;\n  color: #374151;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.sa-modal-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  z-index: 1000;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.sa-modal {\n  background: #fff;\n  border-radius: 16px;\n  width: 440px;\n  max-width: 95vw;\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);\n  overflow: hidden;\n}\n.sa-modal-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 20px 0;\n}\n.sa-modal-header h3 {\n  font-size: 16px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0;\n}\n.sa-modal-close {\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #94A3B8;\n  display: flex;\n}\n.sa-modal-close .material-icons-round {\n  font-size: 22px;\n}\n.sa-modal-close:hover {\n  color: #374151;\n}\n.sa-modal-body {\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n}\n.sa-field {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.sa-field label {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 500;\n}\n.sa-field select,\n.sa-field input {\n  padding: 9px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-field select:focus,\n.sa-field input:focus {\n  border-color: #6366F1;\n}\n.sa-modal-footer {\n  padding: 0 20px 20px;\n  display: flex;\n  gap: 10px;\n  justify-content: flex-end;\n}\n.sa-btn-cancel {\n  padding: 9px 16px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n  cursor: pointer;\n}\n.sa-btn-cancel:hover {\n  border-color: #94A3B8;\n}\n.sa-btn-confirm {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 20px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n}\n.sa-btn-confirm:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-btn-confirm:hover:not(:disabled) {\n  background: #4F46E5;\n}\n.sa-spinner-sm {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: spin 0.7s linear infinite;\n}\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.sa-page-header {\n  margin-bottom: 24px;\n}\n.sa-page-header h1 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header p {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-toolbar {\n  display: flex;\n  gap: 12px;\n  margin-bottom: 20px;\n  align-items: center;\n}\n.sa-toolbar select {\n  padding: 8px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 14px;\n  color: #374151;\n}\n.sa-search {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  padding: 0 12px;\n  flex: 1;\n  max-width: 360px;\n}\n.sa-search .material-icons-round {\n  color: #94A3B8;\n  font-size: 18px;\n}\n.sa-search input {\n  border: none;\n  outline: none;\n  padding: 9px 0;\n  font-size: 14px;\n  flex: 1;\n}\n.sa-table-wrap {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table th {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table td {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table tr:last-child td {\n  border-bottom: none;\n}\n.sa-table tr.suspended td {\n  opacity: 0.5;\n}\n.sa-table code {\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 12px;\n  color: #6366F1;\n}\n.sa-badge {\n  display: inline-block;\n  padding: 2px 8px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.sa-badge.green {\n  background: #DCFCE7;\n  color: #16A34A;\n}\n.sa-badge.red {\n  background: #FEE2E2;\n  color: #DC2626;\n}\n.sa-badge.purple {\n  background: #F5F3FF;\n  color: #7C3AED;\n}\n.sa-badge.grey {\n  background: #F1F5F9;\n  color: #64748B;\n}\n.sa-badge.plan {\n  background: #EFF6FF;\n  color: #2563EB;\n}\n.sa-badge.ml {\n  margin-left: 6px;\n}\n.sa-actions {\n  display: flex;\n  gap: 6px;\n}\n.sa-act-btn {\n  width: 32px;\n  height: 32px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  transition: all 0.15s;\n}\n.sa-act-btn .material-icons-round {\n  font-size: 16px;\n}\n.sa-act-btn:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-pagination {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  padding: 16px;\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-pagination button {\n  padding: 6px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n.sa-pagination button:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-pagination button:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-familles.component.css.map */\n"] }]
   }], () => [{ type: SuperAdminService }], null);
 })();
 (() => {
@@ -1584,26 +1651,40 @@ var SaFamillesComponent = class _SaFamillesComponent {
 var _forTrack04 = ($index, $item) => $item.id;
 function SaUsersComponent_Conditional_28_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 14);
+    \u0275\u0275elementStart(0, "div", 14)(1, "span", 4);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r0.actionErreur, " ");
+  }
+}
+function SaUsersComponent_Conditional_29_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 15);
     \u0275\u0275text(1, "Chargement...");
     \u0275\u0275elementEnd();
   }
 }
-function SaUsersComponent_Conditional_29_For_20_Conditional_4_Template(rf, ctx) {
+function SaUsersComponent_Conditional_30_For_20_Conditional_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 20);
+    \u0275\u0275elementStart(0, "span", 21);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const u_r3 = \u0275\u0275nextContext().$implicit;
+    const u_r4 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(u_r3.platformRole);
+    \u0275\u0275textInterpolate(u_r4.platformRole);
   }
 }
-function SaUsersComponent_Conditional_29_For_20_For_14_Template(rf, ctx) {
+function SaUsersComponent_Conditional_30_For_20_For_14_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 22);
+    \u0275\u0275elementStart(0, "option", 23);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -1614,13 +1695,13 @@ function SaUsersComponent_Conditional_29_For_20_For_14_Template(rf, ctx) {
     \u0275\u0275textInterpolate(r_r5);
   }
 }
-function SaUsersComponent_Conditional_29_For_20_Template(rf, ctx) {
+function SaUsersComponent_Conditional_30_For_20_Template(rf, ctx) {
   if (rf & 1) {
-    const _r2 = \u0275\u0275getCurrentView();
+    const _r3 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "tr")(1, "td")(2, "strong");
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
-    \u0275\u0275conditionalCreate(4, SaUsersComponent_Conditional_29_For_20_Conditional_4_Template, 2, 1, "span", 20);
+    \u0275\u0275conditionalCreate(4, SaUsersComponent_Conditional_30_For_20_Conditional_4_Template, 2, 1, "span", 21);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(5, "td");
     \u0275\u0275text(6);
@@ -1628,77 +1709,77 @@ function SaUsersComponent_Conditional_29_For_20_Template(rf, ctx) {
     \u0275\u0275elementStart(7, "td");
     \u0275\u0275text(8);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "td")(10, "select", 21);
-    \u0275\u0275listener("ngModelChange", function SaUsersComponent_Conditional_29_For_20_Template_select_ngModelChange_10_listener($event) {
-      const u_r3 = \u0275\u0275restoreView(_r2).$implicit;
-      const ctx_r3 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r3.setRole(u_r3, $event || null));
+    \u0275\u0275elementStart(9, "td")(10, "select", 22);
+    \u0275\u0275listener("ngModelChange", function SaUsersComponent_Conditional_30_For_20_Template_select_ngModelChange_10_listener($event) {
+      const u_r4 = \u0275\u0275restoreView(_r3).$implicit;
+      const ctx_r0 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r0.setRole(u_r4, $event || null));
     });
     \u0275\u0275elementStart(11, "option", 9);
     \u0275\u0275text(12, "\u2014 Aucun \u2014");
     \u0275\u0275elementEnd();
-    \u0275\u0275repeaterCreate(13, SaUsersComponent_Conditional_29_For_20_For_14_Template, 2, 2, "option", 22, \u0275\u0275repeaterTrackByIdentity);
+    \u0275\u0275repeaterCreate(13, SaUsersComponent_Conditional_30_For_20_For_14_Template, 2, 2, "option", 23, \u0275\u0275repeaterTrackByIdentity);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(15, "td")(16, "span", 23);
+    \u0275\u0275elementStart(15, "td")(16, "span", 24);
     \u0275\u0275text(17);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(18, "td");
     \u0275\u0275text(19);
     \u0275\u0275pipe(20, "date");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(21, "td")(22, "div", 24)(23, "button", 25);
-    \u0275\u0275listener("click", function SaUsersComponent_Conditional_29_For_20_Template_button_click_23_listener() {
-      const u_r3 = \u0275\u0275restoreView(_r2).$implicit;
-      const ctx_r3 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r3.toggleSuspend(u_r3));
+    \u0275\u0275elementStart(21, "td")(22, "div", 25)(23, "button", 26);
+    \u0275\u0275listener("click", function SaUsersComponent_Conditional_30_For_20_Template_button_click_23_listener() {
+      const u_r4 = \u0275\u0275restoreView(_r3).$implicit;
+      const ctx_r0 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r0.toggleSuspend(u_r4));
     });
     \u0275\u0275elementStart(24, "span", 4);
     \u0275\u0275text(25);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(26, "button", 26);
-    \u0275\u0275listener("click", function SaUsersComponent_Conditional_29_For_20_Template_button_click_26_listener() {
-      const u_r3 = \u0275\u0275restoreView(_r2).$implicit;
-      const ctx_r3 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r3.delete(u_r3));
+    \u0275\u0275elementStart(26, "button", 27);
+    \u0275\u0275listener("click", function SaUsersComponent_Conditional_30_For_20_Template_button_click_26_listener() {
+      const u_r4 = \u0275\u0275restoreView(_r3).$implicit;
+      const ctx_r0 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r0.delete(u_r4));
     });
     \u0275\u0275elementStart(27, "span", 4);
     \u0275\u0275text(28, "delete");
     \u0275\u0275elementEnd()()()()();
   }
   if (rf & 2) {
-    const u_r3 = ctx.$implicit;
-    const ctx_r3 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("suspended", u_r3.suspended);
+    const u_r4 = ctx.$implicit;
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275classProp("suspended", u_r4.suspended);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate2("", u_r3.prenom, " ", u_r3.nom);
+    \u0275\u0275textInterpolate2("", u_r4.prenom, " ", u_r4.nom);
     \u0275\u0275advance();
-    \u0275\u0275conditional(u_r3.platformRole ? 4 : -1);
+    \u0275\u0275conditional(u_r4.platformRole ? 4 : -1);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(u_r3.email || u_r3.telephone);
+    \u0275\u0275textInterpolate(u_r4.email || u_r4.telephone);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(u_r3._count.familleMembres);
+    \u0275\u0275textInterpolate(u_r4._count.familleMembres);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngModel", u_r3.platformRole)("disabled", ctx_r3.actionLoading === u_r3.id);
+    \u0275\u0275property("ngModel", u_r4.platformRole)("disabled", ctx_r0.actionLoading === u_r4.id);
     \u0275\u0275advance(3);
-    \u0275\u0275repeater(ctx_r3.platformRoles);
+    \u0275\u0275repeater(ctx_r0.platformRoles);
     \u0275\u0275advance(3);
-    \u0275\u0275classProp("green", !u_r3.suspended)("red", u_r3.suspended);
+    \u0275\u0275classProp("green", !u_r4.suspended)("red", u_r4.suspended);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", u_r3.suspended ? "suspendu" : "actif", " ");
+    \u0275\u0275textInterpolate1(" ", u_r4.suspended ? "suspendu" : "actif", " ");
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(20, 19, u_r3.createdAt, "dd/MM/yy"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(20, 19, u_r4.createdAt, "dd/MM/yy"));
     \u0275\u0275advance(4);
-    \u0275\u0275property("disabled", ctx_r3.actionLoading === u_r3.id)("title", u_r3.suspended ? "R\xE9activer" : "Suspendre");
+    \u0275\u0275property("disabled", ctx_r0.actionLoading === u_r4.id)("title", u_r4.suspended ? "R\xE9activer" : "Suspendre");
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(u_r3.suspended ? "lock_open" : "lock");
+    \u0275\u0275textInterpolate(u_r4.suspended ? "lock_open" : "lock");
     \u0275\u0275advance();
-    \u0275\u0275property("disabled", ctx_r3.actionLoading === u_r3.id);
+    \u0275\u0275property("disabled", ctx_r0.actionLoading === u_r4.id);
   }
 }
-function SaUsersComponent_Conditional_29_Template(rf, ctx) {
+function SaUsersComponent_Conditional_30_Template(rf, ctx) {
   if (rf & 1) {
-    const _r1 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 15)(1, "table", 16)(2, "thead")(3, "tr")(4, "th");
+    const _r2 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 16)(1, "table", 17)(2, "thead")(3, "tr")(4, "th");
     \u0275\u0275text(5, "Utilisateur");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "th");
@@ -1720,40 +1801,40 @@ function SaUsersComponent_Conditional_29_Template(rf, ctx) {
     \u0275\u0275text(17, "Actions");
     \u0275\u0275elementEnd()()();
     \u0275\u0275elementStart(18, "tbody");
-    \u0275\u0275repeaterCreate(19, SaUsersComponent_Conditional_29_For_20_Template, 29, 22, "tr", 17, _forTrack04);
+    \u0275\u0275repeaterCreate(19, SaUsersComponent_Conditional_30_For_20_Template, 29, 22, "tr", 18, _forTrack04);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(21, "div", 18)(22, "button", 19);
-    \u0275\u0275listener("click", function SaUsersComponent_Conditional_29_Template_button_click_22_listener() {
-      \u0275\u0275restoreView(_r1);
-      const ctx_r3 = \u0275\u0275nextContext();
-      ctx_r3.page = ctx_r3.page - 1;
-      return \u0275\u0275resetView(ctx_r3.load());
+    \u0275\u0275elementStart(21, "div", 19)(22, "button", 20);
+    \u0275\u0275listener("click", function SaUsersComponent_Conditional_30_Template_button_click_22_listener() {
+      \u0275\u0275restoreView(_r2);
+      const ctx_r0 = \u0275\u0275nextContext();
+      ctx_r0.page = ctx_r0.page - 1;
+      return \u0275\u0275resetView(ctx_r0.load());
     });
     \u0275\u0275text(23, "\u2039 Pr\xE9c\xE9dent");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(24, "span");
     \u0275\u0275text(25);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(26, "button", 19);
-    \u0275\u0275listener("click", function SaUsersComponent_Conditional_29_Template_button_click_26_listener() {
-      \u0275\u0275restoreView(_r1);
-      const ctx_r3 = \u0275\u0275nextContext();
-      ctx_r3.page = ctx_r3.page + 1;
-      return \u0275\u0275resetView(ctx_r3.load());
+    \u0275\u0275elementStart(26, "button", 20);
+    \u0275\u0275listener("click", function SaUsersComponent_Conditional_30_Template_button_click_26_listener() {
+      \u0275\u0275restoreView(_r2);
+      const ctx_r0 = \u0275\u0275nextContext();
+      ctx_r0.page = ctx_r0.page + 1;
+      return \u0275\u0275resetView(ctx_r0.load());
     });
     \u0275\u0275text(27, "Suivant \u203A");
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const ctx_r3 = \u0275\u0275nextContext();
+    const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275advance(19);
-    \u0275\u0275repeater(ctx_r3.data == null ? null : ctx_r3.data.users);
+    \u0275\u0275repeater(ctx_r0.data == null ? null : ctx_r0.data.users);
     \u0275\u0275advance(3);
-    \u0275\u0275property("disabled", ctx_r3.page <= 1);
+    \u0275\u0275property("disabled", ctx_r0.page <= 1);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate2("Page ", ctx_r3.page, " / ", ctx_r3.data == null ? null : ctx_r3.data.pages);
+    \u0275\u0275textInterpolate2("Page ", ctx_r0.page, " / ", ctx_r0.data == null ? null : ctx_r0.data.pages);
     \u0275\u0275advance();
-    \u0275\u0275property("disabled", ctx_r3.page >= ((ctx_r3.data == null ? null : ctx_r3.data.pages) ?? 1));
+    \u0275\u0275property("disabled", ctx_r0.page >= ((ctx_r0.data == null ? null : ctx_r0.data.pages) ?? 1));
   }
 }
 var SaUsersComponent = class _SaUsersComponent {
@@ -1764,6 +1845,7 @@ var SaUsersComponent = class _SaUsersComponent {
   page = 1;
   filterRole = "";
   actionLoading = "";
+  actionErreur = null;
   platformRoles = ["superadmin", "platform_admin", "support"];
   constructor(sa) {
     this.sa = sa;
@@ -1797,13 +1879,15 @@ var SaUsersComponent = class _SaUsersComponent {
     if (!confirm(message))
       return;
     this.actionLoading = u.id;
+    this.actionErreur = null;
     this.sa.patchUser(u.id, { platformRole: role }).subscribe({
       next: (updated) => {
         u.platformRole = updated.platformRole;
         this.actionLoading = "";
       },
-      error: () => {
+      error: (err) => {
         this.actionLoading = "";
+        this.actionErreur = err?.error?.error ?? "Erreur lors du changement de r\xF4le.";
       }
     });
   }
@@ -1813,13 +1897,15 @@ var SaUsersComponent = class _SaUsersComponent {
     if (!confirm(message))
       return;
     this.actionLoading = u.id;
+    this.actionErreur = null;
     this.sa.patchUser(u.id, { suspended: !u.suspended }).subscribe({
       next: (updated) => {
         u.suspended = updated.suspended;
         this.actionLoading = "";
       },
-      error: () => {
+      error: (err) => {
         this.actionLoading = "";
+        this.actionErreur = err?.error?.error ?? "Erreur lors du changement de statut.";
       }
     });
   }
@@ -1827,12 +1913,14 @@ var SaUsersComponent = class _SaUsersComponent {
     if (!confirm(`Supprimer "${u.prenom} ${u.nom}" ? Irr\xE9versible.`))
       return;
     this.actionLoading = u.id;
+    this.actionErreur = null;
     this.sa.deleteUser(u.id).subscribe({
       next: () => {
         this.load();
       },
-      error: () => {
+      error: (err) => {
         this.actionLoading = "";
+        this.actionErreur = err?.error?.error ?? "Erreur lors de la suppression.";
       }
     });
   }
@@ -1842,7 +1930,7 @@ var SaUsersComponent = class _SaUsersComponent {
   static \u0275fac = function SaUsersComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _SaUsersComponent)(\u0275\u0275directiveInject(SuperAdminService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SaUsersComponent, selectors: [["sa-users"]], standalone: false, decls: 30, vars: 4, consts: [[1, "sa-page"], [1, "sa-page-header"], [1, "sa-header-row"], [1, "sa-export-btn", 3, "click"], [1, "material-icons-round"], [1, "sa-toolbar"], [1, "sa-search"], ["type", "text", "placeholder", "Email, nom, t\xE9l\xE9phone...", 3, "ngModelChange", "keyup.enter", "ngModel"], [3, "ngModelChange", "change", "ngModel"], ["value", ""], ["value", "superadmin"], ["value", "platform_admin"], ["value", "support"], ["value", "none"], [1, "sa-loading"], [1, "sa-table-wrap"], [1, "sa-table"], [3, "suspended"], [1, "sa-pagination"], [3, "click", "disabled"], [1, "sa-badge", "purple", "ml"], [1, "sa-role-select", 3, "ngModelChange", "ngModel", "disabled"], [3, "value"], [1, "sa-badge"], [1, "sa-actions"], [1, "sa-act-btn", 3, "click", "disabled", "title"], [1, "sa-act-btn", "danger", 3, "click", "disabled"]], template: function SaUsersComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SaUsersComponent, selectors: [["sa-users"]], standalone: false, decls: 31, vars: 5, consts: [[1, "sa-page"], [1, "sa-page-header"], [1, "sa-header-row"], [1, "sa-export-btn", 3, "click"], [1, "material-icons-round"], [1, "sa-toolbar"], [1, "sa-search"], ["type", "text", "placeholder", "Email, nom, t\xE9l\xE9phone...", 3, "ngModelChange", "keyup.enter", "ngModel"], [3, "ngModelChange", "change", "ngModel"], ["value", ""], ["value", "superadmin"], ["value", "platform_admin"], ["value", "support"], ["value", "none"], [1, "error-state", 2, "margin-bottom", "16px"], [1, "sa-loading"], [1, "sa-table-wrap"], [1, "sa-table"], [3, "suspended"], [1, "sa-pagination"], [3, "click", "disabled"], [1, "sa-badge", "purple", "ml"], [1, "sa-role-select", 3, "ngModelChange", "ngModel", "disabled"], [3, "value"], [1, "sa-badge"], [1, "sa-actions"], [1, "sa-act-btn", 3, "click", "disabled", "title"], [1, "sa-act-btn", "danger", 3, "click", "disabled"]], template: function SaUsersComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div")(4, "h1");
       \u0275\u0275text(5, "Utilisateurs");
@@ -1894,7 +1982,8 @@ var SaUsersComponent = class _SaUsersComponent {
       \u0275\u0275elementStart(26, "option", 13);
       \u0275\u0275text(27, "Sans r\xF4le plateforme");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275conditionalCreate(28, SaUsersComponent_Conditional_28_Template, 2, 0, "div", 14)(29, SaUsersComponent_Conditional_29_Template, 28, 4);
+      \u0275\u0275conditionalCreate(28, SaUsersComponent_Conditional_28_Template, 4, 1, "div", 14);
+      \u0275\u0275conditionalCreate(29, SaUsersComponent_Conditional_29_Template, 2, 0, "div", 15)(30, SaUsersComponent_Conditional_30_Template, 28, 4);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
@@ -1905,7 +1994,9 @@ var SaUsersComponent = class _SaUsersComponent {
       \u0275\u0275advance();
       \u0275\u0275twoWayProperty("ngModel", ctx.filterRole);
       \u0275\u0275advance(11);
-      \u0275\u0275conditional(ctx.loading ? 28 : 29);
+      \u0275\u0275conditional(ctx.actionErreur ? 28 : -1);
+      \u0275\u0275advance();
+      \u0275\u0275conditional(ctx.loading ? 29 : 30);
     }
   }, dependencies: [NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, DatePipe], styles: ["\n\n.sa-header-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  gap: 12px;\n}\n.sa-export-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 14px;\n  flex-shrink: 0;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 13px;\n  color: #374151;\n  cursor: pointer;\n  transition: all 0.15s;\n}\n.sa-export-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n.sa-export-btn[_ngcontent-%COMP%]:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-page-header[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.sa-page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading[_ngcontent-%COMP%] {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  margin-bottom: 20px;\n  align-items: center;\n}\n.sa-toolbar[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  padding: 8px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  background: #fff;\n  font-size: 14px;\n  color: #374151;\n}\n.sa-search[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  padding: 0 12px;\n  flex: 1;\n  max-width: 360px;\n}\n.sa-search[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #94A3B8;\n  font-size: 18px;\n}\n.sa-search[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  border: none;\n  outline: none;\n  padding: 9px 0;\n  font-size: 14px;\n  flex: 1;\n}\n.sa-table-wrap[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table[_ngcontent-%COMP%] {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:last-child   td[_ngcontent-%COMP%] {\n  border-bottom: none;\n}\n.sa-table[_ngcontent-%COMP%]   tr.suspended[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  opacity: 0.5;\n}\n.sa-table[_ngcontent-%COMP%]   code[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 12px;\n  color: #6366F1;\n}\n.sa-badge[_ngcontent-%COMP%] {\n  display: inline-block;\n  padding: 2px 8px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.sa-badge.green[_ngcontent-%COMP%] {\n  background: #DCFCE7;\n  color: #16A34A;\n}\n.sa-badge.red[_ngcontent-%COMP%] {\n  background: #FEE2E2;\n  color: #DC2626;\n}\n.sa-badge.purple[_ngcontent-%COMP%] {\n  background: #F5F3FF;\n  color: #7C3AED;\n}\n.sa-badge.grey[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  color: #64748B;\n}\n.sa-badge.plan[_ngcontent-%COMP%] {\n  background: #EFF6FF;\n  color: #2563EB;\n}\n.sa-badge.ml[_ngcontent-%COMP%] {\n  margin-left: 6px;\n}\n.sa-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n}\n.sa-act-btn[_ngcontent-%COMP%] {\n  width: 32px;\n  height: 32px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  transition: all 0.15s;\n}\n.sa-act-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n.sa-act-btn[_ngcontent-%COMP%]:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger[_ngcontent-%COMP%]:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green[_ngcontent-%COMP%]:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-pagination[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  padding: 16px;\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  padding: 6px 14px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-pagination[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-role-select[_ngcontent-%COMP%] {\n  padding: 4px 8px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  font-size: 12px;\n  background: #fff;\n  color: #374151;\n}\n/*# sourceMappingURL=sa-users.component.css.map */"] });
 };
@@ -1938,6 +2029,12 @@ var SaUsersComponent = class _SaUsersComponent {
       <option value="none">Sans r\xF4le plateforme</option>\r
     </select>\r
   </div>\r
+\r
+  @if (actionErreur) {\r
+    <div class="error-state" style="margin-bottom:16px">\r
+      <span class="material-icons-round">error_outline</span>{{ actionErreur }}\r
+    </div>\r
+  }\r
 \r
   @if (loading) {\r
     <div class="sa-loading">Chargement...</div>\r
@@ -2315,11 +2412,25 @@ function SaSettingsComponent_Conditional_11_Template(rf, ctx) {
     \u0275\u0275elementEnd();
   }
 }
-function SaSettingsComponent_Conditional_12_For_14_Conditional_7_Template(rf, ctx) {
+function SaSettingsComponent_Conditional_12_Conditional_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 7)(1, "span", 16);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r2.settingsErreur, " ");
+  }
+}
+function SaSettingsComponent_Conditional_12_For_15_Conditional_7_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "input", 28);
-    \u0275\u0275twoWayListener("ngModelChange", function SaSettingsComponent_Conditional_12_For_14_Conditional_7_Template_input_ngModelChange_0_listener($event) {
+    \u0275\u0275elementStart(0, "input", 31);
+    \u0275\u0275twoWayListener("ngModelChange", function SaSettingsComponent_Conditional_12_For_15_Conditional_7_Template_input_ngModelChange_0_listener($event) {
       \u0275\u0275restoreView(_r5);
       const s_r6 = \u0275\u0275nextContext().$implicit;
       \u0275\u0275twoWayBindingSet(s_r6.editValue, $event) || (s_r6.editValue = $event);
@@ -2332,9 +2443,9 @@ function SaSettingsComponent_Conditional_12_For_14_Conditional_7_Template(rf, ct
     \u0275\u0275twoWayProperty("ngModel", s_r6.editValue);
   }
 }
-function SaSettingsComponent_Conditional_12_For_14_Conditional_8_Template(rf, ctx) {
+function SaSettingsComponent_Conditional_12_For_15_Conditional_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 29);
+    \u0275\u0275elementStart(0, "span", 32);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -2345,27 +2456,27 @@ function SaSettingsComponent_Conditional_12_For_14_Conditional_8_Template(rf, ct
     \u0275\u0275textInterpolate1(" ", s_r6.value, " ");
   }
 }
-function SaSettingsComponent_Conditional_12_For_14_Conditional_11_Template(rf, ctx) {
+function SaSettingsComponent_Conditional_12_For_15_Conditional_11_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 30);
-    \u0275\u0275listener("click", function SaSettingsComponent_Conditional_12_For_14_Conditional_11_Template_button_click_0_listener() {
+    \u0275\u0275elementStart(0, "button", 33);
+    \u0275\u0275listener("click", function SaSettingsComponent_Conditional_12_For_15_Conditional_11_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r7);
       const s_r6 = \u0275\u0275nextContext().$implicit;
       const ctx_r2 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r2.save(s_r6));
     });
-    \u0275\u0275elementStart(1, "span", 15);
+    \u0275\u0275elementStart(1, "span", 16);
     \u0275\u0275text(2, "check");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(3, "button", 31);
-    \u0275\u0275listener("click", function SaSettingsComponent_Conditional_12_For_14_Conditional_11_Template_button_click_3_listener() {
+    \u0275\u0275elementStart(3, "button", 34);
+    \u0275\u0275listener("click", function SaSettingsComponent_Conditional_12_For_15_Conditional_11_Template_button_click_3_listener() {
       \u0275\u0275restoreView(_r7);
       const s_r6 = \u0275\u0275nextContext().$implicit;
       const ctx_r2 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r2.cancelEdit(s_r6));
     });
-    \u0275\u0275elementStart(4, "span", 15);
+    \u0275\u0275elementStart(4, "span", 16);
     \u0275\u0275text(5, "close");
     \u0275\u0275elementEnd()();
   }
@@ -2374,32 +2485,32 @@ function SaSettingsComponent_Conditional_12_For_14_Conditional_11_Template(rf, c
     \u0275\u0275property("disabled", s_r6.saving);
   }
 }
-function SaSettingsComponent_Conditional_12_For_14_Conditional_12_Template(rf, ctx) {
+function SaSettingsComponent_Conditional_12_For_15_Conditional_12_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 32);
-    \u0275\u0275listener("click", function SaSettingsComponent_Conditional_12_For_14_Conditional_12_Template_button_click_0_listener() {
+    \u0275\u0275elementStart(0, "button", 35);
+    \u0275\u0275listener("click", function SaSettingsComponent_Conditional_12_For_15_Conditional_12_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r8);
       const s_r6 = \u0275\u0275nextContext().$implicit;
       const ctx_r2 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r2.startEdit(s_r6));
     });
-    \u0275\u0275elementStart(1, "span", 15);
+    \u0275\u0275elementStart(1, "span", 16);
     \u0275\u0275text(2, "edit");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(3, "button", 33);
-    \u0275\u0275listener("click", function SaSettingsComponent_Conditional_12_For_14_Conditional_12_Template_button_click_3_listener() {
+    \u0275\u0275elementStart(3, "button", 36);
+    \u0275\u0275listener("click", function SaSettingsComponent_Conditional_12_For_15_Conditional_12_Template_button_click_3_listener() {
       \u0275\u0275restoreView(_r8);
       const s_r6 = \u0275\u0275nextContext().$implicit;
       const ctx_r2 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r2.deleteSetting(s_r6));
     });
-    \u0275\u0275elementStart(4, "span", 15);
+    \u0275\u0275elementStart(4, "span", 16);
     \u0275\u0275text(5, "delete");
     \u0275\u0275elementEnd()();
   }
 }
-function SaSettingsComponent_Conditional_12_For_14_Template(rf, ctx) {
+function SaSettingsComponent_Conditional_12_For_15_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "tr")(1, "td")(2, "code");
     \u0275\u0275text(3);
@@ -2408,10 +2519,10 @@ function SaSettingsComponent_Conditional_12_For_14_Template(rf, ctx) {
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "td");
-    \u0275\u0275conditionalCreate(7, SaSettingsComponent_Conditional_12_For_14_Conditional_7_Template, 1, 1, "input", 25)(8, SaSettingsComponent_Conditional_12_For_14_Conditional_8_Template, 2, 5, "span", 26);
+    \u0275\u0275conditionalCreate(7, SaSettingsComponent_Conditional_12_For_15_Conditional_7_Template, 1, 1, "input", 28)(8, SaSettingsComponent_Conditional_12_For_15_Conditional_8_Template, 2, 5, "span", 29);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "td")(10, "div", 27);
-    \u0275\u0275conditionalCreate(11, SaSettingsComponent_Conditional_12_For_14_Conditional_11_Template, 6, 1)(12, SaSettingsComponent_Conditional_12_For_14_Conditional_12_Template, 6, 0);
+    \u0275\u0275elementStart(9, "td")(10, "div", 30);
+    \u0275\u0275conditionalCreate(11, SaSettingsComponent_Conditional_12_For_15_Conditional_11_Template, 6, 1)(12, SaSettingsComponent_Conditional_12_For_15_Conditional_12_Template, 6, 0);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -2426,9 +2537,23 @@ function SaSettingsComponent_Conditional_12_For_14_Template(rf, ctx) {
     \u0275\u0275conditional(s_r6.editing ? 11 : 12);
   }
 }
-function SaSettingsComponent_Conditional_12_Conditional_37_Template(rf, ctx) {
+function SaSettingsComponent_Conditional_12_Conditional_27_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 22)(1, "span", 15);
+    \u0275\u0275elementStart(0, "div", 17)(1, "span", 16);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r2.addErreur, " ");
+  }
+}
+function SaSettingsComponent_Conditional_12_Conditional_39_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 24)(1, "span", 16);
     \u0275\u0275text(2, "check_circle");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -2440,14 +2565,28 @@ function SaSettingsComponent_Conditional_12_Conditional_37_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", ctx_r2.broadcastDone, " ");
   }
 }
-function SaSettingsComponent_Conditional_12_Conditional_39_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275element(0, "span", 24);
-  }
-}
 function SaSettingsComponent_Conditional_12_Conditional_40_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 15);
+    \u0275\u0275elementStart(0, "div", 25)(1, "span", 16);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r2.broadcastErreur, " ");
+  }
+}
+function SaSettingsComponent_Conditional_12_Conditional_42_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "span", 27);
+  }
+}
+function SaSettingsComponent_Conditional_12_Conditional_43_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 16);
     \u0275\u0275text(1, "send");
     \u0275\u0275elementEnd();
     \u0275\u0275text(2, " Envoyer \xE0 tous ");
@@ -2456,37 +2595,30 @@ function SaSettingsComponent_Conditional_12_Conditional_40_Template(rf, ctx) {
 function SaSettingsComponent_Conditional_12_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 7)(1, "table", 8)(2, "thead")(3, "tr")(4, "th");
-    \u0275\u0275text(5, "Cl\xE9");
+    \u0275\u0275conditionalCreate(0, SaSettingsComponent_Conditional_12_Conditional_0_Template, 4, 1, "div", 7);
+    \u0275\u0275elementStart(1, "div", 8)(2, "table", 9)(3, "thead")(4, "tr")(5, "th");
+    \u0275\u0275text(6, "Cl\xE9");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "th");
-    \u0275\u0275text(7, "Label");
+    \u0275\u0275elementStart(7, "th");
+    \u0275\u0275text(8, "Label");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "th");
-    \u0275\u0275text(9, "Valeur");
+    \u0275\u0275elementStart(9, "th");
+    \u0275\u0275text(10, "Valeur");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "th");
-    \u0275\u0275text(11, "Actions");
+    \u0275\u0275elementStart(11, "th");
+    \u0275\u0275text(12, "Actions");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(12, "tbody");
-    \u0275\u0275repeaterCreate(13, SaSettingsComponent_Conditional_12_For_14_Template, 13, 4, "tr", null, _forTrack06);
+    \u0275\u0275elementStart(13, "tbody");
+    \u0275\u0275repeaterCreate(14, SaSettingsComponent_Conditional_12_For_15_Template, 13, 4, "tr", null, _forTrack06);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(15, "div", 9)(16, "h3");
-    \u0275\u0275text(17, "Ajouter un param\xE8tre");
+    \u0275\u0275elementStart(16, "div", 10)(17, "h3");
+    \u0275\u0275text(18, "Ajouter un param\xE8tre");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(18, "div", 10)(19, "input", 11);
-    \u0275\u0275twoWayListener("ngModelChange", function SaSettingsComponent_Conditional_12_Template_input_ngModelChange_19_listener($event) {
-      \u0275\u0275restoreView(_r4);
-      const ctx_r2 = \u0275\u0275nextContext();
-      \u0275\u0275twoWayBindingSet(ctx_r2.newKey, $event) || (ctx_r2.newKey = $event);
-      return \u0275\u0275resetView($event);
-    });
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "input", 12);
+    \u0275\u0275elementStart(19, "div", 11)(20, "input", 12);
     \u0275\u0275twoWayListener("ngModelChange", function SaSettingsComponent_Conditional_12_Template_input_ngModelChange_20_listener($event) {
       \u0275\u0275restoreView(_r4);
       const ctx_r2 = \u0275\u0275nextContext();
-      \u0275\u0275twoWayBindingSet(ctx_r2.newLabel, $event) || (ctx_r2.newLabel = $event);
+      \u0275\u0275twoWayBindingSet(ctx_r2.newKey, $event) || (ctx_r2.newKey = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
@@ -2494,59 +2626,71 @@ function SaSettingsComponent_Conditional_12_Template(rf, ctx) {
     \u0275\u0275twoWayListener("ngModelChange", function SaSettingsComponent_Conditional_12_Template_input_ngModelChange_21_listener($event) {
       \u0275\u0275restoreView(_r4);
       const ctx_r2 = \u0275\u0275nextContext();
+      \u0275\u0275twoWayBindingSet(ctx_r2.newLabel, $event) || (ctx_r2.newLabel = $event);
+      return \u0275\u0275resetView($event);
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(22, "input", 14);
+    \u0275\u0275twoWayListener("ngModelChange", function SaSettingsComponent_Conditional_12_Template_input_ngModelChange_22_listener($event) {
+      \u0275\u0275restoreView(_r4);
+      const ctx_r2 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r2.newValue, $event) || (ctx_r2.newValue = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(22, "button", 14);
-    \u0275\u0275listener("click", function SaSettingsComponent_Conditional_12_Template_button_click_22_listener() {
+    \u0275\u0275elementStart(23, "button", 15);
+    \u0275\u0275listener("click", function SaSettingsComponent_Conditional_12_Template_button_click_23_listener() {
       \u0275\u0275restoreView(_r4);
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.addSetting());
     });
-    \u0275\u0275elementStart(23, "span", 15);
-    \u0275\u0275text(24, "add");
+    \u0275\u0275elementStart(24, "span", 16);
+    \u0275\u0275text(25, "add");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(25, "Ajouter ");
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(26, "div", 16)(27, "div", 17)(28, "span", 15);
-    \u0275\u0275text(29, "campaign");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(30, "h3");
-    \u0275\u0275text(31, "Notification globale");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(32, "span", 18);
-    \u0275\u0275text(33, "Envoy\xE9e \xE0 tous les membres de toutes les familles");
+    \u0275\u0275text(26, "Ajouter ");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(34, "div", 19)(35, "input", 20);
-    \u0275\u0275twoWayListener("ngModelChange", function SaSettingsComponent_Conditional_12_Template_input_ngModelChange_35_listener($event) {
+    \u0275\u0275conditionalCreate(27, SaSettingsComponent_Conditional_12_Conditional_27_Template, 4, 1, "div", 17);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(28, "div", 18)(29, "div", 19)(30, "span", 16);
+    \u0275\u0275text(31, "campaign");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(32, "h3");
+    \u0275\u0275text(33, "Notification globale");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(34, "span", 20);
+    \u0275\u0275text(35, "Envoy\xE9e \xE0 tous les membres de toutes les familles");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(36, "div", 21)(37, "input", 22);
+    \u0275\u0275twoWayListener("ngModelChange", function SaSettingsComponent_Conditional_12_Template_input_ngModelChange_37_listener($event) {
       \u0275\u0275restoreView(_r4);
       const ctx_r2 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r2.broadcastTitre, $event) || (ctx_r2.broadcastTitre = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(36, "textarea", 21);
-    \u0275\u0275twoWayListener("ngModelChange", function SaSettingsComponent_Conditional_12_Template_textarea_ngModelChange_36_listener($event) {
+    \u0275\u0275elementStart(38, "textarea", 23);
+    \u0275\u0275twoWayListener("ngModelChange", function SaSettingsComponent_Conditional_12_Template_textarea_ngModelChange_38_listener($event) {
       \u0275\u0275restoreView(_r4);
       const ctx_r2 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r2.broadcastMsg, $event) || (ctx_r2.broadcastMsg = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275conditionalCreate(37, SaSettingsComponent_Conditional_12_Conditional_37_Template, 4, 1, "div", 22);
-    \u0275\u0275elementStart(38, "button", 23);
-    \u0275\u0275listener("click", function SaSettingsComponent_Conditional_12_Template_button_click_38_listener() {
+    \u0275\u0275conditionalCreate(39, SaSettingsComponent_Conditional_12_Conditional_39_Template, 4, 1, "div", 24);
+    \u0275\u0275conditionalCreate(40, SaSettingsComponent_Conditional_12_Conditional_40_Template, 4, 1, "div", 25);
+    \u0275\u0275elementStart(41, "button", 26);
+    \u0275\u0275listener("click", function SaSettingsComponent_Conditional_12_Template_button_click_41_listener() {
       \u0275\u0275restoreView(_r4);
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.sendBroadcast());
     });
-    \u0275\u0275conditionalCreate(39, SaSettingsComponent_Conditional_12_Conditional_39_Template, 1, 0, "span", 24)(40, SaSettingsComponent_Conditional_12_Conditional_40_Template, 3, 0);
+    \u0275\u0275conditionalCreate(42, SaSettingsComponent_Conditional_12_Conditional_42_Template, 1, 0, "span", 27)(43, SaSettingsComponent_Conditional_12_Conditional_43_Template, 3, 0);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r2 = \u0275\u0275nextContext();
-    \u0275\u0275advance(13);
+    \u0275\u0275conditional(ctx_r2.settingsErreur ? 0 : -1);
+    \u0275\u0275advance(14);
     \u0275\u0275repeater(ctx_r2.settings);
     \u0275\u0275advance(6);
     \u0275\u0275twoWayProperty("ngModel", ctx_r2.newKey);
@@ -2556,16 +2700,20 @@ function SaSettingsComponent_Conditional_12_Template(rf, ctx) {
     \u0275\u0275twoWayProperty("ngModel", ctx_r2.newValue);
     \u0275\u0275advance();
     \u0275\u0275property("disabled", !ctx_r2.newKey || !ctx_r2.newValue || ctx_r2.adding);
-    \u0275\u0275advance(13);
+    \u0275\u0275advance(4);
+    \u0275\u0275conditional(ctx_r2.addErreur ? 27 : -1);
+    \u0275\u0275advance(10);
     \u0275\u0275twoWayProperty("ngModel", ctx_r2.broadcastTitre);
     \u0275\u0275advance();
     \u0275\u0275twoWayProperty("ngModel", ctx_r2.broadcastMsg);
     \u0275\u0275advance();
-    \u0275\u0275conditional(ctx_r2.broadcastDone ? 37 : -1);
+    \u0275\u0275conditional(ctx_r2.broadcastDone ? 39 : -1);
+    \u0275\u0275advance();
+    \u0275\u0275conditional(ctx_r2.broadcastErreur ? 40 : -1);
     \u0275\u0275advance();
     \u0275\u0275property("disabled", !ctx_r2.broadcastTitre || !ctx_r2.broadcastMsg || ctx_r2.broadcasting);
     \u0275\u0275advance();
-    \u0275\u0275conditional(ctx_r2.broadcasting ? 39 : 40);
+    \u0275\u0275conditional(ctx_r2.broadcasting ? 42 : 43);
   }
 }
 var SaSettingsComponent = class _SaSettingsComponent {
@@ -2576,6 +2724,8 @@ var SaSettingsComponent = class _SaSettingsComponent {
   newValue = "";
   newLabel = "";
   adding = false;
+  addErreur = null;
+  settingsErreur = null;
   defaults = [
     { key: "inscription_ouverte", value: "true", label: "Inscriptions ouvertes" },
     { key: "maintenance", value: "false", label: "Mode maintenance" },
@@ -2599,11 +2749,17 @@ var SaSettingsComponent = class _SaSettingsComponent {
   startEdit(s) {
     s.editValue = s.value;
     s.editing = true;
+    this.settingsErreur = null;
   }
   cancelEdit(s) {
     s.editing = false;
   }
   save(s) {
+    if (!s.editValue?.trim()) {
+      this.settingsErreur = "La valeur ne peut pas \xEAtre vide.";
+      return;
+    }
+    this.settingsErreur = null;
     s.saving = true;
     this.sa.patchSetting(s.key, s.editValue, s.label).subscribe({
       next: (updated) => {
@@ -2611,14 +2767,18 @@ var SaSettingsComponent = class _SaSettingsComponent {
         s.editing = false;
         s.saving = false;
       },
-      error: () => {
+      error: (err) => {
         s.saving = false;
+        this.settingsErreur = err?.error?.error ?? "Erreur lors de la sauvegarde.";
       }
     });
   }
   addSetting() {
-    if (!this.newKey || !this.newValue)
+    if (!this.newKey.trim() || !this.newValue.trim()) {
+      this.addErreur = "La cl\xE9 et la valeur sont requises.";
       return;
+    }
+    this.addErreur = null;
     this.adding = true;
     this.sa.patchSetting(this.newKey, this.newValue, this.newLabel).subscribe({
       next: (s) => {
@@ -2628,8 +2788,9 @@ var SaSettingsComponent = class _SaSettingsComponent {
         this.newLabel = "";
         this.adding = false;
       },
-      error: () => {
+      error: (err) => {
         this.adding = false;
+        this.addErreur = err?.error?.error ?? "Erreur lors de l'ajout.";
       }
     });
   }
@@ -2639,6 +2800,9 @@ var SaSettingsComponent = class _SaSettingsComponent {
     this.sa.deleteSetting(s.key).subscribe({
       next: () => {
         this.settings = this.settings.filter((x) => x.key !== s.key);
+      },
+      error: () => {
+        this.settingsErreur = "Erreur lors de la suppression du param\xE8tre.";
       }
     });
   }
@@ -2649,6 +2813,9 @@ var SaSettingsComponent = class _SaSettingsComponent {
     this.sa.patchSetting(d.key, d.value, d.label).subscribe({
       next: (s) => {
         this.settings.push(s);
+      },
+      error: () => {
+        this.settingsErreur = "Erreur lors de l'application du param\xE8tre par d\xE9faut.";
       }
     });
   }
@@ -2660,11 +2827,15 @@ var SaSettingsComponent = class _SaSettingsComponent {
   broadcastMsg = "";
   broadcasting = false;
   broadcastDone = "";
+  broadcastErreur = null;
   sendBroadcast() {
-    if (!this.broadcastTitre || !this.broadcastMsg)
+    if (!this.broadcastTitre.trim() || !this.broadcastMsg.trim()) {
+      this.broadcastErreur = "Le titre et le message sont requis.";
       return;
+    }
     if (!confirm(`Envoyer cette notification \xE0 TOUS les utilisateurs de la plateforme ?`))
       return;
+    this.broadcastErreur = null;
     this.broadcasting = true;
     this.sa.broadcast(this.broadcastTitre, this.broadcastMsg).subscribe({
       next: (r) => {
@@ -2674,13 +2845,16 @@ var SaSettingsComponent = class _SaSettingsComponent {
         this.broadcasting = false;
         setTimeout(() => this.broadcastDone = "", 5e3);
       },
-      error: () => this.broadcasting = false
+      error: (err) => {
+        this.broadcasting = false;
+        this.broadcastErreur = err?.error?.error ?? "Erreur lors de l'envoi.";
+      }
     });
   }
   static \u0275fac = function SaSettingsComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _SaSettingsComponent)(\u0275\u0275directiveInject(SuperAdminService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SaSettingsComponent, selectors: [["sa-settings"]], standalone: false, decls: 13, vars: 1, consts: [[1, "sa-page"], [1, "sa-page-header"], [1, "sa-defaults-bar"], [1, "sa-defaults-label"], [1, "sa-default-chip", 3, "disabled", "title"], [1, "sa-loading"], [1, "sa-default-chip", 3, "click", "disabled", "title"], [1, "sa-table-wrap"], [1, "sa-table"], [1, "sa-add-setting"], [1, "sa-add-row"], ["placeholder", "cl\xE9 (ex: max_upload_mb)", 1, "sa-add-input", 3, "ngModelChange", "ngModel"], ["placeholder", "Label (optionnel)", 1, "sa-add-input", 3, "ngModelChange", "ngModel"], ["placeholder", "valeur", 1, "sa-add-input", 3, "ngModelChange", "ngModel"], [1, "sa-btn-add", 3, "click", "disabled"], [1, "material-icons-round"], [1, "sa-broadcast-card"], [1, "sa-broadcast-header"], [1, "sa-broadcast-warn"], [1, "sa-broadcast-fields"], ["placeholder", "Titre de la notification", 1, "sa-add-input", 3, "ngModelChange", "ngModel"], ["placeholder", "Message...", "rows", "3", 1, "sa-textarea", 3, "ngModelChange", "ngModel"], [1, "sa-broadcast-success"], [1, "sa-btn-broadcast", 3, "click", "disabled"], [1, "sa-spinner-sm"], [1, "sa-inline-input", 3, "ngModel"], [1, "sa-setting-val", 3, "bool-true", "bool-false"], [1, "sa-actions"], [1, "sa-inline-input", 3, "ngModelChange", "ngModel"], [1, "sa-setting-val"], [1, "sa-act-btn", "green", 3, "click", "disabled"], [1, "sa-act-btn", 3, "click"], ["title", "Modifier", 1, "sa-act-btn", 3, "click"], ["title", "Supprimer", 1, "sa-act-btn", "danger", 3, "click"]], template: function SaSettingsComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SaSettingsComponent, selectors: [["sa-settings"]], standalone: false, decls: 13, vars: 1, consts: [[1, "sa-page"], [1, "sa-page-header"], [1, "sa-defaults-bar"], [1, "sa-defaults-label"], [1, "sa-default-chip", 3, "disabled", "title"], [1, "sa-loading"], [1, "sa-default-chip", 3, "click", "disabled", "title"], [1, "error-state", 2, "margin-bottom", "16px"], [1, "sa-table-wrap"], [1, "sa-table"], [1, "sa-add-setting"], [1, "sa-add-row"], ["required", "", "placeholder", "cl\xE9 * (ex: max_upload_mb)", 1, "sa-add-input", 3, "ngModelChange", "ngModel"], ["placeholder", "Label (optionnel)", 1, "sa-add-input", 3, "ngModelChange", "ngModel"], ["required", "", "placeholder", "valeur *", 1, "sa-add-input", 3, "ngModelChange", "ngModel"], [1, "sa-btn-add", 3, "click", "disabled"], [1, "material-icons-round"], [1, "error-state", 2, "margin-top", "10px"], [1, "sa-broadcast-card"], [1, "sa-broadcast-header"], [1, "sa-broadcast-warn"], [1, "sa-broadcast-fields"], ["placeholder", "Titre de la notification", 1, "sa-add-input", 3, "ngModelChange", "ngModel"], ["placeholder", "Message...", "rows", "3", 1, "sa-textarea", 3, "ngModelChange", "ngModel"], [1, "sa-broadcast-success"], [1, "error-state", 2, "margin-bottom", "12px"], [1, "sa-btn-broadcast", 3, "click", "disabled"], [1, "sa-spinner-sm"], [1, "sa-inline-input", 3, "ngModel"], [1, "sa-setting-val", 3, "bool-true", "bool-false"], [1, "sa-actions"], [1, "sa-inline-input", 3, "ngModelChange", "ngModel"], [1, "sa-setting-val"], [1, "sa-act-btn", "green", 3, "click", "disabled"], [1, "sa-act-btn", 3, "click"], ["title", "Modifier", 1, "sa-act-btn", 3, "click"], ["title", "Supprimer", 1, "sa-act-btn", "danger", 3, "click"]], template: function SaSettingsComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h1");
       \u0275\u0275text(3, "Param\xE8tres plateforme");
@@ -2693,7 +2867,7 @@ var SaSettingsComponent = class _SaSettingsComponent {
       \u0275\u0275elementEnd();
       \u0275\u0275repeaterCreate(9, SaSettingsComponent_For_10_Template, 2, 3, "button", 4, _forTrack06);
       \u0275\u0275elementEnd();
-      \u0275\u0275conditionalCreate(11, SaSettingsComponent_Conditional_11_Template, 2, 0, "div", 5)(12, SaSettingsComponent_Conditional_12_Template, 41, 9);
+      \u0275\u0275conditionalCreate(11, SaSettingsComponent_Conditional_11_Template, 2, 0, "div", 5)(12, SaSettingsComponent_Conditional_12_Template, 44, 12);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
@@ -2702,7 +2876,7 @@ var SaSettingsComponent = class _SaSettingsComponent {
       \u0275\u0275advance(2);
       \u0275\u0275conditional(ctx.loading ? 11 : 12);
     }
-  }, dependencies: [DefaultValueAccessor, NgControlStatus, NgModel], styles: ["\n\n.sa-page-header[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.sa-page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading[_ngcontent-%COMP%] {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-table-wrap[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table[_ngcontent-%COMP%] {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:last-child   td[_ngcontent-%COMP%] {\n  border-bottom: none;\n}\n.sa-table[_ngcontent-%COMP%]   code[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 12px;\n  color: #6366F1;\n}\n.sa-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n}\n.sa-act-btn[_ngcontent-%COMP%] {\n  width: 32px;\n  height: 32px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  transition: all 0.15s;\n}\n.sa-act-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n.sa-act-btn[_ngcontent-%COMP%]:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger[_ngcontent-%COMP%]:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green[_ngcontent-%COMP%]:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-defaults-bar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  margin-bottom: 20px;\n}\n.sa-defaults-bar[_ngcontent-%COMP%]   .sa-defaults-label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-default-chip[_ngcontent-%COMP%] {\n  padding: 4px 12px;\n  border: 1px dashed #CBD5E1;\n  border-radius: 20px;\n  background: #fff;\n  font-size: 12px;\n  color: #64748B;\n  cursor: pointer;\n}\n.sa-default-chip[_ngcontent-%COMP%]:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-default-chip[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-add-setting[_ngcontent-%COMP%] {\n  margin-top: 24px;\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-add-setting[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0 0 16px;\n}\n.sa-add-row[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 10px;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.sa-add-input[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 150px;\n  padding: 9px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  font-size: 13px;\n  color: #374151;\n  outline: none;\n}\n.sa-add-input[_ngcontent-%COMP%]:focus {\n  border-color: #6366F1;\n}\n.sa-btn-add[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 16px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n}\n.sa-btn-add[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n.sa-btn-add[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-inline-input[_ngcontent-%COMP%] {\n  padding: 4px 8px;\n  border: 1px solid #6366F1;\n  border-radius: 6px;\n  font-size: 13px;\n  outline: none;\n  width: 200px;\n}\n.sa-setting-val.bool-true[_ngcontent-%COMP%] {\n  color: #16A34A;\n  font-weight: 600;\n}\n.sa-setting-val.bool-false[_ngcontent-%COMP%] {\n  color: #DC2626;\n  font-weight: 600;\n}\n.sa-broadcast-card[_ngcontent-%COMP%] {\n  margin-top: 24px;\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  border-left: 3px solid #EF4444;\n}\n.sa-broadcast-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 16px;\n}\n.sa-broadcast-header[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #EF4444;\n  font-size: 22px;\n}\n.sa-broadcast-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0;\n}\n.sa-broadcast-warn[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #EF4444;\n  background: #FEF2F2;\n  padding: 2px 8px;\n  border-radius: 20px;\n}\n.sa-broadcast-fields[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  margin-bottom: 12px;\n}\n.sa-textarea[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 9px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  font-size: 13px;\n  color: #374151;\n  outline: none;\n  resize: vertical;\n  font-family: inherit;\n}\n.sa-textarea[_ngcontent-%COMP%]:focus {\n  border-color: #EF4444;\n}\n.sa-broadcast-success[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  background: #DCFCE7;\n  color: #16A34A;\n  padding: 8px 12px;\n  border-radius: 8px;\n  font-size: 13px;\n  margin-bottom: 10px;\n}\n.sa-broadcast-success[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px;\n}\n.sa-btn-broadcast[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 18px;\n  background: #EF4444;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.sa-btn-broadcast[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n.sa-btn-broadcast[_ngcontent-%COMP%]:hover:not(:disabled) {\n  background: #DC2626;\n}\n.sa-btn-broadcast[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-spinner-sm[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.7s linear infinite;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n/*# sourceMappingURL=sa-settings.component.css.map */"] });
+  }, dependencies: [DefaultValueAccessor, NgControlStatus, RequiredValidator, NgModel], styles: ["\n\n.sa-page-header[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.sa-page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-page-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-loading[_ngcontent-%COMP%] {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-table-wrap[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 12px;\n  overflow: auto;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-table[_ngcontent-%COMP%] {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 13px;\n}\n.sa-table[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  text-align: left;\n  font-size: 11px;\n  font-weight: 600;\n  color: #94A3B8;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  border-bottom: 1px solid #F1F5F9;\n}\n.sa-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  border-bottom: 1px solid #F8FAFC;\n  color: #374151;\n  vertical-align: middle;\n}\n.sa-table[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:last-child   td[_ngcontent-%COMP%] {\n  border-bottom: none;\n}\n.sa-table[_ngcontent-%COMP%]   code[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-size: 12px;\n  color: #6366F1;\n}\n.sa-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n}\n.sa-act-btn[_ngcontent-%COMP%] {\n  width: 32px;\n  height: 32px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  transition: all 0.15s;\n}\n.sa-act-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n.sa-act-btn[_ngcontent-%COMP%]:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger[_ngcontent-%COMP%]:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green[_ngcontent-%COMP%]:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-defaults-bar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  margin-bottom: 20px;\n}\n.sa-defaults-bar[_ngcontent-%COMP%]   .sa-defaults-label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #64748B;\n}\n.sa-default-chip[_ngcontent-%COMP%] {\n  padding: 4px 12px;\n  border: 1px dashed #CBD5E1;\n  border-radius: 20px;\n  background: #fff;\n  font-size: 12px;\n  color: #64748B;\n  cursor: pointer;\n}\n.sa-default-chip[_ngcontent-%COMP%]:hover:not(:disabled) {\n  border-color: #6366F1;\n  color: #6366F1;\n}\n.sa-default-chip[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.sa-add-setting[_ngcontent-%COMP%] {\n  margin-top: 24px;\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.sa-add-setting[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0 0 16px;\n}\n.sa-add-row[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 10px;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.sa-add-input[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 150px;\n  padding: 9px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  font-size: 13px;\n  color: #374151;\n  outline: none;\n}\n.sa-add-input[_ngcontent-%COMP%]:focus {\n  border-color: #6366F1;\n}\n.sa-btn-add[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 16px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n}\n.sa-btn-add[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n.sa-btn-add[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-inline-input[_ngcontent-%COMP%] {\n  padding: 4px 8px;\n  border: 1px solid #6366F1;\n  border-radius: 6px;\n  font-size: 13px;\n  outline: none;\n  width: 200px;\n}\n.sa-setting-val.bool-true[_ngcontent-%COMP%] {\n  color: #16A34A;\n  font-weight: 600;\n}\n.sa-setting-val.bool-false[_ngcontent-%COMP%] {\n  color: #DC2626;\n  font-weight: 600;\n}\n.sa-broadcast-card[_ngcontent-%COMP%] {\n  margin-top: 24px;\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  border-left: 3px solid #EF4444;\n}\n.sa-broadcast-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 16px;\n}\n.sa-broadcast-header[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #EF4444;\n  font-size: 22px;\n}\n.sa-broadcast-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0;\n}\n.sa-broadcast-warn[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #EF4444;\n  background: #FEF2F2;\n  padding: 2px 8px;\n  border-radius: 20px;\n}\n.sa-broadcast-fields[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  margin-bottom: 12px;\n}\n.sa-textarea[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 9px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 8px;\n  font-size: 13px;\n  color: #374151;\n  outline: none;\n  resize: vertical;\n  font-family: inherit;\n}\n.sa-textarea[_ngcontent-%COMP%]:focus {\n  border-color: #EF4444;\n}\n.sa-broadcast-success[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  background: #DCFCE7;\n  color: #16A34A;\n  padding: 8px 12px;\n  border-radius: 8px;\n  font-size: 13px;\n  margin-bottom: 10px;\n}\n.sa-broadcast-success[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px;\n}\n.sa-btn-broadcast[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 18px;\n  background: #EF4444;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.sa-btn-broadcast[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n.sa-btn-broadcast[_ngcontent-%COMP%]:hover:not(:disabled) {\n  background: #DC2626;\n}\n.sa-btn-broadcast[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-spinner-sm[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.7s linear infinite;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n/*# sourceMappingURL=sa-settings.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SaSettingsComponent, [{
@@ -2727,6 +2901,11 @@ var SaSettingsComponent = class _SaSettingsComponent {
   @if (loading) {\r
     <div class="sa-loading">Chargement...</div>\r
   } @else {\r
+    @if (settingsErreur) {\r
+      <div class="error-state" style="margin-bottom:16px">\r
+        <span class="material-icons-round">error_outline</span>{{ settingsErreur }}\r
+      </div>\r
+    }\r
     <div class="sa-table-wrap">\r
       <table class="sa-table">\r
         <thead>\r
@@ -2781,13 +2960,18 @@ var SaSettingsComponent = class _SaSettingsComponent {
     <div class="sa-add-setting">\r
       <h3>Ajouter un param\xE8tre</h3>\r
       <div class="sa-add-row">\r
-        <input class="sa-add-input" [(ngModel)]="newKey" placeholder="cl\xE9 (ex: max_upload_mb)"/>\r
+        <input class="sa-add-input" [(ngModel)]="newKey" required placeholder="cl\xE9 * (ex: max_upload_mb)"/>\r
         <input class="sa-add-input" [(ngModel)]="newLabel" placeholder="Label (optionnel)"/>\r
-        <input class="sa-add-input" [(ngModel)]="newValue" placeholder="valeur"/>\r
+        <input class="sa-add-input" [(ngModel)]="newValue" required placeholder="valeur *"/>\r
         <button class="sa-btn-add" (click)="addSetting()" [disabled]="!newKey || !newValue || adding">\r
           <span class="material-icons-round">add</span>Ajouter\r
         </button>\r
       </div>\r
+      @if (addErreur) {\r
+        <div class="error-state" style="margin-top:10px">\r
+          <span class="material-icons-round">error_outline</span>{{ addErreur }}\r
+        </div>\r
+      }\r
     </div>\r
 \r
     <!-- Broadcast section -->\r
@@ -2804,6 +2988,11 @@ var SaSettingsComponent = class _SaSettingsComponent {
       @if (broadcastDone) {\r
         <div class="sa-broadcast-success">\r
           <span class="material-icons-round">check_circle</span> {{ broadcastDone }}\r
+        </div>\r
+      }\r
+      @if (broadcastErreur) {\r
+        <div class="error-state" style="margin-bottom:12px">\r
+          <span class="material-icons-round">error_outline</span>{{ broadcastErreur }}\r
         </div>\r
       }\r
       <button class="sa-btn-broadcast" (click)="sendBroadcast()" [disabled]="!broadcastTitre || !broadcastMsg || broadcasting">\r
@@ -2825,17 +3014,52 @@ var SaSettingsComponent = class _SaSettingsComponent {
 var _forTrack07 = ($index, $item) => $item.id;
 function SaPlansComponent_Conditional_12_Conditional_9_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 12);
+    \u0275\u0275elementStart(0, "span", 13);
     \u0275\u0275text(1, "Requis, lettres minuscules/chiffres/tiret bas uniquement");
     \u0275\u0275elementEnd();
   }
 }
-function SaPlansComponent_Conditional_12_Conditional_32_Template(rf, ctx) {
+function SaPlansComponent_Conditional_12_Conditional_14_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "span", 21);
+    \u0275\u0275elementStart(0, "span", 13);
+    \u0275\u0275text(1, "Requis");
+    \u0275\u0275elementEnd();
+  }
+}
+function SaPlansComponent_Conditional_12_Conditional_19_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 13);
+    \u0275\u0275text(1, "Requis");
+    \u0275\u0275elementEnd();
+  }
+}
+function SaPlansComponent_Conditional_12_Conditional_24_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 13);
+    \u0275\u0275text(1, "Requis, doit \xEAtre positif");
+    \u0275\u0275elementEnd();
   }
 }
 function SaPlansComponent_Conditional_12_Conditional_33_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 20)(1, "span", 4);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r1.createErreur, " ");
+  }
+}
+function SaPlansComponent_Conditional_12_Conditional_36_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "span", 23);
+  }
+}
+function SaPlansComponent_Conditional_12_Conditional_37_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275text(0, " Cr\xE9er le plan ");
   }
@@ -2846,45 +3070,49 @@ function SaPlansComponent_Conditional_12_Template(rf, ctx) {
     \u0275\u0275elementStart(0, "div", 5)(1, "h3");
     \u0275\u0275text(2, "Cr\xE9er un nouveau plan");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "form", 8);
+    \u0275\u0275elementStart(3, "form", 9);
     \u0275\u0275listener("ngSubmit", function SaPlansComponent_Conditional_12_Template_form_ngSubmit_3_listener() {
       \u0275\u0275restoreView(_r1);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.submitCreate());
     });
-    \u0275\u0275elementStart(4, "div", 9)(5, "div", 10)(6, "label");
+    \u0275\u0275elementStart(4, "div", 10)(5, "div", 11)(6, "label");
     \u0275\u0275text(7, "ID (slug unique)");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(8, "input", 11);
-    \u0275\u0275conditionalCreate(9, SaPlansComponent_Conditional_12_Conditional_9_Template, 2, 0, "span", 12);
+    \u0275\u0275element(8, "input", 12);
+    \u0275\u0275conditionalCreate(9, SaPlansComponent_Conditional_12_Conditional_9_Template, 2, 0, "span", 13);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "div", 10)(11, "label");
+    \u0275\u0275elementStart(10, "div", 11)(11, "label");
     \u0275\u0275text(12, "Nom technique");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(13, "input", 13);
+    \u0275\u0275element(13, "input", 14);
+    \u0275\u0275conditionalCreate(14, SaPlansComponent_Conditional_12_Conditional_14_Template, 2, 0, "span", 13);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "div", 10)(15, "label");
-    \u0275\u0275text(16, "Label affich\xE9");
+    \u0275\u0275elementStart(15, "div", 11)(16, "label");
+    \u0275\u0275text(17, "Label affich\xE9");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(17, "input", 14);
+    \u0275\u0275element(18, "input", 15);
+    \u0275\u0275conditionalCreate(19, SaPlansComponent_Conditional_12_Conditional_19_Template, 2, 0, "span", 13);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(18, "div", 10)(19, "label");
-    \u0275\u0275text(20, "Prix (FCFA/mois)");
+    \u0275\u0275elementStart(20, "div", 11)(21, "label");
+    \u0275\u0275text(22, "Prix (FCFA/mois)");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(21, "input", 15);
+    \u0275\u0275element(23, "input", 16);
+    \u0275\u0275conditionalCreate(24, SaPlansComponent_Conditional_12_Conditional_24_Template, 2, 0, "span", 13);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(22, "div", 10)(23, "label");
-    \u0275\u0275text(24, "Max personnes (vide = illimit\xE9)");
+    \u0275\u0275elementStart(25, "div", 11)(26, "label");
+    \u0275\u0275text(27, "Max personnes (vide = illimit\xE9)");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(25, "input", 16);
+    \u0275\u0275element(28, "input", 17);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(26, "div", 17)(27, "label");
-    \u0275\u0275text(28, "Fonctionnalit\xE9s (s\xE9par\xE9es par virgule)");
+    \u0275\u0275elementStart(29, "div", 18)(30, "label");
+    \u0275\u0275text(31, "Fonctionnalit\xE9s (s\xE9par\xE9es par virgule)");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(29, "input", 18);
+    \u0275\u0275element(32, "input", 19);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(30, "div", 19)(31, "button", 20);
-    \u0275\u0275conditionalCreate(32, SaPlansComponent_Conditional_12_Conditional_32_Template, 1, 0, "span", 21)(33, SaPlansComponent_Conditional_12_Conditional_33_Template, 1, 0);
+    \u0275\u0275conditionalCreate(33, SaPlansComponent_Conditional_12_Conditional_33_Template, 4, 1, "div", 20);
+    \u0275\u0275elementStart(34, "div", 21)(35, "button", 22);
+    \u0275\u0275conditionalCreate(36, SaPlansComponent_Conditional_12_Conditional_36_Template, 1, 0, "span", 23)(37, SaPlansComponent_Conditional_12_Conditional_37_Template, 1, 0);
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
@@ -2893,29 +3121,51 @@ function SaPlansComponent_Conditional_12_Template(rf, ctx) {
     \u0275\u0275property("formGroup", ctx_r1.createForm);
     \u0275\u0275advance(6);
     \u0275\u0275conditional(ctx_r1.createForm.get("id").invalid && ctx_r1.createForm.get("id").touched ? 9 : -1);
-    \u0275\u0275advance(22);
+    \u0275\u0275advance(5);
+    \u0275\u0275conditional(ctx_r1.createForm.get("nom").invalid && ctx_r1.createForm.get("nom").touched ? 14 : -1);
+    \u0275\u0275advance(5);
+    \u0275\u0275conditional(ctx_r1.createForm.get("label").invalid && ctx_r1.createForm.get("label").touched ? 19 : -1);
+    \u0275\u0275advance(5);
+    \u0275\u0275conditional(ctx_r1.createForm.get("prix").invalid && ctx_r1.createForm.get("prix").touched ? 24 : -1);
+    \u0275\u0275advance(9);
+    \u0275\u0275conditional(ctx_r1.createErreur ? 33 : -1);
+    \u0275\u0275advance(2);
     \u0275\u0275property("disabled", ctx_r1.creating);
     \u0275\u0275advance();
-    \u0275\u0275conditional(ctx_r1.creating ? 32 : 33);
+    \u0275\u0275conditional(ctx_r1.creating ? 36 : 37);
   }
 }
 function SaPlansComponent_Conditional_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 6);
+    \u0275\u0275elementStart(0, "div", 6)(1, "span", 4);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r1.actionErreur, " ");
+  }
+}
+function SaPlansComponent_Conditional_14_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 7);
     \u0275\u0275text(1, "Chargement...");
     \u0275\u0275elementEnd();
   }
 }
-function SaPlansComponent_Conditional_14_For_2_Conditional_10_Template(rf, ctx) {
+function SaPlansComponent_Conditional_15_For_2_Conditional_10_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "small");
     \u0275\u0275text(1, "/mois");
     \u0275\u0275elementEnd();
   }
 }
-function SaPlansComponent_Conditional_14_For_2_Conditional_14_Template(rf, ctx) {
+function SaPlansComponent_Conditional_15_For_2_Conditional_14_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 30);
+    \u0275\u0275elementStart(0, "span", 32);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -2925,14 +3175,14 @@ function SaPlansComponent_Conditional_14_For_2_Conditional_14_Template(rf, ctx) 
     \u0275\u0275textInterpolate1("Max ", p_r3.maxPersonnes, " pers.");
   }
 }
-function SaPlansComponent_Conditional_14_For_2_Conditional_15_Template(rf, ctx) {
+function SaPlansComponent_Conditional_15_For_2_Conditional_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 31);
+    \u0275\u0275elementStart(0, "span", 33);
     \u0275\u0275text(1, "Illimit\xE9");
     \u0275\u0275elementEnd();
   }
 }
-function SaPlansComponent_Conditional_14_For_2_Conditional_16_For_2_Template(rf, ctx) {
+function SaPlansComponent_Conditional_15_For_2_Conditional_16_For_2_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "li")(1, "span", 4);
     \u0275\u0275text(2, "check_circle");
@@ -2946,14 +3196,14 @@ function SaPlansComponent_Conditional_14_For_2_Conditional_16_For_2_Template(rf,
     \u0275\u0275textInterpolate(f_r5);
   }
 }
-function SaPlansComponent_Conditional_14_For_2_Conditional_16_Template(rf, ctx) {
+function SaPlansComponent_Conditional_15_For_2_Conditional_16_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "ul", 32);
-    \u0275\u0275repeaterCreate(1, SaPlansComponent_Conditional_14_For_2_Conditional_16_For_2_Template, 4, 1, "li", null, \u0275\u0275repeaterTrackByIdentity);
+    \u0275\u0275elementStart(0, "ul", 34);
+    \u0275\u0275repeaterCreate(1, SaPlansComponent_Conditional_15_For_2_Conditional_16_For_2_Template, 4, 1, "li", null, \u0275\u0275repeaterTrackByIdentity);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 33)(4, "button", 34);
-    \u0275\u0275listener("click", function SaPlansComponent_Conditional_14_For_2_Conditional_16_Template_button_click_4_listener() {
+    \u0275\u0275elementStart(3, "div", 35)(4, "button", 36);
+    \u0275\u0275listener("click", function SaPlansComponent_Conditional_15_For_2_Conditional_16_Template_button_click_4_listener() {
       \u0275\u0275restoreView(_r4);
       const p_r3 = \u0275\u0275nextContext().$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -2964,8 +3214,8 @@ function SaPlansComponent_Conditional_14_For_2_Conditional_16_Template(rf, ctx) 
     \u0275\u0275elementEnd();
     \u0275\u0275text(7, " Modifier ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "button", 35);
-    \u0275\u0275listener("click", function SaPlansComponent_Conditional_14_For_2_Conditional_16_Template_button_click_8_listener() {
+    \u0275\u0275elementStart(8, "button", 37);
+    \u0275\u0275listener("click", function SaPlansComponent_Conditional_15_For_2_Conditional_16_Template_button_click_8_listener() {
       \u0275\u0275restoreView(_r4);
       const p_r3 = \u0275\u0275nextContext().$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -2984,109 +3234,130 @@ function SaPlansComponent_Conditional_14_For_2_Conditional_16_Template(rf, ctx) 
     \u0275\u0275property("disabled", ctx_r1.actionLoading === p_r3.id);
   }
 }
-function SaPlansComponent_Conditional_14_For_2_Conditional_17_Template(rf, ctx) {
+function SaPlansComponent_Conditional_15_For_2_Conditional_17_Conditional_17_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 44)(1, "span", 4);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r1.editErreur, " ");
+  }
+}
+function SaPlansComponent_Conditional_15_For_2_Conditional_17_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 36)(1, "label");
-    \u0275\u0275text(2, "Label");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "input", 37);
-    \u0275\u0275twoWayListener("ngModelChange", function SaPlansComponent_Conditional_14_For_2_Conditional_17_Template_input_ngModelChange_3_listener($event) {
+    \u0275\u0275elementStart(0, "div", 38)(1, "label");
+    \u0275\u0275text(2, "Label ");
+    \u0275\u0275elementStart(3, "span", 39);
+    \u0275\u0275text(4, "*");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(5, "input", 40);
+    \u0275\u0275twoWayListener("ngModelChange", function SaPlansComponent_Conditional_15_For_2_Conditional_17_Template_input_ngModelChange_5_listener($event) {
       \u0275\u0275restoreView(_r6);
       const p_r3 = \u0275\u0275nextContext().$implicit;
       \u0275\u0275twoWayBindingSet(p_r3._editLabel, $event) || (p_r3._editLabel = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "label");
-    \u0275\u0275text(5, "Prix (FCFA)");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "input", 38);
-    \u0275\u0275twoWayListener("ngModelChange", function SaPlansComponent_Conditional_14_For_2_Conditional_17_Template_input_ngModelChange_6_listener($event) {
+    \u0275\u0275elementStart(6, "label");
+    \u0275\u0275text(7, "Prix (FCFA) ");
+    \u0275\u0275elementStart(8, "span", 39);
+    \u0275\u0275text(9, "*");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(10, "input", 41);
+    \u0275\u0275twoWayListener("ngModelChange", function SaPlansComponent_Conditional_15_For_2_Conditional_17_Template_input_ngModelChange_10_listener($event) {
       \u0275\u0275restoreView(_r6);
       const p_r3 = \u0275\u0275nextContext().$implicit;
       \u0275\u0275twoWayBindingSet(p_r3._editPrix, $event) || (p_r3._editPrix = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "label");
-    \u0275\u0275text(8, "Max personnes (vide = illimit\xE9)");
+    \u0275\u0275elementStart(11, "label");
+    \u0275\u0275text(12, "Max personnes (vide = illimit\xE9)");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "input", 39);
-    \u0275\u0275twoWayListener("ngModelChange", function SaPlansComponent_Conditional_14_For_2_Conditional_17_Template_input_ngModelChange_9_listener($event) {
+    \u0275\u0275elementStart(13, "input", 42);
+    \u0275\u0275twoWayListener("ngModelChange", function SaPlansComponent_Conditional_15_For_2_Conditional_17_Template_input_ngModelChange_13_listener($event) {
       \u0275\u0275restoreView(_r6);
       const p_r3 = \u0275\u0275nextContext().$implicit;
       \u0275\u0275twoWayBindingSet(p_r3._editMax, $event) || (p_r3._editMax = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "label");
-    \u0275\u0275text(11, "Fonctionnalit\xE9s (virgule)");
+    \u0275\u0275elementStart(14, "label");
+    \u0275\u0275text(15, "Fonctionnalit\xE9s (virgule)");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "input", 37);
-    \u0275\u0275twoWayListener("ngModelChange", function SaPlansComponent_Conditional_14_For_2_Conditional_17_Template_input_ngModelChange_12_listener($event) {
+    \u0275\u0275elementStart(16, "input", 43);
+    \u0275\u0275twoWayListener("ngModelChange", function SaPlansComponent_Conditional_15_For_2_Conditional_17_Template_input_ngModelChange_16_listener($event) {
       \u0275\u0275restoreView(_r6);
       const p_r3 = \u0275\u0275nextContext().$implicit;
       \u0275\u0275twoWayBindingSet(p_r3._editFeats, $event) || (p_r3._editFeats = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(13, "div", 33)(14, "button", 40);
-    \u0275\u0275listener("click", function SaPlansComponent_Conditional_14_For_2_Conditional_17_Template_button_click_14_listener() {
+    \u0275\u0275conditionalCreate(17, SaPlansComponent_Conditional_15_For_2_Conditional_17_Conditional_17_Template, 4, 1, "div", 44);
+    \u0275\u0275elementStart(18, "div", 35)(19, "button", 45);
+    \u0275\u0275listener("click", function SaPlansComponent_Conditional_15_For_2_Conditional_17_Template_button_click_19_listener() {
       \u0275\u0275restoreView(_r6);
       const p_r3 = \u0275\u0275nextContext().$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.saveEdit(p_r3));
     });
-    \u0275\u0275elementStart(15, "span", 4);
-    \u0275\u0275text(16, "check");
+    \u0275\u0275elementStart(20, "span", 4);
+    \u0275\u0275text(21, "check");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(17, " Enregistrer ");
+    \u0275\u0275text(22, " Enregistrer ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(18, "button", 41);
-    \u0275\u0275listener("click", function SaPlansComponent_Conditional_14_For_2_Conditional_17_Template_button_click_18_listener() {
+    \u0275\u0275elementStart(23, "button", 46);
+    \u0275\u0275listener("click", function SaPlansComponent_Conditional_15_For_2_Conditional_17_Template_button_click_23_listener() {
       \u0275\u0275restoreView(_r6);
       const p_r3 = \u0275\u0275nextContext().$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.cancelEdit(p_r3));
     });
-    \u0275\u0275text(19, "Annuler");
+    \u0275\u0275text(24, "Annuler");
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const p_r3 = \u0275\u0275nextContext().$implicit;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(3);
+    \u0275\u0275advance(5);
     \u0275\u0275twoWayProperty("ngModel", p_r3._editLabel);
-    \u0275\u0275advance(3);
+    \u0275\u0275advance(5);
     \u0275\u0275twoWayProperty("ngModel", p_r3._editPrix);
     \u0275\u0275advance(3);
     \u0275\u0275twoWayProperty("ngModel", p_r3._editMax);
     \u0275\u0275advance(3);
     \u0275\u0275twoWayProperty("ngModel", p_r3._editFeats);
+    \u0275\u0275advance();
+    \u0275\u0275conditional(ctx_r1.editErreur ? 17 : -1);
     \u0275\u0275advance(2);
     \u0275\u0275property("disabled", ctx_r1.actionLoading === p_r3.id);
   }
 }
-function SaPlansComponent_Conditional_14_For_2_Template(rf, ctx) {
+function SaPlansComponent_Conditional_15_For_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 23)(1, "div", 24)(2, "div")(3, "div", 25);
+    \u0275\u0275elementStart(0, "div", 25)(1, "div", 26)(2, "div")(3, "div", 27);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "code", 26);
+    \u0275\u0275elementStart(5, "code", 28);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "div", 27);
+    \u0275\u0275elementStart(7, "div", 29);
     \u0275\u0275text(8);
     \u0275\u0275pipe(9, "number");
-    \u0275\u0275conditionalCreate(10, SaPlansComponent_Conditional_14_For_2_Conditional_10_Template, 2, 0, "small");
+    \u0275\u0275conditionalCreate(10, SaPlansComponent_Conditional_15_For_2_Conditional_10_Template, 2, 0, "small");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(11, "div", 28)(12, "span", 29);
+    \u0275\u0275elementStart(11, "div", 30)(12, "span", 31);
     \u0275\u0275text(13);
     \u0275\u0275elementEnd();
-    \u0275\u0275conditionalCreate(14, SaPlansComponent_Conditional_14_For_2_Conditional_14_Template, 2, 1, "span", 30)(15, SaPlansComponent_Conditional_14_For_2_Conditional_15_Template, 2, 0, "span", 31);
+    \u0275\u0275conditionalCreate(14, SaPlansComponent_Conditional_15_For_2_Conditional_14_Template, 2, 1, "span", 32)(15, SaPlansComponent_Conditional_15_For_2_Conditional_15_Template, 2, 0, "span", 33);
     \u0275\u0275elementEnd();
-    \u0275\u0275conditionalCreate(16, SaPlansComponent_Conditional_14_For_2_Conditional_16_Template, 11, 1)(17, SaPlansComponent_Conditional_14_For_2_Conditional_17_Template, 20, 5);
+    \u0275\u0275conditionalCreate(16, SaPlansComponent_Conditional_15_For_2_Conditional_16_Template, 11, 1)(17, SaPlansComponent_Conditional_15_For_2_Conditional_17_Template, 25, 6);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -3108,10 +3379,10 @@ function SaPlansComponent_Conditional_14_For_2_Template(rf, ctx) {
     \u0275\u0275conditional(!p_r3._editing ? 16 : 17);
   }
 }
-function SaPlansComponent_Conditional_14_Template(rf, ctx) {
+function SaPlansComponent_Conditional_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 7);
-    \u0275\u0275repeaterCreate(1, SaPlansComponent_Conditional_14_For_2_Template, 18, 11, "div", 22, _forTrack07);
+    \u0275\u0275elementStart(0, "div", 8);
+    \u0275\u0275repeaterCreate(1, SaPlansComponent_Conditional_15_For_2_Template, 18, 11, "div", 24, _forTrack07);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -3130,6 +3401,9 @@ var SaPlansComponent = class _SaPlansComponent {
   creating = false;
   editingId = null;
   actionLoading = "";
+  actionErreur = null;
+  createErreur = null;
+  editErreur = null;
   constructor(sa, fb) {
     this.sa = sa;
     this.fb = fb;
@@ -3158,11 +3432,22 @@ var SaPlansComponent = class _SaPlansComponent {
     p._editPrix = p.prix;
     p._editMax = p.maxPersonnes;
     p._editFeats = (p.features ?? []).join(", ");
+    this.editErreur = null;
   }
   cancelEdit(p) {
     p._editing = false;
+    this.editErreur = null;
   }
   saveEdit(p) {
+    if (!p._editLabel?.trim()) {
+      this.editErreur = "Le libell\xE9 est requis.";
+      return;
+    }
+    if (p._editPrix == null || +p._editPrix < 0) {
+      this.editErreur = "Le prix doit \xEAtre un nombre positif.";
+      return;
+    }
+    this.editErreur = null;
     this.actionLoading = p.id;
     const features = p._editFeats.split(",").map((s) => s.trim()).filter(Boolean);
     this.sa.patchPlan(p.id, { label: p._editLabel, prix: +(p._editPrix ?? p.prix), maxPersonnes: p._editMax ? +p._editMax : null, features }).subscribe({
@@ -3171,25 +3456,33 @@ var SaPlansComponent = class _SaPlansComponent {
         p._editing = false;
         this.actionLoading = "";
       },
-      error: () => this.actionLoading = ""
+      error: (err) => {
+        this.actionLoading = "";
+        this.editErreur = err?.error?.error ?? "Erreur lors de la sauvegarde.";
+      }
     });
   }
   deletePlan(p) {
     if (!confirm(`Supprimer le plan "${p.label}" ? Les abonnements existants seront affect\xE9s.`))
       return;
     this.actionLoading = p.id;
+    this.actionErreur = null;
     this.sa.deletePlan(p.id).subscribe({
       next: () => {
         this.plans = this.plans.filter((x) => x.id !== p.id);
         this.actionLoading = "";
       },
-      error: () => this.actionLoading = ""
+      error: (err) => {
+        this.actionLoading = "";
+        this.actionErreur = err?.error?.error ?? "Erreur lors de la suppression.";
+      }
     });
   }
   submitCreate() {
     this.createForm.markAllAsTouched();
     if (this.createForm.invalid)
       return;
+    this.createErreur = null;
     this.creating = true;
     const v = this.createForm.value;
     const features = v.featuresRaw.split(",").map((s) => s.trim()).filter(Boolean);
@@ -3200,13 +3493,16 @@ var SaPlansComponent = class _SaPlansComponent {
         this.createForm.reset({ prix: 0 });
         this.creating = false;
       },
-      error: () => this.creating = false
+      error: (err) => {
+        this.creating = false;
+        this.createErreur = err?.error?.error ?? "Erreur lors de la cr\xE9ation du plan.";
+      }
     });
   }
   static \u0275fac = function SaPlansComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _SaPlansComponent)(\u0275\u0275directiveInject(SuperAdminService), \u0275\u0275directiveInject(FormBuilder));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SaPlansComponent, selectors: [["sa-plans"]], standalone: false, decls: 15, vars: 4, consts: [[1, "sa-page"], [1, "sa-page-header"], [1, "sa-header-row"], [1, "sa-btn-primary", 3, "click"], [1, "material-icons-round"], [1, "sa-create-card"], [1, "sa-loading"], [1, "sa-plans-grid"], [3, "ngSubmit", "formGroup"], [1, "sa-form-grid"], [1, "sa-field"], ["formControlName", "id", "placeholder", "ex: plan_premium"], [1, "sa-ferr"], ["formControlName", "nom", "placeholder", "ex: premium"], ["formControlName", "label", "placeholder", "ex: Premium"], ["type", "number", "formControlName", "prix", "min", "0"], ["type", "number", "formControlName", "maxPersonnes", "placeholder", "illimit\xE9"], [1, "sa-field", "sa-field-full"], ["formControlName", "featuresRaw", "placeholder", "Arbre illimit\xE9, Albums photos, Stories..."], [1, "sa-create-actions"], ["type", "submit", 1, "sa-btn-primary", 3, "disabled"], [1, "sa-spinner-sm"], [1, "sa-plan-card", 3, "sa-plan-free"], [1, "sa-plan-card"], [1, "sa-plan-head"], [1, "sa-plan-label"], [1, "sa-plan-id"], [1, "sa-plan-prix"], [1, "sa-plan-meta"], [1, "sa-badge", "blue"], [1, "sa-badge", "grey"], [1, "sa-badge", "green"], [1, "sa-plan-features"], [1, "sa-plan-actions"], ["title", "Modifier", 1, "sa-act-btn", 3, "click"], ["title", "Supprimer", 1, "sa-act-btn", "danger", 3, "click", "disabled"], [1, "sa-plan-edit"], [3, "ngModelChange", "ngModel"], ["type", "number", "min", "0", 3, "ngModelChange", "ngModel"], ["type", "number", 3, "ngModelChange", "ngModel"], [1, "sa-act-btn", "green", 3, "click", "disabled"], [1, "sa-act-btn", 3, "click"]], template: function SaPlansComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SaPlansComponent, selectors: [["sa-plans"]], standalone: false, decls: 16, vars: 5, consts: [[1, "sa-page"], [1, "sa-page-header"], [1, "sa-header-row"], [1, "sa-btn-primary", 3, "click"], [1, "material-icons-round"], [1, "sa-create-card"], [1, "error-state", 2, "margin-bottom", "16px"], [1, "sa-loading"], [1, "sa-plans-grid"], [3, "ngSubmit", "formGroup"], [1, "sa-form-grid"], [1, "sa-field"], ["formControlName", "id", "placeholder", "ex: plan_premium"], [1, "sa-ferr"], ["formControlName", "nom", "placeholder", "ex: premium"], ["formControlName", "label", "placeholder", "ex: Premium"], ["type", "number", "formControlName", "prix", "min", "0"], ["type", "number", "formControlName", "maxPersonnes", "placeholder", "illimit\xE9"], [1, "sa-field", "sa-field-full"], ["formControlName", "featuresRaw", "placeholder", "Arbre illimit\xE9, Albums photos, Stories..."], [1, "error-state", 2, "margin-top", "12px"], [1, "sa-create-actions"], ["type", "submit", 1, "sa-btn-primary", 3, "disabled"], [1, "sa-spinner-sm"], [1, "sa-plan-card", 3, "sa-plan-free"], [1, "sa-plan-card"], [1, "sa-plan-head"], [1, "sa-plan-label"], [1, "sa-plan-id"], [1, "sa-plan-prix"], [1, "sa-plan-meta"], [1, "sa-badge", "blue"], [1, "sa-badge", "grey"], [1, "sa-badge", "green"], [1, "sa-plan-features"], [1, "sa-plan-actions"], ["title", "Modifier", 1, "sa-act-btn", 3, "click"], ["title", "Supprimer", 1, "sa-act-btn", "danger", 3, "click", "disabled"], [1, "sa-plan-edit"], [1, "required"], ["required", "", 3, "ngModelChange", "ngModel"], ["type", "number", "min", "0", "required", "", 3, "ngModelChange", "ngModel"], ["type", "number", 3, "ngModelChange", "ngModel"], [3, "ngModelChange", "ngModel"], [1, "error-state", 2, "margin-top", "8px"], [1, "sa-act-btn", "green", 3, "click", "disabled"], [1, "sa-act-btn", 3, "click"]], template: function SaPlansComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div")(4, "h1");
       \u0275\u0275text(5, "Plans d'abonnement");
@@ -3223,8 +3519,9 @@ var SaPlansComponent = class _SaPlansComponent {
       \u0275\u0275elementEnd();
       \u0275\u0275text(11);
       \u0275\u0275elementEnd()()();
-      \u0275\u0275conditionalCreate(12, SaPlansComponent_Conditional_12_Template, 34, 4, "div", 5);
-      \u0275\u0275conditionalCreate(13, SaPlansComponent_Conditional_13_Template, 2, 0, "div", 6)(14, SaPlansComponent_Conditional_14_Template, 3, 0, "div", 7);
+      \u0275\u0275conditionalCreate(12, SaPlansComponent_Conditional_12_Template, 38, 8, "div", 5);
+      \u0275\u0275conditionalCreate(13, SaPlansComponent_Conditional_13_Template, 4, 1, "div", 6);
+      \u0275\u0275conditionalCreate(14, SaPlansComponent_Conditional_14_Template, 2, 0, "div", 7)(15, SaPlansComponent_Conditional_15_Template, 3, 0, "div", 8);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
@@ -3235,9 +3532,11 @@ var SaPlansComponent = class _SaPlansComponent {
       \u0275\u0275advance();
       \u0275\u0275conditional(ctx.showCreateForm ? 12 : -1);
       \u0275\u0275advance();
-      \u0275\u0275conditional(ctx.loading ? 13 : 14);
+      \u0275\u0275conditional(ctx.actionErreur ? 13 : -1);
+      \u0275\u0275advance();
+      \u0275\u0275conditional(ctx.loading ? 14 : 15);
     }
-  }, dependencies: [\u0275NgNoValidate, DefaultValueAccessor, NumberValueAccessor, NgControlStatus, NgControlStatusGroup, MinValidator, FormGroupDirective, FormControlName, NgModel, DecimalPipe], styles: ["\n\n.sa-page-header[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.sa-page-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-header-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n}\n.sa-page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-loading[_ngcontent-%COMP%] {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-btn-primary[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 16px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 14px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.sa-btn-primary[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px;\n}\n.sa-btn-primary[_ngcontent-%COMP%]:hover {\n  background: #4F46E5;\n}\n.sa-btn-primary[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-create-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  margin-bottom: 24px;\n  border-left: 3px solid #6366F1;\n}\n.sa-create-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0 0 16px;\n}\n.sa-form-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));\n  gap: 12px;\n}\n.sa-field[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.sa-field[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 500;\n}\n.sa-field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  padding: 8px 10px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:focus {\n  border-color: #6366F1;\n}\n.sa-field.sa-field-full[_ngcontent-%COMP%] {\n  grid-column: 1/-1;\n}\n.sa-ferr[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #EF4444;\n}\n.sa-create-actions[_ngcontent-%COMP%] {\n  margin-top: 16px;\n}\n.sa-spinner-sm[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.7s linear infinite;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.sa-plans-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));\n  gap: 20px;\n}\n.sa-plan-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  border-top: 3px solid #6366F1;\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.sa-plan-card.sa-plan-free[_ngcontent-%COMP%] {\n  border-top-color: #94A3B8;\n}\n.sa-plan-head[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n}\n.sa-plan-label[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  color: #0F172A;\n}\n.sa-plan-id[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #94A3B8;\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n}\n.sa-plan-prix[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: #6366F1;\n  white-space: nowrap;\n}\n.sa-plan-prix[_ngcontent-%COMP%]   small[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #94A3B8;\n  font-weight: 400;\n}\n.sa-plan-meta[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.sa-plan-features[_ngcontent-%COMP%] {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  flex: 1;\n}\n.sa-plan-features[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  color: #374151;\n  padding: 3px 0;\n}\n.sa-plan-features[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #10B981;\n}\n.sa-plan-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n}\n.sa-plan-edit[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.sa-plan-edit[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #64748B;\n  font-weight: 500;\n  margin-top: 4px;\n}\n.sa-plan-edit[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  padding: 6px 8px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-plan-edit[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:focus {\n  border-color: #6366F1;\n}\n.sa-badge[_ngcontent-%COMP%] {\n  display: inline-block;\n  padding: 2px 8px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.sa-badge.blue[_ngcontent-%COMP%] {\n  background: #EFF6FF;\n  color: #2563EB;\n}\n.sa-badge.green[_ngcontent-%COMP%] {\n  background: #DCFCE7;\n  color: #16A34A;\n}\n.sa-badge.grey[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  color: #64748B;\n}\n.sa-act-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  padding: 6px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  font-size: 12px;\n  transition: all 0.15s;\n}\n.sa-act-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px;\n}\n.sa-act-btn[_ngcontent-%COMP%]:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger[_ngcontent-%COMP%]:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green[_ngcontent-%COMP%]:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-plans.component.css.map */"] });
+  }, dependencies: [\u0275NgNoValidate, DefaultValueAccessor, NumberValueAccessor, NgControlStatus, NgControlStatusGroup, RequiredValidator, MinValidator, FormGroupDirective, FormControlName, NgModel, DecimalPipe], styles: ["\n\n.sa-page-header[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.sa-page-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-header-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n}\n.sa-page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-loading[_ngcontent-%COMP%] {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-btn-primary[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 16px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 14px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.sa-btn-primary[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px;\n}\n.sa-btn-primary[_ngcontent-%COMP%]:hover {\n  background: #4F46E5;\n}\n.sa-btn-primary[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-create-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  margin-bottom: 24px;\n  border-left: 3px solid #6366F1;\n}\n.sa-create-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0 0 16px;\n}\n.sa-form-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));\n  gap: 12px;\n}\n.sa-field[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.sa-field[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 500;\n}\n.sa-field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  padding: 8px 10px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:focus {\n  border-color: #6366F1;\n}\n.sa-field.sa-field-full[_ngcontent-%COMP%] {\n  grid-column: 1/-1;\n}\n.sa-ferr[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #EF4444;\n}\n.required[_ngcontent-%COMP%] {\n  color: #EF4444;\n}\n.sa-create-actions[_ngcontent-%COMP%] {\n  margin-top: 16px;\n}\n.sa-spinner-sm[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.7s linear infinite;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.sa-plans-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));\n  gap: 20px;\n}\n.sa-plan-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  border-top: 3px solid #6366F1;\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.sa-plan-card.sa-plan-free[_ngcontent-%COMP%] {\n  border-top-color: #94A3B8;\n}\n.sa-plan-head[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n}\n.sa-plan-label[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  color: #0F172A;\n}\n.sa-plan-id[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #94A3B8;\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n}\n.sa-plan-prix[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: #6366F1;\n  white-space: nowrap;\n}\n.sa-plan-prix[_ngcontent-%COMP%]   small[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #94A3B8;\n  font-weight: 400;\n}\n.sa-plan-meta[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.sa-plan-features[_ngcontent-%COMP%] {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  flex: 1;\n}\n.sa-plan-features[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  color: #374151;\n  padding: 3px 0;\n}\n.sa-plan-features[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #10B981;\n}\n.sa-plan-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n}\n.sa-plan-edit[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.sa-plan-edit[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #64748B;\n  font-weight: 500;\n  margin-top: 4px;\n}\n.sa-plan-edit[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  padding: 6px 8px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-plan-edit[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:focus {\n  border-color: #6366F1;\n}\n.sa-badge[_ngcontent-%COMP%] {\n  display: inline-block;\n  padding: 2px 8px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.sa-badge.blue[_ngcontent-%COMP%] {\n  background: #EFF6FF;\n  color: #2563EB;\n}\n.sa-badge.green[_ngcontent-%COMP%] {\n  background: #DCFCE7;\n  color: #16A34A;\n}\n.sa-badge.grey[_ngcontent-%COMP%] {\n  background: #F1F5F9;\n  color: #64748B;\n}\n.sa-act-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  padding: 6px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  font-size: 12px;\n  transition: all 0.15s;\n}\n.sa-act-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px;\n}\n.sa-act-btn[_ngcontent-%COMP%]:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger[_ngcontent-%COMP%]:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green[_ngcontent-%COMP%]:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-plans.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SaPlansComponent, [{
@@ -3272,14 +3571,23 @@ var SaPlansComponent = class _SaPlansComponent {
           <div class="sa-field">\r
             <label>Nom technique</label>\r
             <input formControlName="nom" placeholder="ex: premium"/>\r
+            @if (createForm.get('nom')!.invalid && createForm.get('nom')!.touched) {\r
+              <span class="sa-ferr">Requis</span>\r
+            }\r
           </div>\r
           <div class="sa-field">\r
             <label>Label affich\xE9</label>\r
             <input formControlName="label" placeholder="ex: Premium"/>\r
+            @if (createForm.get('label')!.invalid && createForm.get('label')!.touched) {\r
+              <span class="sa-ferr">Requis</span>\r
+            }\r
           </div>\r
           <div class="sa-field">\r
             <label>Prix (FCFA/mois)</label>\r
             <input type="number" formControlName="prix" min="0"/>\r
+            @if (createForm.get('prix')!.invalid && createForm.get('prix')!.touched) {\r
+              <span class="sa-ferr">Requis, doit \xEAtre positif</span>\r
+            }\r
           </div>\r
           <div class="sa-field">\r
             <label>Max personnes (vide = illimit\xE9)</label>\r
@@ -3290,12 +3598,23 @@ var SaPlansComponent = class _SaPlansComponent {
             <input formControlName="featuresRaw" placeholder="Arbre illimit\xE9, Albums photos, Stories..."/>\r
           </div>\r
         </div>\r
+        @if (createErreur) {\r
+          <div class="error-state" style="margin-top:12px">\r
+            <span class="material-icons-round">error_outline</span>{{ createErreur }}\r
+          </div>\r
+        }\r
         <div class="sa-create-actions">\r
           <button type="submit" class="sa-btn-primary" [disabled]="creating">\r
             @if (creating) { <span class="sa-spinner-sm"></span> } @else { Cr\xE9er le plan }\r
           </button>\r
         </div>\r
       </form>\r
+    </div>\r
+  }\r
+\r
+  @if (actionErreur) {\r
+    <div class="error-state" style="margin-bottom:16px">\r
+      <span class="material-icons-round">error_outline</span>{{ actionErreur }}\r
     </div>\r
   }\r
 \r
@@ -3342,15 +3661,20 @@ var SaPlansComponent = class _SaPlansComponent {
           } @else {\r
             <!-- Inline edit -->\r
             <div class="sa-plan-edit">\r
-              <label>Label</label>\r
-              <input [(ngModel)]="p._editLabel"/>\r
-              <label>Prix (FCFA)</label>\r
-              <input type="number" [(ngModel)]="p._editPrix" min="0"/>\r
+              <label>Label <span class="required">*</span></label>\r
+              <input [(ngModel)]="p._editLabel" required/>\r
+              <label>Prix (FCFA) <span class="required">*</span></label>\r
+              <input type="number" [(ngModel)]="p._editPrix" min="0" required/>\r
               <label>Max personnes (vide = illimit\xE9)</label>\r
               <input type="number" [(ngModel)]="p._editMax"/>\r
               <label>Fonctionnalit\xE9s (virgule)</label>\r
               <input [(ngModel)]="p._editFeats"/>\r
             </div>\r
+            @if (editErreur) {\r
+              <div class="error-state" style="margin-top:8px">\r
+                <span class="material-icons-round">error_outline</span>{{ editErreur }}\r
+              </div>\r
+            }\r
             <div class="sa-plan-actions">\r
               <button class="sa-act-btn green" (click)="saveEdit(p)" [disabled]="actionLoading === p.id">\r
                 <span class="material-icons-round">check</span> Enregistrer\r
@@ -3363,7 +3687,7 @@ var SaPlansComponent = class _SaPlansComponent {
     </div>\r
   }\r
 </div>\r
-`, styles: ["/* src/app/superadmin/pages/plans/sa-plans.component.scss */\n.sa-page-header {\n  margin-bottom: 24px;\n}\n.sa-page-header p {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-header-row {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n}\n.sa-page-header h1 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-loading {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-btn-primary {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 16px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 14px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.sa-btn-primary .material-icons-round {\n  font-size: 18px;\n}\n.sa-btn-primary:hover {\n  background: #4F46E5;\n}\n.sa-btn-primary:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-create-card {\n  background: #fff;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  margin-bottom: 24px;\n  border-left: 3px solid #6366F1;\n}\n.sa-create-card h3 {\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0 0 16px;\n}\n.sa-form-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));\n  gap: 12px;\n}\n.sa-field {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.sa-field label {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 500;\n}\n.sa-field input {\n  padding: 8px 10px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-field input:focus {\n  border-color: #6366F1;\n}\n.sa-field.sa-field-full {\n  grid-column: 1/-1;\n}\n.sa-ferr {\n  font-size: 11px;\n  color: #EF4444;\n}\n.sa-create-actions {\n  margin-top: 16px;\n}\n.sa-spinner-sm {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: spin 0.7s linear infinite;\n}\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.sa-plans-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));\n  gap: 20px;\n}\n.sa-plan-card {\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  border-top: 3px solid #6366F1;\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.sa-plan-card.sa-plan-free {\n  border-top-color: #94A3B8;\n}\n.sa-plan-head {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n}\n.sa-plan-label {\n  font-size: 16px;\n  font-weight: 700;\n  color: #0F172A;\n}\n.sa-plan-id {\n  font-size: 11px;\n  color: #94A3B8;\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n}\n.sa-plan-prix {\n  font-size: 20px;\n  font-weight: 700;\n  color: #6366F1;\n  white-space: nowrap;\n}\n.sa-plan-prix small {\n  font-size: 12px;\n  color: #94A3B8;\n  font-weight: 400;\n}\n.sa-plan-meta {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.sa-plan-features {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  flex: 1;\n}\n.sa-plan-features li {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  color: #374151;\n  padding: 3px 0;\n}\n.sa-plan-features li .material-icons-round {\n  font-size: 16px;\n  color: #10B981;\n}\n.sa-plan-actions {\n  display: flex;\n  gap: 8px;\n}\n.sa-plan-edit {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.sa-plan-edit label {\n  font-size: 11px;\n  color: #64748B;\n  font-weight: 500;\n  margin-top: 4px;\n}\n.sa-plan-edit input {\n  padding: 6px 8px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-plan-edit input:focus {\n  border-color: #6366F1;\n}\n.sa-badge {\n  display: inline-block;\n  padding: 2px 8px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.sa-badge.blue {\n  background: #EFF6FF;\n  color: #2563EB;\n}\n.sa-badge.green {\n  background: #DCFCE7;\n  color: #16A34A;\n}\n.sa-badge.grey {\n  background: #F1F5F9;\n  color: #64748B;\n}\n.sa-act-btn {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  padding: 6px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  font-size: 12px;\n  transition: all 0.15s;\n}\n.sa-act-btn .material-icons-round {\n  font-size: 14px;\n}\n.sa-act-btn:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-plans.component.css.map */\n"] }]
+`, styles: ["/* src/app/superadmin/pages/plans/sa-plans.component.scss */\n.sa-page-header {\n  margin-bottom: 24px;\n}\n.sa-page-header p {\n  color: #64748B;\n  font-size: 14px;\n  margin: 0;\n}\n.sa-header-row {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n}\n.sa-page-header h1 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 4px;\n}\n.sa-loading {\n  color: #64748B;\n  padding: 40px;\n  text-align: center;\n}\n.sa-btn-primary {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 16px;\n  background: #6366F1;\n  color: #fff;\n  border: none;\n  border-radius: 8px;\n  font-size: 14px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.sa-btn-primary .material-icons-round {\n  font-size: 18px;\n}\n.sa-btn-primary:hover {\n  background: #4F46E5;\n}\n.sa-btn-primary:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.sa-create-card {\n  background: #fff;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  margin-bottom: 24px;\n  border-left: 3px solid #6366F1;\n}\n.sa-create-card h3 {\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n  margin: 0 0 16px;\n}\n.sa-form-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));\n  gap: 12px;\n}\n.sa-field {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.sa-field label {\n  font-size: 12px;\n  color: #64748B;\n  font-weight: 500;\n}\n.sa-field input {\n  padding: 8px 10px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-field input:focus {\n  border-color: #6366F1;\n}\n.sa-field.sa-field-full {\n  grid-column: 1/-1;\n}\n.sa-ferr {\n  font-size: 11px;\n  color: #EF4444;\n}\n.required {\n  color: #EF4444;\n}\n.sa-create-actions {\n  margin-top: 16px;\n}\n.sa-spinner-sm {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: spin 0.7s linear infinite;\n}\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.sa-plans-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));\n  gap: 20px;\n}\n.sa-plan-card {\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  border-top: 3px solid #6366F1;\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.sa-plan-card.sa-plan-free {\n  border-top-color: #94A3B8;\n}\n.sa-plan-head {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n}\n.sa-plan-label {\n  font-size: 16px;\n  font-weight: 700;\n  color: #0F172A;\n}\n.sa-plan-id {\n  font-size: 11px;\n  color: #94A3B8;\n  background: #F1F5F9;\n  padding: 2px 6px;\n  border-radius: 4px;\n}\n.sa-plan-prix {\n  font-size: 20px;\n  font-weight: 700;\n  color: #6366F1;\n  white-space: nowrap;\n}\n.sa-plan-prix small {\n  font-size: 12px;\n  color: #94A3B8;\n  font-weight: 400;\n}\n.sa-plan-meta {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n.sa-plan-features {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  flex: 1;\n}\n.sa-plan-features li {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  color: #374151;\n  padding: 3px 0;\n}\n.sa-plan-features li .material-icons-round {\n  font-size: 16px;\n  color: #10B981;\n}\n.sa-plan-actions {\n  display: flex;\n  gap: 8px;\n}\n.sa-plan-edit {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.sa-plan-edit label {\n  font-size: 11px;\n  color: #64748B;\n  font-weight: 500;\n  margin-top: 4px;\n}\n.sa-plan-edit input {\n  padding: 6px 8px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  font-size: 13px;\n  outline: none;\n}\n.sa-plan-edit input:focus {\n  border-color: #6366F1;\n}\n.sa-badge {\n  display: inline-block;\n  padding: 2px 8px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.sa-badge.blue {\n  background: #EFF6FF;\n  color: #2563EB;\n}\n.sa-badge.green {\n  background: #DCFCE7;\n  color: #16A34A;\n}\n.sa-badge.grey {\n  background: #F1F5F9;\n  color: #64748B;\n}\n.sa-act-btn {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  padding: 6px 12px;\n  border: 1px solid #E2E8F0;\n  border-radius: 6px;\n  background: #fff;\n  cursor: pointer;\n  color: #64748B;\n  font-size: 12px;\n  transition: all 0.15s;\n}\n.sa-act-btn .material-icons-round {\n  font-size: 14px;\n}\n.sa-act-btn:hover {\n  border-color: #6366F1;\n  color: #6366F1;\n  background: #F5F3FF;\n}\n.sa-act-btn.danger:hover {\n  border-color: #EF4444;\n  color: #EF4444;\n  background: #FEF2F2;\n}\n.sa-act-btn.green:hover {\n  border-color: #10B981;\n  color: #10B981;\n  background: #ECFDF5;\n}\n.sa-act-btn:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n/*# sourceMappingURL=sa-plans.component.css.map */\n"] }]
   }], () => [{ type: SuperAdminService }, { type: FormBuilder }], null);
 })();
 (() => {
@@ -3899,4 +4223,4 @@ var SuperAdminModule = class _SuperAdminModule {
 export {
   SuperAdminModule
 };
-//# sourceMappingURL=chunk-SWAO5CSK.js.map
+//# sourceMappingURL=chunk-FIBQ7E3M.js.map

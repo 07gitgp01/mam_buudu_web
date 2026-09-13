@@ -20,6 +20,9 @@ export class SaPlansComponent implements OnInit {
   creating = false;
   editingId: string | null = null;
   actionLoading = '';
+  actionErreur: string | null = null;
+  createErreur: string | null = null;
+  editErreur: string | null = null;
 
   constructor(private sa: SuperAdminService, private fb: FormBuilder) {}
 
@@ -46,10 +49,20 @@ export class SaPlansComponent implements OnInit {
     p._editPrix  = p.prix;
     p._editMax   = p.maxPersonnes;
     p._editFeats = (p.features ?? []).join(', ');
+    this.editErreur = null;
   }
-  cancelEdit(p: EditablePlan): void { p._editing = false; }
+  cancelEdit(p: EditablePlan): void { p._editing = false; this.editErreur = null; }
 
   saveEdit(p: EditablePlan): void {
+    if (!p._editLabel?.trim()) {
+      this.editErreur = 'Le libellé est requis.';
+      return;
+    }
+    if (p._editPrix == null || +p._editPrix < 0) {
+      this.editErreur = 'Le prix doit être un nombre positif.';
+      return;
+    }
+    this.editErreur = null;
     this.actionLoading = p.id;
     const features = (p._editFeats as string).split(',').map((s: string) => s.trim()).filter(Boolean);
     this.sa.patchPlan(p.id, { label: p._editLabel, prix: +(p._editPrix ?? p.prix), maxPersonnes: p._editMax ? +p._editMax : null, features }).subscribe({
@@ -58,28 +71,30 @@ export class SaPlansComponent implements OnInit {
         p._editing = false;
         this.actionLoading = '';
       },
-      error: () => this.actionLoading = '',
+      error: (err) => { this.actionLoading = ''; this.editErreur = err?.error?.error ?? 'Erreur lors de la sauvegarde.'; },
     });
   }
 
   deletePlan(p: EditablePlan): void {
     if (!confirm(`Supprimer le plan "${p.label}" ? Les abonnements existants seront affectés.`)) return;
     this.actionLoading = p.id;
+    this.actionErreur = null;
     this.sa.deletePlan(p.id).subscribe({
       next: () => { this.plans = this.plans.filter(x => x.id !== p.id); this.actionLoading = ''; },
-      error: () => this.actionLoading = '',
+      error: (err) => { this.actionLoading = ''; this.actionErreur = err?.error?.error ?? 'Erreur lors de la suppression.'; },
     });
   }
 
   submitCreate(): void {
     this.createForm.markAllAsTouched();
     if (this.createForm.invalid) return;
+    this.createErreur = null;
     this.creating = true;
     const v = this.createForm.value;
     const features = (v.featuresRaw as string).split(',').map((s: string) => s.trim()).filter(Boolean);
     this.sa.createPlan({ id: v.id, nom: v.nom, label: v.label, prix: +v.prix, maxPersonnes: v.maxPersonnes ? +v.maxPersonnes : null, features }).subscribe({
       next: (p) => { this.plans.push(p); this.showCreateForm = false; this.createForm.reset({ prix: 0 }); this.creating = false; },
-      error: () => this.creating = false,
+      error: (err) => { this.creating = false; this.createErreur = err?.error?.error ?? 'Erreur lors de la création du plan.'; },
     });
   }
 }

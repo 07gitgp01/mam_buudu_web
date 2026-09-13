@@ -184,11 +184,15 @@
       </div>
 
       <div class="fs-form-group">
-        <label>Votre histoire *</label>
+        <label>Votre histoire <span class="fs-optional">(texte ou média requis)</span></label>
         <textarea [(ngModel)]="form.caption" rows="5"
                   placeholder="Racontez ce beau moment à toute la famille…"
                   class="fs-input fs-textarea"></textarea>
       </div>
+    </div>
+
+    <div class="error-state" *ngIf="formErreur" style="margin:0 20px 12px">
+      <span class="material-icons-round">error_outline</span>{{ formErreur }}
     </div>
 
     <div class="fs-modal-foot">

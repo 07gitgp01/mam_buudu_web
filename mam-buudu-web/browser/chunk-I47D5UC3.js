@@ -6598,25 +6598,39 @@ function TreeComponent_ng_container_70_Template(rf, ctx) {
     \u0275\u0275twoWayProperty("ngModel", ctx_r1.quickCreateForm.dateNaissance);
   }
 }
-function TreeComponent_span_75_Template(rf, ctx) {
+function TreeComponent_div_71_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 62)(1, "span", 10);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r1.quickAddErreur, " ");
+  }
+}
+function TreeComponent_span_76_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 61);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function TreeComponent_span_76_Template(rf, ctx) {
+function TreeComponent_span_77_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 10);
     \u0275\u0275text(1, "save");
     \u0275\u0275elementEnd();
   }
 }
-function TreeComponent_div_78_Template(rf, ctx) {
+function TreeComponent_div_79_Template(rf, ctx) {
   if (rf & 1) {
     const _r34 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "div", 126);
-    \u0275\u0275listener("click", function TreeComponent_div_78_Template_div_click_0_listener() {
+    \u0275\u0275listener("click", function TreeComponent_div_79_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r34);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.closeDetail());
@@ -6624,11 +6638,11 @@ function TreeComponent_div_78_Template(rf, ctx) {
     \u0275\u0275elementEnd();
   }
 }
-function TreeComponent_div_86_img_3_Template(rf, ctx) {
+function TreeComponent_div_87_img_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r36 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "img", 161);
-    \u0275\u0275listener("error", function TreeComponent_div_86_img_3_Template_img_error_0_listener() {
+    \u0275\u0275listener("error", function TreeComponent_div_87_img_3_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r36);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onPhotoError(ctx_r1.selectedPerson.id));
@@ -6640,7 +6654,7 @@ function TreeComponent_div_86_img_3_Template(rf, ctx) {
     \u0275\u0275property("src", ctx_r1.getPhotoUrl(ctx_r1.selectedPerson), \u0275\u0275sanitizeUrl);
   }
 }
-function TreeComponent_div_86_span_4_Template(rf, ctx) {
+function TreeComponent_div_87_span_4_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1);
@@ -6652,21 +6666,21 @@ function TreeComponent_div_86_span_4_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r1.getInitiales(ctx_r1.selectedPerson));
   }
 }
-function TreeComponent_div_86_span_10_Template(rf, ctx) {
+function TreeComponent_div_87_span_10_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 162);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
-function TreeComponent_div_86_span_11_Template(rf, ctx) {
+function TreeComponent_div_87_span_11_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 163);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
 }
-function TreeComponent_div_86_div_13_span_8_Template(rf, ctx) {
+function TreeComponent_div_87_div_13_span_8_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1);
@@ -6678,7 +6692,7 @@ function TreeComponent_div_86_div_13_span_8_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" \xB7 ", ctx_r1.selectedPerson.lieuNaissance);
   }
 }
-function TreeComponent_div_86_div_13_Template(rf, ctx) {
+function TreeComponent_div_87_div_13_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 164)(1, "span", 10);
     \u0275\u0275text(2, "cake");
@@ -6688,7 +6702,7 @@ function TreeComponent_div_86_div_13_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "span", 167);
     \u0275\u0275text(7);
-    \u0275\u0275template(8, TreeComponent_div_86_div_13_span_8_Template, 2, 1, "span", 19);
+    \u0275\u0275template(8, TreeComponent_div_87_div_13_span_8_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -6699,7 +6713,7 @@ function TreeComponent_div_86_div_13_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r1.selectedPerson.lieuNaissance);
   }
 }
-function TreeComponent_div_86_div_14_span_8_Template(rf, ctx) {
+function TreeComponent_div_87_div_14_span_8_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1);
@@ -6711,7 +6725,7 @@ function TreeComponent_div_86_div_14_span_8_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" \xB7 ", ctx_r1.selectedPerson.lieuDeces);
   }
 }
-function TreeComponent_div_86_div_14_Template(rf, ctx) {
+function TreeComponent_div_87_div_14_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 164)(1, "span", 10);
     \u0275\u0275text(2, "sentiment_very_dissatisfied");
@@ -6721,7 +6735,7 @@ function TreeComponent_div_86_div_14_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "span", 167);
     \u0275\u0275text(7);
-    \u0275\u0275template(8, TreeComponent_div_86_div_14_span_8_Template, 2, 1, "span", 19);
+    \u0275\u0275template(8, TreeComponent_div_87_div_14_span_8_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -6732,7 +6746,7 @@ function TreeComponent_div_86_div_14_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r1.selectedPerson.lieuDeces);
   }
 }
-function TreeComponent_div_86_div_15_Template(rf, ctx) {
+function TreeComponent_div_87_div_15_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 164)(1, "span", 10);
     \u0275\u0275text(2, "hourglass_bottom");
@@ -6752,11 +6766,11 @@ function TreeComponent_div_86_div_15_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r1.getAgeLabel(ctx_r1.selectedPerson));
   }
 }
-function TreeComponent_div_86_Template(rf, ctx) {
+function TreeComponent_div_87_Template(rf, ctx) {
   if (rf & 1) {
     const _r35 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "div", 149)(1, "div", 150)(2, "div", 151);
-    \u0275\u0275template(3, TreeComponent_div_86_img_3_Template, 1, 1, "img", 152)(4, TreeComponent_div_86_span_4_Template, 2, 1, "span", 19);
+    \u0275\u0275template(3, TreeComponent_div_87_img_3_Template, 1, 1, "img", 152)(4, TreeComponent_div_87_span_4_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(5, "h2", 153);
     \u0275\u0275text(6);
@@ -6764,13 +6778,13 @@ function TreeComponent_div_86_Template(rf, ctx) {
     \u0275\u0275elementStart(7, "div", 154)(8, "span", 155);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(10, TreeComponent_div_86_span_10_Template, 2, 0, "span", 156)(11, TreeComponent_div_86_span_11_Template, 2, 0, "span", 157);
+    \u0275\u0275template(10, TreeComponent_div_87_span_10_Template, 2, 0, "span", 156)(11, TreeComponent_div_87_span_11_Template, 2, 0, "span", 157);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(12, "div", 158);
-    \u0275\u0275template(13, TreeComponent_div_86_div_13_Template, 9, 2, "div", 159)(14, TreeComponent_div_86_div_14_Template, 9, 2, "div", 159)(15, TreeComponent_div_86_div_15_Template, 8, 2, "div", 159);
+    \u0275\u0275template(13, TreeComponent_div_87_div_13_Template, 9, 2, "div", 159)(14, TreeComponent_div_87_div_14_Template, 9, 2, "div", 159)(15, TreeComponent_div_87_div_15_Template, 8, 2, "div", 159);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(16, "a", 160);
-    \u0275\u0275listener("click", function TreeComponent_div_86_Template_a_click_16_listener() {
+    \u0275\u0275listener("click", function TreeComponent_div_87_Template_a_click_16_listener() {
       \u0275\u0275restoreView(_r35);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.closeDetail());
@@ -6882,6 +6896,7 @@ var TreeComponent = class _TreeComponent {
   quickAddSearch = "";
   quickAddSelected = "";
   quickAddSaving = false;
+  quickAddErreur = null;
   quickCreateForm = { prenoms: "", nomNaissance: "", nomUsage: "", sexe: "M", dateNaissance: "" };
   // ── Mode kiosque ─────────────────────────────────────────────────────────
   isKiosk = false;
@@ -7045,6 +7060,7 @@ var TreeComponent = class _TreeComponent {
       sexe: mode === "partner" ? node.p1.sexe === "M" ? "F" : "M" : "M",
       dateNaissance: ""
     };
+    this.quickAddErreur = null;
     this.showQuickAdd = true;
   }
   closeQuickAdd() {
@@ -7052,6 +7068,7 @@ var TreeComponent = class _TreeComponent {
     this.quickAddTarget = null;
     this.quickAddMode = null;
     this.quickAddSelected = "";
+    this.quickAddErreur = null;
   }
   get quickAddPersonnes() {
     if (!this.quickAddTarget || !this.quickAddMode)
@@ -7078,6 +7095,15 @@ var TreeComponent = class _TreeComponent {
   saveQuickAdd() {
     if (this.quickAddSaving || !this.quickAddTarget || !this.quickAddMode)
       return;
+    if (this.quickAddTab === "select" && !this.quickAddSelected) {
+      this.quickAddErreur = "S\xE9lectionnez un membre.";
+      return;
+    }
+    if (this.quickAddTab === "create" && (!this.quickCreateForm.prenoms.trim() || !this.quickCreateForm.nomNaissance.trim())) {
+      this.quickAddErreur = "Le pr\xE9nom et le nom de naissance sont requis.";
+      return;
+    }
+    this.quickAddErreur = null;
     this.quickAddSaving = true;
     const personObs = this.quickAddTab === "select" ? of({ id: this.quickAddSelected }) : this.api.createPersonne({
       prenoms: this.quickCreateForm.prenoms,
@@ -7098,8 +7124,9 @@ var TreeComponent = class _TreeComponent {
         this.quickAddSaving = false;
         this.closeQuickAdd();
       },
-      error: () => {
+      error: (err) => {
         this.quickAddSaving = false;
+        this.quickAddErreur = err?.error?.error ?? "Erreur lors de l'ajout.";
       }
     });
   }
@@ -7356,7 +7383,7 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.treeVisual = _t.first);
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.treeCanvas = _t.first);
     }
-  }, standalone: false, decls: 87, vars: 43, consts: [["treeCanvas", ""], ["treeVisual", ""], ["nodeRef", ""], [1, "tree-page"], [1, "tree-toolbar"], [1, "toolbar-left"], ["class", "badge badge-primary", 4, "ngIf"], ["class", "root-badge", 4, "ngIf"], [1, "toolbar-right"], ["title", "D\xE9zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "zoom-level"], ["title", "Zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], ["title", "R\xE9initialiser", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "btn-outline", "btn-sm", 3, "click", "disabled"], [2, "width", "1px", "height", "20px", "background", "var(--border)", "margin", "0 2px"], [1, "btn-ghost", "btn-sm", "tree-kiosk-btn", 3, "click", "title"], [1, "root-picker-wrap"], [1, "btn-ghost", "btn-sm", "root-pick-btn", 3, "click"], [4, "ngIf"], ["class", "root-dropdown", 3, "click", 4, "ngIf"], ["class", "root-overlay", 3, "click", 4, "ngIf"], [1, "tree-canvas", 3, "wheel", "mouseleave"], ["class", "loading-state", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "tree-visual", 3, "transform", "pointerdown", "pointermove", "pointerup", "pointercancel", 4, "ngIf"], ["class", "zoom-hint", 4, "ngIf"], ["class", "tree-tooltip", 3, "left", "top", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel", "qa-panel"], [1, "panel-header"], [2, "display", "flex", "align-items", "center", "gap", "8px"], [1, "material-icons-round", 2, "color", "var(--primary)"], [1, "btn-icon", 3, "click"], ["class", "qa-for-whom", 4, "ngIf"], [1, "qa-tabs"], [1, "qa-tab", 3, "click"], [1, "panel-body"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "detail-panel"], [1, "dp-header"], ["class", "dp-body", 4, "ngIf"], [1, "badge", "badge-primary"], [1, "root-badge"], [1, "root-badge-name"], [1, "root-badge-clear", 3, "click"], [1, "root-dropdown", 3, "click"], [1, "root-search-bar"], ["type", "text", "placeholder", "Rechercher\u2026", 1, "root-search-input", 3, "ngModelChange", "ngModel"], [1, "root-list"], [1, "root-list-item", "root-list-all", 3, "click"], ["class", "root-list-item", 3, "active", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "root-list-item", 3, "click"], [1, "root-list-avatar"], [1, "root-overlay", 3, "click"], [1, "loading-state"], [1, "material-icons-round", "spin"], [1, "error-state"], [1, "empty-state"], [1, "tree-visual", 3, "pointerdown", "pointermove", "pointerup", "pointercancel"], [1, "ts-roots"], [4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "ts-subtree"], ["class", "ts-solo-card", 3, "ts-root", "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-quick-btns", 4, "ngIf"], [1, "ts-couple"], [1, "ts-person", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar"], ["class", "ts-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ts-name"], [1, "ts-year"], ["class", "ts-heart", 4, "ngIf"], ["class", "ts-person", 3, "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-union-badge", 4, "ngIf"], [1, "ts-quick-btns"], ["title", "Ajouter un enfant", 1, "ts-quick-btn", "ts-qb-child", 3, "click"], ["title", "Ajouter une \xE9pouse", 1, "ts-quick-btn", "ts-qb-partner", 3, "click"], [1, "ts-avatar-photo", 3, "error", "src", "alt"], [1, "ts-heart"], [1, "ts-hline"], [1, "ts-union-badge"], [1, "ts-multi-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar", "ts-avatar-lg"], [1, "ts-multi-badge"], [1, "ts-down"], [1, "ts-branch"], [1, "ts-hbar"], [1, "ts-children-row"], ["class", "ts-child-col", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "ts-child-col"], [1, "ts-up"], [1, "ts-couple", "ts-union-branch"], [1, "ts-person", "ts-person-ref", 3, "click"], [1, "ts-avatar", "ts-avatar-ref"], ["class", "ts-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "ts-name-ref"], ["class", "ts-status-chip", 4, "ngIf"], [1, "ts-avatar-photo", 3, "error", "src"], [1, "ts-status-chip"], ["class", "ts-branch", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "ts-solo-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], ["title", "Ajouter un(e) partenaire", 1, "ts-quick-btn", "ts-qb-partner", 3, "click"], [1, "zoom-hint"], [1, "tree-tooltip"], [1, "tt-avatar"], ["class", "tt-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "tt-content"], [1, "tt-name"], ["class", "tt-dates", 4, "ngIf"], ["class", "tt-lieu", 4, "ngIf"], [1, "tt-badges"], [1, "tt-badge"], ["class", "tt-badge tt-alive", 4, "ngIf"], ["class", "tt-badge tt-dead", 4, "ngIf"], [1, "tt-hint"], [1, "tt-avatar-photo", 3, "error", "src"], [1, "tt-dates"], [1, "tt-lieu"], [1, "tt-badge", "tt-alive"], [1, "tt-badge", "tt-dead"], [1, "panel-overlay", 3, "click"], [1, "qa-for-whom"], [1, "material-icons-round", 2, "font-size", "16px!important", "color", "var(--text-muted)"], [1, "avatar", "avatar-sm"], [2, "font-size", "13px", "font-weight", "600", "color", "var(--text-primary)"], [1, "search-bar", 2, "margin-bottom", "10px"], ["type", "text", "placeholder", "Rechercher un membre...", 3, "ngModelChange", "ngModel"], [1, "person-select-list"], ["class", "person-select-item", 3, "selected", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "empty-list-msg", 4, "ngIf"], [1, "person-select-item", 3, "click"], [1, "person-select-name"], ["class", "material-icons-round check-icon", 4, "ngIf"], [1, "material-icons-round", "check-icon"], [1, "empty-list-msg"], [1, "form-group"], [2, "color", "#EF4444"], ["type", "text", "placeholder", "Pr\xE9nom(s)", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-control", 3, "ngModelChange", "ngModel"], ["value", "M"], ["value", "F"], ["type", "number", "placeholder", "1990", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "dp-body"], [1, "dp-avatar-wrap"], [1, "dp-avatar"], ["class", "dp-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "dp-name"], [1, "dp-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "dp-info-list"], ["class", "dp-info-item", 4, "ngIf"], [1, "btn-primary", "dp-link", 3, "click", "routerLink", "queryParams"], [1, "dp-avatar-photo", 3, "error", "src"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "dp-info-item"], [1, "dp-info-text"], [1, "dp-info-label"], [1, "dp-info-value"]], template: function TreeComponent_Template(rf, ctx) {
+  }, standalone: false, decls: 88, vars: 44, consts: [["treeCanvas", ""], ["treeVisual", ""], ["nodeRef", ""], [1, "tree-page"], [1, "tree-toolbar"], [1, "toolbar-left"], ["class", "badge badge-primary", 4, "ngIf"], ["class", "root-badge", 4, "ngIf"], [1, "toolbar-right"], ["title", "D\xE9zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "zoom-level"], ["title", "Zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], ["title", "R\xE9initialiser", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "btn-outline", "btn-sm", 3, "click", "disabled"], [2, "width", "1px", "height", "20px", "background", "var(--border)", "margin", "0 2px"], [1, "btn-ghost", "btn-sm", "tree-kiosk-btn", 3, "click", "title"], [1, "root-picker-wrap"], [1, "btn-ghost", "btn-sm", "root-pick-btn", 3, "click"], [4, "ngIf"], ["class", "root-dropdown", 3, "click", 4, "ngIf"], ["class", "root-overlay", 3, "click", 4, "ngIf"], [1, "tree-canvas", 3, "wheel", "mouseleave"], ["class", "loading-state", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "tree-visual", 3, "transform", "pointerdown", "pointermove", "pointerup", "pointercancel", 4, "ngIf"], ["class", "zoom-hint", 4, "ngIf"], ["class", "tree-tooltip", 3, "left", "top", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel", "qa-panel"], [1, "panel-header"], [2, "display", "flex", "align-items", "center", "gap", "8px"], [1, "material-icons-round", 2, "color", "var(--primary)"], [1, "btn-icon", 3, "click"], ["class", "qa-for-whom", 4, "ngIf"], [1, "qa-tabs"], [1, "qa-tab", 3, "click"], [1, "panel-body"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "detail-panel"], [1, "dp-header"], ["class", "dp-body", 4, "ngIf"], [1, "badge", "badge-primary"], [1, "root-badge"], [1, "root-badge-name"], [1, "root-badge-clear", 3, "click"], [1, "root-dropdown", 3, "click"], [1, "root-search-bar"], ["type", "text", "placeholder", "Rechercher\u2026", 1, "root-search-input", 3, "ngModelChange", "ngModel"], [1, "root-list"], [1, "root-list-item", "root-list-all", 3, "click"], ["class", "root-list-item", 3, "active", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "root-list-item", 3, "click"], [1, "root-list-avatar"], [1, "root-overlay", 3, "click"], [1, "loading-state"], [1, "material-icons-round", "spin"], [1, "error-state"], [1, "empty-state"], [1, "tree-visual", 3, "pointerdown", "pointermove", "pointerup", "pointercancel"], [1, "ts-roots"], [4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "ts-subtree"], ["class", "ts-solo-card", 3, "ts-root", "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-quick-btns", 4, "ngIf"], [1, "ts-couple"], [1, "ts-person", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar"], ["class", "ts-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ts-name"], [1, "ts-year"], ["class", "ts-heart", 4, "ngIf"], ["class", "ts-person", 3, "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-union-badge", 4, "ngIf"], [1, "ts-quick-btns"], ["title", "Ajouter un enfant", 1, "ts-quick-btn", "ts-qb-child", 3, "click"], ["title", "Ajouter une \xE9pouse", 1, "ts-quick-btn", "ts-qb-partner", 3, "click"], [1, "ts-avatar-photo", 3, "error", "src", "alt"], [1, "ts-heart"], [1, "ts-hline"], [1, "ts-union-badge"], [1, "ts-multi-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar", "ts-avatar-lg"], [1, "ts-multi-badge"], [1, "ts-down"], [1, "ts-branch"], [1, "ts-hbar"], [1, "ts-children-row"], ["class", "ts-child-col", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "ts-child-col"], [1, "ts-up"], [1, "ts-couple", "ts-union-branch"], [1, "ts-person", "ts-person-ref", 3, "click"], [1, "ts-avatar", "ts-avatar-ref"], ["class", "ts-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "ts-name-ref"], ["class", "ts-status-chip", 4, "ngIf"], [1, "ts-avatar-photo", 3, "error", "src"], [1, "ts-status-chip"], ["class", "ts-branch", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "ts-solo-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], ["title", "Ajouter un(e) partenaire", 1, "ts-quick-btn", "ts-qb-partner", 3, "click"], [1, "zoom-hint"], [1, "tree-tooltip"], [1, "tt-avatar"], ["class", "tt-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "tt-content"], [1, "tt-name"], ["class", "tt-dates", 4, "ngIf"], ["class", "tt-lieu", 4, "ngIf"], [1, "tt-badges"], [1, "tt-badge"], ["class", "tt-badge tt-alive", 4, "ngIf"], ["class", "tt-badge tt-dead", 4, "ngIf"], [1, "tt-hint"], [1, "tt-avatar-photo", 3, "error", "src"], [1, "tt-dates"], [1, "tt-lieu"], [1, "tt-badge", "tt-alive"], [1, "tt-badge", "tt-dead"], [1, "panel-overlay", 3, "click"], [1, "qa-for-whom"], [1, "material-icons-round", 2, "font-size", "16px!important", "color", "var(--text-muted)"], [1, "avatar", "avatar-sm"], [2, "font-size", "13px", "font-weight", "600", "color", "var(--text-primary)"], [1, "search-bar", 2, "margin-bottom", "10px"], ["type", "text", "placeholder", "Rechercher un membre...", 3, "ngModelChange", "ngModel"], [1, "person-select-list"], ["class", "person-select-item", 3, "selected", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "empty-list-msg", 4, "ngIf"], [1, "person-select-item", 3, "click"], [1, "person-select-name"], ["class", "material-icons-round check-icon", 4, "ngIf"], [1, "material-icons-round", "check-icon"], [1, "empty-list-msg"], [1, "form-group"], [2, "color", "#EF4444"], ["type", "text", "placeholder", "Pr\xE9nom(s)", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-control", 3, "ngModelChange", "ngModel"], ["value", "M"], ["value", "F"], ["type", "number", "placeholder", "1990", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "dp-body"], [1, "dp-avatar-wrap"], [1, "dp-avatar"], ["class", "dp-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "dp-name"], [1, "dp-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "dp-info-list"], ["class", "dp-info-item", 4, "ngIf"], [1, "btn-primary", "dp-link", 3, "click", "routerLink", "queryParams"], [1, "dp-avatar-photo", 3, "error", "src"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "dp-info-item"], [1, "dp-info-text"], [1, "dp-info-label"], [1, "dp-info-value"]], template: function TreeComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 3)(1, "div", 4)(2, "div", 5)(3, "h2");
@@ -7486,34 +7513,35 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275elementStart(68, "div", 38);
       \u0275\u0275template(69, TreeComponent_ng_container_69_Template, 8, 4, "ng-container", 19)(70, TreeComponent_ng_container_70_Template, 25, 4, "ng-container", 19);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(71, "div", 39)(72, "button", 40);
-      \u0275\u0275listener("click", function TreeComponent_Template_button_click_72_listener() {
+      \u0275\u0275template(71, TreeComponent_div_71_Template, 4, 1, "div", 24);
+      \u0275\u0275elementStart(72, "div", 39)(73, "button", 40);
+      \u0275\u0275listener("click", function TreeComponent_Template_button_click_73_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeQuickAdd());
       });
-      \u0275\u0275text(73, "Annuler");
+      \u0275\u0275text(74, "Annuler");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(74, "button", 41);
-      \u0275\u0275listener("click", function TreeComponent_Template_button_click_74_listener() {
+      \u0275\u0275elementStart(75, "button", 41);
+      \u0275\u0275listener("click", function TreeComponent_Template_button_click_75_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.saveQuickAdd());
       });
-      \u0275\u0275template(75, TreeComponent_span_75_Template, 2, 0, "span", 42)(76, TreeComponent_span_76_Template, 2, 0, "span", 43);
-      \u0275\u0275text(77);
+      \u0275\u0275template(76, TreeComponent_span_76_Template, 2, 0, "span", 42)(77, TreeComponent_span_77_Template, 2, 0, "span", 43);
+      \u0275\u0275text(78);
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(78, TreeComponent_div_78_Template, 1, 0, "div", 29);
-      \u0275\u0275elementStart(79, "div", 44)(80, "div", 45)(81, "h3");
-      \u0275\u0275text(82, "Fiche membre");
+      \u0275\u0275template(79, TreeComponent_div_79_Template, 1, 0, "div", 29);
+      \u0275\u0275elementStart(80, "div", 44)(81, "div", 45)(82, "h3");
+      \u0275\u0275text(83, "Fiche membre");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(83, "button", 34);
-      \u0275\u0275listener("click", function TreeComponent_Template_button_click_83_listener() {
+      \u0275\u0275elementStart(84, "button", 34);
+      \u0275\u0275listener("click", function TreeComponent_Template_button_click_84_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeDetail());
       });
-      \u0275\u0275elementStart(84, "span", 10);
-      \u0275\u0275text(85, "close");
+      \u0275\u0275elementStart(85, "span", 10);
+      \u0275\u0275text(86, "close");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(86, TreeComponent_div_86_Template, 20, 22, "div", 46);
+      \u0275\u0275template(87, TreeComponent_div_87_Template, 20, 22, "div", 46);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
@@ -7523,7 +7551,7 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.rootPersonId);
       \u0275\u0275advance(6);
-      \u0275\u0275textInterpolate1("", \u0275\u0275pipeBind2(13, 40, ctx.scale * 100, "1.0-0"), "%");
+      \u0275\u0275textInterpolate1("", \u0275\u0275pipeBind2(13, 41, ctx.scale * 100, "1.0-0"), "%");
       \u0275\u0275advance(8);
       \u0275\u0275property("disabled", ctx.exporting);
       \u0275\u0275advance(4);
@@ -7570,6 +7598,8 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275property("ngIf", ctx.quickAddTab === "select");
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.quickAddTab === "create");
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.quickAddErreur);
       \u0275\u0275advance(4);
       \u0275\u0275property("disabled", ctx.quickAddSaving || ctx.quickAddTab === "select" && !ctx.quickAddSelected || ctx.quickAddTab === "create" && (!ctx.quickCreateForm.prenoms || !ctx.quickCreateForm.nomNaissance));
       \u0275\u0275advance();
@@ -8066,6 +8096,9 @@ var TreeComponent = class _TreeComponent {
 \r
   </div>\r
 \r
+  <div class="error-state" *ngIf="quickAddErreur">\r
+    <span class="material-icons-round">error_outline</span>{{ quickAddErreur }}\r
+  </div>\r
   <div class="panel-footer">\r
     <button class="btn-ghost" (click)="closeQuickAdd()">Annuler</button>\r
     <button class="btn-primary" (click)="saveQuickAdd()" [disabled]="quickAddSaving || (quickAddTab==='select' && !quickAddSelected) || (quickAddTab==='create' && (!quickCreateForm.prenoms || !quickCreateForm.nomNaissance))">\r
@@ -8525,7 +8558,7 @@ function StoriesComponent_ng_container_12_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_11_div_5_img_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "img", 97);
+    \u0275\u0275element(0, "img", 98);
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(4);
@@ -8534,7 +8567,7 @@ function StoriesComponent_div_13_div_11_div_5_img_1_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_11_div_5_video_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "video", 98);
+    \u0275\u0275element(0, "video", 99);
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(4);
@@ -8544,9 +8577,9 @@ function StoriesComponent_div_13_div_11_div_5_video_2_Template(rf, ctx) {
 function StoriesComponent_div_13_div_11_div_5_Template(rf, ctx) {
   if (rf & 1) {
     const _r12 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 93);
-    \u0275\u0275template(1, StoriesComponent_div_13_div_11_div_5_img_1_Template, 1, 1, "img", 94)(2, StoriesComponent_div_13_div_11_div_5_video_2_Template, 1, 1, "video", 95);
-    \u0275\u0275elementStart(3, "button", 96);
+    \u0275\u0275elementStart(0, "div", 94);
+    \u0275\u0275template(1, StoriesComponent_div_13_div_11_div_5_img_1_Template, 1, 1, "img", 95)(2, StoriesComponent_div_13_div_11_div_5_video_2_Template, 1, 1, "video", 96);
+    \u0275\u0275elementStart(3, "button", 97);
     \u0275\u0275listener("click", function StoriesComponent_div_13_div_11_div_5_Template_button_click_3_listener() {
       \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -8567,7 +8600,7 @@ function StoriesComponent_div_13_div_11_div_5_Template(rf, ctx) {
 function StoriesComponent_div_13_div_11_label_6_Template(rf, ctx) {
   if (rf & 1) {
     const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "label", 99)(1, "input", 100);
+    \u0275\u0275elementStart(0, "label", 100)(1, "input", 101);
     \u0275\u0275listener("change", function StoriesComponent_div_13_div_11_label_6_Template_input_change_1_listener($event) {
       \u0275\u0275restoreView(_r13);
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -8589,7 +8622,7 @@ function StoriesComponent_div_13_div_11_Template(rf, ctx) {
     \u0275\u0275elementStart(3, "span", 81);
     \u0275\u0275text(4, "(optionnel)");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(5, StoriesComponent_div_13_div_11_div_5_Template, 6, 2, "div", 91)(6, StoriesComponent_div_13_div_11_label_6_Template, 6, 0, "label", 92);
+    \u0275\u0275template(5, StoriesComponent_div_13_div_11_div_5_Template, 6, 2, "div", 92)(6, StoriesComponent_div_13_div_11_label_6_Template, 6, 0, "label", 93);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -8603,7 +8636,7 @@ function StoriesComponent_div_13_div_11_Template(rf, ctx) {
 function StoriesComponent_div_13_div_12_button_5_Template(rf, ctx) {
   if (rf & 1) {
     const _r14 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 104);
+    \u0275\u0275elementStart(0, "button", 105);
     \u0275\u0275listener("click", function StoriesComponent_div_13_div_12_button_5_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r14);
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -8620,15 +8653,15 @@ function StoriesComponent_div_13_div_12_button_5_Template(rf, ctx) {
 function StoriesComponent_div_13_div_12_div_6_Template(rf, ctx) {
   if (rf & 1) {
     const _r15 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 105);
-    \u0275\u0275element(1, "div", 106);
-    \u0275\u0275elementStart(2, "span", 107);
+    \u0275\u0275elementStart(0, "div", 106);
+    \u0275\u0275element(1, "div", 107);
+    \u0275\u0275elementStart(2, "span", 108);
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 108);
+    \u0275\u0275elementStart(4, "span", 109);
     \u0275\u0275text(5, "Enregistrement en cours\u2026");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "button", 109);
+    \u0275\u0275elementStart(6, "button", 110);
     \u0275\u0275listener("click", function StoriesComponent_div_13_div_12_div_6_Template_button_click_6_listener() {
       \u0275\u0275restoreView(_r15);
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -8649,14 +8682,14 @@ function StoriesComponent_div_13_div_12_div_6_Template(rf, ctx) {
 function StoriesComponent_div_13_div_12_div_7_Template(rf, ctx) {
   if (rf & 1) {
     const _r16 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 110)(1, "div", 111)(2, "span", 3);
+    \u0275\u0275elementStart(0, "div", 111)(1, "div", 112)(2, "span", 3);
     \u0275\u0275text(3, "mic");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(4, "span");
     \u0275\u0275text(5);
     \u0275\u0275elementEnd()();
-    \u0275\u0275element(6, "audio", 112);
-    \u0275\u0275elementStart(7, "button", 113);
+    \u0275\u0275element(6, "audio", 113);
+    \u0275\u0275elementStart(7, "button", 114);
     \u0275\u0275listener("click", function StoriesComponent_div_13_div_12_div_7_Template_button_click_7_listener() {
       \u0275\u0275restoreView(_r16);
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -8683,7 +8716,7 @@ function StoriesComponent_div_13_div_12_Template(rf, ctx) {
     \u0275\u0275elementStart(3, "span", 81);
     \u0275\u0275text(4, "(optionnel)");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(5, StoriesComponent_div_13_div_12_button_5_Template, 5, 0, "button", 101)(6, StoriesComponent_div_13_div_12_div_6_Template, 10, 1, "div", 102)(7, StoriesComponent_div_13_div_12_div_7_Template, 11, 2, "div", 103);
+    \u0275\u0275template(5, StoriesComponent_div_13_div_12_button_5_Template, 5, 0, "button", 102)(6, StoriesComponent_div_13_div_12_div_6_Template, 10, 1, "div", 103)(7, StoriesComponent_div_13_div_12_div_7_Template, 11, 2, "div", 104);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -8699,7 +8732,7 @@ function StoriesComponent_div_13_div_12_Template(rf, ctx) {
 function StoriesComponent_div_13_button_23_Template(rf, ctx) {
   if (rf & 1) {
     const _r17 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 114);
+    \u0275\u0275elementStart(0, "button", 115);
     \u0275\u0275listener("click", function StoriesComponent_div_13_button_23_Template_button_click_0_listener() {
       const t_r18 = \u0275\u0275restoreView(_r17).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -8717,14 +8750,28 @@ function StoriesComponent_div_13_button_23_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", t_r18, " ");
   }
 }
-function StoriesComponent_div_13_span_32_Template(rf, ctx) {
+function StoriesComponent_div_13_div_30_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 115);
+    \u0275\u0275elementStart(0, "div", 116)(1, "span", 3);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r1.formErreur, " ");
+  }
+}
+function StoriesComponent_div_13_span_35_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 117);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function StoriesComponent_div_13_span_33_Template(rf, ctx) {
+function StoriesComponent_div_13_span_36_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 3);
     \u0275\u0275text(1, "send");
@@ -8781,32 +8828,35 @@ function StoriesComponent_div_13_Template(rf, ctx) {
     \u0275\u0275template(23, StoriesComponent_div_13_button_23_Template, 2, 9, "button", 84);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(24, "div", 79)(25, "label", 80);
-    \u0275\u0275text(26, "Votre histoire *");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "textarea", 85);
-    \u0275\u0275twoWayListener("ngModelChange", function StoriesComponent_div_13_Template_textarea_ngModelChange_27_listener($event) {
+    \u0275\u0275text(26, "Votre histoire ");
+    \u0275\u0275elementStart(27, "span", 81);
+    \u0275\u0275text(28, "(texte, photo/vid\xE9o ou audio requis)");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(29, "textarea", 85);
+    \u0275\u0275twoWayListener("ngModelChange", function StoriesComponent_div_13_Template_textarea_ngModelChange_29_listener($event) {
       \u0275\u0275restoreView(_r11);
       const ctx_r1 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r1.form.caption, $event) || (ctx_r1.form.caption = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(28, "div", 86)(29, "button", 87);
-    \u0275\u0275listener("click", function StoriesComponent_div_13_Template_button_click_29_listener() {
+    \u0275\u0275template(30, StoriesComponent_div_13_div_30_Template, 4, 1, "div", 86);
+    \u0275\u0275elementStart(31, "div", 87)(32, "button", 88);
+    \u0275\u0275listener("click", function StoriesComponent_div_13_Template_button_click_32_listener() {
       \u0275\u0275restoreView(_r11);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.showForm = false);
     });
-    \u0275\u0275text(30, "Annuler");
+    \u0275\u0275text(33, "Annuler");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(31, "button", 88);
-    \u0275\u0275listener("click", function StoriesComponent_div_13_Template_button_click_31_listener() {
+    \u0275\u0275elementStart(34, "button", 89);
+    \u0275\u0275listener("click", function StoriesComponent_div_13_Template_button_click_34_listener() {
       \u0275\u0275restoreView(_r11);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.submitForm());
     });
-    \u0275\u0275template(32, StoriesComponent_div_13_span_32_Template, 2, 0, "span", 89)(33, StoriesComponent_div_13_span_33_Template, 2, 0, "span", 90);
-    \u0275\u0275text(34);
+    \u0275\u0275template(35, StoriesComponent_div_13_span_35_Template, 2, 0, "span", 90)(36, StoriesComponent_div_13_span_36_Template, 2, 0, "span", 91);
+    \u0275\u0275text(37);
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
@@ -8819,10 +8869,12 @@ function StoriesComponent_div_13_Template(rf, ctx) {
     \u0275\u0275twoWayProperty("ngModel", ctx_r1.form.titre);
     \u0275\u0275advance(5);
     \u0275\u0275property("ngForOf", ctx_r1.tagOptions);
-    \u0275\u0275advance(4);
+    \u0275\u0275advance(6);
     \u0275\u0275twoWayProperty("ngModel", ctx_r1.form.caption);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.formErreur);
     \u0275\u0275advance(4);
-    \u0275\u0275property("disabled", ctx_r1.saving || !ctx_r1.form.caption.trim() && !ctx_r1.form.mediaFile);
+    \u0275\u0275property("disabled", ctx_r1.saving || !ctx_r1.form.caption.trim() && !ctx_r1.form.mediaFile && !ctx_r1.audioBlob);
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r1.saving);
     \u0275\u0275advance();
@@ -8844,6 +8896,7 @@ var StoriesComponent = class _StoriesComponent {
   tagColors = STORY_TAG_COLORS;
   showForm = false;
   saving = false;
+  formErreur = null;
   form = { titre: "", caption: "", tag: "Souvenir", mediaFile: null, mediaPreview: null, mediaType: null };
   /* ── Enregistrement audio ── */
   audioMode = "idle";
@@ -8918,6 +8971,7 @@ var StoriesComponent = class _StoriesComponent {
   openForm() {
     this.form = { titre: "", caption: "", tag: "Souvenir", mediaFile: null, mediaPreview: null, mediaType: null };
     this.resetAudio();
+    this.formErreur = null;
     this.showForm = true;
   }
   /* ── Audio recording ── */
@@ -8994,8 +9048,11 @@ var StoriesComponent = class _StoriesComponent {
   }
   submitForm() {
     const hasContent = this.form.caption.trim() || this.form.mediaFile || this.audioBlob;
-    if (!hasContent)
+    if (!hasContent) {
+      this.formErreur = "Ajoutez un texte ou un m\xE9dia pour publier une story.";
       return;
+    }
+    this.formErreur = null;
     this.saving = true;
     const publish = (mediaUrl, mediaType) => {
       this.api.createStory({
@@ -9011,8 +9068,9 @@ var StoriesComponent = class _StoriesComponent {
           this.saving = false;
           this.resetAudio();
         },
-        error: () => {
+        error: (err) => {
           this.saving = false;
+          this.formErreur = err?.error?.error ?? "Erreur lors de la publication.";
         }
       });
     };
@@ -9021,6 +9079,7 @@ var StoriesComponent = class _StoriesComponent {
         next: ({ mediaUrl, mediaType }) => publish(mediaUrl, mediaType),
         error: () => {
           this.saving = false;
+          this.formErreur = "Erreur lors de l'envoi de l'audio.";
         }
       });
     } else if (this.form.mediaFile) {
@@ -9028,6 +9087,7 @@ var StoriesComponent = class _StoriesComponent {
         next: ({ mediaUrl, mediaType }) => publish(mediaUrl, mediaType),
         error: () => {
           this.saving = false;
+          this.formErreur = "Erreur lors de l'envoi du m\xE9dia.";
         }
       });
     } else {
@@ -9037,8 +9097,13 @@ var StoriesComponent = class _StoriesComponent {
   deleteStory(id) {
     if (!confirm("Supprimer cette story ?"))
       return;
-    this.api.deleteStory(id).subscribe(() => {
-      this.stories = this.stories.filter((s) => s.id !== id);
+    this.api.deleteStory(id).subscribe({
+      next: () => {
+        this.stories = this.stories.filter((s) => s.id !== id);
+      },
+      error: () => {
+        this.formErreur = "Erreur lors de la suppression de la story.";
+      }
     });
   }
   isMyStory(s) {
@@ -9050,7 +9115,7 @@ var StoriesComponent = class _StoriesComponent {
   static \u0275fac = function StoriesComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _StoriesComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(AuthService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _StoriesComponent, selectors: [["app-stories"]], standalone: false, decls: 14, vars: 3, consts: [[1, "page-header"], [1, "header-row"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], [4, "ngIf"], ["class", "modal-overlay", 3, "click", 4, "ngIf"], [1, "sk-circles"], ["class", "sk-circle-item", 4, "ngFor", "ngForOf"], [1, "stories-sk-grid", "mt-16"], ["class", "story-card", 4, "ngFor", "ngForOf"], [1, "sk-circle-item"], [1, "sk-avatar", "sk-av-lg"], [1, "sk-line", "sk-xs", 2, "width", "48px", "margin", "6px auto 0"], [1, "story-card"], [2, "display", "flex", "align-items", "center", "justify-content", "space-between", "padding", "18px 20px 14px"], [2, "display", "flex", "align-items", "center", "gap", "10px"], [1, "sk-avatar-sq", "sk-av-md"], [2, "display", "flex", "flex-direction", "column", "gap", "6px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "sk-line", "sk-xs"], [2, "padding", "0 20px 16px", "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "55%"], [1, "stories-circles", "mb-24"], [1, "story-circle", "add-story", 3, "click"], [1, "story-avatar", "add"], [1, "story-label"], ["class", "story-circle", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "stories-toolbar", "mb-20"], [1, "story-search"], ["type", "text", "placeholder", "Rechercher une story\u2026", 3, "ngModelChange", "ngModel"], ["class", "search-clear", 3, "click", 4, "ngIf"], [1, "story-tag-row"], ["class", "story-tag-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], ["class", "stories-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "story-circle"], [1, "story-avatar"], [1, "search-clear", 3, "click"], [1, "story-tag-btn", 3, "click"], [1, "stories-grid"], ["class", "story-card", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "story-card-header"], [1, "sc-author"], [1, "sc-avatar"], [1, "sc-author-info"], [1, "story-name"], [1, "story-date"], [1, "story-header-right"], [1, "story-tag-badge"], ["class", "story-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "story-media", 4, "ngIf"], [1, "story-card-body"], [1, "story-card-footer"], [1, "reaction-btn", 3, "click"], [1, "reaction-btn"], [1, "reaction-btn", "reaction-share"], ["title", "Supprimer", 1, "story-delete-btn", 3, "click"], [1, "story-media"], ["class", "story-media-img", "loading", "lazy", "alt", "", 3, "src", 4, "ngIf"], ["class", "story-media-video", "controls", "", 3, "src", 4, "ngIf"], ["class", "story-audio-player", 4, "ngIf"], ["loading", "lazy", "alt", "", 1, "story-media-img", 3, "src"], ["controls", "", 1, "story-media-video", 3, "src"], [1, "story-audio-player"], [1, "sap-icon"], [1, "sap-content"], [1, "sap-label"], ["controls", "", 1, "sap-audio", 3, "src"], [1, "empty-state"], ["class", "btn-primary", 3, "click", 4, "ngIf"], [1, "modal-overlay", 3, "click"], [1, "story-modal", 3, "click"], [1, "story-modal-head"], [1, "modal-close-btn", 3, "click"], [1, "story-modal-body"], ["class", "form-group", 4, "ngIf"], [1, "form-group"], [1, "form-label"], [1, "form-optional"], ["type", "text", "placeholder", "Ex : Mariage de tonton Amadou\u2026", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "tag-picker"], ["class", "tag-pick-btn", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], ["rows", "5", "placeholder", "Racontez ce moment important pour la famille\u2026", 1, "form-control", "form-textarea", 3, "ngModelChange", "ngModel"], [1, "story-modal-foot"], [1, "btn-secondary", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], ["class", "media-preview", 4, "ngIf"], ["class", "media-picker", 4, "ngIf"], [1, "media-preview"], ["class", "media-preview-img", "alt", "", 3, "src", 4, "ngIf"], ["class", "media-preview-video", "controls", "", 3, "src", 4, "ngIf"], ["type", "button", 1, "media-remove-btn", 3, "click"], ["alt", "", 1, "media-preview-img", 3, "src"], ["controls", "", 1, "media-preview-video", 3, "src"], [1, "media-picker"], ["type", "file", "accept", "image/*,video/*", "hidden", "", 3, "change"], ["class", "audio-record-btn", "type", "button", 3, "click", 4, "ngIf"], ["class", "audio-recording-wrap", 4, "ngIf"], ["class", "audio-preview-wrap", 4, "ngIf"], ["type", "button", 1, "audio-record-btn", 3, "click"], [1, "audio-recording-wrap"], [1, "audio-rec-dot"], [1, "audio-rec-timer"], [1, "audio-rec-label"], ["type", "button", 1, "audio-stop-btn", 3, "click"], [1, "audio-preview-wrap"], [1, "audio-preview-info"], ["controls", "", 1, "audio-preview-player", 3, "src"], ["type", "button", 1, "audio-reset-btn", 3, "click"], [1, "tag-pick-btn", 3, "click"], [1, "material-icons-round", "spin"]], template: function StoriesComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _StoriesComponent, selectors: [["app-stories"]], standalone: false, decls: 14, vars: 3, consts: [[1, "page-header"], [1, "header-row"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], [4, "ngIf"], ["class", "modal-overlay", 3, "click", 4, "ngIf"], [1, "sk-circles"], ["class", "sk-circle-item", 4, "ngFor", "ngForOf"], [1, "stories-sk-grid", "mt-16"], ["class", "story-card", 4, "ngFor", "ngForOf"], [1, "sk-circle-item"], [1, "sk-avatar", "sk-av-lg"], [1, "sk-line", "sk-xs", 2, "width", "48px", "margin", "6px auto 0"], [1, "story-card"], [2, "display", "flex", "align-items", "center", "justify-content", "space-between", "padding", "18px 20px 14px"], [2, "display", "flex", "align-items", "center", "gap", "10px"], [1, "sk-avatar-sq", "sk-av-md"], [2, "display", "flex", "flex-direction", "column", "gap", "6px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "sk-line", "sk-xs"], [2, "padding", "0 20px 16px", "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "55%"], [1, "stories-circles", "mb-24"], [1, "story-circle", "add-story", 3, "click"], [1, "story-avatar", "add"], [1, "story-label"], ["class", "story-circle", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "stories-toolbar", "mb-20"], [1, "story-search"], ["type", "text", "placeholder", "Rechercher une story\u2026", 3, "ngModelChange", "ngModel"], ["class", "search-clear", 3, "click", 4, "ngIf"], [1, "story-tag-row"], ["class", "story-tag-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], ["class", "stories-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "story-circle"], [1, "story-avatar"], [1, "search-clear", 3, "click"], [1, "story-tag-btn", 3, "click"], [1, "stories-grid"], ["class", "story-card", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "story-card-header"], [1, "sc-author"], [1, "sc-avatar"], [1, "sc-author-info"], [1, "story-name"], [1, "story-date"], [1, "story-header-right"], [1, "story-tag-badge"], ["class", "story-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "story-media", 4, "ngIf"], [1, "story-card-body"], [1, "story-card-footer"], [1, "reaction-btn", 3, "click"], [1, "reaction-btn"], [1, "reaction-btn", "reaction-share"], ["title", "Supprimer", 1, "story-delete-btn", 3, "click"], [1, "story-media"], ["class", "story-media-img", "loading", "lazy", "alt", "", 3, "src", 4, "ngIf"], ["class", "story-media-video", "controls", "", 3, "src", 4, "ngIf"], ["class", "story-audio-player", 4, "ngIf"], ["loading", "lazy", "alt", "", 1, "story-media-img", 3, "src"], ["controls", "", 1, "story-media-video", 3, "src"], [1, "story-audio-player"], [1, "sap-icon"], [1, "sap-content"], [1, "sap-label"], ["controls", "", 1, "sap-audio", 3, "src"], [1, "empty-state"], ["class", "btn-primary", 3, "click", 4, "ngIf"], [1, "modal-overlay", 3, "click"], [1, "story-modal", 3, "click"], [1, "story-modal-head"], [1, "modal-close-btn", 3, "click"], [1, "story-modal-body"], ["class", "form-group", 4, "ngIf"], [1, "form-group"], [1, "form-label"], [1, "form-optional"], ["type", "text", "placeholder", "Ex : Mariage de tonton Amadou\u2026", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "tag-picker"], ["class", "tag-pick-btn", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], ["rows", "5", "placeholder", "Racontez ce moment important pour la famille\u2026", 1, "form-control", "form-textarea", 3, "ngModelChange", "ngModel"], ["class", "error-state", "style", "margin:0 24px 12px", 4, "ngIf"], [1, "story-modal-foot"], [1, "btn-secondary", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], ["class", "media-preview", 4, "ngIf"], ["class", "media-picker", 4, "ngIf"], [1, "media-preview"], ["class", "media-preview-img", "alt", "", 3, "src", 4, "ngIf"], ["class", "media-preview-video", "controls", "", 3, "src", 4, "ngIf"], ["type", "button", 1, "media-remove-btn", 3, "click"], ["alt", "", 1, "media-preview-img", 3, "src"], ["controls", "", 1, "media-preview-video", 3, "src"], [1, "media-picker"], ["type", "file", "accept", "image/*,video/*", "hidden", "", 3, "change"], ["class", "audio-record-btn", "type", "button", 3, "click", 4, "ngIf"], ["class", "audio-recording-wrap", 4, "ngIf"], ["class", "audio-preview-wrap", 4, "ngIf"], ["type", "button", 1, "audio-record-btn", 3, "click"], [1, "audio-recording-wrap"], [1, "audio-rec-dot"], [1, "audio-rec-timer"], [1, "audio-rec-label"], ["type", "button", 1, "audio-stop-btn", 3, "click"], [1, "audio-preview-wrap"], [1, "audio-preview-info"], ["controls", "", 1, "audio-preview-player", 3, "src"], ["type", "button", 1, "audio-reset-btn", 3, "click"], [1, "tag-pick-btn", 3, "click"], [1, "error-state", 2, "margin", "0 24px 12px"], [1, "material-icons-round", "spin"]], template: function StoriesComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div")(3, "h2");
       \u0275\u0275text(4, "Stories familiales");
@@ -9067,7 +9132,7 @@ var StoriesComponent = class _StoriesComponent {
       \u0275\u0275elementEnd();
       \u0275\u0275text(10, " Nouvelle story ");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(11, StoriesComponent_ng_container_11_Template, 5, 4, "ng-container", 4)(12, StoriesComponent_ng_container_12_Template, 19, 7, "ng-container", 4)(13, StoriesComponent_div_13_Template, 35, 9, "div", 5);
+      \u0275\u0275template(11, StoriesComponent_ng_container_11_Template, 5, 4, "ng-container", 4)(12, StoriesComponent_ng_container_12_Template, 19, 7, "ng-container", 4)(13, StoriesComponent_div_13_Template, 38, 10, "div", 5);
     }
     if (rf & 2) {
       \u0275\u0275advance(11);
@@ -9329,7 +9394,7 @@ var StoriesComponent = class _StoriesComponent {
       </div>\r
 \r
       <div class="form-group">\r
-        <label class="form-label">Votre histoire *</label>\r
+        <label class="form-label">Votre histoire <span class="form-optional">(texte, photo/vid\xE9o ou audio requis)</span></label>\r
         <textarea [(ngModel)]="form.caption"\r
                   rows="5"\r
                   placeholder="Racontez ce moment important pour la famille\u2026"\r
@@ -9337,10 +9402,14 @@ var StoriesComponent = class _StoriesComponent {
       </div>\r
     </div>\r
 \r
+    <div class="error-state" *ngIf="formErreur" style="margin:0 24px 12px">\r
+      <span class="material-icons-round">error_outline</span>{{ formErreur }}\r
+    </div>\r
+\r
     <div class="story-modal-foot">\r
       <button class="btn-secondary" (click)="showForm = false">Annuler</button>\r
       <button class="btn-primary"\r
-              [disabled]="saving || (!form.caption.trim() && !form.mediaFile)"\r
+              [disabled]="saving || (!form.caption.trim() && !form.mediaFile && !audioBlob)"\r
               (click)="submitForm()">\r
         <span class="material-icons-round spin" *ngIf="saving">sync</span>\r
         <span class="material-icons-round" *ngIf="!saving">send</span>\r
@@ -9604,7 +9673,7 @@ function TimelineComponent_ng_container_18_Template(rf, ctx) {
 function TimelineComponent_div_19_button_15_Template(rf, ctx) {
   if (rf & 1) {
     const _r10 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 59);
+    \u0275\u0275elementStart(0, "button", 63);
     \u0275\u0275listener("click", function TimelineComponent_div_19_button_15_Template_button_click_0_listener() {
       const t_r11 = \u0275\u0275restoreView(_r10).$implicit;
       const ctx_r2 = \u0275\u0275nextContext(2);
@@ -9625,6 +9694,34 @@ function TimelineComponent_div_19_button_15_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r2.typeConfig(t_r11).icon);
     \u0275\u0275advance();
     \u0275\u0275textInterpolate1(" ", ctx_r2.typeConfig(t_r11).label, " ");
+  }
+}
+function TimelineComponent_div_19_div_36_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 64)(1, "span", 4);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r2.formErreur, " ");
+  }
+}
+function TimelineComponent_div_19_span_41_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 65);
+    \u0275\u0275text(1, "sync");
+    \u0275\u0275elementEnd();
+  }
+}
+function TimelineComponent_div_19_span_42_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 4);
+    \u0275\u0275text(1, "check");
+    \u0275\u0275elementEnd();
   }
 }
 function TimelineComponent_div_19_Template(rf, ctx) {
@@ -9662,83 +9759,94 @@ function TimelineComponent_div_19_Template(rf, ctx) {
     \u0275\u0275template(15, TimelineComponent_div_19_button_15_Template, 4, 10, "button", 51);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(16, "div", 48)(17, "label", 49);
-    \u0275\u0275text(18, "Titre *");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(19, "input", 52);
-    \u0275\u0275twoWayListener("ngModelChange", function TimelineComponent_div_19_Template_input_ngModelChange_19_listener($event) {
+    \u0275\u0275text(18, "Titre ");
+    \u0275\u0275elementStart(19, "span", 52);
+    \u0275\u0275text(20, "*");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(21, "input", 53);
+    \u0275\u0275twoWayListener("ngModelChange", function TimelineComponent_div_19_Template_input_ngModelChange_21_listener($event) {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r2.form.titre, $event) || (ctx_r2.form.titre = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(20, "div", 48)(21, "label", 49);
-    \u0275\u0275text(22, "Date *");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(23, "input", 53);
-    \u0275\u0275twoWayListener("ngModelChange", function TimelineComponent_div_19_Template_input_ngModelChange_23_listener($event) {
+    \u0275\u0275elementStart(22, "div", 48)(23, "label", 49);
+    \u0275\u0275text(24, "Date ");
+    \u0275\u0275elementStart(25, "span", 52);
+    \u0275\u0275text(26, "*");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(27, "input", 54);
+    \u0275\u0275twoWayListener("ngModelChange", function TimelineComponent_div_19_Template_input_ngModelChange_27_listener($event) {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r2.form.date, $event) || (ctx_r2.form.date = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(24, "div", 48)(25, "label", 49);
-    \u0275\u0275text(26, "Personne concern\xE9e");
+    \u0275\u0275elementStart(28, "div", 48)(29, "label", 49);
+    \u0275\u0275text(30, "Personne concern\xE9e");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "input", 54);
-    \u0275\u0275twoWayListener("ngModelChange", function TimelineComponent_div_19_Template_input_ngModelChange_27_listener($event) {
+    \u0275\u0275elementStart(31, "input", 55);
+    \u0275\u0275twoWayListener("ngModelChange", function TimelineComponent_div_19_Template_input_ngModelChange_31_listener($event) {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r2.form.personne, $event) || (ctx_r2.form.personne = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(28, "div", 48)(29, "label", 49);
-    \u0275\u0275text(30, "Description");
+    \u0275\u0275elementStart(32, "div", 48)(33, "label", 49);
+    \u0275\u0275text(34, "Description");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(31, "textarea", 55);
-    \u0275\u0275twoWayListener("ngModelChange", function TimelineComponent_div_19_Template_textarea_ngModelChange_31_listener($event) {
+    \u0275\u0275elementStart(35, "textarea", 56);
+    \u0275\u0275twoWayListener("ngModelChange", function TimelineComponent_div_19_Template_textarea_ngModelChange_35_listener($event) {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r2.form.description, $event) || (ctx_r2.form.description = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(32, "div", 56)(33, "button", 57);
-    \u0275\u0275listener("click", function TimelineComponent_div_19_Template_button_click_33_listener() {
+    \u0275\u0275template(36, TimelineComponent_div_19_div_36_Template, 4, 1, "div", 57);
+    \u0275\u0275elementStart(37, "div", 58)(38, "button", 59);
+    \u0275\u0275listener("click", function TimelineComponent_div_19_Template_button_click_38_listener() {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.showForm = false);
     });
-    \u0275\u0275text(34, "Annuler");
+    \u0275\u0275text(39, "Annuler");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(35, "button", 58);
-    \u0275\u0275listener("click", function TimelineComponent_div_19_Template_button_click_35_listener() {
+    \u0275\u0275elementStart(40, "button", 60);
+    \u0275\u0275listener("click", function TimelineComponent_div_19_Template_button_click_40_listener() {
       \u0275\u0275restoreView(_r9);
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.submitForm());
     });
-    \u0275\u0275elementStart(36, "span", 4);
-    \u0275\u0275text(37, "check");
-    \u0275\u0275elementEnd();
-    \u0275\u0275text(38, " Ajouter ");
+    \u0275\u0275template(41, TimelineComponent_div_19_span_41_Template, 2, 0, "span", 61)(42, TimelineComponent_div_19_span_42_Template, 2, 0, "span", 62);
+    \u0275\u0275text(43);
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
     const ctx_r2 = \u0275\u0275nextContext();
     \u0275\u0275advance(15);
     \u0275\u0275property("ngForOf", ctx_r2.typeOptions);
-    \u0275\u0275advance(4);
+    \u0275\u0275advance(6);
     \u0275\u0275twoWayProperty("ngModel", ctx_r2.form.titre);
-    \u0275\u0275advance(4);
+    \u0275\u0275advance(6);
     \u0275\u0275twoWayProperty("ngModel", ctx_r2.form.date);
     \u0275\u0275advance(4);
     \u0275\u0275twoWayProperty("ngModel", ctx_r2.form.personne);
     \u0275\u0275advance(4);
     \u0275\u0275twoWayProperty("ngModel", ctx_r2.form.description);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.formErreur);
     \u0275\u0275advance(4);
-    \u0275\u0275property("disabled", !ctx_r2.form.titre.trim() || !ctx_r2.form.date.trim());
+    \u0275\u0275property("disabled", ctx_r2.saving || !ctx_r2.form.titre.trim() || !ctx_r2.form.date.trim());
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.saving);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r2.saving);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r2.saving ? "Ajout\u2026" : "Ajouter", " ");
   }
 }
 var TYPE_CONFIG = {
@@ -9757,6 +9865,7 @@ var TimelineComponent = class _TimelineComponent {
   triDesc = true;
   showForm = false;
   saving = false;
+  formErreur = null;
   form = {
     titre: "",
     description: "",
@@ -9876,14 +9985,20 @@ var TimelineComponent = class _TimelineComponent {
   }
   openForm() {
     this.form = { titre: "", description: "", type: "autre", date: "", personne: "" };
+    this.formErreur = null;
     this.showForm = true;
   }
   submitForm() {
-    if (!this.form.titre.trim() || !this.form.date.trim())
+    if (!this.form.titre.trim() || !this.form.date.trim()) {
+      this.formErreur = "Le titre et la date sont requis.";
       return;
+    }
     const annee = extractAnnee(this.form.date);
-    if (!annee)
+    if (!annee) {
+      this.formErreur = "Date invalide.";
       return;
+    }
+    this.formErreur = null;
     this.saving = true;
     this.api.createTimelineEvent({
       titre: this.form.titre,
@@ -9906,23 +10021,31 @@ var TimelineComponent = class _TimelineComponent {
         this.customEvents.push(ev);
         this.events = [...this.events, ev].sort((a, b) => this.triDesc ? b.annee - a.annee : a.annee - b.annee);
         this.showForm = false;
+      },
+      error: (err) => {
+        this.formErreur = err?.error?.error ?? "Erreur lors de la cr\xE9ation de l'\xE9v\xE9nement.";
       }
     });
   }
   deleteEvent(ev) {
     if (ev.source !== "custom")
       return;
+    if (!confirm(`Supprimer l'\xE9v\xE9nement "${ev.titre}" ?`))
+      return;
     this.api.deleteTimelineEvent(ev.id).subscribe({
       next: () => {
         this.customEvents = this.customEvents.filter((e) => e.id !== ev.id);
         this.events = this.events.filter((e) => e.id !== ev.id);
+      },
+      error: () => {
+        this.formErreur = "Erreur lors de la suppression de l'\xE9v\xE9nement.";
       }
     });
   }
   static \u0275fac = function TimelineComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _TimelineComponent)(\u0275\u0275directiveInject(ApiService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TimelineComponent, selectors: [["app-timeline"]], standalone: false, decls: 20, vars: 6, consts: [[1, "page-header"], [1, "header-row"], [2, "display", "flex", "gap", "10px", "align-items", "center"], ["title", "Changer l'ordre", 1, "btn-secondary", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "btn-primary", 3, "click"], ["class", "tl-filtres", 4, "ngIf"], [4, "ngIf"], ["class", "modal-overlay", 3, "click", 4, "ngIf"], [1, "tl-filtres"], ["class", "tl-filtre-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "tl-filtre-btn", 3, "click"], ["class", "sk-line sk-sm", "style", "width:90px;height:34px;border-radius:30px", 4, "ngFor", "ngForOf"], [1, "tl-timeline"], [1, "tl-line"], ["class", "tl-event", 3, "right", 4, "ngFor", "ngForOf"], [1, "sk-line", "sk-sm", 2, "width", "90px", "height", "34px", "border-radius", "30px"], [1, "tl-event"], [1, "tl-event-dot", 2, "background", "#E5E7EB"], [1, "material-icons-round", 2, "color", "#D1D5DB"], [1, "tl-event-card", 2, "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-xs", 2, "width", "60px"], [1, "sk-line", "sk-xs", 2, "width", "90px", "height", "22px", "border-radius", "20px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "65%"], ["class", "tl-timeline", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "tl-event", 3, "right", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "tl-event-dot"], [1, "tl-event-card"], [1, "tl-event-date"], [1, "tl-event-type-badge"], [1, "tl-event-card-head"], [1, "tl-event-title"], ["class", "ev-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "tl-event-desc", 4, "ngIf"], ["class", "tl-event-author", 4, "ngIf"], ["title", "Supprimer", 1, "ev-delete-btn", 3, "click"], [1, "tl-event-desc"], [1, "tl-event-author"], [1, "empty-state"], ["class", "btn-primary", 3, "click", 4, "ngIf"], [1, "modal-overlay", 3, "click"], [1, "tl-modal", 3, "click"], [1, "tl-modal-head"], [1, "modal-close-btn", 3, "click"], [1, "tl-modal-body"], [1, "form-group"], [1, "form-label"], [1, "tl-type-picker"], ["class", "tl-type-btn", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], ["type", "text", "placeholder", "Ex : Dipl\xF4me de Fatou\u2026", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "2024 ou 2024-06 ou 2024-06-15", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom du membre", 1, "form-control", 3, "ngModelChange", "ngModel"], ["rows", "3", "placeholder", "D\xE9tails de l'\xE9v\xE9nement\u2026", 1, "form-control", "form-textarea", 3, "ngModelChange", "ngModel"], [1, "tl-modal-foot"], [1, "btn-secondary", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], [1, "tl-type-btn", 3, "click"]], template: function TimelineComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TimelineComponent, selectors: [["app-timeline"]], standalone: false, decls: 20, vars: 6, consts: [[1, "page-header"], [1, "header-row"], [2, "display", "flex", "gap", "10px", "align-items", "center"], ["title", "Changer l'ordre", 1, "btn-secondary", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "btn-primary", 3, "click"], ["class", "tl-filtres", 4, "ngIf"], [4, "ngIf"], ["class", "modal-overlay", 3, "click", 4, "ngIf"], [1, "tl-filtres"], ["class", "tl-filtre-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "tl-filtre-btn", 3, "click"], ["class", "sk-line sk-sm", "style", "width:90px;height:34px;border-radius:30px", 4, "ngFor", "ngForOf"], [1, "tl-timeline"], [1, "tl-line"], ["class", "tl-event", 3, "right", 4, "ngFor", "ngForOf"], [1, "sk-line", "sk-sm", 2, "width", "90px", "height", "34px", "border-radius", "30px"], [1, "tl-event"], [1, "tl-event-dot", 2, "background", "#E5E7EB"], [1, "material-icons-round", 2, "color", "#D1D5DB"], [1, "tl-event-card", 2, "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-xs", 2, "width", "60px"], [1, "sk-line", "sk-xs", 2, "width", "90px", "height", "22px", "border-radius", "20px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "65%"], ["class", "tl-timeline", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "tl-event", 3, "right", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "tl-event-dot"], [1, "tl-event-card"], [1, "tl-event-date"], [1, "tl-event-type-badge"], [1, "tl-event-card-head"], [1, "tl-event-title"], ["class", "ev-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "tl-event-desc", 4, "ngIf"], ["class", "tl-event-author", 4, "ngIf"], ["title", "Supprimer", 1, "ev-delete-btn", 3, "click"], [1, "tl-event-desc"], [1, "tl-event-author"], [1, "empty-state"], ["class", "btn-primary", 3, "click", 4, "ngIf"], [1, "modal-overlay", 3, "click"], [1, "tl-modal", 3, "click"], [1, "tl-modal-head"], [1, "modal-close-btn", 3, "click"], [1, "tl-modal-body"], [1, "form-group"], [1, "form-label"], [1, "tl-type-picker"], ["class", "tl-type-btn", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], [1, "required"], ["type", "text", "required", "", "placeholder", "Ex : Dipl\xF4me de Fatou\u2026", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "required", "", "placeholder", "2024 ou 2024-06 ou 2024-06-15", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom du membre", 1, "form-control", 3, "ngModelChange", "ngModel"], ["rows", "3", "placeholder", "D\xE9tails de l'\xE9v\xE9nement\u2026", 1, "form-control", "form-textarea", 3, "ngModelChange", "ngModel"], ["class", "error-state", "style", "margin:0 20px 12px", 4, "ngIf"], [1, "tl-modal-foot"], [1, "btn-secondary", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "tl-type-btn", 3, "click"], [1, "error-state", 2, "margin", "0 20px 12px"], [1, "material-icons-round", "spin"]], template: function TimelineComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div")(3, "h2");
       \u0275\u0275text(4, "Timeline familiale");
@@ -9948,7 +10071,7 @@ var TimelineComponent = class _TimelineComponent {
       \u0275\u0275elementEnd();
       \u0275\u0275text(15, " Ajouter un \xE9v\xE9nement ");
       \u0275\u0275elementEnd()()()();
-      \u0275\u0275template(16, TimelineComponent_div_16_Template, 2, 1, "div", 6)(17, TimelineComponent_ng_container_17_Template, 6, 4, "ng-container", 7)(18, TimelineComponent_ng_container_18_Template, 3, 2, "ng-container", 7)(19, TimelineComponent_div_19_Template, 39, 6, "div", 8);
+      \u0275\u0275template(16, TimelineComponent_div_16_Template, 2, 1, "div", 6)(17, TimelineComponent_ng_container_17_Template, 6, 4, "ng-container", 7)(18, TimelineComponent_ng_container_18_Template, 3, 2, "ng-container", 7)(19, TimelineComponent_div_19_Template, 44, 10, "div", 8);
     }
     if (rf & 2) {
       \u0275\u0275advance(10);
@@ -9964,7 +10087,7 @@ var TimelineComponent = class _TimelineComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.showForm);
     }
-  }, dependencies: [NgForOf, NgIf, DefaultValueAccessor, NgControlStatus, NgModel], styles: ['@charset "UTF-8";\n\n\n\n.header-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 12px;\n}\n.header-row[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.header-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.tl-filtres[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n  flex-wrap: wrap;\n  margin-bottom: 8px;\n}\n.tl-filtre-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 7px 14px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--white);\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.tl-filtre-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.tl-filtre-btn[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n.tl-filtre-btn.active[_ngcontent-%COMP%] {\n  background: var(--primary);\n  border-color: var(--primary);\n  color: #fff;\n}\n.ev-type-badge[_ngcontent-%COMP%] {\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  font-size: 11px;\n  font-weight: 600;\n  white-space: nowrap;\n}\n.ev-delete-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  width: 26px;\n  height: 26px;\n  border-radius: 7px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: var(--text-muted);\n  transition: var(--transition);\n}\n.ev-delete-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.ev-delete-btn[_ngcontent-%COMP%]:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.modal-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  padding: 16px;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.tl-modal[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 20px;\n  width: 100%;\n  max-width: 500px;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);\n  overflow: hidden;\n  animation: _ngcontent-%COMP%_tl-modal-in 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_tl-modal-in {\n  from {\n    transform: translateY(12px) scale(0.98);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0) scale(1);\n    opacity: 1;\n  }\n}\n.tl-modal-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px 16px;\n  border-bottom: 1px solid var(--border-light);\n}\n.tl-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 16px;\n  margin: 0;\n}\n.tl-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--primary);\n  font-size: 20px !important;\n}\n.modal-close-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 32px;\n  height: 32px;\n  border-radius: 10px;\n  border: none;\n  background: var(--bg-muted);\n  cursor: pointer;\n  color: var(--text-secondary);\n  transition: var(--transition);\n}\n.modal-close-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.modal-close-btn[_ngcontent-%COMP%]:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.tl-modal-body[_ngcontent-%COMP%] {\n  padding: 20px 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  max-height: 60vh;\n  overflow-y: auto;\n}\n.tl-modal-foot[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: flex-end;\n  gap: 10px;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border-light);\n}\n.form-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.form-label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.form-control[_ngcontent-%COMP%] {\n  padding: 10px 14px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md);\n  font-size: 14px;\n  font-family: inherit;\n  color: var(--text-primary);\n  background: var(--white);\n  transition: border-color var(--transition);\n  outline: none;\n}\n.form-control[_ngcontent-%COMP%]:focus {\n  border-color: var(--primary);\n}\n.form-control[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.form-textarea[_ngcontent-%COMP%] {\n  resize: vertical;\n  min-height: 80px;\n}\n.tl-type-picker[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.tl-type-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 6px 12px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--bg-muted);\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.tl-type-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.tl-type-btn[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n}\n.tl-type-btn.selected[_ngcontent-%COMP%] {\n  font-weight: 700;\n}\n.empty-state[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  padding: 64px 24px;\n  text-align: center;\n}\n.empty-state[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 48px !important;\n  color: var(--text-muted);\n}\n.empty-state[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 18px;\n  color: var(--text-secondary);\n}\n.empty-state[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  color: var(--text-muted);\n  font-size: 14px;\n}\n.tl-timeline[_ngcontent-%COMP%] {\n  position: relative;\n  padding: 0 0 40px;\n  display: flex;\n  flex-direction: column;\n  gap: 32px;\n}\n.tl-line[_ngcontent-%COMP%] {\n  position: absolute;\n  left: 50%;\n  top: 0;\n  bottom: 0;\n  width: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      #BFDBFE,\n      #93C5FD,\n      #BFDBFE);\n  transform: translateX(-50%);\n}\n.tl-event[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  position: relative;\n}\n.tl-event[_ngcontent-%COMP%]   .tl-event-card[_ngcontent-%COMP%] {\n  width: calc(50% - 40px);\n  margin-left: auto;\n  margin-right: 40px;\n}\n.tl-event.right[_ngcontent-%COMP%]   .tl-event-card[_ngcontent-%COMP%] {\n  margin-left: 40px;\n  margin-right: auto;\n  order: 2;\n}\n.tl-event.right[_ngcontent-%COMP%]   .tl-event-dot[_ngcontent-%COMP%] {\n  order: 1;\n}\n.tl-event-dot[_ngcontent-%COMP%] {\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 4px solid #fff;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n  z-index: 2;\n  flex-shrink: 0;\n  top: 12px;\n}\n.tl-event-dot[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #fff;\n}\n.tl-event-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 20px;\n  border: 1px solid #EFF3FF;\n  padding: 20px 24px;\n  transition: all 0.25s;\n}\n.tl-event-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 8px 32px rgba(29, 78, 216, 0.09);\n  border-color: #DBEAFE;\n  transform: translateY(-2px);\n}\n.tl-event-date[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 700;\n  color: #9CA3AF;\n  text-transform: uppercase;\n  letter-spacing: 0.07em;\n  margin-bottom: 8px;\n}\n.tl-event-type-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n  margin-bottom: 10px;\n}\n.tl-event-type-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.tl-event-card-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 8px;\n  margin-bottom: 6px;\n}\n.tl-event-title[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 0;\n  line-height: 1.3;\n  flex: 1;\n}\n.tl-event-desc[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #4B5563;\n  line-height: 1.7;\n  margin: 0 0 12px;\n}\n.tl-event-author[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  color: #9CA3AF;\n}\n.tl-event-author[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n@media (max-width: 768px) {\n  .tl-line[_ngcontent-%COMP%] {\n    left: 24px;\n  }\n  .tl-event[_ngcontent-%COMP%]   .tl-event-card[_ngcontent-%COMP%], \n   .tl-event.right[_ngcontent-%COMP%]   .tl-event-card[_ngcontent-%COMP%] {\n    width: calc(100% - 60px);\n    margin-left: 60px !important;\n    margin-right: 0 !important;\n    order: 1 !important;\n  }\n  .tl-event[_ngcontent-%COMP%]   .tl-event-dot[_ngcontent-%COMP%], \n   .tl-event.right[_ngcontent-%COMP%]   .tl-event-dot[_ngcontent-%COMP%] {\n    left: 24px;\n    order: 0 !important;\n  }\n}\n/*# sourceMappingURL=timeline.component.css.map */'] });
+  }, dependencies: [NgForOf, NgIf, DefaultValueAccessor, NgControlStatus, RequiredValidator, NgModel], styles: ['@charset "UTF-8";\n\n\n\n.header-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 12px;\n}\n.header-row[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.header-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.required[_ngcontent-%COMP%] {\n  color: #EF4444;\n}\n.tl-filtres[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n  flex-wrap: wrap;\n  margin-bottom: 8px;\n}\n.tl-filtre-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 7px 14px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--white);\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.tl-filtre-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.tl-filtre-btn[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n.tl-filtre-btn.active[_ngcontent-%COMP%] {\n  background: var(--primary);\n  border-color: var(--primary);\n  color: #fff;\n}\n.ev-type-badge[_ngcontent-%COMP%] {\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  font-size: 11px;\n  font-weight: 600;\n  white-space: nowrap;\n}\n.ev-delete-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  width: 26px;\n  height: 26px;\n  border-radius: 7px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: var(--text-muted);\n  transition: var(--transition);\n}\n.ev-delete-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.ev-delete-btn[_ngcontent-%COMP%]:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.modal-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  padding: 16px;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.tl-modal[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 20px;\n  width: 100%;\n  max-width: 500px;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);\n  overflow: hidden;\n  animation: _ngcontent-%COMP%_tl-modal-in 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_tl-modal-in {\n  from {\n    transform: translateY(12px) scale(0.98);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0) scale(1);\n    opacity: 1;\n  }\n}\n.tl-modal-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px 16px;\n  border-bottom: 1px solid var(--border-light);\n}\n.tl-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 16px;\n  margin: 0;\n}\n.tl-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--primary);\n  font-size: 20px !important;\n}\n.modal-close-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 32px;\n  height: 32px;\n  border-radius: 10px;\n  border: none;\n  background: var(--bg-muted);\n  cursor: pointer;\n  color: var(--text-secondary);\n  transition: var(--transition);\n}\n.modal-close-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.modal-close-btn[_ngcontent-%COMP%]:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.tl-modal-body[_ngcontent-%COMP%] {\n  padding: 20px 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  max-height: 60vh;\n  overflow-y: auto;\n}\n.tl-modal-foot[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: flex-end;\n  gap: 10px;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border-light);\n}\n.form-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.form-label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.form-control[_ngcontent-%COMP%] {\n  padding: 10px 14px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md);\n  font-size: 14px;\n  font-family: inherit;\n  color: var(--text-primary);\n  background: var(--white);\n  transition: border-color var(--transition);\n  outline: none;\n}\n.form-control[_ngcontent-%COMP%]:focus {\n  border-color: var(--primary);\n}\n.form-control[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.form-textarea[_ngcontent-%COMP%] {\n  resize: vertical;\n  min-height: 80px;\n}\n.tl-type-picker[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.tl-type-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 6px 12px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--bg-muted);\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.tl-type-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.tl-type-btn[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n}\n.tl-type-btn.selected[_ngcontent-%COMP%] {\n  font-weight: 700;\n}\n.empty-state[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  padding: 64px 24px;\n  text-align: center;\n}\n.empty-state[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 48px !important;\n  color: var(--text-muted);\n}\n.empty-state[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 18px;\n  color: var(--text-secondary);\n}\n.empty-state[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  color: var(--text-muted);\n  font-size: 14px;\n}\n.tl-timeline[_ngcontent-%COMP%] {\n  position: relative;\n  padding: 0 0 40px;\n  display: flex;\n  flex-direction: column;\n  gap: 32px;\n}\n.tl-line[_ngcontent-%COMP%] {\n  position: absolute;\n  left: 50%;\n  top: 0;\n  bottom: 0;\n  width: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      #BFDBFE,\n      #93C5FD,\n      #BFDBFE);\n  transform: translateX(-50%);\n}\n.tl-event[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  position: relative;\n}\n.tl-event[_ngcontent-%COMP%]   .tl-event-card[_ngcontent-%COMP%] {\n  width: calc(50% - 40px);\n  margin-left: auto;\n  margin-right: 40px;\n}\n.tl-event.right[_ngcontent-%COMP%]   .tl-event-card[_ngcontent-%COMP%] {\n  margin-left: 40px;\n  margin-right: auto;\n  order: 2;\n}\n.tl-event.right[_ngcontent-%COMP%]   .tl-event-dot[_ngcontent-%COMP%] {\n  order: 1;\n}\n.tl-event-dot[_ngcontent-%COMP%] {\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 4px solid #fff;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n  z-index: 2;\n  flex-shrink: 0;\n  top: 12px;\n}\n.tl-event-dot[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #fff;\n}\n.tl-event-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 20px;\n  border: 1px solid #EFF3FF;\n  padding: 20px 24px;\n  transition: all 0.25s;\n}\n.tl-event-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 8px 32px rgba(29, 78, 216, 0.09);\n  border-color: #DBEAFE;\n  transform: translateY(-2px);\n}\n.tl-event-date[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 700;\n  color: #9CA3AF;\n  text-transform: uppercase;\n  letter-spacing: 0.07em;\n  margin-bottom: 8px;\n}\n.tl-event-type-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n  margin-bottom: 10px;\n}\n.tl-event-type-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.tl-event-card-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 8px;\n  margin-bottom: 6px;\n}\n.tl-event-title[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 0;\n  line-height: 1.3;\n  flex: 1;\n}\n.tl-event-desc[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #4B5563;\n  line-height: 1.7;\n  margin: 0 0 12px;\n}\n.tl-event-author[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  color: #9CA3AF;\n}\n.tl-event-author[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n@media (max-width: 768px) {\n  .tl-line[_ngcontent-%COMP%] {\n    left: 24px;\n  }\n  .tl-event[_ngcontent-%COMP%]   .tl-event-card[_ngcontent-%COMP%], \n   .tl-event.right[_ngcontent-%COMP%]   .tl-event-card[_ngcontent-%COMP%] {\n    width: calc(100% - 60px);\n    margin-left: 60px !important;\n    margin-right: 0 !important;\n    order: 1 !important;\n  }\n  .tl-event[_ngcontent-%COMP%]   .tl-event-dot[_ngcontent-%COMP%], \n   .tl-event.right[_ngcontent-%COMP%]   .tl-event-dot[_ngcontent-%COMP%] {\n    left: 24px;\n    order: 0 !important;\n  }\n}\n/*# sourceMappingURL=timeline.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(TimelineComponent, [{
@@ -10100,13 +10223,13 @@ var TimelineComponent = class _TimelineComponent {
       </div>\r
 \r
       <div class="form-group">\r
-        <label class="form-label">Titre *</label>\r
-        <input type="text" [(ngModel)]="form.titre" placeholder="Ex : Dipl\xF4me de Fatou\u2026" class="form-control" />\r
+        <label class="form-label">Titre <span class="required">*</span></label>\r
+        <input type="text" [(ngModel)]="form.titre" required placeholder="Ex : Dipl\xF4me de Fatou\u2026" class="form-control" />\r
       </div>\r
 \r
       <div class="form-group">\r
-        <label class="form-label">Date *</label>\r
-        <input type="text" [(ngModel)]="form.date" placeholder="2024 ou 2024-06 ou 2024-06-15" class="form-control" />\r
+        <label class="form-label">Date <span class="required">*</span></label>\r
+        <input type="text" [(ngModel)]="form.date" required placeholder="2024 ou 2024-06 ou 2024-06-15" class="form-control" />\r
       </div>\r
 \r
       <div class="form-group">\r
@@ -10120,18 +10243,23 @@ var TimelineComponent = class _TimelineComponent {
       </div>\r
     </div>\r
 \r
+    <div class="error-state" *ngIf="formErreur" style="margin:0 20px 12px">\r
+      <span class="material-icons-round">error_outline</span>{{ formErreur }}\r
+    </div>\r
+\r
     <div class="tl-modal-foot">\r
       <button class="btn-secondary" (click)="showForm = false">Annuler</button>\r
       <button class="btn-primary"\r
-              [disabled]="!form.titre.trim() || !form.date.trim()"\r
+              [disabled]="saving || !form.titre.trim() || !form.date.trim()"\r
               (click)="submitForm()">\r
-        <span class="material-icons-round">check</span>\r
-        Ajouter\r
+        <span class="material-icons-round spin" *ngIf="saving">sync</span>\r
+        <span class="material-icons-round" *ngIf="!saving">check</span>\r
+        {{ saving ? 'Ajout\u2026' : 'Ajouter' }}\r
       </button>\r
     </div>\r
   </div>\r
 </div>\r
-`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/timeline/timeline.component.scss */\n.header-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 12px;\n}\n.header-row h2 {\n  margin-bottom: 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.tl-filtres {\n  display: flex;\n  gap: 8px;\n  flex-wrap: wrap;\n  margin-bottom: 8px;\n}\n.tl-filtre-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 7px 14px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--white);\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.tl-filtre-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.tl-filtre-btn:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n.tl-filtre-btn.active {\n  background: var(--primary);\n  border-color: var(--primary);\n  color: #fff;\n}\n.ev-type-badge {\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  font-size: 11px;\n  font-weight: 600;\n  white-space: nowrap;\n}\n.ev-delete-btn {\n  display: flex;\n  align-items: center;\n  width: 26px;\n  height: 26px;\n  border-radius: 7px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: var(--text-muted);\n  transition: var(--transition);\n}\n.ev-delete-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.ev-delete-btn:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.modal-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  padding: 16px;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.tl-modal {\n  background: #fff;\n  border-radius: 20px;\n  width: 100%;\n  max-width: 500px;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);\n  overflow: hidden;\n  animation: tl-modal-in 0.2s ease;\n}\n@keyframes tl-modal-in {\n  from {\n    transform: translateY(12px) scale(0.98);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0) scale(1);\n    opacity: 1;\n  }\n}\n.tl-modal-head {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px 16px;\n  border-bottom: 1px solid var(--border-light);\n}\n.tl-modal-head h3 {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 16px;\n  margin: 0;\n}\n.tl-modal-head h3 .material-icons-round {\n  color: var(--primary);\n  font-size: 20px !important;\n}\n.modal-close-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 32px;\n  height: 32px;\n  border-radius: 10px;\n  border: none;\n  background: var(--bg-muted);\n  cursor: pointer;\n  color: var(--text-secondary);\n  transition: var(--transition);\n}\n.modal-close-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.modal-close-btn:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.tl-modal-body {\n  padding: 20px 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  max-height: 60vh;\n  overflow-y: auto;\n}\n.tl-modal-foot {\n  display: flex;\n  justify-content: flex-end;\n  gap: 10px;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border-light);\n}\n.form-group {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.form-label {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.form-control {\n  padding: 10px 14px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md);\n  font-size: 14px;\n  font-family: inherit;\n  color: var(--text-primary);\n  background: var(--white);\n  transition: border-color var(--transition);\n  outline: none;\n}\n.form-control:focus {\n  border-color: var(--primary);\n}\n.form-control::placeholder {\n  color: var(--text-muted);\n}\n.form-textarea {\n  resize: vertical;\n  min-height: 80px;\n}\n.tl-type-picker {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.tl-type-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 6px 12px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--bg-muted);\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.tl-type-btn .material-icons-round {\n  font-size: 14px !important;\n}\n.tl-type-btn:hover {\n  border-color: var(--primary);\n}\n.tl-type-btn.selected {\n  font-weight: 700;\n}\n.empty-state {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  padding: 64px 24px;\n  text-align: center;\n}\n.empty-state .material-icons-round {\n  font-size: 48px !important;\n  color: var(--text-muted);\n}\n.empty-state h3 {\n  margin: 0;\n  font-size: 18px;\n  color: var(--text-secondary);\n}\n.empty-state p {\n  margin: 0;\n  color: var(--text-muted);\n  font-size: 14px;\n}\n.tl-timeline {\n  position: relative;\n  padding: 0 0 40px;\n  display: flex;\n  flex-direction: column;\n  gap: 32px;\n}\n.tl-line {\n  position: absolute;\n  left: 50%;\n  top: 0;\n  bottom: 0;\n  width: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      #BFDBFE,\n      #93C5FD,\n      #BFDBFE);\n  transform: translateX(-50%);\n}\n.tl-event {\n  display: flex;\n  align-items: flex-start;\n  position: relative;\n}\n.tl-event .tl-event-card {\n  width: calc(50% - 40px);\n  margin-left: auto;\n  margin-right: 40px;\n}\n.tl-event.right .tl-event-card {\n  margin-left: 40px;\n  margin-right: auto;\n  order: 2;\n}\n.tl-event.right .tl-event-dot {\n  order: 1;\n}\n.tl-event-dot {\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 4px solid #fff;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n  z-index: 2;\n  flex-shrink: 0;\n  top: 12px;\n}\n.tl-event-dot .material-icons-round {\n  font-size: 18px !important;\n  color: #fff;\n}\n.tl-event-card {\n  background: #fff;\n  border-radius: 20px;\n  border: 1px solid #EFF3FF;\n  padding: 20px 24px;\n  transition: all 0.25s;\n}\n.tl-event-card:hover {\n  box-shadow: 0 8px 32px rgba(29, 78, 216, 0.09);\n  border-color: #DBEAFE;\n  transform: translateY(-2px);\n}\n.tl-event-date {\n  font-size: 11px;\n  font-weight: 700;\n  color: #9CA3AF;\n  text-transform: uppercase;\n  letter-spacing: 0.07em;\n  margin-bottom: 8px;\n}\n.tl-event-type-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n  margin-bottom: 10px;\n}\n.tl-event-type-badge .material-icons-round {\n  font-size: 13px !important;\n}\n.tl-event-card-head {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 8px;\n  margin-bottom: 6px;\n}\n.tl-event-title {\n  font-size: 15px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 0;\n  line-height: 1.3;\n  flex: 1;\n}\n.tl-event-desc {\n  font-size: 13px;\n  color: #4B5563;\n  line-height: 1.7;\n  margin: 0 0 12px;\n}\n.tl-event-author {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  color: #9CA3AF;\n}\n.tl-event-author .material-icons-round {\n  font-size: 14px !important;\n}\n@media (max-width: 768px) {\n  .tl-line {\n    left: 24px;\n  }\n  .tl-event .tl-event-card,\n  .tl-event.right .tl-event-card {\n    width: calc(100% - 60px);\n    margin-left: 60px !important;\n    margin-right: 0 !important;\n    order: 1 !important;\n  }\n  .tl-event .tl-event-dot,\n  .tl-event.right .tl-event-dot {\n    left: 24px;\n    order: 0 !important;\n  }\n}\n/*# sourceMappingURL=timeline.component.css.map */\n'] }]
+`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/timeline/timeline.component.scss */\n.header-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 12px;\n}\n.header-row h2 {\n  margin-bottom: 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.required {\n  color: #EF4444;\n}\n.tl-filtres {\n  display: flex;\n  gap: 8px;\n  flex-wrap: wrap;\n  margin-bottom: 8px;\n}\n.tl-filtre-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 7px 14px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--white);\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.tl-filtre-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.tl-filtre-btn:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n.tl-filtre-btn.active {\n  background: var(--primary);\n  border-color: var(--primary);\n  color: #fff;\n}\n.ev-type-badge {\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  font-size: 11px;\n  font-weight: 600;\n  white-space: nowrap;\n}\n.ev-delete-btn {\n  display: flex;\n  align-items: center;\n  width: 26px;\n  height: 26px;\n  border-radius: 7px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: var(--text-muted);\n  transition: var(--transition);\n}\n.ev-delete-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.ev-delete-btn:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.modal-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  padding: 16px;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.tl-modal {\n  background: #fff;\n  border-radius: 20px;\n  width: 100%;\n  max-width: 500px;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);\n  overflow: hidden;\n  animation: tl-modal-in 0.2s ease;\n}\n@keyframes tl-modal-in {\n  from {\n    transform: translateY(12px) scale(0.98);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0) scale(1);\n    opacity: 1;\n  }\n}\n.tl-modal-head {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px 16px;\n  border-bottom: 1px solid var(--border-light);\n}\n.tl-modal-head h3 {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 16px;\n  margin: 0;\n}\n.tl-modal-head h3 .material-icons-round {\n  color: var(--primary);\n  font-size: 20px !important;\n}\n.modal-close-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 32px;\n  height: 32px;\n  border-radius: 10px;\n  border: none;\n  background: var(--bg-muted);\n  cursor: pointer;\n  color: var(--text-secondary);\n  transition: var(--transition);\n}\n.modal-close-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.modal-close-btn:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.tl-modal-body {\n  padding: 20px 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  max-height: 60vh;\n  overflow-y: auto;\n}\n.tl-modal-foot {\n  display: flex;\n  justify-content: flex-end;\n  gap: 10px;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border-light);\n}\n.form-group {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.form-label {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.form-control {\n  padding: 10px 14px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md);\n  font-size: 14px;\n  font-family: inherit;\n  color: var(--text-primary);\n  background: var(--white);\n  transition: border-color var(--transition);\n  outline: none;\n}\n.form-control:focus {\n  border-color: var(--primary);\n}\n.form-control::placeholder {\n  color: var(--text-muted);\n}\n.form-textarea {\n  resize: vertical;\n  min-height: 80px;\n}\n.tl-type-picker {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.tl-type-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 6px 12px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--bg-muted);\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.tl-type-btn .material-icons-round {\n  font-size: 14px !important;\n}\n.tl-type-btn:hover {\n  border-color: var(--primary);\n}\n.tl-type-btn.selected {\n  font-weight: 700;\n}\n.empty-state {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  padding: 64px 24px;\n  text-align: center;\n}\n.empty-state .material-icons-round {\n  font-size: 48px !important;\n  color: var(--text-muted);\n}\n.empty-state h3 {\n  margin: 0;\n  font-size: 18px;\n  color: var(--text-secondary);\n}\n.empty-state p {\n  margin: 0;\n  color: var(--text-muted);\n  font-size: 14px;\n}\n.tl-timeline {\n  position: relative;\n  padding: 0 0 40px;\n  display: flex;\n  flex-direction: column;\n  gap: 32px;\n}\n.tl-line {\n  position: absolute;\n  left: 50%;\n  top: 0;\n  bottom: 0;\n  width: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      #BFDBFE,\n      #93C5FD,\n      #BFDBFE);\n  transform: translateX(-50%);\n}\n.tl-event {\n  display: flex;\n  align-items: flex-start;\n  position: relative;\n}\n.tl-event .tl-event-card {\n  width: calc(50% - 40px);\n  margin-left: auto;\n  margin-right: 40px;\n}\n.tl-event.right .tl-event-card {\n  margin-left: 40px;\n  margin-right: auto;\n  order: 2;\n}\n.tl-event.right .tl-event-dot {\n  order: 1;\n}\n.tl-event-dot {\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 4px solid #fff;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n  z-index: 2;\n  flex-shrink: 0;\n  top: 12px;\n}\n.tl-event-dot .material-icons-round {\n  font-size: 18px !important;\n  color: #fff;\n}\n.tl-event-card {\n  background: #fff;\n  border-radius: 20px;\n  border: 1px solid #EFF3FF;\n  padding: 20px 24px;\n  transition: all 0.25s;\n}\n.tl-event-card:hover {\n  box-shadow: 0 8px 32px rgba(29, 78, 216, 0.09);\n  border-color: #DBEAFE;\n  transform: translateY(-2px);\n}\n.tl-event-date {\n  font-size: 11px;\n  font-weight: 700;\n  color: #9CA3AF;\n  text-transform: uppercase;\n  letter-spacing: 0.07em;\n  margin-bottom: 8px;\n}\n.tl-event-type-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n  margin-bottom: 10px;\n}\n.tl-event-type-badge .material-icons-round {\n  font-size: 13px !important;\n}\n.tl-event-card-head {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 8px;\n  margin-bottom: 6px;\n}\n.tl-event-title {\n  font-size: 15px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 0;\n  line-height: 1.3;\n  flex: 1;\n}\n.tl-event-desc {\n  font-size: 13px;\n  color: #4B5563;\n  line-height: 1.7;\n  margin: 0 0 12px;\n}\n.tl-event-author {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  color: #9CA3AF;\n}\n.tl-event-author .material-icons-round {\n  font-size: 14px !important;\n}\n@media (max-width: 768px) {\n  .tl-line {\n    left: 24px;\n  }\n  .tl-event .tl-event-card,\n  .tl-event.right .tl-event-card {\n    width: calc(100% - 60px);\n    margin-left: 60px !important;\n    margin-right: 0 !important;\n    order: 1 !important;\n  }\n  .tl-event .tl-event-dot,\n  .tl-event.right .tl-event-dot {\n    left: 24px;\n    order: 0 !important;\n  }\n}\n/*# sourceMappingURL=timeline.component.css.map */\n'] }]
   }], () => [{ type: ApiService }], null);
 })();
 (() => {
@@ -13249,7 +13377,7 @@ function AdminComponent_div_40_Template(rf, ctx) {
 function AdminComponent_ng_container_41_button_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 102);
+    \u0275\u0275elementStart(0, "button", 103);
     \u0275\u0275listener("click", function AdminComponent_ng_container_41_button_18_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r4);
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -13262,7 +13390,7 @@ function AdminComponent_ng_container_41_button_18_Template(rf, ctx) {
 }
 function AdminComponent_ng_container_41_button_20_span_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 105);
+    \u0275\u0275elementStart(0, "span", 106);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -13276,7 +13404,7 @@ function AdminComponent_ng_container_41_button_20_span_4_Template(rf, ctx) {
 function AdminComponent_ng_container_41_button_20_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 103);
+    \u0275\u0275elementStart(0, "button", 104);
     \u0275\u0275listener("click", function AdminComponent_ng_container_41_button_20_Template_button_click_0_listener() {
       const f_r6 = \u0275\u0275restoreView(_r5).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -13286,7 +13414,7 @@ function AdminComponent_ng_container_41_button_20_Template(rf, ctx) {
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
-    \u0275\u0275template(4, AdminComponent_ng_container_41_button_20_span_4_Template, 2, 1, "span", 104);
+    \u0275\u0275template(4, AdminComponent_ng_container_41_button_20_span_4_Template, 2, 1, "span", 105);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -13301,9 +13429,23 @@ function AdminComponent_ng_container_41_button_20_Template(rf, ctx) {
     \u0275\u0275property("ngIf", f_r6.key !== "tous");
   }
 }
-function AdminComponent_ng_container_41_div_22_div_10_option_2_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_21_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 116);
+    \u0275\u0275elementStart(0, "div", 107)(1, "span", 7);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r1.roleErreur, " ");
+  }
+}
+function AdminComponent_ng_container_41_div_23_div_10_option_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 118);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -13314,35 +13456,35 @@ function AdminComponent_ng_container_41_div_22_div_10_option_2_Template(rf, ctx)
     \u0275\u0275textInterpolate(r_r9.label);
   }
 }
-function AdminComponent_ng_container_41_div_22_div_10_ng_container_3_span_2_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_23_div_10_ng_container_3_span_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 119);
+    \u0275\u0275elementStart(0, "span", 121);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function AdminComponent_ng_container_41_div_22_div_10_ng_container_3_span_3_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_23_div_10_ng_container_3_span_3_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 7);
     \u0275\u0275text(1, "check");
     \u0275\u0275elementEnd();
   }
 }
-function AdminComponent_ng_container_41_div_22_div_10_ng_container_3_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_23_div_10_ng_container_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r10 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "button", 117);
-    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_22_div_10_ng_container_3_Template_button_click_1_listener() {
+    \u0275\u0275elementStart(1, "button", 119);
+    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_23_div_10_ng_container_3_Template_button_click_1_listener() {
       \u0275\u0275restoreView(_r10);
       const m_r8 = \u0275\u0275nextContext(2).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.confirmRoleChange(m_r8.user == null ? null : m_r8.user.id));
     });
-    \u0275\u0275template(2, AdminComponent_ng_container_41_div_22_div_10_ng_container_3_span_2_Template, 2, 0, "span", 45)(3, AdminComponent_ng_container_41_div_22_div_10_ng_container_3_span_3_Template, 2, 0, "span", 46);
+    \u0275\u0275template(2, AdminComponent_ng_container_41_div_23_div_10_ng_container_3_span_2_Template, 2, 0, "span", 45)(3, AdminComponent_ng_container_41_div_23_div_10_ng_container_3_span_3_Template, 2, 0, "span", 46);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "button", 118);
-    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_22_div_10_ng_container_3_Template_button_click_4_listener() {
+    \u0275\u0275elementStart(4, "button", 120);
+    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_23_div_10_ng_container_3_Template_button_click_4_listener() {
       \u0275\u0275restoreView(_r10);
       const m_r8 = \u0275\u0275nextContext(2).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -13366,20 +13508,20 @@ function AdminComponent_ng_container_41_div_22_div_10_ng_container_3_Template(rf
     \u0275\u0275property("disabled", ctx_r1.roleChanging === (m_r8.user == null ? null : m_r8.user.id));
   }
 }
-function AdminComponent_ng_container_41_div_22_div_10_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_23_div_10_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 114)(1, "select", 115);
-    \u0275\u0275twoWayListener("ngModelChange", function AdminComponent_ng_container_41_div_22_div_10_Template_select_ngModelChange_1_listener($event) {
+    \u0275\u0275elementStart(0, "div", 116)(1, "select", 117);
+    \u0275\u0275twoWayListener("ngModelChange", function AdminComponent_ng_container_41_div_23_div_10_Template_select_ngModelChange_1_listener($event) {
       \u0275\u0275restoreView(_r7);
       const m_r8 = \u0275\u0275nextContext().$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
       \u0275\u0275twoWayBindingSet(ctx_r1.editingRole[m_r8.user == null ? null : m_r8.user.id], $event) || (ctx_r1.editingRole[m_r8.user == null ? null : m_r8.user.id] = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275template(2, AdminComponent_ng_container_41_div_22_div_10_option_2_Template, 2, 2, "option", 38);
+    \u0275\u0275template(2, AdminComponent_ng_container_41_div_23_div_10_option_2_Template, 2, 2, "option", 38);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(3, AdminComponent_ng_container_41_div_22_div_10_ng_container_3_Template, 7, 4, "ng-container", 19);
+    \u0275\u0275template(3, AdminComponent_ng_container_41_div_23_div_10_ng_container_3_Template, 7, 4, "ng-container", 19);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -13395,28 +13537,28 @@ function AdminComponent_ng_container_41_div_22_div_10_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r1.hasRoleChanged(m_r8.user == null ? null : m_r8.user.id));
   }
 }
-function AdminComponent_ng_container_41_div_22_ng_template_11_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_23_ng_template_11_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 120)(1, "span", 7);
+    \u0275\u0275elementStart(0, "div", 122)(1, "span", 7);
     \u0275\u0275text(2, "verified");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3, " Administrateur ");
     \u0275\u0275elementEnd();
   }
 }
-function AdminComponent_ng_container_41_div_22_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_23_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 106)(1, "div", 107)(2, "div", 108);
+    \u0275\u0275elementStart(0, "div", 108)(1, "div", 109)(2, "div", 110);
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "div", 109)(5, "span", 110);
+    \u0275\u0275elementStart(4, "div", 111)(5, "span", 112);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "span", 111);
+    \u0275\u0275elementStart(7, "span", 113);
     \u0275\u0275text(8);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(9, "div", 112);
-    \u0275\u0275template(10, AdminComponent_ng_container_41_div_22_div_10_Template, 4, 6, "div", 113)(11, AdminComponent_ng_container_41_div_22_ng_template_11_Template, 4, 0, "ng-template", null, 0, \u0275\u0275templateRefExtractor);
+    \u0275\u0275elementStart(9, "div", 114);
+    \u0275\u0275template(10, AdminComponent_ng_container_41_div_23_div_10_Template, 4, 6, "div", 115)(11, AdminComponent_ng_container_41_div_23_ng_template_11_Template, 4, 0, "ng-template", null, 0, \u0275\u0275templateRefExtractor);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -13435,9 +13577,9 @@ function AdminComponent_ng_container_41_div_22_Template(rf, ctx) {
     \u0275\u0275property("ngIf", m_r8.role !== "admin")("ngIfElse", adminBadge_r11);
   }
 }
-function AdminComponent_ng_container_41_div_23_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_24_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 121)(1, "span", 7);
+    \u0275\u0275elementStart(0, "div", 123)(1, "span", 7);
     \u0275\u0275text(2, "manage_search");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "p");
@@ -13445,16 +13587,16 @@ function AdminComponent_ng_container_41_div_23_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
   }
 }
-function AdminComponent_ng_container_41_div_25_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_26_Template(rf, ctx) {
   if (rf & 1) {
     const _r12 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 122)(1, "div", 69)(2, "div", 70)(3, "span", 7);
+    \u0275\u0275elementStart(0, "div", 124)(1, "div", 69)(2, "div", 70)(3, "span", 7);
     \u0275\u0275text(4, "visibility");
     \u0275\u0275elementEnd();
     \u0275\u0275text(5, " Acc\xE8s lecture seule ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "button", 123);
-    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_25_Template_button_click_6_listener() {
+    \u0275\u0275elementStart(6, "button", 125);
+    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_26_Template_button_click_6_listener() {
       \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.showViewonlyPassword = !ctx_r1.showViewonlyPassword);
@@ -13462,19 +13604,19 @@ function AdminComponent_ng_container_41_div_25_Template(rf, ctx) {
     \u0275\u0275elementStart(7, "span", 7);
     \u0275\u0275text(8);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(9, "p", 124);
+    \u0275\u0275elementStart(9, "p", 126);
     \u0275\u0275text(10, " Partagez ces identifiants pour un acc\xE8s en consultation uniquement, sans compte personnel. ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(11, "div", 125);
-    \u0275\u0275element(12, "img", 126);
-    \u0275\u0275elementStart(13, "div", 127)(14, "div", 128)(15, "span", 129);
+    \u0275\u0275elementStart(11, "div", 127);
+    \u0275\u0275element(12, "img", 128);
+    \u0275\u0275elementStart(13, "div", 129)(14, "div", 130)(15, "span", 131);
     \u0275\u0275text(16, "Code famille");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(17, "span", 130);
+    \u0275\u0275elementStart(17, "span", 132);
     \u0275\u0275text(18);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(19, "button", 131);
-    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_25_Template_button_click_19_listener() {
+    \u0275\u0275elementStart(19, "button", 133);
+    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_26_Template_button_click_19_listener() {
       \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.copyViewonly("code"));
@@ -13482,14 +13624,14 @@ function AdminComponent_ng_container_41_div_25_Template(rf, ctx) {
     \u0275\u0275elementStart(20, "span", 7);
     \u0275\u0275text(21);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(22, "div", 128)(23, "span", 129);
+    \u0275\u0275elementStart(22, "div", 130)(23, "span", 131);
     \u0275\u0275text(24, "Identifiant");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(25, "span", 130);
+    \u0275\u0275elementStart(25, "span", 132);
     \u0275\u0275text(26);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "button", 131);
-    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_25_Template_button_click_27_listener() {
+    \u0275\u0275elementStart(27, "button", 133);
+    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_26_Template_button_click_27_listener() {
       \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.copyViewonly("username"));
@@ -13497,14 +13639,14 @@ function AdminComponent_ng_container_41_div_25_Template(rf, ctx) {
     \u0275\u0275elementStart(28, "span", 7);
     \u0275\u0275text(29);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(30, "div", 128)(31, "span", 129);
+    \u0275\u0275elementStart(30, "div", 130)(31, "span", 131);
     \u0275\u0275text(32, "Mot de passe");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(33, "span", 130);
+    \u0275\u0275elementStart(33, "span", 132);
     \u0275\u0275text(34);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(35, "button", 131);
-    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_25_Template_button_click_35_listener() {
+    \u0275\u0275elementStart(35, "button", 133);
+    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_26_Template_button_click_35_listener() {
       \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.copyViewonly("password"));
@@ -13512,21 +13654,21 @@ function AdminComponent_ng_container_41_div_25_Template(rf, ctx) {
     \u0275\u0275elementStart(36, "span", 7);
     \u0275\u0275text(37);
     \u0275\u0275elementEnd()()()()();
-    \u0275\u0275elementStart(38, "div", 132)(39, "button", 133);
-    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_25_Template_button_click_39_listener() {
+    \u0275\u0275elementStart(38, "div", 134)(39, "button", 135);
+    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_26_Template_button_click_39_listener() {
       \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.shareViewonlyWhatsApp());
     });
     \u0275\u0275namespaceSVG();
-    \u0275\u0275elementStart(40, "svg", 134);
-    \u0275\u0275element(41, "path", 135);
+    \u0275\u0275elementStart(40, "svg", 136);
+    \u0275\u0275element(41, "path", 137);
     \u0275\u0275elementEnd();
     \u0275\u0275text(42, " WhatsApp ");
     \u0275\u0275elementEnd();
     \u0275\u0275namespaceHTML();
-    \u0275\u0275elementStart(43, "button", 136);
-    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_25_Template_button_click_43_listener() {
+    \u0275\u0275elementStart(43, "button", 138);
+    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_26_Template_button_click_43_listener() {
       \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.shareViewonly());
@@ -13536,8 +13678,8 @@ function AdminComponent_ng_container_41_div_25_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275text(46);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(47, "button", 137);
-    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_25_Template_button_click_47_listener() {
+    \u0275\u0275elementStart(47, "button", 139);
+    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_26_Template_button_click_47_listener() {
       \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.regenerateViewonlyPassword());
@@ -13578,7 +13720,7 @@ function AdminComponent_ng_container_41_div_25_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", ctx_r1.regeneratingViewonly ? "R\xE9g\xE9n\xE9ration..." : "R\xE9g\xE9n\xE9rer le mot de passe", " ");
   }
 }
-function AdminComponent_ng_container_41_div_26_span_12_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_27_span_12_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1);
@@ -13590,16 +13732,16 @@ function AdminComponent_ng_container_41_div_26_span_12_Template(rf, ctx) {
     \u0275\u0275textInterpolate1("/ ", ctx_r1.subscription.limit);
   }
 }
-function AdminComponent_ng_container_41_div_26_span_13_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_27_span_13_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1, "/ illimit\xE9");
     \u0275\u0275elementEnd();
   }
 }
-function AdminComponent_ng_container_41_div_26_p_16_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_27_p_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "p", 147)(1, "span", 7);
+    \u0275\u0275elementStart(0, "p", 149)(1, "span", 7);
     \u0275\u0275text(2, "warning");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -13611,11 +13753,11 @@ function AdminComponent_ng_container_41_div_26_p_16_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", ctx_r1.subscription.pourcentage >= 100 ? "Limite atteinte \u2014 passez \xE0 un plan sup\xE9rieur pour continuer." : "Vous approchez de la limite de votre plan.", " ");
   }
 }
-function AdminComponent_ng_container_41_div_26_button_17_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_27_button_17_Template(rf, ctx) {
   if (rf & 1) {
     const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 148);
-    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_26_button_17_Template_button_click_0_listener() {
+    \u0275\u0275elementStart(0, "button", 150);
+    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_27_button_17_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r13);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.showPlanModal = true);
@@ -13627,11 +13769,11 @@ function AdminComponent_ng_container_41_div_26_button_17_Template(rf, ctx) {
     \u0275\u0275elementEnd();
   }
 }
-function AdminComponent_ng_container_41_div_26_button_18_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_27_button_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r14 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 149);
-    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_26_button_18_Template_button_click_0_listener() {
+    \u0275\u0275elementStart(0, "button", 151);
+    \u0275\u0275listener("click", function AdminComponent_ng_container_41_div_27_button_18_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r14);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.showPlanModal = true);
@@ -13643,27 +13785,27 @@ function AdminComponent_ng_container_41_div_26_button_18_Template(rf, ctx) {
     \u0275\u0275elementEnd();
   }
 }
-function AdminComponent_ng_container_41_div_26_Template(rf, ctx) {
+function AdminComponent_ng_container_41_div_27_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 138)(1, "div", 69)(2, "div", 70)(3, "span", 7);
+    \u0275\u0275elementStart(0, "div", 140)(1, "div", 69)(2, "div", 70)(3, "span", 7);
     \u0275\u0275text(4, "workspace_premium");
     \u0275\u0275elementEnd();
     \u0275\u0275text(5, " Abonnement ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 139);
+    \u0275\u0275elementStart(6, "span", 141);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(8, "div", 140)(9, "div", 141)(10, "span");
+    \u0275\u0275elementStart(8, "div", 142)(9, "div", 143)(10, "span");
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(12, AdminComponent_ng_container_41_div_26_span_12_Template, 2, 1, "span", 19)(13, AdminComponent_ng_container_41_div_26_span_13_Template, 2, 0, "span", 19);
+    \u0275\u0275template(12, AdminComponent_ng_container_41_div_27_span_12_Template, 2, 1, "span", 19)(13, AdminComponent_ng_container_41_div_27_span_13_Template, 2, 0, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "div", 142);
-    \u0275\u0275element(15, "div", 143);
+    \u0275\u0275elementStart(14, "div", 144);
+    \u0275\u0275element(15, "div", 145);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(16, AdminComponent_ng_container_41_div_26_p_16_Template, 4, 1, "p", 144);
+    \u0275\u0275template(16, AdminComponent_ng_container_41_div_27_p_16_Template, 4, 1, "p", 146);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(17, AdminComponent_ng_container_41_div_26_button_17_Template, 4, 0, "button", 145)(18, AdminComponent_ng_container_41_div_26_button_18_Template, 4, 0, "button", 146);
+    \u0275\u0275template(17, AdminComponent_ng_container_41_div_27_button_17_Template, 4, 0, "button", 147)(18, AdminComponent_ng_container_41_div_27_button_18_Template, 4, 0, "button", 148);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -13689,14 +13831,14 @@ function AdminComponent_ng_container_41_div_26_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r1.subscription.plan && ctx_r1.subscription.plan.prix > 0);
   }
 }
-function AdminComponent_ng_container_41_span_45_Template(rf, ctx) {
+function AdminComponent_ng_container_41_span_46_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 119);
+    \u0275\u0275elementStart(0, "span", 121);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function AdminComponent_ng_container_41_span_46_Template(rf, ctx) {
+function AdminComponent_ng_container_41_span_47_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 7);
     \u0275\u0275text(1, "download");
@@ -13718,6 +13860,7 @@ function AdminComponent_ng_container_41_Template(rf, ctx) {
     \u0275\u0275listener("click", function AdminComponent_ng_container_41_Template_button_click_10_listener() {
       \u0275\u0275restoreView(_r3);
       const ctx_r1 = \u0275\u0275nextContext();
+      ctx_r1.createErreur = null;
       return \u0275\u0275resetView(ctx_r1.showCreateForm = true);
     });
     \u0275\u0275elementStart(11, "span", 7);
@@ -13741,82 +13884,83 @@ function AdminComponent_ng_container_41_Template(rf, ctx) {
     \u0275\u0275elementStart(19, "div", 77);
     \u0275\u0275template(20, AdminComponent_ng_container_41_button_20_Template, 5, 5, "button", 78);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(21, "div", 79);
-    \u0275\u0275template(22, AdminComponent_ng_container_41_div_22_Template, 13, 8, "div", 80)(23, AdminComponent_ng_container_41_div_23_Template, 5, 0, "div", 81);
+    \u0275\u0275template(21, AdminComponent_ng_container_41_div_21_Template, 4, 1, "div", 79);
+    \u0275\u0275elementStart(22, "div", 80);
+    \u0275\u0275template(23, AdminComponent_ng_container_41_div_23_Template, 13, 8, "div", 81)(24, AdminComponent_ng_container_41_div_24_Template, 5, 0, "div", 82);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(24, "div", 82);
-    \u0275\u0275template(25, AdminComponent_ng_container_41_div_25_Template, 51, 13, "div", 83)(26, AdminComponent_ng_container_41_div_26_Template, 19, 16, "div", 84);
-    \u0275\u0275elementStart(27, "div", 85)(28, "div", 69)(29, "div", 70)(30, "span", 7);
-    \u0275\u0275text(31, "download");
+    \u0275\u0275elementStart(25, "div", 83);
+    \u0275\u0275template(26, AdminComponent_ng_container_41_div_26_Template, 51, 13, "div", 84)(27, AdminComponent_ng_container_41_div_27_Template, 19, 16, "div", 85);
+    \u0275\u0275elementStart(28, "div", 86)(29, "div", 69)(30, "div", 70)(31, "span", 7);
+    \u0275\u0275text(32, "download");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(32, " Export g\xE9n\xE9alogie ");
+    \u0275\u0275text(33, " Export g\xE9n\xE9alogie ");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(33, "p", 86);
-    \u0275\u0275text(34, " Exportez tout l'arbre familial au format ");
-    \u0275\u0275elementStart(35, "strong");
-    \u0275\u0275text(36, "GEDCOM 5.5.1");
+    \u0275\u0275elementStart(34, "p", 87);
+    \u0275\u0275text(35, " Exportez tout l'arbre familial au format ");
+    \u0275\u0275elementStart(36, "strong");
+    \u0275\u0275text(37, "GEDCOM 5.5.1");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(37, " \u2014 le standard universel des logiciels de g\xE9n\xE9alogie (Ancestry, MyHeritage, Geneanet\u2026). ");
+    \u0275\u0275text(38, " \u2014 le standard universel des logiciels de g\xE9n\xE9alogie (Ancestry, MyHeritage, Geneanet\u2026). ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(38, "div", 87)(39, "div", 88)(40, "span", 7);
-    \u0275\u0275text(41, "people");
+    \u0275\u0275elementStart(39, "div", 88)(40, "div", 89)(41, "span", 7);
+    \u0275\u0275text(42, "people");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(42, "span");
-    \u0275\u0275text(43);
+    \u0275\u0275elementStart(43, "span");
+    \u0275\u0275text(44);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(44, "button", 89);
-    \u0275\u0275listener("click", function AdminComponent_ng_container_41_Template_button_click_44_listener() {
+    \u0275\u0275elementStart(45, "button", 90);
+    \u0275\u0275listener("click", function AdminComponent_ng_container_41_Template_button_click_45_listener() {
       \u0275\u0275restoreView(_r3);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.exportGedcom());
     });
-    \u0275\u0275template(45, AdminComponent_ng_container_41_span_45_Template, 2, 0, "span", 45)(46, AdminComponent_ng_container_41_span_46_Template, 2, 0, "span", 46);
-    \u0275\u0275text(47);
+    \u0275\u0275template(46, AdminComponent_ng_container_41_span_46_Template, 2, 0, "span", 45)(47, AdminComponent_ng_container_41_span_47_Template, 2, 0, "span", 46);
+    \u0275\u0275text(48);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(48, "div", 90)(49, "div", 69)(50, "div", 70)(51, "span", 7);
-    \u0275\u0275text(52, "info");
+    \u0275\u0275elementStart(49, "div", 91)(50, "div", 69)(51, "div", 70)(52, "span", 7);
+    \u0275\u0275text(53, "info");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(53, " Informations famille ");
+    \u0275\u0275text(54, " Informations famille ");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(54, "div", 91)(55, "div", 92)(56, "span", 93);
-    \u0275\u0275text(57, "Nom");
+    \u0275\u0275elementStart(55, "div", 92)(56, "div", 93)(57, "span", 94);
+    \u0275\u0275text(58, "Nom");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(58, "span", 94);
-    \u0275\u0275text(59);
+    \u0275\u0275elementStart(59, "span", 95);
+    \u0275\u0275text(60);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(60, "div", 92)(61, "span", 93);
-    \u0275\u0275text(62, "Code d'acc\xE8s");
+    \u0275\u0275elementStart(61, "div", 93)(62, "span", 94);
+    \u0275\u0275text(63, "Code d'acc\xE8s");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(63, "span", 95);
-    \u0275\u0275text(64);
+    \u0275\u0275elementStart(64, "span", 96);
+    \u0275\u0275text(65);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(65, "div", 92)(66, "span", 93);
-    \u0275\u0275text(67, "Total membres");
+    \u0275\u0275elementStart(66, "div", 93)(67, "span", 94);
+    \u0275\u0275text(68, "Total membres");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(68, "span", 94);
-    \u0275\u0275text(69);
+    \u0275\u0275elementStart(69, "span", 95);
+    \u0275\u0275text(70);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(70, "div", 92)(71, "span", 93);
-    \u0275\u0275text(72, "Profils arbre");
+    \u0275\u0275elementStart(71, "div", 93)(72, "span", 94);
+    \u0275\u0275text(73, "Profils arbre");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(73, "span", 94);
-    \u0275\u0275text(74);
+    \u0275\u0275elementStart(74, "span", 95);
+    \u0275\u0275text(75);
     \u0275\u0275elementEnd()()()()()();
-    \u0275\u0275elementStart(75, "div", 96)(76, "div", 69)(77, "div", 97)(78, "span", 7);
-    \u0275\u0275text(79, "warning");
+    \u0275\u0275elementStart(76, "div", 97)(77, "div", 69)(78, "div", 98)(79, "span", 7);
+    \u0275\u0275text(80, "warning");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(80, " Zone de danger ");
+    \u0275\u0275text(81, " Zone de danger ");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(81, "div", 98)(82, "div")(83, "span", 99);
-    \u0275\u0275text(84, "R\xE9initialiser l'acc\xE8s lecture seule");
+    \u0275\u0275elementStart(82, "div", 99)(83, "div")(84, "span", 100);
+    \u0275\u0275text(85, "R\xE9initialiser l'acc\xE8s lecture seule");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(85, "span", 100);
-    \u0275\u0275text(86, "G\xE9n\xE8re de nouveaux identifiants \u2014 les anciens ne fonctionneront plus");
+    \u0275\u0275elementStart(86, "span", 101);
+    \u0275\u0275text(87, "G\xE9n\xE8re de nouveaux identifiants \u2014 les anciens ne fonctionneront plus");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(87, "button", 101)(88, "span", 7);
-    \u0275\u0275text(89, "refresh");
+    \u0275\u0275elementStart(88, "button", 102)(89, "span", 7);
+    \u0275\u0275text(90, "refresh");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(90, "R\xE9initialiser ");
+    \u0275\u0275text(91, "R\xE9initialiser ");
     \u0275\u0275elementEnd()()();
     \u0275\u0275elementContainerEnd();
   }
@@ -13830,6 +13974,8 @@ function AdminComponent_ng_container_41_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r1.searchQuery);
     \u0275\u0275advance(2);
     \u0275\u0275property("ngForOf", ctx_r1.roleFilters);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.roleErreur);
     \u0275\u0275advance(2);
     \u0275\u0275property("ngForOf", ctx_r1.filteredMembres)("ngForTrackBy", ctx_r1.trackById);
     \u0275\u0275advance();
@@ -13860,14 +14006,14 @@ function AdminComponent_ng_container_41_Template(rf, ctx) {
 }
 function AdminComponent_Conditional_42_div_12_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 167);
+    \u0275\u0275elementStart(0, "div", 169);
     \u0275\u0275text(1, "\u2B50 Populaire");
     \u0275\u0275elementEnd();
   }
 }
 function AdminComponent_Conditional_42_div_12_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 168);
+    \u0275\u0275elementStart(0, "div", 170);
     \u0275\u0275text(1, "Plan actuel");
     \u0275\u0275elementEnd();
   }
@@ -13888,7 +14034,7 @@ function AdminComponent_Conditional_42_div_12_li_15_Template(rf, ctx) {
 }
 function AdminComponent_Conditional_42_div_12_span_17_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 119);
+    \u0275\u0275elementStart(0, "span", 121);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
@@ -13903,25 +14049,25 @@ function AdminComponent_Conditional_42_div_12_span_18_Template(rf, ctx) {
 function AdminComponent_Conditional_42_div_12_Template(rf, ctx) {
   if (rf & 1) {
     const _r16 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 156);
-    \u0275\u0275template(1, AdminComponent_Conditional_42_div_12_div_1_Template, 2, 0, "div", 157)(2, AdminComponent_Conditional_42_div_12_div_2_Template, 2, 0, "div", 158);
-    \u0275\u0275elementStart(3, "div", 159)(4, "h4");
+    \u0275\u0275elementStart(0, "div", 158);
+    \u0275\u0275template(1, AdminComponent_Conditional_42_div_12_div_1_Template, 2, 0, "div", 159)(2, AdminComponent_Conditional_42_div_12_div_2_Template, 2, 0, "div", 160);
+    \u0275\u0275elementStart(3, "div", 161)(4, "h4");
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div", 160)(7, "span", 161);
+    \u0275\u0275elementStart(6, "div", 162)(7, "span", 163);
     \u0275\u0275text(8);
     \u0275\u0275pipe(9, "number");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 162);
+    \u0275\u0275elementStart(10, "span", 164);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(12, "p", 163);
+    \u0275\u0275elementStart(12, "p", 165);
     \u0275\u0275text(13);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(14, "ul", 164);
-    \u0275\u0275template(15, AdminComponent_Conditional_42_div_12_li_15_Template, 4, 1, "li", 165);
+    \u0275\u0275elementStart(14, "ul", 166);
+    \u0275\u0275template(15, AdminComponent_Conditional_42_div_12_li_15_Template, 4, 1, "li", 167);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "button", 166);
+    \u0275\u0275elementStart(16, "button", 168);
     \u0275\u0275listener("click", function AdminComponent_Conditional_42_div_12_Template_button_click_16_listener() {
       const plan_r18 = \u0275\u0275restoreView(_r16).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -13963,18 +14109,18 @@ function AdminComponent_Conditional_42_div_12_Template(rf, ctx) {
 function AdminComponent_Conditional_42_Template(rf, ctx) {
   if (rf & 1) {
     const _r15 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 150);
+    \u0275\u0275elementStart(0, "div", 152);
     \u0275\u0275listener("click", function AdminComponent_Conditional_42_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r15);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.showPlanModal = false);
     });
-    \u0275\u0275elementStart(1, "div", 151);
+    \u0275\u0275elementStart(1, "div", 153);
     \u0275\u0275listener("click", function AdminComponent_Conditional_42_Template_div_click_1_listener($event) {
       \u0275\u0275restoreView(_r15);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275elementStart(2, "div", 152)(3, "div")(4, "h3");
+    \u0275\u0275elementStart(2, "div", 154)(3, "div")(4, "h3");
     \u0275\u0275text(5, "Choisir un plan");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "p");
@@ -13989,10 +14135,10 @@ function AdminComponent_Conditional_42_Template(rf, ctx) {
     \u0275\u0275elementStart(9, "span", 7);
     \u0275\u0275text(10, "close");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(11, "div", 153);
-    \u0275\u0275template(12, AdminComponent_Conditional_42_div_12_Template, 20, 23, "div", 154);
+    \u0275\u0275elementStart(11, "div", 155);
+    \u0275\u0275template(12, AdminComponent_Conditional_42_div_12_Template, 20, 23, "div", 156);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(13, "p", 155)(14, "span", 7);
+    \u0275\u0275elementStart(13, "p", 157)(14, "span", 7);
     \u0275\u0275text(15, "lock");
     \u0275\u0275elementEnd();
     \u0275\u0275text(16, " Paiement s\xE9curis\xE9 via CinetPay \xB7 Orange Money, Wave, Moov Money accept\xE9s ");
@@ -14007,7 +14153,7 @@ function AdminComponent_Conditional_42_Template(rf, ctx) {
 function AdminComponent_div_43_Template(rf, ctx) {
   if (rf & 1) {
     const _r19 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 169);
+    \u0275\u0275elementStart(0, "div", 171);
     \u0275\u0275listener("click", function AdminComponent_div_43_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r19);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -14016,9 +14162,9 @@ function AdminComponent_div_43_Template(rf, ctx) {
     \u0275\u0275elementEnd();
   }
 }
-function AdminComponent_option_95_Template(rf, ctx) {
+function AdminComponent_option_97_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 116);
+    \u0275\u0275elementStart(0, "option", 118);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -14029,9 +14175,9 @@ function AdminComponent_option_95_Template(rf, ctx) {
     \u0275\u0275textInterpolate(r_r20.label);
   }
 }
-function AdminComponent_option_104_Template(rf, ctx) {
+function AdminComponent_option_106_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 116);
+    \u0275\u0275elementStart(0, "option", 118);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -14042,14 +14188,28 @@ function AdminComponent_option_104_Template(rf, ctx) {
     \u0275\u0275textInterpolate2(" ", p_r21.prenoms, " ", p_r21.nomUsage ?? p_r21.nomNaissance, " ");
   }
 }
-function AdminComponent_span_109_Template(rf, ctx) {
+function AdminComponent_div_107_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 119);
+    \u0275\u0275elementStart(0, "div", 65)(1, "span", 7);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r1.createErreur, " ");
+  }
+}
+function AdminComponent_span_112_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 121);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function AdminComponent_span_110_Template(rf, ctx) {
+function AdminComponent_span_113_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 7);
     \u0275\u0275text(1, "person_add");
@@ -14084,7 +14244,9 @@ var AdminComponent = class _AdminComponent {
   regeneratingViewonly = false;
   showCreateForm = false;
   saving = false;
+  createErreur = null;
   roleChanging = null;
+  roleErreur = null;
   // Recherche et filtre membres
   searchQuery = "";
   roleFilter = "tous";
@@ -14106,11 +14268,12 @@ var AdminComponent = class _AdminComponent {
     role: "membre",
     personneId: ""
   };
+  // Rôles assignables via /familles/membres/:id/role et /auth/membres/create —
+  // le backend n'accepte que gestionnaire/membre sur ces deux endpoints
+  // (admin est unique par famille, viewonly est un mécanisme de lien partagé, pas un rôle de compte).
   roles = [
-    { val: "admin", label: "Administrateur" },
     { val: "gestionnaire", label: "Gestionnaire" },
-    { val: "membre", label: "Membre" },
-    { val: "viewonly", label: "Lecture seule" }
+    { val: "membre", label: "Membre" }
   ];
   ROLE_ORDER = ROLE_ORDER;
   viewonlyQrUrl = "";
@@ -14177,6 +14340,7 @@ var AdminComponent = class _AdminComponent {
       return;
     const newRole = this.editingRole[userId];
     this.roleChanging = userId;
+    this.roleErreur = null;
     this.api.changeMemberRole(userId, newRole).subscribe({
       next: () => {
         const m = this.membres.find((x) => x.user?.id === userId);
@@ -14186,9 +14350,11 @@ var AdminComponent = class _AdminComponent {
         this.saveSuccess = "R\xF4le modifi\xE9 avec succ\xE8s";
         setTimeout(() => this.saveSuccess = "", 3e3);
       },
-      error: () => {
+      error: (err) => {
         this.cancelRoleChange(userId);
         this.roleChanging = null;
+        this.roleErreur = err?.error?.error ?? "Erreur lors du changement de r\xF4le.";
+        setTimeout(() => this.roleErreur = null, 4e3);
       }
     });
   }
@@ -14201,17 +14367,29 @@ var AdminComponent = class _AdminComponent {
   createMember() {
     if (this.saving)
       return;
+    if (!this.createForm.prenom.trim() || !this.createForm.nom.trim()) {
+      this.createErreur = "Le pr\xE9nom et le nom sont requis.";
+      return;
+    }
+    if (!this.createForm.telephone.trim()) {
+      this.createErreur = "Le num\xE9ro de t\xE9l\xE9phone est requis.";
+      return;
+    }
+    if (this.createForm.password.length < 8) {
+      this.createErreur = "Le mot de passe doit faire au moins 8 caract\xE8res.";
+      return;
+    }
+    this.createErreur = null;
     this.saving = true;
     const data = {
       nom: this.createForm.nom,
       prenom: this.createForm.prenom,
       password: this.createForm.password,
-      role: this.createForm.role
+      role: this.createForm.role,
+      telephone: this.createForm.telephone
     };
     if (this.createForm.email)
       data.email = this.createForm.email;
-    if (this.createForm.telephone)
-      data.telephone = this.createForm.telephone;
     if (this.createForm.personneId)
       data.personneId = this.createForm.personneId;
     this.api.createMemberAccount(data).subscribe({
@@ -14223,8 +14401,9 @@ var AdminComponent = class _AdminComponent {
         this.saveSuccess = "Compte cr\xE9\xE9 avec succ\xE8s";
         setTimeout(() => this.saveSuccess = "", 3e3);
       },
-      error: () => {
+      error: (err) => {
         this.saving = false;
+        this.createErreur = err?.error?.error ?? "Erreur lors de la cr\xE9ation du compte.";
       }
     });
   }
@@ -14394,7 +14573,7 @@ _Acc\xE8s lecture seule uniquement_`;
   static \u0275fac = function AdminComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _AdminComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(QrcodeService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AdminComponent, selectors: [["app-admin"]], standalone: false, decls: 112, vars: 27, consts: [["adminBadge", ""], [1, "admin-page"], [1, "adm-hero"], [1, "adm-hero-bg"], [1, "adm-hero-content"], [1, "adm-hero-left"], [1, "adm-hero-icon"], [1, "material-icons-round"], [1, "adm-hero-eyebrow"], [1, "adm-hero-title"], ["class", "adm-hero-code", 4, "ngIf"], [1, "adm-hero-stats"], [1, "adm-hstat"], [1, "adm-hstat-val"], [1, "adm-hstat-lbl"], [1, "adm-hstat-sep"], ["class", "sk-section", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "adm-toast", 4, "ngIf"], [4, "ngIf"], [1, "plan-modal-overlay"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel"], [1, "panel-header"], [1, "panel-header-title"], [1, "btn-icon", 3, "click"], [1, "panel-body"], [1, "form-section"], [1, "section-title"], [1, "form-row-2"], [1, "form-group"], [1, "required"], ["type", "text", "name", "prenom", "required", "", "placeholder", "Pr\xE9nom", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "nom", "required", "", "placeholder", "Nom de famille", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "email", "name", "email", "placeholder", "exemple@email.com", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "tel", "name", "telephone", "placeholder", "+221 77 000 00 00", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "password", "name", "password", "required", "", "placeholder", "Mot de passe", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "role", 1, "form-control", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [1, "optional"], ["name", "personneId", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "adm-hero-code"], [1, "adm-code-val"], [1, "adm-copy-code", 3, "click", "title"], [1, "sk-section"], [2, "display", "flex", "gap", "16px", "flex-wrap", "wrap"], ["class", "sk-stat", "style", "flex:1;min-width:120px", 4, "ngFor", "ngForOf"], [2, "background", "#fff", "border", "1px solid #E5E7EB", "border-radius", "14px", "overflow", "hidden", "margin-top", "8px"], ["class", "sk-row", "style", "padding:14px 22px;border-bottom:1px solid #F3F4F6", 4, "ngFor", "ngForOf"], [1, "sk-stat", 2, "flex", "1", "min-width", "120px"], [1, "sk-stat-icon"], [1, "sk-stat-body"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-sm"], [1, "sk-row", 2, "padding", "14px 22px", "border-bottom", "1px solid #F3F4F6"], [1, "sk-avatar-sq", "sk-av-md"], [1, "sk-row-content"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-xs"], [1, "error-state"], [1, "adm-toast"], [1, "adm-main-grid"], [1, "adm-card", "adm-card-members"], [1, "adm-card-head"], [1, "adm-card-title"], [1, "adm-count-badge"], [1, "btn-primary", "btn-sm", 3, "click"], [1, "adm-search-bar"], [1, "material-icons-round", "adm-search-icon"], ["type", "text", "placeholder", "Rechercher un membre\u2026", 1, "adm-search-input", 3, "ngModelChange", "ngModel"], ["class", "adm-search-clear", 3, "click", 4, "ngIf"], [1, "adm-role-filters"], ["class", "adm-filter-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "adm-members-list"], ["class", "adm-member-row", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "adm-empty", 4, "ngIf"], [1, "adm-right-col"], ["class", "adm-card adm-card-viewonly", 4, "ngIf"], ["class", "adm-card adm-card-plan", 4, "ngIf"], [1, "adm-card", "adm-card-export"], [1, "adm-export-desc"], [1, "adm-export-stats"], [1, "adm-export-stat"], [1, "adm-export-btn", 3, "click", "disabled"], [1, "adm-card", "adm-card-info"], [1, "adm-info-rows"], [1, "adm-info-row"], [1, "adm-info-label"], [1, "adm-info-val"], [1, "adm-info-val", "adm-info-code"], [1, "adm-card", "adm-danger-card"], [1, "adm-card-title", "adm-danger-title"], [1, "adm-danger-row"], [1, "adm-danger-label"], [1, "adm-danger-sub"], ["disabled", "", "title", "Bient\xF4t disponible", 1, "adm-danger-btn"], [1, "adm-search-clear", 3, "click"], [1, "adm-filter-btn", 3, "click"], ["class", "adm-filter-count", 4, "ngIf"], [1, "adm-filter-count"], [1, "adm-member-row"], [1, "adm-member-left"], [1, "adm-avatar"], [1, "adm-member-info"], [1, "adm-member-name"], [1, "adm-member-contact"], [1, "adm-role-cell"], ["class", "adm-role-select-wrap", 4, "ngIf", "ngIfElse"], [1, "adm-role-select-wrap"], [1, "adm-role-select", 3, "ngModelChange", "ngModel", "disabled"], [3, "value"], ["title", "Confirmer le changement", 1, "adm-confirm-btn", "adm-confirm-yes", 3, "click", "disabled"], ["title", "Annuler", 1, "adm-confirm-btn", "adm-confirm-no", 3, "click", "disabled"], [1, "material-icons-round", "spin"], [1, "adm-admin-badge"], [1, "adm-empty"], [1, "adm-card", "adm-card-viewonly"], [1, "btn-icon", 3, "click", "title"], [1, "adm-viewonly-desc"], [1, "adm-viewonly-body"], ["alt", "QR code", 1, "adm-viewonly-qr", 3, "src"], [1, "adm-cred-rows"], [1, "adm-cred-row"], [1, "adm-cred-label"], [1, "adm-cred-val"], [1, "adm-cred-copy", 3, "click"], [1, "adm-share-btns"], [1, "adm-share-wa", 3, "click"], ["viewBox", "0 0 24 24", "fill", "currentColor", 2, "width", "16px", "height", "16px", "flex-shrink", "0"], ["d", "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"], [1, "adm-share-copy", 3, "click"], [1, "adm-viewonly-regen", 3, "click", "disabled"], [1, "adm-card", "adm-card-plan"], [1, "adm-plan-badge"], [1, "adm-quota-wrap"], [1, "adm-quota-labels"], [1, "adm-quota-bar"], [1, "adm-quota-fill"], ["class", "adm-quota-alert", 4, "ngIf"], ["class", "adm-upgrade-btn", 3, "click", 4, "ngIf"], ["class", "adm-manage-btn", 3, "click", 4, "ngIf"], [1, "adm-quota-alert"], [1, "adm-upgrade-btn", 3, "click"], [1, "adm-manage-btn", 3, "click"], [1, "plan-modal-overlay", 3, "click"], [1, "plan-modal", 3, "click"], [1, "plan-modal-head"], [1, "plan-cards"], ["class", "plan-card", 3, "plan-card--current", "plan-card--popular", 4, "ngFor", "ngForOf"], [1, "plan-modal-note"], [1, "plan-card"], ["class", "plan-card-badge", 4, "ngIf"], ["class", "plan-card-badge plan-card-badge--current", 4, "ngIf"], [1, "plan-card-header"], [1, "plan-price"], [1, "plan-price-amount"], [1, "plan-price-unit"], [1, "plan-limit"], [1, "plan-features"], [4, "ngFor", "ngForOf"], [1, "plan-choose-btn", 3, "click", "disabled"], [1, "plan-card-badge"], [1, "plan-card-badge", "plan-card-badge--current"], [1, "panel-overlay", 3, "click"]], template: function AdminComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AdminComponent, selectors: [["app-admin"]], standalone: false, decls: 115, vars: 28, consts: [["adminBadge", ""], [1, "admin-page"], [1, "adm-hero"], [1, "adm-hero-bg"], [1, "adm-hero-content"], [1, "adm-hero-left"], [1, "adm-hero-icon"], [1, "material-icons-round"], [1, "adm-hero-eyebrow"], [1, "adm-hero-title"], ["class", "adm-hero-code", 4, "ngIf"], [1, "adm-hero-stats"], [1, "adm-hstat"], [1, "adm-hstat-val"], [1, "adm-hstat-lbl"], [1, "adm-hstat-sep"], ["class", "sk-section", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "adm-toast", 4, "ngIf"], [4, "ngIf"], [1, "plan-modal-overlay"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel"], [1, "panel-header"], [1, "panel-header-title"], [1, "btn-icon", 3, "click"], [1, "panel-body"], [1, "form-section"], [1, "section-title"], [1, "form-row-2"], [1, "form-group"], [1, "required"], ["type", "text", "name", "prenom", "required", "", "placeholder", "Pr\xE9nom", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "nom", "required", "", "placeholder", "Nom de famille", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "email", "name", "email", "placeholder", "exemple@email.com", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "tel", "name", "telephone", "required", "", "placeholder", "+221 77 000 00 00", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "password", "name", "password", "required", "", "placeholder", "Mot de passe", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "role", 1, "form-control", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [1, "optional"], ["name", "personneId", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "adm-hero-code"], [1, "adm-code-val"], [1, "adm-copy-code", 3, "click", "title"], [1, "sk-section"], [2, "display", "flex", "gap", "16px", "flex-wrap", "wrap"], ["class", "sk-stat", "style", "flex:1;min-width:120px", 4, "ngFor", "ngForOf"], [2, "background", "#fff", "border", "1px solid #E5E7EB", "border-radius", "14px", "overflow", "hidden", "margin-top", "8px"], ["class", "sk-row", "style", "padding:14px 22px;border-bottom:1px solid #F3F4F6", 4, "ngFor", "ngForOf"], [1, "sk-stat", 2, "flex", "1", "min-width", "120px"], [1, "sk-stat-icon"], [1, "sk-stat-body"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-sm"], [1, "sk-row", 2, "padding", "14px 22px", "border-bottom", "1px solid #F3F4F6"], [1, "sk-avatar-sq", "sk-av-md"], [1, "sk-row-content"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-xs"], [1, "error-state"], [1, "adm-toast"], [1, "adm-main-grid"], [1, "adm-card", "adm-card-members"], [1, "adm-card-head"], [1, "adm-card-title"], [1, "adm-count-badge"], [1, "btn-primary", "btn-sm", 3, "click"], [1, "adm-search-bar"], [1, "material-icons-round", "adm-search-icon"], ["type", "text", "placeholder", "Rechercher un membre\u2026", 1, "adm-search-input", 3, "ngModelChange", "ngModel"], ["class", "adm-search-clear", 3, "click", 4, "ngIf"], [1, "adm-role-filters"], ["class", "adm-filter-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], ["class", "error-state", "style", "margin-bottom:12px", 4, "ngIf"], [1, "adm-members-list"], ["class", "adm-member-row", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "adm-empty", 4, "ngIf"], [1, "adm-right-col"], ["class", "adm-card adm-card-viewonly", 4, "ngIf"], ["class", "adm-card adm-card-plan", 4, "ngIf"], [1, "adm-card", "adm-card-export"], [1, "adm-export-desc"], [1, "adm-export-stats"], [1, "adm-export-stat"], [1, "adm-export-btn", 3, "click", "disabled"], [1, "adm-card", "adm-card-info"], [1, "adm-info-rows"], [1, "adm-info-row"], [1, "adm-info-label"], [1, "adm-info-val"], [1, "adm-info-val", "adm-info-code"], [1, "adm-card", "adm-danger-card"], [1, "adm-card-title", "adm-danger-title"], [1, "adm-danger-row"], [1, "adm-danger-label"], [1, "adm-danger-sub"], ["disabled", "", "title", "Bient\xF4t disponible", 1, "adm-danger-btn"], [1, "adm-search-clear", 3, "click"], [1, "adm-filter-btn", 3, "click"], ["class", "adm-filter-count", 4, "ngIf"], [1, "adm-filter-count"], [1, "error-state", 2, "margin-bottom", "12px"], [1, "adm-member-row"], [1, "adm-member-left"], [1, "adm-avatar"], [1, "adm-member-info"], [1, "adm-member-name"], [1, "adm-member-contact"], [1, "adm-role-cell"], ["class", "adm-role-select-wrap", 4, "ngIf", "ngIfElse"], [1, "adm-role-select-wrap"], [1, "adm-role-select", 3, "ngModelChange", "ngModel", "disabled"], [3, "value"], ["title", "Confirmer le changement", 1, "adm-confirm-btn", "adm-confirm-yes", 3, "click", "disabled"], ["title", "Annuler", 1, "adm-confirm-btn", "adm-confirm-no", 3, "click", "disabled"], [1, "material-icons-round", "spin"], [1, "adm-admin-badge"], [1, "adm-empty"], [1, "adm-card", "adm-card-viewonly"], [1, "btn-icon", 3, "click", "title"], [1, "adm-viewonly-desc"], [1, "adm-viewonly-body"], ["alt", "QR code", 1, "adm-viewonly-qr", 3, "src"], [1, "adm-cred-rows"], [1, "adm-cred-row"], [1, "adm-cred-label"], [1, "adm-cred-val"], [1, "adm-cred-copy", 3, "click"], [1, "adm-share-btns"], [1, "adm-share-wa", 3, "click"], ["viewBox", "0 0 24 24", "fill", "currentColor", 2, "width", "16px", "height", "16px", "flex-shrink", "0"], ["d", "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"], [1, "adm-share-copy", 3, "click"], [1, "adm-viewonly-regen", 3, "click", "disabled"], [1, "adm-card", "adm-card-plan"], [1, "adm-plan-badge"], [1, "adm-quota-wrap"], [1, "adm-quota-labels"], [1, "adm-quota-bar"], [1, "adm-quota-fill"], ["class", "adm-quota-alert", 4, "ngIf"], ["class", "adm-upgrade-btn", 3, "click", 4, "ngIf"], ["class", "adm-manage-btn", 3, "click", 4, "ngIf"], [1, "adm-quota-alert"], [1, "adm-upgrade-btn", 3, "click"], [1, "adm-manage-btn", 3, "click"], [1, "plan-modal-overlay", 3, "click"], [1, "plan-modal", 3, "click"], [1, "plan-modal-head"], [1, "plan-cards"], ["class", "plan-card", 3, "plan-card--current", "plan-card--popular", 4, "ngFor", "ngForOf"], [1, "plan-modal-note"], [1, "plan-card"], ["class", "plan-card-badge", 4, "ngIf"], ["class", "plan-card-badge plan-card-badge--current", 4, "ngIf"], [1, "plan-card-header"], [1, "plan-price"], [1, "plan-price-amount"], [1, "plan-price-unit"], [1, "plan-limit"], [1, "plan-features"], [4, "ngFor", "ngForOf"], [1, "plan-choose-btn", 3, "click", "disabled"], [1, "plan-card-badge"], [1, "plan-card-badge", "plan-card-badge--current"], [1, "panel-overlay", 3, "click"]], template: function AdminComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 1)(1, "div", 2);
       \u0275\u0275element(2, "div", 3);
@@ -14436,7 +14615,7 @@ _Acc\xE8s lecture seule uniquement_`;
       \u0275\u0275elementStart(36, "span", 14);
       \u0275\u0275text(37, "Lecture seule");
       \u0275\u0275elementEnd()()()()();
-      \u0275\u0275template(38, AdminComponent_div_38_Template, 5, 4, "div", 16)(39, AdminComponent_div_39_Template, 4, 1, "div", 17)(40, AdminComponent_div_40_Template, 4, 1, "div", 18)(41, AdminComponent_ng_container_41_Template, 91, 20, "ng-container", 19);
+      \u0275\u0275template(38, AdminComponent_div_38_Template, 5, 4, "div", 16)(39, AdminComponent_div_39_Template, 4, 1, "div", 17)(40, AdminComponent_div_40_Template, 4, 1, "div", 18)(41, AdminComponent_ng_container_41_Template, 92, 21, "ng-container", 19);
       \u0275\u0275elementEnd();
       \u0275\u0275conditionalCreate(42, AdminComponent_Conditional_42_Template, 17, 1, "div", 20);
       \u0275\u0275template(43, AdminComponent_div_43_Template, 1, 0, "div", 21);
@@ -14491,65 +14670,68 @@ _Acc\xE8s lecture seule uniquement_`;
       });
       \u0275\u0275elementEnd()();
       \u0275\u0275elementStart(78, "div", 30)(79, "label");
-      \u0275\u0275text(80, "T\xE9l\xE9phone");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(81, "input", 35);
-      \u0275\u0275twoWayListener("ngModelChange", function AdminComponent_Template_input_ngModelChange_81_listener($event) {
+      \u0275\u0275text(80, "T\xE9l\xE9phone ");
+      \u0275\u0275elementStart(81, "span", 31);
+      \u0275\u0275text(82, "*");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(83, "input", 35);
+      \u0275\u0275twoWayListener("ngModelChange", function AdminComponent_Template_input_ngModelChange_83_listener($event) {
         \u0275\u0275twoWayBindingSet(ctx.createForm.telephone, $event) || (ctx.createForm.telephone = $event);
         return $event;
       });
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(82, "div", 30)(83, "label");
-      \u0275\u0275text(84, "Mot de passe ");
-      \u0275\u0275elementStart(85, "span", 31);
-      \u0275\u0275text(86, "*");
+      \u0275\u0275elementStart(84, "div", 30)(85, "label");
+      \u0275\u0275text(86, "Mot de passe ");
+      \u0275\u0275elementStart(87, "span", 31);
+      \u0275\u0275text(88, "*");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(87, "input", 36);
-      \u0275\u0275twoWayListener("ngModelChange", function AdminComponent_Template_input_ngModelChange_87_listener($event) {
+      \u0275\u0275elementStart(89, "input", 36);
+      \u0275\u0275twoWayListener("ngModelChange", function AdminComponent_Template_input_ngModelChange_89_listener($event) {
         \u0275\u0275twoWayBindingSet(ctx.createForm.password, $event) || (ctx.createForm.password = $event);
         return $event;
       });
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(88, "div", 27)(89, "div", 28);
-      \u0275\u0275text(90, "R\xF4le et association");
+      \u0275\u0275elementStart(90, "div", 27)(91, "div", 28);
+      \u0275\u0275text(92, "R\xF4le et association");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(91, "div", 30)(92, "label");
-      \u0275\u0275text(93, "R\xF4le");
+      \u0275\u0275elementStart(93, "div", 30)(94, "label");
+      \u0275\u0275text(95, "R\xF4le");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(94, "select", 37);
-      \u0275\u0275twoWayListener("ngModelChange", function AdminComponent_Template_select_ngModelChange_94_listener($event) {
+      \u0275\u0275elementStart(96, "select", 37);
+      \u0275\u0275twoWayListener("ngModelChange", function AdminComponent_Template_select_ngModelChange_96_listener($event) {
         \u0275\u0275twoWayBindingSet(ctx.createForm.role, $event) || (ctx.createForm.role = $event);
         return $event;
       });
-      \u0275\u0275template(95, AdminComponent_option_95_Template, 2, 2, "option", 38);
+      \u0275\u0275template(97, AdminComponent_option_97_Template, 2, 2, "option", 38);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(96, "div", 30)(97, "label");
-      \u0275\u0275text(98, "Associer \xE0 une personne ");
-      \u0275\u0275elementStart(99, "span", 39);
-      \u0275\u0275text(100, "(optionnel)");
+      \u0275\u0275elementStart(98, "div", 30)(99, "label");
+      \u0275\u0275text(100, "Associer \xE0 une personne ");
+      \u0275\u0275elementStart(101, "span", 39);
+      \u0275\u0275text(102, "(optionnel)");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(101, "select", 40);
-      \u0275\u0275twoWayListener("ngModelChange", function AdminComponent_Template_select_ngModelChange_101_listener($event) {
+      \u0275\u0275elementStart(103, "select", 40);
+      \u0275\u0275twoWayListener("ngModelChange", function AdminComponent_Template_select_ngModelChange_103_listener($event) {
         \u0275\u0275twoWayBindingSet(ctx.createForm.personneId, $event) || (ctx.createForm.personneId = $event);
         return $event;
       });
-      \u0275\u0275elementStart(102, "option", 41);
-      \u0275\u0275text(103, "\u2014 Aucune association \u2014");
+      \u0275\u0275elementStart(104, "option", 41);
+      \u0275\u0275text(105, "\u2014 Aucune association \u2014");
       \u0275\u0275elementEnd();
-      \u0275\u0275template(104, AdminComponent_option_104_Template, 2, 3, "option", 38);
+      \u0275\u0275template(106, AdminComponent_option_106_Template, 2, 3, "option", 38);
       \u0275\u0275elementEnd()()()();
-      \u0275\u0275elementStart(105, "div", 42)(106, "button", 43);
-      \u0275\u0275listener("click", function AdminComponent_Template_button_click_106_listener() {
+      \u0275\u0275template(107, AdminComponent_div_107_Template, 4, 1, "div", 17);
+      \u0275\u0275elementStart(108, "div", 42)(109, "button", 43);
+      \u0275\u0275listener("click", function AdminComponent_Template_button_click_109_listener() {
         return ctx.showCreateForm = false;
       });
-      \u0275\u0275text(107, "Annuler");
+      \u0275\u0275text(110, "Annuler");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(108, "button", 44);
-      \u0275\u0275listener("click", function AdminComponent_Template_button_click_108_listener() {
+      \u0275\u0275elementStart(111, "button", 44);
+      \u0275\u0275listener("click", function AdminComponent_Template_button_click_111_listener() {
         return ctx.createMember();
       });
-      \u0275\u0275template(109, AdminComponent_span_109_Template, 2, 0, "span", 45)(110, AdminComponent_span_110_Template, 2, 0, "span", 46);
-      \u0275\u0275text(111);
+      \u0275\u0275template(112, AdminComponent_span_112_Template, 2, 0, "span", 45)(113, AdminComponent_span_113_Template, 2, 0, "span", 46);
+      \u0275\u0275text(114);
       \u0275\u0275elementEnd()()();
     }
     if (rf & 2) {
@@ -14585,7 +14767,7 @@ _Acc\xE8s lecture seule uniquement_`;
       \u0275\u0275twoWayProperty("ngModel", ctx.createForm.nom);
       \u0275\u0275advance(7);
       \u0275\u0275twoWayProperty("ngModel", ctx.createForm.email);
-      \u0275\u0275advance(4);
+      \u0275\u0275advance(6);
       \u0275\u0275twoWayProperty("ngModel", ctx.createForm.telephone);
       \u0275\u0275advance(6);
       \u0275\u0275twoWayProperty("ngModel", ctx.createForm.password);
@@ -14597,6 +14779,8 @@ _Acc\xE8s lecture seule uniquement_`;
       \u0275\u0275twoWayProperty("ngModel", ctx.createForm.personneId);
       \u0275\u0275advance(3);
       \u0275\u0275property("ngForOf", ctx.personnes);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.createErreur);
       \u0275\u0275advance(4);
       \u0275\u0275property("disabled", ctx.saving);
       \u0275\u0275advance();
@@ -14705,7 +14889,7 @@ _Acc\xE8s lecture seule uniquement_`;
             Comptes membres\r
             <span class="adm-count-badge">{{ filteredMembres.length }}/{{ membres.length }}</span>\r
           </div>\r
-          <button class="btn-primary btn-sm" (click)="showCreateForm = true">\r
+          <button class="btn-primary btn-sm" (click)="createErreur = null; showCreateForm = true">\r
             <span class="material-icons-round">person_add</span>\r
             Nouveau\r
           </button>\r
@@ -14729,6 +14913,10 @@ _Acc\xE8s lecture seule uniquement_`;
             {{ f.label }}\r
             <span class="adm-filter-count" *ngIf="f.key !== 'tous'">{{ countRole(f.key) }}</span>\r
           </button>\r
+        </div>\r
+\r
+        <div class="error-state" *ngIf="roleErreur" style="margin-bottom:12px">\r
+          <span class="material-icons-round">error_outline</span>{{ roleErreur }}\r
         </div>\r
 \r
         <!-- Liste membres -->\r
@@ -15085,9 +15273,9 @@ _Acc\xE8s lecture seule uniquement_`;
                placeholder="exemple@email.com" class="form-control" />\r
       </div>\r
       <div class="form-group">\r
-        <label>T\xE9l\xE9phone</label>\r
+        <label>T\xE9l\xE9phone <span class="required">*</span></label>\r
         <input type="tel" name="telephone" [(ngModel)]="createForm.telephone"\r
-               placeholder="+221 77 000 00 00" class="form-control" />\r
+               required placeholder="+221 77 000 00 00" class="form-control" />\r
       </div>\r
       <div class="form-group">\r
         <label>Mot de passe <span class="required">*</span></label>\r
@@ -15117,6 +15305,9 @@ _Acc\xE8s lecture seule uniquement_`;
 \r
   </div>\r
 \r
+  <div class="error-state" *ngIf="createErreur">\r
+    <span class="material-icons-round">error_outline</span>{{ createErreur }}\r
+  </div>\r
   <div class="panel-footer">\r
     <button class="btn-ghost" (click)="showCreateForm = false">Annuler</button>\r
     <button class="btn-primary" (click)="createMember()" [disabled]="saving">\r
@@ -16729,4 +16920,4 @@ var ShellModule = class _ShellModule {
 export {
   ShellModule
 };
-//# sourceMappingURL=chunk-P7AKHJN7.js.map
+//# sourceMappingURL=chunk-I47D5UC3.js.map

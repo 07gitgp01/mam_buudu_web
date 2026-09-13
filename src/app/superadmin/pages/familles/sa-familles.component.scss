@@ -1,5 +1,6 @@
 // styles communs à tous les composants de table superadmin
 .sa-page { }
+.required { color: #EF4444; }
 .sa-header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
 .sa-export-btn {
   display: flex; align-items: center; gap: 6px; padding: 8px 14px;

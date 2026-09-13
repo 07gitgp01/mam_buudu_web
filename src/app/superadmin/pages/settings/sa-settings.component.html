@@ -18,6 +18,11 @@
   @if (loading) {
     <div class="sa-loading">Chargement...</div>
   } @else {
+    @if (settingsErreur) {
+      <div class="error-state" style="margin-bottom:16px">
+        <span class="material-icons-round">error_outline</span>{{ settingsErreur }}
+      </div>
+    }
     <div class="sa-table-wrap">
       <table class="sa-table">
         <thead>
@@ -72,13 +77,18 @@
     <div class="sa-add-setting">
       <h3>Ajouter un paramètre</h3>
       <div class="sa-add-row">
-        <input class="sa-add-input" [(ngModel)]="newKey" placeholder="clé (ex: max_upload_mb)"/>
+        <input class="sa-add-input" [(ngModel)]="newKey" required placeholder="clé * (ex: max_upload_mb)"/>
         <input class="sa-add-input" [(ngModel)]="newLabel" placeholder="Label (optionnel)"/>
-        <input class="sa-add-input" [(ngModel)]="newValue" placeholder="valeur"/>
+        <input class="sa-add-input" [(ngModel)]="newValue" required placeholder="valeur *"/>
         <button class="sa-btn-add" (click)="addSetting()" [disabled]="!newKey || !newValue || adding">
           <span class="material-icons-round">add</span>Ajouter
         </button>
       </div>
+      @if (addErreur) {
+        <div class="error-state" style="margin-top:10px">
+          <span class="material-icons-round">error_outline</span>{{ addErreur }}
+        </div>
+      }
     </div>
 
     <!-- Broadcast section -->
@@ -95,6 +105,11 @@
       @if (broadcastDone) {
         <div class="sa-broadcast-success">
           <span class="material-icons-round">check_circle</span> {{ broadcastDone }}
+        </div>
+      }
+      @if (broadcastErreur) {
+        <div class="error-state" style="margin-bottom:12px">
+          <span class="material-icons-round">error_outline</span>{{ broadcastErreur }}
         </div>
       }
       <button class="sa-btn-broadcast" (click)="sendBroadcast()" [disabled]="!broadcastTitre || !broadcastMsg || broadcasting">

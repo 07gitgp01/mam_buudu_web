@@ -15,6 +15,7 @@ export class SaUsersComponent implements OnInit {
   page = 1;
   filterRole = '';
   actionLoading = '';
+  actionErreur: string | null = null;
 
   readonly platformRoles = ['superadmin', 'platform_admin', 'support'];
 
@@ -46,9 +47,10 @@ export class SaUsersComponent implements OnInit {
     if (!confirm(message)) return;
 
     this.actionLoading = u.id;
+    this.actionErreur = null;
     this.sa.patchUser(u.id, { platformRole: role }).subscribe({
       next: (updated) => { u.platformRole = updated.platformRole; this.actionLoading = ''; },
-      error: () => { this.actionLoading = ''; },
+      error: (err) => { this.actionLoading = ''; this.actionErreur = err?.error?.error ?? 'Erreur lors du changement de rôle.'; },
     });
   }
 
@@ -60,18 +62,20 @@ export class SaUsersComponent implements OnInit {
     if (!confirm(message)) return;
 
     this.actionLoading = u.id;
+    this.actionErreur = null;
     this.sa.patchUser(u.id, { suspended: !u.suspended }).subscribe({
       next: (updated) => { u.suspended = updated.suspended; this.actionLoading = ''; },
-      error: () => { this.actionLoading = ''; },
+      error: (err) => { this.actionLoading = ''; this.actionErreur = err?.error?.error ?? 'Erreur lors du changement de statut.'; },
     });
   }
 
   delete(u: SaUser): void {
     if (!confirm(`Supprimer "${u.prenom} ${u.nom}" ? Irréversible.`)) return;
     this.actionLoading = u.id;
+    this.actionErreur = null;
     this.sa.deleteUser(u.id).subscribe({
       next: () => { this.load(); },
-      error: () => { this.actionLoading = ''; },
+      error: (err) => { this.actionLoading = ''; this.actionErreur = err?.error?.error ?? 'Erreur lors de la suppression.'; },
     });
   }
 

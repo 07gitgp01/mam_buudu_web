@@ -23,6 +23,12 @@
     </select>
   </div>
 
+  @if (actionErreur) {
+    <div class="error-state" style="margin-bottom:16px">
+      <span class="material-icons-round">error_outline</span>{{ actionErreur }}
+    </div>
+  }
+
   @if (loading) {
     <div class="sa-loading">Chargement...</div>
   } @else {
@@ -152,8 +158,8 @@
       </div>
       <div class="sa-modal-body">
         <div class="sa-field">
-          <label>Plan</label>
-          <select [(ngModel)]="assignModal.planId">
+          <label>Plan <span class="required">*</span></label>
+          <select [(ngModel)]="assignModal.planId" required>
             <option value="">— Choisir un plan —</option>
             @for (p of plans; track p.id) {
               <option [value]="p.id">{{ p.label }} ({{ p.prix === 0 ? 'Gratuit' : (p.prix | number) + ' FCFA/mois' }})</option>
@@ -164,6 +170,11 @@
           <label>Date de fin (optionnel — vide = indéfini)</label>
           <input type="date" [(ngModel)]="assignModal.dateFin"/>
         </div>
+        @if (assignErreur) {
+          <div class="error-state">
+            <span class="material-icons-round">error_outline</span>{{ assignErreur }}
+          </div>
+        }
       </div>
       <div class="sa-modal-footer">
         <button class="sa-btn-cancel" (click)="closeAssign()">Annuler</button>

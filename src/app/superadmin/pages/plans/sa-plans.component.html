@@ -28,14 +28,23 @@
           <div class="sa-field">
             <label>Nom technique</label>
             <input formControlName="nom" placeholder="ex: premium"/>
+            @if (createForm.get('nom')!.invalid && createForm.get('nom')!.touched) {
+              <span class="sa-ferr">Requis</span>
+            }
           </div>
           <div class="sa-field">
             <label>Label affiché</label>
             <input formControlName="label" placeholder="ex: Premium"/>
+            @if (createForm.get('label')!.invalid && createForm.get('label')!.touched) {
+              <span class="sa-ferr">Requis</span>
+            }
           </div>
           <div class="sa-field">
             <label>Prix (FCFA/mois)</label>
             <input type="number" formControlName="prix" min="0"/>
+            @if (createForm.get('prix')!.invalid && createForm.get('prix')!.touched) {
+              <span class="sa-ferr">Requis, doit être positif</span>
+            }
           </div>
           <div class="sa-field">
             <label>Max personnes (vide = illimité)</label>
@@ -46,12 +55,23 @@
             <input formControlName="featuresRaw" placeholder="Arbre illimité, Albums photos, Stories..."/>
           </div>
         </div>
+        @if (createErreur) {
+          <div class="error-state" style="margin-top:12px">
+            <span class="material-icons-round">error_outline</span>{{ createErreur }}
+          </div>
+        }
         <div class="sa-create-actions">
           <button type="submit" class="sa-btn-primary" [disabled]="creating">
             @if (creating) { <span class="sa-spinner-sm"></span> } @else { Créer le plan }
           </button>
         </div>
       </form>
+    </div>
+  }
+
+  @if (actionErreur) {
+    <div class="error-state" style="margin-bottom:16px">
+      <span class="material-icons-round">error_outline</span>{{ actionErreur }}
     </div>
   }
 
@@ -98,15 +118,20 @@
           } @else {
             <!-- Inline edit -->
             <div class="sa-plan-edit">
-              <label>Label</label>
-              <input [(ngModel)]="p._editLabel"/>
-              <label>Prix (FCFA)</label>
-              <input type="number" [(ngModel)]="p._editPrix" min="0"/>
+              <label>Label <span class="required">*</span></label>
+              <input [(ngModel)]="p._editLabel" required/>
+              <label>Prix (FCFA) <span class="required">*</span></label>
+              <input type="number" [(ngModel)]="p._editPrix" min="0" required/>
               <label>Max personnes (vide = illimité)</label>
               <input type="number" [(ngModel)]="p._editMax"/>
               <label>Fonctionnalités (virgule)</label>
               <input [(ngModel)]="p._editFeats"/>
             </div>
+            @if (editErreur) {
+              <div class="error-state" style="margin-top:8px">
+                <span class="material-icons-round">error_outline</span>{{ editErreur }}
+              </div>
+            }
             <div class="sa-plan-actions">
               <button class="sa-act-btn green" (click)="saveEdit(p)" [disabled]="actionLoading === p.id">
                 <span class="material-icons-round">check</span> Enregistrer

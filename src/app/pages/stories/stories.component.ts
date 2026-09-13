@@ -23,6 +23,7 @@ export class StoriesComponent implements OnInit, OnDestroy {
 
   showForm = false;
   saving = false;
+  formErreur: string | null = null;
   form: { titre: string; caption: string; tag: string; mediaFile: File | null; mediaPreview: string | null; mediaType: 'photo' | 'video' | null } =
     { titre: '', caption: '', tag: 'Souvenir', mediaFile: null, mediaPreview: null, mediaType: null };
 
@@ -99,6 +100,7 @@ export class StoriesComponent implements OnInit, OnDestroy {
   openForm(): void {
     this.form = { titre: '', caption: '', tag: 'Souvenir', mediaFile: null, mediaPreview: null, mediaType: null };
     this.resetAudio();
+    this.formErreur = null;
     this.showForm = true;
   }
 
@@ -167,7 +169,11 @@ export class StoriesComponent implements OnInit, OnDestroy {
 
   submitForm(): void {
     const hasContent = this.form.caption.trim() || this.form.mediaFile || this.audioBlob;
-    if (!hasContent) return;
+    if (!hasContent) {
+      this.formErreur = 'Ajoutez un texte ou un média pour publier une story.';
+      return;
+    }
+    this.formErreur = null;
     this.saving = true;
 
     const publish = (mediaUrl?: string, mediaType?: string) => {
@@ -184,19 +190,19 @@ export class StoriesComponent implements OnInit, OnDestroy {
           this.saving = false;
           this.resetAudio();
         },
-        error: () => { this.saving = false; }
+        error: (err) => { this.saving = false; this.formErreur = err?.error?.error ?? 'Erreur lors de la publication.'; }
       });
     };
 
     if (this.audioBlob) {
       this.api.uploadStoryAudio(this.audioBlob).subscribe({
         next: ({ mediaUrl, mediaType }) => publish(mediaUrl, mediaType),
-        error: () => { this.saving = false; }
+        error: () => { this.saving = false; this.formErreur = "Erreur lors de l'envoi de l'audio."; }
       });
     } else if (this.form.mediaFile) {
       this.api.uploadStoryMedia(this.form.mediaFile).subscribe({
         next: ({ mediaUrl, mediaType }) => publish(mediaUrl, mediaType),
-        error: () => { this.saving = false; }
+        error: () => { this.saving = false; this.formErreur = "Erreur lors de l'envoi du média."; }
       });
     } else {
       publish();
@@ -205,8 +211,9 @@ export class StoriesComponent implements OnInit, OnDestroy {
 
   deleteStory(id: string): void {
     if (!confirm('Supprimer cette story ?')) return;
-    this.api.deleteStory(id).subscribe(() => {
-      this.stories = this.stories.filter(s => s.id !== id);
+    this.api.deleteStory(id).subscribe({
+      next: () => { this.stories = this.stories.filter(s => s.id !== id); },
+      error: () => { this.formErreur = 'Erreur lors de la suppression de la story.'; },
     });
   }
 

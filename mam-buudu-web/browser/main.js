@@ -1893,15 +1893,15 @@ var routes = [
   {
     path: "app",
     canActivate: [authGuard, roleGuard(["admin", "gestionnaire"])],
-    loadChildren: () => import("./chunk-P7AKHJN7.js").then((m) => m.ShellModule)
+    loadChildren: () => import("./chunk-I47D5UC3.js").then((m) => m.ShellModule)
   },
   {
     path: "famille",
-    loadChildren: () => import("./chunk-AXRHJMO3.js").then((m) => m.FamilleModule)
+    loadChildren: () => import("./chunk-TCQEEOUO.js").then((m) => m.FamilleModule)
   },
   {
     path: "superadmin",
-    loadChildren: () => import("./chunk-SWAO5CSK.js").then((m) => m.SuperAdminModule)
+    loadChildren: () => import("./chunk-FIBQ7E3M.js").then((m) => m.SuperAdminModule)
   },
   { path: "**", redirectTo: "" }
 ];

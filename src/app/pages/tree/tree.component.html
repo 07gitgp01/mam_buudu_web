@@ -474,6 +474,9 @@
 
   </div>
 
+  <div class="error-state" *ngIf="quickAddErreur">
+    <span class="material-icons-round">error_outline</span>{{ quickAddErreur }}
+  </div>
   <div class="panel-footer">
     <button class="btn-ghost" (click)="closeQuickAdd()">Annuler</button>
     <button class="btn-primary" (click)="saveQuickAdd()" [disabled]="quickAddSaving || (quickAddTab==='select' && !quickAddSelected) || (quickAddTab==='create' && (!quickCreateForm.prenoms || !quickCreateForm.nomNaissance))">

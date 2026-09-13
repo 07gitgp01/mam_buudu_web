@@ -245,7 +245,7 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label">Votre histoire *</label>
+        <label class="form-label">Votre histoire <span class="form-optional">(texte, photo/vidéo ou audio requis)</span></label>
         <textarea [(ngModel)]="form.caption"
                   rows="5"
                   placeholder="Racontez ce moment important pour la famille…"
@@ -253,10 +253,14 @@
       </div>
     </div>
 
+    <div class="error-state" *ngIf="formErreur" style="margin:0 24px 12px">
+      <span class="material-icons-round">error_outline</span>{{ formErreur }}
+    </div>
+
     <div class="story-modal-foot">
       <button class="btn-secondary" (click)="showForm = false">Annuler</button>
       <button class="btn-primary"
-              [disabled]="saving || (!form.caption.trim() && !form.mediaFile)"
+              [disabled]="saving || (!form.caption.trim() && !form.mediaFile && !audioBlob)"
               (click)="submitForm()">
         <span class="material-icons-round spin" *ngIf="saving">sync</span>
         <span class="material-icons-round" *ngIf="!saving">send</span>

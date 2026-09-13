@@ -44,7 +44,9 @@ export class AdminComponent implements OnInit {
 
   showCreateForm = false;
   saving = false;
+  createErreur: string | null = null;
   roleChanging: string | null = null;
+  roleErreur: string | null = null;
 
   // Recherche et filtre membres
   searchQuery = '';
@@ -65,11 +67,12 @@ export class AdminComponent implements OnInit {
     nom: '', prenom: '', role: 'membre', personneId: '',
   };
 
+  // Rôles assignables via /familles/membres/:id/role et /auth/membres/create —
+  // le backend n'accepte que gestionnaire/membre sur ces deux endpoints
+  // (admin est unique par famille, viewonly est un mécanisme de lien partagé, pas un rôle de compte).
   roles = [
-    { val: 'admin',        label: 'Administrateur' },
-    { val: 'gestionnaire', label: 'Gestionnaire'   },
-    { val: 'membre',       label: 'Membre'         },
-    { val: 'viewonly',     label: 'Lecture seule'  },
+    { val: 'gestionnaire', label: 'Gestionnaire' },
+    { val: 'membre',       label: 'Membre'       },
   ];
 
   readonly ROLE_ORDER = ROLE_ORDER;
@@ -139,6 +142,7 @@ export class AdminComponent implements OnInit {
     if (this.roleChanging) return;
     const newRole = this.editingRole[userId];
     this.roleChanging = userId;
+    this.roleErreur = null;
     this.api.changeMemberRole(userId, newRole).subscribe({
       next: () => {
         const m = this.membres.find(x => x.user?.id === userId);
@@ -147,9 +151,11 @@ export class AdminComponent implements OnInit {
         this.saveSuccess = 'Rôle modifié avec succès';
         setTimeout(() => (this.saveSuccess = ''), 3000);
       },
-      error: () => {
+      error: (err) => {
         this.cancelRoleChange(userId);
         this.roleChanging = null;
+        this.roleErreur = err?.error?.error ?? 'Erreur lors du changement de rôle.';
+        setTimeout(() => (this.roleErreur = null), 4000);
       },
     });
   }
@@ -162,13 +168,27 @@ export class AdminComponent implements OnInit {
   // ── Création membre ──────────────────────────────────
   createMember(): void {
     if (this.saving) return;
+
+    if (!this.createForm.prenom.trim() || !this.createForm.nom.trim()) {
+      this.createErreur = 'Le prénom et le nom sont requis.';
+      return;
+    }
+    if (!this.createForm.telephone.trim()) {
+      this.createErreur = 'Le numéro de téléphone est requis.';
+      return;
+    }
+    if (this.createForm.password.length < 8) {
+      this.createErreur = 'Le mot de passe doit faire au moins 8 caractères.';
+      return;
+    }
+    this.createErreur = null;
     this.saving = true;
     const data: any = {
       nom: this.createForm.nom, prenom: this.createForm.prenom,
       password: this.createForm.password, role: this.createForm.role,
+      telephone: this.createForm.telephone,
     };
     if (this.createForm.email)     data.email     = this.createForm.email;
-    if (this.createForm.telephone) data.telephone = this.createForm.telephone;
     if (this.createForm.personneId) data.personneId = this.createForm.personneId;
 
     this.api.createMemberAccount(data).subscribe({
@@ -180,7 +200,10 @@ export class AdminComponent implements OnInit {
         this.saveSuccess = 'Compte créé avec succès';
         setTimeout(() => (this.saveSuccess = ''), 3000);
       },
-      error: () => { this.saving = false; },
+      error: (err) => {
+        this.saving = false;
+        this.createErreur = err?.error?.error ?? 'Erreur lors de la création du compte.';
+      },
     });
   }
 
