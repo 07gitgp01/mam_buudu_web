@@ -1,6 +1,6 @@
 import {
   LoginComponent
-} from "./chunk-2723XT3Y.js";
+} from "./chunk-XVZM4MPD.js";
 import {
   DefaultValueAccessor,
   FormBuilder,
@@ -45,6 +45,8 @@ import {
   ɵɵelementStart,
   ɵɵgetCurrentView,
   ɵɵlistener,
+  ɵɵnamespaceHTML,
+  ɵɵnamespaceSVG,
   ɵɵnextContext,
   ɵɵproperty,
   ɵɵrepeater,
@@ -61,27 +63,27 @@ import {
 import "./chunk-YP43Q66R.js";
 
 // src/app/auth/register/register.component.ts
-function RegisterComponent_Conditional_68_Template(rf, ctx) {
+function RegisterComponent_Conditional_92_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 47);
+    \u0275\u0275element(0, "input", 70);
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275classProp("input-error", ctx_r0.f["contact"].invalid && ctx_r0.f["contact"].touched);
   }
 }
-function RegisterComponent_Conditional_69_Template(rf, ctx) {
+function RegisterComponent_Conditional_93_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 48);
+    \u0275\u0275element(0, "input", 71);
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275classProp("input-error", ctx_r0.f["contact"].invalid && ctx_r0.f["contact"].touched);
   }
 }
-function RegisterComponent_Conditional_70_Template(rf, ctx) {
+function RegisterComponent_Conditional_94_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 26);
+    \u0275\u0275elementStart(0, "span", 49);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -91,16 +93,16 @@ function RegisterComponent_Conditional_70_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", ctx_r0.contactType === "email" ? "Adresse email invalide" : "Num\xE9ro invalide", " ");
   }
 }
-function RegisterComponent_Conditional_78_Template(rf, ctx) {
+function RegisterComponent_Conditional_102_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 26);
+    \u0275\u0275elementStart(0, "span", 49);
     \u0275\u0275text(1, "Nom requis (2 car. min.)");
     \u0275\u0275elementEnd();
   }
 }
-function RegisterComponent_Conditional_79_Template(rf, ctx) {
+function RegisterComponent_Conditional_103_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 28)(1, "span", 9);
+    \u0275\u0275elementStart(0, "div", 51)(1, "span", 37);
     \u0275\u0275text(2, "tag");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3, " Code famille : ");
@@ -114,26 +116,26 @@ function RegisterComponent_Conditional_79_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r0.familleCodePreview);
   }
 }
-function RegisterComponent_Conditional_88_Template(rf, ctx) {
+function RegisterComponent_Conditional_112_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 26);
+    \u0275\u0275elementStart(0, "span", 49);
     \u0275\u0275text(1, "Requis");
     \u0275\u0275elementEnd();
   }
 }
-function RegisterComponent_Conditional_96_Template(rf, ctx) {
+function RegisterComponent_Conditional_120_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 26);
+    \u0275\u0275elementStart(0, "span", 49);
     \u0275\u0275text(1, "Requis");
     \u0275\u0275elementEnd();
   }
 }
-function RegisterComponent_Conditional_108_Template(rf, ctx) {
+function RegisterComponent_Conditional_132_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 35)(1, "div", 49);
-    \u0275\u0275element(2, "div", 50)(3, "div", 50)(4, "div", 50)(5, "div", 50);
+    \u0275\u0275elementStart(0, "div", 58)(1, "div", 72);
+    \u0275\u0275element(2, "div", 73)(3, "div", 73)(4, "div", 73)(5, "div", 73);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 51);
+    \u0275\u0275elementStart(6, "span", 74);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()();
   }
@@ -153,16 +155,16 @@ function RegisterComponent_Conditional_108_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r0.passwordStrength.label);
   }
 }
-function RegisterComponent_Conditional_109_Template(rf, ctx) {
+function RegisterComponent_Conditional_133_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 26);
+    \u0275\u0275elementStart(0, "span", 49);
     \u0275\u0275text(1, "8 caract\xE8res minimum");
     \u0275\u0275elementEnd();
   }
 }
-function RegisterComponent_For_122_Template(rf, ctx) {
+function RegisterComponent_For_146_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 40);
+    \u0275\u0275elementStart(0, "option", 63);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -173,23 +175,23 @@ function RegisterComponent_For_122_Template(rf, ctx) {
     \u0275\u0275textInterpolate(q_r2);
   }
 }
-function RegisterComponent_Conditional_123_Template(rf, ctx) {
+function RegisterComponent_Conditional_147_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 26);
+    \u0275\u0275elementStart(0, "span", 49);
     \u0275\u0275text(1, "Veuillez choisir une question");
     \u0275\u0275elementEnd();
   }
 }
-function RegisterComponent_Conditional_131_Template(rf, ctx) {
+function RegisterComponent_Conditional_155_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 26);
+    \u0275\u0275elementStart(0, "span", 49);
     \u0275\u0275text(1, "La r\xE9ponse est requise");
     \u0275\u0275elementEnd();
   }
 }
-function RegisterComponent_Conditional_132_Template(rf, ctx) {
+function RegisterComponent_Conditional_156_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 42)(1, "span", 9);
+    \u0275\u0275elementStart(0, "div", 65)(1, "span", 37);
     \u0275\u0275text(2, "error_outline");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -201,14 +203,14 @@ function RegisterComponent_Conditional_132_Template(rf, ctx) {
     \u0275\u0275textInterpolate1("", ctx_r0.errorMsg, " ");
   }
 }
-function RegisterComponent_Conditional_134_Template(rf, ctx) {
+function RegisterComponent_Conditional_158_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "span", 44);
+    \u0275\u0275element(0, "span", 67);
   }
 }
-function RegisterComponent_Conditional_135_Template(rf, ctx) {
+function RegisterComponent_Conditional_159_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 9);
+    \u0275\u0275elementStart(0, "span", 37);
     \u0275\u0275text(1, "rocket_launch");
     \u0275\u0275elementEnd();
     \u0275\u0275text(2, " Cr\xE9er mon espace ");
@@ -314,177 +316,188 @@ var RegisterComponent = class _RegisterComponent {
   static \u0275fac = function RegisterComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _RegisterComponent)(\u0275\u0275directiveInject(FormBuilder), \u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _RegisterComponent, selectors: [["app-register"]], standalone: false, decls: 141, vars: 34, consts: [[1, "auth-page"], [1, "auth-left"], [1, "al-bg"], [1, "al-blob", "al-blob-1"], [1, "al-blob", "al-blob-2"], [1, "al-dots"], [1, "al-content"], [1, "al-brand"], [1, "al-brand-icon"], [1, "material-icons-round"], [1, "al-brand-name"], [1, "al-title"], [1, "al-subtitle"], [1, "al-features"], [1, "al-feature"], [1, "auth-right"], [1, "auth-card"], [1, "auth-card-header"], [1, "auth-card-icon"], [3, "ngSubmit", "formGroup"], [1, "contact-toggle"], ["type", "button", 1, "ct-btn", 3, "click"], [1, "form-group"], [1, "input-wrapper"], ["type", "email", "formControlName", "contact", "placeholder", "votre@email.com", 3, "input-error"], ["type", "tel", "formControlName", "contact", "placeholder", "+221 77 000 00 00", 3, "input-error"], [1, "field-error"], ["type", "text", "formControlName", "nomFamille", "placeholder", "Ex : Famille Diallo"], [1, "code-preview"], [1, "form-row"], ["type", "text", "formControlName", "prenom", "placeholder", "Votre pr\xE9nom"], ["type", "text", "formControlName", "nom", "placeholder", "Votre nom"], ["formControlName", "password", "placeholder", "8 caract\xE8res minimum", 3, "type"], [1, "input-suffix"], ["type", "button", 1, "btn-icon-eye", 3, "click"], [1, "pwd-strength"], [1, "label-hint"], [1, "input-wrapper", "input-wrapper-select"], ["formControlName", "questionSecrete"], ["value", ""], [3, "value"], ["type", "text", "formControlName", "reponseSecrete", "placeholder", "Votre r\xE9ponse"], [1, "alert-error-box"], ["type", "submit", 1, "btn-submit", 3, "disabled"], [1, "btn-spinner"], [1, "auth-footer"], ["routerLink", "/auth/login"], ["type", "email", "formControlName", "contact", "placeholder", "votre@email.com"], ["type", "tel", "formControlName", "contact", "placeholder", "+221 77 000 00 00"], [1, "pwd-bars"], [1, "pwd-bar"], [1, "pwd-label"]], template: function RegisterComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _RegisterComponent, selectors: [["app-register"]], standalone: false, decls: 165, vars: 34, consts: [[1, "auth-page"], [1, "auth-left"], [1, "al-bg"], ["width", "420", "height", "520", "viewBox", "0 0 420 520", "fill", "none", 1, "al-tree"], ["d", "M210 500 L 210 380", "stroke", "#8B4513", "stroke-width", "7", "stroke-linecap", "round"], ["d", "M210 380 C 180 360, 150 345, 120 320", "stroke", "#8B4513", "stroke-width", "5", "fill", "none", "stroke-linecap", "round"], ["d", "M210 380 C 240 360, 270 345, 300 320", "stroke", "#8B4513", "stroke-width", "5", "fill", "none", "stroke-linecap", "round"], ["d", "M210 380 L 210 310", "stroke", "#8B4513", "stroke-width", "5", "stroke-linecap", "round"], ["d", "M120 320 C 100 295, 88 280, 92 255", "stroke", "#8B4513", "stroke-width", "3.5", "fill", "none", "stroke-linecap", "round"], ["d", "M300 320 C 320 295, 332 280, 328 255", "stroke", "#8B4513", "stroke-width", "3.5", "fill", "none", "stroke-linecap", "round"], ["d", "M210 310 C 195 285, 195 270, 205 245", "stroke", "#8B4513", "stroke-width", "3.5", "fill", "none", "stroke-linecap", "round"], ["cx", "92", "cy", "250", "r", "15", "fill", "#2E7D32"], ["cx", "205", "cy", "240", "r", "16", "fill", "#81C784"], ["cx", "328", "cy", "250", "r", "15", "fill", "#2E7D32"], ["cx", "120", "cy", "320", "r", "9", "fill", "#3B82F6", "opacity", "0.75"], ["cx", "300", "cy", "320", "r", "9", "fill", "#EC4899", "opacity", "0.75"], [1, "al-sparks"], [1, "al-spark", 2, "left", "18%", "animation-delay", "0s"], [1, "al-spark", 2, "left", "52%", "animation-delay", "1.8s"], [1, "al-spark", 2, "left", "76%", "animation-delay", "3.2s"], [1, "al-dots"], [1, "al-content"], [1, "al-brand"], [1, "al-brand-icon"], ["width", "22", "height", "22", "viewBox", "0 0 120 120", "fill", "none"], ["x", "50", "y", "60", "width", "20", "height", "40", "fill", "#8B4513", "rx", "2"], ["d", "M60 60 L40 40", "stroke", "#8B4513", "stroke-width", "7", "stroke-linecap", "round"], ["d", "M60 60 L80 40", "stroke", "#8B4513", "stroke-width", "7", "stroke-linecap", "round"], ["cx", "35", "cy", "35", "r", "11", "fill", "#2E7D32"], ["cx", "85", "cy", "35", "r", "11", "fill", "#2E7D32"], ["cx", "60", "cy", "24", "r", "11", "fill", "#81C784"], [1, "al-brand-name"], [1, "al-title"], [1, "al-subtitle"], [1, "al-features"], [1, "al-feat"], [1, "al-feat-icon"], [1, "material-icons-round"], [1, "auth-right"], [1, "auth-card"], [1, "auth-card-header"], [1, "auth-card-icon"], [3, "ngSubmit", "formGroup"], [1, "contact-toggle"], ["type", "button", 1, "ct-btn", 3, "click"], [1, "form-group"], [1, "input-wrapper"], ["type", "email", "formControlName", "contact", "placeholder", "votre@email.com", 3, "input-error"], ["type", "tel", "formControlName", "contact", "placeholder", "+221 77 000 00 00", 3, "input-error"], [1, "field-error"], ["type", "text", "formControlName", "nomFamille", "placeholder", "Ex : Famille Diallo"], [1, "code-preview"], [1, "form-row"], ["type", "text", "formControlName", "prenom", "placeholder", "Votre pr\xE9nom"], ["type", "text", "formControlName", "nom", "placeholder", "Votre nom"], ["formControlName", "password", "placeholder", "8 caract\xE8res minimum", 3, "type"], [1, "input-suffix"], ["type", "button", 1, "btn-icon-eye", 3, "click"], [1, "pwd-strength"], [1, "label-hint"], [1, "input-wrapper", "input-wrapper-select"], ["formControlName", "questionSecrete"], ["value", ""], [3, "value"], ["type", "text", "formControlName", "reponseSecrete", "placeholder", "Votre r\xE9ponse"], [1, "alert-error-box"], ["type", "submit", 1, "btn-submit", 3, "disabled"], [1, "btn-spinner"], [1, "auth-footer"], ["routerLink", "/auth/login"], ["type", "email", "formControlName", "contact", "placeholder", "votre@email.com"], ["type", "tel", "formControlName", "contact", "placeholder", "+221 77 000 00 00"], [1, "pwd-bars"], [1, "pwd-bar"], [1, "pwd-label"]], template: function RegisterComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "aside", 1)(2, "div", 2);
-      \u0275\u0275element(3, "div", 3)(4, "div", 4)(5, "div", 5);
+      \u0275\u0275namespaceSVG();
+      \u0275\u0275elementStart(3, "svg", 3);
+      \u0275\u0275element(4, "path", 4)(5, "path", 5)(6, "path", 6)(7, "path", 7)(8, "path", 8)(9, "path", 9)(10, "path", 10)(11, "circle", 11)(12, "circle", 12)(13, "circle", 13)(14, "circle", 14)(15, "circle", 15);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(6, "div", 6)(7, "div", 7)(8, "div", 8)(9, "span", 9);
-      \u0275\u0275text(10, "account_tree");
+      \u0275\u0275namespaceHTML();
+      \u0275\u0275elementStart(16, "div", 16);
+      \u0275\u0275element(17, "div", 17)(18, "div", 18)(19, "div", 19);
+      \u0275\u0275elementEnd();
+      \u0275\u0275element(20, "div", 20);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(21, "div", 21)(22, "div", 22)(23, "div", 23);
+      \u0275\u0275namespaceSVG();
+      \u0275\u0275elementStart(24, "svg", 24);
+      \u0275\u0275element(25, "rect", 25)(26, "path", 26)(27, "path", 27)(28, "circle", 28)(29, "circle", 29)(30, "circle", 30);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(11, "span", 10);
-      \u0275\u0275text(12, "Mam Buudu");
+      \u0275\u0275namespaceHTML();
+      \u0275\u0275elementStart(31, "span", 31);
+      \u0275\u0275text(32, "Mam Buudu");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(13, "h1", 11);
-      \u0275\u0275text(14, "Cr\xE9ez l'espace");
-      \u0275\u0275element(15, "br");
-      \u0275\u0275text(16, "familial de votre");
-      \u0275\u0275element(17, "br");
-      \u0275\u0275text(18, "famille");
+      \u0275\u0275elementStart(33, "h1", 32);
+      \u0275\u0275text(34, "Cr\xE9ez l'espace");
+      \u0275\u0275element(35, "br");
+      \u0275\u0275text(36, "familial de votre");
+      \u0275\u0275element(37, "br");
+      \u0275\u0275text(38, "famille");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(19, "p", 12);
-      \u0275\u0275text(20, "Quelques minutes suffisent pour d\xE9marrer votre arbre g\xE9n\xE9alogique.");
+      \u0275\u0275elementStart(39, "p", 33);
+      \u0275\u0275text(40, "Quelques minutes suffisent pour d\xE9marrer votre arbre g\xE9n\xE9alogique.");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(21, "div", 13)(22, "div", 14)(23, "span", 9);
-      \u0275\u0275text(24, "family_restroom");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(25, "span");
-      \u0275\u0275text(26, "Arbre g\xE9n\xE9alogique interactif");
+      \u0275\u0275elementStart(41, "div", 34)(42, "div", 35)(43, "div", 36)(44, "span", 37);
+      \u0275\u0275text(45, "family_restroom");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(27, "div", 14)(28, "span", 9);
-      \u0275\u0275text(29, "photo_library");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(30, "span");
-      \u0275\u0275text(31, "Albums photos familiaux");
+      \u0275\u0275elementStart(46, "span");
+      \u0275\u0275text(47, "Arbre g\xE9n\xE9alogique interactif");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(32, "div", 14)(33, "span", 9);
-      \u0275\u0275text(34, "auto_stories");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(35, "span");
-      \u0275\u0275text(36, "Stories et souvenirs");
+      \u0275\u0275elementStart(48, "div", 35)(49, "div", 36)(50, "span", 37);
+      \u0275\u0275text(51, "photo_library");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(37, "div", 14)(38, "span", 9);
-      \u0275\u0275text(39, "lock");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(40, "span");
-      \u0275\u0275text(41, "Espace priv\xE9 et s\xE9curis\xE9");
+      \u0275\u0275elementStart(52, "span");
+      \u0275\u0275text(53, "Albums photos familiaux");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(54, "div", 35)(55, "div", 36)(56, "span", 37);
+      \u0275\u0275text(57, "auto_stories");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(58, "span");
+      \u0275\u0275text(59, "Stories et souvenirs");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(60, "div", 35)(61, "div", 36)(62, "span", 37);
+      \u0275\u0275text(63, "lock");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(64, "span");
+      \u0275\u0275text(65, "Espace priv\xE9 et s\xE9curis\xE9");
       \u0275\u0275elementEnd()()()()();
-      \u0275\u0275elementStart(42, "main", 15)(43, "div", 16)(44, "div", 17)(45, "div", 18)(46, "span", 9);
-      \u0275\u0275text(47, "family_restroom");
+      \u0275\u0275elementStart(66, "main", 38)(67, "div", 39)(68, "div", 40)(69, "div", 41)(70, "span", 37);
+      \u0275\u0275text(71, "family_restroom");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(48, "h2");
-      \u0275\u0275text(49, "Cr\xE9er mon espace familial");
+      \u0275\u0275elementStart(72, "h2");
+      \u0275\u0275text(73, "Cr\xE9er mon espace familial");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(50, "p");
-      \u0275\u0275text(51, "Rejoignez des milliers de familles sur Mam Buudu.");
+      \u0275\u0275elementStart(74, "p");
+      \u0275\u0275text(75, "Rejoignez des milliers de familles sur Mam Buudu.");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(52, "form", 19);
-      \u0275\u0275listener("ngSubmit", function RegisterComponent_Template_form_ngSubmit_52_listener() {
+      \u0275\u0275elementStart(76, "form", 42);
+      \u0275\u0275listener("ngSubmit", function RegisterComponent_Template_form_ngSubmit_76_listener() {
         return ctx.submit();
       });
-      \u0275\u0275elementStart(53, "div", 20)(54, "button", 21);
-      \u0275\u0275listener("click", function RegisterComponent_Template_button_click_54_listener() {
+      \u0275\u0275elementStart(77, "div", 43)(78, "button", 44);
+      \u0275\u0275listener("click", function RegisterComponent_Template_button_click_78_listener() {
         return ctx.setContactType("email");
       });
-      \u0275\u0275elementStart(55, "span", 9);
-      \u0275\u0275text(56, "email");
+      \u0275\u0275elementStart(79, "span", 37);
+      \u0275\u0275text(80, "email");
       \u0275\u0275elementEnd();
-      \u0275\u0275text(57, "Email ");
+      \u0275\u0275text(81, "Email ");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(58, "button", 21);
-      \u0275\u0275listener("click", function RegisterComponent_Template_button_click_58_listener() {
+      \u0275\u0275elementStart(82, "button", 44);
+      \u0275\u0275listener("click", function RegisterComponent_Template_button_click_82_listener() {
         return ctx.setContactType("tel");
       });
-      \u0275\u0275elementStart(59, "span", 9);
-      \u0275\u0275text(60, "phone");
+      \u0275\u0275elementStart(83, "span", 37);
+      \u0275\u0275text(84, "phone");
       \u0275\u0275elementEnd();
-      \u0275\u0275text(61, "T\xE9l\xE9phone ");
+      \u0275\u0275text(85, "T\xE9l\xE9phone ");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(62, "div", 22)(63, "label");
-      \u0275\u0275text(64);
+      \u0275\u0275elementStart(86, "div", 45)(87, "label");
+      \u0275\u0275text(88);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(65, "div", 23)(66, "span", 9);
-      \u0275\u0275text(67);
+      \u0275\u0275elementStart(89, "div", 46)(90, "span", 37);
+      \u0275\u0275text(91);
       \u0275\u0275elementEnd();
-      \u0275\u0275conditionalCreate(68, RegisterComponent_Conditional_68_Template, 1, 2, "input", 24)(69, RegisterComponent_Conditional_69_Template, 1, 2, "input", 25);
+      \u0275\u0275conditionalCreate(92, RegisterComponent_Conditional_92_Template, 1, 2, "input", 47)(93, RegisterComponent_Conditional_93_Template, 1, 2, "input", 48);
       \u0275\u0275elementEnd();
-      \u0275\u0275conditionalCreate(70, RegisterComponent_Conditional_70_Template, 2, 1, "span", 26);
+      \u0275\u0275conditionalCreate(94, RegisterComponent_Conditional_94_Template, 2, 1, "span", 49);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(71, "div", 22)(72, "label");
-      \u0275\u0275text(73, "Nom de la famille");
+      \u0275\u0275elementStart(95, "div", 45)(96, "label");
+      \u0275\u0275text(97, "Nom de la famille");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(74, "div", 23)(75, "span", 9);
-      \u0275\u0275text(76, "group");
+      \u0275\u0275elementStart(98, "div", 46)(99, "span", 37);
+      \u0275\u0275text(100, "group");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(77, "input", 27);
+      \u0275\u0275element(101, "input", 50);
       \u0275\u0275elementEnd();
-      \u0275\u0275conditionalCreate(78, RegisterComponent_Conditional_78_Template, 2, 0, "span", 26);
-      \u0275\u0275conditionalCreate(79, RegisterComponent_Conditional_79_Template, 6, 1, "div", 28);
+      \u0275\u0275conditionalCreate(102, RegisterComponent_Conditional_102_Template, 2, 0, "span", 49);
+      \u0275\u0275conditionalCreate(103, RegisterComponent_Conditional_103_Template, 6, 1, "div", 51);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(80, "div", 29)(81, "div", 22)(82, "label");
-      \u0275\u0275text(83, "Pr\xE9nom");
+      \u0275\u0275elementStart(104, "div", 52)(105, "div", 45)(106, "label");
+      \u0275\u0275text(107, "Pr\xE9nom");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(84, "div", 23)(85, "span", 9);
-      \u0275\u0275text(86, "badge");
+      \u0275\u0275elementStart(108, "div", 46)(109, "span", 37);
+      \u0275\u0275text(110, "badge");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(87, "input", 30);
+      \u0275\u0275element(111, "input", 53);
       \u0275\u0275elementEnd();
-      \u0275\u0275conditionalCreate(88, RegisterComponent_Conditional_88_Template, 2, 0, "span", 26);
+      \u0275\u0275conditionalCreate(112, RegisterComponent_Conditional_112_Template, 2, 0, "span", 49);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(89, "div", 22)(90, "label");
-      \u0275\u0275text(91, "Nom");
+      \u0275\u0275elementStart(113, "div", 45)(114, "label");
+      \u0275\u0275text(115, "Nom");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(92, "div", 23)(93, "span", 9);
-      \u0275\u0275text(94, "badge");
+      \u0275\u0275elementStart(116, "div", 46)(117, "span", 37);
+      \u0275\u0275text(118, "badge");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(95, "input", 31);
+      \u0275\u0275element(119, "input", 54);
       \u0275\u0275elementEnd();
-      \u0275\u0275conditionalCreate(96, RegisterComponent_Conditional_96_Template, 2, 0, "span", 26);
+      \u0275\u0275conditionalCreate(120, RegisterComponent_Conditional_120_Template, 2, 0, "span", 49);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(97, "div", 22)(98, "label");
-      \u0275\u0275text(99, "Mot de passe");
+      \u0275\u0275elementStart(121, "div", 45)(122, "label");
+      \u0275\u0275text(123, "Mot de passe");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(100, "div", 23)(101, "span", 9);
-      \u0275\u0275text(102, "lock");
+      \u0275\u0275elementStart(124, "div", 46)(125, "span", 37);
+      \u0275\u0275text(126, "lock");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(103, "input", 32);
-      \u0275\u0275elementStart(104, "div", 33)(105, "button", 34);
-      \u0275\u0275listener("click", function RegisterComponent_Template_button_click_105_listener() {
+      \u0275\u0275element(127, "input", 55);
+      \u0275\u0275elementStart(128, "div", 56)(129, "button", 57);
+      \u0275\u0275listener("click", function RegisterComponent_Template_button_click_129_listener() {
         return ctx.showPassword = !ctx.showPassword;
       });
-      \u0275\u0275elementStart(106, "span", 9);
-      \u0275\u0275text(107);
+      \u0275\u0275elementStart(130, "span", 37);
+      \u0275\u0275text(131);
       \u0275\u0275elementEnd()()()();
-      \u0275\u0275conditionalCreate(108, RegisterComponent_Conditional_108_Template, 8, 11, "div", 35);
-      \u0275\u0275conditionalCreate(109, RegisterComponent_Conditional_109_Template, 2, 0, "span", 26);
+      \u0275\u0275conditionalCreate(132, RegisterComponent_Conditional_132_Template, 8, 11, "div", 58);
+      \u0275\u0275conditionalCreate(133, RegisterComponent_Conditional_133_Template, 2, 0, "span", 49);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(110, "div", 22)(111, "label");
-      \u0275\u0275text(112, "Question secr\xE8te ");
-      \u0275\u0275elementStart(113, "span", 36);
-      \u0275\u0275text(114, "(r\xE9cup\xE9ration de compte)");
+      \u0275\u0275elementStart(134, "div", 45)(135, "label");
+      \u0275\u0275text(136, "Question secr\xE8te ");
+      \u0275\u0275elementStart(137, "span", 59);
+      \u0275\u0275text(138, "(r\xE9cup\xE9ration de compte)");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(115, "div", 37)(116, "span", 9);
-      \u0275\u0275text(117, "help_outline");
+      \u0275\u0275elementStart(139, "div", 60)(140, "span", 37);
+      \u0275\u0275text(141, "help_outline");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(118, "select", 38)(119, "option", 39);
-      \u0275\u0275text(120, "-- Choisir une question --");
+      \u0275\u0275elementStart(142, "select", 61)(143, "option", 62);
+      \u0275\u0275text(144, "-- Choisir une question --");
       \u0275\u0275elementEnd();
-      \u0275\u0275repeaterCreate(121, RegisterComponent_For_122_Template, 2, 2, "option", 40, \u0275\u0275repeaterTrackByIdentity);
+      \u0275\u0275repeaterCreate(145, RegisterComponent_For_146_Template, 2, 2, "option", 63, \u0275\u0275repeaterTrackByIdentity);
       \u0275\u0275elementEnd()();
-      \u0275\u0275conditionalCreate(123, RegisterComponent_Conditional_123_Template, 2, 0, "span", 26);
+      \u0275\u0275conditionalCreate(147, RegisterComponent_Conditional_147_Template, 2, 0, "span", 49);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(124, "div", 22)(125, "label");
-      \u0275\u0275text(126, "R\xE9ponse secr\xE8te");
+      \u0275\u0275elementStart(148, "div", 45)(149, "label");
+      \u0275\u0275text(150, "R\xE9ponse secr\xE8te");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(127, "div", 23)(128, "span", 9);
-      \u0275\u0275text(129, "key");
+      \u0275\u0275elementStart(151, "div", 46)(152, "span", 37);
+      \u0275\u0275text(153, "key");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(130, "input", 41);
+      \u0275\u0275element(154, "input", 64);
       \u0275\u0275elementEnd();
-      \u0275\u0275conditionalCreate(131, RegisterComponent_Conditional_131_Template, 2, 0, "span", 26);
+      \u0275\u0275conditionalCreate(155, RegisterComponent_Conditional_155_Template, 2, 0, "span", 49);
       \u0275\u0275elementEnd();
-      \u0275\u0275conditionalCreate(132, RegisterComponent_Conditional_132_Template, 4, 1, "div", 42);
-      \u0275\u0275elementStart(133, "button", 43);
-      \u0275\u0275conditionalCreate(134, RegisterComponent_Conditional_134_Template, 1, 0, "span", 44)(135, RegisterComponent_Conditional_135_Template, 3, 0);
+      \u0275\u0275conditionalCreate(156, RegisterComponent_Conditional_156_Template, 4, 1, "div", 65);
+      \u0275\u0275elementStart(157, "button", 66);
+      \u0275\u0275conditionalCreate(158, RegisterComponent_Conditional_158_Template, 1, 0, "span", 67)(159, RegisterComponent_Conditional_159_Template, 3, 0);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(136, "div", 45)(137, "p");
-      \u0275\u0275text(138, "D\xE9j\xE0 un compte ? ");
-      \u0275\u0275elementStart(139, "a", 46);
-      \u0275\u0275text(140, "Se connecter");
+      \u0275\u0275elementStart(160, "div", 68)(161, "p");
+      \u0275\u0275text(162, "D\xE9j\xE0 un compte ? ");
+      \u0275\u0275elementStart(163, "a", 69);
+      \u0275\u0275text(164, "Se connecter");
       \u0275\u0275elementEnd()()()()()();
     }
     if (rf & 2) {
-      \u0275\u0275advance(52);
+      \u0275\u0275advance(76);
       \u0275\u0275property("formGroup", ctx.form);
       \u0275\u0275advance(2);
       \u0275\u0275classProp("ct-active", ctx.contactType === "email");
@@ -495,50 +508,50 @@ var RegisterComponent = class _RegisterComponent {
       \u0275\u0275advance(3);
       \u0275\u0275textInterpolate(ctx.contactType === "email" ? "email" : "phone");
       \u0275\u0275advance();
-      \u0275\u0275conditional(ctx.contactType === "email" ? 68 : 69);
+      \u0275\u0275conditional(ctx.contactType === "email" ? 92 : 93);
       \u0275\u0275advance(2);
-      \u0275\u0275conditional(ctx.f["contact"].invalid && ctx.f["contact"].touched ? 70 : -1);
+      \u0275\u0275conditional(ctx.f["contact"].invalid && ctx.f["contact"].touched ? 94 : -1);
       \u0275\u0275advance(7);
       \u0275\u0275classProp("input-error", ctx.f["nomFamille"].invalid && ctx.f["nomFamille"].touched);
       \u0275\u0275advance();
-      \u0275\u0275conditional(ctx.f["nomFamille"].invalid && ctx.f["nomFamille"].touched ? 78 : -1);
+      \u0275\u0275conditional(ctx.f["nomFamille"].invalid && ctx.f["nomFamille"].touched ? 102 : -1);
       \u0275\u0275advance();
-      \u0275\u0275conditional(ctx.familleCodePreview ? 79 : -1);
+      \u0275\u0275conditional(ctx.familleCodePreview ? 103 : -1);
       \u0275\u0275advance(8);
       \u0275\u0275classProp("input-error", ctx.f["prenom"].invalid && ctx.f["prenom"].touched);
       \u0275\u0275advance();
-      \u0275\u0275conditional(ctx.f["prenom"].invalid && ctx.f["prenom"].touched ? 88 : -1);
+      \u0275\u0275conditional(ctx.f["prenom"].invalid && ctx.f["prenom"].touched ? 112 : -1);
       \u0275\u0275advance(7);
       \u0275\u0275classProp("input-error", ctx.f["nom"].invalid && ctx.f["nom"].touched);
       \u0275\u0275advance();
-      \u0275\u0275conditional(ctx.f["nom"].invalid && ctx.f["nom"].touched ? 96 : -1);
+      \u0275\u0275conditional(ctx.f["nom"].invalid && ctx.f["nom"].touched ? 120 : -1);
       \u0275\u0275advance(7);
       \u0275\u0275classProp("input-error", ctx.f["password"].invalid && ctx.f["password"].touched);
       \u0275\u0275property("type", ctx.showPassword ? "text" : "password");
       \u0275\u0275advance(4);
       \u0275\u0275textInterpolate(ctx.showPassword ? "visibility_off" : "visibility");
       \u0275\u0275advance();
-      \u0275\u0275conditional(ctx.passwordStrength.level > 0 ? 108 : -1);
+      \u0275\u0275conditional(ctx.passwordStrength.level > 0 ? 132 : -1);
       \u0275\u0275advance();
-      \u0275\u0275conditional(ctx.f["password"].invalid && ctx.f["password"].touched ? 109 : -1);
+      \u0275\u0275conditional(ctx.f["password"].invalid && ctx.f["password"].touched ? 133 : -1);
       \u0275\u0275advance(9);
       \u0275\u0275classProp("input-error", ctx.f["questionSecrete"].invalid && ctx.f["questionSecrete"].touched);
       \u0275\u0275advance(3);
       \u0275\u0275repeater(ctx.questions);
       \u0275\u0275advance(2);
-      \u0275\u0275conditional(ctx.f["questionSecrete"].invalid && ctx.f["questionSecrete"].touched ? 123 : -1);
+      \u0275\u0275conditional(ctx.f["questionSecrete"].invalid && ctx.f["questionSecrete"].touched ? 147 : -1);
       \u0275\u0275advance(7);
       \u0275\u0275classProp("input-error", ctx.f["reponseSecrete"].invalid && ctx.f["reponseSecrete"].touched);
       \u0275\u0275advance();
-      \u0275\u0275conditional(ctx.f["reponseSecrete"].invalid && ctx.f["reponseSecrete"].touched ? 131 : -1);
+      \u0275\u0275conditional(ctx.f["reponseSecrete"].invalid && ctx.f["reponseSecrete"].touched ? 155 : -1);
       \u0275\u0275advance();
-      \u0275\u0275conditional(ctx.errorMsg ? 132 : -1);
+      \u0275\u0275conditional(ctx.errorMsg ? 156 : -1);
       \u0275\u0275advance();
       \u0275\u0275property("disabled", ctx.loading);
       \u0275\u0275advance();
-      \u0275\u0275conditional(ctx.loading ? 134 : 135);
+      \u0275\u0275conditional(ctx.loading ? 158 : 159);
     }
-  }, dependencies: [\u0275NgNoValidate, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, RouterLink], styles: ['@charset "UTF-8";\n\n\n\n.auth-page[_ngcontent-%COMP%] {\n  display: flex;\n  min-height: 100vh;\n}\n.auth-left[_ngcontent-%COMP%] {\n  width: 42%;\n  min-height: 100vh;\n  background:\n    linear-gradient(\n      145deg,\n      #0A1FA8 0%,\n      #1445F5 55%,\n      #2563EB 100%);\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n}\n.al-bg[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n}\n.al-blob[_ngcontent-%COMP%] {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0.12;\n  background: #fff;\n}\n.al-blob-1[_ngcontent-%COMP%] {\n  width: 340px;\n  height: 340px;\n  top: -80px;\n  right: -100px;\n}\n.al-blob-2[_ngcontent-%COMP%] {\n  width: 220px;\n  height: 220px;\n  bottom: -60px;\n  left: -60px;\n}\n.al-dots[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.15) 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n}\n.al-content[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n  padding: 48px 44px;\n  display: flex;\n  flex-direction: column;\n  gap: 28px;\n  width: 100%;\n  max-width: 420px;\n}\n.al-brand[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.al-brand-icon[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  background: rgba(255, 255, 255, 0.18);\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.al-brand-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #fff;\n  font-size: 20px;\n}\n.al-brand-name[_ngcontent-%COMP%] {\n  color: #fff;\n  font-size: 17px;\n  font-weight: 700;\n  letter-spacing: 0.2px;\n}\n.al-title[_ngcontent-%COMP%] {\n  color: #fff;\n  font-size: 26px;\n  font-weight: 800;\n  line-height: 1.28;\n  margin: 0;\n}\n.al-subtitle[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.72);\n  font-size: 14px;\n  line-height: 1.6;\n  margin: 0;\n}\n.al-steps[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  background: rgba(255, 255, 255, 0.08);\n  border-radius: 16px;\n  padding: 20px;\n}\n.al-step[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n  padding: 4px 0;\n  opacity: 0.55;\n  transition: opacity 0.25s ease;\n}\n.al-step.al-step-active[_ngcontent-%COMP%] {\n  opacity: 1;\n}\n.al-step.al-step-done[_ngcontent-%COMP%] {\n  opacity: 0.9;\n}\n.al-step[_ngcontent-%COMP%]   .als-num[_ngcontent-%COMP%] {\n  width: 30px;\n  height: 30px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.18);\n  color: #fff;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  flex-shrink: 0;\n  transition: background 0.25s ease;\n}\n.al-step[_ngcontent-%COMP%]   .als-num[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n.al-step.al-step-active[_ngcontent-%COMP%]   .als-num[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.9);\n  color: #1445F5;\n}\n.al-step.al-step-done[_ngcontent-%COMP%]   .als-num[_ngcontent-%COMP%] {\n  background: #10B981;\n}\n.al-step[_ngcontent-%COMP%]   .als-info[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.al-step[_ngcontent-%COMP%]   .als-info[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: #fff;\n  font-size: 13px;\n  font-weight: 600;\n}\n.al-step[_ngcontent-%COMP%]   .als-info[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.65);\n  font-size: 12px;\n}\n.als-connector[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 24px;\n  background: rgba(255, 255, 255, 0.2);\n  margin: 4px 0 4px 14px;\n  transition: background 0.3s ease;\n}\n.als-connector.done[_ngcontent-%COMP%] {\n  background: #10B981;\n}\n.al-what-next[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.awn-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.awn-item[_ngcontent-%COMP%]   .awn-icon[_ngcontent-%COMP%] {\n  width: 32px;\n  height: 32px;\n  background: rgba(255, 255, 255, 0.12);\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.awn-item[_ngcontent-%COMP%]   .awn-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.85);\n  font-size: 17px;\n}\n.awn-item[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.72);\n  font-size: 13px;\n  line-height: 1.4;\n}\n.auth-right[_ngcontent-%COMP%] {\n  flex: 1;\n  background: #EEF2FF;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 40px 24px;\n  min-height: 100vh;\n}\n.auth-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 22px;\n  padding: 40px 40px 32px;\n  width: 100%;\n  max-width: 480px;\n  box-shadow: 0 8px 40px rgba(20, 69, 245, 0.12);\n  animation: _ngcontent-%COMP%_cardFadeIn 0.45s ease both;\n}\n@keyframes _ngcontent-%COMP%_cardFadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(18px);\n  }\n}\n.auth-card-header[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-bottom: 24px;\n}\n.auth-card-icon[_ngcontent-%COMP%] {\n  width: 52px;\n  height: 52px;\n  background:\n    linear-gradient(\n      135deg,\n      rgba(20, 69, 245, 0.12),\n      rgba(37, 99, 235, 0.08));\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 14px;\n}\n.auth-card-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #1445F5;\n  font-size: 26px;\n}\n.auth-card-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 21px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 6px;\n}\n.auth-card-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #64748B;\n  margin: 0;\n}\n.step-indicator[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  margin-bottom: 28px;\n}\n.si-step[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n}\n.si-step[_ngcontent-%COMP%]   .si-circle[_ngcontent-%COMP%] {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  background: #E2E8F0;\n  color: #94A3B8;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  transition: all 0.3s ease;\n}\n.si-step[_ngcontent-%COMP%]   .si-circle[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px;\n}\n.si-step[_ngcontent-%COMP%]   .si-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #94A3B8;\n  font-weight: 500;\n}\n.si-step.si-active[_ngcontent-%COMP%]   .si-circle[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #1445F5,\n      #2563EB);\n  color: #fff;\n  box-shadow: 0 2px 10px rgba(20, 69, 245, 0.3);\n}\n.si-step.si-active[_ngcontent-%COMP%]   .si-label[_ngcontent-%COMP%] {\n  color: #1445F5;\n  font-weight: 600;\n}\n.si-step.si-done[_ngcontent-%COMP%]   .si-circle[_ngcontent-%COMP%] {\n  background: #10B981;\n  color: #fff;\n}\n.si-step.si-done[_ngcontent-%COMP%]   .si-label[_ngcontent-%COMP%] {\n  color: #10B981;\n}\n.si-line[_ngcontent-%COMP%] {\n  flex: 1;\n  height: 2px;\n  background: #E2E8F0;\n  margin: 0 12px;\n  margin-bottom: 22px;\n  border-radius: 2px;\n  transition: background 0.3s ease;\n}\n.si-line.si-line-done[_ngcontent-%COMP%] {\n  background: #10B981;\n}\n.form-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  margin-bottom: 16px;\n}\n.form-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: #374151;\n}\n.form-row[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.form-row[_ngcontent-%COMP%]   .form-group[_ngcontent-%COMP%] {\n  margin-bottom: 16px;\n}\n.input-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  background: #F8FAFC;\n  border: 1.5px solid #E2E8F0;\n  border-radius: 12px;\n  padding: 0 14px;\n  height: 46px;\n  transition: border-color 0.2s, box-shadow 0.2s;\n}\n.input-wrapper[_ngcontent-%COMP%]    > .material-icons-round[_ngcontent-%COMP%]:first-child {\n  color: #94A3B8;\n  font-size: 18px;\n  flex-shrink: 0;\n}\n.input-wrapper[_ngcontent-%COMP%]   input[_ngcontent-%COMP%], \n.input-wrapper[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  background: transparent;\n  outline: none;\n  font-size: 14px;\n  color: #1E293B;\n  height: 100%;\n}\n.input-wrapper[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]::placeholder, \n.input-wrapper[_ngcontent-%COMP%]   select[_ngcontent-%COMP%]::placeholder {\n  color: #CBD5E1;\n}\n.input-wrapper[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n.input-wrapper[_ngcontent-%COMP%]:focus-within {\n  border-color: #1445F5;\n  box-shadow: 0 0 0 3px rgba(20, 69, 245, 0.1);\n  background: #fff;\n}\n.input-wrapper.input-wrapper-select[_ngcontent-%COMP%] {\n  padding-right: 10px;\n}\n.input-suffix[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  margin-left: auto;\n}\n.btn-icon-eye[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  border-radius: 6px;\n  color: #94A3B8;\n  transition: color 0.15s, background 0.15s;\n}\n.btn-icon-eye[_ngcontent-%COMP%]:hover {\n  color: #1445F5;\n  background: rgba(20, 69, 245, 0.07);\n}\n.btn-icon-eye[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px;\n}\n.input-error[_ngcontent-%COMP%] {\n  border-color: #EF4444 !important;\n}\n.field-error[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #EF4444;\n}\n.field-hint[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #94A3B8;\n}\n.code-preview[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  background: #EFF6FF;\n  border: 1px solid #BFDBFE;\n  border-radius: 8px;\n  padding: 8px 12px;\n  font-size: 13px;\n  color: #1D4ED8;\n  animation: _ngcontent-%COMP%_fadeSlideIn 0.25s ease both;\n}\n.code-preview[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #3B82F6;\n  flex-shrink: 0;\n}\n.code-preview[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  font-family: "Courier New", monospace;\n  font-weight: 700;\n  letter-spacing: 0.5px;\n  color: #1445F5;\n}\n.pwd-strength[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-top: 2px;\n  animation: _ngcontent-%COMP%_fadeSlideIn 0.2s ease both;\n}\n.pwd-bars[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  flex: 1;\n}\n.pwd-bar[_ngcontent-%COMP%] {\n  flex: 1;\n  height: 4px;\n  border-radius: 4px;\n  background: #E2E8F0;\n  transition: background 0.3s ease;\n}\n.pwd-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 600;\n  min-width: 36px;\n  text-align: right;\n  transition: color 0.2s;\n}\n.step-panel[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_stepFadeIn 0.3s ease both;\n}\n@keyframes _ngcontent-%COMP%_stepFadeIn {\n  from {\n    opacity: 0;\n    transform: translateX(12px);\n  }\n}\n@keyframes _ngcontent-%COMP%_fadeSlideIn {\n  from {\n    opacity: 0;\n    transform: translateY(-4px);\n  }\n}\n.step2-info[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n  background:\n    linear-gradient(\n      135deg,\n      #EFF6FF 0%,\n      #F0FDF4 100%);\n  border: 1px solid #BFDBFE;\n  border-radius: 14px;\n  padding: 16px;\n  margin-bottom: 20px;\n}\n.step2-info[_ngcontent-%COMP%]   .s2i-icon[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  background:\n    linear-gradient(\n      135deg,\n      rgba(20, 69, 245, 0.12),\n      rgba(16, 185, 129, 0.1));\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.step2-info[_ngcontent-%COMP%]   .s2i-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #1445F5;\n  font-size: 20px;\n}\n.step2-info[_ngcontent-%COMP%]   .s2i-text[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.step2-info[_ngcontent-%COMP%]   .s2i-text[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 700;\n  color: #1E293B;\n}\n.step2-info[_ngcontent-%COMP%]   .s2i-text[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #64748B;\n  margin: 0;\n  line-height: 1.5;\n}\n.alert-error-box[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  background: #FEF2F2;\n  border: 1px solid #FECACA;\n  border-radius: 10px;\n  padding: 12px 14px;\n  font-size: 13px;\n  color: #DC2626;\n  margin-bottom: 16px;\n}\n.alert-error-box[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px;\n  flex-shrink: 0;\n}\n.btn-submit[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 48px;\n  background:\n    linear-gradient(\n      135deg,\n      #1445F5,\n      #2563EB);\n  color: #fff;\n  border: none;\n  border-radius: 13px;\n  font-size: 15px;\n  font-weight: 600;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  box-shadow: 0 4px 16px rgba(20, 69, 245, 0.35);\n  transition: transform 0.15s, box-shadow 0.15s;\n}\n.btn-submit[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px;\n}\n.btn-submit[_ngcontent-%COMP%]:hover:not(:disabled) {\n  transform: translateY(-1px);\n  box-shadow: 0 6px 20px rgba(20, 69, 245, 0.42);\n}\n.btn-submit[_ngcontent-%COMP%]:disabled {\n  opacity: 0.65;\n  cursor: not-allowed;\n  transform: none;\n}\n.btn-submit-flex[_ngcontent-%COMP%] {\n  width: auto;\n  flex: 1;\n}\n.btn-back[_ngcontent-%COMP%] {\n  height: 48px;\n  padding: 0 20px;\n  background: transparent;\n  border: 1.5px solid #E2E8F0;\n  border-radius: 13px;\n  font-size: 14px;\n  font-weight: 600;\n  color: #64748B;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  transition:\n    background 0.15s,\n    border-color 0.15s,\n    color 0.15s;\n}\n.btn-back[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px;\n}\n.btn-back[_ngcontent-%COMP%]:hover {\n  background: #F1F5F9;\n  border-color: #CBD5E1;\n  color: #374151;\n}\n.form-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  align-items: center;\n}\n.btn-spinner[_ngcontent-%COMP%] {\n  width: 18px;\n  height: 18px;\n  border: 2px solid rgba(255, 255, 255, 0.35);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.6s linear infinite;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.auth-footer[_ngcontent-%COMP%] {\n  margin-top: 24px;\n  text-align: center;\n}\n.auth-footer[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #64748B;\n  margin: 0;\n}\n.auth-footer[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  color: #1445F5;\n  font-weight: 600;\n  text-decoration: none;\n}\n.auth-footer[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  text-decoration: underline;\n}\n@media (max-width: 860px) {\n  .auth-left[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .auth-right[_ngcontent-%COMP%] {\n    background:\n      linear-gradient(\n        145deg,\n        #0A1FA8 0%,\n        #1445F5 55%,\n        #2563EB 100%);\n    padding: 24px 16px;\n    align-items: flex-start;\n    padding-top: 40px;\n  }\n  .auth-card[_ngcontent-%COMP%] {\n    box-shadow: 0 8px 48px rgba(0, 0, 0, 0.25);\n  }\n}\n@media (max-width: 480px) {\n  .auth-card[_ngcontent-%COMP%] {\n    padding: 28px 20px 24px;\n  }\n  .form-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n.contact-toggle[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n  margin-bottom: 20px;\n}\n.ct-btn[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 10px 16px;\n  border: 2px solid #E2E8F0;\n  border-radius: 10px;\n  background: #F8FAFC;\n  color: #64748B;\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.ct-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px;\n}\n.ct-btn[_ngcontent-%COMP%]:hover {\n  border-color: #1445F5;\n  color: #1445F5;\n  background: rgba(20, 69, 245, 0.05);\n}\n.ct-btn.ct-active[_ngcontent-%COMP%] {\n  border-color: #1445F5;\n  background: rgba(20, 69, 245, 0.08);\n  color: #1445F5;\n  font-weight: 600;\n}\n/*# sourceMappingURL=register.component.css.map */'] });
+  }, dependencies: [\u0275NgNoValidate, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, RouterLink], styles: ['@charset "UTF-8";\n\n\n\n.auth-page[_ngcontent-%COMP%] {\n  display: flex;\n  min-height: 100vh;\n}\n.auth-left[_ngcontent-%COMP%] {\n  width: 42%;\n  min-height: 100vh;\n  background:\n    linear-gradient(\n      160deg,\n      #0A1020 0%,\n      #0E2417 55%,\n      #123B27 100%);\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n}\n.al-bg[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n}\n.al-tree[_ngcontent-%COMP%] {\n  position: absolute;\n  right: -60px;\n  bottom: -30px;\n  opacity: 0.4;\n}\n.al-sparks[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  overflow: hidden;\n}\n.al-spark[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 40px;\n  width: 4px;\n  height: 4px;\n  border-radius: 50%;\n  background: #A6E3AF;\n  box-shadow: 0 0 8px 2px rgba(166, 227, 175, 0.7);\n  animation: _ngcontent-%COMP%_sparkRise 5.5s ease-in infinite;\n}\n@keyframes _ngcontent-%COMP%_sparkRise {\n  0% {\n    opacity: 0;\n    transform: translateY(0);\n  }\n  15% {\n    opacity: 0.9;\n  }\n  85% {\n    opacity: 0.5;\n  }\n  100% {\n    opacity: 0;\n    transform: translateY(-90px);\n  }\n}\n.al-dots[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.15) 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n}\n.al-content[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n  padding: 48px 44px;\n  display: flex;\n  flex-direction: column;\n  gap: 28px;\n  width: 100%;\n  max-width: 420px;\n}\n.al-brand[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.al-brand-icon[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  background: rgba(255, 255, 255, 0.18);\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.al-brand-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #fff;\n  font-size: 20px;\n}\n.al-brand-name[_ngcontent-%COMP%] {\n  color: #fff;\n  font-size: 17px;\n  font-weight: 700;\n  letter-spacing: 0.2px;\n}\n.al-title[_ngcontent-%COMP%] {\n  color: #fff;\n  font-size: 26px;\n  font-weight: 800;\n  line-height: 1.28;\n  margin: 0;\n}\n.al-subtitle[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.72);\n  font-size: 14px;\n  line-height: 1.6;\n  margin: 0;\n}\n.al-features[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.al-feat[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 11px 14px;\n  background: rgba(255, 255, 255, 0.09);\n  border: 1px solid rgba(255, 255, 255, 0.11);\n  border-radius: 12px;\n  font-size: 13px;\n  font-weight: 500;\n  color: rgba(255, 255, 255, 0.88);\n  transition: background 0.2s;\n}\n.al-feat[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.15);\n}\n.al-feat-icon[_ngcontent-%COMP%] {\n  width: 32px;\n  height: 32px;\n  border-radius: 8px;\n  background: rgba(255, 255, 255, 0.1);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.al-feat-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n  color: #81C784;\n}\n.auth-right[_ngcontent-%COMP%] {\n  flex: 1;\n  background: #F0FDF4;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 40px 24px;\n  min-height: 100vh;\n}\n.auth-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 22px;\n  padding: 40px 40px 32px;\n  width: 100%;\n  max-width: 480px;\n  box-shadow: 0 8px 40px rgba(15, 42, 30, 0.1);\n  animation: _ngcontent-%COMP%_cardFadeIn 0.45s ease both;\n}\n@keyframes _ngcontent-%COMP%_cardFadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(18px);\n  }\n}\n.auth-card-header[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-bottom: 24px;\n}\n.auth-card-icon[_ngcontent-%COMP%] {\n  width: 52px;\n  height: 52px;\n  background:\n    linear-gradient(\n      135deg,\n      #F0FDF4,\n      #DCFCE7);\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 14px;\n}\n.auth-card-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #15803D;\n  font-size: 26px;\n}\n.auth-card-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 21px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 6px;\n}\n.auth-card-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #64748B;\n  margin: 0;\n}\n.step-indicator[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  margin-bottom: 28px;\n}\n.si-step[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n}\n.si-step[_ngcontent-%COMP%]   .si-circle[_ngcontent-%COMP%] {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  background: #E2E8F0;\n  color: #94A3B8;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  transition: all 0.3s ease;\n}\n.si-step[_ngcontent-%COMP%]   .si-circle[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px;\n}\n.si-step[_ngcontent-%COMP%]   .si-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #94A3B8;\n  font-weight: 500;\n}\n.si-step.si-active[_ngcontent-%COMP%]   .si-circle[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #15803D,\n      #166534);\n  color: #fff;\n  box-shadow: 0 2px 10px rgba(21, 128, 61, 0.3);\n}\n.si-step.si-active[_ngcontent-%COMP%]   .si-label[_ngcontent-%COMP%] {\n  color: #15803D;\n  font-weight: 600;\n}\n.si-step.si-done[_ngcontent-%COMP%]   .si-circle[_ngcontent-%COMP%] {\n  background: #10B981;\n  color: #fff;\n}\n.si-step.si-done[_ngcontent-%COMP%]   .si-label[_ngcontent-%COMP%] {\n  color: #10B981;\n}\n.si-line[_ngcontent-%COMP%] {\n  flex: 1;\n  height: 2px;\n  background: #E2E8F0;\n  margin: 0 12px;\n  margin-bottom: 22px;\n  border-radius: 2px;\n  transition: background 0.3s ease;\n}\n.si-line.si-line-done[_ngcontent-%COMP%] {\n  background: #10B981;\n}\n.form-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  margin-bottom: 16px;\n}\n.form-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: #374151;\n}\n.form-row[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.form-row[_ngcontent-%COMP%]   .form-group[_ngcontent-%COMP%] {\n  margin-bottom: 16px;\n}\n.input-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  background: #F8FAFC;\n  border: 1.5px solid #E2E8F0;\n  border-radius: 12px;\n  padding: 0 14px;\n  height: 46px;\n  transition: border-color 0.2s, box-shadow 0.2s;\n}\n.input-wrapper[_ngcontent-%COMP%]    > .material-icons-round[_ngcontent-%COMP%]:first-child {\n  color: #94A3B8;\n  font-size: 18px;\n  flex-shrink: 0;\n}\n.input-wrapper[_ngcontent-%COMP%]   input[_ngcontent-%COMP%], \n.input-wrapper[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  background: transparent;\n  outline: none;\n  font-size: 14px;\n  color: #1E293B;\n  height: 100%;\n}\n.input-wrapper[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]::placeholder, \n.input-wrapper[_ngcontent-%COMP%]   select[_ngcontent-%COMP%]::placeholder {\n  color: #CBD5E1;\n}\n.input-wrapper[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n.input-wrapper[_ngcontent-%COMP%]:focus-within {\n  border-color: #15803D;\n  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.1);\n  background: #fff;\n}\n.input-wrapper.input-wrapper-select[_ngcontent-%COMP%] {\n  padding-right: 10px;\n}\n.input-suffix[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  margin-left: auto;\n}\n.btn-icon-eye[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  border-radius: 6px;\n  color: #94A3B8;\n  transition: color 0.15s, background 0.15s;\n}\n.btn-icon-eye[_ngcontent-%COMP%]:hover {\n  color: #15803D;\n  background: rgba(21, 128, 61, 0.07);\n}\n.btn-icon-eye[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px;\n}\n.input-error[_ngcontent-%COMP%] {\n  border-color: #EF4444 !important;\n}\n.field-error[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #EF4444;\n}\n.field-hint[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #94A3B8;\n}\n.code-preview[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  background: #F0FDF4;\n  border: 1px solid #BBF7D0;\n  border-radius: 8px;\n  padding: 8px 12px;\n  font-size: 13px;\n  color: #166534;\n  animation: _ngcontent-%COMP%_fadeSlideIn 0.25s ease both;\n}\n.code-preview[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #15803D;\n  flex-shrink: 0;\n}\n.code-preview[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  font-family: "Courier New", monospace;\n  font-weight: 700;\n  letter-spacing: 0.5px;\n  color: #15803D;\n}\n.pwd-strength[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-top: 2px;\n  animation: _ngcontent-%COMP%_fadeSlideIn 0.2s ease both;\n}\n.pwd-bars[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  flex: 1;\n}\n.pwd-bar[_ngcontent-%COMP%] {\n  flex: 1;\n  height: 4px;\n  border-radius: 4px;\n  background: #E2E8F0;\n  transition: background 0.3s ease;\n}\n.pwd-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 600;\n  min-width: 36px;\n  text-align: right;\n  transition: color 0.2s;\n}\n.step-panel[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_stepFadeIn 0.3s ease both;\n}\n@keyframes _ngcontent-%COMP%_stepFadeIn {\n  from {\n    opacity: 0;\n    transform: translateX(12px);\n  }\n}\n@keyframes _ngcontent-%COMP%_fadeSlideIn {\n  from {\n    opacity: 0;\n    transform: translateY(-4px);\n  }\n}\n.step2-info[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n  background:\n    linear-gradient(\n      135deg,\n      #F0FDF4 0%,\n      #DCFCE7 100%);\n  border: 1px solid #BBF7D0;\n  border-radius: 14px;\n  padding: 16px;\n  margin-bottom: 20px;\n}\n.step2-info[_ngcontent-%COMP%]   .s2i-icon[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  background:\n    linear-gradient(\n      135deg,\n      rgba(21, 128, 61, 0.12),\n      rgba(16, 185, 129, 0.1));\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.step2-info[_ngcontent-%COMP%]   .s2i-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #15803D;\n  font-size: 20px;\n}\n.step2-info[_ngcontent-%COMP%]   .s2i-text[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.step2-info[_ngcontent-%COMP%]   .s2i-text[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 700;\n  color: #1E293B;\n}\n.step2-info[_ngcontent-%COMP%]   .s2i-text[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #64748B;\n  margin: 0;\n  line-height: 1.5;\n}\n.alert-error-box[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  background: #FEF2F2;\n  border: 1px solid #FECACA;\n  border-radius: 10px;\n  padding: 12px 14px;\n  font-size: 13px;\n  color: #DC2626;\n  margin-bottom: 16px;\n}\n.alert-error-box[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px;\n  flex-shrink: 0;\n}\n.btn-submit[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 48px;\n  background:\n    linear-gradient(\n      135deg,\n      #15803D,\n      #166534);\n  color: #fff;\n  border: none;\n  border-radius: 13px;\n  font-size: 15px;\n  font-weight: 600;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  box-shadow: 0 4px 16px rgba(21, 128, 61, 0.35);\n  transition: transform 0.15s, box-shadow 0.15s;\n}\n.btn-submit[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px;\n}\n.btn-submit[_ngcontent-%COMP%]:hover:not(:disabled) {\n  transform: translateY(-1px);\n  box-shadow: 0 6px 20px rgba(21, 128, 61, 0.42);\n}\n.btn-submit[_ngcontent-%COMP%]:disabled {\n  opacity: 0.65;\n  cursor: not-allowed;\n  transform: none;\n}\n.btn-submit-flex[_ngcontent-%COMP%] {\n  width: auto;\n  flex: 1;\n}\n.btn-back[_ngcontent-%COMP%] {\n  height: 48px;\n  padding: 0 20px;\n  background: transparent;\n  border: 1.5px solid #E2E8F0;\n  border-radius: 13px;\n  font-size: 14px;\n  font-weight: 600;\n  color: #64748B;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  transition:\n    background 0.15s,\n    border-color 0.15s,\n    color 0.15s;\n}\n.btn-back[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px;\n}\n.btn-back[_ngcontent-%COMP%]:hover {\n  background: #F1F5F9;\n  border-color: #CBD5E1;\n  color: #374151;\n}\n.form-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  align-items: center;\n}\n.btn-spinner[_ngcontent-%COMP%] {\n  width: 18px;\n  height: 18px;\n  border: 2px solid rgba(255, 255, 255, 0.35);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.6s linear infinite;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.auth-footer[_ngcontent-%COMP%] {\n  margin-top: 24px;\n  text-align: center;\n}\n.auth-footer[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #64748B;\n  margin: 0;\n}\n.auth-footer[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  color: #15803D;\n  font-weight: 600;\n  text-decoration: none;\n}\n.auth-footer[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  text-decoration: underline;\n}\n@media (max-width: 860px) {\n  .auth-left[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .auth-right[_ngcontent-%COMP%] {\n    background:\n      linear-gradient(\n        160deg,\n        #0A1020 0%,\n        #0E2417 55%,\n        #123B27 100%);\n    padding: 24px 16px;\n    align-items: flex-start;\n    padding-top: 40px;\n  }\n  .auth-card[_ngcontent-%COMP%] {\n    box-shadow: 0 8px 48px rgba(0, 0, 0, 0.25);\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  [_nghost-%COMP%]   *[_ngcontent-%COMP%] {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 480px) {\n  .auth-card[_ngcontent-%COMP%] {\n    padding: 28px 20px 24px;\n  }\n  .form-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n.contact-toggle[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n  margin-bottom: 20px;\n}\n.ct-btn[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 10px 16px;\n  border: 2px solid #E2E8F0;\n  border-radius: 10px;\n  background: #F8FAFC;\n  color: #64748B;\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.ct-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px;\n}\n.ct-btn[_ngcontent-%COMP%]:hover {\n  border-color: #15803D;\n  color: #15803D;\n  background: rgba(21, 128, 61, 0.05);\n}\n.ct-btn.ct-active[_ngcontent-%COMP%] {\n  border-color: #15803D;\n  background: rgba(21, 128, 61, 0.08);\n  color: #15803D;\n  font-weight: 600;\n}\n/*# sourceMappingURL=register.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RegisterComponent, [{
@@ -548,32 +561,58 @@ var RegisterComponent = class _RegisterComponent {
   <!-- \u2550\u2550\u2550 PANNEAU GAUCHE \u2550\u2550\u2550 -->\r
   <aside class="auth-left">\r
     <div class="al-bg">\r
-      <div class="al-blob al-blob-1"></div>\r
-      <div class="al-blob al-blob-2"></div>\r
+      <svg class="al-tree" width="420" height="520" viewBox="0 0 420 520" fill="none">\r
+        <path d="M210 500 L 210 380" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>\r
+        <path d="M210 380 C 180 360, 150 345, 120 320" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>\r
+        <path d="M210 380 C 240 360, 270 345, 300 320" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>\r
+        <path d="M210 380 L 210 310" stroke="#8B4513" stroke-width="5" stroke-linecap="round"/>\r
+        <path d="M120 320 C 100 295, 88 280, 92 255" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>\r
+        <path d="M300 320 C 320 295, 332 280, 328 255" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>\r
+        <path d="M210 310 C 195 285, 195 270, 205 245" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>\r
+        <circle cx="92" cy="250" r="15" fill="#2E7D32"/>\r
+        <circle cx="205" cy="240" r="16" fill="#81C784"/>\r
+        <circle cx="328" cy="250" r="15" fill="#2E7D32"/>\r
+        <circle cx="120" cy="320" r="9" fill="#3B82F6" opacity="0.75"/>\r
+        <circle cx="300" cy="320" r="9" fill="#EC4899" opacity="0.75"/>\r
+      </svg>\r
+      <div class="al-sparks">\r
+        <div class="al-spark" style="left:18%; animation-delay:0s"></div>\r
+        <div class="al-spark" style="left:52%; animation-delay:1.8s"></div>\r
+        <div class="al-spark" style="left:76%; animation-delay:3.2s"></div>\r
+      </div>\r
       <div class="al-dots"></div>\r
     </div>\r
     <div class="al-content">\r
       <div class="al-brand">\r
-        <div class="al-brand-icon"><span class="material-icons-round">account_tree</span></div>\r
+        <div class="al-brand-icon">\r
+          <svg width="22" height="22" viewBox="0 0 120 120" fill="none">\r
+            <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>\r
+            <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>\r
+            <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>\r
+            <circle cx="35" cy="35" r="11" fill="#2E7D32"/>\r
+            <circle cx="85" cy="35" r="11" fill="#2E7D32"/>\r
+            <circle cx="60" cy="24" r="11" fill="#81C784"/>\r
+          </svg>\r
+        </div>\r
         <span class="al-brand-name">Mam Buudu</span>\r
       </div>\r
       <h1 class="al-title">Cr\xE9ez l'espace<br/>familial de votre<br/>famille</h1>\r
       <p class="al-subtitle">Quelques minutes suffisent pour d\xE9marrer votre arbre g\xE9n\xE9alogique.</p>\r
       <div class="al-features">\r
-        <div class="al-feature">\r
-          <span class="material-icons-round">family_restroom</span>\r
+        <div class="al-feat">\r
+          <div class="al-feat-icon"><span class="material-icons-round">family_restroom</span></div>\r
           <span>Arbre g\xE9n\xE9alogique interactif</span>\r
         </div>\r
-        <div class="al-feature">\r
-          <span class="material-icons-round">photo_library</span>\r
+        <div class="al-feat">\r
+          <div class="al-feat-icon"><span class="material-icons-round">photo_library</span></div>\r
           <span>Albums photos familiaux</span>\r
         </div>\r
-        <div class="al-feature">\r
-          <span class="material-icons-round">auto_stories</span>\r
+        <div class="al-feat">\r
+          <div class="al-feat-icon"><span class="material-icons-round">auto_stories</span></div>\r
           <span>Stories et souvenirs</span>\r
         </div>\r
-        <div class="al-feature">\r
-          <span class="material-icons-round">lock</span>\r
+        <div class="al-feat">\r
+          <div class="al-feat-icon"><span class="material-icons-round">lock</span></div>\r
           <span>Espace priv\xE9 et s\xE9curis\xE9</span>\r
         </div>\r
       </div>\r
@@ -751,7 +790,7 @@ var RegisterComponent = class _RegisterComponent {
   </main>\r
 \r
 </div>\r
-`, styles: ['@charset "UTF-8";\n\n/* src/app/auth/register/register.component.scss */\n.auth-page {\n  display: flex;\n  min-height: 100vh;\n}\n.auth-left {\n  width: 42%;\n  min-height: 100vh;\n  background:\n    linear-gradient(\n      145deg,\n      #0A1FA8 0%,\n      #1445F5 55%,\n      #2563EB 100%);\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n}\n.al-bg {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n}\n.al-blob {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0.12;\n  background: #fff;\n}\n.al-blob-1 {\n  width: 340px;\n  height: 340px;\n  top: -80px;\n  right: -100px;\n}\n.al-blob-2 {\n  width: 220px;\n  height: 220px;\n  bottom: -60px;\n  left: -60px;\n}\n.al-dots {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.15) 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n}\n.al-content {\n  position: relative;\n  z-index: 1;\n  padding: 48px 44px;\n  display: flex;\n  flex-direction: column;\n  gap: 28px;\n  width: 100%;\n  max-width: 420px;\n}\n.al-brand {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.al-brand-icon {\n  width: 38px;\n  height: 38px;\n  background: rgba(255, 255, 255, 0.18);\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.al-brand-icon .material-icons-round {\n  color: #fff;\n  font-size: 20px;\n}\n.al-brand-name {\n  color: #fff;\n  font-size: 17px;\n  font-weight: 700;\n  letter-spacing: 0.2px;\n}\n.al-title {\n  color: #fff;\n  font-size: 26px;\n  font-weight: 800;\n  line-height: 1.28;\n  margin: 0;\n}\n.al-subtitle {\n  color: rgba(255, 255, 255, 0.72);\n  font-size: 14px;\n  line-height: 1.6;\n  margin: 0;\n}\n.al-steps {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  background: rgba(255, 255, 255, 0.08);\n  border-radius: 16px;\n  padding: 20px;\n}\n.al-step {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n  padding: 4px 0;\n  opacity: 0.55;\n  transition: opacity 0.25s ease;\n}\n.al-step.al-step-active {\n  opacity: 1;\n}\n.al-step.al-step-done {\n  opacity: 0.9;\n}\n.al-step .als-num {\n  width: 30px;\n  height: 30px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.18);\n  color: #fff;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  flex-shrink: 0;\n  transition: background 0.25s ease;\n}\n.al-step .als-num .material-icons-round {\n  font-size: 16px;\n}\n.al-step.al-step-active .als-num {\n  background: rgba(255, 255, 255, 0.9);\n  color: #1445F5;\n}\n.al-step.al-step-done .als-num {\n  background: #10B981;\n}\n.al-step .als-info {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.al-step .als-info strong {\n  color: #fff;\n  font-size: 13px;\n  font-weight: 600;\n}\n.al-step .als-info span {\n  color: rgba(255, 255, 255, 0.65);\n  font-size: 12px;\n}\n.als-connector {\n  width: 2px;\n  height: 24px;\n  background: rgba(255, 255, 255, 0.2);\n  margin: 4px 0 4px 14px;\n  transition: background 0.3s ease;\n}\n.als-connector.done {\n  background: #10B981;\n}\n.al-what-next {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.awn-item {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.awn-item .awn-icon {\n  width: 32px;\n  height: 32px;\n  background: rgba(255, 255, 255, 0.12);\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.awn-item .awn-icon .material-icons-round {\n  color: rgba(255, 255, 255, 0.85);\n  font-size: 17px;\n}\n.awn-item span {\n  color: rgba(255, 255, 255, 0.72);\n  font-size: 13px;\n  line-height: 1.4;\n}\n.auth-right {\n  flex: 1;\n  background: #EEF2FF;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 40px 24px;\n  min-height: 100vh;\n}\n.auth-card {\n  background: #fff;\n  border-radius: 22px;\n  padding: 40px 40px 32px;\n  width: 100%;\n  max-width: 480px;\n  box-shadow: 0 8px 40px rgba(20, 69, 245, 0.12);\n  animation: cardFadeIn 0.45s ease both;\n}\n@keyframes cardFadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(18px);\n  }\n}\n.auth-card-header {\n  text-align: center;\n  margin-bottom: 24px;\n}\n.auth-card-icon {\n  width: 52px;\n  height: 52px;\n  background:\n    linear-gradient(\n      135deg,\n      rgba(20, 69, 245, 0.12),\n      rgba(37, 99, 235, 0.08));\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 14px;\n}\n.auth-card-icon .material-icons-round {\n  color: #1445F5;\n  font-size: 26px;\n}\n.auth-card-header h2 {\n  font-size: 21px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 6px;\n}\n.auth-card-header p {\n  font-size: 13px;\n  color: #64748B;\n  margin: 0;\n}\n.step-indicator {\n  display: flex;\n  align-items: center;\n  margin-bottom: 28px;\n}\n.si-step {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n}\n.si-step .si-circle {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  background: #E2E8F0;\n  color: #94A3B8;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  transition: all 0.3s ease;\n}\n.si-step .si-circle .material-icons-round {\n  font-size: 17px;\n}\n.si-step .si-label {\n  font-size: 11px;\n  color: #94A3B8;\n  font-weight: 500;\n}\n.si-step.si-active .si-circle {\n  background:\n    linear-gradient(\n      135deg,\n      #1445F5,\n      #2563EB);\n  color: #fff;\n  box-shadow: 0 2px 10px rgba(20, 69, 245, 0.3);\n}\n.si-step.si-active .si-label {\n  color: #1445F5;\n  font-weight: 600;\n}\n.si-step.si-done .si-circle {\n  background: #10B981;\n  color: #fff;\n}\n.si-step.si-done .si-label {\n  color: #10B981;\n}\n.si-line {\n  flex: 1;\n  height: 2px;\n  background: #E2E8F0;\n  margin: 0 12px;\n  margin-bottom: 22px;\n  border-radius: 2px;\n  transition: background 0.3s ease;\n}\n.si-line.si-line-done {\n  background: #10B981;\n}\n.form-group {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  margin-bottom: 16px;\n}\n.form-group label {\n  font-size: 13px;\n  font-weight: 600;\n  color: #374151;\n}\n.form-row {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.form-row .form-group {\n  margin-bottom: 16px;\n}\n.input-wrapper {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  background: #F8FAFC;\n  border: 1.5px solid #E2E8F0;\n  border-radius: 12px;\n  padding: 0 14px;\n  height: 46px;\n  transition: border-color 0.2s, box-shadow 0.2s;\n}\n.input-wrapper > .material-icons-round:first-child {\n  color: #94A3B8;\n  font-size: 18px;\n  flex-shrink: 0;\n}\n.input-wrapper input,\n.input-wrapper select {\n  flex: 1;\n  border: none;\n  background: transparent;\n  outline: none;\n  font-size: 14px;\n  color: #1E293B;\n  height: 100%;\n}\n.input-wrapper input::placeholder,\n.input-wrapper select::placeholder {\n  color: #CBD5E1;\n}\n.input-wrapper select {\n  cursor: pointer;\n}\n.input-wrapper:focus-within {\n  border-color: #1445F5;\n  box-shadow: 0 0 0 3px rgba(20, 69, 245, 0.1);\n  background: #fff;\n}\n.input-wrapper.input-wrapper-select {\n  padding-right: 10px;\n}\n.input-suffix {\n  display: flex;\n  align-items: center;\n  margin-left: auto;\n}\n.btn-icon-eye {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  border-radius: 6px;\n  color: #94A3B8;\n  transition: color 0.15s, background 0.15s;\n}\n.btn-icon-eye:hover {\n  color: #1445F5;\n  background: rgba(20, 69, 245, 0.07);\n}\n.btn-icon-eye .material-icons-round {\n  font-size: 18px;\n}\n.input-error {\n  border-color: #EF4444 !important;\n}\n.field-error {\n  font-size: 12px;\n  color: #EF4444;\n}\n.field-hint {\n  font-size: 12px;\n  color: #94A3B8;\n}\n.code-preview {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  background: #EFF6FF;\n  border: 1px solid #BFDBFE;\n  border-radius: 8px;\n  padding: 8px 12px;\n  font-size: 13px;\n  color: #1D4ED8;\n  animation: fadeSlideIn 0.25s ease both;\n}\n.code-preview .material-icons-round {\n  font-size: 16px;\n  color: #3B82F6;\n  flex-shrink: 0;\n}\n.code-preview strong {\n  font-family: "Courier New", monospace;\n  font-weight: 700;\n  letter-spacing: 0.5px;\n  color: #1445F5;\n}\n.pwd-strength {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-top: 2px;\n  animation: fadeSlideIn 0.2s ease both;\n}\n.pwd-bars {\n  display: flex;\n  gap: 4px;\n  flex: 1;\n}\n.pwd-bar {\n  flex: 1;\n  height: 4px;\n  border-radius: 4px;\n  background: #E2E8F0;\n  transition: background 0.3s ease;\n}\n.pwd-label {\n  font-size: 12px;\n  font-weight: 600;\n  min-width: 36px;\n  text-align: right;\n  transition: color 0.2s;\n}\n.step-panel {\n  animation: stepFadeIn 0.3s ease both;\n}\n@keyframes stepFadeIn {\n  from {\n    opacity: 0;\n    transform: translateX(12px);\n  }\n}\n@keyframes fadeSlideIn {\n  from {\n    opacity: 0;\n    transform: translateY(-4px);\n  }\n}\n.step2-info {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n  background:\n    linear-gradient(\n      135deg,\n      #EFF6FF 0%,\n      #F0FDF4 100%);\n  border: 1px solid #BFDBFE;\n  border-radius: 14px;\n  padding: 16px;\n  margin-bottom: 20px;\n}\n.step2-info .s2i-icon {\n  width: 40px;\n  height: 40px;\n  background:\n    linear-gradient(\n      135deg,\n      rgba(20, 69, 245, 0.12),\n      rgba(16, 185, 129, 0.1));\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.step2-info .s2i-icon .material-icons-round {\n  color: #1445F5;\n  font-size: 20px;\n}\n.step2-info .s2i-text {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.step2-info .s2i-text strong {\n  font-size: 13px;\n  font-weight: 700;\n  color: #1E293B;\n}\n.step2-info .s2i-text p {\n  font-size: 12px;\n  color: #64748B;\n  margin: 0;\n  line-height: 1.5;\n}\n.alert-error-box {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  background: #FEF2F2;\n  border: 1px solid #FECACA;\n  border-radius: 10px;\n  padding: 12px 14px;\n  font-size: 13px;\n  color: #DC2626;\n  margin-bottom: 16px;\n}\n.alert-error-box .material-icons-round {\n  font-size: 18px;\n  flex-shrink: 0;\n}\n.btn-submit {\n  width: 100%;\n  height: 48px;\n  background:\n    linear-gradient(\n      135deg,\n      #1445F5,\n      #2563EB);\n  color: #fff;\n  border: none;\n  border-radius: 13px;\n  font-size: 15px;\n  font-weight: 600;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  box-shadow: 0 4px 16px rgba(20, 69, 245, 0.35);\n  transition: transform 0.15s, box-shadow 0.15s;\n}\n.btn-submit .material-icons-round {\n  font-size: 20px;\n}\n.btn-submit:hover:not(:disabled) {\n  transform: translateY(-1px);\n  box-shadow: 0 6px 20px rgba(20, 69, 245, 0.42);\n}\n.btn-submit:disabled {\n  opacity: 0.65;\n  cursor: not-allowed;\n  transform: none;\n}\n.btn-submit-flex {\n  width: auto;\n  flex: 1;\n}\n.btn-back {\n  height: 48px;\n  padding: 0 20px;\n  background: transparent;\n  border: 1.5px solid #E2E8F0;\n  border-radius: 13px;\n  font-size: 14px;\n  font-weight: 600;\n  color: #64748B;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  transition:\n    background 0.15s,\n    border-color 0.15s,\n    color 0.15s;\n}\n.btn-back .material-icons-round {\n  font-size: 18px;\n}\n.btn-back:hover {\n  background: #F1F5F9;\n  border-color: #CBD5E1;\n  color: #374151;\n}\n.form-actions {\n  display: flex;\n  gap: 12px;\n  align-items: center;\n}\n.btn-spinner {\n  width: 18px;\n  height: 18px;\n  border: 2px solid rgba(255, 255, 255, 0.35);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: spin 0.6s linear infinite;\n}\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.auth-footer {\n  margin-top: 24px;\n  text-align: center;\n}\n.auth-footer p {\n  font-size: 13px;\n  color: #64748B;\n  margin: 0;\n}\n.auth-footer a {\n  color: #1445F5;\n  font-weight: 600;\n  text-decoration: none;\n}\n.auth-footer a:hover {\n  text-decoration: underline;\n}\n@media (max-width: 860px) {\n  .auth-left {\n    display: none;\n  }\n  .auth-right {\n    background:\n      linear-gradient(\n        145deg,\n        #0A1FA8 0%,\n        #1445F5 55%,\n        #2563EB 100%);\n    padding: 24px 16px;\n    align-items: flex-start;\n    padding-top: 40px;\n  }\n  .auth-card {\n    box-shadow: 0 8px 48px rgba(0, 0, 0, 0.25);\n  }\n}\n@media (max-width: 480px) {\n  .auth-card {\n    padding: 28px 20px 24px;\n  }\n  .form-row {\n    grid-template-columns: 1fr;\n  }\n}\n.contact-toggle {\n  display: flex;\n  gap: 8px;\n  margin-bottom: 20px;\n}\n.ct-btn {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 10px 16px;\n  border: 2px solid #E2E8F0;\n  border-radius: 10px;\n  background: #F8FAFC;\n  color: #64748B;\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.ct-btn .material-icons-round {\n  font-size: 18px;\n}\n.ct-btn:hover {\n  border-color: #1445F5;\n  color: #1445F5;\n  background: rgba(20, 69, 245, 0.05);\n}\n.ct-btn.ct-active {\n  border-color: #1445F5;\n  background: rgba(20, 69, 245, 0.08);\n  color: #1445F5;\n  font-weight: 600;\n}\n/*# sourceMappingURL=register.component.css.map */\n'] }]
+`, styles: ['@charset "UTF-8";\n\n/* src/app/auth/register/register.component.scss */\n.auth-page {\n  display: flex;\n  min-height: 100vh;\n}\n.auth-left {\n  width: 42%;\n  min-height: 100vh;\n  background:\n    linear-gradient(\n      160deg,\n      #0A1020 0%,\n      #0E2417 55%,\n      #123B27 100%);\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n}\n.al-bg {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n}\n.al-tree {\n  position: absolute;\n  right: -60px;\n  bottom: -30px;\n  opacity: 0.4;\n}\n.al-sparks {\n  position: absolute;\n  inset: 0;\n  overflow: hidden;\n}\n.al-spark {\n  position: absolute;\n  bottom: 40px;\n  width: 4px;\n  height: 4px;\n  border-radius: 50%;\n  background: #A6E3AF;\n  box-shadow: 0 0 8px 2px rgba(166, 227, 175, 0.7);\n  animation: sparkRise 5.5s ease-in infinite;\n}\n@keyframes sparkRise {\n  0% {\n    opacity: 0;\n    transform: translateY(0);\n  }\n  15% {\n    opacity: 0.9;\n  }\n  85% {\n    opacity: 0.5;\n  }\n  100% {\n    opacity: 0;\n    transform: translateY(-90px);\n  }\n}\n.al-dots {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.15) 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n}\n.al-content {\n  position: relative;\n  z-index: 1;\n  padding: 48px 44px;\n  display: flex;\n  flex-direction: column;\n  gap: 28px;\n  width: 100%;\n  max-width: 420px;\n}\n.al-brand {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.al-brand-icon {\n  width: 38px;\n  height: 38px;\n  background: rgba(255, 255, 255, 0.18);\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.al-brand-icon .material-icons-round {\n  color: #fff;\n  font-size: 20px;\n}\n.al-brand-name {\n  color: #fff;\n  font-size: 17px;\n  font-weight: 700;\n  letter-spacing: 0.2px;\n}\n.al-title {\n  color: #fff;\n  font-size: 26px;\n  font-weight: 800;\n  line-height: 1.28;\n  margin: 0;\n}\n.al-subtitle {\n  color: rgba(255, 255, 255, 0.72);\n  font-size: 14px;\n  line-height: 1.6;\n  margin: 0;\n}\n.al-features {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.al-feat {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 11px 14px;\n  background: rgba(255, 255, 255, 0.09);\n  border: 1px solid rgba(255, 255, 255, 0.11);\n  border-radius: 12px;\n  font-size: 13px;\n  font-weight: 500;\n  color: rgba(255, 255, 255, 0.88);\n  transition: background 0.2s;\n}\n.al-feat:hover {\n  background: rgba(255, 255, 255, 0.15);\n}\n.al-feat-icon {\n  width: 32px;\n  height: 32px;\n  border-radius: 8px;\n  background: rgba(255, 255, 255, 0.1);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.al-feat-icon .material-icons-round {\n  font-size: 16px !important;\n  color: #81C784;\n}\n.auth-right {\n  flex: 1;\n  background: #F0FDF4;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 40px 24px;\n  min-height: 100vh;\n}\n.auth-card {\n  background: #fff;\n  border-radius: 22px;\n  padding: 40px 40px 32px;\n  width: 100%;\n  max-width: 480px;\n  box-shadow: 0 8px 40px rgba(15, 42, 30, 0.1);\n  animation: cardFadeIn 0.45s ease both;\n}\n@keyframes cardFadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(18px);\n  }\n}\n.auth-card-header {\n  text-align: center;\n  margin-bottom: 24px;\n}\n.auth-card-icon {\n  width: 52px;\n  height: 52px;\n  background:\n    linear-gradient(\n      135deg,\n      #F0FDF4,\n      #DCFCE7);\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 14px;\n}\n.auth-card-icon .material-icons-round {\n  color: #15803D;\n  font-size: 26px;\n}\n.auth-card-header h2 {\n  font-size: 21px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 6px;\n}\n.auth-card-header p {\n  font-size: 13px;\n  color: #64748B;\n  margin: 0;\n}\n.step-indicator {\n  display: flex;\n  align-items: center;\n  margin-bottom: 28px;\n}\n.si-step {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n}\n.si-step .si-circle {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  background: #E2E8F0;\n  color: #94A3B8;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  transition: all 0.3s ease;\n}\n.si-step .si-circle .material-icons-round {\n  font-size: 17px;\n}\n.si-step .si-label {\n  font-size: 11px;\n  color: #94A3B8;\n  font-weight: 500;\n}\n.si-step.si-active .si-circle {\n  background:\n    linear-gradient(\n      135deg,\n      #15803D,\n      #166534);\n  color: #fff;\n  box-shadow: 0 2px 10px rgba(21, 128, 61, 0.3);\n}\n.si-step.si-active .si-label {\n  color: #15803D;\n  font-weight: 600;\n}\n.si-step.si-done .si-circle {\n  background: #10B981;\n  color: #fff;\n}\n.si-step.si-done .si-label {\n  color: #10B981;\n}\n.si-line {\n  flex: 1;\n  height: 2px;\n  background: #E2E8F0;\n  margin: 0 12px;\n  margin-bottom: 22px;\n  border-radius: 2px;\n  transition: background 0.3s ease;\n}\n.si-line.si-line-done {\n  background: #10B981;\n}\n.form-group {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  margin-bottom: 16px;\n}\n.form-group label {\n  font-size: 13px;\n  font-weight: 600;\n  color: #374151;\n}\n.form-row {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n.form-row .form-group {\n  margin-bottom: 16px;\n}\n.input-wrapper {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  background: #F8FAFC;\n  border: 1.5px solid #E2E8F0;\n  border-radius: 12px;\n  padding: 0 14px;\n  height: 46px;\n  transition: border-color 0.2s, box-shadow 0.2s;\n}\n.input-wrapper > .material-icons-round:first-child {\n  color: #94A3B8;\n  font-size: 18px;\n  flex-shrink: 0;\n}\n.input-wrapper input,\n.input-wrapper select {\n  flex: 1;\n  border: none;\n  background: transparent;\n  outline: none;\n  font-size: 14px;\n  color: #1E293B;\n  height: 100%;\n}\n.input-wrapper input::placeholder,\n.input-wrapper select::placeholder {\n  color: #CBD5E1;\n}\n.input-wrapper select {\n  cursor: pointer;\n}\n.input-wrapper:focus-within {\n  border-color: #15803D;\n  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.1);\n  background: #fff;\n}\n.input-wrapper.input-wrapper-select {\n  padding-right: 10px;\n}\n.input-suffix {\n  display: flex;\n  align-items: center;\n  margin-left: auto;\n}\n.btn-icon-eye {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  border-radius: 6px;\n  color: #94A3B8;\n  transition: color 0.15s, background 0.15s;\n}\n.btn-icon-eye:hover {\n  color: #15803D;\n  background: rgba(21, 128, 61, 0.07);\n}\n.btn-icon-eye .material-icons-round {\n  font-size: 18px;\n}\n.input-error {\n  border-color: #EF4444 !important;\n}\n.field-error {\n  font-size: 12px;\n  color: #EF4444;\n}\n.field-hint {\n  font-size: 12px;\n  color: #94A3B8;\n}\n.code-preview {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  background: #F0FDF4;\n  border: 1px solid #BBF7D0;\n  border-radius: 8px;\n  padding: 8px 12px;\n  font-size: 13px;\n  color: #166534;\n  animation: fadeSlideIn 0.25s ease both;\n}\n.code-preview .material-icons-round {\n  font-size: 16px;\n  color: #15803D;\n  flex-shrink: 0;\n}\n.code-preview strong {\n  font-family: "Courier New", monospace;\n  font-weight: 700;\n  letter-spacing: 0.5px;\n  color: #15803D;\n}\n.pwd-strength {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-top: 2px;\n  animation: fadeSlideIn 0.2s ease both;\n}\n.pwd-bars {\n  display: flex;\n  gap: 4px;\n  flex: 1;\n}\n.pwd-bar {\n  flex: 1;\n  height: 4px;\n  border-radius: 4px;\n  background: #E2E8F0;\n  transition: background 0.3s ease;\n}\n.pwd-label {\n  font-size: 12px;\n  font-weight: 600;\n  min-width: 36px;\n  text-align: right;\n  transition: color 0.2s;\n}\n.step-panel {\n  animation: stepFadeIn 0.3s ease both;\n}\n@keyframes stepFadeIn {\n  from {\n    opacity: 0;\n    transform: translateX(12px);\n  }\n}\n@keyframes fadeSlideIn {\n  from {\n    opacity: 0;\n    transform: translateY(-4px);\n  }\n}\n.step2-info {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n  background:\n    linear-gradient(\n      135deg,\n      #F0FDF4 0%,\n      #DCFCE7 100%);\n  border: 1px solid #BBF7D0;\n  border-radius: 14px;\n  padding: 16px;\n  margin-bottom: 20px;\n}\n.step2-info .s2i-icon {\n  width: 40px;\n  height: 40px;\n  background:\n    linear-gradient(\n      135deg,\n      rgba(21, 128, 61, 0.12),\n      rgba(16, 185, 129, 0.1));\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.step2-info .s2i-icon .material-icons-round {\n  color: #15803D;\n  font-size: 20px;\n}\n.step2-info .s2i-text {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.step2-info .s2i-text strong {\n  font-size: 13px;\n  font-weight: 700;\n  color: #1E293B;\n}\n.step2-info .s2i-text p {\n  font-size: 12px;\n  color: #64748B;\n  margin: 0;\n  line-height: 1.5;\n}\n.alert-error-box {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  background: #FEF2F2;\n  border: 1px solid #FECACA;\n  border-radius: 10px;\n  padding: 12px 14px;\n  font-size: 13px;\n  color: #DC2626;\n  margin-bottom: 16px;\n}\n.alert-error-box .material-icons-round {\n  font-size: 18px;\n  flex-shrink: 0;\n}\n.btn-submit {\n  width: 100%;\n  height: 48px;\n  background:\n    linear-gradient(\n      135deg,\n      #15803D,\n      #166534);\n  color: #fff;\n  border: none;\n  border-radius: 13px;\n  font-size: 15px;\n  font-weight: 600;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  box-shadow: 0 4px 16px rgba(21, 128, 61, 0.35);\n  transition: transform 0.15s, box-shadow 0.15s;\n}\n.btn-submit .material-icons-round {\n  font-size: 20px;\n}\n.btn-submit:hover:not(:disabled) {\n  transform: translateY(-1px);\n  box-shadow: 0 6px 20px rgba(21, 128, 61, 0.42);\n}\n.btn-submit:disabled {\n  opacity: 0.65;\n  cursor: not-allowed;\n  transform: none;\n}\n.btn-submit-flex {\n  width: auto;\n  flex: 1;\n}\n.btn-back {\n  height: 48px;\n  padding: 0 20px;\n  background: transparent;\n  border: 1.5px solid #E2E8F0;\n  border-radius: 13px;\n  font-size: 14px;\n  font-weight: 600;\n  color: #64748B;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  transition:\n    background 0.15s,\n    border-color 0.15s,\n    color 0.15s;\n}\n.btn-back .material-icons-round {\n  font-size: 18px;\n}\n.btn-back:hover {\n  background: #F1F5F9;\n  border-color: #CBD5E1;\n  color: #374151;\n}\n.form-actions {\n  display: flex;\n  gap: 12px;\n  align-items: center;\n}\n.btn-spinner {\n  width: 18px;\n  height: 18px;\n  border: 2px solid rgba(255, 255, 255, 0.35);\n  border-top-color: #fff;\n  border-radius: 50%;\n  animation: spin 0.6s linear infinite;\n}\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.auth-footer {\n  margin-top: 24px;\n  text-align: center;\n}\n.auth-footer p {\n  font-size: 13px;\n  color: #64748B;\n  margin: 0;\n}\n.auth-footer a {\n  color: #15803D;\n  font-weight: 600;\n  text-decoration: none;\n}\n.auth-footer a:hover {\n  text-decoration: underline;\n}\n@media (max-width: 860px) {\n  .auth-left {\n    display: none;\n  }\n  .auth-right {\n    background:\n      linear-gradient(\n        160deg,\n        #0A1020 0%,\n        #0E2417 55%,\n        #123B27 100%);\n    padding: 24px 16px;\n    align-items: flex-start;\n    padding-top: 40px;\n  }\n  .auth-card {\n    box-shadow: 0 8px 48px rgba(0, 0, 0, 0.25);\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  :host * {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 480px) {\n  .auth-card {\n    padding: 28px 20px 24px;\n  }\n  .form-row {\n    grid-template-columns: 1fr;\n  }\n}\n.contact-toggle {\n  display: flex;\n  gap: 8px;\n  margin-bottom: 20px;\n}\n.ct-btn {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 10px 16px;\n  border: 2px solid #E2E8F0;\n  border-radius: 10px;\n  background: #F8FAFC;\n  color: #64748B;\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.ct-btn .material-icons-round {\n  font-size: 18px;\n}\n.ct-btn:hover {\n  border-color: #15803D;\n  color: #15803D;\n  background: rgba(21, 128, 61, 0.05);\n}\n.ct-btn.ct-active {\n  border-color: #15803D;\n  background: rgba(21, 128, 61, 0.08);\n  color: #15803D;\n  font-weight: 600;\n}\n/*# sourceMappingURL=register.component.css.map */\n'] }]
   }], () => [{ type: FormBuilder }, { type: AuthService }, { type: Router }], null);
 })();
 (() => {
@@ -1509,4 +1548,4 @@ var AuthModule = class _AuthModule {
 export {
   AuthModule
 };
-//# sourceMappingURL=chunk-PYMUSLR4.js.map
+//# sourceMappingURL=chunk-ZKGMGZF4.js.map

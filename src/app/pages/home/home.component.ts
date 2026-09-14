@@ -95,7 +95,7 @@ export class HomeComponent implements OnInit {
   trackByPersonneId(_: number, item: Personne): string { return item.id; }
   trackByAnniversaire(_: number, item: { p: Personne }): string { return item.p.id; }
 
-  get anniversairesProches(): { p: Personne; jours: number; dateStr: string }[] {
+  get anniversairesProches(): { p: Personne; jours: number; dateStr: string; jourNum: number; moisAbbr: string }[] {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     return this.toutes
@@ -108,9 +108,11 @@ export class HomeComponent implements OnInit {
         const yr    = today.getFullYear();
         let next    = new Date(yr, month, day);
         if (next < today) next = new Date(yr + 1, month, day);
-        const jours   = Math.round((next.getTime() - today.getTime()) / 86_400_000);
-        const dateStr = next.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
-        return { p, jours, dateStr };
+        const jours    = Math.round((next.getTime() - today.getTime()) / 86_400_000);
+        const dateStr  = next.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
+        const jourNum  = next.getDate();
+        const moisAbbr = next.toLocaleDateString('fr-FR', { month: 'short' }).replace('.', '').toUpperCase();
+        return { p, jours, dateStr, jourNum, moisAbbr };
       })
       .filter((x): x is NonNullable<typeof x> => x !== null && x.jours <= 60)
       .sort((a, b) => a.jours - b.jours)

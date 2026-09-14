@@ -3,7 +3,7 @@ import {
 } from "./chunk-DBSPYNLN.js";
 import {
   COUNTRIES
-} from "./chunk-2723XT3Y.js";
+} from "./chunk-XVZM4MPD.js";
 import {
   ApiService,
   QrcodeService,
@@ -121,19 +121,19 @@ var clientGuard = () => {
 };
 
 // src/app/famille/auth/famille-login.component.ts
-function FamilleLoginComponent_span_65_Template(rf, ctx) {
+function FamilleLoginComponent_span_85_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 35);
+    \u0275\u0275elementStart(0, "span", 57);
     \u0275\u0275text(1, " Le code famille est requis ");
     \u0275\u0275elementEnd();
   }
 }
-function FamilleLoginComponent_div_82_Template(rf, ctx) {
+function FamilleLoginComponent_div_102_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 19)(1, "span", 7);
+    \u0275\u0275elementStart(0, "div", 41)(1, "span", 33);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
-    \u0275\u0275element(3, "input", 36);
+    \u0275\u0275element(3, "input", 58);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -145,20 +145,20 @@ function FamilleLoginComponent_div_82_Template(rf, ctx) {
     \u0275\u0275property("placeholder", ctx_r0.tabPlaceholder);
   }
 }
-function FamilleLoginComponent_div_83_div_9_button_3_Template(rf, ctx) {
+function FamilleLoginComponent_div_103_div_9_button_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 49);
-    \u0275\u0275listener("click", function FamilleLoginComponent_div_83_div_9_button_3_Template_button_click_0_listener() {
+    \u0275\u0275elementStart(0, "button", 71);
+    \u0275\u0275listener("click", function FamilleLoginComponent_div_103_div_9_button_3_Template_button_click_0_listener() {
       const c_r5 = \u0275\u0275restoreView(_r4).$implicit;
       const ctx_r0 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r0.selectCountry(c_r5));
     });
-    \u0275\u0275element(1, "img", 40);
-    \u0275\u0275elementStart(2, "span", 50);
+    \u0275\u0275element(1, "img", 62);
+    \u0275\u0275elementStart(2, "span", 72);
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 51);
+    \u0275\u0275elementStart(4, "span", 73);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd()();
   }
@@ -172,18 +172,18 @@ function FamilleLoginComponent_div_83_div_9_button_3_Template(rf, ctx) {
     \u0275\u0275textInterpolate(c_r5.dial);
   }
 }
-function FamilleLoginComponent_div_83_div_9_Template(rf, ctx) {
+function FamilleLoginComponent_div_103_div_9_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 45)(1, "input", 46);
-    \u0275\u0275listener("input", function FamilleLoginComponent_div_83_div_9_Template_input_input_1_listener($event) {
+    \u0275\u0275elementStart(0, "div", 67)(1, "input", 68);
+    \u0275\u0275listener("input", function FamilleLoginComponent_div_103_div_9_Template_input_input_1_listener($event) {
       \u0275\u0275restoreView(_r3);
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.countrySearch = $event.target.value);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(2, "div", 47);
-    \u0275\u0275template(3, FamilleLoginComponent_div_83_div_9_button_3_Template, 6, 4, "button", 48);
+    \u0275\u0275elementStart(2, "div", 69);
+    \u0275\u0275template(3, FamilleLoginComponent_div_103_div_9_button_3_Template, 6, 4, "button", 70);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -194,31 +194,31 @@ function FamilleLoginComponent_div_83_div_9_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r0.filteredCountries);
   }
 }
-function FamilleLoginComponent_div_83_Template(rf, ctx) {
+function FamilleLoginComponent_div_103_Template(rf, ctx) {
   if (rf & 1) {
     const _r2 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 37)(1, "div", 38)(2, "div", 39);
-    \u0275\u0275listener("click", function FamilleLoginComponent_div_83_Template_div_click_2_listener() {
+    \u0275\u0275elementStart(0, "div", 59)(1, "div", 60)(2, "div", 61);
+    \u0275\u0275listener("click", function FamilleLoginComponent_div_103_Template_div_click_2_listener() {
       \u0275\u0275restoreView(_r2);
       const ctx_r0 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r0.showCountryPicker = !ctx_r0.showCountryPicker);
     });
-    \u0275\u0275element(3, "img", 40);
-    \u0275\u0275elementStart(4, "span", 41);
+    \u0275\u0275element(3, "img", 62);
+    \u0275\u0275elementStart(4, "span", 63);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 42);
+    \u0275\u0275elementStart(6, "span", 64);
     \u0275\u0275text(7, "expand_more");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(8, "input", 43);
-    \u0275\u0275listener("input", function FamilleLoginComponent_div_83_Template_input_input_8_listener($event) {
+    \u0275\u0275elementStart(8, "input", 65);
+    \u0275\u0275listener("input", function FamilleLoginComponent_div_103_Template_input_input_8_listener($event) {
       \u0275\u0275restoreView(_r2);
       const ctx_r0 = \u0275\u0275nextContext();
       ctx_r0.localPhone = $event.target.value;
       return \u0275\u0275resetView(ctx_r0.updatePhoneIdentifiant());
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(9, FamilleLoginComponent_div_83_div_9_Template, 4, 2, "div", 44);
+    \u0275\u0275template(9, FamilleLoginComponent_div_103_div_9_Template, 4, 2, "div", 66);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -234,23 +234,23 @@ function FamilleLoginComponent_div_83_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r0.showCountryPicker);
   }
 }
-function FamilleLoginComponent_span_84_Template(rf, ctx) {
+function FamilleLoginComponent_span_104_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 35);
+    \u0275\u0275elementStart(0, "span", 57);
     \u0275\u0275text(1, " L'identifiant est requis ");
     \u0275\u0275elementEnd();
   }
 }
-function FamilleLoginComponent_span_96_Template(rf, ctx) {
+function FamilleLoginComponent_span_116_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 35);
+    \u0275\u0275elementStart(0, "span", 57);
     \u0275\u0275text(1, " Mot de passe requis (6 caract\xE8res min.) ");
     \u0275\u0275elementEnd();
   }
 }
-function FamilleLoginComponent_div_97_Template(rf, ctx) {
+function FamilleLoginComponent_div_117_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 52)(1, "span", 7);
+    \u0275\u0275elementStart(0, "div", 74)(1, "span", 33);
     \u0275\u0275text(2, "error_outline");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -262,15 +262,15 @@ function FamilleLoginComponent_div_97_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", ctx_r0.errorMsg, " ");
   }
 }
-function FamilleLoginComponent_span_99_Template(rf, ctx) {
+function FamilleLoginComponent_span_119_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "span", 53);
+    \u0275\u0275element(0, "span", 75);
   }
 }
-function FamilleLoginComponent_ng_container_100_Template(rf, ctx) {
+function FamilleLoginComponent_ng_container_120_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "span", 7);
+    \u0275\u0275elementStart(1, "span", 33);
     \u0275\u0275text(2, "login");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3, " Acc\xE9der \xE0 ma famille ");
@@ -349,137 +349,146 @@ var FamilleLoginComponent = class _FamilleLoginComponent {
   static \u0275fac = function FamilleLoginComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _FamilleLoginComponent)(\u0275\u0275directiveInject(FormBuilder), \u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FamilleLoginComponent, selectors: [["app-famille-login"]], standalone: false, decls: 106, vars: 22, consts: [[1, "fl-container"], [1, "fl-left"], [1, "fl-left-bg"], [1, "fl-blob", "fl-blob-1"], [1, "fl-blob", "fl-blob-2"], [1, "fl-left-content"], [1, "fl-logo"], [1, "material-icons-round"], [1, "fl-welcome"], [1, "fl-features"], [1, "fl-feat"], [1, "fl-feat-icon"], ["routerLink", "/", 1, "fl-back-link"], [1, "fl-right"], [1, "fl-card"], [1, "fl-card-header"], [1, "fl-card-icon"], [3, "ngSubmit", "formGroup"], [1, "form-group"], [1, "input-wrapper"], ["type", "text", "formControlName", "familleCode", "placeholder", "Ex : DIALLO-2024"], ["class", "field-error", 4, "ngIf"], [1, "fl-tabs"], ["type", "button", 1, "fl-tab", 3, "click"], ["class", "input-wrapper", 4, "ngIf"], ["class", "phone-field-wrap", 4, "ngIf"], ["formControlName", "password", "placeholder", "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022", 3, "type"], [1, "input-suffix"], ["type", "button", 1, "btn-icon", 3, "click"], ["class", "alert alert-error", 4, "ngIf"], ["type", "submit", 1, "fl-submit-btn", 3, "disabled"], ["class", "spinner", 4, "ngIf"], [4, "ngIf"], [1, "fl-card-footer"], ["routerLink", "/auth/login", 1, "fl-admin-link"], [1, "field-error"], ["type", "text", "formControlName", "identifiant", 3, "placeholder"], [1, "phone-field-wrap"], [1, "phone-input-row"], [1, "country-selector", 3, "click"], [1, "country-flag-img", 3, "src", "alt"], [1, "country-dial"], [1, "material-icons-round", "country-chevron"], ["type", "tel", "placeholder", "ex: 620 00 00 00", 1, "phone-number-input", 3, "input", "value"], ["class", "country-dropdown", 4, "ngIf"], [1, "country-dropdown"], ["type", "text", "placeholder", "Rechercher un pays...", 1, "country-search", 3, "input", "value"], [1, "country-list"], ["type", "button", "class", "country-option", 3, "click", 4, "ngFor", "ngForOf"], ["type", "button", 1, "country-option", 3, "click"], [1, "country-name"], [1, "country-dial-sm"], [1, "alert", "alert-error"], [1, "spinner"]], template: function FamilleLoginComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FamilleLoginComponent, selectors: [["app-famille-login"]], standalone: false, decls: 126, vars: 22, consts: [[1, "fl-container"], [1, "fl-left"], [1, "fl-left-bg"], ["width", "420", "height", "520", "viewBox", "0 0 420 520", "fill", "none", 1, "fl-tree"], ["d", "M210 500 L 210 380", "stroke", "#8B4513", "stroke-width", "7", "stroke-linecap", "round"], ["d", "M210 380 C 180 360, 150 345, 120 320", "stroke", "#8B4513", "stroke-width", "5", "fill", "none", "stroke-linecap", "round"], ["d", "M210 380 C 240 360, 270 345, 300 320", "stroke", "#8B4513", "stroke-width", "5", "fill", "none", "stroke-linecap", "round"], ["d", "M210 380 L 210 310", "stroke", "#8B4513", "stroke-width", "5", "stroke-linecap", "round"], ["d", "M120 320 C 100 295, 88 280, 92 255", "stroke", "#8B4513", "stroke-width", "3.5", "fill", "none", "stroke-linecap", "round"], ["d", "M300 320 C 320 295, 332 280, 328 255", "stroke", "#8B4513", "stroke-width", "3.5", "fill", "none", "stroke-linecap", "round"], ["d", "M210 310 C 195 285, 195 270, 205 245", "stroke", "#8B4513", "stroke-width", "3.5", "fill", "none", "stroke-linecap", "round"], ["cx", "92", "cy", "250", "r", "15", "fill", "#2E7D32"], ["cx", "205", "cy", "240", "r", "16", "fill", "#81C784"], ["cx", "328", "cy", "250", "r", "15", "fill", "#2E7D32"], ["cx", "120", "cy", "320", "r", "9", "fill", "#3B82F6", "opacity", "0.75"], ["cx", "300", "cy", "320", "r", "9", "fill", "#EC4899", "opacity", "0.75"], [1, "fl-sparks"], [1, "fl-spark", 2, "left", "18%", "animation-delay", "0s"], [1, "fl-spark", 2, "left", "52%", "animation-delay", "1.8s"], [1, "fl-spark", 2, "left", "76%", "animation-delay", "3.2s"], [1, "fl-left-content"], [1, "fl-logo"], ["width", "24", "height", "24", "viewBox", "0 0 120 120", "fill", "none"], ["x", "50", "y", "60", "width", "20", "height", "40", "fill", "#8B4513", "rx", "2"], ["d", "M60 60 L40 40", "stroke", "#8B4513", "stroke-width", "7", "stroke-linecap", "round"], ["d", "M60 60 L80 40", "stroke", "#8B4513", "stroke-width", "7", "stroke-linecap", "round"], ["cx", "35", "cy", "35", "r", "11", "fill", "#2E7D32"], ["cx", "85", "cy", "35", "r", "11", "fill", "#2E7D32"], ["cx", "60", "cy", "24", "r", "11", "fill", "#81C784"], [1, "fl-welcome"], [1, "fl-features"], [1, "fl-feat"], [1, "fl-feat-icon"], [1, "material-icons-round"], ["routerLink", "/", 1, "fl-back-link"], [1, "fl-right"], [1, "fl-card"], [1, "fl-card-header"], [1, "fl-card-icon"], [3, "ngSubmit", "formGroup"], [1, "form-group"], [1, "input-wrapper"], ["type", "text", "formControlName", "familleCode", "placeholder", "Ex : DIALLO-2024"], ["class", "field-error", 4, "ngIf"], [1, "fl-tabs"], ["type", "button", 1, "fl-tab", 3, "click"], ["class", "input-wrapper", 4, "ngIf"], ["class", "phone-field-wrap", 4, "ngIf"], ["formControlName", "password", "placeholder", "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022", 3, "type"], [1, "input-suffix"], ["type", "button", 1, "btn-icon", 3, "click"], ["class", "alert alert-error", 4, "ngIf"], ["type", "submit", 1, "fl-submit-btn", 3, "disabled"], ["class", "spinner", 4, "ngIf"], [4, "ngIf"], [1, "fl-card-footer"], ["routerLink", "/auth/login", 1, "fl-admin-link"], [1, "field-error"], ["type", "text", "formControlName", "identifiant", 3, "placeholder"], [1, "phone-field-wrap"], [1, "phone-input-row"], [1, "country-selector", 3, "click"], [1, "country-flag-img", 3, "src", "alt"], [1, "country-dial"], [1, "material-icons-round", "country-chevron"], ["type", "tel", "placeholder", "ex: 620 00 00 00", 1, "phone-number-input", 3, "input", "value"], ["class", "country-dropdown", 4, "ngIf"], [1, "country-dropdown"], ["type", "text", "placeholder", "Rechercher un pays...", 1, "country-search", 3, "input", "value"], [1, "country-list"], ["type", "button", "class", "country-option", 3, "click", 4, "ngFor", "ngForOf"], ["type", "button", 1, "country-option", 3, "click"], [1, "country-name"], [1, "country-dial-sm"], [1, "alert", "alert-error"], [1, "spinner"]], template: function FamilleLoginComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2);
-      \u0275\u0275element(3, "div", 3)(4, "div", 4);
+      \u0275\u0275namespaceSVG();
+      \u0275\u0275elementStart(3, "svg", 3);
+      \u0275\u0275element(4, "path", 4)(5, "path", 5)(6, "path", 6)(7, "path", 7)(8, "path", 8)(9, "path", 9)(10, "path", 10)(11, "circle", 11)(12, "circle", 12)(13, "circle", 13)(14, "circle", 14)(15, "circle", 15);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(5, "div", 5)(6, "div", 6)(7, "span", 7);
-      \u0275\u0275text(8, "account_tree");
+      \u0275\u0275namespaceHTML();
+      \u0275\u0275elementStart(16, "div", 16);
+      \u0275\u0275element(17, "div", 17)(18, "div", 18)(19, "div", 19);
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(20, "div", 20)(21, "div", 21);
+      \u0275\u0275namespaceSVG();
+      \u0275\u0275elementStart(22, "svg", 22);
+      \u0275\u0275element(23, "rect", 23)(24, "path", 24)(25, "path", 25)(26, "circle", 26)(27, "circle", 27)(28, "circle", 28);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(9, "span");
-      \u0275\u0275text(10, "Mam Buudu");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(11, "div", 8)(12, "h1");
-      \u0275\u0275text(13, "Bienvenue dans");
-      \u0275\u0275element(14, "br");
-      \u0275\u0275text(15, "votre espace famille");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(16, "p");
-      \u0275\u0275text(17, "Retrouvez votre arbre g\xE9n\xE9alogique, les stories de vos proches et toute l'histoire de votre famille.");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(18, "div", 9)(19, "div", 10)(20, "div", 11)(21, "span", 7);
-      \u0275\u0275text(22, "account_tree");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(23, "span");
-      \u0275\u0275text(24, "Arbre g\xE9n\xE9alogique interactif");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(25, "div", 10)(26, "div", 11)(27, "span", 7);
-      \u0275\u0275text(28, "auto_stories");
-      \u0275\u0275elementEnd()();
+      \u0275\u0275namespaceHTML();
       \u0275\u0275elementStart(29, "span");
-      \u0275\u0275text(30, "Stories et souvenirs partag\xE9s");
+      \u0275\u0275text(30, "Mam Buudu");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(31, "div", 10)(32, "div", 11)(33, "span", 7);
-      \u0275\u0275text(34, "timeline");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(35, "span");
-      \u0275\u0275text(36, "Ligne du temps familiale");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(37, "div", 10)(38, "div", 11)(39, "span", 7);
-      \u0275\u0275text(40, "people");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(41, "span");
-      \u0275\u0275text(42, "Tous les membres en un clin d'oeil");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(43, "a", 12)(44, "span", 7);
-      \u0275\u0275text(45, "arrow_back");
+      \u0275\u0275elementStart(31, "div", 29)(32, "h1");
+      \u0275\u0275text(33, "Bienvenue dans");
+      \u0275\u0275element(34, "br");
+      \u0275\u0275text(35, "votre espace famille");
       \u0275\u0275elementEnd();
-      \u0275\u0275text(46, " Retour \xE0 l'accueil ");
+      \u0275\u0275elementStart(36, "p");
+      \u0275\u0275text(37, "Retrouvez votre arbre g\xE9n\xE9alogique, les stories de vos proches et toute l'histoire de votre famille.");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(38, "div", 30)(39, "div", 31)(40, "div", 32)(41, "span", 33);
+      \u0275\u0275text(42, "account_tree");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(43, "span");
+      \u0275\u0275text(44, "Arbre g\xE9n\xE9alogique interactif");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(45, "div", 31)(46, "div", 32)(47, "span", 33);
+      \u0275\u0275text(48, "auto_stories");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(49, "span");
+      \u0275\u0275text(50, "Stories et souvenirs partag\xE9s");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(51, "div", 31)(52, "div", 32)(53, "span", 33);
+      \u0275\u0275text(54, "timeline");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(55, "span");
+      \u0275\u0275text(56, "Ligne du temps familiale");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(57, "div", 31)(58, "div", 32)(59, "span", 33);
+      \u0275\u0275text(60, "people");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(61, "span");
+      \u0275\u0275text(62, "Tous les membres en un clin d'oeil");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(47, "div", 13)(48, "div", 14)(49, "div", 15)(50, "div", 16)(51, "span", 7);
-      \u0275\u0275text(52, "family_restroom");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(53, "h2");
-      \u0275\u0275text(54, "Acc\xE9der \xE0 ma famille");
+      \u0275\u0275elementStart(63, "a", 34)(64, "span", 33);
+      \u0275\u0275text(65, "arrow_back");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(55, "p");
-      \u0275\u0275text(56, "Entrez vos identifiants pour rejoindre l'espace familial");
+      \u0275\u0275text(66, " Retour \xE0 l'accueil ");
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275elementStart(67, "div", 35)(68, "div", 36)(69, "div", 37)(70, "div", 38)(71, "span", 33);
+      \u0275\u0275text(72, "family_restroom");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(57, "form", 17);
-      \u0275\u0275listener("ngSubmit", function FamilleLoginComponent_Template_form_ngSubmit_57_listener() {
+      \u0275\u0275elementStart(73, "h2");
+      \u0275\u0275text(74, "Acc\xE9der \xE0 ma famille");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(75, "p");
+      \u0275\u0275text(76, "Entrez vos identifiants pour rejoindre l'espace familial");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(77, "form", 39);
+      \u0275\u0275listener("ngSubmit", function FamilleLoginComponent_Template_form_ngSubmit_77_listener() {
         return ctx.submit();
       });
-      \u0275\u0275elementStart(58, "div", 18)(59, "label");
-      \u0275\u0275text(60, "Code famille");
+      \u0275\u0275elementStart(78, "div", 40)(79, "label");
+      \u0275\u0275text(80, "Code famille");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(61, "div", 19)(62, "span", 7);
-      \u0275\u0275text(63, "group");
+      \u0275\u0275elementStart(81, "div", 41)(82, "span", 33);
+      \u0275\u0275text(83, "group");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(64, "input", 20);
+      \u0275\u0275element(84, "input", 42);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(65, FamilleLoginComponent_span_65_Template, 2, 0, "span", 21);
+      \u0275\u0275template(85, FamilleLoginComponent_span_85_Template, 2, 0, "span", 43);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(66, "div", 18)(67, "label");
-      \u0275\u0275text(68, "Identifiant");
+      \u0275\u0275elementStart(86, "div", 40)(87, "label");
+      \u0275\u0275text(88, "Identifiant");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(69, "div", 22)(70, "button", 23);
-      \u0275\u0275listener("click", function FamilleLoginComponent_Template_button_click_70_listener() {
+      \u0275\u0275elementStart(89, "div", 44)(90, "button", 45);
+      \u0275\u0275listener("click", function FamilleLoginComponent_Template_button_click_90_listener() {
         return ctx.setTab("email");
       });
-      \u0275\u0275elementStart(71, "span", 7);
-      \u0275\u0275text(72, "email");
+      \u0275\u0275elementStart(91, "span", 33);
+      \u0275\u0275text(92, "email");
       \u0275\u0275elementEnd();
-      \u0275\u0275text(73, " Email ");
+      \u0275\u0275text(93, " Email ");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(74, "button", 23);
-      \u0275\u0275listener("click", function FamilleLoginComponent_Template_button_click_74_listener() {
+      \u0275\u0275elementStart(94, "button", 45);
+      \u0275\u0275listener("click", function FamilleLoginComponent_Template_button_click_94_listener() {
         return ctx.setTab("telephone");
       });
-      \u0275\u0275elementStart(75, "span", 7);
-      \u0275\u0275text(76, "phone");
+      \u0275\u0275elementStart(95, "span", 33);
+      \u0275\u0275text(96, "phone");
       \u0275\u0275elementEnd();
-      \u0275\u0275text(77, " Tel. ");
+      \u0275\u0275text(97, " Tel. ");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(78, "button", 23);
-      \u0275\u0275listener("click", function FamilleLoginComponent_Template_button_click_78_listener() {
+      \u0275\u0275elementStart(98, "button", 45);
+      \u0275\u0275listener("click", function FamilleLoginComponent_Template_button_click_98_listener() {
         return ctx.setTab("username");
       });
-      \u0275\u0275elementStart(79, "span", 7);
-      \u0275\u0275text(80, "badge");
+      \u0275\u0275elementStart(99, "span", 33);
+      \u0275\u0275text(100, "badge");
       \u0275\u0275elementEnd();
-      \u0275\u0275text(81, " Username ");
+      \u0275\u0275text(101, " Username ");
       \u0275\u0275elementEnd()();
-      \u0275\u0275template(82, FamilleLoginComponent_div_82_Template, 4, 4, "div", 24)(83, FamilleLoginComponent_div_83_Template, 10, 7, "div", 25)(84, FamilleLoginComponent_span_84_Template, 2, 0, "span", 21);
+      \u0275\u0275template(102, FamilleLoginComponent_div_102_Template, 4, 4, "div", 46)(103, FamilleLoginComponent_div_103_Template, 10, 7, "div", 47)(104, FamilleLoginComponent_span_104_Template, 2, 0, "span", 43);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(85, "div", 18)(86, "label");
-      \u0275\u0275text(87, "Mot de passe");
+      \u0275\u0275elementStart(105, "div", 40)(106, "label");
+      \u0275\u0275text(107, "Mot de passe");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(88, "div", 19)(89, "span", 7);
-      \u0275\u0275text(90, "lock");
+      \u0275\u0275elementStart(108, "div", 41)(109, "span", 33);
+      \u0275\u0275text(110, "lock");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(91, "input", 26);
-      \u0275\u0275elementStart(92, "div", 27)(93, "button", 28);
-      \u0275\u0275listener("click", function FamilleLoginComponent_Template_button_click_93_listener() {
+      \u0275\u0275element(111, "input", 48);
+      \u0275\u0275elementStart(112, "div", 49)(113, "button", 50);
+      \u0275\u0275listener("click", function FamilleLoginComponent_Template_button_click_113_listener() {
         return ctx.showPassword = !ctx.showPassword;
       });
-      \u0275\u0275elementStart(94, "span", 7);
-      \u0275\u0275text(95);
+      \u0275\u0275elementStart(114, "span", 33);
+      \u0275\u0275text(115);
       \u0275\u0275elementEnd()()()();
-      \u0275\u0275template(96, FamilleLoginComponent_span_96_Template, 2, 0, "span", 21);
+      \u0275\u0275template(116, FamilleLoginComponent_span_116_Template, 2, 0, "span", 43);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(97, FamilleLoginComponent_div_97_Template, 4, 1, "div", 29);
-      \u0275\u0275elementStart(98, "button", 30);
-      \u0275\u0275template(99, FamilleLoginComponent_span_99_Template, 1, 0, "span", 31)(100, FamilleLoginComponent_ng_container_100_Template, 4, 0, "ng-container", 32);
+      \u0275\u0275template(117, FamilleLoginComponent_div_117_Template, 4, 1, "div", 51);
+      \u0275\u0275elementStart(118, "button", 52);
+      \u0275\u0275template(119, FamilleLoginComponent_span_119_Template, 1, 0, "span", 53)(120, FamilleLoginComponent_ng_container_120_Template, 4, 0, "ng-container", 54);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(101, "div", 33)(102, "a", 34)(103, "span", 7);
-      \u0275\u0275text(104, "admin_panel_settings");
+      \u0275\u0275elementStart(121, "div", 55)(122, "a", 56)(123, "span", 33);
+      \u0275\u0275text(124, "admin_panel_settings");
       \u0275\u0275elementEnd();
-      \u0275\u0275text(105, " Espace administrateur ");
+      \u0275\u0275text(125, " Espace administrateur ");
       \u0275\u0275elementEnd()()()()();
     }
     if (rf & 2) {
-      \u0275\u0275advance(57);
+      \u0275\u0275advance(77);
       \u0275\u0275property("formGroup", ctx.form);
       \u0275\u0275advance(7);
       \u0275\u0275classProp("input-error", ctx.f["familleCode"].invalid && ctx.f["familleCode"].touched);
@@ -513,7 +522,7 @@ var FamilleLoginComponent = class _FamilleLoginComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", !ctx.loading);
     }
-  }, dependencies: [NgForOf, NgIf, RouterLink, \u0275NgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName], styles: ["\n\n.fl-container[_ngcontent-%COMP%] {\n  display: flex;\n  min-height: 100vh;\n}\n.fl-left[_ngcontent-%COMP%] {\n  flex: 1;\n  position: relative;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      145deg,\n      #1a0533 0%,\n      #2d1b69 40%,\n      #1e3a8a 80%,\n      #0f2048 100%);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 48px;\n}\n.fl-left-bg[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n}\n.fl-blob[_ngcontent-%COMP%] {\n  position: absolute;\n  border-radius: 50%;\n  filter: blur(80px);\n  opacity: 0.25;\n}\n.fl-blob-1[_ngcontent-%COMP%] {\n  width: 400px;\n  height: 400px;\n  background: #EC4899;\n  top: -100px;\n  right: -80px;\n  animation: _ngcontent-%COMP%_blobPulse 7s ease-in-out infinite;\n}\n.fl-blob-2[_ngcontent-%COMP%] {\n  width: 350px;\n  height: 350px;\n  background: #7C3AED;\n  bottom: -100px;\n  left: -60px;\n  animation: _ngcontent-%COMP%_blobPulse 9s ease-in-out infinite reverse;\n}\n.fl-left-content[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 2;\n  max-width: 420px;\n  color: #fff;\n}\n.fl-logo[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 40px;\n  font-size: 20px;\n  font-weight: 800;\n  color: #fff;\n}\n.fl-logo[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 26px !important;\n  color: #A78BFA;\n}\n.fl-welcome[_ngcontent-%COMP%] {\n  margin-bottom: 36px;\n}\n.fl-welcome[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 32px;\n  font-weight: 800;\n  line-height: 1.2;\n  margin-bottom: 14px;\n}\n.fl-welcome[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 15px;\n  line-height: 1.7;\n  color: rgba(255, 255, 255, 0.65);\n}\n.fl-features[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  margin-bottom: 36px;\n}\n.fl-feat[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 16px;\n  background: rgba(255, 255, 255, 0.08);\n  border-radius: 12px;\n  font-size: 14px;\n  font-weight: 500;\n  color: rgba(255, 255, 255, 0.85);\n}\n.fl-feat-icon[_ngcontent-%COMP%] {\n  width: 36px;\n  height: 36px;\n  border-radius: 10px;\n  background: rgba(167, 139, 250, 0.25);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.fl-feat-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #A78BFA;\n}\n.fl-back-link[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 13px;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.fl-back-link[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.fl-back-link[_ngcontent-%COMP%]:hover {\n  color: rgba(255, 255, 255, 0.9);\n  text-decoration: none;\n}\n.fl-right[_ngcontent-%COMP%] {\n  width: 500px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 40px 32px;\n  background: #F8FAFC;\n}\n.fl-card[_ngcontent-%COMP%] {\n  width: 100%;\n  background: #fff;\n  border-radius: 24px;\n  padding: 40px 36px;\n  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);\n  border: 1px solid #F0F4FF;\n}\n.fl-card-header[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-bottom: 32px;\n}\n.fl-card-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 12px 0 6px;\n}\n.fl-card-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #6B7280;\n}\n.fl-card-icon[_ngcontent-%COMP%] {\n  width: 60px;\n  height: 60px;\n  border-radius: 18px;\n  background:\n    linear-gradient(\n      135deg,\n      #F5F3FF,\n      #EDE9FE);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 12px;\n}\n.fl-card-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 30px !important;\n  color: #7C3AED;\n}\n.fl-submit-btn[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 14px;\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #EC4899);\n  color: #fff;\n  border: none;\n  border-radius: 14px;\n  font-family: inherit;\n  font-size: 15px;\n  font-weight: 600;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  transition: all 0.2s;\n  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.35);\n}\n.fl-submit-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n}\n.fl-submit-btn[_ngcontent-%COMP%]:hover:not(:disabled) {\n  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.5);\n  transform: translateY(-1px);\n}\n.fl-submit-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n  transform: none;\n}\n.fl-card-footer[_ngcontent-%COMP%] {\n  margin-top: 24px;\n  text-align: center;\n}\n.fl-admin-link[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  color: #6B7280;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.fl-admin-link[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.fl-admin-link[_ngcontent-%COMP%]:hover {\n  color: #3B82F6;\n  text-decoration: none;\n}\n.fl-tabs[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  margin-bottom: 10px;\n  background: rgba(255, 255, 255, 0.06);\n  border-radius: 10px;\n  padding: 4px;\n  border: 1px solid rgba(255, 255, 255, 0.12);\n}\n.fl-tab[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 5px;\n  padding: 7px 4px;\n  border: none;\n  background: transparent;\n  border-radius: 8px;\n  font-size: 12px;\n  font-weight: 500;\n  color: rgba(255, 255, 255, 0.55);\n  cursor: pointer;\n  transition: all 0.18s;\n}\n.fl-tab[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.fl-tab.active[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.15);\n  color: #fff;\n  font-weight: 600;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);\n}\n.phone-field-wrap[_ngcontent-%COMP%] {\n  position: relative;\n}\n.phone-input-row[_ngcontent-%COMP%] {\n  display: flex;\n  border: 1px solid rgba(255, 255, 255, 0.15);\n  border-radius: 10px;\n  overflow: hidden;\n  background: rgba(255, 255, 255, 0.08);\n}\n.phone-input-row[_ngcontent-%COMP%]:focus-within {\n  border-color: rgba(167, 139, 250, 0.6);\n}\n.country-selector[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  padding: 0 10px;\n  border-right: 1px solid rgba(255, 255, 255, 0.15);\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n  flex-shrink: 0;\n  border-radius: 10px 0 0 10px;\n  transition: background 0.15s;\n}\n.country-selector[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.08);\n}\n.country-flag-img[_ngcontent-%COMP%] {\n  width: 20px;\n  height: 15px;\n  border-radius: 2px;\n  object-fit: cover;\n  flex-shrink: 0;\n}\n.country-dial[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: #fff;\n}\n.country-chevron[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n  color: rgba(255, 255, 255, 0.6);\n}\n.phone-number-input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  outline: none;\n  padding: 12px 14px;\n  font-size: 14px;\n  background: transparent;\n  border-radius: 0 10px 10px 0;\n  color: #fff;\n}\n.phone-number-input[_ngcontent-%COMP%]::placeholder {\n  color: rgba(255, 255, 255, 0.35);\n}\n.country-dropdown[_ngcontent-%COMP%] {\n  position: absolute;\n  z-index: 300;\n  top: calc(100% + 4px);\n  left: 0;\n  width: 280px;\n  background: #1e1246;\n  border: 1px solid rgba(255, 255, 255, 0.15);\n  border-radius: 12px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);\n  overflow: hidden;\n}\n.country-search[_ngcontent-%COMP%] {\n  width: 100%;\n  border: none;\n  border-bottom: 1px solid rgba(255, 255, 255, 0.12);\n  padding: 10px 14px;\n  font-size: 13px;\n  outline: none;\n  background: rgba(255, 255, 255, 0.06);\n  color: #fff;\n  box-sizing: border-box;\n}\n.country-search[_ngcontent-%COMP%]::placeholder {\n  color: rgba(255, 255, 255, 0.35);\n}\n.country-list[_ngcontent-%COMP%] {\n  max-height: 220px;\n  overflow-y: auto;\n}\n.country-list[_ngcontent-%COMP%]::-webkit-scrollbar {\n  width: 4px;\n}\n.country-list[_ngcontent-%COMP%]::-webkit-scrollbar-thumb {\n  background: rgba(255, 255, 255, 0.2);\n  border-radius: 2px;\n}\n.country-option[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 14px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  text-align: left;\n  transition: background 0.12s;\n}\n.country-option[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.08);\n}\n.country-name[_ngcontent-%COMP%] {\n  flex: 1;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.85);\n}\n.country-dial-sm[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.45);\n  font-weight: 600;\n}\n@keyframes _ngcontent-%COMP%_blobPulse {\n  0%, 100% {\n    transform: scale(1) translate(0, 0);\n  }\n  50% {\n    transform: scale(1.1) translate(20px, -20px);\n  }\n}\n@media (max-width: 900px) {\n  .fl-left[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .fl-right[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n}\n/*# sourceMappingURL=famille-login.component.css.map */"] });
+  }, dependencies: [NgForOf, NgIf, RouterLink, \u0275NgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName], styles: ["\n\n.fl-container[_ngcontent-%COMP%] {\n  display: flex;\n  min-height: 100vh;\n}\n.fl-left[_ngcontent-%COMP%] {\n  width: 44%;\n  flex-shrink: 0;\n  position: relative;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      160deg,\n      #0A1020 0%,\n      #0E2417 55%,\n      #123B27 100%);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 48px;\n}\n.fl-left-bg[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n}\n.fl-tree[_ngcontent-%COMP%] {\n  position: absolute;\n  right: -60px;\n  bottom: -30px;\n  opacity: 0.4;\n}\n.fl-sparks[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  overflow: hidden;\n}\n.fl-spark[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 40px;\n  width: 4px;\n  height: 4px;\n  border-radius: 50%;\n  background: #A6E3AF;\n  box-shadow: 0 0 8px 2px rgba(166, 227, 175, 0.7);\n  animation: _ngcontent-%COMP%_sparkRise 5.5s ease-in infinite;\n}\n.fl-left-content[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 2;\n  max-width: 420px;\n  color: #fff;\n}\n.fl-logo[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 40px;\n  font-size: 20px;\n  font-weight: 800;\n  color: #fff;\n}\n.fl-welcome[_ngcontent-%COMP%] {\n  margin-bottom: 36px;\n}\n.fl-welcome[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 32px;\n  font-weight: 800;\n  line-height: 1.2;\n  margin-bottom: 14px;\n}\n.fl-welcome[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 15px;\n  line-height: 1.7;\n  color: rgba(255, 255, 255, 0.65);\n}\n.fl-features[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  margin-bottom: 36px;\n}\n.fl-feat[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 16px;\n  background: rgba(255, 255, 255, 0.08);\n  border-radius: 12px;\n  font-size: 14px;\n  font-weight: 500;\n  color: rgba(255, 255, 255, 0.85);\n}\n.fl-feat-icon[_ngcontent-%COMP%] {\n  width: 36px;\n  height: 36px;\n  border-radius: 10px;\n  background: rgba(255, 255, 255, 0.1);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.fl-feat-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #81C784;\n}\n.fl-back-link[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 13px;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.fl-back-link[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.fl-back-link[_ngcontent-%COMP%]:hover {\n  color: rgba(255, 255, 255, 0.9);\n  text-decoration: none;\n}\n.fl-right[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 40px 32px;\n  background: #F0FDF4;\n  overflow-y: auto;\n}\n.fl-card[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 440px;\n  background: #fff;\n  border-radius: 24px;\n  padding: 40px 36px;\n  box-shadow: 0 8px 40px rgba(15, 42, 30, 0.1);\n  border: 1px solid #DCFCE7;\n}\n.fl-card-header[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-bottom: 32px;\n}\n.fl-card-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 12px 0 6px;\n}\n.fl-card-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #6B7280;\n}\n.fl-card-icon[_ngcontent-%COMP%] {\n  width: 60px;\n  height: 60px;\n  border-radius: 18px;\n  background:\n    linear-gradient(\n      135deg,\n      #F0FDF4,\n      #DCFCE7);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 12px;\n}\n.fl-card-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 30px !important;\n  color: #15803D;\n}\n.fl-submit-btn[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 14px;\n  background:\n    linear-gradient(\n      135deg,\n      #15803D,\n      #166534);\n  color: #fff;\n  border: none;\n  border-radius: 14px;\n  font-family: inherit;\n  font-size: 15px;\n  font-weight: 600;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  transition: all 0.2s;\n  box-shadow: 0 4px 16px rgba(21, 128, 61, 0.35);\n}\n.fl-submit-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n}\n.fl-submit-btn[_ngcontent-%COMP%]:hover:not(:disabled) {\n  box-shadow: 0 6px 24px rgba(21, 128, 61, 0.5);\n  transform: translateY(-1px);\n}\n.fl-submit-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n  transform: none;\n}\n.fl-card-footer[_ngcontent-%COMP%] {\n  margin-top: 24px;\n  text-align: center;\n}\n.fl-admin-link[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  color: #6B7280;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.fl-admin-link[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.fl-admin-link[_ngcontent-%COMP%]:hover {\n  color: #15803D;\n  text-decoration: none;\n}\n.fl-tabs[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  margin-bottom: 10px;\n  background: #F1F5F9;\n  border-radius: 10px;\n  padding: 4px;\n}\n.fl-tab[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 5px;\n  padding: 7px 4px;\n  border: none;\n  background: transparent;\n  border-radius: 8px;\n  font-size: 12px;\n  font-weight: 500;\n  color: #6B7280;\n  cursor: pointer;\n  transition: all 0.18s;\n  font-family: inherit;\n}\n.fl-tab[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.fl-tab.active[_ngcontent-%COMP%] {\n  background: #fff;\n  color: #15803D;\n  font-weight: 600;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(21, 128, 61, 0.08);\n}\n.fl-tab[_ngcontent-%COMP%]:not(.active):hover {\n  background: rgba(255, 255, 255, 0.65);\n  color: #374151;\n}\n.phone-field-wrap[_ngcontent-%COMP%] {\n  position: relative;\n}\n.phone-input-row[_ngcontent-%COMP%] {\n  display: flex;\n  border: 1.5px solid #E5E7EB;\n  border-radius: 10px;\n  overflow: hidden;\n  background: #F9FAFB;\n  transition: border-color 0.15s, box-shadow 0.15s;\n}\n.phone-input-row[_ngcontent-%COMP%]:focus-within {\n  border-color: #15803D;\n  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.1);\n  background: #fff;\n}\n.country-selector[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  padding: 0 12px;\n  border-right: 1px solid #E5E7EB;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n  flex-shrink: 0;\n  transition: background 0.15s;\n}\n.country-selector[_ngcontent-%COMP%]:hover {\n  background: rgba(0, 0, 0, 0.03);\n}\n.country-flag-img[_ngcontent-%COMP%] {\n  width: 20px;\n  height: 15px;\n  border-radius: 2px;\n  object-fit: cover;\n  flex-shrink: 0;\n}\n.country-dial[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: #374151;\n}\n.country-chevron[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n  color: #9CA3AF;\n}\n.phone-number-input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  outline: none;\n  padding: 11px 14px;\n  font-size: 14px;\n  background: transparent;\n  color: #111827;\n  font-family: inherit;\n}\n.phone-number-input[_ngcontent-%COMP%]::placeholder {\n  color: #9CA3AF;\n}\n.country-dropdown[_ngcontent-%COMP%] {\n  position: absolute;\n  z-index: 300;\n  top: calc(100% + 6px);\n  left: 0;\n  width: 280px;\n  background: #fff;\n  border: 1px solid #E5E7EB;\n  border-radius: 14px;\n  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.05);\n  overflow: hidden;\n}\n.country-search[_ngcontent-%COMP%] {\n  width: 100%;\n  border: none;\n  border-bottom: 1px solid #F1F5F9;\n  padding: 10px 14px;\n  font-size: 13px;\n  outline: none;\n  background: #F9FAFB;\n  color: #111827;\n  box-sizing: border-box;\n  font-family: inherit;\n}\n.country-search[_ngcontent-%COMP%]::placeholder {\n  color: #9CA3AF;\n}\n.country-list[_ngcontent-%COMP%] {\n  max-height: 220px;\n  overflow-y: auto;\n  padding: 4px;\n}\n.country-option[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 12px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  text-align: left;\n  border-radius: 8px;\n  transition: background 0.12s;\n  font-family: inherit;\n}\n.country-option[_ngcontent-%COMP%]:hover {\n  background: #F0FDF4;\n}\n.country-name[_ngcontent-%COMP%] {\n  flex: 1;\n  font-size: 13px;\n  color: #111827;\n}\n.country-dial-sm[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #6B7280;\n  font-weight: 600;\n  background: #F1F5F9;\n  padding: 2px 7px;\n  border-radius: 5px;\n}\n@keyframes _ngcontent-%COMP%_sparkRise {\n  0% {\n    opacity: 0;\n    transform: translateY(0);\n  }\n  15% {\n    opacity: 0.9;\n  }\n  85% {\n    opacity: 0.5;\n  }\n  100% {\n    opacity: 0;\n    transform: translateY(-90px);\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  [_nghost-%COMP%]   *[_ngcontent-%COMP%] {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 900px) {\n  .fl-left[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n/*# sourceMappingURL=famille-login.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FamilleLoginComponent, [{
@@ -522,12 +531,36 @@ var FamilleLoginComponent = class _FamilleLoginComponent {
   <!-- Panneau gauche d\xE9coratif -->
   <div class="fl-left">
     <div class="fl-left-bg">
-      <div class="fl-blob fl-blob-1"></div>
-      <div class="fl-blob fl-blob-2"></div>
+      <svg class="fl-tree" width="420" height="520" viewBox="0 0 420 520" fill="none">
+        <path d="M210 500 L 210 380" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>
+        <path d="M210 380 C 180 360, 150 345, 120 320" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M210 380 C 240 360, 270 345, 300 320" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M210 380 L 210 310" stroke="#8B4513" stroke-width="5" stroke-linecap="round"/>
+        <path d="M120 320 C 100 295, 88 280, 92 255" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path d="M300 320 C 320 295, 332 280, 328 255" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path d="M210 310 C 195 285, 195 270, 205 245" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <circle cx="92" cy="250" r="15" fill="#2E7D32"/>
+        <circle cx="205" cy="240" r="16" fill="#81C784"/>
+        <circle cx="328" cy="250" r="15" fill="#2E7D32"/>
+        <circle cx="120" cy="320" r="9" fill="#3B82F6" opacity="0.75"/>
+        <circle cx="300" cy="320" r="9" fill="#EC4899" opacity="0.75"/>
+      </svg>
+      <div class="fl-sparks">
+        <div class="fl-spark" style="left:18%; animation-delay:0s"></div>
+        <div class="fl-spark" style="left:52%; animation-delay:1.8s"></div>
+        <div class="fl-spark" style="left:76%; animation-delay:3.2s"></div>
+      </div>
     </div>
     <div class="fl-left-content">
       <div class="fl-logo">
-        <span class="material-icons-round">account_tree</span>
+        <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
+          <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>
+          <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>
+          <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="35" cy="35" r="11" fill="#2E7D32"/>
+          <circle cx="85" cy="35" r="11" fill="#2E7D32"/>
+          <circle cx="60" cy="24" r="11" fill="#81C784"/>
+        </svg>
         <span>Mam Buudu</span>
       </div>
       <div class="fl-welcome">
@@ -693,7 +726,7 @@ var FamilleLoginComponent = class _FamilleLoginComponent {
     </div>
   </div>
 </div>
-`, styles: ["/* src/app/famille/auth/famille-login.component.scss */\n.fl-container {\n  display: flex;\n  min-height: 100vh;\n}\n.fl-left {\n  flex: 1;\n  position: relative;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      145deg,\n      #1a0533 0%,\n      #2d1b69 40%,\n      #1e3a8a 80%,\n      #0f2048 100%);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 48px;\n}\n.fl-left-bg {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n}\n.fl-blob {\n  position: absolute;\n  border-radius: 50%;\n  filter: blur(80px);\n  opacity: 0.25;\n}\n.fl-blob-1 {\n  width: 400px;\n  height: 400px;\n  background: #EC4899;\n  top: -100px;\n  right: -80px;\n  animation: blobPulse 7s ease-in-out infinite;\n}\n.fl-blob-2 {\n  width: 350px;\n  height: 350px;\n  background: #7C3AED;\n  bottom: -100px;\n  left: -60px;\n  animation: blobPulse 9s ease-in-out infinite reverse;\n}\n.fl-left-content {\n  position: relative;\n  z-index: 2;\n  max-width: 420px;\n  color: #fff;\n}\n.fl-logo {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 40px;\n  font-size: 20px;\n  font-weight: 800;\n  color: #fff;\n}\n.fl-logo .material-icons-round {\n  font-size: 26px !important;\n  color: #A78BFA;\n}\n.fl-welcome {\n  margin-bottom: 36px;\n}\n.fl-welcome h1 {\n  font-size: 32px;\n  font-weight: 800;\n  line-height: 1.2;\n  margin-bottom: 14px;\n}\n.fl-welcome p {\n  font-size: 15px;\n  line-height: 1.7;\n  color: rgba(255, 255, 255, 0.65);\n}\n.fl-features {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  margin-bottom: 36px;\n}\n.fl-feat {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 16px;\n  background: rgba(255, 255, 255, 0.08);\n  border-radius: 12px;\n  font-size: 14px;\n  font-weight: 500;\n  color: rgba(255, 255, 255, 0.85);\n}\n.fl-feat-icon {\n  width: 36px;\n  height: 36px;\n  border-radius: 10px;\n  background: rgba(167, 139, 250, 0.25);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.fl-feat-icon .material-icons-round {\n  font-size: 18px !important;\n  color: #A78BFA;\n}\n.fl-back-link {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 13px;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.fl-back-link .material-icons-round {\n  font-size: 16px !important;\n}\n.fl-back-link:hover {\n  color: rgba(255, 255, 255, 0.9);\n  text-decoration: none;\n}\n.fl-right {\n  width: 500px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 40px 32px;\n  background: #F8FAFC;\n}\n.fl-card {\n  width: 100%;\n  background: #fff;\n  border-radius: 24px;\n  padding: 40px 36px;\n  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);\n  border: 1px solid #F0F4FF;\n}\n.fl-card-header {\n  text-align: center;\n  margin-bottom: 32px;\n}\n.fl-card-header h2 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 12px 0 6px;\n}\n.fl-card-header p {\n  font-size: 14px;\n  color: #6B7280;\n}\n.fl-card-icon {\n  width: 60px;\n  height: 60px;\n  border-radius: 18px;\n  background:\n    linear-gradient(\n      135deg,\n      #F5F3FF,\n      #EDE9FE);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 12px;\n}\n.fl-card-icon .material-icons-round {\n  font-size: 30px !important;\n  color: #7C3AED;\n}\n.fl-submit-btn {\n  width: 100%;\n  padding: 14px;\n  background:\n    linear-gradient(\n      135deg,\n      #7C3AED,\n      #EC4899);\n  color: #fff;\n  border: none;\n  border-radius: 14px;\n  font-family: inherit;\n  font-size: 15px;\n  font-weight: 600;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  transition: all 0.2s;\n  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.35);\n}\n.fl-submit-btn .material-icons-round {\n  font-size: 20px !important;\n}\n.fl-submit-btn:hover:not(:disabled) {\n  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.5);\n  transform: translateY(-1px);\n}\n.fl-submit-btn:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n  transform: none;\n}\n.fl-card-footer {\n  margin-top: 24px;\n  text-align: center;\n}\n.fl-admin-link {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  color: #6B7280;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.fl-admin-link .material-icons-round {\n  font-size: 15px !important;\n}\n.fl-admin-link:hover {\n  color: #3B82F6;\n  text-decoration: none;\n}\n.fl-tabs {\n  display: flex;\n  gap: 4px;\n  margin-bottom: 10px;\n  background: rgba(255, 255, 255, 0.06);\n  border-radius: 10px;\n  padding: 4px;\n  border: 1px solid rgba(255, 255, 255, 0.12);\n}\n.fl-tab {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 5px;\n  padding: 7px 4px;\n  border: none;\n  background: transparent;\n  border-radius: 8px;\n  font-size: 12px;\n  font-weight: 500;\n  color: rgba(255, 255, 255, 0.55);\n  cursor: pointer;\n  transition: all 0.18s;\n}\n.fl-tab .material-icons-round {\n  font-size: 15px !important;\n}\n.fl-tab.active {\n  background: rgba(255, 255, 255, 0.15);\n  color: #fff;\n  font-weight: 600;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);\n}\n.phone-field-wrap {\n  position: relative;\n}\n.phone-input-row {\n  display: flex;\n  border: 1px solid rgba(255, 255, 255, 0.15);\n  border-radius: 10px;\n  overflow: hidden;\n  background: rgba(255, 255, 255, 0.08);\n}\n.phone-input-row:focus-within {\n  border-color: rgba(167, 139, 250, 0.6);\n}\n.country-selector {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  padding: 0 10px;\n  border-right: 1px solid rgba(255, 255, 255, 0.15);\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n  flex-shrink: 0;\n  border-radius: 10px 0 0 10px;\n  transition: background 0.15s;\n}\n.country-selector:hover {\n  background: rgba(255, 255, 255, 0.08);\n}\n.country-flag-img {\n  width: 20px;\n  height: 15px;\n  border-radius: 2px;\n  object-fit: cover;\n  flex-shrink: 0;\n}\n.country-dial {\n  font-size: 13px;\n  font-weight: 600;\n  color: #fff;\n}\n.country-chevron {\n  font-size: 16px !important;\n  color: rgba(255, 255, 255, 0.6);\n}\n.phone-number-input {\n  flex: 1;\n  border: none;\n  outline: none;\n  padding: 12px 14px;\n  font-size: 14px;\n  background: transparent;\n  border-radius: 0 10px 10px 0;\n  color: #fff;\n}\n.phone-number-input::placeholder {\n  color: rgba(255, 255, 255, 0.35);\n}\n.country-dropdown {\n  position: absolute;\n  z-index: 300;\n  top: calc(100% + 4px);\n  left: 0;\n  width: 280px;\n  background: #1e1246;\n  border: 1px solid rgba(255, 255, 255, 0.15);\n  border-radius: 12px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);\n  overflow: hidden;\n}\n.country-search {\n  width: 100%;\n  border: none;\n  border-bottom: 1px solid rgba(255, 255, 255, 0.12);\n  padding: 10px 14px;\n  font-size: 13px;\n  outline: none;\n  background: rgba(255, 255, 255, 0.06);\n  color: #fff;\n  box-sizing: border-box;\n}\n.country-search::placeholder {\n  color: rgba(255, 255, 255, 0.35);\n}\n.country-list {\n  max-height: 220px;\n  overflow-y: auto;\n}\n.country-list::-webkit-scrollbar {\n  width: 4px;\n}\n.country-list::-webkit-scrollbar-thumb {\n  background: rgba(255, 255, 255, 0.2);\n  border-radius: 2px;\n}\n.country-option {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 14px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  text-align: left;\n  transition: background 0.12s;\n}\n.country-option:hover {\n  background: rgba(255, 255, 255, 0.08);\n}\n.country-name {\n  flex: 1;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.85);\n}\n.country-dial-sm {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.45);\n  font-weight: 600;\n}\n@keyframes blobPulse {\n  0%, 100% {\n    transform: scale(1) translate(0, 0);\n  }\n  50% {\n    transform: scale(1.1) translate(20px, -20px);\n  }\n}\n@media (max-width: 900px) {\n  .fl-left {\n    display: none;\n  }\n  .fl-right {\n    width: 100%;\n  }\n}\n/*# sourceMappingURL=famille-login.component.css.map */\n"] }]
+`, styles: ["/* src/app/famille/auth/famille-login.component.scss */\n.fl-container {\n  display: flex;\n  min-height: 100vh;\n}\n.fl-left {\n  width: 44%;\n  flex-shrink: 0;\n  position: relative;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      160deg,\n      #0A1020 0%,\n      #0E2417 55%,\n      #123B27 100%);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 48px;\n}\n.fl-left-bg {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n}\n.fl-tree {\n  position: absolute;\n  right: -60px;\n  bottom: -30px;\n  opacity: 0.4;\n}\n.fl-sparks {\n  position: absolute;\n  inset: 0;\n  overflow: hidden;\n}\n.fl-spark {\n  position: absolute;\n  bottom: 40px;\n  width: 4px;\n  height: 4px;\n  border-radius: 50%;\n  background: #A6E3AF;\n  box-shadow: 0 0 8px 2px rgba(166, 227, 175, 0.7);\n  animation: sparkRise 5.5s ease-in infinite;\n}\n.fl-left-content {\n  position: relative;\n  z-index: 2;\n  max-width: 420px;\n  color: #fff;\n}\n.fl-logo {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 40px;\n  font-size: 20px;\n  font-weight: 800;\n  color: #fff;\n}\n.fl-welcome {\n  margin-bottom: 36px;\n}\n.fl-welcome h1 {\n  font-size: 32px;\n  font-weight: 800;\n  line-height: 1.2;\n  margin-bottom: 14px;\n}\n.fl-welcome p {\n  font-size: 15px;\n  line-height: 1.7;\n  color: rgba(255, 255, 255, 0.65);\n}\n.fl-features {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  margin-bottom: 36px;\n}\n.fl-feat {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 16px;\n  background: rgba(255, 255, 255, 0.08);\n  border-radius: 12px;\n  font-size: 14px;\n  font-weight: 500;\n  color: rgba(255, 255, 255, 0.85);\n}\n.fl-feat-icon {\n  width: 36px;\n  height: 36px;\n  border-radius: 10px;\n  background: rgba(255, 255, 255, 0.1);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.fl-feat-icon .material-icons-round {\n  font-size: 18px !important;\n  color: #81C784;\n}\n.fl-back-link {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 13px;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.fl-back-link .material-icons-round {\n  font-size: 16px !important;\n}\n.fl-back-link:hover {\n  color: rgba(255, 255, 255, 0.9);\n  text-decoration: none;\n}\n.fl-right {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 40px 32px;\n  background: #F0FDF4;\n  overflow-y: auto;\n}\n.fl-card {\n  width: 100%;\n  max-width: 440px;\n  background: #fff;\n  border-radius: 24px;\n  padding: 40px 36px;\n  box-shadow: 0 8px 40px rgba(15, 42, 30, 0.1);\n  border: 1px solid #DCFCE7;\n}\n.fl-card-header {\n  text-align: center;\n  margin-bottom: 32px;\n}\n.fl-card-header h2 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 12px 0 6px;\n}\n.fl-card-header p {\n  font-size: 14px;\n  color: #6B7280;\n}\n.fl-card-icon {\n  width: 60px;\n  height: 60px;\n  border-radius: 18px;\n  background:\n    linear-gradient(\n      135deg,\n      #F0FDF4,\n      #DCFCE7);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 12px;\n}\n.fl-card-icon .material-icons-round {\n  font-size: 30px !important;\n  color: #15803D;\n}\n.fl-submit-btn {\n  width: 100%;\n  padding: 14px;\n  background:\n    linear-gradient(\n      135deg,\n      #15803D,\n      #166534);\n  color: #fff;\n  border: none;\n  border-radius: 14px;\n  font-family: inherit;\n  font-size: 15px;\n  font-weight: 600;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  transition: all 0.2s;\n  box-shadow: 0 4px 16px rgba(21, 128, 61, 0.35);\n}\n.fl-submit-btn .material-icons-round {\n  font-size: 20px !important;\n}\n.fl-submit-btn:hover:not(:disabled) {\n  box-shadow: 0 6px 24px rgba(21, 128, 61, 0.5);\n  transform: translateY(-1px);\n}\n.fl-submit-btn:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n  transform: none;\n}\n.fl-card-footer {\n  margin-top: 24px;\n  text-align: center;\n}\n.fl-admin-link {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  color: #6B7280;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.fl-admin-link .material-icons-round {\n  font-size: 15px !important;\n}\n.fl-admin-link:hover {\n  color: #15803D;\n  text-decoration: none;\n}\n.fl-tabs {\n  display: flex;\n  gap: 4px;\n  margin-bottom: 10px;\n  background: #F1F5F9;\n  border-radius: 10px;\n  padding: 4px;\n}\n.fl-tab {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 5px;\n  padding: 7px 4px;\n  border: none;\n  background: transparent;\n  border-radius: 8px;\n  font-size: 12px;\n  font-weight: 500;\n  color: #6B7280;\n  cursor: pointer;\n  transition: all 0.18s;\n  font-family: inherit;\n}\n.fl-tab .material-icons-round {\n  font-size: 15px !important;\n}\n.fl-tab.active {\n  background: #fff;\n  color: #15803D;\n  font-weight: 600;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(21, 128, 61, 0.08);\n}\n.fl-tab:not(.active):hover {\n  background: rgba(255, 255, 255, 0.65);\n  color: #374151;\n}\n.phone-field-wrap {\n  position: relative;\n}\n.phone-input-row {\n  display: flex;\n  border: 1.5px solid #E5E7EB;\n  border-radius: 10px;\n  overflow: hidden;\n  background: #F9FAFB;\n  transition: border-color 0.15s, box-shadow 0.15s;\n}\n.phone-input-row:focus-within {\n  border-color: #15803D;\n  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.1);\n  background: #fff;\n}\n.country-selector {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  padding: 0 12px;\n  border-right: 1px solid #E5E7EB;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n  flex-shrink: 0;\n  transition: background 0.15s;\n}\n.country-selector:hover {\n  background: rgba(0, 0, 0, 0.03);\n}\n.country-flag-img {\n  width: 20px;\n  height: 15px;\n  border-radius: 2px;\n  object-fit: cover;\n  flex-shrink: 0;\n}\n.country-dial {\n  font-size: 13px;\n  font-weight: 600;\n  color: #374151;\n}\n.country-chevron {\n  font-size: 16px !important;\n  color: #9CA3AF;\n}\n.phone-number-input {\n  flex: 1;\n  border: none;\n  outline: none;\n  padding: 11px 14px;\n  font-size: 14px;\n  background: transparent;\n  color: #111827;\n  font-family: inherit;\n}\n.phone-number-input::placeholder {\n  color: #9CA3AF;\n}\n.country-dropdown {\n  position: absolute;\n  z-index: 300;\n  top: calc(100% + 6px);\n  left: 0;\n  width: 280px;\n  background: #fff;\n  border: 1px solid #E5E7EB;\n  border-radius: 14px;\n  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.05);\n  overflow: hidden;\n}\n.country-search {\n  width: 100%;\n  border: none;\n  border-bottom: 1px solid #F1F5F9;\n  padding: 10px 14px;\n  font-size: 13px;\n  outline: none;\n  background: #F9FAFB;\n  color: #111827;\n  box-sizing: border-box;\n  font-family: inherit;\n}\n.country-search::placeholder {\n  color: #9CA3AF;\n}\n.country-list {\n  max-height: 220px;\n  overflow-y: auto;\n  padding: 4px;\n}\n.country-option {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 12px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  text-align: left;\n  border-radius: 8px;\n  transition: background 0.12s;\n  font-family: inherit;\n}\n.country-option:hover {\n  background: #F0FDF4;\n}\n.country-name {\n  flex: 1;\n  font-size: 13px;\n  color: #111827;\n}\n.country-dial-sm {\n  font-size: 11px;\n  color: #6B7280;\n  font-weight: 600;\n  background: #F1F5F9;\n  padding: 2px 7px;\n  border-radius: 5px;\n}\n@keyframes sparkRise {\n  0% {\n    opacity: 0;\n    transform: translateY(0);\n  }\n  15% {\n    opacity: 0.9;\n  }\n  85% {\n    opacity: 0.5;\n  }\n  100% {\n    opacity: 0;\n    transform: translateY(-90px);\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  :host * {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 900px) {\n  .fl-left {\n    display: none;\n  }\n}\n/*# sourceMappingURL=famille-login.component.css.map */\n"] }]
   }], () => [{ type: FormBuilder }, { type: AuthService }, { type: Router }], null);
 })();
 (() => {
@@ -1179,16 +1212,26 @@ var FamilleShellComponent = class _FamilleShellComponent {
 
 // src/app/famille/pages/home/famille-home.component.ts
 var _c0 = () => [1, 2, 3, 4];
-function FamilleHomeComponent_div_4_Template(rf, ctx) {
+function FamilleHomeComponent_div_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 15)(1, "div", 16);
+    \u0275\u0275elementStart(0, "div", 26)(1, "div", 27);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div")(4, "p", 17);
+    \u0275\u0275elementStart(3, "div")(4, "p", 28);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "h1", 18);
+    \u0275\u0275elementStart(6, "h1", 29);
     \u0275\u0275text(7);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "p", 30)(9, "b");
+    \u0275\u0275text(10);
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(11, "\xA0membres");
+    \u0275\u0275element(12, "span", 31);
+    \u0275\u0275elementStart(13, "b");
+    \u0275\u0275text(14);
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(15, "\xA0g\xE9n\xE9rations ");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -1199,45 +1242,47 @@ function FamilleHomeComponent_div_4_Template(rf, ctx) {
     \u0275\u0275textInterpolate1("Bonjour, ", ctx_r0.user.prenom, " \u{1F44B}");
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate1("Famille ", ctx_r0.nomFamille || "\u2026");
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(ctx_r0.totalMembres);
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate(ctx_r0.totalGenerations);
   }
 }
-function FamilleHomeComponent_div_28_Template(rf, ctx) {
+function FamilleHomeComponent_div_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 19)(1, "div", 20)(2, "span", 12);
-    \u0275\u0275text(3, "bar_chart");
-    \u0275\u0275elementEnd();
-    \u0275\u0275text(4, " Compl\xE9tion des profils ");
-    \u0275\u0275elementStart(5, "strong");
-    \u0275\u0275text(6);
+    \u0275\u0275elementStart(0, "div", 32)(1, "div", 33)(2, "div", 34);
+    \u0275\u0275text(3);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "div", 21);
-    \u0275\u0275element(8, "div", 22);
+    \u0275\u0275elementStart(4, "div", 35)(5, "b");
+    \u0275\u0275text(6, "Arbre compl\xE9t\xE9");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(7, "Enrichissez les profils pour compl\xE9ter l'arbre");
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext();
-    \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate1("", ctx_r0.completionScore, "%");
+    \u0275\u0275advance();
+    \u0275\u0275styleProp("background", "conic-gradient(#81C784 0% " + ctx_r0.completionScore + "%, rgba(255,255,255,0.14) " + ctx_r0.completionScore + "% 100%)");
     \u0275\u0275advance(2);
-    \u0275\u0275styleProp("width", ctx_r0.completionScore, "%");
+    \u0275\u0275textInterpolate1("", ctx_r0.completionScore, "%");
   }
 }
-function FamilleHomeComponent_ng_container_29_div_4_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_39_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 27);
-    \u0275\u0275element(1, "div", 28);
-    \u0275\u0275elementStart(2, "div", 29);
-    \u0275\u0275element(3, "div", 30)(4, "div", 31);
+    \u0275\u0275elementStart(0, "div", 40);
+    \u0275\u0275element(1, "div", 41);
+    \u0275\u0275elementStart(2, "div", 42);
+    \u0275\u0275element(3, "div", 43)(4, "div", 44);
     \u0275\u0275elementEnd()();
   }
 }
-function FamilleHomeComponent_ng_container_29_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_39_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "div", 23);
-    \u0275\u0275element(2, "div", 24);
-    \u0275\u0275elementStart(3, "div", 25);
-    \u0275\u0275template(4, FamilleHomeComponent_ng_container_29_div_4_Template, 5, 0, "div", 26);
+    \u0275\u0275elementStart(1, "div", 36);
+    \u0275\u0275element(2, "div", 37);
+    \u0275\u0275elementStart(3, "div", 38);
+    \u0275\u0275template(4, FamilleHomeComponent_ng_container_39_div_4_Template, 5, 0, "div", 39);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementContainerEnd();
   }
@@ -1246,15 +1291,15 @@ function FamilleHomeComponent_ng_container_29_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", \u0275\u0275pureFunction0(1, _c0));
   }
 }
-function FamilleHomeComponent_ng_container_30_a_5_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_a_7_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "a", 37)(1, "div", 38)(2, "span", 12);
+    \u0275\u0275elementStart(0, "a", 70)(1, "div", 71)(2, "span", 20);
     \u0275\u0275text(3);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(4, "span", 39);
+    \u0275\u0275elementStart(4, "span", 72);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 40);
+    \u0275\u0275elementStart(6, "span", 73);
     \u0275\u0275text(7, "arrow_forward");
     \u0275\u0275elementEnd()();
   }
@@ -1270,168 +1315,119 @@ function FamilleHomeComponent_ng_container_30_a_5_Template(rf, ctx) {
     \u0275\u0275textInterpolate(t_r2.label);
   }
 }
-function FamilleHomeComponent_ng_container_30_div_6_div_6_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_16_div_1_img_5_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 44)(1, "div", 45);
-    \u0275\u0275text(2);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 46)(4, "span", 47);
-    \u0275\u0275text(5);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 48);
-    \u0275\u0275text(7);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(8, "span", 49);
-    \u0275\u0275text(9);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const b_r3 = ctx.$implicit;
-    const ctx_r0 = \u0275\u0275nextContext(3);
-    \u0275\u0275advance();
-    \u0275\u0275classProp("male", b_r3.p.sexe === "M")("female", b_r3.p.sexe === "F");
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r0.getInitiales(b_r3.p), " ");
-    \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(b_r3.p));
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(b_r3.dateStr);
-    \u0275\u0275advance();
-    \u0275\u0275classProp("soon", b_r3.jours <= 7);
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", b_r3.jours === 0 ? "Aujourd'hui !" : b_r3.jours === 1 ? "Demain !" : b_r3.jours + "j", " ");
-  }
-}
-function FamilleHomeComponent_ng_container_30_div_6_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 32)(1, "h2", 33)(2, "span", 41);
-    \u0275\u0275text(3, "cake");
-    \u0275\u0275elementEnd();
-    \u0275\u0275text(4, " Anniversaires \xE0 venir ");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "div", 42);
-    \u0275\u0275template(6, FamilleHomeComponent_ng_container_30_div_6_div_6_Template, 10, 10, "div", 43);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(6);
-    \u0275\u0275property("ngForOf", ctx_r0.anniversairesProches)("ngForTrackBy", ctx_r0.trackByAnniversaire);
-  }
-}
-function FamilleHomeComponent_ng_container_30_div_7_div_16_div_1_img_5_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 76);
-    \u0275\u0275listener("error", function FamilleHomeComponent_ng_container_30_div_7_div_16_div_1_img_5_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r5);
-      const p_r6 = \u0275\u0275nextContext().$implicit;
+    const _r4 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 100);
+    \u0275\u0275listener("error", function FamilleHomeComponent_ng_container_40_div_8_div_16_div_1_img_5_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r4);
+      const p_r5 = \u0275\u0275nextContext().$implicit;
       const ctx_r0 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r0.onPhotoError(p_r6.id));
+      return \u0275\u0275resetView(ctx_r0.onPhotoError(p_r5.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r6 = \u0275\u0275nextContext().$implicit;
+    const p_r5 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(4);
-    \u0275\u0275property("src", ctx_r0.getPhotoUrl(p_r6), \u0275\u0275sanitizeUrl)("alt", ctx_r0.getNomComplet(p_r6));
+    \u0275\u0275property("src", ctx_r0.getPhotoUrl(p_r5), \u0275\u0275sanitizeUrl)("alt", ctx_r0.getNomComplet(p_r5));
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_16_div_1_div_6_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_16_div_1_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 77);
+    \u0275\u0275elementStart(0, "div", 101);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r6 = \u0275\u0275nextContext().$implicit;
+    const p_r5 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(4);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r0.getInitiales(p_r6), " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r0.getInitiales(p_r5), " ");
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_16_div_1_div_12_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_16_div_1_div_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 78)(1, "span", 12);
+    \u0275\u0275elementStart(0, "div", 102)(1, "span", 20);
     \u0275\u0275text(2, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r6 = \u0275\u0275nextContext().$implicit;
+    const p_r5 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1("", p_r6.lieuNaissance, " ");
+    \u0275\u0275textInterpolate1("", p_r5.lieuNaissance, " ");
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_16_div_1_span_14_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_16_div_1_span_14_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 79);
+    \u0275\u0275elementStart(0, "span", 103);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_16_div_1_span_15_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_16_div_1_span_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 80);
+    \u0275\u0275elementStart(0, "span", 104);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_16_div_1_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_16_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 60)(1, "div", 61);
-    \u0275\u0275element(2, "div", 62)(3, "span", 63);
-    \u0275\u0275elementStart(4, "div", 64);
-    \u0275\u0275template(5, FamilleHomeComponent_ng_container_30_div_7_div_16_div_1_img_5_Template, 1, 2, "img", 65)(6, FamilleHomeComponent_ng_container_30_div_7_div_16_div_1_div_6_Template, 2, 1, "div", 66);
+    \u0275\u0275elementStart(0, "div", 84)(1, "div", 85);
+    \u0275\u0275element(2, "div", 86)(3, "span", 87);
+    \u0275\u0275elementStart(4, "div", 88);
+    \u0275\u0275template(5, FamilleHomeComponent_ng_container_40_div_8_div_16_div_1_img_5_Template, 1, 2, "img", 89)(6, FamilleHomeComponent_ng_container_40_div_8_div_16_div_1_div_6_Template, 2, 1, "div", 90);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "div", 67)(8, "h4", 68);
+    \u0275\u0275elementStart(7, "div", 91)(8, "h4", 92);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 69);
+    \u0275\u0275elementStart(10, "span", 93);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(12, FamilleHomeComponent_ng_container_30_div_7_div_16_div_1_div_12_Template, 4, 1, "div", 70);
-    \u0275\u0275elementStart(13, "div", 71);
-    \u0275\u0275template(14, FamilleHomeComponent_ng_container_30_div_7_div_16_div_1_span_14_Template, 2, 0, "span", 72)(15, FamilleHomeComponent_ng_container_30_div_7_div_16_div_1_span_15_Template, 2, 0, "span", 73);
+    \u0275\u0275template(12, FamilleHomeComponent_ng_container_40_div_8_div_16_div_1_div_12_Template, 4, 1, "div", 94);
+    \u0275\u0275elementStart(13, "div", 95);
+    \u0275\u0275template(14, FamilleHomeComponent_ng_container_40_div_8_div_16_div_1_span_14_Template, 2, 0, "span", 96)(15, FamilleHomeComponent_ng_container_40_div_8_div_16_div_1_span_15_Template, 2, 0, "span", 97);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(16, "div", 74)(17, "a", 75)(18, "span", 12);
+    \u0275\u0275elementStart(16, "div", 98)(17, "a", 99)(18, "span", 20);
     \u0275\u0275text(19, "visibility");
     \u0275\u0275elementEnd();
     \u0275\u0275text(20, "Voir ");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const p_r6 = ctx.$implicit;
-    const i_r7 = ctx.index;
+    const p_r5 = ctx.$implicit;
+    const i_r6 = ctx.index;
     const ctx_r0 = \u0275\u0275nextContext(4);
-    \u0275\u0275classProp("pc-male", p_r6.sexe === "M")("pc-female", p_r6.sexe === "F");
+    \u0275\u0275classProp("pc-male", p_r5.sexe === "M")("pc-female", p_r5.sexe === "F");
     \u0275\u0275advance(2);
-    \u0275\u0275classProp("color-1", i_r7 % 3 === 0)("color-2", i_r7 % 3 === 1)("color-3", i_r7 % 3 === 2);
+    \u0275\u0275classProp("color-1", i_r6 % 3 === 0)("color-2", i_r6 % 3 === 1)("color-3", i_r6 % 3 === 2);
     \u0275\u0275advance();
-    \u0275\u0275classProp("alive", ctx_r0.estVivant(p_r6))("dead", !ctx_r0.estVivant(p_r6));
+    \u0275\u0275classProp("alive", ctx_r0.estVivant(p_r5))("dead", !ctx_r0.estVivant(p_r5));
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r0.getPhotoUrl(p_r6) && !ctx_r0.failedPhotos.has(p_r6.id));
+    \u0275\u0275property("ngIf", ctx_r0.getPhotoUrl(p_r5) && !ctx_r0.failedPhotos.has(p_r5.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r0.getPhotoUrl(p_r6) || ctx_r0.failedPhotos.has(p_r6.id));
+    \u0275\u0275property("ngIf", !ctx_r0.getPhotoUrl(p_r5) || ctx_r0.failedPhotos.has(p_r5.id));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(p_r6));
+    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(p_r5));
     \u0275\u0275advance();
-    \u0275\u0275classProp("pc-age-unknown", !ctx_r0.getAgeLabel(p_r6));
+    \u0275\u0275classProp("pc-age-unknown", !ctx_r0.getAgeLabel(p_r5));
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r0.getAgeLabel(p_r6) || "Naissance inconnue", " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r0.getAgeLabel(p_r5) || "Naissance inconnue", " ");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", p_r6.lieuNaissance);
+    \u0275\u0275property("ngIf", p_r5.lieuNaissance);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r0.estVivant(p_r6));
+    \u0275\u0275property("ngIf", ctx_r0.estVivant(p_r5));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r0.estVivant(p_r6));
+    \u0275\u0275property("ngIf", !ctx_r0.estVivant(p_r5));
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_16_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 58);
-    \u0275\u0275template(1, FamilleHomeComponent_ng_container_30_div_7_div_16_div_1_Template, 21, 23, "div", 59);
+    \u0275\u0275elementStart(0, "div", 82);
+    \u0275\u0275template(1, FamilleHomeComponent_ng_container_40_div_8_div_16_div_1_Template, 21, 23, "div", 83);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -1440,129 +1436,129 @@ function FamilleHomeComponent_ng_container_30_div_7_div_16_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r0.recentPersonnes)("ngForTrackBy", ctx_r0.trackByPersonneId);
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_img_3_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_img_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 100);
-    \u0275\u0275listener("error", function FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_img_3_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r8);
-      const p_r9 = \u0275\u0275nextContext().$implicit;
+    const _r7 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 124);
+    \u0275\u0275listener("error", function FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_img_3_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r7);
+      const p_r8 = \u0275\u0275nextContext().$implicit;
       const ctx_r0 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r0.onPhotoError(p_r9.id));
+      return \u0275\u0275resetView(ctx_r0.onPhotoError(p_r8.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r9 = \u0275\u0275nextContext().$implicit;
+    const p_r8 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(4);
-    \u0275\u0275property("src", ctx_r0.getPhotoUrl(p_r9), \u0275\u0275sanitizeUrl)("alt", ctx_r0.getNomComplet(p_r9));
+    \u0275\u0275property("src", ctx_r0.getPhotoUrl(p_r8), \u0275\u0275sanitizeUrl)("alt", ctx_r0.getNomComplet(p_r8));
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_div_4_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 101);
+    \u0275\u0275elementStart(0, "div", 125);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r9 = \u0275\u0275nextContext().$implicit;
+    const p_r8 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(4);
-    \u0275\u0275classProp("male", p_r9.sexe === "M")("female", p_r9.sexe === "F");
+    \u0275\u0275classProp("male", p_r8.sexe === "M")("female", p_r8.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r0.getInitiales(p_r9));
+    \u0275\u0275textInterpolate(ctx_r0.getInitiales(p_r8));
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_span_12_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_span_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 102)(1, "span", 12);
+    \u0275\u0275elementStart(0, "span", 126)(1, "span", 20);
     \u0275\u0275text(2, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r9 = \u0275\u0275nextContext().$implicit;
+    const p_r8 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1("", p_r9.lieuNaissance, " ");
+    \u0275\u0275textInterpolate1("", p_r8.lieuNaissance, " ");
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_span_13_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_span_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 103);
+    \u0275\u0275elementStart(0, "span", 127);
     \u0275\u0275text(1, "\u2014");
     \u0275\u0275elementEnd();
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_span_15_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_span_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 79);
+    \u0275\u0275elementStart(0, "span", 103);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_span_16_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_span_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 80);
+    \u0275\u0275elementStart(0, "span", 104);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 87)(1, "div", 88)(2, "div", 89);
-    \u0275\u0275template(3, FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_img_3_Template, 1, 2, "img", 90)(4, FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_div_4_Template, 2, 5, "div", 91);
-    \u0275\u0275element(5, "span", 92);
+    \u0275\u0275elementStart(0, "div", 111)(1, "div", 112)(2, "div", 113);
+    \u0275\u0275template(3, FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_img_3_Template, 1, 2, "img", 114)(4, FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_div_4_Template, 2, 5, "div", 115);
+    \u0275\u0275element(5, "span", 116);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div", 93)(7, "span", 94);
+    \u0275\u0275elementStart(6, "div", 117)(7, "span", 118);
     \u0275\u0275text(8);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "span", 95);
+    \u0275\u0275elementStart(9, "span", 119);
     \u0275\u0275text(10);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(11, "div", 96);
-    \u0275\u0275template(12, FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_span_12_Template, 4, 1, "span", 97)(13, FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_span_13_Template, 2, 0, "span", 98);
+    \u0275\u0275elementStart(11, "div", 120);
+    \u0275\u0275template(12, FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_span_12_Template, 4, 1, "span", 121)(13, FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_span_13_Template, 2, 0, "span", 122);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "div", 99);
-    \u0275\u0275template(15, FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_span_15_Template, 2, 0, "span", 72)(16, FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_span_16_Template, 2, 0, "span", 73);
+    \u0275\u0275elementStart(14, "div", 123);
+    \u0275\u0275template(15, FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_span_15_Template, 2, 0, "span", 96)(16, FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_span_16_Template, 2, 0, "span", 97);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const p_r9 = ctx.$implicit;
+    const p_r8 = ctx.$implicit;
     const ctx_r0 = \u0275\u0275nextContext(4);
     \u0275\u0275advance(3);
-    \u0275\u0275property("ngIf", ctx_r0.getPhotoUrl(p_r9) && !ctx_r0.failedPhotos.has(p_r9.id));
+    \u0275\u0275property("ngIf", ctx_r0.getPhotoUrl(p_r8) && !ctx_r0.failedPhotos.has(p_r8.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r0.getPhotoUrl(p_r9) || ctx_r0.failedPhotos.has(p_r9.id));
+    \u0275\u0275property("ngIf", !ctx_r0.getPhotoUrl(p_r8) || ctx_r0.failedPhotos.has(p_r8.id));
     \u0275\u0275advance();
-    \u0275\u0275classProp("alive", ctx_r0.estVivant(p_r9))("dead", !ctx_r0.estVivant(p_r9));
+    \u0275\u0275classProp("alive", ctx_r0.estVivant(p_r8))("dead", !ctx_r0.estVivant(p_r8));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(p_r9));
+    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(p_r8));
     \u0275\u0275advance();
-    \u0275\u0275classProp("pc-age-unknown", !ctx_r0.getAgeLabel(p_r9));
+    \u0275\u0275classProp("pc-age-unknown", !ctx_r0.getAgeLabel(p_r8));
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r0.getAgeLabel(p_r9) || "Naissance inconnue", " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r0.getAgeLabel(p_r8) || "Naissance inconnue", " ");
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", p_r9.lieuNaissance);
+    \u0275\u0275property("ngIf", p_r8.lieuNaissance);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !p_r9.lieuNaissance);
+    \u0275\u0275property("ngIf", !p_r8.lieuNaissance);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r0.estVivant(p_r9));
+    \u0275\u0275property("ngIf", ctx_r0.estVivant(p_r8));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r0.estVivant(p_r9));
+    \u0275\u0275property("ngIf", !ctx_r0.estVivant(p_r8));
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_div_17_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_div_17_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 81)(1, "div", 82)(2, "span", 83);
+    \u0275\u0275elementStart(0, "div", 105)(1, "div", 106)(2, "span", 107);
     \u0275\u0275text(3, "Personne");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 84);
+    \u0275\u0275elementStart(4, "span", 108);
     \u0275\u0275text(5, "Lieu de naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 85);
+    \u0275\u0275elementStart(6, "span", 109);
     \u0275\u0275text(7, "Statut");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(8, FamilleHomeComponent_ng_container_30_div_7_div_17_div_8_Template, 17, 14, "div", 86);
+    \u0275\u0275template(8, FamilleHomeComponent_ng_container_40_div_8_div_17_div_8_Template, 17, 14, "div", 110);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -1571,36 +1567,36 @@ function FamilleHomeComponent_ng_container_30_div_7_div_17_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r0.recentPersonnes)("ngForTrackBy", ctx_r0.trackByPersonneId);
   }
 }
-function FamilleHomeComponent_ng_container_30_div_7_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_8_Template(rf, ctx) {
   if (rf & 1) {
-    const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 32)(1, "div", 50)(2, "h2", 33);
+    const _r3 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 46)(1, "div", 74)(2, "h2", 47);
     \u0275\u0275text(3, "Membres r\xE9cents");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "div", 51)(5, "div", 52)(6, "button", 53);
-    \u0275\u0275listener("click", function FamilleHomeComponent_ng_container_30_div_7_Template_button_click_6_listener() {
-      \u0275\u0275restoreView(_r4);
+    \u0275\u0275elementStart(4, "div", 75)(5, "div", 76)(6, "button", 77);
+    \u0275\u0275listener("click", function FamilleHomeComponent_ng_container_40_div_8_Template_button_click_6_listener() {
+      \u0275\u0275restoreView(_r3);
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.viewMode = "cards");
     });
-    \u0275\u0275elementStart(7, "span", 12);
+    \u0275\u0275elementStart(7, "span", 20);
     \u0275\u0275text(8, "grid_view");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(9, "button", 54);
-    \u0275\u0275listener("click", function FamilleHomeComponent_ng_container_30_div_7_Template_button_click_9_listener() {
-      \u0275\u0275restoreView(_r4);
+    \u0275\u0275elementStart(9, "button", 78);
+    \u0275\u0275listener("click", function FamilleHomeComponent_ng_container_40_div_8_Template_button_click_9_listener() {
+      \u0275\u0275restoreView(_r3);
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.viewMode = "list");
     });
-    \u0275\u0275elementStart(10, "span", 12);
+    \u0275\u0275elementStart(10, "span", 20);
     \u0275\u0275text(11, "view_list");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(12, "a", 55);
+    \u0275\u0275elementStart(12, "a", 79);
     \u0275\u0275text(13, " Voir tous ");
-    \u0275\u0275elementStart(14, "span", 12);
+    \u0275\u0275elementStart(14, "span", 20);
     \u0275\u0275text(15, "arrow_forward");
     \u0275\u0275elementEnd()()()();
-    \u0275\u0275template(16, FamilleHomeComponent_ng_container_30_div_7_div_16_Template, 2, 2, "div", 56)(17, FamilleHomeComponent_ng_container_30_div_7_div_17_Template, 9, 2, "div", 57);
+    \u0275\u0275template(16, FamilleHomeComponent_ng_container_40_div_8_div_16_Template, 2, 2, "div", 80)(17, FamilleHomeComponent_ng_container_40_div_8_div_17_Template, 9, 2, "div", 81);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -1615,26 +1611,100 @@ function FamilleHomeComponent_ng_container_30_div_7_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r0.viewMode === "list");
   }
 }
-function FamilleHomeComponent_ng_container_30_Template(rf, ctx) {
+function FamilleHomeComponent_ng_container_40_div_10_div_5_span_11_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 136);
+    \u0275\u0275text(1, "Bient\xF4t");
+    \u0275\u0275elementEnd();
+  }
+}
+function FamilleHomeComponent_ng_container_40_div_10_div_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 130)(1, "div", 131)(2, "span");
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "span");
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(6, "div", 132)(7, "div", 133);
+    \u0275\u0275text(8);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "div", 134);
+    \u0275\u0275text(10);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275template(11, FamilleHomeComponent_ng_container_40_div_10_div_5_span_11_Template, 2, 0, "span", 135);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const b_r9 = ctx.$implicit;
+    const ctx_r0 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(b_r9.jourNum);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(b_r9.moisAbbr);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(b_r9.p));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(b_r9.jours === 0 ? "Aujourd'hui" : b_r9.jours === 1 ? "Demain" : "dans " + b_r9.jours + " jours");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", b_r9.jours <= 7);
+  }
+}
+function FamilleHomeComponent_ng_container_40_div_10_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 52)(1, "h4")(2, "span", 128);
+    \u0275\u0275text(3, "cake");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(4, "Anniversaires \xE0 venir");
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(5, FamilleHomeComponent_ng_container_40_div_10_div_5_Template, 12, 5, "div", 129);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(5);
+    \u0275\u0275property("ngForOf", ctx_r0.anniversairesProches)("ngForTrackBy", ctx_r0.trackByAnniversaire);
+  }
+}
+function FamilleHomeComponent_ng_container_40_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "div", 32)(2, "h2", 33);
-    \u0275\u0275text(3, "Explorer");
+    \u0275\u0275elementStart(1, "div", 45)(2, "div")(3, "div", 46)(4, "h2", 47);
+    \u0275\u0275text(5, "Explorer");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "div", 34);
-    \u0275\u0275template(5, FamilleHomeComponent_ng_container_30_a_5_Template, 8, 11, "a", 35);
+    \u0275\u0275elementStart(6, "div", 48);
+    \u0275\u0275template(7, FamilleHomeComponent_ng_container_40_a_7_Template, 8, 11, "a", 49);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(6, FamilleHomeComponent_ng_container_30_div_6_Template, 7, 2, "div", 36)(7, FamilleHomeComponent_ng_container_30_div_7_Template, 18, 6, "div", 36);
+    \u0275\u0275template(8, FamilleHomeComponent_ng_container_40_div_8_Template, 18, 6, "div", 50);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "div");
+    \u0275\u0275template(10, FamilleHomeComponent_ng_container_40_div_10_Template, 6, 2, "div", 51);
+    \u0275\u0275elementStart(11, "div", 52)(12, "h4")(13, "span", 53);
+    \u0275\u0275text(14, "account_tree");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(15, "Aper\xE7u de l'arbre");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(16, "div", 54);
+    \u0275\u0275namespaceSVG();
+    \u0275\u0275elementStart(17, "svg", 55);
+    \u0275\u0275element(18, "line", 56)(19, "line", 57)(20, "line", 58)(21, "line", 59)(22, "line", 60)(23, "line", 61)(24, "circle", 62)(25, "circle", 63)(26, "circle", 64)(27, "circle", 65)(28, "circle", 66)(29, "circle", 67)(30, "circle", 68);
+    \u0275\u0275elementEnd();
+    \u0275\u0275namespaceHTML();
+    \u0275\u0275elementStart(31, "button", 69)(32, "span", 20);
+    \u0275\u0275text(33, "open_in_full");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(34, "Voir l'arbre complet");
+    \u0275\u0275elementEnd()()()()();
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext();
-    \u0275\u0275advance(5);
+    \u0275\u0275advance(7);
     \u0275\u0275property("ngForOf", ctx_r0.tiles);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r0.anniversairesProches.length > 0);
-    \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.recentPersonnes.length > 0);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngIf", ctx_r0.anniversairesProches.length > 0);
   }
 }
 var FamilleHomeComponent = class _FamilleHomeComponent {
@@ -1730,7 +1800,9 @@ var FamilleHomeComponent = class _FamilleHomeComponent {
         next = new Date(yr + 1, month, day);
       const jours = Math.round((next.getTime() - today.getTime()) / 864e5);
       const dateStr = next.toLocaleDateString("fr-FR", { day: "numeric", month: "long" });
-      return { p, jours, dateStr };
+      const jourNum = next.getDate();
+      const moisAbbr = next.toLocaleDateString("fr-FR", { month: "short" }).replace(".", "").toUpperCase();
+      return { p, jours, dateStr, jourNum, moisAbbr };
     }).filter((x) => x !== null && x.jours <= 60).sort((a, b) => a.jours - b.jours).slice(0, 5);
   }
   shareWhatsApp() {
@@ -1741,267 +1813,291 @@ Code : *${this.familleCode}*`;
   static \u0275fac = function FamilleHomeComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _FamilleHomeComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FamilleHomeComponent, selectors: [["app-famille-home"]], standalone: false, decls: 31, vars: 7, consts: [[1, "fh-page"], [1, "fh-hero"], [1, "fh-hero-bg"], [1, "fh-hero-content"], ["class", "fh-hello", 4, "ngIf"], [1, "fh-hero-right"], [1, "fh-hero-stats"], [1, "fh-hero-stat"], [1, "fhs-value"], [1, "fhs-label"], [1, "fh-hero-divider"], ["routerLink", "/famille/inviter", 1, "fh-invite-btn"], [1, "material-icons-round"], ["class", "fh-completion", 4, "ngIf"], [4, "ngIf"], [1, "fh-hello"], [1, "fh-user-avatar"], [1, "fh-greeting"], [1, "fh-family-name"], [1, "fh-completion"], [1, "fh-completion-label"], [1, "fh-completion-bar"], [1, "fh-completion-fill"], [1, "sk-section"], [1, "sk-hero"], [1, "sk-grid"], ["class", "sk-card", 4, "ngFor", "ngForOf"], [1, "sk-card"], [1, "sk-card-banner"], [1, "sk-card-body"], [1, "sk-line", "sk-full"], [1, "sk-line", "sk-md"], [1, "fh-section"], [1, "fh-section-title"], [1, "fh-tiles"], ["class", "fh-tile", 3, "routerLink", "--tile-color", "--tile-bg", 4, "ngFor", "ngForOf"], ["class", "fh-section", 4, "ngIf"], [1, "fh-tile", 3, "routerLink"], [1, "fh-tile-icon"], [1, "fh-tile-label"], [1, "material-icons-round", "fh-tile-arrow"], [1, "material-icons-round", 2, "color", "#DB2777", "font-size", "20px!important", "vertical-align", "middle"], [1, "fh-bday-row"], ["class", "fh-bday-card", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "fh-bday-card"], [1, "fh-bday-avatar"], [1, "fh-bday-info"], [1, "fh-bday-name"], [1, "fh-bday-date"], [1, "fh-bday-badge"], [1, "fh-section-header"], [1, "fh-section-actions"], [1, "view-toggle"], ["title", "Vue cartes", 1, "vt-btn", 3, "click"], ["title", "Vue liste", 1, "vt-btn", 3, "click"], ["routerLink", "/famille/membres", 1, "fh-see-all"], ["class", "pc-grid", 4, "ngIf"], ["class", "pl-table", 4, "ngIf"], [1, "pc-grid"], ["class", "pc-card", 3, "pc-male", "pc-female", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pc-card"], [1, "pc-card-banner"], [1, "pc-colorband"], [1, "pc-live-dot"], [1, "pc-avatar-ring"], ["class", "pc-avatar pc-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pc-avatar pc-avatar-initials", 4, "ngIf"], [1, "pc-card-body"], [1, "pc-name"], [1, "pc-age"], ["class", "pc-loc", 4, "ngIf"], [1, "pc-badges"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "pc-card-actions"], ["routerLink", "/famille/membres", 1, "pc-act"], [1, "pc-avatar", "pc-avatar-photo", 3, "error", "src", "alt"], [1, "pc-avatar", "pc-avatar-initials"], [1, "pc-loc"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "pl-table"], [1, "pl-thead"], [1, "pl-th", "pl-th-person"], [1, "pl-th", "pl-th-lieu"], [1, "pl-th", "pl-th-statut"], ["class", "pl-row", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pl-row"], [1, "pl-cell", "pl-cell-person"], [1, "pl-avatar-wrap"], ["class", "pl-avatar pl-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pl-avatar pl-avatar-initials", 3, "male", "female", 4, "ngIf"], [1, "pl-status-dot"], [1, "pl-person-info"], [1, "pl-person-name"], [1, "pl-person-age"], [1, "pl-cell", "pl-cell-lieu"], ["class", "pl-lieu", 4, "ngIf"], ["class", "pl-empty", 4, "ngIf"], [1, "pl-cell", "pl-cell-statut"], [1, "pl-avatar", "pl-avatar-photo", 3, "error", "src", "alt"], [1, "pl-avatar", "pl-avatar-initials"], [1, "pl-lieu"], [1, "pl-empty"]], template: function FamilleHomeComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FamilleHomeComponent, selectors: [["app-famille-home"]], standalone: false, decls: 41, vars: 7, consts: [[1, "fh-page"], [1, "fh-hero"], ["width", "100%", "height", "100%", "viewBox", "0 0 1000 280", "preserveAspectRatio", "xMaxYMax slice", 1, "fh-hero-roots"], ["d", "M760 280 C 755 230, 740 200, 700 175 C 670 156, 660 130, 665 100", "stroke", "#3E7A4C", "stroke-width", "2.5", "fill", "none", "opacity", "0.55"], ["d", "M760 280 C 770 235, 800 210, 830 190 C 855 173, 868 148, 862 118", "stroke", "#3E7A4C", "stroke-width", "2.5", "fill", "none", "opacity", "0.55"], ["d", "M760 280 C 762 245, 775 222, 800 205", "stroke", "#3E7A4C", "stroke-width", "1.5", "fill", "none", "opacity", "0.4"], ["d", "M665 100 C 640 82, 630 55, 645 28", "stroke", "#3E7A4C", "stroke-width", "2", "fill", "none", "opacity", "0.45"], ["d", "M665 100 C 690 88, 705 65, 700 38", "stroke", "#3E7A4C", "stroke-width", "2", "fill", "none", "opacity", "0.45"], ["d", "M862 118 C 885 100, 895 75, 885 48", "stroke", "#3E7A4C", "stroke-width", "2", "fill", "none", "opacity", "0.45"], ["d", "M862 118 C 840 105, 828 82, 838 58", "stroke", "#3E7A4C", "stroke-width", "2", "fill", "none", "opacity", "0.45"], ["cx", "645", "cy", "26", "r", "7", "fill", "#5A9A68", "opacity", "0.5"], ["cx", "700", "cy", "36", "r", "9", "fill", "#5A9A68", "opacity", "0.55"], ["cx", "885", "cy", "46", "r", "8", "fill", "#5A9A68", "opacity", "0.5"], ["cx", "838", "cy", "56", "r", "6", "fill", "#5A9A68", "opacity", "0.45"], ["cx", "800", "cy", "204", "r", "5", "fill", "#5A9A68", "opacity", "0.35"], [1, "fh-hero-content"], ["class", "fh-hello", 4, "ngIf"], [1, "fh-hero-right"], ["class", "fh-ring-wrap", 4, "ngIf"], ["routerLink", "/famille/inviter", 1, "fh-invite-btn"], [1, "material-icons-round"], [1, "fh-hero-stats-row"], [1, "fh-hero-stat"], [1, "fhs-value"], [1, "fhs-label"], [4, "ngIf"], [1, "fh-hello"], [1, "fh-user-avatar"], [1, "fh-greeting"], [1, "fh-family-name"], [1, "fh-hero-meta"], [1, "fh-hero-dot"], [1, "fh-ring-wrap"], [1, "fh-ring"], [1, "fh-ring-inner"], [1, "fh-ring-label"], [1, "sk-section"], [1, "sk-hero"], [1, "sk-grid"], ["class", "sk-card", 4, "ngFor", "ngForOf"], [1, "sk-card"], [1, "sk-card-banner"], [1, "sk-card-body"], [1, "sk-line", "sk-full"], [1, "sk-line", "sk-md"], [1, "fh-body-grid"], [1, "fh-section"], [1, "fh-section-title"], [1, "fh-tiles"], ["class", "fh-tile", 3, "routerLink", "--tile-color", "--tile-bg", 4, "ngFor", "ngForOf"], ["class", "fh-section", 4, "ngIf"], ["class", "aside-card", 4, "ngIf"], [1, "aside-card"], [1, "material-icons-round", 2, "color", "#2E7D32"], [1, "tree-preview"], ["width", "220", "height", "130", "viewBox", "0 0 220 130"], ["x1", "110", "y1", "30", "x2", "70", "y2", "70", "stroke", "#D1D5DB", "stroke-width", "2"], ["x1", "110", "y1", "30", "x2", "150", "y2", "70", "stroke", "#D1D5DB", "stroke-width", "2"], ["x1", "70", "y1", "70", "x2", "45", "y2", "110", "stroke", "#D1D5DB", "stroke-width", "2"], ["x1", "70", "y1", "70", "x2", "90", "y2", "110", "stroke", "#D1D5DB", "stroke-width", "2"], ["x1", "150", "y1", "70", "x2", "130", "y2", "110", "stroke", "#D1D5DB", "stroke-width", "2"], ["x1", "150", "y1", "70", "x2", "170", "y2", "110", "stroke", "#D1D5DB", "stroke-width", "2"], ["cx", "110", "cy", "30", "r", "13", "fill", "#2E7D32"], ["cx", "70", "cy", "70", "r", "11", "fill", "#60A5FA"], ["cx", "150", "cy", "70", "r", "11", "fill", "#F472B6"], ["cx", "45", "cy", "110", "r", "9", "fill", "#93C5FD"], ["cx", "90", "cy", "110", "r", "9", "fill", "#93C5FD"], ["cx", "130", "cy", "110", "r", "9", "fill", "#F9A8D4"], ["cx", "170", "cy", "110", "r", "9", "fill", "#F9A8D4"], ["routerLink", "/famille/arbre", 1, "tree-link"], [1, "fh-tile", 3, "routerLink"], [1, "fh-tile-icon"], [1, "fh-tile-label"], [1, "material-icons-round", "fh-tile-arrow"], [1, "fh-section-header"], [1, "fh-section-actions"], [1, "view-toggle"], ["title", "Vue cartes", 1, "vt-btn", 3, "click"], ["title", "Vue liste", 1, "vt-btn", 3, "click"], ["routerLink", "/famille/membres", 1, "fh-see-all"], ["class", "pc-grid", 4, "ngIf"], ["class", "pl-table", 4, "ngIf"], [1, "pc-grid"], ["class", "pc-card", 3, "pc-male", "pc-female", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pc-card"], [1, "pc-card-banner"], [1, "pc-colorband"], [1, "pc-live-dot"], [1, "pc-avatar-ring"], ["class", "pc-avatar pc-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pc-avatar pc-avatar-initials", 4, "ngIf"], [1, "pc-card-body"], [1, "pc-name"], [1, "pc-age"], ["class", "pc-loc", 4, "ngIf"], [1, "pc-badges"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "pc-card-actions"], ["routerLink", "/famille/membres", 1, "pc-act"], [1, "pc-avatar", "pc-avatar-photo", 3, "error", "src", "alt"], [1, "pc-avatar", "pc-avatar-initials"], [1, "pc-loc"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "pl-table"], [1, "pl-thead"], [1, "pl-th", "pl-th-person"], [1, "pl-th", "pl-th-lieu"], [1, "pl-th", "pl-th-statut"], ["class", "pl-row", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pl-row"], [1, "pl-cell", "pl-cell-person"], [1, "pl-avatar-wrap"], ["class", "pl-avatar pl-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pl-avatar pl-avatar-initials", 3, "male", "female", 4, "ngIf"], [1, "pl-status-dot"], [1, "pl-person-info"], [1, "pl-person-name"], [1, "pl-person-age"], [1, "pl-cell", "pl-cell-lieu"], ["class", "pl-lieu", 4, "ngIf"], ["class", "pl-empty", 4, "ngIf"], [1, "pl-cell", "pl-cell-statut"], [1, "pl-avatar", "pl-avatar-photo", 3, "error", "src", "alt"], [1, "pl-avatar", "pl-avatar-initials"], [1, "pl-lieu"], [1, "pl-empty"], [1, "material-icons-round", 2, "color", "#DB2777"], ["class", "bday-item", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "bday-item"], [1, "bday-date"], [1, "bday-item-info"], [1, "bday-item-name"], [1, "bday-item-when"], ["class", "bday-item-soon", 4, "ngIf"], [1, "bday-item-soon"]], template: function FamilleHomeComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1);
-      \u0275\u0275element(2, "div", 2);
-      \u0275\u0275elementStart(3, "div", 3);
-      \u0275\u0275template(4, FamilleHomeComponent_div_4_Template, 8, 3, "div", 4);
-      \u0275\u0275elementStart(5, "div", 5)(6, "div", 6)(7, "div", 7)(8, "span", 8);
-      \u0275\u0275text(9);
+      \u0275\u0275namespaceSVG();
+      \u0275\u0275elementStart(2, "svg", 2);
+      \u0275\u0275element(3, "path", 3)(4, "path", 4)(5, "path", 5)(6, "path", 6)(7, "path", 7)(8, "path", 8)(9, "path", 9)(10, "circle", 10)(11, "circle", 11)(12, "circle", 12)(13, "circle", 13)(14, "circle", 14);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(10, "span", 9);
-      \u0275\u0275text(11, "Membres");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275element(12, "div", 10);
-      \u0275\u0275elementStart(13, "div", 7)(14, "span", 8);
-      \u0275\u0275text(15);
+      \u0275\u0275namespaceHTML();
+      \u0275\u0275elementStart(15, "div", 15);
+      \u0275\u0275template(16, FamilleHomeComponent_div_16_Template, 16, 5, "div", 16);
+      \u0275\u0275elementStart(17, "div", 17);
+      \u0275\u0275template(18, FamilleHomeComponent_div_18_Template, 8, 3, "div", 18);
+      \u0275\u0275elementStart(19, "a", 19)(20, "span", 20);
+      \u0275\u0275text(21, "group_add");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(16, "span", 9);
-      \u0275\u0275text(17, "G\xE9n\xE9rations");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275element(18, "div", 10);
-      \u0275\u0275elementStart(19, "div", 7)(20, "span", 8);
-      \u0275\u0275text(21);
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(22, "span", 9);
-      \u0275\u0275text(23, "Unions");
+      \u0275\u0275text(22, " Inviter ");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(24, "a", 11)(25, "span", 12);
-      \u0275\u0275text(26, "group_add");
+      \u0275\u0275elementStart(23, "div", 21)(24, "div", 22)(25, "span", 23);
+      \u0275\u0275text(26);
       \u0275\u0275elementEnd();
-      \u0275\u0275text(27, " Inviter ");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275template(28, FamilleHomeComponent_div_28_Template, 9, 3, "div", 13);
+      \u0275\u0275elementStart(27, "span", 24);
+      \u0275\u0275text(28, "Membres");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(29, "div", 22)(30, "span", 23);
+      \u0275\u0275text(31);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(29, FamilleHomeComponent_ng_container_29_Template, 5, 2, "ng-container", 14)(30, FamilleHomeComponent_ng_container_30_Template, 8, 3, "ng-container", 14);
+      \u0275\u0275elementStart(32, "span", 24);
+      \u0275\u0275text(33, "G\xE9n\xE9rations");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(34, "div", 22)(35, "span", 23);
+      \u0275\u0275text(36);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(37, "span", 24);
+      \u0275\u0275text(38, "Unions");
+      \u0275\u0275elementEnd()()()();
+      \u0275\u0275template(39, FamilleHomeComponent_ng_container_39_Template, 5, 2, "ng-container", 25)(40, FamilleHomeComponent_ng_container_40_Template, 35, 3, "ng-container", 25);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
-      \u0275\u0275advance(4);
+      \u0275\u0275advance(16);
       \u0275\u0275property("ngIf", ctx.user);
-      \u0275\u0275advance(5);
+      \u0275\u0275advance(2);
+      \u0275\u0275property("ngIf", !ctx.loading && ctx.toutes.length > 0);
+      \u0275\u0275advance(8);
       \u0275\u0275textInterpolate(ctx.totalMembres);
-      \u0275\u0275advance(6);
+      \u0275\u0275advance(5);
       \u0275\u0275textInterpolate(ctx.totalGenerations);
-      \u0275\u0275advance(6);
+      \u0275\u0275advance(5);
       \u0275\u0275textInterpolate(ctx.totalUnions);
-      \u0275\u0275advance(7);
-      \u0275\u0275property("ngIf", !ctx.loading && ctx.totalMembres > 0);
-      \u0275\u0275advance();
+      \u0275\u0275advance(3);
       \u0275\u0275property("ngIf", ctx.loading);
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", !ctx.loading);
     }
-  }, dependencies: [NgForOf, NgIf, RouterLink], styles: ['@charset "UTF-8";\n\n\n\n.fh-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 32px;\n}\n.fh-hero[_ngcontent-%COMP%] {\n  position: relative;\n  border-radius: 24px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #1a0533 0%,\n      #2d1b69 50%,\n      #1e3a8a 100%);\n  padding: 36px 40px;\n  color: #fff;\n}\n.fh-hero-bg[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.04) 1px,\n      transparent 1px);\n  background-size: 32px 32px;\n  pointer-events: none;\n}\n.fh-hero-content[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 24px;\n}\n.fh-hello[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.fh-user-avatar[_ngcontent-%COMP%] {\n  width: 56px;\n  height: 56px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      #A78BFA,\n      #EC4899);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.fh-greeting[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.65);\n  margin: 0 0 4px;\n}\n.fh-family-name[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  margin: 0;\n  letter-spacing: -0.3px;\n}\n.fh-hero-stats[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  background: rgba(255, 255, 255, 0.08);\n  border-radius: 16px;\n  padding: 16px 24px;\n  gap: 24px;\n}\n.fh-hero-stat[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n}\n.fhs-value[_ngcontent-%COMP%] {\n  font-size: 28px;\n  font-weight: 800;\n  color: #fff;\n  line-height: 1;\n}\n.fhs-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: rgba(255, 255, 255, 0.5);\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n}\n.fh-hero-divider[_ngcontent-%COMP%] {\n  width: 1px;\n  height: 36px;\n  background: rgba(255, 255, 255, 0.15);\n}\n.fh-section[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.fh-section-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 12px;\n}\n.fh-section-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.fh-section-title[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 0;\n}\n.fh-see-all[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  font-weight: 500;\n  color: #7C3AED;\n  text-decoration: none;\n}\n.fh-see-all[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.fh-see-all[_ngcontent-%COMP%]:hover {\n  text-decoration: none;\n  opacity: 0.8;\n}\n.fh-tiles[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n}\n.fh-tile[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 20px;\n  background: #fff;\n  border-radius: 18px;\n  border: 1px solid #F0F4FF;\n  text-decoration: none;\n  color: #1F2937;\n  transition: all 0.25s;\n}\n.fh-tile[_ngcontent-%COMP%]:hover {\n  border-color: var(--tile-color, #7C3AED);\n  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);\n  transform: translateY(-3px);\n  text-decoration: none;\n  color: #1F2937;\n}\n.fh-tile[_ngcontent-%COMP%]:hover   .fh-tile-arrow[_ngcontent-%COMP%] {\n  opacity: 1;\n  transform: translateX(3px);\n  color: var(--tile-color, #7C3AED);\n}\n.fh-tile-icon[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.fh-tile-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 24px !important;\n}\n.fh-tile-label[_ngcontent-%COMP%] {\n  flex: 1;\n  font-size: 14px;\n  font-weight: 600;\n}\n.fh-tile-arrow[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #D1D5DB;\n  opacity: 0;\n  transition: all 0.2s;\n}\n.fh-hero-right[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  gap: 12px;\n}\n.fh-invite-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 9px 18px;\n  border-radius: 12px;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  background: rgba(255, 255, 255, 0.14);\n  color: #fff;\n  font-size: 13px;\n  font-weight: 700;\n  text-decoration: none;\n  white-space: nowrap;\n  transition: background 0.15s;\n}\n.fh-invite-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.fh-invite-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.26);\n  text-decoration: none;\n  color: #fff;\n}\n.fh-completion[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n  margin-top: 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.fh-completion-label[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.7);\n}\n.fh-completion-label[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.fh-completion-label[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: #fff;\n  font-weight: 700;\n}\n.fh-completion-bar[_ngcontent-%COMP%] {\n  height: 5px;\n  border-radius: 99px;\n  background: rgba(255, 255, 255, 0.15);\n  overflow: hidden;\n}\n.fh-completion-fill[_ngcontent-%COMP%] {\n  height: 100%;\n  border-radius: 99px;\n  background:\n    linear-gradient(\n      90deg,\n      #A78BFA,\n      #EC4899);\n  transition: width 0.8s ease;\n}\n.fh-bday-row[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  overflow-x: auto;\n  padding-bottom: 4px;\n  scrollbar-width: none;\n}\n.fh-bday-row[_ngcontent-%COMP%]::-webkit-scrollbar {\n  display: none;\n}\n.fh-bday-card[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 14px;\n  background: #fff;\n  border: 1px solid #FBE8F3;\n  border-radius: 14px;\n  min-width: 200px;\n  flex-shrink: 0;\n  transition: box-shadow 0.15s;\n}\n.fh-bday-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 4px 14px rgba(219, 39, 119, 0.12);\n}\n.fh-bday-avatar[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.fh-bday-avatar.male[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #3B82F6);\n}\n.fh-bday-avatar.female[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #F472B6,\n      #EC4899);\n}\n.fh-bday-avatar[_ngcontent-%COMP%]:not(.male):not(.female) {\n  background:\n    linear-gradient(\n      135deg,\n      #A78BFA,\n      #7C3AED);\n}\n.fh-bday-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.fh-bday-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: #1F2937;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.fh-bday-date[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #9CA3AF;\n}\n.fh-bday-badge[_ngcontent-%COMP%] {\n  background: #FDF2F8;\n  color: #DB2777;\n  font-size: 11px;\n  font-weight: 700;\n  padding: 3px 8px;\n  border-radius: 7px;\n  white-space: nowrap;\n}\n.fh-bday-badge.soon[_ngcontent-%COMP%] {\n  background: #FEF3C7;\n  color: #B45309;\n  animation: _ngcontent-%COMP%_pulse-badge 1.5s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-badge {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n@media (max-width: 1024px) {\n  .fh-tiles[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  .fh-members-row[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media (max-width: 640px) {\n  .fh-hero[_ngcontent-%COMP%] {\n    padding: 24px 20px;\n    border-radius: 16px;\n  }\n  .fh-hero-content[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 16px;\n  }\n  .fh-hero-right[_ngcontent-%COMP%] {\n    align-items: flex-start;\n    flex-direction: row;\n    flex-wrap: wrap;\n    gap: 10px;\n  }\n  .fh-hero-stats[_ngcontent-%COMP%] {\n    width: auto;\n    justify-content: space-around;\n    padding: 12px 16px;\n    gap: 12px;\n  }\n  .fhs-value[_ngcontent-%COMP%] {\n    font-size: 22px;\n  }\n  .fh-family-name[_ngcontent-%COMP%] {\n    font-size: 18px;\n  }\n  .fh-tiles[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .fh-tile[_ngcontent-%COMP%] {\n    padding: 14px;\n    gap: 10px;\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .fh-tile-icon[_ngcontent-%COMP%] {\n    width: 40px;\n    height: 40px;\n  }\n  .fh-tile-arrow[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .fh-bday-card[_ngcontent-%COMP%] {\n    min-width: 180px;\n  }\n}\n@media (max-width: 380px) {\n  .fh-tiles[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=famille-home.component.css.map */'] });
+  }, dependencies: [NgForOf, NgIf, RouterLink], styles: ['@charset "UTF-8";\n\n\n\n.fh-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 32px;\n}\n.fh-hero[_ngcontent-%COMP%] {\n  position: relative;\n  border-radius: 26px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #0B1220 0%,\n      #0F2A1E 46%,\n      #123B27 100%);\n  padding: 36px 40px 32px;\n  color: #fff;\n  animation: _ngcontent-%COMP%_fhHeroIn 0.5s ease-out;\n}\n@keyframes _ngcontent-%COMP%_fhHeroIn {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.fh-hero-roots[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n  opacity: 0.5;\n}\n.fh-hero-content[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 24px;\n}\n.fh-hello[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.fh-user-avatar[_ngcontent-%COMP%] {\n  width: 56px;\n  height: 56px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      #86D19C,\n      #2E7D32);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 800;\n  color: #08210F;\n  flex-shrink: 0;\n  border: 2px solid rgba(255, 255, 255, 0.25);\n}\n.fh-greeting[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.68);\n  margin: 0 0 4px;\n}\n.fh-family-name[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  margin: 0;\n  letter-spacing: -0.3px;\n}\n.fh-hero-meta[_ngcontent-%COMP%] {\n  margin: 6px 0 0;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.55);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.fh-hero-meta[_ngcontent-%COMP%]   b[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.85);\n  font-weight: 600;\n}\n.fh-hero-dot[_ngcontent-%COMP%] {\n  width: 3px;\n  height: 3px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.35);\n}\n.fh-hero-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 22px;\n  flex-wrap: wrap;\n}\n.fh-ring-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.fh-ring[_ngcontent-%COMP%] {\n  width: 64px;\n  height: 64px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: background 0.4s ease;\n}\n.fh-ring-inner[_ngcontent-%COMP%] {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  background: #0F2A1E;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  color: #fff;\n}\n.fh-ring-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.6);\n  max-width: 130px;\n  line-height: 1.4;\n}\n.fh-ring-label[_ngcontent-%COMP%]   b[_ngcontent-%COMP%] {\n  color: #fff;\n  display: block;\n  font-size: 13px;\n  margin-bottom: 1px;\n}\n.fh-invite-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  background: rgba(255, 255, 255, 0.1);\n  color: #fff;\n  font-size: 13.5px;\n  font-weight: 600;\n  text-decoration: none;\n  white-space: nowrap;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    background 0.15s;\n}\n.fh-invite-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.fh-invite-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.16);\n  text-decoration: none;\n  color: #fff;\n  transform: translateY(-1px);\n}\n.fh-hero-stats-row[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  gap: 28px;\n  margin-top: 24px;\n  padding-top: 20px;\n  border-top: 1px solid rgba(255, 255, 255, 0.12);\n  flex-wrap: wrap;\n}\n.fh-hero-stat[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: baseline;\n  gap: 8px;\n}\n.fhs-value[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  line-height: 1;\n}\n.fhs-label[_ngcontent-%COMP%] {\n  font-size: 12.5px;\n  color: rgba(255, 255, 255, 0.55);\n}\n.fh-body-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 336px;\n  gap: 22px;\n}\n.fh-section[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.fh-section[_ngcontent-%COMP%]:last-child {\n  margin-bottom: 0;\n}\n.fh-section-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 12px;\n}\n.fh-section-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.fh-section-title[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.fh-see-all[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--primary);\n  text-decoration: none;\n}\n.fh-see-all[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.fh-see-all[_ngcontent-%COMP%]:hover {\n  text-decoration: none;\n  opacity: 0.8;\n}\n.fh-tiles[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));\n  gap: 16px;\n}\n.fh-tile[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 20px;\n  background: var(--white);\n  border-radius: 18px;\n  border: 1px solid var(--border-light);\n  text-decoration: none;\n  color: var(--text-primary);\n  transition: all 0.25s;\n}\n.fh-tile[_ngcontent-%COMP%]:hover {\n  border-color: var(--tile-color, var(--primary));\n  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);\n  transform: translateY(-3px);\n  text-decoration: none;\n  color: var(--text-primary);\n}\n.fh-tile[_ngcontent-%COMP%]:hover   .fh-tile-arrow[_ngcontent-%COMP%] {\n  opacity: 1;\n  transform: translateX(3px);\n  color: var(--tile-color, var(--primary));\n}\n.fh-tile-icon[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.fh-tile-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 24px !important;\n}\n.fh-tile-label[_ngcontent-%COMP%] {\n  flex: 1;\n  font-size: 14px;\n  font-weight: 600;\n}\n.fh-tile-arrow[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #D1D5DB;\n  opacity: 0;\n  transition: all 0.2s;\n}\n.aside-card[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 18px;\n  padding: 18px;\n  margin-bottom: 18px;\n}\n.aside-card[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  margin: 0 0 14px;\n  font-size: 13.5px;\n  font-weight: 700;\n  color: var(--text-primary);\n  display: flex;\n  align-items: center;\n  gap: 7px;\n}\n.aside-card[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.bday-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 11px;\n  padding: 9px 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.bday-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.bday-date[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border-radius: 11px;\n  background: #FDF2F8;\n  color: #DB2777;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.bday-date[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:first-child {\n  font-size: 13px;\n  font-weight: 800;\n  line-height: 1;\n}\n.bday-date[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:last-child {\n  font-size: 8.5px;\n  font-weight: 600;\n  text-transform: uppercase;\n}\n.bday-item-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.bday-item-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-item-when[_ngcontent-%COMP%] {\n  font-size: 11.5px;\n  color: var(--text-muted);\n}\n.bday-item-soon[_ngcontent-%COMP%] {\n  margin-left: auto;\n  flex-shrink: 0;\n  font-size: 10.5px;\n  font-weight: 700;\n  color: #DB2777;\n  background: #FDF2F8;\n  padding: 3px 8px;\n  border-radius: 999px;\n  animation: _ngcontent-%COMP%_pulse-badge 1.5s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-badge {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n.tree-preview[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 4px 0 6px;\n}\n.tree-link[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  width: 100%;\n  margin-top: 14px;\n  padding: 9px;\n  border-radius: 10px;\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  border: none;\n  text-decoration: none;\n}\n.tree-link[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.tree-link[_ngcontent-%COMP%]:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n@media (prefers-reduced-motion: reduce) {\n  [_nghost-%COMP%]   *[_ngcontent-%COMP%] {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 1100px) {\n  .fh-body-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 1024px) {\n  .fh-tiles[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media (max-width: 640px) {\n  .fh-hero[_ngcontent-%COMP%] {\n    padding: 24px 20px;\n    border-radius: 18px;\n  }\n  .fh-hero-content[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 16px;\n  }\n  .fh-hero-right[_ngcontent-%COMP%] {\n    align-items: flex-start;\n    flex-direction: row;\n    flex-wrap: wrap;\n    gap: 14px;\n  }\n  .fhs-value[_ngcontent-%COMP%] {\n    font-size: 20px;\n  }\n  .fh-family-name[_ngcontent-%COMP%] {\n    font-size: 19px;\n  }\n  .fh-hero-stats-row[_ngcontent-%COMP%] {\n    gap: 18px;\n  }\n  .fh-tiles[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .fh-tile[_ngcontent-%COMP%] {\n    padding: 14px;\n    gap: 10px;\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .fh-tile-icon[_ngcontent-%COMP%] {\n    width: 40px;\n    height: 40px;\n  }\n  .fh-tile-arrow[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n@media (max-width: 380px) {\n  .fh-tiles[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=famille-home.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FamilleHomeComponent, [{
     type: Component,
-    args: [{ selector: "app-famille-home", standalone: false, template: `<div class="fh-page">\r
-\r
-  <!-- Banni\xE8re de bienvenue -->\r
-  <div class="fh-hero">\r
-    <div class="fh-hero-bg"></div>\r
-    <div class="fh-hero-content">\r
-      <div class="fh-hello" *ngIf="user">\r
-        <div class="fh-user-avatar">{{ (user.prenom[0] + user.nom[0]).toUpperCase() }}</div>\r
-        <div>\r
-          <p class="fh-greeting">Bonjour, {{ user.prenom }} \u{1F44B}</p>\r
-          <h1 class="fh-family-name">Famille {{ nomFamille || '\u2026' }}</h1>\r
-        </div>\r
-      </div>\r
-      <div class="fh-hero-right">\r
-        <div class="fh-hero-stats">\r
-          <div class="fh-hero-stat">\r
-            <span class="fhs-value">{{ totalMembres }}</span>\r
-            <span class="fhs-label">Membres</span>\r
-          </div>\r
-          <div class="fh-hero-divider"></div>\r
-          <div class="fh-hero-stat">\r
-            <span class="fhs-value">{{ totalGenerations }}</span>\r
-            <span class="fhs-label">G\xE9n\xE9rations</span>\r
-          </div>\r
-          <div class="fh-hero-divider"></div>\r
-          <div class="fh-hero-stat">\r
-            <span class="fhs-value">{{ totalUnions }}</span>\r
-            <span class="fhs-label">Unions</span>\r
-          </div>\r
-        </div>\r
-        <a class="fh-invite-btn" routerLink="/famille/inviter">\r
-          <span class="material-icons-round">group_add</span>\r
-          Inviter\r
-        </a>\r
-      </div>\r
-    </div>\r
-    <!-- Barre de compl\xE9tion -->\r
-    <div class="fh-completion" *ngIf="!loading && totalMembres > 0">\r
-      <div class="fh-completion-label">\r
-        <span class="material-icons-round">bar_chart</span>\r
-        Compl\xE9tion des profils\r
-        <strong>{{ completionScore }}%</strong>\r
-      </div>\r
-      <div class="fh-completion-bar">\r
-        <div class="fh-completion-fill" [style.width.%]="completionScore"></div>\r
-      </div>\r
-    </div>\r
-  </div>\r
-\r
-  <!-- Skeleton chargement -->\r
-  <ng-container *ngIf="loading">\r
-    <div class="sk-section">\r
-      <div class="sk-hero"></div>\r
-      <div class="sk-grid">\r
-        <div class="sk-card" *ngFor="let _ of [1,2,3,4]">\r
-          <div class="sk-card-banner"></div>\r
-          <div class="sk-card-body">\r
-            <div class="sk-line sk-full"></div>\r
-            <div class="sk-line sk-md"></div>\r
-          </div>\r
-        </div>\r
-      </div>\r
-    </div>\r
-  </ng-container>\r
-\r
-  <ng-container *ngIf="!loading">\r
-\r
-    <!-- Tuiles de navigation -->\r
-    <div class="fh-section">\r
-      <h2 class="fh-section-title">Explorer</h2>\r
-      <div class="fh-tiles">\r
-        <a class="fh-tile" *ngFor="let t of tiles" [routerLink]="t.route"\r
-           [style.--tile-color]="t.color" [style.--tile-bg]="t.bg">\r
-          <div class="fh-tile-icon" [style.background]="t.bg" [style.color]="t.color">\r
-            <span class="material-icons-round">{{ t.icon }}</span>\r
-          </div>\r
-          <span class="fh-tile-label">{{ t.label }}</span>\r
-          <span class="material-icons-round fh-tile-arrow">arrow_forward</span>\r
-        </a>\r
-      </div>\r
-    </div>\r
-\r
-    <!-- Anniversaires \xE0 venir -->\r
-    <div class="fh-section" *ngIf="anniversairesProches.length > 0">\r
-      <h2 class="fh-section-title">\r
-        <span class="material-icons-round" style="color:#DB2777;font-size:20px!important;vertical-align:middle">cake</span>\r
-        Anniversaires \xE0 venir\r
-      </h2>\r
-      <div class="fh-bday-row">\r
-        <div class="fh-bday-card" *ngFor="let b of anniversairesProches; trackBy: trackByAnniversaire">\r
-          <div class="fh-bday-avatar" [class.male]="b.p.sexe === 'M'" [class.female]="b.p.sexe === 'F'">\r
-            {{ getInitiales(b.p) }}\r
-          </div>\r
-          <div class="fh-bday-info">\r
-            <span class="fh-bday-name">{{ getNomComplet(b.p) }}</span>\r
-            <span class="fh-bday-date">{{ b.dateStr }}</span>\r
-          </div>\r
-          <span class="fh-bday-badge" [class.soon]="b.jours <= 7">\r
-            {{ b.jours === 0 ? 'Aujourd\\'hui !' : b.jours === 1 ? 'Demain !' : b.jours + 'j' }}\r
-          </span>\r
-        </div>\r
-      </div>\r
-    </div>\r
-\r
-    <!-- Membres r\xE9cents -->\r
-    <div class="fh-section" *ngIf="recentPersonnes.length > 0">\r
-      <div class="fh-section-header">\r
-        <h2 class="fh-section-title">Membres r\xE9cents</h2>\r
-        <div class="fh-section-actions">\r
-          <div class="view-toggle">\r
-            <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">\r
-              <span class="material-icons-round">grid_view</span>\r
-            </button>\r
-            <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">\r
-              <span class="material-icons-round">view_list</span>\r
-            </button>\r
-          </div>\r
-          <a routerLink="/famille/membres" class="fh-see-all">\r
-            Voir tous <span class="material-icons-round">arrow_forward</span>\r
-          </a>\r
-        </div>\r
-      </div>\r
-\r
-      <!-- Vue cartes -->\r
-      <div class="pc-grid" *ngIf="viewMode === 'cards'">\r
-        <div class="pc-card" *ngFor="let p of recentPersonnes; let i = index; trackBy: trackByPersonneId"\r
-             [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'">\r
-          <div class="pc-card-banner">\r
-            <div class="pc-colorband"\r
-                 [class.color-1]="i % 3 === 0"\r
-                 [class.color-2]="i % 3 === 1"\r
-                 [class.color-3]="i % 3 === 2"></div>\r
-            <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>\r
-            <div class="pc-avatar-ring">\r
-              <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
-                   [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"\r
-                   [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />\r
-              <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">\r
-                {{ getInitiales(p) }}\r
-              </div>\r
-            </div>\r
-          </div>\r
-          <div class="pc-card-body">\r
-            <h4 class="pc-name">{{ getNomComplet(p) }}</h4>\r
-            <span class="pc-age" [class.pc-age-unknown]="!getAgeLabel(p)">\r
-              {{ getAgeLabel(p) || 'Naissance inconnue' }}\r
-            </span>\r
-            <div class="pc-loc" *ngIf="p.lieuNaissance">\r
-              <span class="material-icons-round">place</span>{{ p.lieuNaissance }}\r
-            </div>\r
-            <div class="pc-badges">\r
-              <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>\r
-              <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>\r
-            </div>\r
-          </div>\r
-          <div class="pc-card-actions">\r
-            <a class="pc-act" routerLink="/famille/membres">\r
-              <span class="material-icons-round">visibility</span>Voir\r
-            </a>\r
-          </div>\r
-        </div>\r
-      </div>\r
-\r
-      <!-- Vue liste -->\r
-      <div class="pl-table" *ngIf="viewMode === 'list'">\r
-        <div class="pl-thead">\r
-          <span class="pl-th pl-th-person">Personne</span>\r
-          <span class="pl-th pl-th-lieu">Lieu de naissance</span>\r
-          <span class="pl-th pl-th-statut">Statut</span>\r
-        </div>\r
-        <div class="pl-row" *ngFor="let p of recentPersonnes; trackBy: trackByPersonneId">\r
-          <div class="pl-cell pl-cell-person">\r
-            <div class="pl-avatar-wrap">\r
-              <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
-                   [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"\r
-                   [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />\r
-              <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pl-avatar pl-avatar-initials"\r
-                   [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">{{ getInitiales(p) }}</div>\r
-              <span class="pl-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>\r
-            </div>\r
-            <div class="pl-person-info">\r
-              <span class="pl-person-name">{{ getNomComplet(p) }}</span>\r
-              <span class="pl-person-age" [class.pc-age-unknown]="!getAgeLabel(p)">\r
-                {{ getAgeLabel(p) || 'Naissance inconnue' }}\r
-              </span>\r
-            </div>\r
-          </div>\r
-          <div class="pl-cell pl-cell-lieu">\r
-            <span *ngIf="p.lieuNaissance" class="pl-lieu">\r
-              <span class="material-icons-round">place</span>{{ p.lieuNaissance }}\r
-            </span>\r
-            <span *ngIf="!p.lieuNaissance" class="pl-empty">\u2014</span>\r
-          </div>\r
-          <div class="pl-cell pl-cell-statut">\r
-            <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>\r
-            <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>\r
-          </div>\r
-        </div>\r
-      </div>\r
-    </div>\r
-\r
-  </ng-container>\r
-</div>\r
-`, styles: ['@charset "UTF-8";\n\n/* src/app/famille/pages/home/famille-home.component.scss */\n.fh-page {\n  display: flex;\n  flex-direction: column;\n  gap: 32px;\n}\n.fh-hero {\n  position: relative;\n  border-radius: 24px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #1a0533 0%,\n      #2d1b69 50%,\n      #1e3a8a 100%);\n  padding: 36px 40px;\n  color: #fff;\n}\n.fh-hero-bg {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.04) 1px,\n      transparent 1px);\n  background-size: 32px 32px;\n  pointer-events: none;\n}\n.fh-hero-content {\n  position: relative;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 24px;\n}\n.fh-hello {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.fh-user-avatar {\n  width: 56px;\n  height: 56px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      #A78BFA,\n      #EC4899);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.fh-greeting {\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.65);\n  margin: 0 0 4px;\n}\n.fh-family-name {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  margin: 0;\n  letter-spacing: -0.3px;\n}\n.fh-hero-stats {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  background: rgba(255, 255, 255, 0.08);\n  border-radius: 16px;\n  padding: 16px 24px;\n  gap: 24px;\n}\n.fh-hero-stat {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n}\n.fhs-value {\n  font-size: 28px;\n  font-weight: 800;\n  color: #fff;\n  line-height: 1;\n}\n.fhs-label {\n  font-size: 11px;\n  color: rgba(255, 255, 255, 0.5);\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n}\n.fh-hero-divider {\n  width: 1px;\n  height: 36px;\n  background: rgba(255, 255, 255, 0.15);\n}\n.fh-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.fh-section-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 12px;\n}\n.fh-section-actions {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.fh-section-title {\n  font-size: 18px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 0;\n}\n.fh-see-all {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  font-weight: 500;\n  color: #7C3AED;\n  text-decoration: none;\n}\n.fh-see-all .material-icons-round {\n  font-size: 16px !important;\n}\n.fh-see-all:hover {\n  text-decoration: none;\n  opacity: 0.8;\n}\n.fh-tiles {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n}\n.fh-tile {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 20px;\n  background: #fff;\n  border-radius: 18px;\n  border: 1px solid #F0F4FF;\n  text-decoration: none;\n  color: #1F2937;\n  transition: all 0.25s;\n}\n.fh-tile:hover {\n  border-color: var(--tile-color, #7C3AED);\n  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);\n  transform: translateY(-3px);\n  text-decoration: none;\n  color: #1F2937;\n}\n.fh-tile:hover .fh-tile-arrow {\n  opacity: 1;\n  transform: translateX(3px);\n  color: var(--tile-color, #7C3AED);\n}\n.fh-tile-icon {\n  width: 48px;\n  height: 48px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.fh-tile-icon .material-icons-round {\n  font-size: 24px !important;\n}\n.fh-tile-label {\n  flex: 1;\n  font-size: 14px;\n  font-weight: 600;\n}\n.fh-tile-arrow {\n  font-size: 18px !important;\n  color: #D1D5DB;\n  opacity: 0;\n  transition: all 0.2s;\n}\n.fh-hero-right {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  gap: 12px;\n}\n.fh-invite-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 9px 18px;\n  border-radius: 12px;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  background: rgba(255, 255, 255, 0.14);\n  color: #fff;\n  font-size: 13px;\n  font-weight: 700;\n  text-decoration: none;\n  white-space: nowrap;\n  transition: background 0.15s;\n}\n.fh-invite-btn .material-icons-round {\n  font-size: 17px !important;\n}\n.fh-invite-btn:hover {\n  background: rgba(255, 255, 255, 0.26);\n  text-decoration: none;\n  color: #fff;\n}\n.fh-completion {\n  position: relative;\n  z-index: 1;\n  margin-top: 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.fh-completion-label {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.7);\n}\n.fh-completion-label .material-icons-round {\n  font-size: 15px !important;\n}\n.fh-completion-label strong {\n  color: #fff;\n  font-weight: 700;\n}\n.fh-completion-bar {\n  height: 5px;\n  border-radius: 99px;\n  background: rgba(255, 255, 255, 0.15);\n  overflow: hidden;\n}\n.fh-completion-fill {\n  height: 100%;\n  border-radius: 99px;\n  background:\n    linear-gradient(\n      90deg,\n      #A78BFA,\n      #EC4899);\n  transition: width 0.8s ease;\n}\n.fh-bday-row {\n  display: flex;\n  gap: 12px;\n  overflow-x: auto;\n  padding-bottom: 4px;\n  scrollbar-width: none;\n}\n.fh-bday-row::-webkit-scrollbar {\n  display: none;\n}\n.fh-bday-card {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 14px;\n  background: #fff;\n  border: 1px solid #FBE8F3;\n  border-radius: 14px;\n  min-width: 200px;\n  flex-shrink: 0;\n  transition: box-shadow 0.15s;\n}\n.fh-bday-card:hover {\n  box-shadow: 0 4px 14px rgba(219, 39, 119, 0.12);\n}\n.fh-bday-avatar {\n  width: 38px;\n  height: 38px;\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.fh-bday-avatar.male {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #3B82F6);\n}\n.fh-bday-avatar.female {\n  background:\n    linear-gradient(\n      135deg,\n      #F472B6,\n      #EC4899);\n}\n.fh-bday-avatar:not(.male):not(.female) {\n  background:\n    linear-gradient(\n      135deg,\n      #A78BFA,\n      #7C3AED);\n}\n.fh-bday-info {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.fh-bday-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: #1F2937;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.fh-bday-date {\n  font-size: 11px;\n  color: #9CA3AF;\n}\n.fh-bday-badge {\n  background: #FDF2F8;\n  color: #DB2777;\n  font-size: 11px;\n  font-weight: 700;\n  padding: 3px 8px;\n  border-radius: 7px;\n  white-space: nowrap;\n}\n.fh-bday-badge.soon {\n  background: #FEF3C7;\n  color: #B45309;\n  animation: pulse-badge 1.5s infinite;\n}\n@keyframes pulse-badge {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n@media (max-width: 1024px) {\n  .fh-tiles {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  .fh-members-row {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media (max-width: 640px) {\n  .fh-hero {\n    padding: 24px 20px;\n    border-radius: 16px;\n  }\n  .fh-hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 16px;\n  }\n  .fh-hero-right {\n    align-items: flex-start;\n    flex-direction: row;\n    flex-wrap: wrap;\n    gap: 10px;\n  }\n  .fh-hero-stats {\n    width: auto;\n    justify-content: space-around;\n    padding: 12px 16px;\n    gap: 12px;\n  }\n  .fhs-value {\n    font-size: 22px;\n  }\n  .fh-family-name {\n    font-size: 18px;\n  }\n  .fh-tiles {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .fh-tile {\n    padding: 14px;\n    gap: 10px;\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .fh-tile-icon {\n    width: 40px;\n    height: 40px;\n  }\n  .fh-tile-arrow {\n    display: none;\n  }\n  .fh-bday-card {\n    min-width: 180px;\n  }\n}\n@media (max-width: 380px) {\n  .fh-tiles {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=famille-home.component.css.map */\n'] }]
+    args: [{ selector: "app-famille-home", standalone: false, template: `<div class="fh-page">
+
+  <!-- Banni\xE8re de bienvenue -->
+  <div class="fh-hero">
+    <svg class="fh-hero-roots" width="100%" height="100%" viewBox="0 0 1000 280" preserveAspectRatio="xMaxYMax slice">
+      <path d="M760 280 C 755 230, 740 200, 700 175 C 670 156, 660 130, 665 100" stroke="#3E7A4C" stroke-width="2.5" fill="none" opacity="0.55"/>
+      <path d="M760 280 C 770 235, 800 210, 830 190 C 855 173, 868 148, 862 118" stroke="#3E7A4C" stroke-width="2.5" fill="none" opacity="0.55"/>
+      <path d="M760 280 C 762 245, 775 222, 800 205" stroke="#3E7A4C" stroke-width="1.5" fill="none" opacity="0.4"/>
+      <path d="M665 100 C 640 82, 630 55, 645 28" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
+      <path d="M665 100 C 690 88, 705 65, 700 38" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
+      <path d="M862 118 C 885 100, 895 75, 885 48" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
+      <path d="M862 118 C 840 105, 828 82, 838 58" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
+      <circle cx="645" cy="26" r="7" fill="#5A9A68" opacity="0.5"/>
+      <circle cx="700" cy="36" r="9" fill="#5A9A68" opacity="0.55"/>
+      <circle cx="885" cy="46" r="8" fill="#5A9A68" opacity="0.5"/>
+      <circle cx="838" cy="56" r="6" fill="#5A9A68" opacity="0.45"/>
+      <circle cx="800" cy="204" r="5" fill="#5A9A68" opacity="0.35"/>
+    </svg>
+
+    <div class="fh-hero-content">
+      <div class="fh-hello" *ngIf="user">
+        <div class="fh-user-avatar">{{ (user.prenom[0] + user.nom[0]).toUpperCase() }}</div>
+        <div>
+          <p class="fh-greeting">Bonjour, {{ user.prenom }} \u{1F44B}</p>
+          <h1 class="fh-family-name">Famille {{ nomFamille || '\u2026' }}</h1>
+          <p class="fh-hero-meta">
+            <b>{{ totalMembres }}</b>&nbsp;membres<span class="fh-hero-dot"></span><b>{{ totalGenerations }}</b>&nbsp;g\xE9n\xE9rations
+          </p>
+        </div>
+      </div>
+      <div class="fh-hero-right">
+        <div class="fh-ring-wrap" *ngIf="!loading && toutes.length > 0">
+          <div class="fh-ring" [style.background]="'conic-gradient(#81C784 0% ' + completionScore + '%, rgba(255,255,255,0.14) ' + completionScore + '% 100%)'">
+            <div class="fh-ring-inner">{{ completionScore }}%</div>
+          </div>
+          <div class="fh-ring-label"><b>Arbre compl\xE9t\xE9</b>Enrichissez les profils pour compl\xE9ter l'arbre</div>
+        </div>
+        <a class="fh-invite-btn" routerLink="/famille/inviter">
+          <span class="material-icons-round">group_add</span>
+          Inviter
+        </a>
+      </div>
+    </div>
+
+    <div class="fh-hero-stats-row">
+      <div class="fh-hero-stat"><span class="fhs-value">{{ totalMembres }}</span><span class="fhs-label">Membres</span></div>
+      <div class="fh-hero-stat"><span class="fhs-value">{{ totalGenerations }}</span><span class="fhs-label">G\xE9n\xE9rations</span></div>
+      <div class="fh-hero-stat"><span class="fhs-value">{{ totalUnions }}</span><span class="fhs-label">Unions</span></div>
+    </div>
+  </div>
+
+  <!-- Skeleton chargement -->
+  <ng-container *ngIf="loading">
+    <div class="sk-section">
+      <div class="sk-hero"></div>
+      <div class="sk-grid">
+        <div class="sk-card" *ngFor="let _ of [1,2,3,4]">
+          <div class="sk-card-banner"></div>
+          <div class="sk-card-body">
+            <div class="sk-line sk-full"></div>
+            <div class="sk-line sk-md"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!loading">
+    <div class="fh-body-grid">
+
+      <!-- ===== COLONNE PRINCIPALE ===== -->
+      <div>
+        <!-- Tuiles de navigation -->
+        <div class="fh-section">
+          <h2 class="fh-section-title">Explorer</h2>
+          <div class="fh-tiles">
+            <a class="fh-tile" *ngFor="let t of tiles" [routerLink]="t.route"
+               [style.--tile-color]="t.color" [style.--tile-bg]="t.bg">
+              <div class="fh-tile-icon" [style.background]="t.bg" [style.color]="t.color">
+                <span class="material-icons-round">{{ t.icon }}</span>
+              </div>
+              <span class="fh-tile-label">{{ t.label }}</span>
+              <span class="material-icons-round fh-tile-arrow">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Membres r\xE9cents -->
+        <div class="fh-section" *ngIf="recentPersonnes.length > 0">
+          <div class="fh-section-header">
+            <h2 class="fh-section-title">Membres r\xE9cents</h2>
+            <div class="fh-section-actions">
+              <div class="view-toggle">
+                <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">
+                  <span class="material-icons-round">grid_view</span>
+                </button>
+                <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">
+                  <span class="material-icons-round">view_list</span>
+                </button>
+              </div>
+              <a routerLink="/famille/membres" class="fh-see-all">
+                Voir tous <span class="material-icons-round">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Vue cartes -->
+          <div class="pc-grid" *ngIf="viewMode === 'cards'">
+            <div class="pc-card" *ngFor="let p of recentPersonnes; let i = index; trackBy: trackByPersonneId"
+                 [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'">
+              <div class="pc-card-banner">
+                <div class="pc-colorband"
+                     [class.color-1]="i % 3 === 0"
+                     [class.color-2]="i % 3 === 1"
+                     [class.color-3]="i % 3 === 2"></div>
+                <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
+                <div class="pc-avatar-ring">
+                  <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
+                       [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"
+                       [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
+                  <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">
+                    {{ getInitiales(p) }}
+                  </div>
+                </div>
+              </div>
+              <div class="pc-card-body">
+                <h4 class="pc-name">{{ getNomComplet(p) }}</h4>
+                <span class="pc-age" [class.pc-age-unknown]="!getAgeLabel(p)">
+                  {{ getAgeLabel(p) || 'Naissance inconnue' }}
+                </span>
+                <div class="pc-loc" *ngIf="p.lieuNaissance">
+                  <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
+                </div>
+                <div class="pc-badges">
+                  <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
+                  <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>
+                </div>
+              </div>
+              <div class="pc-card-actions">
+                <a class="pc-act" routerLink="/famille/membres">
+                  <span class="material-icons-round">visibility</span>Voir
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vue liste -->
+          <div class="pl-table" *ngIf="viewMode === 'list'">
+            <div class="pl-thead">
+              <span class="pl-th pl-th-person">Personne</span>
+              <span class="pl-th pl-th-lieu">Lieu de naissance</span>
+              <span class="pl-th pl-th-statut">Statut</span>
+            </div>
+            <div class="pl-row" *ngFor="let p of recentPersonnes; trackBy: trackByPersonneId">
+              <div class="pl-cell pl-cell-person">
+                <div class="pl-avatar-wrap">
+                  <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
+                       [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"
+                       [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
+                  <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pl-avatar pl-avatar-initials"
+                       [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">{{ getInitiales(p) }}</div>
+                  <span class="pl-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
+                </div>
+                <div class="pl-person-info">
+                  <span class="pl-person-name">{{ getNomComplet(p) }}</span>
+                  <span class="pl-person-age" [class.pc-age-unknown]="!getAgeLabel(p)">
+                    {{ getAgeLabel(p) || 'Naissance inconnue' }}
+                  </span>
+                </div>
+              </div>
+              <div class="pl-cell pl-cell-lieu">
+                <span *ngIf="p.lieuNaissance" class="pl-lieu">
+                  <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
+                </span>
+                <span *ngIf="!p.lieuNaissance" class="pl-empty">\u2014</span>
+              </div>
+              <div class="pl-cell pl-cell-statut">
+                <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
+                <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ASIDE ===== -->
+      <div>
+        <div class="aside-card" *ngIf="anniversairesProches.length > 0">
+          <h4><span class="material-icons-round" style="color:#DB2777">cake</span>Anniversaires \xE0 venir</h4>
+          <div class="bday-item" *ngFor="let b of anniversairesProches; trackBy: trackByAnniversaire">
+            <div class="bday-date"><span>{{ b.jourNum }}</span><span>{{ b.moisAbbr }}</span></div>
+            <div class="bday-item-info">
+              <div class="bday-item-name">{{ getNomComplet(b.p) }}</div>
+              <div class="bday-item-when">{{ b.jours === 0 ? "Aujourd'hui" : b.jours === 1 ? 'Demain' : 'dans ' + b.jours + ' jours' }}</div>
+            </div>
+            <span class="bday-item-soon" *ngIf="b.jours <= 7">Bient\xF4t</span>
+          </div>
+        </div>
+
+        <div class="aside-card">
+          <h4><span class="material-icons-round" style="color:#2E7D32">account_tree</span>Aper\xE7u de l'arbre</h4>
+          <div class="tree-preview">
+            <svg width="220" height="130" viewBox="0 0 220 130">
+              <line x1="110" y1="30" x2="70" y2="70" stroke="#D1D5DB" stroke-width="2"/>
+              <line x1="110" y1="30" x2="150" y2="70" stroke="#D1D5DB" stroke-width="2"/>
+              <line x1="70" y1="70" x2="45" y2="110" stroke="#D1D5DB" stroke-width="2"/>
+              <line x1="70" y1="70" x2="90" y2="110" stroke="#D1D5DB" stroke-width="2"/>
+              <line x1="150" y1="70" x2="130" y2="110" stroke="#D1D5DB" stroke-width="2"/>
+              <line x1="150" y1="70" x2="170" y2="110" stroke="#D1D5DB" stroke-width="2"/>
+              <circle cx="110" cy="30" r="13" fill="#2E7D32"/>
+              <circle cx="70" cy="70" r="11" fill="#60A5FA"/>
+              <circle cx="150" cy="70" r="11" fill="#F472B6"/>
+              <circle cx="45" cy="110" r="9" fill="#93C5FD"/>
+              <circle cx="90" cy="110" r="9" fill="#93C5FD"/>
+              <circle cx="130" cy="110" r="9" fill="#F9A8D4"/>
+              <circle cx="170" cy="110" r="9" fill="#F9A8D4"/>
+            </svg>
+            <button class="tree-link" routerLink="/famille/arbre"><span class="material-icons-round">open_in_full</span>Voir l'arbre complet</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </ng-container>
+</div>
+`, styles: ['@charset "UTF-8";\n\n/* src/app/famille/pages/home/famille-home.component.scss */\n.fh-page {\n  display: flex;\n  flex-direction: column;\n  gap: 32px;\n}\n.fh-hero {\n  position: relative;\n  border-radius: 26px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #0B1220 0%,\n      #0F2A1E 46%,\n      #123B27 100%);\n  padding: 36px 40px 32px;\n  color: #fff;\n  animation: fhHeroIn 0.5s ease-out;\n}\n@keyframes fhHeroIn {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.fh-hero-roots {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n  opacity: 0.5;\n}\n.fh-hero-content {\n  position: relative;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 24px;\n}\n.fh-hello {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.fh-user-avatar {\n  width: 56px;\n  height: 56px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      #86D19C,\n      #2E7D32);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 800;\n  color: #08210F;\n  flex-shrink: 0;\n  border: 2px solid rgba(255, 255, 255, 0.25);\n}\n.fh-greeting {\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.68);\n  margin: 0 0 4px;\n}\n.fh-family-name {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  margin: 0;\n  letter-spacing: -0.3px;\n}\n.fh-hero-meta {\n  margin: 6px 0 0;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.55);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.fh-hero-meta b {\n  color: rgba(255, 255, 255, 0.85);\n  font-weight: 600;\n}\n.fh-hero-dot {\n  width: 3px;\n  height: 3px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.35);\n}\n.fh-hero-right {\n  display: flex;\n  align-items: center;\n  gap: 22px;\n  flex-wrap: wrap;\n}\n.fh-ring-wrap {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.fh-ring {\n  width: 64px;\n  height: 64px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: background 0.4s ease;\n}\n.fh-ring-inner {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  background: #0F2A1E;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  color: #fff;\n}\n.fh-ring-label {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.6);\n  max-width: 130px;\n  line-height: 1.4;\n}\n.fh-ring-label b {\n  color: #fff;\n  display: block;\n  font-size: 13px;\n  margin-bottom: 1px;\n}\n.fh-invite-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  background: rgba(255, 255, 255, 0.1);\n  color: #fff;\n  font-size: 13.5px;\n  font-weight: 600;\n  text-decoration: none;\n  white-space: nowrap;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    background 0.15s;\n}\n.fh-invite-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.fh-invite-btn:hover {\n  background: rgba(255, 255, 255, 0.16);\n  text-decoration: none;\n  color: #fff;\n  transform: translateY(-1px);\n}\n.fh-hero-stats-row {\n  position: relative;\n  display: flex;\n  gap: 28px;\n  margin-top: 24px;\n  padding-top: 20px;\n  border-top: 1px solid rgba(255, 255, 255, 0.12);\n  flex-wrap: wrap;\n}\n.fh-hero-stat {\n  display: flex;\n  align-items: baseline;\n  gap: 8px;\n}\n.fhs-value {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  line-height: 1;\n}\n.fhs-label {\n  font-size: 12.5px;\n  color: rgba(255, 255, 255, 0.55);\n}\n.fh-body-grid {\n  display: grid;\n  grid-template-columns: 1fr 336px;\n  gap: 22px;\n}\n.fh-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.fh-section:last-child {\n  margin-bottom: 0;\n}\n.fh-section-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 12px;\n}\n.fh-section-actions {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.fh-section-title {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.fh-see-all {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--primary);\n  text-decoration: none;\n}\n.fh-see-all .material-icons-round {\n  font-size: 16px !important;\n}\n.fh-see-all:hover {\n  text-decoration: none;\n  opacity: 0.8;\n}\n.fh-tiles {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));\n  gap: 16px;\n}\n.fh-tile {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 20px;\n  background: var(--white);\n  border-radius: 18px;\n  border: 1px solid var(--border-light);\n  text-decoration: none;\n  color: var(--text-primary);\n  transition: all 0.25s;\n}\n.fh-tile:hover {\n  border-color: var(--tile-color, var(--primary));\n  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);\n  transform: translateY(-3px);\n  text-decoration: none;\n  color: var(--text-primary);\n}\n.fh-tile:hover .fh-tile-arrow {\n  opacity: 1;\n  transform: translateX(3px);\n  color: var(--tile-color, var(--primary));\n}\n.fh-tile-icon {\n  width: 48px;\n  height: 48px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.fh-tile-icon .material-icons-round {\n  font-size: 24px !important;\n}\n.fh-tile-label {\n  flex: 1;\n  font-size: 14px;\n  font-weight: 600;\n}\n.fh-tile-arrow {\n  font-size: 18px !important;\n  color: #D1D5DB;\n  opacity: 0;\n  transition: all 0.2s;\n}\n.aside-card {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 18px;\n  padding: 18px;\n  margin-bottom: 18px;\n}\n.aside-card h4 {\n  margin: 0 0 14px;\n  font-size: 13.5px;\n  font-weight: 700;\n  color: var(--text-primary);\n  display: flex;\n  align-items: center;\n  gap: 7px;\n}\n.aside-card h4 .material-icons-round {\n  font-size: 17px !important;\n}\n.bday-item {\n  display: flex;\n  align-items: center;\n  gap: 11px;\n  padding: 9px 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.bday-item:last-child {\n  border-bottom: none;\n}\n.bday-date {\n  width: 40px;\n  height: 40px;\n  border-radius: 11px;\n  background: #FDF2F8;\n  color: #DB2777;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.bday-date span:first-child {\n  font-size: 13px;\n  font-weight: 800;\n  line-height: 1;\n}\n.bday-date span:last-child {\n  font-size: 8.5px;\n  font-weight: 600;\n  text-transform: uppercase;\n}\n.bday-item-info {\n  flex: 1;\n  min-width: 0;\n}\n.bday-item-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-item-when {\n  font-size: 11.5px;\n  color: var(--text-muted);\n}\n.bday-item-soon {\n  margin-left: auto;\n  flex-shrink: 0;\n  font-size: 10.5px;\n  font-weight: 700;\n  color: #DB2777;\n  background: #FDF2F8;\n  padding: 3px 8px;\n  border-radius: 999px;\n  animation: pulse-badge 1.5s infinite;\n}\n@keyframes pulse-badge {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n.tree-preview {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 4px 0 6px;\n}\n.tree-link {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  width: 100%;\n  margin-top: 14px;\n  padding: 9px;\n  border-radius: 10px;\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  border: none;\n  text-decoration: none;\n}\n.tree-link .material-icons-round {\n  font-size: 15px !important;\n}\n.tree-link:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n@media (prefers-reduced-motion: reduce) {\n  :host * {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 1100px) {\n  .fh-body-grid {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 1024px) {\n  .fh-tiles {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media (max-width: 640px) {\n  .fh-hero {\n    padding: 24px 20px;\n    border-radius: 18px;\n  }\n  .fh-hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 16px;\n  }\n  .fh-hero-right {\n    align-items: flex-start;\n    flex-direction: row;\n    flex-wrap: wrap;\n    gap: 14px;\n  }\n  .fhs-value {\n    font-size: 20px;\n  }\n  .fh-family-name {\n    font-size: 19px;\n  }\n  .fh-hero-stats-row {\n    gap: 18px;\n  }\n  .fh-tiles {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .fh-tile {\n    padding: 14px;\n    gap: 10px;\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .fh-tile-icon {\n    width: 40px;\n    height: 40px;\n  }\n  .fh-tile-arrow {\n    display: none;\n  }\n}\n@media (max-width: 380px) {\n  .fh-tiles {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=famille-home.component.css.map */\n'] }]
   }], () => [{ type: ApiService }, { type: AuthService }, { type: Router }], null);
 })();
 (() => {
@@ -8117,4 +8213,4 @@ var FamilleModule = class _FamilleModule {
 export {
   FamilleModule
 };
-//# sourceMappingURL=chunk-TCQEEOUO.js.map
+//# sourceMappingURL=chunk-OJLAJIZ7.js.map

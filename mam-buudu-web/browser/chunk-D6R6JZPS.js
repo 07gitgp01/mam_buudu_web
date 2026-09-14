@@ -1762,16 +1762,26 @@ var ShellComponent = class _ShellComponent {
 var _c0 = () => [1, 2, 3, 4];
 var _c1 = () => ["/app/personnes"];
 var _c2 = (a0) => ({ id: a0 });
-function HomeComponent_div_3_Template(rf, ctx) {
+function HomeComponent_div_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 25)(1, "div", 26);
+    \u0275\u0275elementStart(0, "div", 35)(1, "div", 36);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div")(4, "p", 27);
+    \u0275\u0275elementStart(3, "div")(4, "p", 37);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "h1", 28);
+    \u0275\u0275elementStart(6, "h1", 38);
     \u0275\u0275text(7);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "p", 39)(9, "b");
+    \u0275\u0275text(10);
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(11, "\xA0membres");
+    \u0275\u0275element(12, "span", 40);
+    \u0275\u0275elementStart(13, "b");
+    \u0275\u0275text(14);
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(15, "\xA0g\xE9n\xE9rations ");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -1782,17 +1792,21 @@ function HomeComponent_div_3_Template(rf, ctx) {
     \u0275\u0275textInterpolate1("Bonjour, ", ctx_r0.user.prenom, " \u{1F44B}");
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate1("Famille ", ctx_r0.nomFamille || "\u2026");
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(ctx_r0.stats[0].value);
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate(ctx_r0.stats[1].value);
   }
 }
-function HomeComponent_div_4_Template(rf, ctx) {
+function HomeComponent_div_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 25)(1, "div", 26);
+    \u0275\u0275elementStart(0, "div", 35)(1, "div", 36);
     \u0275\u0275text(2, "MB");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div")(4, "p", 27);
+    \u0275\u0275elementStart(3, "div")(4, "p", 37);
     \u0275\u0275text(5, "Bonjour \u{1F44B}");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "h1", 28);
+    \u0275\u0275elementStart(6, "h1", 38);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()()();
   }
@@ -1802,40 +1816,55 @@ function HomeComponent_div_4_Template(rf, ctx) {
     \u0275\u0275textInterpolate1("Famille ", ctx_r0.nomFamille || "\u2026");
   }
 }
-function HomeComponent_div_33_Template(rf, ctx) {
+function HomeComponent_div_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 29)(1, "div", 30)(2, "span", 12);
-    \u0275\u0275text(3, "bar_chart");
-    \u0275\u0275elementEnd();
-    \u0275\u0275text(4, " Compl\xE9tion des profils ");
-    \u0275\u0275elementStart(5, "strong");
-    \u0275\u0275text(6);
+    \u0275\u0275elementStart(0, "div", 41)(1, "div", 42)(2, "div", 43);
+    \u0275\u0275text(3);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "div", 31);
-    \u0275\u0275element(8, "div", 32);
+    \u0275\u0275elementStart(4, "div", 44)(5, "b");
+    \u0275\u0275text(6, "Arbre compl\xE9t\xE9");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(7, "Enrichissez les profils pour compl\xE9ter l'arbre");
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext();
-    \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate1("", ctx_r0.completionScore, "%");
+    \u0275\u0275advance();
+    \u0275\u0275styleProp("background", "conic-gradient(#81C784 0% " + ctx_r0.completionScore + "%, rgba(255,255,255,0.14) " + ctx_r0.completionScore + "% 100%)");
     \u0275\u0275advance(2);
-    \u0275\u0275styleProp("width", ctx_r0.completionScore, "%");
+    \u0275\u0275textInterpolate1("", ctx_r0.completionScore, "%");
   }
 }
-function HomeComponent_div_34_div_1_Template(rf, ctx) {
+function HomeComponent_div_29_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 35);
-    \u0275\u0275element(1, "div", 36);
-    \u0275\u0275elementStart(2, "div", 37);
-    \u0275\u0275element(3, "div", 38)(4, "div", 39);
+    \u0275\u0275elementStart(0, "div", 45)(1, "span", 46);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "span", 47);
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const s_r2 = ctx.$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(s_r2.value);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(s_r2.label);
+  }
+}
+function HomeComponent_div_32_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 50);
+    \u0275\u0275element(1, "div", 51);
+    \u0275\u0275elementStart(2, "div", 52);
+    \u0275\u0275element(3, "div", 53)(4, "div", 54);
     \u0275\u0275elementEnd()();
   }
 }
-function HomeComponent_div_34_Template(rf, ctx) {
+function HomeComponent_div_32_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 33);
-    \u0275\u0275template(1, HomeComponent_div_34_div_1_Template, 5, 0, "div", 34);
+    \u0275\u0275elementStart(0, "div", 48);
+    \u0275\u0275template(1, HomeComponent_div_32_div_1_Template, 5, 0, "div", 49);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -1843,125 +1872,42 @@ function HomeComponent_div_34_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", \u0275\u0275pureFunction0(1, _c0));
   }
 }
-function HomeComponent_div_35_div_1_Template(rf, ctx) {
+function HomeComponent_a_37_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 41)(1, "div", 42)(2, "span", 12);
+    \u0275\u0275elementStart(0, "a", 55)(1, "div", 56)(2, "span", 20);
     \u0275\u0275text(3);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(4, "div", 43)(5, "span", 44);
-    \u0275\u0275text(6);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "span", 45);
-    \u0275\u0275text(8);
-    \u0275\u0275elementEnd()()();
-  }
-  if (rf & 2) {
-    const s_r2 = ctx.$implicit;
-    \u0275\u0275classMap("stat-card--" + s_r2.color);
-    \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(s_r2.icon);
-    \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(s_r2.value);
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(s_r2.label);
-  }
-}
-function HomeComponent_div_35_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 33);
-    \u0275\u0275template(1, HomeComponent_div_35_div_1_Template, 9, 5, "div", 40);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r0 = \u0275\u0275nextContext();
-    \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", ctx_r0.stats);
-  }
-}
-function HomeComponent_a_40_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "a", 46)(1, "span", 12);
-    \u0275\u0275text(2);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span");
-    \u0275\u0275text(4);
+    \u0275\u0275elementStart(4, "span", 57);
+    \u0275\u0275text(5);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const a_r3 = ctx.$implicit;
-    \u0275\u0275classMap("quick-action--" + a_r3.color);
     \u0275\u0275property("routerLink", a_r3.route);
+    \u0275\u0275advance();
+    \u0275\u0275classMap(a_r3.color);
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(a_r3.icon);
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(a_r3.label);
   }
 }
-function HomeComponent_div_41_div_7_Template(rf, ctx) {
+function HomeComponent_div_38_div_5_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 51)(1, "div", 52);
-    \u0275\u0275text(2);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 53)(4, "span", 54);
-    \u0275\u0275text(5);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 55);
-    \u0275\u0275text(7);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(8, "span", 56);
-    \u0275\u0275text(9);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const b_r4 = ctx.$implicit;
-    const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance();
-    \u0275\u0275classProp("male", b_r4.p.sexe === "M")("female", b_r4.p.sexe === "F");
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r0.getInitiales(b_r4.p), " ");
-    \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(b_r4.p));
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(b_r4.dateStr);
-    \u0275\u0275advance();
-    \u0275\u0275classProp("soon", b_r4.jours <= 7);
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", b_r4.jours === 0 ? "Aujourd'hui !" : b_r4.jours === 1 ? "Demain !" : b_r4.jours + "j", " ");
-  }
-}
-function HomeComponent_div_41_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 47)(1, "div", 16)(2, "h3")(3, "span", 48);
-    \u0275\u0275text(4, "cake");
-    \u0275\u0275elementEnd();
-    \u0275\u0275text(5, " Anniversaires \xE0 venir");
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(6, "div", 49);
-    \u0275\u0275template(7, HomeComponent_div_41_div_7_Template, 10, 10, "div", 50);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r0 = \u0275\u0275nextContext();
-    \u0275\u0275advance(7);
-    \u0275\u0275property("ngForOf", ctx_r0.anniversairesProches)("ngForTrackBy", ctx_r0.trackByAnniversaire);
-  }
-}
-function HomeComponent_div_42_div_5_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 63);
-    \u0275\u0275element(1, "div", 64);
-    \u0275\u0275elementStart(2, "div", 65);
-    \u0275\u0275element(3, "div", 66)(4, "div", 60)(5, "div", 67);
+    \u0275\u0275elementStart(0, "div", 64);
+    \u0275\u0275element(1, "div", 65);
+    \u0275\u0275elementStart(2, "div", 66);
+    \u0275\u0275element(3, "div", 67)(4, "div", 61)(5, "div", 68);
     \u0275\u0275elementEnd()();
   }
 }
-function HomeComponent_div_42_Template(rf, ctx) {
+function HomeComponent_div_38_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 57)(1, "div", 58);
-    \u0275\u0275element(2, "div", 59)(3, "div", 60);
+    \u0275\u0275elementStart(0, "div", 58)(1, "div", 59);
+    \u0275\u0275element(2, "div", 60)(3, "div", 61);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "div", 61);
-    \u0275\u0275template(5, HomeComponent_div_42_div_5_Template, 6, 0, "div", 62);
+    \u0275\u0275elementStart(4, "div", 62);
+    \u0275\u0275template(5, HomeComponent_div_38_div_5_Template, 6, 0, "div", 63);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -1969,31 +1915,31 @@ function HomeComponent_div_42_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", \u0275\u0275pureFunction0(1, _c0));
   }
 }
-function HomeComponent_div_43_Template(rf, ctx) {
+function HomeComponent_div_39_Template(rf, ctx) {
   if (rf & 1) {
-    const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 16)(1, "h3");
+    const _r4 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 26)(1, "h3");
     \u0275\u0275text(2, "Membres r\xE9cents");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 68)(4, "div", 69)(5, "button", 70);
-    \u0275\u0275listener("click", function HomeComponent_div_43_Template_button_click_5_listener() {
-      \u0275\u0275restoreView(_r5);
+    \u0275\u0275elementStart(3, "div", 69)(4, "div", 70)(5, "button", 71);
+    \u0275\u0275listener("click", function HomeComponent_div_39_Template_button_click_5_listener() {
+      \u0275\u0275restoreView(_r4);
       const ctx_r0 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r0.viewMode = "cards");
     });
-    \u0275\u0275elementStart(6, "span", 12);
+    \u0275\u0275elementStart(6, "span", 20);
     \u0275\u0275text(7, "grid_view");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(8, "button", 71);
-    \u0275\u0275listener("click", function HomeComponent_div_43_Template_button_click_8_listener() {
-      \u0275\u0275restoreView(_r5);
+    \u0275\u0275elementStart(8, "button", 72);
+    \u0275\u0275listener("click", function HomeComponent_div_39_Template_button_click_8_listener() {
+      \u0275\u0275restoreView(_r4);
       const ctx_r0 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r0.viewMode = "list");
     });
-    \u0275\u0275elementStart(9, "span", 12);
+    \u0275\u0275elementStart(9, "span", 20);
     \u0275\u0275text(10, "view_list");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(11, "a", 72);
+    \u0275\u0275elementStart(11, "a", 73);
     \u0275\u0275text(12, "Voir tous");
     \u0275\u0275elementEnd()()();
   }
@@ -2005,126 +1951,126 @@ function HomeComponent_div_43_Template(rf, ctx) {
     \u0275\u0275classProp("active", ctx_r0.viewMode === "list");
   }
 }
-function HomeComponent_div_44_div_1_img_5_Template(rf, ctx) {
+function HomeComponent_div_40_div_1_img_5_Template(rf, ctx) {
   if (rf & 1) {
-    const _r6 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 92);
-    \u0275\u0275listener("error", function HomeComponent_div_44_div_1_img_5_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r6);
-      const p_r7 = \u0275\u0275nextContext().$implicit;
+    const _r5 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 93);
+    \u0275\u0275listener("error", function HomeComponent_div_40_div_1_img_5_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r5);
+      const p_r6 = \u0275\u0275nextContext().$implicit;
       const ctx_r0 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r0.onPhotoError(p_r7.id));
+      return \u0275\u0275resetView(ctx_r0.onPhotoError(p_r6.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r7 = \u0275\u0275nextContext().$implicit;
+    const p_r6 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r0.getPhotoUrl(p_r7), \u0275\u0275sanitizeUrl)("alt", ctx_r0.getNomComplet(p_r7));
+    \u0275\u0275property("src", ctx_r0.getPhotoUrl(p_r6), \u0275\u0275sanitizeUrl)("alt", ctx_r0.getNomComplet(p_r6));
   }
 }
-function HomeComponent_div_44_div_1_div_6_Template(rf, ctx) {
+function HomeComponent_div_40_div_1_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 93);
+    \u0275\u0275elementStart(0, "div", 94);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r7 = \u0275\u0275nextContext().$implicit;
+    const p_r6 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r0.getInitiales(p_r7), " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r0.getInitiales(p_r6), " ");
   }
 }
-function HomeComponent_div_44_div_1_div_12_Template(rf, ctx) {
+function HomeComponent_div_40_div_1_div_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 94)(1, "span", 12);
+    \u0275\u0275elementStart(0, "div", 95)(1, "span", 20);
     \u0275\u0275text(2, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r7 = \u0275\u0275nextContext().$implicit;
+    const p_r6 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1("", p_r7.lieuNaissance, " ");
+    \u0275\u0275textInterpolate1("", p_r6.lieuNaissance, " ");
   }
 }
-function HomeComponent_div_44_div_1_span_14_Template(rf, ctx) {
+function HomeComponent_div_40_div_1_span_14_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 95);
+    \u0275\u0275elementStart(0, "span", 96);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
-function HomeComponent_div_44_div_1_span_15_Template(rf, ctx) {
+function HomeComponent_div_40_div_1_span_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 96);
+    \u0275\u0275elementStart(0, "span", 97);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
 }
-function HomeComponent_div_44_div_1_Template(rf, ctx) {
+function HomeComponent_div_40_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 75)(1, "div", 76);
-    \u0275\u0275element(2, "div", 77)(3, "span", 78);
-    \u0275\u0275elementStart(4, "div", 79);
-    \u0275\u0275template(5, HomeComponent_div_44_div_1_img_5_Template, 1, 2, "img", 80)(6, HomeComponent_div_44_div_1_div_6_Template, 2, 1, "div", 81);
+    \u0275\u0275elementStart(0, "div", 76)(1, "div", 77);
+    \u0275\u0275element(2, "div", 78)(3, "span", 79);
+    \u0275\u0275elementStart(4, "div", 80);
+    \u0275\u0275template(5, HomeComponent_div_40_div_1_img_5_Template, 1, 2, "img", 81)(6, HomeComponent_div_40_div_1_div_6_Template, 2, 1, "div", 82);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "div", 82)(8, "h4", 83);
+    \u0275\u0275elementStart(7, "div", 83)(8, "h4", 84);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 84);
+    \u0275\u0275elementStart(10, "span", 85);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(12, HomeComponent_div_44_div_1_div_12_Template, 4, 1, "div", 85);
-    \u0275\u0275elementStart(13, "div", 86);
-    \u0275\u0275template(14, HomeComponent_div_44_div_1_span_14_Template, 2, 0, "span", 87)(15, HomeComponent_div_44_div_1_span_15_Template, 2, 0, "span", 88);
+    \u0275\u0275template(12, HomeComponent_div_40_div_1_div_12_Template, 4, 1, "div", 86);
+    \u0275\u0275elementStart(13, "div", 87);
+    \u0275\u0275template(14, HomeComponent_div_40_div_1_span_14_Template, 2, 0, "span", 88)(15, HomeComponent_div_40_div_1_span_15_Template, 2, 0, "span", 89);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(16, "div", 89)(17, "button", 90)(18, "span", 12);
+    \u0275\u0275elementStart(16, "div", 90)(17, "button", 91)(18, "span", 20);
     \u0275\u0275text(19, "favorite_border");
     \u0275\u0275elementEnd();
     \u0275\u0275text(20, "Like ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(21, "a", 91)(22, "span", 12);
+    \u0275\u0275elementStart(21, "a", 92)(22, "span", 20);
     \u0275\u0275text(23, "visibility");
     \u0275\u0275elementEnd();
     \u0275\u0275text(24, "Voir ");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const p_r7 = ctx.$implicit;
-    const i_r8 = ctx.index;
+    const p_r6 = ctx.$implicit;
+    const i_r7 = ctx.index;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("pc-male", p_r7.sexe === "M")("pc-female", p_r7.sexe === "F");
+    \u0275\u0275classProp("pc-male", p_r6.sexe === "M")("pc-female", p_r6.sexe === "F");
     \u0275\u0275advance(2);
-    \u0275\u0275classProp("color-1", i_r8 % 3 === 0)("color-2", i_r8 % 3 === 1)("color-3", i_r8 % 3 === 2);
+    \u0275\u0275classProp("color-1", i_r7 % 3 === 0)("color-2", i_r7 % 3 === 1)("color-3", i_r7 % 3 === 2);
     \u0275\u0275advance();
-    \u0275\u0275classProp("alive", ctx_r0.estVivant(p_r7))("dead", !ctx_r0.estVivant(p_r7));
+    \u0275\u0275classProp("alive", ctx_r0.estVivant(p_r6))("dead", !ctx_r0.estVivant(p_r6));
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r0.getPhotoUrl(p_r7) && !ctx_r0.failedPhotos.has(p_r7.id));
+    \u0275\u0275property("ngIf", ctx_r0.getPhotoUrl(p_r6) && !ctx_r0.failedPhotos.has(p_r6.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r0.getPhotoUrl(p_r7) || ctx_r0.failedPhotos.has(p_r7.id));
+    \u0275\u0275property("ngIf", !ctx_r0.getPhotoUrl(p_r6) || ctx_r0.failedPhotos.has(p_r6.id));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(p_r7));
+    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(p_r6));
     \u0275\u0275advance();
-    \u0275\u0275classProp("pc-age-unknown", !ctx_r0.getAgeLabel(p_r7));
+    \u0275\u0275classProp("pc-age-unknown", !ctx_r0.getAgeLabel(p_r6));
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r0.getAgeLabel(p_r7) || "Naissance inconnue", " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r0.getAgeLabel(p_r6) || "Naissance inconnue", " ");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", p_r7.lieuNaissance);
+    \u0275\u0275property("ngIf", p_r6.lieuNaissance);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r0.estVivant(p_r7));
+    \u0275\u0275property("ngIf", ctx_r0.estVivant(p_r6));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r0.estVivant(p_r7));
+    \u0275\u0275property("ngIf", !ctx_r0.estVivant(p_r6));
     \u0275\u0275advance(6);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(25, _c1))("queryParams", \u0275\u0275pureFunction1(26, _c2, p_r7.id));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(25, _c1))("queryParams", \u0275\u0275pureFunction1(26, _c2, p_r6.id));
   }
 }
-function HomeComponent_div_44_Template(rf, ctx) {
+function HomeComponent_div_40_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 73);
-    \u0275\u0275template(1, HomeComponent_div_44_div_1_Template, 25, 28, "div", 74);
+    \u0275\u0275elementStart(0, "div", 74);
+    \u0275\u0275template(1, HomeComponent_div_40_div_1_Template, 25, 28, "div", 75);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -2133,147 +2079,147 @@ function HomeComponent_div_44_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r0.recentPersonnes)("ngForTrackBy", ctx_r0.trackByPersonneId);
   }
 }
-function HomeComponent_div_45_div_12_img_3_Template(rf, ctx) {
+function HomeComponent_div_41_div_12_img_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r9 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 122);
-    \u0275\u0275listener("error", function HomeComponent_div_45_div_12_img_3_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r9);
-      const p_r10 = \u0275\u0275nextContext().$implicit;
+    const _r8 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 123);
+    \u0275\u0275listener("error", function HomeComponent_div_41_div_12_img_3_Template_img_error_0_listener() {
+      \u0275\u0275restoreView(_r8);
+      const p_r9 = \u0275\u0275nextContext().$implicit;
       const ctx_r0 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r0.onPhotoError(p_r10.id));
+      return \u0275\u0275resetView(ctx_r0.onPhotoError(p_r9.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r10 = \u0275\u0275nextContext().$implicit;
+    const p_r9 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r0.getPhotoUrl(p_r10), \u0275\u0275sanitizeUrl)("alt", ctx_r0.getNomComplet(p_r10));
+    \u0275\u0275property("src", ctx_r0.getPhotoUrl(p_r9), \u0275\u0275sanitizeUrl)("alt", ctx_r0.getNomComplet(p_r9));
   }
 }
-function HomeComponent_div_45_div_12_div_4_Template(rf, ctx) {
+function HomeComponent_div_41_div_12_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 123);
+    \u0275\u0275elementStart(0, "div", 124);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r10 = \u0275\u0275nextContext().$implicit;
+    const p_r9 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("male", p_r10.sexe === "M")("female", p_r10.sexe === "F");
+    \u0275\u0275classProp("male", p_r9.sexe === "M")("female", p_r9.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r0.getInitiales(p_r10));
+    \u0275\u0275textInterpolate(ctx_r0.getInitiales(p_r9));
   }
 }
-function HomeComponent_div_45_div_12_span_15_Template(rf, ctx) {
+function HomeComponent_div_41_div_12_span_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 124)(1, "span", 12);
+    \u0275\u0275elementStart(0, "span", 125)(1, "span", 20);
     \u0275\u0275text(2, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r10 = \u0275\u0275nextContext().$implicit;
+    const p_r9 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1("", p_r10.lieuNaissance, " ");
+    \u0275\u0275textInterpolate1("", p_r9.lieuNaissance, " ");
   }
 }
-function HomeComponent_div_45_div_12_span_16_Template(rf, ctx) {
+function HomeComponent_div_41_div_12_span_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 125);
+    \u0275\u0275elementStart(0, "span", 126);
     \u0275\u0275text(1, "\u2014");
     \u0275\u0275elementEnd();
   }
 }
-function HomeComponent_div_45_div_12_span_18_Template(rf, ctx) {
+function HomeComponent_div_41_div_12_span_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 95);
+    \u0275\u0275elementStart(0, "span", 96);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
-function HomeComponent_div_45_div_12_span_19_Template(rf, ctx) {
+function HomeComponent_div_41_div_12_span_19_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 96);
+    \u0275\u0275elementStart(0, "span", 97);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
 }
-function HomeComponent_div_45_div_12_Template(rf, ctx) {
+function HomeComponent_div_41_div_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 105)(1, "div", 106)(2, "div", 107);
-    \u0275\u0275template(3, HomeComponent_div_45_div_12_img_3_Template, 1, 2, "img", 108)(4, HomeComponent_div_45_div_12_div_4_Template, 2, 5, "div", 109);
-    \u0275\u0275element(5, "span", 110);
+    \u0275\u0275elementStart(0, "div", 106)(1, "div", 107)(2, "div", 108);
+    \u0275\u0275template(3, HomeComponent_div_41_div_12_img_3_Template, 1, 2, "img", 109)(4, HomeComponent_div_41_div_12_div_4_Template, 2, 5, "div", 110);
+    \u0275\u0275element(5, "span", 111);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div", 111)(7, "span", 112);
+    \u0275\u0275elementStart(6, "div", 112)(7, "span", 113);
     \u0275\u0275text(8);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "span", 113);
+    \u0275\u0275elementStart(9, "span", 114);
     \u0275\u0275text(10);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(11, "div", 114)(12, "span", 115);
+    \u0275\u0275elementStart(11, "div", 115)(12, "span", 116);
     \u0275\u0275text(13);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(14, "div", 116);
-    \u0275\u0275template(15, HomeComponent_div_45_div_12_span_15_Template, 4, 1, "span", 117)(16, HomeComponent_div_45_div_12_span_16_Template, 2, 0, "span", 118);
+    \u0275\u0275elementStart(14, "div", 117);
+    \u0275\u0275template(15, HomeComponent_div_41_div_12_span_15_Template, 4, 1, "span", 118)(16, HomeComponent_div_41_div_12_span_16_Template, 2, 0, "span", 119);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(17, "div", 119);
-    \u0275\u0275template(18, HomeComponent_div_45_div_12_span_18_Template, 2, 0, "span", 87)(19, HomeComponent_div_45_div_12_span_19_Template, 2, 0, "span", 88);
+    \u0275\u0275elementStart(17, "div", 120);
+    \u0275\u0275template(18, HomeComponent_div_41_div_12_span_18_Template, 2, 0, "span", 88)(19, HomeComponent_div_41_div_12_span_19_Template, 2, 0, "span", 89);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "div", 120)(21, "a", 121)(22, "span", 12);
+    \u0275\u0275elementStart(20, "div", 121)(21, "a", 122)(22, "span", 20);
     \u0275\u0275text(23, "visibility");
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
-    const p_r10 = ctx.$implicit;
+    const p_r9 = ctx.$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(3);
-    \u0275\u0275property("ngIf", ctx_r0.getPhotoUrl(p_r10) && !ctx_r0.failedPhotos.has(p_r10.id));
+    \u0275\u0275property("ngIf", ctx_r0.getPhotoUrl(p_r9) && !ctx_r0.failedPhotos.has(p_r9.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r0.getPhotoUrl(p_r10) || ctx_r0.failedPhotos.has(p_r10.id));
+    \u0275\u0275property("ngIf", !ctx_r0.getPhotoUrl(p_r9) || ctx_r0.failedPhotos.has(p_r9.id));
     \u0275\u0275advance();
-    \u0275\u0275classProp("alive", ctx_r0.estVivant(p_r10))("dead", !ctx_r0.estVivant(p_r10));
+    \u0275\u0275classProp("alive", ctx_r0.estVivant(p_r9))("dead", !ctx_r0.estVivant(p_r9));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(p_r10));
+    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(p_r9));
     \u0275\u0275advance();
-    \u0275\u0275classProp("pc-age-unknown", !ctx_r0.getAgeLabel(p_r10));
+    \u0275\u0275classProp("pc-age-unknown", !ctx_r0.getAgeLabel(p_r9));
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r0.getAgeLabel(p_r10) || "Naissance inconnue", " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r0.getAgeLabel(p_r9) || "Naissance inconnue", " ");
     \u0275\u0275advance(2);
-    \u0275\u0275classProp("pc-badge-m", p_r10.sexe === "M")("pc-badge-f", p_r10.sexe === "F");
+    \u0275\u0275classProp("pc-badge-m", p_r9.sexe === "M")("pc-badge-f", p_r9.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", p_r10.sexe === "M" ? "Homme" : p_r10.sexe === "F" ? "Femme" : "Autre", " ");
+    \u0275\u0275textInterpolate1(" ", p_r9.sexe === "M" ? "Homme" : p_r9.sexe === "F" ? "Femme" : "Autre", " ");
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", p_r10.lieuNaissance);
+    \u0275\u0275property("ngIf", p_r9.lieuNaissance);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !p_r10.lieuNaissance);
+    \u0275\u0275property("ngIf", !p_r9.lieuNaissance);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r0.estVivant(p_r10));
+    \u0275\u0275property("ngIf", ctx_r0.estVivant(p_r9));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r0.estVivant(p_r10));
+    \u0275\u0275property("ngIf", !ctx_r0.estVivant(p_r9));
     \u0275\u0275advance(2);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(21, _c1))("queryParams", \u0275\u0275pureFunction1(22, _c2, p_r10.id));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(21, _c1))("queryParams", \u0275\u0275pureFunction1(22, _c2, p_r9.id));
   }
 }
-function HomeComponent_div_45_Template(rf, ctx) {
+function HomeComponent_div_41_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 97)(1, "div", 98)(2, "span", 99);
+    \u0275\u0275elementStart(0, "div", 98)(1, "div", 99)(2, "span", 100);
     \u0275\u0275text(3, "Personne");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 100);
+    \u0275\u0275elementStart(4, "span", 101);
     \u0275\u0275text(5, "Genre");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 101);
+    \u0275\u0275elementStart(6, "span", 102);
     \u0275\u0275text(7, "Lieu de naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "span", 102);
+    \u0275\u0275elementStart(8, "span", 103);
     \u0275\u0275text(9, "Statut");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 103);
+    \u0275\u0275elementStart(10, "span", 104);
     \u0275\u0275text(11, "Actions");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(12, HomeComponent_div_45_div_12_Template, 24, 24, "div", 104);
+    \u0275\u0275template(12, HomeComponent_div_41_div_12_Template, 24, 24, "div", 105);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -2282,9 +2228,9 @@ function HomeComponent_div_45_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r0.recentPersonnes)("ngForTrackBy", ctx_r0.trackByPersonneId);
   }
 }
-function HomeComponent_div_46_Template(rf, ctx) {
+function HomeComponent_div_42_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 126)(1, "span", 12);
+    \u0275\u0275elementStart(0, "div", 127)(1, "span", 20);
     \u0275\u0275text(2, "people");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "h3");
@@ -2293,6 +2239,96 @@ function HomeComponent_div_46_Template(rf, ctx) {
     \u0275\u0275elementStart(5, "p");
     \u0275\u0275text(6, "Commencez par ajouter des personnes \xE0 votre famille.");
     \u0275\u0275elementEnd()();
+  }
+}
+function HomeComponent_div_43_div_1_div_5_span_11_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 156);
+    \u0275\u0275text(1, "Bient\xF4t");
+    \u0275\u0275elementEnd();
+  }
+}
+function HomeComponent_div_43_div_1_div_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 150)(1, "div", 151)(2, "span");
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "span");
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(6, "div", 152)(7, "div", 153);
+    \u0275\u0275text(8);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "div", 154);
+    \u0275\u0275text(10);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275template(11, HomeComponent_div_43_div_1_div_5_span_11_Template, 2, 0, "span", 155);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const b_r10 = ctx.$implicit;
+    const ctx_r0 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(b_r10.jourNum);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(b_r10.moisAbbr);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(ctx_r0.getNomComplet(b_r10.p));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(b_r10.jours === 0 ? "Aujourd'hui" : b_r10.jours === 1 ? "Demain" : "dans " + b_r10.jours + " jours");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", b_r10.jours <= 7);
+  }
+}
+function HomeComponent_div_43_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 129)(1, "h4")(2, "span", 148);
+    \u0275\u0275text(3, "cake");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(4, "Anniversaires \xE0 venir");
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(5, HomeComponent_div_43_div_1_div_5_Template, 12, 5, "div", 149);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(5);
+    \u0275\u0275property("ngForOf", ctx_r0.anniversairesProches)("ngForTrackBy", ctx_r0.trackByAnniversaire);
+  }
+}
+function HomeComponent_div_43_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div");
+    \u0275\u0275template(1, HomeComponent_div_43_div_1_Template, 6, 2, "div", 128);
+    \u0275\u0275elementStart(2, "div", 129)(3, "h4")(4, "span", 130);
+    \u0275\u0275text(5, "account_tree");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(6, "Aper\xE7u de l'arbre");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(7, "div", 131);
+    \u0275\u0275namespaceSVG();
+    \u0275\u0275elementStart(8, "svg", 132);
+    \u0275\u0275element(9, "line", 133)(10, "line", 134)(11, "line", 135)(12, "line", 136)(13, "line", 137)(14, "line", 138)(15, "circle", 139)(16, "circle", 140)(17, "circle", 141)(18, "circle", 142)(19, "circle", 143)(20, "circle", 144)(21, "circle", 145);
+    \u0275\u0275elementEnd();
+    \u0275\u0275namespaceHTML();
+    \u0275\u0275elementStart(22, "button", 146)(23, "span", 20);
+    \u0275\u0275text(24, "open_in_full");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(25, "Voir l'arbre complet");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(26, "div", 129)(27, "div", 147)(28, "span", 20);
+    \u0275\u0275text(29, "auto_stories");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(30, "p");
+    \u0275\u0275text(31);
+    \u0275\u0275elementEnd()()()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.anniversairesProches.length > 0);
+    \u0275\u0275advance(30);
+    \u0275\u0275textInterpolate3("", ctx_r0.stats[3].value, " story", ctx_r0.stats[3].value > 1 ? "ies" : "", " partag\xE9e", ctx_r0.stats[3].value > 1 ? "s" : "", " par la famille \u2014 racontez la v\xF4tre.");
   }
 }
 var HomeComponent = class _HomeComponent {
@@ -2393,7 +2429,9 @@ var HomeComponent = class _HomeComponent {
         next = new Date(yr + 1, month, day);
       const jours = Math.round((next.getTime() - today.getTime()) / 864e5);
       const dateStr = next.toLocaleDateString("fr-FR", { day: "numeric", month: "long" });
-      return { p, jours, dateStr };
+      const jourNum = next.getDate();
+      const moisAbbr = next.toLocaleDateString("fr-FR", { month: "short" }).replace(".", "").toUpperCase();
+      return { p, jours, dateStr, jourNum, moisAbbr };
     }).filter((x) => x !== null && x.jours <= 60).sort((a, b) => a.jours - b.jours).slice(0, 5);
   }
   shareWhatsApp() {
@@ -2404,78 +2442,61 @@ Code : *${this.familleCode}*`;
   static \u0275fac = function HomeComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HomeComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HomeComponent, selectors: [["app-home"]], standalone: false, decls: 47, vars: 15, consts: [[1, "home-hero"], [1, "home-hero-bg"], [1, "home-hero-content"], ["class", "home-hero-left", 4, "ngIf"], [1, "home-hero-right"], [1, "home-hero-stats"], [1, "home-hero-stat"], [1, "hhs-value"], [1, "hhs-label"], [1, "home-hero-divider"], [1, "home-hero-btns"], [1, "home-invite-btn", 3, "click"], [1, "material-icons-round"], ["routerLink", "/app/personnes", 1, "home-add-btn"], ["class", "home-completion", 4, "ngIf"], ["class", "stats-grid mb-16", 4, "ngIf"], [1, "section-header", "mb-16"], [1, "quick-actions", "mb-32"], ["class", "quick-action", 3, "routerLink", "class", 4, "ngFor", "ngForOf"], ["class", "mb-32", 4, "ngIf"], ["class", "skeleton-section mb-32", 4, "ngIf"], ["class", "section-header mb-16", 4, "ngIf"], ["class", "pc-grid", 4, "ngIf"], ["class", "pl-table", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "home-hero-left"], [1, "home-user-avatar"], [1, "home-greeting"], [1, "home-family-name"], [1, "home-completion"], [1, "home-completion-label"], [1, "home-completion-bar"], [1, "home-completion-fill"], [1, "stats-grid", "mb-16"], ["class", "sk-stat", 4, "ngFor", "ngForOf"], [1, "sk-stat"], [1, "sk-stat-icon"], [1, "sk-stat-body"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-sm"], ["class", "stat-card", 3, "class", 4, "ngFor", "ngForOf"], [1, "stat-card"], [1, "stat-icon-wrap"], [1, "stat-body"], [1, "stat-value"], [1, "stat-label"], [1, "quick-action", 3, "routerLink"], [1, "mb-32"], [1, "material-icons-round", 2, "vertical-align", "middle", "color", "#DB2777", "font-size", "20px!important"], [1, "bday-row"], ["class", "bday-card", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "bday-card"], [1, "bday-avatar"], [1, "bday-info"], [1, "bday-name"], [1, "bday-date"], [1, "bday-badge"], [1, "skeleton-section", "mb-32"], [1, "skeleton-header"], [1, "skeleton-bar", "skeleton-bar-title"], [1, "skeleton-bar", "skeleton-bar-sm"], [1, "skeleton-grid"], ["class", "skeleton-card", 4, "ngFor", "ngForOf"], [1, "skeleton-card"], [1, "skeleton-card-top"], [1, "skeleton-card-body"], [1, "skeleton-bar"], [1, "skeleton-bar", "skeleton-bar-xs"], [1, "section-actions"], [1, "view-toggle"], ["title", "Vue cartes", 1, "vt-btn", 3, "click"], ["title", "Vue liste", 1, "vt-btn", 3, "click"], ["routerLink", "/app/personnes", 1, "btn-secondary", "btn-sm"], [1, "pc-grid"], ["class", "pc-card", 3, "pc-male", "pc-female", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pc-card"], [1, "pc-card-banner"], [1, "pc-colorband"], [1, "pc-live-dot"], [1, "pc-avatar-ring"], ["class", "pc-avatar pc-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pc-avatar pc-avatar-initials", 4, "ngIf"], [1, "pc-card-body"], [1, "pc-name"], [1, "pc-age"], ["class", "pc-loc", 4, "ngIf"], [1, "pc-badges"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "pc-card-actions"], [1, "pc-act"], [1, "pc-act", 3, "routerLink", "queryParams"], [1, "pc-avatar", "pc-avatar-photo", 3, "error", "src", "alt"], [1, "pc-avatar", "pc-avatar-initials"], [1, "pc-loc"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "pl-table"], [1, "pl-thead"], [1, "pl-th", "pl-th-person"], [1, "pl-th", "pl-th-genre"], [1, "pl-th", "pl-th-lieu"], [1, "pl-th", "pl-th-statut"], [1, "pl-th", "pl-th-actions"], ["class", "pl-row", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pl-row"], [1, "pl-cell", "pl-cell-person"], [1, "pl-avatar-wrap"], ["class", "pl-avatar pl-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pl-avatar pl-avatar-initials", 3, "male", "female", 4, "ngIf"], [1, "pl-status-dot"], [1, "pl-person-info"], [1, "pl-person-name"], [1, "pl-person-age"], [1, "pl-cell", "pl-cell-genre"], [1, "pc-badge"], [1, "pl-cell", "pl-cell-lieu"], ["class", "pl-lieu", 4, "ngIf"], ["class", "pl-empty", 4, "ngIf"], [1, "pl-cell", "pl-cell-statut"], [1, "pl-cell", "pl-cell-actions"], ["title", "Voir", 1, "btn-icon", 3, "routerLink", "queryParams"], [1, "pl-avatar", "pl-avatar-photo", 3, "error", "src", "alt"], [1, "pl-avatar", "pl-avatar-initials"], [1, "pl-lieu"], [1, "pl-empty"], [1, "empty-state"]], template: function HomeComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HomeComponent, selectors: [["app-home"]], standalone: false, decls: 44, vars: 12, consts: [[1, "home-hero"], ["width", "100%", "height", "100%", "viewBox", "0 0 1000 280", "preserveAspectRatio", "xMaxYMax slice", 1, "home-hero-roots"], ["d", "M760 280 C 755 230, 740 200, 700 175 C 670 156, 660 130, 665 100", "stroke", "#3E7A4C", "stroke-width", "2.5", "fill", "none", "opacity", "0.55"], ["d", "M760 280 C 770 235, 800 210, 830 190 C 855 173, 868 148, 862 118", "stroke", "#3E7A4C", "stroke-width", "2.5", "fill", "none", "opacity", "0.55"], ["d", "M760 280 C 762 245, 775 222, 800 205", "stroke", "#3E7A4C", "stroke-width", "1.5", "fill", "none", "opacity", "0.4"], ["d", "M665 100 C 640 82, 630 55, 645 28", "stroke", "#3E7A4C", "stroke-width", "2", "fill", "none", "opacity", "0.45"], ["d", "M665 100 C 690 88, 705 65, 700 38", "stroke", "#3E7A4C", "stroke-width", "2", "fill", "none", "opacity", "0.45"], ["d", "M862 118 C 885 100, 895 75, 885 48", "stroke", "#3E7A4C", "stroke-width", "2", "fill", "none", "opacity", "0.45"], ["d", "M862 118 C 840 105, 828 82, 838 58", "stroke", "#3E7A4C", "stroke-width", "2", "fill", "none", "opacity", "0.45"], ["cx", "645", "cy", "26", "r", "7", "fill", "#5A9A68", "opacity", "0.5"], ["cx", "700", "cy", "36", "r", "9", "fill", "#5A9A68", "opacity", "0.55"], ["cx", "885", "cy", "46", "r", "8", "fill", "#5A9A68", "opacity", "0.5"], ["cx", "838", "cy", "56", "r", "6", "fill", "#5A9A68", "opacity", "0.45"], ["cx", "800", "cy", "204", "r", "5", "fill", "#5A9A68", "opacity", "0.35"], [1, "home-hero-content"], ["class", "home-hero-left", 4, "ngIf"], [1, "home-hero-right"], ["class", "home-ring-wrap", 4, "ngIf"], [1, "home-hero-btns"], [1, "home-invite-btn", 3, "click"], [1, "material-icons-round"], ["routerLink", "/app/personnes", 1, "home-add-btn"], [1, "home-hero-stats-row"], ["class", "home-hero-stat", 4, "ngFor", "ngForOf"], [1, "home-body-grid"], ["class", "stats-grid mb-16", 4, "ngIf"], [1, "section-header", "mb-16"], [1, "qa-row", "mb-32"], ["class", "qa-tile", 3, "routerLink", 4, "ngFor", "ngForOf"], ["class", "skeleton-section mb-32", 4, "ngIf"], ["class", "section-header mb-16", 4, "ngIf"], ["class", "pc-grid", 4, "ngIf"], ["class", "pl-table", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [4, "ngIf"], [1, "home-hero-left"], [1, "home-user-avatar"], [1, "home-greeting"], [1, "home-family-name"], [1, "home-hero-meta"], [1, "home-hero-dot"], [1, "home-ring-wrap"], [1, "home-ring"], [1, "home-ring-inner"], [1, "home-ring-label"], [1, "home-hero-stat"], [1, "hhs-value"], [1, "hhs-label"], [1, "stats-grid", "mb-16"], ["class", "sk-stat", 4, "ngFor", "ngForOf"], [1, "sk-stat"], [1, "sk-stat-icon"], [1, "sk-stat-body"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-sm"], [1, "qa-tile", 3, "routerLink"], [1, "qa-icon"], [1, "qa-label"], [1, "skeleton-section", "mb-32"], [1, "skeleton-header"], [1, "skeleton-bar", "skeleton-bar-title"], [1, "skeleton-bar", "skeleton-bar-sm"], [1, "skeleton-grid"], ["class", "skeleton-card", 4, "ngFor", "ngForOf"], [1, "skeleton-card"], [1, "skeleton-card-top"], [1, "skeleton-card-body"], [1, "skeleton-bar"], [1, "skeleton-bar", "skeleton-bar-xs"], [1, "section-actions"], [1, "view-toggle"], ["title", "Vue cartes", 1, "vt-btn", 3, "click"], ["title", "Vue liste", 1, "vt-btn", 3, "click"], ["routerLink", "/app/personnes", 1, "btn-secondary", "btn-sm"], [1, "pc-grid"], ["class", "pc-card", 3, "pc-male", "pc-female", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pc-card"], [1, "pc-card-banner"], [1, "pc-colorband"], [1, "pc-live-dot"], [1, "pc-avatar-ring"], ["class", "pc-avatar pc-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pc-avatar pc-avatar-initials", 4, "ngIf"], [1, "pc-card-body"], [1, "pc-name"], [1, "pc-age"], ["class", "pc-loc", 4, "ngIf"], [1, "pc-badges"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "pc-card-actions"], [1, "pc-act"], [1, "pc-act", 3, "routerLink", "queryParams"], [1, "pc-avatar", "pc-avatar-photo", 3, "error", "src", "alt"], [1, "pc-avatar", "pc-avatar-initials"], [1, "pc-loc"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "pl-table"], [1, "pl-thead"], [1, "pl-th", "pl-th-person"], [1, "pl-th", "pl-th-genre"], [1, "pl-th", "pl-th-lieu"], [1, "pl-th", "pl-th-statut"], [1, "pl-th", "pl-th-actions"], ["class", "pl-row", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pl-row"], [1, "pl-cell", "pl-cell-person"], [1, "pl-avatar-wrap"], ["class", "pl-avatar pl-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pl-avatar pl-avatar-initials", 3, "male", "female", 4, "ngIf"], [1, "pl-status-dot"], [1, "pl-person-info"], [1, "pl-person-name"], [1, "pl-person-age"], [1, "pl-cell", "pl-cell-genre"], [1, "pc-badge"], [1, "pl-cell", "pl-cell-lieu"], ["class", "pl-lieu", 4, "ngIf"], ["class", "pl-empty", 4, "ngIf"], [1, "pl-cell", "pl-cell-statut"], [1, "pl-cell", "pl-cell-actions"], ["title", "Voir", 1, "btn-icon", 3, "routerLink", "queryParams"], [1, "pl-avatar", "pl-avatar-photo", 3, "error", "src", "alt"], [1, "pl-avatar", "pl-avatar-initials"], [1, "pl-lieu"], [1, "pl-empty"], [1, "empty-state"], ["class", "aside-card", 4, "ngIf"], [1, "aside-card"], [1, "material-icons-round", 2, "color", "#2E7D32"], [1, "tree-preview"], ["width", "220", "height", "130", "viewBox", "0 0 220 130"], ["x1", "110", "y1", "30", "x2", "70", "y2", "70", "stroke", "#D1D5DB", "stroke-width", "2"], ["x1", "110", "y1", "30", "x2", "150", "y2", "70", "stroke", "#D1D5DB", "stroke-width", "2"], ["x1", "70", "y1", "70", "x2", "45", "y2", "110", "stroke", "#D1D5DB", "stroke-width", "2"], ["x1", "70", "y1", "70", "x2", "90", "y2", "110", "stroke", "#D1D5DB", "stroke-width", "2"], ["x1", "150", "y1", "70", "x2", "130", "y2", "110", "stroke", "#D1D5DB", "stroke-width", "2"], ["x1", "150", "y1", "70", "x2", "170", "y2", "110", "stroke", "#D1D5DB", "stroke-width", "2"], ["cx", "110", "cy", "30", "r", "13", "fill", "#2E7D32"], ["cx", "70", "cy", "70", "r", "11", "fill", "#60A5FA"], ["cx", "150", "cy", "70", "r", "11", "fill", "#F472B6"], ["cx", "45", "cy", "110", "r", "9", "fill", "#93C5FD"], ["cx", "90", "cy", "110", "r", "9", "fill", "#93C5FD"], ["cx", "130", "cy", "110", "r", "9", "fill", "#F9A8D4"], ["cx", "170", "cy", "110", "r", "9", "fill", "#F9A8D4"], ["routerLink", "/app/tree", 1, "tree-link"], [1, "fact-row"], [1, "material-icons-round", 2, "color", "#DB2777"], ["class", "bday-item", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "bday-item"], [1, "bday-date"], [1, "bday-item-info"], [1, "bday-item-name"], [1, "bday-item-when"], ["class", "bday-item-soon", 4, "ngIf"], [1, "bday-item-soon"]], template: function HomeComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0);
-      \u0275\u0275element(1, "div", 1);
-      \u0275\u0275elementStart(2, "div", 2);
-      \u0275\u0275template(3, HomeComponent_div_3_Template, 8, 3, "div", 3)(4, HomeComponent_div_4_Template, 8, 1, "div", 3);
-      \u0275\u0275elementStart(5, "div", 4)(6, "div", 5)(7, "div", 6)(8, "span", 7);
-      \u0275\u0275text(9);
+      \u0275\u0275namespaceSVG();
+      \u0275\u0275elementStart(1, "svg", 1);
+      \u0275\u0275element(2, "path", 2)(3, "path", 3)(4, "path", 4)(5, "path", 5)(6, "path", 6)(7, "path", 7)(8, "path", 8)(9, "circle", 9)(10, "circle", 10)(11, "circle", 11)(12, "circle", 12)(13, "circle", 13);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(10, "span", 8);
-      \u0275\u0275text(11, "Membres");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275element(12, "div", 9);
-      \u0275\u0275elementStart(13, "div", 6)(14, "span", 7);
-      \u0275\u0275text(15);
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(16, "span", 8);
-      \u0275\u0275text(17, "G\xE9n\xE9rations");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275element(18, "div", 9);
-      \u0275\u0275elementStart(19, "div", 6)(20, "span", 7);
-      \u0275\u0275text(21);
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(22, "span", 8);
-      \u0275\u0275text(23, "Unions");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(24, "div", 10)(25, "button", 11);
-      \u0275\u0275listener("click", function HomeComponent_Template_button_click_25_listener() {
+      \u0275\u0275namespaceHTML();
+      \u0275\u0275elementStart(14, "div", 14);
+      \u0275\u0275template(15, HomeComponent_div_15_Template, 16, 5, "div", 15)(16, HomeComponent_div_16_Template, 8, 1, "div", 15);
+      \u0275\u0275elementStart(17, "div", 16);
+      \u0275\u0275template(18, HomeComponent_div_18_Template, 8, 3, "div", 17);
+      \u0275\u0275elementStart(19, "div", 18)(20, "button", 19);
+      \u0275\u0275listener("click", function HomeComponent_Template_button_click_20_listener() {
         return ctx.shareWhatsApp();
       });
-      \u0275\u0275elementStart(26, "span", 12);
-      \u0275\u0275text(27, "group_add");
+      \u0275\u0275elementStart(21, "span", 20);
+      \u0275\u0275text(22, "group_add");
       \u0275\u0275elementEnd();
-      \u0275\u0275text(28, " Inviter ");
+      \u0275\u0275text(23, " Inviter ");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(29, "button", 13)(30, "span", 12);
-      \u0275\u0275text(31, "person_add");
+      \u0275\u0275elementStart(24, "button", 21)(25, "span", 20);
+      \u0275\u0275text(26, "person_add");
       \u0275\u0275elementEnd();
-      \u0275\u0275text(32, " Ajouter ");
+      \u0275\u0275text(27, " Ajouter ");
       \u0275\u0275elementEnd()()()();
-      \u0275\u0275template(33, HomeComponent_div_33_Template, 9, 3, "div", 14);
-      \u0275\u0275elementEnd();
-      \u0275\u0275template(34, HomeComponent_div_34_Template, 2, 2, "div", 15)(35, HomeComponent_div_35_Template, 2, 1, "div", 15);
-      \u0275\u0275elementStart(36, "div", 16)(37, "h3");
-      \u0275\u0275text(38, "Actions rapides");
+      \u0275\u0275elementStart(28, "div", 22);
+      \u0275\u0275template(29, HomeComponent_div_29_Template, 5, 2, "div", 23);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(39, "div", 17);
-      \u0275\u0275template(40, HomeComponent_a_40_Template, 5, 5, "a", 18);
+      \u0275\u0275elementStart(30, "div", 24)(31, "div");
+      \u0275\u0275template(32, HomeComponent_div_32_Template, 2, 2, "div", 25);
+      \u0275\u0275elementStart(33, "div", 26)(34, "h3");
+      \u0275\u0275text(35, "Actions rapides");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(36, "div", 27);
+      \u0275\u0275template(37, HomeComponent_a_37_Template, 6, 5, "a", 28);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(41, HomeComponent_div_41_Template, 8, 2, "div", 19)(42, HomeComponent_div_42_Template, 6, 2, "div", 20)(43, HomeComponent_div_43_Template, 13, 4, "div", 21)(44, HomeComponent_div_44_Template, 2, 2, "div", 22)(45, HomeComponent_div_45_Template, 13, 2, "div", 23)(46, HomeComponent_div_46_Template, 7, 0, "div", 24);
+      \u0275\u0275template(38, HomeComponent_div_38_Template, 6, 2, "div", 29)(39, HomeComponent_div_39_Template, 13, 4, "div", 30)(40, HomeComponent_div_40_Template, 2, 2, "div", 31)(41, HomeComponent_div_41_Template, 13, 2, "div", 32)(42, HomeComponent_div_42_Template, 7, 0, "div", 33);
+      \u0275\u0275elementEnd();
+      \u0275\u0275template(43, HomeComponent_div_43_Template, 32, 4, "div", 34);
+      \u0275\u0275elementEnd();
     }
     if (rf & 2) {
-      \u0275\u0275advance(3);
+      \u0275\u0275advance(15);
       \u0275\u0275property("ngIf", ctx.user);
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", !ctx.user);
-      \u0275\u0275advance(5);
-      \u0275\u0275textInterpolate(ctx.stats[0].value);
-      \u0275\u0275advance(6);
-      \u0275\u0275textInterpolate(ctx.stats[1].value);
-      \u0275\u0275advance(6);
-      \u0275\u0275textInterpolate(ctx.stats[2].value);
-      \u0275\u0275advance(12);
+      \u0275\u0275advance(2);
       \u0275\u0275property("ngIf", !ctx.loading && ctx.toutes.length > 0);
-      \u0275\u0275advance();
+      \u0275\u0275advance(11);
+      \u0275\u0275property("ngForOf", ctx.stats);
+      \u0275\u0275advance(3);
       \u0275\u0275property("ngIf", ctx.loading);
-      \u0275\u0275advance();
-      \u0275\u0275property("ngIf", !ctx.loading);
       \u0275\u0275advance(5);
       \u0275\u0275property("ngForOf", ctx.quickActions);
-      \u0275\u0275advance();
-      \u0275\u0275property("ngIf", ctx.anniversairesProches.length > 0);
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.loading);
       \u0275\u0275advance();
@@ -2486,262 +2507,287 @@ Code : *${this.familleCode}*`;
       \u0275\u0275property("ngIf", !ctx.loading && ctx.recentPersonnes.length > 0 && ctx.viewMode === "list");
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", !ctx.loading && ctx.recentPersonnes.length === 0);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", !ctx.loading);
     }
-  }, dependencies: [NgForOf, NgIf, RouterLink], styles: ['@charset "UTF-8";\n\n\n\n.home-hero[_ngcontent-%COMP%] {\n  position: relative;\n  border-radius: 24px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #0f172a 0%,\n      #1e3a8a 50%,\n      #1d4ed8 100%);\n  padding: 32px 36px;\n  color: #fff;\n  margin-bottom: 24px;\n}\n.home-hero-bg[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.05) 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  pointer-events: none;\n}\n.home-hero-content[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.home-hero-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.home-user-avatar[_ngcontent-%COMP%] {\n  width: 52px;\n  height: 52px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #2563EB);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 800;\n  color: #fff;\n  flex-shrink: 0;\n  border: 2px solid rgba(255, 255, 255, 0.25);\n}\n.home-greeting[_ngcontent-%COMP%] {\n  margin: 0 0 2px;\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.75);\n  font-weight: 400;\n}\n.home-family-name[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 22px;\n  font-weight: 800;\n  color: #fff;\n  letter-spacing: -0.3px;\n}\n.home-hero-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  flex-wrap: wrap;\n}\n.home-hero-stats[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  background: rgba(255, 255, 255, 0.1);\n  border: 1px solid rgba(255, 255, 255, 0.15);\n  border-radius: 16px;\n  padding: 14px 22px;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n}\n.home-hero-stat[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n}\n.hhs-value[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 800;\n  color: #fff;\n  line-height: 1;\n}\n.hhs-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: rgba(255, 255, 255, 0.65);\n  font-weight: 500;\n  white-space: nowrap;\n}\n.home-hero-divider[_ngcontent-%COMP%] {\n  width: 1px;\n  height: 36px;\n  background: rgba(255, 255, 255, 0.2);\n}\n.home-hero-btns[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.home-invite-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 10px 18px;\n  border-radius: 12px;\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  background: rgba(255, 255, 255, 0.12);\n  color: #fff;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.2s;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n}\n.home-invite-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.home-invite-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.22);\n  border-color: rgba(255, 255, 255, 0.6);\n}\n.home-add-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 10px 18px;\n  border-radius: 12px;\n  border: none;\n  background: #fff;\n  color: #1d4ed8;\n  font-size: 13px;\n  font-weight: 700;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.2s;\n  white-space: nowrap;\n}\n.home-add-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.home-add-btn[_ngcontent-%COMP%]:hover {\n  background: #EFF6FF;\n}\n.home-completion[_ngcontent-%COMP%] {\n  position: relative;\n  margin-top: 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 7px;\n}\n.home-completion-label[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.7);\n}\n.home-completion-label[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n  color: rgba(255, 255, 255, 0.6);\n}\n.home-completion-label[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: #fff;\n  font-weight: 700;\n}\n.home-completion-bar[_ngcontent-%COMP%] {\n  height: 5px;\n  border-radius: 99px;\n  background: rgba(255, 255, 255, 0.2);\n  overflow: hidden;\n}\n.home-completion-fill[_ngcontent-%COMP%] {\n  height: 100%;\n  border-radius: 99px;\n  background:\n    linear-gradient(\n      90deg,\n      #93C5FD,\n      #fff);\n  transition: width 0.8s ease;\n}\n.header-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.header-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: var(--text-primary);\n}\n.stats-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n}\n.stat-card[_ngcontent-%COMP%] {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  border: 1px solid var(--border-light);\n  box-shadow: var(--shadow-sm);\n  padding: 20px;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  transition: box-shadow var(--transition), transform var(--transition);\n}\n.stat-card[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.stat-icon-wrap[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 24px !important;\n}\n.stat-card--blue[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.stat-card--blue[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n.stat-card--indigo[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%] {\n  background: var(--accent-bg);\n}\n.stat-card--indigo[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--accent);\n}\n.stat-card--pink[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%] {\n  background: var(--pink-bg);\n}\n.stat-card--pink[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--pink);\n}\n.stat-card--green[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%] {\n  background: var(--success-bg);\n}\n.stat-card--green[_ngcontent-%COMP%]   .stat-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--success);\n}\n.stat-body[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n.stat-value[_ngcontent-%COMP%] {\n  font-size: 26px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1;\n}\n.stat-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-weight: 500;\n}\n.quick-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.quick-action[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 18px;\n  border-radius: var(--radius-full);\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  text-decoration: none;\n  transition: var(--transition);\n}\n.quick-action[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.quick-action--blue[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary-dark);\n}\n.quick-action--blue[_ngcontent-%COMP%]:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.quick-action--indigo[_ngcontent-%COMP%] {\n  background: var(--accent-bg);\n  color: var(--accent);\n}\n.quick-action--indigo[_ngcontent-%COMP%]:hover {\n  background: #DDD6FE;\n  text-decoration: none;\n}\n.quick-action--pink[_ngcontent-%COMP%] {\n  background: var(--pink-bg);\n  color: var(--pink);\n}\n.quick-action--pink[_ngcontent-%COMP%]:hover {\n  background: #FBCFE8;\n  text-decoration: none;\n}\n.quick-action--green[_ngcontent-%COMP%] {\n  background: var(--success-bg);\n  color: var(--success);\n}\n.quick-action--green[_ngcontent-%COMP%]:hover {\n  background: #A7F3D0;\n  text-decoration: none;\n}\n.section-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.bday-row[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  overflow-x: auto;\n  padding-bottom: 4px;\n  scrollbar-width: none;\n}\n.bday-row[_ngcontent-%COMP%]::-webkit-scrollbar {\n  display: none;\n}\n.bday-card[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 14px;\n  background: var(--white);\n  border: 1px solid #FBE8F3;\n  border-radius: var(--radius-lg);\n  min-width: 200px;\n  flex-shrink: 0;\n  transition: box-shadow var(--transition);\n}\n.bday-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 4px 14px rgba(219, 39, 119, 0.12);\n}\n.bday-avatar[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.bday-avatar.male[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #3B82F6);\n}\n.bday-avatar.female[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #F472B6,\n      #EC4899);\n}\n.bday-avatar[_ngcontent-%COMP%]:not(.male):not(.female) {\n  background:\n    linear-gradient(\n      135deg,\n      #A78BFA,\n      var(--primary));\n}\n.bday-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.bday-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-date[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.bday-badge[_ngcontent-%COMP%] {\n  background: #FDF2F8;\n  color: #DB2777;\n  font-size: 11px;\n  font-weight: 700;\n  padding: 3px 8px;\n  border-radius: 7px;\n  white-space: nowrap;\n}\n.bday-badge.soon[_ngcontent-%COMP%] {\n  background: #FEF3C7;\n  color: #B45309;\n  animation: _ngcontent-%COMP%_pulse-bday 1.5s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n@keyframes _ngcontent-%COMP%_skeleton-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.skeleton-bar[_ngcontent-%COMP%], \n.skeleton-card-top[_ngcontent-%COMP%], \n.skeleton-card[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: _ngcontent-%COMP%_skeleton-shimmer 1.4s infinite;\n  border-radius: 8px;\n}\n.skeleton-section[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.skeleton-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.skeleton-bar[_ngcontent-%COMP%] {\n  height: 16px;\n}\n.skeleton-bar-title[_ngcontent-%COMP%] {\n  width: 160px;\n  height: 20px;\n}\n.skeleton-bar-sm[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 14px;\n}\n.skeleton-bar-xs[_ngcontent-%COMP%] {\n  width: 70px;\n  height: 12px;\n}\n.skeleton-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 16px;\n}\n.skeleton-card[_ngcontent-%COMP%] {\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: 1px solid var(--border-light);\n}\n.skeleton-card-top[_ngcontent-%COMP%] {\n  height: 90px;\n  border-radius: 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.skeleton-card-body[_ngcontent-%COMP%] {\n  padding: 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n@media (max-width: 1200px) {\n  .stats-grid[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media (max-width: 640px) {\n  .stats-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .stat-card[_ngcontent-%COMP%] {\n    padding: 14px;\n  }\n  .stat-value[_ngcontent-%COMP%] {\n    font-size: 22px;\n  }\n  .quick-actions[_ngcontent-%COMP%] {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 8px;\n  }\n  .quick-action[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n  .home-hero[_ngcontent-%COMP%] {\n    padding: 24px 20px;\n    border-radius: 18px;\n  }\n  .home-hero-content[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .home-hero-right[_ngcontent-%COMP%] {\n    width: 100%;\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .home-hero-stats[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: space-around;\n  }\n  .home-family-name[_ngcontent-%COMP%] {\n    font-size: 18px;\n  }\n  .home-hero-btns[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  .home-invite-btn[_ngcontent-%COMP%], \n   .home-add-btn[_ngcontent-%COMP%] {\n    flex: 1;\n    justify-content: center;\n  }\n}\n@media (max-width: 360px) {\n  .stats-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */'] });
+  }, dependencies: [NgForOf, NgIf, RouterLink], styles: ["\n\n.home-hero[_ngcontent-%COMP%] {\n  position: relative;\n  border-radius: 26px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #0B1220 0%,\n      #0F2A1E 46%,\n      #123B27 100%);\n  padding: 32px 36px 28px;\n  color: #fff;\n  margin-bottom: 24px;\n  animation: _ngcontent-%COMP%_heroIn 0.5s ease-out;\n}\n@keyframes _ngcontent-%COMP%_heroIn {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.home-hero-roots[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n  opacity: 0.5;\n}\n.home-hero-content[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.home-hero-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.home-user-avatar[_ngcontent-%COMP%] {\n  width: 52px;\n  height: 52px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      #86D19C,\n      #2E7D32);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 800;\n  color: #08210F;\n  flex-shrink: 0;\n  border: 2px solid rgba(255, 255, 255, 0.25);\n}\n.home-greeting[_ngcontent-%COMP%] {\n  margin: 0 0 2px;\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.68);\n  font-weight: 400;\n}\n.home-family-name[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  letter-spacing: -0.3px;\n}\n.home-hero-meta[_ngcontent-%COMP%] {\n  margin: 6px 0 0;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.55);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.home-hero-meta[_ngcontent-%COMP%]   b[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.85);\n  font-weight: 600;\n}\n.home-hero-dot[_ngcontent-%COMP%] {\n  width: 3px;\n  height: 3px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.35);\n}\n.home-hero-right[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  align-items: center;\n  gap: 22px;\n  flex-wrap: wrap;\n}\n.home-ring-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.home-ring[_ngcontent-%COMP%] {\n  width: 64px;\n  height: 64px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: background 0.4s ease;\n}\n.home-ring-inner[_ngcontent-%COMP%] {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  background: #0F2A1E;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  color: #fff;\n}\n.home-ring-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.6);\n  max-width: 130px;\n  line-height: 1.4;\n}\n.home-ring-label[_ngcontent-%COMP%]   b[_ngcontent-%COMP%] {\n  color: #fff;\n  display: block;\n  font-size: 13px;\n  margin-bottom: 1px;\n}\n.home-hero-btns[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.home-invite-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  background: rgba(255, 255, 255, 0.1);\n  color: #fff;\n  font-size: 13.5px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    background 0.15s;\n}\n.home-invite-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.home-invite-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.16);\n  transform: translateY(-1px);\n}\n.home-add-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: none;\n  background: #81C784;\n  color: #0B2914;\n  font-size: 13.5px;\n  font-weight: 700;\n  cursor: pointer;\n  font-family: inherit;\n  transition: transform 0.15s, box-shadow 0.15s;\n  white-space: nowrap;\n  box-shadow: 0 4px 14px rgba(129, 199, 132, 0.35);\n}\n.home-add-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.home-add-btn[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 6px 18px rgba(129, 199, 132, 0.45);\n  transform: translateY(-1px);\n}\n.home-hero-stats-row[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  gap: 28px;\n  margin-top: 24px;\n  padding-top: 20px;\n  border-top: 1px solid rgba(255, 255, 255, 0.12);\n  flex-wrap: wrap;\n}\n.home-hero-stat[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: baseline;\n  gap: 8px;\n}\n.hhs-value[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n}\n.hhs-label[_ngcontent-%COMP%] {\n  font-size: 12.5px;\n  color: rgba(255, 255, 255, 0.55);\n}\n.home-body-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 336px;\n  gap: 22px;\n}\n.header-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.header-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: var(--text-primary);\n}\n.stats-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 16px;\n}\n.qa-row[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 14px;\n}\n.qa-tile[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 16px;\n  padding: 16px 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  cursor: pointer;\n  text-decoration: none;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    border-color 0.15s;\n}\n.qa-tile[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);\n  border-color: #D1D5DB;\n  text-decoration: none;\n}\n.qa-icon[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  border-radius: 11px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.qa-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 19px !important;\n}\n.qa-icon.blue[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.qa-icon.blue[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n.qa-icon.indigo[_ngcontent-%COMP%] {\n  background: var(--accent-bg);\n}\n.qa-icon.indigo[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--accent);\n}\n.qa-icon.pink[_ngcontent-%COMP%] {\n  background: var(--pink-bg);\n}\n.qa-icon.pink[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--pink);\n}\n.qa-icon.green[_ngcontent-%COMP%] {\n  background: var(--success-bg);\n}\n.qa-icon.green[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--success);\n}\n.qa-label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.section-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.aside-card[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 18px;\n  padding: 18px;\n  margin-bottom: 18px;\n}\n.aside-card[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  margin: 0 0 14px;\n  font-size: 13.5px;\n  font-weight: 700;\n  color: var(--text-primary);\n  display: flex;\n  align-items: center;\n  gap: 7px;\n}\n.aside-card[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.bday-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 11px;\n  padding: 9px 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.bday-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.bday-date[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border-radius: 11px;\n  background: #FDF2F8;\n  color: #DB2777;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.bday-date[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:first-child {\n  font-size: 13px;\n  font-weight: 800;\n  line-height: 1;\n}\n.bday-date[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:last-child {\n  font-size: 8.5px;\n  font-weight: 600;\n  text-transform: uppercase;\n}\n.bday-item-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.bday-item-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-item-when[_ngcontent-%COMP%] {\n  font-size: 11.5px;\n  color: var(--text-muted);\n}\n.bday-item-soon[_ngcontent-%COMP%] {\n  margin-left: auto;\n  flex-shrink: 0;\n  font-size: 10.5px;\n  font-weight: 700;\n  color: #DB2777;\n  background: #FDF2F8;\n  padding: 3px 8px;\n  border-radius: 999px;\n  animation: _ngcontent-%COMP%_pulse-bday 1.5s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n.tree-preview[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 4px 0 6px;\n}\n.tree-link[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  width: 100%;\n  margin-top: 14px;\n  padding: 9px;\n  border-radius: 10px;\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  border: none;\n  text-decoration: none;\n}\n.tree-link[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.tree-link[_ngcontent-%COMP%]:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.fact-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n}\n.fact-row[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #2E7D32;\n  font-size: 18px !important;\n  margin-top: 1px;\n}\n.fact-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 12.5px;\n  color: var(--text-secondary);\n  line-height: 1.55;\n}\n@keyframes _ngcontent-%COMP%_skeleton-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.skeleton-bar[_ngcontent-%COMP%], \n.skeleton-card-top[_ngcontent-%COMP%], \n.skeleton-card[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: _ngcontent-%COMP%_skeleton-shimmer 1.4s infinite;\n  border-radius: 8px;\n}\n.skeleton-section[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.skeleton-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.skeleton-bar[_ngcontent-%COMP%] {\n  height: 16px;\n}\n.skeleton-bar-title[_ngcontent-%COMP%] {\n  width: 160px;\n  height: 20px;\n}\n.skeleton-bar-sm[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 14px;\n}\n.skeleton-bar-xs[_ngcontent-%COMP%] {\n  width: 70px;\n  height: 12px;\n}\n.skeleton-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 16px;\n}\n.skeleton-card[_ngcontent-%COMP%] {\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: 1px solid var(--border-light);\n}\n.skeleton-card-top[_ngcontent-%COMP%] {\n  height: 90px;\n  border-radius: 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.skeleton-card-body[_ngcontent-%COMP%] {\n  padding: 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n@media (prefers-reduced-motion: reduce) {\n  [_nghost-%COMP%]   *[_ngcontent-%COMP%] {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 1100px) {\n  .home-body-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 640px) {\n  .qa-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .home-hero[_ngcontent-%COMP%] {\n    padding: 24px 20px;\n    border-radius: 18px;\n  }\n  .home-hero-content[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .home-hero-right[_ngcontent-%COMP%] {\n    width: 100%;\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 14px;\n  }\n  .home-family-name[_ngcontent-%COMP%] {\n    font-size: 19px;\n  }\n  .home-hero-btns[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  .home-invite-btn[_ngcontent-%COMP%], \n   .home-add-btn[_ngcontent-%COMP%] {\n    flex: 1;\n    justify-content: center;\n  }\n  .home-hero-stats-row[_ngcontent-%COMP%] {\n    gap: 18px;\n  }\n}\n@media (max-width: 480px) {\n  .qa-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(HomeComponent, [{
     type: Component,
-    args: [{ selector: "app-home", standalone: false, template: `<!-- ===== HERO ===== -->\r
-<div class="home-hero">\r
-  <div class="home-hero-bg"></div>\r
-  <div class="home-hero-content">\r
-    <div class="home-hero-left" *ngIf="user">\r
-      <div class="home-user-avatar">{{ (user.prenom[0] + user.nom[0]).toUpperCase() }}</div>\r
-      <div>\r
-        <p class="home-greeting">Bonjour, {{ user.prenom }} \u{1F44B}</p>\r
-        <h1 class="home-family-name">Famille {{ nomFamille || '\u2026' }}</h1>\r
-      </div>\r
-    </div>\r
-    <div class="home-hero-left" *ngIf="!user">\r
-      <div class="home-user-avatar">MB</div>\r
-      <div>\r
-        <p class="home-greeting">Bonjour \u{1F44B}</p>\r
-        <h1 class="home-family-name">Famille {{ nomFamille || '\u2026' }}</h1>\r
-      </div>\r
-    </div>\r
-    <div class="home-hero-right">\r
-      <div class="home-hero-stats">\r
-        <div class="home-hero-stat">\r
-          <span class="hhs-value">{{ stats[0].value }}</span>\r
-          <span class="hhs-label">Membres</span>\r
-        </div>\r
-        <div class="home-hero-divider"></div>\r
-        <div class="home-hero-stat">\r
-          <span class="hhs-value">{{ stats[1].value }}</span>\r
-          <span class="hhs-label">G\xE9n\xE9rations</span>\r
-        </div>\r
-        <div class="home-hero-divider"></div>\r
-        <div class="home-hero-stat">\r
-          <span class="hhs-value">{{ stats[2].value }}</span>\r
-          <span class="hhs-label">Unions</span>\r
-        </div>\r
-      </div>\r
-      <div class="home-hero-btns">\r
-        <button class="home-invite-btn" (click)="shareWhatsApp()">\r
-          <span class="material-icons-round">group_add</span>\r
-          Inviter\r
-        </button>\r
-        <button class="home-add-btn" routerLink="/app/personnes">\r
-          <span class="material-icons-round">person_add</span>\r
-          Ajouter\r
-        </button>\r
-      </div>\r
-    </div>\r
-  </div>\r
-  <!-- Barre de compl\xE9tion dans le hero -->\r
-  <div class="home-completion" *ngIf="!loading && toutes.length > 0">\r
-    <div class="home-completion-label">\r
-      <span class="material-icons-round">bar_chart</span>\r
-      Compl\xE9tion des profils\r
-      <strong>{{ completionScore }}%</strong>\r
-    </div>\r
-    <div class="home-completion-bar">\r
-      <div class="home-completion-fill" [style.width.%]="completionScore"></div>\r
-    </div>\r
-  </div>\r
-</div>\r
-\r
-<!-- ===== STATS SKELETON ===== -->\r
-<div class="stats-grid mb-16" *ngIf="loading">\r
-  <div class="sk-stat" *ngFor="let _ of [1,2,3,4]">\r
-    <div class="sk-stat-icon"></div>\r
-    <div class="sk-stat-body">\r
-      <div class="sk-line sk-lg"></div>\r
-      <div class="sk-line sk-sm"></div>\r
-    </div>\r
-  </div>\r
-</div>\r
-\r
-<!-- ===== STATS ===== -->\r
-<div class="stats-grid mb-16" *ngIf="!loading">\r
-  <div class="stat-card" *ngFor="let s of stats" [class]="'stat-card--' + s.color">\r
-    <div class="stat-icon-wrap">\r
-      <span class="material-icons-round">{{ s.icon }}</span>\r
-    </div>\r
-    <div class="stat-body">\r
-      <span class="stat-value">{{ s.value }}</span>\r
-      <span class="stat-label">{{ s.label }}</span>\r
-    </div>\r
-  </div>\r
-</div>\r
-\r
-\r
-<!-- ===== ACTIONS RAPIDES ===== -->\r
-<div class="section-header mb-16">\r
-  <h3>Actions rapides</h3>\r
-</div>\r
-\r
-<div class="quick-actions mb-32">\r
-  <a *ngFor="let a of quickActions" [routerLink]="a.route" class="quick-action" [class]="'quick-action--' + a.color">\r
-    <span class="material-icons-round">{{ a.icon }}</span>\r
-    <span>{{ a.label }}</span>\r
-  </a>\r
-</div>\r
-\r
-<!-- ===== ANNIVERSAIRES ===== -->\r
-<div *ngIf="anniversairesProches.length > 0" class="mb-32">\r
-  <div class="section-header mb-16">\r
-    <h3><span class="material-icons-round" style="vertical-align:middle;color:#DB2777;font-size:20px!important">cake</span> Anniversaires \xE0 venir</h3>\r
-  </div>\r
-  <div class="bday-row">\r
-    <div class="bday-card" *ngFor="let b of anniversairesProches; trackBy: trackByAnniversaire">\r
-      <div class="bday-avatar" [class.male]="b.p.sexe === 'M'" [class.female]="b.p.sexe === 'F'">\r
-        {{ getInitiales(b.p) }}\r
-      </div>\r
-      <div class="bday-info">\r
-        <span class="bday-name">{{ getNomComplet(b.p) }}</span>\r
-        <span class="bday-date">{{ b.dateStr }}</span>\r
-      </div>\r
-      <span class="bday-badge" [class.soon]="b.jours <= 7">\r
-        {{ b.jours === 0 ? "Aujourd'hui !" : b.jours === 1 ? 'Demain !' : b.jours + 'j' }}\r
-      </span>\r
-    </div>\r
-  </div>\r
-</div>\r
-\r
-<!-- ===== SKELETON CHARGEMENT MEMBRES ===== -->\r
-<div *ngIf="loading" class="skeleton-section mb-32">\r
-  <div class="skeleton-header">\r
-    <div class="skeleton-bar skeleton-bar-title"></div>\r
-    <div class="skeleton-bar skeleton-bar-sm"></div>\r
-  </div>\r
-  <div class="skeleton-grid">\r
-    <div class="skeleton-card" *ngFor="let _ of [1,2,3,4]">\r
-      <div class="skeleton-card-top"></div>\r
-      <div class="skeleton-card-body">\r
-        <div class="skeleton-bar"></div>\r
-        <div class="skeleton-bar skeleton-bar-sm"></div>\r
-        <div class="skeleton-bar skeleton-bar-xs"></div>\r
-      </div>\r
-    </div>\r
-  </div>\r
-</div>\r
-\r
-<!-- ===== DERNIERS MEMBRES ===== -->\r
-<div class="section-header mb-16" *ngIf="!loading">\r
-  <h3>Membres r\xE9cents</h3>\r
-  <div class="section-actions">\r
-    <div class="view-toggle">\r
-      <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">\r
-        <span class="material-icons-round">grid_view</span>\r
-      </button>\r
-      <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">\r
-        <span class="material-icons-round">view_list</span>\r
-      </button>\r
-    </div>\r
-    <a routerLink="/app/personnes" class="btn-secondary btn-sm">Voir tous</a>\r
-  </div>\r
-</div>\r
-\r
-<!-- ===== VUE CARTES ===== -->\r
-<div class="pc-grid" *ngIf="!loading && recentPersonnes.length > 0 && viewMode === 'cards'">\r
-  <div class="pc-card" *ngFor="let p of recentPersonnes; let i = index; trackBy: trackByPersonneId"\r
-       [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'">\r
-    <div class="pc-card-banner">\r
-      <div class="pc-colorband"\r
-           [class.color-1]="i % 3 === 0"\r
-           [class.color-2]="i % 3 === 1"\r
-           [class.color-3]="i % 3 === 2"></div>\r
-      <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>\r
-      <div class="pc-avatar-ring">\r
-        <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
-             [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"\r
-             [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />\r
-        <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">\r
-          {{ getInitiales(p) }}\r
-        </div>\r
-      </div>\r
-    </div>\r
-    <div class="pc-card-body">\r
-      <h4 class="pc-name">{{ getNomComplet(p) }}</h4>\r
-      <span class="pc-age" [class.pc-age-unknown]="!getAgeLabel(p)">\r
-        {{ getAgeLabel(p) || 'Naissance inconnue' }}\r
-      </span>\r
-      <div class="pc-loc" *ngIf="p.lieuNaissance">\r
-        <span class="material-icons-round">place</span>{{ p.lieuNaissance }}\r
-      </div>\r
-      <div class="pc-badges">\r
-        <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>\r
-        <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>\r
-      </div>\r
-    </div>\r
-    <div class="pc-card-actions">\r
-      <button class="pc-act">\r
-        <span class="material-icons-round">favorite_border</span>Like\r
-      </button>\r
-      <a class="pc-act" [routerLink]="['/app/personnes']" [queryParams]="{ id: p.id }">\r
-        <span class="material-icons-round">visibility</span>Voir\r
-      </a>\r
-    </div>\r
-  </div>\r
-</div>\r
-\r
-<!-- ===== VUE LISTE ===== -->\r
-<div class="pl-table" *ngIf="!loading && recentPersonnes.length > 0 && viewMode === 'list'">\r
-  <div class="pl-thead">\r
-    <span class="pl-th pl-th-person">Personne</span>\r
-    <span class="pl-th pl-th-genre">Genre</span>\r
-    <span class="pl-th pl-th-lieu">Lieu de naissance</span>\r
-    <span class="pl-th pl-th-statut">Statut</span>\r
-    <span class="pl-th pl-th-actions">Actions</span>\r
-  </div>\r
-  <div class="pl-row" *ngFor="let p of recentPersonnes; trackBy: trackByPersonneId">\r
-    <div class="pl-cell pl-cell-person">\r
-      <div class="pl-avatar-wrap">\r
-        <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
-             [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"\r
-             [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />\r
-        <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pl-avatar pl-avatar-initials"\r
-             [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">{{ getInitiales(p) }}</div>\r
-        <span class="pl-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>\r
-      </div>\r
-      <div class="pl-person-info">\r
-        <span class="pl-person-name">{{ getNomComplet(p) }}</span>\r
-        <span class="pl-person-age" [class.pc-age-unknown]="!getAgeLabel(p)">\r
-          {{ getAgeLabel(p) || 'Naissance inconnue' }}\r
-        </span>\r
-      </div>\r
-    </div>\r
-    <div class="pl-cell pl-cell-genre">\r
-      <span class="pc-badge" [class.pc-badge-m]="p.sexe === 'M'" [class.pc-badge-f]="p.sexe === 'F'">\r
-        {{ p.sexe === 'M' ? 'Homme' : p.sexe === 'F' ? 'Femme' : 'Autre' }}\r
-      </span>\r
-    </div>\r
-    <div class="pl-cell pl-cell-lieu">\r
-      <span *ngIf="p.lieuNaissance" class="pl-lieu">\r
-        <span class="material-icons-round">place</span>{{ p.lieuNaissance }}\r
-      </span>\r
-      <span *ngIf="!p.lieuNaissance" class="pl-empty">\u2014</span>\r
-    </div>\r
-    <div class="pl-cell pl-cell-statut">\r
-      <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>\r
-      <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>\r
-    </div>\r
-    <div class="pl-cell pl-cell-actions">\r
-      <a class="btn-icon" title="Voir" [routerLink]="['/app/personnes']" [queryParams]="{ id: p.id }">\r
-        <span class="material-icons-round">visibility</span>\r
-      </a>\r
-    </div>\r
-  </div>\r
-</div>\r
-\r
-<div class="empty-state" *ngIf="!loading && recentPersonnes.length === 0">\r
-  <span class="material-icons-round">people</span>\r
-  <h3>Aucun membre encore</h3>\r
-  <p>Commencez par ajouter des personnes \xE0 votre famille.</p>\r
-</div>\r
-`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/home/home.component.scss */\n.home-hero {\n  position: relative;\n  border-radius: 24px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #0f172a 0%,\n      #1e3a8a 50%,\n      #1d4ed8 100%);\n  padding: 32px 36px;\n  color: #fff;\n  margin-bottom: 24px;\n}\n.home-hero-bg {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.05) 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  pointer-events: none;\n}\n.home-hero-content {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.home-hero-left {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.home-user-avatar {\n  width: 52px;\n  height: 52px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #2563EB);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 800;\n  color: #fff;\n  flex-shrink: 0;\n  border: 2px solid rgba(255, 255, 255, 0.25);\n}\n.home-greeting {\n  margin: 0 0 2px;\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.75);\n  font-weight: 400;\n}\n.home-family-name {\n  margin: 0;\n  font-size: 22px;\n  font-weight: 800;\n  color: #fff;\n  letter-spacing: -0.3px;\n}\n.home-hero-right {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  flex-wrap: wrap;\n}\n.home-hero-stats {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  background: rgba(255, 255, 255, 0.1);\n  border: 1px solid rgba(255, 255, 255, 0.15);\n  border-radius: 16px;\n  padding: 14px 22px;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n}\n.home-hero-stat {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n}\n.hhs-value {\n  font-size: 22px;\n  font-weight: 800;\n  color: #fff;\n  line-height: 1;\n}\n.hhs-label {\n  font-size: 11px;\n  color: rgba(255, 255, 255, 0.65);\n  font-weight: 500;\n  white-space: nowrap;\n}\n.home-hero-divider {\n  width: 1px;\n  height: 36px;\n  background: rgba(255, 255, 255, 0.2);\n}\n.home-hero-btns {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.home-invite-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 10px 18px;\n  border-radius: 12px;\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  background: rgba(255, 255, 255, 0.12);\n  color: #fff;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.2s;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n}\n.home-invite-btn .material-icons-round {\n  font-size: 17px !important;\n}\n.home-invite-btn:hover {\n  background: rgba(255, 255, 255, 0.22);\n  border-color: rgba(255, 255, 255, 0.6);\n}\n.home-add-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 10px 18px;\n  border-radius: 12px;\n  border: none;\n  background: #fff;\n  color: #1d4ed8;\n  font-size: 13px;\n  font-weight: 700;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.2s;\n  white-space: nowrap;\n}\n.home-add-btn .material-icons-round {\n  font-size: 17px !important;\n}\n.home-add-btn:hover {\n  background: #EFF6FF;\n}\n.home-completion {\n  position: relative;\n  margin-top: 20px;\n  display: flex;\n  flex-direction: column;\n  gap: 7px;\n}\n.home-completion-label {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.7);\n}\n.home-completion-label .material-icons-round {\n  font-size: 14px !important;\n  color: rgba(255, 255, 255, 0.6);\n}\n.home-completion-label strong {\n  color: #fff;\n  font-weight: 700;\n}\n.home-completion-bar {\n  height: 5px;\n  border-radius: 99px;\n  background: rgba(255, 255, 255, 0.2);\n  overflow: hidden;\n}\n.home-completion-fill {\n  height: 100%;\n  border-radius: 99px;\n  background:\n    linear-gradient(\n      90deg,\n      #93C5FD,\n      #fff);\n  transition: width 0.8s ease;\n}\n.header-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row h2 {\n  margin-bottom: 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row strong {\n  color: var(--text-primary);\n}\n.stats-grid {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n}\n.stat-card {\n  background: var(--white);\n  border-radius: var(--radius-lg);\n  border: 1px solid var(--border-light);\n  box-shadow: var(--shadow-sm);\n  padding: 20px;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  transition: box-shadow var(--transition), transform var(--transition);\n}\n.stat-card:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.stat-icon-wrap {\n  width: 48px;\n  height: 48px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.stat-icon-wrap .material-icons-round {\n  font-size: 24px !important;\n}\n.stat-card--blue .stat-icon-wrap {\n  background: var(--primary-bg);\n}\n.stat-card--blue .stat-icon-wrap .material-icons-round {\n  color: var(--primary);\n}\n.stat-card--indigo .stat-icon-wrap {\n  background: var(--accent-bg);\n}\n.stat-card--indigo .stat-icon-wrap .material-icons-round {\n  color: var(--accent);\n}\n.stat-card--pink .stat-icon-wrap {\n  background: var(--pink-bg);\n}\n.stat-card--pink .stat-icon-wrap .material-icons-round {\n  color: var(--pink);\n}\n.stat-card--green .stat-icon-wrap {\n  background: var(--success-bg);\n}\n.stat-card--green .stat-icon-wrap .material-icons-round {\n  color: var(--success);\n}\n.stat-body {\n  display: flex;\n  flex-direction: column;\n}\n.stat-value {\n  font-size: 26px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1;\n}\n.stat-label {\n  font-size: 12px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-weight: 500;\n}\n.quick-actions {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.quick-action {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 18px;\n  border-radius: var(--radius-full);\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  text-decoration: none;\n  transition: var(--transition);\n}\n.quick-action .material-icons-round {\n  font-size: 18px !important;\n}\n.quick-action--blue {\n  background: var(--primary-bg);\n  color: var(--primary-dark);\n}\n.quick-action--blue:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.quick-action--indigo {\n  background: var(--accent-bg);\n  color: var(--accent);\n}\n.quick-action--indigo:hover {\n  background: #DDD6FE;\n  text-decoration: none;\n}\n.quick-action--pink {\n  background: var(--pink-bg);\n  color: var(--pink);\n}\n.quick-action--pink:hover {\n  background: #FBCFE8;\n  text-decoration: none;\n}\n.quick-action--green {\n  background: var(--success-bg);\n  color: var(--success);\n}\n.quick-action--green:hover {\n  background: #A7F3D0;\n  text-decoration: none;\n}\n.section-actions {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.bday-row {\n  display: flex;\n  gap: 12px;\n  overflow-x: auto;\n  padding-bottom: 4px;\n  scrollbar-width: none;\n}\n.bday-row::-webkit-scrollbar {\n  display: none;\n}\n.bday-card {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 14px;\n  background: var(--white);\n  border: 1px solid #FBE8F3;\n  border-radius: var(--radius-lg);\n  min-width: 200px;\n  flex-shrink: 0;\n  transition: box-shadow var(--transition);\n}\n.bday-card:hover {\n  box-shadow: 0 4px 14px rgba(219, 39, 119, 0.12);\n}\n.bday-avatar {\n  width: 38px;\n  height: 38px;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.bday-avatar.male {\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #3B82F6);\n}\n.bday-avatar.female {\n  background:\n    linear-gradient(\n      135deg,\n      #F472B6,\n      #EC4899);\n}\n.bday-avatar:not(.male):not(.female) {\n  background:\n    linear-gradient(\n      135deg,\n      #A78BFA,\n      var(--primary));\n}\n.bday-info {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.bday-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-date {\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.bday-badge {\n  background: #FDF2F8;\n  color: #DB2777;\n  font-size: 11px;\n  font-weight: 700;\n  padding: 3px 8px;\n  border-radius: 7px;\n  white-space: nowrap;\n}\n.bday-badge.soon {\n  background: #FEF3C7;\n  color: #B45309;\n  animation: pulse-bday 1.5s infinite;\n}\n@keyframes pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n@keyframes skeleton-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.skeleton-bar,\n.skeleton-card-top,\n.skeleton-card {\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: skeleton-shimmer 1.4s infinite;\n  border-radius: 8px;\n}\n.skeleton-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.skeleton-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.skeleton-bar {\n  height: 16px;\n}\n.skeleton-bar-title {\n  width: 160px;\n  height: 20px;\n}\n.skeleton-bar-sm {\n  width: 100px;\n  height: 14px;\n}\n.skeleton-bar-xs {\n  width: 70px;\n  height: 12px;\n}\n.skeleton-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 16px;\n}\n.skeleton-card {\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: 1px solid var(--border-light);\n}\n.skeleton-card-top {\n  height: 90px;\n  border-radius: 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.skeleton-card-body {\n  padding: 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n@media (max-width: 1200px) {\n  .stats-grid {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media (max-width: 640px) {\n  .stats-grid {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .stat-card {\n    padding: 14px;\n  }\n  .stat-value {\n    font-size: 22px;\n  }\n  .quick-actions {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 8px;\n  }\n  .quick-action {\n    justify-content: center;\n  }\n  .home-hero {\n    padding: 24px 20px;\n    border-radius: 18px;\n  }\n  .home-hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .home-hero-right {\n    width: 100%;\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .home-hero-stats {\n    width: 100%;\n    justify-content: space-around;\n  }\n  .home-family-name {\n    font-size: 18px;\n  }\n  .home-hero-btns {\n    width: 100%;\n  }\n  .home-invite-btn,\n  .home-add-btn {\n    flex: 1;\n    justify-content: center;\n  }\n}\n@media (max-width: 360px) {\n  .stats-grid {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */\n'] }]
+    args: [{ selector: "app-home", standalone: false, template: `<!-- ===== HERO ===== -->
+<div class="home-hero">
+  <svg class="home-hero-roots" width="100%" height="100%" viewBox="0 0 1000 280" preserveAspectRatio="xMaxYMax slice">
+    <path d="M760 280 C 755 230, 740 200, 700 175 C 670 156, 660 130, 665 100" stroke="#3E7A4C" stroke-width="2.5" fill="none" opacity="0.55"/>
+    <path d="M760 280 C 770 235, 800 210, 830 190 C 855 173, 868 148, 862 118" stroke="#3E7A4C" stroke-width="2.5" fill="none" opacity="0.55"/>
+    <path d="M760 280 C 762 245, 775 222, 800 205" stroke="#3E7A4C" stroke-width="1.5" fill="none" opacity="0.4"/>
+    <path d="M665 100 C 640 82, 630 55, 645 28" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
+    <path d="M665 100 C 690 88, 705 65, 700 38" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
+    <path d="M862 118 C 885 100, 895 75, 885 48" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
+    <path d="M862 118 C 840 105, 828 82, 838 58" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
+    <circle cx="645" cy="26" r="7" fill="#5A9A68" opacity="0.5"/>
+    <circle cx="700" cy="36" r="9" fill="#5A9A68" opacity="0.55"/>
+    <circle cx="885" cy="46" r="8" fill="#5A9A68" opacity="0.5"/>
+    <circle cx="838" cy="56" r="6" fill="#5A9A68" opacity="0.45"/>
+    <circle cx="800" cy="204" r="5" fill="#5A9A68" opacity="0.35"/>
+  </svg>
+
+  <div class="home-hero-content">
+    <div class="home-hero-left" *ngIf="user">
+      <div class="home-user-avatar">{{ (user.prenom[0] + user.nom[0]).toUpperCase() }}</div>
+      <div>
+        <p class="home-greeting">Bonjour, {{ user.prenom }} \u{1F44B}</p>
+        <h1 class="home-family-name">Famille {{ nomFamille || '\u2026' }}</h1>
+        <p class="home-hero-meta">
+          <b>{{ stats[0].value }}</b>&nbsp;membres<span class="home-hero-dot"></span><b>{{ stats[1].value }}</b>&nbsp;g\xE9n\xE9rations
+        </p>
+      </div>
+    </div>
+    <div class="home-hero-left" *ngIf="!user">
+      <div class="home-user-avatar">MB</div>
+      <div>
+        <p class="home-greeting">Bonjour \u{1F44B}</p>
+        <h1 class="home-family-name">Famille {{ nomFamille || '\u2026' }}</h1>
+      </div>
+    </div>
+
+    <div class="home-hero-right">
+      <div class="home-ring-wrap" *ngIf="!loading && toutes.length > 0">
+        <div class="home-ring" [style.background]="'conic-gradient(#81C784 0% ' + completionScore + '%, rgba(255,255,255,0.14) ' + completionScore + '% 100%)'">
+          <div class="home-ring-inner">{{ completionScore }}%</div>
+        </div>
+        <div class="home-ring-label"><b>Arbre compl\xE9t\xE9</b>Enrichissez les profils pour compl\xE9ter l'arbre</div>
+      </div>
+      <div class="home-hero-btns">
+        <button class="home-invite-btn" (click)="shareWhatsApp()">
+          <span class="material-icons-round">group_add</span>
+          Inviter
+        </button>
+        <button class="home-add-btn" routerLink="/app/personnes">
+          <span class="material-icons-round">person_add</span>
+          Ajouter
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-hero-stats-row">
+    <div class="home-hero-stat" *ngFor="let s of stats">
+      <span class="hhs-value">{{ s.value }}</span>
+      <span class="hhs-label">{{ s.label }}</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BODY GRID ===== -->
+<div class="home-body-grid">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <div>
+
+    <!-- ===== STATS SKELETON ===== -->
+    <div class="stats-grid mb-16" *ngIf="loading">
+      <div class="sk-stat" *ngFor="let _ of [1,2,3,4]">
+        <div class="sk-stat-icon"></div>
+        <div class="sk-stat-body">
+          <div class="sk-line sk-lg"></div>
+          <div class="sk-line sk-sm"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ACTIONS RAPIDES ===== -->
+    <div class="section-header mb-16">
+      <h3>Actions rapides</h3>
+    </div>
+
+    <div class="qa-row mb-32">
+      <a *ngFor="let a of quickActions" [routerLink]="a.route" class="qa-tile">
+        <div class="qa-icon" [class]="a.color">
+          <span class="material-icons-round">{{ a.icon }}</span>
+        </div>
+        <span class="qa-label">{{ a.label }}</span>
+      </a>
+    </div>
+
+    <!-- ===== SKELETON CHARGEMENT MEMBRES ===== -->
+    <div *ngIf="loading" class="skeleton-section mb-32">
+      <div class="skeleton-header">
+        <div class="skeleton-bar skeleton-bar-title"></div>
+        <div class="skeleton-bar skeleton-bar-sm"></div>
+      </div>
+      <div class="skeleton-grid">
+        <div class="skeleton-card" *ngFor="let _ of [1,2,3,4]">
+          <div class="skeleton-card-top"></div>
+          <div class="skeleton-card-body">
+            <div class="skeleton-bar"></div>
+            <div class="skeleton-bar skeleton-bar-sm"></div>
+            <div class="skeleton-bar skeleton-bar-xs"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== DERNIERS MEMBRES ===== -->
+    <div class="section-header mb-16" *ngIf="!loading">
+      <h3>Membres r\xE9cents</h3>
+      <div class="section-actions">
+        <div class="view-toggle">
+          <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">
+            <span class="material-icons-round">grid_view</span>
+          </button>
+          <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">
+            <span class="material-icons-round">view_list</span>
+          </button>
+        </div>
+        <a routerLink="/app/personnes" class="btn-secondary btn-sm">Voir tous</a>
+      </div>
+    </div>
+
+    <!-- ===== VUE CARTES ===== -->
+    <div class="pc-grid" *ngIf="!loading && recentPersonnes.length > 0 && viewMode === 'cards'">
+      <div class="pc-card" *ngFor="let p of recentPersonnes; let i = index; trackBy: trackByPersonneId"
+           [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'">
+        <div class="pc-card-banner">
+          <div class="pc-colorband"
+               [class.color-1]="i % 3 === 0"
+               [class.color-2]="i % 3 === 1"
+               [class.color-3]="i % 3 === 2"></div>
+          <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
+          <div class="pc-avatar-ring">
+            <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
+                 [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"
+                 [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
+            <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">
+              {{ getInitiales(p) }}
+            </div>
+          </div>
+        </div>
+        <div class="pc-card-body">
+          <h4 class="pc-name">{{ getNomComplet(p) }}</h4>
+          <span class="pc-age" [class.pc-age-unknown]="!getAgeLabel(p)">
+            {{ getAgeLabel(p) || 'Naissance inconnue' }}
+          </span>
+          <div class="pc-loc" *ngIf="p.lieuNaissance">
+            <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
+          </div>
+          <div class="pc-badges">
+            <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
+            <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>
+          </div>
+        </div>
+        <div class="pc-card-actions">
+          <button class="pc-act">
+            <span class="material-icons-round">favorite_border</span>Like
+          </button>
+          <a class="pc-act" [routerLink]="['/app/personnes']" [queryParams]="{ id: p.id }">
+            <span class="material-icons-round">visibility</span>Voir
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== VUE LISTE ===== -->
+    <div class="pl-table" *ngIf="!loading && recentPersonnes.length > 0 && viewMode === 'list'">
+      <div class="pl-thead">
+        <span class="pl-th pl-th-person">Personne</span>
+        <span class="pl-th pl-th-genre">Genre</span>
+        <span class="pl-th pl-th-lieu">Lieu de naissance</span>
+        <span class="pl-th pl-th-statut">Statut</span>
+        <span class="pl-th pl-th-actions">Actions</span>
+      </div>
+      <div class="pl-row" *ngFor="let p of recentPersonnes; trackBy: trackByPersonneId">
+        <div class="pl-cell pl-cell-person">
+          <div class="pl-avatar-wrap">
+            <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
+                 [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"
+                 [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
+            <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pl-avatar pl-avatar-initials"
+                 [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">{{ getInitiales(p) }}</div>
+            <span class="pl-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
+          </div>
+          <div class="pl-person-info">
+            <span class="pl-person-name">{{ getNomComplet(p) }}</span>
+            <span class="pl-person-age" [class.pc-age-unknown]="!getAgeLabel(p)">
+              {{ getAgeLabel(p) || 'Naissance inconnue' }}
+            </span>
+          </div>
+        </div>
+        <div class="pl-cell pl-cell-genre">
+          <span class="pc-badge" [class.pc-badge-m]="p.sexe === 'M'" [class.pc-badge-f]="p.sexe === 'F'">
+            {{ p.sexe === 'M' ? 'Homme' : p.sexe === 'F' ? 'Femme' : 'Autre' }}
+          </span>
+        </div>
+        <div class="pl-cell pl-cell-lieu">
+          <span *ngIf="p.lieuNaissance" class="pl-lieu">
+            <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
+          </span>
+          <span *ngIf="!p.lieuNaissance" class="pl-empty">\u2014</span>
+        </div>
+        <div class="pl-cell pl-cell-statut">
+          <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
+          <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>
+        </div>
+        <div class="pl-cell pl-cell-actions">
+          <a class="btn-icon" title="Voir" [routerLink]="['/app/personnes']" [queryParams]="{ id: p.id }">
+            <span class="material-icons-round">visibility</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="empty-state" *ngIf="!loading && recentPersonnes.length === 0">
+      <span class="material-icons-round">people</span>
+      <h3>Aucun membre encore</h3>
+      <p>Commencez par ajouter des personnes \xE0 votre famille.</p>
+    </div>
+  </div>
+
+  <!-- ===== ASIDE ===== -->
+  <div *ngIf="!loading">
+    <div class="aside-card" *ngIf="anniversairesProches.length > 0">
+      <h4><span class="material-icons-round" style="color:#DB2777">cake</span>Anniversaires \xE0 venir</h4>
+      <div class="bday-item" *ngFor="let b of anniversairesProches; trackBy: trackByAnniversaire">
+        <div class="bday-date"><span>{{ b.jourNum }}</span><span>{{ b.moisAbbr }}</span></div>
+        <div class="bday-item-info">
+          <div class="bday-item-name">{{ getNomComplet(b.p) }}</div>
+          <div class="bday-item-when">{{ b.jours === 0 ? "Aujourd'hui" : b.jours === 1 ? 'Demain' : 'dans ' + b.jours + ' jours' }}</div>
+        </div>
+        <span class="bday-item-soon" *ngIf="b.jours <= 7">Bient\xF4t</span>
+      </div>
+    </div>
+
+    <div class="aside-card">
+      <h4><span class="material-icons-round" style="color:#2E7D32">account_tree</span>Aper\xE7u de l'arbre</h4>
+      <div class="tree-preview">
+        <svg width="220" height="130" viewBox="0 0 220 130">
+          <line x1="110" y1="30" x2="70" y2="70" stroke="#D1D5DB" stroke-width="2"/>
+          <line x1="110" y1="30" x2="150" y2="70" stroke="#D1D5DB" stroke-width="2"/>
+          <line x1="70" y1="70" x2="45" y2="110" stroke="#D1D5DB" stroke-width="2"/>
+          <line x1="70" y1="70" x2="90" y2="110" stroke="#D1D5DB" stroke-width="2"/>
+          <line x1="150" y1="70" x2="130" y2="110" stroke="#D1D5DB" stroke-width="2"/>
+          <line x1="150" y1="70" x2="170" y2="110" stroke="#D1D5DB" stroke-width="2"/>
+          <circle cx="110" cy="30" r="13" fill="#2E7D32"/>
+          <circle cx="70" cy="70" r="11" fill="#60A5FA"/>
+          <circle cx="150" cy="70" r="11" fill="#F472B6"/>
+          <circle cx="45" cy="110" r="9" fill="#93C5FD"/>
+          <circle cx="90" cy="110" r="9" fill="#93C5FD"/>
+          <circle cx="130" cy="110" r="9" fill="#F9A8D4"/>
+          <circle cx="170" cy="110" r="9" fill="#F9A8D4"/>
+        </svg>
+        <button class="tree-link" routerLink="/app/tree"><span class="material-icons-round">open_in_full</span>Voir l'arbre complet</button>
+      </div>
+    </div>
+
+    <div class="aside-card">
+      <div class="fact-row">
+        <span class="material-icons-round">auto_stories</span>
+        <p>{{ stats[3].value }} story{{ stats[3].value > 1 ? 'ies' : '' }} partag\xE9e{{ stats[3].value > 1 ? 's' : '' }} par la famille \u2014 racontez la v\xF4tre.</p>
+      </div>
+    </div>
+  </div>
+</div>
+`, styles: ["/* src/app/pages/home/home.component.scss */\n.home-hero {\n  position: relative;\n  border-radius: 26px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #0B1220 0%,\n      #0F2A1E 46%,\n      #123B27 100%);\n  padding: 32px 36px 28px;\n  color: #fff;\n  margin-bottom: 24px;\n  animation: heroIn 0.5s ease-out;\n}\n@keyframes heroIn {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.home-hero-roots {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n  opacity: 0.5;\n}\n.home-hero-content {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.home-hero-left {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.home-user-avatar {\n  width: 52px;\n  height: 52px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      #86D19C,\n      #2E7D32);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 800;\n  color: #08210F;\n  flex-shrink: 0;\n  border: 2px solid rgba(255, 255, 255, 0.25);\n}\n.home-greeting {\n  margin: 0 0 2px;\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.68);\n  font-weight: 400;\n}\n.home-family-name {\n  margin: 0;\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  letter-spacing: -0.3px;\n}\n.home-hero-meta {\n  margin: 6px 0 0;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.55);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.home-hero-meta b {\n  color: rgba(255, 255, 255, 0.85);\n  font-weight: 600;\n}\n.home-hero-dot {\n  width: 3px;\n  height: 3px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.35);\n}\n.home-hero-right {\n  position: relative;\n  display: flex;\n  align-items: center;\n  gap: 22px;\n  flex-wrap: wrap;\n}\n.home-ring-wrap {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.home-ring {\n  width: 64px;\n  height: 64px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: background 0.4s ease;\n}\n.home-ring-inner {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  background: #0F2A1E;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  color: #fff;\n}\n.home-ring-label {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.6);\n  max-width: 130px;\n  line-height: 1.4;\n}\n.home-ring-label b {\n  color: #fff;\n  display: block;\n  font-size: 13px;\n  margin-bottom: 1px;\n}\n.home-hero-btns {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.home-invite-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  background: rgba(255, 255, 255, 0.1);\n  color: #fff;\n  font-size: 13.5px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    background 0.15s;\n}\n.home-invite-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.home-invite-btn:hover {\n  background: rgba(255, 255, 255, 0.16);\n  transform: translateY(-1px);\n}\n.home-add-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: none;\n  background: #81C784;\n  color: #0B2914;\n  font-size: 13.5px;\n  font-weight: 700;\n  cursor: pointer;\n  font-family: inherit;\n  transition: transform 0.15s, box-shadow 0.15s;\n  white-space: nowrap;\n  box-shadow: 0 4px 14px rgba(129, 199, 132, 0.35);\n}\n.home-add-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.home-add-btn:hover {\n  box-shadow: 0 6px 18px rgba(129, 199, 132, 0.45);\n  transform: translateY(-1px);\n}\n.home-hero-stats-row {\n  position: relative;\n  display: flex;\n  gap: 28px;\n  margin-top: 24px;\n  padding-top: 20px;\n  border-top: 1px solid rgba(255, 255, 255, 0.12);\n  flex-wrap: wrap;\n}\n.home-hero-stat {\n  display: flex;\n  align-items: baseline;\n  gap: 8px;\n}\n.hhs-value {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n}\n.hhs-label {\n  font-size: 12.5px;\n  color: rgba(255, 255, 255, 0.55);\n}\n.home-body-grid {\n  display: grid;\n  grid-template-columns: 1fr 336px;\n  gap: 22px;\n}\n.header-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row h2 {\n  margin-bottom: 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row strong {\n  color: var(--text-primary);\n}\n.stats-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 16px;\n}\n.qa-row {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 14px;\n}\n.qa-tile {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 16px;\n  padding: 16px 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  cursor: pointer;\n  text-decoration: none;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    border-color 0.15s;\n}\n.qa-tile:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);\n  border-color: #D1D5DB;\n  text-decoration: none;\n}\n.qa-icon {\n  width: 38px;\n  height: 38px;\n  border-radius: 11px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.qa-icon .material-icons-round {\n  font-size: 19px !important;\n}\n.qa-icon.blue {\n  background: var(--primary-bg);\n}\n.qa-icon.blue .material-icons-round {\n  color: var(--primary);\n}\n.qa-icon.indigo {\n  background: var(--accent-bg);\n}\n.qa-icon.indigo .material-icons-round {\n  color: var(--accent);\n}\n.qa-icon.pink {\n  background: var(--pink-bg);\n}\n.qa-icon.pink .material-icons-round {\n  color: var(--pink);\n}\n.qa-icon.green {\n  background: var(--success-bg);\n}\n.qa-icon.green .material-icons-round {\n  color: var(--success);\n}\n.qa-label {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.section-actions {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.aside-card {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 18px;\n  padding: 18px;\n  margin-bottom: 18px;\n}\n.aside-card h4 {\n  margin: 0 0 14px;\n  font-size: 13.5px;\n  font-weight: 700;\n  color: var(--text-primary);\n  display: flex;\n  align-items: center;\n  gap: 7px;\n}\n.aside-card h4 .material-icons-round {\n  font-size: 17px !important;\n}\n.bday-item {\n  display: flex;\n  align-items: center;\n  gap: 11px;\n  padding: 9px 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.bday-item:last-child {\n  border-bottom: none;\n}\n.bday-date {\n  width: 40px;\n  height: 40px;\n  border-radius: 11px;\n  background: #FDF2F8;\n  color: #DB2777;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.bday-date span:first-child {\n  font-size: 13px;\n  font-weight: 800;\n  line-height: 1;\n}\n.bday-date span:last-child {\n  font-size: 8.5px;\n  font-weight: 600;\n  text-transform: uppercase;\n}\n.bday-item-info {\n  flex: 1;\n  min-width: 0;\n}\n.bday-item-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-item-when {\n  font-size: 11.5px;\n  color: var(--text-muted);\n}\n.bday-item-soon {\n  margin-left: auto;\n  flex-shrink: 0;\n  font-size: 10.5px;\n  font-weight: 700;\n  color: #DB2777;\n  background: #FDF2F8;\n  padding: 3px 8px;\n  border-radius: 999px;\n  animation: pulse-bday 1.5s infinite;\n}\n@keyframes pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n.tree-preview {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 4px 0 6px;\n}\n.tree-link {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  width: 100%;\n  margin-top: 14px;\n  padding: 9px;\n  border-radius: 10px;\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  border: none;\n  text-decoration: none;\n}\n.tree-link .material-icons-round {\n  font-size: 15px !important;\n}\n.tree-link:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.fact-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n}\n.fact-row .material-icons-round {\n  color: #2E7D32;\n  font-size: 18px !important;\n  margin-top: 1px;\n}\n.fact-row p {\n  margin: 0;\n  font-size: 12.5px;\n  color: var(--text-secondary);\n  line-height: 1.55;\n}\n@keyframes skeleton-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.skeleton-bar,\n.skeleton-card-top,\n.skeleton-card {\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: skeleton-shimmer 1.4s infinite;\n  border-radius: 8px;\n}\n.skeleton-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.skeleton-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.skeleton-bar {\n  height: 16px;\n}\n.skeleton-bar-title {\n  width: 160px;\n  height: 20px;\n}\n.skeleton-bar-sm {\n  width: 100px;\n  height: 14px;\n}\n.skeleton-bar-xs {\n  width: 70px;\n  height: 12px;\n}\n.skeleton-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 16px;\n}\n.skeleton-card {\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: 1px solid var(--border-light);\n}\n.skeleton-card-top {\n  height: 90px;\n  border-radius: 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.skeleton-card-body {\n  padding: 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n@media (prefers-reduced-motion: reduce) {\n  :host * {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 1100px) {\n  .home-body-grid {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 640px) {\n  .qa-row {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .home-hero {\n    padding: 24px 20px;\n    border-radius: 18px;\n  }\n  .home-hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .home-hero-right {\n    width: 100%;\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 14px;\n  }\n  .home-family-name {\n    font-size: 19px;\n  }\n  .home-hero-btns {\n    width: 100%;\n  }\n  .home-invite-btn,\n  .home-add-btn {\n    flex: 1;\n    justify-content: center;\n  }\n  .home-hero-stats-row {\n    gap: 18px;\n  }\n}\n@media (max-width: 480px) {\n  .qa-row {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */\n"] }]
   }], () => [{ type: ApiService }, { type: AuthService }, { type: Router }], null);
 })();
 (() => {
@@ -16920,4 +16966,4 @@ var ShellModule = class _ShellModule {
 export {
   ShellModule
 };
-//# sourceMappingURL=chunk-I47D5UC3.js.map
+//# sourceMappingURL=chunk-D6R6JZPS.js.map

@@ -17,7 +17,7 @@
 .auth-left {
   width: 44%;
   flex-shrink: 0;
-  background: linear-gradient(145deg, #0A1FA8 0%, #1445F5 55%, #2563EB 100%);
+  background: linear-gradient(160deg, #0A1020 0%, #0E2417 55%, #123B27 100%);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -30,19 +30,24 @@
   pointer-events: none;
 }
 
-.al-blob {
+.al-tree {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.22;
+  right: -60px;
+  bottom: -30px;
+  opacity: 0.4;
 }
-.al-blob-1 { width: 380px; height: 380px; background: #3B82F6; top: -120px; left: -80px; animation: blobFloat 9s ease-in-out infinite; }
-.al-blob-2 { width: 300px; height: 300px; background: #8B5CF6; bottom: -80px; right: -60px; animation: blobFloat 11s ease-in-out infinite reverse; }
+
+.al-sparks { position: absolute; inset: 0; overflow: hidden; }
+.al-spark {
+  position: absolute; bottom: 40px; width: 4px; height: 4px; border-radius: 50%;
+  background: #A6E3AF; box-shadow: 0 0 8px 2px rgba(166,227,175,0.7);
+  animation: sparkRise 5.5s ease-in infinite;
+}
 
 .al-dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 36px 36px;
 }
 
@@ -62,13 +67,12 @@
 
 .al-brand-icon {
   width: 42px; height: 42px;
-  background: rgba(255,255,255,0.18);
-  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  .material-icons-round { font-size: 22px !important; color: #BAE6FD; }
 }
 
 .al-brand-name {
@@ -120,10 +124,10 @@
 .al-feat-icon {
   width: 32px; height: 32px;
   border-radius: 8px;
-  background: rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.1);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  .material-icons-round { font-size: 16px !important; color: #BAE6FD; }
+  .material-icons-round { font-size: 16px !important; color: #81C784; }
 }
 
 .al-stats {
@@ -171,7 +175,7 @@
   align-items: center;
   justify-content: center;
   padding: 40px 32px;
-  background: #EEF2FF;
+  background: #F0FDF4;
   overflow-y: auto;
 }
 
@@ -181,8 +185,8 @@
   background: #fff;
   border-radius: 22px;
   padding: 36px 32px;
-  box-shadow: 0 8px 40px rgba(20,69,245,0.12), 0 2px 8px rgba(0,0,0,0.04);
-  border: 1px solid #E0E7FF;
+  box-shadow: 0 8px 40px rgba(15,42,30,0.1), 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #DCFCE7;
   animation: cardFadeIn 0.45s ease both;
 }
 
@@ -194,14 +198,14 @@
 
 .auth-card-icon {
   width: 52px; height: 52px;
-  background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
-  border: 1px solid #C7D2FE;
+  background: linear-gradient(135deg, #F0FDF4, #DCFCE7);
+  border: 1px solid #BBF7D0;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 16px;
-  .material-icons-round { font-size: 24px !important; color: #1445F5; }
+  .material-icons-round { font-size: 24px !important; color: #15803D; }
 }
 
 .auth-card-header h2 {
@@ -255,7 +259,7 @@
 .forgot-link {
   font-size: 12px;
   font-weight: 500;
-  color: #1445F5;
+  color: #15803D;
   text-decoration: none;
   &:hover { text-decoration: underline; }
 }
@@ -308,8 +312,8 @@ select {
 
   &:focus {
     background: #fff;
-    border-color: #1445F5;
-    box-shadow: 0 0 0 3px rgba(20,69,245,0.10);
+    border-color: #15803D;
+    box-shadow: 0 0 0 3px rgba(21,128,61,0.10);
   }
 
   &.input-error {
@@ -366,9 +370,9 @@ select {
 
   &.active {
     background: #fff;
-    color: #1445F5;
+    color: #15803D;
     font-weight: 600;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(20,69,245,0.08);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(21,128,61,0.08);
   }
 
   &:not(.active):hover { background: rgba(255,255,255,0.65); color: #374151; }
@@ -386,8 +390,8 @@ select {
   background: #F9FAFB;
 
   &:focus-within {
-    border-color: #1445F5;
-    box-shadow: 0 0 0 3px rgba(20,69,245,0.10);
+    border-color: #15803D;
+    box-shadow: 0 0 0 3px rgba(21,128,61,0.10);
     background: #fff;
   }
 }
@@ -464,7 +468,7 @@ select {
   cursor: pointer; text-align: left;
   border-radius: 8px; transition: background 0.12s;
   font-family: inherit;
-  &:hover { background: #EEF2FF; }
+  &:hover { background: #F0FDF4; }
 }
 
 .country-name { flex: 1; font-size: 13px; color: #111827; }
@@ -496,7 +500,7 @@ select {
   gap: 8px;
   width: 100%;
   padding: 13px 20px;
-  background: linear-gradient(135deg, #1445F5, #2563EB);
+  background: linear-gradient(135deg, #15803D, #166534);
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -505,13 +509,13 @@ select {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 4px 16px rgba(20,69,245,0.35);
+  box-shadow: 0 4px 16px rgba(21,128,61,0.35);
   letter-spacing: -0.1px;
   .material-icons-round { font-size: 18px !important; }
 
   &:hover:not(:disabled) {
-    background: linear-gradient(135deg, #0A1FA8, #1445F5);
-    box-shadow: 0 6px 24px rgba(20,69,245,0.45);
+    background: linear-gradient(135deg, #166534, #14532D);
+    box-shadow: 0 6px 24px rgba(21,128,61,0.45);
     transform: translateY(-1px);
   }
   &:active:not(:disabled) { transform: translateY(0); }
@@ -536,7 +540,7 @@ select {
     color: #6B7280;
     margin-bottom: 14px;
     a {
-      color: #1445F5;
+      color: #15803D;
       font-weight: 600;
       text-decoration: none;
       &:hover { text-decoration: underline; }
@@ -575,13 +579,18 @@ select {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes blobFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%       { transform: translate(16px, -20px) scale(1.04); }
-  66%       { transform: translate(-10px, 12px) scale(0.96); }
+@keyframes sparkRise {
+  0% { opacity: 0; transform: translateY(0); }
+  15% { opacity: 0.9; }
+  85% { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-90px); }
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  :host * { animation: none !important; transition: none !important; }
+}
 
 /* ══════════════════════════════════
    RESPONSIVE
@@ -594,7 +603,7 @@ select {
 @media (max-width: 768px) {
   .auth-left { display: none; }
   .auth-right {
-    background: linear-gradient(145deg, #0A1FA8 0%, #1445F5 55%, #2563EB 100%);
+    background: linear-gradient(160deg, #0A1020 0%, #0E2417 55%, #123B27 100%);
     padding: 32px 20px;
   }
   .auth-card {

@@ -1,6 +1,6 @@
-$blue-vivid: #1445F5;
-$blue-deep:  #0A1FA8;
-$blue-mid:   #2563EB;
+$blue-vivid: #15803D;
+$blue-deep:  #0A1020;
+$blue-mid:   #166534;
 
 /* ──────────────────────────────────────
    PAGE
@@ -16,7 +16,7 @@ $blue-mid:   #2563EB;
 .auth-left {
   width: 42%;
   min-height: 100vh;
-  background: linear-gradient(145deg, $blue-deep 0%, $blue-vivid 55%, $blue-mid 100%);
+  background: linear-gradient(160deg, #0A1020 0%, #0E2417 55%, #123B27 100%);
   position: relative;
   display: flex;
   align-items: center;
@@ -30,14 +30,21 @@ $blue-mid:   #2563EB;
   pointer-events: none;
 }
 
-.al-blob {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.12;
-  background: #fff;
+.al-tree { position: absolute; right: -60px; bottom: -30px; opacity: 0.4; }
+
+.al-sparks { position: absolute; inset: 0; overflow: hidden; }
+.al-spark {
+  position: absolute; bottom: 40px; width: 4px; height: 4px; border-radius: 50%;
+  background: #A6E3AF; box-shadow: 0 0 8px 2px rgba(166,227,175,0.7);
+  animation: sparkRise 5.5s ease-in infinite;
 }
-.al-blob-1 { width: 340px; height: 340px; top: -80px; right: -100px; }
-.al-blob-2 { width: 220px; height: 220px; bottom: -60px; left: -60px; }
+
+@keyframes sparkRise {
+  0% { opacity: 0; transform: translateY(0); }
+  15% { opacity: 0.9; }
+  85% { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-90px); }
+}
 
 .al-dots {
   position: absolute;
@@ -86,76 +93,34 @@ $blue-mid:   #2563EB;
   margin: 0;
 }
 
-/* Step progression */
-.al-steps {
+.al-features {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  background: rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 20px;
+  gap: 8px;
 }
 
-.al-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 4px 0;
-  opacity: 0.55;
-  transition: opacity 0.25s ease;
-
-  &.al-step-active { opacity: 1; }
-  &.al-step-done   { opacity: 0.9; }
-
-  .als-num {
-    width: 30px; height: 30px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.18);
-    color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 13px; font-weight: 700;
-    flex-shrink: 0;
-    transition: background 0.25s ease;
-    .material-icons-round { font-size: 16px; }
-  }
-
-  &.al-step-active .als-num { background: rgba(255,255,255,0.9); color: $blue-vivid; }
-  &.al-step-done   .als-num { background: #10B981; }
-
-  .als-info {
-    display: flex; flex-direction: column; gap: 2px;
-    strong { color: #fff; font-size: 13px; font-weight: 600; }
-    span   { color: rgba(255,255,255,0.65); font-size: 12px; }
-  }
-}
-
-.als-connector {
-  width: 2px; height: 24px;
-  background: rgba(255,255,255,0.2);
-  margin: 4px 0 4px 14px;
-  transition: background 0.3s ease;
-  &.done { background: #10B981; }
-}
-
-/* What next */
-.al-what-next {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.awn-item {
+.al-feat {
   display: flex;
   align-items: center;
   gap: 12px;
-  .awn-icon {
-    width: 32px; height: 32px;
-    background: rgba(255,255,255,0.12);
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    .material-icons-round { color: rgba(255,255,255,0.85); font-size: 17px; }
-  }
-  span { color: rgba(255,255,255,0.72); font-size: 13px; line-height: 1.4; }
+  padding: 11px 14px;
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.11);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.88);
+  transition: background 0.2s;
+  &:hover { background: rgba(255,255,255,0.15); }
+}
+
+.al-feat-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  .material-icons-round { font-size: 16px !important; color: #81C784; }
 }
 
 /* ──────────────────────────────────────
@@ -163,7 +128,7 @@ $blue-mid:   #2563EB;
 ─────────────────────────────────────── */
 .auth-right {
   flex: 1;
-  background: #EEF2FF;
+  background: #F0FDF4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -177,7 +142,7 @@ $blue-mid:   #2563EB;
   padding: 40px 40px 32px;
   width: 100%;
   max-width: 480px;
-  box-shadow: 0 8px 40px rgba(20,69,245,0.12);
+  box-shadow: 0 8px 40px rgba(15,42,30,.1);
   animation: cardFadeIn 0.45s ease both;
 }
 
@@ -191,7 +156,7 @@ $blue-mid:   #2563EB;
 }
 .auth-card-icon {
   width: 52px; height: 52px;
-  background: linear-gradient(135deg, rgba(20,69,245,0.12), rgba(37,99,235,0.08));
+  background: linear-gradient(135deg, #F0FDF4, #DCFCE7);
   border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 14px;
@@ -236,7 +201,7 @@ $blue-mid:   #2563EB;
     .si-circle {
       background: linear-gradient(135deg, $blue-vivid, $blue-mid);
       color: #fff;
-      box-shadow: 0 2px 10px rgba(20,69,245,0.30);
+      box-shadow: 0 2px 10px rgba(21,128,61,0.30);
     }
     .si-label { color: $blue-vivid; font-weight: 600; }
   }
@@ -313,7 +278,7 @@ $blue-mid:   #2563EB;
 
   &:focus-within {
     border-color: $blue-vivid;
-    box-shadow: 0 0 0 3px rgba(20,69,245,0.10);
+    box-shadow: 0 0 0 3px rgba(21,128,61,0.10);
     background: #fff;
   }
 
@@ -337,7 +302,7 @@ $blue-mid:   #2563EB;
   border-radius: 6px;
   color: #94A3B8;
   transition: color 0.15s, background 0.15s;
-  &:hover { color: $blue-vivid; background: rgba(20,69,245,0.07); }
+  &:hover { color: $blue-vivid; background: rgba(21,128,61,0.07); }
   .material-icons-round { font-size: 18px; }
 }
 
@@ -353,21 +318,21 @@ $blue-mid:   #2563EB;
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #EFF6FF;
-  border: 1px solid #BFDBFE;
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
   border-radius: 8px;
   padding: 8px 12px;
   font-size: 13px;
-  color: #1D4ED8;
+  color: #166534;
   animation: fadeSlideIn 0.25s ease both;
 
-  .material-icons-round { font-size: 16px; color: #3B82F6; flex-shrink: 0; }
+  .material-icons-round { font-size: 16px; color: #15803D; flex-shrink: 0; }
 
   strong {
     font-family: 'Courier New', monospace;
     font-weight: 700;
     letter-spacing: 0.5px;
-    color: #1445F5;
+    color: #15803D;
   }
 }
 
@@ -426,15 +391,15 @@ $blue-mid:   #2563EB;
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  background: linear-gradient(135deg, #EFF6FF 0%, #F0FDF4 100%);
-  border: 1px solid #BFDBFE;
+  background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+  border: 1px solid #BBF7D0;
   border-radius: 14px;
   padding: 16px;
   margin-bottom: 20px;
 
   .s2i-icon {
     width: 40px; height: 40px;
-    background: linear-gradient(135deg, rgba(20,69,245,0.12), rgba(16,185,129,0.10));
+    background: linear-gradient(135deg, rgba(21,128,61,0.12), rgba(16,185,129,0.10));
     border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
@@ -484,13 +449,13 @@ $blue-mid:   #2563EB;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: 0 4px 16px rgba(20,69,245,0.35);
+  box-shadow: 0 4px 16px rgba(21,128,61,0.35);
   transition: transform 0.15s, box-shadow 0.15s;
   .material-icons-round { font-size: 20px; }
 
   &:hover:not(:disabled) {
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(20,69,245,0.42);
+    box-shadow: 0 6px 20px rgba(21,128,61,0.42);
   }
   &:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
 }
@@ -551,12 +516,16 @@ $blue-mid:   #2563EB;
 @media (max-width: 860px) {
   .auth-left { display: none; }
   .auth-right {
-    background: linear-gradient(145deg, $blue-deep 0%, $blue-vivid 55%, $blue-mid 100%);
+    background: linear-gradient(160deg, #0A1020 0%, #0E2417 55%, #123B27 100%);
     padding: 24px 16px;
     align-items: flex-start;
     padding-top: 40px;
   }
   .auth-card { box-shadow: 0 8px 48px rgba(0,0,0,0.25); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host * { animation: none !important; transition: none !important; }
 }
 
 @media (max-width: 480px) {
@@ -594,12 +563,12 @@ $blue-mid:   #2563EB;
   &:hover {
     border-color: $blue-vivid;
     color: $blue-vivid;
-    background: rgba(20,69,245,.05);
+    background: rgba(21,128,61,.05);
   }
 
   &.ct-active {
     border-color: $blue-vivid;
-    background: rgba(20,69,245,.08);
+    background: rgba(21,128,61,.08);
     color: $blue-vivid;
     font-weight: 600;
   }

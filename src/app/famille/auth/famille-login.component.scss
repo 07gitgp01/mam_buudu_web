@@ -5,10 +5,11 @@
 
 /* ===== LEFT ===== */
 .fl-left {
-  flex: 1;
+  width: 44%;
+  flex-shrink: 0;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(145deg, #1a0533 0%, #2d1b69 40%, #1e3a8a 80%, #0f2048 100%);
+  background: linear-gradient(160deg, #0A1020 0%, #0E2417 55%, #123B27 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,25 +18,13 @@
 
 .fl-left-bg { position: absolute; inset: 0; pointer-events: none; }
 
-.fl-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.25;
-}
+.fl-tree { position: absolute; right: -60px; bottom: -30px; opacity: 0.4; }
 
-.fl-blob-1 {
-  width: 400px; height: 400px;
-  background: #EC4899;
-  top: -100px; right: -80px;
-  animation: blobPulse 7s ease-in-out infinite;
-}
-
-.fl-blob-2 {
-  width: 350px; height: 350px;
-  background: #7C3AED;
-  bottom: -100px; left: -60px;
-  animation: blobPulse 9s ease-in-out infinite reverse;
+.fl-sparks { position: absolute; inset: 0; overflow: hidden; }
+.fl-spark {
+  position: absolute; bottom: 40px; width: 4px; height: 4px; border-radius: 50%;
+  background: #A6E3AF; box-shadow: 0 0 8px 2px rgba(166,227,175,0.7);
+  animation: sparkRise 5.5s ease-in infinite;
 }
 
 .fl-left-content {
@@ -54,7 +43,6 @@
   font-weight: 800;
   color: #fff;
 
-  .material-icons-round { font-size: 26px !important; color: #A78BFA; }
 }
 
 .fl-welcome {
@@ -97,13 +85,13 @@
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: rgba(167,139,250,0.25);
+  background: rgba(255,255,255,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 
-  .material-icons-round { font-size: 18px !important; color: #A78BFA; }
+  .material-icons-round { font-size: 18px !important; color: #81C784; }
 }
 
 .fl-back-link {
@@ -122,21 +110,23 @@
 
 /* ===== RIGHT ===== */
 .fl-right {
-  width: 500px;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px 32px;
-  background: #F8FAFC;
+  background: #F0FDF4;
+  overflow-y: auto;
 }
 
 .fl-card {
   width: 100%;
+  max-width: 440px;
   background: #fff;
   border-radius: 24px;
   padding: 40px 36px;
-  box-shadow: 0 8px 40px rgba(0,0,0,.08);
-  border: 1px solid #F0F4FF;
+  box-shadow: 0 8px 40px rgba(15,42,30,.1);
+  border: 1px solid #DCFCE7;
 }
 
 .fl-card-header {
@@ -160,19 +150,19 @@
   width: 60px;
   height: 60px;
   border-radius: 18px;
-  background: linear-gradient(135deg, #F5F3FF, #EDE9FE);
+  background: linear-gradient(135deg, #F0FDF4, #DCFCE7);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 12px;
 
-  .material-icons-round { font-size: 30px !important; color: #7C3AED; }
+  .material-icons-round { font-size: 30px !important; color: #15803D; }
 }
 
 .fl-submit-btn {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #7C3AED, #EC4899);
+  background: linear-gradient(135deg, #15803D, #166534);
   color: #fff;
   border: none;
   border-radius: 14px;
@@ -185,12 +175,12 @@
   justify-content: center;
   gap: 8px;
   transition: all 0.2s;
-  box-shadow: 0 4px 16px rgba(124,58,237,.35);
+  box-shadow: 0 4px 16px rgba(21,128,61,.35);
 
   .material-icons-round { font-size: 20px !important; }
 
   &:hover:not(:disabled) {
-    box-shadow: 0 6px 24px rgba(124,58,237,.5);
+    box-shadow: 0 6px 24px rgba(21,128,61,.5);
     transform: translateY(-1px);
   }
 
@@ -213,7 +203,7 @@
 
   .material-icons-round { font-size: 15px !important; }
 
-  &:hover { color: #3B82F6; text-decoration: none; }
+  &:hover { color: #15803D; text-decoration: none; }
 }
 
 /* ===== TABS ===== */
@@ -221,10 +211,9 @@
   display: flex;
   gap: 4px;
   margin-bottom: 10px;
-  background: rgba(255,255,255,0.06);
+  background: #F1F5F9;
   border-radius: 10px;
   padding: 4px;
-  border: 1px solid rgba(255,255,255,0.12);
 }
 
 .fl-tab {
@@ -239,18 +228,21 @@
   border-radius: 8px;
   font-size: 12px;
   font-weight: 500;
-  color: rgba(255,255,255,0.55);
+  color: #6B7280;
   cursor: pointer;
   transition: all 0.18s;
+  font-family: inherit;
 
   .material-icons-round { font-size: 15px !important; }
 
   &.active {
-    background: rgba(255,255,255,0.15);
-    color: #fff;
+    background: #fff;
+    color: #15803D;
     font-weight: 600;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(21,128,61,0.08);
   }
+
+  &:not(.active):hover { background: rgba(255,255,255,0.65); color: #374151; }
 }
 
 /* ===== PHONE INPUT ===== */
@@ -260,80 +252,83 @@
 
 .phone-input-row {
   display: flex;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1.5px solid #E5E7EB;
   border-radius: 10px;
   overflow: hidden;
-  background: rgba(255,255,255,0.08);
+  background: #F9FAFB;
+  transition: border-color 0.15s, box-shadow 0.15s;
 
-  &:focus-within { border-color: rgba(167,139,250,0.6); }
+  &:focus-within {
+    border-color: #15803D;
+    box-shadow: 0 0 0 3px rgba(21,128,61,0.10);
+    background: #fff;
+  }
 }
 
 .country-selector {
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 0 10px;
-  border-right: 1px solid rgba(255,255,255,0.15);
+  gap: 5px;
+  padding: 0 12px;
+  border-right: 1px solid #E5E7EB;
   cursor: pointer;
   user-select: none;
   flex-shrink: 0;
-  border-radius: 10px 0 0 10px;
   transition: background 0.15s;
 
-  &:hover { background: rgba(255,255,255,0.08); }
+  &:hover { background: rgba(0,0,0,0.03); }
 }
 
 .country-flag-img { width: 20px; height: 15px; border-radius: 2px; object-fit: cover; flex-shrink: 0; }
-.country-dial { font-size: 13px; font-weight: 600; color: #fff; }
-.country-chevron { font-size: 16px !important; color: rgba(255,255,255,0.6); }
+.country-dial { font-size: 13px; font-weight: 600; color: #374151; }
+.country-chevron { font-size: 16px !important; color: #9CA3AF; }
 
 .phone-number-input {
   flex: 1;
   border: none;
   outline: none;
-  padding: 12px 14px;
+  padding: 11px 14px;
   font-size: 14px;
   background: transparent;
-  border-radius: 0 10px 10px 0;
-  color: #fff;
+  color: #111827;
+  font-family: inherit;
 
-  &::placeholder { color: rgba(255,255,255,0.35); }
+  &::placeholder { color: #9CA3AF; }
 }
 
 /* ===== COUNTRY DROPDOWN ===== */
 .country-dropdown {
   position: absolute;
   z-index: 300;
-  top: calc(100% + 4px);
+  top: calc(100% + 6px);
   left: 0;
   width: 280px;
-  background: #1e1246;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.05);
   overflow: hidden;
 }
 
 .country-search {
   width: 100%;
   border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid #F1F5F9;
   padding: 10px 14px;
   font-size: 13px;
   outline: none;
-  background: rgba(255,255,255,0.06);
-  color: #fff;
+  background: #F9FAFB;
+  color: #111827;
   box-sizing: border-box;
+  font-family: inherit;
 
-  &::placeholder { color: rgba(255,255,255,0.35); }
+  &::placeholder { color: #9CA3AF; }
 }
 
 .country-list {
   max-height: 220px;
   overflow-y: auto;
-
-  &::-webkit-scrollbar { width: 4px; }
-  &::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 2px; }
+  padding: 4px;
 }
 
 .country-option {
@@ -341,25 +336,35 @@
   align-items: center;
   gap: 10px;
   width: 100%;
-  padding: 8px 14px;
+  padding: 8px 12px;
   border: none;
   background: transparent;
   cursor: pointer;
   text-align: left;
+  border-radius: 8px;
   transition: background 0.12s;
+  font-family: inherit;
 
-  &:hover { background: rgba(255,255,255,0.08); }
+  &:hover { background: #F0FDF4; }
 }
 
-.country-name { flex: 1; font-size: 13px; color: rgba(255,255,255,0.85); }
-.country-dial-sm { font-size: 12px; color: rgba(255,255,255,0.45); font-weight: 600; }
+.country-name { flex: 1; font-size: 13px; color: #111827; }
+.country-dial-sm {
+  font-size: 11px; color: #6B7280; font-weight: 600;
+  background: #F1F5F9; padding: 2px 7px; border-radius: 5px;
+}
 
-@keyframes blobPulse {
-  0%, 100% { transform: scale(1) translate(0, 0); }
-  50%       { transform: scale(1.1) translate(20px, -20px); }
+@keyframes sparkRise {
+  0% { opacity: 0; transform: translateY(0); }
+  15% { opacity: 0.9; }
+  85% { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-90px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host * { animation: none !important; transition: none !important; }
 }
 
 @media (max-width: 900px) {
   .fl-left { display: none; }
-  .fl-right { width: 100%; }
 }

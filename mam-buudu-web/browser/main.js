@@ -635,15 +635,15 @@ var authGuard = () => {
 };
 
 // src/app/landing/landing.component.ts
-function LandingComponent_ng_container_14_Template(rf, ctx) {
+function LandingComponent_ng_container_19_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "a", 111)(2, "span", 2);
+    \u0275\u0275elementStart(1, "a", 116)(2, "span", 16);
     \u0275\u0275text(3, "people");
     \u0275\u0275elementEnd();
     \u0275\u0275text(4, " Espace Famille ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "a", 112)(6, "span", 2);
+    \u0275\u0275elementStart(5, "a", 117)(6, "span", 16);
     \u0275\u0275text(7, "manage_accounts");
     \u0275\u0275elementEnd();
     \u0275\u0275text(8, " Administration ");
@@ -651,22 +651,22 @@ function LandingComponent_ng_container_14_Template(rf, ctx) {
     \u0275\u0275elementContainerEnd();
   }
 }
-function LandingComponent_ng_container_15_Template(rf, ctx) {
+function LandingComponent_ng_container_20_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "a", 113)(2, "span", 2);
+    \u0275\u0275elementStart(1, "a", 118)(2, "span", 16);
     \u0275\u0275text(3, "dashboard");
     \u0275\u0275elementEnd();
     \u0275\u0275text(4, " Mon espace ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "button", 114);
-    \u0275\u0275listener("click", function LandingComponent_ng_container_15_Template_button_click_5_listener() {
+    \u0275\u0275elementStart(5, "button", 119);
+    \u0275\u0275listener("click", function LandingComponent_ng_container_20_Template_button_click_5_listener() {
       \u0275\u0275restoreView(_r1);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.logout());
     });
-    \u0275\u0275elementStart(6, "span", 2);
+    \u0275\u0275elementStart(6, "span", 16);
     \u0275\u0275text(7, "logout");
     \u0275\u0275elementEnd();
     \u0275\u0275text(8, " Se d\xE9connecter ");
@@ -679,11 +679,11 @@ function LandingComponent_ng_container_15_Template(rf, ctx) {
     \u0275\u0275property("routerLink", ctx_r1.dashboardRoute);
   }
 }
-function LandingComponent_div_19_Template(rf, ctx) {
+function LandingComponent_div_24_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 115);
-    \u0275\u0275listener("click", function LandingComponent_div_19_Template_div_click_0_listener() {
+    \u0275\u0275elementStart(0, "div", 120);
+    \u0275\u0275listener("click", function LandingComponent_div_24_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r3);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.navOpen = false);
@@ -691,28 +691,28 @@ function LandingComponent_div_19_Template(rf, ctx) {
     \u0275\u0275elementEnd();
   }
 }
-function LandingComponent_ng_container_44_Template(rf, ctx) {
+function LandingComponent_ng_container_54_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "a", 116);
-    \u0275\u0275listener("click", function LandingComponent_ng_container_44_Template_a_click_1_listener() {
+    \u0275\u0275elementStart(1, "a", 121);
+    \u0275\u0275listener("click", function LandingComponent_ng_container_54_Template_a_click_1_listener() {
       \u0275\u0275restoreView(_r4);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.navOpen = false);
     });
-    \u0275\u0275elementStart(2, "span", 2);
+    \u0275\u0275elementStart(2, "span", 16);
     \u0275\u0275text(3, "people");
     \u0275\u0275elementEnd();
     \u0275\u0275text(4, "Espace Famille ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "a", 117);
-    \u0275\u0275listener("click", function LandingComponent_ng_container_44_Template_a_click_5_listener() {
+    \u0275\u0275elementStart(5, "a", 122);
+    \u0275\u0275listener("click", function LandingComponent_ng_container_54_Template_a_click_5_listener() {
       \u0275\u0275restoreView(_r4);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.navOpen = false);
     });
-    \u0275\u0275elementStart(6, "span", 2);
+    \u0275\u0275elementStart(6, "span", 16);
     \u0275\u0275text(7, "manage_accounts");
     \u0275\u0275elementEnd();
     \u0275\u0275text(8, "Administration ");
@@ -720,29 +720,29 @@ function LandingComponent_ng_container_44_Template(rf, ctx) {
     \u0275\u0275elementContainerEnd();
   }
 }
-function LandingComponent_ng_container_45_Template(rf, ctx) {
+function LandingComponent_ng_container_55_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "a", 118);
-    \u0275\u0275listener("click", function LandingComponent_ng_container_45_Template_a_click_1_listener() {
+    \u0275\u0275elementStart(1, "a", 123);
+    \u0275\u0275listener("click", function LandingComponent_ng_container_55_Template_a_click_1_listener() {
       \u0275\u0275restoreView(_r5);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.navOpen = false);
     });
-    \u0275\u0275elementStart(2, "span", 2);
+    \u0275\u0275elementStart(2, "span", 16);
     \u0275\u0275text(3, "dashboard");
     \u0275\u0275elementEnd();
     \u0275\u0275text(4, "Mon espace ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "button", 119);
-    \u0275\u0275listener("click", function LandingComponent_ng_container_45_Template_button_click_5_listener() {
+    \u0275\u0275elementStart(5, "button", 124);
+    \u0275\u0275listener("click", function LandingComponent_ng_container_55_Template_button_click_5_listener() {
       \u0275\u0275restoreView(_r5);
       const ctx_r1 = \u0275\u0275nextContext();
       ctx_r1.logout();
       return \u0275\u0275resetView(ctx_r1.navOpen = false);
     });
-    \u0275\u0275elementStart(6, "span", 2);
+    \u0275\u0275elementStart(6, "span", 16);
     \u0275\u0275text(7, "logout");
     \u0275\u0275elementEnd();
     \u0275\u0275text(8, "Se d\xE9connecter ");
@@ -755,68 +755,68 @@ function LandingComponent_ng_container_45_Template(rf, ctx) {
     \u0275\u0275property("routerLink", ctx_r1.dashboardRoute);
   }
 }
-function LandingComponent_ng_container_103_Template(rf, ctx) {
+function LandingComponent_ng_container_81_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "a", 120)(2, "div", 121)(3, "span", 2);
+    \u0275\u0275elementStart(1, "a", 125)(2, "div", 126)(3, "span", 16);
     \u0275\u0275text(4, "family_restroom");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(5, "div", 122)(6, "strong");
+    \u0275\u0275elementStart(5, "div", 127)(6, "strong");
     \u0275\u0275text(7, "Espace Famille");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(8, "span");
     \u0275\u0275text(9, "Pour les membres de la famille");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(10, "span", 123);
+    \u0275\u0275elementStart(10, "span", 128);
     \u0275\u0275text(11, "arrow_forward");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(12, "a", 124)(13, "div", 125)(14, "span", 2);
+    \u0275\u0275elementStart(12, "a", 129)(13, "div", 130)(14, "span", 16);
     \u0275\u0275text(15, "admin_panel_settings");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(16, "div", 122)(17, "strong");
+    \u0275\u0275elementStart(16, "div", 127)(17, "strong");
     \u0275\u0275text(18, "Espace Admin");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(19, "span");
     \u0275\u0275text(20, "Pour les gestionnaires");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(21, "span", 123);
+    \u0275\u0275elementStart(21, "span", 128);
     \u0275\u0275text(22, "arrow_forward");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementContainerEnd();
   }
 }
-function LandingComponent_ng_container_104_Template(rf, ctx) {
+function LandingComponent_ng_container_82_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "a", 126)(2, "div", 121)(3, "span", 2);
+    \u0275\u0275elementStart(1, "a", 131)(2, "div", 126)(3, "span", 16);
     \u0275\u0275text(4, "dashboard");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(5, "div", 122)(6, "strong");
+    \u0275\u0275elementStart(5, "div", 127)(6, "strong");
     \u0275\u0275text(7, "Retour \xE0 mon espace");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(8, "span");
     \u0275\u0275text(9);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(10, "span", 123);
+    \u0275\u0275elementStart(10, "span", 128);
     \u0275\u0275text(11, "arrow_forward");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(12, "button", 127);
-    \u0275\u0275listener("click", function LandingComponent_ng_container_104_Template_button_click_12_listener() {
+    \u0275\u0275elementStart(12, "button", 132);
+    \u0275\u0275listener("click", function LandingComponent_ng_container_82_Template_button_click_12_listener() {
       \u0275\u0275restoreView(_r6);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.logout());
     });
-    \u0275\u0275elementStart(13, "div", 128)(14, "span", 2);
+    \u0275\u0275elementStart(13, "div", 130)(14, "span", 16);
     \u0275\u0275text(15, "logout");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(16, "div", 122)(17, "strong");
+    \u0275\u0275elementStart(16, "div", 127)(17, "strong");
     \u0275\u0275text(18, "Se d\xE9connecter");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(19, "span");
     \u0275\u0275text(20, "Quitter la session");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(21, "span", 123);
+    \u0275\u0275elementStart(21, "span", 128);
     \u0275\u0275text(22, "arrow_forward");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementContainerEnd();
@@ -829,127 +829,141 @@ function LandingComponent_ng_container_104_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r1.userName);
   }
 }
-function LandingComponent_div_212_Template(rf, ctx) {
+function LandingComponent_div_192_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 129)(1, "div", 130)(2, "span", 2);
+    \u0275\u0275elementStart(0, "div", 133)(1, "div", 134)(2, "span", 16);
     \u0275\u0275text(3);
-    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(4, "h4");
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "p");
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const f_r7 = ctx.$implicit;
     \u0275\u0275advance();
-    \u0275\u0275styleProp("background", f_r7.color + "18")("color", f_r7.color);
-    \u0275\u0275advance(2);
+    \u0275\u0275styleProp("background", f_r7.color + "18");
+    \u0275\u0275advance();
+    \u0275\u0275styleProp("color", f_r7.color);
+    \u0275\u0275advance();
     \u0275\u0275textInterpolate(f_r7.icon);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(f_r7.title);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(f_r7.desc);
   }
 }
-function LandingComponent_div_223_Template(rf, ctx) {
+function LandingComponent_div_203_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 131)(1, "div", 132)(2, "div", 133);
+    \u0275\u0275elementStart(0, "div", 135)(1, "div", 136)(2, "div", 137);
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "div", 134)(5, "h3");
+    \u0275\u0275elementStart(4, "div")(5, "p", 138);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "span", 135)(8, "span", 2);
+    \u0275\u0275elementStart(7, "span", 139)(8, "span", 16);
     \u0275\u0275text(9, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(10);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(11, "div", 136)(12, "div", 137)(13, "span", 138);
+    \u0275\u0275elementStart(11, "div", 140)(12, "div", 141)(13, "span", 142);
     \u0275\u0275text(14);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(15, "span", 139);
+    \u0275\u0275elementStart(15, "span", 143);
     \u0275\u0275text(16, "Membres");
     \u0275\u0275elementEnd()();
-    \u0275\u0275element(17, "div", 140);
-    \u0275\u0275elementStart(18, "div", 137)(19, "span", 138);
-    \u0275\u0275text(20);
+    \u0275\u0275elementStart(17, "div", 141)(18, "span", 142);
+    \u0275\u0275text(19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(21, "span", 139);
-    \u0275\u0275text(22, "G\xE9n\xE9rations");
+    \u0275\u0275elementStart(20, "span", 143);
+    \u0275\u0275text(21, "G\xE9n\xE9rations");
     \u0275\u0275elementEnd()();
-    \u0275\u0275element(23, "div", 140);
-    \u0275\u0275elementStart(24, "div", 137)(25, "span", 138);
-    \u0275\u0275text(26);
+    \u0275\u0275elementStart(22, "div", 141)(23, "span", 142);
+    \u0275\u0275text(24);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "span", 139);
-    \u0275\u0275text(28, "Unions");
+    \u0275\u0275elementStart(25, "span", 143);
+    \u0275\u0275text(26, "Unions");
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
     const f_r8 = ctx.$implicit;
-    \u0275\u0275advance();
-    \u0275\u0275styleProp("background", "linear-gradient(135deg," + f_r8.color + "22 0%, " + f_r8.color + "0a 100%)");
-    \u0275\u0275advance();
+    \u0275\u0275advance(2);
     \u0275\u0275styleProp("background", f_r8.color + "22")("color", f_r8.color);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", f_r8.initiale, " ");
+    \u0275\u0275textInterpolate(f_r8.initiale);
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate1("Famille ", f_r8.nom);
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate1(" ", f_r8.origine);
+    \u0275\u0275textInterpolate(f_r8.origine);
     \u0275\u0275advance(3);
     \u0275\u0275styleProp("color", f_r8.color);
     \u0275\u0275advance();
     \u0275\u0275textInterpolate(f_r8.membres);
-    \u0275\u0275advance(5);
+    \u0275\u0275advance(4);
     \u0275\u0275styleProp("color", f_r8.color);
     \u0275\u0275advance();
     \u0275\u0275textInterpolate(f_r8.generations);
-    \u0275\u0275advance(5);
+    \u0275\u0275advance(4);
     \u0275\u0275styleProp("color", f_r8.color);
     \u0275\u0275advance();
     \u0275\u0275textInterpolate(f_r8.unions);
   }
 }
-function LandingComponent_div_235_Template(rf, ctx) {
+function LandingComponent_div_213_button_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 141)(1, "div", 142)(2, "div", 143)(3, "span", 144);
-    \u0275\u0275text(4, "format_quote");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "p");
-    \u0275\u0275text(6);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "div", 145)(8, "div", 146);
-    \u0275\u0275text(9);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "div")(11, "strong");
-    \u0275\u0275text(12);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(13, "span");
-    \u0275\u0275text(14);
-    \u0275\u0275elementEnd()()()()();
-  }
-  if (rf & 2) {
-    const t_r9 = ctx.$implicit;
-    \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate(t_r9.texte);
-    \u0275\u0275advance(2);
-    \u0275\u0275styleProp("background", t_r9.color + "22")("color", t_r9.color);
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", t_r9.initiale, " ");
-    \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(t_r9.nom);
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(t_r9.role);
-  }
-}
-function LandingComponent_button_241_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r10 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 147);
-    \u0275\u0275listener("click", function LandingComponent_button_241_Template_button_click_0_listener() {
-      const i_r11 = \u0275\u0275restoreView(_r10).index;
-      const ctx_r1 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r1.goToSlide(i_r11));
+    const _r9 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "button", 154);
+    \u0275\u0275listener("click", function LandingComponent_div_213_button_15_Template_button_click_0_listener() {
+      const i_r10 = \u0275\u0275restoreView(_r9).index;
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.goToSlide(i_r10));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const i_r11 = ctx.index;
+    const i_r10 = ctx.index;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275classProp("active", i_r10 === ctx_r1.currentSlide);
+  }
+}
+function LandingComponent_div_213_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 144)(1, "div", 145)(2, "span", 146);
+    \u0275\u0275text(3, "format_quote");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "p", 147);
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "div", 148)(7, "div", 149);
+    \u0275\u0275text(8);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "div")(10, "div", 150);
+    \u0275\u0275text(11);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "div", 151);
+    \u0275\u0275text(13);
+    \u0275\u0275elementEnd()()()();
+    \u0275\u0275elementStart(14, "div", 152);
+    \u0275\u0275template(15, LandingComponent_div_213_button_15_Template, 1, 2, "button", 153);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const t_r11 = ctx.ngIf;
     const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275classProp("active", i_r11 === ctx_r1.currentSlide);
+    \u0275\u0275advance(5);
+    \u0275\u0275textInterpolate(t_r11.texte);
+    \u0275\u0275advance(2);
+    \u0275\u0275styleProp("background", t_r11.color + "33")("color", t_r11.color);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(t_r11.initiale);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(t_r11.nom);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(t_r11.role);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngForOf", ctx_r1.testimonials);
   }
 }
 var LandingComponent = class _LandingComponent {
@@ -1078,335 +1092,256 @@ var LandingComponent = class _LandingComponent {
   static \u0275fac = function LandingComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _LandingComponent)(\u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LandingComponent, selectors: [["app-landing"]], standalone: false, decls: 287, vars: 20, consts: [[1, "landing-nav"], ["routerLink", "/", 1, "nav-logo"], [1, "material-icons-round"], [1, "nav-links"], ["href", "#features", 1, "nav-link"], ["href", "#familles", 1, "nav-link"], ["href", "#temoignages", 1, "nav-link"], [1, "nav-actions"], [4, "ngIf"], ["aria-label", "Menu", 1, "nav-hamburger", 3, "click"], ["class", "nav-mobile-overlay", 3, "click", 4, "ngIf"], [1, "nav-mobile-sheet"], [1, "nms-header"], [1, "nav-logo", "nms-logo"], [1, "nms-close", 3, "click"], [1, "nms-links"], ["href", "#features", 1, "nms-link", 3, "click"], ["href", "#familles", 1, "nms-link", 3, "click"], ["href", "#temoignages", 1, "nms-link", 3, "click"], [1, "nms-actions"], [1, "hero"], [1, "hero-blue"], [1, "hb-bg"], [1, "blob", "blob-1"], [1, "blob", "blob-2"], [1, "blob", "blob-3"], [1, "dots-grid"], [1, "fn-group"], [1, "float-node", "fn-1"], [1, "fn-disc", "fn-disc-blue"], [1, "fn-lbl"], [1, "float-node", "fn-2"], [1, "fn-disc", "fn-disc-pink"], [1, "float-node", "fn-3"], [1, "fn-disc", "fn-disc-green"], [1, "float-node", "fn-4"], [1, "fn-disc", "fn-disc-violet"], [1, "float-node", "fn-5"], [1, "fn-disc", "fn-disc-cyan"], [1, "hero-wave"], ["viewBox", "0 0 1440 90", "fill", "none", "xmlns", "http://www.w3.org/2000/svg", "preserveAspectRatio", "none"], ["d", "M0,45 C360,90 1080,0 1440,45 L1440,90 L0,90 Z", "fill", "#ffffff"], [1, "hero-white"], [1, "hero-badge"], [1, "hero-title"], [1, "gradient-text"], [1, "hero-subtitle"], [1, "hero-entries"], [1, "stats-section"], [1, "container"], [1, "stats-grid"], [1, "stat-item"], [1, "stat-number"], [1, "stat-label"], [1, "stat-icon-bg"], [1, "solution-section"], [1, "sol-floats"], [1, "sf-node"], [1, "sf-disc", "sf-glass-blue"], [1, "sf-node", "sf-main"], [1, "sf-disc", "sf-white"], [1, "sf-disc", "sf-glass-dark"], [1, "sol-arrow-indicator"], [1, "sol-arrow-label"], [1, "section-header-landing", "light"], [1, "section-tag", "light-tag"], [1, "sol-cards"], [1, "sol-card"], [1, "sc-icon"], ["id", "features", 1, "features-section"], [1, "features-layout"], [1, "fl-left"], [1, "welcome-badge"], [1, "wb-chevron", "material-icons-round"], [1, "fl-sub"], [1, "fl-evolving"], [1, "fl-right"], [1, "fl-mission"], [1, "fl-feat-icons"], ["class", "ffi-card", 4, "ngFor", "ngForOf"], ["id", "familles", 1, "showcase-section"], [1, "section-header-landing"], [1, "section-tag"], [1, "familles-carousel"], ["class", "famille-card", 4, "ngFor", "ngForOf"], ["id", "temoignages", 1, "testimonials-section"], [1, "testimonial-carousel"], [1, "testimonial-track"], ["class", "testimonial-slide", 4, "ngFor", "ngForOf"], [1, "carousel-controls"], [1, "carousel-btn", 3, "click"], [1, "carousel-dots"], ["class", "dot", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "cta-section"], [1, "cta-content"], [1, "cta-badge"], [1, "cta-actions"], ["routerLink", "/famille/login", 1, "cta-btn", "cta-btn-famille"], ["routerLink", "/auth/login", 1, "cta-btn", "cta-btn-admin"], [1, "cta-deco"], [1, "cta-blob"], [1, "landing-footer"], [1, "container", "footer-inner"], [1, "footer-brand"], [1, "footer-sep"], [1, "footer-by"], [1, "footer-links"], ["routerLink", "/famille/login"], ["routerLink", "/auth/login"], ["routerLink", "/auth/register"], [1, "footer-copy"], ["routerLink", "/famille/login", 1, "btn-nav-famille"], ["routerLink", "/auth/login", 1, "btn-nav-admin"], [1, "btn-nav-famille", 3, "routerLink"], [1, "btn-nav-logout", 3, "click"], [1, "nav-mobile-overlay", 3, "click"], ["routerLink", "/famille/login", 1, "nms-btn", "nms-btn-famille", 3, "click"], ["routerLink", "/auth/login", 1, "nms-btn", "nms-btn-admin", 3, "click"], [1, "nms-btn", "nms-btn-famille", 3, "click", "routerLink"], [1, "nms-btn", "nms-btn-logout", 3, "click"], ["routerLink", "/famille/login", 1, "entry-card", "entry-famille"], [1, "entry-icon-wrap", "famille-icon"], [1, "entry-info"], [1, "material-icons-round", "entry-arrow"], ["routerLink", "/auth/login", 1, "entry-card", "entry-admin"], [1, "entry-icon-wrap", "admin-icon"], [1, "entry-card", "entry-famille", 3, "routerLink"], [1, "entry-card", "entry-logout", 3, "click"], [1, "entry-icon-wrap", "logout-icon"], [1, "ffi-card"], [1, "ffi-icon"], [1, "famille-card"], [1, "fc-header"], [1, "fc-avatar"], [1, "fc-identity"], [1, "fc-origine"], [1, "fc-stats"], [1, "fc-stat"], [1, "fc-stat-val"], [1, "fc-stat-label"], [1, "fc-divider"], [1, "testimonial-slide"], [1, "testimonial-card"], [1, "testi-quote"], [1, "material-icons-round", "quote-icon"], [1, "testi-author"], [1, "testi-avatar"], [1, "dot", 3, "click"]], template: function LandingComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LandingComponent, selectors: [["app-landing"]], standalone: false, decls: 255, vars: 17, consts: [[1, "landing-nav"], ["routerLink", "/", 1, "nav-logo"], ["width", "26", "height", "26", "viewBox", "0 0 120 120", "fill", "none"], ["x", "50", "y", "60", "width", "20", "height", "40", "fill", "#8B4513", "rx", "2"], ["d", "M60 60 L40 40", "stroke", "#8B4513", "stroke-width", "6", "stroke-linecap", "round"], ["d", "M60 60 L80 40", "stroke", "#8B4513", "stroke-width", "6", "stroke-linecap", "round"], ["cx", "35", "cy", "35", "r", "10", "fill", "#2E7D32"], ["cx", "85", "cy", "35", "r", "10", "fill", "#2E7D32"], ["cx", "60", "cy", "25", "r", "10", "fill", "#81C784"], [1, "nav-links"], ["href", "#features", 1, "nav-link"], ["href", "#familles", 1, "nav-link"], ["href", "#temoignages", 1, "nav-link"], [1, "nav-actions"], [4, "ngIf"], ["aria-label", "Menu", 1, "nav-hamburger", 3, "click"], [1, "material-icons-round"], ["class", "nav-mobile-overlay", 3, "click", 4, "ngIf"], [1, "nav-mobile-sheet"], [1, "nms-header"], [1, "nav-logo", "nms-logo"], ["width", "24", "height", "24", "viewBox", "0 0 120 120", "fill", "none"], [1, "nms-close", 3, "click"], [1, "nms-links"], ["href", "#features", 1, "nms-link", 3, "click"], ["href", "#familles", 1, "nms-link", 3, "click"], ["href", "#temoignages", 1, "nms-link", 3, "click"], [1, "nms-actions"], [1, "hero"], [1, "hero-sparks"], [1, "spark", 2, "left", "12%", "animation-delay", "0s"], [1, "spark", 2, "left", "24%", "animation-delay", "1.4s", "width", "4px", "height", "4px"], [1, "spark", 2, "left", "38%", "animation-delay", "2.6s"], [1, "spark", 2, "left", "55%", "animation-delay", "0.7s", "width", "4px", "height", "4px"], [1, "spark", 2, "left", "68%", "animation-delay", "3.4s"], [1, "spark", 2, "left", "81%", "animation-delay", "1.9s", "width", "4px", "height", "4px"], [1, "hero-inner"], [1, "hero-badge", "fade-up-1"], [1, "hero-title", "fade-up-2"], [1, "accent"], [1, "hero-sub", "fade-up-3"], [1, "hero-entries", "fade-up-4"], [1, "hero-tree-wrap"], ["width", "480", "height", "560", "viewBox", "0 0 480 560", "fill", "none"], ["d", "M240 520 C 220 500, 200 495, 175 505", "stroke", "#8B4513", "stroke-width", "3", "fill", "none", "opacity", "0.55", 1, "tree-line", "g-root"], ["d", "M240 520 C 260 500, 280 495, 305 505", "stroke", "#8B4513", "stroke-width", "3", "fill", "none", "opacity", "0.55", 1, "tree-line", "g-root"], ["d", "M240 520 L 240 545", "stroke", "#8B4513", "stroke-width", "4", "opacity", "0.55", 1, "tree-line", "g-root"], ["d", "M240 520 L 240 400", "stroke", "#8B4513", "stroke-width", "7", "stroke-linecap", "round", 1, "tree-line", "g-trunk"], ["d", "M240 400 C 210 380, 180 365, 150 340", "stroke", "#8B4513", "stroke-width", "5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-trunk"], ["d", "M240 400 C 270 380, 300 365, 330 340", "stroke", "#8B4513", "stroke-width", "5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-trunk"], ["d", "M240 400 L 240 330", "stroke", "#8B4513", "stroke-width", "5", "stroke-linecap", "round", 1, "tree-line", "g-trunk"], ["d", "M150 340 C 130 315, 115 300, 95 280", "stroke", "#8B4513", "stroke-width", "3.5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-1"], ["d", "M150 340 C 155 310, 150 290, 140 265", "stroke", "#8B4513", "stroke-width", "3.5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-1"], ["d", "M330 340 C 350 315, 365 300, 385 280", "stroke", "#8B4513", "stroke-width", "3.5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-1"], ["d", "M330 340 C 325 310, 330 290, 340 265", "stroke", "#8B4513", "stroke-width", "3.5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-1"], ["d", "M240 330 C 225 305, 225 290, 235 265", "stroke", "#8B4513", "stroke-width", "3.5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-1"], ["d", "M240 330 C 255 305, 255 290, 245 265", "stroke", "#8B4513", "stroke-width", "3.5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-1"], ["d", "M95 280 C 85 260, 82 245, 88 225", "stroke", "#8B4513", "stroke-width", "2.5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-2"], ["d", "M140 265 C 135 245, 138 230, 148 210", "stroke", "#8B4513", "stroke-width", "2.5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-2"], ["d", "M385 280 C 395 260, 398 245, 392 225", "stroke", "#8B4513", "stroke-width", "2.5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-2"], ["d", "M340 265 C 345 245, 342 230, 332 210", "stroke", "#8B4513", "stroke-width", "2.5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-2"], ["d", "M235 265 C 225 240, 228 222, 220 200", "stroke", "#8B4513", "stroke-width", "2.5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-2"], ["d", "M245 265 C 255 240, 252 222, 260 200", "stroke", "#8B4513", "stroke-width", "2.5", "fill", "none", "stroke-linecap", "round", 1, "tree-line", "g-2"], ["cx", "88", "cy", "220", "r", "16", "fill", "#2E7D32", 1, "leaf", 2, "animation-delay", "1.4s, 1.9s"], ["cx", "148", "cy", "205", "r", "14", "fill", "#81C784", 1, "leaf", 2, "animation-delay", "1.5s, 2.1s"], ["cx", "220", "cy", "196", "r", "16", "fill", "#2E7D32", 1, "leaf", 2, "animation-delay", "1.6s, 1.7s"], ["cx", "260", "cy", "196", "r", "14", "fill", "#81C784", 1, "leaf", 2, "animation-delay", "1.65s, 2.4s"], ["cx", "332", "cy", "205", "r", "14", "fill", "#2E7D32", 1, "leaf", 2, "animation-delay", "1.55s, 2.0s"], ["cx", "392", "cy", "220", "r", "16", "fill", "#81C784", 1, "leaf", 2, "animation-delay", "1.45s, 1.85s"], ["cx", "95", "cy", "280", "r", "9", "fill", "#3B82F6", "opacity", "0.85", 1, "leaf", 2, "animation-delay", "1.0s, 2.6s"], ["cx", "140", "cy", "265", "r", "8", "fill", "#EC4899", "opacity", "0.85", 1, "leaf", 2, "animation-delay", "1.05s, 2.2s"], ["cx", "240", "cy", "330", "r", "9", "fill", "#F59E0B", "opacity", "0.85", 1, "leaf", 2, "animation-delay", "0.75s, 2.8s"], ["cx", "340", "cy", "265", "r", "8", "fill", "#EC4899", "opacity", "0.85", 1, "leaf", 2, "animation-delay", "1.05s, 2.35s"], ["cx", "385", "cy", "280", "r", "9", "fill", "#3B82F6", "opacity", "0.85", 1, "leaf", 2, "animation-delay", "1.0s, 1.95s"], ["cx", "150", "cy", "340", "r", "10", "fill", "#8B5CF6", "opacity", "0.9", 1, "leaf", 2, "animation-delay", "0.65s, 3.0s"], ["cx", "330", "cy", "340", "r", "10", "fill", "#8B5CF6", "opacity", "0.9", 1, "leaf", 2, "animation-delay", "0.65s, 2.5s"], [1, "stats-section"], [1, "container", "stats-grid"], [1, "stat-box"], [1, "stat-icon"], [1, "stat-number"], [1, "stat-label"], [1, "solution"], [1, "container"], [1, "sec-head"], [1, "sec-tag"], [1, "sol-grid"], [1, "sol-card"], [1, "sol-icon"], ["id", "features", 1, "features"], [1, "feat-layout"], [1, "feat-left"], [1, "feat-grid"], ["class", "feat-card", 4, "ngFor", "ngForOf"], ["id", "familles", 1, "familles"], [1, "fam-grid"], ["class", "fam-card", 4, "ngFor", "ngForOf"], ["id", "temoignages", 1, "testimonials"], [1, "sec-tag", "sec-tag-dark"], ["class", "testi-wrap", 4, "ngIf"], [1, "cta"], [1, "cta-box"], [1, "cta-actions"], ["routerLink", "/famille/login", 1, "cta-btn", "cta-btn-primary"], ["routerLink", "/auth/login", 1, "cta-btn", "cta-btn-ghost"], [1, "landing-footer"], [1, "container", "footer-inner"], [1, "footer-brand"], ["width", "18", "height", "18", "viewBox", "0 0 120 120", "fill", "none"], [1, "footer-sep"], [1, "footer-by"], [1, "footer-links"], ["routerLink", "/famille/login"], ["routerLink", "/auth/login"], ["routerLink", "/auth/register"], [1, "footer-copy"], ["routerLink", "/famille/login", 1, "btn-nav-famille"], ["routerLink", "/auth/login", 1, "btn-nav-admin"], [1, "btn-nav-famille", 3, "routerLink"], [1, "btn-nav-logout", 3, "click"], [1, "nav-mobile-overlay", 3, "click"], ["routerLink", "/famille/login", 1, "nms-btn", "nms-btn-famille", 3, "click"], ["routerLink", "/auth/login", 1, "nms-btn", "nms-btn-admin", 3, "click"], [1, "nms-btn", "nms-btn-famille", 3, "click", "routerLink"], [1, "nms-btn", "nms-btn-logout", 3, "click"], ["routerLink", "/famille/login", 1, "entry-card"], [1, "entry-icon", "famille"], [1, "entry-info"], [1, "material-icons-round", "arrow"], ["routerLink", "/auth/login", 1, "entry-card"], [1, "entry-icon", "admin"], [1, "entry-card", 3, "routerLink"], [1, "entry-card", 3, "click"], [1, "feat-card"], [1, "feat-icon"], [1, "fam-card"], [1, "fam-head"], [1, "fam-avatar"], [1, "fam-name"], [1, "fam-origin"], [1, "fam-stats"], [1, "fam-stat"], [1, "fam-stat-val"], [1, "fam-stat-label"], [1, "testi-wrap"], [1, "testi-card"], [1, "material-icons-round", "testi-quote-icon"], [1, "testi-text"], [1, "testi-author"], [1, "testi-avatar"], [1, "testi-name"], [1, "testi-role"], [1, "testi-dots"], ["class", "testi-dot", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "testi-dot", 3, "click"]], template: function LandingComponent_Template(rf, ctx) {
     if (rf & 1) {
-      \u0275\u0275elementStart(0, "nav", 0)(1, "a", 1)(2, "span", 2);
-      \u0275\u0275text(3, "account_tree");
+      \u0275\u0275elementStart(0, "nav", 0)(1, "a", 1);
+      \u0275\u0275namespaceSVG();
+      \u0275\u0275elementStart(2, "svg", 2);
+      \u0275\u0275element(3, "rect", 3)(4, "path", 4)(5, "path", 5)(6, "circle", 6)(7, "circle", 7)(8, "circle", 8);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(4, "span");
-      \u0275\u0275text(5, "Mam Buudu");
+      \u0275\u0275namespaceHTML();
+      \u0275\u0275elementStart(9, "span");
+      \u0275\u0275text(10, "Mam Buudu");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(6, "div", 3)(7, "a", 4);
-      \u0275\u0275text(8, "Fonctionnalit\xE9s");
+      \u0275\u0275elementStart(11, "div", 9)(12, "a", 10);
+      \u0275\u0275text(13, "Fonctionnalit\xE9s");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(9, "a", 5);
-      \u0275\u0275text(10, "Familles");
+      \u0275\u0275elementStart(14, "a", 11);
+      \u0275\u0275text(15, "Familles");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(11, "a", 6);
-      \u0275\u0275text(12, "T\xE9moignages");
+      \u0275\u0275elementStart(16, "a", 12);
+      \u0275\u0275text(17, "T\xE9moignages");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(13, "div", 7);
-      \u0275\u0275template(14, LandingComponent_ng_container_14_Template, 9, 0, "ng-container", 8)(15, LandingComponent_ng_container_15_Template, 9, 1, "ng-container", 8);
-      \u0275\u0275elementStart(16, "button", 9);
-      \u0275\u0275listener("click", function LandingComponent_Template_button_click_16_listener() {
+      \u0275\u0275elementStart(18, "div", 13);
+      \u0275\u0275template(19, LandingComponent_ng_container_19_Template, 9, 0, "ng-container", 14)(20, LandingComponent_ng_container_20_Template, 9, 1, "ng-container", 14);
+      \u0275\u0275elementStart(21, "button", 15);
+      \u0275\u0275listener("click", function LandingComponent_Template_button_click_21_listener() {
         return ctx.navOpen = !ctx.navOpen;
       });
-      \u0275\u0275elementStart(17, "span", 2);
-      \u0275\u0275text(18);
+      \u0275\u0275elementStart(22, "span", 16);
+      \u0275\u0275text(23);
       \u0275\u0275elementEnd()()()();
-      \u0275\u0275template(19, LandingComponent_div_19_Template, 1, 0, "div", 10);
-      \u0275\u0275elementStart(20, "div", 11)(21, "div", 12)(22, "div", 13)(23, "span", 2);
-      \u0275\u0275text(24, "account_tree");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(25, "span");
-      \u0275\u0275text(26, "Mam Buudu");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(27, "button", 14);
-      \u0275\u0275listener("click", function LandingComponent_Template_button_click_27_listener() {
-        return ctx.navOpen = false;
-      });
-      \u0275\u0275elementStart(28, "span", 2);
-      \u0275\u0275text(29, "close");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(30, "div", 15)(31, "a", 16);
-      \u0275\u0275listener("click", function LandingComponent_Template_a_click_31_listener() {
-        return ctx.navOpen = false;
-      });
-      \u0275\u0275elementStart(32, "span", 2);
-      \u0275\u0275text(33, "star");
-      \u0275\u0275elementEnd();
-      \u0275\u0275text(34, "Fonctionnalit\xE9s ");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(35, "a", 17);
-      \u0275\u0275listener("click", function LandingComponent_Template_a_click_35_listener() {
-        return ctx.navOpen = false;
-      });
-      \u0275\u0275elementStart(36, "span", 2);
-      \u0275\u0275text(37, "family_restroom");
-      \u0275\u0275elementEnd();
-      \u0275\u0275text(38, "Familles ");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(39, "a", 18);
-      \u0275\u0275listener("click", function LandingComponent_Template_a_click_39_listener() {
-        return ctx.navOpen = false;
-      });
-      \u0275\u0275elementStart(40, "span", 2);
-      \u0275\u0275text(41, "format_quote");
-      \u0275\u0275elementEnd();
-      \u0275\u0275text(42, "T\xE9moignages ");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(43, "div", 19);
-      \u0275\u0275template(44, LandingComponent_ng_container_44_Template, 9, 0, "ng-container", 8)(45, LandingComponent_ng_container_45_Template, 9, 1, "ng-container", 8);
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(46, "section", 20)(47, "div", 21)(48, "div", 22);
-      \u0275\u0275element(49, "div", 23)(50, "div", 24)(51, "div", 25)(52, "div", 26);
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(53, "div", 27)(54, "div", 28)(55, "div", 29)(56, "span", 2);
-      \u0275\u0275text(57, "account_tree");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(58, "span", 30);
-      \u0275\u0275text(59, "Arbre");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(60, "div", 31)(61, "div", 32)(62, "span", 2);
-      \u0275\u0275text(63, "favorite");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(64, "span", 30);
-      \u0275\u0275text(65, "Unions");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(66, "div", 33)(67, "div", 34)(68, "span", 2);
-      \u0275\u0275text(69, "family_restroom");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(70, "span", 30);
-      \u0275\u0275text(71, "Famille");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(72, "div", 35)(73, "div", 36)(74, "span", 2);
-      \u0275\u0275text(75, "auto_stories");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(76, "span", 30);
-      \u0275\u0275text(77, "Stories");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(78, "div", 37)(79, "div", 38)(80, "span", 2);
-      \u0275\u0275text(81, "people");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(82, "span", 30);
-      \u0275\u0275text(83, "Membres");
-      \u0275\u0275elementEnd()()()();
-      \u0275\u0275elementStart(84, "div", 39);
+      \u0275\u0275template(24, LandingComponent_div_24_Template, 1, 0, "div", 17);
+      \u0275\u0275elementStart(25, "div", 18)(26, "div", 19)(27, "div", 20);
       \u0275\u0275namespaceSVG();
-      \u0275\u0275elementStart(85, "svg", 40);
-      \u0275\u0275element(86, "path", 41);
-      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(28, "svg", 21);
+      \u0275\u0275element(29, "rect", 3)(30, "path", 4)(31, "path", 5)(32, "circle", 6)(33, "circle", 7)(34, "circle", 8);
+      \u0275\u0275elementEnd();
       \u0275\u0275namespaceHTML();
-      \u0275\u0275elementStart(87, "div", 42)(88, "div", 43)(89, "span", 2);
-      \u0275\u0275text(90, "auto_awesome");
-      \u0275\u0275elementEnd();
-      \u0275\u0275text(91, " Application g\xE9n\xE9alogique africaine ");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(92, "h1", 44);
-      \u0275\u0275text(93, " L'histoire de votre");
-      \u0275\u0275element(94, "br");
-      \u0275\u0275elementStart(95, "span", 45);
-      \u0275\u0275text(96, "famille");
-      \u0275\u0275elementEnd();
-      \u0275\u0275text(97, ",");
-      \u0275\u0275element(98, "br");
-      \u0275\u0275text(99, " pr\xE9serv\xE9e pour toujours ");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(100, "p", 46);
-      \u0275\u0275text(101, " Construisez l'arbre g\xE9n\xE9alogique de votre famille, partagez vos stories et connectez les g\xE9n\xE9rations \xE0 travers le temps. ");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(102, "div", 47);
-      \u0275\u0275template(103, LandingComponent_ng_container_103_Template, 23, 0, "ng-container", 8)(104, LandingComponent_ng_container_104_Template, 23, 2, "ng-container", 8);
+      \u0275\u0275elementStart(35, "span");
+      \u0275\u0275text(36, "Mam Buudu");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(37, "button", 22);
+      \u0275\u0275listener("click", function LandingComponent_Template_button_click_37_listener() {
+        return ctx.navOpen = false;
+      });
+      \u0275\u0275elementStart(38, "span", 16);
+      \u0275\u0275text(39, "close");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(105, "section", 48)(106, "div", 49)(107, "div", 50)(108, "div", 51)(109, "span", 52);
-      \u0275\u0275text(110);
+      \u0275\u0275elementStart(40, "div", 23)(41, "a", 24);
+      \u0275\u0275listener("click", function LandingComponent_Template_a_click_41_listener() {
+        return ctx.navOpen = false;
+      });
+      \u0275\u0275elementStart(42, "span", 16);
+      \u0275\u0275text(43, "star");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(111, "span", 53);
-      \u0275\u0275text(112, "Familles");
+      \u0275\u0275text(44, "Fonctionnalit\xE9s ");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(113, "span", 54)(114, "span", 2);
-      \u0275\u0275text(115, "family_restroom");
+      \u0275\u0275elementStart(45, "a", 25);
+      \u0275\u0275listener("click", function LandingComponent_Template_a_click_45_listener() {
+        return ctx.navOpen = false;
+      });
+      \u0275\u0275elementStart(46, "span", 16);
+      \u0275\u0275text(47, "family_restroom");
+      \u0275\u0275elementEnd();
+      \u0275\u0275text(48, "Familles ");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(49, "a", 26);
+      \u0275\u0275listener("click", function LandingComponent_Template_a_click_49_listener() {
+        return ctx.navOpen = false;
+      });
+      \u0275\u0275elementStart(50, "span", 16);
+      \u0275\u0275text(51, "format_quote");
+      \u0275\u0275elementEnd();
+      \u0275\u0275text(52, "T\xE9moignages ");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(53, "div", 27);
+      \u0275\u0275template(54, LandingComponent_ng_container_54_Template, 9, 0, "ng-container", 14)(55, LandingComponent_ng_container_55_Template, 9, 1, "ng-container", 14);
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(56, "section", 28)(57, "div", 29);
+      \u0275\u0275element(58, "div", 30)(59, "div", 31)(60, "div", 32)(61, "div", 33)(62, "div", 34)(63, "div", 35);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(64, "div", 36)(65, "div")(66, "span", 37)(67, "span", 16);
+      \u0275\u0275text(68, "auto_awesome");
+      \u0275\u0275elementEnd();
+      \u0275\u0275text(69, " Application g\xE9n\xE9alogique africaine ");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(70, "h1", 38);
+      \u0275\u0275text(71, " L'histoire de votre");
+      \u0275\u0275element(72, "br");
+      \u0275\u0275elementStart(73, "span", 39);
+      \u0275\u0275text(74, "famille");
+      \u0275\u0275elementEnd();
+      \u0275\u0275text(75, ",");
+      \u0275\u0275element(76, "br");
+      \u0275\u0275text(77, " pr\xE9serv\xE9e pour toujours ");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(78, "p", 40);
+      \u0275\u0275text(79, " Construisez l'arbre g\xE9n\xE9alogique de votre famille, partagez vos stories et connectez les g\xE9n\xE9rations \xE0 travers le temps. ");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(80, "div", 41);
+      \u0275\u0275template(81, LandingComponent_ng_container_81_Template, 23, 0, "ng-container", 14)(82, LandingComponent_ng_container_82_Template, 23, 2, "ng-container", 14);
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(83, "div", 42);
+      \u0275\u0275namespaceSVG();
+      \u0275\u0275elementStart(84, "svg", 43);
+      \u0275\u0275element(85, "path", 44)(86, "path", 45)(87, "path", 46)(88, "path", 47)(89, "path", 48)(90, "path", 49)(91, "path", 50)(92, "path", 51)(93, "path", 52)(94, "path", 53)(95, "path", 54)(96, "path", 55)(97, "path", 56)(98, "path", 57)(99, "path", 58)(100, "path", 59)(101, "path", 60)(102, "path", 61)(103, "path", 62)(104, "circle", 63)(105, "circle", 64)(106, "circle", 65)(107, "circle", 66)(108, "circle", 67)(109, "circle", 68)(110, "circle", 69)(111, "circle", 70)(112, "circle", 71)(113, "circle", 72)(114, "circle", 73)(115, "circle", 74)(116, "circle", 75);
+      \u0275\u0275elementEnd()()()();
+      \u0275\u0275namespaceHTML();
+      \u0275\u0275elementStart(117, "section", 76)(118, "div", 77)(119, "div", 78)(120, "div", 79)(121, "span", 16);
+      \u0275\u0275text(122, "family_restroom");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(123, "div")(124, "div", 80);
+      \u0275\u0275text(125);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(126, "div", 81);
+      \u0275\u0275text(127, "Familles");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(116, "div", 51)(117, "span", 52);
-      \u0275\u0275text(118);
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(119, "span", 53);
-      \u0275\u0275text(120, "Membres");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(121, "span", 54)(122, "span", 2);
-      \u0275\u0275text(123, "people");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(124, "div", 51)(125, "span", 52);
-      \u0275\u0275text(126);
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(127, "span", 53);
-      \u0275\u0275text(128, "Unions");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(129, "span", 54)(130, "span", 2);
-      \u0275\u0275text(131, "favorite");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(132, "div", 51)(133, "span", 52);
+      \u0275\u0275elementStart(128, "div", 78)(129, "div", 79)(130, "span", 16);
+      \u0275\u0275text(131, "people");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(132, "div")(133, "div", 80);
       \u0275\u0275text(134);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(135, "span", 53);
-      \u0275\u0275text(136, "Stories");
+      \u0275\u0275elementStart(135, "div", 81);
+      \u0275\u0275text(136, "Membres");
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275elementStart(137, "div", 78)(138, "div", 79)(139, "span", 16);
+      \u0275\u0275text(140, "favorite");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(141, "div")(142, "div", 80);
+      \u0275\u0275text(143);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(137, "span", 54)(138, "span", 2);
-      \u0275\u0275text(139, "auto_stories");
-      \u0275\u0275elementEnd()()()()()();
-      \u0275\u0275elementStart(140, "section", 55)(141, "div", 49)(142, "div", 56)(143, "div", 57)(144, "div", 58)(145, "span", 2);
-      \u0275\u0275text(146, "account_tree");
+      \u0275\u0275elementStart(144, "div", 81);
+      \u0275\u0275text(145, "Unions");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(147, "div", 59)(148, "div", 60)(149, "span", 2);
-      \u0275\u0275text(150, "people");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(151, "div", 57)(152, "div", 61)(153, "span", 2);
-      \u0275\u0275text(154, "auto_stories");
+      \u0275\u0275elementStart(146, "div", 78)(147, "div", 79)(148, "span", 16);
+      \u0275\u0275text(149, "auto_stories");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(150, "div")(151, "div", 80);
+      \u0275\u0275text(152);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(153, "div", 81);
+      \u0275\u0275text(154, "Stories");
+      \u0275\u0275elementEnd()()()()();
+      \u0275\u0275elementStart(155, "section", 82)(156, "div", 83)(157, "div", 84)(158, "span", 85);
+      \u0275\u0275text(159, "Notre solution");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(160, "h2");
+      \u0275\u0275text(161, "Mam Buudu simplifie la g\xE9n\xE9alogie, pour toutes les familles.");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(162, "p");
+      \u0275\u0275text(163, "De la cr\xE9ation de l'arbre au partage des stories \u2014 une solution compl\xE8te, accessible en ligne ou hors ligne.");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(164, "div", 86)(165, "div", 87)(166, "div", 88)(167, "span", 16);
+      \u0275\u0275text(168, "account_tree");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(169, "h3");
+      \u0275\u0275text(170, "Sans code, sans effort");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(171, "p");
+      \u0275\u0275text(172, "Construisez votre arbre g\xE9n\xE9alogique facilement, sans aucune comp\xE9tence technique. En ligne ou hors ligne.");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(173, "div", 87)(174, "div", 88)(175, "span", 16);
+      \u0275\u0275text(176, "share");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(177, "h3");
+      \u0275\u0275text(178, "Partage en famille");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(179, "p");
+      \u0275\u0275text(180, "Invitez les membres, partagez les stories et connectez les g\xE9n\xE9rations en temps r\xE9el, depuis n'importe o\xF9.");
+      \u0275\u0275elementEnd()()()()();
+      \u0275\u0275elementStart(181, "section", 89)(182, "div", 83)(183, "div", 90)(184, "div", 91)(185, "span", 85);
+      \u0275\u0275text(186, "Bienvenue sur Mam Buudu");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(187, "h2");
+      \u0275\u0275text(188, "G\xE9n\xE9alogie nouvelle g\xE9n\xE9ration");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(189, "p");
+      \u0275\u0275text(190, "Construite pour \xE9quiper chaque famille d'outils modernes pour pr\xE9server et partager leur histoire. Nous rempla\xE7ons les albums \xE9parpill\xE9s et la m\xE9moire orale par une plateforme num\xE9rique s\xE9curis\xE9e, accessible \xE0 toute la famille.");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(191, "div", 92);
+      \u0275\u0275template(192, LandingComponent_div_192_Template, 8, 7, "div", 93);
       \u0275\u0275elementEnd()()()();
-      \u0275\u0275elementStart(155, "div", 62)(156, "span", 2);
-      \u0275\u0275text(157, "arrow_upward");
+      \u0275\u0275elementStart(193, "section", 94)(194, "div", 83)(195, "div", 84)(196, "span", 85);
+      \u0275\u0275text(197, "Familles");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(158, "span", 63);
-      \u0275\u0275text(159, "Notre Solution");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(160, "div", 64)(161, "span", 65);
-      \u0275\u0275text(162, "Notre Solution");
+      \u0275\u0275elementStart(198, "h2");
+      \u0275\u0275text(199, "Des familles qui nous font confiance");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(163, "h2");
-      \u0275\u0275text(164, "Mam Buudu simplifie la g\xE9n\xE9alogie,");
-      \u0275\u0275element(165, "br");
-      \u0275\u0275text(166, "pour toutes les familles.");
+      \u0275\u0275elementStart(200, "p");
+      \u0275\u0275text(201, "Rejoignez des centaines de familles qui ont choisi Mam Buudu pour pr\xE9server leur patrimoine.");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(202, "div", 95);
+      \u0275\u0275template(203, LandingComponent_div_203_Template, 27, 16, "div", 96);
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275elementStart(204, "section", 97)(205, "div", 83)(206, "div", 84)(207, "span", 98);
+      \u0275\u0275text(208, "T\xE9moignages");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(167, "p");
-      \u0275\u0275text(168, "De la cr\xE9ation de l'arbre au partage des stories \u2014 une solution compl\xE8te, accessible en ligne ou hors ligne.");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(169, "div", 66)(170, "div", 67)(171, "div", 68)(172, "span", 2);
-      \u0275\u0275text(173, "account_tree");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(174, "h3");
-      \u0275\u0275text(175, "Sans code, sans effort");
+      \u0275\u0275elementStart(209, "h2");
+      \u0275\u0275text(210, "Ce que disent nos utilisateurs");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(176, "p");
-      \u0275\u0275text(177, "Construisez votre arbre g\xE9n\xE9alogique facilement, sans aucune comp\xE9tence technique. En ligne ou hors ligne.");
+      \u0275\u0275elementStart(211, "p");
+      \u0275\u0275text(212, "Ils ont choisi Mam Buudu pour connecter leur famille \xE0 travers les g\xE9n\xE9rations.");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(178, "div", 67)(179, "div", 68)(180, "span", 2);
-      \u0275\u0275text(181, "share");
+      \u0275\u0275template(213, LandingComponent_div_213_Template, 16, 9, "div", 99);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(182, "h3");
-      \u0275\u0275text(183, "Partage en famille");
+      \u0275\u0275elementStart(214, "section", 100)(215, "div", 83)(216, "div", 101)(217, "h2");
+      \u0275\u0275text(218, "Pr\xEAt \xE0 connecter votre famille ?");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(184, "p");
-      \u0275\u0275text(185, "Invitez les membres, partagez les stories et connectez les g\xE9n\xE9rations en temps r\xE9el, depuis n'importe o\xF9.");
+      \u0275\u0275elementStart(219, "p");
+      \u0275\u0275text(220, "Rejoignez des milliers de familles qui pr\xE9servent leur histoire avec Mam Buudu.");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(221, "div", 102)(222, "a", 103)(223, "span", 16);
+      \u0275\u0275text(224, "family_restroom");
+      \u0275\u0275elementEnd();
+      \u0275\u0275text(225, " Acc\xE9der \xE0 mon espace famille ");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(226, "a", 104)(227, "span", 16);
+      \u0275\u0275text(228, "admin_panel_settings");
+      \u0275\u0275elementEnd();
+      \u0275\u0275text(229, " Espace administrateur ");
       \u0275\u0275elementEnd()()()()();
-      \u0275\u0275elementStart(186, "section", 69)(187, "div", 49)(188, "div", 70)(189, "div", 71)(190, "span", 72)(191, "span", 2);
-      \u0275\u0275text(192, "account_tree");
+      \u0275\u0275elementStart(230, "footer", 105)(231, "div", 106)(232, "div", 107);
+      \u0275\u0275namespaceSVG();
+      \u0275\u0275elementStart(233, "svg", 108);
+      \u0275\u0275element(234, "rect", 3)(235, "path", 4)(236, "path", 5)(237, "circle", 6)(238, "circle", 7)(239, "circle", 8);
       \u0275\u0275elementEnd();
-      \u0275\u0275text(193, " Bienvenue sur Mam Buudu ");
-      \u0275\u0275elementStart(194, "span", 73);
-      \u0275\u0275text(195, "chevron_right");
+      \u0275\u0275namespaceHTML();
+      \u0275\u0275elementStart(240, "span");
+      \u0275\u0275text(241, "Mam Buudu");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(242, "span", 109);
+      \u0275\u0275text(243, "\xB7");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(244, "span", 110);
+      \u0275\u0275text(245, "par Sahelys");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(196, "h2");
-      \u0275\u0275text(197, "G\xE9n\xE9alogie nouvelle");
-      \u0275\u0275element(198, "br");
-      \u0275\u0275text(199, "g\xE9n\xE9ration");
+      \u0275\u0275elementStart(246, "div", 111)(247, "a", 112);
+      \u0275\u0275text(248, "Espace Famille");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(200, "p", 74);
-      \u0275\u0275text(201, "Construite pour \xE9quiper chaque famille d'outils modernes pour pr\xE9server et partager leur histoire.");
+      \u0275\u0275elementStart(249, "a", 113);
+      \u0275\u0275text(250, "Administration");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(202, "div", 75)(203, "h3");
-      \u0275\u0275text(204, "\xC9voluer au-del\xE0 des m\xE9thodes traditionnelles");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(205, "p");
-      \u0275\u0275text(206, "Nous r\xE9pondons aux d\xE9fis de la pr\xE9servation familiale en rempla\xE7ant les albums \xE9parpill\xE9s et la m\xE9moire orale par une plateforme num\xE9rique s\xE9curis\xE9e, accessible \xE0 toute la famille.");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(207, "div", 76)(208, "div", 77)(209, "p");
-      \u0275\u0275text(210, "Notre mission est d'\xE9quiper les familles africaines d'outils modernes pour rester connect\xE9es et pr\xE9server leur patrimoine \xE0 travers les g\xE9n\xE9rations.");
+      \u0275\u0275elementStart(251, "a", 114);
+      \u0275\u0275text(252, "Cr\xE9er un espace");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(211, "div", 78);
-      \u0275\u0275template(212, LandingComponent_div_212_Template, 4, 5, "div", 79);
-      \u0275\u0275elementEnd()()()()();
-      \u0275\u0275elementStart(213, "section", 80)(214, "div", 49)(215, "div", 81)(216, "span", 82);
-      \u0275\u0275text(217, "Familles");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(218, "h2");
-      \u0275\u0275text(219, "Des familles qui nous font confiance");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(220, "p");
-      \u0275\u0275text(221, "Rejoignez des centaines de familles qui ont choisi Mam Buudu pour pr\xE9server leur patrimoine.");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(222, "div", 83);
-      \u0275\u0275template(223, LandingComponent_div_223_Template, 29, 18, "div", 84);
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(224, "section", 85)(225, "div", 49)(226, "div", 64)(227, "span", 65);
-      \u0275\u0275text(228, "T\xE9moignages");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(229, "h2");
-      \u0275\u0275text(230, "Ce que disent nos utilisateurs");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(231, "p");
-      \u0275\u0275text(232, "Ils ont choisi Mam Buudu pour connecter leur famille \xE0 travers les g\xE9n\xE9rations.");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(233, "div", 86)(234, "div", 87);
-      \u0275\u0275template(235, LandingComponent_div_235_Template, 15, 8, "div", 88);
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(236, "div", 89)(237, "button", 90);
-      \u0275\u0275listener("click", function LandingComponent_Template_button_click_237_listener() {
-        return ctx.prevSlide();
-      });
-      \u0275\u0275elementStart(238, "span", 2);
-      \u0275\u0275text(239, "chevron_left");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(240, "div", 91);
-      \u0275\u0275template(241, LandingComponent_button_241_Template, 1, 2, "button", 92);
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(242, "button", 90);
-      \u0275\u0275listener("click", function LandingComponent_Template_button_click_242_listener() {
-        return ctx.nextSlide();
-      });
-      \u0275\u0275elementStart(243, "span", 2);
-      \u0275\u0275text(244, "chevron_right");
-      \u0275\u0275elementEnd()()()()()();
-      \u0275\u0275elementStart(245, "section", 93)(246, "div", 49)(247, "div", 94)(248, "div", 95)(249, "span", 2);
-      \u0275\u0275text(250, "rocket_launch");
-      \u0275\u0275elementEnd();
-      \u0275\u0275text(251, " Commencez maintenant \u2014 C'est gratuit ");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(252, "h2");
-      \u0275\u0275text(253, "Pr\xEAt \xE0 connecter votre famille ?");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(254, "p");
-      \u0275\u0275text(255, "Rejoignez des milliers de familles qui pr\xE9servent leur histoire avec Mam Buudu.");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(256, "div", 96)(257, "a", 97)(258, "span", 2);
-      \u0275\u0275text(259, "family_restroom");
-      \u0275\u0275elementEnd();
-      \u0275\u0275text(260, " Acc\xE9der \xE0 mon espace famille ");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(261, "a", 98)(262, "span", 2);
-      \u0275\u0275text(263, "admin_panel_settings");
-      \u0275\u0275elementEnd();
-      \u0275\u0275text(264, " Espace administrateur ");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(265, "div", 99);
-      \u0275\u0275element(266, "div", 100);
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(267, "footer", 101)(268, "div", 102)(269, "div", 103)(270, "span", 2);
-      \u0275\u0275text(271, "account_tree");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(272, "span");
-      \u0275\u0275text(273, "Mam Buudu");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(274, "span", 104);
-      \u0275\u0275text(275, "\xB7");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(276, "span", 105);
-      \u0275\u0275text(277, "par Sahelys");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(278, "div", 106)(279, "a", 107);
-      \u0275\u0275text(280, "Espace Famille");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(281, "a", 108);
-      \u0275\u0275text(282, "Administration");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(283, "a", 109);
-      \u0275\u0275text(284, "Cr\xE9er un espace");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(285, "div", 110);
-      \u0275\u0275text(286, "\xA9 2025 Sahelys. Tous droits r\xE9serv\xE9s.");
+      \u0275\u0275elementStart(253, "div", 115);
+      \u0275\u0275text(254, "\xA9 2026 Sahelys. Tous droits r\xE9serv\xE9s.");
       \u0275\u0275elementEnd()()();
     }
     if (rf & 2) {
-      \u0275\u0275advance(14);
+      \u0275\u0275advance(19);
       \u0275\u0275property("ngIf", !ctx.isLoggedIn);
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.isLoggedIn);
@@ -1416,34 +1351,30 @@ var LandingComponent = class _LandingComponent {
       \u0275\u0275property("ngIf", ctx.navOpen);
       \u0275\u0275advance();
       \u0275\u0275classProp("open", ctx.navOpen);
-      \u0275\u0275advance(24);
+      \u0275\u0275advance(29);
       \u0275\u0275property("ngIf", !ctx.isLoggedIn);
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.isLoggedIn);
-      \u0275\u0275advance(58);
+      \u0275\u0275advance(26);
       \u0275\u0275property("ngIf", !ctx.isLoggedIn);
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.isLoggedIn);
-      \u0275\u0275advance(6);
+      \u0275\u0275advance(43);
       \u0275\u0275textInterpolate1("", ctx.formatStat(ctx.stats.familles), "+");
-      \u0275\u0275advance(8);
+      \u0275\u0275advance(9);
       \u0275\u0275textInterpolate1("", ctx.formatStat(ctx.stats.membres), "+");
-      \u0275\u0275advance(8);
+      \u0275\u0275advance(9);
       \u0275\u0275textInterpolate1("", ctx.formatStat(ctx.stats.unions), "+");
-      \u0275\u0275advance(8);
+      \u0275\u0275advance(9);
       \u0275\u0275textInterpolate1("", ctx.formatStat(ctx.stats.stories), "+");
-      \u0275\u0275advance(78);
+      \u0275\u0275advance(40);
       \u0275\u0275property("ngForOf", ctx.features);
       \u0275\u0275advance(11);
       \u0275\u0275property("ngForOf", ctx.familles);
-      \u0275\u0275advance(11);
-      \u0275\u0275styleProp("transform", "translateX(-" + ctx.currentSlide * 100 + "%)");
-      \u0275\u0275advance();
-      \u0275\u0275property("ngForOf", ctx.testimonials);
-      \u0275\u0275advance(6);
-      \u0275\u0275property("ngForOf", ctx.testimonials);
+      \u0275\u0275advance(10);
+      \u0275\u0275property("ngIf", ctx.testimonials[ctx.currentSlide]);
     }
-  }, dependencies: [NgForOf, NgIf, RouterLink], styles: ['@charset "UTF-8";\n\n\n\n[_nghost-%COMP%] {\n  display: block;\n  font-family: "Poppins", sans-serif;\n  overflow-x: hidden;\n}\n.container[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 0 24px;\n}\n.landing-nav[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 200;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 40px;\n  height: 64px;\n  background: rgba(10, 31, 168, 0.88);\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\n}\n.nav-logo[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  color: #fff;\n  font-size: 18px;\n  font-weight: 800;\n  letter-spacing: -0.3px;\n  text-decoration: none;\n}\n.nav-logo[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 24px !important;\n  color: #93C5FD;\n}\n.nav-links[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 28px;\n}\n.nav-link[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.7);\n  font-size: 14px;\n  font-weight: 500;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.nav-link[_ngcontent-%COMP%]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.nav-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 10px;\n  align-items: center;\n}\n.btn-nav-famille[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 16px;\n  background: rgba(255, 255, 255, 0.12);\n  border: 1px solid rgba(255, 255, 255, 0.2);\n  border-radius: 30px;\n  color: #fff;\n  font-size: 13px;\n  font-weight: 500;\n  text-decoration: none;\n  transition: all 0.2s;\n}\n.btn-nav-famille[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.btn-nav-famille[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.22);\n  text-decoration: none;\n}\n.btn-nav-admin[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 18px;\n  background: #ffffff;\n  border-radius: 30px;\n  color: #1445F5;\n  font-size: 13px;\n  font-weight: 700;\n  text-decoration: none;\n  transition: all 0.2s;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n}\n.btn-nav-admin[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.btn-nav-admin[_ngcontent-%COMP%]:hover {\n  background: #F0F7FF;\n  text-decoration: none;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);\n}\n.btn-nav-logout[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 18px;\n  background: rgba(239, 68, 68, 0.15);\n  border: 1px solid rgba(239, 68, 68, 0.35);\n  border-radius: 30px;\n  color: #FCA5A5;\n  font-size: 13px;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.btn-nav-logout[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.btn-nav-logout[_ngcontent-%COMP%]:hover {\n  background: rgba(239, 68, 68, 0.28);\n  color: #fff;\n}\n.nav-hamburger[_ngcontent-%COMP%] {\n  display: none;\n  align-items: center;\n  justify-content: center;\n  width: 40px;\n  height: 40px;\n  background: rgba(255, 255, 255, 0.1);\n  border: 1px solid rgba(255, 255, 255, 0.2);\n  border-radius: 10px;\n  color: #fff;\n  cursor: pointer;\n  transition: background 0.2s;\n  flex-shrink: 0;\n}\n.nav-hamburger[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 22px !important;\n}\n.nav-hamburger[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.22);\n}\n.nav-mobile-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  z-index: 299;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.nav-mobile-sheet[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: #fff;\n  border-radius: 24px 24px 0 0;\n  z-index: 300;\n  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.15);\n  transform: translateY(100%);\n  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);\n}\n.nav-mobile-sheet.open[_ngcontent-%COMP%] {\n  transform: translateY(0);\n}\n.nms-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 20px 14px;\n  border-bottom: 1px solid #F0F4FF;\n}\n.nms-logo[_ngcontent-%COMP%] {\n  color: #0A1FA8 !important;\n}\n.nms-logo[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #1445F5 !important;\n}\n.nms-close[_ngcontent-%COMP%] {\n  width: 36px;\n  height: 36px;\n  border-radius: 10px;\n  background: #F8FAFC;\n  border: 1px solid #E2E8F0;\n  color: #6B7280;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.nms-close[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n}\n.nms-links[_ngcontent-%COMP%] {\n  padding: 10px 16px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.nms-link[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 14px;\n  border-radius: 12px;\n  color: #374151;\n  font-size: 15px;\n  font-weight: 500;\n  text-decoration: none;\n  transition: background 0.15s;\n}\n.nms-link[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n  color: #9CA3AF;\n}\n.nms-link[_ngcontent-%COMP%]:hover {\n  background: #F8FAFC;\n  text-decoration: none;\n}\n.nms-actions[_ngcontent-%COMP%] {\n  padding: 12px 16px 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  border-top: 1px solid #F0F4FF;\n}\n.nms-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 14px 18px;\n  border-radius: 14px;\n  font-size: 15px;\n  font-weight: 600;\n  text-decoration: none;\n  cursor: pointer;\n  border: none;\n  width: 100%;\n  text-align: left;\n  transition: all 0.2s;\n}\n.nms-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n}\n.nms-btn[_ngcontent-%COMP%]:hover {\n  text-decoration: none;\n  opacity: 0.9;\n}\n.nms-btn-famille[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(236, 72, 153, 0.1),\n      rgba(139, 92, 246, 0.1));\n  color: #7C3AED;\n  border: 1px solid rgba(139, 92, 246, 0.2) !important;\n}\n.nms-btn-admin[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #EFF6FF,\n      #E0E7FF);\n  color: #1445F5;\n  border: 1px solid rgba(20, 69, 245, 0.15) !important;\n}\n.nms-btn-logout[_ngcontent-%COMP%] {\n  background: #FFF5F5;\n  color: #EF4444;\n  border: 1px solid rgba(239, 68, 68, 0.2) !important;\n}\n.hero[_ngcontent-%COMP%] {\n  background: #ffffff;\n  overflow: hidden;\n}\n.hero-blue[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #0A1FA8 0%,\n      #1445F5 55%,\n      #2563EB 100%);\n  min-height: 420px;\n  padding-top: 64px;\n  position: relative;\n  overflow: hidden;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.hb-bg[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n}\n.blob[_ngcontent-%COMP%] {\n  position: absolute;\n  border-radius: 50%;\n  filter: blur(80px);\n  opacity: 0.2;\n}\n.blob-1[_ngcontent-%COMP%] {\n  width: 480px;\n  height: 480px;\n  background: #3B82F6;\n  top: -120px;\n  left: -80px;\n  animation: _ngcontent-%COMP%_blobFloat 8s ease-in-out infinite;\n}\n.blob-2[_ngcontent-%COMP%] {\n  width: 360px;\n  height: 360px;\n  background: #8B5CF6;\n  bottom: -80px;\n  right: 180px;\n  animation: _ngcontent-%COMP%_blobFloat 10s ease-in-out infinite reverse;\n}\n.blob-3[_ngcontent-%COMP%] {\n  width: 280px;\n  height: 280px;\n  background: #06B6D4;\n  top: 120px;\n  right: -60px;\n  animation: _ngcontent-%COMP%_blobFloat 7s ease-in-out infinite 2s;\n}\n.dots-grid[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.07) 1px,\n      transparent 1px);\n  background-size: 40px 40px;\n}\n.fn-group[_ngcontent-%COMP%] {\n  position: relative;\n  width: 100%;\n  max-width: 900px;\n  height: 300px;\n}\n.float-node[_ngcontent-%COMP%] {\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n}\n.fn-disc[_ngcontent-%COMP%] {\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.2);\n  border: 1.5px solid rgba(255, 255, 255, 0.25);\n}\n.fn-disc[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 28px !important;\n}\n.fn-disc-blue[_ngcontent-%COMP%] {\n  width: 80px;\n  height: 80px;\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #2563EB);\n  color: #fff;\n}\n.fn-disc-pink[_ngcontent-%COMP%] {\n  width: 68px;\n  height: 68px;\n  background:\n    linear-gradient(\n      135deg,\n      #F472B6,\n      #DB2777);\n  color: #fff;\n}\n.fn-disc-green[_ngcontent-%COMP%] {\n  width: 90px;\n  height: 90px;\n  background:\n    linear-gradient(\n      135deg,\n      #34D399,\n      #059669);\n  color: #fff;\n}\n.fn-disc-green[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 34px !important;\n}\n.fn-disc-violet[_ngcontent-%COMP%] {\n  width: 64px;\n  height: 64px;\n  background:\n    linear-gradient(\n      135deg,\n      #A78BFA,\n      #7C3AED);\n  color: #fff;\n}\n.fn-disc-violet[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 24px !important;\n}\n.fn-disc-cyan[_ngcontent-%COMP%] {\n  width: 74px;\n  height: 74px;\n  background:\n    linear-gradient(\n      135deg,\n      #22D3EE,\n      #0891B2);\n  color: #fff;\n}\n.fn-lbl[_ngcontent-%COMP%] {\n  font-size: 10px;\n  font-weight: 600;\n  color: rgba(255, 255, 255, 0.75);\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.fn-1[_ngcontent-%COMP%] {\n  top: 40px;\n  left: 12%;\n  animation: _ngcontent-%COMP%_float 5s ease-in-out infinite;\n}\n.fn-2[_ngcontent-%COMP%] {\n  top: 28px;\n  right: 16%;\n  animation: _ngcontent-%COMP%_float 6.5s ease-in-out infinite 1s;\n}\n.fn-3[_ngcontent-%COMP%] {\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  animation: _ngcontent-%COMP%_floatCenter 4.5s ease-in-out infinite 0.5s;\n}\n.fn-4[_ngcontent-%COMP%] {\n  bottom: 32px;\n  right: 22%;\n  animation: _ngcontent-%COMP%_float 7s ease-in-out infinite 2s;\n}\n.fn-5[_ngcontent-%COMP%] {\n  bottom: 24px;\n  left: 18%;\n  animation: _ngcontent-%COMP%_float 5.5s ease-in-out infinite 1.5s;\n}\n.hero-wave[_ngcontent-%COMP%] {\n  height: 90px;\n  background:\n    linear-gradient(\n      135deg,\n      #0A1FA8 0%,\n      #1445F5 55%,\n      #2563EB 100%);\n  position: relative;\n  overflow: hidden;\n}\n.hero-wave[_ngcontent-%COMP%]   svg[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n.hero-white[_ngcontent-%COMP%] {\n  background: #ffffff;\n  padding: 64px 24px 80px;\n  text-align: center;\n  animation: _ngcontent-%COMP%_fadeInUp 0.8s ease both;\n}\n.hero-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 6px 16px;\n  background: #EFF6FF;\n  border: 1px solid #BFDBFE;\n  border-radius: 30px;\n  color: #1445F5;\n  font-size: 12px;\n  font-weight: 600;\n  margin-bottom: 24px;\n}\n.hero-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.hero-title[_ngcontent-%COMP%] {\n  font-size: 52px;\n  font-weight: 800;\n  line-height: 1.12;\n  color: #0F172A;\n  margin-bottom: 20px;\n  letter-spacing: -1.5px;\n}\n.gradient-text[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      90deg,\n      #1445F5,\n      #8B5CF6,\n      #EC4899);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-clip: text;\n}\n.hero-subtitle[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #6B7280;\n  line-height: 1.7;\n  margin-bottom: 40px;\n  max-width: 560px;\n  margin-left: auto;\n  margin-right: auto;\n}\n.hero-entries[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  max-width: 480px;\n  margin: 0 auto;\n}\n.entry-card[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 16px 20px;\n  border-radius: 16px;\n  text-decoration: none;\n  transition: all 0.25s;\n  cursor: pointer;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);\n}\n.entry-famille[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(236, 72, 153, 0.07) 0%,\n      rgba(139, 92, 246, 0.07) 100%);\n  border: 1.5px solid rgba(236, 72, 153, 0.2);\n}\n.entry-famille[_ngcontent-%COMP%]:hover {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(236, 72, 153, 0.14) 0%,\n      rgba(139, 92, 246, 0.14) 100%);\n  border-color: rgba(236, 72, 153, 0.4);\n  transform: translateX(6px);\n  text-decoration: none;\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.12);\n}\n.entry-admin[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(20, 69, 245, 0.06) 0%,\n      rgba(6, 182, 212, 0.06) 100%);\n  border: 1.5px solid rgba(20, 69, 245, 0.15);\n}\n.entry-admin[_ngcontent-%COMP%]:hover {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(20, 69, 245, 0.12) 0%,\n      rgba(6, 182, 212, 0.12) 100%);\n  border-color: rgba(20, 69, 245, 0.3);\n  transform: translateX(6px);\n  text-decoration: none;\n  box-shadow: 0 4px 16px rgba(20, 69, 245, 0.1);\n}\n.entry-logout[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(239, 68, 68, 0.07) 0%,\n      rgba(220, 38, 38, 0.05) 100%);\n  border: 1.5px solid rgba(239, 68, 68, 0.2);\n  width: 100%;\n  text-align: left;\n}\n.entry-logout[_ngcontent-%COMP%]:hover {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(239, 68, 68, 0.14) 0%,\n      rgba(220, 38, 38, 0.1) 100%);\n  border-color: rgba(239, 68, 68, 0.4);\n  transform: translateX(6px);\n}\n.entry-icon-wrap[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.entry-icon-wrap[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 24px !important;\n}\n.famille-icon[_ngcontent-%COMP%] {\n  background: rgba(236, 72, 153, 0.12);\n  color: #EC4899;\n}\n.admin-icon[_ngcontent-%COMP%] {\n  background: rgba(20, 69, 245, 0.12);\n  color: #1445F5;\n}\n.logout-icon[_ngcontent-%COMP%] {\n  background: rgba(239, 68, 68, 0.12);\n  color: #EF4444;\n}\n.entry-info[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.entry-info[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n}\n.entry-info[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #6B7280;\n}\n.entry-arrow[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n  color: #CBD5E1;\n}\n.stats-section[_ngcontent-%COMP%] {\n  padding: 60px 0;\n  background: #ffffff;\n  border-top: 1px solid #E2E8F0;\n  border-bottom: 1px solid #E2E8F0;\n}\n.stats-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 24px;\n}\n.stat-item[_ngcontent-%COMP%] {\n  position: relative;\n  text-align: center;\n  padding: 32px 20px;\n  border-radius: 16px;\n  background: #F8FAFC;\n  border: 1px solid #E2E8F0;\n  overflow: hidden;\n  transition: all 0.2s;\n}\n.stat-item[_ngcontent-%COMP%]:hover {\n  border-color: #BFDBFE;\n  box-shadow: 0 4px 24px rgba(20, 69, 245, 0.08);\n  transform: translateY(-2px);\n}\n.stat-number[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 42px;\n  font-weight: 800;\n  color: #0F172A;\n  line-height: 1;\n  margin-bottom: 8px;\n  letter-spacing: -1px;\n}\n.stat-label[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 12px;\n  font-weight: 600;\n  color: #6B7280;\n  text-transform: uppercase;\n  letter-spacing: 0.07em;\n}\n.stat-icon-bg[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: -8px;\n  right: -8px;\n  opacity: 0.05;\n}\n.stat-icon-bg[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 72px !important;\n  color: #1445F5;\n}\n.solution-section[_ngcontent-%COMP%] {\n  padding: 100px 0;\n  background:\n    linear-gradient(\n      135deg,\n      #0A1FA8 0%,\n      #1445F5 55%,\n      #2563EB 100%);\n  position: relative;\n  overflow: hidden;\n  text-align: center;\n}\n.solution-section[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.05) 1px,\n      transparent 1px);\n  background-size: 40px 40px;\n  pointer-events: none;\n}\n.sol-floats[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  gap: 12px;\n  margin-bottom: 8px;\n  position: relative;\n  z-index: 2;\n}\n.sf-node[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.sf-main[_ngcontent-%COMP%]   .sf-disc[_ngcontent-%COMP%] {\n  width: 80px !important;\n  height: 80px !important;\n}\n.sf-main[_ngcontent-%COMP%]   .sf-disc[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 32px !important;\n}\n.sf-disc[_ngcontent-%COMP%] {\n  width: 64px;\n  height: 64px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);\n}\n.sf-disc[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 26px !important;\n}\n.sf-glass-blue[_ngcontent-%COMP%] {\n  background: rgba(96, 165, 250, 0.7);\n  -webkit-backdrop-filter: blur(8px);\n  backdrop-filter: blur(8px);\n  border: 1.5px solid rgba(255, 255, 255, 0.3);\n  color: #fff;\n}\n.sf-white[_ngcontent-%COMP%] {\n  background: #ffffff;\n  color: #1445F5;\n  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.15);\n}\n.sf-glass-dark[_ngcontent-%COMP%] {\n  background: rgba(15, 23, 42, 0.8);\n  -webkit-backdrop-filter: blur(8px);\n  backdrop-filter: blur(8px);\n  border: 1.5px solid rgba(255, 255, 255, 0.12);\n  color: rgba(255, 255, 255, 0.85);\n}\n.sol-arrow-indicator[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 12px;\n  font-weight: 500;\n  margin-bottom: 40px;\n  position: relative;\n  z-index: 2;\n}\n.sol-arrow-indicator[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.sol-arrow-label[_ngcontent-%COMP%] {\n  padding: 3px 10px;\n  background: rgba(255, 255, 255, 0.12);\n  border-radius: 12px;\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.6px;\n}\n.sol-cards[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 20px;\n  max-width: 720px;\n  margin: 40px auto 0;\n  position: relative;\n  z-index: 2;\n}\n.sol-card[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.1);\n  -webkit-backdrop-filter: blur(8px);\n  backdrop-filter: blur(8px);\n  border: 1px solid rgba(255, 255, 255, 0.15);\n  border-radius: 20px;\n  padding: 28px 24px;\n  text-align: left;\n  transition: all 0.2s;\n}\n.sol-card[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.15);\n  transform: translateY(-4px);\n  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);\n}\n.sol-card[_ngcontent-%COMP%]   .sc-icon[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 12px;\n  background: rgba(255, 255, 255, 0.15);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 16px;\n}\n.sol-card[_ngcontent-%COMP%]   .sc-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 22px !important;\n  color: #fff;\n}\n.sol-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  color: #fff;\n  margin-bottom: 10px;\n}\n.sol-card[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.65);\n  line-height: 1.65;\n}\n.section-header-landing[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-bottom: 60px;\n  position: relative;\n  z-index: 2;\n}\n.section-header-landing[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 36px;\n  font-weight: 800;\n  color: #0F172A;\n  margin: 12px 0 16px;\n  letter-spacing: -0.5px;\n  line-height: 1.2;\n}\n.section-header-landing[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #6B7280;\n  max-width: 520px;\n  margin: 0 auto;\n  line-height: 1.7;\n}\n.section-header-landing.light[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  color: #fff;\n}\n.section-header-landing.light[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.65);\n}\n.section-tag[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  padding: 4px 14px;\n  background: #EFF6FF;\n  color: #1445F5;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.07em;\n}\n.section-tag.light-tag[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.15);\n  color: rgba(255, 255, 255, 0.85);\n}\n.features-section[_ngcontent-%COMP%] {\n  padding: 100px 0;\n  background: #ffffff;\n}\n.features-layout[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 80px;\n  align-items: flex-start;\n}\n.welcome-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 5px 10px 5px 8px;\n  background: #F8FAFC;\n  border: 1px solid #E2E8F0;\n  border-radius: 20px;\n  font-size: 12px;\n  font-weight: 500;\n  color: #475569;\n  margin-bottom: 20px;\n}\n.welcome-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n  color: #1445F5;\n}\n.welcome-badge[_ngcontent-%COMP%]   .wb-chevron[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n  color: #3B82F6;\n}\n.fl-left[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 40px;\n  font-weight: 800;\n  color: #0F172A;\n  letter-spacing: -0.5px;\n  line-height: 1.15;\n  margin-bottom: 16px;\n}\n.fl-left[_ngcontent-%COMP%]   .fl-sub[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #6B7280;\n  line-height: 1.7;\n  margin-bottom: 48px;\n}\n.fl-evolving[_ngcontent-%COMP%] {\n  padding: 28px 0 0;\n  border-top: 1px solid #E2E8F0;\n}\n.fl-evolving[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: #0F172A;\n  margin-bottom: 12px;\n  line-height: 1.3;\n}\n.fl-evolving[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #6B7280;\n  line-height: 1.75;\n}\n.fl-right[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  padding-top: 52px;\n}\n.fl-mission[_ngcontent-%COMP%] {\n  background: #F8FAFC;\n  border: 1px solid #E2E8F0;\n  border-radius: 16px;\n  padding: 20px 22px;\n}\n.fl-mission[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  font-weight: 500;\n  color: #374151;\n  line-height: 1.75;\n}\n.fl-feat-icons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n.ffi-card[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 52px;\n  height: 52px;\n  border-radius: 14px;\n  background: #ffffff;\n  border: 1px solid #E2E8F0;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);\n  transition: all 0.2s;\n  cursor: default;\n}\n.ffi-card[_ngcontent-%COMP%]:nth-child(1) {\n  align-self: flex-end;\n}\n.ffi-card[_ngcontent-%COMP%]:nth-child(2) {\n  align-self: flex-end;\n  margin-right: 60px;\n}\n.ffi-card[_ngcontent-%COMP%]:nth-child(3) {\n  align-self: flex-end;\n  margin-right: 20px;\n}\n.ffi-card[_ngcontent-%COMP%]:nth-child(4) {\n  align-self: flex-end;\n  margin-right: 80px;\n}\n.ffi-card[_ngcontent-%COMP%]:nth-child(5) {\n  align-self: flex-end;\n  margin-right: 40px;\n}\n.ffi-card[_ngcontent-%COMP%]:nth-child(6) {\n  align-self: flex-end;\n}\n.ffi-card[_ngcontent-%COMP%]:hover {\n  transform: scale(1.08) translateY(-2px);\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);\n}\n.ffi-icon[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.ffi-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n}\n.showcase-section[_ngcontent-%COMP%] {\n  padding: 100px 0;\n  background: #F8FAFC;\n  border-top: 1px solid #E2E8F0;\n}\n.familles-carousel[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n}\n.famille-card[_ngcontent-%COMP%] {\n  border-radius: 20px;\n  border: 1px solid #E2E8F0;\n  overflow: hidden;\n  background: #ffffff;\n  transition: all 0.25s;\n}\n.famille-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);\n  transform: translateY(-4px);\n  border-color: #BFDBFE;\n}\n.fc-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 20px;\n}\n.fc-avatar[_ngcontent-%COMP%] {\n  width: 52px;\n  height: 52px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 22px;\n  font-weight: 800;\n  flex-shrink: 0;\n}\n.fc-identity[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 3px;\n}\n.fc-origine[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 3px;\n  font-size: 12px;\n  color: #6B7280;\n}\n.fc-origine[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.fc-stats[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  padding: 16px 20px;\n  border-top: 1px solid #E2E8F0;\n}\n.fc-stat[_ngcontent-%COMP%] {\n  flex: 1;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.fc-stat-val[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 800;\n  line-height: 1;\n}\n.fc-stat-label[_ngcontent-%COMP%] {\n  font-size: 10px;\n  font-weight: 500;\n  color: #9CA3AF;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.fc-divider[_ngcontent-%COMP%] {\n  width: 1px;\n  height: 32px;\n  background: #E2E8F0;\n}\n.testimonials-section[_ngcontent-%COMP%] {\n  padding: 100px 0;\n  background:\n    linear-gradient(\n      135deg,\n      #0A1FA8 0%,\n      #1445F5 60%,\n      #1E40AF 100%);\n  overflow: hidden;\n}\n.testimonial-carousel[_ngcontent-%COMP%] {\n  overflow: hidden;\n  border-radius: 24px;\n}\n.testimonial-track[_ngcontent-%COMP%] {\n  display: flex;\n  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);\n}\n.testimonial-slide[_ngcontent-%COMP%] {\n  min-width: 100%;\n  padding: 0 20px;\n}\n.testimonial-card[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.07);\n  border: 1px solid rgba(255, 255, 255, 0.12);\n  -webkit-backdrop-filter: blur(10px);\n  backdrop-filter: blur(10px);\n  border-radius: 24px;\n  padding: 40px 48px;\n  max-width: 800px;\n  margin: 0 auto;\n}\n.testi-quote[_ngcontent-%COMP%] {\n  position: relative;\n  margin-bottom: 28px;\n}\n.testi-quote[_ngcontent-%COMP%]   .quote-icon[_ngcontent-%COMP%] {\n  font-size: 48px !important;\n  color: rgba(147, 197, 253, 0.35);\n  position: absolute;\n  top: -12px;\n  left: -8px;\n}\n.testi-quote[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 18px;\n  color: rgba(255, 255, 255, 0.85);\n  line-height: 1.8;\n  font-style: italic;\n  padding-left: 32px;\n}\n.testi-author[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n}\n.testi-avatar[_ngcontent-%COMP%] {\n  width: 52px;\n  height: 52px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 16px;\n  font-weight: 700;\n  flex-shrink: 0;\n}\n.testi-author[_ngcontent-%COMP%]   div[_ngcontent-%COMP%]:last-child {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.testi-author[_ngcontent-%COMP%]   div[_ngcontent-%COMP%]:last-child   strong[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #fff;\n}\n.testi-author[_ngcontent-%COMP%]   div[_ngcontent-%COMP%]:last-child   span[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.carousel-controls[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  margin-top: 32px;\n}\n.carousel-btn[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.1);\n  border: 1px solid rgba(255, 255, 255, 0.15);\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.2s;\n}\n.carousel-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.2);\n}\n.carousel-dots[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n}\n.dot[_ngcontent-%COMP%] {\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.3);\n  border: none;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.dot.active[_ngcontent-%COMP%] {\n  background: #fff;\n  width: 24px;\n  border-radius: 4px;\n}\n.cta-section[_ngcontent-%COMP%] {\n  padding: 100px 0;\n  background:\n    linear-gradient(\n      135deg,\n      #EFF6FF 0%,\n      #F5F3FF 100%);\n  overflow: hidden;\n  position: relative;\n}\n.cta-content[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 2;\n  text-align: center;\n}\n.cta-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 6px 16px;\n  background: #EFF6FF;\n  border: 1px solid #BFDBFE;\n  border-radius: 30px;\n  font-size: 12px;\n  font-weight: 600;\n  color: #1445F5;\n  margin-bottom: 20px;\n}\n.cta-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.cta-content[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 42px;\n  font-weight: 800;\n  color: #0F172A;\n  margin-bottom: 14px;\n  letter-spacing: -0.5px;\n}\n.cta-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #6B7280;\n  margin-bottom: 40px;\n}\n.cta-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.cta-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 10px;\n  padding: 14px 28px;\n  border-radius: 16px;\n  font-size: 15px;\n  font-weight: 600;\n  text-decoration: none;\n  transition: all 0.25s;\n}\n.cta-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n}\n.cta-btn[_ngcontent-%COMP%]:hover {\n  text-decoration: none;\n  transform: translateY(-2px);\n}\n.cta-btn-famille[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #EC4899,\n      #8B5CF6);\n  color: #fff;\n  box-shadow: 0 4px 20px rgba(236, 72, 153, 0.35);\n}\n.cta-btn-famille[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.45);\n}\n.cta-btn-admin[_ngcontent-%COMP%] {\n  background: #ffffff;\n  color: #0F172A;\n  border: 1.5px solid #E5E7EB;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);\n}\n.cta-btn-admin[_ngcontent-%COMP%]:hover {\n  border-color: #BFDBFE;\n  color: #1445F5;\n}\n.cta-blob[_ngcontent-%COMP%] {\n  position: absolute;\n  width: 600px;\n  height: 600px;\n  border-radius: 50%;\n  background:\n    linear-gradient(\n      135deg,\n      #BFDBFE,\n      #DDD6FE);\n  opacity: 0.3;\n  right: -200px;\n  top: -200px;\n  filter: blur(80px);\n  pointer-events: none;\n}\n.landing-footer[_ngcontent-%COMP%] {\n  background: #0A1FA8;\n  padding: 28px 0;\n}\n.footer-inner[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 16px;\n}\n.footer-brand[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  color: rgba(255, 255, 255, 0.85);\n  font-weight: 600;\n  font-size: 15px;\n}\n.footer-brand[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n  color: #93C5FD;\n}\n.footer-sep[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.3);\n}\n.footer-by[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.4);\n  font-size: 12px;\n  font-weight: 400;\n}\n.footer-links[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 24px;\n}\n.footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 13px;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  color: rgba(255, 255, 255, 0.9);\n  text-decoration: none;\n}\n.footer-copy[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.3);\n  font-size: 12px;\n}\n@keyframes _ngcontent-%COMP%_fadeInUp {\n  from {\n    opacity: 0;\n    transform: translateY(24px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes _ngcontent-%COMP%_blobFloat {\n  0%, 100% {\n    transform: translate(0, 0) scale(1);\n  }\n  33% {\n    transform: translate(20px, -30px) scale(1.05);\n  }\n  66% {\n    transform: translate(-15px, 15px) scale(0.95);\n  }\n}\n@keyframes _ngcontent-%COMP%_float {\n  0%, 100% {\n    transform: translateY(0);\n  }\n  50% {\n    transform: translateY(-12px);\n  }\n}\n@keyframes _ngcontent-%COMP%_floatCenter {\n  0%, 100% {\n    transform: translate(-50%, -50%) translateY(0);\n  }\n  50% {\n    transform: translate(-50%, -50%) translateY(-12px);\n  }\n}\n@media (max-width: 1024px) {\n  .features-layout[_ngcontent-%COMP%] {\n    gap: 48px;\n  }\n  .fl-left[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n    font-size: 34px;\n  }\n}\n@media (max-width: 900px) {\n  .features-layout[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n    gap: 40px;\n  }\n  .fl-right[_ngcontent-%COMP%] {\n    padding-top: 0;\n    flex-direction: row;\n    flex-wrap: wrap;\n  }\n  .fl-feat-icons[_ngcontent-%COMP%] {\n    flex-direction: row;\n    flex-wrap: wrap;\n  }\n  .ffi-card[_ngcontent-%COMP%] {\n    align-self: auto !important;\n    margin-right: 0 !important;\n  }\n  .familles-carousel[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  .stats-grid[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  .nav-links[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .hero-title[_ngcontent-%COMP%] {\n    font-size: 40px;\n  }\n  .sol-cards[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n    max-width: 400px;\n  }\n  .fn-1[_ngcontent-%COMP%], \n   .fn-2[_ngcontent-%COMP%], \n   .fn-4[_ngcontent-%COMP%], \n   .fn-5[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .fn-3[_ngcontent-%COMP%] {\n    top: 50%;\n    left: 50%;\n  }\n}\n@media (max-width: 640px) {\n  .hero-blue[_ngcontent-%COMP%] {\n    min-height: 280px;\n  }\n  .hero-white[_ngcontent-%COMP%] {\n    padding: 48px 20px 60px;\n  }\n  .hero-title[_ngcontent-%COMP%] {\n    font-size: 30px;\n    letter-spacing: -0.5px;\n  }\n  .features-section[_ngcontent-%COMP%], \n   .showcase-section[_ngcontent-%COMP%], \n   .testimonials-section[_ngcontent-%COMP%], \n   .cta-section[_ngcontent-%COMP%], \n   .solution-section[_ngcontent-%COMP%] {\n    padding: 64px 0;\n  }\n  .familles-carousel[_ngcontent-%COMP%], \n   .stats-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .landing-nav[_ngcontent-%COMP%] {\n    padding: 0 20px;\n  }\n  .btn-nav-admin[_ngcontent-%COMP%], \n   .btn-nav-famille[_ngcontent-%COMP%], \n   .btn-nav-logout[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .nav-hamburger[_ngcontent-%COMP%] {\n    display: flex;\n  }\n  .footer-inner[_ngcontent-%COMP%] {\n    flex-direction: column;\n    text-align: center;\n  }\n  .cta-content[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n    font-size: 28px;\n  }\n  .section-header-landing[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n    font-size: 26px;\n  }\n  .fl-left[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n    font-size: 28px;\n  }\n  .sol-floats[_ngcontent-%COMP%]   .sf-node[_ngcontent-%COMP%]:not(.sf-main) {\n    display: none;\n  }\n  .testimonial-card[_ngcontent-%COMP%] {\n    padding: 28px 24px;\n  }\n  .testi-quote[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n    font-size: 15px;\n  }\n}\n/*# sourceMappingURL=landing.component.css.map */'] });
+  }, dependencies: [NgForOf, NgIf, RouterLink], styles: ['\n\n[_nghost-%COMP%] {\n  display: block;\n  font-family:\n    "Poppins",\n    -apple-system,\n    BlinkMacSystemFont,\n    "Segoe UI",\n    sans-serif;\n  overflow-x: hidden;\n  color: #0F172A;\n  background: #ffffff;\n}\n*[_ngcontent-%COMP%] {\n  box-sizing: border-box;\n}\na[_ngcontent-%COMP%] {\n  color: #1445F5;\n  text-decoration: none;\n}\nh1[_ngcontent-%COMP%], \nh2[_ngcontent-%COMP%], \nh3[_ngcontent-%COMP%] {\n  text-wrap: balance;\n  margin: 0;\n}\n.container[_ngcontent-%COMP%] {\n  max-width: 1160px;\n  margin: 0 auto;\n  padding: 0 24px;\n}\n@keyframes _ngcontent-%COMP%_fadeUp {\n  from {\n    opacity: 0;\n    transform: translateY(16px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes _ngcontent-%COMP%_drawLine {\n  to {\n    stroke-dashoffset: 0;\n  }\n}\n@keyframes _ngcontent-%COMP%_leafPop {\n  from {\n    opacity: 0;\n    transform: scale(0);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n@keyframes _ngcontent-%COMP%_leafFloat {\n  0%, 100% {\n    transform: translateY(0) scale(1);\n  }\n  50% {\n    transform: translateY(-5px) scale(1);\n  }\n}\n@keyframes _ngcontent-%COMP%_sparkRise {\n  0% {\n    opacity: 0;\n    transform: translateY(0);\n  }\n  15% {\n    opacity: 0.9;\n  }\n  85% {\n    opacity: 0.5;\n  }\n  100% {\n    opacity: 0;\n    transform: translateY(-90px);\n  }\n}\n@keyframes _ngcontent-%COMP%_ctaGlow {\n  0%, 100% {\n    box-shadow: 0 0 0 0 rgba(129, 199, 132, 0.4);\n  }\n  50% {\n    box-shadow: 0 0 0 8px rgba(129, 199, 132, 0);\n  }\n}\n@keyframes _ngcontent-%COMP%_statPop {\n  from {\n    opacity: 0;\n    transform: translateY(8px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  [_nghost-%COMP%]   *[_ngcontent-%COMP%] {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n.fade-up-1[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_fadeUp 0.6s ease 0.05s both;\n}\n.fade-up-2[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_fadeUp 0.6s ease 0.18s both;\n}\n.fade-up-3[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_fadeUp 0.6s ease 0.3s both;\n}\n.fade-up-4[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_fadeUp 0.6s ease 0.42s both;\n}\n.landing-nav[_ngcontent-%COMP%] {\n  height: 76px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 40px;\n  border-bottom: 1px solid rgba(15, 23, 42, 0.06);\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 60;\n  background: rgba(255, 255, 255, 0.72);\n  backdrop-filter: blur(14px) saturate(160%);\n  -webkit-backdrop-filter: blur(14px) saturate(160%);\n  transition: background 0.2s ease, box-shadow 0.2s ease;\n}\n.nav-logo[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  font-size: 17px;\n  font-weight: 800;\n  color: #0F172A;\n}\n.nav-links[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 36px;\n}\n.nav-link[_ngcontent-%COMP%] {\n  font-size: 14px;\n  font-weight: 500;\n  color: #4B5563;\n}\n.nav-link[_ngcontent-%COMP%]:hover {\n  color: #0F172A;\n}\n.nav-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.btn-nav-famille[_ngcontent-%COMP%], \n.btn-nav-admin[_ngcontent-%COMP%], \n.btn-nav-logout[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  padding: 10px 18px;\n  border-radius: 11px;\n  font-size: 13.5px;\n  font-weight: 600;\n  cursor: pointer;\n  border: none;\n  white-space: nowrap;\n}\n.btn-nav-famille[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%], \n.btn-nav-admin[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%], \n.btn-nav-logout[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.btn-nav-famille[_ngcontent-%COMP%] {\n  background: #0F2A1E;\n  color: #ffffff;\n}\n.btn-nav-famille[_ngcontent-%COMP%]:hover {\n  background: #123B27;\n}\n.btn-nav-admin[_ngcontent-%COMP%] {\n  background: #F0FDF4;\n  color: #15803D;\n}\n.btn-nav-admin[_ngcontent-%COMP%]:hover {\n  background: #DCFCE7;\n}\n.btn-nav-logout[_ngcontent-%COMP%] {\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.btn-nav-logout[_ngcontent-%COMP%]:hover {\n  background: #FEE2E2;\n}\n.nav-hamburger[_ngcontent-%COMP%] {\n  display: none;\n  width: 40px;\n  height: 40px;\n  border-radius: 10px;\n  border: none;\n  background: #F3F4F6;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  color: #0F172A;\n}\n.nav-mobile-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.4);\n  z-index: 40;\n}\n.nav-mobile-sheet[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  height: 100%;\n  width: 300px;\n  max-width: 84vw;\n  background: #ffffff;\n  z-index: 50;\n  transform: translateX(100%);\n  transition: transform 0.25s ease;\n  display: flex;\n  flex-direction: column;\n  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.12);\n}\n.nav-mobile-sheet.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.nms-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 20px;\n  border-bottom: 1px solid #EEF1F5;\n}\n.nms-logo[_ngcontent-%COMP%] {\n  font-size: 15px;\n}\n.nms-close[_ngcontent-%COMP%] {\n  width: 34px;\n  height: 34px;\n  border-radius: 9px;\n  border: none;\n  background: #F3F4F6;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n}\n.nms-links[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  padding: 12px 10px;\n  gap: 2px;\n}\n.nms-link[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 12px;\n  border-radius: 10px;\n  font-size: 14px;\n  font-weight: 500;\n  color: #374151;\n}\n.nms-link[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 19px !important;\n  color: #9CA3AF;\n}\n.nms-link[_ngcontent-%COMP%]:hover {\n  background: #F9FAFB;\n}\n.nms-actions[_ngcontent-%COMP%] {\n  margin-top: auto;\n  padding: 16px;\n  border-top: 1px solid #EEF1F5;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n.nms-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 13px 16px;\n  border-radius: 12px;\n  font-size: 14px;\n  font-weight: 600;\n  border: none;\n  cursor: pointer;\n  width: 100%;\n}\n.nms-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 19px !important;\n}\n.nms-btn-famille[_ngcontent-%COMP%] {\n  background: #0F2A1E;\n  color: #ffffff;\n}\n.nms-btn-admin[_ngcontent-%COMP%] {\n  background: #F0FDF4;\n  color: #15803D;\n}\n.nms-btn-logout[_ngcontent-%COMP%] {\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.hero[_ngcontent-%COMP%] {\n  position: relative;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      160deg,\n      #0A1020 0%,\n      #0E2417 55%,\n      #123B27 100%);\n  padding: 76px 40px 0;\n}\n.hero-sparks[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  overflow: hidden;\n  pointer-events: none;\n}\n.spark[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 60px;\n  width: 5px;\n  height: 5px;\n  border-radius: 50%;\n  background: #A6E3AF;\n  box-shadow: 0 0 8px 2px rgba(166, 227, 175, 0.7);\n  animation: _ngcontent-%COMP%_sparkRise 5.5s ease-in infinite;\n}\n.hero-inner[_ngcontent-%COMP%] {\n  position: relative;\n  max-width: 1160px;\n  margin: 0 auto;\n  display: grid;\n  grid-template-columns: 1fr 480px;\n  gap: 40px;\n  align-items: center;\n  padding-bottom: 70px;\n}\n.hero-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 16px;\n  border-radius: 999px;\n  background: rgba(255, 255, 255, 0.08);\n  border: 1px solid rgba(255, 255, 255, 0.16);\n  color: #C7F0D3;\n  font-size: 12.5px;\n  font-weight: 600;\n  margin-bottom: 22px;\n}\n.hero-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n  color: #81C784;\n}\n.hero-title[_ngcontent-%COMP%] {\n  font-size: 46px;\n  font-weight: 800;\n  line-height: 1.14;\n  letter-spacing: -1px;\n  color: #ffffff;\n}\n.hero-title[_ngcontent-%COMP%]   .accent[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      90deg,\n      #81C784,\n      #D4E88C);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n.hero-sub[_ngcontent-%COMP%] {\n  margin: 20px 0 0;\n  font-size: 16px;\n  line-height: 1.6;\n  color: rgba(255, 255, 255, 0.62);\n  max-width: 46ch;\n}\n.hero-entries[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  margin-top: 32px;\n  max-width: 420px;\n}\n.entry-card[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 15px 18px;\n  border-radius: 16px;\n  background: rgba(255, 255, 255, 0.06);\n  border: 1px solid rgba(255, 255, 255, 0.14);\n  cursor: pointer;\n  transition: transform 0.15s, background 0.15s;\n  text-align: left;\n  width: 100%;\n  font-family: inherit;\n}\n.entry-card[_ngcontent-%COMP%]:hover {\n  transform: translateX(3px);\n  background: rgba(255, 255, 255, 0.1);\n}\n.entry-icon[_ngcontent-%COMP%] {\n  width: 42px;\n  height: 42px;\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.entry-icon.famille[_ngcontent-%COMP%] {\n  background: #81C784;\n  color: #0B2914;\n}\n.entry-icon.admin[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.12);\n  color: #ffffff;\n}\n.entry-info[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n}\n.entry-info[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: #ffffff;\n  font-size: 14px;\n  font-weight: 700;\n}\n.entry-info[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 12px;\n}\n.entry-card[_ngcontent-%COMP%]   .arrow[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.4);\n  font-size: 18px !important;\n}\n.hero-tree-wrap[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.tree-line[_ngcontent-%COMP%] {\n  stroke-dasharray: 400;\n  stroke-dashoffset: 400;\n  animation: _ngcontent-%COMP%_drawLine 0.9s ease forwards;\n}\n.tree-line.g-root[_ngcontent-%COMP%] {\n  animation-delay: 0s;\n}\n.tree-line.g-trunk[_ngcontent-%COMP%] {\n  animation-delay: 0.15s;\n}\n.tree-line.g-1[_ngcontent-%COMP%] {\n  animation-delay: 0.55s;\n}\n.tree-line.g-2[_ngcontent-%COMP%] {\n  animation-delay: 0.95s;\n}\n.leaf[_ngcontent-%COMP%] {\n  transform-box: fill-box;\n  transform-origin: center;\n  opacity: 0;\n  animation: _ngcontent-%COMP%_leafPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both, _ngcontent-%COMP%_leafFloat 3.2s ease-in-out infinite;\n}\n.stats-section[_ngcontent-%COMP%] {\n  background: #0F2A1E;\n  padding: 26px 0 30px;\n}\n.stats-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n}\n.stat-box[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 4px 8px;\n}\n.stat-icon[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border-radius: 11px;\n  background: rgba(255, 255, 255, 0.08);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.stat-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #81C784;\n  font-size: 19px !important;\n}\n.stat-number[_ngcontent-%COMP%] {\n  font-size: 22px;\n  font-weight: 800;\n  color: #ffffff;\n  line-height: 1.1;\n  animation: _ngcontent-%COMP%_statPop 0.5s ease both;\n  font-variant-numeric: tabular-nums;\n}\n.stat-box[_ngcontent-%COMP%]:nth-child(1)   .stat-number[_ngcontent-%COMP%] {\n  animation-delay: 0.55s;\n}\n.stat-box[_ngcontent-%COMP%]:nth-child(2)   .stat-number[_ngcontent-%COMP%] {\n  animation-delay: 0.65s;\n}\n.stat-box[_ngcontent-%COMP%]:nth-child(3)   .stat-number[_ngcontent-%COMP%] {\n  animation-delay: 0.75s;\n}\n.stat-box[_ngcontent-%COMP%]:nth-child(4)   .stat-number[_ngcontent-%COMP%] {\n  animation-delay: 0.85s;\n}\n.stat-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.sec-tag[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  padding: 6px 14px;\n  border-radius: 999px;\n  background: #F0FDF4;\n  color: #15803D;\n  font-size: 11.5px;\n  font-weight: 700;\n  letter-spacing: 0.03em;\n  text-transform: uppercase;\n}\n.sec-tag-dark[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.1);\n  color: #81C784;\n}\n.sec-head[_ngcontent-%COMP%] {\n  text-align: center;\n  max-width: 620px;\n  margin: 0 auto 48px;\n}\n.sec-head[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 32px;\n  font-weight: 800;\n  letter-spacing: -0.6px;\n  margin: 14px 0 12px;\n  color: #0F172A;\n}\n.sec-head[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 15px;\n  color: #6B7280;\n  line-height: 1.6;\n  margin: 0;\n}\n.solution[_ngcontent-%COMP%] {\n  padding: 100px 0;\n  background: #ffffff;\n}\n.sol-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 20px;\n  margin-top: 44px;\n}\n.sol-card[_ngcontent-%COMP%] {\n  padding: 34px;\n  border-radius: 22px;\n  border: 1px solid #EEF1F5;\n  background: #FAFBFC;\n  transition:\n    transform 0.2s ease,\n    box-shadow 0.2s ease,\n    border-color 0.2s ease;\n}\n.sol-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 14px 30px rgba(15, 42, 30, 0.08);\n  border-color: #DCE5DF;\n}\n.sol-icon[_ngcontent-%COMP%] {\n  width: 52px;\n  height: 52px;\n  border-radius: 15px;\n  background: #0F2A1E;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 20px;\n}\n.sol-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #81C784;\n  font-size: 24px !important;\n}\n.sol-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 700;\n  margin-bottom: 8px;\n}\n.sol-card[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #6B7280;\n  line-height: 1.65;\n  margin: 0;\n}\n.features[_ngcontent-%COMP%] {\n  padding: 100px 0;\n  background: #FAFBFC;\n}\n.feat-layout[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 380px 1fr;\n  gap: 60px;\n  align-items: start;\n}\n.feat-left[_ngcontent-%COMP%]   .sec-tag[_ngcontent-%COMP%] {\n  margin-bottom: 18px;\n}\n.feat-left[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 30px;\n  font-weight: 800;\n  letter-spacing: -0.6px;\n  margin: 0 0 14px;\n}\n.feat-left[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14.5px;\n  color: #6B7280;\n  line-height: 1.65;\n}\n.feat-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 16px;\n}\n.feat-card[_ngcontent-%COMP%] {\n  background: #ffffff;\n  border: 1px solid #EEF1F5;\n  border-radius: 18px;\n  padding: 24px 20px;\n  transition: transform 0.2s ease, box-shadow 0.2s ease;\n}\n.feat-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.07);\n}\n.feat-icon[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 13px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 16px;\n}\n.feat-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 21px !important;\n}\n.feat-card[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  font-size: 14.5px;\n  font-weight: 700;\n  margin: 0 0 6px;\n  color: #0F172A;\n}\n.feat-card[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 12.5px;\n  color: #6B7280;\n  line-height: 1.55;\n  margin: 0;\n}\n.familles[_ngcontent-%COMP%] {\n  padding: 100px 0;\n  background: #ffffff;\n}\n.fam-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 18px;\n  margin-top: 44px;\n}\n.fam-card[_ngcontent-%COMP%] {\n  border: 1px solid #EEF1F5;\n  border-radius: 20px;\n  overflow: hidden;\n  transition: transform 0.2s ease, box-shadow 0.2s ease;\n}\n.fam-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.07);\n}\n.fam-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 20px;\n}\n.fam-avatar[_ngcontent-%COMP%] {\n  width: 46px;\n  height: 46px;\n  border-radius: 13px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 800;\n  font-size: 16px;\n  flex-shrink: 0;\n}\n.fam-name[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0;\n}\n.fam-origin[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  color: #6B7280;\n  margin-top: 2px;\n}\n.fam-origin[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.fam-stats[_ngcontent-%COMP%] {\n  display: flex;\n  border-top: 1px solid #F3F4F6;\n}\n.fam-stat[_ngcontent-%COMP%] {\n  flex: 1;\n  text-align: center;\n  padding: 14px 0;\n}\n.fam-stat[_ngcontent-%COMP%]    + .fam-stat[_ngcontent-%COMP%] {\n  border-left: 1px solid #F3F4F6;\n}\n.fam-stat-val[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 17px;\n  font-weight: 800;\n}\n.fam-stat-label[_ngcontent-%COMP%] {\n  font-size: 10.5px;\n  color: #6B7280;\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n}\n.testimonials[_ngcontent-%COMP%] {\n  padding: 100px 0;\n  background: #0F2A1E;\n}\n.testimonials[_ngcontent-%COMP%]   .sec-head[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.55);\n}\n.testimonials[_ngcontent-%COMP%]   .sec-head[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  color: #ffffff;\n}\n.testi-wrap[_ngcontent-%COMP%] {\n  max-width: 720px;\n  margin: 0 auto;\n}\n.testi-card[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.05);\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 24px;\n  padding: 40px;\n}\n.testi-quote-icon[_ngcontent-%COMP%] {\n  color: #81C784;\n  font-size: 30px !important;\n  margin-bottom: 14px;\n  display: block;\n}\n.testi-text[_ngcontent-%COMP%] {\n  font-size: 17px;\n  line-height: 1.65;\n  color: rgba(255, 255, 255, 0.88);\n  margin: 0 0 26px;\n  font-weight: 300;\n}\n.testi-author[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.testi-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 13px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 14px;\n  flex-shrink: 0;\n}\n.testi-name[_ngcontent-%COMP%] {\n  font-size: 14px;\n  font-weight: 700;\n  color: #ffffff;\n}\n.testi-role[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.65);\n}\n.testi-dots[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  gap: 8px;\n  margin-top: 26px;\n}\n.testi-dot[_ngcontent-%COMP%] {\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.25);\n  border: none;\n  cursor: pointer;\n  padding: 0;\n  transition: all 0.2s ease;\n}\n.testi-dot.active[_ngcontent-%COMP%] {\n  background: #81C784;\n  width: 22px;\n  border-radius: 5px;\n}\n.cta[_ngcontent-%COMP%] {\n  padding: 90px 0;\n  background: #ffffff;\n}\n.cta-box[_ngcontent-%COMP%] {\n  max-width: 1160px;\n  margin: 0 auto;\n  padding: 56px;\n  border-radius: 28px;\n  text-align: center;\n  background:\n    linear-gradient(\n      135deg,\n      #0E2417,\n      #123B27);\n  position: relative;\n  overflow: hidden;\n}\n.cta-box[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 30px;\n  font-weight: 800;\n  color: #ffffff;\n  letter-spacing: -0.5px;\n}\n.cta-box[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 15px;\n  color: rgba(255, 255, 255, 0.6);\n  margin: 14px 0 30px;\n}\n.cta-actions[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.cta-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 13px 24px;\n  border-radius: 13px;\n  font-size: 14px;\n  font-weight: 700;\n  cursor: pointer;\n  border: none;\n}\n.cta-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.cta-btn-primary[_ngcontent-%COMP%] {\n  background: #81C784;\n  color: #0B2914;\n  animation: _ngcontent-%COMP%_ctaGlow 2.4s ease-in-out infinite;\n}\n.cta-btn-primary[_ngcontent-%COMP%]:hover {\n  animation: none;\n}\n.cta-btn-ghost[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.08);\n  color: #ffffff;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n}\n.landing-footer[_ngcontent-%COMP%] {\n  padding: 28px 0;\n  border-top: 1px solid #EEF1F5;\n}\n.footer-inner[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 12px;\n}\n.footer-brand[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 13.5px;\n  font-weight: 700;\n  color: #0F172A;\n}\n.footer-sep[_ngcontent-%COMP%] {\n  color: #D1D5DB;\n}\n.footer-by[_ngcontent-%COMP%] {\n  color: #6B7280;\n  font-weight: 400;\n}\n.footer-links[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 22px;\n}\n.footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #6B7280;\n}\n.footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  color: #0F172A;\n}\n.footer-copy[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #6B7280;\n}\n@media (max-width: 900px) {\n  .landing-nav[_ngcontent-%COMP%] {\n    padding: 0 20px;\n  }\n  .nav-links[_ngcontent-%COMP%], \n   .nav-actions[_ngcontent-%COMP%]   .btn-nav-famille[_ngcontent-%COMP%], \n   .nav-actions[_ngcontent-%COMP%]   .btn-nav-admin[_ngcontent-%COMP%], \n   .nav-actions[_ngcontent-%COMP%]   .btn-nav-logout[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .nav-hamburger[_ngcontent-%COMP%] {\n    display: flex;\n  }\n  .hero[_ngcontent-%COMP%] {\n    padding: 76px 20px 0;\n  }\n  .hero-inner[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n    padding-bottom: 40px;\n    text-align: center;\n  }\n  .hero-title[_ngcontent-%COMP%] {\n    font-size: 32px;\n  }\n  .hero-entries[_ngcontent-%COMP%] {\n    margin-left: auto;\n    margin-right: auto;\n  }\n  .hero-tree-wrap[_ngcontent-%COMP%]   svg[_ngcontent-%COMP%] {\n    width: 280px;\n    height: auto;\n  }\n  .stats-grid[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  .sol-grid[_ngcontent-%COMP%], \n   .fam-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .feat-layout[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n    gap: 32px;\n  }\n  .feat-grid[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  .solution[_ngcontent-%COMP%], \n   .features[_ngcontent-%COMP%], \n   .familles[_ngcontent-%COMP%], \n   .testimonials[_ngcontent-%COMP%] {\n    padding: 64px 0;\n  }\n  .cta-box[_ngcontent-%COMP%] {\n    padding: 36px 24px;\n  }\n  .footer-inner[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n}\n/*# sourceMappingURL=landing.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(LandingComponent, [{
@@ -1451,7 +1382,14 @@ var LandingComponent = class _LandingComponent {
     args: [{ selector: "app-landing", standalone: false, template: `<!-- ===== NAVBAR ===== -->
 <nav class="landing-nav">
   <a routerLink="/" class="nav-logo">
-    <span class="material-icons-round">account_tree</span>
+    <svg width="26" height="26" viewBox="0 0 120 120" fill="none">
+      <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>
+      <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
+      <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="35" cy="35" r="10" fill="#2E7D32"/>
+      <circle cx="85" cy="35" r="10" fill="#2E7D32"/>
+      <circle cx="60" cy="25" r="10" fill="#81C784"/>
+    </svg>
     <span>Mam Buudu</span>
   </a>
   <div class="nav-links">
@@ -1491,7 +1429,14 @@ var LandingComponent = class _LandingComponent {
 <div class="nav-mobile-sheet" [class.open]="navOpen">
   <div class="nms-header">
     <div class="nav-logo nms-logo">
-      <span class="material-icons-round">account_tree</span>
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
+        <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>
+        <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
+        <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="35" cy="35" r="10" fill="#2E7D32"/>
+        <circle cx="85" cy="35" r="10" fill="#2E7D32"/>
+        <circle cx="60" cy="25" r="10" fill="#81C784"/>
+      </svg>
       <span>Mam Buudu</span>
     </div>
     <button class="nms-close" (click)="navOpen=false">
@@ -1531,172 +1476,143 @@ var LandingComponent = class _LandingComponent {
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-
-  <!-- Zone bleue : \xE9l\xE9ments flottants -->
-  <div class="hero-blue">
-    <div class="hb-bg">
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
-      <div class="blob blob-3"></div>
-      <div class="dots-grid"></div>
-    </div>
-    <div class="fn-group">
-      <div class="float-node fn-1">
-        <div class="fn-disc fn-disc-blue"><span class="material-icons-round">account_tree</span></div>
-        <span class="fn-lbl">Arbre</span>
-      </div>
-      <div class="float-node fn-2">
-        <div class="fn-disc fn-disc-pink"><span class="material-icons-round">favorite</span></div>
-        <span class="fn-lbl">Unions</span>
-      </div>
-      <div class="float-node fn-3">
-        <div class="fn-disc fn-disc-green"><span class="material-icons-round">family_restroom</span></div>
-        <span class="fn-lbl">Famille</span>
-      </div>
-      <div class="float-node fn-4">
-        <div class="fn-disc fn-disc-violet"><span class="material-icons-round">auto_stories</span></div>
-        <span class="fn-lbl">Stories</span>
-      </div>
-      <div class="float-node fn-5">
-        <div class="fn-disc fn-disc-cyan"><span class="material-icons-round">people</span></div>
-        <span class="fn-lbl">Membres</span>
-      </div>
-    </div>
+  <div class="hero-sparks">
+    <div class="spark" style="left:12%; animation-delay:0s"></div>
+    <div class="spark" style="left:24%; animation-delay:1.4s; width:4px; height:4px;"></div>
+    <div class="spark" style="left:38%; animation-delay:2.6s"></div>
+    <div class="spark" style="left:55%; animation-delay:0.7s; width:4px; height:4px;"></div>
+    <div class="spark" style="left:68%; animation-delay:3.4s"></div>
+    <div class="spark" style="left:81%; animation-delay:1.9s; width:4px; height:4px;"></div>
   </div>
 
-  <!-- Vague bleu \u2192 blanc -->
-  <div class="hero-wave">
-    <svg viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,45 C360,90 1080,0 1440,45 L1440,90 L0,90 Z" fill="#ffffff"/>
-    </svg>
-  </div>
+  <div class="hero-inner">
+    <div>
+      <span class="hero-badge fade-up-1">
+        <span class="material-icons-round">auto_awesome</span>
+        Application g\xE9n\xE9alogique africaine
+      </span>
+      <h1 class="hero-title fade-up-2">
+        L'histoire de votre<br/>
+        <span class="accent">famille</span>,<br/>
+        pr\xE9serv\xE9e pour toujours
+      </h1>
+      <p class="hero-sub fade-up-3">
+        Construisez l'arbre g\xE9n\xE9alogique de votre famille, partagez vos stories et connectez les g\xE9n\xE9rations \xE0 travers le temps.
+      </p>
 
-  <!-- Zone blanche : contenu principal -->
-  <div class="hero-white">
-    <div class="hero-badge">
-      <span class="material-icons-round">auto_awesome</span>
-      Application g\xE9n\xE9alogique africaine
+      <div class="hero-entries fade-up-4">
+        <ng-container *ngIf="!isLoggedIn">
+          <a routerLink="/famille/login" class="entry-card">
+            <div class="entry-icon famille"><span class="material-icons-round">family_restroom</span></div>
+            <div class="entry-info"><strong>Espace Famille</strong><span>Pour les membres de la famille</span></div>
+            <span class="material-icons-round arrow">arrow_forward</span>
+          </a>
+          <a routerLink="/auth/login" class="entry-card">
+            <div class="entry-icon admin"><span class="material-icons-round">admin_panel_settings</span></div>
+            <div class="entry-info"><strong>Espace Admin</strong><span>Pour les gestionnaires</span></div>
+            <span class="material-icons-round arrow">arrow_forward</span>
+          </a>
+        </ng-container>
+        <ng-container *ngIf="isLoggedIn">
+          <a [routerLink]="dashboardRoute" class="entry-card">
+            <div class="entry-icon famille"><span class="material-icons-round">dashboard</span></div>
+            <div class="entry-info"><strong>Retour \xE0 mon espace</strong><span>{{ userName }}</span></div>
+            <span class="material-icons-round arrow">arrow_forward</span>
+          </a>
+          <button class="entry-card" (click)="logout()">
+            <div class="entry-icon admin"><span class="material-icons-round">logout</span></div>
+            <div class="entry-info"><strong>Se d\xE9connecter</strong><span>Quitter la session</span></div>
+            <span class="material-icons-round arrow">arrow_forward</span>
+          </button>
+        </ng-container>
+      </div>
     </div>
-    <h1 class="hero-title">
-      L'histoire de votre<br/>
-      <span class="gradient-text">famille</span>,<br/>
-      pr\xE9serv\xE9e pour toujours
-    </h1>
-    <p class="hero-subtitle">
-      Construisez l'arbre g\xE9n\xE9alogique de votre famille, partagez vos stories et connectez les g\xE9n\xE9rations \xE0 travers le temps.
-    </p>
-    <div class="hero-entries">
-      <ng-container *ngIf="!isLoggedIn">
-        <a routerLink="/famille/login" class="entry-card entry-famille">
-          <div class="entry-icon-wrap famille-icon">
-            <span class="material-icons-round">family_restroom</span>
-          </div>
-          <div class="entry-info">
-            <strong>Espace Famille</strong>
-            <span>Pour les membres de la famille</span>
-          </div>
-          <span class="material-icons-round entry-arrow">arrow_forward</span>
-        </a>
-        <a routerLink="/auth/login" class="entry-card entry-admin">
-          <div class="entry-icon-wrap admin-icon">
-            <span class="material-icons-round">admin_panel_settings</span>
-          </div>
-          <div class="entry-info">
-            <strong>Espace Admin</strong>
-            <span>Pour les gestionnaires</span>
-          </div>
-          <span class="material-icons-round entry-arrow">arrow_forward</span>
-        </a>
-      </ng-container>
-      <ng-container *ngIf="isLoggedIn">
-        <a [routerLink]="dashboardRoute" class="entry-card entry-famille">
-          <div class="entry-icon-wrap famille-icon">
-            <span class="material-icons-round">dashboard</span>
-          </div>
-          <div class="entry-info">
-            <strong>Retour \xE0 mon espace</strong>
-            <span>{{ userName }}</span>
-          </div>
-          <span class="material-icons-round entry-arrow">arrow_forward</span>
-        </a>
-        <button class="entry-card entry-logout" (click)="logout()">
-          <div class="entry-icon-wrap logout-icon">
-            <span class="material-icons-round">logout</span>
-          </div>
-          <div class="entry-info">
-            <strong>Se d\xE9connecter</strong>
-            <span>Quitter la session</span>
-          </div>
-          <span class="material-icons-round entry-arrow">arrow_forward</span>
-        </button>
-      </ng-container>
+
+    <div class="hero-tree-wrap">
+      <svg width="480" height="560" viewBox="0 0 480 560" fill="none">
+        <!-- Racines -->
+        <path class="tree-line g-root" d="M240 520 C 220 500, 200 495, 175 505" stroke="#8B4513" stroke-width="3" fill="none" opacity="0.55"/>
+        <path class="tree-line g-root" d="M240 520 C 260 500, 280 495, 305 505" stroke="#8B4513" stroke-width="3" fill="none" opacity="0.55"/>
+        <path class="tree-line g-root" d="M240 520 L 240 545" stroke="#8B4513" stroke-width="4" opacity="0.55"/>
+        <!-- Tronc + g\xE9n\xE9ration 1 -->
+        <path class="tree-line g-trunk" d="M240 520 L 240 400" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>
+        <path class="tree-line g-trunk" d="M240 400 C 210 380, 180 365, 150 340" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path class="tree-line g-trunk" d="M240 400 C 270 380, 300 365, 330 340" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path class="tree-line g-trunk" d="M240 400 L 240 330" stroke="#8B4513" stroke-width="5" stroke-linecap="round"/>
+        <!-- G\xE9n\xE9ration 2 -->
+        <path class="tree-line g-1" d="M150 340 C 130 315, 115 300, 95 280" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path class="tree-line g-1" d="M150 340 C 155 310, 150 290, 140 265" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path class="tree-line g-1" d="M330 340 C 350 315, 365 300, 385 280" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path class="tree-line g-1" d="M330 340 C 325 310, 330 290, 340 265" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path class="tree-line g-1" d="M240 330 C 225 305, 225 290, 235 265" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path class="tree-line g-1" d="M240 330 C 255 305, 255 290, 245 265" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <!-- G\xE9n\xE9ration 3 (fines) -->
+        <path class="tree-line g-2" d="M95 280 C 85 260, 82 245, 88 225" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path class="tree-line g-2" d="M140 265 C 135 245, 138 230, 148 210" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path class="tree-line g-2" d="M385 280 C 395 260, 398 245, 392 225" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path class="tree-line g-2" d="M340 265 C 345 245, 342 230, 332 210" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path class="tree-line g-2" d="M235 265 C 225 240, 228 222, 220 200" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path class="tree-line g-2" d="M245 265 C 255 240, 252 222, 260 200" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+        <!-- Feuillage -->
+        <circle class="leaf" style="animation-delay:1.4s, 1.9s" cx="88" cy="220" r="16" fill="#2E7D32"/>
+        <circle class="leaf" style="animation-delay:1.5s, 2.1s" cx="148" cy="205" r="14" fill="#81C784"/>
+        <circle class="leaf" style="animation-delay:1.6s, 1.7s" cx="220" cy="196" r="16" fill="#2E7D32"/>
+        <circle class="leaf" style="animation-delay:1.65s, 2.4s" cx="260" cy="196" r="14" fill="#81C784"/>
+        <circle class="leaf" style="animation-delay:1.55s, 2.0s" cx="332" cy="205" r="14" fill="#2E7D32"/>
+        <circle class="leaf" style="animation-delay:1.45s, 1.85s" cx="392" cy="220" r="16" fill="#81C784"/>
+
+        <circle class="leaf" style="animation-delay:1.0s, 2.6s" cx="95" cy="280" r="9" fill="#3B82F6" opacity="0.85"/>
+        <circle class="leaf" style="animation-delay:1.05s, 2.2s" cx="140" cy="265" r="8" fill="#EC4899" opacity="0.85"/>
+        <circle class="leaf" style="animation-delay:0.75s, 2.8s" cx="240" cy="330" r="9" fill="#F59E0B" opacity="0.85"/>
+        <circle class="leaf" style="animation-delay:1.05s, 2.35s" cx="340" cy="265" r="8" fill="#EC4899" opacity="0.85"/>
+        <circle class="leaf" style="animation-delay:1.0s, 1.95s" cx="385" cy="280" r="9" fill="#3B82F6" opacity="0.85"/>
+
+        <circle class="leaf" style="animation-delay:0.65s, 3.0s" cx="150" cy="340" r="10" fill="#8B5CF6" opacity="0.9"/>
+        <circle class="leaf" style="animation-delay:0.65s, 2.5s" cx="330" cy="340" r="10" fill="#8B5CF6" opacity="0.9"/>
+      </svg>
     </div>
   </div>
-
 </section>
 
 <!-- ===== STATS ===== -->
 <section class="stats-section">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <span class="stat-number">{{ formatStat(stats.familles) }}+</span>
-        <span class="stat-label">Familles</span>
-        <span class="stat-icon-bg"><span class="material-icons-round">family_restroom</span></span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">{{ formatStat(stats.membres) }}+</span>
-        <span class="stat-label">Membres</span>
-        <span class="stat-icon-bg"><span class="material-icons-round">people</span></span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">{{ formatStat(stats.unions) }}+</span>
-        <span class="stat-label">Unions</span>
-        <span class="stat-icon-bg"><span class="material-icons-round">favorite</span></span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">{{ formatStat(stats.stories) }}+</span>
-        <span class="stat-label">Stories</span>
-        <span class="stat-icon-bg"><span class="material-icons-round">auto_stories</span></span>
-      </div>
+  <div class="container stats-grid">
+    <div class="stat-box">
+      <div class="stat-icon"><span class="material-icons-round">family_restroom</span></div>
+      <div><div class="stat-number">{{ formatStat(stats.familles) }}+</div><div class="stat-label">Familles</div></div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon"><span class="material-icons-round">people</span></div>
+      <div><div class="stat-number">{{ formatStat(stats.membres) }}+</div><div class="stat-label">Membres</div></div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon"><span class="material-icons-round">favorite</span></div>
+      <div><div class="stat-number">{{ formatStat(stats.unions) }}+</div><div class="stat-label">Unions</div></div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon"><span class="material-icons-round">auto_stories</span></div>
+      <div><div class="stat-number">{{ formatStat(stats.stories) }}+</div><div class="stat-label">Stories</div></div>
     </div>
   </div>
 </section>
 
-<!-- ===== SOLUTION (section bleue, inspir\xE9e Image 1) ===== -->
-<section class="solution-section">
+<!-- ===== SOLUTION ===== -->
+<section class="solution">
   <div class="container">
-    <!-- Noeuds 3D flottants -->
-    <div class="sol-floats">
-      <div class="sf-node">
-        <div class="sf-disc sf-glass-blue"><span class="material-icons-round">account_tree</span></div>
-      </div>
-      <div class="sf-node sf-main">
-        <div class="sf-disc sf-white"><span class="material-icons-round">people</span></div>
-      </div>
-      <div class="sf-node">
-        <div class="sf-disc sf-glass-dark"><span class="material-icons-round">auto_stories</span></div>
-      </div>
-    </div>
-    <div class="sol-arrow-indicator">
-      <span class="material-icons-round">arrow_upward</span>
-      <span class="sol-arrow-label">Notre Solution</span>
-    </div>
-
-    <div class="section-header-landing light">
-      <span class="section-tag light-tag">Notre Solution</span>
-      <h2>Mam Buudu simplifie la g\xE9n\xE9alogie,<br/>pour toutes les familles.</h2>
+    <div class="sec-head">
+      <span class="sec-tag">Notre solution</span>
+      <h2>Mam Buudu simplifie la g\xE9n\xE9alogie, pour toutes les familles.</h2>
       <p>De la cr\xE9ation de l'arbre au partage des stories \u2014 une solution compl\xE8te, accessible en ligne ou hors ligne.</p>
     </div>
-
-    <div class="sol-cards">
+    <div class="sol-grid">
       <div class="sol-card">
-        <div class="sc-icon"><span class="material-icons-round">account_tree</span></div>
+        <div class="sol-icon"><span class="material-icons-round">account_tree</span></div>
         <h3>Sans code, sans effort</h3>
         <p>Construisez votre arbre g\xE9n\xE9alogique facilement, sans aucune comp\xE9tence technique. En ligne ou hors ligne.</p>
       </div>
       <div class="sol-card">
-        <div class="sc-icon"><span class="material-icons-round">share</span></div>
+        <div class="sol-icon"><span class="material-icons-round">share</span></div>
         <h3>Partage en famille</h3>
         <p>Invitez les membres, partagez les stories et connectez les g\xE9n\xE9rations en temps r\xE9el, depuis n'importe o\xF9.</p>
       </div>
@@ -1704,81 +1620,49 @@ var LandingComponent = class _LandingComponent {
   </div>
 </section>
 
-<!-- ===== FEATURES (redesign, inspir\xE9e Image 2) ===== -->
-<section class="features-section" id="features">
+<!-- ===== FEATURES ===== -->
+<section class="features" id="features">
   <div class="container">
-
-    <div class="features-layout">
-
-      <!-- Colonne gauche : texte + \xE9voluer -->
-      <div class="fl-left">
-        <span class="welcome-badge">
-          <span class="material-icons-round">account_tree</span>
-          Bienvenue sur Mam Buudu
-          <span class="wb-chevron material-icons-round">chevron_right</span>
-        </span>
-        <h2>G\xE9n\xE9alogie nouvelle<br/>g\xE9n\xE9ration</h2>
-        <p class="fl-sub">Construite pour \xE9quiper chaque famille d'outils modernes pour pr\xE9server et partager leur histoire.</p>
-
-        <div class="fl-evolving">
-          <h3>\xC9voluer au-del\xE0 des m\xE9thodes traditionnelles</h3>
-          <p>Nous r\xE9pondons aux d\xE9fis de la pr\xE9servation familiale en rempla\xE7ant les albums \xE9parpill\xE9s et la m\xE9moire orale par une plateforme num\xE9rique s\xE9curis\xE9e, accessible \xE0 toute la famille.</p>
-        </div>
+    <div class="feat-layout">
+      <div class="feat-left">
+        <span class="sec-tag">Bienvenue sur Mam Buudu</span>
+        <h2>G\xE9n\xE9alogie nouvelle g\xE9n\xE9ration</h2>
+        <p>Construite pour \xE9quiper chaque famille d'outils modernes pour pr\xE9server et partager leur histoire. Nous rempla\xE7ons les albums \xE9parpill\xE9s et la m\xE9moire orale par une plateforme num\xE9rique s\xE9curis\xE9e, accessible \xE0 toute la famille.</p>
       </div>
-
-      <!-- Colonne droite : carte mission + ic\xF4nes features -->
-      <div class="fl-right">
-        <div class="fl-mission">
-          <p>Notre mission est d'\xE9quiper les familles africaines d'outils modernes pour rester connect\xE9es et pr\xE9server leur patrimoine \xE0 travers les g\xE9n\xE9rations.</p>
-        </div>
-        <div class="fl-feat-icons">
-          <div class="ffi-card" *ngFor="let f of features">
-            <div class="ffi-icon" [style.background]="f.color + '18'" [style.color]="f.color">
-              <span class="material-icons-round">{{ f.icon }}</span>
-            </div>
+      <div class="feat-grid">
+        <div class="feat-card" *ngFor="let f of features">
+          <div class="feat-icon" [style.background]="f.color + '18'">
+            <span class="material-icons-round" [style.color]="f.color">{{ f.icon }}</span>
           </div>
+          <h4>{{ f.title }}</h4>
+          <p>{{ f.desc }}</p>
         </div>
       </div>
-
     </div>
-
   </div>
 </section>
 
-<!-- ===== FAMILLES SHOWCASE ===== -->
-<section class="showcase-section" id="familles">
+<!-- ===== FAMILLES ===== -->
+<section class="familles" id="familles">
   <div class="container">
-    <div class="section-header-landing">
-      <span class="section-tag">Familles</span>
+    <div class="sec-head">
+      <span class="sec-tag">Familles</span>
       <h2>Des familles qui nous font confiance</h2>
       <p>Rejoignez des centaines de familles qui ont choisi Mam Buudu pour pr\xE9server leur patrimoine.</p>
     </div>
-    <div class="familles-carousel">
-      <div class="famille-card" *ngFor="let f of familles">
-        <div class="fc-header" [style.background]="'linear-gradient(135deg,' + f.color + '22 0%, ' + f.color + '0a 100%)'">
-          <div class="fc-avatar" [style.background]="f.color + '22'" [style.color]="f.color">
-            {{ f.initiale }}
-          </div>
-          <div class="fc-identity">
-            <h3>Famille {{ f.nom }}</h3>
-            <span class="fc-origine"><span class="material-icons-round">place</span> {{ f.origine }}</span>
+    <div class="fam-grid">
+      <div class="fam-card" *ngFor="let f of familles">
+        <div class="fam-head">
+          <div class="fam-avatar" [style.background]="f.color + '22'" [style.color]="f.color">{{ f.initiale }}</div>
+          <div>
+            <p class="fam-name">Famille {{ f.nom }}</p>
+            <span class="fam-origin"><span class="material-icons-round">place</span>{{ f.origine }}</span>
           </div>
         </div>
-        <div class="fc-stats">
-          <div class="fc-stat">
-            <span class="fc-stat-val" [style.color]="f.color">{{ f.membres }}</span>
-            <span class="fc-stat-label">Membres</span>
-          </div>
-          <div class="fc-divider"></div>
-          <div class="fc-stat">
-            <span class="fc-stat-val" [style.color]="f.color">{{ f.generations }}</span>
-            <span class="fc-stat-label">G\xE9n\xE9rations</span>
-          </div>
-          <div class="fc-divider"></div>
-          <div class="fc-stat">
-            <span class="fc-stat-val" [style.color]="f.color">{{ f.unions }}</span>
-            <span class="fc-stat-label">Unions</span>
-          </div>
+        <div class="fam-stats">
+          <div class="fam-stat"><span class="fam-stat-val" [style.color]="f.color">{{ f.membres }}</span><span class="fam-stat-label">Membres</span></div>
+          <div class="fam-stat"><span class="fam-stat-val" [style.color]="f.color">{{ f.generations }}</span><span class="fam-stat-label">G\xE9n\xE9rations</span></div>
+          <div class="fam-stat"><span class="fam-stat-val" [style.color]="f.color">{{ f.unions }}</span><span class="fam-stat-label">Unions</span></div>
         </div>
       </div>
     </div>
@@ -1786,75 +1670,46 @@ var LandingComponent = class _LandingComponent {
 </section>
 
 <!-- ===== TESTIMONIALS ===== -->
-<section class="testimonials-section" id="temoignages">
+<section class="testimonials" id="temoignages">
   <div class="container">
-    <div class="section-header-landing light">
-      <span class="section-tag light-tag">T\xE9moignages</span>
+    <div class="sec-head">
+      <span class="sec-tag sec-tag-dark">T\xE9moignages</span>
       <h2>Ce que disent nos utilisateurs</h2>
       <p>Ils ont choisi Mam Buudu pour connecter leur famille \xE0 travers les g\xE9n\xE9rations.</p>
     </div>
-
-    <div class="testimonial-carousel">
-      <div class="testimonial-track" [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
-        <div class="testimonial-slide" *ngFor="let t of testimonials">
-          <div class="testimonial-card">
-            <div class="testi-quote">
-              <span class="material-icons-round quote-icon">format_quote</span>
-              <p>{{ t.texte }}</p>
-            </div>
-            <div class="testi-author">
-              <div class="testi-avatar" [style.background]="t.color + '22'" [style.color]="t.color">
-                {{ t.initiale }}
-              </div>
-              <div>
-                <strong>{{ t.nom }}</strong>
-                <span>{{ t.role }}</span>
-              </div>
-            </div>
-          </div>
+    <div class="testi-wrap" *ngIf="testimonials[currentSlide] as t">
+      <div class="testi-card">
+        <span class="material-icons-round testi-quote-icon">format_quote</span>
+        <p class="testi-text">{{ t.texte }}</p>
+        <div class="testi-author">
+          <div class="testi-avatar" [style.background]="t.color + '33'" [style.color]="t.color">{{ t.initiale }}</div>
+          <div><div class="testi-name">{{ t.nom }}</div><div class="testi-role">{{ t.role }}</div></div>
         </div>
       </div>
-
-      <div class="carousel-controls">
-        <button class="carousel-btn" (click)="prevSlide()">
-          <span class="material-icons-round">chevron_left</span>
-        </button>
-        <div class="carousel-dots">
-          <button class="dot" *ngFor="let t of testimonials; let i = index"
-                  [class.active]="i === currentSlide"
-                  (click)="goToSlide(i)"></button>
-        </div>
-        <button class="carousel-btn" (click)="nextSlide()">
-          <span class="material-icons-round">chevron_right</span>
-        </button>
+      <div class="testi-dots">
+        <button class="testi-dot" *ngFor="let s of testimonials; let i = index"
+                [class.active]="i === currentSlide" (click)="goToSlide(i)"></button>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== CTA FINAL ===== -->
-<section class="cta-section">
+<section class="cta">
   <div class="container">
-    <div class="cta-content">
-      <div class="cta-badge">
-        <span class="material-icons-round">rocket_launch</span>
-        Commencez maintenant \u2014 C'est gratuit
-      </div>
+    <div class="cta-box">
       <h2>Pr\xEAt \xE0 connecter votre famille ?</h2>
       <p>Rejoignez des milliers de familles qui pr\xE9servent leur histoire avec Mam Buudu.</p>
       <div class="cta-actions">
-        <a routerLink="/famille/login" class="cta-btn cta-btn-famille">
+        <a routerLink="/famille/login" class="cta-btn cta-btn-primary">
           <span class="material-icons-round">family_restroom</span>
           Acc\xE9der \xE0 mon espace famille
         </a>
-        <a routerLink="/auth/login" class="cta-btn cta-btn-admin">
+        <a routerLink="/auth/login" class="cta-btn cta-btn-ghost">
           <span class="material-icons-round">admin_panel_settings</span>
           Espace administrateur
         </a>
       </div>
-    </div>
-    <div class="cta-deco">
-      <div class="cta-blob"></div>
     </div>
   </div>
 </section>
@@ -1863,7 +1718,12 @@ var LandingComponent = class _LandingComponent {
 <footer class="landing-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <span class="material-icons-round">account_tree</span>
+      <svg width="18" height="18" viewBox="0 0 120 120" fill="none">
+        <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>
+        <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
+        <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="35" cy="35" r="10" fill="#2E7D32"/><circle cx="85" cy="35" r="10" fill="#2E7D32"/><circle cx="60" cy="25" r="10" fill="#81C784"/>
+      </svg>
       <span>Mam Buudu</span>
       <span class="footer-sep">\xB7</span>
       <span class="footer-by">par Sahelys</span>
@@ -1873,10 +1733,10 @@ var LandingComponent = class _LandingComponent {
       <a routerLink="/auth/login">Administration</a>
       <a routerLink="/auth/register">Cr\xE9er un espace</a>
     </div>
-    <div class="footer-copy">\xA9 2025 Sahelys. Tous droits r\xE9serv\xE9s.</div>
+    <div class="footer-copy">\xA9 2026 Sahelys. Tous droits r\xE9serv\xE9s.</div>
   </div>
 </footer>
-`, styles: ['@charset "UTF-8";\n\n/* src/app/landing/landing.component.scss */\n:host {\n  display: block;\n  font-family: "Poppins", sans-serif;\n  overflow-x: hidden;\n}\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 0 24px;\n}\n.landing-nav {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 200;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 40px;\n  height: 64px;\n  background: rgba(10, 31, 168, 0.88);\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\n}\n.nav-logo {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  color: #fff;\n  font-size: 18px;\n  font-weight: 800;\n  letter-spacing: -0.3px;\n  text-decoration: none;\n}\n.nav-logo .material-icons-round {\n  font-size: 24px !important;\n  color: #93C5FD;\n}\n.nav-links {\n  display: flex;\n  gap: 28px;\n}\n.nav-link {\n  color: rgba(255, 255, 255, 0.7);\n  font-size: 14px;\n  font-weight: 500;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.nav-link:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.nav-actions {\n  display: flex;\n  gap: 10px;\n  align-items: center;\n}\n.btn-nav-famille {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 16px;\n  background: rgba(255, 255, 255, 0.12);\n  border: 1px solid rgba(255, 255, 255, 0.2);\n  border-radius: 30px;\n  color: #fff;\n  font-size: 13px;\n  font-weight: 500;\n  text-decoration: none;\n  transition: all 0.2s;\n}\n.btn-nav-famille .material-icons-round {\n  font-size: 16px !important;\n}\n.btn-nav-famille:hover {\n  background: rgba(255, 255, 255, 0.22);\n  text-decoration: none;\n}\n.btn-nav-admin {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 18px;\n  background: #ffffff;\n  border-radius: 30px;\n  color: #1445F5;\n  font-size: 13px;\n  font-weight: 700;\n  text-decoration: none;\n  transition: all 0.2s;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n}\n.btn-nav-admin .material-icons-round {\n  font-size: 16px !important;\n}\n.btn-nav-admin:hover {\n  background: #F0F7FF;\n  text-decoration: none;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);\n}\n.btn-nav-logout {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 18px;\n  background: rgba(239, 68, 68, 0.15);\n  border: 1px solid rgba(239, 68, 68, 0.35);\n  border-radius: 30px;\n  color: #FCA5A5;\n  font-size: 13px;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.btn-nav-logout .material-icons-round {\n  font-size: 16px !important;\n}\n.btn-nav-logout:hover {\n  background: rgba(239, 68, 68, 0.28);\n  color: #fff;\n}\n.nav-hamburger {\n  display: none;\n  align-items: center;\n  justify-content: center;\n  width: 40px;\n  height: 40px;\n  background: rgba(255, 255, 255, 0.1);\n  border: 1px solid rgba(255, 255, 255, 0.2);\n  border-radius: 10px;\n  color: #fff;\n  cursor: pointer;\n  transition: background 0.2s;\n  flex-shrink: 0;\n}\n.nav-hamburger .material-icons-round {\n  font-size: 22px !important;\n}\n.nav-hamburger:hover {\n  background: rgba(255, 255, 255, 0.22);\n}\n.nav-mobile-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  z-index: 299;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.nav-mobile-sheet {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: #fff;\n  border-radius: 24px 24px 0 0;\n  z-index: 300;\n  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.15);\n  transform: translateY(100%);\n  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);\n}\n.nav-mobile-sheet.open {\n  transform: translateY(0);\n}\n.nms-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 20px 14px;\n  border-bottom: 1px solid #F0F4FF;\n}\n.nms-logo {\n  color: #0A1FA8 !important;\n}\n.nms-logo .material-icons-round {\n  color: #1445F5 !important;\n}\n.nms-close {\n  width: 36px;\n  height: 36px;\n  border-radius: 10px;\n  background: #F8FAFC;\n  border: 1px solid #E2E8F0;\n  color: #6B7280;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.nms-close .material-icons-round {\n  font-size: 20px !important;\n}\n.nms-links {\n  padding: 10px 16px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.nms-link {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 14px;\n  border-radius: 12px;\n  color: #374151;\n  font-size: 15px;\n  font-weight: 500;\n  text-decoration: none;\n  transition: background 0.15s;\n}\n.nms-link .material-icons-round {\n  font-size: 20px !important;\n  color: #9CA3AF;\n}\n.nms-link:hover {\n  background: #F8FAFC;\n  text-decoration: none;\n}\n.nms-actions {\n  padding: 12px 16px 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  border-top: 1px solid #F0F4FF;\n}\n.nms-btn {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 14px 18px;\n  border-radius: 14px;\n  font-size: 15px;\n  font-weight: 600;\n  text-decoration: none;\n  cursor: pointer;\n  border: none;\n  width: 100%;\n  text-align: left;\n  transition: all 0.2s;\n}\n.nms-btn .material-icons-round {\n  font-size: 20px !important;\n}\n.nms-btn:hover {\n  text-decoration: none;\n  opacity: 0.9;\n}\n.nms-btn-famille {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(236, 72, 153, 0.1),\n      rgba(139, 92, 246, 0.1));\n  color: #7C3AED;\n  border: 1px solid rgba(139, 92, 246, 0.2) !important;\n}\n.nms-btn-admin {\n  background:\n    linear-gradient(\n      135deg,\n      #EFF6FF,\n      #E0E7FF);\n  color: #1445F5;\n  border: 1px solid rgba(20, 69, 245, 0.15) !important;\n}\n.nms-btn-logout {\n  background: #FFF5F5;\n  color: #EF4444;\n  border: 1px solid rgba(239, 68, 68, 0.2) !important;\n}\n.hero {\n  background: #ffffff;\n  overflow: hidden;\n}\n.hero-blue {\n  background:\n    linear-gradient(\n      135deg,\n      #0A1FA8 0%,\n      #1445F5 55%,\n      #2563EB 100%);\n  min-height: 420px;\n  padding-top: 64px;\n  position: relative;\n  overflow: hidden;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.hb-bg {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n}\n.blob {\n  position: absolute;\n  border-radius: 50%;\n  filter: blur(80px);\n  opacity: 0.2;\n}\n.blob-1 {\n  width: 480px;\n  height: 480px;\n  background: #3B82F6;\n  top: -120px;\n  left: -80px;\n  animation: blobFloat 8s ease-in-out infinite;\n}\n.blob-2 {\n  width: 360px;\n  height: 360px;\n  background: #8B5CF6;\n  bottom: -80px;\n  right: 180px;\n  animation: blobFloat 10s ease-in-out infinite reverse;\n}\n.blob-3 {\n  width: 280px;\n  height: 280px;\n  background: #06B6D4;\n  top: 120px;\n  right: -60px;\n  animation: blobFloat 7s ease-in-out infinite 2s;\n}\n.dots-grid {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.07) 1px,\n      transparent 1px);\n  background-size: 40px 40px;\n}\n.fn-group {\n  position: relative;\n  width: 100%;\n  max-width: 900px;\n  height: 300px;\n}\n.float-node {\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n}\n.fn-disc {\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.2);\n  border: 1.5px solid rgba(255, 255, 255, 0.25);\n}\n.fn-disc .material-icons-round {\n  font-size: 28px !important;\n}\n.fn-disc-blue {\n  width: 80px;\n  height: 80px;\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #2563EB);\n  color: #fff;\n}\n.fn-disc-pink {\n  width: 68px;\n  height: 68px;\n  background:\n    linear-gradient(\n      135deg,\n      #F472B6,\n      #DB2777);\n  color: #fff;\n}\n.fn-disc-green {\n  width: 90px;\n  height: 90px;\n  background:\n    linear-gradient(\n      135deg,\n      #34D399,\n      #059669);\n  color: #fff;\n}\n.fn-disc-green .material-icons-round {\n  font-size: 34px !important;\n}\n.fn-disc-violet {\n  width: 64px;\n  height: 64px;\n  background:\n    linear-gradient(\n      135deg,\n      #A78BFA,\n      #7C3AED);\n  color: #fff;\n}\n.fn-disc-violet .material-icons-round {\n  font-size: 24px !important;\n}\n.fn-disc-cyan {\n  width: 74px;\n  height: 74px;\n  background:\n    linear-gradient(\n      135deg,\n      #22D3EE,\n      #0891B2);\n  color: #fff;\n}\n.fn-lbl {\n  font-size: 10px;\n  font-weight: 600;\n  color: rgba(255, 255, 255, 0.75);\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.fn-1 {\n  top: 40px;\n  left: 12%;\n  animation: float 5s ease-in-out infinite;\n}\n.fn-2 {\n  top: 28px;\n  right: 16%;\n  animation: float 6.5s ease-in-out infinite 1s;\n}\n.fn-3 {\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  animation: floatCenter 4.5s ease-in-out infinite 0.5s;\n}\n.fn-4 {\n  bottom: 32px;\n  right: 22%;\n  animation: float 7s ease-in-out infinite 2s;\n}\n.fn-5 {\n  bottom: 24px;\n  left: 18%;\n  animation: float 5.5s ease-in-out infinite 1.5s;\n}\n.hero-wave {\n  height: 90px;\n  background:\n    linear-gradient(\n      135deg,\n      #0A1FA8 0%,\n      #1445F5 55%,\n      #2563EB 100%);\n  position: relative;\n  overflow: hidden;\n}\n.hero-wave svg {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n.hero-white {\n  background: #ffffff;\n  padding: 64px 24px 80px;\n  text-align: center;\n  animation: fadeInUp 0.8s ease both;\n}\n.hero-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 6px 16px;\n  background: #EFF6FF;\n  border: 1px solid #BFDBFE;\n  border-radius: 30px;\n  color: #1445F5;\n  font-size: 12px;\n  font-weight: 600;\n  margin-bottom: 24px;\n}\n.hero-badge .material-icons-round {\n  font-size: 14px !important;\n}\n.hero-title {\n  font-size: 52px;\n  font-weight: 800;\n  line-height: 1.12;\n  color: #0F172A;\n  margin-bottom: 20px;\n  letter-spacing: -1.5px;\n}\n.gradient-text {\n  background:\n    linear-gradient(\n      90deg,\n      #1445F5,\n      #8B5CF6,\n      #EC4899);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-clip: text;\n}\n.hero-subtitle {\n  font-size: 16px;\n  color: #6B7280;\n  line-height: 1.7;\n  margin-bottom: 40px;\n  max-width: 560px;\n  margin-left: auto;\n  margin-right: auto;\n}\n.hero-entries {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  max-width: 480px;\n  margin: 0 auto;\n}\n.entry-card {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 16px 20px;\n  border-radius: 16px;\n  text-decoration: none;\n  transition: all 0.25s;\n  cursor: pointer;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);\n}\n.entry-famille {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(236, 72, 153, 0.07) 0%,\n      rgba(139, 92, 246, 0.07) 100%);\n  border: 1.5px solid rgba(236, 72, 153, 0.2);\n}\n.entry-famille:hover {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(236, 72, 153, 0.14) 0%,\n      rgba(139, 92, 246, 0.14) 100%);\n  border-color: rgba(236, 72, 153, 0.4);\n  transform: translateX(6px);\n  text-decoration: none;\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.12);\n}\n.entry-admin {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(20, 69, 245, 0.06) 0%,\n      rgba(6, 182, 212, 0.06) 100%);\n  border: 1.5px solid rgba(20, 69, 245, 0.15);\n}\n.entry-admin:hover {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(20, 69, 245, 0.12) 0%,\n      rgba(6, 182, 212, 0.12) 100%);\n  border-color: rgba(20, 69, 245, 0.3);\n  transform: translateX(6px);\n  text-decoration: none;\n  box-shadow: 0 4px 16px rgba(20, 69, 245, 0.1);\n}\n.entry-logout {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(239, 68, 68, 0.07) 0%,\n      rgba(220, 38, 38, 0.05) 100%);\n  border: 1.5px solid rgba(239, 68, 68, 0.2);\n  width: 100%;\n  text-align: left;\n}\n.entry-logout:hover {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(239, 68, 68, 0.14) 0%,\n      rgba(220, 38, 38, 0.1) 100%);\n  border-color: rgba(239, 68, 68, 0.4);\n  transform: translateX(6px);\n}\n.entry-icon-wrap {\n  width: 48px;\n  height: 48px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.entry-icon-wrap .material-icons-round {\n  font-size: 24px !important;\n}\n.famille-icon {\n  background: rgba(236, 72, 153, 0.12);\n  color: #EC4899;\n}\n.admin-icon {\n  background: rgba(20, 69, 245, 0.12);\n  color: #1445F5;\n}\n.logout-icon {\n  background: rgba(239, 68, 68, 0.12);\n  color: #EF4444;\n}\n.entry-info {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.entry-info strong {\n  font-size: 15px;\n  font-weight: 600;\n  color: #0F172A;\n}\n.entry-info span {\n  font-size: 12px;\n  color: #6B7280;\n}\n.entry-arrow {\n  font-size: 20px !important;\n  color: #CBD5E1;\n}\n.stats-section {\n  padding: 60px 0;\n  background: #ffffff;\n  border-top: 1px solid #E2E8F0;\n  border-bottom: 1px solid #E2E8F0;\n}\n.stats-grid {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 24px;\n}\n.stat-item {\n  position: relative;\n  text-align: center;\n  padding: 32px 20px;\n  border-radius: 16px;\n  background: #F8FAFC;\n  border: 1px solid #E2E8F0;\n  overflow: hidden;\n  transition: all 0.2s;\n}\n.stat-item:hover {\n  border-color: #BFDBFE;\n  box-shadow: 0 4px 24px rgba(20, 69, 245, 0.08);\n  transform: translateY(-2px);\n}\n.stat-number {\n  display: block;\n  font-size: 42px;\n  font-weight: 800;\n  color: #0F172A;\n  line-height: 1;\n  margin-bottom: 8px;\n  letter-spacing: -1px;\n}\n.stat-label {\n  display: block;\n  font-size: 12px;\n  font-weight: 600;\n  color: #6B7280;\n  text-transform: uppercase;\n  letter-spacing: 0.07em;\n}\n.stat-icon-bg {\n  position: absolute;\n  bottom: -8px;\n  right: -8px;\n  opacity: 0.05;\n}\n.stat-icon-bg .material-icons-round {\n  font-size: 72px !important;\n  color: #1445F5;\n}\n.solution-section {\n  padding: 100px 0;\n  background:\n    linear-gradient(\n      135deg,\n      #0A1FA8 0%,\n      #1445F5 55%,\n      #2563EB 100%);\n  position: relative;\n  overflow: hidden;\n  text-align: center;\n}\n.solution-section::before {\n  content: "";\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.05) 1px,\n      transparent 1px);\n  background-size: 40px 40px;\n  pointer-events: none;\n}\n.sol-floats {\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  gap: 12px;\n  margin-bottom: 8px;\n  position: relative;\n  z-index: 2;\n}\n.sf-node {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.sf-main .sf-disc {\n  width: 80px !important;\n  height: 80px !important;\n}\n.sf-main .sf-disc .material-icons-round {\n  font-size: 32px !important;\n}\n.sf-disc {\n  width: 64px;\n  height: 64px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);\n}\n.sf-disc .material-icons-round {\n  font-size: 26px !important;\n}\n.sf-glass-blue {\n  background: rgba(96, 165, 250, 0.7);\n  -webkit-backdrop-filter: blur(8px);\n  backdrop-filter: blur(8px);\n  border: 1.5px solid rgba(255, 255, 255, 0.3);\n  color: #fff;\n}\n.sf-white {\n  background: #ffffff;\n  color: #1445F5;\n  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.15);\n}\n.sf-glass-dark {\n  background: rgba(15, 23, 42, 0.8);\n  -webkit-backdrop-filter: blur(8px);\n  backdrop-filter: blur(8px);\n  border: 1.5px solid rgba(255, 255, 255, 0.12);\n  color: rgba(255, 255, 255, 0.85);\n}\n.sol-arrow-indicator {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 12px;\n  font-weight: 500;\n  margin-bottom: 40px;\n  position: relative;\n  z-index: 2;\n}\n.sol-arrow-indicator .material-icons-round {\n  font-size: 18px !important;\n}\n.sol-arrow-label {\n  padding: 3px 10px;\n  background: rgba(255, 255, 255, 0.12);\n  border-radius: 12px;\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.6px;\n}\n.sol-cards {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 20px;\n  max-width: 720px;\n  margin: 40px auto 0;\n  position: relative;\n  z-index: 2;\n}\n.sol-card {\n  background: rgba(255, 255, 255, 0.1);\n  -webkit-backdrop-filter: blur(8px);\n  backdrop-filter: blur(8px);\n  border: 1px solid rgba(255, 255, 255, 0.15);\n  border-radius: 20px;\n  padding: 28px 24px;\n  text-align: left;\n  transition: all 0.2s;\n}\n.sol-card:hover {\n  background: rgba(255, 255, 255, 0.15);\n  transform: translateY(-4px);\n  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);\n}\n.sol-card .sc-icon {\n  width: 44px;\n  height: 44px;\n  border-radius: 12px;\n  background: rgba(255, 255, 255, 0.15);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 16px;\n}\n.sol-card .sc-icon .material-icons-round {\n  font-size: 22px !important;\n  color: #fff;\n}\n.sol-card h3 {\n  font-size: 16px;\n  font-weight: 700;\n  color: #fff;\n  margin-bottom: 10px;\n}\n.sol-card p {\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.65);\n  line-height: 1.65;\n}\n.section-header-landing {\n  text-align: center;\n  margin-bottom: 60px;\n  position: relative;\n  z-index: 2;\n}\n.section-header-landing h2 {\n  font-size: 36px;\n  font-weight: 800;\n  color: #0F172A;\n  margin: 12px 0 16px;\n  letter-spacing: -0.5px;\n  line-height: 1.2;\n}\n.section-header-landing p {\n  font-size: 16px;\n  color: #6B7280;\n  max-width: 520px;\n  margin: 0 auto;\n  line-height: 1.7;\n}\n.section-header-landing.light h2 {\n  color: #fff;\n}\n.section-header-landing.light p {\n  color: rgba(255, 255, 255, 0.65);\n}\n.section-tag {\n  display: inline-flex;\n  align-items: center;\n  padding: 4px 14px;\n  background: #EFF6FF;\n  color: #1445F5;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.07em;\n}\n.section-tag.light-tag {\n  background: rgba(255, 255, 255, 0.15);\n  color: rgba(255, 255, 255, 0.85);\n}\n.features-section {\n  padding: 100px 0;\n  background: #ffffff;\n}\n.features-layout {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 80px;\n  align-items: flex-start;\n}\n.welcome-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 5px 10px 5px 8px;\n  background: #F8FAFC;\n  border: 1px solid #E2E8F0;\n  border-radius: 20px;\n  font-size: 12px;\n  font-weight: 500;\n  color: #475569;\n  margin-bottom: 20px;\n}\n.welcome-badge .material-icons-round {\n  font-size: 14px !important;\n  color: #1445F5;\n}\n.welcome-badge .wb-chevron {\n  font-size: 14px !important;\n  color: #3B82F6;\n}\n.fl-left h2 {\n  font-size: 40px;\n  font-weight: 800;\n  color: #0F172A;\n  letter-spacing: -0.5px;\n  line-height: 1.15;\n  margin-bottom: 16px;\n}\n.fl-left .fl-sub {\n  font-size: 16px;\n  color: #6B7280;\n  line-height: 1.7;\n  margin-bottom: 48px;\n}\n.fl-evolving {\n  padding: 28px 0 0;\n  border-top: 1px solid #E2E8F0;\n}\n.fl-evolving h3 {\n  font-size: 20px;\n  font-weight: 700;\n  color: #0F172A;\n  margin-bottom: 12px;\n  line-height: 1.3;\n}\n.fl-evolving p {\n  font-size: 14px;\n  color: #6B7280;\n  line-height: 1.75;\n}\n.fl-right {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  padding-top: 52px;\n}\n.fl-mission {\n  background: #F8FAFC;\n  border: 1px solid #E2E8F0;\n  border-radius: 16px;\n  padding: 20px 22px;\n}\n.fl-mission p {\n  font-size: 14px;\n  font-weight: 500;\n  color: #374151;\n  line-height: 1.75;\n}\n.fl-feat-icons {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n.ffi-card {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 52px;\n  height: 52px;\n  border-radius: 14px;\n  background: #ffffff;\n  border: 1px solid #E2E8F0;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);\n  transition: all 0.2s;\n  cursor: default;\n}\n.ffi-card:nth-child(1) {\n  align-self: flex-end;\n}\n.ffi-card:nth-child(2) {\n  align-self: flex-end;\n  margin-right: 60px;\n}\n.ffi-card:nth-child(3) {\n  align-self: flex-end;\n  margin-right: 20px;\n}\n.ffi-card:nth-child(4) {\n  align-self: flex-end;\n  margin-right: 80px;\n}\n.ffi-card:nth-child(5) {\n  align-self: flex-end;\n  margin-right: 40px;\n}\n.ffi-card:nth-child(6) {\n  align-self: flex-end;\n}\n.ffi-card:hover {\n  transform: scale(1.08) translateY(-2px);\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);\n}\n.ffi-icon {\n  width: 38px;\n  height: 38px;\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.ffi-icon .material-icons-round {\n  font-size: 20px !important;\n}\n.showcase-section {\n  padding: 100px 0;\n  background: #F8FAFC;\n  border-top: 1px solid #E2E8F0;\n}\n.familles-carousel {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n}\n.famille-card {\n  border-radius: 20px;\n  border: 1px solid #E2E8F0;\n  overflow: hidden;\n  background: #ffffff;\n  transition: all 0.25s;\n}\n.famille-card:hover {\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);\n  transform: translateY(-4px);\n  border-color: #BFDBFE;\n}\n.fc-header {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 20px;\n}\n.fc-avatar {\n  width: 52px;\n  height: 52px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 22px;\n  font-weight: 800;\n  flex-shrink: 0;\n}\n.fc-identity h3 {\n  font-size: 16px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0 0 3px;\n}\n.fc-origine {\n  display: flex;\n  align-items: center;\n  gap: 3px;\n  font-size: 12px;\n  color: #6B7280;\n}\n.fc-origine .material-icons-round {\n  font-size: 13px !important;\n}\n.fc-stats {\n  display: flex;\n  align-items: center;\n  padding: 16px 20px;\n  border-top: 1px solid #E2E8F0;\n}\n.fc-stat {\n  flex: 1;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.fc-stat-val {\n  font-size: 22px;\n  font-weight: 800;\n  line-height: 1;\n}\n.fc-stat-label {\n  font-size: 10px;\n  font-weight: 500;\n  color: #9CA3AF;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.fc-divider {\n  width: 1px;\n  height: 32px;\n  background: #E2E8F0;\n}\n.testimonials-section {\n  padding: 100px 0;\n  background:\n    linear-gradient(\n      135deg,\n      #0A1FA8 0%,\n      #1445F5 60%,\n      #1E40AF 100%);\n  overflow: hidden;\n}\n.testimonial-carousel {\n  overflow: hidden;\n  border-radius: 24px;\n}\n.testimonial-track {\n  display: flex;\n  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);\n}\n.testimonial-slide {\n  min-width: 100%;\n  padding: 0 20px;\n}\n.testimonial-card {\n  background: rgba(255, 255, 255, 0.07);\n  border: 1px solid rgba(255, 255, 255, 0.12);\n  -webkit-backdrop-filter: blur(10px);\n  backdrop-filter: blur(10px);\n  border-radius: 24px;\n  padding: 40px 48px;\n  max-width: 800px;\n  margin: 0 auto;\n}\n.testi-quote {\n  position: relative;\n  margin-bottom: 28px;\n}\n.testi-quote .quote-icon {\n  font-size: 48px !important;\n  color: rgba(147, 197, 253, 0.35);\n  position: absolute;\n  top: -12px;\n  left: -8px;\n}\n.testi-quote p {\n  font-size: 18px;\n  color: rgba(255, 255, 255, 0.85);\n  line-height: 1.8;\n  font-style: italic;\n  padding-left: 32px;\n}\n.testi-author {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n}\n.testi-avatar {\n  width: 52px;\n  height: 52px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 16px;\n  font-weight: 700;\n  flex-shrink: 0;\n}\n.testi-author div:last-child {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.testi-author div:last-child strong {\n  font-size: 15px;\n  font-weight: 600;\n  color: #fff;\n}\n.testi-author div:last-child span {\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.carousel-controls {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n  margin-top: 32px;\n}\n.carousel-btn {\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.1);\n  border: 1px solid rgba(255, 255, 255, 0.15);\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.2s;\n}\n.carousel-btn:hover {\n  background: rgba(255, 255, 255, 0.2);\n}\n.carousel-dots {\n  display: flex;\n  gap: 8px;\n}\n.dot {\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.3);\n  border: none;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.dot.active {\n  background: #fff;\n  width: 24px;\n  border-radius: 4px;\n}\n.cta-section {\n  padding: 100px 0;\n  background:\n    linear-gradient(\n      135deg,\n      #EFF6FF 0%,\n      #F5F3FF 100%);\n  overflow: hidden;\n  position: relative;\n}\n.cta-content {\n  position: relative;\n  z-index: 2;\n  text-align: center;\n}\n.cta-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 6px 16px;\n  background: #EFF6FF;\n  border: 1px solid #BFDBFE;\n  border-radius: 30px;\n  font-size: 12px;\n  font-weight: 600;\n  color: #1445F5;\n  margin-bottom: 20px;\n}\n.cta-badge .material-icons-round {\n  font-size: 15px !important;\n}\n.cta-content h2 {\n  font-size: 42px;\n  font-weight: 800;\n  color: #0F172A;\n  margin-bottom: 14px;\n  letter-spacing: -0.5px;\n}\n.cta-content p {\n  font-size: 16px;\n  color: #6B7280;\n  margin-bottom: 40px;\n}\n.cta-actions {\n  display: flex;\n  gap: 16px;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.cta-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 10px;\n  padding: 14px 28px;\n  border-radius: 16px;\n  font-size: 15px;\n  font-weight: 600;\n  text-decoration: none;\n  transition: all 0.25s;\n}\n.cta-btn .material-icons-round {\n  font-size: 20px !important;\n}\n.cta-btn:hover {\n  text-decoration: none;\n  transform: translateY(-2px);\n}\n.cta-btn-famille {\n  background:\n    linear-gradient(\n      135deg,\n      #EC4899,\n      #8B5CF6);\n  color: #fff;\n  box-shadow: 0 4px 20px rgba(236, 72, 153, 0.35);\n}\n.cta-btn-famille:hover {\n  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.45);\n}\n.cta-btn-admin {\n  background: #ffffff;\n  color: #0F172A;\n  border: 1.5px solid #E5E7EB;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);\n}\n.cta-btn-admin:hover {\n  border-color: #BFDBFE;\n  color: #1445F5;\n}\n.cta-blob {\n  position: absolute;\n  width: 600px;\n  height: 600px;\n  border-radius: 50%;\n  background:\n    linear-gradient(\n      135deg,\n      #BFDBFE,\n      #DDD6FE);\n  opacity: 0.3;\n  right: -200px;\n  top: -200px;\n  filter: blur(80px);\n  pointer-events: none;\n}\n.landing-footer {\n  background: #0A1FA8;\n  padding: 28px 0;\n}\n.footer-inner {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 16px;\n}\n.footer-brand {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  color: rgba(255, 255, 255, 0.85);\n  font-weight: 600;\n  font-size: 15px;\n}\n.footer-brand .material-icons-round {\n  font-size: 20px !important;\n  color: #93C5FD;\n}\n.footer-sep {\n  color: rgba(255, 255, 255, 0.3);\n}\n.footer-by {\n  color: rgba(255, 255, 255, 0.4);\n  font-size: 12px;\n  font-weight: 400;\n}\n.footer-links {\n  display: flex;\n  gap: 24px;\n}\n.footer-links a {\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 13px;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.footer-links a:hover {\n  color: rgba(255, 255, 255, 0.9);\n  text-decoration: none;\n}\n.footer-copy {\n  color: rgba(255, 255, 255, 0.3);\n  font-size: 12px;\n}\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translateY(24px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes blobFloat {\n  0%, 100% {\n    transform: translate(0, 0) scale(1);\n  }\n  33% {\n    transform: translate(20px, -30px) scale(1.05);\n  }\n  66% {\n    transform: translate(-15px, 15px) scale(0.95);\n  }\n}\n@keyframes float {\n  0%, 100% {\n    transform: translateY(0);\n  }\n  50% {\n    transform: translateY(-12px);\n  }\n}\n@keyframes floatCenter {\n  0%, 100% {\n    transform: translate(-50%, -50%) translateY(0);\n  }\n  50% {\n    transform: translate(-50%, -50%) translateY(-12px);\n  }\n}\n@media (max-width: 1024px) {\n  .features-layout {\n    gap: 48px;\n  }\n  .fl-left h2 {\n    font-size: 34px;\n  }\n}\n@media (max-width: 900px) {\n  .features-layout {\n    grid-template-columns: 1fr;\n    gap: 40px;\n  }\n  .fl-right {\n    padding-top: 0;\n    flex-direction: row;\n    flex-wrap: wrap;\n  }\n  .fl-feat-icons {\n    flex-direction: row;\n    flex-wrap: wrap;\n  }\n  .ffi-card {\n    align-self: auto !important;\n    margin-right: 0 !important;\n  }\n  .familles-carousel {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  .stats-grid {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  .nav-links {\n    display: none;\n  }\n  .hero-title {\n    font-size: 40px;\n  }\n  .sol-cards {\n    grid-template-columns: 1fr;\n    max-width: 400px;\n  }\n  .fn-1,\n  .fn-2,\n  .fn-4,\n  .fn-5 {\n    display: none;\n  }\n  .fn-3 {\n    top: 50%;\n    left: 50%;\n  }\n}\n@media (max-width: 640px) {\n  .hero-blue {\n    min-height: 280px;\n  }\n  .hero-white {\n    padding: 48px 20px 60px;\n  }\n  .hero-title {\n    font-size: 30px;\n    letter-spacing: -0.5px;\n  }\n  .features-section,\n  .showcase-section,\n  .testimonials-section,\n  .cta-section,\n  .solution-section {\n    padding: 64px 0;\n  }\n  .familles-carousel,\n  .stats-grid {\n    grid-template-columns: 1fr;\n  }\n  .landing-nav {\n    padding: 0 20px;\n  }\n  .btn-nav-admin,\n  .btn-nav-famille,\n  .btn-nav-logout {\n    display: none;\n  }\n  .nav-hamburger {\n    display: flex;\n  }\n  .footer-inner {\n    flex-direction: column;\n    text-align: center;\n  }\n  .cta-content h2 {\n    font-size: 28px;\n  }\n  .section-header-landing h2 {\n    font-size: 26px;\n  }\n  .fl-left h2 {\n    font-size: 28px;\n  }\n  .sol-floats .sf-node:not(.sf-main) {\n    display: none;\n  }\n  .testimonial-card {\n    padding: 28px 24px;\n  }\n  .testi-quote p {\n    font-size: 15px;\n  }\n}\n/*# sourceMappingURL=landing.component.css.map */\n'] }]
+`, styles: ['/* src/app/landing/landing.component.scss */\n:host {\n  display: block;\n  font-family:\n    "Poppins",\n    -apple-system,\n    BlinkMacSystemFont,\n    "Segoe UI",\n    sans-serif;\n  overflow-x: hidden;\n  color: #0F172A;\n  background: #ffffff;\n}\n* {\n  box-sizing: border-box;\n}\na {\n  color: #1445F5;\n  text-decoration: none;\n}\nh1,\nh2,\nh3 {\n  text-wrap: balance;\n  margin: 0;\n}\n.container {\n  max-width: 1160px;\n  margin: 0 auto;\n  padding: 0 24px;\n}\n@keyframes fadeUp {\n  from {\n    opacity: 0;\n    transform: translateY(16px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes drawLine {\n  to {\n    stroke-dashoffset: 0;\n  }\n}\n@keyframes leafPop {\n  from {\n    opacity: 0;\n    transform: scale(0);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n@keyframes leafFloat {\n  0%, 100% {\n    transform: translateY(0) scale(1);\n  }\n  50% {\n    transform: translateY(-5px) scale(1);\n  }\n}\n@keyframes sparkRise {\n  0% {\n    opacity: 0;\n    transform: translateY(0);\n  }\n  15% {\n    opacity: 0.9;\n  }\n  85% {\n    opacity: 0.5;\n  }\n  100% {\n    opacity: 0;\n    transform: translateY(-90px);\n  }\n}\n@keyframes ctaGlow {\n  0%, 100% {\n    box-shadow: 0 0 0 0 rgba(129, 199, 132, 0.4);\n  }\n  50% {\n    box-shadow: 0 0 0 8px rgba(129, 199, 132, 0);\n  }\n}\n@keyframes statPop {\n  from {\n    opacity: 0;\n    transform: translateY(8px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  :host * {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n.fade-up-1 {\n  animation: fadeUp 0.6s ease 0.05s both;\n}\n.fade-up-2 {\n  animation: fadeUp 0.6s ease 0.18s both;\n}\n.fade-up-3 {\n  animation: fadeUp 0.6s ease 0.3s both;\n}\n.fade-up-4 {\n  animation: fadeUp 0.6s ease 0.42s both;\n}\n.landing-nav {\n  height: 76px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 40px;\n  border-bottom: 1px solid rgba(15, 23, 42, 0.06);\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 60;\n  background: rgba(255, 255, 255, 0.72);\n  backdrop-filter: blur(14px) saturate(160%);\n  -webkit-backdrop-filter: blur(14px) saturate(160%);\n  transition: background 0.2s ease, box-shadow 0.2s ease;\n}\n.nav-logo {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  font-size: 17px;\n  font-weight: 800;\n  color: #0F172A;\n}\n.nav-links {\n  display: flex;\n  align-items: center;\n  gap: 36px;\n}\n.nav-link {\n  font-size: 14px;\n  font-weight: 500;\n  color: #4B5563;\n}\n.nav-link:hover {\n  color: #0F172A;\n}\n.nav-actions {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.btn-nav-famille,\n.btn-nav-admin,\n.btn-nav-logout {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  padding: 10px 18px;\n  border-radius: 11px;\n  font-size: 13.5px;\n  font-weight: 600;\n  cursor: pointer;\n  border: none;\n  white-space: nowrap;\n}\n.btn-nav-famille .material-icons-round,\n.btn-nav-admin .material-icons-round,\n.btn-nav-logout .material-icons-round {\n  font-size: 17px !important;\n}\n.btn-nav-famille {\n  background: #0F2A1E;\n  color: #ffffff;\n}\n.btn-nav-famille:hover {\n  background: #123B27;\n}\n.btn-nav-admin {\n  background: #F0FDF4;\n  color: #15803D;\n}\n.btn-nav-admin:hover {\n  background: #DCFCE7;\n}\n.btn-nav-logout {\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.btn-nav-logout:hover {\n  background: #FEE2E2;\n}\n.nav-hamburger {\n  display: none;\n  width: 40px;\n  height: 40px;\n  border-radius: 10px;\n  border: none;\n  background: #F3F4F6;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  color: #0F172A;\n}\n.nav-mobile-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.4);\n  z-index: 40;\n}\n.nav-mobile-sheet {\n  position: fixed;\n  top: 0;\n  right: 0;\n  height: 100%;\n  width: 300px;\n  max-width: 84vw;\n  background: #ffffff;\n  z-index: 50;\n  transform: translateX(100%);\n  transition: transform 0.25s ease;\n  display: flex;\n  flex-direction: column;\n  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.12);\n}\n.nav-mobile-sheet.open {\n  transform: translateX(0);\n}\n.nms-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 20px;\n  border-bottom: 1px solid #EEF1F5;\n}\n.nms-logo {\n  font-size: 15px;\n}\n.nms-close {\n  width: 34px;\n  height: 34px;\n  border-radius: 9px;\n  border: none;\n  background: #F3F4F6;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n}\n.nms-links {\n  display: flex;\n  flex-direction: column;\n  padding: 12px 10px;\n  gap: 2px;\n}\n.nms-link {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 12px;\n  border-radius: 10px;\n  font-size: 14px;\n  font-weight: 500;\n  color: #374151;\n}\n.nms-link .material-icons-round {\n  font-size: 19px !important;\n  color: #9CA3AF;\n}\n.nms-link:hover {\n  background: #F9FAFB;\n}\n.nms-actions {\n  margin-top: auto;\n  padding: 16px;\n  border-top: 1px solid #EEF1F5;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n.nms-btn {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 13px 16px;\n  border-radius: 12px;\n  font-size: 14px;\n  font-weight: 600;\n  border: none;\n  cursor: pointer;\n  width: 100%;\n}\n.nms-btn .material-icons-round {\n  font-size: 19px !important;\n}\n.nms-btn-famille {\n  background: #0F2A1E;\n  color: #ffffff;\n}\n.nms-btn-admin {\n  background: #F0FDF4;\n  color: #15803D;\n}\n.nms-btn-logout {\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.hero {\n  position: relative;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      160deg,\n      #0A1020 0%,\n      #0E2417 55%,\n      #123B27 100%);\n  padding: 76px 40px 0;\n}\n.hero-sparks {\n  position: absolute;\n  inset: 0;\n  overflow: hidden;\n  pointer-events: none;\n}\n.spark {\n  position: absolute;\n  bottom: 60px;\n  width: 5px;\n  height: 5px;\n  border-radius: 50%;\n  background: #A6E3AF;\n  box-shadow: 0 0 8px 2px rgba(166, 227, 175, 0.7);\n  animation: sparkRise 5.5s ease-in infinite;\n}\n.hero-inner {\n  position: relative;\n  max-width: 1160px;\n  margin: 0 auto;\n  display: grid;\n  grid-template-columns: 1fr 480px;\n  gap: 40px;\n  align-items: center;\n  padding-bottom: 70px;\n}\n.hero-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 16px;\n  border-radius: 999px;\n  background: rgba(255, 255, 255, 0.08);\n  border: 1px solid rgba(255, 255, 255, 0.16);\n  color: #C7F0D3;\n  font-size: 12.5px;\n  font-weight: 600;\n  margin-bottom: 22px;\n}\n.hero-badge .material-icons-round {\n  font-size: 15px !important;\n  color: #81C784;\n}\n.hero-title {\n  font-size: 46px;\n  font-weight: 800;\n  line-height: 1.14;\n  letter-spacing: -1px;\n  color: #ffffff;\n}\n.hero-title .accent {\n  background:\n    linear-gradient(\n      90deg,\n      #81C784,\n      #D4E88C);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n.hero-sub {\n  margin: 20px 0 0;\n  font-size: 16px;\n  line-height: 1.6;\n  color: rgba(255, 255, 255, 0.62);\n  max-width: 46ch;\n}\n.hero-entries {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  margin-top: 32px;\n  max-width: 420px;\n}\n.entry-card {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 15px 18px;\n  border-radius: 16px;\n  background: rgba(255, 255, 255, 0.06);\n  border: 1px solid rgba(255, 255, 255, 0.14);\n  cursor: pointer;\n  transition: transform 0.15s, background 0.15s;\n  text-align: left;\n  width: 100%;\n  font-family: inherit;\n}\n.entry-card:hover {\n  transform: translateX(3px);\n  background: rgba(255, 255, 255, 0.1);\n}\n.entry-icon {\n  width: 42px;\n  height: 42px;\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.entry-icon.famille {\n  background: #81C784;\n  color: #0B2914;\n}\n.entry-icon.admin {\n  background: rgba(255, 255, 255, 0.12);\n  color: #ffffff;\n}\n.entry-info {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n}\n.entry-info strong {\n  color: #ffffff;\n  font-size: 14px;\n  font-weight: 700;\n}\n.entry-info span {\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 12px;\n}\n.entry-card .arrow {\n  color: rgba(255, 255, 255, 0.4);\n  font-size: 18px !important;\n}\n.hero-tree-wrap {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.tree-line {\n  stroke-dasharray: 400;\n  stroke-dashoffset: 400;\n  animation: drawLine 0.9s ease forwards;\n}\n.tree-line.g-root {\n  animation-delay: 0s;\n}\n.tree-line.g-trunk {\n  animation-delay: 0.15s;\n}\n.tree-line.g-1 {\n  animation-delay: 0.55s;\n}\n.tree-line.g-2 {\n  animation-delay: 0.95s;\n}\n.leaf {\n  transform-box: fill-box;\n  transform-origin: center;\n  opacity: 0;\n  animation: leafPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both, leafFloat 3.2s ease-in-out infinite;\n}\n.stats-section {\n  background: #0F2A1E;\n  padding: 26px 0 30px;\n}\n.stats-grid {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n}\n.stat-box {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 4px 8px;\n}\n.stat-icon {\n  width: 40px;\n  height: 40px;\n  border-radius: 11px;\n  background: rgba(255, 255, 255, 0.08);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.stat-icon .material-icons-round {\n  color: #81C784;\n  font-size: 19px !important;\n}\n.stat-number {\n  font-size: 22px;\n  font-weight: 800;\n  color: #ffffff;\n  line-height: 1.1;\n  animation: statPop 0.5s ease both;\n  font-variant-numeric: tabular-nums;\n}\n.stat-box:nth-child(1) .stat-number {\n  animation-delay: 0.55s;\n}\n.stat-box:nth-child(2) .stat-number {\n  animation-delay: 0.65s;\n}\n.stat-box:nth-child(3) .stat-number {\n  animation-delay: 0.75s;\n}\n.stat-box:nth-child(4) .stat-number {\n  animation-delay: 0.85s;\n}\n.stat-label {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.sec-tag {\n  display: inline-flex;\n  align-items: center;\n  padding: 6px 14px;\n  border-radius: 999px;\n  background: #F0FDF4;\n  color: #15803D;\n  font-size: 11.5px;\n  font-weight: 700;\n  letter-spacing: 0.03em;\n  text-transform: uppercase;\n}\n.sec-tag-dark {\n  background: rgba(255, 255, 255, 0.1);\n  color: #81C784;\n}\n.sec-head {\n  text-align: center;\n  max-width: 620px;\n  margin: 0 auto 48px;\n}\n.sec-head h2 {\n  font-size: 32px;\n  font-weight: 800;\n  letter-spacing: -0.6px;\n  margin: 14px 0 12px;\n  color: #0F172A;\n}\n.sec-head p {\n  font-size: 15px;\n  color: #6B7280;\n  line-height: 1.6;\n  margin: 0;\n}\n.solution {\n  padding: 100px 0;\n  background: #ffffff;\n}\n.sol-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 20px;\n  margin-top: 44px;\n}\n.sol-card {\n  padding: 34px;\n  border-radius: 22px;\n  border: 1px solid #EEF1F5;\n  background: #FAFBFC;\n  transition:\n    transform 0.2s ease,\n    box-shadow 0.2s ease,\n    border-color 0.2s ease;\n}\n.sol-card:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 14px 30px rgba(15, 42, 30, 0.08);\n  border-color: #DCE5DF;\n}\n.sol-icon {\n  width: 52px;\n  height: 52px;\n  border-radius: 15px;\n  background: #0F2A1E;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 20px;\n}\n.sol-icon .material-icons-round {\n  color: #81C784;\n  font-size: 24px !important;\n}\n.sol-card h3 {\n  font-size: 18px;\n  font-weight: 700;\n  margin-bottom: 8px;\n}\n.sol-card p {\n  font-size: 14px;\n  color: #6B7280;\n  line-height: 1.65;\n  margin: 0;\n}\n.features {\n  padding: 100px 0;\n  background: #FAFBFC;\n}\n.feat-layout {\n  display: grid;\n  grid-template-columns: 380px 1fr;\n  gap: 60px;\n  align-items: start;\n}\n.feat-left .sec-tag {\n  margin-bottom: 18px;\n}\n.feat-left h2 {\n  font-size: 30px;\n  font-weight: 800;\n  letter-spacing: -0.6px;\n  margin: 0 0 14px;\n}\n.feat-left p {\n  font-size: 14.5px;\n  color: #6B7280;\n  line-height: 1.65;\n}\n.feat-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 16px;\n}\n.feat-card {\n  background: #ffffff;\n  border: 1px solid #EEF1F5;\n  border-radius: 18px;\n  padding: 24px 20px;\n  transition: transform 0.2s ease, box-shadow 0.2s ease;\n}\n.feat-card:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.07);\n}\n.feat-icon {\n  width: 44px;\n  height: 44px;\n  border-radius: 13px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 16px;\n}\n.feat-icon .material-icons-round {\n  font-size: 21px !important;\n}\n.feat-card h4 {\n  font-size: 14.5px;\n  font-weight: 700;\n  margin: 0 0 6px;\n  color: #0F172A;\n}\n.feat-card p {\n  font-size: 12.5px;\n  color: #6B7280;\n  line-height: 1.55;\n  margin: 0;\n}\n.familles {\n  padding: 100px 0;\n  background: #ffffff;\n}\n.fam-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 18px;\n  margin-top: 44px;\n}\n.fam-card {\n  border: 1px solid #EEF1F5;\n  border-radius: 20px;\n  overflow: hidden;\n  transition: transform 0.2s ease, box-shadow 0.2s ease;\n}\n.fam-card:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.07);\n}\n.fam-head {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 20px;\n}\n.fam-avatar {\n  width: 46px;\n  height: 46px;\n  border-radius: 13px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 800;\n  font-size: 16px;\n  flex-shrink: 0;\n}\n.fam-name {\n  font-size: 15px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0;\n}\n.fam-origin {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  color: #6B7280;\n  margin-top: 2px;\n}\n.fam-origin .material-icons-round {\n  font-size: 13px !important;\n}\n.fam-stats {\n  display: flex;\n  border-top: 1px solid #F3F4F6;\n}\n.fam-stat {\n  flex: 1;\n  text-align: center;\n  padding: 14px 0;\n}\n.fam-stat + .fam-stat {\n  border-left: 1px solid #F3F4F6;\n}\n.fam-stat-val {\n  display: block;\n  font-size: 17px;\n  font-weight: 800;\n}\n.fam-stat-label {\n  font-size: 10.5px;\n  color: #6B7280;\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n}\n.testimonials {\n  padding: 100px 0;\n  background: #0F2A1E;\n}\n.testimonials .sec-head p {\n  color: rgba(255, 255, 255, 0.55);\n}\n.testimonials .sec-head h2 {\n  color: #ffffff;\n}\n.testi-wrap {\n  max-width: 720px;\n  margin: 0 auto;\n}\n.testi-card {\n  background: rgba(255, 255, 255, 0.05);\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 24px;\n  padding: 40px;\n}\n.testi-quote-icon {\n  color: #81C784;\n  font-size: 30px !important;\n  margin-bottom: 14px;\n  display: block;\n}\n.testi-text {\n  font-size: 17px;\n  line-height: 1.65;\n  color: rgba(255, 255, 255, 0.88);\n  margin: 0 0 26px;\n  font-weight: 300;\n}\n.testi-author {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.testi-avatar {\n  width: 44px;\n  height: 44px;\n  border-radius: 13px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 14px;\n  flex-shrink: 0;\n}\n.testi-name {\n  font-size: 14px;\n  font-weight: 700;\n  color: #ffffff;\n}\n.testi-role {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.65);\n}\n.testi-dots {\n  display: flex;\n  justify-content: center;\n  gap: 8px;\n  margin-top: 26px;\n}\n.testi-dot {\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.25);\n  border: none;\n  cursor: pointer;\n  padding: 0;\n  transition: all 0.2s ease;\n}\n.testi-dot.active {\n  background: #81C784;\n  width: 22px;\n  border-radius: 5px;\n}\n.cta {\n  padding: 90px 0;\n  background: #ffffff;\n}\n.cta-box {\n  max-width: 1160px;\n  margin: 0 auto;\n  padding: 56px;\n  border-radius: 28px;\n  text-align: center;\n  background:\n    linear-gradient(\n      135deg,\n      #0E2417,\n      #123B27);\n  position: relative;\n  overflow: hidden;\n}\n.cta-box h2 {\n  font-size: 30px;\n  font-weight: 800;\n  color: #ffffff;\n  letter-spacing: -0.5px;\n}\n.cta-box p {\n  font-size: 15px;\n  color: rgba(255, 255, 255, 0.6);\n  margin: 14px 0 30px;\n}\n.cta-actions {\n  display: flex;\n  justify-content: center;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.cta-btn {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 13px 24px;\n  border-radius: 13px;\n  font-size: 14px;\n  font-weight: 700;\n  cursor: pointer;\n  border: none;\n}\n.cta-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.cta-btn-primary {\n  background: #81C784;\n  color: #0B2914;\n  animation: ctaGlow 2.4s ease-in-out infinite;\n}\n.cta-btn-primary:hover {\n  animation: none;\n}\n.cta-btn-ghost {\n  background: rgba(255, 255, 255, 0.08);\n  color: #ffffff;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n}\n.landing-footer {\n  padding: 28px 0;\n  border-top: 1px solid #EEF1F5;\n}\n.footer-inner {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 12px;\n}\n.footer-brand {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 13.5px;\n  font-weight: 700;\n  color: #0F172A;\n}\n.footer-sep {\n  color: #D1D5DB;\n}\n.footer-by {\n  color: #6B7280;\n  font-weight: 400;\n}\n.footer-links {\n  display: flex;\n  gap: 22px;\n}\n.footer-links a {\n  font-size: 13px;\n  color: #6B7280;\n}\n.footer-links a:hover {\n  color: #0F172A;\n}\n.footer-copy {\n  font-size: 12px;\n  color: #6B7280;\n}\n@media (max-width: 900px) {\n  .landing-nav {\n    padding: 0 20px;\n  }\n  .nav-links,\n  .nav-actions .btn-nav-famille,\n  .nav-actions .btn-nav-admin,\n  .nav-actions .btn-nav-logout {\n    display: none;\n  }\n  .nav-hamburger {\n    display: flex;\n  }\n  .hero {\n    padding: 76px 20px 0;\n  }\n  .hero-inner {\n    grid-template-columns: 1fr;\n    padding-bottom: 40px;\n    text-align: center;\n  }\n  .hero-title {\n    font-size: 32px;\n  }\n  .hero-entries {\n    margin-left: auto;\n    margin-right: auto;\n  }\n  .hero-tree-wrap svg {\n    width: 280px;\n    height: auto;\n  }\n  .stats-grid {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  .sol-grid,\n  .fam-grid {\n    grid-template-columns: 1fr;\n  }\n  .feat-layout {\n    grid-template-columns: 1fr;\n    gap: 32px;\n  }\n  .feat-grid {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  .solution,\n  .features,\n  .familles,\n  .testimonials {\n    padding: 64px 0;\n  }\n  .cta-box {\n    padding: 36px 24px;\n  }\n  .footer-inner {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n}\n/*# sourceMappingURL=landing.component.css.map */\n'] }]
   }], () => [{ type: AuthService }, { type: Router }], null);
 })();
 (() => {
@@ -1888,16 +1748,16 @@ var routes = [
   { path: "", component: LandingComponent, pathMatch: "full" },
   {
     path: "auth",
-    loadChildren: () => import("./chunk-PYMUSLR4.js").then((m) => m.AuthModule)
+    loadChildren: () => import("./chunk-ZKGMGZF4.js").then((m) => m.AuthModule)
   },
   {
     path: "app",
     canActivate: [authGuard, roleGuard(["admin", "gestionnaire"])],
-    loadChildren: () => import("./chunk-I47D5UC3.js").then((m) => m.ShellModule)
+    loadChildren: () => import("./chunk-D6R6JZPS.js").then((m) => m.ShellModule)
   },
   {
     path: "famille",
-    loadChildren: () => import("./chunk-TCQEEOUO.js").then((m) => m.FamilleModule)
+    loadChildren: () => import("./chunk-OJLAJIZ7.js").then((m) => m.FamilleModule)
   },
   {
     path: "superadmin",
