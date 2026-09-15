@@ -1,18 +1,43 @@
 import {
   SwPush
-} from "./chunk-OQPKGRDY.js";
+} from "./chunk-PLIAXXAE.js";
 import {
   API_BASE_URL,
+  CommonModule,
+  Component,
+  EventEmitter,
   HttpClient,
   Injectable,
+  Input,
+  NgForOf,
+  NgIf,
+  Output,
   firstValueFrom,
   setClassMetadata,
+  ɵsetClassDebugInfo,
+  ɵɵadvance,
+  ɵɵclassProp,
+  ɵɵdefineComponent,
   ɵɵdefineInjectable,
-  ɵɵinject
+  ɵɵelementEnd,
+  ɵɵelementStart,
+  ɵɵgetCurrentView,
+  ɵɵinject,
+  ɵɵlistener,
+  ɵɵnextContext,
+  ɵɵproperty,
+  ɵɵresetView,
+  ɵɵrestoreView,
+  ɵɵtemplate,
+  ɵɵtext,
+  ɵɵtextInterpolate,
+  ɵɵtextInterpolate2
 } from "./chunk-UZMMFXAY.js";
 import {
   __async,
   __commonJS,
+  __spreadProps,
+  __spreadValues,
   __toESM
 } from "./chunk-YP43Q66R.js";
 
@@ -2121,6 +2146,167 @@ var require_browser = __commonJS({
   }
 });
 
+// src/app/shared/recipient-picker.component.ts
+function RecipientPickerComponent_label_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "label", 5);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r0.label);
+  }
+}
+function RecipientPickerComponent_div_7_label_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r2 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "label", 10)(1, "input", 11);
+    \u0275\u0275listener("change", function RecipientPickerComponent_div_7_label_1_Template_input_change_1_listener() {
+      const m_r3 = \u0275\u0275restoreView(_r2).$implicit;
+      const ctx_r0 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r0.toggle(m_r3.user.id));
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(2, "span");
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const m_r3 = ctx.$implicit;
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275property("checked", ctx_r0.isChecked(m_r3.user.id));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate2("", m_r3.user.prenom, " ", m_r3.user.nom);
+  }
+}
+function RecipientPickerComponent_div_7_p_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "p", 12);
+    \u0275\u0275text(1, "Aucun autre membre dans la famille.");
+    \u0275\u0275elementEnd();
+  }
+}
+function RecipientPickerComponent_div_7_p_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "p", 13);
+    \u0275\u0275text(1, "S\xE9lectionnez au moins une personne, sinon personne ne sera notifi\xE9.");
+    \u0275\u0275elementEnd();
+  }
+}
+function RecipientPickerComponent_div_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 6);
+    \u0275\u0275template(1, RecipientPickerComponent_div_7_label_1_Template, 4, 3, "label", 7)(2, RecipientPickerComponent_div_7_p_2_Template, 2, 0, "p", 8)(3, RecipientPickerComponent_div_7_p_3_Template, 2, 0, "p", 9);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", ctx_r0.membres);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.membres.length === 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.value !== null && ctx_r0.value.length === 0);
+  }
+}
+var RecipientPickerComponent = class _RecipientPickerComponent {
+  membres = [];
+  label = "Qui doit \xEAtre notifi\xE9 ?";
+  value = null;
+  valueChange = new EventEmitter();
+  setAll() {
+    this.value = null;
+    this.valueChange.emit(null);
+  }
+  setCustom() {
+    if (this.value === null)
+      this.value = [];
+    this.valueChange.emit(this.value);
+  }
+  isChecked(userId) {
+    return !!this.value?.includes(userId);
+  }
+  toggle(userId) {
+    if (this.value === null)
+      return;
+    this.value = this.value.includes(userId) ? this.value.filter((id) => id !== userId) : [...this.value, userId];
+    this.valueChange.emit(this.value);
+  }
+  static \u0275fac = function RecipientPickerComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _RecipientPickerComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _RecipientPickerComponent, selectors: [["app-recipient-picker"]], inputs: { membres: "membres", label: "label", value: "value" }, outputs: { valueChange: "valueChange" }, decls: 8, vars: 6, consts: [[1, "rp-wrap"], ["class", "rp-title", 4, "ngIf"], [1, "rp-toggle"], ["type", "button", 1, "rp-toggle-btn", 3, "click"], ["class", "rp-list", 4, "ngIf"], [1, "rp-title"], [1, "rp-list"], ["class", "rp-item", 4, "ngFor", "ngForOf"], ["class", "rp-empty", 4, "ngIf"], ["class", "rp-warn", 4, "ngIf"], [1, "rp-item"], ["type", "checkbox", 3, "change", "checked"], [1, "rp-empty"], [1, "rp-warn"]], template: function RecipientPickerComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275elementStart(0, "div", 0);
+      \u0275\u0275template(1, RecipientPickerComponent_label_1_Template, 2, 1, "label", 1);
+      \u0275\u0275elementStart(2, "div", 2)(3, "button", 3);
+      \u0275\u0275listener("click", function RecipientPickerComponent_Template_button_click_3_listener() {
+        return ctx.setAll();
+      });
+      \u0275\u0275text(4, " Toute la famille ");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(5, "button", 3);
+      \u0275\u0275listener("click", function RecipientPickerComponent_Template_button_click_5_listener() {
+        return ctx.setCustom();
+      });
+      \u0275\u0275text(6, " Choisir des personnes ");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275template(7, RecipientPickerComponent_div_7_Template, 4, 3, "div", 4);
+      \u0275\u0275elementEnd();
+    }
+    if (rf & 2) {
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.label);
+      \u0275\u0275advance(2);
+      \u0275\u0275classProp("active", ctx.value === null);
+      \u0275\u0275advance(2);
+      \u0275\u0275classProp("active", ctx.value !== null);
+      \u0275\u0275advance(2);
+      \u0275\u0275property("ngIf", ctx.value !== null);
+    }
+  }, dependencies: [CommonModule, NgForOf, NgIf], styles: ["\n\n.rp-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.rp-title[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary, #111827);\n}\n.rp-toggle[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n}\n.rp-toggle-btn[_ngcontent-%COMP%] {\n  flex: 1;\n  padding: 8px 12px;\n  border-radius: 10px;\n  border: 1.5px solid var(--border, #E5E7EB);\n  background: var(--white, #fff);\n  color: var(--text-secondary, #6B7280);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s ease;\n}\n.rp-toggle-btn.active[_ngcontent-%COMP%] {\n  border-color: var(--primary, #2563EB);\n  background: var(--primary-bg, #EFF6FF);\n  color: var(--primary, #2563EB);\n}\n.rp-list[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  max-height: 180px;\n  overflow-y: auto;\n  border: 1px solid var(--border-light, #F3F4F6);\n  border-radius: 10px;\n  padding: 8px 12px;\n}\n.rp-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 5px 0;\n  font-size: 13px;\n  color: var(--text-primary, #111827);\n  cursor: pointer;\n}\n.rp-empty[_ngcontent-%COMP%], \n.rp-warn[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-muted, #9CA3AF);\n  margin: 4px 0 0;\n}\n.rp-warn[_ngcontent-%COMP%] {\n  color: #D97706;\n}\n/*# sourceMappingURL=recipient-picker.component.css.map */"] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RecipientPickerComponent, [{
+    type: Component,
+    args: [{ selector: "app-recipient-picker", standalone: true, imports: [CommonModule], template: `
+    <div class="rp-wrap">
+      <label class="rp-title" *ngIf="label">{{ label }}</label>
+      <div class="rp-toggle">
+        <button type="button" class="rp-toggle-btn" [class.active]="value === null" (click)="setAll()">
+          Toute la famille
+        </button>
+        <button type="button" class="rp-toggle-btn" [class.active]="value !== null" (click)="setCustom()">
+          Choisir des personnes
+        </button>
+      </div>
+      <div class="rp-list" *ngIf="value !== null">
+        <label class="rp-item" *ngFor="let m of membres">
+          <input type="checkbox" [checked]="isChecked(m.user.id)" (change)="toggle(m.user.id)" />
+          <span>{{ m.user.prenom }} {{ m.user.nom }}</span>
+        </label>
+        <p class="rp-empty" *ngIf="membres.length === 0">Aucun autre membre dans la famille.</p>
+        <p class="rp-warn" *ngIf="value !== null && value.length === 0">S\xE9lectionnez au moins une personne, sinon personne ne sera notifi\xE9.</p>
+      </div>
+    </div>
+  `, styles: ["/* angular:styles/component:scss;0299f98657569aa4b21fc5b7afaa7b939361cd2ae9d38869409e49c3798c18ee;C:/Users/paulin.g/ProjectPbs/Mam-buudu/mam-buudu-web/src/app/shared/recipient-picker.component.ts */\n.rp-wrap {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.rp-title {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary, #111827);\n}\n.rp-toggle {\n  display: flex;\n  gap: 8px;\n}\n.rp-toggle-btn {\n  flex: 1;\n  padding: 8px 12px;\n  border-radius: 10px;\n  border: 1.5px solid var(--border, #E5E7EB);\n  background: var(--white, #fff);\n  color: var(--text-secondary, #6B7280);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s ease;\n}\n.rp-toggle-btn.active {\n  border-color: var(--primary, #2563EB);\n  background: var(--primary-bg, #EFF6FF);\n  color: var(--primary, #2563EB);\n}\n.rp-list {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  max-height: 180px;\n  overflow-y: auto;\n  border: 1px solid var(--border-light, #F3F4F6);\n  border-radius: 10px;\n  padding: 8px 12px;\n}\n.rp-item {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 5px 0;\n  font-size: 13px;\n  color: var(--text-primary, #111827);\n  cursor: pointer;\n}\n.rp-empty,\n.rp-warn {\n  font-size: 12px;\n  color: var(--text-muted, #9CA3AF);\n  margin: 4px 0 0;\n}\n.rp-warn {\n  color: #D97706;\n}\n/*# sourceMappingURL=recipient-picker.component.css.map */\n"] }]
+  }], null, { membres: [{
+    type: Input
+  }], label: [{
+    type: Input
+  }], value: [{
+    type: Input
+  }], valueChange: [{
+    type: Output
+  }] });
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(RecipientPickerComponent, { className: "RecipientPickerComponent", filePath: "src/app/shared/recipient-picker.component.ts", lineNumber: 54 });
+})();
+
 // src/app/models/personne.model.ts
 function getPhotoUrl(p) {
   if (!p.photoUrl)
@@ -2206,6 +2392,15 @@ var QrcodeService = class _QrcodeService {
 })();
 
 // src/app/core/push-notification.service.ts
+var NOTIF_TYPE_LABELS = {
+  nouveau_membre_arbre: "Nouveaux membres",
+  nouvelle_union: "Unions",
+  nouvelle_story: "Stories",
+  photo_ajoutee: "Photos",
+  nouvel_evenement: "\xC9v\xE9nements (timeline)",
+  anniversaire: "Anniversaires"
+};
+var TYPES_STORAGE_KEY = "mb_push_types";
 var PushNotificationService = class _PushNotificationService {
   swPush;
   http;
@@ -2226,6 +2421,15 @@ var PushNotificationService = class _PushNotificationService {
       return !!sub;
     });
   }
+  /** Types actuellement sélectionnés sur cet appareil (tableau vide = tout recevoir) */
+  getPreferredTypes() {
+    try {
+      const raw = localStorage.getItem(TYPES_STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  }
   /** Demande la permission navigateur puis enregistre l'abonnement côté serveur */
   subscribe() {
     return __async(this, null, function* () {
@@ -2234,10 +2438,30 @@ var PushNotificationService = class _PushNotificationService {
       try {
         const { publicKey } = yield firstValueFrom(this.http.get(`${API_BASE_URL}/api/push/vapid-public-key`));
         const sub = yield this.swPush.requestSubscription({ serverPublicKey: publicKey });
-        yield firstValueFrom(this.http.post(`${API_BASE_URL}/api/push/subscribe`, sub.toJSON()));
+        const types = this.getPreferredTypes();
+        yield firstValueFrom(this.http.post(`${API_BASE_URL}/api/push/subscribe`, __spreadProps(__spreadValues({}, sub.toJSON()), { types })));
         return true;
       } catch (e) {
         console.warn("[push] abonnement refus\xE9 ou \xE9chou\xE9", e);
+        return false;
+      }
+    });
+  }
+  /** Met à jour les types reçus sur cet appareil (l'abonnement doit déjà exister) */
+  updateTypes(types) {
+    return __async(this, null, function* () {
+      if (!this.isSupported)
+        return false;
+      try {
+        const reg = yield navigator.serviceWorker?.getRegistration();
+        const sub = yield reg?.pushManager.getSubscription();
+        if (!sub)
+          return false;
+        yield firstValueFrom(this.http.post(`${API_BASE_URL}/api/push/subscribe`, __spreadProps(__spreadValues({}, sub.toJSON()), { types })));
+        localStorage.setItem(TYPES_STORAGE_KEY, JSON.stringify(types));
+        return true;
+      } catch (e) {
+        console.warn("[push] mise \xE0 jour des pr\xE9f\xE9rences \xE9chou\xE9e", e);
         return false;
       }
     });
@@ -2254,6 +2478,7 @@ var PushNotificationService = class _PushNotificationService {
       const endpoint = sub.endpoint;
       yield sub.unsubscribe();
       yield firstValueFrom(this.http.request("delete", `${API_BASE_URL}/api/push/subscribe`, { body: { endpoint } }));
+      localStorage.removeItem(TYPES_STORAGE_KEY);
     });
   }
   static \u0275fac = function PushNotificationService_Factory(__ngFactoryType__) {
@@ -2275,9 +2500,11 @@ export {
   extractAnnee,
   estVivant,
   getAgeLabel,
+  RecipientPickerComponent,
   STORY_TAGS,
   STORY_TAG_COLORS,
   QrcodeService,
+  NOTIF_TYPE_LABELS,
   PushNotificationService
 };
-//# sourceMappingURL=chunk-STNTUTHY.js.map
+//# sourceMappingURL=chunk-XNCWYRRL.js.map

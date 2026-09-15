@@ -4,7 +4,7 @@ import { forkJoin } from 'rxjs';
 import { AuthService, AuthUser } from '../../services/auth.service';
 import { ApiService } from '../../services/api.service';
 import { ThemeService } from '../../services/theme.service';
-import { PushNotificationService } from '../../core/push-notification.service';
+import { PushNotificationService, NOTIF_TYPE_LABELS } from '../../core/push-notification.service';
 
 interface FamilleInfo {
   id:   string;
@@ -44,6 +44,8 @@ export class ProfilComponent implements OnInit {
   pushSupported = false;
   pushEnabled = false;
   pushBusy = false;
+  readonly notifTypeEntries = Object.entries(NOTIF_TYPE_LABELS);
+  selectedTypes: string[] = []; // vide = tout recevoir
 
   constructor(
     public auth: AuthService,
@@ -56,6 +58,7 @@ export class ProfilComponent implements OnInit {
   ngOnInit(): void {
     this.pushSupported = this.push.isSupported;
     if (this.pushSupported) {
+      this.selectedTypes = this.push.getPreferredTypes();
       this.push.isSubscribed().then(v => this.pushEnabled = v);
     }
 
@@ -221,6 +224,23 @@ export class ProfilComponent implements OnInit {
     } else {
       this.pushEnabled = await this.push.subscribe();
     }
+    this.pushBusy = false;
+  }
+
+  isTypeChecked(type: string): boolean {
+    return this.selectedTypes.length === 0 || this.selectedTypes.includes(type);
+  }
+
+  async toggleType(type: string): Promise<void> {
+    if (this.pushBusy) return;
+    const allTypes = this.notifTypeEntries.map(([key]) => key);
+    let next = this.selectedTypes.length === 0 ? [...allTypes] : [...this.selectedTypes];
+    next = next.includes(type) ? next.filter(t => t !== type) : [...next, type];
+    if (next.length === allTypes.length) next = [];
+
+    this.pushBusy = true;
+    const ok = await this.push.updateTypes(next);
+    if (ok) this.selectedTypes = next;
     this.pushBusy = false;
   }
 }

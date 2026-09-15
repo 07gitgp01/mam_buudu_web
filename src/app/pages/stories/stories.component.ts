@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { catchError, of } from 'rxjs';
 import { Story, STORY_TAGS, STORY_TAG_COLORS } from '../../models/story.model';
+import { Membre } from '../../models/plateforme.model';
 import { ApiService } from '../../services/api.service';
 import { AuthService } from '../../services/auth.service';
 
@@ -31,6 +32,10 @@ export class StoriesComponent implements OnInit, OnDestroy {
   form: { titre: string; caption: string; tag: string; mediaFile: File | null; mediaPreview: string | null; mediaType: 'photo' | 'video' | null } =
     { titre: '', caption: '', tag: 'Souvenir', mediaFile: null, mediaPreview: null, mediaType: null };
 
+  /* ── Destinataires de la notification ── */
+  membres: Membre[] = [];
+  notifyUserIds: string[] | null = null;
+
   /* ── Enregistrement audio ── */
   audioMode: 'idle' | 'recording' | 'recorded' = 'idle';
   audioBlob:    Blob | null = null;
@@ -43,7 +48,12 @@ export class StoriesComponent implements OnInit, OnDestroy {
 
   constructor(private api: ApiService, public auth: AuthService) {}
 
-  ngOnInit(): void { this.load(); }
+  ngOnInit(): void {
+    this.load();
+    this.api.getCurrentFamille().pipe(catchError(() => of(null))).subscribe(res => {
+      if (res) this.membres = res.membres.filter(m => m.user.id !== this.auth.getUser()?.id);
+    });
+  }
 
   load(): void {
     this.loading = true;
@@ -124,6 +134,7 @@ export class StoriesComponent implements OnInit, OnDestroy {
 
   openForm(): void {
     this.form = { titre: '', caption: '', tag: 'Souvenir', mediaFile: null, mediaPreview: null, mediaType: null };
+    this.notifyUserIds = null;
     this.resetAudio();
     this.formErreur = null;
     this.showForm = true;
@@ -208,6 +219,7 @@ export class StoriesComponent implements OnInit, OnDestroy {
         tag:     this.form.tag || undefined,
         mediaUrl,
         mediaType,
+        notifyUserIds: this.notifyUserIds,
       }).subscribe({
         next: s => {
           this.stories.unshift(s);

@@ -746,6 +746,8 @@ var ApiService = class _ApiService {
       fd.append("datePrise", meta.datePrise);
     if (meta?.lieuPrise)
       fd.append("lieuPrise", meta.lieuPrise);
+    if (meta?.notifyUserIds)
+      fd.append("notifyUserIds", JSON.stringify(meta.notifyUserIds));
     return this.http.post(`${this.base}/api/photos/${personneId}`, fd);
   }
   deleteAlbumPhoto(photoId) {
@@ -897,4 +899,4 @@ export {
    * found in the LICENSE file at https://angular.dev/license
    *)
 */
-//# sourceMappingURL=chunk-OQPKGRDY.js.map
+//# sourceMappingURL=chunk-PLIAXXAE.js.map

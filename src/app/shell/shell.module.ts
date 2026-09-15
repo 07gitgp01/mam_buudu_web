@@ -19,6 +19,7 @@ import { ProfilComponent } from '../pages/profil/profil.component';
 import { InviterComponent } from '../pages/inviter/inviter.component';
 import { HistoriqueComponent } from '../pages/historique/historique.component';
 import { GalerieComponent } from '../pages/galerie/galerie.component';
+import { RecipientPickerComponent } from '../shared/recipient-picker.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,6 @@ import { GalerieComponent } from '../pages/galerie/galerie.component';
     HistoriqueComponent,
     GalerieComponent,
   ],
-  imports: [CommonModule, RouterModule, FormsModule, ShellRoutingModule],
+  imports: [CommonModule, RouterModule, FormsModule, ShellRoutingModule, RecipientPickerComponent],
 })
 export class ShellModule {}

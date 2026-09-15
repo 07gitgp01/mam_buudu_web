@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService, AuthUser } from '../../../services/auth.service';
 import { ApiService } from '../../../services/api.service';
 import { ThemeService } from '../../../services/theme.service';
-import { PushNotificationService } from '../../../core/push-notification.service';
+import { PushNotificationService, NOTIF_TYPE_LABELS } from '../../../core/push-notification.service';
 import { forkJoin } from 'rxjs';
 
 @Component({
@@ -37,6 +37,8 @@ export class FamilleProfilComponent implements OnInit {
   pushSupported = false;
   pushEnabled = false;
   pushBusy = false;
+  readonly notifTypeEntries = Object.entries(NOTIF_TYPE_LABELS);
+  selectedTypes: string[] = []; // vide = tout recevoir
 
   constructor(
     public auth: AuthService,
@@ -49,10 +51,12 @@ export class FamilleProfilComponent implements OnInit {
   ngOnInit(): void {
     this.user = this.auth.getUser();
 
-    // Les accès "lecture seule" (lien partagé, pas de compte personnel) ne
-    // peuvent pas s'abonner aux notifications — le backend les refuse.
-    this.pushSupported = this.push.isSupported && this.user?.role !== 'viewonly';
+    // Les accès "lecture seule" (lien partagé, pas de compte personnel) peuvent
+    // désormais s'abonner : chaque appareil est rattaché à la famille plutôt
+    // qu'à un utilisateur (voir routes/push.ts côté backend).
+    this.pushSupported = this.push.isSupported;
     if (this.pushSupported) {
+      this.selectedTypes = this.push.getPreferredTypes();
       this.push.isSubscribed().then(v => this.pushEnabled = v);
     }
 
@@ -163,6 +167,25 @@ export class FamilleProfilComponent implements OnInit {
     } else {
       this.pushEnabled = await this.push.subscribe();
     }
+    this.pushBusy = false;
+  }
+
+  isTypeChecked(type: string): boolean {
+    return this.selectedTypes.length === 0 || this.selectedTypes.includes(type);
+  }
+
+  async toggleType(type: string): Promise<void> {
+    if (this.pushBusy) return;
+    // Partir de "tout coché" (tableau vide) puis décocher = tous les types sauf celui-ci.
+    const allTypes = this.notifTypeEntries.map(([key]) => key);
+    let next = this.selectedTypes.length === 0 ? [...allTypes] : [...this.selectedTypes];
+    next = next.includes(type) ? next.filter(t => t !== type) : [...next, type];
+    // Si tout est recoché, on revient à "tableau vide" (= tout recevoir) plutôt que de lister explicitement chaque type.
+    if (next.length === allTypes.length) next = [];
+
+    this.pushBusy = true;
+    const ok = await this.push.updateTypes(next);
+    if (ok) this.selectedTypes = next;
     this.pushBusy = false;
   }
 }

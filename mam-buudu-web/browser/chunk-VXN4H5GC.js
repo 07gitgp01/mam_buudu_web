@@ -5,8 +5,10 @@ import {
   COUNTRIES
 } from "./chunk-2XZ6WXAN.js";
 import {
+  NOTIF_TYPE_LABELS,
   PushNotificationService,
   QrcodeService,
+  RecipientPickerComponent,
   STORY_TAGS,
   STORY_TAG_COLORS,
   estVivant,
@@ -15,12 +17,12 @@ import {
   getInitiales,
   getNomComplet,
   getPhotoUrl
-} from "./chunk-STNTUTHY.js";
+} from "./chunk-XNCWYRRL.js";
 import {
   ApiService,
   LoadingService,
   ThemeService
-} from "./chunk-OQPKGRDY.js";
+} from "./chunk-PLIAXXAE.js";
 import {
   DefaultValueAccessor,
   FormBuilder,
@@ -3644,7 +3646,7 @@ function FamilleStoriesComponent_ng_container_11_Template(rf, ctx) {
 }
 function FamilleStoriesComponent_div_12_div_16_img_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "img", 90);
+    \u0275\u0275element(0, "img", 91);
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext(3);
@@ -3653,7 +3655,7 @@ function FamilleStoriesComponent_div_12_div_16_img_1_Template(rf, ctx) {
 }
 function FamilleStoriesComponent_div_12_div_16_video_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "video", 91);
+    \u0275\u0275element(0, "video", 92);
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext(3);
@@ -3663,9 +3665,9 @@ function FamilleStoriesComponent_div_12_div_16_video_2_Template(rf, ctx) {
 function FamilleStoriesComponent_div_12_div_16_Template(rf, ctx) {
   if (rf & 1) {
     const _r12 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 86);
-    \u0275\u0275template(1, FamilleStoriesComponent_div_12_div_16_img_1_Template, 1, 1, "img", 87)(2, FamilleStoriesComponent_div_12_div_16_video_2_Template, 1, 1, "video", 88);
-    \u0275\u0275elementStart(3, "button", 89);
+    \u0275\u0275elementStart(0, "div", 87);
+    \u0275\u0275template(1, FamilleStoriesComponent_div_12_div_16_img_1_Template, 1, 1, "img", 88)(2, FamilleStoriesComponent_div_12_div_16_video_2_Template, 1, 1, "video", 89);
+    \u0275\u0275elementStart(3, "button", 90);
     \u0275\u0275listener("click", function FamilleStoriesComponent_div_12_div_16_Template_button_click_3_listener() {
       \u0275\u0275restoreView(_r12);
       const ctx_r0 = \u0275\u0275nextContext(2);
@@ -3686,7 +3688,7 @@ function FamilleStoriesComponent_div_12_div_16_Template(rf, ctx) {
 function FamilleStoriesComponent_div_12_label_17_Template(rf, ctx) {
   if (rf & 1) {
     const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "label", 92)(1, "input", 93);
+    \u0275\u0275elementStart(0, "label", 93)(1, "input", 94);
     \u0275\u0275listener("change", function FamilleStoriesComponent_div_12_label_17_Template_input_change_1_listener($event) {
       \u0275\u0275restoreView(_r13);
       const ctx_r0 = \u0275\u0275nextContext(2);
@@ -3704,7 +3706,7 @@ function FamilleStoriesComponent_div_12_label_17_Template(rf, ctx) {
 function FamilleStoriesComponent_div_12_button_28_Template(rf, ctx) {
   if (rf & 1) {
     const _r14 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 94);
+    \u0275\u0275elementStart(0, "button", 95);
     \u0275\u0275listener("click", function FamilleStoriesComponent_div_12_button_28_Template_button_click_0_listener() {
       const t_r15 = \u0275\u0275restoreView(_r14).$implicit;
       const ctx_r0 = \u0275\u0275nextContext(2);
@@ -3722,9 +3724,9 @@ function FamilleStoriesComponent_div_12_button_28_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", t_r15, " ");
   }
 }
-function FamilleStoriesComponent_div_12_div_35_Template(rf, ctx) {
+function FamilleStoriesComponent_div_12_div_37_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 95)(1, "span", 5);
+    \u0275\u0275elementStart(0, "div", 96)(1, "span", 5);
     \u0275\u0275text(2, "error_outline");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -3736,14 +3738,14 @@ function FamilleStoriesComponent_div_12_div_35_Template(rf, ctx) {
     \u0275\u0275textInterpolate1("", ctx_r0.formErreur, " ");
   }
 }
-function FamilleStoriesComponent_div_12_span_40_Template(rf, ctx) {
+function FamilleStoriesComponent_div_12_span_42_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 96);
+    \u0275\u0275elementStart(0, "span", 97);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function FamilleStoriesComponent_div_12_span_41_Template(rf, ctx) {
+function FamilleStoriesComponent_div_12_span_43_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 5);
     \u0275\u0275text(1, "send");
@@ -3816,24 +3818,32 @@ function FamilleStoriesComponent_div_12_Template(rf, ctx) {
       \u0275\u0275twoWayBindingSet(ctx_r0.form.caption, $event) || (ctx_r0.form.caption = $event);
       return \u0275\u0275resetView($event);
     });
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(35, "div", 72)(36, "app-recipient-picker", 80);
+    \u0275\u0275twoWayListener("valueChange", function FamilleStoriesComponent_div_12_Template_app_recipient_picker_valueChange_36_listener($event) {
+      \u0275\u0275restoreView(_r11);
+      const ctx_r0 = \u0275\u0275nextContext();
+      \u0275\u0275twoWayBindingSet(ctx_r0.notifyUserIds, $event) || (ctx_r0.notifyUserIds = $event);
+      return \u0275\u0275resetView($event);
+    });
     \u0275\u0275elementEnd()()();
-    \u0275\u0275template(35, FamilleStoriesComponent_div_12_div_35_Template, 4, 1, "div", 80);
-    \u0275\u0275elementStart(36, "div", 81)(37, "button", 82);
-    \u0275\u0275listener("click", function FamilleStoriesComponent_div_12_Template_button_click_37_listener() {
+    \u0275\u0275template(37, FamilleStoriesComponent_div_12_div_37_Template, 4, 1, "div", 81);
+    \u0275\u0275elementStart(38, "div", 82)(39, "button", 83);
+    \u0275\u0275listener("click", function FamilleStoriesComponent_div_12_Template_button_click_39_listener() {
       \u0275\u0275restoreView(_r11);
       const ctx_r0 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r0.showForm = false);
     });
-    \u0275\u0275text(38, "Annuler");
+    \u0275\u0275text(40, "Annuler");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(39, "button", 83);
-    \u0275\u0275listener("click", function FamilleStoriesComponent_div_12_Template_button_click_39_listener() {
+    \u0275\u0275elementStart(41, "button", 84);
+    \u0275\u0275listener("click", function FamilleStoriesComponent_div_12_Template_button_click_41_listener() {
       \u0275\u0275restoreView(_r11);
       const ctx_r0 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r0.submitForm());
     });
-    \u0275\u0275template(40, FamilleStoriesComponent_div_12_span_40_Template, 2, 0, "span", 84)(41, FamilleStoriesComponent_div_12_span_41_Template, 2, 0, "span", 85);
-    \u0275\u0275text(42);
+    \u0275\u0275template(42, FamilleStoriesComponent_div_12_span_42_Template, 2, 0, "span", 85)(43, FamilleStoriesComponent_div_12_span_43_Template, 2, 0, "span", 86);
+    \u0275\u0275text(44);
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
@@ -3848,6 +3858,9 @@ function FamilleStoriesComponent_div_12_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r0.tagOptions);
     \u0275\u0275advance(6);
     \u0275\u0275twoWayProperty("ngModel", ctx_r0.form.caption);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("membres", ctx_r0.membres);
+    \u0275\u0275twoWayProperty("value", ctx_r0.notifyUserIds);
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.formErreur);
     \u0275\u0275advance(4);
@@ -3878,12 +3891,19 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
   saving = false;
   formErreur = null;
   form = { titre: "", caption: "", tag: "Souvenir", mediaFile: null, mediaPreview: null, mediaType: null };
+  membres = [];
+  notifyUserIds = null;
   constructor(api, auth) {
     this.api = api;
     this.auth = auth;
   }
   ngOnInit() {
     this.load();
+    this.api.getCurrentFamille().pipe(catchError(() => of(null))).subscribe((res) => {
+      if (res?.membres) {
+        this.membres = res.membres.filter((m) => m.user.id !== this.auth.getUser()?.id);
+      }
+    });
   }
   load() {
     this.loading = true;
@@ -3955,6 +3975,7 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
   }
   openForm() {
     this.form = { titre: "", caption: "", tag: "Souvenir", mediaFile: null, mediaPreview: null, mediaType: null };
+    this.notifyUserIds = null;
     this.formErreur = null;
     this.showForm = true;
   }
@@ -3988,7 +4009,8 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
         caption: this.form.caption,
         tag: this.form.tag || void 0,
         mediaUrl,
-        mediaType
+        mediaType,
+        notifyUserIds: this.notifyUserIds
       }).subscribe({
         next: (s) => {
           this.stories.unshift(s);
@@ -4034,7 +4056,7 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
   static \u0275fac = function FamilleStoriesComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _FamilleStoriesComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(AuthService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FamilleStoriesComponent, selectors: [["app-famille-stories"]], standalone: false, decls: 13, vars: 4, consts: [[1, "fs-page"], [1, "fs-header"], [1, "fs-title"], ["class", "fs-subtitle", 4, "ngIf"], [1, "fs-new-btn", 3, "click"], [1, "material-icons-round"], [4, "ngIf"], ["class", "fs-modal-overlay", 3, "click", 4, "ngIf"], [1, "fs-subtitle"], [1, "fs-sk-grid"], ["class", "fs-sk-card", 4, "ngFor", "ngForOf"], [1, "fs-sk-card"], [1, "fs-sk-header"], [1, "sk-avatar-sq", "sk-av-md"], [2, "flex", "1", "display", "flex", "flex-direction", "column", "gap", "6px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "sk-line", "sk-xs"], [2, "padding", "0 20px 16px", "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "55%"], [1, "fs-toolbar"], [1, "fs-search-bar"], ["type", "text", "placeholder", "Rechercher une story...", 3, "ngModelChange", "ngModel"], ["class", "fs-search-clear", 3, "click", 4, "ngIf"], [1, "fs-tags"], ["class", "fs-tag-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], ["class", "fs-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "load-more-row", 4, "ngIf"], [1, "fs-search-clear", 3, "click"], [1, "fs-tag-btn", 3, "click"], [1, "fs-grid"], ["class", "fs-card", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "fs-card"], [1, "fs-card-header"], [1, "fs-author"], [1, "fs-author-avatar"], [1, "fs-author-info"], [1, "fs-author-name"], [1, "fs-author-date"], [2, "display", "flex", "align-items", "center", "gap", "6px"], [1, "fs-tag-badge"], ["class", "fs-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "fs-card-media", 4, "ngIf"], [1, "fs-card-body"], ["class", "fs-card-title", 4, "ngIf"], ["class", "fs-card-text", 4, "ngIf"], [1, "fs-card-footer"], [1, "fs-action-btn", 3, "click"], [1, "fs-action-btn"], [1, "fs-action-btn", "fs-share-btn"], ["title", "Supprimer", 1, "fs-delete-btn", 3, "click"], [1, "fs-card-media"], ["class", "fs-card-media-img", "loading", "lazy", "alt", "", 3, "src", 4, "ngIf"], ["class", "fs-card-media-video", "controls", "", 3, "src", 4, "ngIf"], ["loading", "lazy", "alt", "", 1, "fs-card-media-img", 3, "src"], ["controls", "", 1, "fs-card-media-video", 3, "src"], [1, "fs-card-title"], [1, "fs-card-text"], [1, "empty-state"], ["class", "fs-new-btn", 3, "click", 4, "ngIf"], [1, "load-more-row"], [1, "btn-secondary", 3, "click", "disabled"], ["class", "btn-spinner", 4, "ngIf"], [1, "btn-spinner"], [1, "fs-modal-overlay", 3, "click"], [1, "fs-modal", 3, "click"], [1, "fs-modal-head"], [1, "fs-modal-close", 3, "click"], [1, "fs-modal-body"], [1, "fs-form-group"], [1, "fs-optional"], ["class", "fs-media-preview", 4, "ngIf"], ["class", "fs-media-picker", 4, "ngIf"], ["type", "text", "placeholder", "Ex : Mariage de tante Kadiatou\u2026", 1, "fs-input", 3, "ngModelChange", "ngModel"], [1, "fs-tag-picker"], ["class", "fs-tag-pick", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], ["rows", "5", "placeholder", "Racontez ce beau moment \xE0 toute la famille\u2026", 1, "fs-input", "fs-textarea", 3, "ngModelChange", "ngModel"], ["class", "error-state", "style", "margin:0 20px 12px", 4, "ngIf"], [1, "fs-modal-foot"], [1, "fs-btn-cancel", 3, "click"], [1, "fs-btn-submit", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "fs-media-preview"], ["class", "fs-media-img", "alt", "", 3, "src", 4, "ngIf"], ["class", "fs-media-video", "controls", "", 3, "src", 4, "ngIf"], ["type", "button", 1, "fs-media-remove", 3, "click"], ["alt", "", 1, "fs-media-img", 3, "src"], ["controls", "", 1, "fs-media-video", 3, "src"], [1, "fs-media-picker"], ["type", "file", "accept", "image/*,video/*", "hidden", "", 3, "change"], [1, "fs-tag-pick", 3, "click"], [1, "error-state", 2, "margin", "0 20px 12px"], [1, "material-icons-round", "spin"]], template: function FamilleStoriesComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FamilleStoriesComponent, selectors: [["app-famille-stories"]], standalone: false, decls: 13, vars: 4, consts: [[1, "fs-page"], [1, "fs-header"], [1, "fs-title"], ["class", "fs-subtitle", 4, "ngIf"], [1, "fs-new-btn", 3, "click"], [1, "material-icons-round"], [4, "ngIf"], ["class", "fs-modal-overlay", 3, "click", 4, "ngIf"], [1, "fs-subtitle"], [1, "fs-sk-grid"], ["class", "fs-sk-card", 4, "ngFor", "ngForOf"], [1, "fs-sk-card"], [1, "fs-sk-header"], [1, "sk-avatar-sq", "sk-av-md"], [2, "flex", "1", "display", "flex", "flex-direction", "column", "gap", "6px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "sk-line", "sk-xs"], [2, "padding", "0 20px 16px", "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "55%"], [1, "fs-toolbar"], [1, "fs-search-bar"], ["type", "text", "placeholder", "Rechercher une story...", 3, "ngModelChange", "ngModel"], ["class", "fs-search-clear", 3, "click", 4, "ngIf"], [1, "fs-tags"], ["class", "fs-tag-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], ["class", "fs-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "load-more-row", 4, "ngIf"], [1, "fs-search-clear", 3, "click"], [1, "fs-tag-btn", 3, "click"], [1, "fs-grid"], ["class", "fs-card", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "fs-card"], [1, "fs-card-header"], [1, "fs-author"], [1, "fs-author-avatar"], [1, "fs-author-info"], [1, "fs-author-name"], [1, "fs-author-date"], [2, "display", "flex", "align-items", "center", "gap", "6px"], [1, "fs-tag-badge"], ["class", "fs-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "fs-card-media", 4, "ngIf"], [1, "fs-card-body"], ["class", "fs-card-title", 4, "ngIf"], ["class", "fs-card-text", 4, "ngIf"], [1, "fs-card-footer"], [1, "fs-action-btn", 3, "click"], [1, "fs-action-btn"], [1, "fs-action-btn", "fs-share-btn"], ["title", "Supprimer", 1, "fs-delete-btn", 3, "click"], [1, "fs-card-media"], ["class", "fs-card-media-img", "loading", "lazy", "alt", "", 3, "src", 4, "ngIf"], ["class", "fs-card-media-video", "controls", "", 3, "src", 4, "ngIf"], ["loading", "lazy", "alt", "", 1, "fs-card-media-img", 3, "src"], ["controls", "", 1, "fs-card-media-video", 3, "src"], [1, "fs-card-title"], [1, "fs-card-text"], [1, "empty-state"], ["class", "fs-new-btn", 3, "click", 4, "ngIf"], [1, "load-more-row"], [1, "btn-secondary", 3, "click", "disabled"], ["class", "btn-spinner", 4, "ngIf"], [1, "btn-spinner"], [1, "fs-modal-overlay", 3, "click"], [1, "fs-modal", 3, "click"], [1, "fs-modal-head"], [1, "fs-modal-close", 3, "click"], [1, "fs-modal-body"], [1, "fs-form-group"], [1, "fs-optional"], ["class", "fs-media-preview", 4, "ngIf"], ["class", "fs-media-picker", 4, "ngIf"], ["type", "text", "placeholder", "Ex : Mariage de tante Kadiatou\u2026", 1, "fs-input", 3, "ngModelChange", "ngModel"], [1, "fs-tag-picker"], ["class", "fs-tag-pick", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], ["rows", "5", "placeholder", "Racontez ce beau moment \xE0 toute la famille\u2026", 1, "fs-input", "fs-textarea", 3, "ngModelChange", "ngModel"], ["label", "Qui pr\xE9venir de cette story ?", 3, "valueChange", "membres", "value"], ["class", "error-state", "style", "margin:0 20px 12px", 4, "ngIf"], [1, "fs-modal-foot"], [1, "fs-btn-cancel", 3, "click"], [1, "fs-btn-submit", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "fs-media-preview"], ["class", "fs-media-img", "alt", "", 3, "src", 4, "ngIf"], ["class", "fs-media-video", "controls", "", 3, "src", 4, "ngIf"], ["type", "button", 1, "fs-media-remove", 3, "click"], ["alt", "", 1, "fs-media-img", 3, "src"], ["controls", "", 1, "fs-media-video", 3, "src"], [1, "fs-media-picker"], ["type", "file", "accept", "image/*,video/*", "hidden", "", 3, "change"], [1, "fs-tag-pick", 3, "click"], [1, "error-state", 2, "margin", "0 20px 12px"], [1, "material-icons-round", "spin"]], template: function FamilleStoriesComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div")(3, "h2", 2);
       \u0275\u0275text(4, "Stories familiales");
@@ -4052,7 +4074,7 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
       \u0275\u0275elementEnd()();
       \u0275\u0275template(10, FamilleStoriesComponent_ng_container_10_Template, 3, 2, "ng-container", 6)(11, FamilleStoriesComponent_ng_container_11_Template, 12, 6, "ng-container", 6);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(12, FamilleStoriesComponent_div_12_Template, 43, 10, "div", 7);
+      \u0275\u0275template(12, FamilleStoriesComponent_div_12_Template, 45, 12, "div", 7);
     }
     if (rf & 2) {
       \u0275\u0275advance(5);
@@ -4064,7 +4086,7 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.showForm);
     }
-  }, dependencies: [NgForOf, NgIf, DefaultValueAccessor, NgControlStatus, NgModel], styles: ['@charset "UTF-8";\n\n\n\n.fs-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.fs-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.fs-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 0 0 4px;\n}\n.fs-subtitle[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #9CA3AF;\n  margin: 0;\n}\n.fs-new-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 18px;\n  background: #7C3AED;\n  color: #fff;\n  border: none;\n  border-radius: 30px;\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.fs-new-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.fs-new-btn[_ngcontent-%COMP%]:hover {\n  background: #6D28D9;\n  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);\n}\n.fs-sk-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n  gap: 20px;\n}\n.fs-sk-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 20px;\n  border: 1px solid #F0F4FF;\n  overflow: hidden;\n}\n.fs-sk-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 18px 20px 14px;\n}\n.fs-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.fs-search-bar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1.5px solid #E5E7EB;\n  border-radius: 50px;\n  padding: 8px 14px;\n  transition: border-color 0.2s;\n}\n.fs-search-bar[_ngcontent-%COMP%]:focus-within {\n  border-color: #7C3AED;\n}\n.fs-search-bar[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #9CA3AF;\n}\n.fs-search-bar[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  outline: none;\n  background: transparent;\n  font-size: 14px;\n  font-family: inherit;\n  color: #1F2937;\n}\n.fs-search-bar[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]::placeholder {\n  color: #9CA3AF;\n}\n.fs-search-clear[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  border: none;\n  background: none;\n  cursor: pointer;\n  color: #9CA3AF;\n  transition: color 0.2s;\n  padding: 2px;\n}\n.fs-search-clear[_ngcontent-%COMP%]:hover {\n  color: #374151;\n}\n.fs-search-clear[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.fs-tags[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n  flex-wrap: wrap;\n}\n.fs-tag-btn[_ngcontent-%COMP%] {\n  padding: 6px 14px;\n  border-radius: 30px;\n  border: 1.5px solid #E5E7EB;\n  background: #fff;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  color: #6B7280;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.fs-tag-btn[_ngcontent-%COMP%]:hover {\n  border-color: #EC4899;\n  color: #DB2777;\n  background: #FDF2F8;\n}\n.fs-tag-btn.active[_ngcontent-%COMP%] {\n  background: #7C3AED;\n  border-color: #7C3AED;\n  color: #fff;\n}\n.fs-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));\n  gap: 20px;\n}\n.fs-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 20px;\n  border: 1px solid #F0F4FF;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  transition: all 0.25s;\n}\n.fs-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.07);\n  transform: translateY(-3px);\n  border-color: #EDE9FE;\n}\n.fs-card-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 20px 14px;\n}\n.fs-author[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.fs-author-avatar[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  background:\n    linear-gradient(\n      135deg,\n      #8B5CF6,\n      #7C3AED);\n  flex-shrink: 0;\n}\n.fs-author-avatar.male[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #3B82F6,\n      #6366F1);\n}\n.fs-author-avatar.female[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #EC4899,\n      #F43F5E);\n}\n.fs-author-info[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n}\n.fs-author-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: #1F2937;\n}\n.fs-author-date[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #9CA3AF;\n}\n.fs-tag-badge[_ngcontent-%COMP%] {\n  padding: 4px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.fs-delete-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #D1D5DB;\n  transition: all 0.2s;\n}\n.fs-delete-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.fs-delete-btn[_ngcontent-%COMP%]:hover {\n  background: #FEF2F2;\n  color: #EF4444;\n}\n.fs-card-body[_ngcontent-%COMP%] {\n  padding: 0 20px 16px;\n  flex: 1;\n}\n.fs-card-title[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 0 0 8px;\n  line-height: 1.3;\n}\n.fs-card-text[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #4B5563;\n  line-height: 1.7;\n  display: -webkit-box;\n  -webkit-line-clamp: 4;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  margin: 0;\n}\n.fs-card-footer[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  padding: 12px 20px;\n  border-top: 1px solid #F9FAFB;\n}\n.fs-action-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 7px 12px;\n  border: none;\n  background: none;\n  font-family: inherit;\n  font-size: 13px;\n  color: #9CA3AF;\n  cursor: pointer;\n  border-radius: 10px;\n  transition: all 0.2s;\n}\n.fs-action-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.fs-action-btn[_ngcontent-%COMP%]:hover {\n  background: #F9FAFB;\n  color: #4B5563;\n}\n.fs-action-btn.liked[_ngcontent-%COMP%] {\n  color: #DB2777;\n}\n.fs-action-btn.liked[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #DB2777;\n}\n.fs-share-btn[_ngcontent-%COMP%] {\n  margin-left: auto;\n}\n.fs-modal-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  padding: 16px;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.fs-modal[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 22px;\n  width: 100%;\n  max-width: 520px;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);\n  overflow: hidden;\n  animation: _ngcontent-%COMP%_fs-modal-in 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_fs-modal-in {\n  from {\n    transform: translateY(16px) scale(0.98);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0) scale(1);\n    opacity: 1;\n  }\n}\n.fs-modal-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px 16px;\n  border-bottom: 1px solid #F3F4F6;\n}\n.fs-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 17px;\n  margin: 0;\n}\n.fs-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #7C3AED;\n  font-size: 20px !important;\n}\n.fs-modal-close[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 32px;\n  height: 32px;\n  border-radius: 10px;\n  border: none;\n  background: #F3F4F6;\n  cursor: pointer;\n  color: #6B7280;\n  transition: all 0.2s;\n}\n.fs-modal-close[_ngcontent-%COMP%]:hover {\n  background: #FEF2F2;\n  color: #EF4444;\n}\n.fs-modal-close[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.fs-modal-body[_ngcontent-%COMP%] {\n  padding: 20px 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.fs-form-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.fs-form-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: #1F2937;\n}\n.fs-input[_ngcontent-%COMP%] {\n  padding: 10px 14px;\n  border: 1.5px solid #E5E7EB;\n  border-radius: 12px;\n  font-size: 14px;\n  font-family: inherit;\n  color: #1F2937;\n  background: #fff;\n  transition: border-color 0.2s;\n  outline: none;\n}\n.fs-input[_ngcontent-%COMP%]:focus {\n  border-color: #7C3AED;\n}\n.fs-input[_ngcontent-%COMP%]::placeholder {\n  color: #9CA3AF;\n}\n.fs-textarea[_ngcontent-%COMP%] {\n  resize: vertical;\n  min-height: 100px;\n}\n.fs-optional[_ngcontent-%COMP%] {\n  color: #9CA3AF;\n  font-weight: 400;\n  font-size: 12px;\n  margin-left: 4px;\n}\n.fs-media-picker[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 14px 16px;\n  border: 2px dashed #E5E7EB;\n  border-radius: 12px;\n  cursor: pointer;\n  color: #6B7280;\n  font-size: 14px;\n  transition: all 0.2s;\n}\n.fs-media-picker[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 22px !important;\n  color: #7C3AED;\n}\n.fs-media-picker[_ngcontent-%COMP%]:hover {\n  border-color: #7C3AED;\n  color: #7C3AED;\n  background: #F5F3FF;\n}\n.fs-media-preview[_ngcontent-%COMP%] {\n  position: relative;\n  border-radius: 12px;\n  overflow: hidden;\n  background: #000;\n}\n.fs-media-img[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 220px;\n  object-fit: cover;\n  display: block;\n}\n.fs-media-video[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 220px;\n  display: block;\n}\n.fs-media-remove[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  background: rgba(0, 0, 0, 0.55);\n  color: #fff;\n  border: none;\n  border-radius: 50%;\n  width: 28px;\n  height: 28px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  transition: background 0.2s;\n}\n.fs-media-remove[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.fs-media-remove[_ngcontent-%COMP%]:hover {\n  background: rgba(0, 0, 0, 0.82);\n}\n.fs-card-media[_ngcontent-%COMP%] {\n  width: 100%;\n  background: #000;\n}\n.fs-card-media-img[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 280px;\n  object-fit: cover;\n  display: block;\n}\n.fs-card-media-video[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 280px;\n  display: block;\n}\n.fs-tag-picker[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.fs-tag-pick[_ngcontent-%COMP%] {\n  padding: 5px 12px;\n  border-radius: 30px;\n  border: 1.5px solid #E5E7EB;\n  background: #F9FAFB;\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 500;\n  color: #6B7280;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.fs-tag-pick[_ngcontent-%COMP%]:hover {\n  border-color: #7C3AED;\n}\n.fs-tag-pick.selected[_ngcontent-%COMP%] {\n  font-weight: 700;\n}\n.fs-modal-foot[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  gap: 10px;\n  padding: 16px 24px;\n  border-top: 1px solid #F3F4F6;\n}\n.fs-btn-cancel[_ngcontent-%COMP%] {\n  padding: 9px 18px;\n  border: 1.5px solid #E5E7EB;\n  border-radius: 30px;\n  background: #fff;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  color: #6B7280;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.fs-btn-cancel[_ngcontent-%COMP%]:hover {\n  background: #F9FAFB;\n}\n.fs-btn-submit[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 20px;\n  background: #7C3AED;\n  color: #fff;\n  border: none;\n  border-radius: 30px;\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.fs-btn-submit[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.fs-btn-submit[_ngcontent-%COMP%]:hover:not(:disabled) {\n  background: #6D28D9;\n}\n.fs-btn-submit[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.empty-state[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  padding: 64px 24px;\n  text-align: center;\n}\n.empty-state[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 48px !important;\n  color: #D1D5DB;\n}\n.empty-state[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 18px;\n  color: #6B7280;\n}\n.empty-state[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  color: #9CA3AF;\n  font-size: 14px;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_spin 1s linear infinite;\n}\n.load-more-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  margin-top: 24px;\n}\n.btn-spinner[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 15px;\n  height: 15px;\n  border: 2px solid rgba(0, 0, 0, 0.15);\n  border-top-color: var(--primary);\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.7s linear infinite;\n}\n@media (max-width: 600px) {\n  .fs-modal[_ngcontent-%COMP%] {\n    border-radius: 20px 20px 0 0;\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    max-width: 100%;\n  }\n  .fs-modal-overlay[_ngcontent-%COMP%] {\n    align-items: flex-end;\n    padding: 0;\n  }\n  .fs-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=famille-stories.component.css.map */'] });
+  }, dependencies: [NgForOf, NgIf, DefaultValueAccessor, NgControlStatus, NgModel, RecipientPickerComponent], styles: ['@charset "UTF-8";\n\n\n\n.fs-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.fs-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.fs-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 0 0 4px;\n}\n.fs-subtitle[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #9CA3AF;\n  margin: 0;\n}\n.fs-new-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 18px;\n  background: #7C3AED;\n  color: #fff;\n  border: none;\n  border-radius: 30px;\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.fs-new-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.fs-new-btn[_ngcontent-%COMP%]:hover {\n  background: #6D28D9;\n  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);\n}\n.fs-sk-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n  gap: 20px;\n}\n.fs-sk-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 20px;\n  border: 1px solid #F0F4FF;\n  overflow: hidden;\n}\n.fs-sk-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 18px 20px 14px;\n}\n.fs-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.fs-search-bar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: #fff;\n  border: 1.5px solid #E5E7EB;\n  border-radius: 50px;\n  padding: 8px 14px;\n  transition: border-color 0.2s;\n}\n.fs-search-bar[_ngcontent-%COMP%]:focus-within {\n  border-color: #7C3AED;\n}\n.fs-search-bar[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #9CA3AF;\n}\n.fs-search-bar[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  outline: none;\n  background: transparent;\n  font-size: 14px;\n  font-family: inherit;\n  color: #1F2937;\n}\n.fs-search-bar[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]::placeholder {\n  color: #9CA3AF;\n}\n.fs-search-clear[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  border: none;\n  background: none;\n  cursor: pointer;\n  color: #9CA3AF;\n  transition: color 0.2s;\n  padding: 2px;\n}\n.fs-search-clear[_ngcontent-%COMP%]:hover {\n  color: #374151;\n}\n.fs-search-clear[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.fs-tags[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n  flex-wrap: wrap;\n}\n.fs-tag-btn[_ngcontent-%COMP%] {\n  padding: 6px 14px;\n  border-radius: 30px;\n  border: 1.5px solid #E5E7EB;\n  background: #fff;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  color: #6B7280;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.fs-tag-btn[_ngcontent-%COMP%]:hover {\n  border-color: #EC4899;\n  color: #DB2777;\n  background: #FDF2F8;\n}\n.fs-tag-btn.active[_ngcontent-%COMP%] {\n  background: #7C3AED;\n  border-color: #7C3AED;\n  color: #fff;\n}\n.fs-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));\n  gap: 20px;\n}\n.fs-card[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 20px;\n  border: 1px solid #F0F4FF;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  transition: all 0.25s;\n}\n.fs-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.07);\n  transform: translateY(-3px);\n  border-color: #EDE9FE;\n}\n.fs-card-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 20px 14px;\n}\n.fs-author[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.fs-author-avatar[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  background:\n    linear-gradient(\n      135deg,\n      #8B5CF6,\n      #7C3AED);\n  flex-shrink: 0;\n}\n.fs-author-avatar.male[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #3B82F6,\n      #6366F1);\n}\n.fs-author-avatar.female[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #EC4899,\n      #F43F5E);\n}\n.fs-author-info[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n}\n.fs-author-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: #1F2937;\n}\n.fs-author-date[_ngcontent-%COMP%] {\n  font-size: 11px;\n  color: #9CA3AF;\n}\n.fs-tag-badge[_ngcontent-%COMP%] {\n  padding: 4px 10px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 600;\n}\n.fs-delete-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #D1D5DB;\n  transition: all 0.2s;\n}\n.fs-delete-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.fs-delete-btn[_ngcontent-%COMP%]:hover {\n  background: #FEF2F2;\n  color: #EF4444;\n}\n.fs-card-body[_ngcontent-%COMP%] {\n  padding: 0 20px 16px;\n  flex: 1;\n}\n.fs-card-title[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 0 0 8px;\n  line-height: 1.3;\n}\n.fs-card-text[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #4B5563;\n  line-height: 1.7;\n  display: -webkit-box;\n  -webkit-line-clamp: 4;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  margin: 0;\n}\n.fs-card-footer[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  padding: 12px 20px;\n  border-top: 1px solid #F9FAFB;\n}\n.fs-action-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 7px 12px;\n  border: none;\n  background: none;\n  font-family: inherit;\n  font-size: 13px;\n  color: #9CA3AF;\n  cursor: pointer;\n  border-radius: 10px;\n  transition: all 0.2s;\n}\n.fs-action-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.fs-action-btn[_ngcontent-%COMP%]:hover {\n  background: #F9FAFB;\n  color: #4B5563;\n}\n.fs-action-btn.liked[_ngcontent-%COMP%] {\n  color: #DB2777;\n}\n.fs-action-btn.liked[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #DB2777;\n}\n.fs-share-btn[_ngcontent-%COMP%] {\n  margin-left: auto;\n}\n.fs-modal-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  padding: 16px;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.fs-modal[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 22px;\n  width: 100%;\n  max-width: 520px;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);\n  overflow: hidden;\n  animation: _ngcontent-%COMP%_fs-modal-in 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_fs-modal-in {\n  from {\n    transform: translateY(16px) scale(0.98);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0) scale(1);\n    opacity: 1;\n  }\n}\n.fs-modal-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px 16px;\n  border-bottom: 1px solid #F3F4F6;\n}\n.fs-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 17px;\n  margin: 0;\n}\n.fs-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #7C3AED;\n  font-size: 20px !important;\n}\n.fs-modal-close[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 32px;\n  height: 32px;\n  border-radius: 10px;\n  border: none;\n  background: #F3F4F6;\n  cursor: pointer;\n  color: #6B7280;\n  transition: all 0.2s;\n}\n.fs-modal-close[_ngcontent-%COMP%]:hover {\n  background: #FEF2F2;\n  color: #EF4444;\n}\n.fs-modal-close[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.fs-modal-body[_ngcontent-%COMP%] {\n  padding: 20px 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.fs-form-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.fs-form-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: #1F2937;\n}\n.fs-input[_ngcontent-%COMP%] {\n  padding: 10px 14px;\n  border: 1.5px solid #E5E7EB;\n  border-radius: 12px;\n  font-size: 14px;\n  font-family: inherit;\n  color: #1F2937;\n  background: #fff;\n  transition: border-color 0.2s;\n  outline: none;\n}\n.fs-input[_ngcontent-%COMP%]:focus {\n  border-color: #7C3AED;\n}\n.fs-input[_ngcontent-%COMP%]::placeholder {\n  color: #9CA3AF;\n}\n.fs-textarea[_ngcontent-%COMP%] {\n  resize: vertical;\n  min-height: 100px;\n}\n.fs-optional[_ngcontent-%COMP%] {\n  color: #9CA3AF;\n  font-weight: 400;\n  font-size: 12px;\n  margin-left: 4px;\n}\n.fs-media-picker[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 14px 16px;\n  border: 2px dashed #E5E7EB;\n  border-radius: 12px;\n  cursor: pointer;\n  color: #6B7280;\n  font-size: 14px;\n  transition: all 0.2s;\n}\n.fs-media-picker[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 22px !important;\n  color: #7C3AED;\n}\n.fs-media-picker[_ngcontent-%COMP%]:hover {\n  border-color: #7C3AED;\n  color: #7C3AED;\n  background: #F5F3FF;\n}\n.fs-media-preview[_ngcontent-%COMP%] {\n  position: relative;\n  border-radius: 12px;\n  overflow: hidden;\n  background: #000;\n}\n.fs-media-img[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 220px;\n  object-fit: cover;\n  display: block;\n}\n.fs-media-video[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 220px;\n  display: block;\n}\n.fs-media-remove[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  background: rgba(0, 0, 0, 0.55);\n  color: #fff;\n  border: none;\n  border-radius: 50%;\n  width: 28px;\n  height: 28px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  transition: background 0.2s;\n}\n.fs-media-remove[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.fs-media-remove[_ngcontent-%COMP%]:hover {\n  background: rgba(0, 0, 0, 0.82);\n}\n.fs-card-media[_ngcontent-%COMP%] {\n  width: 100%;\n  background: #000;\n}\n.fs-card-media-img[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 280px;\n  object-fit: cover;\n  display: block;\n}\n.fs-card-media-video[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 280px;\n  display: block;\n}\n.fs-tag-picker[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.fs-tag-pick[_ngcontent-%COMP%] {\n  padding: 5px 12px;\n  border-radius: 30px;\n  border: 1.5px solid #E5E7EB;\n  background: #F9FAFB;\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 500;\n  color: #6B7280;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.fs-tag-pick[_ngcontent-%COMP%]:hover {\n  border-color: #7C3AED;\n}\n.fs-tag-pick.selected[_ngcontent-%COMP%] {\n  font-weight: 700;\n}\n.fs-modal-foot[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  gap: 10px;\n  padding: 16px 24px;\n  border-top: 1px solid #F3F4F6;\n}\n.fs-btn-cancel[_ngcontent-%COMP%] {\n  padding: 9px 18px;\n  border: 1.5px solid #E5E7EB;\n  border-radius: 30px;\n  background: #fff;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  color: #6B7280;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.fs-btn-cancel[_ngcontent-%COMP%]:hover {\n  background: #F9FAFB;\n}\n.fs-btn-submit[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 9px 20px;\n  background: #7C3AED;\n  color: #fff;\n  border: none;\n  border-radius: 30px;\n  font-size: 13px;\n  font-weight: 600;\n  font-family: inherit;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.fs-btn-submit[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.fs-btn-submit[_ngcontent-%COMP%]:hover:not(:disabled) {\n  background: #6D28D9;\n}\n.fs-btn-submit[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.empty-state[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  padding: 64px 24px;\n  text-align: center;\n}\n.empty-state[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 48px !important;\n  color: #D1D5DB;\n}\n.empty-state[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 18px;\n  color: #6B7280;\n}\n.empty-state[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  color: #9CA3AF;\n  font-size: 14px;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_spin 1s linear infinite;\n}\n.load-more-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  margin-top: 24px;\n}\n.btn-spinner[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 15px;\n  height: 15px;\n  border: 2px solid rgba(0, 0, 0, 0.15);\n  border-top-color: var(--primary);\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.7s linear infinite;\n}\n@media (max-width: 600px) {\n  .fs-modal[_ngcontent-%COMP%] {\n    border-radius: 20px 20px 0 0;\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    max-width: 100%;\n  }\n  .fs-modal-overlay[_ngcontent-%COMP%] {\n    align-items: flex-end;\n    padding: 0;\n  }\n  .fs-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=famille-stories.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FamilleStoriesComponent, [{
@@ -4268,6 +4290,14 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
                   placeholder="Racontez ce beau moment \xE0 toute la famille\u2026"\r
                   class="fs-input fs-textarea"></textarea>\r
       </div>\r
+\r
+      <div class="fs-form-group">\r
+        <app-recipient-picker\r
+          [membres]="membres"\r
+          label="Qui pr\xE9venir de cette story ?"\r
+          [(value)]="notifyUserIds">\r
+        </app-recipient-picker>\r
+      </div>\r
     </div>\r
 \r
     <div class="error-state" *ngIf="formErreur" style="margin:0 20px 12px">\r
@@ -4290,7 +4320,7 @@ var FamilleStoriesComponent = class _FamilleStoriesComponent {
   }], () => [{ type: ApiService }, { type: AuthService }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FamilleStoriesComponent, { className: "FamilleStoriesComponent", filePath: "src/app/famille/pages/stories/famille-stories.component.ts", lineNumber: 13 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FamilleStoriesComponent, { className: "FamilleStoriesComponent", filePath: "src/app/famille/pages/stories/famille-stories.component.ts", lineNumber: 14 });
 })();
 
 // src/app/famille/pages/arbre/famille-arbre.component.ts
@@ -7405,6 +7435,42 @@ function FamilleProfilComponent_ng_container_2_div_120_ng_container_10_Template(
     \u0275\u0275textInterpolate(ctx_r1.pushEnabled ? "D\xE9sactiver" : "Activer les notifications");
   }
 }
+function FamilleProfilComponent_ng_container_2_div_120_div_11_label_3_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r11 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "label", 104)(1, "input", 105);
+    \u0275\u0275listener("change", function FamilleProfilComponent_ng_container_2_div_120_div_11_label_3_Template_input_change_1_listener() {
+      const entry_r12 = \u0275\u0275restoreView(_r11).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(4);
+      return \u0275\u0275resetView(ctx_r1.toggleType(entry_r12[0]));
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const entry_r12 = ctx.$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance();
+    \u0275\u0275property("checked", ctx_r1.isTypeChecked(entry_r12[0]))("disabled", ctx_r1.pushBusy);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", entry_r12[1], " ");
+  }
+}
+function FamilleProfilComponent_ng_container_2_div_120_div_11_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 101)(1, "p", 102);
+    \u0275\u0275text(2, "Types de notifications re\xE7ues :");
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(3, FamilleProfilComponent_ng_container_2_div_120_div_11_label_3_Template, 3, 3, "label", 103);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngForOf", ctx_r1.notifTypeEntries);
+  }
+}
 function FamilleProfilComponent_ng_container_2_div_120_Template(rf, ctx) {
   if (rf & 1) {
     const _r10 = \u0275\u0275getCurrentView();
@@ -7423,7 +7489,9 @@ function FamilleProfilComponent_ng_container_2_div_120_Template(rf, ctx) {
       return \u0275\u0275resetView(ctx_r1.togglePush());
     });
     \u0275\u0275template(9, FamilleProfilComponent_ng_container_2_div_120_span_9_Template, 2, 0, "span", 85)(10, FamilleProfilComponent_ng_container_2_div_120_ng_container_10_Template, 2, 1, "ng-container", 2);
-    \u0275\u0275elementEnd()();
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(11, FamilleProfilComponent_ng_container_2_div_120_div_11_Template, 4, 1, "div", 100);
+    \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
@@ -7433,6 +7501,8 @@ function FamilleProfilComponent_ng_container_2_div_120_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r1.pushBusy);
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", !ctx_r1.pushBusy);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.pushEnabled);
   }
 }
 function FamilleProfilComponent_ng_container_2_Template(rf, ctx) {
@@ -7577,7 +7647,7 @@ function FamilleProfilComponent_ng_container_2_Template(rf, ctx) {
     \u0275\u0275elementStart(118, "p", 56);
     \u0275\u0275text(119, "Couleur principale de l'interface");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(120, FamilleProfilComponent_ng_container_2_div_120_Template, 11, 3, "div", 57);
+    \u0275\u0275template(120, FamilleProfilComponent_ng_container_2_div_120_Template, 12, 4, "div", 57);
     \u0275\u0275elementStart(121, "div", 58)(122, "div", 26)(123, "div", 59)(124, "span", 28);
     \u0275\u0275text(125, "warning");
     \u0275\u0275elementEnd();
@@ -7674,6 +7744,9 @@ var FamilleProfilComponent = class _FamilleProfilComponent {
   pushSupported = false;
   pushEnabled = false;
   pushBusy = false;
+  notifTypeEntries = Object.entries(NOTIF_TYPE_LABELS);
+  selectedTypes = [];
+  // vide = tout recevoir
   constructor(auth, api, theme, router, push) {
     this.auth = auth;
     this.api = api;
@@ -7683,8 +7756,9 @@ var FamilleProfilComponent = class _FamilleProfilComponent {
   }
   ngOnInit() {
     this.user = this.auth.getUser();
-    this.pushSupported = this.push.isSupported && this.user?.role !== "viewonly";
+    this.pushSupported = this.push.isSupported;
     if (this.pushSupported) {
+      this.selectedTypes = this.push.getPreferredTypes();
       this.push.isSubscribed().then((v) => this.pushEnabled = v);
     }
     if (this.user) {
@@ -7819,10 +7893,29 @@ Code d'acc\xE8s : *${this.familleCode}*`;
       this.pushBusy = false;
     });
   }
+  isTypeChecked(type) {
+    return this.selectedTypes.length === 0 || this.selectedTypes.includes(type);
+  }
+  toggleType(type) {
+    return __async(this, null, function* () {
+      if (this.pushBusy)
+        return;
+      const allTypes = this.notifTypeEntries.map(([key]) => key);
+      let next = this.selectedTypes.length === 0 ? [...allTypes] : [...this.selectedTypes];
+      next = next.includes(type) ? next.filter((t) => t !== type) : [...next, type];
+      if (next.length === allTypes.length)
+        next = [];
+      this.pushBusy = true;
+      const ok = yield this.push.updateTypes(next);
+      if (ok)
+        this.selectedTypes = next;
+      this.pushBusy = false;
+    });
+  }
   static \u0275fac = function FamilleProfilComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _FamilleProfilComponent)(\u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(ThemeService), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(PushNotificationService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FamilleProfilComponent, selectors: [["app-famille-profil"]], standalone: false, decls: 3, vars: 2, consts: [[1, "fp-page"], ["class", "sk-section", 4, "ngIf"], [4, "ngIf"], [1, "sk-section"], [1, "sk-hero"], [2, "display", "grid", "grid-template-columns", "1fr 1fr", "gap", "16px", "margin-top", "8px"], ["style", "background:#fff;border:1px solid #E5E7EB;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px", 4, "ngFor", "ngForOf"], [2, "background", "#fff", "border", "1px solid #E5E7EB", "border-radius", "16px", "padding", "20px", "display", "flex", "flex-direction", "column", "gap", "12px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-full"], [1, "sk-line", "sk-sm"], [1, "fp-hero"], [1, "fp-hero-bg"], [1, "fp-hero-content"], [1, "fp-avatar-wrap"], [1, "fp-hero-avatar"], [1, "fp-online-dot"], [1, "fp-hero-info"], [1, "fp-hero-name"], [1, "fp-hero-meta"], [1, "fp-role-badge"], ["class", "fp-contact", 4, "ngIf"], ["class", "fp-edit-btn", 3, "click", 4, "ngIf"], ["class", "fp-alert fp-alert-success", 4, "ngIf"], [1, "fp-grid"], [1, "fp-card", "fp-span-2"], [1, "fp-card-head"], [1, "fp-card-title"], [1, "material-icons-round"], ["class", "fp-btn-ghost", 3, "click", 4, "ngIf"], ["class", "fp-info-grid", 4, "ngIf"], ["class", "fp-form", 4, "ngIf"], [1, "fp-card"], [1, "fp-famille-hero"], [1, "fp-famille-icon"], [1, "fp-famille-nom"], [1, "fp-code-wrap"], [1, "fp-code"], [1, "fp-copy-btn", 3, "click", "title"], [1, "fp-code-hint"], [1, "fp-famille-actions"], [1, "fp-wa-btn", 3, "click"], ["viewBox", "0 0 24 24", "fill", "currentColor", 2, "width", "14px", "height", "14px", "flex-shrink", "0"], ["d", "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"], ["routerLink", "/famille/inviter", 1, "fp-btn-outline"], [1, "fp-famille-stat"], ["class", "fp-security-list", 4, "ngIf"], [1, "fp-nav-grid"], ["routerLink", "/famille/home", 1, "fp-nav-item"], ["routerLink", "/famille/arbre", 1, "fp-nav-item"], ["routerLink", "/famille/membres", 1, "fp-nav-item"], ["routerLink", "/famille/stories", 1, "fp-nav-item"], ["routerLink", "/famille/timeline", 1, "fp-nav-item"], ["routerLink", "/famille/inviter", 1, "fp-nav-item"], [1, "fp-theme-row"], ["class", "fp-theme-dot", 3, "active", "background", "title", "click", 4, "ngFor", "ngForOf"], [1, "fp-theme-hint"], ["class", "fp-card", 4, "ngIf"], [1, "fp-card", "fp-danger-card", "fp-span-2"], [1, "fp-card-title", "fp-danger-title"], [1, "fp-danger-row"], [1, "fp-danger-label"], [1, "fp-danger-sub"], [1, "fp-logout-btn", 3, "click"], [1, "fp-contact"], [1, "fp-edit-btn", 3, "click"], [1, "fp-alert", "fp-alert-success"], [1, "fp-btn-ghost", 3, "click"], [1, "fp-info-grid"], [1, "fp-info-item"], [1, "fp-info-label"], [1, "fp-info-value"], [1, "fp-form"], [1, "fp-form-row"], [1, "fp-form-group"], [1, "fp-req"], ["type", "text", "placeholder", "Pr\xE9nom", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom", 3, "ngModelChange", "ngModel"], ["type", "email", "placeholder", "votre@email.com", 3, "ngModelChange", "ngModel"], ["type", "tel", "placeholder", "+221 77 000 00 00", 3, "ngModelChange", "ngModel"], ["class", "fp-alert fp-alert-error", 4, "ngIf"], [1, "fp-form-actions"], [1, "fp-btn-ghost", 3, "click", "disabled"], [1, "fp-btn-primary", 3, "click", "disabled"], ["class", "material-icons-round", 4, "ngIf"], ["class", "material-icons-round spin", 4, "ngIf"], [1, "fp-alert", "fp-alert-error"], [1, "material-icons-round", "spin"], [1, "fp-security-list"], [1, "fp-security-row"], [1, "fp-security-left"], [1, "fp-sec-label"], [1, "fp-sec-sub"], [1, "fp-btn-outline", 3, "click"], [1, "fp-sec-sub", "fp-sec-ok"], ["type", "password", "placeholder", "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022", 3, "ngModelChange", "ngModel"], ["type", "password", "placeholder", "Min. 6 caract\xE8res", 3, "ngModelChange", "ngModel"], ["type", "password", "placeholder", "R\xE9p\xE9tez", 3, "ngModelChange", "ngModel"], [1, "fp-theme-dot", 3, "click", "title"], [2, "display", "flex", "align-items", "center", "justify-content", "center", "gap", "6px", "width", "100%", "padding", "9px", "border-radius", "10px", "background", "var(--primary-bg)", "color", "var(--primary)", "border", "1px solid var(--primary-border)", "cursor", "pointer", "font-weight", "600", "font-size", "13px", "font-family", "inherit", 3, "click", "disabled"]], template: function FamilleProfilComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FamilleProfilComponent, selectors: [["app-famille-profil"]], standalone: false, decls: 3, vars: 2, consts: [[1, "fp-page"], ["class", "sk-section", 4, "ngIf"], [4, "ngIf"], [1, "sk-section"], [1, "sk-hero"], [2, "display", "grid", "grid-template-columns", "1fr 1fr", "gap", "16px", "margin-top", "8px"], ["style", "background:#fff;border:1px solid #E5E7EB;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px", 4, "ngFor", "ngForOf"], [2, "background", "#fff", "border", "1px solid #E5E7EB", "border-radius", "16px", "padding", "20px", "display", "flex", "flex-direction", "column", "gap", "12px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-full"], [1, "sk-line", "sk-sm"], [1, "fp-hero"], [1, "fp-hero-bg"], [1, "fp-hero-content"], [1, "fp-avatar-wrap"], [1, "fp-hero-avatar"], [1, "fp-online-dot"], [1, "fp-hero-info"], [1, "fp-hero-name"], [1, "fp-hero-meta"], [1, "fp-role-badge"], ["class", "fp-contact", 4, "ngIf"], ["class", "fp-edit-btn", 3, "click", 4, "ngIf"], ["class", "fp-alert fp-alert-success", 4, "ngIf"], [1, "fp-grid"], [1, "fp-card", "fp-span-2"], [1, "fp-card-head"], [1, "fp-card-title"], [1, "material-icons-round"], ["class", "fp-btn-ghost", 3, "click", 4, "ngIf"], ["class", "fp-info-grid", 4, "ngIf"], ["class", "fp-form", 4, "ngIf"], [1, "fp-card"], [1, "fp-famille-hero"], [1, "fp-famille-icon"], [1, "fp-famille-nom"], [1, "fp-code-wrap"], [1, "fp-code"], [1, "fp-copy-btn", 3, "click", "title"], [1, "fp-code-hint"], [1, "fp-famille-actions"], [1, "fp-wa-btn", 3, "click"], ["viewBox", "0 0 24 24", "fill", "currentColor", 2, "width", "14px", "height", "14px", "flex-shrink", "0"], ["d", "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"], ["routerLink", "/famille/inviter", 1, "fp-btn-outline"], [1, "fp-famille-stat"], ["class", "fp-security-list", 4, "ngIf"], [1, "fp-nav-grid"], ["routerLink", "/famille/home", 1, "fp-nav-item"], ["routerLink", "/famille/arbre", 1, "fp-nav-item"], ["routerLink", "/famille/membres", 1, "fp-nav-item"], ["routerLink", "/famille/stories", 1, "fp-nav-item"], ["routerLink", "/famille/timeline", 1, "fp-nav-item"], ["routerLink", "/famille/inviter", 1, "fp-nav-item"], [1, "fp-theme-row"], ["class", "fp-theme-dot", 3, "active", "background", "title", "click", 4, "ngFor", "ngForOf"], [1, "fp-theme-hint"], ["class", "fp-card", 4, "ngIf"], [1, "fp-card", "fp-danger-card", "fp-span-2"], [1, "fp-card-title", "fp-danger-title"], [1, "fp-danger-row"], [1, "fp-danger-label"], [1, "fp-danger-sub"], [1, "fp-logout-btn", 3, "click"], [1, "fp-contact"], [1, "fp-edit-btn", 3, "click"], [1, "fp-alert", "fp-alert-success"], [1, "fp-btn-ghost", 3, "click"], [1, "fp-info-grid"], [1, "fp-info-item"], [1, "fp-info-label"], [1, "fp-info-value"], [1, "fp-form"], [1, "fp-form-row"], [1, "fp-form-group"], [1, "fp-req"], ["type", "text", "placeholder", "Pr\xE9nom", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom", 3, "ngModelChange", "ngModel"], ["type", "email", "placeholder", "votre@email.com", 3, "ngModelChange", "ngModel"], ["type", "tel", "placeholder", "+221 77 000 00 00", 3, "ngModelChange", "ngModel"], ["class", "fp-alert fp-alert-error", 4, "ngIf"], [1, "fp-form-actions"], [1, "fp-btn-ghost", 3, "click", "disabled"], [1, "fp-btn-primary", 3, "click", "disabled"], ["class", "material-icons-round", 4, "ngIf"], ["class", "material-icons-round spin", 4, "ngIf"], [1, "fp-alert", "fp-alert-error"], [1, "material-icons-round", "spin"], [1, "fp-security-list"], [1, "fp-security-row"], [1, "fp-security-left"], [1, "fp-sec-label"], [1, "fp-sec-sub"], [1, "fp-btn-outline", 3, "click"], [1, "fp-sec-sub", "fp-sec-ok"], ["type", "password", "placeholder", "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022", 3, "ngModelChange", "ngModel"], ["type", "password", "placeholder", "Min. 6 caract\xE8res", 3, "ngModelChange", "ngModel"], ["type", "password", "placeholder", "R\xE9p\xE9tez", 3, "ngModelChange", "ngModel"], [1, "fp-theme-dot", 3, "click", "title"], [2, "display", "flex", "align-items", "center", "justify-content", "center", "gap", "6px", "width", "100%", "padding", "9px", "border-radius", "10px", "background", "var(--primary-bg)", "color", "var(--primary)", "border", "1px solid var(--primary-border)", "cursor", "pointer", "font-weight", "600", "font-size", "13px", "font-family", "inherit", 3, "click", "disabled"], ["style", "margin-top:14px; padding-top:14px; border-top:1px solid var(--border-light, #F0F2F5);", 4, "ngIf"], [2, "margin-top", "14px", "padding-top", "14px", "border-top", "1px solid var(--border-light, #F0F2F5)"], [1, "fp-theme-hint", 2, "margin-bottom", "8px"], ["style", "display:flex; align-items:center; gap:8px; padding:6px 0; font-size:13px; color:var(--text-primary, #111827); cursor:pointer;", 4, "ngFor", "ngForOf"], [2, "display", "flex", "align-items", "center", "gap", "8px", "padding", "6px 0", "font-size", "13px", "color", "var(--text-primary, #111827)", "cursor", "pointer"], ["type", "checkbox", 3, "change", "checked", "disabled"]], template: function FamilleProfilComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0);
       \u0275\u0275template(1, FamilleProfilComponent_div_1_Template, 4, 2, "div", 1)(2, FamilleProfilComponent_ng_container_2_Template, 137, 22, "ng-container", 2);
@@ -8126,6 +8219,15 @@ Code d'acc\xE8s : *${this.familleCode}*`;
           <span class="material-icons-round spin" *ngIf="pushBusy">sync</span>\r
           <ng-container *ngIf="!pushBusy">{{ pushEnabled ? 'D\xE9sactiver' : 'Activer les notifications' }}</ng-container>\r
         </button>\r
+\r
+        <div *ngIf="pushEnabled" style="margin-top:14px; padding-top:14px; border-top:1px solid var(--border-light, #F0F2F5);">\r
+          <p class="fp-theme-hint" style="margin-bottom:8px;">Types de notifications re\xE7ues :</p>\r
+          <label *ngFor="let entry of notifTypeEntries"\r
+                 style="display:flex; align-items:center; gap:8px; padding:6px 0; font-size:13px; color:var(--text-primary, #111827); cursor:pointer;">\r
+            <input type="checkbox" [checked]="isTypeChecked(entry[0])" (change)="toggleType(entry[0])" [disabled]="pushBusy" />\r
+            {{ entry[1] }}\r
+          </label>\r
+        </div>\r
       </div>\r
 \r
       <!-- Zone danger -->\r
@@ -8991,7 +9093,8 @@ var FamilleModule = class _FamilleModule {
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    FamilleRoutingModule
+    FamilleRoutingModule,
+    RecipientPickerComponent
   ] });
 };
 (() => {
@@ -9015,7 +9118,8 @@ var FamilleModule = class _FamilleModule {
         RouterModule,
         FormsModule,
         ReactiveFormsModule,
-        FamilleRoutingModule
+        FamilleRoutingModule,
+        RecipientPickerComponent
       ]
     }]
   }], null, null);
@@ -9023,4 +9127,4 @@ var FamilleModule = class _FamilleModule {
 export {
   FamilleModule
 };
-//# sourceMappingURL=chunk-YJ6ZM5SY.js.map
+//# sourceMappingURL=chunk-VXN4H5GC.js.map

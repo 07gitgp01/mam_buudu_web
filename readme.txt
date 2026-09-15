@@ -22,7 +22,10 @@ ACCUEIL:
 
 ===============================================================================
 ======================================== Deploiement gh-pages==================
+==>BUILDER
 ng build --configuration production,gh-pages
+
+==>PUSHER DEPLOYER
 npx angular-cli-ghpages --dir=mam-buudu-web/browser
 
 

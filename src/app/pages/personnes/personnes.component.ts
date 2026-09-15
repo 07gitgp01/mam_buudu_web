@@ -2,6 +2,9 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Personne, Sexe, getInitiales, getAgeLabel, estVivant, getNomComplet, extractAnnee, getPhotoUrl } from '../../models/personne.model';
 import { ApiService } from '../../services/api.service';
+import { AuthService } from '../../services/auth.service';
+import { Membre } from '../../models/plateforme.model';
+import { catchError, of } from 'rxjs';
 
 export const MOIS = [
   { val: '01', label: 'Janvier' },
@@ -119,9 +122,19 @@ export class PersonnesComponent implements OnInit {
   getPhotoUrl   = getPhotoUrl;
   extractAnnee  = extractAnnee;
 
-  constructor(private api: ApiService, private route: ActivatedRoute, private ngZone: NgZone) {}
+  /* ── Destinataires de la notification ── */
+  membres: Membre[] = [];
+  notifyUserIds: string[] | null = null;
+  albumNotifyUserIds: string[] | null = null;
 
-  ngOnInit(): void { this.loadPersonnes(); }
+  constructor(private api: ApiService, private route: ActivatedRoute, private ngZone: NgZone, private auth: AuthService) {}
+
+  ngOnInit(): void {
+    this.loadPersonnes();
+    this.api.getCurrentFamille().pipe(catchError(() => of(null))).subscribe(res => {
+      if (res) this.membres = res.membres.filter(m => m.user.id !== this.auth.getUser()?.id);
+    });
+  }
 
   private loadPersonnes(): void {
     this.loading = true;
@@ -175,6 +188,7 @@ export class PersonnesComponent implements OnInit {
     this.selectedFile = null;
     this.photoPreview = null;
     this.photoToDelete = false;
+    this.notifyUserIds = null;
     this.formErreur = null;
     this.showForm = true;
   }
@@ -258,6 +272,7 @@ export class PersonnesComponent implements OnInit {
       caption:   this.albumMeta.caption   || undefined,
       datePrise: this.albumMeta.datePrise || undefined,
       lieuPrise: this.albumMeta.lieuPrise || undefined,
+      notifyUserIds: this.albumNotifyUserIds,
     }).subscribe({
       next: photo => {
         this.albumPhotos  = [photo, ...this.albumPhotos];
@@ -265,6 +280,7 @@ export class PersonnesComponent implements OnInit {
         this.albumUploadFile   = null;
         this.albumUploadPreview = null;
         this.albumMeta = { caption: '', datePrise: '', lieuPrise: '' };
+        this.albumNotifyUserIds = null;
       },
       error: () => { this.albumUploading = false; },
     });
@@ -330,7 +346,7 @@ export class PersonnesComponent implements OnInit {
 
     const obs = this.editTarget
       ? this.api.updatePersonne(this.editTarget.id, body)
-      : this.api.createPersonne(body);
+      : this.api.createPersonne({ ...body, notifyUserIds: this.notifyUserIds });
 
     obs.subscribe({
       next: (saved) => {

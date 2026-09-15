@@ -9,7 +9,7 @@ import {
   LoadingService,
   ServiceWorkerModule,
   ThemeService
-} from "./chunk-OQPKGRDY.js";
+} from "./chunk-PLIAXXAE.js";
 import {
   AuthService
 } from "./chunk-3BB7U3NX.js";
@@ -1742,11 +1742,11 @@ var routes = [
   {
     path: "app",
     canActivate: [authGuard, roleGuard(["admin", "gestionnaire"])],
-    loadChildren: () => import("./chunk-LDD3O4HF.js").then((m) => m.ShellModule)
+    loadChildren: () => import("./chunk-Y6C27FWL.js").then((m) => m.ShellModule)
   },
   {
     path: "famille",
-    loadChildren: () => import("./chunk-YJ6ZM5SY.js").then((m) => m.FamilleModule)
+    loadChildren: () => import("./chunk-VXN4H5GC.js").then((m) => m.FamilleModule)
   },
   {
     path: "superadmin",

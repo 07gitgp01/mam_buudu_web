@@ -47,7 +47,7 @@ export class ApiService {
     return this.http.get<Personne>(`${this.base}/api/personnes/${id}`);
   }
 
-  createPersonne(data: Partial<Personne>): Observable<Personne> {
+  createPersonne(data: Partial<Personne> & { notifyUserIds?: string[] | null }): Observable<Personne> {
     return this.http.post<Personne>(`${this.base}/api/personnes`, data);
   }
 
@@ -90,7 +90,7 @@ export class ApiService {
     return this.http.get<Union>(`${this.base}/api/unions/${id}`);
   }
 
-  createUnion(data: Partial<Union> & { parentIds?: string[]; enfantIds?: string[] }): Observable<Union> {
+  createUnion(data: Partial<Union> & { parentIds?: string[]; enfantIds?: string[]; notifyUserIds?: string[] | null }): Observable<Union> {
     return this.http.post<Union>(`${this.base}/api/unions`, data);
   }
 
@@ -148,7 +148,7 @@ export class ApiService {
     return this.http.get<PaginatedStories>(`${this.base}/api/stories`, { params: { page, limit } });
   }
 
-  createStory(data: { titre?: string; caption: string; tag?: string; mediaUrl?: string; mediaType?: string; expiresAt?: string; privacy?: string }): Observable<Story> {
+  createStory(data: { titre?: string; caption: string; tag?: string; mediaUrl?: string; mediaType?: string; expiresAt?: string; privacy?: string; notifyUserIds?: string[] | null }): Observable<Story> {
     return this.http.post<Story>(`${this.base}/api/stories`, data);
   }
 
@@ -207,12 +207,13 @@ export class ApiService {
     return this.http.get<any[]>(`${this.base}/api/photos/${personneId}`);
   }
 
-  uploadAlbumPhoto(personneId: string, file: File, meta?: { caption?: string; datePrise?: string; lieuPrise?: string }): Observable<any> {
+  uploadAlbumPhoto(personneId: string, file: File, meta?: { caption?: string; datePrise?: string; lieuPrise?: string; notifyUserIds?: string[] | null }): Observable<any> {
     const fd = new FormData();
     fd.append('photo', file);
     if (meta?.caption)   fd.append('caption',   meta.caption);
     if (meta?.datePrise) fd.append('datePrise',  meta.datePrise);
     if (meta?.lieuPrise) fd.append('lieuPrise',  meta.lieuPrise);
+    if (meta?.notifyUserIds) fd.append('notifyUserIds', JSON.stringify(meta.notifyUserIds));
     return this.http.post<any>(`${this.base}/api/photos/${personneId}`, fd);
   }
 
@@ -264,7 +265,7 @@ export class ApiService {
     return this.http.get<any[]>(`${this.base}/api/timeline`);
   }
 
-  createTimelineEvent(data: { titre: string; description?: string; type: string; date: string; personne?: string }): Observable<any> {
+  createTimelineEvent(data: { titre: string; description?: string; type: string; date: string; personne?: string; notifyUserIds?: string[] | null }): Observable<any> {
     return this.http.post<any>(`${this.base}/api/timeline`, data);
   }
 

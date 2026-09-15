@@ -147,6 +147,10 @@
         <label class="form-label">Description</label>
         <textarea [(ngModel)]="form.description" rows="3" placeholder="Détails de l'événement…" class="form-control form-textarea"></textarea>
       </div>
+
+      <div class="form-group">
+        <app-recipient-picker [membres]="membres" [(value)]="notifyUserIds"></app-recipient-picker>
+      </div>
     </div>
 
     <div class="error-state" *ngIf="formErreur" style="margin:0 20px 12px">

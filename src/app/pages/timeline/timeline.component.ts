@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { forkJoin, finalize } from 'rxjs';
 import { catchError, of } from 'rxjs';
 import { ApiService } from '../../services/api.service';
+import { AuthService } from '../../services/auth.service';
 import { getNomComplet, extractAnnee } from '../../models/personne.model';
+import { Membre } from '../../models/plateforme.model';
 
 export type EventType = 'naissance' | 'mariage' | 'deces' | 'succes' | 'voyage' | 'autre';
 
@@ -46,6 +48,10 @@ export class TimelineComponent implements OnInit {
   };
   customEvents: TimelineEvent[] = [];
 
+  /* ── Destinataires de la notification ── */
+  membres: Membre[] = [];
+  notifyUserIds: string[] | null = null;
+
   readonly filtres = [
     { key: 'tous',     label: 'Tout',       icon: 'timeline'         },
     { key: 'naissance',label: 'Naissances', icon: 'child_care'       },
@@ -58,9 +64,13 @@ export class TimelineComponent implements OnInit {
 
   readonly typeOptions: EventType[] = ['naissance','mariage','deces','succes','voyage','autre'];
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private auth: AuthService) {}
 
   ngOnInit(): void {
+    this.api.getCurrentFamille().pipe(catchError(() => of(null))).subscribe(res => {
+      if (res) this.membres = res.membres.filter(m => m.user.id !== this.auth.getUser()?.id);
+    });
+
     forkJoin({
       personnes:     this.api.getPersonnes().pipe(catchError(() => of([]))),
       unions:        this.api.getUnions().pipe(catchError(() => of([]))),
@@ -173,6 +183,7 @@ export class TimelineComponent implements OnInit {
 
   openForm(): void {
     this.form = { titre: '', description: '', type: 'autre', date: '', personne: '' };
+    this.notifyUserIds = null;
     this.formErreur = null;
     this.showForm = true;
   }
@@ -196,6 +207,7 @@ export class TimelineComponent implements OnInit {
       type:        this.form.type,
       date:        this.form.date,
       personne:    this.form.personne || undefined,
+      notifyUserIds: this.notifyUserIds,
     }).pipe(finalize(() => this.saving = false)).subscribe({
       next: (created) => {
         const ev: TimelineEvent = {

@@ -15,6 +15,7 @@ import { FamilleTimelineComponent } from './pages/timeline/famille-timeline.comp
 import { FamilleProfilComponent }   from './pages/profil/famille-profil.component';
 import { FamilleInviterComponent }  from './pages/inviter/famille-inviter.component';
 import { FamilleGalerieComponent }  from './pages/galerie/famille-galerie.component';
+import { RecipientPickerComponent } from '../shared/recipient-picker.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FamilleGalerieComponent }  from './pages/galerie/famille-galerie.compon
     FormsModule,
     ReactiveFormsModule,
     FamilleRoutingModule,
+    RecipientPickerComponent,
   ],
 })
 export class FamilleModule {}

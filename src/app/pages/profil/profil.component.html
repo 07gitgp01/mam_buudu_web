@@ -303,6 +303,15 @@
             <ng-container *ngIf="!pushBusy">{{ pushEnabled ? 'Désactiver' : 'Activer' }}</ng-container>
           </button>
         </div>
+
+        <div *ngIf="pushEnabled" style="margin-top:14px; padding-top:14px; border-top:1px solid var(--border-light);">
+          <p class="theme-hint" style="margin-bottom:8px;">Types de notifications reçues :</p>
+          <label *ngFor="let entry of notifTypeEntries"
+                 style="display:flex; align-items:center; gap:8px; padding:6px 0; font-size:13px; color:var(--text-primary); cursor:pointer;">
+            <input type="checkbox" [checked]="isTypeChecked(entry[0])" (change)="toggleType(entry[0])" [disabled]="pushBusy" />
+            {{ entry[1] }}
+          </label>
+        </div>
       </div>
 
       <!-- ===== ZONE DANGER ===== -->

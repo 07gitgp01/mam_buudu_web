@@ -342,6 +342,9 @@
             <option value="prive">Privé — biographie/notes masquées aux membres simples</option>
           </select>
         </div>
+        <div class="form-group" *ngIf="!editTarget">
+          <app-recipient-picker [membres]="membres" [(value)]="notifyUserIds"></app-recipient-picker>
+        </div>
       </div>
 
     </form>
@@ -499,6 +502,7 @@
           <input type="text" class="form-control form-control-sm" placeholder="Légende (optionnel)" [(ngModel)]="albumMeta.caption" />
           <input type="text" class="form-control form-control-sm" placeholder="Date (ex : 1998 ou 1998-06)" [(ngModel)]="albumMeta.datePrise" />
           <input type="text" class="form-control form-control-sm" placeholder="Lieu de la photo" [(ngModel)]="albumMeta.lieuPrise" />
+          <app-recipient-picker [membres]="membres" [(value)]="albumNotifyUserIds" label="Qui notifier de cette photo ?"></app-recipient-picker>
           <div class="album-preview-btns">
             <button class="btn-ghost btn-sm" (click)="cancelAlbumUpload()">Annuler</button>
             <button class="btn-primary btn-sm" [disabled]="albumUploading" (click)="uploadAlbumPhoto()">

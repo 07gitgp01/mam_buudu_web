@@ -8,6 +8,8 @@ import {
   getPhotoUrl, estVivant,
 } from '../../models/personne.model';
 import { ApiService } from '../../services/api.service';
+import { AuthService } from '../../services/auth.service';
+import { Membre } from '../../models/plateforme.model';
 
 export const MOIS = [
   { val: '01', label: 'Janvier' },  { val: '02', label: 'Février' },
@@ -153,9 +155,18 @@ export class UnionsComponent implements OnInit {
     fiancailles: 'ring_volume', adoption: 'child_care', polygamie: 'group',
   };
 
-  constructor(private api: ApiService, private route: ActivatedRoute) {}
+  /* ── Destinataires de la notification ── */
+  membres: Membre[] = [];
+  notifyUserIds: string[] | null = null;
 
-  ngOnInit(): void { this.loadAll(); }
+  constructor(private api: ApiService, private route: ActivatedRoute, private auth: AuthService) {}
+
+  ngOnInit(): void {
+    this.loadAll();
+    this.api.getCurrentFamille().pipe(catchError(() => of(null))).subscribe(res => {
+      if (res) this.membres = res.membres.filter(m => m.user.id !== this.auth.getUser()?.id);
+    });
+  }
 
   private loadAll(): void {
     this.loading = true;
@@ -249,6 +260,7 @@ export class UnionsComponent implements OnInit {
   openCreate(): void {
     this.editTarget = null;
     this.form = this.emptyForm();
+    this.notifyUserIds = null;
     this.formErreur = null;
     this.showForm = true;
   }
@@ -258,6 +270,7 @@ export class UnionsComponent implements OnInit {
     this.editTarget = null;
     this.form = this.emptyForm();
     this.form.participantIds = [chef.id];
+    this.notifyUserIds = null;
     this.formErreur = null;
     this.showForm = true;
   }
@@ -327,13 +340,14 @@ export class UnionsComponent implements OnInit {
       lieuFin: this.form.lieuFin || null,
       notes: this.form.notes || null,
       parentIds: this.form.participantIds,
+      notifyUserIds: this.notifyUserIds,
     };
     const obs = this.editTarget
       ? this.api.updateUnion(this.editTarget.id, body)
       : this.api.createUnion(body);
     obs.subscribe({
       next: () => { this.saving = false; this.closeAll(); this.refreshUnions(); },
-      error: () => { this.saving = false; },
+      error: (err) => { this.saving = false; this.formErreur = err?.error?.error ?? 'Erreur lors de l\'enregistrement.'; },
     });
   }
 

@@ -285,6 +285,15 @@
           <span class="material-icons-round spin" *ngIf="pushBusy">sync</span>
           <ng-container *ngIf="!pushBusy">{{ pushEnabled ? 'Désactiver' : 'Activer les notifications' }}</ng-container>
         </button>
+
+        <div *ngIf="pushEnabled" style="margin-top:14px; padding-top:14px; border-top:1px solid var(--border-light, #F0F2F5);">
+          <p class="fp-theme-hint" style="margin-bottom:8px;">Types de notifications reçues :</p>
+          <label *ngFor="let entry of notifTypeEntries"
+                 style="display:flex; align-items:center; gap:8px; padding:6px 0; font-size:13px; color:var(--text-primary, #111827); cursor:pointer;">
+            <input type="checkbox" [checked]="isTypeChecked(entry[0])" (change)="toggleType(entry[0])" [disabled]="pushBusy" />
+            {{ entry[1] }}
+          </label>
+        </div>
       </div>
 
       <!-- Zone danger -->

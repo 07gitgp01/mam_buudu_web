@@ -197,6 +197,14 @@
                   placeholder="Racontez ce beau moment à toute la famille…"
                   class="fs-input fs-textarea"></textarea>
       </div>
+
+      <div class="fs-form-group">
+        <app-recipient-picker
+          [membres]="membres"
+          label="Qui prévenir de cette story ?"
+          [(value)]="notifyUserIds">
+        </app-recipient-picker>
+      </div>
     </div>
 
     <div class="error-state" *ngIf="formErreur" style="margin:0 20px 12px">
