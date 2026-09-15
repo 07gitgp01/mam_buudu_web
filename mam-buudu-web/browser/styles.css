@@ -220,6 +220,31 @@
   --sb-logout-hover-bg: rgba(239,68,68,0.15);
   --sb-logout-hover-text: #FCA5A5;
 }
+[data-color=foret] {
+  --primary: #15803D;
+  --primary-dark: #166534;
+  --primary-light: #81C784;
+  --primary-bg: #F0FDF4;
+  --primary-border: #DCFCE7;
+  --accent: #15803D;
+  --accent-bg: #F0FDF4;
+  --bg-app: #F0FDF4;
+  --bg-muted: #DCFCE7;
+  --sidebar-bg: #F4FCF6;
+  --sidebar-dark: #0F2A1E;
+  --sb-bg: var(--sidebar-dark);
+  --sb-text-hi: #FFFFFF;
+  --sb-text-mid: rgba(255,255,255,0.55);
+  --sb-text-lo: rgba(255,255,255,0.35);
+  --sb-hover-bg: rgba(255,255,255,0.08);
+  --sb-active-bg: rgba(255,255,255,0.10);
+  --sb-divider: rgba(255,255,255,0.08);
+  --sb-icon-wrap: rgba(255,255,255,0.12);
+  --sb-active-mark: var(--primary-light);
+  --sb-toggle-color: rgba(255,255,255,0.50);
+  --sb-logout-hover-bg: rgba(239,68,68,0.15);
+  --sb-logout-hover-text: #FCA5A5;
+}
 *,
 *::before,
 *::after {

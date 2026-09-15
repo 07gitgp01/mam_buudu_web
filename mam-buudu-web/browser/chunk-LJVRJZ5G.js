@@ -1,4 +1,7 @@
 import {
+  ToastService
+} from "./chunk-2MLW6AMB.js";
+import {
   require_html2canvas
 } from "./chunk-J7MNQZVK.js";
 import {
@@ -6,7 +9,7 @@ import {
 } from "./chunk-AIO5OERH.js";
 import "./chunk-7YWLATDR.js";
 import {
-  ApiService,
+  PushNotificationService,
   QrcodeService,
   STORY_TAGS,
   STORY_TAG_COLORS,
@@ -16,11 +19,12 @@ import {
   getInitiales,
   getNomComplet,
   getPhotoUrl
-} from "./chunk-FDMPEDZ5.js";
+} from "./chunk-GYHNEXRG.js";
 import {
+  ApiService,
   LoadingService,
   ThemeService
-} from "./chunk-IWM4FSC5.js";
+} from "./chunk-MAP5PQOL.js";
 import {
   CheckboxControlValueAccessor,
   DefaultValueAccessor,
@@ -38,10 +42,10 @@ import {
   SelectControlValueAccessor,
   ɵNgNoValidate,
   ɵNgSelectMultipleOption
-} from "./chunk-ESHQL2TU.js";
+} from "./chunk-BUNKOKLL.js";
 import {
   AuthService
-} from "./chunk-VLIH72YP.js";
+} from "./chunk-LX6YEX77.js";
 import {
   ActivatedRoute,
   AsyncPipe,
@@ -125,7 +129,7 @@ import {
   ɵɵtwoWayListener,
   ɵɵtwoWayProperty,
   ɵɵviewQuery
-} from "./chunk-WU2I6PFW.js";
+} from "./chunk-4MA3A2KE.js";
 import {
   __async,
   __spreadProps,
@@ -297,7 +301,9 @@ var SidebarComponent = class _SidebarComponent {
     { icon: "people", label: "Personnes", route: "/app/personnes" },
     { icon: "favorite", label: "Unions", route: "/app/unions" },
     { icon: "collections_bookmark", label: "Stories", route: "/app/stories" },
+    { icon: "photo_library", label: "Galerie", route: "/app/galerie" },
     { icon: "timeline", label: "Timeline", route: "/app/timeline" },
+    { icon: "history", label: "Historique", route: "/app/historique" },
     { icon: "sports_esports", label: "Jeux", route: "/app/jeux" },
     { icon: "group_add", label: "Inviter", route: "/app/inviter" }
   ];
@@ -1830,7 +1836,7 @@ function HomeComponent_div_18_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275advance();
-    \u0275\u0275styleProp("background", "conic-gradient(#81C784 0% " + ctx_r0.completionScore + "%, rgba(255,255,255,0.14) " + ctx_r0.completionScore + "% 100%)");
+    \u0275\u0275styleProp("background", "conic-gradient(var(--primary-light) 0% " + ctx_r0.completionScore + "%, rgba(255,255,255,0.14) " + ctx_r0.completionScore + "% 100%)");
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate1("", ctx_r0.completionScore, "%");
   }
@@ -2510,7 +2516,7 @@ Code : *${this.familleCode}*`;
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", !ctx.loading);
     }
-  }, dependencies: [NgForOf, NgIf, RouterLink], styles: ["\n\n.home-hero[_ngcontent-%COMP%] {\n  position: relative;\n  border-radius: 26px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #0B1220 0%,\n      #0F2A1E 46%,\n      #123B27 100%);\n  padding: 32px 36px 28px;\n  color: #fff;\n  margin-bottom: 24px;\n  animation: _ngcontent-%COMP%_heroIn 0.5s ease-out;\n}\n@keyframes _ngcontent-%COMP%_heroIn {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.home-hero-roots[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n  opacity: 0.5;\n}\n.home-hero-content[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.home-hero-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.home-user-avatar[_ngcontent-%COMP%] {\n  width: 52px;\n  height: 52px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      #86D19C,\n      #2E7D32);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 800;\n  color: #08210F;\n  flex-shrink: 0;\n  border: 2px solid rgba(255, 255, 255, 0.25);\n}\n.home-greeting[_ngcontent-%COMP%] {\n  margin: 0 0 2px;\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.68);\n  font-weight: 400;\n}\n.home-family-name[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  letter-spacing: -0.3px;\n}\n.home-hero-meta[_ngcontent-%COMP%] {\n  margin: 6px 0 0;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.55);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.home-hero-meta[_ngcontent-%COMP%]   b[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.85);\n  font-weight: 600;\n}\n.home-hero-dot[_ngcontent-%COMP%] {\n  width: 3px;\n  height: 3px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.35);\n}\n.home-hero-right[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  align-items: center;\n  gap: 22px;\n  flex-wrap: wrap;\n}\n.home-ring-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.home-ring[_ngcontent-%COMP%] {\n  width: 64px;\n  height: 64px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: background 0.4s ease;\n}\n.home-ring-inner[_ngcontent-%COMP%] {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  background: #0F2A1E;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  color: #fff;\n}\n.home-ring-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.6);\n  max-width: 130px;\n  line-height: 1.4;\n}\n.home-ring-label[_ngcontent-%COMP%]   b[_ngcontent-%COMP%] {\n  color: #fff;\n  display: block;\n  font-size: 13px;\n  margin-bottom: 1px;\n}\n.home-hero-btns[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.home-invite-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  background: rgba(255, 255, 255, 0.1);\n  color: #fff;\n  font-size: 13.5px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    background 0.15s;\n}\n.home-invite-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.home-invite-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.16);\n  transform: translateY(-1px);\n}\n.home-add-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: none;\n  background: #81C784;\n  color: #0B2914;\n  font-size: 13.5px;\n  font-weight: 700;\n  cursor: pointer;\n  font-family: inherit;\n  transition: transform 0.15s, box-shadow 0.15s;\n  white-space: nowrap;\n  box-shadow: 0 4px 14px rgba(129, 199, 132, 0.35);\n}\n.home-add-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.home-add-btn[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 6px 18px rgba(129, 199, 132, 0.45);\n  transform: translateY(-1px);\n}\n.home-hero-stats-row[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  gap: 28px;\n  margin-top: 24px;\n  padding-top: 20px;\n  border-top: 1px solid rgba(255, 255, 255, 0.12);\n  flex-wrap: wrap;\n}\n.home-hero-stat[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: baseline;\n  gap: 8px;\n}\n.hhs-value[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n}\n.hhs-label[_ngcontent-%COMP%] {\n  font-size: 12.5px;\n  color: rgba(255, 255, 255, 0.55);\n}\n.home-body-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 336px;\n  gap: 22px;\n}\n.header-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.header-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: var(--text-primary);\n}\n.stats-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 16px;\n}\n.qa-row[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 14px;\n}\n.qa-tile[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 16px;\n  padding: 16px 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  cursor: pointer;\n  text-decoration: none;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    border-color 0.15s;\n}\n.qa-tile[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);\n  border-color: #D1D5DB;\n  text-decoration: none;\n}\n.qa-icon[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  border-radius: 11px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.qa-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 19px !important;\n}\n.qa-icon.blue[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.qa-icon.blue[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n.qa-icon.indigo[_ngcontent-%COMP%] {\n  background: var(--accent-bg);\n}\n.qa-icon.indigo[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--accent);\n}\n.qa-icon.pink[_ngcontent-%COMP%] {\n  background: var(--pink-bg);\n}\n.qa-icon.pink[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--pink);\n}\n.qa-icon.green[_ngcontent-%COMP%] {\n  background: var(--success-bg);\n}\n.qa-icon.green[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--success);\n}\n.qa-label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.section-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.aside-card[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 18px;\n  padding: 18px;\n  margin-bottom: 18px;\n}\n.aside-card[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  margin: 0 0 14px;\n  font-size: 13.5px;\n  font-weight: 700;\n  color: var(--text-primary);\n  display: flex;\n  align-items: center;\n  gap: 7px;\n}\n.aside-card[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.bday-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 11px;\n  padding: 9px 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.bday-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.bday-date[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border-radius: 11px;\n  background: #FDF2F8;\n  color: #DB2777;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.bday-date[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:first-child {\n  font-size: 13px;\n  font-weight: 800;\n  line-height: 1;\n}\n.bday-date[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:last-child {\n  font-size: 8.5px;\n  font-weight: 600;\n  text-transform: uppercase;\n}\n.bday-item-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.bday-item-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-item-when[_ngcontent-%COMP%] {\n  font-size: 11.5px;\n  color: var(--text-muted);\n}\n.bday-item-soon[_ngcontent-%COMP%] {\n  margin-left: auto;\n  flex-shrink: 0;\n  font-size: 10.5px;\n  font-weight: 700;\n  color: #DB2777;\n  background: #FDF2F8;\n  padding: 3px 8px;\n  border-radius: 999px;\n  animation: _ngcontent-%COMP%_pulse-bday 1.5s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n.tree-preview[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 4px 0 6px;\n}\n.tree-link[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  width: 100%;\n  margin-top: 14px;\n  padding: 9px;\n  border-radius: 10px;\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  border: none;\n  text-decoration: none;\n}\n.tree-link[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.tree-link[_ngcontent-%COMP%]:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.fact-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n}\n.fact-row[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #2E7D32;\n  font-size: 18px !important;\n  margin-top: 1px;\n}\n.fact-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 12.5px;\n  color: var(--text-secondary);\n  line-height: 1.55;\n}\n@keyframes _ngcontent-%COMP%_skeleton-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.skeleton-bar[_ngcontent-%COMP%], \n.skeleton-card-top[_ngcontent-%COMP%], \n.skeleton-card[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: _ngcontent-%COMP%_skeleton-shimmer 1.4s infinite;\n  border-radius: 8px;\n}\n.skeleton-section[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.skeleton-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.skeleton-bar[_ngcontent-%COMP%] {\n  height: 16px;\n}\n.skeleton-bar-title[_ngcontent-%COMP%] {\n  width: 160px;\n  height: 20px;\n}\n.skeleton-bar-sm[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 14px;\n}\n.skeleton-bar-xs[_ngcontent-%COMP%] {\n  width: 70px;\n  height: 12px;\n}\n.skeleton-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 16px;\n}\n.skeleton-card[_ngcontent-%COMP%] {\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: 1px solid var(--border-light);\n}\n.skeleton-card-top[_ngcontent-%COMP%] {\n  height: 90px;\n  border-radius: 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.skeleton-card-body[_ngcontent-%COMP%] {\n  padding: 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n@media (prefers-reduced-motion: reduce) {\n  [_nghost-%COMP%]   *[_ngcontent-%COMP%] {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 1100px) {\n  .home-body-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 640px) {\n  .qa-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .home-hero[_ngcontent-%COMP%] {\n    padding: 24px 20px;\n    border-radius: 18px;\n  }\n  .home-hero-content[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .home-hero-right[_ngcontent-%COMP%] {\n    width: 100%;\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 14px;\n  }\n  .home-family-name[_ngcontent-%COMP%] {\n    font-size: 19px;\n  }\n  .home-hero-btns[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  .home-invite-btn[_ngcontent-%COMP%], \n   .home-add-btn[_ngcontent-%COMP%] {\n    flex: 1;\n    justify-content: center;\n  }\n  .home-hero-stats-row[_ngcontent-%COMP%] {\n    gap: 18px;\n  }\n}\n@media (max-width: 480px) {\n  .qa-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */"] });
+  }, dependencies: [NgForOf, NgIf, RouterLink], styles: ["\n\n.home-hero[_ngcontent-%COMP%] {\n  position: relative;\n  border-radius: 26px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      var(--sidebar-dark, #0F172A) 0%,\n      var(--primary-dark) 55%,\n      var(--primary) 100%);\n  padding: 32px 36px 28px;\n  color: #fff;\n  margin-bottom: 24px;\n  animation: _ngcontent-%COMP%_heroIn 0.5s ease-out;\n}\n@keyframes _ngcontent-%COMP%_heroIn {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.home-hero-roots[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n  opacity: 0.5;\n}\n.home-hero-content[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.home-hero-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.home-user-avatar[_ngcontent-%COMP%] {\n  width: 52px;\n  height: 52px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-light),\n      var(--primary));\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 800;\n  color: #fff;\n  flex-shrink: 0;\n  border: 2px solid rgba(255, 255, 255, 0.25);\n}\n.home-greeting[_ngcontent-%COMP%] {\n  margin: 0 0 2px;\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.68);\n  font-weight: 400;\n}\n.home-family-name[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  letter-spacing: -0.3px;\n}\n.home-hero-meta[_ngcontent-%COMP%] {\n  margin: 6px 0 0;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.55);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.home-hero-meta[_ngcontent-%COMP%]   b[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.85);\n  font-weight: 600;\n}\n.home-hero-dot[_ngcontent-%COMP%] {\n  width: 3px;\n  height: 3px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.35);\n}\n.home-hero-right[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  align-items: center;\n  gap: 22px;\n  flex-wrap: wrap;\n}\n.home-ring-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.home-ring[_ngcontent-%COMP%] {\n  width: 64px;\n  height: 64px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: background 0.4s ease;\n}\n.home-ring-inner[_ngcontent-%COMP%] {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  background: var(--sidebar-dark, #0F172A);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  color: #fff;\n}\n.home-ring-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.6);\n  max-width: 130px;\n  line-height: 1.4;\n}\n.home-ring-label[_ngcontent-%COMP%]   b[_ngcontent-%COMP%] {\n  color: #fff;\n  display: block;\n  font-size: 13px;\n  margin-bottom: 1px;\n}\n.home-hero-btns[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.home-invite-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  background: rgba(255, 255, 255, 0.1);\n  color: #fff;\n  font-size: 13.5px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    background 0.15s;\n}\n.home-invite-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.home-invite-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.16);\n  transform: translateY(-1px);\n}\n.home-add-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: none;\n  background: var(--primary-light);\n  color: var(--sidebar-dark, #0F172A);\n  font-size: 13.5px;\n  font-weight: 700;\n  cursor: pointer;\n  font-family: inherit;\n  transition: transform 0.15s, box-shadow 0.15s;\n  white-space: nowrap;\n  box-shadow: 0 4px 14px color-mix(in srgb, var(--primary-light) 35%, transparent);\n}\n.home-add-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.home-add-btn[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 6px 18px color-mix(in srgb, var(--primary-light) 45%, transparent);\n  transform: translateY(-1px);\n}\n.home-hero-stats-row[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  gap: 28px;\n  margin-top: 24px;\n  padding-top: 20px;\n  border-top: 1px solid rgba(255, 255, 255, 0.12);\n  flex-wrap: wrap;\n}\n.home-hero-stat[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: baseline;\n  gap: 8px;\n}\n.hhs-value[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n}\n.hhs-label[_ngcontent-%COMP%] {\n  font-size: 12.5px;\n  color: rgba(255, 255, 255, 0.55);\n}\n.home-body-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 336px;\n  gap: 22px;\n}\n.header-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.header-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: var(--text-primary);\n}\n.stats-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 16px;\n}\n.qa-row[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 14px;\n}\n.qa-tile[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 16px;\n  padding: 16px 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  cursor: pointer;\n  text-decoration: none;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    border-color 0.15s;\n}\n.qa-tile[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);\n  border-color: #D1D5DB;\n  text-decoration: none;\n}\n.qa-icon[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  border-radius: 11px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.qa-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 19px !important;\n}\n.qa-icon.blue[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.qa-icon.blue[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n.qa-icon.indigo[_ngcontent-%COMP%] {\n  background: var(--accent-bg);\n}\n.qa-icon.indigo[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--accent);\n}\n.qa-icon.pink[_ngcontent-%COMP%] {\n  background: var(--pink-bg);\n}\n.qa-icon.pink[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--pink);\n}\n.qa-icon.green[_ngcontent-%COMP%] {\n  background: var(--success-bg);\n}\n.qa-icon.green[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--success);\n}\n.qa-label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.section-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.aside-card[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 18px;\n  padding: 18px;\n  margin-bottom: 18px;\n}\n.aside-card[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  margin: 0 0 14px;\n  font-size: 13.5px;\n  font-weight: 700;\n  color: var(--text-primary);\n  display: flex;\n  align-items: center;\n  gap: 7px;\n}\n.aside-card[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.bday-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 11px;\n  padding: 9px 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.bday-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.bday-date[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border-radius: 11px;\n  background: #FDF2F8;\n  color: #DB2777;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.bday-date[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:first-child {\n  font-size: 13px;\n  font-weight: 800;\n  line-height: 1;\n}\n.bday-date[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:last-child {\n  font-size: 8.5px;\n  font-weight: 600;\n  text-transform: uppercase;\n}\n.bday-item-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.bday-item-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-item-when[_ngcontent-%COMP%] {\n  font-size: 11.5px;\n  color: var(--text-muted);\n}\n.bday-item-soon[_ngcontent-%COMP%] {\n  margin-left: auto;\n  flex-shrink: 0;\n  font-size: 10.5px;\n  font-weight: 700;\n  color: #DB2777;\n  background: #FDF2F8;\n  padding: 3px 8px;\n  border-radius: 999px;\n  animation: _ngcontent-%COMP%_pulse-bday 1.5s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n.tree-preview[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 4px 0 6px;\n}\n.tree-link[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  width: 100%;\n  margin-top: 14px;\n  padding: 9px;\n  border-radius: 10px;\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  border: none;\n  text-decoration: none;\n}\n.tree-link[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.tree-link[_ngcontent-%COMP%]:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.fact-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n}\n.fact-row[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #2E7D32;\n  font-size: 18px !important;\n  margin-top: 1px;\n}\n.fact-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 12.5px;\n  color: var(--text-secondary);\n  line-height: 1.55;\n}\n@keyframes _ngcontent-%COMP%_skeleton-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.skeleton-bar[_ngcontent-%COMP%], \n.skeleton-card-top[_ngcontent-%COMP%], \n.skeleton-card[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: _ngcontent-%COMP%_skeleton-shimmer 1.4s infinite;\n  border-radius: 8px;\n}\n.skeleton-section[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.skeleton-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.skeleton-bar[_ngcontent-%COMP%] {\n  height: 16px;\n}\n.skeleton-bar-title[_ngcontent-%COMP%] {\n  width: 160px;\n  height: 20px;\n}\n.skeleton-bar-sm[_ngcontent-%COMP%] {\n  width: 100px;\n  height: 14px;\n}\n.skeleton-bar-xs[_ngcontent-%COMP%] {\n  width: 70px;\n  height: 12px;\n}\n.skeleton-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 16px;\n}\n.skeleton-card[_ngcontent-%COMP%] {\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: 1px solid var(--border-light);\n}\n.skeleton-card-top[_ngcontent-%COMP%] {\n  height: 90px;\n  border-radius: 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.skeleton-card-body[_ngcontent-%COMP%] {\n  padding: 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n@media (prefers-reduced-motion: reduce) {\n  [_nghost-%COMP%]   *[_ngcontent-%COMP%] {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 1100px) {\n  .home-body-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 640px) {\n  .qa-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .home-hero[_ngcontent-%COMP%] {\n    padding: 24px 20px;\n    border-radius: 18px;\n  }\n  .home-hero-content[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .home-hero-right[_ngcontent-%COMP%] {\n    width: 100%;\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 14px;\n  }\n  .home-family-name[_ngcontent-%COMP%] {\n    font-size: 19px;\n  }\n  .home-hero-btns[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  .home-invite-btn[_ngcontent-%COMP%], \n   .home-add-btn[_ngcontent-%COMP%] {\n    flex: 1;\n    justify-content: center;\n  }\n  .home-hero-stats-row[_ngcontent-%COMP%] {\n    gap: 18px;\n  }\n}\n@media (max-width: 480px) {\n  .qa-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(HomeComponent, [{
@@ -2553,7 +2559,7 @@ Code : *${this.familleCode}*`;
 
     <div class="home-hero-right">
       <div class="home-ring-wrap" *ngIf="!loading && toutes.length > 0">
-        <div class="home-ring" [style.background]="'conic-gradient(#81C784 0% ' + completionScore + '%, rgba(255,255,255,0.14) ' + completionScore + '% 100%)'">
+        <div class="home-ring" [style.background]="'conic-gradient(var(--primary-light) 0% ' + completionScore + '%, rgba(255,255,255,0.14) ' + completionScore + '% 100%)'">
           <div class="home-ring-inner">{{ completionScore }}%</div>
         </div>
         <div class="home-ring-label"><b>Arbre compl\xE9t\xE9</b>Enrichissez les profils pour compl\xE9ter l'arbre</div>
@@ -2787,7 +2793,7 @@ Code : *${this.familleCode}*`;
     </div>
   </div>
 </div>
-`, styles: ["/* src/app/pages/home/home.component.scss */\n.home-hero {\n  position: relative;\n  border-radius: 26px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #0B1220 0%,\n      #0F2A1E 46%,\n      #123B27 100%);\n  padding: 32px 36px 28px;\n  color: #fff;\n  margin-bottom: 24px;\n  animation: heroIn 0.5s ease-out;\n}\n@keyframes heroIn {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.home-hero-roots {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n  opacity: 0.5;\n}\n.home-hero-content {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.home-hero-left {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.home-user-avatar {\n  width: 52px;\n  height: 52px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      #86D19C,\n      #2E7D32);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 800;\n  color: #08210F;\n  flex-shrink: 0;\n  border: 2px solid rgba(255, 255, 255, 0.25);\n}\n.home-greeting {\n  margin: 0 0 2px;\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.68);\n  font-weight: 400;\n}\n.home-family-name {\n  margin: 0;\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  letter-spacing: -0.3px;\n}\n.home-hero-meta {\n  margin: 6px 0 0;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.55);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.home-hero-meta b {\n  color: rgba(255, 255, 255, 0.85);\n  font-weight: 600;\n}\n.home-hero-dot {\n  width: 3px;\n  height: 3px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.35);\n}\n.home-hero-right {\n  position: relative;\n  display: flex;\n  align-items: center;\n  gap: 22px;\n  flex-wrap: wrap;\n}\n.home-ring-wrap {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.home-ring {\n  width: 64px;\n  height: 64px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: background 0.4s ease;\n}\n.home-ring-inner {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  background: #0F2A1E;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  color: #fff;\n}\n.home-ring-label {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.6);\n  max-width: 130px;\n  line-height: 1.4;\n}\n.home-ring-label b {\n  color: #fff;\n  display: block;\n  font-size: 13px;\n  margin-bottom: 1px;\n}\n.home-hero-btns {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.home-invite-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  background: rgba(255, 255, 255, 0.1);\n  color: #fff;\n  font-size: 13.5px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    background 0.15s;\n}\n.home-invite-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.home-invite-btn:hover {\n  background: rgba(255, 255, 255, 0.16);\n  transform: translateY(-1px);\n}\n.home-add-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: none;\n  background: #81C784;\n  color: #0B2914;\n  font-size: 13.5px;\n  font-weight: 700;\n  cursor: pointer;\n  font-family: inherit;\n  transition: transform 0.15s, box-shadow 0.15s;\n  white-space: nowrap;\n  box-shadow: 0 4px 14px rgba(129, 199, 132, 0.35);\n}\n.home-add-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.home-add-btn:hover {\n  box-shadow: 0 6px 18px rgba(129, 199, 132, 0.45);\n  transform: translateY(-1px);\n}\n.home-hero-stats-row {\n  position: relative;\n  display: flex;\n  gap: 28px;\n  margin-top: 24px;\n  padding-top: 20px;\n  border-top: 1px solid rgba(255, 255, 255, 0.12);\n  flex-wrap: wrap;\n}\n.home-hero-stat {\n  display: flex;\n  align-items: baseline;\n  gap: 8px;\n}\n.hhs-value {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n}\n.hhs-label {\n  font-size: 12.5px;\n  color: rgba(255, 255, 255, 0.55);\n}\n.home-body-grid {\n  display: grid;\n  grid-template-columns: 1fr 336px;\n  gap: 22px;\n}\n.header-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row h2 {\n  margin-bottom: 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row strong {\n  color: var(--text-primary);\n}\n.stats-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 16px;\n}\n.qa-row {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 14px;\n}\n.qa-tile {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 16px;\n  padding: 16px 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  cursor: pointer;\n  text-decoration: none;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    border-color 0.15s;\n}\n.qa-tile:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);\n  border-color: #D1D5DB;\n  text-decoration: none;\n}\n.qa-icon {\n  width: 38px;\n  height: 38px;\n  border-radius: 11px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.qa-icon .material-icons-round {\n  font-size: 19px !important;\n}\n.qa-icon.blue {\n  background: var(--primary-bg);\n}\n.qa-icon.blue .material-icons-round {\n  color: var(--primary);\n}\n.qa-icon.indigo {\n  background: var(--accent-bg);\n}\n.qa-icon.indigo .material-icons-round {\n  color: var(--accent);\n}\n.qa-icon.pink {\n  background: var(--pink-bg);\n}\n.qa-icon.pink .material-icons-round {\n  color: var(--pink);\n}\n.qa-icon.green {\n  background: var(--success-bg);\n}\n.qa-icon.green .material-icons-round {\n  color: var(--success);\n}\n.qa-label {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.section-actions {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.aside-card {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 18px;\n  padding: 18px;\n  margin-bottom: 18px;\n}\n.aside-card h4 {\n  margin: 0 0 14px;\n  font-size: 13.5px;\n  font-weight: 700;\n  color: var(--text-primary);\n  display: flex;\n  align-items: center;\n  gap: 7px;\n}\n.aside-card h4 .material-icons-round {\n  font-size: 17px !important;\n}\n.bday-item {\n  display: flex;\n  align-items: center;\n  gap: 11px;\n  padding: 9px 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.bday-item:last-child {\n  border-bottom: none;\n}\n.bday-date {\n  width: 40px;\n  height: 40px;\n  border-radius: 11px;\n  background: #FDF2F8;\n  color: #DB2777;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.bday-date span:first-child {\n  font-size: 13px;\n  font-weight: 800;\n  line-height: 1;\n}\n.bday-date span:last-child {\n  font-size: 8.5px;\n  font-weight: 600;\n  text-transform: uppercase;\n}\n.bday-item-info {\n  flex: 1;\n  min-width: 0;\n}\n.bday-item-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-item-when {\n  font-size: 11.5px;\n  color: var(--text-muted);\n}\n.bday-item-soon {\n  margin-left: auto;\n  flex-shrink: 0;\n  font-size: 10.5px;\n  font-weight: 700;\n  color: #DB2777;\n  background: #FDF2F8;\n  padding: 3px 8px;\n  border-radius: 999px;\n  animation: pulse-bday 1.5s infinite;\n}\n@keyframes pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n.tree-preview {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 4px 0 6px;\n}\n.tree-link {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  width: 100%;\n  margin-top: 14px;\n  padding: 9px;\n  border-radius: 10px;\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  border: none;\n  text-decoration: none;\n}\n.tree-link .material-icons-round {\n  font-size: 15px !important;\n}\n.tree-link:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.fact-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n}\n.fact-row .material-icons-round {\n  color: #2E7D32;\n  font-size: 18px !important;\n  margin-top: 1px;\n}\n.fact-row p {\n  margin: 0;\n  font-size: 12.5px;\n  color: var(--text-secondary);\n  line-height: 1.55;\n}\n@keyframes skeleton-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.skeleton-bar,\n.skeleton-card-top,\n.skeleton-card {\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: skeleton-shimmer 1.4s infinite;\n  border-radius: 8px;\n}\n.skeleton-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.skeleton-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.skeleton-bar {\n  height: 16px;\n}\n.skeleton-bar-title {\n  width: 160px;\n  height: 20px;\n}\n.skeleton-bar-sm {\n  width: 100px;\n  height: 14px;\n}\n.skeleton-bar-xs {\n  width: 70px;\n  height: 12px;\n}\n.skeleton-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 16px;\n}\n.skeleton-card {\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: 1px solid var(--border-light);\n}\n.skeleton-card-top {\n  height: 90px;\n  border-radius: 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.skeleton-card-body {\n  padding: 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n@media (prefers-reduced-motion: reduce) {\n  :host * {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 1100px) {\n  .home-body-grid {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 640px) {\n  .qa-row {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .home-hero {\n    padding: 24px 20px;\n    border-radius: 18px;\n  }\n  .home-hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .home-hero-right {\n    width: 100%;\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 14px;\n  }\n  .home-family-name {\n    font-size: 19px;\n  }\n  .home-hero-btns {\n    width: 100%;\n  }\n  .home-invite-btn,\n  .home-add-btn {\n    flex: 1;\n    justify-content: center;\n  }\n  .home-hero-stats-row {\n    gap: 18px;\n  }\n}\n@media (max-width: 480px) {\n  .qa-row {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */\n"] }]
+`, styles: ["/* src/app/pages/home/home.component.scss */\n.home-hero {\n  position: relative;\n  border-radius: 26px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      var(--sidebar-dark, #0F172A) 0%,\n      var(--primary-dark) 55%,\n      var(--primary) 100%);\n  padding: 32px 36px 28px;\n  color: #fff;\n  margin-bottom: 24px;\n  animation: heroIn 0.5s ease-out;\n}\n@keyframes heroIn {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.home-hero-roots {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n  opacity: 0.5;\n}\n.home-hero-content {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.home-hero-left {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.home-user-avatar {\n  width: 52px;\n  height: 52px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-light),\n      var(--primary));\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 800;\n  color: #fff;\n  flex-shrink: 0;\n  border: 2px solid rgba(255, 255, 255, 0.25);\n}\n.home-greeting {\n  margin: 0 0 2px;\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.68);\n  font-weight: 400;\n}\n.home-family-name {\n  margin: 0;\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  letter-spacing: -0.3px;\n}\n.home-hero-meta {\n  margin: 6px 0 0;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.55);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.home-hero-meta b {\n  color: rgba(255, 255, 255, 0.85);\n  font-weight: 600;\n}\n.home-hero-dot {\n  width: 3px;\n  height: 3px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.35);\n}\n.home-hero-right {\n  position: relative;\n  display: flex;\n  align-items: center;\n  gap: 22px;\n  flex-wrap: wrap;\n}\n.home-ring-wrap {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.home-ring {\n  width: 64px;\n  height: 64px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: background 0.4s ease;\n}\n.home-ring-inner {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  background: var(--sidebar-dark, #0F172A);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  color: #fff;\n}\n.home-ring-label {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.6);\n  max-width: 130px;\n  line-height: 1.4;\n}\n.home-ring-label b {\n  color: #fff;\n  display: block;\n  font-size: 13px;\n  margin-bottom: 1px;\n}\n.home-hero-btns {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.home-invite-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  background: rgba(255, 255, 255, 0.1);\n  color: #fff;\n  font-size: 13.5px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    background 0.15s;\n}\n.home-invite-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.home-invite-btn:hover {\n  background: rgba(255, 255, 255, 0.16);\n  transform: translateY(-1px);\n}\n.home-add-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: none;\n  background: var(--primary-light);\n  color: var(--sidebar-dark, #0F172A);\n  font-size: 13.5px;\n  font-weight: 700;\n  cursor: pointer;\n  font-family: inherit;\n  transition: transform 0.15s, box-shadow 0.15s;\n  white-space: nowrap;\n  box-shadow: 0 4px 14px color-mix(in srgb, var(--primary-light) 35%, transparent);\n}\n.home-add-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.home-add-btn:hover {\n  box-shadow: 0 6px 18px color-mix(in srgb, var(--primary-light) 45%, transparent);\n  transform: translateY(-1px);\n}\n.home-hero-stats-row {\n  position: relative;\n  display: flex;\n  gap: 28px;\n  margin-top: 24px;\n  padding-top: 20px;\n  border-top: 1px solid rgba(255, 255, 255, 0.12);\n  flex-wrap: wrap;\n}\n.home-hero-stat {\n  display: flex;\n  align-items: baseline;\n  gap: 8px;\n}\n.hhs-value {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n}\n.hhs-label {\n  font-size: 12.5px;\n  color: rgba(255, 255, 255, 0.55);\n}\n.home-body-grid {\n  display: grid;\n  grid-template-columns: 1fr 336px;\n  gap: 22px;\n}\n.header-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row h2 {\n  margin-bottom: 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row strong {\n  color: var(--text-primary);\n}\n.stats-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 16px;\n}\n.qa-row {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 14px;\n}\n.qa-tile {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 16px;\n  padding: 16px 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  cursor: pointer;\n  text-decoration: none;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    border-color 0.15s;\n}\n.qa-tile:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);\n  border-color: #D1D5DB;\n  text-decoration: none;\n}\n.qa-icon {\n  width: 38px;\n  height: 38px;\n  border-radius: 11px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.qa-icon .material-icons-round {\n  font-size: 19px !important;\n}\n.qa-icon.blue {\n  background: var(--primary-bg);\n}\n.qa-icon.blue .material-icons-round {\n  color: var(--primary);\n}\n.qa-icon.indigo {\n  background: var(--accent-bg);\n}\n.qa-icon.indigo .material-icons-round {\n  color: var(--accent);\n}\n.qa-icon.pink {\n  background: var(--pink-bg);\n}\n.qa-icon.pink .material-icons-round {\n  color: var(--pink);\n}\n.qa-icon.green {\n  background: var(--success-bg);\n}\n.qa-icon.green .material-icons-round {\n  color: var(--success);\n}\n.qa-label {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.section-actions {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.aside-card {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 18px;\n  padding: 18px;\n  margin-bottom: 18px;\n}\n.aside-card h4 {\n  margin: 0 0 14px;\n  font-size: 13.5px;\n  font-weight: 700;\n  color: var(--text-primary);\n  display: flex;\n  align-items: center;\n  gap: 7px;\n}\n.aside-card h4 .material-icons-round {\n  font-size: 17px !important;\n}\n.bday-item {\n  display: flex;\n  align-items: center;\n  gap: 11px;\n  padding: 9px 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.bday-item:last-child {\n  border-bottom: none;\n}\n.bday-date {\n  width: 40px;\n  height: 40px;\n  border-radius: 11px;\n  background: #FDF2F8;\n  color: #DB2777;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.bday-date span:first-child {\n  font-size: 13px;\n  font-weight: 800;\n  line-height: 1;\n}\n.bday-date span:last-child {\n  font-size: 8.5px;\n  font-weight: 600;\n  text-transform: uppercase;\n}\n.bday-item-info {\n  flex: 1;\n  min-width: 0;\n}\n.bday-item-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-item-when {\n  font-size: 11.5px;\n  color: var(--text-muted);\n}\n.bday-item-soon {\n  margin-left: auto;\n  flex-shrink: 0;\n  font-size: 10.5px;\n  font-weight: 700;\n  color: #DB2777;\n  background: #FDF2F8;\n  padding: 3px 8px;\n  border-radius: 999px;\n  animation: pulse-bday 1.5s infinite;\n}\n@keyframes pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n.tree-preview {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 4px 0 6px;\n}\n.tree-link {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  width: 100%;\n  margin-top: 14px;\n  padding: 9px;\n  border-radius: 10px;\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  border: none;\n  text-decoration: none;\n}\n.tree-link .material-icons-round {\n  font-size: 15px !important;\n}\n.tree-link:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.fact-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n}\n.fact-row .material-icons-round {\n  color: #2E7D32;\n  font-size: 18px !important;\n  margin-top: 1px;\n}\n.fact-row p {\n  margin: 0;\n  font-size: 12.5px;\n  color: var(--text-secondary);\n  line-height: 1.55;\n}\n@keyframes skeleton-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.skeleton-bar,\n.skeleton-card-top,\n.skeleton-card {\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: skeleton-shimmer 1.4s infinite;\n  border-radius: 8px;\n}\n.skeleton-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.skeleton-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.skeleton-bar {\n  height: 16px;\n}\n.skeleton-bar-title {\n  width: 160px;\n  height: 20px;\n}\n.skeleton-bar-sm {\n  width: 100px;\n  height: 14px;\n}\n.skeleton-bar-xs {\n  width: 70px;\n  height: 12px;\n}\n.skeleton-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 16px;\n}\n.skeleton-card {\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: 1px solid var(--border-light);\n}\n.skeleton-card-top {\n  height: 90px;\n  border-radius: 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.skeleton-card-body {\n  padding: 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n@media (prefers-reduced-motion: reduce) {\n  :host * {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 1100px) {\n  .home-body-grid {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 640px) {\n  .qa-row {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .home-hero {\n    padding: 24px 20px;\n    border-radius: 18px;\n  }\n  .home-hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .home-hero-right {\n    width: 100%;\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 14px;\n  }\n  .home-family-name {\n    font-size: 19px;\n  }\n  .home-hero-btns {\n    width: 100%;\n  }\n  .home-invite-btn,\n  .home-add-btn {\n    flex: 1;\n    justify-content: center;\n  }\n  .home-hero-stats-row {\n    gap: 18px;\n  }\n}\n@media (max-width: 480px) {\n  .qa-row {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */\n"] }]
   }], () => [{ type: ApiService }, { type: AuthService }, { type: Router }], null);
 })();
 (() => {
@@ -2802,7 +2808,7 @@ var _c3 = () => [1, 2, 3, 4];
 function PersonnesComponent_button_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r2 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 73);
+    \u0275\u0275elementStart(0, "button", 76);
     \u0275\u0275listener("click", function PersonnesComponent_button_18_Template_button_click_0_listener() {
       const f_r3 = \u0275\u0275restoreView(_r2).$implicit;
       const ctx_r3 = \u0275\u0275nextContext();
@@ -2821,17 +2827,17 @@ function PersonnesComponent_button_18_Template(rf, ctx) {
 }
 function PersonnesComponent_div_26_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 76);
-    \u0275\u0275element(1, "div", 77);
-    \u0275\u0275elementStart(2, "div", 78);
-    \u0275\u0275element(3, "div", 79)(4, "div", 80)(5, "div", 81);
+    \u0275\u0275elementStart(0, "div", 79);
+    \u0275\u0275element(1, "div", 80);
+    \u0275\u0275elementStart(2, "div", 81);
+    \u0275\u0275element(3, "div", 82)(4, "div", 83)(5, "div", 84);
     \u0275\u0275elementEnd()();
   }
 }
 function PersonnesComponent_div_26_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 74);
-    \u0275\u0275template(1, PersonnesComponent_div_26_div_1_Template, 6, 0, "div", 75);
+    \u0275\u0275elementStart(0, "div", 77);
+    \u0275\u0275template(1, PersonnesComponent_div_26_div_1_Template, 6, 0, "div", 78);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -2841,7 +2847,7 @@ function PersonnesComponent_div_26_Template(rf, ctx) {
 }
 function PersonnesComponent_div_27_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 82)(1, "span", 6);
+    \u0275\u0275elementStart(0, "div", 85)(1, "span", 6);
     \u0275\u0275text(2, "error_outline");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -2856,7 +2862,7 @@ function PersonnesComponent_div_27_Template(rf, ctx) {
 function PersonnesComponent_div_28_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 83)(1, "span", 6);
+    \u0275\u0275elementStart(0, "div", 86)(1, "span", 6);
     \u0275\u0275text(2, "person_search");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "h3");
@@ -2881,7 +2887,7 @@ function PersonnesComponent_div_28_Template(rf, ctx) {
 function PersonnesComponent_div_29_div_1_img_5_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 104);
+    \u0275\u0275elementStart(0, "img", 107);
     \u0275\u0275listener("error", function PersonnesComponent_div_29_div_1_img_5_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r8);
       const p_r7 = \u0275\u0275nextContext().$implicit;
@@ -2898,7 +2904,7 @@ function PersonnesComponent_div_29_div_1_img_5_Template(rf, ctx) {
 }
 function PersonnesComponent_div_29_div_1_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 105);
+    \u0275\u0275elementStart(0, "div", 108);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -2911,7 +2917,7 @@ function PersonnesComponent_div_29_div_1_div_6_Template(rf, ctx) {
 }
 function PersonnesComponent_div_29_div_1_div_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 106)(1, "span", 6);
+    \u0275\u0275elementStart(0, "div", 109)(1, "span", 6);
     \u0275\u0275text(2, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -2925,14 +2931,14 @@ function PersonnesComponent_div_29_div_1_div_12_Template(rf, ctx) {
 }
 function PersonnesComponent_div_29_div_1_span_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 107);
+    \u0275\u0275elementStart(0, "span", 110);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
 function PersonnesComponent_div_29_div_1_span_17_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 108);
+    \u0275\u0275elementStart(0, "span", 111);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
@@ -2940,30 +2946,30 @@ function PersonnesComponent_div_29_div_1_span_17_Template(rf, ctx) {
 function PersonnesComponent_div_29_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 86);
+    \u0275\u0275elementStart(0, "div", 89);
     \u0275\u0275listener("click", function PersonnesComponent_div_29_div_1_Template_div_click_0_listener() {
       const p_r7 = \u0275\u0275restoreView(_r6).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r3.openDetail(p_r7));
     });
-    \u0275\u0275elementStart(1, "div", 87);
-    \u0275\u0275element(2, "div", 88)(3, "span", 89);
-    \u0275\u0275elementStart(4, "div", 90);
-    \u0275\u0275template(5, PersonnesComponent_div_29_div_1_img_5_Template, 1, 2, "img", 91)(6, PersonnesComponent_div_29_div_1_div_6_Template, 2, 1, "div", 92);
+    \u0275\u0275elementStart(1, "div", 90);
+    \u0275\u0275element(2, "div", 91)(3, "span", 92);
+    \u0275\u0275elementStart(4, "div", 93);
+    \u0275\u0275template(5, PersonnesComponent_div_29_div_1_img_5_Template, 1, 2, "img", 94)(6, PersonnesComponent_div_29_div_1_div_6_Template, 2, 1, "div", 95);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "div", 93)(8, "h4", 94);
+    \u0275\u0275elementStart(7, "div", 96)(8, "h4", 97);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 95);
+    \u0275\u0275elementStart(10, "span", 98);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(12, PersonnesComponent_div_29_div_1_div_12_Template, 4, 1, "div", 96);
-    \u0275\u0275elementStart(13, "div", 97)(14, "span", 98);
+    \u0275\u0275template(12, PersonnesComponent_div_29_div_1_div_12_Template, 4, 1, "div", 99);
+    \u0275\u0275elementStart(13, "div", 100)(14, "span", 101);
     \u0275\u0275text(15);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(16, PersonnesComponent_div_29_div_1_span_16_Template, 2, 0, "span", 99)(17, PersonnesComponent_div_29_div_1_span_17_Template, 2, 0, "span", 100);
+    \u0275\u0275template(16, PersonnesComponent_div_29_div_1_span_16_Template, 2, 0, "span", 102)(17, PersonnesComponent_div_29_div_1_span_17_Template, 2, 0, "span", 103);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(18, "div", 101)(19, "button", 102);
+    \u0275\u0275elementStart(18, "div", 104)(19, "button", 105);
     \u0275\u0275listener("click", function PersonnesComponent_div_29_div_1_Template_button_click_19_listener($event) {
       const p_r7 = \u0275\u0275restoreView(_r6).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
@@ -2975,7 +2981,7 @@ function PersonnesComponent_div_29_div_1_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275text(22, "Voir ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(23, "button", 102);
+    \u0275\u0275elementStart(23, "button", 105);
     \u0275\u0275listener("click", function PersonnesComponent_div_29_div_1_Template_button_click_23_listener($event) {
       const p_r7 = \u0275\u0275restoreView(_r6).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
@@ -2986,7 +2992,7 @@ function PersonnesComponent_div_29_div_1_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275text(26, "\xC9diter ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "button", 103);
+    \u0275\u0275elementStart(27, "button", 106);
     \u0275\u0275listener("click", function PersonnesComponent_div_29_div_1_Template_button_click_27_listener($event) {
       const p_r7 = \u0275\u0275restoreView(_r6).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
@@ -3029,8 +3035,8 @@ function PersonnesComponent_div_29_div_1_Template(rf, ctx) {
 }
 function PersonnesComponent_div_29_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 84);
-    \u0275\u0275template(1, PersonnesComponent_div_29_div_1_Template, 30, 28, "div", 85);
+    \u0275\u0275elementStart(0, "div", 87);
+    \u0275\u0275template(1, PersonnesComponent_div_29_div_1_Template, 30, 28, "div", 88);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -3042,7 +3048,7 @@ function PersonnesComponent_div_29_Template(rf, ctx) {
 function PersonnesComponent_div_30_div_12_img_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r12 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 134);
+    \u0275\u0275elementStart(0, "img", 137);
     \u0275\u0275listener("error", function PersonnesComponent_div_30_div_12_img_3_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r12);
       const p_r11 = \u0275\u0275nextContext().$implicit;
@@ -3059,7 +3065,7 @@ function PersonnesComponent_div_30_div_12_img_3_Template(rf, ctx) {
 }
 function PersonnesComponent_div_30_div_12_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 135);
+    \u0275\u0275elementStart(0, "div", 138);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3073,7 +3079,7 @@ function PersonnesComponent_div_30_div_12_div_4_Template(rf, ctx) {
 }
 function PersonnesComponent_div_30_div_12_span_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 136)(1, "span", 6);
+    \u0275\u0275elementStart(0, "span", 139)(1, "span", 6);
     \u0275\u0275text(2, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -3087,21 +3093,21 @@ function PersonnesComponent_div_30_div_12_span_15_Template(rf, ctx) {
 }
 function PersonnesComponent_div_30_div_12_span_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 137);
+    \u0275\u0275elementStart(0, "span", 140);
     \u0275\u0275text(1, "\u2014");
     \u0275\u0275elementEnd();
   }
 }
 function PersonnesComponent_div_30_div_12_span_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 107);
+    \u0275\u0275elementStart(0, "span", 110);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
 function PersonnesComponent_div_30_div_12_span_19_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 108);
+    \u0275\u0275elementStart(0, "span", 111);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
@@ -3109,37 +3115,37 @@ function PersonnesComponent_div_30_div_12_span_19_Template(rf, ctx) {
 function PersonnesComponent_div_30_div_12_Template(rf, ctx) {
   if (rf & 1) {
     const _r10 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 117);
+    \u0275\u0275elementStart(0, "div", 120);
     \u0275\u0275listener("click", function PersonnesComponent_div_30_div_12_Template_div_click_0_listener() {
       const p_r11 = \u0275\u0275restoreView(_r10).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r3.openDetail(p_r11));
     });
-    \u0275\u0275elementStart(1, "div", 118)(2, "div", 119);
-    \u0275\u0275template(3, PersonnesComponent_div_30_div_12_img_3_Template, 1, 2, "img", 120)(4, PersonnesComponent_div_30_div_12_div_4_Template, 2, 5, "div", 121);
-    \u0275\u0275element(5, "span", 122);
+    \u0275\u0275elementStart(1, "div", 121)(2, "div", 122);
+    \u0275\u0275template(3, PersonnesComponent_div_30_div_12_img_3_Template, 1, 2, "img", 123)(4, PersonnesComponent_div_30_div_12_div_4_Template, 2, 5, "div", 124);
+    \u0275\u0275element(5, "span", 125);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div", 123)(7, "span", 124);
+    \u0275\u0275elementStart(6, "div", 126)(7, "span", 127);
     \u0275\u0275text(8);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "span", 125);
+    \u0275\u0275elementStart(9, "span", 128);
     \u0275\u0275text(10);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(11, "div", 126)(12, "span", 98);
+    \u0275\u0275elementStart(11, "div", 129)(12, "span", 101);
     \u0275\u0275text(13);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(14, "div", 127);
-    \u0275\u0275template(15, PersonnesComponent_div_30_div_12_span_15_Template, 4, 1, "span", 128)(16, PersonnesComponent_div_30_div_12_span_16_Template, 2, 0, "span", 129);
+    \u0275\u0275elementStart(14, "div", 130);
+    \u0275\u0275template(15, PersonnesComponent_div_30_div_12_span_15_Template, 4, 1, "span", 131)(16, PersonnesComponent_div_30_div_12_span_16_Template, 2, 0, "span", 132);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(17, "div", 130);
-    \u0275\u0275template(18, PersonnesComponent_div_30_div_12_span_18_Template, 2, 0, "span", 99)(19, PersonnesComponent_div_30_div_12_span_19_Template, 2, 0, "span", 100);
+    \u0275\u0275elementStart(17, "div", 133);
+    \u0275\u0275template(18, PersonnesComponent_div_30_div_12_span_18_Template, 2, 0, "span", 102)(19, PersonnesComponent_div_30_div_12_span_19_Template, 2, 0, "span", 103);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "div", 131);
+    \u0275\u0275elementStart(20, "div", 134);
     \u0275\u0275listener("click", function PersonnesComponent_div_30_div_12_Template_div_click_20_listener($event) {
       \u0275\u0275restoreView(_r10);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275elementStart(21, "button", 132);
+    \u0275\u0275elementStart(21, "button", 135);
     \u0275\u0275listener("click", function PersonnesComponent_div_30_div_12_Template_button_click_21_listener() {
       const p_r11 = \u0275\u0275restoreView(_r10).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
@@ -3148,7 +3154,7 @@ function PersonnesComponent_div_30_div_12_Template(rf, ctx) {
     \u0275\u0275elementStart(22, "span", 6);
     \u0275\u0275text(23, "visibility");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(24, "button", 67);
+    \u0275\u0275elementStart(24, "button", 70);
     \u0275\u0275listener("click", function PersonnesComponent_div_30_div_12_Template_button_click_24_listener($event) {
       const p_r11 = \u0275\u0275restoreView(_r10).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
@@ -3157,7 +3163,7 @@ function PersonnesComponent_div_30_div_12_Template(rf, ctx) {
     \u0275\u0275elementStart(25, "span", 6);
     \u0275\u0275text(26, "edit");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(27, "button", 133);
+    \u0275\u0275elementStart(27, "button", 136);
     \u0275\u0275listener("click", function PersonnesComponent_div_30_div_12_Template_button_click_27_listener($event) {
       const p_r11 = \u0275\u0275restoreView(_r10).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(2);
@@ -3198,22 +3204,22 @@ function PersonnesComponent_div_30_div_12_Template(rf, ctx) {
 }
 function PersonnesComponent_div_30_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 109)(1, "div", 110)(2, "span", 111);
+    \u0275\u0275elementStart(0, "div", 112)(1, "div", 113)(2, "span", 114);
     \u0275\u0275text(3, "Personne");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 112);
+    \u0275\u0275elementStart(4, "span", 115);
     \u0275\u0275text(5, "Genre");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 113);
+    \u0275\u0275elementStart(6, "span", 116);
     \u0275\u0275text(7, "Lieu de naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "span", 114);
+    \u0275\u0275elementStart(8, "span", 117);
     \u0275\u0275text(9, "Statut");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 115);
+    \u0275\u0275elementStart(10, "span", 118);
     \u0275\u0275text(11, "Actions");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(12, PersonnesComponent_div_30_div_12_Template, 30, 19, "div", 116);
+    \u0275\u0275template(12, PersonnesComponent_div_30_div_12_Template, 30, 19, "div", 119);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -3225,7 +3231,7 @@ function PersonnesComponent_div_30_Template(rf, ctx) {
 function PersonnesComponent_div_31_Template(rf, ctx) {
   if (rf & 1) {
     const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 138);
+    \u0275\u0275elementStart(0, "div", 141);
     \u0275\u0275listener("click", function PersonnesComponent_div_31_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r13);
       const ctx_r3 = \u0275\u0275nextContext();
@@ -3236,7 +3242,7 @@ function PersonnesComponent_div_31_Template(rf, ctx) {
 }
 function PersonnesComponent_p_37_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "p", 139);
+    \u0275\u0275elementStart(0, "p", 142);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3249,7 +3255,7 @@ function PersonnesComponent_p_37_Template(rf, ctx) {
 function PersonnesComponent_img_49_Template(rf, ctx) {
   if (rf & 1) {
     const _r14 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 140);
+    \u0275\u0275elementStart(0, "img", 143);
     \u0275\u0275listener("error", function PersonnesComponent_img_49_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r14);
       const ctx_r3 = \u0275\u0275nextContext();
@@ -3264,7 +3270,7 @@ function PersonnesComponent_img_49_Template(rf, ctx) {
 }
 function PersonnesComponent_div_50_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 141);
+    \u0275\u0275elementStart(0, "div", 144);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3278,7 +3284,7 @@ function PersonnesComponent_div_50_Template(rf, ctx) {
 function PersonnesComponent_button_51_Template(rf, ctx) {
   if (rf & 1) {
     const _r15 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 142);
+    \u0275\u0275elementStart(0, "button", 145);
     \u0275\u0275listener("click", function PersonnesComponent_button_51_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r15);
       const ctx_r3 = \u0275\u0275nextContext();
@@ -3292,7 +3298,7 @@ function PersonnesComponent_button_51_Template(rf, ctx) {
 function PersonnesComponent_label_86_Template(rf, ctx) {
   if (rf & 1) {
     const _r16 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "label", 143)(1, "input", 144);
+    \u0275\u0275elementStart(0, "label", 146)(1, "input", 147);
     \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_label_86_Template_input_ngModelChange_1_listener($event) {
       \u0275\u0275restoreView(_r16);
       const ctx_r3 = \u0275\u0275nextContext();
@@ -3316,7 +3322,7 @@ function PersonnesComponent_label_86_Template(rf, ctx) {
 }
 function PersonnesComponent_option_105_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 145);
+    \u0275\u0275elementStart(0, "option", 148);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3329,7 +3335,7 @@ function PersonnesComponent_option_105_Template(rf, ctx) {
 }
 function PersonnesComponent_div_122_option_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 145);
+    \u0275\u0275elementStart(0, "option", 148);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3346,7 +3352,7 @@ function PersonnesComponent_div_122_Template(rf, ctx) {
     \u0275\u0275elementStart(0, "div")(1, "div", 47)(2, "div", 38)(3, "label");
     \u0275\u0275text(4, "Ann\xE9e");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "input", 146);
+    \u0275\u0275elementStart(5, "input", 149);
     \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_122_Template_input_ngModelChange_5_listener($event) {
       \u0275\u0275restoreView(_r19);
       const ctx_r3 = \u0275\u0275nextContext();
@@ -3357,7 +3363,7 @@ function PersonnesComponent_div_122_Template(rf, ctx) {
     \u0275\u0275elementStart(6, "div", 38)(7, "label");
     \u0275\u0275text(8, "Mois");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "select", 147);
+    \u0275\u0275elementStart(9, "select", 150);
     \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_122_Template_select_ngModelChange_9_listener($event) {
       \u0275\u0275restoreView(_r19);
       const ctx_r3 = \u0275\u0275nextContext();
@@ -3372,7 +3378,7 @@ function PersonnesComponent_div_122_Template(rf, ctx) {
     \u0275\u0275elementStart(13, "div", 38)(14, "label");
     \u0275\u0275text(15, "Jour");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "input", 148);
+    \u0275\u0275elementStart(16, "input", 151);
     \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_122_Template_input_ngModelChange_16_listener($event) {
       \u0275\u0275restoreView(_r19);
       const ctx_r3 = \u0275\u0275nextContext();
@@ -3383,7 +3389,7 @@ function PersonnesComponent_div_122_Template(rf, ctx) {
     \u0275\u0275elementStart(17, "div", 38)(18, "label");
     \u0275\u0275text(19, "Lieu de d\xE9c\xE8s");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "input", 149);
+    \u0275\u0275elementStart(20, "input", 152);
     \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_122_Template_input_ngModelChange_20_listener($event) {
       \u0275\u0275restoreView(_r19);
       const ctx_r3 = \u0275\u0275nextContext();
@@ -3407,9 +3413,9 @@ function PersonnesComponent_div_122_Template(rf, ctx) {
     \u0275\u0275twoWayProperty("ngModel", ctx_r3.form.lieuDeces);
   }
 }
-function PersonnesComponent_div_134_Template(rf, ctx) {
+function PersonnesComponent_div_142_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 82)(1, "span", 6);
+    \u0275\u0275elementStart(0, "div", 85)(1, "span", 6);
     \u0275\u0275text(2, "error_outline");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -3421,19 +3427,19 @@ function PersonnesComponent_div_134_Template(rf, ctx) {
     \u0275\u0275textInterpolate1("", ctx_r3.formErreur, " ");
   }
 }
-function PersonnesComponent_span_139_Template(rf, ctx) {
+function PersonnesComponent_span_147_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 150);
+    \u0275\u0275elementStart(0, "span", 153);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function PersonnesComponent_div_143_Template(rf, ctx) {
+function PersonnesComponent_div_151_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div")(1, "h3");
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "p", 139);
+    \u0275\u0275elementStart(3, "p", 142);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3445,11 +3451,11 @@ function PersonnesComponent_div_143_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r3.getAgeLabel(ctx_r3.detailTarget));
   }
 }
-function PersonnesComponent_div_151_img_2_Template(rf, ctx) {
+function PersonnesComponent_div_159_img_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r21 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 167);
-    \u0275\u0275listener("error", function PersonnesComponent_div_151_img_2_Template_img_error_0_listener() {
+    \u0275\u0275elementStart(0, "img", 171);
+    \u0275\u0275listener("error", function PersonnesComponent_div_159_img_2_Template_img_error_0_listener() {
       \u0275\u0275restoreView(_r21);
       const p_r22 = \u0275\u0275nextContext().ngIf;
       const ctx_r3 = \u0275\u0275nextContext();
@@ -3463,9 +3469,9 @@ function PersonnesComponent_div_151_img_2_Template(rf, ctx) {
     \u0275\u0275property("src", ctx_r3.getPhotoUrl(p_r22), \u0275\u0275sanitizeUrl)("alt", ctx_r3.getNomComplet(p_r22));
   }
 }
-function PersonnesComponent_div_151_div_3_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 168);
+    \u0275\u0275elementStart(0, "div", 172);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3477,12 +3483,21 @@ function PersonnesComponent_div_151_div_3_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", ctx_r3.getInitiales(p_r22), " ");
   }
 }
-function PersonnesComponent_div_151_div_16_Template(rf, ctx) {
+function PersonnesComponent_div_159_span_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 169)(1, "span", 170);
+    \u0275\u0275elementStart(0, "span", 173)(1, "span", 174);
+    \u0275\u0275text(2, "lock");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3, " Priv\xE9 ");
+    \u0275\u0275elementEnd();
+  }
+}
+function PersonnesComponent_div_159_div_17_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 175)(1, "span", 176);
     \u0275\u0275text(2, "Nom de naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 171);
+    \u0275\u0275elementStart(3, "span", 177);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3492,12 +3507,12 @@ function PersonnesComponent_div_151_div_16_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.nomNaissance);
   }
 }
-function PersonnesComponent_div_151_div_17_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 169)(1, "span", 170);
+    \u0275\u0275elementStart(0, "div", 175)(1, "span", 176);
     \u0275\u0275text(2, "Nom d'usage");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 171);
+    \u0275\u0275elementStart(3, "span", 177);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3507,12 +3522,12 @@ function PersonnesComponent_div_151_div_17_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.nomUsage);
   }
 }
-function PersonnesComponent_div_151_div_18_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_19_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 169)(1, "span", 170);
+    \u0275\u0275elementStart(0, "div", 175)(1, "span", 176);
     \u0275\u0275text(2, "Date de naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 171);
+    \u0275\u0275elementStart(3, "span", 177);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3522,12 +3537,12 @@ function PersonnesComponent_div_151_div_18_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.dateNaissance);
   }
 }
-function PersonnesComponent_div_151_div_19_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_20_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 169)(1, "span", 170);
+    \u0275\u0275elementStart(0, "div", 175)(1, "span", 176);
     \u0275\u0275text(2, "Lieu de naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 171);
+    \u0275\u0275elementStart(3, "span", 177);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3537,12 +3552,12 @@ function PersonnesComponent_div_151_div_19_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.lieuNaissance);
   }
 }
-function PersonnesComponent_div_151_div_20_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_21_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 169)(1, "span", 170);
+    \u0275\u0275elementStart(0, "div", 175)(1, "span", 176);
     \u0275\u0275text(2, "Date de d\xE9c\xE8s");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 171);
+    \u0275\u0275elementStart(3, "span", 177);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3552,12 +3567,12 @@ function PersonnesComponent_div_151_div_20_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.dateDeces);
   }
 }
-function PersonnesComponent_div_151_div_21_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_22_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 169)(1, "span", 170);
+    \u0275\u0275elementStart(0, "div", 175)(1, "span", 176);
     \u0275\u0275text(2, "Lieu de d\xE9c\xE8s");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 171);
+    \u0275\u0275elementStart(3, "span", 177);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3567,12 +3582,12 @@ function PersonnesComponent_div_151_div_21_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.lieuDeces);
   }
 }
-function PersonnesComponent_div_151_div_29_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_30_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 157)(1, "div", 28);
+    \u0275\u0275elementStart(0, "div", 161)(1, "div", 28);
     \u0275\u0275text(2, "Biographie");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "p", 172);
+    \u0275\u0275elementStart(3, "p", 178);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3582,12 +3597,12 @@ function PersonnesComponent_div_151_div_29_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.biographie);
   }
 }
-function PersonnesComponent_div_151_div_30_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_31_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 157)(1, "div", 28);
+    \u0275\u0275elementStart(0, "div", 161)(1, "div", 28);
     \u0275\u0275text(2, "Notes");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "p", 172);
+    \u0275\u0275elementStart(3, "p", 178);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -3597,9 +3612,9 @@ function PersonnesComponent_div_151_div_30_Template(rf, ctx) {
     \u0275\u0275textInterpolate(p_r22.notes);
   }
 }
-function PersonnesComponent_div_151_span_35_Template(rf, ctx) {
+function PersonnesComponent_div_159_span_36_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 173);
+    \u0275\u0275elementStart(0, "span", 179);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3609,15 +3624,15 @@ function PersonnesComponent_div_151_span_35_Template(rf, ctx) {
     \u0275\u0275textInterpolate2("", ctx_r3.albumPhotos.length, " photo", ctx_r3.albumPhotos.length > 1 ? "s" : "");
   }
 }
-function PersonnesComponent_div_151_div_36_div_1_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_37_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "div", 176);
+    \u0275\u0275element(0, "div", 182);
   }
 }
-function PersonnesComponent_div_151_div_36_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_37_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 174);
-    \u0275\u0275template(1, PersonnesComponent_div_151_div_36_div_1_Template, 1, 0, "div", 175);
+    \u0275\u0275elementStart(0, "div", 180);
+    \u0275\u0275template(1, PersonnesComponent_div_159_div_37_div_1_Template, 1, 0, "div", 181);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -3625,9 +3640,9 @@ function PersonnesComponent_div_151_div_36_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", \u0275\u0275pureFunction0(1, _c3));
   }
 }
-function PersonnesComponent_div_151_div_37_div_1_div_6_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_38_div_1_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 183);
+    \u0275\u0275elementStart(0, "div", 189);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -3637,18 +3652,18 @@ function PersonnesComponent_div_151_div_37_div_1_div_6_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ph_r24.caption);
   }
 }
-function PersonnesComponent_div_151_div_37_div_1_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_38_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r23 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 178);
-    \u0275\u0275listener("click", function PersonnesComponent_div_151_div_37_div_1_Template_div_click_0_listener() {
+    \u0275\u0275elementStart(0, "div", 184);
+    \u0275\u0275listener("click", function PersonnesComponent_div_159_div_38_div_1_Template_div_click_0_listener() {
       const ph_r24 = \u0275\u0275restoreView(_r23).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r3.albumLightbox = ph_r24);
     });
-    \u0275\u0275element(1, "img", 179);
-    \u0275\u0275elementStart(2, "div", 180)(3, "button", 181);
-    \u0275\u0275listener("click", function PersonnesComponent_div_151_div_37_div_1_Template_button_click_3_listener($event) {
+    \u0275\u0275element(1, "img", 185);
+    \u0275\u0275elementStart(2, "div", 186)(3, "button", 187);
+    \u0275\u0275listener("click", function PersonnesComponent_div_159_div_38_div_1_Template_button_click_3_listener($event) {
       const ph_r24 = \u0275\u0275restoreView(_r23).$implicit;
       const ctx_r3 = \u0275\u0275nextContext(3);
       $event.stopPropagation();
@@ -3657,7 +3672,7 @@ function PersonnesComponent_div_151_div_37_div_1_Template(rf, ctx) {
     \u0275\u0275elementStart(4, "span", 6);
     \u0275\u0275text(5, "delete");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275template(6, PersonnesComponent_div_151_div_37_div_1_div_6_Template, 2, 1, "div", 182);
+    \u0275\u0275template(6, PersonnesComponent_div_159_div_38_div_1_div_6_Template, 2, 1, "div", 188);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -3668,10 +3683,10 @@ function PersonnesComponent_div_151_div_37_div_1_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ph_r24.caption);
   }
 }
-function PersonnesComponent_div_151_div_37_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_38_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 174);
-    \u0275\u0275template(1, PersonnesComponent_div_151_div_37_div_1_Template, 7, 3, "div", 177);
+    \u0275\u0275elementStart(0, "div", 180);
+    \u0275\u0275template(1, PersonnesComponent_div_159_div_38_div_1_Template, 7, 3, "div", 183);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -3680,17 +3695,17 @@ function PersonnesComponent_div_151_div_37_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r3.albumPhotos)("ngForTrackBy", ctx_r3.trackByPhotoId);
   }
 }
-function PersonnesComponent_div_151_div_38_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_39_Template(rf, ctx) {
   if (rf & 1) {
     const _r25 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 184)(1, "label", 185)(2, "span", 6);
+    \u0275\u0275elementStart(0, "div", 190)(1, "label", 191)(2, "span", 6);
     \u0275\u0275text(3, "add_photo_alternate");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(4, "span");
     \u0275\u0275text(5, "Ajouter une photo");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "input", 186);
-    \u0275\u0275listener("change", function PersonnesComponent_div_151_div_38_Template_input_change_6_listener($event) {
+    \u0275\u0275elementStart(6, "input", 192);
+    \u0275\u0275listener("change", function PersonnesComponent_div_159_div_39_Template_input_change_6_listener($event) {
       \u0275\u0275restoreView(_r25);
       const ctx_r3 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r3.onAlbumFileSelected($event));
@@ -3698,71 +3713,71 @@ function PersonnesComponent_div_151_div_38_Template(rf, ctx) {
     \u0275\u0275elementEnd()()();
   }
 }
-function PersonnesComponent_div_151_div_39_span_10_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_40_span_10_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 6);
     \u0275\u0275text(1, "upload");
     \u0275\u0275elementEnd();
   }
 }
-function PersonnesComponent_div_151_div_39_span_11_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_40_span_11_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1, "Envoi\u2026");
     \u0275\u0275elementEnd();
   }
 }
-function PersonnesComponent_div_151_div_39_span_12_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_40_span_12_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1, "Envoyer");
     \u0275\u0275elementEnd();
   }
 }
-function PersonnesComponent_div_151_div_39_Template(rf, ctx) {
+function PersonnesComponent_div_159_div_40_Template(rf, ctx) {
   if (rf & 1) {
     const _r26 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 187);
-    \u0275\u0275element(1, "img", 188);
-    \u0275\u0275elementStart(2, "div", 189)(3, "input", 190);
-    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_151_div_39_Template_input_ngModelChange_3_listener($event) {
+    \u0275\u0275elementStart(0, "div", 193);
+    \u0275\u0275element(1, "img", 194);
+    \u0275\u0275elementStart(2, "div", 195)(3, "input", 196);
+    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_159_div_40_Template_input_ngModelChange_3_listener($event) {
       \u0275\u0275restoreView(_r26);
       const ctx_r3 = \u0275\u0275nextContext(2);
       \u0275\u0275twoWayBindingSet(ctx_r3.albumMeta.caption, $event) || (ctx_r3.albumMeta.caption = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "input", 191);
-    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_151_div_39_Template_input_ngModelChange_4_listener($event) {
+    \u0275\u0275elementStart(4, "input", 197);
+    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_159_div_40_Template_input_ngModelChange_4_listener($event) {
       \u0275\u0275restoreView(_r26);
       const ctx_r3 = \u0275\u0275nextContext(2);
       \u0275\u0275twoWayBindingSet(ctx_r3.albumMeta.datePrise, $event) || (ctx_r3.albumMeta.datePrise = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "input", 192);
-    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_151_div_39_Template_input_ngModelChange_5_listener($event) {
+    \u0275\u0275elementStart(5, "input", 198);
+    \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_div_159_div_40_Template_input_ngModelChange_5_listener($event) {
       \u0275\u0275restoreView(_r26);
       const ctx_r3 = \u0275\u0275nextContext(2);
       \u0275\u0275twoWayBindingSet(ctx_r3.albumMeta.lieuPrise, $event) || (ctx_r3.albumMeta.lieuPrise = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div", 193)(7, "button", 194);
-    \u0275\u0275listener("click", function PersonnesComponent_div_151_div_39_Template_button_click_7_listener() {
+    \u0275\u0275elementStart(6, "div", 199)(7, "button", 200);
+    \u0275\u0275listener("click", function PersonnesComponent_div_159_div_40_Template_button_click_7_listener() {
       \u0275\u0275restoreView(_r26);
       const ctx_r3 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r3.cancelAlbumUpload());
     });
     \u0275\u0275text(8, "Annuler");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "button", 195);
-    \u0275\u0275listener("click", function PersonnesComponent_div_151_div_39_Template_button_click_9_listener() {
+    \u0275\u0275elementStart(9, "button", 201);
+    \u0275\u0275listener("click", function PersonnesComponent_div_159_div_40_Template_button_click_9_listener() {
       \u0275\u0275restoreView(_r26);
       const ctx_r3 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r3.uploadAlbumPhoto());
     });
-    \u0275\u0275template(10, PersonnesComponent_div_151_div_39_span_10_Template, 2, 0, "span", 196)(11, PersonnesComponent_div_151_div_39_span_11_Template, 2, 0, "span", 58)(12, PersonnesComponent_div_151_div_39_span_12_Template, 2, 0, "span", 58);
+    \u0275\u0275template(10, PersonnesComponent_div_159_div_40_span_10_Template, 2, 0, "span", 202)(11, PersonnesComponent_div_159_div_40_span_11_Template, 2, 0, "span", 58)(12, PersonnesComponent_div_159_div_40_span_12_Template, 2, 0, "span", 58);
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
@@ -3785,40 +3800,42 @@ function PersonnesComponent_div_151_div_39_Template(rf, ctx) {
     \u0275\u0275property("ngIf", !ctx_r3.albumUploading);
   }
 }
-function PersonnesComponent_div_151_Template(rf, ctx) {
+function PersonnesComponent_div_159_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 26)(1, "div", 151);
-    \u0275\u0275template(2, PersonnesComponent_div_151_img_2_Template, 1, 2, "img", 152)(3, PersonnesComponent_div_151_div_3_Template, 2, 5, "div", 153);
-    \u0275\u0275elementStart(4, "div", 154)(5, "h2");
+    \u0275\u0275elementStart(0, "div", 26)(1, "div", 154);
+    \u0275\u0275template(2, PersonnesComponent_div_159_img_2_Template, 1, 2, "img", 155)(3, PersonnesComponent_div_159_div_3_Template, 2, 5, "div", 156);
+    \u0275\u0275elementStart(4, "div", 157)(5, "h2");
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "div", 155)(8, "span", 156);
+    \u0275\u0275elementStart(7, "div", 158)(8, "span", 159);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "span", 156);
+    \u0275\u0275elementStart(10, "span", 159);
     \u0275\u0275text(11);
-    \u0275\u0275elementEnd()()()();
-    \u0275\u0275elementStart(12, "div", 157)(13, "div", 28);
-    \u0275\u0275text(14, "Informations");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(15, "div", 158);
-    \u0275\u0275template(16, PersonnesComponent_div_151_div_16_Template, 5, 1, "div", 159)(17, PersonnesComponent_div_151_div_17_Template, 5, 1, "div", 159)(18, PersonnesComponent_div_151_div_18_Template, 5, 1, "div", 159)(19, PersonnesComponent_div_151_div_19_Template, 5, 1, "div", 159)(20, PersonnesComponent_div_151_div_20_Template, 5, 1, "div", 159)(21, PersonnesComponent_div_151_div_21_Template, 5, 1, "div", 159);
+    \u0275\u0275template(12, PersonnesComponent_div_159_span_12_Template, 4, 0, "span", 160);
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(13, "div", 161)(14, "div", 28);
+    \u0275\u0275text(15, "Informations");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(16, "div", 162);
+    \u0275\u0275template(17, PersonnesComponent_div_159_div_17_Template, 5, 1, "div", 163)(18, PersonnesComponent_div_159_div_18_Template, 5, 1, "div", 163)(19, PersonnesComponent_div_159_div_19_Template, 5, 1, "div", 163)(20, PersonnesComponent_div_159_div_20_Template, 5, 1, "div", 163)(21, PersonnesComponent_div_159_div_21_Template, 5, 1, "div", 163)(22, PersonnesComponent_div_159_div_22_Template, 5, 1, "div", 163);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(22, "div", 157)(23, "div", 28);
-    \u0275\u0275text(24, "Famille");
+    \u0275\u0275elementStart(23, "div", 161)(24, "div", 28);
+    \u0275\u0275text(25, "Famille");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(25, "a", 160)(26, "span", 6);
-    \u0275\u0275text(27, "child_care");
+    \u0275\u0275elementStart(26, "a", 164)(27, "span", 6);
+    \u0275\u0275text(28, "child_care");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(28, " Ajouter un enfant ");
+    \u0275\u0275text(29, " Ajouter un enfant ");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(29, PersonnesComponent_div_151_div_29_Template, 5, 1, "div", 161)(30, PersonnesComponent_div_151_div_30_Template, 5, 1, "div", 161);
-    \u0275\u0275elementStart(31, "div", 157)(32, "div", 162)(33, "div", 28);
-    \u0275\u0275text(34, "Album photos");
+    \u0275\u0275template(30, PersonnesComponent_div_159_div_30_Template, 5, 1, "div", 165)(31, PersonnesComponent_div_159_div_31_Template, 5, 1, "div", 165);
+    \u0275\u0275elementStart(32, "div", 161)(33, "div", 166)(34, "div", 28);
+    \u0275\u0275text(35, "Album photos");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(35, PersonnesComponent_div_151_span_35_Template, 2, 2, "span", 163);
+    \u0275\u0275template(36, PersonnesComponent_div_159_span_36_Template, 2, 2, "span", 167);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(36, PersonnesComponent_div_151_div_36_Template, 2, 2, "div", 164)(37, PersonnesComponent_div_151_div_37_Template, 2, 2, "div", 164)(38, PersonnesComponent_div_151_div_38_Template, 7, 0, "div", 165)(39, PersonnesComponent_div_151_div_39_Template, 13, 8, "div", 166);
+    \u0275\u0275template(37, PersonnesComponent_div_159_div_37_Template, 2, 2, "div", 168)(38, PersonnesComponent_div_159_div_38_Template, 2, 2, "div", 168)(39, PersonnesComponent_div_159_div_39_Template, 7, 0, "div", 169)(40, PersonnesComponent_div_159_div_40_Template, 13, 8, "div", 170);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -3838,6 +3855,8 @@ function PersonnesComponent_div_151_Template(rf, ctx) {
     \u0275\u0275classProp("badge-success", ctx_r3.estVivant(p_r22))("badge-gray", !ctx_r3.estVivant(p_r22));
     \u0275\u0275advance();
     \u0275\u0275textInterpolate1(" ", ctx_r3.estVivant(p_r22) ? "Vivant(e)" : "D\xE9c\xE9d\xE9(e)", " ");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", p_r22.visibilite === "prive");
     \u0275\u0275advance(5);
     \u0275\u0275property("ngIf", p_r22.nomNaissance);
     \u0275\u0275advance();
@@ -3851,7 +3870,7 @@ function PersonnesComponent_div_151_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", p_r22.lieuDeces);
     \u0275\u0275advance(4);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(30, _c12))("queryParams", \u0275\u0275pureFunction1(31, _c22, p_r22.id));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(31, _c12))("queryParams", \u0275\u0275pureFunction1(32, _c22, p_r22.id));
     \u0275\u0275advance(4);
     \u0275\u0275property("ngIf", p_r22.biographie);
     \u0275\u0275advance();
@@ -3868,7 +3887,7 @@ function PersonnesComponent_div_151_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r3.albumUploadFile);
   }
 }
-function PersonnesComponent_div_159_div_3_p_1_Template(rf, ctx) {
+function PersonnesComponent_div_167_div_3_p_1_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "p");
     \u0275\u0275text(1);
@@ -3880,7 +3899,7 @@ function PersonnesComponent_div_159_div_3_p_1_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r3.albumLightbox.caption);
   }
 }
-function PersonnesComponent_div_159_div_3_p_2_span_1_Template(rf, ctx) {
+function PersonnesComponent_div_167_div_3_p_2_span_1_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span")(1, "span", 6);
     \u0275\u0275text(2, "calendar_today");
@@ -3894,7 +3913,7 @@ function PersonnesComponent_div_159_div_3_p_2_span_1_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r3.albumLightbox.datePrise);
   }
 }
-function PersonnesComponent_div_159_div_3_p_2_span_2_Template(rf, ctx) {
+function PersonnesComponent_div_167_div_3_p_2_span_2_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span")(1, "span", 6);
     \u0275\u0275text(2, "place");
@@ -3908,10 +3927,10 @@ function PersonnesComponent_div_159_div_3_p_2_span_2_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r3.albumLightbox.lieuPrise);
   }
 }
-function PersonnesComponent_div_159_div_3_p_2_Template(rf, ctx) {
+function PersonnesComponent_div_167_div_3_p_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "p", 204);
-    \u0275\u0275template(1, PersonnesComponent_div_159_div_3_p_2_span_1_Template, 4, 1, "span", 58)(2, PersonnesComponent_div_159_div_3_p_2_span_2_Template, 4, 1, "span", 58);
+    \u0275\u0275elementStart(0, "p", 210);
+    \u0275\u0275template(1, PersonnesComponent_div_167_div_3_p_2_span_1_Template, 4, 1, "span", 58)(2, PersonnesComponent_div_167_div_3_p_2_span_2_Template, 4, 1, "span", 58);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -3922,10 +3941,10 @@ function PersonnesComponent_div_159_div_3_p_2_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r3.albumLightbox.lieuPrise);
   }
 }
-function PersonnesComponent_div_159_div_3_Template(rf, ctx) {
+function PersonnesComponent_div_167_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 202);
-    \u0275\u0275template(1, PersonnesComponent_div_159_div_3_p_1_Template, 2, 1, "p", 58)(2, PersonnesComponent_div_159_div_3_p_2_Template, 3, 2, "p", 203);
+    \u0275\u0275elementStart(0, "div", 208);
+    \u0275\u0275template(1, PersonnesComponent_div_167_div_3_p_1_Template, 2, 1, "p", 58)(2, PersonnesComponent_div_167_div_3_p_2_Template, 3, 2, "p", 209);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -3936,24 +3955,24 @@ function PersonnesComponent_div_159_div_3_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r3.albumLightbox.datePrise || ctx_r3.albumLightbox.lieuPrise);
   }
 }
-function PersonnesComponent_div_159_Template(rf, ctx) {
+function PersonnesComponent_div_167_Template(rf, ctx) {
   if (rf & 1) {
     const _r27 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 197);
-    \u0275\u0275listener("click", function PersonnesComponent_div_159_Template_div_click_0_listener() {
+    \u0275\u0275elementStart(0, "div", 203);
+    \u0275\u0275listener("click", function PersonnesComponent_div_167_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r27);
       const ctx_r3 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r3.albumLightbox = null);
     });
-    \u0275\u0275elementStart(1, "div", 198);
-    \u0275\u0275listener("click", function PersonnesComponent_div_159_Template_div_click_1_listener($event) {
+    \u0275\u0275elementStart(1, "div", 204);
+    \u0275\u0275listener("click", function PersonnesComponent_div_167_Template_div_click_1_listener($event) {
       \u0275\u0275restoreView(_r27);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275element(2, "img", 199);
-    \u0275\u0275template(3, PersonnesComponent_div_159_div_3_Template, 3, 2, "div", 200);
-    \u0275\u0275elementStart(4, "button", 201);
-    \u0275\u0275listener("click", function PersonnesComponent_div_159_Template_button_click_4_listener() {
+    \u0275\u0275element(2, "img", 205);
+    \u0275\u0275template(3, PersonnesComponent_div_167_div_3_Template, 3, 2, "div", 206);
+    \u0275\u0275elementStart(4, "button", 207);
+    \u0275\u0275listener("click", function PersonnesComponent_div_167_Template_button_click_4_listener() {
       \u0275\u0275restoreView(_r27);
       const ctx_r3 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r3.albumLightbox = null);
@@ -3970,17 +3989,31 @@ function PersonnesComponent_div_159_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r3.albumLightbox.caption || ctx_r3.albumLightbox.datePrise || ctx_r3.albumLightbox.lieuPrise);
   }
 }
-function PersonnesComponent_div_160_span_13_Template(rf, ctx) {
+function PersonnesComponent_div_168_div_9_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 150);
+    \u0275\u0275elementStart(0, "div", 85)(1, "span", 6);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r3 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r3.deleteErreur, " ");
+  }
+}
+function PersonnesComponent_div_168_span_14_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 153);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
 }
-function PersonnesComponent_div_160_Template(rf, ctx) {
+function PersonnesComponent_div_168_Template(rf, ctx) {
   if (rf & 1) {
     const _r28 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 205)(1, "div", 206)(2, "div", 207)(3, "span", 6);
+    \u0275\u0275elementStart(0, "div", 211)(1, "div", 212)(2, "div", 213)(3, "span", 6);
     \u0275\u0275text(4, "delete_forever");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(5, "h4");
@@ -3989,29 +4022,32 @@ function PersonnesComponent_div_160_Template(rf, ctx) {
     \u0275\u0275elementStart(7, "p");
     \u0275\u0275text(8, "Cette action est irr\xE9versible. Toutes les relations associ\xE9es seront \xE9galement supprim\xE9es.");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "div", 208)(10, "button", 62);
-    \u0275\u0275listener("click", function PersonnesComponent_div_160_Template_button_click_10_listener() {
+    \u0275\u0275template(9, PersonnesComponent_div_168_div_9_Template, 4, 1, "div", 17);
+    \u0275\u0275elementStart(10, "div", 214)(11, "button", 65);
+    \u0275\u0275listener("click", function PersonnesComponent_div_168_Template_button_click_11_listener() {
       \u0275\u0275restoreView(_r28);
       const ctx_r3 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r3.closeAll());
     });
-    \u0275\u0275text(11, "Annuler");
+    \u0275\u0275text(12, "Annuler");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "button", 209);
-    \u0275\u0275listener("click", function PersonnesComponent_div_160_Template_button_click_12_listener() {
+    \u0275\u0275elementStart(13, "button", 215);
+    \u0275\u0275listener("click", function PersonnesComponent_div_168_Template_button_click_13_listener() {
       \u0275\u0275restoreView(_r28);
       const ctx_r3 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r3.deletePersonne());
     });
-    \u0275\u0275template(13, PersonnesComponent_div_160_span_13_Template, 2, 0, "span", 64);
-    \u0275\u0275text(14);
+    \u0275\u0275template(14, PersonnesComponent_div_168_span_14_Template, 2, 0, "span", 67);
+    \u0275\u0275text(15);
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
     const ctx_r3 = \u0275\u0275nextContext();
     \u0275\u0275advance(6);
     \u0275\u0275textInterpolate1("Supprimer ", ctx_r3.deleteTarget ? ctx_r3.getNomComplet(ctx_r3.deleteTarget) : "ce membre", " ?");
-    \u0275\u0275advance(6);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngIf", ctx_r3.deleteErreur);
+    \u0275\u0275advance(4);
     \u0275\u0275property("disabled", ctx_r3.deleting);
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r3.deleting);
@@ -4157,7 +4193,8 @@ var PersonnesComponent = class _PersonnesComponent {
       deces_jour: "",
       lieuDeces: "",
       biographie: "",
-      notes: ""
+      notes: "",
+      visibilite: "famille"
     };
   }
   openCreate() {
@@ -4189,7 +4226,8 @@ var PersonnesComponent = class _PersonnesComponent {
       deces_jour: dd,
       lieuDeces: p.lieuDeces ?? "",
       biographie: p.biographie ?? "",
-      notes: p.notes ?? ""
+      notes: p.notes ?? "",
+      visibilite: p.visibilite ?? "famille"
     };
     this.selectedFile = null;
     this.photoPreview = p.photoUrl;
@@ -4292,6 +4330,7 @@ var PersonnesComponent = class _PersonnesComponent {
     this.editTarget = null;
     this.detailTarget = null;
     this.deleteTarget = null;
+    this.deleteErreur = null;
   }
   savePersonne() {
     if (this.saving)
@@ -4316,7 +4355,8 @@ var PersonnesComponent = class _PersonnesComponent {
       dateDeces: this.form.estDecede ? this.buildDateStr(this.form.deces_annee, this.form.deces_mois, this.form.deces_jour) : null,
       lieuDeces: this.form.estDecede ? this.form.lieuDeces || null : null,
       biographie: this.form.biographie || null,
-      notes: this.form.notes || null
+      notes: this.form.notes || null,
+      visibilite: this.form.visibilite
     };
     const obs = this.editTarget ? this.api.updatePersonne(this.editTarget.id, body) : this.api.createPersonne(body);
     obs.subscribe({
@@ -4334,23 +4374,27 @@ var PersonnesComponent = class _PersonnesComponent {
           finish();
         }
       },
-      error: () => {
+      error: (err) => {
         this.saving = false;
+        this.formErreur = err?.error?.error ?? "Erreur lors de l'enregistrement.";
       }
     });
   }
+  deleteErreur = null;
   deletePersonne() {
     if (!this.deleteTarget || this.deleting)
       return;
     this.deleting = true;
+    this.deleteErreur = null;
     this.api.deletePersonne(this.deleteTarget.id).subscribe({
       next: () => {
         this.toutes = this.toutes.filter((p) => p.id !== this.deleteTarget.id);
         this.deleting = false;
         this.closeAll();
       },
-      error: () => {
+      error: (err) => {
         this.deleting = false;
+        this.deleteErreur = err?.error?.error ?? "Erreur lors de la suppression.";
       }
     });
   }
@@ -4382,7 +4426,7 @@ var PersonnesComponent = class _PersonnesComponent {
   static \u0275fac = function PersonnesComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _PersonnesComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(ActivatedRoute), \u0275\u0275directiveInject(NgZone));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _PersonnesComponent, selectors: [["app-personnes"]], standalone: false, decls: 161, vars: 48, consts: [["personneForm", "ngForm"], [1, "personnes-page"], [1, "page-header"], [1, "page-title"], [1, "page-subtitle"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], [1, "toolbar"], [1, "search-bar"], ["type", "text", "placeholder", "Rechercher par nom, pr\xE9nom, lieu...", 3, "ngModelChange", "ngModel"], [1, "toolbar-right"], [1, "chip-group"], ["class", "chip", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "view-toggle"], ["title", "Vue cartes", 1, "vt-btn", 3, "click"], ["title", "Vue liste", 1, "vt-btn", 3, "click"], ["class", "sk-grid", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "pc-grid", 4, "ngIf"], ["class", "pl-table", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel"], [1, "panel-header"], ["class", "panel-header-sub", 4, "ngIf"], ["title", "Fermer", "aria-label", "Fermer", 1, "btn-icon", 3, "click"], [1, "panel-body"], [1, "form-section"], [1, "section-title"], [1, "photo-upload-area"], [1, "photo-preview-wrap"], ["class", "photo-preview-img", "alt", "Aper\xE7u", 3, "src", "error", 4, "ngIf"], ["class", "photo-placeholder", 3, "male", "female", 4, "ngIf"], ["class", "photo-remove-btn", "type", "button", "title", "Supprimer la photo", 3, "click", 4, "ngIf"], [1, "photo-actions"], ["for", "photoInput", 1, "btn-photo-pick"], ["id", "photoInput", "type", "file", "accept", "image/jpeg,image/png,image/webp", 2, "display", "none", 3, "change"], [1, "photo-hint"], [1, "form-group"], [1, "required"], ["type", "text", "name", "prenoms", "placeholder", "Jean-Baptiste, Marie...", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-row-2"], ["type", "text", "name", "nomNaissance", "placeholder", "Dupont", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "optional"], ["type", "text", "name", "nomUsage", "placeholder", "Nom apr\xE8s mariage...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "radio-group"], ["class", "radio-option", 3, "selected", 4, "ngFor", "ngForOf"], [1, "form-row"], ["type", "number", "name", "nais_annee", "placeholder", "1960", "min", "1850", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel", "max"], ["name", "nais_mois", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["type", "number", "name", "nais_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuNaissance", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "toggle-wrap"], ["type", "checkbox", "name", "estDecede", 3, "ngModelChange", "ngModel"], [1, "toggle"], [1, "toggle-label"], [4, "ngIf"], ["name", "biographie", "rows", "4", "placeholder", "Parcours de vie, anecdotes...", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "notes", "rows", "2", "placeholder", "Notes compl\xE9mentaires...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], [1, "slide-panel", "slide-panel-wide"], [1, "panel-header-actions"], ["title", "Modifier", "aria-label", "Modifier", 1, "btn-icon", 3, "click"], [1, "btn-icon", 3, "click"], ["class", "panel-body", 4, "ngIf"], [1, "btn-danger", 3, "click"], ["class", "lightbox-overlay", 3, "click", 4, "ngIf"], ["class", "confirm-dialog", 4, "ngIf"], [1, "chip", 3, "click"], [1, "sk-grid"], ["class", "sk-card", 4, "ngFor", "ngForOf"], [1, "sk-card"], [1, "sk-card-banner"], [1, "sk-card-body"], [1, "sk-line", "sk-full"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "error-state"], [1, "empty-state"], [1, "pc-grid"], ["class", "pc-card", 3, "pc-male", "pc-female", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pc-card", 3, "click"], [1, "pc-card-banner"], [1, "pc-colorband"], [1, "pc-live-dot"], [1, "pc-avatar-ring"], ["class", "pc-avatar pc-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pc-avatar pc-avatar-initials", 4, "ngIf"], [1, "pc-card-body"], [1, "pc-name"], [1, "pc-age"], ["class", "pc-loc", 4, "ngIf"], [1, "pc-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "pc-card-actions"], [1, "pc-act", 3, "click"], [1, "pc-act", "pc-act-danger", 3, "click"], [1, "pc-avatar", "pc-avatar-photo", 3, "error", "src", "alt"], [1, "pc-avatar", "pc-avatar-initials"], [1, "pc-loc"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "pl-table"], [1, "pl-thead"], [1, "pl-th", "pl-th-person"], [1, "pl-th", "pl-th-genre"], [1, "pl-th", "pl-th-lieu"], [1, "pl-th", "pl-th-statut"], [1, "pl-th", "pl-th-actions"], ["class", "pl-row", 3, "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pl-row", 3, "click"], [1, "pl-cell", "pl-cell-person"], [1, "pl-avatar-wrap"], ["class", "pl-avatar pl-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pl-avatar pl-avatar-initials", 3, "male", "female", 4, "ngIf"], [1, "pl-status-dot"], [1, "pl-person-info"], [1, "pl-person-name"], [1, "pl-person-age"], [1, "pl-cell", "pl-cell-genre"], [1, "pl-cell", "pl-cell-lieu"], ["class", "pl-lieu", 4, "ngIf"], ["class", "pl-empty", 4, "ngIf"], [1, "pl-cell", "pl-cell-statut"], [1, "pl-cell", "pl-cell-actions", 3, "click"], ["title", "Voir", "aria-label", "Voir le profil", 1, "btn-icon", 3, "click"], ["title", "Supprimer", "aria-label", "Supprimer", 1, "btn-icon", "btn-icon-danger", 3, "click"], [1, "pl-avatar", "pl-avatar-photo", 3, "error", "src", "alt"], [1, "pl-avatar", "pl-avatar-initials"], [1, "pl-lieu"], [1, "pl-empty"], [1, "panel-overlay", 3, "click"], [1, "panel-header-sub"], ["alt", "Aper\xE7u", 1, "photo-preview-img", 3, "error", "src"], [1, "photo-placeholder"], ["type", "button", "title", "Supprimer la photo", 1, "photo-remove-btn", 3, "click"], [1, "radio-option"], ["type", "radio", 3, "ngModelChange", "name", "value", "ngModel"], [3, "value"], ["type", "number", "name", "deces_annee", "placeholder", "2020", "min", "1850", 1, "form-control", 3, "ngModelChange", "ngModel", "max"], ["name", "deces_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "number", "name", "deces_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuDeces", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "material-icons-round", "spin"], [1, "detail-hero"], ["class", "avatar avatar-xl photo-avatar", 3, "src", "alt", "error", 4, "ngIf"], ["class", "avatar avatar-xl", 3, "female", "male", 4, "ngIf"], [1, "detail-hero-info"], [1, "detail-badges"], [1, "badge"], [1, "detail-section"], [1, "detail-grid"], ["class", "detail-item", 4, "ngIf"], [1, "btn-outline", "btn-sm", 3, "routerLink", "queryParams"], ["class", "detail-section", 4, "ngIf"], [1, "album-header"], ["class", "album-count", 4, "ngIf"], ["class", "album-grid", 4, "ngIf"], ["class", "album-upload-wrap", 4, "ngIf"], ["class", "album-preview-wrap", 4, "ngIf"], [1, "avatar", "avatar-xl", "photo-avatar", 3, "error", "src", "alt"], [1, "avatar", "avatar-xl"], [1, "detail-item"], [1, "detail-label"], [1, "detail-value"], [1, "detail-bio"], [1, "album-count"], [1, "album-grid"], ["class", "album-sk", 4, "ngFor", "ngForOf"], [1, "album-sk"], ["class", "album-thumb", 3, "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "album-thumb", 3, "click"], ["loading", "lazy", 3, "src", "alt"], [1, "album-thumb-overlay"], ["title", "Supprimer", 1, "album-delete-btn", 3, "click"], ["class", "album-thumb-caption", 4, "ngIf"], [1, "album-thumb-caption"], [1, "album-upload-wrap"], [1, "album-upload-trigger"], ["type", "file", "accept", "image/*", "hidden", "", 3, "change"], [1, "album-preview-wrap"], ["alt", "Aper\xE7u", 1, "album-preview-img", 3, "src"], [1, "album-meta-fields"], ["type", "text", "placeholder", "L\xE9gende (optionnel)", 1, "form-control", "form-control-sm", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Date (ex : 1998 ou 1998-06)", 1, "form-control", "form-control-sm", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Lieu de la photo", 1, "form-control", "form-control-sm", 3, "ngModelChange", "ngModel"], [1, "album-preview-btns"], [1, "btn-ghost", "btn-sm", 3, "click"], [1, "btn-primary", "btn-sm", 3, "click", "disabled"], ["class", "material-icons-round", 4, "ngIf"], [1, "lightbox-overlay", 3, "click"], [1, "lightbox-box", 3, "click"], [1, "lightbox-img", 3, "src", "alt"], ["class", "lightbox-info", 4, "ngIf"], [1, "lightbox-close", 3, "click"], [1, "lightbox-info"], ["class", "lightbox-meta", 4, "ngIf"], [1, "lightbox-meta"], [1, "confirm-dialog"], [1, "confirm-box"], [1, "confirm-icon"], [1, "confirm-actions"], [1, "btn-danger", 3, "click", "disabled"]], template: function PersonnesComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _PersonnesComponent, selectors: [["app-personnes"]], standalone: false, decls: 169, vars: 49, consts: [["personneForm", "ngForm"], [1, "personnes-page"], [1, "page-header"], [1, "page-title"], [1, "page-subtitle"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], [1, "toolbar"], [1, "search-bar"], ["type", "text", "placeholder", "Rechercher par nom, pr\xE9nom, lieu...", 3, "ngModelChange", "ngModel"], [1, "toolbar-right"], [1, "chip-group"], ["class", "chip", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "view-toggle"], ["title", "Vue cartes", 1, "vt-btn", 3, "click"], ["title", "Vue liste", 1, "vt-btn", 3, "click"], ["class", "sk-grid", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "pc-grid", 4, "ngIf"], ["class", "pl-table", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel"], [1, "panel-header"], ["class", "panel-header-sub", 4, "ngIf"], ["title", "Fermer", "aria-label", "Fermer", 1, "btn-icon", 3, "click"], [1, "panel-body"], [1, "form-section"], [1, "section-title"], [1, "photo-upload-area"], [1, "photo-preview-wrap"], ["class", "photo-preview-img", "alt", "Aper\xE7u", 3, "src", "error", 4, "ngIf"], ["class", "photo-placeholder", 3, "male", "female", 4, "ngIf"], ["class", "photo-remove-btn", "type", "button", "title", "Supprimer la photo", 3, "click", 4, "ngIf"], [1, "photo-actions"], ["for", "photoInput", 1, "btn-photo-pick"], ["id", "photoInput", "type", "file", "accept", "image/jpeg,image/png,image/webp", 2, "display", "none", 3, "change"], [1, "photo-hint"], [1, "form-group"], [1, "required"], ["type", "text", "name", "prenoms", "placeholder", "Jean-Baptiste, Marie...", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-row-2"], ["type", "text", "name", "nomNaissance", "placeholder", "Dupont", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "optional"], ["type", "text", "name", "nomUsage", "placeholder", "Nom apr\xE8s mariage...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "radio-group"], ["class", "radio-option", 3, "selected", 4, "ngFor", "ngForOf"], [1, "form-row"], ["type", "number", "name", "nais_annee", "placeholder", "1960", "min", "1850", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel", "max"], ["name", "nais_mois", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["type", "number", "name", "nais_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuNaissance", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "toggle-wrap"], ["type", "checkbox", "name", "estDecede", 3, "ngModelChange", "ngModel"], [1, "toggle"], [1, "toggle-label"], [4, "ngIf"], ["name", "biographie", "rows", "4", "placeholder", "Parcours de vie, anecdotes...", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "notes", "rows", "2", "placeholder", "Notes compl\xE9mentaires...", 1, "form-control", 3, "ngModelChange", "ngModel"], ["name", "visibilite", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", "famille"], ["value", "prive"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], [1, "slide-panel", "slide-panel-wide"], [1, "panel-header-actions"], ["title", "Modifier", "aria-label", "Modifier", 1, "btn-icon", 3, "click"], [1, "btn-icon", 3, "click"], ["class", "panel-body", 4, "ngIf"], [1, "btn-danger", 3, "click"], ["class", "lightbox-overlay", 3, "click", 4, "ngIf"], ["class", "confirm-dialog", 4, "ngIf"], [1, "chip", 3, "click"], [1, "sk-grid"], ["class", "sk-card", 4, "ngFor", "ngForOf"], [1, "sk-card"], [1, "sk-card-banner"], [1, "sk-card-body"], [1, "sk-line", "sk-full"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "error-state"], [1, "empty-state"], [1, "pc-grid"], ["class", "pc-card", 3, "pc-male", "pc-female", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pc-card", 3, "click"], [1, "pc-card-banner"], [1, "pc-colorband"], [1, "pc-live-dot"], [1, "pc-avatar-ring"], ["class", "pc-avatar pc-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pc-avatar pc-avatar-initials", 4, "ngIf"], [1, "pc-card-body"], [1, "pc-name"], [1, "pc-age"], ["class", "pc-loc", 4, "ngIf"], [1, "pc-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "pc-card-actions"], [1, "pc-act", 3, "click"], [1, "pc-act", "pc-act-danger", 3, "click"], [1, "pc-avatar", "pc-avatar-photo", 3, "error", "src", "alt"], [1, "pc-avatar", "pc-avatar-initials"], [1, "pc-loc"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "pl-table"], [1, "pl-thead"], [1, "pl-th", "pl-th-person"], [1, "pl-th", "pl-th-genre"], [1, "pl-th", "pl-th-lieu"], [1, "pl-th", "pl-th-statut"], [1, "pl-th", "pl-th-actions"], ["class", "pl-row", 3, "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "pl-row", 3, "click"], [1, "pl-cell", "pl-cell-person"], [1, "pl-avatar-wrap"], ["class", "pl-avatar pl-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], ["class", "pl-avatar pl-avatar-initials", 3, "male", "female", 4, "ngIf"], [1, "pl-status-dot"], [1, "pl-person-info"], [1, "pl-person-name"], [1, "pl-person-age"], [1, "pl-cell", "pl-cell-genre"], [1, "pl-cell", "pl-cell-lieu"], ["class", "pl-lieu", 4, "ngIf"], ["class", "pl-empty", 4, "ngIf"], [1, "pl-cell", "pl-cell-statut"], [1, "pl-cell", "pl-cell-actions", 3, "click"], ["title", "Voir", "aria-label", "Voir le profil", 1, "btn-icon", 3, "click"], ["title", "Supprimer", "aria-label", "Supprimer", 1, "btn-icon", "btn-icon-danger", 3, "click"], [1, "pl-avatar", "pl-avatar-photo", 3, "error", "src", "alt"], [1, "pl-avatar", "pl-avatar-initials"], [1, "pl-lieu"], [1, "pl-empty"], [1, "panel-overlay", 3, "click"], [1, "panel-header-sub"], ["alt", "Aper\xE7u", 1, "photo-preview-img", 3, "error", "src"], [1, "photo-placeholder"], ["type", "button", "title", "Supprimer la photo", 1, "photo-remove-btn", 3, "click"], [1, "radio-option"], ["type", "radio", 3, "ngModelChange", "name", "value", "ngModel"], [3, "value"], ["type", "number", "name", "deces_annee", "placeholder", "2020", "min", "1850", 1, "form-control", 3, "ngModelChange", "ngModel", "max"], ["name", "deces_mois", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "number", "name", "deces_jour", "placeholder", "1", "min", "1", "max", "31", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "name", "lieuDeces", "placeholder", "Ville, pays...", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "material-icons-round", "spin"], [1, "detail-hero"], ["class", "avatar avatar-xl photo-avatar", 3, "src", "alt", "error", 4, "ngIf"], ["class", "avatar avatar-xl", 3, "female", "male", 4, "ngIf"], [1, "detail-hero-info"], [1, "detail-badges"], [1, "badge"], ["class", "badge badge-gray", "title", "Biographie/notes masqu\xE9es aux membres simples", 4, "ngIf"], [1, "detail-section"], [1, "detail-grid"], ["class", "detail-item", 4, "ngIf"], [1, "btn-outline", "btn-sm", 3, "routerLink", "queryParams"], ["class", "detail-section", 4, "ngIf"], [1, "album-header"], ["class", "album-count", 4, "ngIf"], ["class", "album-grid", 4, "ngIf"], ["class", "album-upload-wrap", 4, "ngIf"], ["class", "album-preview-wrap", 4, "ngIf"], [1, "avatar", "avatar-xl", "photo-avatar", 3, "error", "src", "alt"], [1, "avatar", "avatar-xl"], ["title", "Biographie/notes masqu\xE9es aux membres simples", 1, "badge", "badge-gray"], [1, "material-icons-round", 2, "font-size", "13px!important", "vertical-align", "-2px"], [1, "detail-item"], [1, "detail-label"], [1, "detail-value"], [1, "detail-bio"], [1, "album-count"], [1, "album-grid"], ["class", "album-sk", 4, "ngFor", "ngForOf"], [1, "album-sk"], ["class", "album-thumb", 3, "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "album-thumb", 3, "click"], ["loading", "lazy", 3, "src", "alt"], [1, "album-thumb-overlay"], ["title", "Supprimer", 1, "album-delete-btn", 3, "click"], ["class", "album-thumb-caption", 4, "ngIf"], [1, "album-thumb-caption"], [1, "album-upload-wrap"], [1, "album-upload-trigger"], ["type", "file", "accept", "image/*", "hidden", "", 3, "change"], [1, "album-preview-wrap"], ["alt", "Aper\xE7u", 1, "album-preview-img", 3, "src"], [1, "album-meta-fields"], ["type", "text", "placeholder", "L\xE9gende (optionnel)", 1, "form-control", "form-control-sm", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Date (ex : 1998 ou 1998-06)", 1, "form-control", "form-control-sm", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Lieu de la photo", 1, "form-control", "form-control-sm", 3, "ngModelChange", "ngModel"], [1, "album-preview-btns"], [1, "btn-ghost", "btn-sm", 3, "click"], [1, "btn-primary", "btn-sm", 3, "click", "disabled"], ["class", "material-icons-round", 4, "ngIf"], [1, "lightbox-overlay", 3, "click"], [1, "lightbox-box", 3, "click"], [1, "lightbox-img", 3, "src", "alt"], ["class", "lightbox-info", 4, "ngIf"], [1, "lightbox-close", 3, "click"], [1, "lightbox-info"], ["class", "lightbox-meta", 4, "ngIf"], [1, "lightbox-meta"], [1, "confirm-dialog"], [1, "confirm-box"], [1, "confirm-icon"], [1, "confirm-actions"], [1, "btn-danger", 3, "click", "disabled"]], template: function PersonnesComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 1)(1, "div", 2)(2, "div")(3, "h2", 3);
@@ -4598,62 +4642,77 @@ var PersonnesComponent = class _PersonnesComponent {
         \u0275\u0275twoWayBindingSet(ctx.form.notes, $event) || (ctx.form.notes = $event);
         return \u0275\u0275resetView($event);
       });
-      \u0275\u0275elementEnd()()()()();
-      \u0275\u0275template(134, PersonnesComponent_div_134_Template, 4, 1, "div", 17);
-      \u0275\u0275elementStart(135, "div", 61)(136, "button", 62);
-      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_136_listener() {
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(134, "div", 38)(135, "label");
+      \u0275\u0275text(136, "Confidentialit\xE9");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(137, "select", 61);
+      \u0275\u0275twoWayListener("ngModelChange", function PersonnesComponent_Template_select_ngModelChange_137_listener($event) {
+        \u0275\u0275restoreView(_r1);
+        \u0275\u0275twoWayBindingSet(ctx.form.visibilite, $event) || (ctx.form.visibilite = $event);
+        return \u0275\u0275resetView($event);
+      });
+      \u0275\u0275elementStart(138, "option", 62);
+      \u0275\u0275text(139, "Visible par toute la famille");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(140, "option", 63);
+      \u0275\u0275text(141, "Priv\xE9 \u2014 biographie/notes masqu\xE9es aux membres simples");
+      \u0275\u0275elementEnd()()()()()();
+      \u0275\u0275template(142, PersonnesComponent_div_142_Template, 4, 1, "div", 17);
+      \u0275\u0275elementStart(143, "div", 64)(144, "button", 65);
+      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_144_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeAll());
       });
-      \u0275\u0275text(137, "Annuler");
+      \u0275\u0275text(145, "Annuler");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(138, "button", 63);
-      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_138_listener() {
+      \u0275\u0275elementStart(146, "button", 66);
+      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_146_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.savePersonne());
       });
-      \u0275\u0275template(139, PersonnesComponent_span_139_Template, 2, 0, "span", 64);
-      \u0275\u0275text(140);
+      \u0275\u0275template(147, PersonnesComponent_span_147_Template, 2, 0, "span", 67);
+      \u0275\u0275text(148);
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(141, "div", 65)(142, "div", 23);
-      \u0275\u0275template(143, PersonnesComponent_div_143_Template, 5, 2, "div", 58);
-      \u0275\u0275elementStart(144, "div", 66)(145, "button", 67);
-      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_145_listener() {
+      \u0275\u0275elementStart(149, "div", 68)(150, "div", 23);
+      \u0275\u0275template(151, PersonnesComponent_div_151_Template, 5, 2, "div", 58);
+      \u0275\u0275elementStart(152, "div", 69)(153, "button", 70);
+      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_153_listener() {
         \u0275\u0275restoreView(_r1);
         ctx.openEdit(ctx.detailTarget);
         return \u0275\u0275resetView(ctx.showDetail = false);
       });
-      \u0275\u0275elementStart(146, "span", 6);
-      \u0275\u0275text(147, "edit");
+      \u0275\u0275elementStart(154, "span", 6);
+      \u0275\u0275text(155, "edit");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(148, "button", 68);
-      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_148_listener() {
+      \u0275\u0275elementStart(156, "button", 71);
+      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_156_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeAll());
       });
-      \u0275\u0275elementStart(149, "span", 6);
-      \u0275\u0275text(150, "close");
+      \u0275\u0275elementStart(157, "span", 6);
+      \u0275\u0275text(158, "close");
       \u0275\u0275elementEnd()()()();
-      \u0275\u0275template(151, PersonnesComponent_div_151_Template, 40, 33, "div", 69);
-      \u0275\u0275elementStart(152, "div", 61)(153, "button", 70);
-      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_153_listener() {
+      \u0275\u0275template(159, PersonnesComponent_div_159_Template, 41, 34, "div", 72);
+      \u0275\u0275elementStart(160, "div", 64)(161, "button", 73);
+      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_161_listener() {
         \u0275\u0275restoreView(_r1);
         ctx.confirmDelete(ctx.detailTarget, void 0);
         return \u0275\u0275resetView(ctx.showDetail = false);
       });
-      \u0275\u0275elementStart(154, "span", 6);
-      \u0275\u0275text(155, "delete");
+      \u0275\u0275elementStart(162, "span", 6);
+      \u0275\u0275text(163, "delete");
       \u0275\u0275elementEnd();
-      \u0275\u0275text(156, " Supprimer ");
+      \u0275\u0275text(164, " Supprimer ");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(157, "button", 62);
-      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_157_listener() {
+      \u0275\u0275elementStart(165, "button", 65);
+      \u0275\u0275listener("click", function PersonnesComponent_Template_button_click_165_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.closeAll());
       });
-      \u0275\u0275text(158, "Fermer");
+      \u0275\u0275text(166, "Fermer");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(159, PersonnesComponent_div_159_Template, 7, 3, "div", 71)(160, PersonnesComponent_div_160_Template, 15, 4, "div", 72);
+      \u0275\u0275template(167, PersonnesComponent_div_167_Template, 7, 3, "div", 74)(168, PersonnesComponent_div_168_Template, 16, 5, "div", 75);
     }
     if (rf & 2) {
       \u0275\u0275advance(6);
@@ -4721,7 +4780,9 @@ var PersonnesComponent = class _PersonnesComponent {
       \u0275\u0275twoWayProperty("ngModel", ctx.form.biographie);
       \u0275\u0275advance(4);
       \u0275\u0275twoWayProperty("ngModel", ctx.form.notes);
-      \u0275\u0275advance();
+      \u0275\u0275advance(4);
+      \u0275\u0275twoWayProperty("ngModel", ctx.form.visibilite);
+      \u0275\u0275advance(5);
       \u0275\u0275property("ngIf", ctx.formErreur);
       \u0275\u0275advance(4);
       \u0275\u0275property("disabled", ctx.saving);
@@ -5082,6 +5143,13 @@ var PersonnesComponent = class _PersonnesComponent {
           <label>Notes</label>\r
           <textarea name="notes" [(ngModel)]="form.notes" rows="2" placeholder="Notes compl\xE9mentaires..." class="form-control"></textarea>\r
         </div>\r
+        <div class="form-group">\r
+          <label>Confidentialit\xE9</label>\r
+          <select name="visibilite" [(ngModel)]="form.visibilite" class="form-control">\r
+            <option value="famille">Visible par toute la famille</option>\r
+            <option value="prive">Priv\xE9 \u2014 biographie/notes masqu\xE9es aux membres simples</option>\r
+          </select>\r
+        </div>\r
       </div>\r
 \r
     </form>\r
@@ -5138,6 +5206,9 @@ var PersonnesComponent = class _PersonnesComponent {
           </span>\r
           <span class="badge" [class.badge-success]="estVivant(p)" [class.badge-gray]="!estVivant(p)">\r
             {{ estVivant(p) ? 'Vivant(e)' : 'D\xE9c\xE9d\xE9(e)' }}\r
+          </span>\r
+          <span class="badge badge-gray" *ngIf="p.visibilite === 'prive'" title="Biographie/notes masqu\xE9es aux membres simples">\r
+            <span class="material-icons-round" style="font-size:13px!important; vertical-align:-2px;">lock</span> Priv\xE9\r
           </span>\r
         </div>\r
       </div>\r
@@ -5284,6 +5355,9 @@ var PersonnesComponent = class _PersonnesComponent {
     </div>\r
     <h4>Supprimer {{ deleteTarget ? getNomComplet(deleteTarget) : 'ce membre' }} ?</h4>\r
     <p>Cette action est irr\xE9versible. Toutes les relations associ\xE9es seront \xE9galement supprim\xE9es.</p>\r
+    <div class="error-state" *ngIf="deleteErreur">\r
+      <span class="material-icons-round">error_outline</span>{{ deleteErreur }}\r
+    </div>\r
     <div class="confirm-actions">\r
       <button class="btn-ghost" (click)="closeAll()">Annuler</button>\r
       <button class="btn-danger" (click)="deletePersonne()" [disabled]="deleting">\r
@@ -5297,7 +5371,7 @@ var PersonnesComponent = class _PersonnesComponent {
   }], () => [{ type: ApiService }, { type: ActivatedRoute }, { type: NgZone }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PersonnesComponent, { className: "PersonnesComponent", filePath: "src/app/pages/personnes/personnes.component.ts", lineNumber: 53 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PersonnesComponent, { className: "PersonnesComponent", filePath: "src/app/pages/personnes/personnes.component.ts", lineNumber: 54 });
 })();
 
 // src/app/pages/tree/tree.component.ts
@@ -5457,6 +5531,54 @@ function TreeComponent_div_42_Template(rf, ctx) {
     \u0275\u0275textInterpolate1("", ctx_r1.erreur, " ");
   }
 }
+function TreeComponent_div_43_p_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "p", 66);
+    \u0275\u0275text(1, "\u2014 ou \u2014");
+    \u0275\u0275elementEnd();
+  }
+}
+function TreeComponent_div_43_label_8_span_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 61);
+    \u0275\u0275text(1, "sync");
+    \u0275\u0275elementEnd();
+  }
+}
+function TreeComponent_div_43_label_8_span_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 10);
+    \u0275\u0275text(1, "file_upload");
+    \u0275\u0275elementEnd();
+  }
+}
+function TreeComponent_div_43_label_8_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r8 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "label", 67);
+    \u0275\u0275template(1, TreeComponent_div_43_label_8_span_1_Template, 2, 0, "span", 42)(2, TreeComponent_div_43_label_8_span_2_Template, 2, 0, "span", 43);
+    \u0275\u0275text(3);
+    \u0275\u0275elementStart(4, "input", 68);
+    \u0275\u0275listener("change", function TreeComponent_div_43_label_8_Template_input_change_4_listener($event) {
+      \u0275\u0275restoreView(_r8);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.onGedcomFileSelected($event));
+    });
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275classProp("disabled", ctx_r1.importing);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.importing);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r1.importing);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r1.importing ? "Import en cours..." : "Importer un fichier GEDCOM", " ");
+    \u0275\u0275advance();
+    \u0275\u0275property("disabled", ctx_r1.importing);
+  }
+}
 function TreeComponent_div_43_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 63)(1, "span", 10);
@@ -5467,25 +5589,34 @@ function TreeComponent_div_43_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(5, "p");
     \u0275\u0275text(6, "Ajoutez des membres et des unions pour construire l'arbre familial.");
-    \u0275\u0275elementEnd()();
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(7, TreeComponent_div_43_p_7_Template, 2, 0, "p", 64)(8, TreeComponent_div_43_label_8_Template, 5, 6, "label", 65);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(7);
+    \u0275\u0275property("ngIf", ctx_r1.totalPersonnes === 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.totalPersonnes === 0);
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_1_img_4_Template(rf, ctx) {
   if (rf & 1) {
-    const _r11 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 82);
+    const _r12 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 87);
     \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_ng_container_1_img_4_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r11);
-      const node_r10 = \u0275\u0275nextContext(2).node;
+      \u0275\u0275restoreView(_r12);
+      const node_r11 = \u0275\u0275nextContext(2).node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r10.p1.id));
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r11.p1.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(2).node;
+    const node_r11 = \u0275\u0275nextContext(2).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r10.p1), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(node_r10.p1));
+    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r11.p1), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(node_r11.p1));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_1_span_5_Template(rf, ctx) {
@@ -5495,37 +5626,37 @@ function TreeComponent_div_44_ng_template_2_ng_container_1_span_5_Template(rf, c
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(2).node;
+    const node_r11 = \u0275\u0275nextContext(2).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r10.p1));
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r11.p1));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_1_div_10_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 83)(1, "span", 10);
+    \u0275\u0275elementStart(0, "div", 88)(1, "span", 10);
     \u0275\u0275text(2, "favorite");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(3, "span", 84);
+    \u0275\u0275element(3, "span", 89);
     \u0275\u0275elementEnd();
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_img_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 82);
+    const _r14 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 87);
     \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_img_2_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r13);
-      const node_r10 = \u0275\u0275nextContext(3).node;
+      \u0275\u0275restoreView(_r14);
+      const node_r11 = \u0275\u0275nextContext(3).node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r10.p2.id));
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r11.p2.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(3).node;
+    const node_r11 = \u0275\u0275nextContext(3).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r10.p2), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(node_r10.p2));
+    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r11.p2), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(node_r11.p2));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_span_3_Template(rf, ctx) {
@@ -5535,59 +5666,59 @@ function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_span_3_Templat
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(3).node;
+    const node_r11 = \u0275\u0275nextContext(3).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r10.p2));
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r11.p2));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_Template(rf, ctx) {
   if (rf & 1) {
-    const _r12 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 71);
+    const _r13 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 76);
     \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_Template_div_mouseenter_0_listener($event) {
-      \u0275\u0275restoreView(_r12);
-      const node_r10 = \u0275\u0275nextContext(2).node;
+      \u0275\u0275restoreView(_r13);
+      const node_r11 = \u0275\u0275nextContext(2).node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.showTooltip(node_r10.p2, $event));
+      return \u0275\u0275resetView(ctx_r1.showTooltip(node_r11.p2, $event));
     })("mousemove", function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_Template_div_mousemove_0_listener($event) {
-      \u0275\u0275restoreView(_r12);
+      \u0275\u0275restoreView(_r13);
       const ctx_r1 = \u0275\u0275nextContext(4);
       return \u0275\u0275resetView(ctx_r1.moveTooltip($event));
     })("mouseleave", function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_Template_div_mouseleave_0_listener() {
-      \u0275\u0275restoreView(_r12);
+      \u0275\u0275restoreView(_r13);
       const ctx_r1 = \u0275\u0275nextContext(4);
       return \u0275\u0275resetView(ctx_r1.hideTooltip());
     })("click", function TreeComponent_div_44_ng_template_2_ng_container_1_div_11_Template_div_click_0_listener() {
-      \u0275\u0275restoreView(_r12);
-      const node_r10 = \u0275\u0275nextContext(2).node;
+      \u0275\u0275restoreView(_r13);
+      const node_r11 = \u0275\u0275nextContext(2).node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.openDetail(node_r10.p2));
+      return \u0275\u0275resetView(ctx_r1.openDetail(node_r11.p2));
     });
-    \u0275\u0275elementStart(1, "div", 72);
-    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_1_div_11_img_2_Template, 1, 2, "img", 73)(3, TreeComponent_div_44_ng_template_2_ng_container_1_div_11_span_3_Template, 2, 1, "span", 19);
+    \u0275\u0275elementStart(1, "div", 77);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_1_div_11_img_2_Template, 1, 2, "img", 78)(3, TreeComponent_div_44_ng_template_2_ng_container_1_div_11_span_3_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 74);
+    \u0275\u0275elementStart(4, "span", 79);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 75);
+    \u0275\u0275elementStart(6, "span", 80);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(2).node;
+    const node_r11 = \u0275\u0275nextContext(2).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("male", node_r10.p2.sexe === "M")("female", node_r10.p2.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === node_r10.p2.id);
+    \u0275\u0275classProp("male", node_r11.p2.sexe === "M")("female", node_r11.p2.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === node_r11.p2.id);
     \u0275\u0275advance();
-    \u0275\u0275classProp("male", node_r10.p2.sexe === "M")("female", node_r10.p2.sexe === "F");
+    \u0275\u0275classProp("male", node_r11.p2.sexe === "M")("female", node_r11.p2.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r10.p2) && !ctx_r1.failedPhotos.has(node_r10.p2.id));
+    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r11.p2) && !ctx_r1.failedPhotos.has(node_r11.p2.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r10.p2) || ctx_r1.failedPhotos.has(node_r10.p2.id));
+    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r11.p2) || ctx_r1.failedPhotos.has(node_r11.p2.id));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate2("", node_r10.p2.prenoms, " ", node_r10.p2.nomUsage ?? node_r10.p2.nomNaissance);
+    \u0275\u0275textInterpolate2("", node_r11.p2.prenoms, " ", node_r11.p2.nomUsage ?? node_r11.p2.nomNaissance);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.yearLabel(node_r10.p2));
+    \u0275\u0275textInterpolate(ctx_r1.yearLabel(node_r11.p2));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_1_div_12_ng_container_4_Template(rf, ctx) {
@@ -5597,15 +5728,15 @@ function TreeComponent_div_44_ng_template_2_ng_container_1_div_12_ng_container_4
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(3).node;
+    const node_r11 = \u0275\u0275nextContext(3).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" \xB7 ", ctx_r1.extractAnnee(node_r10.union.dateDebut));
+    \u0275\u0275textInterpolate1(" \xB7 ", ctx_r1.extractAnnee(node_r11.union.dateDebut));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_1_div_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 85)(1, "span", 10);
+    \u0275\u0275elementStart(0, "div", 90)(1, "span", 10);
     \u0275\u0275text(2, "favorite_border");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -5613,68 +5744,68 @@ function TreeComponent_div_44_ng_template_2_ng_container_1_div_12_Template(rf, c
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(2).node;
+    const node_r11 = \u0275\u0275nextContext(2).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1(" ", ctx_r1.typeLabel(node_r10.union.type), " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r1.typeLabel(node_r11.union.type), " ");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", node_r10.union.dateDebut);
+    \u0275\u0275property("ngIf", node_r11.union.dateDebut);
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
-    const _r9 = \u0275\u0275getCurrentView();
+    const _r10 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "div", 70)(2, "div", 71);
+    \u0275\u0275elementStart(1, "div", 75)(2, "div", 76);
     \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_template_2_ng_container_1_Template_div_mouseenter_2_listener($event) {
-      \u0275\u0275restoreView(_r9);
-      const node_r10 = \u0275\u0275nextContext().node;
+      \u0275\u0275restoreView(_r10);
+      const node_r11 = \u0275\u0275nextContext().node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.showTooltip(node_r10.p1, $event));
+      return \u0275\u0275resetView(ctx_r1.showTooltip(node_r11.p1, $event));
     })("mousemove", function TreeComponent_div_44_ng_template_2_ng_container_1_Template_div_mousemove_2_listener($event) {
-      \u0275\u0275restoreView(_r9);
+      \u0275\u0275restoreView(_r10);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.moveTooltip($event));
     })("mouseleave", function TreeComponent_div_44_ng_template_2_ng_container_1_Template_div_mouseleave_2_listener() {
-      \u0275\u0275restoreView(_r9);
+      \u0275\u0275restoreView(_r10);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.hideTooltip());
     })("click", function TreeComponent_div_44_ng_template_2_ng_container_1_Template_div_click_2_listener() {
-      \u0275\u0275restoreView(_r9);
-      const node_r10 = \u0275\u0275nextContext().node;
+      \u0275\u0275restoreView(_r10);
+      const node_r11 = \u0275\u0275nextContext().node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.openDetail(node_r10.p1));
+      return \u0275\u0275resetView(ctx_r1.openDetail(node_r11.p1));
     });
-    \u0275\u0275elementStart(3, "div", 72);
-    \u0275\u0275template(4, TreeComponent_div_44_ng_template_2_ng_container_1_img_4_Template, 1, 2, "img", 73)(5, TreeComponent_div_44_ng_template_2_ng_container_1_span_5_Template, 2, 1, "span", 19);
+    \u0275\u0275elementStart(3, "div", 77);
+    \u0275\u0275template(4, TreeComponent_div_44_ng_template_2_ng_container_1_img_4_Template, 1, 2, "img", 78)(5, TreeComponent_div_44_ng_template_2_ng_container_1_span_5_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 74);
+    \u0275\u0275elementStart(6, "span", 79);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "span", 75);
+    \u0275\u0275elementStart(8, "span", 80);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(10, TreeComponent_div_44_ng_template_2_ng_container_1_div_10_Template, 4, 0, "div", 76)(11, TreeComponent_div_44_ng_template_2_ng_container_1_div_11_Template, 8, 15, "div", 77);
+    \u0275\u0275template(10, TreeComponent_div_44_ng_template_2_ng_container_1_div_10_Template, 4, 0, "div", 81)(11, TreeComponent_div_44_ng_template_2_ng_container_1_div_11_Template, 8, 15, "div", 82);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(12, TreeComponent_div_44_ng_template_2_ng_container_1_div_12_Template, 5, 2, "div", 78);
-    \u0275\u0275elementStart(13, "div", 79)(14, "button", 80);
+    \u0275\u0275template(12, TreeComponent_div_44_ng_template_2_ng_container_1_div_12_Template, 5, 2, "div", 83);
+    \u0275\u0275elementStart(13, "div", 84)(14, "button", 85);
     \u0275\u0275listener("click", function TreeComponent_div_44_ng_template_2_ng_container_1_Template_button_click_14_listener($event) {
-      \u0275\u0275restoreView(_r9);
-      const node_r10 = \u0275\u0275nextContext().node;
+      \u0275\u0275restoreView(_r10);
+      const node_r11 = \u0275\u0275nextContext().node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.openQuickAdd(node_r10, "child", (node_r10.union == null ? null : node_r10.union.id) ?? null, $event));
+      return \u0275\u0275resetView(ctx_r1.openQuickAdd(node_r11, "child", (node_r11.union == null ? null : node_r11.union.id) ?? null, $event));
     });
     \u0275\u0275elementStart(15, "span", 10);
     \u0275\u0275text(16, "child_care");
     \u0275\u0275elementEnd();
     \u0275\u0275text(17, "Enfant ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(18, "button", 81);
+    \u0275\u0275elementStart(18, "button", 86);
     \u0275\u0275listener("click", function TreeComponent_div_44_ng_template_2_ng_container_1_Template_button_click_18_listener($event) {
-      \u0275\u0275restoreView(_r9);
-      const node_r10 = \u0275\u0275nextContext().node;
+      \u0275\u0275restoreView(_r10);
+      const node_r11 = \u0275\u0275nextContext().node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.openQuickAdd(node_r10, "partner", null, $event));
+      return \u0275\u0275resetView(ctx_r1.openQuickAdd(node_r11, "partner", null, $event));
     });
     \u0275\u0275elementStart(19, "span", 10);
     \u0275\u0275text(20, "person_add");
@@ -5684,46 +5815,46 @@ function TreeComponent_div_44_ng_template_2_ng_container_1_Template(rf, ctx) {
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext().node;
+    const node_r11 = \u0275\u0275nextContext().node;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275classProp("ts-root", node_r10.isRoot)("ts-selected", ctx_r1.selectedPerson && (ctx_r1.selectedPerson.id === node_r10.p1.id || ctx_r1.selectedPerson.id === (node_r10.p2 == null ? null : node_r10.p2.id)));
+    \u0275\u0275classProp("ts-root", node_r11.isRoot)("ts-selected", ctx_r1.selectedPerson && (ctx_r1.selectedPerson.id === node_r11.p1.id || ctx_r1.selectedPerson.id === (node_r11.p2 == null ? null : node_r11.p2.id)));
     \u0275\u0275advance();
-    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === node_r10.p1.id);
+    \u0275\u0275classProp("male", node_r11.p1.sexe === "M")("female", node_r11.p1.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === node_r11.p1.id);
     \u0275\u0275advance();
-    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F");
+    \u0275\u0275classProp("male", node_r11.p1.sexe === "M")("female", node_r11.p1.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r10.p1) && !ctx_r1.failedPhotos.has(node_r10.p1.id));
+    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r11.p1) && !ctx_r1.failedPhotos.has(node_r11.p1.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r10.p1) || ctx_r1.failedPhotos.has(node_r10.p1.id));
+    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r11.p1) || ctx_r1.failedPhotos.has(node_r11.p1.id));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate2("", node_r10.p1.prenoms, " ", node_r10.p1.nomUsage ?? node_r10.p1.nomNaissance);
+    \u0275\u0275textInterpolate2("", node_r11.p1.prenoms, " ", node_r11.p1.nomUsage ?? node_r11.p1.nomNaissance);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.yearLabel(node_r10.p1));
+    \u0275\u0275textInterpolate(ctx_r1.yearLabel(node_r11.p1));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", node_r10.p2);
+    \u0275\u0275property("ngIf", node_r11.p2);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", node_r10.p2);
+    \u0275\u0275property("ngIf", node_r11.p2);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", node_r10.union == null ? null : node_r10.union.type);
+    \u0275\u0275property("ngIf", node_r11.union == null ? null : node_r11.union.type);
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_img_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r15 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 82);
+    const _r16 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 87);
     \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_ng_container_2_img_3_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r15);
-      const node_r10 = \u0275\u0275nextContext(2).node;
+      \u0275\u0275restoreView(_r16);
+      const node_r11 = \u0275\u0275nextContext(2).node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r10.p1.id));
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r11.p1.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(2).node;
+    const node_r11 = \u0275\u0275nextContext(2).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r10.p1), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(node_r10.p1));
+    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r11.p1), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(node_r11.p1));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_span_4_Template(rf, ctx) {
@@ -5733,28 +5864,28 @@ function TreeComponent_div_44_ng_template_2_ng_container_2_span_4_Template(rf, c
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(2).node;
+    const node_r11 = \u0275\u0275nextContext(2).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r10.p1));
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r11.p1));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_img_6_Template(rf, ctx) {
   if (rf & 1) {
-    const _r17 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 102);
+    const _r18 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 107);
     \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_img_6_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r17);
-      const node_r10 = \u0275\u0275nextContext(3).node;
+      \u0275\u0275restoreView(_r18);
+      const node_r11 = \u0275\u0275nextContext(3).node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r10.p1.id));
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r11.p1.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(3).node;
+    const node_r11 = \u0275\u0275nextContext(3).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r10.p1), \u0275\u0275sanitizeUrl);
+    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r11.p1), \u0275\u0275sanitizeUrl);
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_span_7_Template(rf, ctx) {
@@ -5764,47 +5895,47 @@ function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_span_7_Templat
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(3).node;
+    const node_r11 = \u0275\u0275nextContext(3).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r10.p1));
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r11.p1));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_10_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 83)(1, "span", 10);
+    \u0275\u0275elementStart(0, "div", 88)(1, "span", 10);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
-    \u0275\u0275element(3, "span", 84);
+    \u0275\u0275element(3, "span", 89);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const br_r18 = \u0275\u0275nextContext().$implicit;
+    const br_r19 = \u0275\u0275nextContext().$implicit;
     const ctx_r1 = \u0275\u0275nextContext(4);
     \u0275\u0275advance();
-    \u0275\u0275classProp("ts-heart-active", ctx_r1.unionStatus(br_r18) === "active")("ts-heart-broken", ctx_r1.unionStatus(br_r18) === "divorced")("ts-heart-grey", ctx_r1.unionStatus(br_r18) === "widowed");
+    \u0275\u0275classProp("ts-heart-active", ctx_r1.unionStatus(br_r19) === "active")("ts-heart-broken", ctx_r1.unionStatus(br_r19) === "divorced")("ts-heart-grey", ctx_r1.unionStatus(br_r19) === "widowed");
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.unionHeartIcon(br_r18), " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r1.unionHeartIcon(br_r19), " ");
     \u0275\u0275advance();
-    \u0275\u0275classProp("ts-hline-grey", ctx_r1.unionStatus(br_r18) !== "active");
+    \u0275\u0275classProp("ts-hline-grey", ctx_r1.unionStatus(br_r19) !== "active");
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_img_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r20 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 82);
+    const _r21 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 87);
     \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_img_2_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r20);
-      const br_r18 = \u0275\u0275nextContext(2).$implicit;
+      \u0275\u0275restoreView(_r21);
+      const br_r19 = \u0275\u0275nextContext(2).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(br_r18.partner.id));
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(br_r19.partner.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const br_r18 = \u0275\u0275nextContext(2).$implicit;
+    const br_r19 = \u0275\u0275nextContext(2).$implicit;
     const ctx_r1 = \u0275\u0275nextContext(4);
-    \u0275\u0275property("src", ctx_r1.getPhotoUrl(br_r18.partner), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(br_r18.partner));
+    \u0275\u0275property("src", ctx_r1.getPhotoUrl(br_r19.partner), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(br_r19.partner));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_span_3_Template(rf, ctx) {
@@ -5814,59 +5945,59 @@ function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_span_3_
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const br_r18 = \u0275\u0275nextContext(2).$implicit;
+    const br_r19 = \u0275\u0275nextContext(2).$implicit;
     const ctx_r1 = \u0275\u0275nextContext(4);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r1.getInitiales(br_r18.partner));
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(br_r19.partner));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_Template(rf, ctx) {
   if (rf & 1) {
-    const _r19 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 71);
+    const _r20 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 76);
     \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_Template_div_mouseenter_0_listener($event) {
-      \u0275\u0275restoreView(_r19);
-      const br_r18 = \u0275\u0275nextContext().$implicit;
+      \u0275\u0275restoreView(_r20);
+      const br_r19 = \u0275\u0275nextContext().$implicit;
       const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.showTooltip(br_r18.partner, $event));
+      return \u0275\u0275resetView(ctx_r1.showTooltip(br_r19.partner, $event));
     })("mousemove", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_Template_div_mousemove_0_listener($event) {
-      \u0275\u0275restoreView(_r19);
+      \u0275\u0275restoreView(_r20);
       const ctx_r1 = \u0275\u0275nextContext(5);
       return \u0275\u0275resetView(ctx_r1.moveTooltip($event));
     })("mouseleave", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_Template_div_mouseleave_0_listener() {
-      \u0275\u0275restoreView(_r19);
+      \u0275\u0275restoreView(_r20);
       const ctx_r1 = \u0275\u0275nextContext(5);
       return \u0275\u0275resetView(ctx_r1.hideTooltip());
     })("click", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_Template_div_click_0_listener() {
-      \u0275\u0275restoreView(_r19);
-      const br_r18 = \u0275\u0275nextContext().$implicit;
+      \u0275\u0275restoreView(_r20);
+      const br_r19 = \u0275\u0275nextContext().$implicit;
       const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.openDetail(br_r18.partner));
+      return \u0275\u0275resetView(ctx_r1.openDetail(br_r19.partner));
     });
-    \u0275\u0275elementStart(1, "div", 72);
-    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_img_2_Template, 1, 2, "img", 73)(3, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_span_3_Template, 2, 1, "span", 19);
+    \u0275\u0275elementStart(1, "div", 77);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_img_2_Template, 1, 2, "img", 78)(3, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_span_3_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 74);
+    \u0275\u0275elementStart(4, "span", 79);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 75);
+    \u0275\u0275elementStart(6, "span", 80);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const br_r18 = \u0275\u0275nextContext().$implicit;
+    const br_r19 = \u0275\u0275nextContext().$implicit;
     const ctx_r1 = \u0275\u0275nextContext(4);
-    \u0275\u0275classProp("male", br_r18.partner.sexe === "M")("female", br_r18.partner.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === br_r18.partner.id);
+    \u0275\u0275classProp("male", br_r19.partner.sexe === "M")("female", br_r19.partner.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === br_r19.partner.id);
     \u0275\u0275advance();
-    \u0275\u0275classProp("male", br_r18.partner.sexe === "M")("female", br_r18.partner.sexe === "F");
+    \u0275\u0275classProp("male", br_r19.partner.sexe === "M")("female", br_r19.partner.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(br_r18.partner) && !ctx_r1.failedPhotos.has(br_r18.partner.id));
+    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(br_r19.partner) && !ctx_r1.failedPhotos.has(br_r19.partner.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(br_r18.partner) || ctx_r1.failedPhotos.has(br_r18.partner.id));
+    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(br_r19.partner) || ctx_r1.failedPhotos.has(br_r19.partner.id));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate2("", br_r18.partner.prenoms, " ", br_r18.partner.nomUsage ?? br_r18.partner.nomNaissance);
+    \u0275\u0275textInterpolate2("", br_r19.partner.prenoms, " ", br_r19.partner.nomUsage ?? br_r19.partner.nomNaissance);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.yearLabel(br_r18.partner));
+    \u0275\u0275textInterpolate(ctx_r1.yearLabel(br_r19.partner));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_16_Template(rf, ctx) {
@@ -5876,10 +6007,10 @@ function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_1
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const br_r18 = \u0275\u0275nextContext().$implicit;
+    const br_r19 = \u0275\u0275nextContext().$implicit;
     const ctx_r1 = \u0275\u0275nextContext(4);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" \xB7 ", ctx_r1.extractAnnee(br_r18.union.dateDebut));
+    \u0275\u0275textInterpolate1(" \xB7 ", ctx_r1.extractAnnee(br_r19.union.dateDebut));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_17_Template(rf, ctx) {
@@ -5889,234 +6020,234 @@ function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_1
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const br_r18 = \u0275\u0275nextContext().$implicit;
+    const br_r19 = \u0275\u0275nextContext().$implicit;
     const ctx_r1 = \u0275\u0275nextContext(4);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" \u2013 ", ctx_r1.extractAnnee(br_r18.union.dateFin));
+    \u0275\u0275textInterpolate1(" \u2013 ", ctx_r1.extractAnnee(br_r19.union.dateFin));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_span_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 103);
+    \u0275\u0275elementStart(0, "span", 108);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const br_r18 = \u0275\u0275nextContext().$implicit;
+    const br_r19 = \u0275\u0275nextContext().$implicit;
     const ctx_r1 = \u0275\u0275nextContext(4);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r1.unionStatusLabel(br_r18));
+    \u0275\u0275textInterpolate(ctx_r1.unionStatusLabel(br_r19));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementContainer(1, 105);
+    \u0275\u0275elementContainer(1, 110);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const br_r18 = \u0275\u0275nextContext(2).$implicit;
+    const br_r19 = \u0275\u0275nextContext(2).$implicit;
     \u0275\u0275nextContext(3);
-    const nodeRef_r21 = \u0275\u0275reference(3);
+    const nodeRef_r22 = \u0275\u0275reference(3);
     \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", nodeRef_r21)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c23, br_r18.children[0]));
+    \u0275\u0275property("ngTemplateOutlet", nodeRef_r22)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c23, br_r19.children[0]));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_div_3_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 94);
-    \u0275\u0275element(1, "div", 95);
-    \u0275\u0275elementContainer(2, 105);
+    \u0275\u0275elementStart(0, "div", 99);
+    \u0275\u0275element(1, "div", 100);
+    \u0275\u0275elementContainer(2, 110);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const child_r22 = ctx.$implicit;
+    const child_r23 = ctx.$implicit;
     \u0275\u0275nextContext(6);
-    const nodeRef_r21 = \u0275\u0275reference(3);
+    const nodeRef_r22 = \u0275\u0275reference(3);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngTemplateOutlet", nodeRef_r21)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c23, child_r22));
+    \u0275\u0275property("ngTemplateOutlet", nodeRef_r22)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c23, child_r23));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 90);
-    \u0275\u0275element(1, "div", 91);
-    \u0275\u0275elementStart(2, "div", 92);
-    \u0275\u0275template(3, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_div_3_div_3_Template, 3, 4, "div", 93);
+    \u0275\u0275elementStart(0, "div", 95);
+    \u0275\u0275element(1, "div", 96);
+    \u0275\u0275elementStart(2, "div", 97);
+    \u0275\u0275template(3, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_div_3_div_3_Template, 3, 4, "div", 98);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const br_r18 = \u0275\u0275nextContext(2).$implicit;
+    const br_r19 = \u0275\u0275nextContext(2).$implicit;
     const ctx_r1 = \u0275\u0275nextContext(4);
     \u0275\u0275advance();
-    \u0275\u0275styleProp("margin-left", ctx_r1.barInset(br_r18.children[0]), "px")("margin-right", ctx_r1.barInset(br_r18.children[br_r18.children.length - 1]), "px");
+    \u0275\u0275styleProp("margin-left", ctx_r1.barInset(br_r19.children[0]), "px")("margin-right", ctx_r1.barInset(br_r19.children[br_r19.children.length - 1]), "px");
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngForOf", br_r18.children)("ngForTrackBy", ctx_r1.trackByNode);
+    \u0275\u0275property("ngForOf", br_r19.children)("ngForTrackBy", ctx_r1.trackByNode);
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275element(1, "div", 89);
-    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_ng_container_2_Template, 2, 4, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_div_3_Template, 4, 6, "div", 104);
+    \u0275\u0275element(1, "div", 94);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_ng_container_2_Template, 2, 4, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_div_3_Template, 4, 6, "div", 109);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const br_r18 = \u0275\u0275nextContext().$implicit;
+    const br_r19 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", br_r18.children.length === 1);
+    \u0275\u0275property("ngIf", br_r19.children.length === 1);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", br_r18.children.length > 1);
+    \u0275\u0275property("ngIf", br_r19.children.length > 1);
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_Template(rf, ctx) {
   if (rf & 1) {
-    const _r16 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 94);
-    \u0275\u0275element(1, "div", 95);
-    \u0275\u0275elementStart(2, "div", 67)(3, "div", 96)(4, "div", 97);
+    const _r17 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 99);
+    \u0275\u0275element(1, "div", 100);
+    \u0275\u0275elementStart(2, "div", 72)(3, "div", 101)(4, "div", 102);
     \u0275\u0275listener("click", function TreeComponent_div_44_ng_template_2_ng_container_2_div_15_Template_div_click_4_listener() {
-      \u0275\u0275restoreView(_r16);
-      const node_r10 = \u0275\u0275nextContext(2).node;
+      \u0275\u0275restoreView(_r17);
+      const node_r11 = \u0275\u0275nextContext(2).node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.openDetail(node_r10.p1));
+      return \u0275\u0275resetView(ctx_r1.openDetail(node_r11.p1));
     });
-    \u0275\u0275elementStart(5, "div", 98);
-    \u0275\u0275template(6, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_img_6_Template, 1, 1, "img", 99)(7, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_span_7_Template, 2, 1, "span", 19);
+    \u0275\u0275elementStart(5, "div", 103);
+    \u0275\u0275template(6, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_img_6_Template, 1, 1, "img", 104)(7, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_span_7_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "span", 100);
+    \u0275\u0275elementStart(8, "span", 105);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(10, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_10_Template, 4, 9, "div", 76)(11, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_Template, 8, 15, "div", 77);
+    \u0275\u0275template(10, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_10_Template, 4, 9, "div", 81)(11, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_div_11_Template, 8, 15, "div", 82);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "div", 85)(13, "span", 10);
+    \u0275\u0275elementStart(12, "div", 90)(13, "span", 10);
     \u0275\u0275text(14);
     \u0275\u0275elementEnd();
     \u0275\u0275text(15);
-    \u0275\u0275template(16, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_16_Template, 2, 1, "ng-container", 19)(17, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_17_Template, 2, 1, "ng-container", 19)(18, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_span_18_Template, 2, 1, "span", 101);
+    \u0275\u0275template(16, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_16_Template, 2, 1, "ng-container", 19)(17, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_17_Template, 2, 1, "ng-container", 19)(18, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_span_18_Template, 2, 1, "span", 106);
     \u0275\u0275elementEnd();
     \u0275\u0275template(19, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_ng_container_19_Template, 4, 2, "ng-container", 19);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const br_r18 = ctx.$implicit;
-    const node_r10 = \u0275\u0275nextContext(2).node;
+    const br_r19 = ctx.$implicit;
+    const node_r11 = \u0275\u0275nextContext(2).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(3);
-    \u0275\u0275classProp("ts-union-active", ctx_r1.unionStatus(br_r18) === "active")("ts-union-divorced", ctx_r1.unionStatus(br_r18) === "divorced")("ts-union-widowed", ctx_r1.unionStatus(br_r18) === "widowed");
+    \u0275\u0275classProp("ts-union-active", ctx_r1.unionStatus(br_r19) === "active")("ts-union-divorced", ctx_r1.unionStatus(br_r19) === "divorced")("ts-union-widowed", ctx_r1.unionStatus(br_r19) === "widowed");
     \u0275\u0275advance();
-    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F");
+    \u0275\u0275classProp("male", node_r11.p1.sexe === "M")("female", node_r11.p1.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F");
+    \u0275\u0275classProp("male", node_r11.p1.sexe === "M")("female", node_r11.p1.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r10.p1) && !ctx_r1.failedPhotos.has(node_r10.p1.id));
+    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r11.p1) && !ctx_r1.failedPhotos.has(node_r11.p1.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r10.p1) || ctx_r1.failedPhotos.has(node_r10.p1.id));
+    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r11.p1) || ctx_r1.failedPhotos.has(node_r11.p1.id));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(node_r10.p1.prenoms == null ? null : node_r10.p1.prenoms.split(" ")[0]);
+    \u0275\u0275textInterpolate(node_r11.p1.prenoms == null ? null : node_r11.p1.prenoms.split(" ")[0]);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", br_r18.partner);
+    \u0275\u0275property("ngIf", br_r19.partner);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", br_r18.partner);
+    \u0275\u0275property("ngIf", br_r19.partner);
     \u0275\u0275advance();
-    \u0275\u0275classMap("ts-badge-" + ctx_r1.unionStatus(br_r18));
+    \u0275\u0275classMap("ts-badge-" + ctx_r1.unionStatus(br_r19));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.unionHeartIcon(br_r18));
+    \u0275\u0275textInterpolate(ctx_r1.unionHeartIcon(br_r19));
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.typeLabel(br_r18.union.type), " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r1.typeLabel(br_r19.union.type), " ");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", br_r18.union.dateDebut);
+    \u0275\u0275property("ngIf", br_r19.union.dateDebut);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", br_r18.union.dateFin);
+    \u0275\u0275property("ngIf", br_r19.union.dateFin);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.unionStatusLabel(br_r18));
+    \u0275\u0275property("ngIf", ctx_r1.unionStatusLabel(br_r19));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", br_r18.children.length > 0);
+    \u0275\u0275property("ngIf", br_r19.children.length > 0);
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r14 = \u0275\u0275getCurrentView();
+    const _r15 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "div", 86);
+    \u0275\u0275elementStart(1, "div", 91);
     \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_template_2_ng_container_2_Template_div_mouseenter_1_listener($event) {
-      \u0275\u0275restoreView(_r14);
-      const node_r10 = \u0275\u0275nextContext().node;
+      \u0275\u0275restoreView(_r15);
+      const node_r11 = \u0275\u0275nextContext().node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.showTooltip(node_r10.p1, $event));
+      return \u0275\u0275resetView(ctx_r1.showTooltip(node_r11.p1, $event));
     })("mousemove", function TreeComponent_div_44_ng_template_2_ng_container_2_Template_div_mousemove_1_listener($event) {
-      \u0275\u0275restoreView(_r14);
+      \u0275\u0275restoreView(_r15);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.moveTooltip($event));
     })("mouseleave", function TreeComponent_div_44_ng_template_2_ng_container_2_Template_div_mouseleave_1_listener() {
-      \u0275\u0275restoreView(_r14);
+      \u0275\u0275restoreView(_r15);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.hideTooltip());
     })("click", function TreeComponent_div_44_ng_template_2_ng_container_2_Template_div_click_1_listener() {
-      \u0275\u0275restoreView(_r14);
-      const node_r10 = \u0275\u0275nextContext().node;
+      \u0275\u0275restoreView(_r15);
+      const node_r11 = \u0275\u0275nextContext().node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.openDetail(node_r10.p1));
+      return \u0275\u0275resetView(ctx_r1.openDetail(node_r11.p1));
     });
-    \u0275\u0275elementStart(2, "div", 87);
-    \u0275\u0275template(3, TreeComponent_div_44_ng_template_2_ng_container_2_img_3_Template, 1, 2, "img", 73)(4, TreeComponent_div_44_ng_template_2_ng_container_2_span_4_Template, 2, 1, "span", 19);
+    \u0275\u0275elementStart(2, "div", 92);
+    \u0275\u0275template(3, TreeComponent_div_44_ng_template_2_ng_container_2_img_3_Template, 1, 2, "img", 78)(4, TreeComponent_div_44_ng_template_2_ng_container_2_span_4_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "span", 74);
+    \u0275\u0275elementStart(5, "span", 79);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "span", 75);
+    \u0275\u0275elementStart(7, "span", 80);
     \u0275\u0275text(8);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "span", 88);
+    \u0275\u0275elementStart(9, "span", 93);
     \u0275\u0275text(10);
     \u0275\u0275elementEnd()();
-    \u0275\u0275element(11, "div", 89);
-    \u0275\u0275elementStart(12, "div", 90);
-    \u0275\u0275element(13, "div", 91);
-    \u0275\u0275elementStart(14, "div", 92);
-    \u0275\u0275template(15, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_Template, 20, 27, "div", 93);
+    \u0275\u0275element(11, "div", 94);
+    \u0275\u0275elementStart(12, "div", 95);
+    \u0275\u0275element(13, "div", 96);
+    \u0275\u0275elementStart(14, "div", 97);
+    \u0275\u0275template(15, TreeComponent_div_44_ng_template_2_ng_container_2_div_15_Template, 20, 27, "div", 98);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext().node;
+    const node_r11 = \u0275\u0275nextContext().node;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === node_r10.p1.id);
+    \u0275\u0275classProp("male", node_r11.p1.sexe === "M")("female", node_r11.p1.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === node_r11.p1.id);
     \u0275\u0275advance();
-    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F");
+    \u0275\u0275classProp("male", node_r11.p1.sexe === "M")("female", node_r11.p1.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r10.p1) && !ctx_r1.failedPhotos.has(node_r10.p1.id));
+    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r11.p1) && !ctx_r1.failedPhotos.has(node_r11.p1.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r10.p1) || ctx_r1.failedPhotos.has(node_r10.p1.id));
+    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r11.p1) || ctx_r1.failedPhotos.has(node_r11.p1.id));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate2("", node_r10.p1.prenoms, " ", node_r10.p1.nomUsage ?? node_r10.p1.nomNaissance);
+    \u0275\u0275textInterpolate2("", node_r11.p1.prenoms, " ", node_r11.p1.nomUsage ?? node_r11.p1.nomNaissance);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.yearLabel(node_r10.p1));
+    \u0275\u0275textInterpolate(ctx_r1.yearLabel(node_r11.p1));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate2("", (node_r10.unions == null ? null : node_r10.unions.length) ?? 0, " union", ((node_r10.unions == null ? null : node_r10.unions.length) ?? 0) > 1 ? "s" : "");
+    \u0275\u0275textInterpolate2("", (node_r11.unions == null ? null : node_r11.unions.length) ?? 0, " union", ((node_r11.unions == null ? null : node_r11.unions.length) ?? 0) > 1 ? "s" : "");
     \u0275\u0275advance(3);
     \u0275\u0275styleProp("margin-left", 155, "px")("margin-right", 155, "px");
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngForOf", node_r10.unions)("ngForTrackBy", ctx_r1.trackByBranch);
+    \u0275\u0275property("ngForOf", node_r11.unions)("ngForTrackBy", ctx_r1.trackByBranch);
   }
 }
 function TreeComponent_div_44_ng_template_2_div_3_img_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r24 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 82);
+    const _r25 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 87);
     \u0275\u0275listener("error", function TreeComponent_div_44_ng_template_2_div_3_img_2_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r24);
-      const node_r10 = \u0275\u0275nextContext(2).node;
+      \u0275\u0275restoreView(_r25);
+      const node_r11 = \u0275\u0275nextContext(2).node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r10.p1.id));
+      return \u0275\u0275resetView(ctx_r1.onPhotoError(node_r11.p1.id));
     });
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(2).node;
+    const node_r11 = \u0275\u0275nextContext(2).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r10.p1), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(node_r10.p1));
+    \u0275\u0275property("src", ctx_r1.getPhotoUrl(node_r11.p1), \u0275\u0275sanitizeUrl)("alt", ctx_r1.getInitiales(node_r11.p1));
   }
 }
 function TreeComponent_div_44_ng_template_2_div_3_span_3_Template(rf, ctx) {
@@ -6126,70 +6257,70 @@ function TreeComponent_div_44_ng_template_2_div_3_span_3_Template(rf, ctx) {
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(2).node;
+    const node_r11 = \u0275\u0275nextContext(2).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r10.p1));
+    \u0275\u0275textInterpolate(ctx_r1.getInitiales(node_r11.p1));
   }
 }
 function TreeComponent_div_44_ng_template_2_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r23 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 106);
+    const _r24 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 111);
     \u0275\u0275listener("mouseenter", function TreeComponent_div_44_ng_template_2_div_3_Template_div_mouseenter_0_listener($event) {
-      \u0275\u0275restoreView(_r23);
-      const node_r10 = \u0275\u0275nextContext().node;
+      \u0275\u0275restoreView(_r24);
+      const node_r11 = \u0275\u0275nextContext().node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.showTooltip(node_r10.p1, $event));
+      return \u0275\u0275resetView(ctx_r1.showTooltip(node_r11.p1, $event));
     })("mousemove", function TreeComponent_div_44_ng_template_2_div_3_Template_div_mousemove_0_listener($event) {
-      \u0275\u0275restoreView(_r23);
+      \u0275\u0275restoreView(_r24);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.moveTooltip($event));
     })("mouseleave", function TreeComponent_div_44_ng_template_2_div_3_Template_div_mouseleave_0_listener() {
-      \u0275\u0275restoreView(_r23);
+      \u0275\u0275restoreView(_r24);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.hideTooltip());
     })("click", function TreeComponent_div_44_ng_template_2_div_3_Template_div_click_0_listener() {
-      \u0275\u0275restoreView(_r23);
-      const node_r10 = \u0275\u0275nextContext().node;
+      \u0275\u0275restoreView(_r24);
+      const node_r11 = \u0275\u0275nextContext().node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.openDetail(node_r10.p1));
+      return \u0275\u0275resetView(ctx_r1.openDetail(node_r11.p1));
     });
-    \u0275\u0275elementStart(1, "div", 72);
-    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_div_3_img_2_Template, 1, 2, "img", 73)(3, TreeComponent_div_44_ng_template_2_div_3_span_3_Template, 2, 1, "span", 19);
+    \u0275\u0275elementStart(1, "div", 77);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_div_3_img_2_Template, 1, 2, "img", 78)(3, TreeComponent_div_44_ng_template_2_div_3_span_3_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 74);
+    \u0275\u0275elementStart(4, "span", 79);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 75);
+    \u0275\u0275elementStart(6, "span", 80);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext().node;
+    const node_r11 = \u0275\u0275nextContext().node;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("ts-root", node_r10.isRoot)("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === node_r10.p1.id);
+    \u0275\u0275classProp("ts-root", node_r11.isRoot)("male", node_r11.p1.sexe === "M")("female", node_r11.p1.sexe === "F")("ts-active", (ctx_r1.selectedPerson == null ? null : ctx_r1.selectedPerson.id) === node_r11.p1.id);
     \u0275\u0275advance();
-    \u0275\u0275classProp("male", node_r10.p1.sexe === "M")("female", node_r10.p1.sexe === "F");
+    \u0275\u0275classProp("male", node_r11.p1.sexe === "M")("female", node_r11.p1.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r10.p1) && !ctx_r1.failedPhotos.has(node_r10.p1.id));
+    \u0275\u0275property("ngIf", ctx_r1.getPhotoUrl(node_r11.p1) && !ctx_r1.failedPhotos.has(node_r11.p1.id));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r10.p1) || ctx_r1.failedPhotos.has(node_r10.p1.id));
+    \u0275\u0275property("ngIf", !ctx_r1.getPhotoUrl(node_r11.p1) || ctx_r1.failedPhotos.has(node_r11.p1.id));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate2("", node_r10.p1.prenoms, " ", node_r10.p1.nomUsage ?? node_r10.p1.nomNaissance);
+    \u0275\u0275textInterpolate2("", node_r11.p1.prenoms, " ", node_r11.p1.nomUsage ?? node_r11.p1.nomNaissance);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.yearLabel(node_r10.p1));
+    \u0275\u0275textInterpolate(ctx_r1.yearLabel(node_r11.p1));
   }
 }
 function TreeComponent_div_44_ng_template_2_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    const _r25 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 79)(1, "button", 107);
+    const _r26 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 84)(1, "button", 112);
     \u0275\u0275listener("click", function TreeComponent_div_44_ng_template_2_div_4_Template_button_click_1_listener($event) {
-      \u0275\u0275restoreView(_r25);
-      const node_r10 = \u0275\u0275nextContext().node;
+      \u0275\u0275restoreView(_r26);
+      const node_r11 = \u0275\u0275nextContext().node;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.openQuickAdd(node_r10, "partner", null, $event));
+      return \u0275\u0275resetView(ctx_r1.openQuickAdd(node_r11, "partner", null, $event));
     });
     \u0275\u0275elementStart(2, "span", 10);
     \u0275\u0275text(3, "favorite");
@@ -6201,122 +6332,122 @@ function TreeComponent_div_44_ng_template_2_div_4_Template(rf, ctx) {
 function TreeComponent_div_44_ng_template_2_ng_container_5_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementContainer(1, 105);
+    \u0275\u0275elementContainer(1, 110);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(2).node;
+    const node_r11 = \u0275\u0275nextContext(2).node;
     \u0275\u0275nextContext();
-    const nodeRef_r21 = \u0275\u0275reference(3);
+    const nodeRef_r22 = \u0275\u0275reference(3);
     \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", nodeRef_r21)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c23, node_r10.children[0]));
+    \u0275\u0275property("ngTemplateOutlet", nodeRef_r22)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c23, node_r11.children[0]));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_5_div_3_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 94);
-    \u0275\u0275element(1, "div", 95);
-    \u0275\u0275elementContainer(2, 105);
+    \u0275\u0275elementStart(0, "div", 99);
+    \u0275\u0275element(1, "div", 100);
+    \u0275\u0275elementContainer(2, 110);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const child_r26 = ctx.$implicit;
+    const child_r27 = ctx.$implicit;
     \u0275\u0275nextContext(4);
-    const nodeRef_r21 = \u0275\u0275reference(3);
+    const nodeRef_r22 = \u0275\u0275reference(3);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngTemplateOutlet", nodeRef_r21)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c23, child_r26));
+    \u0275\u0275property("ngTemplateOutlet", nodeRef_r22)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c23, child_r27));
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_5_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 90);
-    \u0275\u0275element(1, "div", 91);
-    \u0275\u0275elementStart(2, "div", 92);
-    \u0275\u0275template(3, TreeComponent_div_44_ng_template_2_ng_container_5_div_3_div_3_Template, 3, 4, "div", 93);
+    \u0275\u0275elementStart(0, "div", 95);
+    \u0275\u0275element(1, "div", 96);
+    \u0275\u0275elementStart(2, "div", 97);
+    \u0275\u0275template(3, TreeComponent_div_44_ng_template_2_ng_container_5_div_3_div_3_Template, 3, 4, "div", 98);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext(2).node;
+    const node_r11 = \u0275\u0275nextContext(2).node;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275styleProp("margin-left", ctx_r1.barInset(node_r10.children[0]), "px")("margin-right", ctx_r1.barInset(node_r10.children[node_r10.children.length - 1]), "px");
+    \u0275\u0275styleProp("margin-left", ctx_r1.barInset(node_r11.children[0]), "px")("margin-right", ctx_r1.barInset(node_r11.children[node_r11.children.length - 1]), "px");
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngForOf", node_r10.children)("ngForTrackBy", ctx_r1.trackByNode);
+    \u0275\u0275property("ngForOf", node_r11.children)("ngForTrackBy", ctx_r1.trackByNode);
   }
 }
 function TreeComponent_div_44_ng_template_2_ng_container_5_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275element(1, "div", 89);
-    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_5_ng_container_2_Template, 2, 4, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_ng_container_5_div_3_Template, 4, 6, "div", 104);
+    \u0275\u0275element(1, "div", 94);
+    \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_ng_container_5_ng_container_2_Template, 2, 4, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_ng_container_5_div_3_Template, 4, 6, "div", 109);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const node_r10 = \u0275\u0275nextContext().node;
+    const node_r11 = \u0275\u0275nextContext().node;
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", node_r10.children.length === 1);
+    \u0275\u0275property("ngIf", node_r11.children.length === 1);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", node_r10.children.length > 1);
+    \u0275\u0275property("ngIf", node_r11.children.length > 1);
   }
 }
 function TreeComponent_div_44_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 67);
-    \u0275\u0275template(1, TreeComponent_div_44_ng_template_2_ng_container_1_Template, 22, 22, "ng-container", 19)(2, TreeComponent_div_44_ng_template_2_ng_container_2_Template, 16, 23, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_div_3_Template, 8, 17, "div", 68)(4, TreeComponent_div_44_ng_template_2_div_4_Template, 5, 0, "div", 69)(5, TreeComponent_div_44_ng_template_2_ng_container_5_Template, 4, 2, "ng-container", 19);
+    \u0275\u0275elementStart(0, "div", 72);
+    \u0275\u0275template(1, TreeComponent_div_44_ng_template_2_ng_container_1_Template, 22, 22, "ng-container", 19)(2, TreeComponent_div_44_ng_template_2_ng_container_2_Template, 16, 23, "ng-container", 19)(3, TreeComponent_div_44_ng_template_2_div_3_Template, 8, 17, "div", 73)(4, TreeComponent_div_44_ng_template_2_div_4_Template, 5, 0, "div", 74)(5, TreeComponent_div_44_ng_template_2_ng_container_5_Template, 4, 2, "ng-container", 19);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const node_r10 = ctx.node;
+    const node_r11 = ctx.node;
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", node_r10.type === "union");
+    \u0275\u0275property("ngIf", node_r11.type === "union");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", node_r10.type === "multi");
+    \u0275\u0275property("ngIf", node_r11.type === "multi");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", node_r10.type === "solo");
+    \u0275\u0275property("ngIf", node_r11.type === "solo");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", node_r10.type === "solo");
+    \u0275\u0275property("ngIf", node_r11.type === "solo");
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", node_r10.children.length > 0);
+    \u0275\u0275property("ngIf", node_r11.children.length > 0);
   }
 }
 function TreeComponent_div_44_ng_container_5_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementContainer(1, 105);
+    \u0275\u0275elementContainer(1, 110);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const root_r27 = ctx.$implicit;
+    const root_r28 = ctx.$implicit;
     \u0275\u0275nextContext();
-    const nodeRef_r21 = \u0275\u0275reference(3);
+    const nodeRef_r22 = \u0275\u0275reference(3);
     \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", nodeRef_r21)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c23, root_r27));
+    \u0275\u0275property("ngTemplateOutlet", nodeRef_r22)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c23, root_r28));
   }
 }
 function TreeComponent_div_44_Template(rf, ctx) {
   if (rf & 1) {
-    const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 64, 1);
+    const _r9 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 69, 1);
     \u0275\u0275listener("pointerdown", function TreeComponent_div_44_Template_div_pointerdown_0_listener($event) {
-      \u0275\u0275restoreView(_r8);
+      \u0275\u0275restoreView(_r9);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.startDrag($event));
     })("pointermove", function TreeComponent_div_44_Template_div_pointermove_0_listener($event) {
-      \u0275\u0275restoreView(_r8);
+      \u0275\u0275restoreView(_r9);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.drag($event));
     })("pointerup", function TreeComponent_div_44_Template_div_pointerup_0_listener($event) {
-      \u0275\u0275restoreView(_r8);
+      \u0275\u0275restoreView(_r9);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.endDrag($event));
     })("pointercancel", function TreeComponent_div_44_Template_div_pointercancel_0_listener($event) {
-      \u0275\u0275restoreView(_r8);
+      \u0275\u0275restoreView(_r9);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.endDrag($event));
     });
     \u0275\u0275template(2, TreeComponent_div_44_ng_template_2_Template, 6, 5, "ng-template", null, 2, \u0275\u0275templateRefExtractor);
-    \u0275\u0275elementStart(4, "div", 65);
-    \u0275\u0275template(5, TreeComponent_div_44_ng_container_5_Template, 2, 4, "ng-container", 66);
+    \u0275\u0275elementStart(4, "div", 70);
+    \u0275\u0275template(5, TreeComponent_div_44_ng_container_5_Template, 2, 4, "ng-container", 71);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -6328,7 +6459,7 @@ function TreeComponent_div_44_Template(rf, ctx) {
 }
 function TreeComponent_div_45_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 108)(1, "span", 10);
+    \u0275\u0275elementStart(0, "div", 113)(1, "span", 10);
     \u0275\u0275text(2, "info_outline");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3, " Ctrl + molette pour zoomer \xB7 Glisser pour naviguer \xB7 Clic pour la fiche ");
@@ -6337,10 +6468,10 @@ function TreeComponent_div_45_Template(rf, ctx) {
 }
 function TreeComponent_div_46_img_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r28 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 121);
+    const _r29 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 126);
     \u0275\u0275listener("error", function TreeComponent_div_46_img_2_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r28);
+      \u0275\u0275restoreView(_r29);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onPhotoError(ctx_r1.hoveredPerson.id));
     });
@@ -6365,7 +6496,7 @@ function TreeComponent_div_46_span_3_Template(rf, ctx) {
 }
 function TreeComponent_div_46_span_7_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 122)(1, "span", 10);
+    \u0275\u0275elementStart(0, "span", 127)(1, "span", 10);
     \u0275\u0275text(2, "hourglass_bottom");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -6379,7 +6510,7 @@ function TreeComponent_div_46_span_7_Template(rf, ctx) {
 }
 function TreeComponent_div_46_span_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 123)(1, "span", 10);
+    \u0275\u0275elementStart(0, "span", 128)(1, "span", 10);
     \u0275\u0275text(2, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -6393,33 +6524,33 @@ function TreeComponent_div_46_span_8_Template(rf, ctx) {
 }
 function TreeComponent_div_46_span_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 124);
+    \u0275\u0275elementStart(0, "span", 129);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
 function TreeComponent_div_46_span_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 125);
+    \u0275\u0275elementStart(0, "span", 130);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
 }
 function TreeComponent_div_46_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 109)(1, "div", 110);
-    \u0275\u0275template(2, TreeComponent_div_46_img_2_Template, 1, 1, "img", 111)(3, TreeComponent_div_46_span_3_Template, 2, 1, "span", 19);
+    \u0275\u0275elementStart(0, "div", 114)(1, "div", 115);
+    \u0275\u0275template(2, TreeComponent_div_46_img_2_Template, 1, 1, "img", 116)(3, TreeComponent_div_46_span_3_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "div", 112)(5, "span", 113);
+    \u0275\u0275elementStart(4, "div", 117)(5, "span", 118);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(7, TreeComponent_div_46_span_7_Template, 4, 1, "span", 114)(8, TreeComponent_div_46_span_8_Template, 4, 1, "span", 115);
-    \u0275\u0275elementStart(9, "div", 116)(10, "span", 117);
+    \u0275\u0275template(7, TreeComponent_div_46_span_7_Template, 4, 1, "span", 119)(8, TreeComponent_div_46_span_8_Template, 4, 1, "span", 120);
+    \u0275\u0275elementStart(9, "div", 121)(10, "span", 122);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(12, TreeComponent_div_46_span_12_Template, 2, 0, "span", 118)(13, TreeComponent_div_46_span_13_Template, 2, 0, "span", 119);
+    \u0275\u0275template(12, TreeComponent_div_46_span_12_Template, 2, 0, "span", 123)(13, TreeComponent_div_46_span_13_Template, 2, 0, "span", 124);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "span", 120);
+    \u0275\u0275elementStart(14, "span", 125);
     \u0275\u0275text(15, "Clic pour la fiche compl\xE8te");
     \u0275\u0275elementEnd()()();
   }
@@ -6450,10 +6581,10 @@ function TreeComponent_div_46_Template(rf, ctx) {
 }
 function TreeComponent_div_47_Template(rf, ctx) {
   if (rf & 1) {
-    const _r29 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 126);
+    const _r30 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 131);
     \u0275\u0275listener("click", function TreeComponent_div_47_Template_div_click_0_listener() {
-      \u0275\u0275restoreView(_r29);
+      \u0275\u0275restoreView(_r30);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.closeQuickAdd());
     });
@@ -6474,13 +6605,13 @@ function TreeComponent_div_58_span_7_Template(rf, ctx) {
 }
 function TreeComponent_div_58_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 127)(1, "span", 128);
+    \u0275\u0275elementStart(0, "div", 132)(1, "span", 133);
     \u0275\u0275text(2, "arrow_forward");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 129);
+    \u0275\u0275elementStart(3, "div", 134);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "span", 130);
+    \u0275\u0275elementStart(5, "span", 135);
     \u0275\u0275text(6);
     \u0275\u0275template(7, TreeComponent_div_58_span_7_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd()();
@@ -6499,67 +6630,67 @@ function TreeComponent_div_58_Template(rf, ctx) {
 }
 function TreeComponent_ng_container_69_div_6_span_5_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 139);
+    \u0275\u0275elementStart(0, "span", 144);
     \u0275\u0275text(1, "check_circle");
     \u0275\u0275elementEnd();
   }
 }
 function TreeComponent_ng_container_69_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    const _r31 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 136);
+    const _r32 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 141);
     \u0275\u0275listener("click", function TreeComponent_ng_container_69_div_6_Template_div_click_0_listener() {
-      const p_r32 = \u0275\u0275restoreView(_r31).$implicit;
+      const p_r33 = \u0275\u0275restoreView(_r32).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.quickAddSelected = p_r32.id);
+      return \u0275\u0275resetView(ctx_r1.quickAddSelected = p_r33.id);
     });
-    \u0275\u0275elementStart(1, "div", 129);
+    \u0275\u0275elementStart(1, "div", 134);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 137);
+    \u0275\u0275elementStart(3, "span", 142);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(5, TreeComponent_ng_container_69_div_6_span_5_Template, 2, 0, "span", 138);
+    \u0275\u0275template(5, TreeComponent_ng_container_69_div_6_span_5_Template, 2, 0, "span", 143);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const p_r32 = ctx.$implicit;
+    const p_r33 = ctx.$implicit;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275classProp("selected", ctx_r1.quickAddSelected === p_r32.id);
+    \u0275\u0275classProp("selected", ctx_r1.quickAddSelected === p_r33.id);
     \u0275\u0275advance();
-    \u0275\u0275classProp("male", p_r32.sexe === "M")("female", p_r32.sexe === "F");
+    \u0275\u0275classProp("male", p_r33.sexe === "M")("female", p_r33.sexe === "F");
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.getInitiales(p_r32), " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r1.getInitiales(p_r33), " ");
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.getNomComplet(p_r32));
+    \u0275\u0275textInterpolate(ctx_r1.getNomComplet(p_r33));
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.quickAddSelected === p_r32.id);
+    \u0275\u0275property("ngIf", ctx_r1.quickAddSelected === p_r33.id);
   }
 }
 function TreeComponent_ng_container_69_div_7_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 140);
+    \u0275\u0275elementStart(0, "div", 145);
     \u0275\u0275text(1, "Aucun membre disponible");
     \u0275\u0275elementEnd();
   }
 }
 function TreeComponent_ng_container_69_Template(rf, ctx) {
   if (rf & 1) {
-    const _r30 = \u0275\u0275getCurrentView();
+    const _r31 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "div", 131)(2, "span", 10);
+    \u0275\u0275elementStart(1, "div", 136)(2, "span", 10);
     \u0275\u0275text(3, "search");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "input", 132);
+    \u0275\u0275elementStart(4, "input", 137);
     \u0275\u0275twoWayListener("ngModelChange", function TreeComponent_ng_container_69_Template_input_ngModelChange_4_listener($event) {
-      \u0275\u0275restoreView(_r30);
+      \u0275\u0275restoreView(_r31);
       const ctx_r1 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r1.quickAddSearch, $event) || (ctx_r1.quickAddSearch = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(5, "div", 133);
-    \u0275\u0275template(6, TreeComponent_ng_container_69_div_6_Template, 6, 9, "div", 134)(7, TreeComponent_ng_container_69_div_7_Template, 2, 0, "div", 135);
+    \u0275\u0275elementStart(5, "div", 138);
+    \u0275\u0275template(6, TreeComponent_ng_container_69_div_6_Template, 6, 9, "div", 139)(7, TreeComponent_ng_container_69_div_7_Template, 2, 0, "div", 140);
     \u0275\u0275elementEnd();
     \u0275\u0275elementContainerEnd();
   }
@@ -6575,56 +6706,56 @@ function TreeComponent_ng_container_69_Template(rf, ctx) {
 }
 function TreeComponent_ng_container_70_Template(rf, ctx) {
   if (rf & 1) {
-    const _r33 = \u0275\u0275getCurrentView();
+    const _r34 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "div", 141)(2, "label");
+    \u0275\u0275elementStart(1, "div", 146)(2, "label");
     \u0275\u0275text(3, "Pr\xE9nom(s) ");
-    \u0275\u0275elementStart(4, "span", 142);
+    \u0275\u0275elementStart(4, "span", 147);
     \u0275\u0275text(5, "*");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(6, "input", 143);
+    \u0275\u0275elementStart(6, "input", 148);
     \u0275\u0275twoWayListener("ngModelChange", function TreeComponent_ng_container_70_Template_input_ngModelChange_6_listener($event) {
-      \u0275\u0275restoreView(_r33);
+      \u0275\u0275restoreView(_r34);
       const ctx_r1 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r1.quickCreateForm.prenoms, $event) || (ctx_r1.quickCreateForm.prenoms = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "div", 141)(8, "label");
+    \u0275\u0275elementStart(7, "div", 146)(8, "label");
     \u0275\u0275text(9, "Nom de naissance ");
-    \u0275\u0275elementStart(10, "span", 142);
+    \u0275\u0275elementStart(10, "span", 147);
     \u0275\u0275text(11, "*");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(12, "input", 144);
+    \u0275\u0275elementStart(12, "input", 149);
     \u0275\u0275twoWayListener("ngModelChange", function TreeComponent_ng_container_70_Template_input_ngModelChange_12_listener($event) {
-      \u0275\u0275restoreView(_r33);
+      \u0275\u0275restoreView(_r34);
       const ctx_r1 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r1.quickCreateForm.nomNaissance, $event) || (ctx_r1.quickCreateForm.nomNaissance = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(13, "div", 141)(14, "label");
+    \u0275\u0275elementStart(13, "div", 146)(14, "label");
     \u0275\u0275text(15, "Sexe");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "select", 145);
+    \u0275\u0275elementStart(16, "select", 150);
     \u0275\u0275twoWayListener("ngModelChange", function TreeComponent_ng_container_70_Template_select_ngModelChange_16_listener($event) {
-      \u0275\u0275restoreView(_r33);
+      \u0275\u0275restoreView(_r34);
       const ctx_r1 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r1.quickCreateForm.sexe, $event) || (ctx_r1.quickCreateForm.sexe = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275elementStart(17, "option", 146);
+    \u0275\u0275elementStart(17, "option", 151);
     \u0275\u0275text(18, "Homme");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(19, "option", 147);
+    \u0275\u0275elementStart(19, "option", 152);
     \u0275\u0275text(20, "Femme");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(21, "div", 141)(22, "label");
+    \u0275\u0275elementStart(21, "div", 146)(22, "label");
     \u0275\u0275text(23, "Ann\xE9e de naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(24, "input", 148);
+    \u0275\u0275elementStart(24, "input", 153);
     \u0275\u0275twoWayListener("ngModelChange", function TreeComponent_ng_container_70_Template_input_ngModelChange_24_listener($event) {
-      \u0275\u0275restoreView(_r33);
+      \u0275\u0275restoreView(_r34);
       const ctx_r1 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r1.quickCreateForm.dateNaissance, $event) || (ctx_r1.quickCreateForm.dateNaissance = $event);
       return \u0275\u0275resetView($event);
@@ -6674,10 +6805,10 @@ function TreeComponent_span_77_Template(rf, ctx) {
 }
 function TreeComponent_div_79_Template(rf, ctx) {
   if (rf & 1) {
-    const _r34 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 126);
+    const _r35 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 131);
     \u0275\u0275listener("click", function TreeComponent_div_79_Template_div_click_0_listener() {
-      \u0275\u0275restoreView(_r34);
+      \u0275\u0275restoreView(_r35);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.closeDetail());
     });
@@ -6686,10 +6817,10 @@ function TreeComponent_div_79_Template(rf, ctx) {
 }
 function TreeComponent_div_87_img_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r36 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "img", 161);
+    const _r37 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "img", 166);
     \u0275\u0275listener("error", function TreeComponent_div_87_img_3_Template_img_error_0_listener() {
-      \u0275\u0275restoreView(_r36);
+      \u0275\u0275restoreView(_r37);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onPhotoError(ctx_r1.selectedPerson.id));
     });
@@ -6714,14 +6845,14 @@ function TreeComponent_div_87_span_4_Template(rf, ctx) {
 }
 function TreeComponent_div_87_span_10_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 162);
+    \u0275\u0275elementStart(0, "span", 167);
     \u0275\u0275text(1, "Vivant(e)");
     \u0275\u0275elementEnd();
   }
 }
 function TreeComponent_div_87_span_11_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 163);
+    \u0275\u0275elementStart(0, "span", 168);
     \u0275\u0275text(1, "D\xE9c\xE9d\xE9(e)");
     \u0275\u0275elementEnd();
   }
@@ -6740,13 +6871,13 @@ function TreeComponent_div_87_div_13_span_8_Template(rf, ctx) {
 }
 function TreeComponent_div_87_div_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 164)(1, "span", 10);
+    \u0275\u0275elementStart(0, "div", 169)(1, "span", 10);
     \u0275\u0275text(2, "cake");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 165)(4, "span", 166);
+    \u0275\u0275elementStart(3, "div", 170)(4, "span", 171);
     \u0275\u0275text(5, "Naissance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 167);
+    \u0275\u0275elementStart(6, "span", 172);
     \u0275\u0275text(7);
     \u0275\u0275template(8, TreeComponent_div_87_div_13_span_8_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd()()();
@@ -6773,13 +6904,13 @@ function TreeComponent_div_87_div_14_span_8_Template(rf, ctx) {
 }
 function TreeComponent_div_87_div_14_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 164)(1, "span", 10);
+    \u0275\u0275elementStart(0, "div", 169)(1, "span", 10);
     \u0275\u0275text(2, "sentiment_very_dissatisfied");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 165)(4, "span", 166);
+    \u0275\u0275elementStart(3, "div", 170)(4, "span", 171);
     \u0275\u0275text(5, "D\xE9c\xE8s");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 167);
+    \u0275\u0275elementStart(6, "span", 172);
     \u0275\u0275text(7);
     \u0275\u0275template(8, TreeComponent_div_87_div_14_span_8_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd()()();
@@ -6794,13 +6925,13 @@ function TreeComponent_div_87_div_14_Template(rf, ctx) {
 }
 function TreeComponent_div_87_div_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 164)(1, "span", 10);
+    \u0275\u0275elementStart(0, "div", 169)(1, "span", 10);
     \u0275\u0275text(2, "hourglass_bottom");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 165)(4, "span", 166);
+    \u0275\u0275elementStart(3, "div", 170)(4, "span", 171);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 167);
+    \u0275\u0275elementStart(6, "span", 172);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()()();
   }
@@ -6814,24 +6945,24 @@ function TreeComponent_div_87_div_15_Template(rf, ctx) {
 }
 function TreeComponent_div_87_Template(rf, ctx) {
   if (rf & 1) {
-    const _r35 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 149)(1, "div", 150)(2, "div", 151);
-    \u0275\u0275template(3, TreeComponent_div_87_img_3_Template, 1, 1, "img", 152)(4, TreeComponent_div_87_span_4_Template, 2, 1, "span", 19);
+    const _r36 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 154)(1, "div", 155)(2, "div", 156);
+    \u0275\u0275template(3, TreeComponent_div_87_img_3_Template, 1, 1, "img", 157)(4, TreeComponent_div_87_span_4_Template, 2, 1, "span", 19);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(5, "h2", 153);
+    \u0275\u0275elementStart(5, "h2", 158);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "div", 154)(8, "span", 155);
+    \u0275\u0275elementStart(7, "div", 159)(8, "span", 160);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(10, TreeComponent_div_87_span_10_Template, 2, 0, "span", 156)(11, TreeComponent_div_87_span_11_Template, 2, 0, "span", 157);
+    \u0275\u0275template(10, TreeComponent_div_87_span_10_Template, 2, 0, "span", 161)(11, TreeComponent_div_87_span_11_Template, 2, 0, "span", 162);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "div", 158);
-    \u0275\u0275template(13, TreeComponent_div_87_div_13_Template, 9, 2, "div", 159)(14, TreeComponent_div_87_div_14_Template, 9, 2, "div", 159)(15, TreeComponent_div_87_div_15_Template, 8, 2, "div", 159);
+    \u0275\u0275elementStart(12, "div", 163);
+    \u0275\u0275template(13, TreeComponent_div_87_div_13_Template, 9, 2, "div", 164)(14, TreeComponent_div_87_div_14_Template, 9, 2, "div", 164)(15, TreeComponent_div_87_div_15_Template, 8, 2, "div", 164);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "a", 160);
+    \u0275\u0275elementStart(16, "a", 165);
     \u0275\u0275listener("click", function TreeComponent_div_87_Template_a_click_16_listener() {
-      \u0275\u0275restoreView(_r35);
+      \u0275\u0275restoreView(_r36);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.closeDetail());
     });
@@ -6871,6 +7002,7 @@ function TreeComponent_div_87_Template(rf, ctx) {
 }
 var TreeComponent = class _TreeComponent {
   api;
+  toast;
   loading = true;
   erreur = null;
   treeRoots = [];
@@ -6959,11 +7091,17 @@ var TreeComponent = class _TreeComponent {
       this.clearTooltip();
     }
   };
-  constructor(api) {
+  constructor(api, toast) {
     this.api = api;
+    this.toast = toast;
   }
   ngOnInit() {
     document.addEventListener("pointerover", this.onDocPointerOver, { passive: true });
+    this.reload();
+  }
+  reload() {
+    this.loading = true;
+    this.erreur = "";
     forkJoin({ personnes: this.api.getPersonnes(), unions: this.api.getUnions() }).subscribe({
       next: ({ personnes, unions }) => {
         this.allPersonnes = personnes;
@@ -6974,6 +7112,28 @@ var TreeComponent = class _TreeComponent {
       error: () => {
         this.erreur = "Impossible de charger l'arbre.";
         this.loading = false;
+      }
+    });
+  }
+  /* ===== Import GEDCOM ===== */
+  importing = false;
+  onGedcomFileSelected(event) {
+    const input = event.target;
+    const file = input.files?.[0];
+    input.value = "";
+    if (!file || this.importing)
+      return;
+    this.importing = true;
+    this.api.importGedcom(file).subscribe({
+      next: (res) => {
+        this.importing = false;
+        this.toast.success(`Import r\xE9ussi : ${res.personnesCreees} personne(s) et ${res.unionsCreees} union(s) cr\xE9\xE9es.`);
+        this.reload();
+      },
+      // Pas de toast d'erreur ici : l'intercepteur HTTP global en affiche déjà un
+      // automatiquement avec le message renvoyé par le backend.
+      error: () => {
+        this.importing = false;
       }
     });
   }
@@ -7417,7 +7577,7 @@ var TreeComponent = class _TreeComponent {
     });
   }
   static \u0275fac = function TreeComponent_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _TreeComponent)(\u0275\u0275directiveInject(ApiService));
+    return new (__ngFactoryType__ || _TreeComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(ToastService));
   };
   static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TreeComponent, selectors: [["app-tree"]], viewQuery: function TreeComponent_Query(rf, ctx) {
     if (rf & 1) {
@@ -7429,7 +7589,7 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.treeVisual = _t.first);
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.treeCanvas = _t.first);
     }
-  }, standalone: false, decls: 88, vars: 44, consts: [["treeCanvas", ""], ["treeVisual", ""], ["nodeRef", ""], [1, "tree-page"], [1, "tree-toolbar"], [1, "toolbar-left"], ["class", "badge badge-primary", 4, "ngIf"], ["class", "root-badge", 4, "ngIf"], [1, "toolbar-right"], ["title", "D\xE9zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "zoom-level"], ["title", "Zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], ["title", "R\xE9initialiser", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "btn-outline", "btn-sm", 3, "click", "disabled"], [2, "width", "1px", "height", "20px", "background", "var(--border)", "margin", "0 2px"], [1, "btn-ghost", "btn-sm", "tree-kiosk-btn", 3, "click", "title"], [1, "root-picker-wrap"], [1, "btn-ghost", "btn-sm", "root-pick-btn", 3, "click"], [4, "ngIf"], ["class", "root-dropdown", 3, "click", 4, "ngIf"], ["class", "root-overlay", 3, "click", 4, "ngIf"], [1, "tree-canvas", 3, "wheel", "mouseleave"], ["class", "loading-state", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "tree-visual", 3, "transform", "pointerdown", "pointermove", "pointerup", "pointercancel", 4, "ngIf"], ["class", "zoom-hint", 4, "ngIf"], ["class", "tree-tooltip", 3, "left", "top", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel", "qa-panel"], [1, "panel-header"], [2, "display", "flex", "align-items", "center", "gap", "8px"], [1, "material-icons-round", 2, "color", "var(--primary)"], [1, "btn-icon", 3, "click"], ["class", "qa-for-whom", 4, "ngIf"], [1, "qa-tabs"], [1, "qa-tab", 3, "click"], [1, "panel-body"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "detail-panel"], [1, "dp-header"], ["class", "dp-body", 4, "ngIf"], [1, "badge", "badge-primary"], [1, "root-badge"], [1, "root-badge-name"], [1, "root-badge-clear", 3, "click"], [1, "root-dropdown", 3, "click"], [1, "root-search-bar"], ["type", "text", "placeholder", "Rechercher\u2026", 1, "root-search-input", 3, "ngModelChange", "ngModel"], [1, "root-list"], [1, "root-list-item", "root-list-all", 3, "click"], ["class", "root-list-item", 3, "active", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "root-list-item", 3, "click"], [1, "root-list-avatar"], [1, "root-overlay", 3, "click"], [1, "loading-state"], [1, "material-icons-round", "spin"], [1, "error-state"], [1, "empty-state"], [1, "tree-visual", 3, "pointerdown", "pointermove", "pointerup", "pointercancel"], [1, "ts-roots"], [4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "ts-subtree"], ["class", "ts-solo-card", 3, "ts-root", "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-quick-btns", 4, "ngIf"], [1, "ts-couple"], [1, "ts-person", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar"], ["class", "ts-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ts-name"], [1, "ts-year"], ["class", "ts-heart", 4, "ngIf"], ["class", "ts-person", 3, "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-union-badge", 4, "ngIf"], [1, "ts-quick-btns"], ["title", "Ajouter un enfant", 1, "ts-quick-btn", "ts-qb-child", 3, "click"], ["title", "Ajouter une \xE9pouse", 1, "ts-quick-btn", "ts-qb-partner", 3, "click"], [1, "ts-avatar-photo", 3, "error", "src", "alt"], [1, "ts-heart"], [1, "ts-hline"], [1, "ts-union-badge"], [1, "ts-multi-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar", "ts-avatar-lg"], [1, "ts-multi-badge"], [1, "ts-down"], [1, "ts-branch"], [1, "ts-hbar"], [1, "ts-children-row"], ["class", "ts-child-col", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "ts-child-col"], [1, "ts-up"], [1, "ts-couple", "ts-union-branch"], [1, "ts-person", "ts-person-ref", 3, "click"], [1, "ts-avatar", "ts-avatar-ref"], ["class", "ts-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "ts-name-ref"], ["class", "ts-status-chip", 4, "ngIf"], [1, "ts-avatar-photo", 3, "error", "src"], [1, "ts-status-chip"], ["class", "ts-branch", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "ts-solo-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], ["title", "Ajouter un(e) partenaire", 1, "ts-quick-btn", "ts-qb-partner", 3, "click"], [1, "zoom-hint"], [1, "tree-tooltip"], [1, "tt-avatar"], ["class", "tt-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "tt-content"], [1, "tt-name"], ["class", "tt-dates", 4, "ngIf"], ["class", "tt-lieu", 4, "ngIf"], [1, "tt-badges"], [1, "tt-badge"], ["class", "tt-badge tt-alive", 4, "ngIf"], ["class", "tt-badge tt-dead", 4, "ngIf"], [1, "tt-hint"], [1, "tt-avatar-photo", 3, "error", "src"], [1, "tt-dates"], [1, "tt-lieu"], [1, "tt-badge", "tt-alive"], [1, "tt-badge", "tt-dead"], [1, "panel-overlay", 3, "click"], [1, "qa-for-whom"], [1, "material-icons-round", 2, "font-size", "16px!important", "color", "var(--text-muted)"], [1, "avatar", "avatar-sm"], [2, "font-size", "13px", "font-weight", "600", "color", "var(--text-primary)"], [1, "search-bar", 2, "margin-bottom", "10px"], ["type", "text", "placeholder", "Rechercher un membre...", 3, "ngModelChange", "ngModel"], [1, "person-select-list"], ["class", "person-select-item", 3, "selected", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "empty-list-msg", 4, "ngIf"], [1, "person-select-item", 3, "click"], [1, "person-select-name"], ["class", "material-icons-round check-icon", 4, "ngIf"], [1, "material-icons-round", "check-icon"], [1, "empty-list-msg"], [1, "form-group"], [2, "color", "#EF4444"], ["type", "text", "placeholder", "Pr\xE9nom(s)", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-control", 3, "ngModelChange", "ngModel"], ["value", "M"], ["value", "F"], ["type", "number", "placeholder", "1990", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "dp-body"], [1, "dp-avatar-wrap"], [1, "dp-avatar"], ["class", "dp-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "dp-name"], [1, "dp-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "dp-info-list"], ["class", "dp-info-item", 4, "ngIf"], [1, "btn-primary", "dp-link", 3, "click", "routerLink", "queryParams"], [1, "dp-avatar-photo", 3, "error", "src"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "dp-info-item"], [1, "dp-info-text"], [1, "dp-info-label"], [1, "dp-info-value"]], template: function TreeComponent_Template(rf, ctx) {
+  }, standalone: false, decls: 88, vars: 44, consts: [["treeCanvas", ""], ["treeVisual", ""], ["nodeRef", ""], [1, "tree-page"], [1, "tree-toolbar"], [1, "toolbar-left"], ["class", "badge badge-primary", 4, "ngIf"], ["class", "root-badge", 4, "ngIf"], [1, "toolbar-right"], ["title", "D\xE9zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "material-icons-round"], [1, "zoom-level"], ["title", "Zoomer", 1, "btn-ghost", "btn-sm", 3, "click"], ["title", "R\xE9initialiser", 1, "btn-ghost", "btn-sm", 3, "click"], [1, "btn-outline", "btn-sm", 3, "click", "disabled"], [2, "width", "1px", "height", "20px", "background", "var(--border)", "margin", "0 2px"], [1, "btn-ghost", "btn-sm", "tree-kiosk-btn", 3, "click", "title"], [1, "root-picker-wrap"], [1, "btn-ghost", "btn-sm", "root-pick-btn", 3, "click"], [4, "ngIf"], ["class", "root-dropdown", 3, "click", 4, "ngIf"], ["class", "root-overlay", 3, "click", 4, "ngIf"], [1, "tree-canvas", 3, "wheel", "mouseleave"], ["class", "loading-state", 4, "ngIf"], ["class", "error-state", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "tree-visual", 3, "transform", "pointerdown", "pointermove", "pointerup", "pointercancel", 4, "ngIf"], ["class", "zoom-hint", 4, "ngIf"], ["class", "tree-tooltip", 3, "left", "top", 4, "ngIf"], ["class", "panel-overlay", 3, "click", 4, "ngIf"], [1, "slide-panel", "qa-panel"], [1, "panel-header"], [2, "display", "flex", "align-items", "center", "gap", "8px"], [1, "material-icons-round", 2, "color", "var(--primary)"], [1, "btn-icon", 3, "click"], ["class", "qa-for-whom", 4, "ngIf"], [1, "qa-tabs"], [1, "qa-tab", 3, "click"], [1, "panel-body"], [1, "panel-footer"], [1, "btn-ghost", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], [1, "detail-panel"], [1, "dp-header"], ["class", "dp-body", 4, "ngIf"], [1, "badge", "badge-primary"], [1, "root-badge"], [1, "root-badge-name"], [1, "root-badge-clear", 3, "click"], [1, "root-dropdown", 3, "click"], [1, "root-search-bar"], ["type", "text", "placeholder", "Rechercher\u2026", 1, "root-search-input", 3, "ngModelChange", "ngModel"], [1, "root-list"], [1, "root-list-item", "root-list-all", 3, "click"], ["class", "root-list-item", 3, "active", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "root-list-item", 3, "click"], [1, "root-list-avatar"], [1, "root-overlay", 3, "click"], [1, "loading-state"], [1, "material-icons-round", "spin"], [1, "error-state"], [1, "empty-state"], ["class", "empty-state-or", 4, "ngIf"], ["class", "btn-outline btn-sm", 3, "disabled", 4, "ngIf"], [1, "empty-state-or"], [1, "btn-outline", "btn-sm"], ["type", "file", "accept", ".ged,.gedcom", "hidden", "", 3, "change", "disabled"], [1, "tree-visual", 3, "pointerdown", "pointermove", "pointerup", "pointercancel"], [1, "ts-roots"], [4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "ts-subtree"], ["class", "ts-solo-card", 3, "ts-root", "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-quick-btns", 4, "ngIf"], [1, "ts-couple"], [1, "ts-person", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar"], ["class", "ts-avatar-photo", 3, "src", "alt", "error", 4, "ngIf"], [1, "ts-name"], [1, "ts-year"], ["class", "ts-heart", 4, "ngIf"], ["class", "ts-person", 3, "male", "female", "ts-active", "mouseenter", "mousemove", "mouseleave", "click", 4, "ngIf"], ["class", "ts-union-badge", 4, "ngIf"], [1, "ts-quick-btns"], ["title", "Ajouter un enfant", 1, "ts-quick-btn", "ts-qb-child", 3, "click"], ["title", "Ajouter une \xE9pouse", 1, "ts-quick-btn", "ts-qb-partner", 3, "click"], [1, "ts-avatar-photo", 3, "error", "src", "alt"], [1, "ts-heart"], [1, "ts-hline"], [1, "ts-union-badge"], [1, "ts-multi-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], [1, "ts-avatar", "ts-avatar-lg"], [1, "ts-multi-badge"], [1, "ts-down"], [1, "ts-branch"], [1, "ts-hbar"], [1, "ts-children-row"], ["class", "ts-child-col", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "ts-child-col"], [1, "ts-up"], [1, "ts-couple", "ts-union-branch"], [1, "ts-person", "ts-person-ref", 3, "click"], [1, "ts-avatar", "ts-avatar-ref"], ["class", "ts-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "ts-name-ref"], ["class", "ts-status-chip", 4, "ngIf"], [1, "ts-avatar-photo", 3, "error", "src"], [1, "ts-status-chip"], ["class", "ts-branch", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "ts-solo-card", 3, "mouseenter", "mousemove", "mouseleave", "click"], ["title", "Ajouter un(e) partenaire", 1, "ts-quick-btn", "ts-qb-partner", 3, "click"], [1, "zoom-hint"], [1, "tree-tooltip"], [1, "tt-avatar"], ["class", "tt-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "tt-content"], [1, "tt-name"], ["class", "tt-dates", 4, "ngIf"], ["class", "tt-lieu", 4, "ngIf"], [1, "tt-badges"], [1, "tt-badge"], ["class", "tt-badge tt-alive", 4, "ngIf"], ["class", "tt-badge tt-dead", 4, "ngIf"], [1, "tt-hint"], [1, "tt-avatar-photo", 3, "error", "src"], [1, "tt-dates"], [1, "tt-lieu"], [1, "tt-badge", "tt-alive"], [1, "tt-badge", "tt-dead"], [1, "panel-overlay", 3, "click"], [1, "qa-for-whom"], [1, "material-icons-round", 2, "font-size", "16px!important", "color", "var(--text-muted)"], [1, "avatar", "avatar-sm"], [2, "font-size", "13px", "font-weight", "600", "color", "var(--text-primary)"], [1, "search-bar", 2, "margin-bottom", "10px"], ["type", "text", "placeholder", "Rechercher un membre...", 3, "ngModelChange", "ngModel"], [1, "person-select-list"], ["class", "person-select-item", 3, "selected", "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "empty-list-msg", 4, "ngIf"], [1, "person-select-item", 3, "click"], [1, "person-select-name"], ["class", "material-icons-round check-icon", 4, "ngIf"], [1, "material-icons-round", "check-icon"], [1, "empty-list-msg"], [1, "form-group"], [2, "color", "#EF4444"], ["type", "text", "placeholder", "Pr\xE9nom(s)", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-control", 3, "ngModelChange", "ngModel"], ["value", "M"], ["value", "F"], ["type", "number", "placeholder", "1990", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "dp-body"], [1, "dp-avatar-wrap"], [1, "dp-avatar"], ["class", "dp-avatar-photo", 3, "src", "error", 4, "ngIf"], [1, "dp-name"], [1, "dp-badges"], [1, "pc-badge"], ["class", "pc-badge pc-badge-alive", 4, "ngIf"], ["class", "pc-badge pc-badge-dead", 4, "ngIf"], [1, "dp-info-list"], ["class", "dp-info-item", 4, "ngIf"], [1, "btn-primary", "dp-link", 3, "click", "routerLink", "queryParams"], [1, "dp-avatar-photo", 3, "error", "src"], [1, "pc-badge", "pc-badge-alive"], [1, "pc-badge", "pc-badge-dead"], [1, "dp-info-item"], [1, "dp-info-text"], [1, "dp-info-label"], [1, "dp-info-value"]], template: function TreeComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 3)(1, "div", 4)(2, "div", 5)(3, "h2");
@@ -7516,7 +7676,7 @@ var TreeComponent = class _TreeComponent {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.clearTooltip());
       });
-      \u0275\u0275template(41, TreeComponent_div_41_Template, 4, 0, "div", 23)(42, TreeComponent_div_42_Template, 4, 1, "div", 24)(43, TreeComponent_div_43_Template, 7, 0, "div", 25)(44, TreeComponent_div_44_Template, 6, 4, "div", 26);
+      \u0275\u0275template(41, TreeComponent_div_41_Template, 4, 0, "div", 23)(42, TreeComponent_div_42_Template, 4, 1, "div", 24)(43, TreeComponent_div_43_Template, 9, 2, "div", 25)(44, TreeComponent_div_44_Template, 6, 4, "div", 26);
       \u0275\u0275elementEnd();
       \u0275\u0275template(45, TreeComponent_div_45_Template, 4, 0, "div", 27);
       \u0275\u0275elementEnd();
@@ -7661,7 +7821,7 @@ var TreeComponent = class _TreeComponent {
       \u0275\u0275advance(7);
       \u0275\u0275property("ngIf", ctx.selectedPerson);
     }
-  }, dependencies: [NgForOf, NgIf, NgTemplateOutlet, RouterLink, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, DecimalPipe], styles: ['@charset "UTF-8";\n\n\n\n.tree-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  margin: -28px -32px;\n}\n.tree-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 24px;\n  background: var(--white);\n  border-bottom: 1px solid var(--border);\n  gap: 16px;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-left[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 18px;\n  margin: 0;\n  white-space: nowrap;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n}\n.tree-kiosk-btn[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n.root-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  background: var(--primary-bg);\n  border: 1.5px solid var(--primary-border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--primary);\n}\n.root-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.root-badge-name[_ngcontent-%COMP%] {\n  max-width: 160px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.root-badge-clear[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  border: none;\n  background: var(--primary-border);\n  cursor: pointer;\n  padding: 0;\n}\n.root-badge-clear[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: var(--primary);\n}\n.root-badge-clear[_ngcontent-%COMP%]:hover {\n  background: var(--primary);\n}\n.root-badge-clear[_ngcontent-%COMP%]:hover   .material-icons-round[_ngcontent-%COMP%] {\n  color: #fff;\n}\n.root-picker-wrap[_ngcontent-%COMP%] {\n  position: relative;\n}\n.root-pick-btn.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.root-pick-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.root-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  z-index: 299;\n}\n.root-dropdown[_ngcontent-%COMP%] {\n  position: absolute;\n  top: calc(100% + 8px);\n  right: 0;\n  width: 280px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);\n  z-index: 300;\n  overflow: hidden;\n  animation: _ngcontent-%COMP%_root-drop-in 0.15s ease;\n}\n@keyframes _ngcontent-%COMP%_root-drop-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.root-search-bar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-bottom: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.root-search-bar[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.root-search-input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--text-primary);\n  font-family: inherit;\n}\n.root-search-input[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n.root-search-input[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.root-list[_ngcontent-%COMP%] {\n  max-height: 280px;\n  overflow-y: auto;\n  padding: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.root-list-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 10px;\n  border-radius: 9px;\n  border: none;\n  background: transparent;\n  text-align: left;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n  cursor: pointer;\n  font-family: inherit;\n  transition: background 0.12s;\n}\n.root-list-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.root-list-item[_ngcontent-%COMP%]:hover {\n  background: var(--bg-muted);\n}\n.root-list-item.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 700;\n}\n.root-list-all[_ngcontent-%COMP%] {\n  border-bottom: 1px solid var(--border);\n  border-radius: 0;\n  margin-bottom: 4px;\n  padding-bottom: 10px;\n}\n.root-list-avatar[_ngcontent-%COMP%] {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.root-list-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.root-list-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink, #EC4899);\n}\n.root-list-avatar[_ngcontent-%COMP%]:not(.male):not(.female) {\n  background: var(--text-muted);\n}\n.root-empty[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 20px;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.tree-kiosk[_ngcontent-%COMP%]   .tree-toolbar[_ngcontent-%COMP%] {\n  display: none;\n}\n.tree-kiosk[_ngcontent-%COMP%]   .tree-canvas[_ngcontent-%COMP%] {\n  padding: 0;\n}\n.tree-kiosk[_ngcontent-%COMP%]:hover   .tree-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 50;\n  animation: _ngcontent-%COMP%_tree-slide-down 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_tree-slide-down {\n  from {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n.zoom-level[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-muted);\n  min-width: 38px;\n  text-align: center;\n}\n.tree-canvas[_ngcontent-%COMP%] {\n  flex: 1;\n  background: #F0F4FF;\n  background-image:\n    radial-gradient(\n      circle,\n      #BFDBFE 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px 24px;\n  position: relative;\n}\n.tree-visual[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n  min-width: 500px;\n  transition: transform 0.15s ease;\n  transform-origin: top center;\n  cursor: grab;\n  touch-action: none;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.tree-visual[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.generation[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.gen-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  background: var(--white);\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  border: 1px solid var(--border);\n}\n.gen-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 80px;\n  flex-wrap: nowrap;\n  justify-content: center;\n}\n.gen-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-stem[_ngcontent-%COMP%] {\n  width: 2px;\n  border-radius: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n}\n.group-stem.stem-single[_ngcontent-%COMP%] {\n  height: 40px;\n}\n.group-stem.stem-multi[_ngcontent-%COMP%] {\n  height: 20px;\n}\n.group-items[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  position: relative;\n}\n.group-items.multi[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: var(--bar-l, 55px);\n  right: var(--bar-r, 55px);\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.group-items.multi[_ngcontent-%COMP%] {\n  background: rgba(219, 234, 254, 0.28);\n  border-radius: 14px;\n  padding-bottom: 8px;\n}\n.group-child-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-child-drop[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.down-connector[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  margin-top: 2px;\n  border-radius: 2px;\n}\n.generation[_ngcontent-%COMP%]    + .generation[_ngcontent-%COMP%] {\n  margin-top: 4px;\n}\n.union-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.solo-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.couple-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);\n  transition: var(--transition);\n}\n.couple-wrap.root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);\n}\n.couple-wrap.selected[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.couple-wrap[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.union-heart-connector[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.union-heart-connector[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.union-heart-connector[_ngcontent-%COMP%]   .union-hline[_ngcontent-%COMP%] {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.union-badge[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.union-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.tree-node[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  transition: var(--transition);\n  border-radius: 12px;\n}\n.tree-node[_ngcontent-%COMP%]:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.tree-node.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.tree-node.solo[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n}\n.tree-node.solo.root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.tree-node.solo[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.tree-node.solo.active[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.node-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.node-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.node-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.node-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.node-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.node-name[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  word-break: break-word;\n}\n.node-year[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n}\n.zoom-hint[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(15, 23, 42, 0.7);\n  color: #fff;\n  font-size: 12px;\n  padding: 6px 14px;\n  border-radius: var(--radius-full);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  pointer-events: none;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  z-index: 10;\n}\n.zoom-hint[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.tree-tooltip[_ngcontent-%COMP%] {\n  position: fixed;\n  z-index: 500;\n  pointer-events: none;\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  padding: 12px 14px;\n  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);\n  min-width: 220px;\n  max-width: 280px;\n  animation: _ngcontent-%COMP%_tt-in 0.15s ease;\n}\n@keyframes _ngcontent-%COMP%_tt-in {\n  from {\n    opacity: 0;\n    transform: translateY(6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.tt-avatar[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.tt-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.tt-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.tt-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.tt-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.tt-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  flex: 1;\n}\n.tt-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n  word-break: break-word;\n}\n.tt-dates[_ngcontent-%COMP%], \n.tt-lieu[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 11px;\n  color: var(--text-secondary);\n}\n.tt-dates[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%], \n.tt-lieu[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.tt-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  flex-wrap: wrap;\n  margin-top: 2px;\n}\n.tt-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  padding: 1px 7px;\n  border-radius: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  background: var(--bg-muted);\n  color: var(--text-muted);\n}\n.tt-badge.tt-m[_ngcontent-%COMP%] {\n  background: #eff6ff;\n  color: var(--primary);\n}\n.tt-badge.tt-f[_ngcontent-%COMP%] {\n  background: #fdf2f8;\n  color: var(--pink);\n}\n.tt-badge.tt-alive[_ngcontent-%COMP%] {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.tt-badge.tt-dead[_ngcontent-%COMP%] {\n  background: #f1f5f9;\n  color: #64748b;\n}\n.tt-hint[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-style: italic;\n}\n.panel-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.3);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.detail-panel[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 340px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.detail-panel.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.dp-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.dp-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  margin: 0;\n  color: var(--text-primary);\n}\n.dp-body[_ngcontent-%COMP%] {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 24px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.dp-avatar-wrap[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.dp-avatar[_ngcontent-%COMP%] {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n  font-weight: 700;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);\n}\n.dp-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.dp-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);\n}\n.dp-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.dp-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.dp-name[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  text-align: center;\n  margin: 0;\n  line-height: 1.3;\n}\n.dp-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n.dp-info-list[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  margin-top: 4px;\n}\n.dp-info-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  padding: 12px 16px;\n  border-bottom: 1px solid var(--border);\n}\n.dp-info-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.dp-info-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.dp-info-text[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.dp-info-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n}\n.dp-info-value[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-primary);\n  font-weight: 500;\n}\n.dp-link[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  text-decoration: none;\n  margin-top: 8px;\n}\n.ts-quick-btns[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  justify-content: center;\n  margin-top: 6px;\n  flex-wrap: wrap;\n}\n.ts-quick-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  padding: 3px 10px;\n  border-radius: 20px;\n  border: 1.5px solid;\n  font-size: 11px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n}\n.ts-quick-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.ts-quick-btn.ts-qb-child[_ngcontent-%COMP%] {\n  background: #ECFDF5;\n  border-color: #A7F3D0;\n  color: #059669;\n}\n.ts-quick-btn.ts-qb-child[_ngcontent-%COMP%]:hover {\n  background: #059669;\n  color: #fff;\n  border-color: #059669;\n}\n.ts-quick-btn.ts-qb-partner[_ngcontent-%COMP%] {\n  background: #FDF2F8;\n  border-color: #FBCFE8;\n  color: #DB2777;\n}\n.ts-quick-btn.ts-qb-partner[_ngcontent-%COMP%]:hover {\n  background: #DB2777;\n  color: #fff;\n  border-color: #DB2777;\n}\n.qa-panel[_ngcontent-%COMP%] {\n  width: 420px !important;\n}\n.qa-for-whom[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 24px;\n  background: var(--bg-muted);\n  border-bottom: 1px solid var(--border);\n  font-size: 13px;\n}\n.qa-tabs[_ngcontent-%COMP%] {\n  display: flex;\n  border-bottom: 1px solid var(--border);\n}\n.qa-tab[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 11px 12px;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-muted);\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  border-bottom: 2px solid transparent;\n}\n.qa-tab[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.qa-tab.active[_ngcontent-%COMP%] {\n  color: var(--primary);\n  border-bottom-color: var(--primary);\n  background: var(--primary-bg);\n}\n.qa-tab[_ngcontent-%COMP%]:hover:not(.active) {\n  background: var(--bg-muted);\n}\n@media (max-width: 640px) {\n  .qa-panel[_ngcontent-%COMP%] {\n    width: 100vw !important;\n  }\n}\n.ts-multi-card[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 14px 20px;\n  min-width: 130px;\n  background: var(--primary-bg);\n  border: 2.5px solid var(--primary);\n  border-radius: 18px;\n  cursor: pointer;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);\n  transition: var(--transition);\n}\n.ts-multi-card.ts-active[_ngcontent-%COMP%] {\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.28);\n}\n.ts-multi-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25);\n}\n.ts-avatar-lg[_ngcontent-%COMP%] {\n  width: 56px !important;\n  height: 56px !important;\n  font-size: 18px !important;\n}\n.ts-multi-badge[_ngcontent-%COMP%] {\n  font-size: 10px;\n  font-weight: 700;\n  color: var(--primary);\n  background: rgba(59, 130, 246, 0.12);\n  border-radius: 10px;\n  padding: 2px 8px;\n}\n.ts-union-branch[_ngcontent-%COMP%] {\n  cursor: default;\n}\n.ts-union-active[_ngcontent-%COMP%] {\n  border-color: var(--primary-border);\n}\n.ts-union-divorced[_ngcontent-%COMP%] {\n  border-color: #D1D5DB;\n  opacity: 0.85;\n}\n.ts-union-widowed[_ngcontent-%COMP%] {\n  border-color: #E5E7EB;\n}\n.ts-person-ref[_ngcontent-%COMP%] {\n  width: 80px !important;\n  opacity: 0.75;\n}\n.ts-avatar-ref[_ngcontent-%COMP%] {\n  width: 34px !important;\n  height: 34px !important;\n  font-size: 11px !important;\n}\n.ts-name-ref[_ngcontent-%COMP%] {\n  font-size: 10px !important;\n  color: var(--text-muted);\n}\n.ts-heart-active[_ngcontent-%COMP%] {\n  color: #f43f5e !important;\n}\n.ts-heart-broken[_ngcontent-%COMP%] {\n  color: #9CA3AF !important;\n}\n.ts-heart-grey[_ngcontent-%COMP%] {\n  color: #9CA3AF !important;\n}\n.ts-hline-grey[_ngcontent-%COMP%] {\n  background: #D1D5DB !important;\n}\n.ts-badge-active[_ngcontent-%COMP%] {\n  background: var(--white);\n  color: var(--primary);\n  border-color: var(--primary-border);\n}\n.ts-badge-divorced[_ngcontent-%COMP%] {\n  background: #F9FAFB;\n  color: #6B7280;\n  border-color: #E5E7EB;\n}\n.ts-badge-divorced[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #9CA3AF !important;\n}\n.ts-badge-widowed[_ngcontent-%COMP%] {\n  background: #F3F4F6;\n  color: #4B5563;\n  border-color: #D1D5DB;\n}\n.ts-badge-widowed[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #6B7280 !important;\n}\n.ts-status-chip[_ngcontent-%COMP%] {\n  display: inline-block;\n  font-size: 9px;\n  font-weight: 700;\n  padding: 1px 6px;\n  border-radius: 8px;\n  background: rgba(0, 0, 0, 0.06);\n  margin-left: 2px;\n}\n@media (max-width: 640px) {\n  .tree-toolbar[_ngcontent-%COMP%] {\n    padding: 12px 16px;\n  }\n  .toolbar-right[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n    min-width: 0;\n  }\n  .detail-panel[_ngcontent-%COMP%] {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 85vh;\n    transform: translateY(100%);\n  }\n  .detail-panel.open[_ngcontent-%COMP%] {\n    transform: translateY(0);\n  }\n  .zoom-hint[_ngcontent-%COMP%] {\n    bottom: 8px;\n    font-size: 11px;\n    padding: 5px 10px;\n  }\n}\n.ts-roots[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 60px;\n  padding: 40px;\n}\n.ts-subtree[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.ts-couple[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);\n  transition: var(--transition);\n}\n.ts-couple.ts-root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18);\n}\n.ts-couple.ts-selected[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-couple[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.ts-solo-card.ts-root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.ts-solo-card.ts-active[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-solo-card.male[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card.female[_ngcontent-%COMP%]:hover {\n  border-color: var(--pink);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-person[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  border-radius: 12px;\n  transition: var(--transition);\n}\n.ts-person[_ngcontent-%COMP%]:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.ts-person.ts-active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.ts-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.ts-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.ts-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink, #EC4899);\n}\n.ts-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.ts-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.ts-name[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  max-width: 110px;\n  word-break: break-word;\n}\n.ts-year[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n  white-space: nowrap;\n}\n.ts-heart[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.ts-heart[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.ts-hline[_ngcontent-%COMP%] {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.ts-union-badge[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.ts-union-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.ts-down[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  border-radius: 2px;\n  margin-top: 2px;\n}\n.ts-branch[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n}\n.ts-hbar[_ngcontent-%COMP%] {\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.ts-children-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 40px;\n}\n.ts-child-col[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ts-up[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n/*# sourceMappingURL=tree.component.css.map */'] });
+  }, dependencies: [NgForOf, NgIf, NgTemplateOutlet, RouterLink, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, DecimalPipe], styles: ['@charset "UTF-8";\n\n\n\n.tree-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  margin: -28px -32px;\n}\n.tree-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 24px;\n  background: var(--white);\n  border-bottom: 1px solid var(--border);\n  gap: 16px;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-left[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 18px;\n  margin: 0;\n  white-space: nowrap;\n}\n.tree-toolbar[_ngcontent-%COMP%]   .toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n}\n.tree-kiosk-btn[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n.root-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  background: var(--primary-bg);\n  border: 1.5px solid var(--primary-border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--primary);\n}\n.root-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.root-badge-name[_ngcontent-%COMP%] {\n  max-width: 160px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.root-badge-clear[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  border: none;\n  background: var(--primary-border);\n  cursor: pointer;\n  padding: 0;\n}\n.root-badge-clear[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: var(--primary);\n}\n.root-badge-clear[_ngcontent-%COMP%]:hover {\n  background: var(--primary);\n}\n.root-badge-clear[_ngcontent-%COMP%]:hover   .material-icons-round[_ngcontent-%COMP%] {\n  color: #fff;\n}\n.root-picker-wrap[_ngcontent-%COMP%] {\n  position: relative;\n}\n.root-pick-btn.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.root-pick-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.root-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  z-index: 299;\n}\n.root-dropdown[_ngcontent-%COMP%] {\n  position: absolute;\n  top: calc(100% + 8px);\n  right: 0;\n  width: 280px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);\n  z-index: 300;\n  overflow: hidden;\n  animation: _ngcontent-%COMP%_root-drop-in 0.15s ease;\n}\n@keyframes _ngcontent-%COMP%_root-drop-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.root-search-bar[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-bottom: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.root-search-bar[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.root-search-input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--text-primary);\n  font-family: inherit;\n}\n.root-search-input[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n.root-search-input[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.root-list[_ngcontent-%COMP%] {\n  max-height: 280px;\n  overflow-y: auto;\n  padding: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.root-list-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 10px;\n  border-radius: 9px;\n  border: none;\n  background: transparent;\n  text-align: left;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n  cursor: pointer;\n  font-family: inherit;\n  transition: background 0.12s;\n}\n.root-list-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.root-list-item[_ngcontent-%COMP%]:hover {\n  background: var(--bg-muted);\n}\n.root-list-item.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 700;\n}\n.root-list-all[_ngcontent-%COMP%] {\n  border-bottom: 1px solid var(--border);\n  border-radius: 0;\n  margin-bottom: 4px;\n  padding-bottom: 10px;\n}\n.root-list-avatar[_ngcontent-%COMP%] {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.root-list-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.root-list-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink, #EC4899);\n}\n.root-list-avatar[_ngcontent-%COMP%]:not(.male):not(.female) {\n  background: var(--text-muted);\n}\n.root-empty[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 20px;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.tree-kiosk[_ngcontent-%COMP%]   .tree-toolbar[_ngcontent-%COMP%] {\n  display: none;\n}\n.tree-kiosk[_ngcontent-%COMP%]   .tree-canvas[_ngcontent-%COMP%] {\n  padding: 0;\n}\n.tree-kiosk[_ngcontent-%COMP%]:hover   .tree-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 50;\n  animation: _ngcontent-%COMP%_tree-slide-down 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_tree-slide-down {\n  from {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n.zoom-level[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-muted);\n  min-width: 38px;\n  text-align: center;\n}\n.tree-canvas[_ngcontent-%COMP%] {\n  flex: 1;\n  background: #F0F4FF;\n  background-image:\n    radial-gradient(\n      circle,\n      #BFDBFE 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px 24px;\n  position: relative;\n}\n.tree-visual[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n  min-width: 500px;\n  transition: transform 0.15s ease;\n  transform-origin: top center;\n  cursor: grab;\n  touch-action: none;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.tree-visual[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.generation[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.gen-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  background: var(--white);\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  border: 1px solid var(--border);\n}\n.gen-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 80px;\n  flex-wrap: nowrap;\n  justify-content: center;\n}\n.gen-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-stem[_ngcontent-%COMP%] {\n  width: 2px;\n  border-radius: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n}\n.group-stem.stem-single[_ngcontent-%COMP%] {\n  height: 40px;\n}\n.group-stem.stem-multi[_ngcontent-%COMP%] {\n  height: 20px;\n}\n.group-items[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  position: relative;\n}\n.group-items.multi[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: var(--bar-l, 55px);\n  right: var(--bar-r, 55px);\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.group-items.multi[_ngcontent-%COMP%] {\n  background: rgba(219, 234, 254, 0.28);\n  border-radius: 14px;\n  padding-bottom: 8px;\n}\n.group-child-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-child-drop[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.down-connector[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  margin-top: 2px;\n  border-radius: 2px;\n}\n.generation[_ngcontent-%COMP%]    + .generation[_ngcontent-%COMP%] {\n  margin-top: 4px;\n}\n.union-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.solo-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.couple-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);\n  transition: var(--transition);\n}\n.couple-wrap.root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);\n}\n.couple-wrap.selected[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.couple-wrap[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.union-heart-connector[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.union-heart-connector[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.union-heart-connector[_ngcontent-%COMP%]   .union-hline[_ngcontent-%COMP%] {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.union-badge[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.union-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.tree-node[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  transition: var(--transition);\n  border-radius: 12px;\n}\n.tree-node[_ngcontent-%COMP%]:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.tree-node.active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.tree-node.solo[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n}\n.tree-node.solo.root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.tree-node.solo[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.tree-node.solo.active[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.node-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.node-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.node-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.node-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.node-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.node-name[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  word-break: break-word;\n}\n.node-year[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n}\n.zoom-hint[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(15, 23, 42, 0.7);\n  color: #fff;\n  font-size: 12px;\n  padding: 6px 14px;\n  border-radius: var(--radius-full);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  pointer-events: none;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  z-index: 10;\n}\n.zoom-hint[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.tree-tooltip[_ngcontent-%COMP%] {\n  position: fixed;\n  z-index: 500;\n  pointer-events: none;\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  padding: 12px 14px;\n  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);\n  min-width: 220px;\n  max-width: 280px;\n  animation: _ngcontent-%COMP%_tt-in 0.15s ease;\n}\n@keyframes _ngcontent-%COMP%_tt-in {\n  from {\n    opacity: 0;\n    transform: translateY(6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.tt-avatar[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.tt-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.tt-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.tt-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.tt-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.tt-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  flex: 1;\n}\n.tt-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n  word-break: break-word;\n}\n.tt-dates[_ngcontent-%COMP%], \n.tt-lieu[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 11px;\n  color: var(--text-secondary);\n}\n.tt-dates[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%], \n.tt-lieu[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.tt-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 4px;\n  flex-wrap: wrap;\n  margin-top: 2px;\n}\n.tt-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  padding: 1px 7px;\n  border-radius: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  background: var(--bg-muted);\n  color: var(--text-muted);\n}\n.tt-badge.tt-m[_ngcontent-%COMP%] {\n  background: #eff6ff;\n  color: var(--primary);\n}\n.tt-badge.tt-f[_ngcontent-%COMP%] {\n  background: #fdf2f8;\n  color: var(--pink);\n}\n.tt-badge.tt-alive[_ngcontent-%COMP%] {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.tt-badge.tt-dead[_ngcontent-%COMP%] {\n  background: #f1f5f9;\n  color: #64748b;\n}\n.tt-hint[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-style: italic;\n}\n.panel-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.3);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.detail-panel[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 340px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.detail-panel.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.dp-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.dp-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  margin: 0;\n  color: var(--text-primary);\n}\n.dp-body[_ngcontent-%COMP%] {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 24px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.dp-avatar-wrap[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.dp-avatar[_ngcontent-%COMP%] {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n  font-weight: 700;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);\n}\n.dp-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.dp-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);\n}\n.dp-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.dp-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.dp-name[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  text-align: center;\n  margin: 0;\n  line-height: 1.3;\n}\n.dp-badges[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n.dp-info-list[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  margin-top: 4px;\n}\n.dp-info-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  padding: 12px 16px;\n  border-bottom: 1px solid var(--border);\n}\n.dp-info-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.dp-info-item[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.dp-info-text[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.dp-info-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n}\n.dp-info-value[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: var(--text-primary);\n  font-weight: 500;\n}\n.dp-link[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  text-decoration: none;\n  margin-top: 8px;\n}\n.ts-quick-btns[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 6px;\n  justify-content: center;\n  margin-top: 6px;\n  flex-wrap: wrap;\n}\n.ts-quick-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  padding: 3px 10px;\n  border-radius: 20px;\n  border: 1.5px solid;\n  font-size: 11px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n}\n.ts-quick-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.ts-quick-btn.ts-qb-child[_ngcontent-%COMP%] {\n  background: #ECFDF5;\n  border-color: #A7F3D0;\n  color: #059669;\n}\n.ts-quick-btn.ts-qb-child[_ngcontent-%COMP%]:hover {\n  background: #059669;\n  color: #fff;\n  border-color: #059669;\n}\n.ts-quick-btn.ts-qb-partner[_ngcontent-%COMP%] {\n  background: #FDF2F8;\n  border-color: #FBCFE8;\n  color: #DB2777;\n}\n.ts-quick-btn.ts-qb-partner[_ngcontent-%COMP%]:hover {\n  background: #DB2777;\n  color: #fff;\n  border-color: #DB2777;\n}\n.qa-panel[_ngcontent-%COMP%] {\n  width: 420px !important;\n}\n.qa-for-whom[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 24px;\n  background: var(--bg-muted);\n  border-bottom: 1px solid var(--border);\n  font-size: 13px;\n}\n.qa-tabs[_ngcontent-%COMP%] {\n  display: flex;\n  border-bottom: 1px solid var(--border);\n}\n.qa-tab[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 11px 12px;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-muted);\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  border-bottom: 2px solid transparent;\n}\n.qa-tab[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.qa-tab.active[_ngcontent-%COMP%] {\n  color: var(--primary);\n  border-bottom-color: var(--primary);\n  background: var(--primary-bg);\n}\n.qa-tab[_ngcontent-%COMP%]:hover:not(.active) {\n  background: var(--bg-muted);\n}\n@media (max-width: 640px) {\n  .qa-panel[_ngcontent-%COMP%] {\n    width: 100vw !important;\n  }\n}\n.ts-multi-card[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 14px 20px;\n  min-width: 130px;\n  background: var(--primary-bg);\n  border: 2.5px solid var(--primary);\n  border-radius: 18px;\n  cursor: pointer;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);\n  transition: var(--transition);\n}\n.ts-multi-card.ts-active[_ngcontent-%COMP%] {\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.28);\n}\n.ts-multi-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25);\n}\n.ts-avatar-lg[_ngcontent-%COMP%] {\n  width: 56px !important;\n  height: 56px !important;\n  font-size: 18px !important;\n}\n.ts-multi-badge[_ngcontent-%COMP%] {\n  font-size: 10px;\n  font-weight: 700;\n  color: var(--primary);\n  background: rgba(59, 130, 246, 0.12);\n  border-radius: 10px;\n  padding: 2px 8px;\n}\n.ts-union-branch[_ngcontent-%COMP%] {\n  cursor: default;\n}\n.ts-union-active[_ngcontent-%COMP%] {\n  border-color: var(--primary-border);\n}\n.ts-union-divorced[_ngcontent-%COMP%] {\n  border-color: #D1D5DB;\n  opacity: 0.85;\n}\n.ts-union-widowed[_ngcontent-%COMP%] {\n  border-color: #E5E7EB;\n}\n.ts-person-ref[_ngcontent-%COMP%] {\n  width: 80px !important;\n  opacity: 0.75;\n}\n.ts-avatar-ref[_ngcontent-%COMP%] {\n  width: 34px !important;\n  height: 34px !important;\n  font-size: 11px !important;\n}\n.ts-name-ref[_ngcontent-%COMP%] {\n  font-size: 10px !important;\n  color: var(--text-muted);\n}\n.ts-heart-active[_ngcontent-%COMP%] {\n  color: #f43f5e !important;\n}\n.ts-heart-broken[_ngcontent-%COMP%] {\n  color: #9CA3AF !important;\n}\n.ts-heart-grey[_ngcontent-%COMP%] {\n  color: #9CA3AF !important;\n}\n.ts-hline-grey[_ngcontent-%COMP%] {\n  background: #D1D5DB !important;\n}\n.ts-badge-active[_ngcontent-%COMP%] {\n  background: var(--white);\n  color: var(--primary);\n  border-color: var(--primary-border);\n}\n.ts-badge-divorced[_ngcontent-%COMP%] {\n  background: #F9FAFB;\n  color: #6B7280;\n  border-color: #E5E7EB;\n}\n.ts-badge-divorced[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #9CA3AF !important;\n}\n.ts-badge-widowed[_ngcontent-%COMP%] {\n  background: #F3F4F6;\n  color: #4B5563;\n  border-color: #D1D5DB;\n}\n.ts-badge-widowed[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #6B7280 !important;\n}\n.ts-status-chip[_ngcontent-%COMP%] {\n  display: inline-block;\n  font-size: 9px;\n  font-weight: 700;\n  padding: 1px 6px;\n  border-radius: 8px;\n  background: rgba(0, 0, 0, 0.06);\n  margin-left: 2px;\n}\n@media (max-width: 640px) {\n  .tree-toolbar[_ngcontent-%COMP%] {\n    padding: 12px 16px;\n  }\n  .toolbar-right[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n    min-width: 0;\n  }\n  .detail-panel[_ngcontent-%COMP%] {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 85vh;\n    transform: translateY(100%);\n  }\n  .detail-panel.open[_ngcontent-%COMP%] {\n    transform: translateY(0);\n  }\n  .zoom-hint[_ngcontent-%COMP%] {\n    bottom: 8px;\n    font-size: 11px;\n    padding: 5px 10px;\n  }\n}\n.ts-roots[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 60px;\n  padding: 40px;\n}\n.ts-subtree[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.ts-couple[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);\n  transition: var(--transition);\n}\n.ts-couple.ts-root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18);\n}\n.ts-couple.ts-selected[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-couple[_ngcontent-%COMP%]:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.ts-solo-card.ts-root[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.ts-solo-card.ts-active[_ngcontent-%COMP%] {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-solo-card.male[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card.female[_ngcontent-%COMP%]:hover {\n  border-color: var(--pink);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-person[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  border-radius: 12px;\n  transition: var(--transition);\n}\n.ts-person[_ngcontent-%COMP%]:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.ts-person.ts-active[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n}\n.ts-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.ts-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.ts-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink, #EC4899);\n}\n.ts-avatar[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.ts-avatar-photo[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.ts-name[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  max-width: 110px;\n  word-break: break-word;\n}\n.ts-year[_ngcontent-%COMP%] {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n  white-space: nowrap;\n}\n.ts-heart[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.ts-heart[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.ts-hline[_ngcontent-%COMP%] {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.ts-union-badge[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.ts-union-badge[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.ts-down[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  border-radius: 2px;\n  margin-top: 2px;\n}\n.ts-branch[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n}\n.ts-hbar[_ngcontent-%COMP%] {\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.ts-children-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 40px;\n}\n.ts-child-col[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ts-up[_ngcontent-%COMP%] {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.empty-state-or[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-muted);\n  margin: 4px 0 !important;\n}\nlabel.btn-outline[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\nlabel.btn-outline.disabled[_ngcontent-%COMP%] {\n  opacity: 0.6;\n  cursor: not-allowed;\n  pointer-events: none;\n}\n/*# sourceMappingURL=tree.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(TreeComponent, [{
@@ -7749,6 +7909,13 @@ var TreeComponent = class _TreeComponent {
       <span class="material-icons-round">account_tree</span>\r
       <h3>Arbre vide</h3>\r
       <p>Ajoutez des membres et des unions pour construire l'arbre familial.</p>\r
+      <p class="empty-state-or" *ngIf="totalPersonnes === 0">\u2014 ou \u2014</p>\r
+      <label class="btn-outline btn-sm" *ngIf="totalPersonnes === 0" [class.disabled]="importing">\r
+        <span class="material-icons-round spin" *ngIf="importing">sync</span>\r
+        <span class="material-icons-round" *ngIf="!importing">file_upload</span>\r
+        {{ importing ? 'Import en cours...' : 'Importer un fichier GEDCOM' }}\r
+        <input type="file" accept=".ged,.gedcom" hidden [disabled]="importing" (change)="onGedcomFileSelected($event)" />\r
+      </label>\r
     </div>\r
 \r
     <!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\r
@@ -8211,8 +8378,8 @@ var TreeComponent = class _TreeComponent {
     </a>\r
   </div>\r
 </div>\r
-`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/tree/tree.component.scss */\n.tree-page {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  margin: -28px -32px;\n}\n.tree-toolbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 24px;\n  background: var(--white);\n  border-bottom: 1px solid var(--border);\n  gap: 16px;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.tree-toolbar .toolbar-left {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.tree-toolbar .toolbar-left h2 {\n  font-size: 18px;\n  margin: 0;\n  white-space: nowrap;\n}\n.tree-toolbar .toolbar-right {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n}\n.tree-kiosk-btn {\n  color: var(--primary) !important;\n}\n.root-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  background: var(--primary-bg);\n  border: 1.5px solid var(--primary-border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--primary);\n}\n.root-badge .material-icons-round {\n  font-size: 15px !important;\n}\n.root-badge-name {\n  max-width: 160px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.root-badge-clear {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  border: none;\n  background: var(--primary-border);\n  cursor: pointer;\n  padding: 0;\n}\n.root-badge-clear .material-icons-round {\n  font-size: 12px !important;\n  color: var(--primary);\n}\n.root-badge-clear:hover {\n  background: var(--primary);\n}\n.root-badge-clear:hover .material-icons-round {\n  color: #fff;\n}\n.root-picker-wrap {\n  position: relative;\n}\n.root-pick-btn.active {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.root-pick-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.root-overlay {\n  position: fixed;\n  inset: 0;\n  z-index: 299;\n}\n.root-dropdown {\n  position: absolute;\n  top: calc(100% + 8px);\n  right: 0;\n  width: 280px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);\n  z-index: 300;\n  overflow: hidden;\n  animation: root-drop-in 0.15s ease;\n}\n@keyframes root-drop-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.root-search-bar {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-bottom: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.root-search-bar .material-icons-round {\n  font-size: 17px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.root-search-input {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--text-primary);\n  font-family: inherit;\n}\n.root-search-input:focus {\n  outline: none;\n}\n.root-search-input::placeholder {\n  color: var(--text-muted);\n}\n.root-list {\n  max-height: 280px;\n  overflow-y: auto;\n  padding: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.root-list-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 10px;\n  border-radius: 9px;\n  border: none;\n  background: transparent;\n  text-align: left;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n  cursor: pointer;\n  font-family: inherit;\n  transition: background 0.12s;\n}\n.root-list-item .material-icons-round {\n  font-size: 17px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.root-list-item:hover {\n  background: var(--bg-muted);\n}\n.root-list-item.active {\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 700;\n}\n.root-list-all {\n  border-bottom: 1px solid var(--border);\n  border-radius: 0;\n  margin-bottom: 4px;\n  padding-bottom: 10px;\n}\n.root-list-avatar {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.root-list-avatar.male {\n  background: var(--primary);\n}\n.root-list-avatar.female {\n  background: var(--pink, #EC4899);\n}\n.root-list-avatar:not(.male):not(.female) {\n  background: var(--text-muted);\n}\n.root-empty {\n  text-align: center;\n  padding: 20px;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.tree-kiosk .tree-toolbar {\n  display: none;\n}\n.tree-kiosk .tree-canvas {\n  padding: 0;\n}\n.tree-kiosk:hover .tree-toolbar {\n  display: flex;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 50;\n  animation: tree-slide-down 0.2s ease;\n}\n@keyframes tree-slide-down {\n  from {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n.zoom-level {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-muted);\n  min-width: 38px;\n  text-align: center;\n}\n.tree-canvas {\n  flex: 1;\n  background: #F0F4FF;\n  background-image:\n    radial-gradient(\n      circle,\n      #BFDBFE 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px 24px;\n  position: relative;\n}\n.tree-visual {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n  min-width: 500px;\n  transition: transform 0.15s ease;\n  transform-origin: top center;\n  cursor: grab;\n  touch-action: none;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.tree-visual:active {\n  cursor: grabbing;\n}\n.generation {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.gen-label {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  background: var(--white);\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  border: 1px solid var(--border);\n}\n.gen-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 80px;\n  flex-wrap: nowrap;\n  justify-content: center;\n}\n.gen-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-stem {\n  width: 2px;\n  border-radius: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n}\n.group-stem.stem-single {\n  height: 40px;\n}\n.group-stem.stem-multi {\n  height: 20px;\n}\n.group-items {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  position: relative;\n}\n.group-items.multi::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: var(--bar-l, 55px);\n  right: var(--bar-r, 55px);\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.group-items.multi {\n  background: rgba(219, 234, 254, 0.28);\n  border-radius: 14px;\n  padding-bottom: 8px;\n}\n.group-child-wrap {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-child-drop {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.down-connector {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  margin-top: 2px;\n  border-radius: 2px;\n}\n.generation + .generation {\n  margin-top: 4px;\n}\n.union-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.solo-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.couple-wrap {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);\n  transition: var(--transition);\n}\n.couple-wrap.root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);\n}\n.couple-wrap.selected {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.couple-wrap:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.union-heart-connector {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.union-heart-connector .material-icons-round {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.union-heart-connector .union-hline {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.union-badge {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.union-badge .material-icons-round {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.tree-node {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  transition: var(--transition);\n  border-radius: 12px;\n}\n.tree-node:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.tree-node.active {\n  background: var(--primary-bg);\n}\n.tree-node.solo {\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n}\n.tree-node.solo.root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.tree-node.solo:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.tree-node.solo.active {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.node-avatar {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.node-avatar.male {\n  background: var(--primary);\n}\n.node-avatar.female {\n  background: var(--pink);\n}\n.node-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.node-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.node-name {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  word-break: break-word;\n}\n.node-year {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n}\n.zoom-hint {\n  position: fixed;\n  bottom: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(15, 23, 42, 0.7);\n  color: #fff;\n  font-size: 12px;\n  padding: 6px 14px;\n  border-radius: var(--radius-full);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  pointer-events: none;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  z-index: 10;\n}\n.zoom-hint .material-icons-round {\n  font-size: 14px !important;\n}\n.tree-tooltip {\n  position: fixed;\n  z-index: 500;\n  pointer-events: none;\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  padding: 12px 14px;\n  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);\n  min-width: 220px;\n  max-width: 280px;\n  animation: tt-in 0.15s ease;\n}\n@keyframes tt-in {\n  from {\n    opacity: 0;\n    transform: translateY(6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.tt-avatar {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.tt-avatar.male {\n  background: var(--primary);\n}\n.tt-avatar.female {\n  background: var(--pink);\n}\n.tt-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.tt-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.tt-content {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  flex: 1;\n}\n.tt-name {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n  word-break: break-word;\n}\n.tt-dates,\n.tt-lieu {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 11px;\n  color: var(--text-secondary);\n}\n.tt-dates .material-icons-round,\n.tt-lieu .material-icons-round {\n  font-size: 13px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.tt-badges {\n  display: flex;\n  gap: 4px;\n  flex-wrap: wrap;\n  margin-top: 2px;\n}\n.tt-badge {\n  display: inline-flex;\n  align-items: center;\n  padding: 1px 7px;\n  border-radius: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  background: var(--bg-muted);\n  color: var(--text-muted);\n}\n.tt-badge.tt-m {\n  background: #eff6ff;\n  color: var(--primary);\n}\n.tt-badge.tt-f {\n  background: #fdf2f8;\n  color: var(--pink);\n}\n.tt-badge.tt-alive {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.tt-badge.tt-dead {\n  background: #f1f5f9;\n  color: #64748b;\n}\n.tt-hint {\n  font-size: 10px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-style: italic;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.3);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.detail-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 340px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.detail-panel.open {\n  transform: translateX(0);\n}\n.dp-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.dp-header h3 {\n  font-size: 16px;\n  font-weight: 700;\n  margin: 0;\n  color: var(--text-primary);\n}\n.dp-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 24px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.dp-avatar-wrap {\n  margin-bottom: 4px;\n}\n.dp-avatar {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n  font-weight: 700;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);\n}\n.dp-avatar.male {\n  background: var(--primary);\n}\n.dp-avatar.female {\n  background: var(--pink);\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);\n}\n.dp-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.dp-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.dp-name {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  text-align: center;\n  margin: 0;\n  line-height: 1.3;\n}\n.dp-badges {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n.dp-info-list {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  margin-top: 4px;\n}\n.dp-info-item {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  padding: 12px 16px;\n  border-bottom: 1px solid var(--border);\n}\n.dp-info-item:last-child {\n  border-bottom: none;\n}\n.dp-info-item .material-icons-round {\n  font-size: 18px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.dp-info-text {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.dp-info-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n}\n.dp-info-value {\n  font-size: 14px;\n  color: var(--text-primary);\n  font-weight: 500;\n}\n.dp-link {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  text-decoration: none;\n  margin-top: 8px;\n}\n.ts-quick-btns {\n  display: flex;\n  gap: 6px;\n  justify-content: center;\n  margin-top: 6px;\n  flex-wrap: wrap;\n}\n.ts-quick-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  padding: 3px 10px;\n  border-radius: 20px;\n  border: 1.5px solid;\n  font-size: 11px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n}\n.ts-quick-btn .material-icons-round {\n  font-size: 13px !important;\n}\n.ts-quick-btn.ts-qb-child {\n  background: #ECFDF5;\n  border-color: #A7F3D0;\n  color: #059669;\n}\n.ts-quick-btn.ts-qb-child:hover {\n  background: #059669;\n  color: #fff;\n  border-color: #059669;\n}\n.ts-quick-btn.ts-qb-partner {\n  background: #FDF2F8;\n  border-color: #FBCFE8;\n  color: #DB2777;\n}\n.ts-quick-btn.ts-qb-partner:hover {\n  background: #DB2777;\n  color: #fff;\n  border-color: #DB2777;\n}\n.qa-panel {\n  width: 420px !important;\n}\n.qa-for-whom {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 24px;\n  background: var(--bg-muted);\n  border-bottom: 1px solid var(--border);\n  font-size: 13px;\n}\n.qa-tabs {\n  display: flex;\n  border-bottom: 1px solid var(--border);\n}\n.qa-tab {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 11px 12px;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-muted);\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  border-bottom: 2px solid transparent;\n}\n.qa-tab .material-icons-round {\n  font-size: 17px !important;\n}\n.qa-tab.active {\n  color: var(--primary);\n  border-bottom-color: var(--primary);\n  background: var(--primary-bg);\n}\n.qa-tab:hover:not(.active) {\n  background: var(--bg-muted);\n}\n@media (max-width: 640px) {\n  .qa-panel {\n    width: 100vw !important;\n  }\n}\n.ts-multi-card {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 14px 20px;\n  min-width: 130px;\n  background: var(--primary-bg);\n  border: 2.5px solid var(--primary);\n  border-radius: 18px;\n  cursor: pointer;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);\n  transition: var(--transition);\n}\n.ts-multi-card.ts-active {\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.28);\n}\n.ts-multi-card:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25);\n}\n.ts-avatar-lg {\n  width: 56px !important;\n  height: 56px !important;\n  font-size: 18px !important;\n}\n.ts-multi-badge {\n  font-size: 10px;\n  font-weight: 700;\n  color: var(--primary);\n  background: rgba(59, 130, 246, 0.12);\n  border-radius: 10px;\n  padding: 2px 8px;\n}\n.ts-union-branch {\n  cursor: default;\n}\n.ts-union-active {\n  border-color: var(--primary-border);\n}\n.ts-union-divorced {\n  border-color: #D1D5DB;\n  opacity: 0.85;\n}\n.ts-union-widowed {\n  border-color: #E5E7EB;\n}\n.ts-person-ref {\n  width: 80px !important;\n  opacity: 0.75;\n}\n.ts-avatar-ref {\n  width: 34px !important;\n  height: 34px !important;\n  font-size: 11px !important;\n}\n.ts-name-ref {\n  font-size: 10px !important;\n  color: var(--text-muted);\n}\n.ts-heart-active {\n  color: #f43f5e !important;\n}\n.ts-heart-broken {\n  color: #9CA3AF !important;\n}\n.ts-heart-grey {\n  color: #9CA3AF !important;\n}\n.ts-hline-grey {\n  background: #D1D5DB !important;\n}\n.ts-badge-active {\n  background: var(--white);\n  color: var(--primary);\n  border-color: var(--primary-border);\n}\n.ts-badge-divorced {\n  background: #F9FAFB;\n  color: #6B7280;\n  border-color: #E5E7EB;\n}\n.ts-badge-divorced .material-icons-round {\n  color: #9CA3AF !important;\n}\n.ts-badge-widowed {\n  background: #F3F4F6;\n  color: #4B5563;\n  border-color: #D1D5DB;\n}\n.ts-badge-widowed .material-icons-round {\n  color: #6B7280 !important;\n}\n.ts-status-chip {\n  display: inline-block;\n  font-size: 9px;\n  font-weight: 700;\n  padding: 1px 6px;\n  border-radius: 8px;\n  background: rgba(0, 0, 0, 0.06);\n  margin-left: 2px;\n}\n@media (max-width: 640px) {\n  .tree-toolbar {\n    padding: 12px 16px;\n  }\n  .toolbar-right button {\n    min-width: 0;\n  }\n  .detail-panel {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 85vh;\n    transform: translateY(100%);\n  }\n  .detail-panel.open {\n    transform: translateY(0);\n  }\n  .zoom-hint {\n    bottom: 8px;\n    font-size: 11px;\n    padding: 5px 10px;\n  }\n}\n.ts-roots {\n  display: flex;\n  align-items: flex-start;\n  gap: 60px;\n  padding: 40px;\n}\n.ts-subtree {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.ts-couple {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);\n  transition: var(--transition);\n}\n.ts-couple.ts-root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18);\n}\n.ts-couple.ts-selected {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-couple:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.ts-solo-card.ts-root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.ts-solo-card.ts-active {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-solo-card.male:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card.female:hover {\n  border-color: var(--pink);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-person {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  border-radius: 12px;\n  transition: var(--transition);\n}\n.ts-person:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.ts-person.ts-active {\n  background: var(--primary-bg);\n}\n.ts-avatar {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.ts-avatar.male {\n  background: var(--primary);\n}\n.ts-avatar.female {\n  background: var(--pink, #EC4899);\n}\n.ts-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.ts-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.ts-name {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  max-width: 110px;\n  word-break: break-word;\n}\n.ts-year {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n  white-space: nowrap;\n}\n.ts-heart {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.ts-heart .material-icons-round {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.ts-hline {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.ts-union-badge {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.ts-union-badge .material-icons-round {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.ts-down {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  border-radius: 2px;\n  margin-top: 2px;\n}\n.ts-branch {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n}\n.ts-hbar {\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.ts-children-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 40px;\n}\n.ts-child-col {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ts-up {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n/*# sourceMappingURL=tree.component.css.map */\n'] }]
-  }], () => [{ type: ApiService }], { treeVisual: [{
+`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/tree/tree.component.scss */\n.tree-page {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  margin: -28px -32px;\n}\n.tree-toolbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 24px;\n  background: var(--white);\n  border-bottom: 1px solid var(--border);\n  gap: 16px;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.tree-toolbar .toolbar-left {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.tree-toolbar .toolbar-left h2 {\n  font-size: 18px;\n  margin: 0;\n  white-space: nowrap;\n}\n.tree-toolbar .toolbar-right {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n}\n.tree-kiosk-btn {\n  color: var(--primary) !important;\n}\n.root-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px;\n  border-radius: 20px;\n  background: var(--primary-bg);\n  border: 1.5px solid var(--primary-border);\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--primary);\n}\n.root-badge .material-icons-round {\n  font-size: 15px !important;\n}\n.root-badge-name {\n  max-width: 160px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.root-badge-clear {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  border: none;\n  background: var(--primary-border);\n  cursor: pointer;\n  padding: 0;\n}\n.root-badge-clear .material-icons-round {\n  font-size: 12px !important;\n  color: var(--primary);\n}\n.root-badge-clear:hover {\n  background: var(--primary);\n}\n.root-badge-clear:hover .material-icons-round {\n  color: #fff;\n}\n.root-picker-wrap {\n  position: relative;\n}\n.root-pick-btn.active {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.root-pick-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.root-overlay {\n  position: fixed;\n  inset: 0;\n  z-index: 299;\n}\n.root-dropdown {\n  position: absolute;\n  top: calc(100% + 8px);\n  right: 0;\n  width: 280px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);\n  z-index: 300;\n  overflow: hidden;\n  animation: root-drop-in 0.15s ease;\n}\n@keyframes root-drop-in {\n  from {\n    opacity: 0;\n    transform: translateY(-6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.root-search-bar {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-bottom: 1px solid var(--border);\n  background: var(--bg-muted);\n}\n.root-search-bar .material-icons-round {\n  font-size: 17px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.root-search-input {\n  flex: 1;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--text-primary);\n  font-family: inherit;\n}\n.root-search-input:focus {\n  outline: none;\n}\n.root-search-input::placeholder {\n  color: var(--text-muted);\n}\n.root-list {\n  max-height: 280px;\n  overflow-y: auto;\n  padding: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.root-list-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 10px;\n  border-radius: 9px;\n  border: none;\n  background: transparent;\n  text-align: left;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-primary);\n  cursor: pointer;\n  font-family: inherit;\n  transition: background 0.12s;\n}\n.root-list-item .material-icons-round {\n  font-size: 17px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.root-list-item:hover {\n  background: var(--bg-muted);\n}\n.root-list-item.active {\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-weight: 700;\n}\n.root-list-all {\n  border-bottom: 1px solid var(--border);\n  border-radius: 0;\n  margin-bottom: 4px;\n  padding-bottom: 10px;\n}\n.root-list-avatar {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n}\n.root-list-avatar.male {\n  background: var(--primary);\n}\n.root-list-avatar.female {\n  background: var(--pink, #EC4899);\n}\n.root-list-avatar:not(.male):not(.female) {\n  background: var(--text-muted);\n}\n.root-empty {\n  text-align: center;\n  padding: 20px;\n  font-size: 13px;\n  color: var(--text-muted);\n}\n.tree-kiosk .tree-toolbar {\n  display: none;\n}\n.tree-kiosk .tree-canvas {\n  padding: 0;\n}\n.tree-kiosk:hover .tree-toolbar {\n  display: flex;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 50;\n  animation: tree-slide-down 0.2s ease;\n}\n@keyframes tree-slide-down {\n  from {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n.zoom-level {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-muted);\n  min-width: 38px;\n  text-align: center;\n}\n.tree-canvas {\n  flex: 1;\n  background: #F0F4FF;\n  background-image:\n    radial-gradient(\n      circle,\n      #BFDBFE 1px,\n      transparent 1px);\n  background-size: 28px 28px;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px 24px;\n  position: relative;\n}\n.tree-visual {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n  min-width: 500px;\n  transition: transform 0.15s ease;\n  transform-origin: top center;\n  cursor: grab;\n  touch-action: none;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.tree-visual:active {\n  cursor: grabbing;\n}\n.generation {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.gen-label {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-muted);\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  background: var(--white);\n  padding: 3px 10px;\n  border-radius: var(--radius-full);\n  border: 1px solid var(--border);\n}\n.gen-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 80px;\n  flex-wrap: nowrap;\n  justify-content: center;\n}\n.gen-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-stem {\n  width: 2px;\n  border-radius: 2px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n}\n.group-stem.stem-single {\n  height: 40px;\n}\n.group-stem.stem-multi {\n  height: 20px;\n}\n.group-items {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  position: relative;\n}\n.group-items.multi::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: var(--bar-l, 55px);\n  right: var(--bar-r, 55px);\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.group-items.multi {\n  background: rgba(219, 234, 254, 0.28);\n  border-radius: 14px;\n  padding-bottom: 8px;\n}\n.group-child-wrap {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.group-child-drop {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.down-connector {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  margin-top: 2px;\n  border-radius: 2px;\n}\n.generation + .generation {\n  margin-top: 4px;\n}\n.union-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.solo-group {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.couple-wrap {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);\n  transition: var(--transition);\n}\n.couple-wrap.root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);\n}\n.couple-wrap.selected {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.couple-wrap:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.union-heart-connector {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.union-heart-connector .material-icons-round {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.union-heart-connector .union-hline {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.union-badge {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.union-badge .material-icons-round {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.tree-node {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  transition: var(--transition);\n  border-radius: 12px;\n}\n.tree-node:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.tree-node.active {\n  background: var(--primary-bg);\n}\n.tree-node.solo {\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n}\n.tree-node.solo.root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.tree-node.solo:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.tree-node.solo.active {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\n}\n.node-avatar {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.node-avatar.male {\n  background: var(--primary);\n}\n.node-avatar.female {\n  background: var(--pink);\n}\n.node-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.node-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.node-name {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  word-break: break-word;\n}\n.node-year {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n}\n.zoom-hint {\n  position: fixed;\n  bottom: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(15, 23, 42, 0.7);\n  color: #fff;\n  font-size: 12px;\n  padding: 6px 14px;\n  border-radius: var(--radius-full);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  pointer-events: none;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  z-index: 10;\n}\n.zoom-hint .material-icons-round {\n  font-size: 14px !important;\n}\n.tree-tooltip {\n  position: fixed;\n  z-index: 500;\n  pointer-events: none;\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  background: var(--white);\n  border: 1px solid var(--border);\n  border-radius: 14px;\n  padding: 12px 14px;\n  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);\n  min-width: 220px;\n  max-width: 280px;\n  animation: tt-in 0.15s ease;\n}\n@keyframes tt-in {\n  from {\n    opacity: 0;\n    transform: translateY(6px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.tt-avatar {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 15px;\n  font-weight: 700;\n  color: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.tt-avatar.male {\n  background: var(--primary);\n}\n.tt-avatar.female {\n  background: var(--pink);\n}\n.tt-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.tt-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.tt-content {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  flex: 1;\n}\n.tt-name {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n  word-break: break-word;\n}\n.tt-dates,\n.tt-lieu {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 11px;\n  color: var(--text-secondary);\n}\n.tt-dates .material-icons-round,\n.tt-lieu .material-icons-round {\n  font-size: 13px !important;\n  color: var(--text-muted);\n  flex-shrink: 0;\n}\n.tt-badges {\n  display: flex;\n  gap: 4px;\n  flex-wrap: wrap;\n  margin-top: 2px;\n}\n.tt-badge {\n  display: inline-flex;\n  align-items: center;\n  padding: 1px 7px;\n  border-radius: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  background: var(--bg-muted);\n  color: var(--text-muted);\n}\n.tt-badge.tt-m {\n  background: #eff6ff;\n  color: var(--primary);\n}\n.tt-badge.tt-f {\n  background: #fdf2f8;\n  color: var(--pink);\n}\n.tt-badge.tt-alive {\n  background: #f0fdf4;\n  color: #16a34a;\n}\n.tt-badge.tt-dead {\n  background: #f1f5f9;\n  color: #64748b;\n}\n.tt-hint {\n  font-size: 10px;\n  color: var(--text-muted);\n  margin-top: 4px;\n  font-style: italic;\n}\n.panel-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.3);\n  z-index: 399;\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n}\n.detail-panel {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 340px;\n  height: 100vh;\n  background: var(--white);\n  box-shadow: var(--shadow-xl);\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: 400;\n  display: flex;\n  flex-direction: column;\n}\n.detail-panel.open {\n  transform: translateX(0);\n}\n.dp-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px;\n  border-bottom: 1px solid var(--border);\n  flex-shrink: 0;\n}\n.dp-header h3 {\n  font-size: 16px;\n  font-weight: 700;\n  margin: 0;\n  color: var(--text-primary);\n}\n.dp-body {\n  flex: 1;\n  overflow-y: auto;\n  padding: 28px 24px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n}\n.dp-avatar-wrap {\n  margin-bottom: 4px;\n}\n.dp-avatar {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n  font-weight: 700;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);\n}\n.dp-avatar.male {\n  background: var(--primary);\n}\n.dp-avatar.female {\n  background: var(--pink);\n  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);\n}\n.dp-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.dp-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  z-index: 2;\n}\n.dp-name {\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--text-primary);\n  text-align: center;\n  margin: 0;\n  line-height: 1.3;\n}\n.dp-badges {\n  display: flex;\n  gap: 6px;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n.dp-info-list {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  margin-top: 4px;\n}\n.dp-info-item {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  padding: 12px 16px;\n  border-bottom: 1px solid var(--border);\n}\n.dp-info-item:last-child {\n  border-bottom: none;\n}\n.dp-info-item .material-icons-round {\n  font-size: 18px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.dp-info-text {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.dp-info-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  color: var(--text-muted);\n}\n.dp-info-value {\n  font-size: 14px;\n  color: var(--text-primary);\n  font-weight: 500;\n}\n.dp-link {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  text-decoration: none;\n  margin-top: 8px;\n}\n.ts-quick-btns {\n  display: flex;\n  gap: 6px;\n  justify-content: center;\n  margin-top: 6px;\n  flex-wrap: wrap;\n}\n.ts-quick-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  padding: 3px 10px;\n  border-radius: 20px;\n  border: 1.5px solid;\n  font-size: 11px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n}\n.ts-quick-btn .material-icons-round {\n  font-size: 13px !important;\n}\n.ts-quick-btn.ts-qb-child {\n  background: #ECFDF5;\n  border-color: #A7F3D0;\n  color: #059669;\n}\n.ts-quick-btn.ts-qb-child:hover {\n  background: #059669;\n  color: #fff;\n  border-color: #059669;\n}\n.ts-quick-btn.ts-qb-partner {\n  background: #FDF2F8;\n  border-color: #FBCFE8;\n  color: #DB2777;\n}\n.ts-quick-btn.ts-qb-partner:hover {\n  background: #DB2777;\n  color: #fff;\n  border-color: #DB2777;\n}\n.qa-panel {\n  width: 420px !important;\n}\n.qa-for-whom {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 24px;\n  background: var(--bg-muted);\n  border-bottom: 1px solid var(--border);\n  font-size: 13px;\n}\n.qa-tabs {\n  display: flex;\n  border-bottom: 1px solid var(--border);\n}\n.qa-tab {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 11px 12px;\n  border: none;\n  background: transparent;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-muted);\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  border-bottom: 2px solid transparent;\n}\n.qa-tab .material-icons-round {\n  font-size: 17px !important;\n}\n.qa-tab.active {\n  color: var(--primary);\n  border-bottom-color: var(--primary);\n  background: var(--primary-bg);\n}\n.qa-tab:hover:not(.active) {\n  background: var(--bg-muted);\n}\n@media (max-width: 640px) {\n  .qa-panel {\n    width: 100vw !important;\n  }\n}\n.ts-multi-card {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 14px 20px;\n  min-width: 130px;\n  background: var(--primary-bg);\n  border: 2.5px solid var(--primary);\n  border-radius: 18px;\n  cursor: pointer;\n  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);\n  transition: var(--transition);\n}\n.ts-multi-card.ts-active {\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.28);\n}\n.ts-multi-card:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25);\n}\n.ts-avatar-lg {\n  width: 56px !important;\n  height: 56px !important;\n  font-size: 18px !important;\n}\n.ts-multi-badge {\n  font-size: 10px;\n  font-weight: 700;\n  color: var(--primary);\n  background: rgba(59, 130, 246, 0.12);\n  border-radius: 10px;\n  padding: 2px 8px;\n}\n.ts-union-branch {\n  cursor: default;\n}\n.ts-union-active {\n  border-color: var(--primary-border);\n}\n.ts-union-divorced {\n  border-color: #D1D5DB;\n  opacity: 0.85;\n}\n.ts-union-widowed {\n  border-color: #E5E7EB;\n}\n.ts-person-ref {\n  width: 80px !important;\n  opacity: 0.75;\n}\n.ts-avatar-ref {\n  width: 34px !important;\n  height: 34px !important;\n  font-size: 11px !important;\n}\n.ts-name-ref {\n  font-size: 10px !important;\n  color: var(--text-muted);\n}\n.ts-heart-active {\n  color: #f43f5e !important;\n}\n.ts-heart-broken {\n  color: #9CA3AF !important;\n}\n.ts-heart-grey {\n  color: #9CA3AF !important;\n}\n.ts-hline-grey {\n  background: #D1D5DB !important;\n}\n.ts-badge-active {\n  background: var(--white);\n  color: var(--primary);\n  border-color: var(--primary-border);\n}\n.ts-badge-divorced {\n  background: #F9FAFB;\n  color: #6B7280;\n  border-color: #E5E7EB;\n}\n.ts-badge-divorced .material-icons-round {\n  color: #9CA3AF !important;\n}\n.ts-badge-widowed {\n  background: #F3F4F6;\n  color: #4B5563;\n  border-color: #D1D5DB;\n}\n.ts-badge-widowed .material-icons-round {\n  color: #6B7280 !important;\n}\n.ts-status-chip {\n  display: inline-block;\n  font-size: 9px;\n  font-weight: 700;\n  padding: 1px 6px;\n  border-radius: 8px;\n  background: rgba(0, 0, 0, 0.06);\n  margin-left: 2px;\n}\n@media (max-width: 640px) {\n  .tree-toolbar {\n    padding: 12px 16px;\n  }\n  .toolbar-right button {\n    min-width: 0;\n  }\n  .detail-panel {\n    width: 100vw;\n    border-radius: 20px 20px 0 0;\n    top: auto;\n    bottom: 0;\n    height: 85vh;\n    transform: translateY(100%);\n  }\n  .detail-panel.open {\n    transform: translateY(0);\n  }\n  .zoom-hint {\n    bottom: 8px;\n    font-size: 11px;\n    padding: 5px 10px;\n  }\n}\n.ts-roots {\n  display: flex;\n  align-items: flex-start;\n  gap: 60px;\n  padding: 40px;\n}\n.ts-subtree {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n}\n.ts-couple {\n  display: flex;\n  align-items: flex-start;\n  gap: 0;\n  background: var(--white);\n  border: 2px solid var(--primary-border);\n  border-radius: 20px;\n  padding: 10px 14px;\n  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);\n  transition: var(--transition);\n}\n.ts-couple.ts-root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18);\n}\n.ts-couple.ts-selected {\n  border-color: var(--primary);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-couple:hover {\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-sm);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.ts-solo-card.ts-root {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n}\n.ts-solo-card.ts-active {\n  border-color: var(--primary);\n  background: var(--primary-bg);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);\n}\n.ts-solo-card.male:hover {\n  border-color: var(--primary);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-solo-card.female:hover {\n  border-color: var(--pink);\n  box-shadow: var(--shadow-md);\n  transform: translateY(-2px);\n}\n.ts-person {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  padding: 10px 12px;\n  width: 110px;\n  cursor: pointer;\n  border-radius: 12px;\n  transition: var(--transition);\n}\n.ts-person:hover {\n  background: rgba(59, 130, 246, 0.06);\n}\n.ts-person.ts-active {\n  background: var(--primary-bg);\n}\n.ts-avatar {\n  width: 44px;\n  height: 44px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 13px;\n  color: #fff;\n  background: var(--primary);\n  position: relative;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.ts-avatar.male {\n  background: var(--primary);\n}\n.ts-avatar.female {\n  background: var(--pink, #EC4899);\n}\n.ts-avatar span {\n  position: relative;\n  z-index: 1;\n}\n.ts-avatar-photo {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center top;\n  border-radius: 50%;\n  z-index: 2;\n}\n.ts-name {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--text-primary);\n  text-align: center;\n  line-height: 1.3;\n  max-width: 110px;\n  word-break: break-word;\n}\n.ts-year {\n  font-size: 10px;\n  color: var(--text-muted);\n  text-align: center;\n  white-space: nowrap;\n}\n.ts-heart {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 2px;\n  align-self: center;\n  gap: 4px;\n}\n.ts-heart .material-icons-round {\n  font-size: 18px !important;\n  color: #f43f5e;\n}\n.ts-hline {\n  display: block;\n  width: 20px;\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      #BFDBFE,\n      #f43f5e,\n      #BFDBFE);\n  border-radius: 2px;\n}\n.ts-union-badge {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: var(--white);\n  border: 1px solid var(--primary-border);\n  border-radius: var(--radius-full);\n  padding: 2px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  color: var(--primary);\n  margin-top: 6px;\n  box-shadow: var(--shadow-xs);\n}\n.ts-union-badge .material-icons-round {\n  font-size: 12px !important;\n  color: #f43f5e;\n}\n.ts-down {\n  width: 2px;\n  height: 40px;\n  background:\n    linear-gradient(\n      to bottom,\n      var(--primary-border),\n      var(--primary));\n  border-radius: 2px;\n  margin-top: 2px;\n}\n.ts-branch {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n}\n.ts-hbar {\n  height: 2px;\n  background:\n    linear-gradient(\n      to right,\n      var(--primary-border),\n      var(--primary),\n      var(--primary-border));\n  border-radius: 2px;\n}\n.ts-children-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 40px;\n}\n.ts-child-col {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ts-up {\n  width: 2px;\n  height: 20px;\n  background: var(--primary);\n  border-radius: 2px;\n}\n.empty-state-or {\n  font-size: 12px;\n  color: var(--text-muted);\n  margin: 4px 0 !important;\n}\nlabel.btn-outline {\n  cursor: pointer;\n}\nlabel.btn-outline.disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n  pointer-events: none;\n}\n/*# sourceMappingURL=tree.component.css.map */\n'] }]
+  }], () => [{ type: ApiService }, { type: ToastService }], { treeVisual: [{
     type: ViewChild,
     args: ["treeVisual", { static: false }]
   }], treeCanvas: [{
@@ -8221,7 +8388,7 @@ var TreeComponent = class _TreeComponent {
   }] });
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TreeComponent, { className: "TreeComponent", filePath: "src/app/pages/tree/tree.component.ts", lineNumber: 41 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TreeComponent, { className: "TreeComponent", filePath: "src/app/pages/tree/tree.component.ts", lineNumber: 42 });
 })();
 
 // src/app/pages/stories/stories.component.ts
@@ -8268,7 +8435,7 @@ function StoriesComponent_ng_container_11_Template(rf, ctx) {
 }
 function StoriesComponent_ng_container_12_div_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 38)(1, "div", 39);
+    \u0275\u0275elementStart(0, "div", 39)(1, "div", 40);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "span", 28);
@@ -8289,7 +8456,7 @@ function StoriesComponent_ng_container_12_div_8_Template(rf, ctx) {
 function StoriesComponent_ng_container_12_button_14_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 40);
+    \u0275\u0275elementStart(0, "button", 41);
     \u0275\u0275listener("click", function StoriesComponent_ng_container_12_button_14_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r4);
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -8303,7 +8470,7 @@ function StoriesComponent_ng_container_12_button_14_Template(rf, ctx) {
 function StoriesComponent_ng_container_12_button_16_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 41);
+    \u0275\u0275elementStart(0, "button", 42);
     \u0275\u0275listener("click", function StoriesComponent_ng_container_12_button_16_Template_button_click_0_listener() {
       const t_r6 = \u0275\u0275restoreView(_r5).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -8323,7 +8490,7 @@ function StoriesComponent_ng_container_12_button_16_Template(rf, ctx) {
 function StoriesComponent_ng_container_12_div_17_div_1_button_13_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 59);
+    \u0275\u0275elementStart(0, "button", 60);
     \u0275\u0275listener("click", function StoriesComponent_ng_container_12_div_17_div_1_button_13_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r8);
       const s_r9 = \u0275\u0275nextContext().$implicit;
@@ -8337,7 +8504,7 @@ function StoriesComponent_ng_container_12_div_17_div_1_button_13_Template(rf, ct
 }
 function StoriesComponent_ng_container_12_div_17_div_1_div_14_img_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "img", 64);
+    \u0275\u0275element(0, "img", 65);
   }
   if (rf & 2) {
     const s_r9 = \u0275\u0275nextContext(2).$implicit;
@@ -8346,7 +8513,7 @@ function StoriesComponent_ng_container_12_div_17_div_1_div_14_img_1_Template(rf,
 }
 function StoriesComponent_ng_container_12_div_17_div_1_div_14_video_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "video", 65);
+    \u0275\u0275element(0, "video", 66);
   }
   if (rf & 2) {
     const s_r9 = \u0275\u0275nextContext(2).$implicit;
@@ -8355,13 +8522,13 @@ function StoriesComponent_ng_container_12_div_17_div_1_div_14_video_2_Template(r
 }
 function StoriesComponent_ng_container_12_div_17_div_1_div_14_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 66)(1, "div", 67)(2, "span", 3);
+    \u0275\u0275elementStart(0, "div", 67)(1, "div", 68)(2, "span", 3);
     \u0275\u0275text(3, "mic");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(4, "div", 68)(5, "span", 69);
+    \u0275\u0275elementStart(4, "div", 69)(5, "span", 70);
     \u0275\u0275text(6, "R\xE9cit vocal");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(7, "audio", 70);
+    \u0275\u0275element(7, "audio", 71);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -8372,8 +8539,8 @@ function StoriesComponent_ng_container_12_div_17_div_1_div_14_div_3_Template(rf,
 }
 function StoriesComponent_ng_container_12_div_17_div_1_div_14_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 60);
-    \u0275\u0275template(1, StoriesComponent_ng_container_12_div_17_div_1_div_14_img_1_Template, 1, 1, "img", 61)(2, StoriesComponent_ng_container_12_div_17_div_1_div_14_video_2_Template, 1, 1, "video", 62)(3, StoriesComponent_ng_container_12_div_17_div_1_div_14_div_3_Template, 8, 1, "div", 63);
+    \u0275\u0275elementStart(0, "div", 61);
+    \u0275\u0275template(1, StoriesComponent_ng_container_12_div_17_div_1_div_14_img_1_Template, 1, 1, "img", 62)(2, StoriesComponent_ng_container_12_div_17_div_1_div_14_video_2_Template, 1, 1, "video", 63)(3, StoriesComponent_ng_container_12_div_17_div_1_div_14_div_3_Template, 8, 1, "div", 64);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -8413,25 +8580,25 @@ function StoriesComponent_ng_container_12_div_17_div_1_p_17_Template(rf, ctx) {
 function StoriesComponent_ng_container_12_div_17_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 13)(1, "div", 44)(2, "div", 45)(3, "div", 46);
+    \u0275\u0275elementStart(0, "div", 13)(1, "div", 45)(2, "div", 46)(3, "div", 47);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "div", 47)(6, "span", 48);
+    \u0275\u0275elementStart(5, "div", 48)(6, "span", 49);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "span", 49);
+    \u0275\u0275elementStart(8, "span", 50);
     \u0275\u0275text(9);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(10, "div", 50)(11, "span", 51);
+    \u0275\u0275elementStart(10, "div", 51)(11, "span", 52);
     \u0275\u0275text(12);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(13, StoriesComponent_ng_container_12_div_17_div_1_button_13_Template, 3, 0, "button", 52);
+    \u0275\u0275template(13, StoriesComponent_ng_container_12_div_17_div_1_button_13_Template, 3, 0, "button", 53);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(14, StoriesComponent_ng_container_12_div_17_div_1_div_14_Template, 4, 3, "div", 53);
-    \u0275\u0275elementStart(15, "div", 54);
+    \u0275\u0275template(14, StoriesComponent_ng_container_12_div_17_div_1_div_14_Template, 4, 3, "div", 54);
+    \u0275\u0275elementStart(15, "div", 55);
     \u0275\u0275template(16, StoriesComponent_ng_container_12_div_17_div_1_h4_16_Template, 2, 1, "h4", 4)(17, StoriesComponent_ng_container_12_div_17_div_1_p_17_Template, 2, 1, "p", 4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(18, "div", 55)(19, "button", 56);
+    \u0275\u0275elementStart(18, "div", 56)(19, "button", 57);
     \u0275\u0275listener("click", function StoriesComponent_ng_container_12_div_17_div_1_Template_button_click_19_listener() {
       const s_r9 = \u0275\u0275restoreView(_r7).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(3);
@@ -8442,12 +8609,12 @@ function StoriesComponent_ng_container_12_div_17_div_1_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275text(22);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(23, "button", 57)(24, "span", 3);
+    \u0275\u0275elementStart(23, "button", 58)(24, "span", 3);
     \u0275\u0275text(25, "chat_bubble_outline");
     \u0275\u0275elementEnd();
     \u0275\u0275text(26);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "button", 58)(28, "span", 3);
+    \u0275\u0275elementStart(27, "button", 59)(28, "span", 3);
     \u0275\u0275text(29, "share");
     \u0275\u0275elementEnd();
     \u0275\u0275text(30, " Partager ");
@@ -8488,8 +8655,8 @@ function StoriesComponent_ng_container_12_div_17_div_1_Template(rf, ctx) {
 }
 function StoriesComponent_ng_container_12_div_17_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 42);
-    \u0275\u0275template(1, StoriesComponent_ng_container_12_div_17_div_1_Template, 31, 21, "div", 43);
+    \u0275\u0275elementStart(0, "div", 43);
+    \u0275\u0275template(1, StoriesComponent_ng_container_12_div_17_div_1_Template, 31, 21, "div", 44);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -8530,13 +8697,13 @@ function StoriesComponent_ng_container_12_div_18_button_7_Template(rf, ctx) {
 }
 function StoriesComponent_ng_container_12_div_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 71)(1, "span", 3);
+    \u0275\u0275elementStart(0, "div", 72)(1, "span", 3);
     \u0275\u0275text(2, "auto_stories");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "h3");
     \u0275\u0275text(4, "Aucune story");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(5, StoriesComponent_ng_container_12_div_18_p_5_Template, 2, 0, "p", 4)(6, StoriesComponent_ng_container_12_div_18_p_6_Template, 2, 0, "p", 4)(7, StoriesComponent_ng_container_12_div_18_button_7_Template, 4, 0, "button", 72);
+    \u0275\u0275template(5, StoriesComponent_ng_container_12_div_18_p_5_Template, 2, 0, "p", 4)(6, StoriesComponent_ng_container_12_div_18_p_6_Template, 2, 0, "p", 4)(7, StoriesComponent_ng_container_12_div_18_button_7_Template, 4, 0, "button", 73);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -8547,6 +8714,40 @@ function StoriesComponent_ng_container_12_div_18_Template(rf, ctx) {
     \u0275\u0275property("ngIf", !ctx_r1.searchQuery && ctx_r1.selectedTag === "tous");
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", !ctx_r1.searchQuery && ctx_r1.selectedTag === "tous");
+  }
+}
+function StoriesComponent_ng_container_12_div_19_span_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "span", 77);
+  }
+}
+function StoriesComponent_ng_container_12_div_19_ng_container_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275text(1, "Charger plus");
+    \u0275\u0275elementContainerEnd();
+  }
+}
+function StoriesComponent_ng_container_12_div_19_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r11 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 74)(1, "button", 75);
+    \u0275\u0275listener("click", function StoriesComponent_ng_container_12_div_19_Template_button_click_1_listener() {
+      \u0275\u0275restoreView(_r11);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.loadMore());
+    });
+    \u0275\u0275template(2, StoriesComponent_ng_container_12_div_19_span_2_Template, 1, 0, "span", 76)(3, StoriesComponent_ng_container_12_div_19_ng_container_3_Template, 2, 0, "ng-container", 4);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275property("disabled", ctx_r1.loadingMore);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.loadingMore);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r1.loadingMore);
   }
 }
 function StoriesComponent_ng_container_12_Template(rf, ctx) {
@@ -8583,7 +8784,7 @@ function StoriesComponent_ng_container_12_Template(rf, ctx) {
     \u0275\u0275elementStart(15, "div", 34);
     \u0275\u0275template(16, StoriesComponent_ng_container_12_button_16_Template, 2, 3, "button", 35);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(17, StoriesComponent_ng_container_12_div_17_Template, 2, 2, "div", 36)(18, StoriesComponent_ng_container_12_div_18_Template, 8, 3, "div", 37);
+    \u0275\u0275template(17, StoriesComponent_ng_container_12_div_17_Template, 2, 2, "div", 36)(18, StoriesComponent_ng_container_12_div_18_Template, 8, 3, "div", 37)(19, StoriesComponent_ng_container_12_div_19_Template, 4, 3, "div", 38);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
@@ -8600,11 +8801,13 @@ function StoriesComponent_ng_container_12_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r1.storiesFiltrees.length > 0);
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r1.storiesFiltrees.length === 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.page < ctx_r1.totalPages);
   }
 }
 function StoriesComponent_div_13_div_11_div_5_img_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "img", 98);
+    \u0275\u0275element(0, "img", 103);
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(4);
@@ -8613,7 +8816,7 @@ function StoriesComponent_div_13_div_11_div_5_img_1_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_11_div_5_video_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "video", 99);
+    \u0275\u0275element(0, "video", 104);
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(4);
@@ -8622,12 +8825,12 @@ function StoriesComponent_div_13_div_11_div_5_video_2_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_11_div_5_Template(rf, ctx) {
   if (rf & 1) {
-    const _r12 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 94);
-    \u0275\u0275template(1, StoriesComponent_div_13_div_11_div_5_img_1_Template, 1, 1, "img", 95)(2, StoriesComponent_div_13_div_11_div_5_video_2_Template, 1, 1, "video", 96);
-    \u0275\u0275elementStart(3, "button", 97);
+    const _r13 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 99);
+    \u0275\u0275template(1, StoriesComponent_div_13_div_11_div_5_img_1_Template, 1, 1, "img", 100)(2, StoriesComponent_div_13_div_11_div_5_video_2_Template, 1, 1, "video", 101);
+    \u0275\u0275elementStart(3, "button", 102);
     \u0275\u0275listener("click", function StoriesComponent_div_13_div_11_div_5_Template_button_click_3_listener() {
-      \u0275\u0275restoreView(_r12);
+      \u0275\u0275restoreView(_r13);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.removeMedia());
     });
@@ -8645,10 +8848,10 @@ function StoriesComponent_div_13_div_11_div_5_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_11_label_6_Template(rf, ctx) {
   if (rf & 1) {
-    const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "label", 100)(1, "input", 101);
+    const _r14 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "label", 105)(1, "input", 106);
     \u0275\u0275listener("change", function StoriesComponent_div_13_div_11_label_6_Template_input_change_1_listener($event) {
-      \u0275\u0275restoreView(_r13);
+      \u0275\u0275restoreView(_r14);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.onMediaSelected($event));
     });
@@ -8663,12 +8866,12 @@ function StoriesComponent_div_13_div_11_label_6_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_11_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 79)(1, "label", 80);
+    \u0275\u0275elementStart(0, "div", 84)(1, "label", 85);
     \u0275\u0275text(2, "Photo ou vid\xE9o ");
-    \u0275\u0275elementStart(3, "span", 81);
+    \u0275\u0275elementStart(3, "span", 86);
     \u0275\u0275text(4, "(optionnel)");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(5, StoriesComponent_div_13_div_11_div_5_Template, 6, 2, "div", 92)(6, StoriesComponent_div_13_div_11_label_6_Template, 6, 0, "label", 93);
+    \u0275\u0275template(5, StoriesComponent_div_13_div_11_div_5_Template, 6, 2, "div", 97)(6, StoriesComponent_div_13_div_11_label_6_Template, 6, 0, "label", 98);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -8681,10 +8884,10 @@ function StoriesComponent_div_13_div_11_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_12_button_5_Template(rf, ctx) {
   if (rf & 1) {
-    const _r14 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 105);
+    const _r15 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "button", 110);
     \u0275\u0275listener("click", function StoriesComponent_div_13_div_12_button_5_Template_button_click_0_listener() {
-      \u0275\u0275restoreView(_r14);
+      \u0275\u0275restoreView(_r15);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.startRecording());
     });
@@ -8698,18 +8901,18 @@ function StoriesComponent_div_13_div_12_button_5_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_12_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    const _r15 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 106);
-    \u0275\u0275element(1, "div", 107);
-    \u0275\u0275elementStart(2, "span", 108);
+    const _r16 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 111);
+    \u0275\u0275element(1, "div", 112);
+    \u0275\u0275elementStart(2, "span", 113);
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 109);
+    \u0275\u0275elementStart(4, "span", 114);
     \u0275\u0275text(5, "Enregistrement en cours\u2026");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "button", 110);
+    \u0275\u0275elementStart(6, "button", 115);
     \u0275\u0275listener("click", function StoriesComponent_div_13_div_12_div_6_Template_button_click_6_listener() {
-      \u0275\u0275restoreView(_r15);
+      \u0275\u0275restoreView(_r16);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.stopRecording());
     });
@@ -8727,17 +8930,17 @@ function StoriesComponent_div_13_div_12_div_6_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_12_div_7_Template(rf, ctx) {
   if (rf & 1) {
-    const _r16 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 111)(1, "div", 112)(2, "span", 3);
+    const _r17 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 116)(1, "div", 117)(2, "span", 3);
     \u0275\u0275text(3, "mic");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(4, "span");
     \u0275\u0275text(5);
     \u0275\u0275elementEnd()();
-    \u0275\u0275element(6, "audio", 113);
-    \u0275\u0275elementStart(7, "button", 114);
+    \u0275\u0275element(6, "audio", 118);
+    \u0275\u0275elementStart(7, "button", 119);
     \u0275\u0275listener("click", function StoriesComponent_div_13_div_12_div_7_Template_button_click_7_listener() {
-      \u0275\u0275restoreView(_r16);
+      \u0275\u0275restoreView(_r17);
       const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.resetAudio());
     });
@@ -8757,12 +8960,12 @@ function StoriesComponent_div_13_div_12_div_7_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_div_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 79)(1, "label", 80);
+    \u0275\u0275elementStart(0, "div", 84)(1, "label", 85);
     \u0275\u0275text(2, " R\xE9cit audio ");
-    \u0275\u0275elementStart(3, "span", 81);
+    \u0275\u0275elementStart(3, "span", 86);
     \u0275\u0275text(4, "(optionnel)");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(5, StoriesComponent_div_13_div_12_button_5_Template, 5, 0, "button", 102)(6, StoriesComponent_div_13_div_12_div_6_Template, 10, 1, "div", 103)(7, StoriesComponent_div_13_div_12_div_7_Template, 11, 2, "div", 104);
+    \u0275\u0275template(5, StoriesComponent_div_13_div_12_button_5_Template, 5, 0, "button", 107)(6, StoriesComponent_div_13_div_12_div_6_Template, 10, 1, "div", 108)(7, StoriesComponent_div_13_div_12_div_7_Template, 11, 2, "div", 109);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -8777,28 +8980,28 @@ function StoriesComponent_div_13_div_12_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_button_23_Template(rf, ctx) {
   if (rf & 1) {
-    const _r17 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 115);
+    const _r18 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "button", 120);
     \u0275\u0275listener("click", function StoriesComponent_div_13_button_23_Template_button_click_0_listener() {
-      const t_r18 = \u0275\u0275restoreView(_r17).$implicit;
+      const t_r19 = \u0275\u0275restoreView(_r18).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.form.tag = t_r18);
+      return \u0275\u0275resetView(ctx_r1.form.tag = t_r19);
     });
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const t_r18 = ctx.$implicit;
+    const t_r19 = ctx.$implicit;
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275styleProp("background", ctx_r1.form.tag === t_r18 ? ctx_r1.tagColor(t_r18).bg : "")("color", ctx_r1.form.tag === t_r18 ? ctx_r1.tagColor(t_r18).color : "")("border-color", ctx_r1.form.tag === t_r18 ? ctx_r1.tagColor(t_r18).color : "");
-    \u0275\u0275classProp("selected", ctx_r1.form.tag === t_r18);
+    \u0275\u0275styleProp("background", ctx_r1.form.tag === t_r19 ? ctx_r1.tagColor(t_r19).bg : "")("color", ctx_r1.form.tag === t_r19 ? ctx_r1.tagColor(t_r19).color : "")("border-color", ctx_r1.form.tag === t_r19 ? ctx_r1.tagColor(t_r19).color : "");
+    \u0275\u0275classProp("selected", ctx_r1.form.tag === t_r19);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", t_r18, " ");
+    \u0275\u0275textInterpolate1(" ", t_r19, " ");
   }
 }
 function StoriesComponent_div_13_div_30_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 116)(1, "span", 3);
+    \u0275\u0275elementStart(0, "div", 121)(1, "span", 3);
     \u0275\u0275text(2, "error_outline");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -8812,7 +9015,7 @@ function StoriesComponent_div_13_div_30_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_span_35_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 117);
+    \u0275\u0275elementStart(0, "span", 122);
     \u0275\u0275text(1, "sync");
     \u0275\u0275elementEnd();
   }
@@ -8826,82 +9029,82 @@ function StoriesComponent_div_13_span_36_Template(rf, ctx) {
 }
 function StoriesComponent_div_13_Template(rf, ctx) {
   if (rf & 1) {
-    const _r11 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 73);
+    const _r12 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 78);
     \u0275\u0275listener("click", function StoriesComponent_div_13_Template_div_click_0_listener() {
-      \u0275\u0275restoreView(_r11);
+      \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.showForm = false);
     });
-    \u0275\u0275elementStart(1, "div", 74);
+    \u0275\u0275elementStart(1, "div", 79);
     \u0275\u0275listener("click", function StoriesComponent_div_13_Template_div_click_1_listener($event) {
-      \u0275\u0275restoreView(_r11);
+      \u0275\u0275restoreView(_r12);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275elementStart(2, "div", 75)(3, "h3")(4, "span", 3);
+    \u0275\u0275elementStart(2, "div", 80)(3, "h3")(4, "span", 3);
     \u0275\u0275text(5, "auto_stories");
     \u0275\u0275elementEnd();
     \u0275\u0275text(6, " Nouvelle story ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "button", 76);
+    \u0275\u0275elementStart(7, "button", 81);
     \u0275\u0275listener("click", function StoriesComponent_div_13_Template_button_click_7_listener() {
-      \u0275\u0275restoreView(_r11);
+      \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.showForm = false);
     });
     \u0275\u0275elementStart(8, "span", 3);
     \u0275\u0275text(9, "close");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(10, "div", 77);
-    \u0275\u0275template(11, StoriesComponent_div_13_div_11_Template, 7, 2, "div", 78)(12, StoriesComponent_div_13_div_12_Template, 8, 3, "div", 78);
-    \u0275\u0275elementStart(13, "div", 79)(14, "label", 80);
+    \u0275\u0275elementStart(10, "div", 82);
+    \u0275\u0275template(11, StoriesComponent_div_13_div_11_Template, 7, 2, "div", 83)(12, StoriesComponent_div_13_div_12_Template, 8, 3, "div", 83);
+    \u0275\u0275elementStart(13, "div", 84)(14, "label", 85);
     \u0275\u0275text(15, "Titre ");
-    \u0275\u0275elementStart(16, "span", 81);
+    \u0275\u0275elementStart(16, "span", 86);
     \u0275\u0275text(17, "(optionnel)");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(18, "input", 82);
+    \u0275\u0275elementStart(18, "input", 87);
     \u0275\u0275twoWayListener("ngModelChange", function StoriesComponent_div_13_Template_input_ngModelChange_18_listener($event) {
-      \u0275\u0275restoreView(_r11);
+      \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r1.form.titre, $event) || (ctx_r1.form.titre = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(19, "div", 79)(20, "label", 80);
+    \u0275\u0275elementStart(19, "div", 84)(20, "label", 85);
     \u0275\u0275text(21, "Cat\xE9gorie");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(22, "div", 83);
-    \u0275\u0275template(23, StoriesComponent_div_13_button_23_Template, 2, 9, "button", 84);
+    \u0275\u0275elementStart(22, "div", 88);
+    \u0275\u0275template(23, StoriesComponent_div_13_button_23_Template, 2, 9, "button", 89);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(24, "div", 79)(25, "label", 80);
+    \u0275\u0275elementStart(24, "div", 84)(25, "label", 85);
     \u0275\u0275text(26, "Votre histoire ");
-    \u0275\u0275elementStart(27, "span", 81);
+    \u0275\u0275elementStart(27, "span", 86);
     \u0275\u0275text(28, "(texte, photo/vid\xE9o ou audio requis)");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(29, "textarea", 85);
+    \u0275\u0275elementStart(29, "textarea", 90);
     \u0275\u0275twoWayListener("ngModelChange", function StoriesComponent_div_13_Template_textarea_ngModelChange_29_listener($event) {
-      \u0275\u0275restoreView(_r11);
+      \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r1.form.caption, $event) || (ctx_r1.form.caption = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd()()();
-    \u0275\u0275template(30, StoriesComponent_div_13_div_30_Template, 4, 1, "div", 86);
-    \u0275\u0275elementStart(31, "div", 87)(32, "button", 88);
+    \u0275\u0275template(30, StoriesComponent_div_13_div_30_Template, 4, 1, "div", 91);
+    \u0275\u0275elementStart(31, "div", 92)(32, "button", 93);
     \u0275\u0275listener("click", function StoriesComponent_div_13_Template_button_click_32_listener() {
-      \u0275\u0275restoreView(_r11);
+      \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.showForm = false);
     });
     \u0275\u0275text(33, "Annuler");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(34, "button", 89);
+    \u0275\u0275elementStart(34, "button", 94);
     \u0275\u0275listener("click", function StoriesComponent_div_13_Template_button_click_34_listener() {
-      \u0275\u0275restoreView(_r11);
+      \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.submitForm());
     });
-    \u0275\u0275template(35, StoriesComponent_div_13_span_35_Template, 2, 0, "span", 90)(36, StoriesComponent_div_13_span_36_Template, 2, 0, "span", 91);
+    \u0275\u0275template(35, StoriesComponent_div_13_span_35_Template, 2, 0, "span", 95)(36, StoriesComponent_div_13_span_36_Template, 2, 0, "span", 96);
     \u0275\u0275text(37);
     \u0275\u0275elementEnd()()()();
   }
@@ -8933,8 +9136,12 @@ var StoriesComponent = class _StoriesComponent {
   api;
   auth;
   loading = true;
+  loadingMore = false;
   erreur = "";
   stories = [];
+  page = 1;
+  pageSize = 20;
+  totalPages = 1;
   searchQuery = "";
   selectedTag = "tous";
   tags = ["tous", ...STORY_TAGS];
@@ -8963,9 +9170,30 @@ var StoriesComponent = class _StoriesComponent {
   load() {
     this.loading = true;
     this.erreur = "";
-    this.api.getStories().pipe(catchError(() => of([]))).subscribe((data) => {
-      this.stories = data;
+    this.page = 1;
+    this.api.getStories(this.page, this.pageSize).pipe(catchError(() => of(null))).subscribe((res) => {
+      if (!res) {
+        this.erreur = "Impossible de charger les stories.";
+        this.loading = false;
+        return;
+      }
+      this.stories = res.data;
+      this.totalPages = res.totalPages;
       this.loading = false;
+    });
+  }
+  loadMore() {
+    if (this.loadingMore || this.page >= this.totalPages)
+      return;
+    this.loadingMore = true;
+    const nextPage = this.page + 1;
+    this.api.getStories(nextPage, this.pageSize).pipe(catchError(() => of(null))).subscribe((res) => {
+      if (res) {
+        this.stories = [...this.stories, ...res.data];
+        this.page = res.page;
+        this.totalPages = res.totalPages;
+      }
+      this.loadingMore = false;
     });
   }
   get storiesFiltrees() {
@@ -9161,7 +9389,7 @@ var StoriesComponent = class _StoriesComponent {
   static \u0275fac = function StoriesComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _StoriesComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(AuthService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _StoriesComponent, selectors: [["app-stories"]], standalone: false, decls: 14, vars: 3, consts: [[1, "page-header"], [1, "header-row"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], [4, "ngIf"], ["class", "modal-overlay", 3, "click", 4, "ngIf"], [1, "sk-circles"], ["class", "sk-circle-item", 4, "ngFor", "ngForOf"], [1, "stories-sk-grid", "mt-16"], ["class", "story-card", 4, "ngFor", "ngForOf"], [1, "sk-circle-item"], [1, "sk-avatar", "sk-av-lg"], [1, "sk-line", "sk-xs", 2, "width", "48px", "margin", "6px auto 0"], [1, "story-card"], [2, "display", "flex", "align-items", "center", "justify-content", "space-between", "padding", "18px 20px 14px"], [2, "display", "flex", "align-items", "center", "gap", "10px"], [1, "sk-avatar-sq", "sk-av-md"], [2, "display", "flex", "flex-direction", "column", "gap", "6px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "sk-line", "sk-xs"], [2, "padding", "0 20px 16px", "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "55%"], [1, "stories-circles", "mb-24"], [1, "story-circle", "add-story", 3, "click"], [1, "story-avatar", "add"], [1, "story-label"], ["class", "story-circle", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "stories-toolbar", "mb-20"], [1, "story-search"], ["type", "text", "placeholder", "Rechercher une story\u2026", 3, "ngModelChange", "ngModel"], ["class", "search-clear", 3, "click", 4, "ngIf"], [1, "story-tag-row"], ["class", "story-tag-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], ["class", "stories-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "story-circle"], [1, "story-avatar"], [1, "search-clear", 3, "click"], [1, "story-tag-btn", 3, "click"], [1, "stories-grid"], ["class", "story-card", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "story-card-header"], [1, "sc-author"], [1, "sc-avatar"], [1, "sc-author-info"], [1, "story-name"], [1, "story-date"], [1, "story-header-right"], [1, "story-tag-badge"], ["class", "story-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "story-media", 4, "ngIf"], [1, "story-card-body"], [1, "story-card-footer"], [1, "reaction-btn", 3, "click"], [1, "reaction-btn"], [1, "reaction-btn", "reaction-share"], ["title", "Supprimer", 1, "story-delete-btn", 3, "click"], [1, "story-media"], ["class", "story-media-img", "loading", "lazy", "alt", "", 3, "src", 4, "ngIf"], ["class", "story-media-video", "controls", "", 3, "src", 4, "ngIf"], ["class", "story-audio-player", 4, "ngIf"], ["loading", "lazy", "alt", "", 1, "story-media-img", 3, "src"], ["controls", "", 1, "story-media-video", 3, "src"], [1, "story-audio-player"], [1, "sap-icon"], [1, "sap-content"], [1, "sap-label"], ["controls", "", 1, "sap-audio", 3, "src"], [1, "empty-state"], ["class", "btn-primary", 3, "click", 4, "ngIf"], [1, "modal-overlay", 3, "click"], [1, "story-modal", 3, "click"], [1, "story-modal-head"], [1, "modal-close-btn", 3, "click"], [1, "story-modal-body"], ["class", "form-group", 4, "ngIf"], [1, "form-group"], [1, "form-label"], [1, "form-optional"], ["type", "text", "placeholder", "Ex : Mariage de tonton Amadou\u2026", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "tag-picker"], ["class", "tag-pick-btn", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], ["rows", "5", "placeholder", "Racontez ce moment important pour la famille\u2026", 1, "form-control", "form-textarea", 3, "ngModelChange", "ngModel"], ["class", "error-state", "style", "margin:0 24px 12px", 4, "ngIf"], [1, "story-modal-foot"], [1, "btn-secondary", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], ["class", "media-preview", 4, "ngIf"], ["class", "media-picker", 4, "ngIf"], [1, "media-preview"], ["class", "media-preview-img", "alt", "", 3, "src", 4, "ngIf"], ["class", "media-preview-video", "controls", "", 3, "src", 4, "ngIf"], ["type", "button", 1, "media-remove-btn", 3, "click"], ["alt", "", 1, "media-preview-img", 3, "src"], ["controls", "", 1, "media-preview-video", 3, "src"], [1, "media-picker"], ["type", "file", "accept", "image/*,video/*", "hidden", "", 3, "change"], ["class", "audio-record-btn", "type", "button", 3, "click", 4, "ngIf"], ["class", "audio-recording-wrap", 4, "ngIf"], ["class", "audio-preview-wrap", 4, "ngIf"], ["type", "button", 1, "audio-record-btn", 3, "click"], [1, "audio-recording-wrap"], [1, "audio-rec-dot"], [1, "audio-rec-timer"], [1, "audio-rec-label"], ["type", "button", 1, "audio-stop-btn", 3, "click"], [1, "audio-preview-wrap"], [1, "audio-preview-info"], ["controls", "", 1, "audio-preview-player", 3, "src"], ["type", "button", 1, "audio-reset-btn", 3, "click"], [1, "tag-pick-btn", 3, "click"], [1, "error-state", 2, "margin", "0 24px 12px"], [1, "material-icons-round", "spin"]], template: function StoriesComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _StoriesComponent, selectors: [["app-stories"]], standalone: false, decls: 14, vars: 3, consts: [[1, "page-header"], [1, "header-row"], [1, "btn-primary", 3, "click"], [1, "material-icons-round"], [4, "ngIf"], ["class", "modal-overlay", 3, "click", 4, "ngIf"], [1, "sk-circles"], ["class", "sk-circle-item", 4, "ngFor", "ngForOf"], [1, "stories-sk-grid", "mt-16"], ["class", "story-card", 4, "ngFor", "ngForOf"], [1, "sk-circle-item"], [1, "sk-avatar", "sk-av-lg"], [1, "sk-line", "sk-xs", 2, "width", "48px", "margin", "6px auto 0"], [1, "story-card"], [2, "display", "flex", "align-items", "center", "justify-content", "space-between", "padding", "18px 20px 14px"], [2, "display", "flex", "align-items", "center", "gap", "10px"], [1, "sk-avatar-sq", "sk-av-md"], [2, "display", "flex", "flex-direction", "column", "gap", "6px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-sm"], [1, "sk-line", "sk-xs"], [2, "padding", "0 20px 16px", "display", "flex", "flex-direction", "column", "gap", "8px"], [1, "sk-line", "sk-lg"], [1, "sk-line", "sk-full"], [1, "sk-line", 2, "width", "55%"], [1, "stories-circles", "mb-24"], [1, "story-circle", "add-story", 3, "click"], [1, "story-avatar", "add"], [1, "story-label"], ["class", "story-circle", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "stories-toolbar", "mb-20"], [1, "story-search"], ["type", "text", "placeholder", "Rechercher une story\u2026", 3, "ngModelChange", "ngModel"], ["class", "search-clear", 3, "click", 4, "ngIf"], [1, "story-tag-row"], ["class", "story-tag-btn", 3, "active", "click", 4, "ngFor", "ngForOf"], ["class", "stories-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "load-more-row", 4, "ngIf"], [1, "story-circle"], [1, "story-avatar"], [1, "search-clear", 3, "click"], [1, "story-tag-btn", 3, "click"], [1, "stories-grid"], ["class", "story-card", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "story-card-header"], [1, "sc-author"], [1, "sc-avatar"], [1, "sc-author-info"], [1, "story-name"], [1, "story-date"], [1, "story-header-right"], [1, "story-tag-badge"], ["class", "story-delete-btn", "title", "Supprimer", 3, "click", 4, "ngIf"], ["class", "story-media", 4, "ngIf"], [1, "story-card-body"], [1, "story-card-footer"], [1, "reaction-btn", 3, "click"], [1, "reaction-btn"], [1, "reaction-btn", "reaction-share"], ["title", "Supprimer", 1, "story-delete-btn", 3, "click"], [1, "story-media"], ["class", "story-media-img", "loading", "lazy", "alt", "", 3, "src", 4, "ngIf"], ["class", "story-media-video", "controls", "", 3, "src", 4, "ngIf"], ["class", "story-audio-player", 4, "ngIf"], ["loading", "lazy", "alt", "", 1, "story-media-img", 3, "src"], ["controls", "", 1, "story-media-video", 3, "src"], [1, "story-audio-player"], [1, "sap-icon"], [1, "sap-content"], [1, "sap-label"], ["controls", "", 1, "sap-audio", 3, "src"], [1, "empty-state"], ["class", "btn-primary", 3, "click", 4, "ngIf"], [1, "load-more-row"], [1, "btn-secondary", 3, "click", "disabled"], ["class", "btn-spinner", 4, "ngIf"], [1, "btn-spinner"], [1, "modal-overlay", 3, "click"], [1, "story-modal", 3, "click"], [1, "story-modal-head"], [1, "modal-close-btn", 3, "click"], [1, "story-modal-body"], ["class", "form-group", 4, "ngIf"], [1, "form-group"], [1, "form-label"], [1, "form-optional"], ["type", "text", "placeholder", "Ex : Mariage de tonton Amadou\u2026", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "tag-picker"], ["class", "tag-pick-btn", 3, "selected", "background", "color", "borderColor", "click", 4, "ngFor", "ngForOf"], ["rows", "5", "placeholder", "Racontez ce moment important pour la famille\u2026", 1, "form-control", "form-textarea", 3, "ngModelChange", "ngModel"], ["class", "error-state", "style", "margin:0 24px 12px", 4, "ngIf"], [1, "story-modal-foot"], [1, "btn-secondary", 3, "click"], [1, "btn-primary", 3, "click", "disabled"], ["class", "material-icons-round spin", 4, "ngIf"], ["class", "material-icons-round", 4, "ngIf"], ["class", "media-preview", 4, "ngIf"], ["class", "media-picker", 4, "ngIf"], [1, "media-preview"], ["class", "media-preview-img", "alt", "", 3, "src", 4, "ngIf"], ["class", "media-preview-video", "controls", "", 3, "src", 4, "ngIf"], ["type", "button", 1, "media-remove-btn", 3, "click"], ["alt", "", 1, "media-preview-img", 3, "src"], ["controls", "", 1, "media-preview-video", 3, "src"], [1, "media-picker"], ["type", "file", "accept", "image/*,video/*", "hidden", "", 3, "change"], ["class", "audio-record-btn", "type", "button", 3, "click", 4, "ngIf"], ["class", "audio-recording-wrap", 4, "ngIf"], ["class", "audio-preview-wrap", 4, "ngIf"], ["type", "button", 1, "audio-record-btn", 3, "click"], [1, "audio-recording-wrap"], [1, "audio-rec-dot"], [1, "audio-rec-timer"], [1, "audio-rec-label"], ["type", "button", 1, "audio-stop-btn", 3, "click"], [1, "audio-preview-wrap"], [1, "audio-preview-info"], ["controls", "", 1, "audio-preview-player", 3, "src"], ["type", "button", 1, "audio-reset-btn", 3, "click"], [1, "tag-pick-btn", 3, "click"], [1, "error-state", 2, "margin", "0 24px 12px"], [1, "material-icons-round", "spin"]], template: function StoriesComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div")(3, "h2");
       \u0275\u0275text(4, "Stories familiales");
@@ -9178,7 +9406,7 @@ var StoriesComponent = class _StoriesComponent {
       \u0275\u0275elementEnd();
       \u0275\u0275text(10, " Nouvelle story ");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(11, StoriesComponent_ng_container_11_Template, 5, 4, "ng-container", 4)(12, StoriesComponent_ng_container_12_Template, 19, 7, "ng-container", 4)(13, StoriesComponent_div_13_Template, 38, 10, "div", 5);
+      \u0275\u0275template(11, StoriesComponent_ng_container_11_Template, 5, 4, "ng-container", 4)(12, StoriesComponent_ng_container_12_Template, 20, 8, "ng-container", 4)(13, StoriesComponent_div_13_Template, 38, 10, "div", 5);
     }
     if (rf & 2) {
       \u0275\u0275advance(11);
@@ -9188,7 +9416,7 @@ var StoriesComponent = class _StoriesComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.showForm);
     }
-  }, dependencies: [NgForOf, NgIf, DefaultValueAccessor, NgControlStatus, NgModel], styles: ['@charset "UTF-8";\n\n\n\n.header-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.header-row[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.header-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.stories-circles[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 20px;\n  overflow-x: auto;\n  padding-bottom: 8px;\n}\n.stories-circles[_ngcontent-%COMP%]::-webkit-scrollbar {\n  height: 3px;\n}\n.story-circle[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  flex-shrink: 0;\n  cursor: pointer;\n}\n.story-circle[_ngcontent-%COMP%]:hover   .story-avatar[_ngcontent-%COMP%] {\n  transform: scale(1.05);\n  box-shadow: var(--shadow-md);\n}\n.story-avatar[_ngcontent-%COMP%] {\n  width: 60px;\n  height: 60px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 16px;\n  color: #fff;\n  border: 2.5px solid var(--primary);\n  transition: var(--transition);\n}\n.story-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.story-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.story-avatar.add[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n  border: 2px dashed var(--primary-border);\n}\n.story-avatar.add[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 24px !important;\n}\n.story-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  max-width: 60px;\n  text-align: center;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.sk-circles[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 20px;\n  overflow-x: auto;\n  padding-bottom: 8px;\n}\n.sk-circle-item[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  flex-shrink: 0;\n}\n.sk-circle-item[_ngcontent-%COMP%]   .sk-avatar[_ngcontent-%COMP%] {\n  width: 60px !important;\n  height: 60px !important;\n}\n.stories-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.story-search[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-full);\n  padding: 8px 14px;\n  transition: border-color var(--transition);\n}\n.story-search[_ngcontent-%COMP%]:focus-within {\n  border-color: var(--primary);\n}\n.story-search[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--text-muted);\n}\n.story-search[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  outline: none;\n  background: transparent;\n  font-size: 14px;\n  font-family: inherit;\n  color: var(--text-primary);\n}\n.story-search[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.story-search[_ngcontent-%COMP%]   .search-clear[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  background: none;\n  cursor: pointer;\n  padding: 2px;\n  color: var(--text-muted);\n  transition: color var(--transition);\n}\n.story-search[_ngcontent-%COMP%]   .search-clear[_ngcontent-%COMP%]:hover {\n  color: var(--text-primary);\n}\n.story-search[_ngcontent-%COMP%]   .search-clear[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.story-tag-row[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n  flex-wrap: wrap;\n}\n.story-tag-btn[_ngcontent-%COMP%] {\n  padding: 5px 14px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--white);\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.story-tag-btn[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.story-tag-btn.active[_ngcontent-%COMP%] {\n  background: var(--primary);\n  border-color: var(--primary);\n  color: #fff;\n}\n.stories-sk-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n  gap: 20px;\n}\n.stories-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));\n  gap: 20px;\n}\n.story-card[_ngcontent-%COMP%] {\n  background: var(--white);\n  border-radius: 20px;\n  border: 1px solid #EFF3FF;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  transition: all 0.25s;\n}\n.story-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 8px 32px rgba(29, 78, 216, 0.09);\n  transform: translateY(-3px);\n  border-color: #DBEAFE;\n}\n.story-card-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 20px 14px;\n}\n.sc-author[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.sc-author-info[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n}\n.sc-avatar[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #1D4ED8);\n}\n.sc-avatar.male[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #3B82F6,\n      #1D4ED8);\n}\n.sc-avatar.female[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #EC4899,\n      #F43F5E);\n}\n.story-name[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.story-date[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.story-header-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n.story-tag-badge[_ngcontent-%COMP%] {\n  padding: 4px 10px;\n  border-radius: var(--radius-full);\n  font-size: 11px;\n  font-weight: 600;\n}\n.story-delete-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #D1D5DB;\n  transition: var(--transition);\n}\n.story-delete-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.story-delete-btn[_ngcontent-%COMP%]:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.story-card-body[_ngcontent-%COMP%] {\n  padding: 0 20px 16px;\n  flex: 1;\n}\n.story-card-body[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  font-size: 15px;\n  margin: 0 0 8px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n}\n.story-card-body[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #4B5563;\n  line-height: 1.7;\n  display: -webkit-box;\n  -webkit-line-clamp: 4;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  margin: 0;\n}\n.story-card-footer[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  padding: 12px 20px;\n  border-top: 1px solid #F9FAFB;\n}\n.reaction-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 7px 12px;\n  border: none;\n  background: none;\n  border-radius: 10px;\n  font-size: 13px;\n  font-weight: 500;\n  color: #9CA3AF;\n  cursor: pointer;\n  transition: var(--transition);\n  font-family: inherit;\n}\n.reaction-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.reaction-btn[_ngcontent-%COMP%]:hover {\n  background: #F9FAFB;\n  color: #4B5563;\n}\n.reaction-btn.liked[_ngcontent-%COMP%] {\n  color: #DB2777;\n}\n.reaction-btn.liked[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #DB2777;\n}\n.reaction-share[_ngcontent-%COMP%] {\n  margin-left: auto;\n}\n.modal-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  padding: 16px;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.story-modal[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 20px;\n  width: 100%;\n  max-width: 540px;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);\n  overflow: hidden;\n  animation: _ngcontent-%COMP%_modal-in 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_modal-in {\n  from {\n    transform: translateY(16px) scale(0.98);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0) scale(1);\n    opacity: 1;\n  }\n}\n.story-modal-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px 16px;\n  border-bottom: 1px solid var(--border-light);\n}\n.story-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 17px;\n  margin: 0;\n}\n.story-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--primary);\n  font-size: 20px !important;\n}\n.modal-close-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 32px;\n  height: 32px;\n  border-radius: 10px;\n  border: none;\n  background: var(--bg-muted);\n  cursor: pointer;\n  color: var(--text-secondary);\n  transition: var(--transition);\n}\n.modal-close-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.modal-close-btn[_ngcontent-%COMP%]:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.story-modal-body[_ngcontent-%COMP%] {\n  padding: 20px 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.form-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.form-label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.form-control[_ngcontent-%COMP%] {\n  padding: 10px 14px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md);\n  font-size: 14px;\n  font-family: inherit;\n  color: var(--text-primary);\n  background: var(--white);\n  transition: border-color var(--transition);\n  outline: none;\n}\n.form-control[_ngcontent-%COMP%]:focus {\n  border-color: var(--primary);\n}\n.form-control[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.form-textarea[_ngcontent-%COMP%] {\n  resize: vertical;\n  min-height: 100px;\n}\n.form-optional[_ngcontent-%COMP%] {\n  color: var(--text-muted);\n  font-weight: 400;\n  font-size: 12px;\n  margin-left: 4px;\n}\n.media-picker[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 14px 16px;\n  border: 2px dashed #D1D5DB;\n  border-radius: 12px;\n  cursor: pointer;\n  color: var(--text-secondary);\n  font-size: 14px;\n  transition: all 0.2s;\n}\n.media-picker[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 22px !important;\n  color: var(--primary);\n}\n.media-picker[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.media-preview[_ngcontent-%COMP%] {\n  position: relative;\n  border-radius: 12px;\n  overflow: hidden;\n  background: #000;\n}\n.media-preview-img[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 220px;\n  object-fit: cover;\n  display: block;\n}\n.media-preview-video[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 220px;\n  display: block;\n}\n.media-remove-btn[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  background: rgba(0, 0, 0, 0.55);\n  color: #fff;\n  border: none;\n  border-radius: 50%;\n  width: 28px;\n  height: 28px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  transition: background 0.2s;\n}\n.media-remove-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.media-remove-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(0, 0, 0, 0.82);\n}\n.story-media[_ngcontent-%COMP%] {\n  width: 100%;\n  background: #000;\n}\n.story-media-img[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 340px;\n  object-fit: cover;\n  display: block;\n}\n.story-media-video[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 340px;\n  display: block;\n}\n.story-audio-player[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 14px 16px;\n  background: #EFF6FF;\n  border-top: 1px solid #DBEAFE;\n  border-bottom: 1px solid #DBEAFE;\n}\n.sap-icon[_ngcontent-%COMP%] {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  background: #2563EB;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.sap-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #fff;\n}\n.sap-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  flex: 1;\n  min-width: 0;\n}\n.sap-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 700;\n  color: #2563EB;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.sap-audio[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 32px;\n  accent-color: #2563EB;\n}\n.audio-record-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-radius: 12px;\n  border: 2px dashed #D1D5DB;\n  background: var(--bg-muted);\n  font-family: inherit;\n  font-size: 14px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: all 0.2s;\n  width: 100%;\n}\n.audio-record-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 22px !important;\n  color: var(--primary);\n}\n.audio-record-btn[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.audio-recording-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n  padding: 12px 14px;\n  border-radius: 12px;\n  background: #FEF2F2;\n  border: 1.5px solid #FECACA;\n}\n.audio-rec-dot[_ngcontent-%COMP%] {\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  background: var(--error);\n  flex-shrink: 0;\n  animation: _ngcontent-%COMP%_recPulse 1s infinite;\n}\n@keyframes _ngcontent-%COMP%_recPulse {\n  0%, 100% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.3;\n  }\n}\n.audio-rec-timer[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 800;\n  color: var(--error);\n  letter-spacing: 0.04em;\n  min-width: 40px;\n}\n.audio-rec-label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: var(--error);\n  font-weight: 500;\n  flex: 1;\n}\n.audio-stop-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 7px 14px;\n  border-radius: 20px;\n  border: none;\n  background: var(--error);\n  color: #fff;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n}\n.audio-stop-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.audio-stop-btn[_ngcontent-%COMP%]:hover {\n  opacity: 0.88;\n}\n.audio-preview-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: 12px 14px;\n  border-radius: 12px;\n  background: #EFF6FF;\n  border: 1.5px solid #BFDBFE;\n}\n.audio-preview-info[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  font-size: 13px;\n  font-weight: 600;\n  color: #1D4ED8;\n}\n.audio-preview-info[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.audio-preview-player[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 36px;\n  accent-color: #2563EB;\n}\n.audio-reset-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  align-self: flex-start;\n  padding: 5px 12px;\n  border-radius: 8px;\n  border: 1.5px solid #93C5FD;\n  background: transparent;\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 600;\n  color: #2563EB;\n  cursor: pointer;\n}\n.audio-reset-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.audio-reset-btn[_ngcontent-%COMP%]:hover {\n  background: #DBEAFE;\n}\n.tag-picker[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.tag-pick-btn[_ngcontent-%COMP%] {\n  padding: 5px 14px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--bg-muted);\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.tag-pick-btn[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n}\n.tag-pick-btn.selected[_ngcontent-%COMP%] {\n  font-weight: 700;\n}\n.story-modal-foot[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  gap: 10px;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border-light);\n}\n.empty-state[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  padding: 64px 24px;\n  text-align: center;\n}\n.empty-state[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 48px !important;\n  color: var(--text-muted);\n}\n.empty-state[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 18px;\n  color: var(--text-secondary);\n}\n.empty-state[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  color: var(--text-muted);\n  font-size: 14px;\n}\n.mt-16[_ngcontent-%COMP%] {\n  margin-top: 16px;\n}\n.mb-24[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.mb-20[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_spin 1s linear infinite;\n}\n@media (max-width: 600px) {\n  .story-modal[_ngcontent-%COMP%] {\n    border-radius: 16px 16px 0 0;\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    max-width: 100%;\n  }\n  .modal-overlay[_ngcontent-%COMP%] {\n    align-items: flex-end;\n    padding: 0;\n  }\n}\n/*# sourceMappingURL=stories.component.css.map */'] });
+  }, dependencies: [NgForOf, NgIf, DefaultValueAccessor, NgControlStatus, NgModel], styles: ['@charset "UTF-8";\n\n\n\n.header-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.header-row[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-bottom: 4px;\n}\n.header-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.stories-circles[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 20px;\n  overflow-x: auto;\n  padding-bottom: 8px;\n}\n.stories-circles[_ngcontent-%COMP%]::-webkit-scrollbar {\n  height: 3px;\n}\n.story-circle[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  flex-shrink: 0;\n  cursor: pointer;\n}\n.story-circle[_ngcontent-%COMP%]:hover   .story-avatar[_ngcontent-%COMP%] {\n  transform: scale(1.05);\n  box-shadow: var(--shadow-md);\n}\n.story-avatar[_ngcontent-%COMP%] {\n  width: 60px;\n  height: 60px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 16px;\n  color: #fff;\n  border: 2.5px solid var(--primary);\n  transition: var(--transition);\n}\n.story-avatar.male[_ngcontent-%COMP%] {\n  background: var(--primary);\n}\n.story-avatar.female[_ngcontent-%COMP%] {\n  background: var(--pink);\n}\n.story-avatar.add[_ngcontent-%COMP%] {\n  background: var(--primary-bg);\n  color: var(--primary);\n  border: 2px dashed var(--primary-border);\n}\n.story-avatar.add[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 24px !important;\n}\n.story-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  max-width: 60px;\n  text-align: center;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.sk-circles[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 20px;\n  overflow-x: auto;\n  padding-bottom: 8px;\n}\n.sk-circle-item[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  flex-shrink: 0;\n}\n.sk-circle-item[_ngcontent-%COMP%]   .sk-avatar[_ngcontent-%COMP%] {\n  width: 60px !important;\n  height: 60px !important;\n}\n.stories-toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.story-search[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-full);\n  padding: 8px 14px;\n  transition: border-color var(--transition);\n}\n.story-search[_ngcontent-%COMP%]:focus-within {\n  border-color: var(--primary);\n}\n.story-search[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: var(--text-muted);\n}\n.story-search[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  flex: 1;\n  border: none;\n  outline: none;\n  background: transparent;\n  font-size: 14px;\n  font-family: inherit;\n  color: var(--text-primary);\n}\n.story-search[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.story-search[_ngcontent-%COMP%]   .search-clear[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  background: none;\n  cursor: pointer;\n  padding: 2px;\n  color: var(--text-muted);\n  transition: color var(--transition);\n}\n.story-search[_ngcontent-%COMP%]   .search-clear[_ngcontent-%COMP%]:hover {\n  color: var(--text-primary);\n}\n.story-search[_ngcontent-%COMP%]   .search-clear[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.story-tag-row[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n  flex-wrap: wrap;\n}\n.story-tag-btn[_ngcontent-%COMP%] {\n  padding: 5px 14px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--white);\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.story-tag-btn[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.story-tag-btn.active[_ngcontent-%COMP%] {\n  background: var(--primary);\n  border-color: var(--primary);\n  color: #fff;\n}\n.stories-sk-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n  gap: 20px;\n}\n.stories-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));\n  gap: 20px;\n}\n.story-card[_ngcontent-%COMP%] {\n  background: var(--white);\n  border-radius: 20px;\n  border: 1px solid #EFF3FF;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  transition: all 0.25s;\n}\n.story-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 8px 32px rgba(29, 78, 216, 0.09);\n  transform: translateY(-3px);\n  border-color: #DBEAFE;\n}\n.story-card-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 20px 14px;\n}\n.sc-author[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.sc-author-info[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n}\n.sc-avatar[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #1D4ED8);\n}\n.sc-avatar.male[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #3B82F6,\n      #1D4ED8);\n}\n.sc-avatar.female[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #EC4899,\n      #F43F5E);\n}\n.story-name[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.story-date[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.story-header-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n.story-tag-badge[_ngcontent-%COMP%] {\n  padding: 4px 10px;\n  border-radius: var(--radius-full);\n  font-size: 11px;\n  font-weight: 600;\n}\n.story-delete-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #D1D5DB;\n  transition: var(--transition);\n}\n.story-delete-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.story-delete-btn[_ngcontent-%COMP%]:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.story-card-body[_ngcontent-%COMP%] {\n  padding: 0 20px 16px;\n  flex: 1;\n}\n.story-card-body[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  font-size: 15px;\n  margin: 0 0 8px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n}\n.story-card-body[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: #4B5563;\n  line-height: 1.7;\n  display: -webkit-box;\n  -webkit-line-clamp: 4;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  margin: 0;\n}\n.story-card-footer[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  padding: 12px 20px;\n  border-top: 1px solid #F9FAFB;\n}\n.reaction-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 7px 12px;\n  border: none;\n  background: none;\n  border-radius: 10px;\n  font-size: 13px;\n  font-weight: 500;\n  color: #9CA3AF;\n  cursor: pointer;\n  transition: var(--transition);\n  font-family: inherit;\n}\n.reaction-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.reaction-btn[_ngcontent-%COMP%]:hover {\n  background: #F9FAFB;\n  color: #4B5563;\n}\n.reaction-btn.liked[_ngcontent-%COMP%] {\n  color: #DB2777;\n}\n.reaction-btn.liked[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: #DB2777;\n}\n.reaction-share[_ngcontent-%COMP%] {\n  margin-left: auto;\n}\n.modal-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  padding: 16px;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.story-modal[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 20px;\n  width: 100%;\n  max-width: 540px;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);\n  overflow: hidden;\n  animation: _ngcontent-%COMP%_modal-in 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_modal-in {\n  from {\n    transform: translateY(16px) scale(0.98);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0) scale(1);\n    opacity: 1;\n  }\n}\n.story-modal-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px 16px;\n  border-bottom: 1px solid var(--border-light);\n}\n.story-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 17px;\n  margin: 0;\n}\n.story-modal-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  color: var(--primary);\n  font-size: 20px !important;\n}\n.modal-close-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 32px;\n  height: 32px;\n  border-radius: 10px;\n  border: none;\n  background: var(--bg-muted);\n  cursor: pointer;\n  color: var(--text-secondary);\n  transition: var(--transition);\n}\n.modal-close-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n}\n.modal-close-btn[_ngcontent-%COMP%]:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.story-modal-body[_ngcontent-%COMP%] {\n  padding: 20px 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.form-group[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.form-label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.form-control[_ngcontent-%COMP%] {\n  padding: 10px 14px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md);\n  font-size: 14px;\n  font-family: inherit;\n  color: var(--text-primary);\n  background: var(--white);\n  transition: border-color var(--transition);\n  outline: none;\n}\n.form-control[_ngcontent-%COMP%]:focus {\n  border-color: var(--primary);\n}\n.form-control[_ngcontent-%COMP%]::placeholder {\n  color: var(--text-muted);\n}\n.form-textarea[_ngcontent-%COMP%] {\n  resize: vertical;\n  min-height: 100px;\n}\n.form-optional[_ngcontent-%COMP%] {\n  color: var(--text-muted);\n  font-weight: 400;\n  font-size: 12px;\n  margin-left: 4px;\n}\n.media-picker[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 14px 16px;\n  border: 2px dashed #D1D5DB;\n  border-radius: 12px;\n  cursor: pointer;\n  color: var(--text-secondary);\n  font-size: 14px;\n  transition: all 0.2s;\n}\n.media-picker[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 22px !important;\n  color: var(--primary);\n}\n.media-picker[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.media-preview[_ngcontent-%COMP%] {\n  position: relative;\n  border-radius: 12px;\n  overflow: hidden;\n  background: #000;\n}\n.media-preview-img[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 220px;\n  object-fit: cover;\n  display: block;\n}\n.media-preview-video[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 220px;\n  display: block;\n}\n.media-remove-btn[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  background: rgba(0, 0, 0, 0.55);\n  color: #fff;\n  border: none;\n  border-radius: 50%;\n  width: 28px;\n  height: 28px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  transition: background 0.2s;\n}\n.media-remove-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 15px !important;\n}\n.media-remove-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(0, 0, 0, 0.82);\n}\n.story-media[_ngcontent-%COMP%] {\n  width: 100%;\n  background: #000;\n}\n.story-media-img[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 340px;\n  object-fit: cover;\n  display: block;\n}\n.story-media-video[_ngcontent-%COMP%] {\n  width: 100%;\n  max-height: 340px;\n  display: block;\n}\n.story-audio-player[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 14px 16px;\n  background: #EFF6FF;\n  border-top: 1px solid #DBEAFE;\n  border-bottom: 1px solid #DBEAFE;\n}\n.sap-icon[_ngcontent-%COMP%] {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  background: #2563EB;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.sap-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 18px !important;\n  color: #fff;\n}\n.sap-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  flex: 1;\n  min-width: 0;\n}\n.sap-label[_ngcontent-%COMP%] {\n  font-size: 11px;\n  font-weight: 700;\n  color: #2563EB;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.sap-audio[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 32px;\n  accent-color: #2563EB;\n}\n.audio-record-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-radius: 12px;\n  border: 2px dashed #D1D5DB;\n  background: var(--bg-muted);\n  font-family: inherit;\n  font-size: 14px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: all 0.2s;\n  width: 100%;\n}\n.audio-record-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 22px !important;\n  color: var(--primary);\n}\n.audio-record-btn[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.audio-recording-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n  padding: 12px 14px;\n  border-radius: 12px;\n  background: #FEF2F2;\n  border: 1.5px solid #FECACA;\n}\n.audio-rec-dot[_ngcontent-%COMP%] {\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  background: var(--error);\n  flex-shrink: 0;\n  animation: _ngcontent-%COMP%_recPulse 1s infinite;\n}\n@keyframes _ngcontent-%COMP%_recPulse {\n  0%, 100% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.3;\n  }\n}\n.audio-rec-timer[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 800;\n  color: var(--error);\n  letter-spacing: 0.04em;\n  min-width: 40px;\n}\n.audio-rec-label[_ngcontent-%COMP%] {\n  font-size: 13px;\n  color: var(--error);\n  font-weight: 500;\n  flex: 1;\n}\n.audio-stop-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 7px 14px;\n  border-radius: 20px;\n  border: none;\n  background: var(--error);\n  color: #fff;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n}\n.audio-stop-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.audio-stop-btn[_ngcontent-%COMP%]:hover {\n  opacity: 0.88;\n}\n.audio-preview-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: 12px 14px;\n  border-radius: 12px;\n  background: #EFF6FF;\n  border: 1.5px solid #BFDBFE;\n}\n.audio-preview-info[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  font-size: 13px;\n  font-weight: 600;\n  color: #1D4ED8;\n}\n.audio-preview-info[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 17px !important;\n}\n.audio-preview-player[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 36px;\n  accent-color: #2563EB;\n}\n.audio-reset-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  align-self: flex-start;\n  padding: 5px 12px;\n  border-radius: 8px;\n  border: 1.5px solid #93C5FD;\n  background: transparent;\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 600;\n  color: #2563EB;\n  cursor: pointer;\n}\n.audio-reset-btn[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 14px !important;\n}\n.audio-reset-btn[_ngcontent-%COMP%]:hover {\n  background: #DBEAFE;\n}\n.tag-picker[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.tag-pick-btn[_ngcontent-%COMP%] {\n  padding: 5px 14px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--bg-muted);\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.tag-pick-btn[_ngcontent-%COMP%]:hover {\n  border-color: var(--primary);\n}\n.tag-pick-btn.selected[_ngcontent-%COMP%] {\n  font-weight: 700;\n}\n.story-modal-foot[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  gap: 10px;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border-light);\n}\n.empty-state[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  padding: 64px 24px;\n  text-align: center;\n}\n.empty-state[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 48px !important;\n  color: var(--text-muted);\n}\n.empty-state[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 18px;\n  color: var(--text-secondary);\n}\n.empty-state[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  color: var(--text-muted);\n  font-size: 14px;\n}\n.mt-16[_ngcontent-%COMP%] {\n  margin-top: 16px;\n}\n.mb-24[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.mb-20[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_spin 1s linear infinite;\n}\n.load-more-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  margin-top: 24px;\n}\n.btn-spinner[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 15px;\n  height: 15px;\n  border: 2px solid rgba(0, 0, 0, 0.15);\n  border-top-color: var(--primary);\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.7s linear infinite;\n}\n@media (max-width: 600px) {\n  .story-modal[_ngcontent-%COMP%] {\n    border-radius: 16px 16px 0 0;\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    max-width: 100%;\n  }\n  .modal-overlay[_ngcontent-%COMP%] {\n    align-items: flex-end;\n    padding: 0;\n  }\n}\n/*# sourceMappingURL=stories.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(StoriesComponent, [{
@@ -9345,6 +9573,14 @@ var StoriesComponent = class _StoriesComponent {
     </button>\r
   </div>\r
 \r
+  <!-- Charger plus -->\r
+  <div class="load-more-row" *ngIf="page < totalPages">\r
+    <button class="btn-secondary" [disabled]="loadingMore" (click)="loadMore()">\r
+      <span class="btn-spinner" *ngIf="loadingMore"></span>\r
+      <ng-container *ngIf="!loadingMore">Charger plus</ng-container>\r
+    </button>\r
+  </div>\r
+\r
 </ng-container>\r
 \r
 <!-- ===== MODAL CR\xC9ER STORY ===== -->\r
@@ -9464,7 +9700,7 @@ var StoriesComponent = class _StoriesComponent {
     </div>\r
   </div>\r
 </div>\r
-`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/stories/stories.component.scss */\n.header-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.header-row h2 {\n  margin-bottom: 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.stories-circles {\n  display: flex;\n  gap: 20px;\n  overflow-x: auto;\n  padding-bottom: 8px;\n}\n.stories-circles::-webkit-scrollbar {\n  height: 3px;\n}\n.story-circle {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  flex-shrink: 0;\n  cursor: pointer;\n}\n.story-circle:hover .story-avatar {\n  transform: scale(1.05);\n  box-shadow: var(--shadow-md);\n}\n.story-avatar {\n  width: 60px;\n  height: 60px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 16px;\n  color: #fff;\n  border: 2.5px solid var(--primary);\n  transition: var(--transition);\n}\n.story-avatar.male {\n  background: var(--primary);\n}\n.story-avatar.female {\n  background: var(--pink);\n}\n.story-avatar.add {\n  background: var(--primary-bg);\n  color: var(--primary);\n  border: 2px dashed var(--primary-border);\n}\n.story-avatar.add .material-icons-round {\n  font-size: 24px !important;\n}\n.story-label {\n  font-size: 11px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  max-width: 60px;\n  text-align: center;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.sk-circles {\n  display: flex;\n  gap: 20px;\n  overflow-x: auto;\n  padding-bottom: 8px;\n}\n.sk-circle-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  flex-shrink: 0;\n}\n.sk-circle-item .sk-avatar {\n  width: 60px !important;\n  height: 60px !important;\n}\n.stories-toolbar {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.story-search {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-full);\n  padding: 8px 14px;\n  transition: border-color var(--transition);\n}\n.story-search:focus-within {\n  border-color: var(--primary);\n}\n.story-search .material-icons-round {\n  font-size: 18px !important;\n  color: var(--text-muted);\n}\n.story-search input {\n  flex: 1;\n  border: none;\n  outline: none;\n  background: transparent;\n  font-size: 14px;\n  font-family: inherit;\n  color: var(--text-primary);\n}\n.story-search input::placeholder {\n  color: var(--text-muted);\n}\n.story-search .search-clear {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  background: none;\n  cursor: pointer;\n  padding: 2px;\n  color: var(--text-muted);\n  transition: color var(--transition);\n}\n.story-search .search-clear:hover {\n  color: var(--text-primary);\n}\n.story-search .search-clear .material-icons-round {\n  font-size: 16px !important;\n}\n.story-tag-row {\n  display: flex;\n  gap: 8px;\n  flex-wrap: wrap;\n}\n.story-tag-btn {\n  padding: 5px 14px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--white);\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.story-tag-btn:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.story-tag-btn.active {\n  background: var(--primary);\n  border-color: var(--primary);\n  color: #fff;\n}\n.stories-sk-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n  gap: 20px;\n}\n.stories-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));\n  gap: 20px;\n}\n.story-card {\n  background: var(--white);\n  border-radius: 20px;\n  border: 1px solid #EFF3FF;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  transition: all 0.25s;\n}\n.story-card:hover {\n  box-shadow: 0 8px 32px rgba(29, 78, 216, 0.09);\n  transform: translateY(-3px);\n  border-color: #DBEAFE;\n}\n.story-card-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 20px 14px;\n}\n.sc-author {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.sc-author-info {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n}\n.sc-avatar {\n  width: 40px;\n  height: 40px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #1D4ED8);\n}\n.sc-avatar.male {\n  background:\n    linear-gradient(\n      135deg,\n      #3B82F6,\n      #1D4ED8);\n}\n.sc-avatar.female {\n  background:\n    linear-gradient(\n      135deg,\n      #EC4899,\n      #F43F5E);\n}\n.story-name {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.story-date {\n  display: block;\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.story-header-right {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n.story-tag-badge {\n  padding: 4px 10px;\n  border-radius: var(--radius-full);\n  font-size: 11px;\n  font-weight: 600;\n}\n.story-delete-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #D1D5DB;\n  transition: var(--transition);\n}\n.story-delete-btn .material-icons-round {\n  font-size: 16px !important;\n}\n.story-delete-btn:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.story-card-body {\n  padding: 0 20px 16px;\n  flex: 1;\n}\n.story-card-body h4 {\n  font-size: 15px;\n  margin: 0 0 8px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n}\n.story-card-body p {\n  font-size: 13px;\n  color: #4B5563;\n  line-height: 1.7;\n  display: -webkit-box;\n  -webkit-line-clamp: 4;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  margin: 0;\n}\n.story-card-footer {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  padding: 12px 20px;\n  border-top: 1px solid #F9FAFB;\n}\n.reaction-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 7px 12px;\n  border: none;\n  background: none;\n  border-radius: 10px;\n  font-size: 13px;\n  font-weight: 500;\n  color: #9CA3AF;\n  cursor: pointer;\n  transition: var(--transition);\n  font-family: inherit;\n}\n.reaction-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.reaction-btn:hover {\n  background: #F9FAFB;\n  color: #4B5563;\n}\n.reaction-btn.liked {\n  color: #DB2777;\n}\n.reaction-btn.liked .material-icons-round {\n  color: #DB2777;\n}\n.reaction-share {\n  margin-left: auto;\n}\n.modal-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  padding: 16px;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.story-modal {\n  background: #fff;\n  border-radius: 20px;\n  width: 100%;\n  max-width: 540px;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);\n  overflow: hidden;\n  animation: modal-in 0.2s ease;\n}\n@keyframes modal-in {\n  from {\n    transform: translateY(16px) scale(0.98);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0) scale(1);\n    opacity: 1;\n  }\n}\n.story-modal-head {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px 16px;\n  border-bottom: 1px solid var(--border-light);\n}\n.story-modal-head h3 {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 17px;\n  margin: 0;\n}\n.story-modal-head h3 .material-icons-round {\n  color: var(--primary);\n  font-size: 20px !important;\n}\n.modal-close-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 32px;\n  height: 32px;\n  border-radius: 10px;\n  border: none;\n  background: var(--bg-muted);\n  cursor: pointer;\n  color: var(--text-secondary);\n  transition: var(--transition);\n}\n.modal-close-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.modal-close-btn:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.story-modal-body {\n  padding: 20px 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.form-group {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.form-label {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.form-control {\n  padding: 10px 14px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md);\n  font-size: 14px;\n  font-family: inherit;\n  color: var(--text-primary);\n  background: var(--white);\n  transition: border-color var(--transition);\n  outline: none;\n}\n.form-control:focus {\n  border-color: var(--primary);\n}\n.form-control::placeholder {\n  color: var(--text-muted);\n}\n.form-textarea {\n  resize: vertical;\n  min-height: 100px;\n}\n.form-optional {\n  color: var(--text-muted);\n  font-weight: 400;\n  font-size: 12px;\n  margin-left: 4px;\n}\n.media-picker {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 14px 16px;\n  border: 2px dashed #D1D5DB;\n  border-radius: 12px;\n  cursor: pointer;\n  color: var(--text-secondary);\n  font-size: 14px;\n  transition: all 0.2s;\n}\n.media-picker .material-icons-round {\n  font-size: 22px !important;\n  color: var(--primary);\n}\n.media-picker:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.media-preview {\n  position: relative;\n  border-radius: 12px;\n  overflow: hidden;\n  background: #000;\n}\n.media-preview-img {\n  width: 100%;\n  max-height: 220px;\n  object-fit: cover;\n  display: block;\n}\n.media-preview-video {\n  width: 100%;\n  max-height: 220px;\n  display: block;\n}\n.media-remove-btn {\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  background: rgba(0, 0, 0, 0.55);\n  color: #fff;\n  border: none;\n  border-radius: 50%;\n  width: 28px;\n  height: 28px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  transition: background 0.2s;\n}\n.media-remove-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.media-remove-btn:hover {\n  background: rgba(0, 0, 0, 0.82);\n}\n.story-media {\n  width: 100%;\n  background: #000;\n}\n.story-media-img {\n  width: 100%;\n  max-height: 340px;\n  object-fit: cover;\n  display: block;\n}\n.story-media-video {\n  width: 100%;\n  max-height: 340px;\n  display: block;\n}\n.story-audio-player {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 14px 16px;\n  background: #EFF6FF;\n  border-top: 1px solid #DBEAFE;\n  border-bottom: 1px solid #DBEAFE;\n}\n.sap-icon {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  background: #2563EB;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.sap-icon .material-icons-round {\n  font-size: 18px !important;\n  color: #fff;\n}\n.sap-content {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  flex: 1;\n  min-width: 0;\n}\n.sap-label {\n  font-size: 11px;\n  font-weight: 700;\n  color: #2563EB;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.sap-audio {\n  width: 100%;\n  height: 32px;\n  accent-color: #2563EB;\n}\n.audio-record-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-radius: 12px;\n  border: 2px dashed #D1D5DB;\n  background: var(--bg-muted);\n  font-family: inherit;\n  font-size: 14px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: all 0.2s;\n  width: 100%;\n}\n.audio-record-btn .material-icons-round {\n  font-size: 22px !important;\n  color: var(--primary);\n}\n.audio-record-btn:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.audio-recording-wrap {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n  padding: 12px 14px;\n  border-radius: 12px;\n  background: #FEF2F2;\n  border: 1.5px solid #FECACA;\n}\n.audio-rec-dot {\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  background: var(--error);\n  flex-shrink: 0;\n  animation: recPulse 1s infinite;\n}\n@keyframes recPulse {\n  0%, 100% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.3;\n  }\n}\n.audio-rec-timer {\n  font-size: 18px;\n  font-weight: 800;\n  color: var(--error);\n  letter-spacing: 0.04em;\n  min-width: 40px;\n}\n.audio-rec-label {\n  font-size: 13px;\n  color: var(--error);\n  font-weight: 500;\n  flex: 1;\n}\n.audio-stop-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 7px 14px;\n  border-radius: 20px;\n  border: none;\n  background: var(--error);\n  color: #fff;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n}\n.audio-stop-btn .material-icons-round {\n  font-size: 16px !important;\n}\n.audio-stop-btn:hover {\n  opacity: 0.88;\n}\n.audio-preview-wrap {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: 12px 14px;\n  border-radius: 12px;\n  background: #EFF6FF;\n  border: 1.5px solid #BFDBFE;\n}\n.audio-preview-info {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  font-size: 13px;\n  font-weight: 600;\n  color: #1D4ED8;\n}\n.audio-preview-info .material-icons-round {\n  font-size: 17px !important;\n}\n.audio-preview-player {\n  width: 100%;\n  height: 36px;\n  accent-color: #2563EB;\n}\n.audio-reset-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  align-self: flex-start;\n  padding: 5px 12px;\n  border-radius: 8px;\n  border: 1.5px solid #93C5FD;\n  background: transparent;\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 600;\n  color: #2563EB;\n  cursor: pointer;\n}\n.audio-reset-btn .material-icons-round {\n  font-size: 14px !important;\n}\n.audio-reset-btn:hover {\n  background: #DBEAFE;\n}\n.tag-picker {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.tag-pick-btn {\n  padding: 5px 14px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--bg-muted);\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.tag-pick-btn:hover {\n  border-color: var(--primary);\n}\n.tag-pick-btn.selected {\n  font-weight: 700;\n}\n.story-modal-foot {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  gap: 10px;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border-light);\n}\n.empty-state {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  padding: 64px 24px;\n  text-align: center;\n}\n.empty-state .material-icons-round {\n  font-size: 48px !important;\n  color: var(--text-muted);\n}\n.empty-state h3 {\n  margin: 0;\n  font-size: 18px;\n  color: var(--text-secondary);\n}\n.empty-state p {\n  margin: 0;\n  color: var(--text-muted);\n  font-size: 14px;\n}\n.mt-16 {\n  margin-top: 16px;\n}\n.mb-24 {\n  margin-bottom: 24px;\n}\n.mb-20 {\n  margin-bottom: 20px;\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin {\n  animation: spin 1s linear infinite;\n}\n@media (max-width: 600px) {\n  .story-modal {\n    border-radius: 16px 16px 0 0;\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    max-width: 100%;\n  }\n  .modal-overlay {\n    align-items: flex-end;\n    padding: 0;\n  }\n}\n/*# sourceMappingURL=stories.component.css.map */\n'] }]
+`, styles: ['@charset "UTF-8";\n\n/* src/app/pages/stories/stories.component.scss */\n.header-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.header-row h2 {\n  margin-bottom: 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.stories-circles {\n  display: flex;\n  gap: 20px;\n  overflow-x: auto;\n  padding-bottom: 8px;\n}\n.stories-circles::-webkit-scrollbar {\n  height: 3px;\n}\n.story-circle {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  flex-shrink: 0;\n  cursor: pointer;\n}\n.story-circle:hover .story-avatar {\n  transform: scale(1.05);\n  box-shadow: var(--shadow-md);\n}\n.story-avatar {\n  width: 60px;\n  height: 60px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 16px;\n  color: #fff;\n  border: 2.5px solid var(--primary);\n  transition: var(--transition);\n}\n.story-avatar.male {\n  background: var(--primary);\n}\n.story-avatar.female {\n  background: var(--pink);\n}\n.story-avatar.add {\n  background: var(--primary-bg);\n  color: var(--primary);\n  border: 2px dashed var(--primary-border);\n}\n.story-avatar.add .material-icons-round {\n  font-size: 24px !important;\n}\n.story-label {\n  font-size: 11px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  max-width: 60px;\n  text-align: center;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.sk-circles {\n  display: flex;\n  gap: 20px;\n  overflow-x: auto;\n  padding-bottom: 8px;\n}\n.sk-circle-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  flex-shrink: 0;\n}\n.sk-circle-item .sk-avatar {\n  width: 60px !important;\n  height: 60px !important;\n}\n.stories-toolbar {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.story-search {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  background: var(--white);\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-full);\n  padding: 8px 14px;\n  transition: border-color var(--transition);\n}\n.story-search:focus-within {\n  border-color: var(--primary);\n}\n.story-search .material-icons-round {\n  font-size: 18px !important;\n  color: var(--text-muted);\n}\n.story-search input {\n  flex: 1;\n  border: none;\n  outline: none;\n  background: transparent;\n  font-size: 14px;\n  font-family: inherit;\n  color: var(--text-primary);\n}\n.story-search input::placeholder {\n  color: var(--text-muted);\n}\n.story-search .search-clear {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  background: none;\n  cursor: pointer;\n  padding: 2px;\n  color: var(--text-muted);\n  transition: color var(--transition);\n}\n.story-search .search-clear:hover {\n  color: var(--text-primary);\n}\n.story-search .search-clear .material-icons-round {\n  font-size: 16px !important;\n}\n.story-tag-row {\n  display: flex;\n  gap: 8px;\n  flex-wrap: wrap;\n}\n.story-tag-btn {\n  padding: 5px 14px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--white);\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.story-tag-btn:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.story-tag-btn.active {\n  background: var(--primary);\n  border-color: var(--primary);\n  color: #fff;\n}\n.stories-sk-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n  gap: 20px;\n}\n.stories-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));\n  gap: 20px;\n}\n.story-card {\n  background: var(--white);\n  border-radius: 20px;\n  border: 1px solid #EFF3FF;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  transition: all 0.25s;\n}\n.story-card:hover {\n  box-shadow: 0 8px 32px rgba(29, 78, 216, 0.09);\n  transform: translateY(-3px);\n  border-color: #DBEAFE;\n}\n.story-card-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 20px 14px;\n}\n.sc-author {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.sc-author-info {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n}\n.sc-avatar {\n  width: 40px;\n  height: 40px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  font-weight: 700;\n  color: #fff;\n  flex-shrink: 0;\n  background:\n    linear-gradient(\n      135deg,\n      #60A5FA,\n      #1D4ED8);\n}\n.sc-avatar.male {\n  background:\n    linear-gradient(\n      135deg,\n      #3B82F6,\n      #1D4ED8);\n}\n.sc-avatar.female {\n  background:\n    linear-gradient(\n      135deg,\n      #EC4899,\n      #F43F5E);\n}\n.story-name {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.story-date {\n  display: block;\n  font-size: 11px;\n  color: var(--text-muted);\n}\n.story-header-right {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n.story-tag-badge {\n  padding: 4px 10px;\n  border-radius: var(--radius-full);\n  font-size: 11px;\n  font-weight: 600;\n}\n.story-delete-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: #D1D5DB;\n  transition: var(--transition);\n}\n.story-delete-btn .material-icons-round {\n  font-size: 16px !important;\n}\n.story-delete-btn:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.story-card-body {\n  padding: 0 20px 16px;\n  flex: 1;\n}\n.story-card-body h4 {\n  font-size: 15px;\n  margin: 0 0 8px;\n  font-weight: 700;\n  color: var(--text-primary);\n  line-height: 1.3;\n}\n.story-card-body p {\n  font-size: 13px;\n  color: #4B5563;\n  line-height: 1.7;\n  display: -webkit-box;\n  -webkit-line-clamp: 4;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  margin: 0;\n}\n.story-card-footer {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  padding: 12px 20px;\n  border-top: 1px solid #F9FAFB;\n}\n.reaction-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 7px 12px;\n  border: none;\n  background: none;\n  border-radius: 10px;\n  font-size: 13px;\n  font-weight: 500;\n  color: #9CA3AF;\n  cursor: pointer;\n  transition: var(--transition);\n  font-family: inherit;\n}\n.reaction-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.reaction-btn:hover {\n  background: #F9FAFB;\n  color: #4B5563;\n}\n.reaction-btn.liked {\n  color: #DB2777;\n}\n.reaction-btn.liked .material-icons-round {\n  color: #DB2777;\n}\n.reaction-share {\n  margin-left: auto;\n}\n.modal-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.45);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  padding: 16px;\n  -webkit-backdrop-filter: blur(3px);\n  backdrop-filter: blur(3px);\n}\n.story-modal {\n  background: #fff;\n  border-radius: 20px;\n  width: 100%;\n  max-width: 540px;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);\n  overflow: hidden;\n  animation: modal-in 0.2s ease;\n}\n@keyframes modal-in {\n  from {\n    transform: translateY(16px) scale(0.98);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0) scale(1);\n    opacity: 1;\n  }\n}\n.story-modal-head {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px 24px 16px;\n  border-bottom: 1px solid var(--border-light);\n}\n.story-modal-head h3 {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 17px;\n  margin: 0;\n}\n.story-modal-head h3 .material-icons-round {\n  color: var(--primary);\n  font-size: 20px !important;\n}\n.modal-close-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 32px;\n  height: 32px;\n  border-radius: 10px;\n  border: none;\n  background: var(--bg-muted);\n  cursor: pointer;\n  color: var(--text-secondary);\n  transition: var(--transition);\n}\n.modal-close-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.modal-close-btn:hover {\n  background: var(--error-bg);\n  color: var(--error);\n}\n.story-modal-body {\n  padding: 20px 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.form-group {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.form-label {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.form-control {\n  padding: 10px 14px;\n  border: 1.5px solid var(--border);\n  border-radius: var(--radius-md);\n  font-size: 14px;\n  font-family: inherit;\n  color: var(--text-primary);\n  background: var(--white);\n  transition: border-color var(--transition);\n  outline: none;\n}\n.form-control:focus {\n  border-color: var(--primary);\n}\n.form-control::placeholder {\n  color: var(--text-muted);\n}\n.form-textarea {\n  resize: vertical;\n  min-height: 100px;\n}\n.form-optional {\n  color: var(--text-muted);\n  font-weight: 400;\n  font-size: 12px;\n  margin-left: 4px;\n}\n.media-picker {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 14px 16px;\n  border: 2px dashed #D1D5DB;\n  border-radius: 12px;\n  cursor: pointer;\n  color: var(--text-secondary);\n  font-size: 14px;\n  transition: all 0.2s;\n}\n.media-picker .material-icons-round {\n  font-size: 22px !important;\n  color: var(--primary);\n}\n.media-picker:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.media-preview {\n  position: relative;\n  border-radius: 12px;\n  overflow: hidden;\n  background: #000;\n}\n.media-preview-img {\n  width: 100%;\n  max-height: 220px;\n  object-fit: cover;\n  display: block;\n}\n.media-preview-video {\n  width: 100%;\n  max-height: 220px;\n  display: block;\n}\n.media-remove-btn {\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  background: rgba(0, 0, 0, 0.55);\n  color: #fff;\n  border: none;\n  border-radius: 50%;\n  width: 28px;\n  height: 28px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  transition: background 0.2s;\n}\n.media-remove-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.media-remove-btn:hover {\n  background: rgba(0, 0, 0, 0.82);\n}\n.story-media {\n  width: 100%;\n  background: #000;\n}\n.story-media-img {\n  width: 100%;\n  max-height: 340px;\n  object-fit: cover;\n  display: block;\n}\n.story-media-video {\n  width: 100%;\n  max-height: 340px;\n  display: block;\n}\n.story-audio-player {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 14px 16px;\n  background: #EFF6FF;\n  border-top: 1px solid #DBEAFE;\n  border-bottom: 1px solid #DBEAFE;\n}\n.sap-icon {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  background: #2563EB;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.sap-icon .material-icons-round {\n  font-size: 18px !important;\n  color: #fff;\n}\n.sap-content {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  flex: 1;\n  min-width: 0;\n}\n.sap-label {\n  font-size: 11px;\n  font-weight: 700;\n  color: #2563EB;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.sap-audio {\n  width: 100%;\n  height: 32px;\n  accent-color: #2563EB;\n}\n.audio-record-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 18px;\n  border-radius: 12px;\n  border: 2px dashed #D1D5DB;\n  background: var(--bg-muted);\n  font-family: inherit;\n  font-size: 14px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: all 0.2s;\n  width: 100%;\n}\n.audio-record-btn .material-icons-round {\n  font-size: 22px !important;\n  color: var(--primary);\n}\n.audio-record-btn:hover {\n  border-color: var(--primary);\n  color: var(--primary);\n  background: var(--primary-bg);\n}\n.audio-recording-wrap {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n  padding: 12px 14px;\n  border-radius: 12px;\n  background: #FEF2F2;\n  border: 1.5px solid #FECACA;\n}\n.audio-rec-dot {\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  background: var(--error);\n  flex-shrink: 0;\n  animation: recPulse 1s infinite;\n}\n@keyframes recPulse {\n  0%, 100% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.3;\n  }\n}\n.audio-rec-timer {\n  font-size: 18px;\n  font-weight: 800;\n  color: var(--error);\n  letter-spacing: 0.04em;\n  min-width: 40px;\n}\n.audio-rec-label {\n  font-size: 13px;\n  color: var(--error);\n  font-weight: 500;\n  flex: 1;\n}\n.audio-stop-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 7px 14px;\n  border-radius: 20px;\n  border: none;\n  background: var(--error);\n  color: #fff;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n}\n.audio-stop-btn .material-icons-round {\n  font-size: 16px !important;\n}\n.audio-stop-btn:hover {\n  opacity: 0.88;\n}\n.audio-preview-wrap {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: 12px 14px;\n  border-radius: 12px;\n  background: #EFF6FF;\n  border: 1.5px solid #BFDBFE;\n}\n.audio-preview-info {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  font-size: 13px;\n  font-weight: 600;\n  color: #1D4ED8;\n}\n.audio-preview-info .material-icons-round {\n  font-size: 17px !important;\n}\n.audio-preview-player {\n  width: 100%;\n  height: 36px;\n  accent-color: #2563EB;\n}\n.audio-reset-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  align-self: flex-start;\n  padding: 5px 12px;\n  border-radius: 8px;\n  border: 1.5px solid #93C5FD;\n  background: transparent;\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 600;\n  color: #2563EB;\n  cursor: pointer;\n}\n.audio-reset-btn .material-icons-round {\n  font-size: 14px !important;\n}\n.audio-reset-btn:hover {\n  background: #DBEAFE;\n}\n.tag-picker {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.tag-pick-btn {\n  padding: 5px 14px;\n  border-radius: var(--radius-full);\n  border: 1.5px solid var(--border);\n  background: var(--bg-muted);\n  font-family: inherit;\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--text-secondary);\n  cursor: pointer;\n  transition: var(--transition);\n}\n.tag-pick-btn:hover {\n  border-color: var(--primary);\n}\n.tag-pick-btn.selected {\n  font-weight: 700;\n}\n.story-modal-foot {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  gap: 10px;\n  padding: 16px 24px;\n  border-top: 1px solid var(--border-light);\n}\n.empty-state {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  padding: 64px 24px;\n  text-align: center;\n}\n.empty-state .material-icons-round {\n  font-size: 48px !important;\n  color: var(--text-muted);\n}\n.empty-state h3 {\n  margin: 0;\n  font-size: 18px;\n  color: var(--text-secondary);\n}\n.empty-state p {\n  margin: 0;\n  color: var(--text-muted);\n  font-size: 14px;\n}\n.mt-16 {\n  margin-top: 16px;\n}\n.mb-24 {\n  margin-bottom: 24px;\n}\n.mb-20 {\n  margin-bottom: 20px;\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spin {\n  animation: spin 1s linear infinite;\n}\n.load-more-row {\n  display: flex;\n  justify-content: center;\n  margin-top: 24px;\n}\n.btn-spinner {\n  display: inline-block;\n  width: 15px;\n  height: 15px;\n  border: 2px solid rgba(0, 0, 0, 0.15);\n  border-top-color: var(--primary);\n  border-radius: 50%;\n  animation: spin 0.7s linear infinite;\n}\n@media (max-width: 600px) {\n  .story-modal {\n    border-radius: 16px 16px 0 0;\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    max-width: 100%;\n  }\n  .modal-overlay {\n    align-items: flex-end;\n    padding: 0;\n  }\n}\n/*# sourceMappingURL=stories.component.css.map */\n'] }]
   }], () => [{ type: ApiService }, { type: AuthService }], null);
 })();
 (() => {
@@ -15887,6 +16123,55 @@ function ProfilComponent_ng_container_2_button_84_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r1.theme.current === t_r10.name);
   }
 }
+function ProfilComponent_ng_container_2_div_87_span_10_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 79);
+    \u0275\u0275text(1, "sync");
+    \u0275\u0275elementEnd();
+  }
+}
+function ProfilComponent_ng_container_2_div_87_ng_container_11_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275text(1);
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r1.pushEnabled ? "D\xE9sactiver" : "Activer");
+  }
+}
+function ProfilComponent_ng_container_2_div_87_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r11 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 34)(1, "div", 27)(2, "div", 28)(3, "span", 29);
+    \u0275\u0275text(4, "notifications_active");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(5, " Notifications ");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(6, "div", 105)(7, "span");
+    \u0275\u0275text(8, "Recevez une notification sur cet appareil d\xE8s qu'un \xE9v\xE9nement a lieu dans votre famille (nouveau membre, story, union...).");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "button", 106);
+    \u0275\u0275listener("click", function ProfilComponent_ng_container_2_div_87_Template_button_click_9_listener() {
+      \u0275\u0275restoreView(_r11);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.togglePush());
+    });
+    \u0275\u0275template(10, ProfilComponent_ng_container_2_div_87_span_10_Template, 2, 0, "span", 77)(11, ProfilComponent_ng_container_2_div_87_ng_container_11_Template, 2, 1, "ng-container", 2);
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(9);
+    \u0275\u0275property("disabled", ctx_r1.pushBusy);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.pushBusy);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r1.pushBusy);
+  }
+}
 function ProfilComponent_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
@@ -15981,27 +16266,28 @@ function ProfilComponent_ng_container_2_Template(rf, ctx) {
     \u0275\u0275elementStart(85, "p", 48);
     \u0275\u0275text(86, "Choisissez la couleur principale de l'interface");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(87, "div", 49)(88, "div", 27)(89, "div", 50)(90, "span", 29);
-    \u0275\u0275text(91, "warning");
+    \u0275\u0275template(87, ProfilComponent_ng_container_2_div_87_Template, 12, 3, "div", 33);
+    \u0275\u0275elementStart(88, "div", 49)(89, "div", 27)(90, "div", 50)(91, "span", 29);
+    \u0275\u0275text(92, "warning");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(92, " Zone de danger ");
+    \u0275\u0275text(93, " Zone de danger ");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(93, "div", 51)(94, "div", 52)(95, "div")(96, "span", 53);
-    \u0275\u0275text(97, "Se d\xE9connecter");
+    \u0275\u0275elementStart(94, "div", 51)(95, "div", 52)(96, "div")(97, "span", 53);
+    \u0275\u0275text(98, "Se d\xE9connecter");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(98, "span", 54);
-    \u0275\u0275text(99, "Vous serez redirig\xE9 vers la page de connexion");
+    \u0275\u0275elementStart(99, "span", 54);
+    \u0275\u0275text(100, "Vous serez redirig\xE9 vers la page de connexion");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(100, "button", 55);
-    \u0275\u0275listener("click", function ProfilComponent_ng_container_2_Template_button_click_100_listener() {
+    \u0275\u0275elementStart(101, "button", 55);
+    \u0275\u0275listener("click", function ProfilComponent_ng_container_2_Template_button_click_101_listener() {
       \u0275\u0275restoreView(_r1);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.logout());
     });
-    \u0275\u0275elementStart(101, "span", 29);
-    \u0275\u0275text(102, "logout");
+    \u0275\u0275elementStart(102, "span", 29);
+    \u0275\u0275text(103, "logout");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(103, "D\xE9connexion ");
+    \u0275\u0275text(104, "D\xE9connexion ");
     \u0275\u0275elementEnd()()()()();
     \u0275\u0275elementContainerEnd();
   }
@@ -16041,6 +16327,8 @@ function ProfilComponent_ng_container_2_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r1.user.role === "admin" || ctx_r1.user.role === "gestionnaire");
     \u0275\u0275advance(8);
     \u0275\u0275property("ngForOf", ctx_r1.theme.themes);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngIf", ctx_r1.pushSupported);
   }
 }
 var ProfilComponent = class _ProfilComponent {
@@ -16048,6 +16336,7 @@ var ProfilComponent = class _ProfilComponent {
   api;
   theme;
   router;
+  push;
   user = null;
   famille = null;
   loading = true;
@@ -16063,13 +16352,22 @@ var ProfilComponent = class _ProfilComponent {
   pwSuccess = false;
   pwError = "";
   showPwSection = false;
-  constructor(auth, api, theme, router) {
+  /* ---- Notifications push ---- */
+  pushSupported = false;
+  pushEnabled = false;
+  pushBusy = false;
+  constructor(auth, api, theme, router, push) {
     this.auth = auth;
     this.api = api;
     this.theme = theme;
     this.router = router;
+    this.push = push;
   }
   ngOnInit() {
+    this.pushSupported = this.push.isSupported;
+    if (this.pushSupported) {
+      this.push.isSubscribed().then((v) => this.pushEnabled = v);
+    }
     this.user = this.auth.getUser();
     if (this.user) {
       this.editForm = {
@@ -16213,13 +16511,27 @@ var ProfilComponent = class _ProfilComponent {
     }
   }
   codeCopied = false;
+  togglePush() {
+    return __async(this, null, function* () {
+      if (this.pushBusy)
+        return;
+      this.pushBusy = true;
+      if (this.pushEnabled) {
+        yield this.push.unsubscribe();
+        this.pushEnabled = false;
+      } else {
+        this.pushEnabled = yield this.push.subscribe();
+      }
+      this.pushBusy = false;
+    });
+  }
   static \u0275fac = function ProfilComponent_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _ProfilComponent)(\u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(ThemeService), \u0275\u0275directiveInject(Router));
+    return new (__ngFactoryType__ || _ProfilComponent)(\u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(ThemeService), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(PushNotificationService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ProfilComponent, selectors: [["app-profil"]], standalone: false, decls: 3, vars: 2, consts: [[1, "profil-page"], ["class", "sk-section", 4, "ngIf"], [4, "ngIf"], [1, "sk-section"], [1, "sk-hero"], [2, "display", "grid", "grid-template-columns", "1fr 1fr", "gap", "20px", "margin-top", "8px"], ["style", "background:#fff;border:1px solid #E5E7EB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px", 4, "ngFor", "ngForOf"], [2, "background", "#fff", "border", "1px solid #E5E7EB", "border-radius", "16px", "padding", "24px", "display", "flex", "flex-direction", "column", "gap", "14px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-full"], [1, "sk-line", "sk-sm"], [1, "profil-hero"], [1, "hero-bg"], [1, "hero-content"], [1, "hero-avatar-wrap"], [1, "hero-avatar"], [1, "hero-status-dot"], [1, "hero-info"], [1, "hero-name"], [1, "hero-meta"], [1, "role-badge"], ["class", "hero-contact", 4, "ngIf"], [1, "hero-actions"], ["class", "btn-outline btn-sm", 3, "click", 4, "ngIf"], ["class", "alert alert-success", 4, "ngIf"], [1, "profil-grid"], [1, "profil-card", "span-2"], [1, "card-header"], [1, "card-title"], [1, "material-icons-round"], ["class", "btn-ghost btn-sm", 3, "click", 4, "ngIf"], ["class", "info-grid", 4, "ngIf"], ["class", "edit-form", 4, "ngIf"], ["class", "profil-card", 4, "ngIf"], [1, "profil-card"], ["class", "security-items", 4, "ngIf"], ["class", "pw-form", 4, "ngIf"], [1, "quick-nav"], ["routerLink", "/app/home", 1, "qnav-item"], [1, "qnav-icon", "material-icons-round"], ["routerLink", "/app/tree", 1, "qnav-item"], ["routerLink", "/app/personnes", 1, "qnav-item"], ["routerLink", "/app/unions", 1, "qnav-item"], ["routerLink", "/app/stories", 1, "qnav-item"], ["routerLink", "/app/timeline", 1, "qnav-item"], ["class", "qnav-item qnav-admin", "routerLink", "/app/admin", 4, "ngIf"], [1, "theme-grid"], ["class", "theme-btn", 3, "active", "background", "title", "click", 4, "ngFor", "ngForOf"], [1, "theme-hint"], [1, "profil-card", "danger-card", "span-2"], [1, "card-title", "danger-title"], [1, "danger-actions"], [1, "danger-item"], [1, "danger-label"], [1, "danger-sub"], [1, "btn-danger", 3, "click"], [1, "hero-contact"], [1, "btn-outline", "btn-sm", 3, "click"], [1, "alert", "alert-success"], [1, "btn-ghost", "btn-sm", 3, "click"], [1, "info-grid"], [1, "info-item"], [1, "info-label"], [1, "info-value"], [1, "edit-form"], [1, "form-row"], [1, "form-group"], [1, "required"], ["type", "text", "placeholder", "Pr\xE9nom", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom", 3, "ngModelChange", "ngModel"], ["type", "email", "placeholder", "votre@email.com", 3, "ngModelChange", "ngModel"], ["type", "tel", "placeholder", "+221 77 000 00 00", 3, "ngModelChange", "ngModel"], ["class", "alert alert-error", 4, "ngIf"], [1, "form-actions"], [1, "btn-ghost", "btn-sm", 3, "click", "disabled"], [1, "btn-primary", "btn-sm", 3, "click", "disabled"], ["class", "material-icons-round", 4, "ngIf"], ["class", "material-icons-round spin", 4, "ngIf"], [1, "alert", "alert-error"], [1, "material-icons-round", "spin"], [1, "famille-hero"], [1, "famille-icon"], [1, "famille-nom"], [1, "famille-code-wrap"], [1, "famille-code"], [1, "btn-icon", "copy-btn", 3, "click", "title"], [1, "famille-hint"], [1, "famille-stats"], [1, "fstat"], [1, "fstat-val"], [1, "fstat-lbl"], [1, "fstat-divider"], [1, "security-items"], [1, "security-item"], [1, "security-item-left"], [1, "security-icon", "material-icons-round"], [1, "security-label"], [1, "security-sub"], [1, "security-sub", "security-ok"], [1, "pw-form"], ["type", "password", "placeholder", "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022", 3, "ngModelChange", "ngModel"], ["type", "password", "placeholder", "Minimum 6 caract\xE8res", 3, "ngModelChange", "ngModel"], ["type", "password", "placeholder", "R\xE9p\xE9tez le mot de passe", 3, "ngModelChange", "ngModel"], ["routerLink", "/app/admin", 1, "qnav-item", "qnav-admin"], [1, "theme-btn", 3, "click", "title"]], template: function ProfilComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ProfilComponent, selectors: [["app-profil"]], standalone: false, decls: 3, vars: 2, consts: [[1, "profil-page"], ["class", "sk-section", 4, "ngIf"], [4, "ngIf"], [1, "sk-section"], [1, "sk-hero"], [2, "display", "grid", "grid-template-columns", "1fr 1fr", "gap", "20px", "margin-top", "8px"], ["style", "background:#fff;border:1px solid #E5E7EB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px", 4, "ngFor", "ngForOf"], [2, "background", "#fff", "border", "1px solid #E5E7EB", "border-radius", "16px", "padding", "24px", "display", "flex", "flex-direction", "column", "gap", "14px"], [1, "sk-line", "sk-md"], [1, "sk-line", "sk-full"], [1, "sk-line", "sk-sm"], [1, "profil-hero"], [1, "hero-bg"], [1, "hero-content"], [1, "hero-avatar-wrap"], [1, "hero-avatar"], [1, "hero-status-dot"], [1, "hero-info"], [1, "hero-name"], [1, "hero-meta"], [1, "role-badge"], ["class", "hero-contact", 4, "ngIf"], [1, "hero-actions"], ["class", "btn-outline btn-sm", 3, "click", 4, "ngIf"], ["class", "alert alert-success", 4, "ngIf"], [1, "profil-grid"], [1, "profil-card", "span-2"], [1, "card-header"], [1, "card-title"], [1, "material-icons-round"], ["class", "btn-ghost btn-sm", 3, "click", 4, "ngIf"], ["class", "info-grid", 4, "ngIf"], ["class", "edit-form", 4, "ngIf"], ["class", "profil-card", 4, "ngIf"], [1, "profil-card"], ["class", "security-items", 4, "ngIf"], ["class", "pw-form", 4, "ngIf"], [1, "quick-nav"], ["routerLink", "/app/home", 1, "qnav-item"], [1, "qnav-icon", "material-icons-round"], ["routerLink", "/app/tree", 1, "qnav-item"], ["routerLink", "/app/personnes", 1, "qnav-item"], ["routerLink", "/app/unions", 1, "qnav-item"], ["routerLink", "/app/stories", 1, "qnav-item"], ["routerLink", "/app/timeline", 1, "qnav-item"], ["class", "qnav-item qnav-admin", "routerLink", "/app/admin", 4, "ngIf"], [1, "theme-grid"], ["class", "theme-btn", 3, "active", "background", "title", "click", 4, "ngFor", "ngForOf"], [1, "theme-hint"], [1, "profil-card", "danger-card", "span-2"], [1, "card-title", "danger-title"], [1, "danger-actions"], [1, "danger-item"], [1, "danger-label"], [1, "danger-sub"], [1, "btn-danger", 3, "click"], [1, "hero-contact"], [1, "btn-outline", "btn-sm", 3, "click"], [1, "alert", "alert-success"], [1, "btn-ghost", "btn-sm", 3, "click"], [1, "info-grid"], [1, "info-item"], [1, "info-label"], [1, "info-value"], [1, "edit-form"], [1, "form-row"], [1, "form-group"], [1, "required"], ["type", "text", "placeholder", "Pr\xE9nom", 3, "ngModelChange", "ngModel"], ["type", "text", "placeholder", "Nom", 3, "ngModelChange", "ngModel"], ["type", "email", "placeholder", "votre@email.com", 3, "ngModelChange", "ngModel"], ["type", "tel", "placeholder", "+221 77 000 00 00", 3, "ngModelChange", "ngModel"], ["class", "alert alert-error", 4, "ngIf"], [1, "form-actions"], [1, "btn-ghost", "btn-sm", 3, "click", "disabled"], [1, "btn-primary", "btn-sm", 3, "click", "disabled"], ["class", "material-icons-round", 4, "ngIf"], ["class", "material-icons-round spin", 4, "ngIf"], [1, "alert", "alert-error"], [1, "material-icons-round", "spin"], [1, "famille-hero"], [1, "famille-icon"], [1, "famille-nom"], [1, "famille-code-wrap"], [1, "famille-code"], [1, "btn-icon", "copy-btn", 3, "click", "title"], [1, "famille-hint"], [1, "famille-stats"], [1, "fstat"], [1, "fstat-val"], [1, "fstat-lbl"], [1, "fstat-divider"], [1, "security-items"], [1, "security-item"], [1, "security-item-left"], [1, "security-icon", "material-icons-round"], [1, "security-label"], [1, "security-sub"], [1, "security-sub", "security-ok"], [1, "pw-form"], ["type", "password", "placeholder", "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022", 3, "ngModelChange", "ngModel"], ["type", "password", "placeholder", "Minimum 6 caract\xE8res", 3, "ngModelChange", "ngModel"], ["type", "password", "placeholder", "R\xE9p\xE9tez le mot de passe", 3, "ngModelChange", "ngModel"], ["routerLink", "/app/admin", 1, "qnav-item", "qnav-admin"], [1, "theme-btn", 3, "click", "title"], [1, "theme-hint", 2, "display", "flex", "align-items", "center", "justify-content", "space-between", "gap", "16px"], [1, "btn-secondary", "btn-sm", 2, "flex-shrink", "0", "white-space", "nowrap", 3, "click", "disabled"]], template: function ProfilComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0);
-      \u0275\u0275template(1, ProfilComponent_div_1_Template, 4, 2, "div", 1)(2, ProfilComponent_ng_container_2_Template, 104, 19, "ng-container", 2);
+      \u0275\u0275template(1, ProfilComponent_div_1_Template, 4, 2, "div", 1)(2, ProfilComponent_ng_container_2_Template, 105, 20, "ng-container", 2);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
@@ -16523,6 +16835,23 @@ var ProfilComponent = class _ProfilComponent {
         <p class="theme-hint">Choisissez la couleur principale de l'interface</p>\r
       </div>\r
 \r
+      <!-- ===== NOTIFICATIONS ===== -->\r
+      <div class="profil-card" *ngIf="pushSupported">\r
+        <div class="card-header">\r
+          <div class="card-title">\r
+            <span class="material-icons-round">notifications_active</span>\r
+            Notifications\r
+          </div>\r
+        </div>\r
+        <div class="theme-hint" style="display:flex; align-items:center; justify-content:space-between; gap:16px;">\r
+          <span>Recevez une notification sur cet appareil d\xE8s qu'un \xE9v\xE9nement a lieu dans votre famille (nouveau membre, story, union...).</span>\r
+          <button class="btn-secondary btn-sm" (click)="togglePush()" [disabled]="pushBusy" style="flex-shrink:0; white-space:nowrap;">\r
+            <span class="material-icons-round spin" *ngIf="pushBusy">sync</span>\r
+            <ng-container *ngIf="!pushBusy">{{ pushEnabled ? 'D\xE9sactiver' : 'Activer' }}</ng-container>\r
+          </button>\r
+        </div>\r
+      </div>\r
+\r
       <!-- ===== ZONE DANGER ===== -->\r
       <div class="profil-card danger-card span-2">\r
         <div class="card-header">\r
@@ -16549,10 +16878,10 @@ var ProfilComponent = class _ProfilComponent {
 \r
 </div>\r
 `, styles: ['@charset "UTF-8";\n\n/* src/app/pages/profil/profil.component.scss */\n.profil-page {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n.profil-hero {\n  position: relative;\n  border-radius: 24px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      #1a0533 0%,\n      #2d1b69 50%,\n      var(--primary, #3B82F6) 100%);\n  padding: 36px 40px;\n  color: #fff;\n}\n.hero-bg {\n  position: absolute;\n  inset: 0;\n  background-image:\n    radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.05) 1px,\n      transparent 1px);\n  background-size: 30px 30px;\n  pointer-events: none;\n}\n.hero-content {\n  position: relative;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.hero-avatar-wrap {\n  position: relative;\n  flex-shrink: 0;\n}\n.hero-avatar {\n  width: 88px;\n  height: 88px;\n  border-radius: 50%;\n  background:\n    linear-gradient(\n      135deg,\n      rgba(255, 255, 255, 0.25),\n      rgba(255, 255, 255, 0.1));\n  border: 3px solid rgba(255, 255, 255, 0.35);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 32px;\n  font-weight: 800;\n  color: #fff;\n  letter-spacing: -1px;\n}\n.hero-status-dot {\n  position: absolute;\n  bottom: 4px;\n  right: 4px;\n  width: 14px;\n  height: 14px;\n  background: #10B981;\n  border-radius: 50%;\n  border: 2px solid rgba(255, 255, 255, 0.8);\n}\n.hero-info {\n  flex: 1;\n  min-width: 0;\n}\n.hero-name {\n  font-size: 28px;\n  font-weight: 800;\n  color: #fff;\n  margin: 0 0 10px;\n  letter-spacing: -0.3px;\n}\n.hero-meta {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.hero-contact {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.7);\n}\n.hero-contact .material-icons-round {\n  font-size: 15px !important;\n}\n.hero-actions {\n  display: flex;\n  gap: 8px;\n  flex-shrink: 0;\n}\n.hero-actions .btn-outline {\n  background: rgba(255, 255, 255, 0.15);\n  border-color: rgba(255, 255, 255, 0.4);\n  color: #fff;\n}\n.hero-actions .btn-outline:hover {\n  background: rgba(255, 255, 255, 0.25);\n}\n.role-badge {\n  display: inline-flex;\n  align-items: center;\n  padding: 3px 12px;\n  border-radius: 20px;\n  font-size: 11px;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  background: rgba(255, 255, 255, 0.15);\n  color: #fff;\n  border: 1px solid rgba(255, 255, 255, 0.3);\n}\n.role-badge.role-admin {\n  background: #FEF2F2;\n  color: #DC2626;\n  border-color: #FECACA;\n}\n.role-badge.role-gestionnaire {\n  background: var(--primary-bg, #EFF6FF);\n  color: var(--primary, #2563EB);\n  border-color: var(--primary-border, #BFDBFE);\n}\n.role-badge.role-membre {\n  background: #ECFDF5;\n  color: #059669;\n  border-color: #A7F3D0;\n}\n.role-badge.role-viewonly {\n  background: #F3F4F6;\n  color: #6B7280;\n  border-color: #E5E7EB;\n}\n.alert {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px 16px;\n  border-radius: 12px;\n  font-size: 13px;\n  font-weight: 500;\n}\n.alert .material-icons-round {\n  font-size: 18px !important;\n  flex-shrink: 0;\n}\n.alert.alert-success {\n  background: #ECFDF5;\n  color: #065F46;\n  border: 1px solid #A7F3D0;\n}\n.alert.alert-error {\n  background: #FEF2F2;\n  color: #991B1B;\n  border: 1px solid #FECACA;\n}\n.profil-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 20px;\n}\n.profil-card {\n  background: var(--white, #fff);\n  border: 1px solid var(--border, #E5E7EB);\n  border-radius: 18px;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n}\n.profil-card.span-2 {\n  grid-column: span 2;\n}\n.card-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.card-title {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 15px;\n  font-weight: 700;\n  color: var(--text-primary, #1F2937);\n}\n.card-title .material-icons-round {\n  font-size: 20px !important;\n  color: var(--primary, #3B82F6);\n}\n.info-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 16px;\n}\n.info-item {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n.info-label {\n  font-size: 11px;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: var(--text-muted, #9CA3AF);\n}\n.info-value {\n  font-size: 14px;\n  color: var(--text-primary, #1F2937);\n  font-weight: 500;\n}\n.edit-form {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.form-row {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 16px;\n}\n.form-group {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n.form-group label {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--text-secondary, #6B7280);\n}\n.form-group label .required {\n  color: #EF4444;\n}\n.form-group input {\n  width: 100%;\n  padding: 9px 12px;\n  border: 1.5px solid var(--border, #E5E7EB);\n  border-radius: 10px;\n  font-size: 13px;\n  font-family: inherit;\n  color: var(--text-primary, #1F2937);\n  background: var(--white, #fff);\n  transition: border-color 0.15s;\n  box-sizing: border-box;\n}\n.form-group input:focus {\n  outline: none;\n  border-color: var(--primary, #3B82F6);\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);\n}\n.form-actions {\n  display: flex;\n  justify-content: flex-end;\n  gap: 8px;\n}\n.famille-hero {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 16px;\n  background: var(--primary-bg, #EFF6FF);\n  border-radius: 14px;\n  border: 1px solid var(--primary-border, #BFDBFE);\n}\n.famille-icon {\n  width: 52px;\n  height: 52px;\n  border-radius: 14px;\n  background: var(--primary, #3B82F6);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.famille-icon .material-icons-round {\n  font-size: 26px !important;\n  color: #fff;\n}\n.famille-nom {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--text-primary, #1F2937);\n  margin: 0 0 6px;\n}\n.famille-code-wrap {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  margin-bottom: 4px;\n}\n.famille-code {\n  font-size: 13px;\n  font-weight: 700;\n  font-family: monospace;\n  color: var(--primary, #3B82F6);\n  background: rgba(59, 130, 246, 0.1);\n  padding: 2px 10px;\n  border-radius: 8px;\n  letter-spacing: 1px;\n}\n.copy-btn {\n  width: 28px;\n  height: 28px;\n  border-radius: 8px;\n}\n.copy-btn .material-icons-round {\n  font-size: 15px !important;\n}\n.famille-hint {\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n  margin: 0;\n}\n.famille-stats {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  background: var(--bg-muted, #F9FAFB);\n  border-radius: 14px;\n  border: 1px solid var(--border, #E5E7EB);\n  padding: 16px 20px;\n  gap: 20px;\n}\n.fstat {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 4px;\n  flex: 1;\n}\n.fstat-val {\n  font-size: 24px;\n  font-weight: 800;\n  color: var(--text-primary, #1F2937);\n  line-height: 1;\n}\n.fstat-lbl {\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n}\n.fstat-divider {\n  width: 1px;\n  height: 36px;\n  background: var(--border, #E5E7EB);\n  flex-shrink: 0;\n}\n.security-items {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid var(--border, #E5E7EB);\n  border-radius: 12px;\n  overflow: hidden;\n}\n.security-item {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n  padding: 14px 16px;\n  border-bottom: 1px solid var(--border, #E5E7EB);\n}\n.security-item:last-child {\n  border-bottom: none;\n}\n.security-item-left {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.security-icon {\n  font-size: 20px !important;\n  color: var(--text-muted, #9CA3AF);\n}\n.security-label {\n  display: block;\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary, #1F2937);\n}\n.security-sub {\n  display: block;\n  font-size: 11px;\n  color: var(--text-muted, #9CA3AF);\n}\n.security-sub.security-ok {\n  color: #10B981;\n}\n.pw-form {\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n}\n.quick-nav {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 8px;\n}\n.qnav-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 14px;\n  border-radius: 12px;\n  border: 1px solid var(--border, #E5E7EB);\n  background: var(--white, #fff);\n  color: var(--text-primary, #1F2937);\n  font-size: 13px;\n  font-weight: 500;\n  text-decoration: none;\n  transition: all 0.15s;\n}\n.qnav-item:hover {\n  border-color: var(--primary, #3B82F6);\n  background: var(--primary-bg, #EFF6FF);\n  color: var(--primary, #3B82F6);\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.12);\n  text-decoration: none;\n}\n.qnav-item.qnav-admin {\n  border-color: #FECACA;\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.qnav-item.qnav-admin:hover {\n  background: #FEE2E2;\n  border-color: #FCA5A5;\n}\n.qnav-icon {\n  font-size: 18px !important;\n  color: var(--primary, #3B82F6);\n}\n.qnav-admin .qnav-icon {\n  color: #DC2626;\n}\n.theme-grid {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.theme-btn {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: 3px solid transparent;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: transform 0.15s, box-shadow 0.15s;\n}\n.theme-btn.active {\n  border-color: rgba(0, 0, 0, 0.25);\n  box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(0, 0, 0, 0.2);\n}\n.theme-btn:hover {\n  transform: scale(1.15);\n}\n.theme-btn .material-icons-round {\n  font-size: 16px !important;\n  color: #fff;\n}\n.theme-hint {\n  font-size: 12px;\n  color: var(--text-muted, #9CA3AF);\n  margin: 0;\n}\n.danger-card {\n  border-color: #FECACA;\n  background: #FFFBFB;\n}\n.danger-title {\n  color: #DC2626 !important;\n}\n.danger-title .material-icons-round {\n  color: #DC2626 !important;\n}\n.danger-actions {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  border: 1px solid #FECACA;\n  border-radius: 12px;\n  overflow: hidden;\n}\n.danger-item {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 16px 20px;\n  border-bottom: 1px solid #FECACA;\n}\n.danger-item:last-child {\n  border-bottom: none;\n}\n.danger-label {\n  display: block;\n  font-size: 14px;\n  font-weight: 600;\n  color: var(--text-primary, #1F2937);\n  margin-bottom: 3px;\n}\n.danger-sub {\n  display: block;\n  font-size: 12px;\n  color: var(--text-muted, #9CA3AF);\n}\n.btn-danger {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 8px 18px;\n  border-radius: 10px;\n  border: 1.5px solid #FECACA;\n  background: #FEF2F2;\n  color: #DC2626;\n  font-size: 13px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition: all 0.15s;\n  white-space: nowrap;\n}\n.btn-danger .material-icons-round {\n  font-size: 17px !important;\n}\n.btn-danger:hover {\n  background: #DC2626;\n  color: #fff;\n  border-color: #DC2626;\n}\n@media (max-width: 768px) {\n  .profil-page {\n    gap: 16px;\n  }\n  .profil-hero {\n    padding: 24px 20px;\n    border-radius: 16px;\n  }\n  .hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 16px;\n  }\n  .hero-avatar {\n    width: 72px;\n    height: 72px;\n    font-size: 24px;\n  }\n  .hero-name {\n    font-size: 20px;\n  }\n  .hero-meta {\n    gap: 8px;\n    flex-wrap: wrap;\n  }\n  .hero-actions {\n    width: 100%;\n  }\n  .hero-actions .btn-outline {\n    flex: 1;\n    justify-content: center;\n  }\n  .profil-grid {\n    grid-template-columns: 1fr;\n  }\n  .profil-card {\n    padding: 18px;\n  }\n  .profil-card.span-2 {\n    grid-column: span 1;\n  }\n  .info-grid {\n    grid-template-columns: 1fr 1fr;\n  }\n  .form-row {\n    grid-template-columns: 1fr;\n  }\n  .quick-nav {\n    grid-template-columns: 1fr 1fr;\n  }\n  .famille-hero {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 12px;\n  }\n  .famille-stats {\n    flex-wrap: wrap;\n    gap: 12px;\n    padding: 14px;\n  }\n  .fstat {\n    flex: 0 0 auto;\n  }\n  .fstat-val {\n    font-size: 20px;\n  }\n  .danger-item {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 10px;\n  }\n  .btn-danger {\n    width: 100%;\n    justify-content: center;\n  }\n}\n@media (max-width: 480px) {\n  .profil-hero {\n    padding: 20px 16px;\n  }\n  .hero-name {\n    font-size: 18px;\n  }\n  .hero-meta {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 4px;\n  }\n  .hero-contact {\n    font-size: 12px;\n  }\n  .profil-card {\n    padding: 14px;\n    gap: 14px;\n  }\n  .info-grid {\n    grid-template-columns: 1fr;\n  }\n  .quick-nav {\n    grid-template-columns: 1fr;\n  }\n  .theme-grid {\n    gap: 8px;\n  }\n  .theme-btn {\n    width: 32px;\n    height: 32px;\n  }\n  .famille-stats {\n    flex-direction: column;\n    gap: 0;\n  }\n  .fstat {\n    width: 100%;\n    flex-direction: row;\n    justify-content: space-between;\n    padding: 10px 0;\n    border-bottom: 1px solid var(--border, #E5E7EB);\n  }\n  .fstat:last-child {\n    border-bottom: none;\n  }\n  .fstat-divider {\n    display: none;\n  }\n  .fstat-val {\n    font-size: 18px;\n  }\n}\n/*# sourceMappingURL=profil.component.css.map */\n'] }]
-  }], () => [{ type: AuthService }, { type: ApiService }, { type: ThemeService }, { type: Router }], null);
+  }], () => [{ type: AuthService }, { type: ApiService }, { type: ThemeService }, { type: Router }, { type: PushNotificationService }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ProfilComponent, { className: "ProfilComponent", filePath: "src/app/pages/profil/profil.component.ts", lineNumber: 23 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ProfilComponent, { className: "ProfilComponent", filePath: "src/app/pages/profil/profil.component.ts", lineNumber: 24 });
 })();
 
 // src/app/pages/inviter/inviter.component.ts
@@ -16895,6 +17224,721 @@ Code d'acc\xE8s : *${this.familleCode}*
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(InviterComponent, { className: "InviterComponent", filePath: "src/app/pages/inviter/inviter.component.ts", lineNumber: 11 });
 })();
 
+// src/app/models/activity.model.ts
+var ACTIVITY_LABELS = {
+  create_personne: { label: "a ajout\xE9", icon: "person_add", color: "#2563EB" },
+  update_personne: { label: "a modifi\xE9", icon: "edit", color: "#D97706" },
+  delete_personne: { label: "a supprim\xE9", icon: "person_remove", color: "#DC2626" },
+  create_union: { label: "a cr\xE9\xE9 une union pour", icon: "favorite", color: "#DB2777" },
+  delete_union: { label: "a supprim\xE9 une union", icon: "heart_broken", color: "#DC2626" },
+  create_story: { label: "a partag\xE9 une story", icon: "auto_stories", color: "#7C3AED" },
+  delete_story: { label: "a supprim\xE9 une story", icon: "delete_outline", color: "#DC2626" },
+  create_event: { label: "a ajout\xE9 un \xE9v\xE9nement", icon: "timeline", color: "#059669" },
+  update_event: { label: "a modifi\xE9 un \xE9v\xE9nement", icon: "edit_calendar", color: "#D97706" },
+  delete_event: { label: "a supprim\xE9 un \xE9v\xE9nement", icon: "event_busy", color: "#DC2626" },
+  import_gedcom: { label: "a import\xE9 un arbre (GEDCOM)", icon: "file_upload", color: "#0891B2" }
+};
+
+// src/app/pages/historique/historique.component.ts
+var _c010 = () => [1, 2, 3, 4, 5];
+function HistoriqueComponent_div_6_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 4);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r0.erreur);
+  }
+}
+function HistoriqueComponent_div_7_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 7);
+    \u0275\u0275element(1, "div", 8);
+    \u0275\u0275elementStart(2, "div", 9);
+    \u0275\u0275element(3, "div", 10)(4, "div", 11);
+    \u0275\u0275elementEnd()();
+  }
+}
+function HistoriqueComponent_div_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 5);
+    \u0275\u0275template(1, HistoriqueComponent_div_7_div_1_Template, 5, 0, "div", 6);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", \u0275\u0275pureFunction0(1, _c010));
+  }
+}
+function HistoriqueComponent_ng_container_8_div_1_div_1_strong_9_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "strong");
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const e_r2 = \u0275\u0275nextContext().$implicit;
+    const ctx_r0 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r0.cibleNom(e_r2));
+  }
+}
+function HistoriqueComponent_ng_container_8_div_1_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 17)(1, "div", 18)(2, "span", 19);
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(4, "div", 20)(5, "p", 21)(6, "strong");
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(8);
+    \u0275\u0275template(9, HistoriqueComponent_ng_container_8_div_1_div_1_strong_9_Template, 2, 1, "strong", 3);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "span", 22);
+    \u0275\u0275text(11);
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const e_r2 = ctx.$implicit;
+    const ctx_r0 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275styleProp("background", ctx_r0.labelFor(e_r2).color + "1A")("color", ctx_r0.labelFor(e_r2).color);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r0.labelFor(e_r2).icon);
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate(e_r2.auteurNom || "Quelqu'un");
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r0.labelFor(e_r2).label, " ");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.cibleNom(e_r2));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r0.formatDate(e_r2.createdAt));
+  }
+}
+function HistoriqueComponent_ng_container_8_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 15);
+    \u0275\u0275template(1, HistoriqueComponent_ng_container_8_div_1_div_1_Template, 12, 9, "div", 16);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", ctx_r0.entries)("ngForTrackBy", ctx_r0.trackById);
+  }
+}
+function HistoriqueComponent_ng_container_8_div_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 23)(1, "span", 19);
+    \u0275\u0275text(2, "history");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "h3");
+    \u0275\u0275text(4, "Aucune activit\xE9 pour le moment");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "p");
+    \u0275\u0275text(6, "Les actions de la famille (ajouts, modifications, suppressions) appara\xEEtront ici.");
+    \u0275\u0275elementEnd()();
+  }
+}
+function HistoriqueComponent_ng_container_8_div_3_span_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "span", 27);
+  }
+}
+function HistoriqueComponent_ng_container_8_div_3_ng_container_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275text(1, "Charger plus");
+    \u0275\u0275elementContainerEnd();
+  }
+}
+function HistoriqueComponent_ng_container_8_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 24)(1, "button", 25);
+    \u0275\u0275listener("click", function HistoriqueComponent_ng_container_8_div_3_Template_button_click_1_listener() {
+      \u0275\u0275restoreView(_r3);
+      const ctx_r0 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r0.loadMore());
+    });
+    \u0275\u0275template(2, HistoriqueComponent_ng_container_8_div_3_span_2_Template, 1, 0, "span", 26)(3, HistoriqueComponent_ng_container_8_div_3_ng_container_3_Template, 2, 0, "ng-container", 3);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275property("disabled", ctx_r0.loadingMore);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.loadingMore);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r0.loadingMore);
+  }
+}
+function HistoriqueComponent_ng_container_8_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275template(1, HistoriqueComponent_ng_container_8_div_1_Template, 2, 2, "div", 12)(2, HistoriqueComponent_ng_container_8_div_2_Template, 7, 0, "div", 13)(3, HistoriqueComponent_ng_container_8_div_3_Template, 4, 3, "div", 14);
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.entries.length > 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.entries.length === 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.page < ctx_r0.totalPages);
+  }
+}
+var HistoriqueComponent = class _HistoriqueComponent {
+  api;
+  loading = true;
+  loadingMore = false;
+  erreur = "";
+  entries = [];
+  page = 1;
+  pageSize = 30;
+  totalPages = 1;
+  labels = ACTIVITY_LABELS;
+  constructor(api) {
+    this.api = api;
+  }
+  ngOnInit() {
+    this.load();
+  }
+  load() {
+    this.loading = true;
+    this.erreur = "";
+    this.page = 1;
+    this.api.getActivity(this.page, this.pageSize).pipe(catchError(() => of(null))).subscribe((res) => {
+      if (!res) {
+        this.erreur = "Impossible de charger l'historique.";
+        this.loading = false;
+        return;
+      }
+      this.entries = res.data;
+      this.totalPages = res.totalPages;
+      this.loading = false;
+    });
+  }
+  loadMore() {
+    if (this.loadingMore || this.page >= this.totalPages)
+      return;
+    this.loadingMore = true;
+    const nextPage = this.page + 1;
+    this.api.getActivity(nextPage, this.pageSize).pipe(catchError(() => of(null))).subscribe((res) => {
+      if (res) {
+        this.entries = [...this.entries, ...res.data];
+        this.page = res.page;
+        this.totalPages = res.totalPages;
+      }
+      this.loadingMore = false;
+    });
+  }
+  labelFor(e) {
+    return this.labels[e.action] ?? { label: e.action, icon: "history", color: "#6B7280" };
+  }
+  cibleNom(e) {
+    const d = e.details;
+    if (!d)
+      return "";
+    return d["nom"] ?? d["noms"] ?? d["titre"] ?? "";
+  }
+  formatDate(dateStr) {
+    const d = new Date(dateStr);
+    const diff = Math.floor((Date.now() - d.getTime()) / 1e3);
+    if (diff < 60)
+      return "\xC0 l'instant";
+    if (diff < 3600)
+      return `Il y a ${Math.floor(diff / 60)} min`;
+    if (diff < 86400)
+      return `Il y a ${Math.floor(diff / 3600)} h`;
+    if (diff < 604800)
+      return `Il y a ${Math.floor(diff / 86400)} j`;
+    return d.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
+  }
+  trackById(_, item) {
+    return item.id;
+  }
+  static \u0275fac = function HistoriqueComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _HistoriqueComponent)(\u0275\u0275directiveInject(ApiService));
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HistoriqueComponent, selectors: [["app-historique"]], standalone: false, decls: 9, vars: 3, consts: [[1, "header-row", "mb-24"], ["class", "erreur-box", 4, "ngIf"], ["class", "hi-skeleton", 4, "ngIf"], [4, "ngIf"], [1, "erreur-box"], [1, "hi-skeleton"], ["class", "hi-sk-row", 4, "ngFor", "ngForOf"], [1, "hi-sk-row"], [1, "hi-sk-icon"], [1, "hi-sk-body"], [1, "hi-sk-line", "hi-sk-lg"], [1, "hi-sk-line", "hi-sk-sm"], ["class", "hi-list", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "load-more-row", 4, "ngIf"], [1, "hi-list"], ["class", "hi-row", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "hi-row"], [1, "hi-icon"], [1, "material-icons-round"], [1, "hi-body"], [1, "hi-text"], [1, "hi-date"], [1, "empty-state"], [1, "load-more-row"], [1, "btn-secondary", 3, "click", "disabled"], ["class", "btn-spinner", 4, "ngIf"], [1, "btn-spinner"]], template: function HistoriqueComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275elementStart(0, "div", 0)(1, "div")(2, "h2");
+      \u0275\u0275text(3, "Historique");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(4, "p");
+      \u0275\u0275text(5, "Journal des actions r\xE9centes sur l'arbre de votre famille.");
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275template(6, HistoriqueComponent_div_6_Template, 2, 1, "div", 1)(7, HistoriqueComponent_div_7_Template, 2, 2, "div", 2)(8, HistoriqueComponent_ng_container_8_Template, 4, 3, "ng-container", 3);
+    }
+    if (rf & 2) {
+      \u0275\u0275advance(6);
+      \u0275\u0275property("ngIf", ctx.erreur);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.loading);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", !ctx.loading);
+    }
+  }, dependencies: [NgForOf, NgIf], styles: ["\n\n.header-row[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin: 0 0 4px;\n}\n.header-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 14px;\n  margin: 0;\n}\n.erreur-box[_ngcontent-%COMP%] {\n  background: var(--error-bg);\n  color: var(--error);\n  border: 1px solid #FECACA;\n  border-radius: var(--radius-md);\n  padding: 12px 16px;\n  margin-bottom: 20px;\n  font-size: 14px;\n}\n.hi-list[_ngcontent-%COMP%] {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n}\n.hi-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n  padding: 16px 20px;\n  border-bottom: 1px solid var(--border-light);\n}\n.hi-row[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.hi-icon[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  border-radius: 11px;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.hi-icon[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 19px !important;\n}\n.hi-body[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n}\n.hi-text[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 14px;\n  color: var(--text-primary);\n  line-height: 1.5;\n}\n.hi-date[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.hi-skeleton[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  background: var(--border-light);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n}\n.hi-sk-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 16px 20px;\n  background: var(--white);\n}\n.hi-sk-icon[_ngcontent-%COMP%] {\n  width: 38px;\n  height: 38px;\n  border-radius: 11px;\n  flex-shrink: 0;\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: _ngcontent-%COMP%_hi-shimmer 1.4s infinite;\n}\n.hi-sk-body[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.hi-sk-line[_ngcontent-%COMP%] {\n  height: 12px;\n  border-radius: 6px;\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: _ngcontent-%COMP%_hi-shimmer 1.4s infinite;\n}\n.hi-sk-lg[_ngcontent-%COMP%] {\n  width: 60%;\n}\n.hi-sk-sm[_ngcontent-%COMP%] {\n  width: 30%;\n}\n@keyframes _ngcontent-%COMP%_hi-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.load-more-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  margin-top: 24px;\n}\n.btn-spinner[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 15px;\n  height: 15px;\n  border: 2px solid rgba(0, 0, 0, 0.15);\n  border-top-color: var(--primary);\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_hi-spin 0.7s linear infinite;\n}\n@keyframes _ngcontent-%COMP%_hi-spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n/*# sourceMappingURL=historique.component.css.map */"] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(HistoriqueComponent, [{
+    type: Component,
+    args: [{ selector: "app-historique", standalone: false, template: `<div class="header-row mb-24">
+  <div>
+    <h2>Historique</h2>
+    <p>Journal des actions r\xE9centes sur l'arbre de votre famille.</p>
+  </div>
+</div>
+
+<div class="erreur-box" *ngIf="erreur">{{ erreur }}</div>
+
+<!-- Skeleton chargement -->
+<div class="hi-skeleton" *ngIf="loading">
+  <div class="hi-sk-row" *ngFor="let _ of [1,2,3,4,5]">
+    <div class="hi-sk-icon"></div>
+    <div class="hi-sk-body">
+      <div class="hi-sk-line hi-sk-lg"></div>
+      <div class="hi-sk-line hi-sk-sm"></div>
+    </div>
+  </div>
+</div>
+
+<ng-container *ngIf="!loading">
+  <div class="hi-list" *ngIf="entries.length > 0">
+    <div class="hi-row" *ngFor="let e of entries; trackBy: trackById">
+      <div class="hi-icon" [style.background]="labelFor(e).color + '1A'" [style.color]="labelFor(e).color">
+        <span class="material-icons-round">{{ labelFor(e).icon }}</span>
+      </div>
+      <div class="hi-body">
+        <p class="hi-text">
+          <strong>{{ e.auteurNom || 'Quelqu\\'un' }}</strong>
+          {{ labelFor(e).label }}
+          <strong *ngIf="cibleNom(e)">{{ cibleNom(e) }}</strong>
+        </p>
+        <span class="hi-date">{{ formatDate(e.createdAt) }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="entries.length === 0">
+    <span class="material-icons-round">history</span>
+    <h3>Aucune activit\xE9 pour le moment</h3>
+    <p>Les actions de la famille (ajouts, modifications, suppressions) appara\xEEtront ici.</p>
+  </div>
+
+  <div class="load-more-row" *ngIf="page < totalPages">
+    <button class="btn-secondary" [disabled]="loadingMore" (click)="loadMore()">
+      <span class="btn-spinner" *ngIf="loadingMore"></span>
+      <ng-container *ngIf="!loadingMore">Charger plus</ng-container>
+    </button>
+  </div>
+</ng-container>
+`, styles: ["/* src/app/pages/historique/historique.component.scss */\n.header-row h2 {\n  margin: 0 0 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n  margin: 0;\n}\n.erreur-box {\n  background: var(--error-bg);\n  color: var(--error);\n  border: 1px solid #FECACA;\n  border-radius: var(--radius-md);\n  padding: 12px 16px;\n  margin-bottom: 20px;\n  font-size: 14px;\n}\n.hi-list {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n}\n.hi-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n  padding: 16px 20px;\n  border-bottom: 1px solid var(--border-light);\n}\n.hi-row:last-child {\n  border-bottom: none;\n}\n.hi-icon {\n  width: 38px;\n  height: 38px;\n  border-radius: 11px;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.hi-icon .material-icons-round {\n  font-size: 19px !important;\n}\n.hi-body {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n}\n.hi-text {\n  margin: 0;\n  font-size: 14px;\n  color: var(--text-primary);\n  line-height: 1.5;\n}\n.hi-date {\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.hi-skeleton {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  background: var(--border-light);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n}\n.hi-sk-row {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 16px 20px;\n  background: var(--white);\n}\n.hi-sk-icon {\n  width: 38px;\n  height: 38px;\n  border-radius: 11px;\n  flex-shrink: 0;\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: hi-shimmer 1.4s infinite;\n}\n.hi-sk-body {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.hi-sk-line {\n  height: 12px;\n  border-radius: 6px;\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: hi-shimmer 1.4s infinite;\n}\n.hi-sk-lg {\n  width: 60%;\n}\n.hi-sk-sm {\n  width: 30%;\n}\n@keyframes hi-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.load-more-row {\n  display: flex;\n  justify-content: center;\n  margin-top: 24px;\n}\n.btn-spinner {\n  display: inline-block;\n  width: 15px;\n  height: 15px;\n  border: 2px solid rgba(0, 0, 0, 0.15);\n  border-top-color: var(--primary);\n  border-radius: 50%;\n  animation: hi-spin 0.7s linear infinite;\n}\n@keyframes hi-spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n/*# sourceMappingURL=historique.component.css.map */\n"] }]
+  }], () => [{ type: ApiService }], null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HistoriqueComponent, { className: "HistoriqueComponent", filePath: "src/app/pages/historique/historique.component.ts", lineNumber: 12 });
+})();
+
+// src/app/pages/galerie/galerie.component.ts
+var _c011 = () => [1, 2, 3, 4, 5, 6, 7, 8];
+function GalerieComponent_div_6_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 5);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r0.erreur);
+  }
+}
+function GalerieComponent_div_7_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "div", 8);
+  }
+}
+function GalerieComponent_div_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 6);
+    \u0275\u0275template(1, GalerieComponent_div_7_div_1_Template, 1, 0, "div", 7);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", \u0275\u0275pureFunction0(1, _c011));
+  }
+}
+function GalerieComponent_ng_container_8_div_1_button_1_span_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 16);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const p_r3 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(p_r3.personneNom);
+  }
+}
+function GalerieComponent_ng_container_8_div_1_button_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r2 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "button", 12);
+    \u0275\u0275listener("click", function GalerieComponent_ng_container_8_div_1_button_1_Template_button_click_0_listener() {
+      const p_r3 = \u0275\u0275restoreView(_r2).$implicit;
+      const ctx_r0 = \u0275\u0275nextContext(3);
+      return \u0275\u0275resetView(ctx_r0.lightbox = p_r3);
+    });
+    \u0275\u0275element(1, "img", 13);
+    \u0275\u0275elementStart(2, "div", 14);
+    \u0275\u0275template(3, GalerieComponent_ng_container_8_div_1_button_1_span_3_Template, 2, 1, "span", 15);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const p_r3 = ctx.$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275property("src", p_r3.url, \u0275\u0275sanitizeUrl)("alt", p_r3.caption || p_r3.personneNom || "Photo");
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngIf", p_r3.personneNom);
+  }
+}
+function GalerieComponent_ng_container_8_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 6);
+    \u0275\u0275template(1, GalerieComponent_ng_container_8_div_1_button_1_Template, 4, 3, "button", 11);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", ctx_r0.photos)("ngForTrackBy", ctx_r0.trackById);
+  }
+}
+function GalerieComponent_ng_container_8_div_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 17)(1, "span", 18);
+    \u0275\u0275text(2, "photo_library");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "h3");
+    \u0275\u0275text(4, "Aucune photo pour le moment");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "p");
+    \u0275\u0275text(6, "Ajoutez des photos depuis la fiche d'une personne \u2014 elles appara\xEEtront ici automatiquement.");
+    \u0275\u0275elementEnd()();
+  }
+}
+function GalerieComponent_ng_container_8_div_3_span_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "span", 22);
+  }
+}
+function GalerieComponent_ng_container_8_div_3_ng_container_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275text(1, "Charger plus");
+    \u0275\u0275elementContainerEnd();
+  }
+}
+function GalerieComponent_ng_container_8_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 19)(1, "button", 20);
+    \u0275\u0275listener("click", function GalerieComponent_ng_container_8_div_3_Template_button_click_1_listener() {
+      \u0275\u0275restoreView(_r4);
+      const ctx_r0 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r0.loadMore());
+    });
+    \u0275\u0275template(2, GalerieComponent_ng_container_8_div_3_span_2_Template, 1, 0, "span", 21)(3, GalerieComponent_ng_container_8_div_3_ng_container_3_Template, 2, 0, "ng-container", 3);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275property("disabled", ctx_r0.loadingMore);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.loadingMore);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r0.loadingMore);
+  }
+}
+function GalerieComponent_ng_container_8_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275template(1, GalerieComponent_ng_container_8_div_1_Template, 2, 2, "div", 2)(2, GalerieComponent_ng_container_8_div_2_Template, 7, 0, "div", 9)(3, GalerieComponent_ng_container_8_div_3_Template, 4, 3, "div", 10);
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.photos.length > 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.photos.length === 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.page < ctx_r0.totalPages);
+  }
+}
+function GalerieComponent_div_9_div_3_strong_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "strong");
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r0.lightbox.personneNom);
+  }
+}
+function GalerieComponent_div_9_div_3_p_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "p");
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r0.lightbox.caption);
+  }
+}
+function GalerieComponent_div_9_div_3_p_3_span_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span")(1, "span", 18);
+    \u0275\u0275text(2, "calendar_today");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(ctx_r0.lightbox.datePrise);
+  }
+}
+function GalerieComponent_div_9_div_3_p_3_span_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span")(1, "span", 18);
+    \u0275\u0275text(2, "place");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(ctx_r0.lightbox.lieuPrise);
+  }
+}
+function GalerieComponent_div_9_div_3_p_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "p", 30);
+    \u0275\u0275template(1, GalerieComponent_div_9_div_3_p_3_span_1_Template, 4, 1, "span", 3)(2, GalerieComponent_div_9_div_3_p_3_span_2_Template, 4, 1, "span", 3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.lightbox.datePrise);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.lightbox.lieuPrise);
+  }
+}
+function GalerieComponent_div_9_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 28);
+    \u0275\u0275template(1, GalerieComponent_div_9_div_3_strong_1_Template, 2, 1, "strong", 3)(2, GalerieComponent_div_9_div_3_p_2_Template, 2, 1, "p", 3)(3, GalerieComponent_div_9_div_3_p_3_Template, 3, 2, "p", 29);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.lightbox.personneNom);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.lightbox.caption);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.lightbox.datePrise || ctx_r0.lightbox.lieuPrise);
+  }
+}
+function GalerieComponent_div_9_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r5 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 23);
+    \u0275\u0275listener("click", function GalerieComponent_div_9_Template_div_click_0_listener() {
+      \u0275\u0275restoreView(_r5);
+      const ctx_r0 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r0.lightbox = null);
+    });
+    \u0275\u0275elementStart(1, "div", 24);
+    \u0275\u0275listener("click", function GalerieComponent_div_9_Template_div_click_1_listener($event) {
+      \u0275\u0275restoreView(_r5);
+      return \u0275\u0275resetView($event.stopPropagation());
+    });
+    \u0275\u0275element(2, "img", 25);
+    \u0275\u0275template(3, GalerieComponent_div_9_div_3_Template, 4, 3, "div", 26);
+    \u0275\u0275elementStart(4, "button", 27);
+    \u0275\u0275listener("click", function GalerieComponent_div_9_Template_button_click_4_listener() {
+      \u0275\u0275restoreView(_r5);
+      const ctx_r0 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r0.lightbox = null);
+    });
+    \u0275\u0275elementStart(5, "span", 18);
+    \u0275\u0275text(6, "close");
+    \u0275\u0275elementEnd()()()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance(2);
+    \u0275\u0275property("src", ctx_r0.lightbox.url, \u0275\u0275sanitizeUrl)("alt", ctx_r0.lightbox.caption || "Photo");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r0.lightbox.personneNom || ctx_r0.lightbox.caption || ctx_r0.lightbox.datePrise || ctx_r0.lightbox.lieuPrise);
+  }
+}
+var GalerieComponent = class _GalerieComponent {
+  api;
+  loading = true;
+  loadingMore = false;
+  erreur = "";
+  photos = [];
+  page = 1;
+  pageSize = 24;
+  totalPages = 1;
+  lightbox = null;
+  constructor(api) {
+    this.api = api;
+  }
+  ngOnInit() {
+    this.load();
+  }
+  load() {
+    this.loading = true;
+    this.erreur = "";
+    this.page = 1;
+    this.api.getGalerie(this.page, this.pageSize).pipe(catchError(() => of(null))).subscribe((res) => {
+      if (!res) {
+        this.erreur = "Impossible de charger la galerie.";
+        this.loading = false;
+        return;
+      }
+      this.photos = res.data;
+      this.totalPages = res.totalPages;
+      this.loading = false;
+    });
+  }
+  loadMore() {
+    if (this.loadingMore || this.page >= this.totalPages)
+      return;
+    this.loadingMore = true;
+    const nextPage = this.page + 1;
+    this.api.getGalerie(nextPage, this.pageSize).pipe(catchError(() => of(null))).subscribe((res) => {
+      if (res) {
+        this.photos = [...this.photos, ...res.data];
+        this.page = res.page;
+        this.totalPages = res.totalPages;
+      }
+      this.loadingMore = false;
+    });
+  }
+  trackById(_, item) {
+    return item.id;
+  }
+  static \u0275fac = function GalerieComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _GalerieComponent)(\u0275\u0275directiveInject(ApiService));
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _GalerieComponent, selectors: [["app-galerie"]], standalone: false, decls: 10, vars: 4, consts: [[1, "header-row", "mb-24"], ["class", "erreur-box", 4, "ngIf"], ["class", "ga-grid", 4, "ngIf"], [4, "ngIf"], ["class", "lightbox-overlay", 3, "click", 4, "ngIf"], [1, "erreur-box"], [1, "ga-grid"], ["class", "ga-sk-tile", 4, "ngFor", "ngForOf"], [1, "ga-sk-tile"], ["class", "empty-state", 4, "ngIf"], ["class", "load-more-row", 4, "ngIf"], ["class", "ga-tile", 3, "click", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "ga-tile", 3, "click"], ["loading", "lazy", 3, "src", "alt"], [1, "ga-tile-overlay"], ["class", "ga-tile-name", 4, "ngIf"], [1, "ga-tile-name"], [1, "empty-state"], [1, "material-icons-round"], [1, "load-more-row"], [1, "btn-secondary", 3, "click", "disabled"], ["class", "btn-spinner", 4, "ngIf"], [1, "btn-spinner"], [1, "lightbox-overlay", 3, "click"], [1, "lightbox-box", 3, "click"], [1, "lightbox-img", 3, "src", "alt"], ["class", "lightbox-info", 4, "ngIf"], [1, "lightbox-close", 3, "click"], [1, "lightbox-info"], ["class", "lightbox-meta", 4, "ngIf"], [1, "lightbox-meta"]], template: function GalerieComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275elementStart(0, "div", 0)(1, "div")(2, "h2");
+      \u0275\u0275text(3, "Galerie");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(4, "p");
+      \u0275\u0275text(5, "Toutes les photos ajout\xE9es aux profils de la famille, au m\xEAme endroit.");
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275template(6, GalerieComponent_div_6_Template, 2, 1, "div", 1)(7, GalerieComponent_div_7_Template, 2, 2, "div", 2)(8, GalerieComponent_ng_container_8_Template, 4, 3, "ng-container", 3)(9, GalerieComponent_div_9_Template, 7, 3, "div", 4);
+    }
+    if (rf & 2) {
+      \u0275\u0275advance(6);
+      \u0275\u0275property("ngIf", ctx.erreur);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.loading);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", !ctx.loading);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.lightbox);
+    }
+  }, dependencies: [NgForOf, NgIf], styles: ["\n\n.header-row[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin: 0 0 4px;\n}\n.header-row[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 14px;\n  margin: 0;\n}\n.erreur-box[_ngcontent-%COMP%] {\n  background: var(--error-bg);\n  color: var(--error);\n  border: 1px solid #FECACA;\n  border-radius: var(--radius-md);\n  padding: 12px 16px;\n  margin-bottom: 20px;\n  font-size: 14px;\n}\n.ga-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));\n  gap: 14px;\n}\n.ga-tile[_ngcontent-%COMP%] {\n  position: relative;\n  aspect-ratio: 1;\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: none;\n  padding: 0;\n  cursor: pointer;\n  background: var(--bg-muted);\n}\n.ga-tile[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n  transition: transform 0.25s ease;\n}\n.ga-tile[_ngcontent-%COMP%]:hover   img[_ngcontent-%COMP%] {\n  transform: scale(1.05);\n}\n.ga-tile-overlay[_ngcontent-%COMP%] {\n  position: absolute;\n  inset-inline: 0;\n  bottom: 0;\n  padding: 20px 10px 8px;\n  background:\n    linear-gradient(\n      to top,\n      rgba(0, 0, 0, 0.65),\n      transparent);\n  opacity: 0;\n  transition: opacity 0.2s ease;\n}\n.ga-tile[_ngcontent-%COMP%]:hover   .ga-tile-overlay[_ngcontent-%COMP%] {\n  opacity: 1;\n}\n.ga-tile-name[_ngcontent-%COMP%] {\n  color: #fff;\n  font-size: 12px;\n  font-weight: 600;\n}\n.ga-sk-tile[_ngcontent-%COMP%] {\n  aspect-ratio: 1;\n  border-radius: var(--radius-lg);\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: _ngcontent-%COMP%_ga-shimmer 1.4s infinite;\n}\n@keyframes _ngcontent-%COMP%_ga-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.load-more-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  margin-top: 24px;\n}\n.btn-spinner[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 15px;\n  height: 15px;\n  border: 2px solid rgba(0, 0, 0, 0.15);\n  border-top-color: var(--primary);\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_ga-spin 0.7s linear infinite;\n}\n@keyframes _ngcontent-%COMP%_ga-spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.lightbox-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.85);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 2000;\n  padding: 20px;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  animation: _ngcontent-%COMP%_ga-fadeIn 0.2s ease;\n}\n@keyframes _ngcontent-%COMP%_ga-fadeIn {\n  from {\n    opacity: 0;\n  }\n}\n.lightbox-box[_ngcontent-%COMP%] {\n  position: relative;\n  max-width: 90vw;\n  max-height: 90vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n}\n.lightbox-img[_ngcontent-%COMP%] {\n  max-width: 100%;\n  max-height: 75vh;\n  border-radius: 12px;\n  object-fit: contain;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);\n}\n.lightbox-info[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.9);\n  text-align: center;\n}\n.lightbox-info[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 14px;\n  margin-bottom: 2px;\n}\n.lightbox-info[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 13px;\n}\n.lightbox-meta[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  justify-content: center;\n  font-size: 12px !important;\n  color: rgba(255, 255, 255, 0.65) !important;\n  margin-top: 4px !important;\n}\n.lightbox-meta[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.lightbox-meta[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n}\n.lightbox-close[_ngcontent-%COMP%] {\n  position: absolute;\n  top: -40px;\n  right: 0;\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  background: rgba(0, 0, 0, 0.5);\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.lightbox-close[_ngcontent-%COMP%]   .material-icons-round[_ngcontent-%COMP%] {\n  font-size: 20px !important;\n}\n.lightbox-close[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.2);\n}\n/*# sourceMappingURL=galerie.component.css.map */"] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(GalerieComponent, [{
+    type: Component,
+    args: [{ selector: "app-galerie", standalone: false, template: `<div class="header-row mb-24">
+  <div>
+    <h2>Galerie</h2>
+    <p>Toutes les photos ajout\xE9es aux profils de la famille, au m\xEAme endroit.</p>
+  </div>
+</div>
+
+<div class="erreur-box" *ngIf="erreur">{{ erreur }}</div>
+
+<!-- Skeleton chargement -->
+<div class="ga-grid" *ngIf="loading">
+  <div class="ga-sk-tile" *ngFor="let _ of [1,2,3,4,5,6,7,8]"></div>
+</div>
+
+<ng-container *ngIf="!loading">
+  <div class="ga-grid" *ngIf="photos.length > 0">
+    <button class="ga-tile" *ngFor="let p of photos; trackBy: trackById" (click)="lightbox = p">
+      <img [src]="p.url" [alt]="p.caption || p.personneNom || 'Photo'" loading="lazy" />
+      <div class="ga-tile-overlay">
+        <span class="ga-tile-name" *ngIf="p.personneNom">{{ p.personneNom }}</span>
+      </div>
+    </button>
+  </div>
+
+  <div class="empty-state" *ngIf="photos.length === 0">
+    <span class="material-icons-round">photo_library</span>
+    <h3>Aucune photo pour le moment</h3>
+    <p>Ajoutez des photos depuis la fiche d'une personne \u2014 elles appara\xEEtront ici automatiquement.</p>
+  </div>
+
+  <div class="load-more-row" *ngIf="page < totalPages">
+    <button class="btn-secondary" [disabled]="loadingMore" (click)="loadMore()">
+      <span class="btn-spinner" *ngIf="loadingMore"></span>
+      <ng-container *ngIf="!loadingMore">Charger plus</ng-container>
+    </button>
+  </div>
+</ng-container>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" *ngIf="lightbox" (click)="lightbox = null">
+  <div class="lightbox-box" (click)="$event.stopPropagation()">
+    <img [src]="lightbox.url" class="lightbox-img" [alt]="lightbox.caption || 'Photo'" />
+    <div class="lightbox-info" *ngIf="lightbox.personneNom || lightbox.caption || lightbox.datePrise || lightbox.lieuPrise">
+      <strong *ngIf="lightbox.personneNom">{{ lightbox.personneNom }}</strong>
+      <p *ngIf="lightbox.caption">{{ lightbox.caption }}</p>
+      <p class="lightbox-meta" *ngIf="lightbox.datePrise || lightbox.lieuPrise">
+        <span *ngIf="lightbox.datePrise"><span class="material-icons-round">calendar_today</span>{{ lightbox.datePrise }}</span>
+        <span *ngIf="lightbox.lieuPrise"><span class="material-icons-round">place</span>{{ lightbox.lieuPrise }}</span>
+      </p>
+    </div>
+    <button class="lightbox-close" (click)="lightbox = null">
+      <span class="material-icons-round">close</span>
+    </button>
+  </div>
+</div>
+`, styles: ["/* src/app/pages/galerie/galerie.component.scss */\n.header-row h2 {\n  margin: 0 0 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n  margin: 0;\n}\n.erreur-box {\n  background: var(--error-bg);\n  color: var(--error);\n  border: 1px solid #FECACA;\n  border-radius: var(--radius-md);\n  padding: 12px 16px;\n  margin-bottom: 20px;\n  font-size: 14px;\n}\n.ga-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));\n  gap: 14px;\n}\n.ga-tile {\n  position: relative;\n  aspect-ratio: 1;\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: none;\n  padding: 0;\n  cursor: pointer;\n  background: var(--bg-muted);\n}\n.ga-tile img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n  transition: transform 0.25s ease;\n}\n.ga-tile:hover img {\n  transform: scale(1.05);\n}\n.ga-tile-overlay {\n  position: absolute;\n  inset-inline: 0;\n  bottom: 0;\n  padding: 20px 10px 8px;\n  background:\n    linear-gradient(\n      to top,\n      rgba(0, 0, 0, 0.65),\n      transparent);\n  opacity: 0;\n  transition: opacity 0.2s ease;\n}\n.ga-tile:hover .ga-tile-overlay {\n  opacity: 1;\n}\n.ga-tile-name {\n  color: #fff;\n  font-size: 12px;\n  font-weight: 600;\n}\n.ga-sk-tile {\n  aspect-ratio: 1;\n  border-radius: var(--radius-lg);\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: ga-shimmer 1.4s infinite;\n}\n@keyframes ga-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.load-more-row {\n  display: flex;\n  justify-content: center;\n  margin-top: 24px;\n}\n.btn-spinner {\n  display: inline-block;\n  width: 15px;\n  height: 15px;\n  border: 2px solid rgba(0, 0, 0, 0.15);\n  border-top-color: var(--primary);\n  border-radius: 50%;\n  animation: ga-spin 0.7s linear infinite;\n}\n@keyframes ga-spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.lightbox-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.85);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 2000;\n  padding: 20px;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  animation: ga-fadeIn 0.2s ease;\n}\n@keyframes ga-fadeIn {\n  from {\n    opacity: 0;\n  }\n}\n.lightbox-box {\n  position: relative;\n  max-width: 90vw;\n  max-height: 90vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n}\n.lightbox-img {\n  max-width: 100%;\n  max-height: 75vh;\n  border-radius: 12px;\n  object-fit: contain;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);\n}\n.lightbox-info {\n  color: rgba(255, 255, 255, 0.9);\n  text-align: center;\n}\n.lightbox-info strong {\n  display: block;\n  font-size: 14px;\n  margin-bottom: 2px;\n}\n.lightbox-info p {\n  margin: 0;\n  font-size: 13px;\n}\n.lightbox-meta {\n  display: flex;\n  gap: 16px;\n  justify-content: center;\n  font-size: 12px !important;\n  color: rgba(255, 255, 255, 0.65) !important;\n  margin-top: 4px !important;\n}\n.lightbox-meta span {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.lightbox-meta .material-icons-round {\n  font-size: 13px !important;\n}\n.lightbox-close {\n  position: absolute;\n  top: -40px;\n  right: 0;\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  background: rgba(0, 0, 0, 0.5);\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.lightbox-close .material-icons-round {\n  font-size: 20px !important;\n}\n.lightbox-close:hover {\n  background: rgba(255, 255, 255, 0.2);\n}\n/*# sourceMappingURL=galerie.component.css.map */\n"] }]
+  }], () => [{ type: ApiService }], null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(GalerieComponent, { className: "GalerieComponent", filePath: "src/app/pages/galerie/galerie.component.ts", lineNumber: 12 });
+})();
+
 // src/app/shell/shell-routing.module.ts
 var routes = [
   {
@@ -16911,7 +17955,9 @@ var routes = [
       { path: "unions", component: UnionsComponent },
       { path: "admin", component: AdminComponent },
       { path: "profil", component: ProfilComponent },
-      { path: "inviter", component: InviterComponent }
+      { path: "inviter", component: InviterComponent },
+      { path: "historique", component: HistoriqueComponent },
+      { path: "galerie", component: GalerieComponent }
     ]
   }
 ];
@@ -16957,7 +18003,9 @@ var ShellModule = class _ShellModule {
         UnionsComponent,
         AdminComponent,
         ProfilComponent,
-        InviterComponent
+        InviterComponent,
+        HistoriqueComponent,
+        GalerieComponent
       ],
       imports: [CommonModule, RouterModule, FormsModule, ShellRoutingModule]
     }]
@@ -16966,4 +18014,4 @@ var ShellModule = class _ShellModule {
 export {
   ShellModule
 };
-//# sourceMappingURL=chunk-D6R6JZPS.js.map
+//# sourceMappingURL=chunk-LJVRJZ5G.js.map

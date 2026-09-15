@@ -1,3 +1,19 @@
+
+==============================================
+        ACCES en local:
+
+
+
+
+
+
+        ACCES en ligne:
+
+
+
+
+
+==============================================
 perspective!
 
 Gestionnaires:
@@ -20,3 +36,9 @@ npx angular-cli-ghpages --dir=mam-buudu-web/browser
 
 ==> Faire un auddit: amelioration des differentes interfaces uxix avec validation par interfaces! en tant que ingenieur senior pro
 
+https://www.microsoft.com/fr-fr/microsoft-365/onedrive/download
+que tinspire cette page à ameliorer note landing page?
+
+
+================
+scrapter ce site: https://portal.c0de4hope.com/
