@@ -17,6 +17,8 @@ import { UnionsComponent } from '../pages/unions/unions.component';
 import { AdminComponent } from '../pages/admin/admin.component';
 import { ProfilComponent } from '../pages/profil/profil.component';
 import { InviterComponent } from '../pages/inviter/inviter.component';
+import { HistoriqueComponent } from '../pages/historique/historique.component';
+import { GalerieComponent } from '../pages/galerie/galerie.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { InviterComponent } from '../pages/inviter/inviter.component';
     AdminComponent,
     ProfilComponent,
     InviterComponent,
+    HistoriqueComponent,
+    GalerieComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule, ShellRoutingModule],
 })

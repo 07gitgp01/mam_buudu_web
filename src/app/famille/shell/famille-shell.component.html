@@ -86,6 +86,42 @@
       <!-- Actions droite -->
       <div class="ft-actions">
 
+        <!-- Bouton notifications -->
+        <div class="ft-notif-wrap" (click)="$event.stopPropagation()">
+          <button class="btn-icon ft-notif-btn" (click)="toggleNotif($event)" title="Notifications" aria-label="Notifications">
+            <span class="material-icons-round">{{ notifCount > 0 ? 'notifications' : 'notifications_none' }}</span>
+            <span class="ft-notif-badge" *ngIf="notifCount > 0">{{ notifCount > 9 ? '9+' : notifCount }}</span>
+          </button>
+
+          <div class="ft-notif-panel" *ngIf="notifOpen">
+            <div class="ft-notif-panel-head">
+              <span>Notifications</span>
+              <span class="ft-notif-panel-count" *ngIf="notifItems.length > 0">{{ notifItems.length }}</span>
+            </div>
+
+            <div class="ft-notif-empty" *ngIf="notifItems.length === 0">
+              <span class="material-icons-round">notifications_none</span>
+              <span>Aucune notification</span>
+            </div>
+
+            <div class="ft-notif-list" *ngIf="notifItems.length > 0">
+              <div class="ft-notif-item" *ngFor="let n of notifItems; trackBy: trackByNotifId" [class.ft-notif-unread]="!n.lue">
+                <div class="ft-notif-item-icon">
+                  <span class="material-icons-round">{{ notifIcon(n.type) }}</span>
+                </div>
+                <div class="ft-notif-item-body">
+                  <p class="ft-notif-item-titre">{{ n.titre }}</p>
+                  <p class="ft-notif-item-msg">{{ n.message }}</p>
+                  <span class="ft-notif-item-date">{{ formatNotifDate(n.createdAt) }}</span>
+                </div>
+                <button class="ft-notif-delete-btn" (click)="deleteNotif(n.id, $event)" title="Supprimer" aria-label="Supprimer la notification">
+                  <span class="material-icons-round">close</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="ft-user-wrap" (click)="showUserMenu = !showUserMenu">
           <button class="ft-user-btn">
             <div class="avatar avatar-sm">{{ userInitiales }}</div>

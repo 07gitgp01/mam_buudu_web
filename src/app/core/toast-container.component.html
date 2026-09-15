@@ -1,0 +1,9 @@
+<div class="toast-stack" *ngIf="toasts$ | async as toasts">
+  <div class="toast" *ngFor="let t of toasts; trackBy: trackById" [class]="'toast-' + t.type">
+    <span class="material-icons-round toast-icon">{{ iconFor(t.type) }}</span>
+    <span class="toast-message">{{ t.message }}</span>
+    <button class="toast-close" (click)="dismiss(t.id)" aria-label="Fermer">
+      <span class="material-icons-round">close</span>
+    </button>
+  </div>
+</div>

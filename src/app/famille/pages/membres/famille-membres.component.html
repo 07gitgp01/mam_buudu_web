@@ -197,5 +197,9 @@
       <span class="fm-detail-label">Biographie</span>
       <p>{{ p.biographie }}</p>
     </div>
+    <div class="fm-detail-bio fm-detail-bio-locked" *ngIf="!p.biographie && p.visibilite === 'prive'">
+      <span class="material-icons-round" style="font-size:15px!important; vertical-align:-2px;">lock</span>
+      Informations privées — visibles uniquement par les administrateurs/gestionnaires.
+    </div>
   </div>
 </div>

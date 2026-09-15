@@ -26,7 +26,9 @@ export class SidebarComponent {
     { icon: 'people',                label: 'Personnes',      route: '/app/personnes' },
     { icon: 'favorite',              label: 'Unions',         route: '/app/unions' },
     { icon: 'collections_bookmark',  label: 'Stories',        route: '/app/stories' },
+    { icon: 'photo_library',         label: 'Galerie',        route: '/app/galerie' },
     { icon: 'timeline',              label: 'Timeline',       route: '/app/timeline' },
+    { icon: 'history',               label: 'Historique',     route: '/app/historique' },
     { icon: 'sports_esports',        label: 'Jeux',           route: '/app/jeux' },
     { icon: 'group_add',             label: 'Inviter',        route: '/app/inviter' },
   ];

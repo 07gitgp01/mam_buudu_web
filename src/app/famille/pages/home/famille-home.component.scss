@@ -9,7 +9,7 @@
   position: relative;
   border-radius: 26px;
   overflow: hidden;
-  background: linear-gradient(135deg, #0B1220 0%, #0F2A1E 46%, #123B27 100%);
+  background: linear-gradient(135deg, var(--sidebar-dark, #3D0A1A) 0%, var(--primary-dark) 55%, var(--primary) 100%);
   padding: 36px 40px 32px;
   color: #fff;
   animation: fhHeroIn 0.5s ease-out;
@@ -47,13 +47,13 @@
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #86D19C, #2E7D32);
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   font-weight: 800;
-  color: #08210F;
+  color: #fff;
   flex-shrink: 0;
   border: 2px solid rgba(255,255,255,0.25);
 }
@@ -99,7 +99,7 @@
 }
 
 .fh-ring-inner {
-  width: 50px; height: 50px; border-radius: 50%; background: #0F2A1E;
+  width: 50px; height: 50px; border-radius: 50%; background: var(--sidebar-dark, #3D0A1A);
   display: flex; align-items: center; justify-content: center;
   font-size: 14px; font-weight: 700; color: #fff;
 }

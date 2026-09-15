@@ -1,6 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { catchError, of } from 'rxjs';
 import { AuthService } from '../services/auth.service';
+import { ApiService } from '../services/api.service';
+import { Plan } from '../models/plateforme.model';
+import { ThemeService } from '../services/theme.service';
 
 interface FamilleCard {
   nom: string;
@@ -27,7 +31,32 @@ interface Testimonial {
   standalone: false,
 })
 export class LandingComponent implements OnInit, OnDestroy {
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private api: ApiService,
+    public themeService: ThemeService,
+  ) {}
+
+  /* ---- Sélecteur de thème ---- */
+  themeMenuOpen = false;
+
+  get currentThemeColor(): string {
+    return this.themeService.themes.find(t => t.name === this.themeService.current)?.color ?? '#15803D';
+  }
+
+  get currentThemeLabel(): string {
+    return this.themeService.themes.find(t => t.name === this.themeService.current)?.label ?? 'Thème';
+  }
+
+  toggleThemeMenu(): void {
+    this.themeMenuOpen = !this.themeMenuOpen;
+  }
+
+  selectTheme(name: string): void {
+    this.themeService.applyColor(name);
+    this.themeMenuOpen = false;
+  }
 
   /* ---- Stats animés ---- */
   stats = { familles: 0, membres: 0, unions: 0, stories: 0 };
@@ -79,6 +108,55 @@ export class LandingComponent implements OnInit, OnDestroy {
     { icon: 'group_add',      title: 'Multi-rôles',        desc: 'Administrateurs, gestionnaires, membres — chaque rôle adapté à ses besoins.',                   color: '#6366F1' },
   ];
 
+  /* ---- Tarifs ---- */
+  plans: Plan[] = [];
+
+  /* ---- FAQ ---- */
+  faqs: { question: string; reponse: string; open: boolean }[] = [
+    {
+      question: "Qu'est-ce que Mam Buudu ?",
+      reponse: "Mam Buudu est une plateforme de généalogie familiale qui vous permet de construire l'arbre de votre famille, de partager des stories et souvenirs, et de suivre les événements marquants — accessible en ligne comme hors ligne.",
+      open: true,
+    },
+    {
+      question: 'Combien de membres puis-je ajouter gratuitement ?',
+      reponse: "Le plan Gratuit permet de créer un arbre jusqu'à 50 membres, avec l'ensemble des fonctionnalités de base (stories, export, notifications d'anniversaires).",
+      open: false,
+    },
+    {
+      question: 'Mes données familiales sont-elles privées ?',
+      reponse: "Oui. L'arbre de votre famille est privé par défaut et accessible uniquement aux membres que vous invitez. Vous gérez qui peut voir et modifier chaque information.",
+      open: false,
+    },
+    {
+      question: "Puis-je inviter les membres de ma famille ?",
+      reponse: "Oui, chaque famille dispose d'un code unique à partager. Les membres invités rejoignent l'espace famille avec leur propre compte et un rôle adapté (gestionnaire ou membre).",
+      open: false,
+    },
+    {
+      question: 'Puis-je changer de plan à tout moment ?',
+      reponse: "Oui, vous pouvez passer à un plan supérieur dès que votre famille grandit, directement depuis votre espace administrateur.",
+      open: false,
+    },
+  ];
+
+  get allFaqOpen(): boolean {
+    return this.faqs.every(f => f.open);
+  }
+
+  toggleFaq(i: number): void {
+    this.faqs[i].open = !this.faqs[i].open;
+  }
+
+  setAllFaq(open: boolean): void {
+    this.faqs.forEach(f => f.open = open);
+  }
+
+  formatPrix(plan: Plan): string {
+    if (plan.prix === 0) return 'Gratuit';
+    return `${plan.prix.toLocaleString('fr-FR')} FCFA`;
+  }
+
   navOpen = false;
 
   get isLoggedIn(): boolean { return this.auth.isLoggedIn(); }
@@ -100,6 +178,7 @@ export class LandingComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.animateCounters();
     this.startSlideTimer();
+    this.api.getPlans().pipe(catchError(() => of([]))).subscribe(plans => this.plans = plans);
   }
 
   ngOnDestroy(): void {

@@ -288,6 +288,23 @@
         <p class="theme-hint">Choisissez la couleur principale de l'interface</p>
       </div>
 
+      <!-- ===== NOTIFICATIONS ===== -->
+      <div class="profil-card" *ngIf="pushSupported">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="material-icons-round">notifications_active</span>
+            Notifications
+          </div>
+        </div>
+        <div class="theme-hint" style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+          <span>Recevez une notification sur cet appareil dès qu'un événement a lieu dans votre famille (nouveau membre, story, union...).</span>
+          <button class="btn-secondary btn-sm" (click)="togglePush()" [disabled]="pushBusy" style="flex-shrink:0; white-space:nowrap;">
+            <span class="material-icons-round spin" *ngIf="pushBusy">sync</span>
+            <ng-container *ngIf="!pushBusy">{{ pushEnabled ? 'Désactiver' : 'Activer' }}</ng-container>
+          </button>
+        </div>
+      </div>
+
       <!-- ===== ZONE DANGER ===== -->
       <div class="profil-card danger-card span-2">
         <div class="card-header">

@@ -39,6 +39,14 @@ export interface Story {
   updatedAt: string;
 }
 
+export interface PaginatedStories {
+  data: Story[];
+  total: number;
+  page: number;
+  limit: number;
+  totalPages: number;
+}
+
 export const STORY_TAGS = [
   'Souvenir', 'Événement', 'Culture', 'Succès', 'Patrimoine', 'Naissance', 'Autre'
 ] as const;

@@ -11,6 +11,8 @@ import { UnionsComponent } from '../pages/unions/unions.component';
 import { AdminComponent } from '../pages/admin/admin.component';
 import { ProfilComponent } from '../pages/profil/profil.component';
 import { InviterComponent } from '../pages/inviter/inviter.component';
+import { HistoriqueComponent } from '../pages/historique/historique.component';
+import { GalerieComponent } from '../pages/galerie/galerie.component';
 
 const routes: Routes = [
   {
@@ -18,16 +20,18 @@ const routes: Routes = [
     component: ShellComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home',      component: HomeComponent },
-      { path: 'personnes', component: PersonnesComponent },
-      { path: 'tree',      component: TreeComponent },
-      { path: 'stories',   component: StoriesComponent },
-      { path: 'timeline',  component: TimelineComponent },
-      { path: 'jeux',      component: JeuxComponent },
-      { path: 'unions',    component: UnionsComponent },
-      { path: 'admin',     component: AdminComponent },
-      { path: 'profil',   component: ProfilComponent },
-      { path: 'inviter',  component: InviterComponent },
+      { path: 'home',       component: HomeComponent },
+      { path: 'personnes',  component: PersonnesComponent },
+      { path: 'tree',       component: TreeComponent },
+      { path: 'stories',    component: StoriesComponent },
+      { path: 'timeline',   component: TimelineComponent },
+      { path: 'jeux',       component: JeuxComponent },
+      { path: 'unions',     component: UnionsComponent },
+      { path: 'admin',      component: AdminComponent },
+      { path: 'profil',     component: ProfilComponent },
+      { path: 'inviter',    component: InviterComponent },
+      { path: 'historique', component: HistoriqueComponent },
+      { path: 'galerie',    component: GalerieComponent },
     ],
   },
 ];

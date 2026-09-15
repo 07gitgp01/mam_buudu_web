@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService, AuthUser } from '../../../services/auth.service';
 import { ApiService } from '../../../services/api.service';
 import { ThemeService } from '../../../services/theme.service';
+import { PushNotificationService } from '../../../core/push-notification.service';
 import { forkJoin } from 'rxjs';
 
 @Component({
@@ -32,14 +33,25 @@ export class FamilleProfilComponent implements OnInit {
 
   codeCopied = false;
 
+  /* ---- Notifications push ---- */
+  pushSupported = false;
+  pushEnabled = false;
+  pushBusy = false;
+
   constructor(
     public auth: AuthService,
     private api: ApiService,
     public theme: ThemeService,
     private router: Router,
+    private push: PushNotificationService,
   ) {}
 
   ngOnInit(): void {
+    this.pushSupported = this.push.isSupported;
+    if (this.pushSupported) {
+      this.push.isSubscribed().then(v => this.pushEnabled = v);
+    }
+
     this.user = this.auth.getUser();
     if (this.user) {
       this.editForm = {
@@ -137,5 +149,17 @@ export class FamilleProfilComponent implements OnInit {
   logout(): void {
     this.auth.logout();
     this.router.navigate(['/famille/login']);
+  }
+
+  async togglePush(): Promise<void> {
+    if (this.pushBusy) return;
+    this.pushBusy = true;
+    if (this.pushEnabled) {
+      await this.push.unsubscribe();
+      this.pushEnabled = false;
+    } else {
+      this.pushEnabled = await this.push.subscribe();
+    }
+    this.pushBusy = false;
   }
 }

@@ -1,0 +1,55 @@
+<div class="header-row mb-24">
+  <div>
+    <h2>Galerie</h2>
+    <p>Toutes les photos ajoutées aux profils de la famille, au même endroit.</p>
+  </div>
+</div>
+
+<div class="erreur-box" *ngIf="erreur">{{ erreur }}</div>
+
+<!-- Skeleton chargement -->
+<div class="ga-grid" *ngIf="loading">
+  <div class="ga-sk-tile" *ngFor="let _ of [1,2,3,4,5,6,7,8]"></div>
+</div>
+
+<ng-container *ngIf="!loading">
+  <div class="ga-grid" *ngIf="photos.length > 0">
+    <button class="ga-tile" *ngFor="let p of photos; trackBy: trackById" (click)="lightbox = p">
+      <img [src]="p.url" [alt]="p.caption || p.personneNom || 'Photo'" loading="lazy" />
+      <div class="ga-tile-overlay">
+        <span class="ga-tile-name" *ngIf="p.personneNom">{{ p.personneNom }}</span>
+      </div>
+    </button>
+  </div>
+
+  <div class="empty-state" *ngIf="photos.length === 0">
+    <span class="material-icons-round">photo_library</span>
+    <h3>Aucune photo pour le moment</h3>
+    <p>Ajoutez des photos depuis la fiche d'une personne — elles apparaîtront ici automatiquement.</p>
+  </div>
+
+  <div class="load-more-row" *ngIf="page < totalPages">
+    <button class="btn-secondary" [disabled]="loadingMore" (click)="loadMore()">
+      <span class="btn-spinner" *ngIf="loadingMore"></span>
+      <ng-container *ngIf="!loadingMore">Charger plus</ng-container>
+    </button>
+  </div>
+</ng-container>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" *ngIf="lightbox" (click)="lightbox = null">
+  <div class="lightbox-box" (click)="$event.stopPropagation()">
+    <img [src]="lightbox.url" class="lightbox-img" [alt]="lightbox.caption || 'Photo'" />
+    <div class="lightbox-info" *ngIf="lightbox.personneNom || lightbox.caption || lightbox.datePrise || lightbox.lieuPrise">
+      <strong *ngIf="lightbox.personneNom">{{ lightbox.personneNom }}</strong>
+      <p *ngIf="lightbox.caption">{{ lightbox.caption }}</p>
+      <p class="lightbox-meta" *ngIf="lightbox.datePrise || lightbox.lieuPrise">
+        <span *ngIf="lightbox.datePrise"><span class="material-icons-round">calendar_today</span>{{ lightbox.datePrise }}</span>
+        <span *ngIf="lightbox.lieuPrise"><span class="material-icons-round">place</span>{{ lightbox.lieuPrise }}</span>
+      </p>
+    </div>
+    <button class="lightbox-close" (click)="lightbox = null">
+      <span class="material-icons-round">close</span>
+    </button>
+  </div>
+</div>

@@ -14,9 +14,28 @@
   <div class="nav-links">
     <a href="#features" class="nav-link">Fonctionnalités</a>
     <a href="#familles" class="nav-link">Familles</a>
+    <a href="#tarifs" class="nav-link">Tarifs</a>
     <a href="#temoignages" class="nav-link">Témoignages</a>
+    <a href="#faq" class="nav-link">FAQ</a>
   </div>
   <div class="nav-actions">
+    <div class="theme-switch" *ngIf="isLoggedIn">
+      <button class="theme-switch-btn" (click)="toggleThemeMenu()" [class.open]="themeMenuOpen" aria-haspopup="listbox" [attr.aria-expanded]="themeMenuOpen">
+        <span class="theme-switch-dot" [style.background]="currentThemeColor"></span>
+        <span class="theme-switch-name">{{ currentThemeLabel }}</span>
+        <span class="material-icons-round theme-switch-chevron">expand_more</span>
+      </button>
+      <div class="theme-switch-overlay" *ngIf="themeMenuOpen" (click)="themeMenuOpen = false"></div>
+      <div class="theme-switch-menu" *ngIf="themeMenuOpen" role="listbox">
+        <button class="theme-switch-option" *ngFor="let t of themeService.themes"
+                [class.active]="themeService.current === t.name"
+                (click)="selectTheme(t.name)" role="option" [attr.aria-selected]="themeService.current === t.name">
+          <span class="theme-switch-dot" [style.background]="t.color"></span>
+          <span class="theme-switch-label">{{ t.label }}</span>
+          <span class="material-icons-round theme-switch-check" *ngIf="themeService.current === t.name">check</span>
+        </button>
+      </div>
+    </div>
     <ng-container *ngIf="!isLoggedIn">
       <a routerLink="/famille/login" class="btn-nav-famille">
         <span class="material-icons-round">people</span>
@@ -69,9 +88,23 @@
     <a href="#familles" class="nms-link" (click)="navOpen=false">
       <span class="material-icons-round">family_restroom</span>Familles
     </a>
+    <a href="#tarifs" class="nms-link" (click)="navOpen=false">
+      <span class="material-icons-round">sell</span>Tarifs
+    </a>
     <a href="#temoignages" class="nms-link" (click)="navOpen=false">
       <span class="material-icons-round">format_quote</span>Témoignages
     </a>
+    <a href="#faq" class="nms-link" (click)="navOpen=false">
+      <span class="material-icons-round">help_outline</span>FAQ
+    </a>
+  </div>
+  <div class="nms-theme-picker" *ngIf="isLoggedIn">
+    <span class="nms-theme-label">Thème</span>
+    <div class="nms-theme-dots">
+      <button class="nms-theme-dot" *ngFor="let t of themeService.themes"
+              [style.background]="t.color" [class.active]="themeService.current === t.name"
+              (click)="selectTheme(t.name)" [title]="t.label"></button>
+    </div>
   </div>
   <div class="nms-actions">
     <ng-container *ngIf="!isLoggedIn">
@@ -261,6 +294,35 @@
   </div>
 </section>
 
+<!-- ===== TARIFS ===== -->
+<section class="pricing" id="tarifs" *ngIf="plans.length > 0">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">Tarifs</span>
+      <h2>Un plan pour chaque famille</h2>
+      <p>Commencez gratuitement, évoluez quand votre arbre grandit. Sans engagement.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card" *ngFor="let p of plans" [class.price-card-highlight]="p.nom === 'premium'">
+        <span class="price-badge" *ngIf="p.nom === 'premium'">Le plus populaire</span>
+        <h3 class="price-label">{{ p.label }}</h3>
+        <div class="price-value">
+          <span class="price-amount">{{ formatPrix(p) }}</span>
+          <span class="price-period" *ngIf="p.prix > 0">/an</span>
+        </div>
+        <ul class="price-features">
+          <li *ngFor="let f of p.features">
+            <span class="material-icons-round">check_circle</span>{{ f }}
+          </li>
+        </ul>
+        <a routerLink="/auth/register" class="price-cta" [class.price-cta-primary]="p.nom === 'premium'">
+          {{ p.prix === 0 ? 'Commencer gratuitement' : 'Choisir ce plan' }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FAMILLES ===== -->
 <section class="familles" id="familles">
   <div class="container">
@@ -313,6 +375,70 @@
   </div>
 </section>
 
+<!-- ===== APPLICATION MOBILE ===== -->
+<section class="mobile-download">
+  <div class="container mobile-download-inner">
+    <div class="mdl-text">
+      <span class="sec-tag">Application mobile</span>
+      <h2>Emportez l'arbre de votre famille partout</h2>
+      <p>L'application mobile Mam Buudu est en cours de finalisation pour Android et iOS — retrouvez votre arbre, vos stories et vos proches, même hors connexion.</p>
+      <div class="mdl-badges">
+        <span class="store-badge store-badge-soon">
+          <span class="material-icons-round">apple</span>
+          <span class="store-badge-text"><small>Bientôt sur</small>App Store</span>
+        </span>
+        <span class="store-badge store-badge-soon">
+          <span class="material-icons-round">shop</span>
+          <span class="store-badge-text"><small>Bientôt sur</small>Google Play</span>
+        </span>
+      </div>
+    </div>
+    <div class="mdl-visual">
+      <svg width="220" height="300" viewBox="0 0 220 300" fill="none">
+        <rect x="10" y="10" width="200" height="280" rx="28" fill="#0F2A1E" stroke="#123B27" stroke-width="2"/>
+        <rect x="20" y="34" width="180" height="232" rx="10" fill="#F0FDF4"/>
+        <circle cx="110" cy="22" r="3" fill="#123B27"/>
+        <circle cx="60" cy="90" r="16" fill="#81C784"/>
+        <circle cx="110" cy="70" r="20" fill="#2E7D32"/>
+        <circle cx="160" cy="90" r="16" fill="#81C784"/>
+        <path d="M60 106 L60 140 M110 90 L110 140 M160 106 L160 140" stroke="#8B4513" stroke-width="3"/>
+        <path d="M60 140 L110 140 L160 140" stroke="#8B4513" stroke-width="3"/>
+        <rect x="40" y="150" width="140" height="10" rx="5" fill="#DCFCE7"/>
+        <rect x="40" y="170" width="100" height="10" rx="5" fill="#DCFCE7"/>
+        <rect x="40" y="190" width="120" height="10" rx="5" fill="#DCFCE7"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-head">
+      <div>
+        <span class="sec-tag">FAQ</span>
+        <h2>Foire aux questions</h2>
+      </div>
+      <div class="faq-toggle-all">
+        <button class="faq-toggle-btn" (click)="setAllFaq(true)">Développer tout</button>
+        <button class="faq-toggle-btn" [disabled]="!allFaqOpen" (click)="setAllFaq(false)">Réduire tout</button>
+      </div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item" *ngFor="let f of faqs; let i = index" [class.open]="f.open">
+        <button class="faq-question" (click)="toggleFaq(i)">
+          <span class="faq-num">{{ (i + 1).toString().padStart(2, '0') }}/</span>
+          <span class="faq-question-text">{{ f.question }}</span>
+          <span class="material-icons-round faq-icon">{{ f.open ? 'remove' : 'add' }}</span>
+        </button>
+        <div class="faq-answer" *ngIf="f.open">
+          <p>{{ f.reponse }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CTA FINAL ===== -->
 <section class="cta">
   <div class="container">
@@ -345,13 +471,13 @@
       </svg>
       <span>Mam Buudu</span>
       <span class="footer-sep">·</span>
-      <span class="footer-by">par Sahelys</span>
+      <span class="footer-by">par Pbs</span>
     </div>
     <div class="footer-links">
       <a routerLink="/famille/login">Espace Famille</a>
       <a routerLink="/auth/login">Administration</a>
       <a routerLink="/auth/register">Créer un espace</a>
     </div>
-    <div class="footer-copy">© 2026 Sahelys. Tous droits réservés.</div>
+    <div class="footer-copy">© 2026 Pbs. Tous droits réservés.</div>
   </div>
 </footer>

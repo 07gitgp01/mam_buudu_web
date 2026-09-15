@@ -150,6 +150,14 @@
     </button>
   </div>
 
+  <!-- Charger plus -->
+  <div class="load-more-row" *ngIf="page < totalPages">
+    <button class="btn-secondary" [disabled]="loadingMore" (click)="loadMore()">
+      <span class="btn-spinner" *ngIf="loadingMore"></span>
+      <ng-container *ngIf="!loadingMore">Charger plus</ng-container>
+    </button>
+  </div>
+
 </ng-container>
 
 <!-- ===== MODAL CRÉER STORY ===== -->

@@ -1,0 +1,64 @@
+.header-row {
+  h2 { margin: 0 0 4px; }
+  p  { color: var(--text-secondary); font-size: 14px; margin: 0; }
+}
+
+.erreur-box {
+  background: var(--error-bg);
+  color: var(--error);
+  border: 1px solid #FECACA;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* ===== LISTE ===== */
+.hi-list {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.hi-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+  &:last-child { border-bottom: none; }
+}
+
+.hi-icon {
+  width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  .material-icons-round { font-size: 19px !important; }
+}
+
+.hi-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.hi-text { margin: 0; font-size: 14px; color: var(--text-primary); line-height: 1.5; }
+.hi-date { font-size: 12px; color: var(--text-muted); }
+
+/* ===== SKELETON ===== */
+.hi-skeleton { display: flex; flex-direction: column; gap: 1px; background: var(--border-light); border-radius: var(--radius-lg); overflow: hidden; }
+.hi-sk-row { display: flex; align-items: center; gap: 14px; padding: 16px 20px; background: var(--white); }
+.hi-sk-icon { width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0; background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%); background-size: 800px 100%; animation: hi-shimmer 1.4s infinite; }
+.hi-sk-body { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.hi-sk-line { height: 12px; border-radius: 6px; background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%); background-size: 800px 100%; animation: hi-shimmer 1.4s infinite; }
+.hi-sk-lg { width: 60%; }
+.hi-sk-sm { width: 30%; }
+
+@keyframes hi-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+/* ===== CHARGER PLUS ===== */
+.load-more-row { display: flex; justify-content: center; margin-top: 24px; }
+.btn-spinner {
+  display: inline-block; width: 15px; height: 15px;
+  border: 2px solid rgba(0,0,0,0.15); border-top-color: var(--primary);
+  border-radius: 50%; animation: hi-spin 0.7s linear infinite;
+}
+@keyframes hi-spin { to { transform: rotate(360deg); } }

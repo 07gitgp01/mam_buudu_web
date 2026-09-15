@@ -12,7 +12,11 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class FamilleStoriesComponent implements OnInit {
   loading = true;
+  loadingMore = false;
   stories: Story[] = [];
+  page = 1;
+  readonly pageSize = 20;
+  totalPages = 1;
 
   searchQuery = '';
   selectedTag = 'tous';
@@ -32,10 +36,32 @@ export class FamilleStoriesComponent implements OnInit {
 
   load(): void {
     this.loading = true;
-    this.api.getStories().pipe(catchError(() => of([]))).subscribe(data => {
-      this.stories = data;
-      this.loading = false;
-    });
+    this.page = 1;
+    this.api.getStories(this.page, this.pageSize)
+      .pipe(catchError(() => of(null)))
+      .subscribe(res => {
+        if (res) {
+          this.stories = res.data;
+          this.totalPages = res.totalPages;
+        }
+        this.loading = false;
+      });
+  }
+
+  loadMore(): void {
+    if (this.loadingMore || this.page >= this.totalPages) return;
+    this.loadingMore = true;
+    const nextPage = this.page + 1;
+    this.api.getStories(nextPage, this.pageSize)
+      .pipe(catchError(() => of(null)))
+      .subscribe(res => {
+        if (res) {
+          this.stories = [...this.stories, ...res.data];
+          this.page = res.page;
+          this.totalPages = res.totalPages;
+        }
+        this.loadingMore = false;
+      });
   }
 
   trackById(_: number, item: Story): string { return item.id; }

@@ -4,6 +4,7 @@ import { forkJoin } from 'rxjs';
 import { AuthService, AuthUser } from '../../services/auth.service';
 import { ApiService } from '../../services/api.service';
 import { ThemeService } from '../../services/theme.service';
+import { PushNotificationService } from '../../core/push-notification.service';
 
 interface FamilleInfo {
   id:   string;
@@ -39,14 +40,25 @@ export class ProfilComponent implements OnInit {
   pwError = '';
   showPwSection = false;
 
+  /* ---- Notifications push ---- */
+  pushSupported = false;
+  pushEnabled = false;
+  pushBusy = false;
+
   constructor(
     public auth: AuthService,
     private api: ApiService,
     public theme: ThemeService,
     private router: Router,
+    private push: PushNotificationService,
   ) {}
 
   ngOnInit(): void {
+    this.pushSupported = this.push.isSupported;
+    if (this.pushSupported) {
+      this.push.isSubscribed().then(v => this.pushEnabled = v);
+    }
+
     this.user = this.auth.getUser();
     if (this.user) {
       this.editForm = {
@@ -199,4 +211,16 @@ export class ProfilComponent implements OnInit {
   }
 
   codeCopied = false;
+
+  async togglePush(): Promise<void> {
+    if (this.pushBusy) return;
+    this.pushBusy = true;
+    if (this.pushEnabled) {
+      await this.push.unsubscribe();
+      this.pushEnabled = false;
+    } else {
+      this.pushEnabled = await this.push.subscribe();
+    }
+    this.pushBusy = false;
+  }
 }

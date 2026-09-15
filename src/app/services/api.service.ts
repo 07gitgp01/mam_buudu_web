@@ -5,14 +5,23 @@ import { API_BASE_URL } from '../core/api.config';
 import { Personne } from '../models/personne.model';
 import { Union } from '../models/union.model';
 import { Famille } from '../models/utilisateur.model';
-import { Story } from '../models/story.model';
+import { Story, PaginatedStories } from '../models/story.model';
 import { Membre, Plan, Subscription, NotificationItem } from '../models/plateforme.model';
+import { PaginatedActivity } from '../models/activity.model';
+import { PaginatedPhotos } from '../models/photo.model';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
   private base = API_BASE_URL;
 
   constructor(private http: HttpClient) {}
+
+  /* === Import GEDCOM === */
+  importGedcom(file: File): Observable<{ personnesCreees: number; unionsCreees: number }> {
+    const fd = new FormData();
+    fd.append('fichier', file);
+    return this.http.post<{ personnesCreees: number; unionsCreees: number }>(`${this.base}/api/import/gedcom`, fd);
+  }
 
   /* === Famille === */
   getCurrentFamille(): Observable<{ famille: Famille; membres: Membre[] }> {
@@ -129,9 +138,14 @@ export class ApiService {
     return this.http.post<any>(`${this.base}/api/auth/change-password`, data);
   }
 
+  /* === Historique / activité === */
+  getActivity(page = 1, limit = 30): Observable<PaginatedActivity> {
+    return this.http.get<PaginatedActivity>(`${this.base}/api/activity`, { params: { page, limit } });
+  }
+
   /* === Stories === */
-  getStories(): Observable<Story[]> {
-    return this.http.get<Story[]>(`${this.base}/api/stories`);
+  getStories(page = 1, limit = 20): Observable<PaginatedStories> {
+    return this.http.get<PaginatedStories>(`${this.base}/api/stories`, { params: { page, limit } });
   }
 
   createStory(data: { titre?: string; caption: string; tag?: string; mediaUrl?: string; mediaType?: string; expiresAt?: string; privacy?: string }): Observable<Story> {
@@ -181,6 +195,11 @@ export class ApiService {
     return this.http.get<any>(`${this.base}/api/sync/pull`, {
       params: new HttpParams().set('since', since),
     });
+  }
+
+  /* === Galerie familiale === */
+  getGalerie(page = 1, limit = 24): Observable<PaginatedPhotos> {
+    return this.http.get<PaginatedPhotos>(`${this.base}/api/photos`, { params: { page, limit } });
   }
 
   /* === Albums photos === */

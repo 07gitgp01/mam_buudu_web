@@ -272,6 +272,21 @@
         <p class="fp-theme-hint">Couleur principale de l'interface</p>
       </div>
 
+      <!-- Notifications -->
+      <div class="fp-card" *ngIf="pushSupported">
+        <div class="fp-card-head">
+          <div class="fp-card-title">
+            <span class="material-icons-round">notifications_active</span>
+            Notifications
+          </div>
+        </div>
+        <p class="fp-theme-hint">Recevez une notification sur cet appareil dès qu'un événement a lieu dans la famille.</p>
+        <button style="display:flex; align-items:center; justify-content:center; gap:6px; width:100%; padding:9px; border-radius:10px; background:var(--primary-bg); color:var(--primary); border:1px solid var(--primary-border); cursor:pointer; font-weight:600; font-size:13px; font-family:inherit;" (click)="togglePush()" [disabled]="pushBusy">
+          <span class="material-icons-round spin" *ngIf="pushBusy">sync</span>
+          <ng-container *ngIf="!pushBusy">{{ pushEnabled ? 'Désactiver' : 'Activer les notifications' }}</ng-container>
+        </button>
+      </div>
+
       <!-- Zone danger -->
       <div class="fp-card fp-danger-card fp-span-2">
         <div class="fp-card-head">

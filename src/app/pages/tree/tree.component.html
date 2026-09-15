@@ -81,6 +81,13 @@
       <span class="material-icons-round">account_tree</span>
       <h3>Arbre vide</h3>
       <p>Ajoutez des membres et des unions pour construire l'arbre familial.</p>
+      <p class="empty-state-or" *ngIf="totalPersonnes === 0">— ou —</p>
+      <label class="btn-outline btn-sm" *ngIf="totalPersonnes === 0" [class.disabled]="importing">
+        <span class="material-icons-round spin" *ngIf="importing">sync</span>
+        <span class="material-icons-round" *ngIf="!importing">file_upload</span>
+        {{ importing ? 'Import en cours...' : 'Importer un fichier GEDCOM' }}
+        <input type="file" accept=".ged,.gedcom" hidden [disabled]="importing" (change)="onGedcomFileSelected($event)" />
+      </label>
     </div>
 
     <!-- ══════════════════════════════════════════════════════

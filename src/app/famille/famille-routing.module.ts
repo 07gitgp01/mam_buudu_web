@@ -11,6 +11,7 @@ import { FamilleArbreComponent } from './pages/arbre/famille-arbre.component';
 import { FamilleTimelineComponent } from './pages/timeline/famille-timeline.component';
 import { FamilleProfilComponent }   from './pages/profil/famille-profil.component';
 import { FamilleInviterComponent }  from './pages/inviter/famille-inviter.component';
+import { FamilleGalerieComponent }  from './pages/galerie/famille-galerie.component';
 
 const routes: Routes = [
   { path: 'login', component: FamilleLoginComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'home',     component: FamilleHomeComponent     },
       { path: 'membres',  component: FamilleMembresComponent  },
       { path: 'stories',  component: FamilleStoriesComponent  },
+      { path: 'galerie',  component: FamilleGalerieComponent  },
       { path: 'arbre',    component: FamilleArbreComponent    },
       { path: 'timeline', component: FamilleTimelineComponent },
       { path: 'profil',   component: FamilleProfilComponent   },

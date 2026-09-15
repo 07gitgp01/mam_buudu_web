@@ -401,6 +401,21 @@
 }
 .spin { animation: spin 1s linear infinite; }
 
+/* ===== CHARGER PLUS ===== */
+.load-more-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+.btn-spinner {
+  display: inline-block;
+  width: 15px; height: 15px;
+  border: 2px solid rgba(0,0,0,0.15);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
   .story-modal { border-radius: 16px 16px 0 0; position: fixed; bottom: 0; left: 0; right: 0; max-width: 100%; }

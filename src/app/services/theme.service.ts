@@ -11,6 +11,7 @@ export class ThemeService {
   private renderer: Renderer2;
 
   readonly themes: AppTheme[] = [
+    { name: 'foret',  label: 'Forêt',  color: '#15803D' },
     { name: 'blanc',  label: 'Blanc',  color: '#E2E8F0' },
     { name: 'bleu',   label: 'Bleu',   color: '#2563EB' },
     { name: 'rose',   label: 'Rose',   color: '#DB2777' },
@@ -23,7 +24,7 @@ export class ThemeService {
 
   constructor(factory: RendererFactory2) {
     this.renderer = factory.createRenderer(null, null);
-    const saved = localStorage.getItem('mb_color') ?? 'blanc';
+    const saved = localStorage.getItem('mb_color') ?? 'foret';
     this.current = saved;
     this.applyColor(saved);
   }

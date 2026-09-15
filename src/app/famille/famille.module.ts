@@ -14,6 +14,7 @@ import { FamilleArbreComponent }    from './pages/arbre/famille-arbre.component'
 import { FamilleTimelineComponent } from './pages/timeline/famille-timeline.component';
 import { FamilleProfilComponent }   from './pages/profil/famille-profil.component';
 import { FamilleInviterComponent }  from './pages/inviter/famille-inviter.component';
+import { FamilleGalerieComponent }  from './pages/galerie/famille-galerie.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FamilleInviterComponent }  from './pages/inviter/famille-inviter.compon
     FamilleTimelineComponent,
     FamilleProfilComponent,
     FamilleInviterComponent,
+    FamilleGalerieComponent,
   ],
   imports: [
     CommonModule,

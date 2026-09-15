@@ -1,0 +1,50 @@
+<div class="header-row mb-24">
+  <div>
+    <h2>Historique</h2>
+    <p>Journal des actions récentes sur l'arbre de votre famille.</p>
+  </div>
+</div>
+
+<div class="erreur-box" *ngIf="erreur">{{ erreur }}</div>
+
+<!-- Skeleton chargement -->
+<div class="hi-skeleton" *ngIf="loading">
+  <div class="hi-sk-row" *ngFor="let _ of [1,2,3,4,5]">
+    <div class="hi-sk-icon"></div>
+    <div class="hi-sk-body">
+      <div class="hi-sk-line hi-sk-lg"></div>
+      <div class="hi-sk-line hi-sk-sm"></div>
+    </div>
+  </div>
+</div>
+
+<ng-container *ngIf="!loading">
+  <div class="hi-list" *ngIf="entries.length > 0">
+    <div class="hi-row" *ngFor="let e of entries; trackBy: trackById">
+      <div class="hi-icon" [style.background]="labelFor(e).color + '1A'" [style.color]="labelFor(e).color">
+        <span class="material-icons-round">{{ labelFor(e).icon }}</span>
+      </div>
+      <div class="hi-body">
+        <p class="hi-text">
+          <strong>{{ e.auteurNom || 'Quelqu\'un' }}</strong>
+          {{ labelFor(e).label }}
+          <strong *ngIf="cibleNom(e)">{{ cibleNom(e) }}</strong>
+        </p>
+        <span class="hi-date">{{ formatDate(e.createdAt) }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="entries.length === 0">
+    <span class="material-icons-round">history</span>
+    <h3>Aucune activité pour le moment</h3>
+    <p>Les actions de la famille (ajouts, modifications, suppressions) apparaîtront ici.</p>
+  </div>
+
+  <div class="load-more-row" *ngIf="page < totalPages">
+    <button class="btn-secondary" [disabled]="loadingMore" (click)="loadMore()">
+      <span class="btn-spinner" *ngIf="loadingMore"></span>
+      <ng-container *ngIf="!loadingMore">Charger plus</ng-container>
+    </button>
+  </div>
+</ng-container>

@@ -335,6 +335,13 @@
           <label>Notes</label>
           <textarea name="notes" [(ngModel)]="form.notes" rows="2" placeholder="Notes complémentaires..." class="form-control"></textarea>
         </div>
+        <div class="form-group">
+          <label>Confidentialité</label>
+          <select name="visibilite" [(ngModel)]="form.visibilite" class="form-control">
+            <option value="famille">Visible par toute la famille</option>
+            <option value="prive">Privé — biographie/notes masquées aux membres simples</option>
+          </select>
+        </div>
       </div>
 
     </form>
@@ -391,6 +398,9 @@
           </span>
           <span class="badge" [class.badge-success]="estVivant(p)" [class.badge-gray]="!estVivant(p)">
             {{ estVivant(p) ? 'Vivant(e)' : 'Décédé(e)' }}
+          </span>
+          <span class="badge badge-gray" *ngIf="p.visibilite === 'prive'" title="Biographie/notes masquées aux membres simples">
+            <span class="material-icons-round" style="font-size:13px!important; vertical-align:-2px;">lock</span> Privé
           </span>
         </div>
       </div>
@@ -537,6 +547,9 @@
     </div>
     <h4>Supprimer {{ deleteTarget ? getNomComplet(deleteTarget) : 'ce membre' }} ?</h4>
     <p>Cette action est irréversible. Toutes les relations associées seront également supprimées.</p>
+    <div class="error-state" *ngIf="deleteErreur">
+      <span class="material-icons-round">error_outline</span>{{ deleteErreur }}
+    </div>
     <div class="confirm-actions">
       <button class="btn-ghost" (click)="closeAll()">Annuler</button>
       <button class="btn-danger" (click)="deletePersonne()" [disabled]="deleting">

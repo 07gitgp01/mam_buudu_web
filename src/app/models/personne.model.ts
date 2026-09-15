@@ -14,6 +14,7 @@ export interface Personne {
   biographie: string | null;
   notes: string | null;
   photoUrl: string | null;
+  visibilite: 'famille' | 'prive';
   createdAt: string;
   updatedAt: string;
 }

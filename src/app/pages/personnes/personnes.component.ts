@@ -40,6 +40,7 @@ interface PersonneForm {
   lieuDeces: string;
   biographie: string;
   notes: string;
+  visibilite: 'famille' | 'prive';
 }
 
 type Filtre = 'tous' | 'hommes' | 'femmes' | 'vivants' | 'decedes';
@@ -164,6 +165,7 @@ export class PersonnesComponent implements OnInit {
       estDecede: false,
       deces_annee: '', deces_mois: '', deces_jour: '', lieuDeces: '',
       biographie: '', notes: '',
+      visibilite: 'famille',
     };
   }
 
@@ -194,6 +196,7 @@ export class PersonnesComponent implements OnInit {
       lieuDeces: p.lieuDeces ?? '',
       biographie: p.biographie ?? '',
       notes:      p.notes      ?? '',
+      visibilite: p.visibilite ?? 'famille',
     };
     this.selectedFile = null;
     this.photoPreview = p.photoUrl;
@@ -292,6 +295,7 @@ export class PersonnesComponent implements OnInit {
     this.editTarget = null;
     this.detailTarget = null;
     this.deleteTarget = null;
+    this.deleteErreur = null;
   }
 
   savePersonne(): void {
@@ -321,6 +325,7 @@ export class PersonnesComponent implements OnInit {
       lieuDeces:  this.form.estDecede ? (this.form.lieuDeces  || null) : null,
       biographie: this.form.biographie || null,
       notes:      this.form.notes      || null,
+      visibilite: this.form.visibilite,
     };
 
     const obs = this.editTarget
@@ -338,20 +343,23 @@ export class PersonnesComponent implements OnInit {
           finish();
         }
       },
-      error: () => { this.saving = false; },
+      error: (err) => { this.saving = false; this.formErreur = err?.error?.error ?? 'Erreur lors de l\'enregistrement.'; },
     });
   }
+
+  deleteErreur: string | null = null;
 
   deletePersonne(): void {
     if (!this.deleteTarget || this.deleting) return;
     this.deleting = true;
+    this.deleteErreur = null;
     this.api.deletePersonne(this.deleteTarget.id).subscribe({
       next: () => {
         this.toutes = this.toutes.filter(p => p.id !== this.deleteTarget!.id);
         this.deleting = false;
         this.closeAll();
       },
-      error: () => { this.deleting = false; },
+      error: (err) => { this.deleting = false; this.deleteErreur = err?.error?.error ?? 'Erreur lors de la suppression.'; },
     });
   }
 

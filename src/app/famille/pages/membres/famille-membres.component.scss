@@ -155,6 +155,15 @@
   p { font-size: 14px; color: #4B5563; line-height: 1.7; margin: 0; }
 }
 
+.fm-detail-bio-locked {
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #9CA3AF;
+  font-style: italic;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .fm-header { flex-direction: column; align-items: flex-start; gap: 12px; }

@@ -9,6 +9,7 @@ import { forkJoin, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
+import { ToastService } from '../../core/toast.service';
 
 /** Branche d'union pour une personne polygame */
 export interface UnionBranch {
@@ -131,10 +132,16 @@ export class TreeComponent implements OnInit, OnDestroy {
     }
   };
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private toast: ToastService) {}
 
   ngOnInit(): void {
     document.addEventListener('pointerover', this.onDocPointerOver, { passive: true });
+    this.reload();
+  }
+
+  private reload(): void {
+    this.loading = true;
+    this.erreur = '';
     forkJoin({ personnes: this.api.getPersonnes(), unions: this.api.getUnions() }).subscribe({
       next: ({ personnes, unions }) => {
         this.allPersonnes = personnes;
@@ -146,6 +153,28 @@ export class TreeComponent implements OnInit, OnDestroy {
         this.erreur  = 'Impossible de charger l\'arbre.';
         this.loading = false;
       },
+    });
+  }
+
+  /* ===== Import GEDCOM ===== */
+  importing = false;
+
+  onGedcomFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const file = input.files?.[0];
+    input.value = ''; // permet de resélectionner le même fichier ensuite
+    if (!file || this.importing) return;
+
+    this.importing = true;
+    this.api.importGedcom(file).subscribe({
+      next: (res) => {
+        this.importing = false;
+        this.toast.success(`Import réussi : ${res.personnesCreees} personne(s) et ${res.unionsCreees} union(s) créées.`);
+        this.reload();
+      },
+      // Pas de toast d'erreur ici : l'intercepteur HTTP global en affiche déjà un
+      // automatiquement avec le message renvoyé par le backend.
+      error: () => { this.importing = false; },
     });
   }
 

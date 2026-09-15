@@ -36,7 +36,7 @@
 
     <div class="home-hero-right">
       <div class="home-ring-wrap" *ngIf="!loading && toutes.length > 0">
-        <div class="home-ring" [style.background]="'conic-gradient(#81C784 0% ' + completionScore + '%, rgba(255,255,255,0.14) ' + completionScore + '% 100%)'">
+        <div class="home-ring" [style.background]="'conic-gradient(var(--primary-light) 0% ' + completionScore + '%, rgba(255,255,255,0.14) ' + completionScore + '% 100%)'">
           <div class="home-ring-inner">{{ completionScore }}%</div>
         </div>
         <div class="home-ring-label"><b>Arbre complété</b>Enrichissez les profils pour compléter l'arbre</div>

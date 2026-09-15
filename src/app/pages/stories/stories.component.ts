@@ -12,8 +12,12 @@ import { AuthService } from '../../services/auth.service';
 })
 export class StoriesComponent implements OnInit, OnDestroy {
   loading = true;
+  loadingMore = false;
   erreur = '';
   stories: Story[] = [];
+  page = 1;
+  readonly pageSize = 20;
+  totalPages = 1;
 
   searchQuery = '';
   selectedTag = 'tous';
@@ -44,10 +48,31 @@ export class StoriesComponent implements OnInit, OnDestroy {
   load(): void {
     this.loading = true;
     this.erreur = '';
-    this.api.getStories().pipe(catchError(() => of([]))).subscribe(data => {
-      this.stories = data;
-      this.loading = false;
-    });
+    this.page = 1;
+    this.api.getStories(this.page, this.pageSize)
+      .pipe(catchError(() => of(null)))
+      .subscribe(res => {
+        if (!res) { this.erreur = 'Impossible de charger les stories.'; this.loading = false; return; }
+        this.stories = res.data;
+        this.totalPages = res.totalPages;
+        this.loading = false;
+      });
+  }
+
+  loadMore(): void {
+    if (this.loadingMore || this.page >= this.totalPages) return;
+    this.loadingMore = true;
+    const nextPage = this.page + 1;
+    this.api.getStories(nextPage, this.pageSize)
+      .pipe(catchError(() => of(null)))
+      .subscribe(res => {
+        if (res) {
+          this.stories = [...this.stories, ...res.data];
+          this.page = res.page;
+          this.totalPages = res.totalPages;
+        }
+        this.loadingMore = false;
+      });
   }
 
   get storiesFiltrees(): Story[] {

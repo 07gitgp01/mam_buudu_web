@@ -7,10 +7,12 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { jwtInterceptor } from './core/jwt.interceptor';
 import { loadingInterceptor } from './core/loading.interceptor';
+import { errorInterceptor } from './core/error.interceptor';
+import { ToastContainerComponent } from './core/toast-container.component';
 import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
-  declarations: [App, LandingComponent],
+  declarations: [App, LandingComponent, ToastContainerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,7 +23,7 @@ import { LandingComponent } from './landing/landing.component';
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient(withInterceptors([jwtInterceptor, loadingInterceptor])),
+    provideHttpClient(withInterceptors([jwtInterceptor, loadingInterceptor, errorInterceptor])),
   ],
   bootstrap: [App],
 })
