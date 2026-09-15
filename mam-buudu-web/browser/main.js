@@ -1,18 +1,18 @@
 import {
   ToastService
-} from "./chunk-2MLW6AMB.js";
+} from "./chunk-OQGG6VTN.js";
 import {
   roleGuard
-} from "./chunk-WJCGERJN.js";
+} from "./chunk-UUSVOCS4.js";
 import {
   ApiService,
   LoadingService,
   ServiceWorkerModule,
   ThemeService
-} from "./chunk-MAP5PQOL.js";
+} from "./chunk-OQPKGRDY.js";
 import {
   AuthService
-} from "./chunk-LX6YEX77.js";
+} from "./chunk-3BB7U3NX.js";
 import {
   AsyncPipe,
   BrowserModule,
@@ -68,7 +68,7 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1
-} from "./chunk-4MA3A2KE.js";
+} from "./chunk-UZMMFXAY.js";
 import {
   __spreadValues
 } from "./chunk-YP43Q66R.js";
@@ -1242,489 +1242,489 @@ var LandingComponent = class _LandingComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(LandingComponent, [{
     type: Component,
-    args: [{ selector: "app-landing", standalone: false, template: `<!-- ===== NAVBAR ===== -->
-<nav class="landing-nav">
-  <a routerLink="/" class="nav-logo">
-    <svg width="26" height="26" viewBox="0 0 120 120" fill="none">
-      <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>
-      <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
-      <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
-      <circle cx="35" cy="35" r="10" fill="#2E7D32"/>
-      <circle cx="85" cy="35" r="10" fill="#2E7D32"/>
-      <circle cx="60" cy="25" r="10" fill="#81C784"/>
-    </svg>
-    <span>Mam Buudu</span>
-  </a>
-  <div class="nav-links">
-    <a href="#features" class="nav-link">Fonctionnalit\xE9s</a>
-    <a href="#familles" class="nav-link">Familles</a>
-    <a href="#tarifs" class="nav-link">Tarifs</a>
-    <a href="#temoignages" class="nav-link">T\xE9moignages</a>
-    <a href="#faq" class="nav-link">FAQ</a>
-  </div>
-  <div class="nav-actions">
-    <div class="theme-switch" *ngIf="isLoggedIn">
-      <button class="theme-switch-btn" (click)="toggleThemeMenu()" [class.open]="themeMenuOpen" aria-haspopup="listbox" [attr.aria-expanded]="themeMenuOpen">
-        <span class="theme-switch-dot" [style.background]="currentThemeColor"></span>
-        <span class="theme-switch-name">{{ currentThemeLabel }}</span>
-        <span class="material-icons-round theme-switch-chevron">expand_more</span>
-      </button>
-      <div class="theme-switch-overlay" *ngIf="themeMenuOpen" (click)="themeMenuOpen = false"></div>
-      <div class="theme-switch-menu" *ngIf="themeMenuOpen" role="listbox">
-        <button class="theme-switch-option" *ngFor="let t of themeService.themes"
-                [class.active]="themeService.current === t.name"
-                (click)="selectTheme(t.name)" role="option" [attr.aria-selected]="themeService.current === t.name">
-          <span class="theme-switch-dot" [style.background]="t.color"></span>
-          <span class="theme-switch-label">{{ t.label }}</span>
-          <span class="material-icons-round theme-switch-check" *ngIf="themeService.current === t.name">check</span>
-        </button>
-      </div>
-    </div>
-    <ng-container *ngIf="!isLoggedIn">
-      <a routerLink="/famille/login" class="btn-nav-famille">
-        <span class="material-icons-round">people</span>
-        Espace Famille
-      </a>
-      <a routerLink="/auth/login" class="btn-nav-admin">
-        <span class="material-icons-round">manage_accounts</span>
-        Administration
-      </a>
-    </ng-container>
-    <ng-container *ngIf="isLoggedIn">
-      <a [routerLink]="dashboardRoute" class="btn-nav-famille">
-        <span class="material-icons-round">dashboard</span>
-        Mon espace
-      </a>
-      <button class="btn-nav-logout" (click)="logout()">
-        <span class="material-icons-round">logout</span>
-        Se d\xE9connecter
-      </button>
-    </ng-container>
-    <button class="nav-hamburger" (click)="navOpen = !navOpen" aria-label="Menu">
-      <span class="material-icons-round">{{ navOpen ? 'close' : 'menu' }}</span>
-    </button>
-  </div>
-</nav>
-
-<!-- ===== MOBILE NAV SHEET ===== -->
-<div class="nav-mobile-overlay" *ngIf="navOpen" (click)="navOpen=false"></div>
-<div class="nav-mobile-sheet" [class.open]="navOpen">
-  <div class="nms-header">
-    <div class="nav-logo nms-logo">
-      <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
-        <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>
-        <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
-        <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
-        <circle cx="35" cy="35" r="10" fill="#2E7D32"/>
-        <circle cx="85" cy="35" r="10" fill="#2E7D32"/>
-        <circle cx="60" cy="25" r="10" fill="#81C784"/>
-      </svg>
-      <span>Mam Buudu</span>
-    </div>
-    <button class="nms-close" (click)="navOpen=false">
-      <span class="material-icons-round">close</span>
-    </button>
-  </div>
-  <div class="nms-links">
-    <a href="#features" class="nms-link" (click)="navOpen=false">
-      <span class="material-icons-round">star</span>Fonctionnalit\xE9s
-    </a>
-    <a href="#familles" class="nms-link" (click)="navOpen=false">
-      <span class="material-icons-round">family_restroom</span>Familles
-    </a>
-    <a href="#tarifs" class="nms-link" (click)="navOpen=false">
-      <span class="material-icons-round">sell</span>Tarifs
-    </a>
-    <a href="#temoignages" class="nms-link" (click)="navOpen=false">
-      <span class="material-icons-round">format_quote</span>T\xE9moignages
-    </a>
-    <a href="#faq" class="nms-link" (click)="navOpen=false">
-      <span class="material-icons-round">help_outline</span>FAQ
-    </a>
-  </div>
-  <div class="nms-theme-picker" *ngIf="isLoggedIn">
-    <span class="nms-theme-label">Th\xE8me</span>
-    <div class="nms-theme-dots">
-      <button class="nms-theme-dot" *ngFor="let t of themeService.themes"
-              [style.background]="t.color" [class.active]="themeService.current === t.name"
-              (click)="selectTheme(t.name)" [title]="t.label"></button>
-    </div>
-  </div>
-  <div class="nms-actions">
-    <ng-container *ngIf="!isLoggedIn">
-      <a routerLink="/famille/login" class="nms-btn nms-btn-famille" (click)="navOpen=false">
-        <span class="material-icons-round">people</span>Espace Famille
-      </a>
-      <a routerLink="/auth/login" class="nms-btn nms-btn-admin" (click)="navOpen=false">
-        <span class="material-icons-round">manage_accounts</span>Administration
-      </a>
-    </ng-container>
-    <ng-container *ngIf="isLoggedIn">
-      <a [routerLink]="dashboardRoute" class="nms-btn nms-btn-famille" (click)="navOpen=false">
-        <span class="material-icons-round">dashboard</span>Mon espace
-      </a>
-      <button class="nms-btn nms-btn-logout" (click)="logout(); navOpen=false">
-        <span class="material-icons-round">logout</span>Se d\xE9connecter
-      </button>
-    </ng-container>
-  </div>
-</div>
-
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-sparks">
-    <div class="spark" style="left:12%; animation-delay:0s"></div>
-    <div class="spark" style="left:24%; animation-delay:1.4s; width:4px; height:4px;"></div>
-    <div class="spark" style="left:38%; animation-delay:2.6s"></div>
-    <div class="spark" style="left:55%; animation-delay:0.7s; width:4px; height:4px;"></div>
-    <div class="spark" style="left:68%; animation-delay:3.4s"></div>
-    <div class="spark" style="left:81%; animation-delay:1.9s; width:4px; height:4px;"></div>
-  </div>
-
-  <div class="hero-inner">
-    <div>
-      <span class="hero-badge fade-up-1">
-        <span class="material-icons-round">auto_awesome</span>
-        Application g\xE9n\xE9alogique africaine
-      </span>
-      <h1 class="hero-title fade-up-2">
-        L'histoire de votre<br/>
-        <span class="accent">famille</span>,<br/>
-        pr\xE9serv\xE9e pour toujours
-      </h1>
-      <p class="hero-sub fade-up-3">
-        Construisez l'arbre g\xE9n\xE9alogique de votre famille, partagez vos stories et connectez les g\xE9n\xE9rations \xE0 travers le temps.
-      </p>
-
-      <div class="hero-entries fade-up-4">
-        <ng-container *ngIf="!isLoggedIn">
-          <a routerLink="/famille/login" class="entry-card">
-            <div class="entry-icon famille"><span class="material-icons-round">family_restroom</span></div>
-            <div class="entry-info"><strong>Espace Famille</strong><span>Pour les membres de la famille</span></div>
-            <span class="material-icons-round arrow">arrow_forward</span>
-          </a>
-          <a routerLink="/auth/login" class="entry-card">
-            <div class="entry-icon admin"><span class="material-icons-round">admin_panel_settings</span></div>
-            <div class="entry-info"><strong>Espace Admin</strong><span>Pour les gestionnaires</span></div>
-            <span class="material-icons-round arrow">arrow_forward</span>
-          </a>
-        </ng-container>
-        <ng-container *ngIf="isLoggedIn">
-          <a [routerLink]="dashboardRoute" class="entry-card">
-            <div class="entry-icon famille"><span class="material-icons-round">dashboard</span></div>
-            <div class="entry-info"><strong>Retour \xE0 mon espace</strong><span>{{ userName }}</span></div>
-            <span class="material-icons-round arrow">arrow_forward</span>
-          </a>
-          <button class="entry-card" (click)="logout()">
-            <div class="entry-icon admin"><span class="material-icons-round">logout</span></div>
-            <div class="entry-info"><strong>Se d\xE9connecter</strong><span>Quitter la session</span></div>
-            <span class="material-icons-round arrow">arrow_forward</span>
-          </button>
-        </ng-container>
-      </div>
-    </div>
-
-    <div class="hero-tree-wrap">
-      <svg width="480" height="560" viewBox="0 0 480 560" fill="none">
-        <!-- Racines -->
-        <path class="tree-line g-root" d="M240 520 C 220 500, 200 495, 175 505" stroke="#8B4513" stroke-width="3" fill="none" opacity="0.55"/>
-        <path class="tree-line g-root" d="M240 520 C 260 500, 280 495, 305 505" stroke="#8B4513" stroke-width="3" fill="none" opacity="0.55"/>
-        <path class="tree-line g-root" d="M240 520 L 240 545" stroke="#8B4513" stroke-width="4" opacity="0.55"/>
-        <!-- Tronc + g\xE9n\xE9ration 1 -->
-        <path class="tree-line g-trunk" d="M240 520 L 240 400" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>
-        <path class="tree-line g-trunk" d="M240 400 C 210 380, 180 365, 150 340" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path class="tree-line g-trunk" d="M240 400 C 270 380, 300 365, 330 340" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path class="tree-line g-trunk" d="M240 400 L 240 330" stroke="#8B4513" stroke-width="5" stroke-linecap="round"/>
-        <!-- G\xE9n\xE9ration 2 -->
-        <path class="tree-line g-1" d="M150 340 C 130 315, 115 300, 95 280" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <path class="tree-line g-1" d="M150 340 C 155 310, 150 290, 140 265" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <path class="tree-line g-1" d="M330 340 C 350 315, 365 300, 385 280" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <path class="tree-line g-1" d="M330 340 C 325 310, 330 290, 340 265" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <path class="tree-line g-1" d="M240 330 C 225 305, 225 290, 235 265" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <path class="tree-line g-1" d="M240 330 C 255 305, 255 290, 245 265" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <!-- G\xE9n\xE9ration 3 (fines) -->
-        <path class="tree-line g-2" d="M95 280 C 85 260, 82 245, 88 225" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path class="tree-line g-2" d="M140 265 C 135 245, 138 230, 148 210" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path class="tree-line g-2" d="M385 280 C 395 260, 398 245, 392 225" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path class="tree-line g-2" d="M340 265 C 345 245, 342 230, 332 210" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path class="tree-line g-2" d="M235 265 C 225 240, 228 222, 220 200" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path class="tree-line g-2" d="M245 265 C 255 240, 252 222, 260 200" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-
-        <!-- Feuillage -->
-        <circle class="leaf" style="animation-delay:1.4s, 1.9s" cx="88" cy="220" r="16" fill="#2E7D32"/>
-        <circle class="leaf" style="animation-delay:1.5s, 2.1s" cx="148" cy="205" r="14" fill="#81C784"/>
-        <circle class="leaf" style="animation-delay:1.6s, 1.7s" cx="220" cy="196" r="16" fill="#2E7D32"/>
-        <circle class="leaf" style="animation-delay:1.65s, 2.4s" cx="260" cy="196" r="14" fill="#81C784"/>
-        <circle class="leaf" style="animation-delay:1.55s, 2.0s" cx="332" cy="205" r="14" fill="#2E7D32"/>
-        <circle class="leaf" style="animation-delay:1.45s, 1.85s" cx="392" cy="220" r="16" fill="#81C784"/>
-
-        <circle class="leaf" style="animation-delay:1.0s, 2.6s" cx="95" cy="280" r="9" fill="#3B82F6" opacity="0.85"/>
-        <circle class="leaf" style="animation-delay:1.05s, 2.2s" cx="140" cy="265" r="8" fill="#EC4899" opacity="0.85"/>
-        <circle class="leaf" style="animation-delay:0.75s, 2.8s" cx="240" cy="330" r="9" fill="#F59E0B" opacity="0.85"/>
-        <circle class="leaf" style="animation-delay:1.05s, 2.35s" cx="340" cy="265" r="8" fill="#EC4899" opacity="0.85"/>
-        <circle class="leaf" style="animation-delay:1.0s, 1.95s" cx="385" cy="280" r="9" fill="#3B82F6" opacity="0.85"/>
-
-        <circle class="leaf" style="animation-delay:0.65s, 3.0s" cx="150" cy="340" r="10" fill="#8B5CF6" opacity="0.9"/>
-        <circle class="leaf" style="animation-delay:0.65s, 2.5s" cx="330" cy="340" r="10" fill="#8B5CF6" opacity="0.9"/>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ===== STATS ===== -->
-<section class="stats-section">
-  <div class="container stats-grid">
-    <div class="stat-box">
-      <div class="stat-icon"><span class="material-icons-round">family_restroom</span></div>
-      <div><div class="stat-number">{{ formatStat(stats.familles) }}+</div><div class="stat-label">Familles</div></div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-icon"><span class="material-icons-round">people</span></div>
-      <div><div class="stat-number">{{ formatStat(stats.membres) }}+</div><div class="stat-label">Membres</div></div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-icon"><span class="material-icons-round">favorite</span></div>
-      <div><div class="stat-number">{{ formatStat(stats.unions) }}+</div><div class="stat-label">Unions</div></div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-icon"><span class="material-icons-round">auto_stories</span></div>
-      <div><div class="stat-number">{{ formatStat(stats.stories) }}+</div><div class="stat-label">Stories</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SOLUTION ===== -->
-<section class="solution">
-  <div class="container">
-    <div class="sec-head">
-      <span class="sec-tag">Notre solution</span>
-      <h2>Mam Buudu simplifie la g\xE9n\xE9alogie, pour toutes les familles.</h2>
-      <p>De la cr\xE9ation de l'arbre au partage des stories \u2014 une solution compl\xE8te, accessible en ligne ou hors ligne.</p>
-    </div>
-    <div class="sol-grid">
-      <div class="sol-card">
-        <div class="sol-icon"><span class="material-icons-round">account_tree</span></div>
-        <h3>Sans code, sans effort</h3>
-        <p>Construisez votre arbre g\xE9n\xE9alogique facilement, sans aucune comp\xE9tence technique. En ligne ou hors ligne.</p>
-      </div>
-      <div class="sol-card">
-        <div class="sol-icon"><span class="material-icons-round">share</span></div>
-        <h3>Partage en famille</h3>
-        <p>Invitez les membres, partagez les stories et connectez les g\xE9n\xE9rations en temps r\xE9el, depuis n'importe o\xF9.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FEATURES ===== -->
-<section class="features" id="features">
-  <div class="container">
-    <div class="feat-layout">
-      <div class="feat-left">
-        <span class="sec-tag">Bienvenue sur Mam Buudu</span>
-        <h2>G\xE9n\xE9alogie nouvelle g\xE9n\xE9ration</h2>
-        <p>Construite pour \xE9quiper chaque famille d'outils modernes pour pr\xE9server et partager leur histoire. Nous rempla\xE7ons les albums \xE9parpill\xE9s et la m\xE9moire orale par une plateforme num\xE9rique s\xE9curis\xE9e, accessible \xE0 toute la famille.</p>
-      </div>
-      <div class="feat-grid">
-        <div class="feat-card" *ngFor="let f of features">
-          <div class="feat-icon" [style.background]="f.color + '18'">
-            <span class="material-icons-round" [style.color]="f.color">{{ f.icon }}</span>
-          </div>
-          <h4>{{ f.title }}</h4>
-          <p>{{ f.desc }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== TARIFS ===== -->
-<section class="pricing" id="tarifs" *ngIf="plans.length > 0">
-  <div class="container">
-    <div class="sec-head">
-      <span class="sec-tag">Tarifs</span>
-      <h2>Un plan pour chaque famille</h2>
-      <p>Commencez gratuitement, \xE9voluez quand votre arbre grandit. Sans engagement.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="price-card" *ngFor="let p of plans" [class.price-card-highlight]="p.nom === 'premium'">
-        <span class="price-badge" *ngIf="p.nom === 'premium'">Le plus populaire</span>
-        <h3 class="price-label">{{ p.label }}</h3>
-        <div class="price-value">
-          <span class="price-amount">{{ formatPrix(p) }}</span>
-          <span class="price-period" *ngIf="p.prix > 0">/an</span>
-        </div>
-        <ul class="price-features">
-          <li *ngFor="let f of p.features">
-            <span class="material-icons-round">check_circle</span>{{ f }}
-          </li>
-        </ul>
-        <a routerLink="/auth/register" class="price-cta" [class.price-cta-primary]="p.nom === 'premium'">
-          {{ p.prix === 0 ? 'Commencer gratuitement' : 'Choisir ce plan' }}
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAMILLES ===== -->
-<section class="familles" id="familles">
-  <div class="container">
-    <div class="sec-head">
-      <span class="sec-tag">Familles</span>
-      <h2>Des familles qui nous font confiance</h2>
-      <p>Rejoignez des centaines de familles qui ont choisi Mam Buudu pour pr\xE9server leur patrimoine.</p>
-    </div>
-    <div class="fam-grid">
-      <div class="fam-card" *ngFor="let f of familles">
-        <div class="fam-head">
-          <div class="fam-avatar" [style.background]="f.color + '22'" [style.color]="f.color">{{ f.initiale }}</div>
-          <div>
-            <p class="fam-name">Famille {{ f.nom }}</p>
-            <span class="fam-origin"><span class="material-icons-round">place</span>{{ f.origine }}</span>
-          </div>
-        </div>
-        <div class="fam-stats">
-          <div class="fam-stat"><span class="fam-stat-val" [style.color]="f.color">{{ f.membres }}</span><span class="fam-stat-label">Membres</span></div>
-          <div class="fam-stat"><span class="fam-stat-val" [style.color]="f.color">{{ f.generations }}</span><span class="fam-stat-label">G\xE9n\xE9rations</span></div>
-          <div class="fam-stat"><span class="fam-stat-val" [style.color]="f.color">{{ f.unions }}</span><span class="fam-stat-label">Unions</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== TESTIMONIALS ===== -->
-<section class="testimonials" id="temoignages">
-  <div class="container">
-    <div class="sec-head">
-      <span class="sec-tag sec-tag-dark">T\xE9moignages</span>
-      <h2>Ce que disent nos utilisateurs</h2>
-      <p>Ils ont choisi Mam Buudu pour connecter leur famille \xE0 travers les g\xE9n\xE9rations.</p>
-    </div>
-    <div class="testi-wrap" *ngIf="testimonials[currentSlide] as t">
-      <div class="testi-card">
-        <span class="material-icons-round testi-quote-icon">format_quote</span>
-        <p class="testi-text">{{ t.texte }}</p>
-        <div class="testi-author">
-          <div class="testi-avatar" [style.background]="t.color + '33'" [style.color]="t.color">{{ t.initiale }}</div>
-          <div><div class="testi-name">{{ t.nom }}</div><div class="testi-role">{{ t.role }}</div></div>
-        </div>
-      </div>
-      <div class="testi-dots">
-        <button class="testi-dot" *ngFor="let s of testimonials; let i = index"
-                [class.active]="i === currentSlide" (click)="goToSlide(i)"></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== APPLICATION MOBILE ===== -->
-<section class="mobile-download">
-  <div class="container mobile-download-inner">
-    <div class="mdl-text">
-      <span class="sec-tag">Application mobile</span>
-      <h2>Emportez l'arbre de votre famille partout</h2>
-      <p>L'application mobile Mam Buudu est en cours de finalisation pour Android et iOS \u2014 retrouvez votre arbre, vos stories et vos proches, m\xEAme hors connexion.</p>
-      <div class="mdl-badges">
-        <span class="store-badge store-badge-soon">
-          <span class="material-icons-round">apple</span>
-          <span class="store-badge-text"><small>Bient\xF4t sur</small>App Store</span>
-        </span>
-        <span class="store-badge store-badge-soon">
-          <span class="material-icons-round">shop</span>
-          <span class="store-badge-text"><small>Bient\xF4t sur</small>Google Play</span>
-        </span>
-      </div>
-    </div>
-    <div class="mdl-visual">
-      <svg width="220" height="300" viewBox="0 0 220 300" fill="none">
-        <rect x="10" y="10" width="200" height="280" rx="28" fill="#0F2A1E" stroke="#123B27" stroke-width="2"/>
-        <rect x="20" y="34" width="180" height="232" rx="10" fill="#F0FDF4"/>
-        <circle cx="110" cy="22" r="3" fill="#123B27"/>
-        <circle cx="60" cy="90" r="16" fill="#81C784"/>
-        <circle cx="110" cy="70" r="20" fill="#2E7D32"/>
-        <circle cx="160" cy="90" r="16" fill="#81C784"/>
-        <path d="M60 106 L60 140 M110 90 L110 140 M160 106 L160 140" stroke="#8B4513" stroke-width="3"/>
-        <path d="M60 140 L110 140 L160 140" stroke="#8B4513" stroke-width="3"/>
-        <rect x="40" y="150" width="140" height="10" rx="5" fill="#DCFCE7"/>
-        <rect x="40" y="170" width="100" height="10" rx="5" fill="#DCFCE7"/>
-        <rect x="40" y="190" width="120" height="10" rx="5" fill="#DCFCE7"/>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAQ ===== -->
-<section class="faq" id="faq">
-  <div class="container">
-    <div class="faq-head">
-      <div>
-        <span class="sec-tag">FAQ</span>
-        <h2>Foire aux questions</h2>
-      </div>
-      <div class="faq-toggle-all">
-        <button class="faq-toggle-btn" (click)="setAllFaq(true)">D\xE9velopper tout</button>
-        <button class="faq-toggle-btn" [disabled]="!allFaqOpen" (click)="setAllFaq(false)">R\xE9duire tout</button>
-      </div>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item" *ngFor="let f of faqs; let i = index" [class.open]="f.open">
-        <button class="faq-question" (click)="toggleFaq(i)">
-          <span class="faq-num">{{ (i + 1).toString().padStart(2, '0') }}/</span>
-          <span class="faq-question-text">{{ f.question }}</span>
-          <span class="material-icons-round faq-icon">{{ f.open ? 'remove' : 'add' }}</span>
-        </button>
-        <div class="faq-answer" *ngIf="f.open">
-          <p>{{ f.reponse }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA FINAL ===== -->
-<section class="cta">
-  <div class="container">
-    <div class="cta-box">
-      <h2>Pr\xEAt \xE0 connecter votre famille ?</h2>
-      <p>Rejoignez des milliers de familles qui pr\xE9servent leur histoire avec Mam Buudu.</p>
-      <div class="cta-actions">
-        <a routerLink="/famille/login" class="cta-btn cta-btn-primary">
-          <span class="material-icons-round">family_restroom</span>
-          Acc\xE9der \xE0 mon espace famille
-        </a>
-        <a routerLink="/auth/login" class="cta-btn cta-btn-ghost">
-          <span class="material-icons-round">admin_panel_settings</span>
-          Espace administrateur
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="landing-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <svg width="18" height="18" viewBox="0 0 120 120" fill="none">
-        <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>
-        <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
-        <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
-        <circle cx="35" cy="35" r="10" fill="#2E7D32"/><circle cx="85" cy="35" r="10" fill="#2E7D32"/><circle cx="60" cy="25" r="10" fill="#81C784"/>
-      </svg>
-      <span>Mam Buudu</span>
-      <span class="footer-sep">\xB7</span>
-      <span class="footer-by">par Pbs</span>
-    </div>
-    <div class="footer-links">
-      <a routerLink="/famille/login">Espace Famille</a>
-      <a routerLink="/auth/login">Administration</a>
-      <a routerLink="/auth/register">Cr\xE9er un espace</a>
-    </div>
-    <div class="footer-copy">\xA9 2026 Pbs. Tous droits r\xE9serv\xE9s.</div>
-  </div>
-</footer>
+    args: [{ selector: "app-landing", standalone: false, template: `<!-- ===== NAVBAR ===== -->\r
+<nav class="landing-nav">\r
+  <a routerLink="/" class="nav-logo">\r
+    <svg width="26" height="26" viewBox="0 0 120 120" fill="none">\r
+      <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>\r
+      <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>\r
+      <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>\r
+      <circle cx="35" cy="35" r="10" fill="#2E7D32"/>\r
+      <circle cx="85" cy="35" r="10" fill="#2E7D32"/>\r
+      <circle cx="60" cy="25" r="10" fill="#81C784"/>\r
+    </svg>\r
+    <span>Mam Buudu</span>\r
+  </a>\r
+  <div class="nav-links">\r
+    <a href="#features" class="nav-link">Fonctionnalit\xE9s</a>\r
+    <a href="#familles" class="nav-link">Familles</a>\r
+    <a href="#tarifs" class="nav-link">Tarifs</a>\r
+    <a href="#temoignages" class="nav-link">T\xE9moignages</a>\r
+    <a href="#faq" class="nav-link">FAQ</a>\r
+  </div>\r
+  <div class="nav-actions">\r
+    <div class="theme-switch" *ngIf="isLoggedIn">\r
+      <button class="theme-switch-btn" (click)="toggleThemeMenu()" [class.open]="themeMenuOpen" aria-haspopup="listbox" [attr.aria-expanded]="themeMenuOpen">\r
+        <span class="theme-switch-dot" [style.background]="currentThemeColor"></span>\r
+        <span class="theme-switch-name">{{ currentThemeLabel }}</span>\r
+        <span class="material-icons-round theme-switch-chevron">expand_more</span>\r
+      </button>\r
+      <div class="theme-switch-overlay" *ngIf="themeMenuOpen" (click)="themeMenuOpen = false"></div>\r
+      <div class="theme-switch-menu" *ngIf="themeMenuOpen" role="listbox">\r
+        <button class="theme-switch-option" *ngFor="let t of themeService.themes"\r
+                [class.active]="themeService.current === t.name"\r
+                (click)="selectTheme(t.name)" role="option" [attr.aria-selected]="themeService.current === t.name">\r
+          <span class="theme-switch-dot" [style.background]="t.color"></span>\r
+          <span class="theme-switch-label">{{ t.label }}</span>\r
+          <span class="material-icons-round theme-switch-check" *ngIf="themeService.current === t.name">check</span>\r
+        </button>\r
+      </div>\r
+    </div>\r
+    <ng-container *ngIf="!isLoggedIn">\r
+      <a routerLink="/famille/login" class="btn-nav-famille">\r
+        <span class="material-icons-round">people</span>\r
+        Espace Famille\r
+      </a>\r
+      <a routerLink="/auth/login" class="btn-nav-admin">\r
+        <span class="material-icons-round">manage_accounts</span>\r
+        Administration\r
+      </a>\r
+    </ng-container>\r
+    <ng-container *ngIf="isLoggedIn">\r
+      <a [routerLink]="dashboardRoute" class="btn-nav-famille">\r
+        <span class="material-icons-round">dashboard</span>\r
+        Mon espace\r
+      </a>\r
+      <button class="btn-nav-logout" (click)="logout()">\r
+        <span class="material-icons-round">logout</span>\r
+        Se d\xE9connecter\r
+      </button>\r
+    </ng-container>\r
+    <button class="nav-hamburger" (click)="navOpen = !navOpen" aria-label="Menu">\r
+      <span class="material-icons-round">{{ navOpen ? 'close' : 'menu' }}</span>\r
+    </button>\r
+  </div>\r
+</nav>\r
+\r
+<!-- ===== MOBILE NAV SHEET ===== -->\r
+<div class="nav-mobile-overlay" *ngIf="navOpen" (click)="navOpen=false"></div>\r
+<div class="nav-mobile-sheet" [class.open]="navOpen">\r
+  <div class="nms-header">\r
+    <div class="nav-logo nms-logo">\r
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none">\r
+        <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>\r
+        <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>\r
+        <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>\r
+        <circle cx="35" cy="35" r="10" fill="#2E7D32"/>\r
+        <circle cx="85" cy="35" r="10" fill="#2E7D32"/>\r
+        <circle cx="60" cy="25" r="10" fill="#81C784"/>\r
+      </svg>\r
+      <span>Mam Buudu</span>\r
+    </div>\r
+    <button class="nms-close" (click)="navOpen=false">\r
+      <span class="material-icons-round">close</span>\r
+    </button>\r
+  </div>\r
+  <div class="nms-links">\r
+    <a href="#features" class="nms-link" (click)="navOpen=false">\r
+      <span class="material-icons-round">star</span>Fonctionnalit\xE9s\r
+    </a>\r
+    <a href="#familles" class="nms-link" (click)="navOpen=false">\r
+      <span class="material-icons-round">family_restroom</span>Familles\r
+    </a>\r
+    <a href="#tarifs" class="nms-link" (click)="navOpen=false">\r
+      <span class="material-icons-round">sell</span>Tarifs\r
+    </a>\r
+    <a href="#temoignages" class="nms-link" (click)="navOpen=false">\r
+      <span class="material-icons-round">format_quote</span>T\xE9moignages\r
+    </a>\r
+    <a href="#faq" class="nms-link" (click)="navOpen=false">\r
+      <span class="material-icons-round">help_outline</span>FAQ\r
+    </a>\r
+  </div>\r
+  <div class="nms-theme-picker" *ngIf="isLoggedIn">\r
+    <span class="nms-theme-label">Th\xE8me</span>\r
+    <div class="nms-theme-dots">\r
+      <button class="nms-theme-dot" *ngFor="let t of themeService.themes"\r
+              [style.background]="t.color" [class.active]="themeService.current === t.name"\r
+              (click)="selectTheme(t.name)" [title]="t.label"></button>\r
+    </div>\r
+  </div>\r
+  <div class="nms-actions">\r
+    <ng-container *ngIf="!isLoggedIn">\r
+      <a routerLink="/famille/login" class="nms-btn nms-btn-famille" (click)="navOpen=false">\r
+        <span class="material-icons-round">people</span>Espace Famille\r
+      </a>\r
+      <a routerLink="/auth/login" class="nms-btn nms-btn-admin" (click)="navOpen=false">\r
+        <span class="material-icons-round">manage_accounts</span>Administration\r
+      </a>\r
+    </ng-container>\r
+    <ng-container *ngIf="isLoggedIn">\r
+      <a [routerLink]="dashboardRoute" class="nms-btn nms-btn-famille" (click)="navOpen=false">\r
+        <span class="material-icons-round">dashboard</span>Mon espace\r
+      </a>\r
+      <button class="nms-btn nms-btn-logout" (click)="logout(); navOpen=false">\r
+        <span class="material-icons-round">logout</span>Se d\xE9connecter\r
+      </button>\r
+    </ng-container>\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== HERO ===== -->\r
+<section class="hero">\r
+  <div class="hero-sparks">\r
+    <div class="spark" style="left:12%; animation-delay:0s"></div>\r
+    <div class="spark" style="left:24%; animation-delay:1.4s; width:4px; height:4px;"></div>\r
+    <div class="spark" style="left:38%; animation-delay:2.6s"></div>\r
+    <div class="spark" style="left:55%; animation-delay:0.7s; width:4px; height:4px;"></div>\r
+    <div class="spark" style="left:68%; animation-delay:3.4s"></div>\r
+    <div class="spark" style="left:81%; animation-delay:1.9s; width:4px; height:4px;"></div>\r
+  </div>\r
+\r
+  <div class="hero-inner">\r
+    <div>\r
+      <span class="hero-badge fade-up-1">\r
+        <span class="material-icons-round">auto_awesome</span>\r
+        Application g\xE9n\xE9alogique africaine\r
+      </span>\r
+      <h1 class="hero-title fade-up-2">\r
+        L'histoire de votre<br/>\r
+        <span class="accent">famille</span>,<br/>\r
+        pr\xE9serv\xE9e pour toujours\r
+      </h1>\r
+      <p class="hero-sub fade-up-3">\r
+        Construisez l'arbre g\xE9n\xE9alogique de votre famille, partagez vos stories et connectez les g\xE9n\xE9rations \xE0 travers le temps.\r
+      </p>\r
+\r
+      <div class="hero-entries fade-up-4">\r
+        <ng-container *ngIf="!isLoggedIn">\r
+          <a routerLink="/famille/login" class="entry-card">\r
+            <div class="entry-icon famille"><span class="material-icons-round">family_restroom</span></div>\r
+            <div class="entry-info"><strong>Espace Famille</strong><span>Pour les membres de la famille</span></div>\r
+            <span class="material-icons-round arrow">arrow_forward</span>\r
+          </a>\r
+          <a routerLink="/auth/login" class="entry-card">\r
+            <div class="entry-icon admin"><span class="material-icons-round">admin_panel_settings</span></div>\r
+            <div class="entry-info"><strong>Espace Admin</strong><span>Pour les gestionnaires</span></div>\r
+            <span class="material-icons-round arrow">arrow_forward</span>\r
+          </a>\r
+        </ng-container>\r
+        <ng-container *ngIf="isLoggedIn">\r
+          <a [routerLink]="dashboardRoute" class="entry-card">\r
+            <div class="entry-icon famille"><span class="material-icons-round">dashboard</span></div>\r
+            <div class="entry-info"><strong>Retour \xE0 mon espace</strong><span>{{ userName }}</span></div>\r
+            <span class="material-icons-round arrow">arrow_forward</span>\r
+          </a>\r
+          <button class="entry-card" (click)="logout()">\r
+            <div class="entry-icon admin"><span class="material-icons-round">logout</span></div>\r
+            <div class="entry-info"><strong>Se d\xE9connecter</strong><span>Quitter la session</span></div>\r
+            <span class="material-icons-round arrow">arrow_forward</span>\r
+          </button>\r
+        </ng-container>\r
+      </div>\r
+    </div>\r
+\r
+    <div class="hero-tree-wrap">\r
+      <svg width="480" height="560" viewBox="0 0 480 560" fill="none">\r
+        <!-- Racines -->\r
+        <path class="tree-line g-root" d="M240 520 C 220 500, 200 495, 175 505" stroke="#8B4513" stroke-width="3" fill="none" opacity="0.55"/>\r
+        <path class="tree-line g-root" d="M240 520 C 260 500, 280 495, 305 505" stroke="#8B4513" stroke-width="3" fill="none" opacity="0.55"/>\r
+        <path class="tree-line g-root" d="M240 520 L 240 545" stroke="#8B4513" stroke-width="4" opacity="0.55"/>\r
+        <!-- Tronc + g\xE9n\xE9ration 1 -->\r
+        <path class="tree-line g-trunk" d="M240 520 L 240 400" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>\r
+        <path class="tree-line g-trunk" d="M240 400 C 210 380, 180 365, 150 340" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>\r
+        <path class="tree-line g-trunk" d="M240 400 C 270 380, 300 365, 330 340" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>\r
+        <path class="tree-line g-trunk" d="M240 400 L 240 330" stroke="#8B4513" stroke-width="5" stroke-linecap="round"/>\r
+        <!-- G\xE9n\xE9ration 2 -->\r
+        <path class="tree-line g-1" d="M150 340 C 130 315, 115 300, 95 280" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>\r
+        <path class="tree-line g-1" d="M150 340 C 155 310, 150 290, 140 265" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>\r
+        <path class="tree-line g-1" d="M330 340 C 350 315, 365 300, 385 280" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>\r
+        <path class="tree-line g-1" d="M330 340 C 325 310, 330 290, 340 265" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>\r
+        <path class="tree-line g-1" d="M240 330 C 225 305, 225 290, 235 265" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>\r
+        <path class="tree-line g-1" d="M240 330 C 255 305, 255 290, 245 265" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>\r
+        <!-- G\xE9n\xE9ration 3 (fines) -->\r
+        <path class="tree-line g-2" d="M95 280 C 85 260, 82 245, 88 225" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>\r
+        <path class="tree-line g-2" d="M140 265 C 135 245, 138 230, 148 210" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>\r
+        <path class="tree-line g-2" d="M385 280 C 395 260, 398 245, 392 225" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>\r
+        <path class="tree-line g-2" d="M340 265 C 345 245, 342 230, 332 210" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>\r
+        <path class="tree-line g-2" d="M235 265 C 225 240, 228 222, 220 200" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>\r
+        <path class="tree-line g-2" d="M245 265 C 255 240, 252 222, 260 200" stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>\r
+\r
+        <!-- Feuillage -->\r
+        <circle class="leaf" style="animation-delay:1.4s, 1.9s" cx="88" cy="220" r="16" fill="#2E7D32"/>\r
+        <circle class="leaf" style="animation-delay:1.5s, 2.1s" cx="148" cy="205" r="14" fill="#81C784"/>\r
+        <circle class="leaf" style="animation-delay:1.6s, 1.7s" cx="220" cy="196" r="16" fill="#2E7D32"/>\r
+        <circle class="leaf" style="animation-delay:1.65s, 2.4s" cx="260" cy="196" r="14" fill="#81C784"/>\r
+        <circle class="leaf" style="animation-delay:1.55s, 2.0s" cx="332" cy="205" r="14" fill="#2E7D32"/>\r
+        <circle class="leaf" style="animation-delay:1.45s, 1.85s" cx="392" cy="220" r="16" fill="#81C784"/>\r
+\r
+        <circle class="leaf" style="animation-delay:1.0s, 2.6s" cx="95" cy="280" r="9" fill="#3B82F6" opacity="0.85"/>\r
+        <circle class="leaf" style="animation-delay:1.05s, 2.2s" cx="140" cy="265" r="8" fill="#EC4899" opacity="0.85"/>\r
+        <circle class="leaf" style="animation-delay:0.75s, 2.8s" cx="240" cy="330" r="9" fill="#F59E0B" opacity="0.85"/>\r
+        <circle class="leaf" style="animation-delay:1.05s, 2.35s" cx="340" cy="265" r="8" fill="#EC4899" opacity="0.85"/>\r
+        <circle class="leaf" style="animation-delay:1.0s, 1.95s" cx="385" cy="280" r="9" fill="#3B82F6" opacity="0.85"/>\r
+\r
+        <circle class="leaf" style="animation-delay:0.65s, 3.0s" cx="150" cy="340" r="10" fill="#8B5CF6" opacity="0.9"/>\r
+        <circle class="leaf" style="animation-delay:0.65s, 2.5s" cx="330" cy="340" r="10" fill="#8B5CF6" opacity="0.9"/>\r
+      </svg>\r
+    </div>\r
+  </div>\r
+</section>\r
+\r
+<!-- ===== STATS ===== -->\r
+<section class="stats-section">\r
+  <div class="container stats-grid">\r
+    <div class="stat-box">\r
+      <div class="stat-icon"><span class="material-icons-round">family_restroom</span></div>\r
+      <div><div class="stat-number">{{ formatStat(stats.familles) }}+</div><div class="stat-label">Familles</div></div>\r
+    </div>\r
+    <div class="stat-box">\r
+      <div class="stat-icon"><span class="material-icons-round">people</span></div>\r
+      <div><div class="stat-number">{{ formatStat(stats.membres) }}+</div><div class="stat-label">Membres</div></div>\r
+    </div>\r
+    <div class="stat-box">\r
+      <div class="stat-icon"><span class="material-icons-round">favorite</span></div>\r
+      <div><div class="stat-number">{{ formatStat(stats.unions) }}+</div><div class="stat-label">Unions</div></div>\r
+    </div>\r
+    <div class="stat-box">\r
+      <div class="stat-icon"><span class="material-icons-round">auto_stories</span></div>\r
+      <div><div class="stat-number">{{ formatStat(stats.stories) }}+</div><div class="stat-label">Stories</div></div>\r
+    </div>\r
+  </div>\r
+</section>\r
+\r
+<!-- ===== SOLUTION ===== -->\r
+<section class="solution">\r
+  <div class="container">\r
+    <div class="sec-head">\r
+      <span class="sec-tag">Notre solution</span>\r
+      <h2>Mam Buudu simplifie la g\xE9n\xE9alogie, pour toutes les familles.</h2>\r
+      <p>De la cr\xE9ation de l'arbre au partage des stories \u2014 une solution compl\xE8te, accessible en ligne ou hors ligne.</p>\r
+    </div>\r
+    <div class="sol-grid">\r
+      <div class="sol-card">\r
+        <div class="sol-icon"><span class="material-icons-round">account_tree</span></div>\r
+        <h3>Sans code, sans effort</h3>\r
+        <p>Construisez votre arbre g\xE9n\xE9alogique facilement, sans aucune comp\xE9tence technique. En ligne ou hors ligne.</p>\r
+      </div>\r
+      <div class="sol-card">\r
+        <div class="sol-icon"><span class="material-icons-round">share</span></div>\r
+        <h3>Partage en famille</h3>\r
+        <p>Invitez les membres, partagez les stories et connectez les g\xE9n\xE9rations en temps r\xE9el, depuis n'importe o\xF9.</p>\r
+      </div>\r
+    </div>\r
+  </div>\r
+</section>\r
+\r
+<!-- ===== FEATURES ===== -->\r
+<section class="features" id="features">\r
+  <div class="container">\r
+    <div class="feat-layout">\r
+      <div class="feat-left">\r
+        <span class="sec-tag">Bienvenue sur Mam Buudu</span>\r
+        <h2>G\xE9n\xE9alogie nouvelle g\xE9n\xE9ration</h2>\r
+        <p>Construite pour \xE9quiper chaque famille d'outils modernes pour pr\xE9server et partager leur histoire. Nous rempla\xE7ons les albums \xE9parpill\xE9s et la m\xE9moire orale par une plateforme num\xE9rique s\xE9curis\xE9e, accessible \xE0 toute la famille.</p>\r
+      </div>\r
+      <div class="feat-grid">\r
+        <div class="feat-card" *ngFor="let f of features">\r
+          <div class="feat-icon" [style.background]="f.color + '18'">\r
+            <span class="material-icons-round" [style.color]="f.color">{{ f.icon }}</span>\r
+          </div>\r
+          <h4>{{ f.title }}</h4>\r
+          <p>{{ f.desc }}</p>\r
+        </div>\r
+      </div>\r
+    </div>\r
+  </div>\r
+</section>\r
+\r
+<!-- ===== TARIFS ===== -->\r
+<section class="pricing" id="tarifs" *ngIf="plans.length > 0">\r
+  <div class="container">\r
+    <div class="sec-head">\r
+      <span class="sec-tag">Tarifs</span>\r
+      <h2>Un plan pour chaque famille</h2>\r
+      <p>Commencez gratuitement, \xE9voluez quand votre arbre grandit. Sans engagement.</p>\r
+    </div>\r
+    <div class="pricing-grid">\r
+      <div class="price-card" *ngFor="let p of plans" [class.price-card-highlight]="p.nom === 'premium'">\r
+        <span class="price-badge" *ngIf="p.nom === 'premium'">Le plus populaire</span>\r
+        <h3 class="price-label">{{ p.label }}</h3>\r
+        <div class="price-value">\r
+          <span class="price-amount">{{ formatPrix(p) }}</span>\r
+          <span class="price-period" *ngIf="p.prix > 0">/an</span>\r
+        </div>\r
+        <ul class="price-features">\r
+          <li *ngFor="let f of p.features">\r
+            <span class="material-icons-round">check_circle</span>{{ f }}\r
+          </li>\r
+        </ul>\r
+        <a routerLink="/auth/register" class="price-cta" [class.price-cta-primary]="p.nom === 'premium'">\r
+          {{ p.prix === 0 ? 'Commencer gratuitement' : 'Choisir ce plan' }}\r
+        </a>\r
+      </div>\r
+    </div>\r
+  </div>\r
+</section>\r
+\r
+<!-- ===== FAMILLES ===== -->\r
+<section class="familles" id="familles">\r
+  <div class="container">\r
+    <div class="sec-head">\r
+      <span class="sec-tag">Familles</span>\r
+      <h2>Des familles qui nous font confiance</h2>\r
+      <p>Rejoignez des centaines de familles qui ont choisi Mam Buudu pour pr\xE9server leur patrimoine.</p>\r
+    </div>\r
+    <div class="fam-grid">\r
+      <div class="fam-card" *ngFor="let f of familles">\r
+        <div class="fam-head">\r
+          <div class="fam-avatar" [style.background]="f.color + '22'" [style.color]="f.color">{{ f.initiale }}</div>\r
+          <div>\r
+            <p class="fam-name">Famille {{ f.nom }}</p>\r
+            <span class="fam-origin"><span class="material-icons-round">place</span>{{ f.origine }}</span>\r
+          </div>\r
+        </div>\r
+        <div class="fam-stats">\r
+          <div class="fam-stat"><span class="fam-stat-val" [style.color]="f.color">{{ f.membres }}</span><span class="fam-stat-label">Membres</span></div>\r
+          <div class="fam-stat"><span class="fam-stat-val" [style.color]="f.color">{{ f.generations }}</span><span class="fam-stat-label">G\xE9n\xE9rations</span></div>\r
+          <div class="fam-stat"><span class="fam-stat-val" [style.color]="f.color">{{ f.unions }}</span><span class="fam-stat-label">Unions</span></div>\r
+        </div>\r
+      </div>\r
+    </div>\r
+  </div>\r
+</section>\r
+\r
+<!-- ===== TESTIMONIALS ===== -->\r
+<section class="testimonials" id="temoignages">\r
+  <div class="container">\r
+    <div class="sec-head">\r
+      <span class="sec-tag sec-tag-dark">T\xE9moignages</span>\r
+      <h2>Ce que disent nos utilisateurs</h2>\r
+      <p>Ils ont choisi Mam Buudu pour connecter leur famille \xE0 travers les g\xE9n\xE9rations.</p>\r
+    </div>\r
+    <div class="testi-wrap" *ngIf="testimonials[currentSlide] as t">\r
+      <div class="testi-card">\r
+        <span class="material-icons-round testi-quote-icon">format_quote</span>\r
+        <p class="testi-text">{{ t.texte }}</p>\r
+        <div class="testi-author">\r
+          <div class="testi-avatar" [style.background]="t.color + '33'" [style.color]="t.color">{{ t.initiale }}</div>\r
+          <div><div class="testi-name">{{ t.nom }}</div><div class="testi-role">{{ t.role }}</div></div>\r
+        </div>\r
+      </div>\r
+      <div class="testi-dots">\r
+        <button class="testi-dot" *ngFor="let s of testimonials; let i = index"\r
+                [class.active]="i === currentSlide" (click)="goToSlide(i)"></button>\r
+      </div>\r
+    </div>\r
+  </div>\r
+</section>\r
+\r
+<!-- ===== APPLICATION MOBILE ===== -->\r
+<section class="mobile-download">\r
+  <div class="container mobile-download-inner">\r
+    <div class="mdl-text">\r
+      <span class="sec-tag">Application mobile</span>\r
+      <h2>Emportez l'arbre de votre famille partout</h2>\r
+      <p>L'application mobile Mam Buudu est en cours de finalisation pour Android et iOS \u2014 retrouvez votre arbre, vos stories et vos proches, m\xEAme hors connexion.</p>\r
+      <div class="mdl-badges">\r
+        <span class="store-badge store-badge-soon">\r
+          <span class="material-icons-round">apple</span>\r
+          <span class="store-badge-text"><small>Bient\xF4t sur</small>App Store</span>\r
+        </span>\r
+        <span class="store-badge store-badge-soon">\r
+          <span class="material-icons-round">shop</span>\r
+          <span class="store-badge-text"><small>Bient\xF4t sur</small>Google Play</span>\r
+        </span>\r
+      </div>\r
+    </div>\r
+    <div class="mdl-visual">\r
+      <svg width="220" height="300" viewBox="0 0 220 300" fill="none">\r
+        <rect x="10" y="10" width="200" height="280" rx="28" fill="#0F2A1E" stroke="#123B27" stroke-width="2"/>\r
+        <rect x="20" y="34" width="180" height="232" rx="10" fill="#F0FDF4"/>\r
+        <circle cx="110" cy="22" r="3" fill="#123B27"/>\r
+        <circle cx="60" cy="90" r="16" fill="#81C784"/>\r
+        <circle cx="110" cy="70" r="20" fill="#2E7D32"/>\r
+        <circle cx="160" cy="90" r="16" fill="#81C784"/>\r
+        <path d="M60 106 L60 140 M110 90 L110 140 M160 106 L160 140" stroke="#8B4513" stroke-width="3"/>\r
+        <path d="M60 140 L110 140 L160 140" stroke="#8B4513" stroke-width="3"/>\r
+        <rect x="40" y="150" width="140" height="10" rx="5" fill="#DCFCE7"/>\r
+        <rect x="40" y="170" width="100" height="10" rx="5" fill="#DCFCE7"/>\r
+        <rect x="40" y="190" width="120" height="10" rx="5" fill="#DCFCE7"/>\r
+      </svg>\r
+    </div>\r
+  </div>\r
+</section>\r
+\r
+<!-- ===== FAQ ===== -->\r
+<section class="faq" id="faq">\r
+  <div class="container">\r
+    <div class="faq-head">\r
+      <div>\r
+        <span class="sec-tag">FAQ</span>\r
+        <h2>Foire aux questions</h2>\r
+      </div>\r
+      <div class="faq-toggle-all">\r
+        <button class="faq-toggle-btn" (click)="setAllFaq(true)">D\xE9velopper tout</button>\r
+        <button class="faq-toggle-btn" [disabled]="!allFaqOpen" (click)="setAllFaq(false)">R\xE9duire tout</button>\r
+      </div>\r
+    </div>\r
+    <div class="faq-list">\r
+      <div class="faq-item" *ngFor="let f of faqs; let i = index" [class.open]="f.open">\r
+        <button class="faq-question" (click)="toggleFaq(i)">\r
+          <span class="faq-num">{{ (i + 1).toString().padStart(2, '0') }}/</span>\r
+          <span class="faq-question-text">{{ f.question }}</span>\r
+          <span class="material-icons-round faq-icon">{{ f.open ? 'remove' : 'add' }}</span>\r
+        </button>\r
+        <div class="faq-answer" *ngIf="f.open">\r
+          <p>{{ f.reponse }}</p>\r
+        </div>\r
+      </div>\r
+    </div>\r
+  </div>\r
+</section>\r
+\r
+<!-- ===== CTA FINAL ===== -->\r
+<section class="cta">\r
+  <div class="container">\r
+    <div class="cta-box">\r
+      <h2>Pr\xEAt \xE0 connecter votre famille ?</h2>\r
+      <p>Rejoignez des milliers de familles qui pr\xE9servent leur histoire avec Mam Buudu.</p>\r
+      <div class="cta-actions">\r
+        <a routerLink="/famille/login" class="cta-btn cta-btn-primary">\r
+          <span class="material-icons-round">family_restroom</span>\r
+          Acc\xE9der \xE0 mon espace famille\r
+        </a>\r
+        <a routerLink="/auth/login" class="cta-btn cta-btn-ghost">\r
+          <span class="material-icons-round">admin_panel_settings</span>\r
+          Espace administrateur\r
+        </a>\r
+      </div>\r
+    </div>\r
+  </div>\r
+</section>\r
+\r
+<!-- ===== FOOTER ===== -->\r
+<footer class="landing-footer">\r
+  <div class="container footer-inner">\r
+    <div class="footer-brand">\r
+      <svg width="18" height="18" viewBox="0 0 120 120" fill="none">\r
+        <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>\r
+        <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>\r
+        <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>\r
+        <circle cx="35" cy="35" r="10" fill="#2E7D32"/><circle cx="85" cy="35" r="10" fill="#2E7D32"/><circle cx="60" cy="25" r="10" fill="#81C784"/>\r
+      </svg>\r
+      <span>Mam Buudu</span>\r
+      <span class="footer-sep">\xB7</span>\r
+      <span class="footer-by">par Pbs</span>\r
+    </div>\r
+    <div class="footer-links">\r
+      <a routerLink="/famille/login">Espace Famille</a>\r
+      <a routerLink="/auth/login">Administration</a>\r
+      <a routerLink="/auth/register">Cr\xE9er un espace</a>\r
+    </div>\r
+    <div class="footer-copy">\xA9 2026 Pbs. Tous droits r\xE9serv\xE9s.</div>\r
+  </div>\r
+</footer>\r
 `, styles: ['@charset "UTF-8";\n\n/* src/app/landing/landing.component.scss */\n:host {\n  display: block;\n  font-family:\n    "Poppins",\n    -apple-system,\n    BlinkMacSystemFont,\n    "Segoe UI",\n    sans-serif;\n  overflow-x: hidden;\n  color: #0F172A;\n  background: #ffffff;\n}\n* {\n  box-sizing: border-box;\n}\na {\n  color: var(--primary);\n  text-decoration: none;\n}\nh1,\nh2,\nh3 {\n  text-wrap: balance;\n  margin: 0;\n}\n.container {\n  max-width: 1160px;\n  margin: 0 auto;\n  padding: 0 24px;\n}\n@keyframes fadeUp {\n  from {\n    opacity: 0;\n    transform: translateY(16px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes drawLine {\n  to {\n    stroke-dashoffset: 0;\n  }\n}\n@keyframes leafPop {\n  from {\n    opacity: 0;\n    transform: scale(0);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n@keyframes leafFloat {\n  0%, 100% {\n    transform: translateY(0) scale(1);\n  }\n  50% {\n    transform: translateY(-5px) scale(1);\n  }\n}\n@keyframes sparkRise {\n  0% {\n    opacity: 0;\n    transform: translateY(0);\n  }\n  15% {\n    opacity: 0.9;\n  }\n  85% {\n    opacity: 0.5;\n  }\n  100% {\n    opacity: 0;\n    transform: translateY(-90px);\n  }\n}\n@keyframes ctaGlow {\n  0%, 100% {\n    box-shadow: 0 0 0 0 color-mix(in srgb, var(--primary-light) 40%, transparent);\n  }\n  50% {\n    box-shadow: 0 0 0 8px color-mix(in srgb, var(--primary-light) 0%, transparent);\n  }\n}\n@keyframes statPop {\n  from {\n    opacity: 0;\n    transform: translateY(8px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  :host * {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n.fade-up-1 {\n  animation: fadeUp 0.6s ease 0.05s both;\n}\n.fade-up-2 {\n  animation: fadeUp 0.6s ease 0.18s both;\n}\n.fade-up-3 {\n  animation: fadeUp 0.6s ease 0.3s both;\n}\n.fade-up-4 {\n  animation: fadeUp 0.6s ease 0.42s both;\n}\n.landing-nav {\n  height: 76px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 40px;\n  border-bottom: 1px solid rgba(15, 23, 42, 0.06);\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 60;\n  background: rgba(255, 255, 255, 0.72);\n  backdrop-filter: blur(14px) saturate(160%);\n  -webkit-backdrop-filter: blur(14px) saturate(160%);\n  transition: background 0.2s ease, box-shadow 0.2s ease;\n}\n.nav-logo {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  font-size: 17px;\n  font-weight: 800;\n  color: #0F172A;\n}\n.nav-links {\n  display: flex;\n  align-items: center;\n  gap: 36px;\n}\n.nav-link {\n  font-size: 14px;\n  font-weight: 500;\n  color: #4B5563;\n}\n.nav-link:hover {\n  color: #0F172A;\n}\n.nav-actions {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.btn-nav-famille,\n.btn-nav-admin,\n.btn-nav-logout {\n  display: flex;\n  align-items: center;\n  gap: 7px;\n  padding: 10px 18px;\n  border-radius: 11px;\n  font-size: 13.5px;\n  font-weight: 600;\n  cursor: pointer;\n  border: none;\n  white-space: nowrap;\n}\n.btn-nav-famille .material-icons-round,\n.btn-nav-admin .material-icons-round,\n.btn-nav-logout .material-icons-round {\n  font-size: 17px !important;\n}\n.btn-nav-famille {\n  background: var(--sidebar-dark);\n  color: #ffffff;\n}\n.btn-nav-famille:hover {\n  background: var(--primary);\n}\n.btn-nav-admin {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.btn-nav-admin:hover {\n  background: var(--primary-border);\n}\n.btn-nav-logout {\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.btn-nav-logout:hover {\n  background: #FEE2E2;\n}\n.theme-switch {\n  position: relative;\n}\n.theme-switch-btn {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 12px 8px 10px;\n  border-radius: 11px;\n  background: rgba(15, 23, 42, 0.04);\n  border: 1px solid rgba(15, 23, 42, 0.08);\n  cursor: pointer;\n  font-family: inherit;\n  transition: background 0.15s ease, border-color 0.15s ease;\n}\n.theme-switch-btn:hover,\n.theme-switch-btn.open {\n  background: rgba(15, 23, 42, 0.07);\n  border-color: rgba(15, 23, 42, 0.14);\n}\n.theme-switch-dot {\n  width: 14px;\n  height: 14px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6), 0 0 0 3px rgba(15, 23, 42, 0.08);\n}\n.theme-switch-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: #374151;\n}\n.theme-switch-chevron {\n  font-size: 18px !important;\n  color: #9CA3AF;\n  transition: transform 0.15s ease;\n}\n.theme-switch-btn.open .theme-switch-chevron {\n  transform: rotate(180deg);\n}\n.theme-switch-overlay {\n  position: fixed;\n  inset: 0;\n  z-index: 69;\n}\n.theme-switch-menu {\n  position: absolute;\n  top: calc(100% + 8px);\n  right: 0;\n  z-index: 70;\n  width: 190px;\n  background: #ffffff;\n  border: 1px solid #EEF1F5;\n  border-radius: 14px;\n  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);\n  padding: 6px;\n  animation: fadeUp 0.15s ease both;\n}\n.theme-switch-option {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 9px 10px;\n  border-radius: 9px;\n  background: none;\n  border: none;\n  cursor: pointer;\n  text-align: left;\n  font-family: inherit;\n}\n.theme-switch-option:hover {\n  background: #F9FAFB;\n}\n.theme-switch-option.active {\n  background: var(--primary-bg);\n}\n.theme-switch-label {\n  flex: 1;\n  font-size: 13.5px;\n  font-weight: 500;\n  color: #0F172A;\n}\n.theme-switch-check {\n  font-size: 16px !important;\n  color: var(--primary);\n}\n.nms-theme-picker {\n  padding: 4px 20px 16px;\n  border-bottom: 1px solid #EEF1F5;\n}\n.nms-theme-label {\n  font-size: 11.5px;\n  font-weight: 700;\n  color: #9CA3AF;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.nms-theme-dots {\n  display: flex;\n  gap: 10px;\n  margin-top: 10px;\n}\n.nms-theme-dot {\n  width: 26px;\n  height: 26px;\n  border-radius: 50%;\n  border: none;\n  cursor: pointer;\n  padding: 0;\n  box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px transparent;\n  transition: box-shadow 0.15s ease;\n}\n.nms-theme-dot.active {\n  box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #0F172A;\n}\n.nav-hamburger {\n  display: none;\n  width: 40px;\n  height: 40px;\n  border-radius: 10px;\n  border: none;\n  background: #F3F4F6;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  color: #0F172A;\n}\n.nav-mobile-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.4);\n  z-index: 40;\n}\n.nav-mobile-sheet {\n  position: fixed;\n  top: 0;\n  right: 0;\n  height: 100%;\n  width: 300px;\n  max-width: 84vw;\n  background: #ffffff;\n  z-index: 50;\n  transform: translateX(100%);\n  transition: transform 0.25s ease;\n  display: flex;\n  flex-direction: column;\n  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.12);\n}\n.nav-mobile-sheet.open {\n  transform: translateX(0);\n}\n.nms-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 18px 20px;\n  border-bottom: 1px solid #EEF1F5;\n}\n.nms-logo {\n  font-size: 15px;\n}\n.nms-close {\n  width: 34px;\n  height: 34px;\n  border-radius: 9px;\n  border: none;\n  background: #F3F4F6;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n}\n.nms-links {\n  display: flex;\n  flex-direction: column;\n  padding: 12px 10px;\n  gap: 2px;\n}\n.nms-link {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 12px;\n  border-radius: 10px;\n  font-size: 14px;\n  font-weight: 500;\n  color: #374151;\n}\n.nms-link .material-icons-round {\n  font-size: 19px !important;\n  color: #9CA3AF;\n}\n.nms-link:hover {\n  background: #F9FAFB;\n}\n.nms-actions {\n  margin-top: auto;\n  padding: 16px;\n  border-top: 1px solid #EEF1F5;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n.nms-btn {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 13px 16px;\n  border-radius: 12px;\n  font-size: 14px;\n  font-weight: 600;\n  border: none;\n  cursor: pointer;\n  width: 100%;\n}\n.nms-btn .material-icons-round {\n  font-size: 19px !important;\n}\n.nms-btn-famille {\n  background: var(--sidebar-dark);\n  color: #ffffff;\n}\n.nms-btn-admin {\n  background: var(--primary-bg);\n  color: var(--primary);\n}\n.nms-btn-logout {\n  background: #FEF2F2;\n  color: #DC2626;\n}\n.hero {\n  position: relative;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      160deg,\n      var(--sidebar-dark) 0%,\n      var(--primary-dark) 55%,\n      var(--primary) 100%);\n  padding: 76px 40px 0;\n}\n.hero-sparks {\n  position: absolute;\n  inset: 0;\n  overflow: hidden;\n  pointer-events: none;\n}\n.spark {\n  position: absolute;\n  bottom: 60px;\n  width: 5px;\n  height: 5px;\n  border-radius: 50%;\n  background: #A6E3AF;\n  box-shadow: 0 0 8px 2px rgba(166, 227, 175, 0.7);\n  animation: sparkRise 5.5s ease-in infinite;\n}\n.hero-inner {\n  position: relative;\n  max-width: 1160px;\n  margin: 0 auto;\n  display: grid;\n  grid-template-columns: 1fr 480px;\n  gap: 40px;\n  align-items: center;\n  padding-bottom: 70px;\n}\n.hero-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 16px;\n  border-radius: 999px;\n  background: rgba(255, 255, 255, 0.08);\n  border: 1px solid rgba(255, 255, 255, 0.16);\n  color: #C7F0D3;\n  font-size: 12.5px;\n  font-weight: 600;\n  margin-bottom: 22px;\n}\n.hero-badge .material-icons-round {\n  font-size: 15px !important;\n  color: var(--primary-light);\n}\n.hero-title {\n  font-size: 46px;\n  font-weight: 800;\n  line-height: 1.14;\n  letter-spacing: -1px;\n  color: #ffffff;\n}\n.hero-title .accent {\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary-light),\n      var(--primary-bg));\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n.hero-sub {\n  margin: 20px 0 0;\n  font-size: 16px;\n  line-height: 1.6;\n  color: rgba(255, 255, 255, 0.62);\n  max-width: 46ch;\n}\n.hero-entries {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  margin-top: 32px;\n  max-width: 420px;\n}\n.entry-card {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 15px 18px;\n  border-radius: 16px;\n  background: rgba(255, 255, 255, 0.06);\n  border: 1px solid rgba(255, 255, 255, 0.14);\n  cursor: pointer;\n  transition: transform 0.15s, background 0.15s;\n  text-align: left;\n  width: 100%;\n  font-family: inherit;\n}\n.entry-card:hover {\n  transform: translateX(3px);\n  background: rgba(255, 255, 255, 0.1);\n}\n.entry-icon {\n  width: 42px;\n  height: 42px;\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.entry-icon.famille {\n  background: var(--primary-light);\n  color: #0B2914;\n}\n.entry-icon.admin {\n  background: rgba(255, 255, 255, 0.12);\n  color: #ffffff;\n}\n.entry-info {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n}\n.entry-info strong {\n  color: #ffffff;\n  font-size: 14px;\n  font-weight: 700;\n}\n.entry-info span {\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 12px;\n}\n.entry-card .arrow {\n  color: rgba(255, 255, 255, 0.4);\n  font-size: 18px !important;\n}\n.hero-tree-wrap {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.tree-line {\n  stroke-dasharray: 400;\n  stroke-dashoffset: 400;\n  animation: drawLine 0.9s ease forwards;\n}\n.tree-line.g-root {\n  animation-delay: 0s;\n}\n.tree-line.g-trunk {\n  animation-delay: 0.15s;\n}\n.tree-line.g-1 {\n  animation-delay: 0.55s;\n}\n.tree-line.g-2 {\n  animation-delay: 0.95s;\n}\n.leaf {\n  transform-box: fill-box;\n  transform-origin: center;\n  opacity: 0;\n  animation: leafPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both, leafFloat 3.2s ease-in-out infinite;\n}\n.stats-section {\n  background: var(--sidebar-dark);\n  padding: 26px 0 30px;\n}\n.stats-grid {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n}\n.stat-box {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 4px 8px;\n}\n.stat-icon {\n  width: 40px;\n  height: 40px;\n  border-radius: 11px;\n  background: rgba(255, 255, 255, 0.08);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.stat-icon .material-icons-round {\n  color: var(--primary-light);\n  font-size: 19px !important;\n}\n.stat-number {\n  font-size: 22px;\n  font-weight: 800;\n  color: #ffffff;\n  line-height: 1.1;\n  animation: statPop 0.5s ease both;\n  font-variant-numeric: tabular-nums;\n}\n.stat-box:nth-child(1) .stat-number {\n  animation-delay: 0.55s;\n}\n.stat-box:nth-child(2) .stat-number {\n  animation-delay: 0.65s;\n}\n.stat-box:nth-child(3) .stat-number {\n  animation-delay: 0.75s;\n}\n.stat-box:nth-child(4) .stat-number {\n  animation-delay: 0.85s;\n}\n.stat-label {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.sec-tag {\n  display: inline-flex;\n  align-items: center;\n  padding: 6px 14px;\n  border-radius: 999px;\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 11.5px;\n  font-weight: 700;\n  letter-spacing: 0.03em;\n  text-transform: uppercase;\n}\n.sec-tag-dark {\n  background: rgba(255, 255, 255, 0.1);\n  color: var(--primary-light);\n}\n.sec-head {\n  text-align: center;\n  max-width: 620px;\n  margin: 0 auto 48px;\n}\n.sec-head h2 {\n  font-size: 32px;\n  font-weight: 800;\n  letter-spacing: -0.6px;\n  margin: 14px 0 12px;\n  color: #0F172A;\n}\n.sec-head p {\n  font-size: 15px;\n  color: #6B7280;\n  line-height: 1.6;\n  margin: 0;\n}\n.solution {\n  padding: 100px 0;\n  background: #ffffff;\n}\n.sol-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 20px;\n  margin-top: 44px;\n}\n.sol-card {\n  padding: 34px;\n  border-radius: 22px;\n  border: 1px solid #EEF1F5;\n  background: #FAFBFC;\n  transition:\n    transform 0.2s ease,\n    box-shadow 0.2s ease,\n    border-color 0.2s ease;\n}\n.sol-card:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 14px 30px rgba(15, 42, 30, 0.08);\n  border-color: #DCE5DF;\n}\n.sol-icon {\n  width: 52px;\n  height: 52px;\n  border-radius: 15px;\n  background: var(--sidebar-dark);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 20px;\n}\n.sol-icon .material-icons-round {\n  color: var(--primary-light);\n  font-size: 24px !important;\n}\n.sol-card h3 {\n  font-size: 18px;\n  font-weight: 700;\n  margin-bottom: 8px;\n}\n.sol-card p {\n  font-size: 14px;\n  color: #6B7280;\n  line-height: 1.65;\n  margin: 0;\n}\n.features {\n  padding: 100px 0;\n  background: #FAFBFC;\n}\n.feat-layout {\n  display: grid;\n  grid-template-columns: 380px 1fr;\n  gap: 60px;\n  align-items: start;\n}\n.feat-left .sec-tag {\n  margin-bottom: 18px;\n}\n.feat-left h2 {\n  font-size: 30px;\n  font-weight: 800;\n  letter-spacing: -0.6px;\n  margin: 0 0 14px;\n}\n.feat-left p {\n  font-size: 14.5px;\n  color: #6B7280;\n  line-height: 1.65;\n}\n.feat-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 16px;\n}\n.feat-card {\n  background: #ffffff;\n  border: 1px solid #EEF1F5;\n  border-radius: 18px;\n  padding: 24px 20px;\n  transition: transform 0.2s ease, box-shadow 0.2s ease;\n}\n.feat-card:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.07);\n}\n.feat-icon {\n  width: 44px;\n  height: 44px;\n  border-radius: 13px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 16px;\n}\n.feat-icon .material-icons-round {\n  font-size: 21px !important;\n}\n.feat-card h4 {\n  font-size: 14.5px;\n  font-weight: 700;\n  margin: 0 0 6px;\n  color: #0F172A;\n}\n.feat-card p {\n  font-size: 12.5px;\n  color: #6B7280;\n  line-height: 1.55;\n  margin: 0;\n}\n.familles {\n  padding: 100px 0;\n  background: #ffffff;\n}\n.fam-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 18px;\n  margin-top: 44px;\n}\n.fam-card {\n  border: 1px solid #EEF1F5;\n  border-radius: 20px;\n  overflow: hidden;\n  transition: transform 0.2s ease, box-shadow 0.2s ease;\n}\n.fam-card:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.07);\n}\n.fam-head {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 20px;\n}\n.fam-avatar {\n  width: 46px;\n  height: 46px;\n  border-radius: 13px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 800;\n  font-size: 16px;\n  flex-shrink: 0;\n}\n.fam-name {\n  font-size: 15px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 0;\n}\n.fam-origin {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  color: #6B7280;\n  margin-top: 2px;\n}\n.fam-origin .material-icons-round {\n  font-size: 13px !important;\n}\n.fam-stats {\n  display: flex;\n  border-top: 1px solid #F3F4F6;\n}\n.fam-stat {\n  flex: 1;\n  text-align: center;\n  padding: 14px 0;\n}\n.fam-stat + .fam-stat {\n  border-left: 1px solid #F3F4F6;\n}\n.fam-stat-val {\n  display: block;\n  font-size: 17px;\n  font-weight: 800;\n}\n.fam-stat-label {\n  font-size: 10.5px;\n  color: #6B7280;\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n}\n.testimonials {\n  padding: 100px 0;\n  background: var(--sidebar-dark);\n}\n.testimonials .sec-head p {\n  color: rgba(255, 255, 255, 0.55);\n}\n.testimonials .sec-head h2 {\n  color: #ffffff;\n}\n.testi-wrap {\n  max-width: 720px;\n  margin: 0 auto;\n}\n.testi-card {\n  background: rgba(255, 255, 255, 0.05);\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 24px;\n  padding: 40px;\n}\n.testi-quote-icon {\n  color: var(--primary-light);\n  font-size: 30px !important;\n  margin-bottom: 14px;\n  display: block;\n}\n.testi-text {\n  font-size: 17px;\n  line-height: 1.65;\n  color: rgba(255, 255, 255, 0.88);\n  margin: 0 0 26px;\n  font-weight: 300;\n}\n.testi-author {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.testi-avatar {\n  width: 44px;\n  height: 44px;\n  border-radius: 13px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 700;\n  font-size: 14px;\n  flex-shrink: 0;\n}\n.testi-name {\n  font-size: 14px;\n  font-weight: 700;\n  color: #ffffff;\n}\n.testi-role {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.65);\n}\n.testi-dots {\n  display: flex;\n  justify-content: center;\n  gap: 8px;\n  margin-top: 26px;\n}\n.testi-dot {\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.25);\n  border: none;\n  cursor: pointer;\n  padding: 0;\n  transition: all 0.2s ease;\n}\n.testi-dot.active {\n  background: var(--primary-light);\n  width: 22px;\n  border-radius: 5px;\n}\n.pricing {\n  padding: 100px 0;\n  background: #FAFBFC;\n}\n.pricing-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n  margin-top: 44px;\n  align-items: stretch;\n}\n.price-card {\n  position: relative;\n  background: #ffffff;\n  border: 1px solid #EEF1F5;\n  border-radius: 22px;\n  padding: 32px 28px;\n  display: flex;\n  flex-direction: column;\n  transition:\n    transform 0.2s ease,\n    box-shadow 0.2s ease,\n    border-color 0.2s ease;\n}\n.price-card:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 14px 30px rgba(15, 42, 30, 0.08);\n  border-color: #DCE5DF;\n}\n.price-card-highlight {\n  border-color: var(--primary);\n  box-shadow: 0 14px 30px color-mix(in srgb, var(--primary) 12%, transparent);\n}\n.price-badge {\n  position: absolute;\n  top: -13px;\n  left: 50%;\n  transform: translateX(-50%);\n  background: var(--primary);\n  color: #ffffff;\n  font-size: 11px;\n  font-weight: 700;\n  padding: 5px 14px;\n  border-radius: 999px;\n  white-space: nowrap;\n}\n.price-label {\n  font-size: 17px;\n  font-weight: 700;\n  color: #0F172A;\n  margin: 6px 0 14px;\n}\n.price-value {\n  display: flex;\n  align-items: baseline;\n  gap: 4px;\n  margin-bottom: 22px;\n}\n.price-amount {\n  font-size: 30px;\n  font-weight: 800;\n  color: #0F172A;\n  letter-spacing: -0.5px;\n}\n.price-period {\n  font-size: 13px;\n  color: #6B7280;\n}\n.price-features {\n  list-style: none;\n  margin: 0 0 26px;\n  padding: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 11px;\n  flex: 1;\n}\n.price-features li {\n  display: flex;\n  align-items: flex-start;\n  gap: 8px;\n  font-size: 13.5px;\n  color: #374151;\n  line-height: 1.4;\n}\n.price-features .material-icons-round {\n  font-size: 17px !important;\n  color: var(--primary);\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.price-cta {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 12px;\n  border-radius: 12px;\n  font-size: 13.5px;\n  font-weight: 700;\n  text-align: center;\n  background: var(--primary-bg);\n  color: var(--primary);\n  border: 1px solid var(--primary-border);\n}\n.price-cta:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.price-cta-primary {\n  background: var(--primary);\n  color: #ffffff;\n  border-color: var(--primary);\n}\n.price-cta-primary:hover {\n  background: var(--primary-dark);\n}\n.mobile-download {\n  padding: 90px 0;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-dark),\n      var(--primary));\n}\n.mobile-download-inner {\n  display: grid;\n  grid-template-columns: 1fr auto;\n  align-items: center;\n  gap: 48px;\n}\n.mdl-text .sec-tag {\n  background: rgba(255, 255, 255, 0.1);\n  color: var(--primary-light);\n  margin-bottom: 16px;\n}\n.mdl-text h2 {\n  font-size: 30px;\n  font-weight: 800;\n  color: #ffffff;\n  letter-spacing: -0.5px;\n  margin: 0 0 14px;\n}\n.mdl-text p {\n  font-size: 14.5px;\n  color: rgba(255, 255, 255, 0.65);\n  line-height: 1.65;\n  max-width: 460px;\n  margin: 0 0 26px;\n}\n.mdl-badges {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.store-badge {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 18px;\n  border-radius: 13px;\n  background: rgba(255, 255, 255, 0.08);\n  border: 1px solid rgba(255, 255, 255, 0.15);\n  color: #ffffff;\n}\n.store-badge .material-icons-round {\n  font-size: 24px !important;\n}\n.store-badge-text {\n  display: flex;\n  flex-direction: column;\n  font-size: 13.5px;\n  font-weight: 700;\n  line-height: 1.3;\n}\n.store-badge-text small {\n  font-size: 10px;\n  font-weight: 400;\n  color: rgba(255, 255, 255, 0.55);\n  text-transform: none;\n}\n.store-badge-soon {\n  opacity: 0.85;\n  cursor: default;\n}\n.mdl-visual {\n  display: flex;\n  justify-content: center;\n}\n.mdl-visual svg {\n  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35));\n}\n.faq {\n  padding: 100px 0;\n  background: #ffffff;\n}\n.faq-head {\n  display: flex;\n  align-items: flex-end;\n  justify-content: space-between;\n  gap: 20px;\n  flex-wrap: wrap;\n  margin-bottom: 40px;\n}\n.faq-head h2 {\n  font-size: 30px;\n  font-weight: 800;\n  letter-spacing: -0.5px;\n  margin: 10px 0 0;\n  color: #0F172A;\n}\n.faq-toggle-all {\n  display: flex;\n  gap: 10px;\n}\n.faq-toggle-btn {\n  padding: 9px 16px;\n  border-radius: 10px;\n  border: 1.5px solid #EEF1F5;\n  background: #ffffff;\n  color: #374151;\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  transition: all 0.15s ease;\n}\n.faq-toggle-btn:hover:not(:disabled) {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n.faq-toggle-btn:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n.faq-list {\n  max-width: 780px;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: column;\n}\n.faq-item {\n  border-bottom: 1px solid #EEF1F5;\n}\n.faq-question {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 22px 4px;\n  background: none;\n  border: none;\n  cursor: pointer;\n  text-align: left;\n  font-family: inherit;\n}\n.faq-num {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--primary);\n  flex-shrink: 0;\n}\n.faq-question-text {\n  flex: 1;\n  font-size: 15.5px;\n  font-weight: 600;\n  color: #0F172A;\n}\n.faq-icon {\n  flex-shrink: 0;\n  width: 30px;\n  height: 30px;\n  border-radius: 50%;\n  background: var(--primary-bg);\n  color: var(--primary);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px !important;\n}\n.faq-item.open .faq-icon {\n  background: var(--primary);\n  color: #ffffff;\n}\n.faq-answer {\n  padding: 0 4px 24px 44px;\n  animation: fadeUp 0.2s ease;\n}\n.faq-answer p {\n  margin: 0;\n  font-size: 14px;\n  color: #6B7280;\n  line-height: 1.65;\n}\n.cta {\n  padding: 90px 0;\n  background: #ffffff;\n}\n.cta-box {\n  max-width: 1160px;\n  margin: 0 auto;\n  padding: 56px;\n  border-radius: 28px;\n  text-align: center;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-dark),\n      var(--primary));\n  position: relative;\n  overflow: hidden;\n}\n.cta-box h2 {\n  font-size: 30px;\n  font-weight: 800;\n  color: #ffffff;\n  letter-spacing: -0.5px;\n}\n.cta-box p {\n  font-size: 15px;\n  color: rgba(255, 255, 255, 0.6);\n  margin: 14px 0 30px;\n}\n.cta-actions {\n  display: flex;\n  justify-content: center;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.cta-btn {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 13px 24px;\n  border-radius: 13px;\n  font-size: 14px;\n  font-weight: 700;\n  cursor: pointer;\n  border: none;\n}\n.cta-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.cta-btn-primary {\n  background: var(--primary-light);\n  color: #0B2914;\n  animation: ctaGlow 2.4s ease-in-out infinite;\n}\n.cta-btn-primary:hover {\n  animation: none;\n}\n.cta-btn-ghost {\n  background: rgba(255, 255, 255, 0.08);\n  color: #ffffff;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n}\n.landing-footer {\n  padding: 28px 0;\n  border-top: 1px solid #EEF1F5;\n}\n.footer-inner {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 12px;\n}\n.footer-brand {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 13.5px;\n  font-weight: 700;\n  color: #0F172A;\n}\n.footer-sep {\n  color: #D1D5DB;\n}\n.footer-by {\n  color: #6B7280;\n  font-weight: 400;\n}\n.footer-links {\n  display: flex;\n  gap: 22px;\n}\n.footer-links a {\n  font-size: 13px;\n  color: #6B7280;\n}\n.footer-links a:hover {\n  color: #0F172A;\n}\n.footer-copy {\n  font-size: 12px;\n  color: #6B7280;\n}\n@media (max-width: 900px) {\n  .landing-nav {\n    padding: 0 20px;\n  }\n  .nav-links,\n  .nav-actions .btn-nav-famille,\n  .nav-actions .btn-nav-admin,\n  .nav-actions .btn-nav-logout,\n  .theme-switch {\n    display: none;\n  }\n  .nav-hamburger {\n    display: flex;\n  }\n  .hero {\n    padding: 76px 20px 0;\n  }\n  .hero-inner {\n    grid-template-columns: 1fr;\n    padding-bottom: 40px;\n    text-align: center;\n  }\n  .hero-title {\n    font-size: 32px;\n  }\n  .hero-entries {\n    margin-left: auto;\n    margin-right: auto;\n  }\n  .hero-tree-wrap svg {\n    width: 280px;\n    height: auto;\n  }\n  .stats-grid {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  .sol-grid,\n  .fam-grid {\n    grid-template-columns: 1fr;\n  }\n  .feat-layout {\n    grid-template-columns: 1fr;\n    gap: 32px;\n  }\n  .feat-grid {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  .solution,\n  .features,\n  .familles,\n  .testimonials,\n  .pricing,\n  .faq {\n    padding: 64px 0;\n  }\n  .pricing-grid {\n    grid-template-columns: 1fr;\n    max-width: 380px;\n    margin-left: auto;\n    margin-right: auto;\n  }\n  .mobile-download {\n    padding: 56px 0;\n  }\n  .mobile-download-inner {\n    grid-template-columns: 1fr;\n    text-align: center;\n    gap: 32px;\n  }\n  .mdl-text p {\n    margin-left: auto;\n    margin-right: auto;\n  }\n  .mdl-badges {\n    justify-content: center;\n  }\n  .mdl-visual svg {\n    width: 160px;\n    height: auto;\n  }\n  .faq-question-text {\n    font-size: 14px;\n  }\n  .faq-answer {\n    padding-left: 4px;\n  }\n  .cta-box {\n    padding: 36px 24px;\n  }\n  .footer-inner {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n}\n/*# sourceMappingURL=landing.component.css.map */\n'] }]
   }], () => [{ type: AuthService }, { type: Router }, { type: ApiService }, { type: ThemeService }], null);
 })();
@@ -1737,20 +1737,20 @@ var routes = [
   { path: "", component: LandingComponent, pathMatch: "full" },
   {
     path: "auth",
-    loadChildren: () => import("./chunk-45XHXGT6.js").then((m) => m.AuthModule)
+    loadChildren: () => import("./chunk-Q35R3XT6.js").then((m) => m.AuthModule)
   },
   {
     path: "app",
     canActivate: [authGuard, roleGuard(["admin", "gestionnaire"])],
-    loadChildren: () => import("./chunk-LJVRJZ5G.js").then((m) => m.ShellModule)
+    loadChildren: () => import("./chunk-LDD3O4HF.js").then((m) => m.ShellModule)
   },
   {
     path: "famille",
-    loadChildren: () => import("./chunk-4H3I5GUD.js").then((m) => m.FamilleModule)
+    loadChildren: () => import("./chunk-YJ6ZM5SY.js").then((m) => m.FamilleModule)
   },
   {
     path: "superadmin",
-    loadChildren: () => import("./chunk-4TAVN7FY.js").then((m) => m.SuperAdminModule)
+    loadChildren: () => import("./chunk-J4PJBCWH.js").then((m) => m.SuperAdminModule)
   },
   { path: "**", redirectTo: "" }
 ];
@@ -1846,15 +1846,15 @@ var ToastContainerComponent = class _ToastContainerComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ToastContainerComponent, [{
     type: Component,
-    args: [{ selector: "app-toast-container", standalone: false, template: `<div class="toast-stack" *ngIf="toasts$ | async as toasts">
-  <div class="toast" *ngFor="let t of toasts; trackBy: trackById" [class]="'toast-' + t.type">
-    <span class="material-icons-round toast-icon">{{ iconFor(t.type) }}</span>
-    <span class="toast-message">{{ t.message }}</span>
-    <button class="toast-close" (click)="dismiss(t.id)" aria-label="Fermer">
-      <span class="material-icons-round">close</span>
-    </button>
-  </div>
-</div>
+    args: [{ selector: "app-toast-container", standalone: false, template: `<div class="toast-stack" *ngIf="toasts$ | async as toasts">\r
+  <div class="toast" *ngFor="let t of toasts; trackBy: trackById" [class]="'toast-' + t.type">\r
+    <span class="material-icons-round toast-icon">{{ iconFor(t.type) }}</span>\r
+    <span class="toast-message">{{ t.message }}</span>\r
+    <button class="toast-close" (click)="dismiss(t.id)" aria-label="Fermer">\r
+      <span class="material-icons-round">close</span>\r
+    </button>\r
+  </div>\r
+</div>\r
 `, styles: ["/* src/app/core/toast-container.component.scss */\n:host {\n  position: fixed;\n  top: 20px;\n  right: 20px;\n  z-index: 9999;\n  pointer-events: none;\n}\n.toast-stack {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  max-width: 380px;\n}\n.toast {\n  pointer-events: auto;\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n  padding: 14px 14px 14px 16px;\n  border-radius: 12px;\n  background: #fff;\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14), 0 2px 6px rgba(0, 0, 0, 0.08);\n  border-left: 4px solid #9CA3AF;\n  animation: toastIn 0.25s ease-out;\n  font-size: 13.5px;\n  line-height: 1.5;\n}\n@keyframes toastIn {\n  from {\n    opacity: 0;\n    transform: translateX(24px);\n  }\n  to {\n    opacity: 1;\n    transform: translateX(0);\n  }\n}\n.toast-success {\n  border-left-color: #10B981;\n}\n.toast-success .toast-icon {\n  color: #10B981;\n}\n.toast-error {\n  border-left-color: #EF4444;\n}\n.toast-error .toast-icon {\n  color: #EF4444;\n}\n.toast-info {\n  border-left-color: #3B82F6;\n}\n.toast-info .toast-icon {\n  color: #3B82F6;\n}\n.toast-icon {\n  font-size: 20px !important;\n  flex-shrink: 0;\n  margin-top: 1px;\n}\n.toast-message {\n  flex: 1;\n  color: #1F2937;\n}\n.toast-close {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 22px;\n  height: 22px;\n  flex-shrink: 0;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  border-radius: 6px;\n  color: #9CA3AF;\n}\n.toast-close .material-icons-round {\n  font-size: 16px !important;\n}\n.toast-close:hover {\n  background: #F3F4F6;\n  color: #374151;\n}\n@media (max-width: 480px) {\n  :host {\n    top: auto;\n    bottom: 16px;\n    left: 16px;\n    right: 16px;\n  }\n  .toast-stack {\n    max-width: 100%;\n  }\n}\n/*# sourceMappingURL=toast-container.component.css.map */\n"] }]
   }], () => [{ type: ToastService }], null);
 })();
@@ -1889,7 +1889,7 @@ var App = class _App {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(App, [{
     type: Component,
-    args: [{ selector: "app-root", standalone: false, template: "<router-outlet></router-outlet>\n<app-toast-container></app-toast-container>\n" }]
+    args: [{ selector: "app-root", standalone: false, template: "<router-outlet></router-outlet>\r\n<app-toast-container></app-toast-container>\r\n" }]
   }], () => [{ type: Router }, { type: Renderer2 }, { type: ThemeService }], null);
 })();
 (() => {

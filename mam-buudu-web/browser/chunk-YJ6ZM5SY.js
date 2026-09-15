@@ -1,9 +1,9 @@
 import {
   roleGuard
-} from "./chunk-WJCGERJN.js";
+} from "./chunk-UUSVOCS4.js";
 import {
   COUNTRIES
-} from "./chunk-OPQNBEV7.js";
+} from "./chunk-2XZ6WXAN.js";
 import {
   PushNotificationService,
   QrcodeService,
@@ -15,12 +15,12 @@ import {
   getInitiales,
   getNomComplet,
   getPhotoUrl
-} from "./chunk-GYHNEXRG.js";
+} from "./chunk-STNTUTHY.js";
 import {
   ApiService,
   LoadingService,
   ThemeService
-} from "./chunk-MAP5PQOL.js";
+} from "./chunk-OQPKGRDY.js";
 import {
   DefaultValueAccessor,
   FormBuilder,
@@ -33,10 +33,10 @@ import {
   ReactiveFormsModule,
   Validators,
   ɵNgNoValidate
-} from "./chunk-BUNKOKLL.js";
+} from "./chunk-IW4264EB.js";
 import {
   AuthService
-} from "./chunk-LX6YEX77.js";
+} from "./chunk-3BB7U3NX.js";
 import {
   AsyncPipe,
   CommonModule,
@@ -106,7 +106,7 @@ import {
   ɵɵtwoWayListener,
   ɵɵtwoWayProperty,
   ɵɵviewQuery
-} from "./chunk-4MA3A2KE.js";
+} from "./chunk-UZMMFXAY.js";
 import {
   __async,
   __spreadProps,
@@ -529,205 +529,205 @@ var FamilleLoginComponent = class _FamilleLoginComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FamilleLoginComponent, [{
     type: Component,
-    args: [{ selector: "app-famille-login", standalone: false, template: `<div class="fl-container">
-  <!-- Panneau gauche d\xE9coratif -->
-  <div class="fl-left">
-    <div class="fl-left-bg">
-      <svg class="fl-tree" width="420" height="520" viewBox="0 0 420 520" fill="none">
-        <path d="M210 500 L 210 380" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>
-        <path d="M210 380 C 180 360, 150 345, 120 320" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path d="M210 380 C 240 360, 270 345, 300 320" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path d="M210 380 L 210 310" stroke="#8B4513" stroke-width="5" stroke-linecap="round"/>
-        <path d="M120 320 C 100 295, 88 280, 92 255" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <path d="M300 320 C 320 295, 332 280, 328 255" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <path d="M210 310 C 195 285, 195 270, 205 245" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <circle cx="92" cy="250" r="15" fill="#2E7D32"/>
-        <circle cx="205" cy="240" r="16" fill="#81C784"/>
-        <circle cx="328" cy="250" r="15" fill="#2E7D32"/>
-        <circle cx="120" cy="320" r="9" fill="#3B82F6" opacity="0.75"/>
-        <circle cx="300" cy="320" r="9" fill="#EC4899" opacity="0.75"/>
-      </svg>
-      <div class="fl-sparks">
-        <div class="fl-spark" style="left:18%; animation-delay:0s"></div>
-        <div class="fl-spark" style="left:52%; animation-delay:1.8s"></div>
-        <div class="fl-spark" style="left:76%; animation-delay:3.2s"></div>
-      </div>
-    </div>
-    <div class="fl-left-content">
-      <div class="fl-logo">
-        <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
-          <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>
-          <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>
-          <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>
-          <circle cx="35" cy="35" r="11" fill="#2E7D32"/>
-          <circle cx="85" cy="35" r="11" fill="#2E7D32"/>
-          <circle cx="60" cy="24" r="11" fill="#81C784"/>
-        </svg>
-        <span>Mam Buudu</span>
-      </div>
-      <div class="fl-welcome">
-        <h1>Bienvenue dans<br/>votre espace famille</h1>
-        <p>Retrouvez votre arbre g\xE9n\xE9alogique, les stories de vos proches et toute l'histoire de votre famille.</p>
-      </div>
-      <div class="fl-features">
-        <div class="fl-feat">
-          <div class="fl-feat-icon"><span class="material-icons-round">account_tree</span></div>
-          <span>Arbre g\xE9n\xE9alogique interactif</span>
-        </div>
-        <div class="fl-feat">
-          <div class="fl-feat-icon"><span class="material-icons-round">auto_stories</span></div>
-          <span>Stories et souvenirs partag\xE9s</span>
-        </div>
-        <div class="fl-feat">
-          <div class="fl-feat-icon"><span class="material-icons-round">timeline</span></div>
-          <span>Ligne du temps familiale</span>
-        </div>
-        <div class="fl-feat">
-          <div class="fl-feat-icon"><span class="material-icons-round">people</span></div>
-          <span>Tous les membres en un clin d'oeil</span>
-        </div>
-      </div>
-      <a routerLink="/" class="fl-back-link">
-        <span class="material-icons-round">arrow_back</span>
-        Retour \xE0 l'accueil
-      </a>
-    </div>
-  </div>
-
-  <!-- Panneau droit - formulaire -->
-  <div class="fl-right">
-    <div class="fl-card">
-      <div class="fl-card-header">
-        <div class="fl-card-icon">
-          <span class="material-icons-round">family_restroom</span>
-        </div>
-        <h2>Acc\xE9der \xE0 ma famille</h2>
-        <p>Entrez vos identifiants pour rejoindre l'espace familial</p>
-      </div>
-
-      <form [formGroup]="form" (ngSubmit)="submit()">
-
-        <!-- Code famille -->
-        <div class="form-group">
-          <label>Code famille</label>
-          <div class="input-wrapper">
-            <span class="material-icons-round">group</span>
-            <input type="text" formControlName="familleCode" placeholder="Ex : DIALLO-2024"
-                   [class.input-error]="f['familleCode'].invalid && f['familleCode'].touched" />
-          </div>
-          <span class="field-error" *ngIf="f['familleCode'].invalid && f['familleCode'].touched">
-            Le code famille est requis
-          </span>
-        </div>
-
-        <!-- Onglets identifiant -->
-        <div class="form-group">
-          <label>Identifiant</label>
-          <div class="fl-tabs">
-            <button type="button" class="fl-tab" [class.active]="activeTab === 'email'"
-                    (click)="setTab('email')">
-              <span class="material-icons-round">email</span> Email
-            </button>
-            <button type="button" class="fl-tab" [class.active]="activeTab === 'telephone'"
-                    (click)="setTab('telephone')">
-              <span class="material-icons-round">phone</span> Tel.
-            </button>
-            <button type="button" class="fl-tab" [class.active]="activeTab === 'username'"
-                    (click)="setTab('username')">
-              <span class="material-icons-round">badge</span> Username
-            </button>
-          </div>
-
-          <!-- Email / Username -->
-          <div class="input-wrapper" *ngIf="activeTab !== 'telephone'">
-            <span class="material-icons-round">{{ tabIcon }}</span>
-            <input type="text" formControlName="identifiant" [placeholder]="tabPlaceholder"
-                   [class.input-error]="f['identifiant'].invalid && f['identifiant'].touched" />
-          </div>
-
-          <!-- T\xE9l\xE9phone avec s\xE9lecteur pays -->
-          <div class="phone-field-wrap" *ngIf="activeTab === 'telephone'">
-            <div class="phone-input-row">
-              <div class="country-selector" (click)="showCountryPicker = !showCountryPicker">
-                <img class="country-flag-img"
-                     [src]="'https://flagcdn.com/20x15/' + selectedCountry.iso + '.png'"
-                     [alt]="selectedCountry.name" />
-                <span class="country-dial">{{ selectedCountry.dial }}</span>
-                <span class="material-icons-round country-chevron">expand_more</span>
-              </div>
-              <input class="phone-number-input" type="tel"
-                     [value]="localPhone"
-                     (input)="localPhone = $any($event.target).value; updatePhoneIdentifiant()"
-                     placeholder="ex: 620 00 00 00"
-                     [class.input-error]="f['identifiant'].invalid && f['identifiant'].touched" />
-            </div>
-
-            <!-- Dropdown pays \u2014 dans le m\xEAme parent relatif -->
-            <div class="country-dropdown" *ngIf="showCountryPicker">
-              <input class="country-search" type="text"
-                     [value]="countrySearch"
-                     (input)="countrySearch = $any($event.target).value"
-                     placeholder="Rechercher un pays..." />
-              <div class="country-list">
-                <button type="button" class="country-option"
-                        *ngFor="let c of filteredCountries"
-                        (click)="selectCountry(c)">
-                  <img class="country-flag-img"
-                       [src]="'https://flagcdn.com/20x15/' + c.iso + '.png'"
-                       [alt]="c.name" />
-                  <span class="country-name">{{ c.name }}</span>
-                  <span class="country-dial-sm">{{ c.dial }}</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <span class="field-error" *ngIf="f['identifiant'].invalid && f['identifiant'].touched">
-            L'identifiant est requis
-          </span>
-        </div>
-
-        <!-- Mot de passe -->
-        <div class="form-group">
-          <label>Mot de passe</label>
-          <div class="input-wrapper">
-            <span class="material-icons-round">lock</span>
-            <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"
-                   [class.input-error]="f['password'].invalid && f['password'].touched" />
-            <div class="input-suffix">
-              <button type="button" class="btn-icon" (click)="showPassword = !showPassword">
-                <span class="material-icons-round">{{ showPassword ? 'visibility_off' : 'visibility' }}</span>
-              </button>
-            </div>
-          </div>
-          <span class="field-error" *ngIf="f['password'].invalid && f['password'].touched">
-            Mot de passe requis (6 caract\xE8res min.)
-          </span>
-        </div>
-
-        <div class="alert alert-error" *ngIf="errorMsg">
-          <span class="material-icons-round">error_outline</span>
-          {{ errorMsg }}
-        </div>
-
-        <button type="submit" class="fl-submit-btn" [disabled]="loading">
-          <span class="spinner" *ngIf="loading"></span>
-          <ng-container *ngIf="!loading">
-            <span class="material-icons-round">login</span>
-            Acc\xE9der \xE0 ma famille
-          </ng-container>
-        </button>
-      </form>
-
-      <div class="fl-card-footer">
-        <a routerLink="/auth/login" class="fl-admin-link">
-          <span class="material-icons-round">admin_panel_settings</span>
-          Espace administrateur
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+    args: [{ selector: "app-famille-login", standalone: false, template: `<div class="fl-container">\r
+  <!-- Panneau gauche d\xE9coratif -->\r
+  <div class="fl-left">\r
+    <div class="fl-left-bg">\r
+      <svg class="fl-tree" width="420" height="520" viewBox="0 0 420 520" fill="none">\r
+        <path d="M210 500 L 210 380" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>\r
+        <path d="M210 380 C 180 360, 150 345, 120 320" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>\r
+        <path d="M210 380 C 240 360, 270 345, 300 320" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>\r
+        <path d="M210 380 L 210 310" stroke="#8B4513" stroke-width="5" stroke-linecap="round"/>\r
+        <path d="M120 320 C 100 295, 88 280, 92 255" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>\r
+        <path d="M300 320 C 320 295, 332 280, 328 255" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>\r
+        <path d="M210 310 C 195 285, 195 270, 205 245" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>\r
+        <circle cx="92" cy="250" r="15" fill="#2E7D32"/>\r
+        <circle cx="205" cy="240" r="16" fill="#81C784"/>\r
+        <circle cx="328" cy="250" r="15" fill="#2E7D32"/>\r
+        <circle cx="120" cy="320" r="9" fill="#3B82F6" opacity="0.75"/>\r
+        <circle cx="300" cy="320" r="9" fill="#EC4899" opacity="0.75"/>\r
+      </svg>\r
+      <div class="fl-sparks">\r
+        <div class="fl-spark" style="left:18%; animation-delay:0s"></div>\r
+        <div class="fl-spark" style="left:52%; animation-delay:1.8s"></div>\r
+        <div class="fl-spark" style="left:76%; animation-delay:3.2s"></div>\r
+      </div>\r
+    </div>\r
+    <div class="fl-left-content">\r
+      <div class="fl-logo">\r
+        <svg width="24" height="24" viewBox="0 0 120 120" fill="none">\r
+          <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>\r
+          <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>\r
+          <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>\r
+          <circle cx="35" cy="35" r="11" fill="#2E7D32"/>\r
+          <circle cx="85" cy="35" r="11" fill="#2E7D32"/>\r
+          <circle cx="60" cy="24" r="11" fill="#81C784"/>\r
+        </svg>\r
+        <span>Mam Buudu</span>\r
+      </div>\r
+      <div class="fl-welcome">\r
+        <h1>Bienvenue dans<br/>votre espace famille</h1>\r
+        <p>Retrouvez votre arbre g\xE9n\xE9alogique, les stories de vos proches et toute l'histoire de votre famille.</p>\r
+      </div>\r
+      <div class="fl-features">\r
+        <div class="fl-feat">\r
+          <div class="fl-feat-icon"><span class="material-icons-round">account_tree</span></div>\r
+          <span>Arbre g\xE9n\xE9alogique interactif</span>\r
+        </div>\r
+        <div class="fl-feat">\r
+          <div class="fl-feat-icon"><span class="material-icons-round">auto_stories</span></div>\r
+          <span>Stories et souvenirs partag\xE9s</span>\r
+        </div>\r
+        <div class="fl-feat">\r
+          <div class="fl-feat-icon"><span class="material-icons-round">timeline</span></div>\r
+          <span>Ligne du temps familiale</span>\r
+        </div>\r
+        <div class="fl-feat">\r
+          <div class="fl-feat-icon"><span class="material-icons-round">people</span></div>\r
+          <span>Tous les membres en un clin d'oeil</span>\r
+        </div>\r
+      </div>\r
+      <a routerLink="/" class="fl-back-link">\r
+        <span class="material-icons-round">arrow_back</span>\r
+        Retour \xE0 l'accueil\r
+      </a>\r
+    </div>\r
+  </div>\r
+\r
+  <!-- Panneau droit - formulaire -->\r
+  <div class="fl-right">\r
+    <div class="fl-card">\r
+      <div class="fl-card-header">\r
+        <div class="fl-card-icon">\r
+          <span class="material-icons-round">family_restroom</span>\r
+        </div>\r
+        <h2>Acc\xE9der \xE0 ma famille</h2>\r
+        <p>Entrez vos identifiants pour rejoindre l'espace familial</p>\r
+      </div>\r
+\r
+      <form [formGroup]="form" (ngSubmit)="submit()">\r
+\r
+        <!-- Code famille -->\r
+        <div class="form-group">\r
+          <label>Code famille</label>\r
+          <div class="input-wrapper">\r
+            <span class="material-icons-round">group</span>\r
+            <input type="text" formControlName="familleCode" placeholder="Ex : DIALLO-2024"\r
+                   [class.input-error]="f['familleCode'].invalid && f['familleCode'].touched" />\r
+          </div>\r
+          <span class="field-error" *ngIf="f['familleCode'].invalid && f['familleCode'].touched">\r
+            Le code famille est requis\r
+          </span>\r
+        </div>\r
+\r
+        <!-- Onglets identifiant -->\r
+        <div class="form-group">\r
+          <label>Identifiant</label>\r
+          <div class="fl-tabs">\r
+            <button type="button" class="fl-tab" [class.active]="activeTab === 'email'"\r
+                    (click)="setTab('email')">\r
+              <span class="material-icons-round">email</span> Email\r
+            </button>\r
+            <button type="button" class="fl-tab" [class.active]="activeTab === 'telephone'"\r
+                    (click)="setTab('telephone')">\r
+              <span class="material-icons-round">phone</span> Tel.\r
+            </button>\r
+            <button type="button" class="fl-tab" [class.active]="activeTab === 'username'"\r
+                    (click)="setTab('username')">\r
+              <span class="material-icons-round">badge</span> Username\r
+            </button>\r
+          </div>\r
+\r
+          <!-- Email / Username -->\r
+          <div class="input-wrapper" *ngIf="activeTab !== 'telephone'">\r
+            <span class="material-icons-round">{{ tabIcon }}</span>\r
+            <input type="text" formControlName="identifiant" [placeholder]="tabPlaceholder"\r
+                   [class.input-error]="f['identifiant'].invalid && f['identifiant'].touched" />\r
+          </div>\r
+\r
+          <!-- T\xE9l\xE9phone avec s\xE9lecteur pays -->\r
+          <div class="phone-field-wrap" *ngIf="activeTab === 'telephone'">\r
+            <div class="phone-input-row">\r
+              <div class="country-selector" (click)="showCountryPicker = !showCountryPicker">\r
+                <img class="country-flag-img"\r
+                     [src]="'https://flagcdn.com/20x15/' + selectedCountry.iso + '.png'"\r
+                     [alt]="selectedCountry.name" />\r
+                <span class="country-dial">{{ selectedCountry.dial }}</span>\r
+                <span class="material-icons-round country-chevron">expand_more</span>\r
+              </div>\r
+              <input class="phone-number-input" type="tel"\r
+                     [value]="localPhone"\r
+                     (input)="localPhone = $any($event.target).value; updatePhoneIdentifiant()"\r
+                     placeholder="ex: 620 00 00 00"\r
+                     [class.input-error]="f['identifiant'].invalid && f['identifiant'].touched" />\r
+            </div>\r
+\r
+            <!-- Dropdown pays \u2014 dans le m\xEAme parent relatif -->\r
+            <div class="country-dropdown" *ngIf="showCountryPicker">\r
+              <input class="country-search" type="text"\r
+                     [value]="countrySearch"\r
+                     (input)="countrySearch = $any($event.target).value"\r
+                     placeholder="Rechercher un pays..." />\r
+              <div class="country-list">\r
+                <button type="button" class="country-option"\r
+                        *ngFor="let c of filteredCountries"\r
+                        (click)="selectCountry(c)">\r
+                  <img class="country-flag-img"\r
+                       [src]="'https://flagcdn.com/20x15/' + c.iso + '.png'"\r
+                       [alt]="c.name" />\r
+                  <span class="country-name">{{ c.name }}</span>\r
+                  <span class="country-dial-sm">{{ c.dial }}</span>\r
+                </button>\r
+              </div>\r
+            </div>\r
+          </div>\r
+\r
+          <span class="field-error" *ngIf="f['identifiant'].invalid && f['identifiant'].touched">\r
+            L'identifiant est requis\r
+          </span>\r
+        </div>\r
+\r
+        <!-- Mot de passe -->\r
+        <div class="form-group">\r
+          <label>Mot de passe</label>\r
+          <div class="input-wrapper">\r
+            <span class="material-icons-round">lock</span>\r
+            <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"\r
+                   [class.input-error]="f['password'].invalid && f['password'].touched" />\r
+            <div class="input-suffix">\r
+              <button type="button" class="btn-icon" (click)="showPassword = !showPassword">\r
+                <span class="material-icons-round">{{ showPassword ? 'visibility_off' : 'visibility' }}</span>\r
+              </button>\r
+            </div>\r
+          </div>\r
+          <span class="field-error" *ngIf="f['password'].invalid && f['password'].touched">\r
+            Mot de passe requis (6 caract\xE8res min.)\r
+          </span>\r
+        </div>\r
+\r
+        <div class="alert alert-error" *ngIf="errorMsg">\r
+          <span class="material-icons-round">error_outline</span>\r
+          {{ errorMsg }}\r
+        </div>\r
+\r
+        <button type="submit" class="fl-submit-btn" [disabled]="loading">\r
+          <span class="spinner" *ngIf="loading"></span>\r
+          <ng-container *ngIf="!loading">\r
+            <span class="material-icons-round">login</span>\r
+            Acc\xE9der \xE0 ma famille\r
+          </ng-container>\r
+        </button>\r
+      </form>\r
+\r
+      <div class="fl-card-footer">\r
+        <a routerLink="/auth/login" class="fl-admin-link">\r
+          <span class="material-icons-round">admin_panel_settings</span>\r
+          Espace administrateur\r
+        </a>\r
+      </div>\r
+    </div>\r
+  </div>\r
+</div>\r
 `, styles: ["/* src/app/famille/auth/famille-login.component.scss */\n.fl-container {\n  display: flex;\n  min-height: 100vh;\n}\n.fl-left {\n  width: 44%;\n  flex-shrink: 0;\n  position: relative;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      160deg,\n      #0A1020 0%,\n      #0E2417 55%,\n      #123B27 100%);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 48px;\n}\n.fl-left-bg {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n}\n.fl-tree {\n  position: absolute;\n  right: -60px;\n  bottom: -30px;\n  opacity: 0.4;\n}\n.fl-sparks {\n  position: absolute;\n  inset: 0;\n  overflow: hidden;\n}\n.fl-spark {\n  position: absolute;\n  bottom: 40px;\n  width: 4px;\n  height: 4px;\n  border-radius: 50%;\n  background: #A6E3AF;\n  box-shadow: 0 0 8px 2px rgba(166, 227, 175, 0.7);\n  animation: sparkRise 5.5s ease-in infinite;\n}\n.fl-left-content {\n  position: relative;\n  z-index: 2;\n  max-width: 420px;\n  color: #fff;\n}\n.fl-logo {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 40px;\n  font-size: 20px;\n  font-weight: 800;\n  color: #fff;\n}\n.fl-welcome {\n  margin-bottom: 36px;\n}\n.fl-welcome h1 {\n  font-size: 32px;\n  font-weight: 800;\n  line-height: 1.2;\n  margin-bottom: 14px;\n}\n.fl-welcome p {\n  font-size: 15px;\n  line-height: 1.7;\n  color: rgba(255, 255, 255, 0.65);\n}\n.fl-features {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  margin-bottom: 36px;\n}\n.fl-feat {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 16px;\n  background: rgba(255, 255, 255, 0.08);\n  border-radius: 12px;\n  font-size: 14px;\n  font-weight: 500;\n  color: rgba(255, 255, 255, 0.85);\n}\n.fl-feat-icon {\n  width: 36px;\n  height: 36px;\n  border-radius: 10px;\n  background: rgba(255, 255, 255, 0.1);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.fl-feat-icon .material-icons-round {\n  font-size: 18px !important;\n  color: #81C784;\n}\n.fl-back-link {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 13px;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.fl-back-link .material-icons-round {\n  font-size: 16px !important;\n}\n.fl-back-link:hover {\n  color: rgba(255, 255, 255, 0.9);\n  text-decoration: none;\n}\n.fl-right {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 40px 32px;\n  background: #F0FDF4;\n  overflow-y: auto;\n}\n.fl-card {\n  width: 100%;\n  max-width: 440px;\n  background: #fff;\n  border-radius: 24px;\n  padding: 40px 36px;\n  box-shadow: 0 8px 40px rgba(15, 42, 30, 0.1);\n  border: 1px solid #DCFCE7;\n}\n.fl-card-header {\n  text-align: center;\n  margin-bottom: 32px;\n}\n.fl-card-header h2 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #1F2937;\n  margin: 12px 0 6px;\n}\n.fl-card-header p {\n  font-size: 14px;\n  color: #6B7280;\n}\n.fl-card-icon {\n  width: 60px;\n  height: 60px;\n  border-radius: 18px;\n  background:\n    linear-gradient(\n      135deg,\n      #F0FDF4,\n      #DCFCE7);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto 12px;\n}\n.fl-card-icon .material-icons-round {\n  font-size: 30px !important;\n  color: #15803D;\n}\n.fl-submit-btn {\n  width: 100%;\n  padding: 14px;\n  background:\n    linear-gradient(\n      135deg,\n      #15803D,\n      #166534);\n  color: #fff;\n  border: none;\n  border-radius: 14px;\n  font-family: inherit;\n  font-size: 15px;\n  font-weight: 600;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  transition: all 0.2s;\n  box-shadow: 0 4px 16px rgba(21, 128, 61, 0.35);\n}\n.fl-submit-btn .material-icons-round {\n  font-size: 20px !important;\n}\n.fl-submit-btn:hover:not(:disabled) {\n  box-shadow: 0 6px 24px rgba(21, 128, 61, 0.5);\n  transform: translateY(-1px);\n}\n.fl-submit-btn:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n  transform: none;\n}\n.fl-card-footer {\n  margin-top: 24px;\n  text-align: center;\n}\n.fl-admin-link {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  color: #6B7280;\n  text-decoration: none;\n  transition: color 0.2s;\n}\n.fl-admin-link .material-icons-round {\n  font-size: 15px !important;\n}\n.fl-admin-link:hover {\n  color: #15803D;\n  text-decoration: none;\n}\n.fl-tabs {\n  display: flex;\n  gap: 4px;\n  margin-bottom: 10px;\n  background: #F1F5F9;\n  border-radius: 10px;\n  padding: 4px;\n}\n.fl-tab {\n  flex: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 5px;\n  padding: 7px 4px;\n  border: none;\n  background: transparent;\n  border-radius: 8px;\n  font-size: 12px;\n  font-weight: 500;\n  color: #6B7280;\n  cursor: pointer;\n  transition: all 0.18s;\n  font-family: inherit;\n}\n.fl-tab .material-icons-round {\n  font-size: 15px !important;\n}\n.fl-tab.active {\n  background: #fff;\n  color: #15803D;\n  font-weight: 600;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(21, 128, 61, 0.08);\n}\n.fl-tab:not(.active):hover {\n  background: rgba(255, 255, 255, 0.65);\n  color: #374151;\n}\n.phone-field-wrap {\n  position: relative;\n}\n.phone-input-row {\n  display: flex;\n  border: 1.5px solid #E5E7EB;\n  border-radius: 10px;\n  overflow: hidden;\n  background: #F9FAFB;\n  transition: border-color 0.15s, box-shadow 0.15s;\n}\n.phone-input-row:focus-within {\n  border-color: #15803D;\n  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.1);\n  background: #fff;\n}\n.country-selector {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  padding: 0 12px;\n  border-right: 1px solid #E5E7EB;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n  flex-shrink: 0;\n  transition: background 0.15s;\n}\n.country-selector:hover {\n  background: rgba(0, 0, 0, 0.03);\n}\n.country-flag-img {\n  width: 20px;\n  height: 15px;\n  border-radius: 2px;\n  object-fit: cover;\n  flex-shrink: 0;\n}\n.country-dial {\n  font-size: 13px;\n  font-weight: 600;\n  color: #374151;\n}\n.country-chevron {\n  font-size: 16px !important;\n  color: #9CA3AF;\n}\n.phone-number-input {\n  flex: 1;\n  border: none;\n  outline: none;\n  padding: 11px 14px;\n  font-size: 14px;\n  background: transparent;\n  color: #111827;\n  font-family: inherit;\n}\n.phone-number-input::placeholder {\n  color: #9CA3AF;\n}\n.country-dropdown {\n  position: absolute;\n  z-index: 300;\n  top: calc(100% + 6px);\n  left: 0;\n  width: 280px;\n  background: #fff;\n  border: 1px solid #E5E7EB;\n  border-radius: 14px;\n  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.05);\n  overflow: hidden;\n}\n.country-search {\n  width: 100%;\n  border: none;\n  border-bottom: 1px solid #F1F5F9;\n  padding: 10px 14px;\n  font-size: 13px;\n  outline: none;\n  background: #F9FAFB;\n  color: #111827;\n  box-sizing: border-box;\n  font-family: inherit;\n}\n.country-search::placeholder {\n  color: #9CA3AF;\n}\n.country-list {\n  max-height: 220px;\n  overflow-y: auto;\n  padding: 4px;\n}\n.country-option {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: 100%;\n  padding: 8px 12px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  text-align: left;\n  border-radius: 8px;\n  transition: background 0.12s;\n  font-family: inherit;\n}\n.country-option:hover {\n  background: #F0FDF4;\n}\n.country-name {\n  flex: 1;\n  font-size: 13px;\n  color: #111827;\n}\n.country-dial-sm {\n  font-size: 11px;\n  color: #6B7280;\n  font-weight: 600;\n  background: #F1F5F9;\n  padding: 2px 7px;\n  border-radius: 5px;\n}\n@keyframes sparkRise {\n  0% {\n    opacity: 0;\n    transform: translateY(0);\n  }\n  15% {\n    opacity: 0.9;\n  }\n  85% {\n    opacity: 0.5;\n  }\n  100% {\n    opacity: 0;\n    transform: translateY(-90px);\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  :host * {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 900px) {\n  .fl-left {\n    display: none;\n  }\n}\n/*# sourceMappingURL=famille-login.component.css.map */\n"] }]
   }], () => [{ type: FormBuilder }, { type: AuthService }, { type: Router }], null);
 })();
@@ -2111,231 +2111,231 @@ Code : *${this.familleCode}*`;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FamilleHomeComponent, [{
     type: Component,
-    args: [{ selector: "app-famille-home", standalone: false, template: `<div class="fh-page">
-
-  <!-- Banni\xE8re de bienvenue -->
-  <div class="fh-hero">
-    <svg class="fh-hero-roots" width="100%" height="100%" viewBox="0 0 1000 280" preserveAspectRatio="xMaxYMax slice">
-      <path d="M760 280 C 755 230, 740 200, 700 175 C 670 156, 660 130, 665 100" stroke="#3E7A4C" stroke-width="2.5" fill="none" opacity="0.55"/>
-      <path d="M760 280 C 770 235, 800 210, 830 190 C 855 173, 868 148, 862 118" stroke="#3E7A4C" stroke-width="2.5" fill="none" opacity="0.55"/>
-      <path d="M760 280 C 762 245, 775 222, 800 205" stroke="#3E7A4C" stroke-width="1.5" fill="none" opacity="0.4"/>
-      <path d="M665 100 C 640 82, 630 55, 645 28" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
-      <path d="M665 100 C 690 88, 705 65, 700 38" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
-      <path d="M862 118 C 885 100, 895 75, 885 48" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
-      <path d="M862 118 C 840 105, 828 82, 838 58" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
-      <circle cx="645" cy="26" r="7" fill="#5A9A68" opacity="0.5"/>
-      <circle cx="700" cy="36" r="9" fill="#5A9A68" opacity="0.55"/>
-      <circle cx="885" cy="46" r="8" fill="#5A9A68" opacity="0.5"/>
-      <circle cx="838" cy="56" r="6" fill="#5A9A68" opacity="0.45"/>
-      <circle cx="800" cy="204" r="5" fill="#5A9A68" opacity="0.35"/>
-    </svg>
-
-    <div class="fh-hero-content">
-      <div class="fh-hello" *ngIf="user">
-        <div class="fh-user-avatar">{{ (user.prenom[0] + user.nom[0]).toUpperCase() }}</div>
-        <div>
-          <p class="fh-greeting">Bonjour, {{ user.prenom }} \u{1F44B}</p>
-          <h1 class="fh-family-name">Famille {{ nomFamille || '\u2026' }}</h1>
-          <p class="fh-hero-meta">
-            <b>{{ totalMembres }}</b>&nbsp;membres<span class="fh-hero-dot"></span><b>{{ totalGenerations }}</b>&nbsp;g\xE9n\xE9rations
-          </p>
-        </div>
-      </div>
-      <div class="fh-hero-right">
-        <div class="fh-ring-wrap" *ngIf="!loading && toutes.length > 0">
-          <div class="fh-ring" [style.background]="'conic-gradient(var(--primary-light) 0% ' + completionScore + '%, rgba(255,255,255,0.14) ' + completionScore + '% 100%)'">
-            <div class="fh-ring-inner">{{ completionScore }}%</div>
-          </div>
-          <div class="fh-ring-label"><b>Arbre compl\xE9t\xE9</b>Enrichissez les profils pour compl\xE9ter l'arbre</div>
-        </div>
-        <a class="fh-invite-btn" routerLink="/famille/inviter">
-          <span class="material-icons-round">group_add</span>
-          Inviter
-        </a>
-      </div>
-    </div>
-
-    <div class="fh-hero-stats-row">
-      <div class="fh-hero-stat"><span class="fhs-value">{{ totalMembres }}</span><span class="fhs-label">Membres</span></div>
-      <div class="fh-hero-stat"><span class="fhs-value">{{ totalGenerations }}</span><span class="fhs-label">G\xE9n\xE9rations</span></div>
-      <div class="fh-hero-stat"><span class="fhs-value">{{ totalUnions }}</span><span class="fhs-label">Unions</span></div>
-    </div>
-  </div>
-
-  <!-- Skeleton chargement -->
-  <ng-container *ngIf="loading">
-    <div class="sk-section">
-      <div class="sk-hero"></div>
-      <div class="sk-grid">
-        <div class="sk-card" *ngFor="let _ of [1,2,3,4]">
-          <div class="sk-card-banner"></div>
-          <div class="sk-card-body">
-            <div class="sk-line sk-full"></div>
-            <div class="sk-line sk-md"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </ng-container>
-
-  <ng-container *ngIf="!loading">
-    <div class="fh-body-grid">
-
-      <!-- ===== COLONNE PRINCIPALE ===== -->
-      <div>
-        <!-- Tuiles de navigation -->
-        <div class="fh-section">
-          <h2 class="fh-section-title">Explorer</h2>
-          <div class="fh-tiles">
-            <a class="fh-tile" *ngFor="let t of tiles" [routerLink]="t.route"
-               [style.--tile-color]="t.color" [style.--tile-bg]="t.bg">
-              <div class="fh-tile-icon" [style.background]="t.bg" [style.color]="t.color">
-                <span class="material-icons-round">{{ t.icon }}</span>
-              </div>
-              <span class="fh-tile-label">{{ t.label }}</span>
-              <span class="material-icons-round fh-tile-arrow">arrow_forward</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Membres r\xE9cents -->
-        <div class="fh-section" *ngIf="recentPersonnes.length > 0">
-          <div class="fh-section-header">
-            <h2 class="fh-section-title">Membres r\xE9cents</h2>
-            <div class="fh-section-actions">
-              <div class="view-toggle">
-                <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">
-                  <span class="material-icons-round">grid_view</span>
-                </button>
-                <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">
-                  <span class="material-icons-round">view_list</span>
-                </button>
-              </div>
-              <a routerLink="/famille/membres" class="fh-see-all">
-                Voir tous <span class="material-icons-round">arrow_forward</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Vue cartes -->
-          <div class="pc-grid" *ngIf="viewMode === 'cards'">
-            <div class="pc-card" *ngFor="let p of recentPersonnes; let i = index; trackBy: trackByPersonneId"
-                 [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'">
-              <div class="pc-card-banner">
-                <div class="pc-colorband"
-                     [class.color-1]="i % 3 === 0"
-                     [class.color-2]="i % 3 === 1"
-                     [class.color-3]="i % 3 === 2"></div>
-                <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
-                <div class="pc-avatar-ring">
-                  <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
-                       [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"
-                       [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
-                  <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">
-                    {{ getInitiales(p) }}
-                  </div>
-                </div>
-              </div>
-              <div class="pc-card-body">
-                <h4 class="pc-name">{{ getNomComplet(p) }}</h4>
-                <span class="pc-age" [class.pc-age-unknown]="!getAgeLabel(p)">
-                  {{ getAgeLabel(p) || 'Naissance inconnue' }}
-                </span>
-                <div class="pc-loc" *ngIf="p.lieuNaissance">
-                  <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
-                </div>
-                <div class="pc-badges">
-                  <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
-                  <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>
-                </div>
-              </div>
-              <div class="pc-card-actions">
-                <a class="pc-act" routerLink="/famille/membres">
-                  <span class="material-icons-round">visibility</span>Voir
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Vue liste -->
-          <div class="pl-table" *ngIf="viewMode === 'list'">
-            <div class="pl-thead">
-              <span class="pl-th pl-th-person">Personne</span>
-              <span class="pl-th pl-th-lieu">Lieu de naissance</span>
-              <span class="pl-th pl-th-statut">Statut</span>
-            </div>
-            <div class="pl-row" *ngFor="let p of recentPersonnes; trackBy: trackByPersonneId">
-              <div class="pl-cell pl-cell-person">
-                <div class="pl-avatar-wrap">
-                  <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
-                       [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"
-                       [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
-                  <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pl-avatar pl-avatar-initials"
-                       [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">{{ getInitiales(p) }}</div>
-                  <span class="pl-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
-                </div>
-                <div class="pl-person-info">
-                  <span class="pl-person-name">{{ getNomComplet(p) }}</span>
-                  <span class="pl-person-age" [class.pc-age-unknown]="!getAgeLabel(p)">
-                    {{ getAgeLabel(p) || 'Naissance inconnue' }}
-                  </span>
-                </div>
-              </div>
-              <div class="pl-cell pl-cell-lieu">
-                <span *ngIf="p.lieuNaissance" class="pl-lieu">
-                  <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
-                </span>
-                <span *ngIf="!p.lieuNaissance" class="pl-empty">\u2014</span>
-              </div>
-              <div class="pl-cell pl-cell-statut">
-                <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
-                <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== ASIDE ===== -->
-      <div>
-        <div class="aside-card" *ngIf="anniversairesProches.length > 0">
-          <h4><span class="material-icons-round" style="color:#DB2777">cake</span>Anniversaires \xE0 venir</h4>
-          <div class="bday-item" *ngFor="let b of anniversairesProches; trackBy: trackByAnniversaire">
-            <div class="bday-date"><span>{{ b.jourNum }}</span><span>{{ b.moisAbbr }}</span></div>
-            <div class="bday-item-info">
-              <div class="bday-item-name">{{ getNomComplet(b.p) }}</div>
-              <div class="bday-item-when">{{ b.jours === 0 ? "Aujourd'hui" : b.jours === 1 ? 'Demain' : 'dans ' + b.jours + ' jours' }}</div>
-            </div>
-            <span class="bday-item-soon" *ngIf="b.jours <= 7">Bient\xF4t</span>
-          </div>
-        </div>
-
-        <div class="aside-card">
-          <h4><span class="material-icons-round" style="color:#2E7D32">account_tree</span>Aper\xE7u de l'arbre</h4>
-          <div class="tree-preview">
-            <svg width="220" height="130" viewBox="0 0 220 130">
-              <line x1="110" y1="30" x2="70" y2="70" stroke="#D1D5DB" stroke-width="2"/>
-              <line x1="110" y1="30" x2="150" y2="70" stroke="#D1D5DB" stroke-width="2"/>
-              <line x1="70" y1="70" x2="45" y2="110" stroke="#D1D5DB" stroke-width="2"/>
-              <line x1="70" y1="70" x2="90" y2="110" stroke="#D1D5DB" stroke-width="2"/>
-              <line x1="150" y1="70" x2="130" y2="110" stroke="#D1D5DB" stroke-width="2"/>
-              <line x1="150" y1="70" x2="170" y2="110" stroke="#D1D5DB" stroke-width="2"/>
-              <circle cx="110" cy="30" r="13" fill="#2E7D32"/>
-              <circle cx="70" cy="70" r="11" fill="#60A5FA"/>
-              <circle cx="150" cy="70" r="11" fill="#F472B6"/>
-              <circle cx="45" cy="110" r="9" fill="#93C5FD"/>
-              <circle cx="90" cy="110" r="9" fill="#93C5FD"/>
-              <circle cx="130" cy="110" r="9" fill="#F9A8D4"/>
-              <circle cx="170" cy="110" r="9" fill="#F9A8D4"/>
-            </svg>
-            <button class="tree-link" routerLink="/famille/arbre"><span class="material-icons-round">open_in_full</span>Voir l'arbre complet</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </ng-container>
-</div>
+    args: [{ selector: "app-famille-home", standalone: false, template: `<div class="fh-page">\r
+\r
+  <!-- Banni\xE8re de bienvenue -->\r
+  <div class="fh-hero">\r
+    <svg class="fh-hero-roots" width="100%" height="100%" viewBox="0 0 1000 280" preserveAspectRatio="xMaxYMax slice">\r
+      <path d="M760 280 C 755 230, 740 200, 700 175 C 670 156, 660 130, 665 100" stroke="#3E7A4C" stroke-width="2.5" fill="none" opacity="0.55"/>\r
+      <path d="M760 280 C 770 235, 800 210, 830 190 C 855 173, 868 148, 862 118" stroke="#3E7A4C" stroke-width="2.5" fill="none" opacity="0.55"/>\r
+      <path d="M760 280 C 762 245, 775 222, 800 205" stroke="#3E7A4C" stroke-width="1.5" fill="none" opacity="0.4"/>\r
+      <path d="M665 100 C 640 82, 630 55, 645 28" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>\r
+      <path d="M665 100 C 690 88, 705 65, 700 38" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>\r
+      <path d="M862 118 C 885 100, 895 75, 885 48" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>\r
+      <path d="M862 118 C 840 105, 828 82, 838 58" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>\r
+      <circle cx="645" cy="26" r="7" fill="#5A9A68" opacity="0.5"/>\r
+      <circle cx="700" cy="36" r="9" fill="#5A9A68" opacity="0.55"/>\r
+      <circle cx="885" cy="46" r="8" fill="#5A9A68" opacity="0.5"/>\r
+      <circle cx="838" cy="56" r="6" fill="#5A9A68" opacity="0.45"/>\r
+      <circle cx="800" cy="204" r="5" fill="#5A9A68" opacity="0.35"/>\r
+    </svg>\r
+\r
+    <div class="fh-hero-content">\r
+      <div class="fh-hello" *ngIf="user">\r
+        <div class="fh-user-avatar">{{ (user.prenom[0] + user.nom[0]).toUpperCase() }}</div>\r
+        <div>\r
+          <p class="fh-greeting">Bonjour, {{ user.prenom }} \u{1F44B}</p>\r
+          <h1 class="fh-family-name">Famille {{ nomFamille || '\u2026' }}</h1>\r
+          <p class="fh-hero-meta">\r
+            <b>{{ totalMembres }}</b>&nbsp;membres<span class="fh-hero-dot"></span><b>{{ totalGenerations }}</b>&nbsp;g\xE9n\xE9rations\r
+          </p>\r
+        </div>\r
+      </div>\r
+      <div class="fh-hero-right">\r
+        <div class="fh-ring-wrap" *ngIf="!loading && toutes.length > 0">\r
+          <div class="fh-ring" [style.background]="'conic-gradient(var(--primary-light) 0% ' + completionScore + '%, rgba(255,255,255,0.14) ' + completionScore + '% 100%)'">\r
+            <div class="fh-ring-inner">{{ completionScore }}%</div>\r
+          </div>\r
+          <div class="fh-ring-label"><b>Arbre compl\xE9t\xE9</b>Enrichissez les profils pour compl\xE9ter l'arbre</div>\r
+        </div>\r
+        <a class="fh-invite-btn" routerLink="/famille/inviter">\r
+          <span class="material-icons-round">group_add</span>\r
+          Inviter\r
+        </a>\r
+      </div>\r
+    </div>\r
+\r
+    <div class="fh-hero-stats-row">\r
+      <div class="fh-hero-stat"><span class="fhs-value">{{ totalMembres }}</span><span class="fhs-label">Membres</span></div>\r
+      <div class="fh-hero-stat"><span class="fhs-value">{{ totalGenerations }}</span><span class="fhs-label">G\xE9n\xE9rations</span></div>\r
+      <div class="fh-hero-stat"><span class="fhs-value">{{ totalUnions }}</span><span class="fhs-label">Unions</span></div>\r
+    </div>\r
+  </div>\r
+\r
+  <!-- Skeleton chargement -->\r
+  <ng-container *ngIf="loading">\r
+    <div class="sk-section">\r
+      <div class="sk-hero"></div>\r
+      <div class="sk-grid">\r
+        <div class="sk-card" *ngFor="let _ of [1,2,3,4]">\r
+          <div class="sk-card-banner"></div>\r
+          <div class="sk-card-body">\r
+            <div class="sk-line sk-full"></div>\r
+            <div class="sk-line sk-md"></div>\r
+          </div>\r
+        </div>\r
+      </div>\r
+    </div>\r
+  </ng-container>\r
+\r
+  <ng-container *ngIf="!loading">\r
+    <div class="fh-body-grid">\r
+\r
+      <!-- ===== COLONNE PRINCIPALE ===== -->\r
+      <div>\r
+        <!-- Tuiles de navigation -->\r
+        <div class="fh-section">\r
+          <h2 class="fh-section-title">Explorer</h2>\r
+          <div class="fh-tiles">\r
+            <a class="fh-tile" *ngFor="let t of tiles" [routerLink]="t.route"\r
+               [style.--tile-color]="t.color" [style.--tile-bg]="t.bg">\r
+              <div class="fh-tile-icon" [style.background]="t.bg" [style.color]="t.color">\r
+                <span class="material-icons-round">{{ t.icon }}</span>\r
+              </div>\r
+              <span class="fh-tile-label">{{ t.label }}</span>\r
+              <span class="material-icons-round fh-tile-arrow">arrow_forward</span>\r
+            </a>\r
+          </div>\r
+        </div>\r
+\r
+        <!-- Membres r\xE9cents -->\r
+        <div class="fh-section" *ngIf="recentPersonnes.length > 0">\r
+          <div class="fh-section-header">\r
+            <h2 class="fh-section-title">Membres r\xE9cents</h2>\r
+            <div class="fh-section-actions">\r
+              <div class="view-toggle">\r
+                <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">\r
+                  <span class="material-icons-round">grid_view</span>\r
+                </button>\r
+                <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">\r
+                  <span class="material-icons-round">view_list</span>\r
+                </button>\r
+              </div>\r
+              <a routerLink="/famille/membres" class="fh-see-all">\r
+                Voir tous <span class="material-icons-round">arrow_forward</span>\r
+              </a>\r
+            </div>\r
+          </div>\r
+\r
+          <!-- Vue cartes -->\r
+          <div class="pc-grid" *ngIf="viewMode === 'cards'">\r
+            <div class="pc-card" *ngFor="let p of recentPersonnes; let i = index; trackBy: trackByPersonneId"\r
+                 [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'">\r
+              <div class="pc-card-banner">\r
+                <div class="pc-colorband"\r
+                     [class.color-1]="i % 3 === 0"\r
+                     [class.color-2]="i % 3 === 1"\r
+                     [class.color-3]="i % 3 === 2"></div>\r
+                <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>\r
+                <div class="pc-avatar-ring">\r
+                  <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
+                       [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"\r
+                       [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />\r
+                  <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">\r
+                    {{ getInitiales(p) }}\r
+                  </div>\r
+                </div>\r
+              </div>\r
+              <div class="pc-card-body">\r
+                <h4 class="pc-name">{{ getNomComplet(p) }}</h4>\r
+                <span class="pc-age" [class.pc-age-unknown]="!getAgeLabel(p)">\r
+                  {{ getAgeLabel(p) || 'Naissance inconnue' }}\r
+                </span>\r
+                <div class="pc-loc" *ngIf="p.lieuNaissance">\r
+                  <span class="material-icons-round">place</span>{{ p.lieuNaissance }}\r
+                </div>\r
+                <div class="pc-badges">\r
+                  <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>\r
+                  <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>\r
+                </div>\r
+              </div>\r
+              <div class="pc-card-actions">\r
+                <a class="pc-act" routerLink="/famille/membres">\r
+                  <span class="material-icons-round">visibility</span>Voir\r
+                </a>\r
+              </div>\r
+            </div>\r
+          </div>\r
+\r
+          <!-- Vue liste -->\r
+          <div class="pl-table" *ngIf="viewMode === 'list'">\r
+            <div class="pl-thead">\r
+              <span class="pl-th pl-th-person">Personne</span>\r
+              <span class="pl-th pl-th-lieu">Lieu de naissance</span>\r
+              <span class="pl-th pl-th-statut">Statut</span>\r
+            </div>\r
+            <div class="pl-row" *ngFor="let p of recentPersonnes; trackBy: trackByPersonneId">\r
+              <div class="pl-cell pl-cell-person">\r
+                <div class="pl-avatar-wrap">\r
+                  <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
+                       [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"\r
+                       [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />\r
+                  <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pl-avatar pl-avatar-initials"\r
+                       [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">{{ getInitiales(p) }}</div>\r
+                  <span class="pl-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>\r
+                </div>\r
+                <div class="pl-person-info">\r
+                  <span class="pl-person-name">{{ getNomComplet(p) }}</span>\r
+                  <span class="pl-person-age" [class.pc-age-unknown]="!getAgeLabel(p)">\r
+                    {{ getAgeLabel(p) || 'Naissance inconnue' }}\r
+                  </span>\r
+                </div>\r
+              </div>\r
+              <div class="pl-cell pl-cell-lieu">\r
+                <span *ngIf="p.lieuNaissance" class="pl-lieu">\r
+                  <span class="material-icons-round">place</span>{{ p.lieuNaissance }}\r
+                </span>\r
+                <span *ngIf="!p.lieuNaissance" class="pl-empty">\u2014</span>\r
+              </div>\r
+              <div class="pl-cell pl-cell-statut">\r
+                <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>\r
+                <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>\r
+              </div>\r
+            </div>\r
+          </div>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- ===== ASIDE ===== -->\r
+      <div>\r
+        <div class="aside-card" *ngIf="anniversairesProches.length > 0">\r
+          <h4><span class="material-icons-round" style="color:#DB2777">cake</span>Anniversaires \xE0 venir</h4>\r
+          <div class="bday-item" *ngFor="let b of anniversairesProches; trackBy: trackByAnniversaire">\r
+            <div class="bday-date"><span>{{ b.jourNum }}</span><span>{{ b.moisAbbr }}</span></div>\r
+            <div class="bday-item-info">\r
+              <div class="bday-item-name">{{ getNomComplet(b.p) }}</div>\r
+              <div class="bday-item-when">{{ b.jours === 0 ? "Aujourd'hui" : b.jours === 1 ? 'Demain' : 'dans ' + b.jours + ' jours' }}</div>\r
+            </div>\r
+            <span class="bday-item-soon" *ngIf="b.jours <= 7">Bient\xF4t</span>\r
+          </div>\r
+        </div>\r
+\r
+        <div class="aside-card">\r
+          <h4><span class="material-icons-round" style="color:#2E7D32">account_tree</span>Aper\xE7u de l'arbre</h4>\r
+          <div class="tree-preview">\r
+            <svg width="220" height="130" viewBox="0 0 220 130">\r
+              <line x1="110" y1="30" x2="70" y2="70" stroke="#D1D5DB" stroke-width="2"/>\r
+              <line x1="110" y1="30" x2="150" y2="70" stroke="#D1D5DB" stroke-width="2"/>\r
+              <line x1="70" y1="70" x2="45" y2="110" stroke="#D1D5DB" stroke-width="2"/>\r
+              <line x1="70" y1="70" x2="90" y2="110" stroke="#D1D5DB" stroke-width="2"/>\r
+              <line x1="150" y1="70" x2="130" y2="110" stroke="#D1D5DB" stroke-width="2"/>\r
+              <line x1="150" y1="70" x2="170" y2="110" stroke="#D1D5DB" stroke-width="2"/>\r
+              <circle cx="110" cy="30" r="13" fill="#2E7D32"/>\r
+              <circle cx="70" cy="70" r="11" fill="#60A5FA"/>\r
+              <circle cx="150" cy="70" r="11" fill="#F472B6"/>\r
+              <circle cx="45" cy="110" r="9" fill="#93C5FD"/>\r
+              <circle cx="90" cy="110" r="9" fill="#93C5FD"/>\r
+              <circle cx="130" cy="110" r="9" fill="#F9A8D4"/>\r
+              <circle cx="170" cy="110" r="9" fill="#F9A8D4"/>\r
+            </svg>\r
+            <button class="tree-link" routerLink="/famille/arbre"><span class="material-icons-round">open_in_full</span>Voir l'arbre complet</button>\r
+          </div>\r
+        </div>\r
+      </div>\r
+\r
+    </div>\r
+  </ng-container>\r
+</div>\r
 `, styles: ['@charset "UTF-8";\n\n/* src/app/famille/pages/home/famille-home.component.scss */\n.fh-page {\n  display: flex;\n  flex-direction: column;\n  gap: 32px;\n}\n.fh-hero {\n  position: relative;\n  border-radius: 26px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      var(--sidebar-dark, #3D0A1A) 0%,\n      var(--primary-dark) 55%,\n      var(--primary) 100%);\n  padding: 36px 40px 32px;\n  color: #fff;\n  animation: fhHeroIn 0.5s ease-out;\n}\n@keyframes fhHeroIn {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.fh-hero-roots {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n  opacity: 0.5;\n}\n.fh-hero-content {\n  position: relative;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 24px;\n}\n.fh-hello {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.fh-user-avatar {\n  width: 56px;\n  height: 56px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-light),\n      var(--primary));\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 800;\n  color: #fff;\n  flex-shrink: 0;\n  border: 2px solid rgba(255, 255, 255, 0.25);\n}\n.fh-greeting {\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.68);\n  margin: 0 0 4px;\n}\n.fh-family-name {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  margin: 0;\n  letter-spacing: -0.3px;\n}\n.fh-hero-meta {\n  margin: 6px 0 0;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.55);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.fh-hero-meta b {\n  color: rgba(255, 255, 255, 0.85);\n  font-weight: 600;\n}\n.fh-hero-dot {\n  width: 3px;\n  height: 3px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.35);\n}\n.fh-hero-right {\n  display: flex;\n  align-items: center;\n  gap: 22px;\n  flex-wrap: wrap;\n}\n.fh-ring-wrap {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.fh-ring {\n  width: 64px;\n  height: 64px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: background 0.4s ease;\n}\n.fh-ring-inner {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  background: var(--sidebar-dark, #3D0A1A);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  color: #fff;\n}\n.fh-ring-label {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.6);\n  max-width: 130px;\n  line-height: 1.4;\n}\n.fh-ring-label b {\n  color: #fff;\n  display: block;\n  font-size: 13px;\n  margin-bottom: 1px;\n}\n.fh-invite-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  background: rgba(255, 255, 255, 0.1);\n  color: #fff;\n  font-size: 13.5px;\n  font-weight: 600;\n  text-decoration: none;\n  white-space: nowrap;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    background 0.15s;\n}\n.fh-invite-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.fh-invite-btn:hover {\n  background: rgba(255, 255, 255, 0.16);\n  text-decoration: none;\n  color: #fff;\n  transform: translateY(-1px);\n}\n.fh-hero-stats-row {\n  position: relative;\n  display: flex;\n  gap: 28px;\n  margin-top: 24px;\n  padding-top: 20px;\n  border-top: 1px solid rgba(255, 255, 255, 0.12);\n  flex-wrap: wrap;\n}\n.fh-hero-stat {\n  display: flex;\n  align-items: baseline;\n  gap: 8px;\n}\n.fhs-value {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  line-height: 1;\n}\n.fhs-label {\n  font-size: 12.5px;\n  color: rgba(255, 255, 255, 0.55);\n}\n.fh-body-grid {\n  display: grid;\n  grid-template-columns: 1fr 336px;\n  gap: 22px;\n}\n.fh-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.fh-section:last-child {\n  margin-bottom: 0;\n}\n.fh-section-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 12px;\n}\n.fh-section-actions {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.fh-section-title {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--text-primary);\n  margin: 0;\n}\n.fh-see-all {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 13px;\n  font-weight: 500;\n  color: var(--primary);\n  text-decoration: none;\n}\n.fh-see-all .material-icons-round {\n  font-size: 16px !important;\n}\n.fh-see-all:hover {\n  text-decoration: none;\n  opacity: 0.8;\n}\n.fh-tiles {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));\n  gap: 16px;\n}\n.fh-tile {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 20px;\n  background: var(--white);\n  border-radius: 18px;\n  border: 1px solid var(--border-light);\n  text-decoration: none;\n  color: var(--text-primary);\n  transition: all 0.25s;\n}\n.fh-tile:hover {\n  border-color: var(--tile-color, var(--primary));\n  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);\n  transform: translateY(-3px);\n  text-decoration: none;\n  color: var(--text-primary);\n}\n.fh-tile:hover .fh-tile-arrow {\n  opacity: 1;\n  transform: translateX(3px);\n  color: var(--tile-color, var(--primary));\n}\n.fh-tile-icon {\n  width: 48px;\n  height: 48px;\n  border-radius: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.fh-tile-icon .material-icons-round {\n  font-size: 24px !important;\n}\n.fh-tile-label {\n  flex: 1;\n  font-size: 14px;\n  font-weight: 600;\n}\n.fh-tile-arrow {\n  font-size: 18px !important;\n  color: #D1D5DB;\n  opacity: 0;\n  transition: all 0.2s;\n}\n.aside-card {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 18px;\n  padding: 18px;\n  margin-bottom: 18px;\n}\n.aside-card h4 {\n  margin: 0 0 14px;\n  font-size: 13.5px;\n  font-weight: 700;\n  color: var(--text-primary);\n  display: flex;\n  align-items: center;\n  gap: 7px;\n}\n.aside-card h4 .material-icons-round {\n  font-size: 17px !important;\n}\n.bday-item {\n  display: flex;\n  align-items: center;\n  gap: 11px;\n  padding: 9px 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.bday-item:last-child {\n  border-bottom: none;\n}\n.bday-date {\n  width: 40px;\n  height: 40px;\n  border-radius: 11px;\n  background: #FDF2F8;\n  color: #DB2777;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.bday-date span:first-child {\n  font-size: 13px;\n  font-weight: 800;\n  line-height: 1;\n}\n.bday-date span:last-child {\n  font-size: 8.5px;\n  font-weight: 600;\n  text-transform: uppercase;\n}\n.bday-item-info {\n  flex: 1;\n  min-width: 0;\n}\n.bday-item-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-item-when {\n  font-size: 11.5px;\n  color: var(--text-muted);\n}\n.bday-item-soon {\n  margin-left: auto;\n  flex-shrink: 0;\n  font-size: 10.5px;\n  font-weight: 700;\n  color: #DB2777;\n  background: #FDF2F8;\n  padding: 3px 8px;\n  border-radius: 999px;\n  animation: pulse-badge 1.5s infinite;\n}\n@keyframes pulse-badge {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n.tree-preview {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 4px 0 6px;\n}\n.tree-link {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  width: 100%;\n  margin-top: 14px;\n  padding: 9px;\n  border-radius: 10px;\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  border: none;\n  text-decoration: none;\n}\n.tree-link .material-icons-round {\n  font-size: 15px !important;\n}\n.tree-link:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n@media (prefers-reduced-motion: reduce) {\n  :host * {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 1100px) {\n  .fh-body-grid {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 1024px) {\n  .fh-tiles {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media (max-width: 640px) {\n  .fh-hero {\n    padding: 24px 20px;\n    border-radius: 18px;\n  }\n  .fh-hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 16px;\n  }\n  .fh-hero-right {\n    align-items: flex-start;\n    flex-direction: row;\n    flex-wrap: wrap;\n    gap: 14px;\n  }\n  .fhs-value {\n    font-size: 20px;\n  }\n  .fh-family-name {\n    font-size: 19px;\n  }\n  .fh-hero-stats-row {\n    gap: 18px;\n  }\n  .fh-tiles {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .fh-tile {\n    padding: 14px;\n    gap: 10px;\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .fh-tile-icon {\n    width: 40px;\n    height: 40px;\n  }\n  .fh-tile-arrow {\n    display: none;\n  }\n}\n@media (max-width: 380px) {\n  .fh-tiles {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=famille-home.component.css.map */\n'] }]
   }], () => [{ type: ApiService }, { type: AuthService }, { type: Router }], null);
 })();
@@ -7682,11 +7682,11 @@ var FamilleProfilComponent = class _FamilleProfilComponent {
     this.push = push;
   }
   ngOnInit() {
-    this.pushSupported = this.push.isSupported;
+    this.user = this.auth.getUser();
+    this.pushSupported = this.push.isSupported && this.user?.role !== "viewonly";
     if (this.pushSupported) {
       this.push.isSubscribed().then((v) => this.pushEnabled = v);
     }
-    this.user = this.auth.getUser();
     if (this.user) {
       this.editForm = {
         prenom: this.user.prenom,
@@ -8879,63 +8879,63 @@ var FamilleGalerieComponent = class _FamilleGalerieComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FamilleGalerieComponent, [{
     type: Component,
-    args: [{ selector: "app-famille-galerie", standalone: false, template: `<div class="header-row mb-24">
-  <div>
-    <h2>Galerie</h2>
-    <p>Toutes les photos ajout\xE9es aux profils de la famille, au m\xEAme endroit.</p>
-  </div>
-</div>
-
-<div class="error-state" *ngIf="erreur">
-  <span class="material-icons-round">error_outline</span> {{ erreur }}
-</div>
-
-<!-- Skeleton chargement -->
-<div class="ga-grid" *ngIf="loading">
-  <div class="ga-sk-tile" *ngFor="let _ of [1,2,3,4,5,6,7,8]"></div>
-</div>
-
-<ng-container *ngIf="!loading">
-  <div class="ga-grid" *ngIf="!erreur && photos.length > 0">
-    <button class="ga-tile" *ngFor="let p of photos; trackBy: trackById" (click)="lightbox = p">
-      <img [src]="p.url" [alt]="p.caption || p.personneNom || 'Photo'" loading="lazy" />
-      <div class="ga-tile-overlay">
-        <span class="ga-tile-name" *ngIf="p.personneNom">{{ p.personneNom }}</span>
-      </div>
-    </button>
-  </div>
-
-  <div class="empty-state" *ngIf="!erreur && photos.length === 0">
-    <span class="material-icons-round">photo_library</span>
-    <h3>Aucune photo pour le moment</h3>
-    <p>Ajoutez des photos depuis la fiche d'un membre \u2014 elles appara\xEEtront ici automatiquement.</p>
-  </div>
-
-  <div class="load-more-row" *ngIf="page < totalPages">
-    <button class="btn-secondary" [disabled]="loadingMore" (click)="loadMore()">
-      <span class="btn-spinner" *ngIf="loadingMore"></span>
-      <ng-container *ngIf="!loadingMore">Charger plus</ng-container>
-    </button>
-  </div>
-</ng-container>
-
-<!-- Lightbox -->
-<div class="lightbox-overlay" *ngIf="lightbox" (click)="lightbox = null">
-  <div class="lightbox-box" (click)="$event.stopPropagation()">
-    <img [src]="lightbox.url" class="lightbox-img" [alt]="lightbox.caption || 'Photo'" />
-    <div class="lightbox-info" *ngIf="lightbox.personneNom || lightbox.caption || lightbox.datePrise || lightbox.lieuPrise">
-      <strong *ngIf="lightbox.personneNom">{{ lightbox.personneNom }}</strong>
-      <p *ngIf="lightbox.caption">{{ lightbox.caption }}</p>
-      <p class="lightbox-meta" *ngIf="lightbox.datePrise || lightbox.lieuPrise">
-        <span *ngIf="lightbox.datePrise"><span class="material-icons-round">calendar_today</span>{{ lightbox.datePrise }}</span>
-        <span *ngIf="lightbox.lieuPrise"><span class="material-icons-round">place</span>{{ lightbox.lieuPrise }}</span>
-      </p>
-    </div>
-    <button class="lightbox-close" (click)="lightbox = null">
-      <span class="material-icons-round">close</span>
-    </button>
-  </div>
-</div>
+    args: [{ selector: "app-famille-galerie", standalone: false, template: `<div class="header-row mb-24">\r
+  <div>\r
+    <h2>Galerie</h2>\r
+    <p>Toutes les photos ajout\xE9es aux profils de la famille, au m\xEAme endroit.</p>\r
+  </div>\r
+</div>\r
+\r
+<div class="error-state" *ngIf="erreur">\r
+  <span class="material-icons-round">error_outline</span> {{ erreur }}\r
+</div>\r
+\r
+<!-- Skeleton chargement -->\r
+<div class="ga-grid" *ngIf="loading">\r
+  <div class="ga-sk-tile" *ngFor="let _ of [1,2,3,4,5,6,7,8]"></div>\r
+</div>\r
+\r
+<ng-container *ngIf="!loading">\r
+  <div class="ga-grid" *ngIf="!erreur && photos.length > 0">\r
+    <button class="ga-tile" *ngFor="let p of photos; trackBy: trackById" (click)="lightbox = p">\r
+      <img [src]="p.url" [alt]="p.caption || p.personneNom || 'Photo'" loading="lazy" />\r
+      <div class="ga-tile-overlay">\r
+        <span class="ga-tile-name" *ngIf="p.personneNom">{{ p.personneNom }}</span>\r
+      </div>\r
+    </button>\r
+  </div>\r
+\r
+  <div class="empty-state" *ngIf="!erreur && photos.length === 0">\r
+    <span class="material-icons-round">photo_library</span>\r
+    <h3>Aucune photo pour le moment</h3>\r
+    <p>Ajoutez des photos depuis la fiche d'un membre \u2014 elles appara\xEEtront ici automatiquement.</p>\r
+  </div>\r
+\r
+  <div class="load-more-row" *ngIf="page < totalPages">\r
+    <button class="btn-secondary" [disabled]="loadingMore" (click)="loadMore()">\r
+      <span class="btn-spinner" *ngIf="loadingMore"></span>\r
+      <ng-container *ngIf="!loadingMore">Charger plus</ng-container>\r
+    </button>\r
+  </div>\r
+</ng-container>\r
+\r
+<!-- Lightbox -->\r
+<div class="lightbox-overlay" *ngIf="lightbox" (click)="lightbox = null">\r
+  <div class="lightbox-box" (click)="$event.stopPropagation()">\r
+    <img [src]="lightbox.url" class="lightbox-img" [alt]="lightbox.caption || 'Photo'" />\r
+    <div class="lightbox-info" *ngIf="lightbox.personneNom || lightbox.caption || lightbox.datePrise || lightbox.lieuPrise">\r
+      <strong *ngIf="lightbox.personneNom">{{ lightbox.personneNom }}</strong>\r
+      <p *ngIf="lightbox.caption">{{ lightbox.caption }}</p>\r
+      <p class="lightbox-meta" *ngIf="lightbox.datePrise || lightbox.lieuPrise">\r
+        <span *ngIf="lightbox.datePrise"><span class="material-icons-round">calendar_today</span>{{ lightbox.datePrise }}</span>\r
+        <span *ngIf="lightbox.lieuPrise"><span class="material-icons-round">place</span>{{ lightbox.lieuPrise }}</span>\r
+      </p>\r
+    </div>\r
+    <button class="lightbox-close" (click)="lightbox = null">\r
+      <span class="material-icons-round">close</span>\r
+    </button>\r
+  </div>\r
+</div>\r
 `, styles: ["/* src/app/famille/pages/galerie/famille-galerie.component.scss */\n.header-row h2 {\n  margin: 0 0 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n  margin: 0;\n}\n.erreur-box {\n  background: var(--error-bg);\n  color: var(--error);\n  border: 1px solid #FECACA;\n  border-radius: var(--radius-md);\n  padding: 12px 16px;\n  margin-bottom: 20px;\n  font-size: 14px;\n}\n.ga-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));\n  gap: 14px;\n}\n.ga-tile {\n  position: relative;\n  aspect-ratio: 1;\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: none;\n  padding: 0;\n  cursor: pointer;\n  background: var(--bg-muted);\n}\n.ga-tile img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n  transition: transform 0.25s ease;\n}\n.ga-tile:hover img {\n  transform: scale(1.05);\n}\n.ga-tile-overlay {\n  position: absolute;\n  inset-inline: 0;\n  bottom: 0;\n  padding: 20px 10px 8px;\n  background:\n    linear-gradient(\n      to top,\n      rgba(0, 0, 0, 0.65),\n      transparent);\n  opacity: 0;\n  transition: opacity 0.2s ease;\n}\n.ga-tile:hover .ga-tile-overlay {\n  opacity: 1;\n}\n.ga-tile-name {\n  color: #fff;\n  font-size: 12px;\n  font-weight: 600;\n}\n.ga-sk-tile {\n  aspect-ratio: 1;\n  border-radius: var(--radius-lg);\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: ga-shimmer 1.4s infinite;\n}\n@keyframes ga-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.load-more-row {\n  display: flex;\n  justify-content: center;\n  margin-top: 24px;\n}\n.btn-spinner {\n  display: inline-block;\n  width: 15px;\n  height: 15px;\n  border: 2px solid rgba(0, 0, 0, 0.15);\n  border-top-color: var(--primary);\n  border-radius: 50%;\n  animation: ga-spin 0.7s linear infinite;\n}\n@keyframes ga-spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.lightbox-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.85);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 2000;\n  padding: 20px;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  animation: ga-fadeIn 0.2s ease;\n}\n@keyframes ga-fadeIn {\n  from {\n    opacity: 0;\n  }\n}\n.lightbox-box {\n  position: relative;\n  max-width: 90vw;\n  max-height: 90vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n}\n.lightbox-img {\n  max-width: 100%;\n  max-height: 75vh;\n  border-radius: 12px;\n  object-fit: contain;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);\n}\n.lightbox-info {\n  color: rgba(255, 255, 255, 0.9);\n  text-align: center;\n}\n.lightbox-info strong {\n  display: block;\n  font-size: 14px;\n  margin-bottom: 2px;\n}\n.lightbox-info p {\n  margin: 0;\n  font-size: 13px;\n}\n.lightbox-meta {\n  display: flex;\n  gap: 16px;\n  justify-content: center;\n  font-size: 12px !important;\n  color: rgba(255, 255, 255, 0.65) !important;\n  margin-top: 4px !important;\n}\n.lightbox-meta span {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.lightbox-meta .material-icons-round {\n  font-size: 13px !important;\n}\n.lightbox-close {\n  position: absolute;\n  top: -40px;\n  right: 0;\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  background: rgba(0, 0, 0, 0.5);\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.lightbox-close .material-icons-round {\n  font-size: 20px !important;\n}\n.lightbox-close:hover {\n  background: rgba(255, 255, 255, 0.2);\n}\n/*# sourceMappingURL=famille-galerie.component.css.map */\n"] }]
   }], () => [{ type: ApiService }], null);
 })();
@@ -9023,4 +9023,4 @@ var FamilleModule = class _FamilleModule {
 export {
   FamilleModule
 };
-//# sourceMappingURL=chunk-4H3I5GUD.js.map
+//# sourceMappingURL=chunk-YJ6ZM5SY.js.map

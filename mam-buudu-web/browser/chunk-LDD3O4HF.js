@@ -1,6 +1,6 @@
 import {
   ToastService
-} from "./chunk-2MLW6AMB.js";
+} from "./chunk-OQGG6VTN.js";
 import {
   require_html2canvas
 } from "./chunk-J7MNQZVK.js";
@@ -19,12 +19,12 @@ import {
   getInitiales,
   getNomComplet,
   getPhotoUrl
-} from "./chunk-GYHNEXRG.js";
+} from "./chunk-STNTUTHY.js";
 import {
   ApiService,
   LoadingService,
   ThemeService
-} from "./chunk-MAP5PQOL.js";
+} from "./chunk-OQPKGRDY.js";
 import {
   CheckboxControlValueAccessor,
   DefaultValueAccessor,
@@ -42,10 +42,10 @@ import {
   SelectControlValueAccessor,
   ɵNgNoValidate,
   ɵNgSelectMultipleOption
-} from "./chunk-BUNKOKLL.js";
+} from "./chunk-IW4264EB.js";
 import {
   AuthService
-} from "./chunk-LX6YEX77.js";
+} from "./chunk-3BB7U3NX.js";
 import {
   ActivatedRoute,
   AsyncPipe,
@@ -129,7 +129,7 @@ import {
   ɵɵtwoWayListener,
   ɵɵtwoWayProperty,
   ɵɵviewQuery
-} from "./chunk-4MA3A2KE.js";
+} from "./chunk-UZMMFXAY.js";
 import {
   __async,
   __spreadProps,
@@ -2521,278 +2521,278 @@ Code : *${this.familleCode}*`;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(HomeComponent, [{
     type: Component,
-    args: [{ selector: "app-home", standalone: false, template: `<!-- ===== HERO ===== -->
-<div class="home-hero">
-  <svg class="home-hero-roots" width="100%" height="100%" viewBox="0 0 1000 280" preserveAspectRatio="xMaxYMax slice">
-    <path d="M760 280 C 755 230, 740 200, 700 175 C 670 156, 660 130, 665 100" stroke="#3E7A4C" stroke-width="2.5" fill="none" opacity="0.55"/>
-    <path d="M760 280 C 770 235, 800 210, 830 190 C 855 173, 868 148, 862 118" stroke="#3E7A4C" stroke-width="2.5" fill="none" opacity="0.55"/>
-    <path d="M760 280 C 762 245, 775 222, 800 205" stroke="#3E7A4C" stroke-width="1.5" fill="none" opacity="0.4"/>
-    <path d="M665 100 C 640 82, 630 55, 645 28" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
-    <path d="M665 100 C 690 88, 705 65, 700 38" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
-    <path d="M862 118 C 885 100, 895 75, 885 48" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
-    <path d="M862 118 C 840 105, 828 82, 838 58" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>
-    <circle cx="645" cy="26" r="7" fill="#5A9A68" opacity="0.5"/>
-    <circle cx="700" cy="36" r="9" fill="#5A9A68" opacity="0.55"/>
-    <circle cx="885" cy="46" r="8" fill="#5A9A68" opacity="0.5"/>
-    <circle cx="838" cy="56" r="6" fill="#5A9A68" opacity="0.45"/>
-    <circle cx="800" cy="204" r="5" fill="#5A9A68" opacity="0.35"/>
-  </svg>
-
-  <div class="home-hero-content">
-    <div class="home-hero-left" *ngIf="user">
-      <div class="home-user-avatar">{{ (user.prenom[0] + user.nom[0]).toUpperCase() }}</div>
-      <div>
-        <p class="home-greeting">Bonjour, {{ user.prenom }} \u{1F44B}</p>
-        <h1 class="home-family-name">Famille {{ nomFamille || '\u2026' }}</h1>
-        <p class="home-hero-meta">
-          <b>{{ stats[0].value }}</b>&nbsp;membres<span class="home-hero-dot"></span><b>{{ stats[1].value }}</b>&nbsp;g\xE9n\xE9rations
-        </p>
-      </div>
-    </div>
-    <div class="home-hero-left" *ngIf="!user">
-      <div class="home-user-avatar">MB</div>
-      <div>
-        <p class="home-greeting">Bonjour \u{1F44B}</p>
-        <h1 class="home-family-name">Famille {{ nomFamille || '\u2026' }}</h1>
-      </div>
-    </div>
-
-    <div class="home-hero-right">
-      <div class="home-ring-wrap" *ngIf="!loading && toutes.length > 0">
-        <div class="home-ring" [style.background]="'conic-gradient(var(--primary-light) 0% ' + completionScore + '%, rgba(255,255,255,0.14) ' + completionScore + '% 100%)'">
-          <div class="home-ring-inner">{{ completionScore }}%</div>
-        </div>
-        <div class="home-ring-label"><b>Arbre compl\xE9t\xE9</b>Enrichissez les profils pour compl\xE9ter l'arbre</div>
-      </div>
-      <div class="home-hero-btns">
-        <button class="home-invite-btn" (click)="shareWhatsApp()">
-          <span class="material-icons-round">group_add</span>
-          Inviter
-        </button>
-        <button class="home-add-btn" routerLink="/app/personnes">
-          <span class="material-icons-round">person_add</span>
-          Ajouter
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="home-hero-stats-row">
-    <div class="home-hero-stat" *ngFor="let s of stats">
-      <span class="hhs-value">{{ s.value }}</span>
-      <span class="hhs-label">{{ s.label }}</span>
-    </div>
-  </div>
-</div>
-
-<!-- ===== BODY GRID ===== -->
-<div class="home-body-grid">
-
-  <!-- ===== MAIN COLUMN ===== -->
-  <div>
-
-    <!-- ===== STATS SKELETON ===== -->
-    <div class="stats-grid mb-16" *ngIf="loading">
-      <div class="sk-stat" *ngFor="let _ of [1,2,3,4]">
-        <div class="sk-stat-icon"></div>
-        <div class="sk-stat-body">
-          <div class="sk-line sk-lg"></div>
-          <div class="sk-line sk-sm"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== ACTIONS RAPIDES ===== -->
-    <div class="section-header mb-16">
-      <h3>Actions rapides</h3>
-    </div>
-
-    <div class="qa-row mb-32">
-      <a *ngFor="let a of quickActions" [routerLink]="a.route" class="qa-tile">
-        <div class="qa-icon" [class]="a.color">
-          <span class="material-icons-round">{{ a.icon }}</span>
-        </div>
-        <span class="qa-label">{{ a.label }}</span>
-      </a>
-    </div>
-
-    <!-- ===== SKELETON CHARGEMENT MEMBRES ===== -->
-    <div *ngIf="loading" class="skeleton-section mb-32">
-      <div class="skeleton-header">
-        <div class="skeleton-bar skeleton-bar-title"></div>
-        <div class="skeleton-bar skeleton-bar-sm"></div>
-      </div>
-      <div class="skeleton-grid">
-        <div class="skeleton-card" *ngFor="let _ of [1,2,3,4]">
-          <div class="skeleton-card-top"></div>
-          <div class="skeleton-card-body">
-            <div class="skeleton-bar"></div>
-            <div class="skeleton-bar skeleton-bar-sm"></div>
-            <div class="skeleton-bar skeleton-bar-xs"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== DERNIERS MEMBRES ===== -->
-    <div class="section-header mb-16" *ngIf="!loading">
-      <h3>Membres r\xE9cents</h3>
-      <div class="section-actions">
-        <div class="view-toggle">
-          <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">
-            <span class="material-icons-round">grid_view</span>
-          </button>
-          <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">
-            <span class="material-icons-round">view_list</span>
-          </button>
-        </div>
-        <a routerLink="/app/personnes" class="btn-secondary btn-sm">Voir tous</a>
-      </div>
-    </div>
-
-    <!-- ===== VUE CARTES ===== -->
-    <div class="pc-grid" *ngIf="!loading && recentPersonnes.length > 0 && viewMode === 'cards'">
-      <div class="pc-card" *ngFor="let p of recentPersonnes; let i = index; trackBy: trackByPersonneId"
-           [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'">
-        <div class="pc-card-banner">
-          <div class="pc-colorband"
-               [class.color-1]="i % 3 === 0"
-               [class.color-2]="i % 3 === 1"
-               [class.color-3]="i % 3 === 2"></div>
-          <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
-          <div class="pc-avatar-ring">
-            <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
-                 [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"
-                 [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
-            <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">
-              {{ getInitiales(p) }}
-            </div>
-          </div>
-        </div>
-        <div class="pc-card-body">
-          <h4 class="pc-name">{{ getNomComplet(p) }}</h4>
-          <span class="pc-age" [class.pc-age-unknown]="!getAgeLabel(p)">
-            {{ getAgeLabel(p) || 'Naissance inconnue' }}
-          </span>
-          <div class="pc-loc" *ngIf="p.lieuNaissance">
-            <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
-          </div>
-          <div class="pc-badges">
-            <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
-            <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>
-          </div>
-        </div>
-        <div class="pc-card-actions">
-          <button class="pc-act">
-            <span class="material-icons-round">favorite_border</span>Like
-          </button>
-          <a class="pc-act" [routerLink]="['/app/personnes']" [queryParams]="{ id: p.id }">
-            <span class="material-icons-round">visibility</span>Voir
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== VUE LISTE ===== -->
-    <div class="pl-table" *ngIf="!loading && recentPersonnes.length > 0 && viewMode === 'list'">
-      <div class="pl-thead">
-        <span class="pl-th pl-th-person">Personne</span>
-        <span class="pl-th pl-th-genre">Genre</span>
-        <span class="pl-th pl-th-lieu">Lieu de naissance</span>
-        <span class="pl-th pl-th-statut">Statut</span>
-        <span class="pl-th pl-th-actions">Actions</span>
-      </div>
-      <div class="pl-row" *ngFor="let p of recentPersonnes; trackBy: trackByPersonneId">
-        <div class="pl-cell pl-cell-person">
-          <div class="pl-avatar-wrap">
-            <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
-                 [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"
-                 [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />
-            <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pl-avatar pl-avatar-initials"
-                 [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">{{ getInitiales(p) }}</div>
-            <span class="pl-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>
-          </div>
-          <div class="pl-person-info">
-            <span class="pl-person-name">{{ getNomComplet(p) }}</span>
-            <span class="pl-person-age" [class.pc-age-unknown]="!getAgeLabel(p)">
-              {{ getAgeLabel(p) || 'Naissance inconnue' }}
-            </span>
-          </div>
-        </div>
-        <div class="pl-cell pl-cell-genre">
-          <span class="pc-badge" [class.pc-badge-m]="p.sexe === 'M'" [class.pc-badge-f]="p.sexe === 'F'">
-            {{ p.sexe === 'M' ? 'Homme' : p.sexe === 'F' ? 'Femme' : 'Autre' }}
-          </span>
-        </div>
-        <div class="pl-cell pl-cell-lieu">
-          <span *ngIf="p.lieuNaissance" class="pl-lieu">
-            <span class="material-icons-round">place</span>{{ p.lieuNaissance }}
-          </span>
-          <span *ngIf="!p.lieuNaissance" class="pl-empty">\u2014</span>
-        </div>
-        <div class="pl-cell pl-cell-statut">
-          <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>
-          <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>
-        </div>
-        <div class="pl-cell pl-cell-actions">
-          <a class="btn-icon" title="Voir" [routerLink]="['/app/personnes']" [queryParams]="{ id: p.id }">
-            <span class="material-icons-round">visibility</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="empty-state" *ngIf="!loading && recentPersonnes.length === 0">
-      <span class="material-icons-round">people</span>
-      <h3>Aucun membre encore</h3>
-      <p>Commencez par ajouter des personnes \xE0 votre famille.</p>
-    </div>
-  </div>
-
-  <!-- ===== ASIDE ===== -->
-  <div *ngIf="!loading">
-    <div class="aside-card" *ngIf="anniversairesProches.length > 0">
-      <h4><span class="material-icons-round" style="color:#DB2777">cake</span>Anniversaires \xE0 venir</h4>
-      <div class="bday-item" *ngFor="let b of anniversairesProches; trackBy: trackByAnniversaire">
-        <div class="bday-date"><span>{{ b.jourNum }}</span><span>{{ b.moisAbbr }}</span></div>
-        <div class="bday-item-info">
-          <div class="bday-item-name">{{ getNomComplet(b.p) }}</div>
-          <div class="bday-item-when">{{ b.jours === 0 ? "Aujourd'hui" : b.jours === 1 ? 'Demain' : 'dans ' + b.jours + ' jours' }}</div>
-        </div>
-        <span class="bday-item-soon" *ngIf="b.jours <= 7">Bient\xF4t</span>
-      </div>
-    </div>
-
-    <div class="aside-card">
-      <h4><span class="material-icons-round" style="color:#2E7D32">account_tree</span>Aper\xE7u de l'arbre</h4>
-      <div class="tree-preview">
-        <svg width="220" height="130" viewBox="0 0 220 130">
-          <line x1="110" y1="30" x2="70" y2="70" stroke="#D1D5DB" stroke-width="2"/>
-          <line x1="110" y1="30" x2="150" y2="70" stroke="#D1D5DB" stroke-width="2"/>
-          <line x1="70" y1="70" x2="45" y2="110" stroke="#D1D5DB" stroke-width="2"/>
-          <line x1="70" y1="70" x2="90" y2="110" stroke="#D1D5DB" stroke-width="2"/>
-          <line x1="150" y1="70" x2="130" y2="110" stroke="#D1D5DB" stroke-width="2"/>
-          <line x1="150" y1="70" x2="170" y2="110" stroke="#D1D5DB" stroke-width="2"/>
-          <circle cx="110" cy="30" r="13" fill="#2E7D32"/>
-          <circle cx="70" cy="70" r="11" fill="#60A5FA"/>
-          <circle cx="150" cy="70" r="11" fill="#F472B6"/>
-          <circle cx="45" cy="110" r="9" fill="#93C5FD"/>
-          <circle cx="90" cy="110" r="9" fill="#93C5FD"/>
-          <circle cx="130" cy="110" r="9" fill="#F9A8D4"/>
-          <circle cx="170" cy="110" r="9" fill="#F9A8D4"/>
-        </svg>
-        <button class="tree-link" routerLink="/app/tree"><span class="material-icons-round">open_in_full</span>Voir l'arbre complet</button>
-      </div>
-    </div>
-
-    <div class="aside-card">
-      <div class="fact-row">
-        <span class="material-icons-round">auto_stories</span>
-        <p>{{ stats[3].value }} story{{ stats[3].value > 1 ? 'ies' : '' }} partag\xE9e{{ stats[3].value > 1 ? 's' : '' }} par la famille \u2014 racontez la v\xF4tre.</p>
-      </div>
-    </div>
-  </div>
-</div>
+    args: [{ selector: "app-home", standalone: false, template: `<!-- ===== HERO ===== -->\r
+<div class="home-hero">\r
+  <svg class="home-hero-roots" width="100%" height="100%" viewBox="0 0 1000 280" preserveAspectRatio="xMaxYMax slice">\r
+    <path d="M760 280 C 755 230, 740 200, 700 175 C 670 156, 660 130, 665 100" stroke="#3E7A4C" stroke-width="2.5" fill="none" opacity="0.55"/>\r
+    <path d="M760 280 C 770 235, 800 210, 830 190 C 855 173, 868 148, 862 118" stroke="#3E7A4C" stroke-width="2.5" fill="none" opacity="0.55"/>\r
+    <path d="M760 280 C 762 245, 775 222, 800 205" stroke="#3E7A4C" stroke-width="1.5" fill="none" opacity="0.4"/>\r
+    <path d="M665 100 C 640 82, 630 55, 645 28" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>\r
+    <path d="M665 100 C 690 88, 705 65, 700 38" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>\r
+    <path d="M862 118 C 885 100, 895 75, 885 48" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>\r
+    <path d="M862 118 C 840 105, 828 82, 838 58" stroke="#3E7A4C" stroke-width="2" fill="none" opacity="0.45"/>\r
+    <circle cx="645" cy="26" r="7" fill="#5A9A68" opacity="0.5"/>\r
+    <circle cx="700" cy="36" r="9" fill="#5A9A68" opacity="0.55"/>\r
+    <circle cx="885" cy="46" r="8" fill="#5A9A68" opacity="0.5"/>\r
+    <circle cx="838" cy="56" r="6" fill="#5A9A68" opacity="0.45"/>\r
+    <circle cx="800" cy="204" r="5" fill="#5A9A68" opacity="0.35"/>\r
+  </svg>\r
+\r
+  <div class="home-hero-content">\r
+    <div class="home-hero-left" *ngIf="user">\r
+      <div class="home-user-avatar">{{ (user.prenom[0] + user.nom[0]).toUpperCase() }}</div>\r
+      <div>\r
+        <p class="home-greeting">Bonjour, {{ user.prenom }} \u{1F44B}</p>\r
+        <h1 class="home-family-name">Famille {{ nomFamille || '\u2026' }}</h1>\r
+        <p class="home-hero-meta">\r
+          <b>{{ stats[0].value }}</b>&nbsp;membres<span class="home-hero-dot"></span><b>{{ stats[1].value }}</b>&nbsp;g\xE9n\xE9rations\r
+        </p>\r
+      </div>\r
+    </div>\r
+    <div class="home-hero-left" *ngIf="!user">\r
+      <div class="home-user-avatar">MB</div>\r
+      <div>\r
+        <p class="home-greeting">Bonjour \u{1F44B}</p>\r
+        <h1 class="home-family-name">Famille {{ nomFamille || '\u2026' }}</h1>\r
+      </div>\r
+    </div>\r
+\r
+    <div class="home-hero-right">\r
+      <div class="home-ring-wrap" *ngIf="!loading && toutes.length > 0">\r
+        <div class="home-ring" [style.background]="'conic-gradient(var(--primary-light) 0% ' + completionScore + '%, rgba(255,255,255,0.14) ' + completionScore + '% 100%)'">\r
+          <div class="home-ring-inner">{{ completionScore }}%</div>\r
+        </div>\r
+        <div class="home-ring-label"><b>Arbre compl\xE9t\xE9</b>Enrichissez les profils pour compl\xE9ter l'arbre</div>\r
+      </div>\r
+      <div class="home-hero-btns">\r
+        <button class="home-invite-btn" (click)="shareWhatsApp()">\r
+          <span class="material-icons-round">group_add</span>\r
+          Inviter\r
+        </button>\r
+        <button class="home-add-btn" routerLink="/app/personnes">\r
+          <span class="material-icons-round">person_add</span>\r
+          Ajouter\r
+        </button>\r
+      </div>\r
+    </div>\r
+  </div>\r
+\r
+  <div class="home-hero-stats-row">\r
+    <div class="home-hero-stat" *ngFor="let s of stats">\r
+      <span class="hhs-value">{{ s.value }}</span>\r
+      <span class="hhs-label">{{ s.label }}</span>\r
+    </div>\r
+  </div>\r
+</div>\r
+\r
+<!-- ===== BODY GRID ===== -->\r
+<div class="home-body-grid">\r
+\r
+  <!-- ===== MAIN COLUMN ===== -->\r
+  <div>\r
+\r
+    <!-- ===== STATS SKELETON ===== -->\r
+    <div class="stats-grid mb-16" *ngIf="loading">\r
+      <div class="sk-stat" *ngFor="let _ of [1,2,3,4]">\r
+        <div class="sk-stat-icon"></div>\r
+        <div class="sk-stat-body">\r
+          <div class="sk-line sk-lg"></div>\r
+          <div class="sk-line sk-sm"></div>\r
+        </div>\r
+      </div>\r
+    </div>\r
+\r
+    <!-- ===== ACTIONS RAPIDES ===== -->\r
+    <div class="section-header mb-16">\r
+      <h3>Actions rapides</h3>\r
+    </div>\r
+\r
+    <div class="qa-row mb-32">\r
+      <a *ngFor="let a of quickActions" [routerLink]="a.route" class="qa-tile">\r
+        <div class="qa-icon" [class]="a.color">\r
+          <span class="material-icons-round">{{ a.icon }}</span>\r
+        </div>\r
+        <span class="qa-label">{{ a.label }}</span>\r
+      </a>\r
+    </div>\r
+\r
+    <!-- ===== SKELETON CHARGEMENT MEMBRES ===== -->\r
+    <div *ngIf="loading" class="skeleton-section mb-32">\r
+      <div class="skeleton-header">\r
+        <div class="skeleton-bar skeleton-bar-title"></div>\r
+        <div class="skeleton-bar skeleton-bar-sm"></div>\r
+      </div>\r
+      <div class="skeleton-grid">\r
+        <div class="skeleton-card" *ngFor="let _ of [1,2,3,4]">\r
+          <div class="skeleton-card-top"></div>\r
+          <div class="skeleton-card-body">\r
+            <div class="skeleton-bar"></div>\r
+            <div class="skeleton-bar skeleton-bar-sm"></div>\r
+            <div class="skeleton-bar skeleton-bar-xs"></div>\r
+          </div>\r
+        </div>\r
+      </div>\r
+    </div>\r
+\r
+    <!-- ===== DERNIERS MEMBRES ===== -->\r
+    <div class="section-header mb-16" *ngIf="!loading">\r
+      <h3>Membres r\xE9cents</h3>\r
+      <div class="section-actions">\r
+        <div class="view-toggle">\r
+          <button class="vt-btn" [class.active]="viewMode === 'cards'" (click)="viewMode = 'cards'" title="Vue cartes">\r
+            <span class="material-icons-round">grid_view</span>\r
+          </button>\r
+          <button class="vt-btn" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" title="Vue liste">\r
+            <span class="material-icons-round">view_list</span>\r
+          </button>\r
+        </div>\r
+        <a routerLink="/app/personnes" class="btn-secondary btn-sm">Voir tous</a>\r
+      </div>\r
+    </div>\r
+\r
+    <!-- ===== VUE CARTES ===== -->\r
+    <div class="pc-grid" *ngIf="!loading && recentPersonnes.length > 0 && viewMode === 'cards'">\r
+      <div class="pc-card" *ngFor="let p of recentPersonnes; let i = index; trackBy: trackByPersonneId"\r
+           [class.pc-male]="p.sexe === 'M'" [class.pc-female]="p.sexe === 'F'">\r
+        <div class="pc-card-banner">\r
+          <div class="pc-colorband"\r
+               [class.color-1]="i % 3 === 0"\r
+               [class.color-2]="i % 3 === 1"\r
+               [class.color-3]="i % 3 === 2"></div>\r
+          <span class="pc-live-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>\r
+          <div class="pc-avatar-ring">\r
+            <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
+                 [src]="getPhotoUrl(p)" class="pc-avatar pc-avatar-photo"\r
+                 [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />\r
+            <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pc-avatar pc-avatar-initials">\r
+              {{ getInitiales(p) }}\r
+            </div>\r
+          </div>\r
+        </div>\r
+        <div class="pc-card-body">\r
+          <h4 class="pc-name">{{ getNomComplet(p) }}</h4>\r
+          <span class="pc-age" [class.pc-age-unknown]="!getAgeLabel(p)">\r
+            {{ getAgeLabel(p) || 'Naissance inconnue' }}\r
+          </span>\r
+          <div class="pc-loc" *ngIf="p.lieuNaissance">\r
+            <span class="material-icons-round">place</span>{{ p.lieuNaissance }}\r
+          </div>\r
+          <div class="pc-badges">\r
+            <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>\r
+            <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>\r
+          </div>\r
+        </div>\r
+        <div class="pc-card-actions">\r
+          <button class="pc-act">\r
+            <span class="material-icons-round">favorite_border</span>Like\r
+          </button>\r
+          <a class="pc-act" [routerLink]="['/app/personnes']" [queryParams]="{ id: p.id }">\r
+            <span class="material-icons-round">visibility</span>Voir\r
+          </a>\r
+        </div>\r
+      </div>\r
+    </div>\r
+\r
+    <!-- ===== VUE LISTE ===== -->\r
+    <div class="pl-table" *ngIf="!loading && recentPersonnes.length > 0 && viewMode === 'list'">\r
+      <div class="pl-thead">\r
+        <span class="pl-th pl-th-person">Personne</span>\r
+        <span class="pl-th pl-th-genre">Genre</span>\r
+        <span class="pl-th pl-th-lieu">Lieu de naissance</span>\r
+        <span class="pl-th pl-th-statut">Statut</span>\r
+        <span class="pl-th pl-th-actions">Actions</span>\r
+      </div>\r
+      <div class="pl-row" *ngFor="let p of recentPersonnes; trackBy: trackByPersonneId">\r
+        <div class="pl-cell pl-cell-person">\r
+          <div class="pl-avatar-wrap">\r
+            <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"\r
+                 [src]="getPhotoUrl(p)" class="pl-avatar pl-avatar-photo"\r
+                 [alt]="getNomComplet(p)" (error)="onPhotoError(p.id)" />\r
+            <div *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)" class="pl-avatar pl-avatar-initials"\r
+                 [class.male]="p.sexe === 'M'" [class.female]="p.sexe === 'F'">{{ getInitiales(p) }}</div>\r
+            <span class="pl-status-dot" [class.alive]="estVivant(p)" [class.dead]="!estVivant(p)"></span>\r
+          </div>\r
+          <div class="pl-person-info">\r
+            <span class="pl-person-name">{{ getNomComplet(p) }}</span>\r
+            <span class="pl-person-age" [class.pc-age-unknown]="!getAgeLabel(p)">\r
+              {{ getAgeLabel(p) || 'Naissance inconnue' }}\r
+            </span>\r
+          </div>\r
+        </div>\r
+        <div class="pl-cell pl-cell-genre">\r
+          <span class="pc-badge" [class.pc-badge-m]="p.sexe === 'M'" [class.pc-badge-f]="p.sexe === 'F'">\r
+            {{ p.sexe === 'M' ? 'Homme' : p.sexe === 'F' ? 'Femme' : 'Autre' }}\r
+          </span>\r
+        </div>\r
+        <div class="pl-cell pl-cell-lieu">\r
+          <span *ngIf="p.lieuNaissance" class="pl-lieu">\r
+            <span class="material-icons-round">place</span>{{ p.lieuNaissance }}\r
+          </span>\r
+          <span *ngIf="!p.lieuNaissance" class="pl-empty">\u2014</span>\r
+        </div>\r
+        <div class="pl-cell pl-cell-statut">\r
+          <span class="pc-badge pc-badge-alive" *ngIf="estVivant(p)">Vivant(e)</span>\r
+          <span class="pc-badge pc-badge-dead"  *ngIf="!estVivant(p)">D\xE9c\xE9d\xE9(e)</span>\r
+        </div>\r
+        <div class="pl-cell pl-cell-actions">\r
+          <a class="btn-icon" title="Voir" [routerLink]="['/app/personnes']" [queryParams]="{ id: p.id }">\r
+            <span class="material-icons-round">visibility</span>\r
+          </a>\r
+        </div>\r
+      </div>\r
+    </div>\r
+\r
+    <div class="empty-state" *ngIf="!loading && recentPersonnes.length === 0">\r
+      <span class="material-icons-round">people</span>\r
+      <h3>Aucun membre encore</h3>\r
+      <p>Commencez par ajouter des personnes \xE0 votre famille.</p>\r
+    </div>\r
+  </div>\r
+\r
+  <!-- ===== ASIDE ===== -->\r
+  <div *ngIf="!loading">\r
+    <div class="aside-card" *ngIf="anniversairesProches.length > 0">\r
+      <h4><span class="material-icons-round" style="color:#DB2777">cake</span>Anniversaires \xE0 venir</h4>\r
+      <div class="bday-item" *ngFor="let b of anniversairesProches; trackBy: trackByAnniversaire">\r
+        <div class="bday-date"><span>{{ b.jourNum }}</span><span>{{ b.moisAbbr }}</span></div>\r
+        <div class="bday-item-info">\r
+          <div class="bday-item-name">{{ getNomComplet(b.p) }}</div>\r
+          <div class="bday-item-when">{{ b.jours === 0 ? "Aujourd'hui" : b.jours === 1 ? 'Demain' : 'dans ' + b.jours + ' jours' }}</div>\r
+        </div>\r
+        <span class="bday-item-soon" *ngIf="b.jours <= 7">Bient\xF4t</span>\r
+      </div>\r
+    </div>\r
+\r
+    <div class="aside-card">\r
+      <h4><span class="material-icons-round" style="color:#2E7D32">account_tree</span>Aper\xE7u de l'arbre</h4>\r
+      <div class="tree-preview">\r
+        <svg width="220" height="130" viewBox="0 0 220 130">\r
+          <line x1="110" y1="30" x2="70" y2="70" stroke="#D1D5DB" stroke-width="2"/>\r
+          <line x1="110" y1="30" x2="150" y2="70" stroke="#D1D5DB" stroke-width="2"/>\r
+          <line x1="70" y1="70" x2="45" y2="110" stroke="#D1D5DB" stroke-width="2"/>\r
+          <line x1="70" y1="70" x2="90" y2="110" stroke="#D1D5DB" stroke-width="2"/>\r
+          <line x1="150" y1="70" x2="130" y2="110" stroke="#D1D5DB" stroke-width="2"/>\r
+          <line x1="150" y1="70" x2="170" y2="110" stroke="#D1D5DB" stroke-width="2"/>\r
+          <circle cx="110" cy="30" r="13" fill="#2E7D32"/>\r
+          <circle cx="70" cy="70" r="11" fill="#60A5FA"/>\r
+          <circle cx="150" cy="70" r="11" fill="#F472B6"/>\r
+          <circle cx="45" cy="110" r="9" fill="#93C5FD"/>\r
+          <circle cx="90" cy="110" r="9" fill="#93C5FD"/>\r
+          <circle cx="130" cy="110" r="9" fill="#F9A8D4"/>\r
+          <circle cx="170" cy="110" r="9" fill="#F9A8D4"/>\r
+        </svg>\r
+        <button class="tree-link" routerLink="/app/tree"><span class="material-icons-round">open_in_full</span>Voir l'arbre complet</button>\r
+      </div>\r
+    </div>\r
+\r
+    <div class="aside-card">\r
+      <div class="fact-row">\r
+        <span class="material-icons-round">auto_stories</span>\r
+        <p>{{ stats[3].value }} story{{ stats[3].value > 1 ? 'ies' : '' }} partag\xE9e{{ stats[3].value > 1 ? 's' : '' }} par la famille \u2014 racontez la v\xF4tre.</p>\r
+      </div>\r
+    </div>\r
+  </div>\r
+</div>\r
 `, styles: ["/* src/app/pages/home/home.component.scss */\n.home-hero {\n  position: relative;\n  border-radius: 26px;\n  overflow: hidden;\n  background:\n    linear-gradient(\n      135deg,\n      var(--sidebar-dark, #0F172A) 0%,\n      var(--primary-dark) 55%,\n      var(--primary) 100%);\n  padding: 32px 36px 28px;\n  color: #fff;\n  margin-bottom: 24px;\n  animation: heroIn 0.5s ease-out;\n}\n@keyframes heroIn {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.home-hero-roots {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n  opacity: 0.5;\n}\n.home-hero-content {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  flex-wrap: wrap;\n}\n.home-hero-left {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.home-user-avatar {\n  width: 52px;\n  height: 52px;\n  border-radius: 16px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-light),\n      var(--primary));\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 18px;\n  font-weight: 800;\n  color: #fff;\n  flex-shrink: 0;\n  border: 2px solid rgba(255, 255, 255, 0.25);\n}\n.home-greeting {\n  margin: 0 0 2px;\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.68);\n  font-weight: 400;\n}\n.home-family-name {\n  margin: 0;\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n  letter-spacing: -0.3px;\n}\n.home-hero-meta {\n  margin: 6px 0 0;\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.55);\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.home-hero-meta b {\n  color: rgba(255, 255, 255, 0.85);\n  font-weight: 600;\n}\n.home-hero-dot {\n  width: 3px;\n  height: 3px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.35);\n}\n.home-hero-right {\n  position: relative;\n  display: flex;\n  align-items: center;\n  gap: 22px;\n  flex-wrap: wrap;\n}\n.home-ring-wrap {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.home-ring {\n  width: 64px;\n  height: 64px;\n  border-radius: 50%;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: background 0.4s ease;\n}\n.home-ring-inner {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  background: var(--sidebar-dark, #0F172A);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  font-weight: 700;\n  color: #fff;\n}\n.home-ring-label {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.6);\n  max-width: 130px;\n  line-height: 1.4;\n}\n.home-ring-label b {\n  color: #fff;\n  display: block;\n  font-size: 13px;\n  margin-bottom: 1px;\n}\n.home-hero-btns {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.home-invite-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  background: rgba(255, 255, 255, 0.1);\n  color: #fff;\n  font-size: 13.5px;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    background 0.15s;\n}\n.home-invite-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.home-invite-btn:hover {\n  background: rgba(255, 255, 255, 0.16);\n  transform: translateY(-1px);\n}\n.home-add-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  padding: 11px 18px;\n  border-radius: 12px;\n  border: none;\n  background: var(--primary-light);\n  color: var(--sidebar-dark, #0F172A);\n  font-size: 13.5px;\n  font-weight: 700;\n  cursor: pointer;\n  font-family: inherit;\n  transition: transform 0.15s, box-shadow 0.15s;\n  white-space: nowrap;\n  box-shadow: 0 4px 14px color-mix(in srgb, var(--primary-light) 35%, transparent);\n}\n.home-add-btn .material-icons-round {\n  font-size: 18px !important;\n}\n.home-add-btn:hover {\n  box-shadow: 0 6px 18px color-mix(in srgb, var(--primary-light) 45%, transparent);\n  transform: translateY(-1px);\n}\n.home-hero-stats-row {\n  position: relative;\n  display: flex;\n  gap: 28px;\n  margin-top: 24px;\n  padding-top: 20px;\n  border-top: 1px solid rgba(255, 255, 255, 0.12);\n  flex-wrap: wrap;\n}\n.home-hero-stat {\n  display: flex;\n  align-items: baseline;\n  gap: 8px;\n}\n.hhs-value {\n  font-size: 24px;\n  font-weight: 800;\n  color: #fff;\n}\n.hhs-label {\n  font-size: 12.5px;\n  color: rgba(255, 255, 255, 0.55);\n}\n.home-body-grid {\n  display: grid;\n  grid-template-columns: 1fr 336px;\n  gap: 22px;\n}\n.header-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n}\n.header-row h2 {\n  margin-bottom: 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n}\n.header-row strong {\n  color: var(--text-primary);\n}\n.stats-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 16px;\n}\n.qa-row {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 14px;\n}\n.qa-tile {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 16px;\n  padding: 16px 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  cursor: pointer;\n  text-decoration: none;\n  transition:\n    transform 0.15s,\n    box-shadow 0.15s,\n    border-color 0.15s;\n}\n.qa-tile:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);\n  border-color: #D1D5DB;\n  text-decoration: none;\n}\n.qa-icon {\n  width: 38px;\n  height: 38px;\n  border-radius: 11px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.qa-icon .material-icons-round {\n  font-size: 19px !important;\n}\n.qa-icon.blue {\n  background: var(--primary-bg);\n}\n.qa-icon.blue .material-icons-round {\n  color: var(--primary);\n}\n.qa-icon.indigo {\n  background: var(--accent-bg);\n}\n.qa-icon.indigo .material-icons-round {\n  color: var(--accent);\n}\n.qa-icon.pink {\n  background: var(--pink-bg);\n}\n.qa-icon.pink .material-icons-round {\n  color: var(--pink);\n}\n.qa-icon.green {\n  background: var(--success-bg);\n}\n.qa-icon.green .material-icons-round {\n  color: var(--success);\n}\n.qa-label {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n}\n.section-actions {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.aside-card {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: 18px;\n  padding: 18px;\n  margin-bottom: 18px;\n}\n.aside-card h4 {\n  margin: 0 0 14px;\n  font-size: 13.5px;\n  font-weight: 700;\n  color: var(--text-primary);\n  display: flex;\n  align-items: center;\n  gap: 7px;\n}\n.aside-card h4 .material-icons-round {\n  font-size: 17px !important;\n}\n.bday-item {\n  display: flex;\n  align-items: center;\n  gap: 11px;\n  padding: 9px 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.bday-item:last-child {\n  border-bottom: none;\n}\n.bday-date {\n  width: 40px;\n  height: 40px;\n  border-radius: 11px;\n  background: #FDF2F8;\n  color: #DB2777;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.bday-date span:first-child {\n  font-size: 13px;\n  font-weight: 800;\n  line-height: 1;\n}\n.bday-date span:last-child {\n  font-size: 8.5px;\n  font-weight: 600;\n  text-transform: uppercase;\n}\n.bday-item-info {\n  flex: 1;\n  min-width: 0;\n}\n.bday-item-name {\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--text-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bday-item-when {\n  font-size: 11.5px;\n  color: var(--text-muted);\n}\n.bday-item-soon {\n  margin-left: auto;\n  flex-shrink: 0;\n  font-size: 10.5px;\n  font-weight: 700;\n  color: #DB2777;\n  background: #FDF2F8;\n  padding: 3px 8px;\n  border-radius: 999px;\n  animation: pulse-bday 1.5s infinite;\n}\n@keyframes pulse-bday {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.06);\n  }\n}\n.tree-preview {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 4px 0 6px;\n}\n.tree-link {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  width: 100%;\n  margin-top: 14px;\n  padding: 9px;\n  border-radius: 10px;\n  background: var(--primary-bg);\n  color: var(--primary);\n  font-size: 12.5px;\n  font-weight: 600;\n  cursor: pointer;\n  border: none;\n  text-decoration: none;\n}\n.tree-link .material-icons-round {\n  font-size: 15px !important;\n}\n.tree-link:hover {\n  background: var(--primary-border);\n  text-decoration: none;\n}\n.fact-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n}\n.fact-row .material-icons-round {\n  color: #2E7D32;\n  font-size: 18px !important;\n  margin-top: 1px;\n}\n.fact-row p {\n  margin: 0;\n  font-size: 12.5px;\n  color: var(--text-secondary);\n  line-height: 1.55;\n}\n@keyframes skeleton-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.skeleton-bar,\n.skeleton-card-top,\n.skeleton-card {\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: skeleton-shimmer 1.4s infinite;\n  border-radius: 8px;\n}\n.skeleton-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.skeleton-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n}\n.skeleton-bar {\n  height: 16px;\n}\n.skeleton-bar-title {\n  width: 160px;\n  height: 20px;\n}\n.skeleton-bar-sm {\n  width: 100px;\n  height: 14px;\n}\n.skeleton-bar-xs {\n  width: 70px;\n  height: 12px;\n}\n.skeleton-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 16px;\n}\n.skeleton-card {\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: 1px solid var(--border-light);\n}\n.skeleton-card-top {\n  height: 90px;\n  border-radius: 0;\n  border-bottom: 1px solid var(--border-light);\n}\n.skeleton-card-body {\n  padding: 14px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n@media (prefers-reduced-motion: reduce) {\n  :host * {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@media (max-width: 1100px) {\n  .home-body-grid {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 640px) {\n  .qa-row {\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n  }\n  .home-hero {\n    padding: 24px 20px;\n    border-radius: 18px;\n  }\n  .home-hero-content {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .home-hero-right {\n    width: 100%;\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 14px;\n  }\n  .home-family-name {\n    font-size: 19px;\n  }\n  .home-hero-btns {\n    width: 100%;\n  }\n  .home-invite-btn,\n  .home-add-btn {\n    flex: 1;\n    justify-content: center;\n  }\n  .home-hero-stats-row {\n    gap: 18px;\n  }\n}\n@media (max-width: 480px) {\n  .qa-row {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */\n"] }]
   }], () => [{ type: ApiService }, { type: AuthService }, { type: Router }], null);
 })();
@@ -17489,56 +17489,56 @@ var HistoriqueComponent = class _HistoriqueComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(HistoriqueComponent, [{
     type: Component,
-    args: [{ selector: "app-historique", standalone: false, template: `<div class="header-row mb-24">
-  <div>
-    <h2>Historique</h2>
-    <p>Journal des actions r\xE9centes sur l'arbre de votre famille.</p>
-  </div>
-</div>
-
-<div class="erreur-box" *ngIf="erreur">{{ erreur }}</div>
-
-<!-- Skeleton chargement -->
-<div class="hi-skeleton" *ngIf="loading">
-  <div class="hi-sk-row" *ngFor="let _ of [1,2,3,4,5]">
-    <div class="hi-sk-icon"></div>
-    <div class="hi-sk-body">
-      <div class="hi-sk-line hi-sk-lg"></div>
-      <div class="hi-sk-line hi-sk-sm"></div>
-    </div>
-  </div>
-</div>
-
-<ng-container *ngIf="!loading">
-  <div class="hi-list" *ngIf="entries.length > 0">
-    <div class="hi-row" *ngFor="let e of entries; trackBy: trackById">
-      <div class="hi-icon" [style.background]="labelFor(e).color + '1A'" [style.color]="labelFor(e).color">
-        <span class="material-icons-round">{{ labelFor(e).icon }}</span>
-      </div>
-      <div class="hi-body">
-        <p class="hi-text">
-          <strong>{{ e.auteurNom || 'Quelqu\\'un' }}</strong>
-          {{ labelFor(e).label }}
-          <strong *ngIf="cibleNom(e)">{{ cibleNom(e) }}</strong>
-        </p>
-        <span class="hi-date">{{ formatDate(e.createdAt) }}</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="empty-state" *ngIf="entries.length === 0">
-    <span class="material-icons-round">history</span>
-    <h3>Aucune activit\xE9 pour le moment</h3>
-    <p>Les actions de la famille (ajouts, modifications, suppressions) appara\xEEtront ici.</p>
-  </div>
-
-  <div class="load-more-row" *ngIf="page < totalPages">
-    <button class="btn-secondary" [disabled]="loadingMore" (click)="loadMore()">
-      <span class="btn-spinner" *ngIf="loadingMore"></span>
-      <ng-container *ngIf="!loadingMore">Charger plus</ng-container>
-    </button>
-  </div>
-</ng-container>
+    args: [{ selector: "app-historique", standalone: false, template: `<div class="header-row mb-24">\r
+  <div>\r
+    <h2>Historique</h2>\r
+    <p>Journal des actions r\xE9centes sur l'arbre de votre famille.</p>\r
+  </div>\r
+</div>\r
+\r
+<div class="erreur-box" *ngIf="erreur">{{ erreur }}</div>\r
+\r
+<!-- Skeleton chargement -->\r
+<div class="hi-skeleton" *ngIf="loading">\r
+  <div class="hi-sk-row" *ngFor="let _ of [1,2,3,4,5]">\r
+    <div class="hi-sk-icon"></div>\r
+    <div class="hi-sk-body">\r
+      <div class="hi-sk-line hi-sk-lg"></div>\r
+      <div class="hi-sk-line hi-sk-sm"></div>\r
+    </div>\r
+  </div>\r
+</div>\r
+\r
+<ng-container *ngIf="!loading">\r
+  <div class="hi-list" *ngIf="entries.length > 0">\r
+    <div class="hi-row" *ngFor="let e of entries; trackBy: trackById">\r
+      <div class="hi-icon" [style.background]="labelFor(e).color + '1A'" [style.color]="labelFor(e).color">\r
+        <span class="material-icons-round">{{ labelFor(e).icon }}</span>\r
+      </div>\r
+      <div class="hi-body">\r
+        <p class="hi-text">\r
+          <strong>{{ e.auteurNom || 'Quelqu\\'un' }}</strong>\r
+          {{ labelFor(e).label }}\r
+          <strong *ngIf="cibleNom(e)">{{ cibleNom(e) }}</strong>\r
+        </p>\r
+        <span class="hi-date">{{ formatDate(e.createdAt) }}</span>\r
+      </div>\r
+    </div>\r
+  </div>\r
+\r
+  <div class="empty-state" *ngIf="entries.length === 0">\r
+    <span class="material-icons-round">history</span>\r
+    <h3>Aucune activit\xE9 pour le moment</h3>\r
+    <p>Les actions de la famille (ajouts, modifications, suppressions) appara\xEEtront ici.</p>\r
+  </div>\r
+\r
+  <div class="load-more-row" *ngIf="page < totalPages">\r
+    <button class="btn-secondary" [disabled]="loadingMore" (click)="loadMore()">\r
+      <span class="btn-spinner" *ngIf="loadingMore"></span>\r
+      <ng-container *ngIf="!loadingMore">Charger plus</ng-container>\r
+    </button>\r
+  </div>\r
+</ng-container>\r
 `, styles: ["/* src/app/pages/historique/historique.component.scss */\n.header-row h2 {\n  margin: 0 0 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n  margin: 0;\n}\n.erreur-box {\n  background: var(--error-bg);\n  color: var(--error);\n  border: 1px solid #FECACA;\n  border-radius: var(--radius-md);\n  padding: 12px 16px;\n  margin-bottom: 20px;\n  font-size: 14px;\n}\n.hi-list {\n  background: var(--white);\n  border: 1px solid var(--border-light);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n}\n.hi-row {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n  padding: 16px 20px;\n  border-bottom: 1px solid var(--border-light);\n}\n.hi-row:last-child {\n  border-bottom: none;\n}\n.hi-icon {\n  width: 38px;\n  height: 38px;\n  border-radius: 11px;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.hi-icon .material-icons-round {\n  font-size: 19px !important;\n}\n.hi-body {\n  flex: 1;\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n}\n.hi-text {\n  margin: 0;\n  font-size: 14px;\n  color: var(--text-primary);\n  line-height: 1.5;\n}\n.hi-date {\n  font-size: 12px;\n  color: var(--text-muted);\n}\n.hi-skeleton {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  background: var(--border-light);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n}\n.hi-sk-row {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 16px 20px;\n  background: var(--white);\n}\n.hi-sk-icon {\n  width: 38px;\n  height: 38px;\n  border-radius: 11px;\n  flex-shrink: 0;\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: hi-shimmer 1.4s infinite;\n}\n.hi-sk-body {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.hi-sk-line {\n  height: 12px;\n  border-radius: 6px;\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: hi-shimmer 1.4s infinite;\n}\n.hi-sk-lg {\n  width: 60%;\n}\n.hi-sk-sm {\n  width: 30%;\n}\n@keyframes hi-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.load-more-row {\n  display: flex;\n  justify-content: center;\n  margin-top: 24px;\n}\n.btn-spinner {\n  display: inline-block;\n  width: 15px;\n  height: 15px;\n  border: 2px solid rgba(0, 0, 0, 0.15);\n  border-top-color: var(--primary);\n  border-radius: 50%;\n  animation: hi-spin 0.7s linear infinite;\n}\n@keyframes hi-spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n/*# sourceMappingURL=historique.component.css.map */\n"] }]
   }], () => [{ type: ApiService }], null);
 })();
@@ -17877,61 +17877,61 @@ var GalerieComponent = class _GalerieComponent {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(GalerieComponent, [{
     type: Component,
-    args: [{ selector: "app-galerie", standalone: false, template: `<div class="header-row mb-24">
-  <div>
-    <h2>Galerie</h2>
-    <p>Toutes les photos ajout\xE9es aux profils de la famille, au m\xEAme endroit.</p>
-  </div>
-</div>
-
-<div class="erreur-box" *ngIf="erreur">{{ erreur }}</div>
-
-<!-- Skeleton chargement -->
-<div class="ga-grid" *ngIf="loading">
-  <div class="ga-sk-tile" *ngFor="let _ of [1,2,3,4,5,6,7,8]"></div>
-</div>
-
-<ng-container *ngIf="!loading">
-  <div class="ga-grid" *ngIf="photos.length > 0">
-    <button class="ga-tile" *ngFor="let p of photos; trackBy: trackById" (click)="lightbox = p">
-      <img [src]="p.url" [alt]="p.caption || p.personneNom || 'Photo'" loading="lazy" />
-      <div class="ga-tile-overlay">
-        <span class="ga-tile-name" *ngIf="p.personneNom">{{ p.personneNom }}</span>
-      </div>
-    </button>
-  </div>
-
-  <div class="empty-state" *ngIf="photos.length === 0">
-    <span class="material-icons-round">photo_library</span>
-    <h3>Aucune photo pour le moment</h3>
-    <p>Ajoutez des photos depuis la fiche d'une personne \u2014 elles appara\xEEtront ici automatiquement.</p>
-  </div>
-
-  <div class="load-more-row" *ngIf="page < totalPages">
-    <button class="btn-secondary" [disabled]="loadingMore" (click)="loadMore()">
-      <span class="btn-spinner" *ngIf="loadingMore"></span>
-      <ng-container *ngIf="!loadingMore">Charger plus</ng-container>
-    </button>
-  </div>
-</ng-container>
-
-<!-- Lightbox -->
-<div class="lightbox-overlay" *ngIf="lightbox" (click)="lightbox = null">
-  <div class="lightbox-box" (click)="$event.stopPropagation()">
-    <img [src]="lightbox.url" class="lightbox-img" [alt]="lightbox.caption || 'Photo'" />
-    <div class="lightbox-info" *ngIf="lightbox.personneNom || lightbox.caption || lightbox.datePrise || lightbox.lieuPrise">
-      <strong *ngIf="lightbox.personneNom">{{ lightbox.personneNom }}</strong>
-      <p *ngIf="lightbox.caption">{{ lightbox.caption }}</p>
-      <p class="lightbox-meta" *ngIf="lightbox.datePrise || lightbox.lieuPrise">
-        <span *ngIf="lightbox.datePrise"><span class="material-icons-round">calendar_today</span>{{ lightbox.datePrise }}</span>
-        <span *ngIf="lightbox.lieuPrise"><span class="material-icons-round">place</span>{{ lightbox.lieuPrise }}</span>
-      </p>
-    </div>
-    <button class="lightbox-close" (click)="lightbox = null">
-      <span class="material-icons-round">close</span>
-    </button>
-  </div>
-</div>
+    args: [{ selector: "app-galerie", standalone: false, template: `<div class="header-row mb-24">\r
+  <div>\r
+    <h2>Galerie</h2>\r
+    <p>Toutes les photos ajout\xE9es aux profils de la famille, au m\xEAme endroit.</p>\r
+  </div>\r
+</div>\r
+\r
+<div class="erreur-box" *ngIf="erreur">{{ erreur }}</div>\r
+\r
+<!-- Skeleton chargement -->\r
+<div class="ga-grid" *ngIf="loading">\r
+  <div class="ga-sk-tile" *ngFor="let _ of [1,2,3,4,5,6,7,8]"></div>\r
+</div>\r
+\r
+<ng-container *ngIf="!loading">\r
+  <div class="ga-grid" *ngIf="photos.length > 0">\r
+    <button class="ga-tile" *ngFor="let p of photos; trackBy: trackById" (click)="lightbox = p">\r
+      <img [src]="p.url" [alt]="p.caption || p.personneNom || 'Photo'" loading="lazy" />\r
+      <div class="ga-tile-overlay">\r
+        <span class="ga-tile-name" *ngIf="p.personneNom">{{ p.personneNom }}</span>\r
+      </div>\r
+    </button>\r
+  </div>\r
+\r
+  <div class="empty-state" *ngIf="photos.length === 0">\r
+    <span class="material-icons-round">photo_library</span>\r
+    <h3>Aucune photo pour le moment</h3>\r
+    <p>Ajoutez des photos depuis la fiche d'une personne \u2014 elles appara\xEEtront ici automatiquement.</p>\r
+  </div>\r
+\r
+  <div class="load-more-row" *ngIf="page < totalPages">\r
+    <button class="btn-secondary" [disabled]="loadingMore" (click)="loadMore()">\r
+      <span class="btn-spinner" *ngIf="loadingMore"></span>\r
+      <ng-container *ngIf="!loadingMore">Charger plus</ng-container>\r
+    </button>\r
+  </div>\r
+</ng-container>\r
+\r
+<!-- Lightbox -->\r
+<div class="lightbox-overlay" *ngIf="lightbox" (click)="lightbox = null">\r
+  <div class="lightbox-box" (click)="$event.stopPropagation()">\r
+    <img [src]="lightbox.url" class="lightbox-img" [alt]="lightbox.caption || 'Photo'" />\r
+    <div class="lightbox-info" *ngIf="lightbox.personneNom || lightbox.caption || lightbox.datePrise || lightbox.lieuPrise">\r
+      <strong *ngIf="lightbox.personneNom">{{ lightbox.personneNom }}</strong>\r
+      <p *ngIf="lightbox.caption">{{ lightbox.caption }}</p>\r
+      <p class="lightbox-meta" *ngIf="lightbox.datePrise || lightbox.lieuPrise">\r
+        <span *ngIf="lightbox.datePrise"><span class="material-icons-round">calendar_today</span>{{ lightbox.datePrise }}</span>\r
+        <span *ngIf="lightbox.lieuPrise"><span class="material-icons-round">place</span>{{ lightbox.lieuPrise }}</span>\r
+      </p>\r
+    </div>\r
+    <button class="lightbox-close" (click)="lightbox = null">\r
+      <span class="material-icons-round">close</span>\r
+    </button>\r
+  </div>\r
+</div>\r
 `, styles: ["/* src/app/pages/galerie/galerie.component.scss */\n.header-row h2 {\n  margin: 0 0 4px;\n}\n.header-row p {\n  color: var(--text-secondary);\n  font-size: 14px;\n  margin: 0;\n}\n.erreur-box {\n  background: var(--error-bg);\n  color: var(--error);\n  border: 1px solid #FECACA;\n  border-radius: var(--radius-md);\n  padding: 12px 16px;\n  margin-bottom: 20px;\n  font-size: 14px;\n}\n.ga-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));\n  gap: 14px;\n}\n.ga-tile {\n  position: relative;\n  aspect-ratio: 1;\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  border: none;\n  padding: 0;\n  cursor: pointer;\n  background: var(--bg-muted);\n}\n.ga-tile img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n  transition: transform 0.25s ease;\n}\n.ga-tile:hover img {\n  transform: scale(1.05);\n}\n.ga-tile-overlay {\n  position: absolute;\n  inset-inline: 0;\n  bottom: 0;\n  padding: 20px 10px 8px;\n  background:\n    linear-gradient(\n      to top,\n      rgba(0, 0, 0, 0.65),\n      transparent);\n  opacity: 0;\n  transition: opacity 0.2s ease;\n}\n.ga-tile:hover .ga-tile-overlay {\n  opacity: 1;\n}\n.ga-tile-name {\n  color: #fff;\n  font-size: 12px;\n  font-weight: 600;\n}\n.ga-sk-tile {\n  aspect-ratio: 1;\n  border-radius: var(--radius-lg);\n  background:\n    linear-gradient(\n      90deg,\n      #F3F4F6 25%,\n      #E5E7EB 50%,\n      #F3F4F6 75%);\n  background-size: 800px 100%;\n  animation: ga-shimmer 1.4s infinite;\n}\n@keyframes ga-shimmer {\n  0% {\n    background-position: -400px 0;\n  }\n  100% {\n    background-position: 400px 0;\n  }\n}\n.load-more-row {\n  display: flex;\n  justify-content: center;\n  margin-top: 24px;\n}\n.btn-spinner {\n  display: inline-block;\n  width: 15px;\n  height: 15px;\n  border: 2px solid rgba(0, 0, 0, 0.15);\n  border-top-color: var(--primary);\n  border-radius: 50%;\n  animation: ga-spin 0.7s linear infinite;\n}\n@keyframes ga-spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.lightbox-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.85);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 2000;\n  padding: 20px;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  animation: ga-fadeIn 0.2s ease;\n}\n@keyframes ga-fadeIn {\n  from {\n    opacity: 0;\n  }\n}\n.lightbox-box {\n  position: relative;\n  max-width: 90vw;\n  max-height: 90vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n}\n.lightbox-img {\n  max-width: 100%;\n  max-height: 75vh;\n  border-radius: 12px;\n  object-fit: contain;\n  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);\n}\n.lightbox-info {\n  color: rgba(255, 255, 255, 0.9);\n  text-align: center;\n}\n.lightbox-info strong {\n  display: block;\n  font-size: 14px;\n  margin-bottom: 2px;\n}\n.lightbox-info p {\n  margin: 0;\n  font-size: 13px;\n}\n.lightbox-meta {\n  display: flex;\n  gap: 16px;\n  justify-content: center;\n  font-size: 12px !important;\n  color: rgba(255, 255, 255, 0.65) !important;\n  margin-top: 4px !important;\n}\n.lightbox-meta span {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.lightbox-meta .material-icons-round {\n  font-size: 13px !important;\n}\n.lightbox-close {\n  position: absolute;\n  top: -40px;\n  right: 0;\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  background: rgba(0, 0, 0, 0.5);\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.lightbox-close .material-icons-round {\n  font-size: 20px !important;\n}\n.lightbox-close:hover {\n  background: rgba(255, 255, 255, 0.2);\n}\n/*# sourceMappingURL=galerie.component.css.map */\n"] }]
   }], () => [{ type: ApiService }], null);
 })();
@@ -18014,4 +18014,4 @@ var ShellModule = class _ShellModule {
 export {
   ShellModule
 };
-//# sourceMappingURL=chunk-LJVRJZ5G.js.map
+//# sourceMappingURL=chunk-LDD3O4HF.js.map

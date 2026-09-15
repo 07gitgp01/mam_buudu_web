@@ -47,12 +47,15 @@ export class FamilleProfilComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.pushSupported = this.push.isSupported;
+    this.user = this.auth.getUser();
+
+    // Les accès "lecture seule" (lien partagé, pas de compte personnel) ne
+    // peuvent pas s'abonner aux notifications — le backend les refuse.
+    this.pushSupported = this.push.isSupported && this.user?.role !== 'viewonly';
     if (this.pushSupported) {
       this.push.isSubscribed().then(v => this.pushEnabled = v);
     }
 
-    this.user = this.auth.getUser();
     if (this.user) {
       this.editForm = {
         prenom:    this.user.prenom,
