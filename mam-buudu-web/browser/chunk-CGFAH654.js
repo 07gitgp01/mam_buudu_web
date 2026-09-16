@@ -6035,7 +6035,7 @@ var FamilleArbreComponent = class _FamilleArbreComponent {
       this.initAncetresRoot();
     }
   }
-  arbreMirror = true;
+  arbreMirror = false;
   toggleArbreMirror() {
     this.arbreMirror = !this.arbreMirror;
   }
@@ -10544,4 +10544,4 @@ var FamilleModule = class _FamilleModule {
 export {
   FamilleModule
 };
-//# sourceMappingURL=chunk-3AESJNMV.js.map
+//# sourceMappingURL=chunk-CGFAH654.js.map

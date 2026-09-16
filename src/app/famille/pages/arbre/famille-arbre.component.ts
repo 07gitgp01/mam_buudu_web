@@ -81,7 +81,7 @@ export class FamilleArbreComponent implements OnInit, OnDestroy {
     }
   }
 
-  arbreMirror = true;
+  arbreMirror = false;
 
   toggleArbreMirror(): void {
     this.arbreMirror = !this.arbreMirror;

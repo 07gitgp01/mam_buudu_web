@@ -5,6 +5,7 @@ import {
 } from '../../models/personne.model';
 import { Union } from '../../models/union.model';
 import { ApiService } from '../../services/api.service';
+import { AuthService } from '../../services/auth.service';
 import { forkJoin, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import html2canvas from 'html2canvas';
@@ -20,6 +21,27 @@ export interface UnionBranch {
 
 /** Statut d'une union */
 export type UnionStatus = 'active' | 'divorced' | 'widowed';
+
+export type ArbreViewMode = 'arbre' | 'ancetres' | 'eventail' | 'liste';
+export type ListeSortField = 'nom' | 'naissance' | 'deces';
+
+/** Nœud récursif de la vue Ancêtres (pedigree) — personne peut être null (ancêtre inconnu) */
+export interface AncestorNode {
+  personne: Personne | null;
+  generation: number;
+  pere: AncestorNode | null;
+  mere: AncestorNode | null;
+}
+
+/** Un secteur de la vue Éventail, prêt à être dessiné en SVG */
+export interface FanWedge {
+  personne: Personne | null;
+  generation: number;
+  path: string;
+  labelX: number;
+  labelY: number;
+  fontSize: number;
+}
 
 /** Nœud récursif de l'arbre */
 export interface TreeNode {
@@ -69,6 +91,211 @@ export class TreeComponent implements OnInit, OnDestroy {
   private treeDepth(nodes: TreeNode[]): number {
     if (!nodes.length) return 0;
     return 1 + Math.max(...nodes.map(n => this.treeDepth(n.children)));
+  }
+
+  // ── Sélecteur de vue (Arbre / Ancêtres / Éventail / Liste) ──────────────
+  viewMode: ArbreViewMode = 'arbre';
+
+  setViewMode(mode: ArbreViewMode): void {
+    this.viewMode = mode;
+    if ((mode === 'ancetres' || mode === 'eventail') && !this.ancetresRoot) {
+      this.initAncetresRoot();
+    }
+  }
+
+  arbreMirror = false;
+
+  toggleArbreMirror(): void {
+    this.arbreMirror = !this.arbreMirror;
+  }
+
+  // ── Vue Liste ────────────────────────────────────────────────────────────
+  listeSearch = '';
+  listeSortField: ListeSortField = 'nom';
+  listeSortAsc = true;
+
+  get listePersonnes(): Personne[] {
+    const q = this.listeSearch.toLowerCase().trim();
+    let list = q
+      ? this.allPersonnes.filter(p => getNomComplet(p).toLowerCase().includes(q))
+      : this.allPersonnes.slice();
+
+    const dir = this.listeSortAsc ? 1 : -1;
+    list = list.sort((a, b) => {
+      if (this.listeSortField === 'nom') {
+        return getNomComplet(a).localeCompare(getNomComplet(b)) * dir;
+      }
+      const va = this.listeSortField === 'naissance' ? a.dateNaissance : a.dateDeces;
+      const vb = this.listeSortField === 'naissance' ? b.dateNaissance : b.dateDeces;
+      if (!va && !vb) return 0;
+      if (!va) return 1;
+      if (!vb) return -1;
+      return va.localeCompare(vb) * dir;
+    });
+    return list;
+  }
+
+  setListeSort(field: ListeSortField): void {
+    if (this.listeSortField === field) {
+      this.listeSortAsc = !this.listeSortAsc;
+    } else {
+      this.listeSortField = field;
+      this.listeSortAsc = true;
+    }
+  }
+
+  // ── Vue Ancêtres (pedigree horizontal) ──────────────────────────────────
+  readonly ancetresMaxGenOptions = [3, 4, 5, 6];
+  ancetresMaxGen = 5;
+  ancetresRootId = '';
+  ancetresRoot: AncestorNode | null = null;
+  showAncetresPicker = false;
+  ancetresSearchQuery = '';
+  ancetresMirror = false;
+
+  toggleAncetresMirror(): void {
+    this.ancetresMirror = !this.ancetresMirror;
+  }
+
+  get ancetresCandidates(): Personne[] {
+    const q = this.ancetresSearchQuery.toLowerCase().trim();
+    const list = q
+      ? this.allPersonnes.filter(p => getNomComplet(p).toLowerCase().includes(q))
+      : this.allPersonnes;
+    return list.slice(0, 30);
+  }
+
+  private initAncetresRoot(): void {
+    const linkedId = this.auth.getUser()?.personneId;
+    const defaultPerson = (linkedId && this.allPersonnes.some(p => p.id === linkedId))
+      ? linkedId
+      : this.allPersonnes[0]?.id ?? '';
+    this.setAncetresRoot(defaultPerson ? this.allPersonnes.find(p => p.id === defaultPerson) ?? null : null);
+  }
+
+  setAncetresRoot(p: Personne | null): void {
+    this.ancetresRootId      = p?.id ?? '';
+    this.showAncetresPicker  = false;
+    this.ancetresSearchQuery = '';
+    this.ancetresRoot        = p ? this.buildAncestorNode(p.id, 0) : null;
+    this.rebuildFan();
+  }
+
+  setAncetresMaxGen(gen: number): void {
+    this.ancetresMaxGen = gen;
+    if (this.ancetresRootId) {
+      this.ancetresRoot = this.buildAncestorNode(this.ancetresRootId, 0);
+    }
+    this.rebuildFan();
+  }
+
+  private findParentUnion(personId: string): Union | undefined {
+    return this.allUnions.find(u => u.filiations.some(f => f.enfantId === personId));
+  }
+
+  private buildAncestorNode(personId: string | null, generation: number): AncestorNode {
+    const empty: AncestorNode = { personne: null, generation, pere: null, mere: null };
+    if (!personId) return empty;
+    const personne = this.allPersonnes.find(p => p.id === personId) ?? null;
+    if (!personne || generation >= this.ancetresMaxGen) {
+      return { personne, generation, pere: null, mere: null };
+    }
+
+    const union = this.findParentUnion(personId);
+    let pereId: string | null = null;
+    let mereId: string | null = null;
+    if (union) {
+      for (const part of union.participants) {
+        const parent = this.allPersonnes.find(p => p.id === part.personneId);
+        if (!parent) continue;
+        if (parent.sexe === 'M' && !pereId) pereId = parent.id;
+        else if (parent.sexe === 'F' && !mereId) mereId = parent.id;
+      }
+      // Sexe non renseigné : on assigne par ordre à défaut
+      if (!pereId && !mereId) {
+        pereId = union.participants[0]?.personneId ?? null;
+        mereId = union.participants[1]?.personneId ?? null;
+      }
+    }
+
+    return {
+      personne, generation,
+      pere: this.buildAncestorNode(pereId, generation + 1),
+      mere: this.buildAncestorNode(mereId, generation + 1),
+    };
+  }
+
+  trackByAncestor(_: number, node: AncestorNode): string { return node.personne?.id ?? `empty-${node.generation}-${_}`; }
+
+  // ── Vue Éventail (fan chart) ────────────────────────────────────────────
+  readonly fanRootRadius = 55;
+  readonly fanRingWidth  = 68;
+  fanWedges: FanWedge[] = [];
+  eventailMirror = false;
+
+  toggleEventailMirror(): void {
+    this.eventailMirror = !this.eventailMirror;
+  }
+
+  get fanRadius(): number {
+    return this.fanRootRadius + this.ancetresMaxGen * this.fanRingWidth;
+  }
+
+  get fanViewBox(): string {
+    const r = this.fanRadius + 20;
+    return `${-r} ${-r - 10} ${r * 2} ${r + 30}`;
+  }
+
+  trackByWedge(_: number, w: FanWedge): string { return w.personne?.id ?? `wedge-${w.generation}-${_}`; }
+
+  private rebuildFan(): void {
+    this.fanWedges = [];
+    if (!this.ancetresRoot) return;
+    this.collectFanWedges(this.ancetresRoot.pere, 180, 270);
+    this.collectFanWedges(this.ancetresRoot.mere, 270, 360);
+  }
+
+  private collectFanWedges(node: AncestorNode | null, angleStart: number, angleEnd: number): void {
+    if (!node) return;
+    const innerR = this.fanRootRadius + (node.generation - 1) * this.fanRingWidth;
+    const outerR = innerR + this.fanRingWidth;
+    const mid    = (angleStart + angleEnd) / 2;
+    const midR   = (innerR + outerR) / 2;
+    const label  = this.polarToPoint(midR, mid);
+
+    this.fanWedges.push({
+      personne:   node.personne,
+      generation: node.generation,
+      path:       this.describeFanSector(innerR, outerR, angleStart, angleEnd),
+      labelX:     label.x,
+      labelY:     label.y,
+      fontSize:   Math.max(8, 13 - node.generation * 1.4),
+    });
+
+    if (node.personne) {
+      this.collectFanWedges(node.pere, angleStart, mid);
+      this.collectFanWedges(node.mere, mid, angleEnd);
+    }
+  }
+
+  private polarToPoint(r: number, angleDeg: number): { x: number; y: number } {
+    const rad = (angleDeg * Math.PI) / 180;
+    return { x: r * Math.cos(rad), y: r * Math.sin(rad) };
+  }
+
+  private describeFanSector(innerR: number, outerR: number, angleStart: number, angleEnd: number): string {
+    const outerStart = this.polarToPoint(outerR, angleStart);
+    const outerEnd    = this.polarToPoint(outerR, angleEnd);
+    const innerEnd    = this.polarToPoint(innerR, angleEnd);
+    const innerStart  = this.polarToPoint(innerR, angleStart);
+    const largeArc = (angleEnd - angleStart) > 180 ? 1 : 0;
+    return [
+      `M ${outerStart.x} ${outerStart.y}`,
+      `A ${outerR} ${outerR} 0 ${largeArc} 1 ${outerEnd.x} ${outerEnd.y}`,
+      `L ${innerEnd.x} ${innerEnd.y}`,
+      `A ${innerR} ${innerR} 0 ${largeArc} 0 ${innerStart.x} ${innerStart.y}`,
+      'Z',
+    ].join(' ');
   }
 
   // ── Sélection de racine ──────────────────────────────────────────────────
@@ -132,7 +359,7 @@ export class TreeComponent implements OnInit, OnDestroy {
     }
   };
 
-  constructor(private api: ApiService, private toast: ToastService) {}
+  constructor(private api: ApiService, private toast: ToastService, private auth: AuthService) {}
 
   ngOnInit(): void {
     document.addEventListener('pointerover', this.onDocPointerOver, { passive: true });
@@ -411,7 +638,8 @@ export class TreeComponent implements OnInit, OnDestroy {
   // ══════════════════════════════════════════════════════════════════════════
 
   get treeTransform(): string {
-    return `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
+    const mirror = this.arbreMirror ? ' scaleY(-1)' : '';
+    return `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})${mirror}`;
   }
 
   typeLabel(type: string | null): string {

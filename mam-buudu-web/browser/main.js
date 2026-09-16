@@ -1735,11 +1735,11 @@ var routes = [
   {
     path: "app",
     canActivate: [authGuard, roleGuard(["admin", "gestionnaire"])],
-    loadChildren: () => import("./chunk-MZZ72LBO.js").then((m) => m.ShellModule)
+    loadChildren: () => import("./chunk-NZHODEQ3.js").then((m) => m.ShellModule)
   },
   {
     path: "famille",
-    loadChildren: () => import("./chunk-3AESJNMV.js").then((m) => m.FamilleModule)
+    loadChildren: () => import("./chunk-CGFAH654.js").then((m) => m.FamilleModule)
   },
   {
     path: "superadmin",

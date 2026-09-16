@@ -16,6 +16,28 @@
       </div>
     </div>
     <div class="toolbar-right">
+      <!-- Sélecteur de vue -->
+      <div class="view-switch">
+        <button class="view-btn" [class.active]="viewMode === 'arbre'" (click)="setViewMode('arbre')" title="Vue arbre (descendants)">
+          <span class="material-icons-round">account_tree</span>
+          <span class="view-btn-label">Arbre</span>
+        </button>
+        <button class="view-btn" [class.active]="viewMode === 'ancetres'" (click)="setViewMode('ancetres')" title="Vue ancêtres">
+          <span class="material-icons-round">family_restroom</span>
+          <span class="view-btn-label">Ancêtres</span>
+        </button>
+        <button class="view-btn" [class.active]="viewMode === 'eventail'" (click)="setViewMode('eventail')" title="Vue éventail">
+          <span class="material-icons-round">donut_large</span>
+          <span class="view-btn-label">Éventail</span>
+        </button>
+        <button class="view-btn" [class.active]="viewMode === 'liste'" (click)="setViewMode('liste')" title="Vue liste">
+          <span class="material-icons-round">table_rows</span>
+          <span class="view-btn-label">Liste</span>
+        </button>
+      </div>
+      <div style="width:1px;height:20px;background:var(--border);margin:0 2px" *ngIf="viewMode === 'arbre'"></div>
+
+      <ng-container *ngIf="viewMode === 'arbre'">
       <button class="btn-ghost btn-sm" (click)="zoomOut()" title="Dézoomer">
         <span class="material-icons-round">zoom_out</span>
       </button>
@@ -64,12 +86,55 @@
           </div>
         </div>
       </div>
+      </ng-container>
+
+      <ng-container *ngIf="viewMode === 'ancetres' || viewMode === 'eventail'">
+      <div style="width:1px;height:20px;background:var(--border);margin:0 2px"></div>
+
+      <!-- Nombre de générations -->
+      <div class="gen-picker-wrap">
+        <select class="gen-select" [ngModel]="ancetresMaxGen" (ngModelChange)="setAncetresMaxGen($event)">
+          <option *ngFor="let g of ancetresMaxGenOptions" [ngValue]="g">{{ g }} générations</option>
+        </select>
+      </div>
+
+      <!-- Sélecteur de racine ancêtres -->
+      <div class="root-picker-wrap">
+        <button class="btn-ghost btn-sm root-pick-btn" [class.active]="showAncetresPicker"
+                (click)="showAncetresPicker = !showAncetresPicker; ancetresSearchQuery = ''">
+          <span class="material-icons-round">my_location</span>
+          <span>{{ ancetresRoot?.personne ? getNomComplet(ancetresRoot!.personne!) : 'Choisir' }}</span>
+        </button>
+        <div class="root-dropdown" *ngIf="showAncetresPicker" (click)="$event.stopPropagation()">
+          <div class="root-search-bar">
+            <span class="material-icons-round">search</span>
+            <input type="text" [(ngModel)]="ancetresSearchQuery" placeholder="Rechercher…" class="root-search-input" />
+          </div>
+          <div class="root-list">
+            <button class="root-list-item" *ngFor="let p of ancetresCandidates; trackBy: trackByPersonneId"
+                    [class.active]="ancetresRootId === p.id" (click)="setAncetresRoot(p)">
+              <div class="root-list-avatar" [class.male]="p.sexe==='M'" [class.female]="p.sexe==='F'">
+                {{ getInitiales(p) }}
+              </div>
+              <span>{{ getNomComplet(p) }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      </ng-container>
     </div>
   </div>
-  <div class="root-overlay" *ngIf="showRootPicker" (click)="showRootPicker=false"></div>
+  <div class="root-overlay" *ngIf="showRootPicker || showAncetresPicker" (click)="showRootPicker=false; showAncetresPicker=false"></div>
 
   <!-- ===== CANVAS ===== -->
+  <ng-container *ngIf="viewMode === 'arbre'">
   <div class="tree-canvas" #treeCanvas (wheel)="onWheel($event)" (mouseleave)="clearTooltip()">
+
+    <button class="mirror-fab" *ngIf="!loading && !erreur && treeRoots.length > 0"
+            [class.active]="arbreMirror" (click)="toggleArbreMirror()">
+      <span class="material-icons-round">swap_vert</span>
+      <span>{{ arbreMirror ? 'Vue normale' : 'Vue renversée' }}</span>
+    </button>
 
     <div class="loading-state" *ngIf="loading">
       <span class="material-icons-round spin">sync</span> Chargement de l'arbre...
@@ -97,6 +162,7 @@
     <div class="tree-visual"
          #treeVisual
          *ngIf="!loading && !erreur && treeRoots.length > 0"
+         [class.mirror-v]="arbreMirror"
          [style.transform]="treeTransform"
          (pointerdown)="startDrag($event)"
          (pointermove)="drag($event)"
@@ -364,6 +430,179 @@
   <div class="zoom-hint" *ngIf="!loading && treeRoots.length > 0">
     <span class="material-icons-round">info_outline</span>
     Ctrl + molette pour zoomer · Glisser pour naviguer · Clic pour la fiche
+  </div>
+  </ng-container>
+
+  <!-- ===== VUE LISTE ===== -->
+  <div class="tree-liste" *ngIf="viewMode === 'liste'">
+    <div class="tree-liste-toolbar">
+      <div class="tree-liste-search">
+        <span class="material-icons-round">search</span>
+        <input type="text" [(ngModel)]="listeSearch" placeholder="Rechercher une personne…" />
+      </div>
+      <span class="tree-liste-count">{{ listePersonnes.length }} personne{{ listePersonnes.length > 1 ? 's' : '' }}</span>
+    </div>
+
+    <div class="tree-liste-table-wrap" *ngIf="!loading">
+      <table class="tree-liste-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th (click)="setListeSort('nom')" class="tree-liste-sortable">
+              Nom
+              <span class="material-icons-round" *ngIf="listeSortField === 'nom'">{{ listeSortAsc ? 'arrow_upward' : 'arrow_downward' }}</span>
+            </th>
+            <th (click)="setListeSort('naissance')" class="tree-liste-sortable">
+              Naissance
+              <span class="material-icons-round" *ngIf="listeSortField === 'naissance'">{{ listeSortAsc ? 'arrow_upward' : 'arrow_downward' }}</span>
+            </th>
+            <th (click)="setListeSort('deces')" class="tree-liste-sortable">
+              Décès
+              <span class="material-icons-round" *ngIf="listeSortField === 'deces'">{{ listeSortAsc ? 'arrow_upward' : 'arrow_downward' }}</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of listePersonnes; trackBy: trackByPersonneId" (click)="openDetail(p)">
+            <td>
+              <div class="tree-liste-avatar" [class.male]="p.sexe==='M'" [class.female]="p.sexe==='F'">
+                <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
+                     [src]="getPhotoUrl(p)!" [alt]="getInitiales(p)" (error)="onPhotoError(p.id)" />
+                <span *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)">{{ getInitiales(p) }}</span>
+              </div>
+            </td>
+            <td>{{ getNomComplet(p) }}</td>
+            <td>{{ p.dateNaissance || '—' }}<span *ngIf="p.lieuNaissance"> · {{ p.lieuNaissance }}</span></td>
+            <td>{{ p.dateDeces || '—' }}<span *ngIf="p.lieuDeces"> · {{ p.lieuDeces }}</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="empty-state" *ngIf="listePersonnes.length === 0">
+        <span class="material-icons-round">search_off</span>
+        <h3>Aucun résultat</h3>
+        <p>Aucune personne ne correspond à cette recherche.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== VUE ANCÊTRES ===== -->
+  <div class="tree-ancetres" *ngIf="viewMode === 'ancetres'" (mouseleave)="clearTooltip()">
+    <button class="mirror-fab" *ngIf="ancetresRoot"
+            [class.active]="ancetresMirror" (click)="toggleAncetresMirror()">
+      <span class="material-icons-round">swap_horiz</span>
+      <span>{{ ancetresMirror ? 'Vue normale' : 'Vue renversée' }}</span>
+    </button>
+
+    <div class="empty-state" *ngIf="!ancetresRoot">
+      <span class="material-icons-round">family_restroom</span>
+      <h3>Choisissez une personne</h3>
+      <p>Sélectionnez une personne pour afficher ses ancêtres.</p>
+    </div>
+
+    <div class="tree-ancetres-scroll" [class.mirror-h]="ancetresMirror" *ngIf="ancetresRoot">
+      <ng-template #ancestorRef let-node="node" let-role="role">
+        <div class="an-row">
+          <div class="an-card"
+               [class.an-empty]="!node.personne"
+               [class.male]="node.personne?.sexe==='M'"
+               [class.female]="node.personne?.sexe==='F'"
+               (mouseenter)="node.personne && showTooltip(node.personne, $event)"
+               (mousemove)="node.personne && moveTooltip($event)"
+               (mouseleave)="hideTooltip()"
+               (click)="node.personne && openDetail(node.personne)">
+            <ng-container *ngIf="node.personne; else emptySlot">
+              <div class="an-avatar" [class.male]="node.personne.sexe==='M'" [class.female]="node.personne.sexe==='F'">
+                <img *ngIf="getPhotoUrl(node.personne) && !failedPhotos.has(node.personne.id)"
+                     [src]="getPhotoUrl(node.personne)!" [alt]="getInitiales(node.personne)" (error)="onPhotoError(node.personne.id)" />
+                <span *ngIf="!getPhotoUrl(node.personne) || failedPhotos.has(node.personne.id)">{{ getInitiales(node.personne) }}</span>
+              </div>
+              <div class="an-info">
+                <span class="an-name">{{ getNomComplet(node.personne) }}</span>
+                <span class="an-year">{{ yearLabel(node.personne) }}</span>
+              </div>
+            </ng-container>
+            <ng-template #emptySlot>
+              <span class="material-icons-round">add</span>
+              <span class="an-empty-label">Ajouter {{ role === 'mere' ? 'la mère' : role === 'pere' ? 'le père' : 'un ancêtre' }}</span>
+            </ng-template>
+          </div>
+
+          <ng-container *ngIf="node.pere">
+            <div class="an-connector">
+              <div class="an-line-h"></div>
+              <div class="an-line-v"></div>
+            </div>
+            <div class="an-parents-col">
+              <div class="an-branch">
+                <ng-container [ngTemplateOutlet]="ancestorRef" [ngTemplateOutletContext]="{ node: node.pere, role: 'pere' }"></ng-container>
+              </div>
+              <div class="an-branch">
+                <ng-container [ngTemplateOutlet]="ancestorRef" [ngTemplateOutletContext]="{ node: node.mere, role: 'mere' }"></ng-container>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </ng-template>
+
+      <ng-container [ngTemplateOutlet]="ancestorRef" [ngTemplateOutletContext]="{ node: ancetresRoot }"></ng-container>
+    </div>
+  </div>
+
+  <!-- ===== VUE ÉVENTAIL ===== -->
+  <div class="tree-eventail" *ngIf="viewMode === 'eventail'" (mouseleave)="clearTooltip()">
+    <button class="mirror-fab" *ngIf="ancetresRoot"
+            [class.active]="eventailMirror" (click)="toggleEventailMirror()">
+      <span class="material-icons-round">swap_horiz</span>
+      <span>{{ eventailMirror ? 'Vue normale' : 'Vue renversée' }}</span>
+    </button>
+
+    <div class="empty-state" *ngIf="!ancetresRoot">
+      <span class="material-icons-round">donut_large</span>
+      <h3>Choisissez une personne</h3>
+      <p>Sélectionnez une personne pour afficher son éventail d'ancêtres.</p>
+    </div>
+
+    <div class="tree-eventail-wrap" *ngIf="ancetresRoot">
+      <svg [attr.viewBox]="fanViewBox" class="tree-eventail-svg">
+        <g [attr.transform]="eventailMirror ? 'scale(-1,1)' : null">
+
+          <!-- Secteurs des ancêtres -->
+          <ng-container *ngFor="let w of fanWedges; trackBy: trackByWedge">
+            <path class="fan-wedge"
+                  [class.fan-empty]="!w.personne"
+                  [class.male]="w.personne?.sexe==='M'"
+                  [class.female]="w.personne?.sexe==='F'"
+                  [attr.d]="w.path"
+                  (mouseenter)="w.personne && showTooltip(w.personne, $event)"
+                  (mousemove)="w.personne && moveTooltip($event)"
+                  (mouseleave)="hideTooltip()"
+                  (click)="w.personne && openDetail(w.personne)" />
+            <g [attr.transform]="'translate(' + w.labelX + ',' + w.labelY + ')' + (eventailMirror ? ' scale(-1,1)' : '')">
+              <ng-container *ngIf="w.personne; else fanEmptyLabel">
+                <text class="fan-name" [attr.font-size]="w.fontSize" text-anchor="middle" dy="-2">{{ w.personne.prenoms }}</text>
+                <text class="fan-year" [attr.font-size]="w.fontSize - 2" text-anchor="middle" dy="11">{{ yearLabel(w.personne) }}</text>
+              </ng-container>
+              <ng-template #fanEmptyLabel>
+                <text class="fan-empty-label" [attr.font-size]="w.fontSize" text-anchor="middle">+</text>
+              </ng-template>
+            </g>
+          </ng-container>
+
+          <!-- Racine -->
+          <circle class="fan-root" [attr.r]="fanRootRadius" cx="0" cy="0"
+                  (mouseenter)="ancetresRoot!.personne && showTooltip(ancetresRoot!.personne!, $event)"
+                  (mousemove)="ancetresRoot!.personne && moveTooltip($event)"
+                  (mouseleave)="hideTooltip()"
+                  (click)="ancetresRoot!.personne && openDetail(ancetresRoot!.personne!)" />
+          <g [attr.transform]="eventailMirror ? 'scale(-1,1)' : null">
+            <text class="fan-root-name" text-anchor="middle" dy="-2">{{ ancetresRoot.personne?.prenoms }}</text>
+            <text class="fan-root-year" text-anchor="middle" dy="14" *ngIf="ancetresRoot.personne">{{ yearLabel(ancetresRoot.personne) }}</text>
+          </g>
+
+        </g>
+      </svg>
+    </div>
   </div>
 </div>
 
