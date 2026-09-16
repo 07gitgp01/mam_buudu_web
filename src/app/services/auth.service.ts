@@ -28,6 +28,7 @@ export interface AuthUser {
   role:                string;
   hasCompletedProfile: boolean;
   emailVerified?:      boolean;
+  personneId?:         string | null;
 }
 
 export interface AuthFamille {

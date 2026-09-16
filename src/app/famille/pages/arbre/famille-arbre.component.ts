@@ -6,6 +6,7 @@ import {
 } from '../../../models/personne.model';
 import { Union } from '../../../models/union.model';
 import { ApiService } from '../../../services/api.service';
+import { AuthService } from '../../../services/auth.service';
 
 export interface UnionBranch {
   union: Union;
@@ -14,6 +15,16 @@ export interface UnionBranch {
 }
 
 export type UnionStatus = 'active' | 'divorced' | 'widowed';
+export type ArbreViewMode = 'arbre' | 'ancetres' | 'liste';
+export type ListeSortField = 'nom' | 'naissance' | 'deces';
+
+/** Nœud récursif de la vue Ancêtres (pedigree) — personne peut être null (ancêtre inconnu) */
+export interface AncestorNode {
+  personne: Personne | null;
+  generation: number;
+  pere: AncestorNode | null;
+  mere: AncestorNode | null;
+}
 
 /** Nœud récursif de l'arbre */
 export interface TreeNode {
@@ -49,6 +60,138 @@ export class FamilleArbreComponent implements OnInit, OnDestroy {
 
   get totalPersonnes(): number { return this._allPersonnes.length; }
   get totalGenerations(): number { return this.treeDepth(this.treeRoots); }
+
+  // ── Sélecteur de vue (Arbre / Liste) ────────────────────────────────────
+  viewMode: ArbreViewMode = 'arbre';
+
+  setViewMode(mode: ArbreViewMode): void {
+    this.viewMode = mode;
+    if (mode === 'ancetres' && !this.ancetresRoot) {
+      this.initAncetresRoot();
+    }
+  }
+
+  arbreMirror = true;
+
+  toggleArbreMirror(): void {
+    this.arbreMirror = !this.arbreMirror;
+  }
+
+  // ── Vue Liste ────────────────────────────────────────────────────────────
+  listeSearch = '';
+  listeSortField: ListeSortField = 'nom';
+  listeSortAsc = true;
+
+  get listePersonnes(): Personne[] {
+    const q = this.listeSearch.toLowerCase().trim();
+    let list = q
+      ? this._allPersonnes.filter(p => getNomComplet(p).toLowerCase().includes(q))
+      : this._allPersonnes.slice();
+
+    const dir = this.listeSortAsc ? 1 : -1;
+    list = list.sort((a, b) => {
+      if (this.listeSortField === 'nom') {
+        return getNomComplet(a).localeCompare(getNomComplet(b)) * dir;
+      }
+      const va = this.listeSortField === 'naissance' ? a.dateNaissance : a.dateDeces;
+      const vb = this.listeSortField === 'naissance' ? b.dateNaissance : b.dateDeces;
+      if (!va && !vb) return 0;
+      if (!va) return 1;
+      if (!vb) return -1;
+      return va.localeCompare(vb) * dir;
+    });
+    return list;
+  }
+
+  setListeSort(field: ListeSortField): void {
+    if (this.listeSortField === field) {
+      this.listeSortAsc = !this.listeSortAsc;
+    } else {
+      this.listeSortField = field;
+      this.listeSortAsc = true;
+    }
+  }
+
+  // ── Vue Ancêtres (pedigree horizontal) ──────────────────────────────────
+  readonly ancetresMaxGenOptions = [3, 4, 5, 6];
+  ancetresMaxGen = 5;
+  ancetresRootId = '';
+  ancetresRoot: AncestorNode | null = null;
+  showAncetresPicker = false;
+  ancetresSearchQuery = '';
+  ancetresMirror = false;
+
+  toggleAncetresMirror(): void {
+    this.ancetresMirror = !this.ancetresMirror;
+  }
+
+  get ancetresCandidates(): Personne[] {
+    const q = this.ancetresSearchQuery.toLowerCase().trim();
+    const list = q
+      ? this._allPersonnes.filter(p => getNomComplet(p).toLowerCase().includes(q))
+      : this._allPersonnes;
+    return list.slice(0, 30);
+  }
+
+  private initAncetresRoot(): void {
+    const linkedId = this.auth.getUser()?.personneId;
+    const defaultPerson = (linkedId && this._allPersonnes.some(p => p.id === linkedId))
+      ? linkedId
+      : this._allPersonnes[0]?.id ?? '';
+    this.setAncetresRoot(defaultPerson ? this._allPersonnes.find(p => p.id === defaultPerson) ?? null : null);
+  }
+
+  setAncetresRoot(p: Personne | null): void {
+    this.ancetresRootId      = p?.id ?? '';
+    this.showAncetresPicker  = false;
+    this.ancetresSearchQuery = '';
+    this.ancetresRoot        = p ? this.buildAncestorNode(p.id, 0) : null;
+  }
+
+  setAncetresMaxGen(gen: number): void {
+    this.ancetresMaxGen = gen;
+    if (this.ancetresRootId) {
+      this.ancetresRoot = this.buildAncestorNode(this.ancetresRootId, 0);
+    }
+  }
+
+  private findParentUnion(personId: string): Union | undefined {
+    return this._allUnions.find(u => u.filiations.some(f => f.enfantId === personId));
+  }
+
+  private buildAncestorNode(personId: string | null, generation: number): AncestorNode {
+    const empty: AncestorNode = { personne: null, generation, pere: null, mere: null };
+    if (!personId) return empty;
+    const personne = this._allPersonnes.find(p => p.id === personId) ?? null;
+    if (!personne || generation >= this.ancetresMaxGen) {
+      return { personne, generation, pere: null, mere: null };
+    }
+
+    const union = this.findParentUnion(personId);
+    let pereId: string | null = null;
+    let mereId: string | null = null;
+    if (union) {
+      for (const part of union.participants) {
+        const parent = this._allPersonnes.find(p => p.id === part.personneId);
+        if (!parent) continue;
+        if (parent.sexe === 'M' && !pereId) pereId = parent.id;
+        else if (parent.sexe === 'F' && !mereId) mereId = parent.id;
+      }
+      // Sexe non renseigné : on assigne par ordre à défaut
+      if (!pereId && !mereId) {
+        pereId = union.participants[0]?.personneId ?? null;
+        mereId = union.participants[1]?.personneId ?? null;
+      }
+    }
+
+    return {
+      personne, generation,
+      pere: this.buildAncestorNode(pereId, generation + 1),
+      mere: this.buildAncestorNode(mereId, generation + 1),
+    };
+  }
+
+  trackByAncestor(_: number, node: AncestorNode): string { return node.personne?.id ?? `empty-${node.generation}-${_}`; }
 
   trackByNode(_: number, node: TreeNode): string { return node.p1.id; }
   trackByBranch(_: number, branch: UnionBranch): string { return branch.union?.id ?? branch.partner?.id ?? String(_); }
@@ -146,7 +289,7 @@ export class FamilleArbreComponent implements OnInit, OnDestroy {
     }
   };
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private auth: AuthService) {}
 
   ngOnInit(): void {
     document.addEventListener('pointerover', this.onDocPointerOver, { passive: true });
@@ -245,7 +388,8 @@ export class FamilleArbreComponent implements OnInit, OnDestroy {
   // ══════════════════════════════════════════════════════════════════════════
 
   get treeTransform(): string {
-    return `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
+    const mirror = this.arbreMirror ? ' scaleY(-1)' : '';
+    return `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})${mirror}`;
   }
 
   typeLabel(type: string | null): string {

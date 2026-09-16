@@ -1,10 +1,10 @@
 import {
   AuthService
-} from "./chunk-LX6YEX77.js";
+} from "./chunk-7NDXYM4W.js";
 import {
   Router,
   inject
-} from "./chunk-4MA3A2KE.js";
+} from "./chunk-K4P23IOF.js";
 
 // src/app/core/role.guard.ts
 function roleGuard(allowedRoles) {
@@ -22,4 +22,4 @@ function roleGuard(allowedRoles) {
 export {
   roleGuard
 };
-//# sourceMappingURL=chunk-WJCGERJN.js.map
+//# sourceMappingURL=chunk-4UVP2ZCS.js.map

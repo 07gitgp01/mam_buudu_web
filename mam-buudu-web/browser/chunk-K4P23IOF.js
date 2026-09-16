@@ -39774,7 +39774,7 @@ function provideRouterInitializer() {
 }
 
 // src/app/core/api.config.ts
-var API_BASE_URL = "https://mam-buudu-api.onrender.com";
+var API_BASE_URL = "";
 
 export {
   Observable,
@@ -39967,4 +39967,4 @@ export {
    * found in the LICENSE file at https://angular.dev/license
    *)
 */
-//# sourceMappingURL=chunk-4MA3A2KE.js.map
+//# sourceMappingURL=chunk-K4P23IOF.js.map

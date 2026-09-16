@@ -16,6 +16,24 @@
       </div>
     </div>
     <div class="fa-toolbar-right">
+      <!-- Sélecteur de vue -->
+      <div class="fa-view-switch">
+        <button class="fa-view-btn" [class.active]="viewMode === 'arbre'" (click)="setViewMode('arbre')" title="Vue arbre (descendants)">
+          <span class="material-icons-round">account_tree</span>
+          <span class="fa-view-btn-label">Arbre</span>
+        </button>
+        <button class="fa-view-btn" [class.active]="viewMode === 'ancetres'" (click)="setViewMode('ancetres')" title="Vue ancêtres">
+          <span class="material-icons-round">family_restroom</span>
+          <span class="fa-view-btn-label">Ancêtres</span>
+        </button>
+        <button class="fa-view-btn" [class.active]="viewMode === 'liste'" (click)="setViewMode('liste')" title="Vue liste">
+          <span class="material-icons-round">table_rows</span>
+          <span class="fa-view-btn-label">Liste</span>
+        </button>
+      </div>
+      <div class="fa-toolbar-sep" *ngIf="viewMode === 'arbre'"></div>
+
+      <ng-container *ngIf="viewMode === 'arbre'">
       <button class="btn-ghost btn-sm" (click)="zoomOut()" title="Dézoomer">
         <span class="material-icons-round">zoom_out</span>
       </button>
@@ -62,13 +80,56 @@
           </div>
         </div>
       </div>
+      </ng-container>
+
+      <ng-container *ngIf="viewMode === 'ancetres'">
+      <div class="fa-toolbar-sep"></div>
+
+      <!-- Nombre de générations -->
+      <div class="fa-gen-picker-wrap">
+        <select class="fa-gen-select" [ngModel]="ancetresMaxGen" (ngModelChange)="setAncetresMaxGen($event)">
+          <option *ngFor="let g of ancetresMaxGenOptions" [ngValue]="g">{{ g }} générations</option>
+        </select>
+      </div>
+
+      <!-- Sélecteur de racine ancêtres -->
+      <div class="fa-root-picker-wrap">
+        <button class="btn-ghost btn-sm fa-root-btn" [class.active]="showAncetresPicker"
+                (click)="showAncetresPicker = !showAncetresPicker; ancetresSearchQuery = ''">
+          <span class="material-icons-round">my_location</span>
+          <span>{{ ancetresRoot?.personne ? getNomComplet(ancetresRoot!.personne!) : 'Choisir' }}</span>
+        </button>
+        <div class="fa-root-dropdown" *ngIf="showAncetresPicker" (click)="$event.stopPropagation()">
+          <div class="fa-root-search">
+            <span class="material-icons-round">search</span>
+            <input type="text" [(ngModel)]="ancetresSearchQuery" placeholder="Rechercher…" class="fa-root-input" />
+          </div>
+          <div class="fa-root-list">
+            <button class="fa-root-item" *ngFor="let p of ancetresCandidates; trackBy: trackByPersonneId"
+                    [class.active]="ancetresRootId === p.id" (click)="setAncetresRoot(p)">
+              <div class="fa-root-avatar" [class.male]="p.sexe==='M'" [class.female]="p.sexe==='F'">
+                {{ getInitiales(p) }}
+              </div>
+              <span>{{ getNomComplet(p) }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      </ng-container>
 
     </div>
   </div>
-  <div class="fa-root-overlay" *ngIf="showRootPicker" (click)="showRootPicker=false"></div>
+  <div class="fa-root-overlay" *ngIf="showRootPicker || showAncetresPicker" (click)="showRootPicker=false; showAncetresPicker=false"></div>
 
   <!-- CANVAS -->
+  <ng-container *ngIf="viewMode === 'arbre'">
   <div class="fa-canvas" #treeCanvas (wheel)="onWheel($event)" (mouseleave)="clearTooltip()">
+
+    <button class="fa-mirror-fab" *ngIf="!loading && !erreur && treeRoots.length > 0"
+            [class.active]="arbreMirror" (click)="toggleArbreMirror()">
+      <span class="material-icons-round">swap_vert</span>
+      <span>{{ arbreMirror ? 'Vue normale' : 'Vue renversée' }}</span>
+    </button>
 
     <div class="loading-state" *ngIf="loading">
       <span class="material-icons-round spin">sync</span> Chargement de l'arbre...
@@ -86,6 +147,7 @@
     <div class="fa-visual"
          #treeVisual
          *ngIf="!loading && !erreur && treeRoots.length > 0"
+         [class.fa-mirror-v]="arbreMirror"
          [style.transform]="treeTransform"
          (pointerdown)="startDrag($event)"
          (pointermove)="drag($event)"
@@ -306,6 +368,120 @@
   <div class="fa-zoom-hint" *ngIf="!loading && treeRoots.length > 0">
     <span class="material-icons-round">info_outline</span>
     Ctrl + molette pour zoomer · Glisser pour naviguer · Clic pour la fiche
+  </div>
+  </ng-container>
+
+  <!-- VUE LISTE -->
+  <div class="fa-liste" *ngIf="viewMode === 'liste'">
+    <div class="fa-liste-toolbar">
+      <div class="fa-liste-search">
+        <span class="material-icons-round">search</span>
+        <input type="text" [(ngModel)]="listeSearch" placeholder="Rechercher une personne…" />
+      </div>
+      <span class="fa-liste-count">{{ listePersonnes.length }} personne{{ listePersonnes.length > 1 ? 's' : '' }}</span>
+    </div>
+
+    <div class="fa-liste-table-wrap" *ngIf="!loading">
+      <table class="fa-liste-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th (click)="setListeSort('nom')" class="fa-liste-sortable">
+              Nom
+              <span class="material-icons-round" *ngIf="listeSortField === 'nom'">{{ listeSortAsc ? 'arrow_upward' : 'arrow_downward' }}</span>
+            </th>
+            <th (click)="setListeSort('naissance')" class="fa-liste-sortable">
+              Naissance
+              <span class="material-icons-round" *ngIf="listeSortField === 'naissance'">{{ listeSortAsc ? 'arrow_upward' : 'arrow_downward' }}</span>
+            </th>
+            <th (click)="setListeSort('deces')" class="fa-liste-sortable">
+              Décès
+              <span class="material-icons-round" *ngIf="listeSortField === 'deces'">{{ listeSortAsc ? 'arrow_upward' : 'arrow_downward' }}</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of listePersonnes; trackBy: trackByPersonneId" (click)="openDetail(p)">
+            <td>
+              <div class="fa-liste-avatar" [class.male]="p.sexe==='M'" [class.female]="p.sexe==='F'">
+                <img *ngIf="getPhotoUrl(p) && !failedPhotos.has(p.id)"
+                     [src]="getPhotoUrl(p)!" [alt]="getInitiales(p)" (error)="onPhotoError(p.id)" />
+                <span *ngIf="!getPhotoUrl(p) || failedPhotos.has(p.id)">{{ getInitiales(p) }}</span>
+              </div>
+            </td>
+            <td>{{ getNomComplet(p) }}</td>
+            <td>{{ p.dateNaissance || '—' }}<span *ngIf="p.lieuNaissance"> · {{ p.lieuNaissance }}</span></td>
+            <td>{{ p.dateDeces || '—' }}<span *ngIf="p.lieuDeces"> · {{ p.lieuDeces }}</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="empty-state" *ngIf="listePersonnes.length === 0">
+        <span class="material-icons-round">search_off</span>
+        <h3>Aucun résultat</h3>
+        <p>Aucune personne ne correspond à cette recherche.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VUE ANCÊTRES -->
+  <div class="fa-ancetres" *ngIf="viewMode === 'ancetres'">
+    <button class="fa-mirror-fab" *ngIf="ancetresRoot"
+            [class.active]="ancetresMirror" (click)="toggleAncetresMirror()">
+      <span class="material-icons-round">swap_horiz</span>
+      <span>{{ ancetresMirror ? 'Vue normale' : 'Vue renversée' }}</span>
+    </button>
+
+    <div class="empty-state" *ngIf="!ancetresRoot">
+      <span class="material-icons-round">family_restroom</span>
+      <h3>Choisissez une personne</h3>
+      <p>Sélectionnez une personne pour afficher ses ancêtres.</p>
+    </div>
+
+    <div class="fa-ancetres-scroll" [class.fa-mirror]="ancetresMirror" *ngIf="ancetresRoot">
+      <ng-template #ancestorRef let-node="node" let-role="role">
+        <div class="an-row">
+          <div class="an-card"
+               [class.an-empty]="!node.personne"
+               [class.male]="node.personne?.sexe==='M'"
+               [class.female]="node.personne?.sexe==='F'"
+               (click)="node.personne && openDetail(node.personne)">
+            <ng-container *ngIf="node.personne; else emptySlot">
+              <div class="an-avatar" [class.male]="node.personne.sexe==='M'" [class.female]="node.personne.sexe==='F'">
+                <img *ngIf="getPhotoUrl(node.personne) && !failedPhotos.has(node.personne.id)"
+                     [src]="getPhotoUrl(node.personne)!" [alt]="getInitiales(node.personne)" (error)="onPhotoError(node.personne.id)" />
+                <span *ngIf="!getPhotoUrl(node.personne) || failedPhotos.has(node.personne.id)">{{ getInitiales(node.personne) }}</span>
+              </div>
+              <div class="an-info">
+                <span class="an-name">{{ getNomComplet(node.personne) }}</span>
+                <span class="an-year">{{ yearLabel(node.personne) }}</span>
+              </div>
+            </ng-container>
+            <ng-template #emptySlot>
+              <span class="material-icons-round">add</span>
+              <span class="an-empty-label">Ajouter {{ role === 'mere' ? 'la mère' : role === 'pere' ? 'le père' : 'un ancêtre' }}</span>
+            </ng-template>
+          </div>
+
+          <ng-container *ngIf="node.pere">
+            <div class="an-connector">
+              <div class="an-line-h"></div>
+              <div class="an-line-v"></div>
+            </div>
+            <div class="an-parents-col">
+              <div class="an-branch">
+                <ng-container [ngTemplateOutlet]="ancestorRef" [ngTemplateOutletContext]="{ node: node.pere, role: 'pere' }"></ng-container>
+              </div>
+              <div class="an-branch">
+                <ng-container [ngTemplateOutlet]="ancestorRef" [ngTemplateOutletContext]="{ node: node.mere, role: 'mere' }"></ng-container>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </ng-template>
+
+      <ng-container [ngTemplateOutlet]="ancestorRef" [ngTemplateOutletContext]="{ node: ancetresRoot }"></ng-container>
+    </div>
   </div>
 </div>
 

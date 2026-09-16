@@ -1,18 +1,18 @@
 import {
   ToastService
-} from "./chunk-CZO4OHRG.js";
+} from "./chunk-2HWSIGP4.js";
 import {
   roleGuard
-} from "./chunk-WJCGERJN.js";
+} from "./chunk-4UVP2ZCS.js";
 import {
   ApiService,
   LoadingService,
   ServiceWorkerModule,
   ThemeService
-} from "./chunk-T4M4USVX.js";
+} from "./chunk-6LIXAG7Z.js";
 import {
   AuthService
-} from "./chunk-LX6YEX77.js";
+} from "./chunk-7NDXYM4W.js";
 import {
   AsyncPipe,
   BrowserModule,
@@ -69,7 +69,7 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1
-} from "./chunk-4MA3A2KE.js";
+} from "./chunk-K4P23IOF.js";
 import {
   __spreadValues
 } from "./chunk-YP43Q66R.js";
@@ -1730,20 +1730,20 @@ var routes = [
   { path: "", component: LandingComponent, pathMatch: "full" },
   {
     path: "auth",
-    loadChildren: () => import("./chunk-4DNHASZ6.js").then((m) => m.AuthModule)
+    loadChildren: () => import("./chunk-3DR3YREU.js").then((m) => m.AuthModule)
   },
   {
     path: "app",
     canActivate: [authGuard, roleGuard(["admin", "gestionnaire"])],
-    loadChildren: () => import("./chunk-5PF4NFM5.js").then((m) => m.ShellModule)
+    loadChildren: () => import("./chunk-MZZ72LBO.js").then((m) => m.ShellModule)
   },
   {
     path: "famille",
-    loadChildren: () => import("./chunk-TWFSA72A.js").then((m) => m.FamilleModule)
+    loadChildren: () => import("./chunk-C5H4TFYH.js").then((m) => m.FamilleModule)
   },
   {
     path: "superadmin",
-    loadChildren: () => import("./chunk-LHYEM4DJ.js").then((m) => m.SuperAdminModule)
+    loadChildren: () => import("./chunk-UMUU5U6B.js").then((m) => m.SuperAdminModule)
   },
   { path: "**", redirectTo: "" }
 ];
