@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/core/role.guard.ts"],
-  "sourcesContent": ["import { inject } from '@angular/core';\r\nimport { CanActivateFn, Router } from '@angular/router';\r\nimport { AuthService } from '../services/auth.service';\r\n\r\n/**\r\n * Bloque l'accès à une route si le rôle de l'utilisateur connecté\r\n * n'est pas dans `allowedRoles`. À combiner avec authGuard/clientGuard\r\n * (qui vérifient seulement que l'utilisateur est connecté).\r\n */\r\nexport function roleGuard(allowedRoles: string[]): CanActivateFn {\r\n  return () => {\r\n    const auth = inject(AuthService);\r\n    const router = inject(Router);\r\n    const role = auth.getUser()?.role;\r\n\r\n    if (role && allowedRoles.includes(role)) return true;\r\n\r\n    router.navigate(role === 'membre' || role === 'viewonly' ? ['/famille'] : ['/app/home']);\r\n    return false;\r\n  };\r\n}\r\n"],
-  "mappings": ";;;;;;;;;AASM,SAAU,UAAU,cAAsB;AAC9C,SAAO,MAAK;AACV,UAAM,OAAO,OAAO,WAAW;AAC/B,UAAM,SAAS,OAAO,MAAM;AAC5B,UAAM,OAAO,KAAK,QAAO,GAAI;AAE7B,QAAI,QAAQ,aAAa,SAAS,IAAI;AAAG,aAAO;AAEhD,WAAO,SAAS,SAAS,YAAY,SAAS,aAAa,CAAC,UAAU,IAAI,CAAC,WAAW,CAAC;AACvF,WAAO;EACT;AACF;",
-  "names": []
-}
