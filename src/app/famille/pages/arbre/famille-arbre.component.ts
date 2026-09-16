@@ -15,7 +15,7 @@ export interface UnionBranch {
 }
 
 export type UnionStatus = 'active' | 'divorced' | 'widowed';
-export type ArbreViewMode = 'arbre' | 'ancetres' | 'liste';
+export type ArbreViewMode = 'arbre' | 'ancetres' | 'eventail' | 'liste';
 export type ListeSortField = 'nom' | 'naissance' | 'deces';
 
 /** Nœud récursif de la vue Ancêtres (pedigree) — personne peut être null (ancêtre inconnu) */
@@ -24,6 +24,16 @@ export interface AncestorNode {
   generation: number;
   pere: AncestorNode | null;
   mere: AncestorNode | null;
+}
+
+/** Un secteur de la vue Éventail, prêt à être dessiné en SVG */
+export interface FanWedge {
+  personne: Personne | null;
+  generation: number;
+  path: string;
+  labelX: number;
+  labelY: number;
+  fontSize: number;
 }
 
 /** Nœud récursif de l'arbre */
@@ -66,7 +76,7 @@ export class FamilleArbreComponent implements OnInit, OnDestroy {
 
   setViewMode(mode: ArbreViewMode): void {
     this.viewMode = mode;
-    if (mode === 'ancetres' && !this.ancetresRoot) {
+    if ((mode === 'ancetres' || mode === 'eventail') && !this.ancetresRoot) {
       this.initAncetresRoot();
     }
   }
@@ -146,6 +156,7 @@ export class FamilleArbreComponent implements OnInit, OnDestroy {
     this.showAncetresPicker  = false;
     this.ancetresSearchQuery = '';
     this.ancetresRoot        = p ? this.buildAncestorNode(p.id, 0) : null;
+    this.rebuildFan();
   }
 
   setAncetresMaxGen(gen: number): void {
@@ -153,6 +164,7 @@ export class FamilleArbreComponent implements OnInit, OnDestroy {
     if (this.ancetresRootId) {
       this.ancetresRoot = this.buildAncestorNode(this.ancetresRootId, 0);
     }
+    this.rebuildFan();
   }
 
   private findParentUnion(personId: string): Union | undefined {
@@ -192,6 +204,77 @@ export class FamilleArbreComponent implements OnInit, OnDestroy {
   }
 
   trackByAncestor(_: number, node: AncestorNode): string { return node.personne?.id ?? `empty-${node.generation}-${_}`; }
+
+  // ── Vue Éventail (fan chart) ────────────────────────────────────────────
+  readonly fanRootRadius = 55;
+  readonly fanRingWidth  = 68;
+  fanWedges: FanWedge[] = [];
+  eventailMirror = false;
+
+  toggleEventailMirror(): void {
+    this.eventailMirror = !this.eventailMirror;
+  }
+
+  get fanRadius(): number {
+    return this.fanRootRadius + this.ancetresMaxGen * this.fanRingWidth;
+  }
+
+  get fanViewBox(): string {
+    const r = this.fanRadius + 20;
+    return `${-r} ${-r - 10} ${r * 2} ${r + 30}`;
+  }
+
+  trackByWedge(_: number, w: FanWedge): string { return w.personne?.id ?? `wedge-${w.generation}-${_}`; }
+
+  private rebuildFan(): void {
+    this.fanWedges = [];
+    if (!this.ancetresRoot) return;
+    this.collectFanWedges(this.ancetresRoot.pere, 180, 270);
+    this.collectFanWedges(this.ancetresRoot.mere, 270, 360);
+  }
+
+  private collectFanWedges(node: AncestorNode | null, angleStart: number, angleEnd: number): void {
+    if (!node) return;
+    const innerR = this.fanRootRadius + (node.generation - 1) * this.fanRingWidth;
+    const outerR = innerR + this.fanRingWidth;
+    const mid    = (angleStart + angleEnd) / 2;
+    const midR   = (innerR + outerR) / 2;
+    const label  = this.polarToPoint(midR, mid);
+
+    this.fanWedges.push({
+      personne:   node.personne,
+      generation: node.generation,
+      path:       this.describeFanSector(innerR, outerR, angleStart, angleEnd),
+      labelX:     label.x,
+      labelY:     label.y,
+      fontSize:   Math.max(8, 13 - node.generation * 1.4),
+    });
+
+    if (node.personne) {
+      this.collectFanWedges(node.pere, angleStart, mid);
+      this.collectFanWedges(node.mere, mid, angleEnd);
+    }
+  }
+
+  private polarToPoint(r: number, angleDeg: number): { x: number; y: number } {
+    const rad = (angleDeg * Math.PI) / 180;
+    return { x: r * Math.cos(rad), y: r * Math.sin(rad) };
+  }
+
+  private describeFanSector(innerR: number, outerR: number, angleStart: number, angleEnd: number): string {
+    const outerStart = this.polarToPoint(outerR, angleStart);
+    const outerEnd    = this.polarToPoint(outerR, angleEnd);
+    const innerEnd    = this.polarToPoint(innerR, angleEnd);
+    const innerStart  = this.polarToPoint(innerR, angleStart);
+    const largeArc = (angleEnd - angleStart) > 180 ? 1 : 0;
+    return [
+      `M ${outerStart.x} ${outerStart.y}`,
+      `A ${outerR} ${outerR} 0 ${largeArc} 1 ${outerEnd.x} ${outerEnd.y}`,
+      `L ${innerEnd.x} ${innerEnd.y}`,
+      `A ${innerR} ${innerR} 0 ${largeArc} 0 ${innerStart.x} ${innerStart.y}`,
+      'Z',
+    ].join(' ');
+  }
 
   trackByNode(_: number, node: TreeNode): string { return node.p1.id; }
   trackByBranch(_: number, branch: UnionBranch): string { return branch.union?.id ?? branch.partner?.id ?? String(_); }

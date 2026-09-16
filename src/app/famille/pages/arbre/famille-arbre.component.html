@@ -26,6 +26,10 @@
           <span class="material-icons-round">family_restroom</span>
           <span class="fa-view-btn-label">Ancêtres</span>
         </button>
+        <button class="fa-view-btn" [class.active]="viewMode === 'eventail'" (click)="setViewMode('eventail')" title="Vue éventail">
+          <span class="material-icons-round">donut_large</span>
+          <span class="fa-view-btn-label">Éventail</span>
+        </button>
         <button class="fa-view-btn" [class.active]="viewMode === 'liste'" (click)="setViewMode('liste')" title="Vue liste">
           <span class="material-icons-round">table_rows</span>
           <span class="fa-view-btn-label">Liste</span>
@@ -82,7 +86,7 @@
       </div>
       </ng-container>
 
-      <ng-container *ngIf="viewMode === 'ancetres'">
+      <ng-container *ngIf="viewMode === 'ancetres' || viewMode === 'eventail'">
       <div class="fa-toolbar-sep"></div>
 
       <!-- Nombre de générations -->
@@ -425,7 +429,7 @@
   </div>
 
   <!-- VUE ANCÊTRES -->
-  <div class="fa-ancetres" *ngIf="viewMode === 'ancetres'">
+  <div class="fa-ancetres" *ngIf="viewMode === 'ancetres'" (mouseleave)="clearTooltip()">
     <button class="fa-mirror-fab" *ngIf="ancetresRoot"
             [class.active]="ancetresMirror" (click)="toggleAncetresMirror()">
       <span class="material-icons-round">swap_horiz</span>
@@ -445,6 +449,9 @@
                [class.an-empty]="!node.personne"
                [class.male]="node.personne?.sexe==='M'"
                [class.female]="node.personne?.sexe==='F'"
+               (mouseenter)="node.personne && showTooltip(node.personne, $event)"
+               (mousemove)="node.personne && moveTooltip($event)"
+               (mouseleave)="hideTooltip()"
                (click)="node.personne && openDetail(node.personne)">
             <ng-container *ngIf="node.personne; else emptySlot">
               <div class="an-avatar" [class.male]="node.personne.sexe==='M'" [class.female]="node.personne.sexe==='F'">
@@ -481,6 +488,62 @@
       </ng-template>
 
       <ng-container [ngTemplateOutlet]="ancestorRef" [ngTemplateOutletContext]="{ node: ancetresRoot }"></ng-container>
+    </div>
+  </div>
+
+  <!-- VUE ÉVENTAIL -->
+  <div class="fa-eventail" *ngIf="viewMode === 'eventail'" (mouseleave)="clearTooltip()">
+    <button class="fa-mirror-fab" *ngIf="ancetresRoot"
+            [class.active]="eventailMirror" (click)="toggleEventailMirror()">
+      <span class="material-icons-round">swap_horiz</span>
+      <span>{{ eventailMirror ? 'Vue normale' : 'Vue renversée' }}</span>
+    </button>
+
+    <div class="empty-state" *ngIf="!ancetresRoot">
+      <span class="material-icons-round">donut_large</span>
+      <h3>Choisissez une personne</h3>
+      <p>Sélectionnez une personne pour afficher son éventail d'ancêtres.</p>
+    </div>
+
+    <div class="fa-eventail-wrap" *ngIf="ancetresRoot">
+      <svg [attr.viewBox]="fanViewBox" class="fa-eventail-svg">
+        <g [attr.transform]="eventailMirror ? 'scale(-1,1)' : null">
+
+          <!-- Secteurs des ancêtres -->
+          <ng-container *ngFor="let w of fanWedges; trackBy: trackByWedge">
+            <path class="fan-wedge"
+                  [class.fan-empty]="!w.personne"
+                  [class.male]="w.personne?.sexe==='M'"
+                  [class.female]="w.personne?.sexe==='F'"
+                  [attr.d]="w.path"
+                  (mouseenter)="w.personne && showTooltip(w.personne, $event)"
+                  (mousemove)="w.personne && moveTooltip($event)"
+                  (mouseleave)="hideTooltip()"
+                  (click)="w.personne && openDetail(w.personne)" />
+            <g [attr.transform]="'translate(' + w.labelX + ',' + w.labelY + ')' + (eventailMirror ? ' scale(-1,1)' : '')">
+              <ng-container *ngIf="w.personne; else fanEmptyLabel">
+                <text class="fan-name" [attr.font-size]="w.fontSize" text-anchor="middle" dy="-2">{{ w.personne.prenoms }}</text>
+                <text class="fan-year" [attr.font-size]="w.fontSize - 2" text-anchor="middle" dy="11">{{ yearLabel(w.personne) }}</text>
+              </ng-container>
+              <ng-template #fanEmptyLabel>
+                <text class="fan-empty-label" [attr.font-size]="w.fontSize" text-anchor="middle">+</text>
+              </ng-template>
+            </g>
+          </ng-container>
+
+          <!-- Racine -->
+          <circle class="fan-root" [attr.r]="fanRootRadius" cx="0" cy="0"
+                  (mouseenter)="ancetresRoot!.personne && showTooltip(ancetresRoot!.personne!, $event)"
+                  (mousemove)="ancetresRoot!.personne && moveTooltip($event)"
+                  (mouseleave)="hideTooltip()"
+                  (click)="ancetresRoot!.personne && openDetail(ancetresRoot!.personne!)" />
+          <g [attr.transform]="eventailMirror ? 'scale(-1,1)' : null">
+            <text class="fan-root-name" text-anchor="middle" dy="-2">{{ ancetresRoot.personne?.prenoms }}</text>
+            <text class="fan-root-year" text-anchor="middle" dy="14" *ngIf="ancetresRoot.personne">{{ yearLabel(ancetresRoot.personne) }}</text>
+          </g>
+
+        </g>
+      </svg>
     </div>
   </div>
 </div>

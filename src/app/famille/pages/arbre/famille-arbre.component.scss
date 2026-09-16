@@ -1,9 +1,17 @@
+/* L'hôte du composant est lui-même l'enfant flex direct de .fs-content-full :
+   sans ça, il reste en display:inline et ne remplit jamais la hauteur dispo. */
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
 .fa-page {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  min-height: 0;
   flex: 1;
+  min-height: 0;
   gap: 0;
 }
 
@@ -672,6 +680,74 @@ $pink: #EC4899;
   content: ''; position: absolute; left: 0; top: 50%; width: 22px; height: 2px;
   background: #C4B5FD; transform: translateY(-1px);
 }
+
+/* ===== VUE ÉVENTAIL (fan chart) ===== */
+.fa-eventail {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: #F5F3FF;
+  background-image: radial-gradient(circle, #DDD6FE 1px, transparent 1px);
+  background-size: 28px 28px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.fa-eventail-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.fa-eventail-svg {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  max-height: 100%;
+}
+
+.fan-wedge {
+  fill: #fff;
+  stroke: #E5E7EB;
+  stroke-width: 1.5;
+  cursor: pointer;
+  transition: fill 0.15s;
+
+  &.male   { fill: #EFF6FF; }
+  &.female { fill: #FDF2F8; }
+  &:hover  { fill: #EDE9FE; }
+
+  &.fan-empty {
+    fill: transparent;
+    stroke: #D1D5DB;
+    stroke-dasharray: 4 3;
+    cursor: default;
+    &:hover { fill: transparent; }
+  }
+}
+
+.fan-root {
+  fill: $primary;
+  stroke: #fff;
+  stroke-width: 3;
+  cursor: pointer;
+}
+
+.fan-name, .fan-year, .fan-root-name, .fan-root-year, .fan-empty-label {
+  pointer-events: none;
+  font-family: inherit;
+}
+
+.fan-name       { fill: #1F2937; font-weight: 700; }
+.fan-year       { fill: #6B7280; font-weight: 500; }
+.fan-empty-label{ fill: #9CA3AF; font-weight: 700; }
+.fan-root-name  { fill: #fff; font-weight: 700; font-size: 13px; }
+.fan-root-year  { fill: rgba(255,255,255,0.8); font-weight: 500; font-size: 11px; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 640px) {

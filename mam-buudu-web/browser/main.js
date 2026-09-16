@@ -1739,7 +1739,7 @@ var routes = [
   },
   {
     path: "famille",
-    loadChildren: () => import("./chunk-C5H4TFYH.js").then((m) => m.FamilleModule)
+    loadChildren: () => import("./chunk-3AESJNMV.js").then((m) => m.FamilleModule)
   },
   {
     path: "superadmin",
