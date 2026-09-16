@@ -5,6 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import { COUNTRIES, Country } from '../../auth/login/login.component';
 
 type LoginTab = 'email' | 'telephone' | 'username';
+type LoginMode = 'membre' | 'viewonly';
 
 @Component({
   selector: 'app-famille-login',
@@ -18,6 +19,7 @@ export class FamilleLoginComponent {
   errorMsg = '';
   showPassword = false;
 
+  loginMode: LoginMode = 'membre';
   activeTab: LoginTab = 'email';
   countries = COUNTRIES;
   selectedCountry: Country = COUNTRIES[0];
@@ -60,6 +62,11 @@ export class FamilleLoginComponent {
     this.activeTab = tab;
     this.form.patchValue({ identifiant: '' });
     this.localPhone = '';
+  }
+
+  setMode(mode: LoginMode): void {
+    this.loginMode = mode;
+    this.setTab(mode === 'viewonly' ? 'username' : 'email');
   }
 
   get tabPlaceholder(): string {

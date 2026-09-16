@@ -3,10 +3,9 @@
   <!-- ===== EN-TÊTE ===== -->
   <div class="sidebar-header">
     <div class="brand" *ngIf="isExpanded">
-      <div class="brand-icon-wrap">
-        <span class="material-icons-round">account_tree</span>
+      <div class="brand-badge">
+        <img src="images/logobg.png" alt="Mam Buudu" />
       </div>
-      <span class="brand-text">Mam Buudu</span>
     </div>
     <button class="toggle-btn" (click)="toggle()" [title]="isExpanded ? 'Réduire' : 'Agrandir'" [attr.aria-label]="isExpanded ? 'Réduire le menu' : 'Agrandir le menu'">
       <span class="material-icons-round">{{ isExpanded ? 'menu_open' : 'menu' }}</span>

@@ -3,20 +3,7 @@
   <!-- ═══ PANNEAU GAUCHE ═══ -->
   <aside class="auth-left">
     <div class="al-bg">
-      <svg class="al-tree" width="420" height="520" viewBox="0 0 420 520" fill="none">
-        <path d="M210 500 L 210 380" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>
-        <path d="M210 380 C 180 360, 150 345, 120 320" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path d="M210 380 C 240 360, 270 345, 300 320" stroke="#8B4513" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path d="M210 380 L 210 310" stroke="#8B4513" stroke-width="5" stroke-linecap="round"/>
-        <path d="M120 320 C 100 295, 88 280, 92 255" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <path d="M300 320 C 320 295, 332 280, 328 255" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <path d="M210 310 C 195 285, 195 270, 205 245" stroke="#8B4513" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <circle cx="92" cy="250" r="15" fill="#2E7D32"/>
-        <circle cx="205" cy="240" r="16" fill="#81C784"/>
-        <circle cx="328" cy="250" r="15" fill="#2E7D32"/>
-        <circle cx="120" cy="320" r="9" fill="#3B82F6" opacity="0.75"/>
-        <circle cx="300" cy="320" r="9" fill="#EC4899" opacity="0.75"/>
-      </svg>
+      <img class="al-tree" src="images/favicon-512.png" alt="" />
       <div class="al-sparks">
         <div class="al-spark" style="left:18%; animation-delay:0s"></div>
         <div class="al-spark" style="left:52%; animation-delay:1.8s"></div>
@@ -27,17 +14,7 @@
     <div class="al-content">
 
       <div class="al-brand">
-        <div class="al-brand-icon">
-          <svg width="22" height="22" viewBox="0 0 120 120" fill="none">
-            <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>
-            <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>
-            <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="7" stroke-linecap="round"/>
-            <circle cx="35" cy="35" r="11" fill="#2E7D32"/>
-            <circle cx="85" cy="35" r="11" fill="#2E7D32"/>
-            <circle cx="60" cy="24" r="11" fill="#81C784"/>
-          </svg>
-        </div>
-        <span class="al-brand-name">Mam Buudu</span>
+        <img src="images/logobg.png" class="al-logo-img" alt="Mam Buudu" />
       </div>
 
       <h1 class="al-title">Votre histoire familiale,<br/>préservée pour toujours</h1>
@@ -88,7 +65,7 @@
 
       <div class="auth-card-header">
         <div class="auth-card-icon">
-          <span class="material-icons-round">login</span>
+          <img src="images/logobg.png" alt="Mam Buudu" />
         </div>
         <h2>Connexion</h2>
         <p>Accédez à l'espace de votre famille</p>
@@ -115,10 +92,24 @@
           </span>
         </div>
 
-        <!-- Onglets identifiant -->
+        <!-- Mode de connexion -->
+        <div class="form-group">
+          <div class="mode-switch">
+            <button type="button" class="mode-btn" [class.active]="loginMode === 'membre'"
+                    (click)="setMode('membre')">
+              <span class="material-icons-round">person</span> Compte personnel
+            </button>
+            <button type="button" class="mode-btn" [class.active]="loginMode === 'viewonly'"
+                    (click)="setMode('viewonly')">
+              <span class="material-icons-round">visibility</span> Accès invité
+            </button>
+          </div>
+        </div>
+
+        <!-- Onglets identifiant (compte personnel uniquement) -->
         <div class="form-group">
           <label>Identifiant</label>
-          <div class="id-tabs">
+          <div class="id-tabs" *ngIf="loginMode === 'membre'">
             <button type="button" class="id-tab" [class.active]="activeTab === 'email'" (click)="setTab('email')">
               <span class="material-icons-round">email</span> Email
             </button>
@@ -218,11 +209,6 @@
       <div class="auth-footer">
         <p>Pas encore de compte ? <a routerLink="/auth/register">Créer un espace familial</a></p>
         <div class="footer-links">
-          <a routerLink="/famille/login" class="footer-link">
-            <span class="material-icons-round">people</span>
-            Espace famille
-          </a>
-          <span class="footer-sep">·</span>
           <a routerLink="/" class="footer-link">
             <span class="material-icons-round">home</span>
             Accueil

@@ -27,8 +27,10 @@ const PAGE_LABELS: Record<string, { label: string; icon: string }> = {
 })
 export class FamilleShellComponent implements OnInit, OnDestroy {
   sidebarOpen  = false;
+  isExpanded   = true;
   showUserMenu = false;
   currentPage  = PAGE_LABELS['/famille/home'];
+  isFullBleed  = false;
 
   /* ── Notifications ── */
   notifOpen  = false;
@@ -67,12 +69,14 @@ export class FamilleShellComponent implements OnInit, OnDestroy {
       .subscribe((e: NavigationEnd) => {
         const base = '/' + e.urlAfterRedirects.split('/').slice(1, 3).join('/');
         this.currentPage = PAGE_LABELS[base] ?? { label: 'Famille', icon: 'account_tree' };
+        this.isFullBleed = base === '/famille/arbre';
       });
   }
 
   ngOnInit(): void {
     this.loadNotifications();
-    this.notifSub = interval(5 * 60 * 1000).subscribe(() => this.loadNotifications());
+    // Recharge toutes les 5 secondes
+    this.notifSub = interval(5 * 1000).subscribe(() => this.loadNotifications());
   }
 
   ngOnDestroy(): void {
@@ -147,6 +151,10 @@ export class FamilleShellComponent implements OnInit, OnDestroy {
 
   logout(): void {
     this.auth.logout();
-    this.router.navigate(['/famille/login']);
+    this.router.navigate(['/auth/login']);
+  }
+
+  toggleExpand(): void {
+    this.isExpanded = !this.isExpanded;
   }
 }

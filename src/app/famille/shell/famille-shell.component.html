@@ -9,11 +9,16 @@
   <div class="fs-backdrop" *ngIf="sidebarOpen" (click)="sidebarOpen=false"></div>
 
   <!-- SIDEBAR -->
-  <aside class="fs-sidebar" [class.fs-sidebar-open]="sidebarOpen">
+  <aside class="fs-sidebar" [class.fs-sidebar-open]="sidebarOpen" [class.fs-expanded]="isExpanded">
     <div class="fs-sidebar-top">
       <div class="fs-brand">
-        <span class="material-icons-round">account_tree</span>
-        <span class="fs-brand-name">Mam Buudu</span>
+        <div class="fs-brand-badge" *ngIf="isExpanded">
+          <img src="images/logobg.png" alt="Mam Buudu" />
+        </div>
+        <!-- Bouton réduire/agrandir sur desktop -->
+        <button class="fs-toggle-btn" (click)="toggleExpand()" [title]="isExpanded ? 'Réduire' : 'Agrandir'" [attr.aria-label]="isExpanded ? 'Réduire le menu' : 'Agrandir le menu'">
+          <span class="material-icons-round">{{ isExpanded ? 'menu_open' : 'menu' }}</span>
+        </button>
         <!-- Bouton fermer sur mobile -->
         <button class="fs-close-btn" (click)="sidebarOpen=false">
           <span class="material-icons-round">close</span>
@@ -23,11 +28,12 @@
       <nav class="fs-nav">
         <a class="fs-nav-item" *ngFor="let item of navItems"
            [routerLink]="item.route" routerLinkActive="active"
+           [title]="!isExpanded ? item.label : ''"
            (click)="sidebarOpen=false">
           <div class="fs-nav-icon" [style.color]="item.color" [style.background]="item.color + '18'">
             <span class="material-icons-round">{{ item.icon }}</span>
           </div>
-          <span class="fs-nav-label">{{ item.label }}</span>
+          <span class="fs-nav-label" *ngIf="isExpanded">{{ item.label }}</span>
         </a>
       </nav>
     </div>
@@ -37,11 +43,11 @@
       <!-- LIEN ACCUEIL PRINCIPAL -->
       <a routerLink="/" class="fs-home-link" title="Page d'accueil" (click)="sidebarOpen=false">
         <span class="material-icons-round">language</span>
-        <span>Page d'accueil</span>
+        <span *ngIf="isExpanded">Page d'accueil</span>
       </a>
 
       <!-- SÉLECTEUR DE THÈME -->
-      <div class="fs-theme-picker">
+      <div class="fs-theme-picker" *ngIf="isExpanded">
         <span class="fs-theme-label">Thème</span>
         <div class="fs-theme-dots">
           <button
@@ -55,13 +61,13 @@
         </div>
       </div>
 
-      <a class="fs-user-card" routerLink="/famille/profil" (click)="sidebarOpen=false">
+      <a class="fs-user-card" routerLink="/famille/profil" (click)="sidebarOpen=false" [title]="!isExpanded ? (user?.prenom + ' ' + user?.nom) : ''">
         <div class="fs-user-avatar">{{ userInitiales }}</div>
-        <div class="fs-user-info">
+        <div class="fs-user-info" *ngIf="isExpanded">
           <span class="fs-user-name">{{ user?.prenom }} {{ user?.nom }}</span>
           <span class="fs-user-role">Espace Famille</span>
         </div>
-        <span class="material-icons-round fs-user-arrow">chevron_right</span>
+        <span class="material-icons-round fs-user-arrow" *ngIf="isExpanded">chevron_right</span>
       </a>
     </div>
   </aside>
@@ -157,7 +163,7 @@
       </div>
     </header>
 
-    <div class="fs-content">
+    <div class="fs-content" [class.fs-content-full]="isFullBleed">
       <router-outlet></router-outlet>
     </div>
   </main>

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { clientGuard } from '../core/client.guard';
 import { roleGuard } from '../core/role.guard';
-import { FamilleLoginComponent } from './auth/famille-login.component';
+// FamilleLoginComponent: route désactivée, connexion unifiée sur /auth/login (composant conservé, non supprimé)
 import { FamilleShellComponent } from './shell/famille-shell.component';
 import { FamilleHomeComponent } from './pages/home/famille-home.component';
 import { FamilleMembresComponent } from './pages/membres/famille-membres.component';
@@ -14,7 +14,7 @@ import { FamilleInviterComponent }  from './pages/inviter/famille-inviter.compon
 import { FamilleGalerieComponent }  from './pages/galerie/famille-galerie.component';
 
 const routes: Routes = [
-  { path: 'login', component: FamilleLoginComponent },
+  // Route 'login' désactivée : connexion unifiée sur /auth/login (composant FamilleLoginComponent conservé, non routé)
   {
     path: '',
     component: FamilleShellComponent,

@@ -1,1 +1,0 @@
-import{a as o}from"./chunk-MEYMGFI5.js";import{A as r,nb as t}from"./chunk-OYIRGY5V.js";function f(n){return()=>{let i=r(o),a=r(t),e=i.getUser()?.role;return e&&n.includes(e)?!0:(a.navigate(e==="membre"||e==="viewonly"?["/famille"]:["/app/home"]),!1)}}export{f as a};

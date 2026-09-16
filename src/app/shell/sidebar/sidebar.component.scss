@@ -34,30 +34,21 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
   overflow: hidden;
   flex: 1;
 }
 
-.brand-icon-wrap {
-  width: 32px;
-  height: 32px;
-  background: var(--sb-icon-wrap, rgba(0,0,0,0.07));
-  border-radius: var(--radius-sm);
-  display: flex;
+.brand-badge {
+  flex: 1;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  background: rgba(255, 254, 254, 0.9);
+  border-radius: 14px;
+  padding: 1px 14px;
 
-  .material-icons-round { color: var(--primary); font-size: 18px !important; }
-}
-
-.brand-text {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--sb-text-hi, #1E293B);
-  white-space: nowrap;
-  letter-spacing: -0.2px;
+  img { width: 100%; max-width: 200px; height: auto; display: block; }
 }
 
 .toggle-btn {

@@ -57,6 +57,7 @@ h1, h2, h3 { text-wrap: balance; margin: 0; }
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 800; color: $text-dark; }
+.nav-logo-img { height: clamp(70px, 5vw, 56px); width: auto; }
 .nav-links { display: flex; align-items: center; gap: 36px; }
 .nav-link { font-size: 14px; font-weight: 500; color: #4B5563; }
 .nav-link:hover { color: $text-dark; }

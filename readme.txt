@@ -45,3 +45,5 @@ que tinspire cette page à ameliorer note landing page?
 
 ================
 scrapter ce site: https://portal.c0de4hope.com/
+
+le pollin, 5min cest trop(ramene ca à 5s)

@@ -1,15 +1,7 @@
 <!-- ===== NAVBAR ===== -->
 <nav class="landing-nav">
   <a routerLink="/" class="nav-logo">
-    <svg width="26" height="26" viewBox="0 0 120 120" fill="none">
-      <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>
-      <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
-      <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
-      <circle cx="35" cy="35" r="10" fill="#2E7D32"/>
-      <circle cx="85" cy="35" r="10" fill="#2E7D32"/>
-      <circle cx="60" cy="25" r="10" fill="#81C784"/>
-    </svg>
-    <span>Mam Buudu</span>
+    <img src="images/logobg.png" class="nav-logo-img" alt="Mam Buudu" />
   </a>
   <div class="nav-links">
     <a href="#features" class="nav-link">Fonctionnalités</a>
@@ -37,7 +29,7 @@
       </div>
     </div>
     <ng-container *ngIf="!isLoggedIn">
-      <a routerLink="/famille/login" class="btn-nav-famille">
+      <a routerLink="/auth/login" [queryParams]="{mode: 'viewonly'}" class="btn-nav-famille">
         <span class="material-icons-round">people</span>
         Espace Famille
       </a>
@@ -67,14 +59,7 @@
 <div class="nav-mobile-sheet" [class.open]="navOpen">
   <div class="nms-header">
     <div class="nav-logo nms-logo">
-      <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
-        <rect x="50" y="60" width="20" height="40" fill="#8B4513" rx="2"/>
-        <path d="M60 60 L40 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
-        <path d="M60 60 L80 40" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
-        <circle cx="35" cy="35" r="10" fill="#2E7D32"/>
-        <circle cx="85" cy="35" r="10" fill="#2E7D32"/>
-        <circle cx="60" cy="25" r="10" fill="#81C784"/>
-      </svg>
+      <img src="images/favicon-192.png" width="24" height="24" alt="Mam Buudu" />
       <span>Mam Buudu</span>
     </div>
     <button class="nms-close" (click)="navOpen=false">
@@ -108,7 +93,7 @@
   </div>
   <div class="nms-actions">
     <ng-container *ngIf="!isLoggedIn">
-      <a routerLink="/famille/login" class="nms-btn nms-btn-famille" (click)="navOpen=false">
+      <a routerLink="/auth/login" [queryParams]="{mode: 'viewonly'}" class="nms-btn nms-btn-famille" (click)="navOpen=false">
         <span class="material-icons-round">people</span>Espace Famille
       </a>
       <a routerLink="/auth/login" class="nms-btn nms-btn-admin" (click)="navOpen=false">
@@ -154,7 +139,7 @@
 
       <div class="hero-entries fade-up-4">
         <ng-container *ngIf="!isLoggedIn">
-          <a routerLink="/famille/login" class="entry-card">
+          <a routerLink="/auth/login" [queryParams]="{mode: 'viewonly'}" class="entry-card">
             <div class="entry-icon famille"><span class="material-icons-round">family_restroom</span></div>
             <div class="entry-info"><strong>Espace Famille</strong><span>Pour les membres de la famille</span></div>
             <span class="material-icons-round arrow">arrow_forward</span>
@@ -446,7 +431,7 @@
       <h2>Prêt à connecter votre famille ?</h2>
       <p>Rejoignez des milliers de familles qui préservent leur histoire avec Mam Buudu.</p>
       <div class="cta-actions">
-        <a routerLink="/famille/login" class="cta-btn cta-btn-primary">
+        <a routerLink="/auth/login" [queryParams]="{mode: 'viewonly'}" class="cta-btn cta-btn-primary">
           <span class="material-icons-round">family_restroom</span>
           Accéder à mon espace famille
         </a>
@@ -474,7 +459,7 @@
       <span class="footer-by">par Pbs</span>
     </div>
     <div class="footer-links">
-      <a routerLink="/famille/login">Espace Famille</a>
+      <a routerLink="/auth/login" [queryParams]="{mode: 'viewonly'}">Espace Famille</a>
       <a routerLink="/auth/login">Administration</a>
       <a routerLink="/auth/register">Créer un espace</a>
     </div>

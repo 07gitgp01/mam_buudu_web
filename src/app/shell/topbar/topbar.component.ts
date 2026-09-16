@@ -112,8 +112,8 @@ export class TopbarComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadNotifications();
-    // Recharge toutes les 5 minutes
-    this.notifSub = interval(5 * 60 * 1000).subscribe(() => this.loadNotifications());
+    // Recharge toutes les 5 secondes
+    this.notifSub = interval(5 * 1000).subscribe(() => this.loadNotifications());
   }
 
   ngOnDestroy(): void {

@@ -155,7 +155,7 @@ export class FamilleProfilComponent implements OnInit {
 
   logout(): void {
     this.auth.logout();
-    this.router.navigate(['/famille/login']);
+    this.router.navigate(['/auth/login']);
   }
 
   async togglePush(): Promise<void> {

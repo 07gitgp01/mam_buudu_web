@@ -21,17 +21,20 @@
 .sa-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   padding: 20px 20px 16px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
 
-  .material-icons-round {
-    color: #6366F1;
-    font-size: 28px;
-  }
+.sa-logo-badge {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 8px 14px;
+
+  img { width: 100%; max-width: 150px; height: auto; display: block; }
 }
 
 .sa-nav {

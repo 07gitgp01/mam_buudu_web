@@ -32,9 +32,12 @@
 
 .al-tree {
   position: absolute;
-  right: -60px;
-  bottom: -30px;
-  opacity: 0.4;
+  top: 50%;
+  left: 50%;
+  width: min(70%, 460px);
+  height: auto;
+  opacity: 0.9;
+  animation: treeFloat 6s ease-in-out infinite;
 }
 
 .al-sparks { position: absolute; inset: 0; overflow: hidden; }
@@ -61,25 +64,15 @@
 .al-brand {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   margin-bottom: 40px;
 }
 
-.al-brand-icon {
-  width: 42px; height: 42px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.al-brand-name {
-  font-size: 21px;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.3px;
+.al-logo-img {
+  height: clamp(36px, 6vw, 56px);
+  width: auto;
+  max-width: 80%;
 }
 
 .al-title {
@@ -197,15 +190,16 @@
 }
 
 .auth-card-icon {
-  width: 52px; height: 52px;
+  width: auto; height: auto;
   background: linear-gradient(135deg, #F0FDF4, #DCFCE7);
   border: 1px solid #BBF7D0;
-  border-radius: 16px;
-  display: flex;
+  border-radius: 14px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 16px;
-  .material-icons-round { font-size: 24px !important; color: #15803D; }
+  padding: 10px 18px;
+  img { width: 150px; max-width: 100%; height: auto; display: block; }
 }
 
 .auth-card-header h2 {
@@ -341,6 +335,43 @@ select {
 }
 
 /* ── Onglets identifiant ── */
+.mode-switch {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+  background: #F1F5F9;
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.mode-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 4px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6B7280;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+  .material-icons-round { font-size: 16px !important; }
+
+  &.active {
+    background: #fff;
+    color: #15803D;
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(21,128,61,0.08);
+  }
+
+  &:not(.active):hover { background: rgba(255,255,255,0.65); color: #374151; }
+}
+
 .id-tabs {
   display: flex;
   gap: 4px;
@@ -587,6 +618,12 @@ select {
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes treeFloat {
+  0%   { transform: translate(-50%, -50%) translateY(0) scale(1); filter: drop-shadow(0 0 16px rgba(166,227,175,0.25)); opacity: 0.85; }
+  50%  { transform: translate(-50%, -50%) translateY(-16px) scale(1.04) rotate(1.5deg); filter: drop-shadow(0 0 38px rgba(166,227,175,0.55)); opacity: 1; }
+  100% { transform: translate(-50%, -50%) translateY(0) scale(1); filter: drop-shadow(0 0 16px rgba(166,227,175,0.25)); opacity: 0.85; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   :host * { animation: none !important; transition: none !important; }

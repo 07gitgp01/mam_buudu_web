@@ -40,7 +40,7 @@
 
 /* ===== SIDEBAR ===== */
 .fs-sidebar {
-  width: 260px;
+  width: 76px;
   flex-shrink: 0;
   background: var(--sb-bg, #F8FAFC);
   border-right: 1px solid var(--sb-divider, rgba(0,0,0,0.08));
@@ -48,7 +48,15 @@
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  transition: width 0.25s ease;
+
+  &.fs-expanded { width: 260px; }
 }
+
+.fs-sidebar:not(.fs-expanded) .fs-brand { justify-content: center; padding: 4px 0 28px; }
+.fs-sidebar:not(.fs-expanded) .fs-nav-item { justify-content: center; padding: 10px; }
+.fs-sidebar:not(.fs-expanded) .fs-home-link { justify-content: center; padding: 9px 0; }
+.fs-sidebar:not(.fs-expanded) .fs-user-card { justify-content: center; padding: 10px 0; }
 
 .fs-sidebar-top { flex: 1; padding: 24px 16px 16px; overflow-y: auto; }
 .fs-sidebar-bottom { padding: 16px; border-top: 1px solid var(--sb-divider, rgba(0,0,0,0.08)); }
@@ -63,11 +71,16 @@
   .material-icons-round { font-size: 24px !important; color: var(--primary); }
 }
 
-.fs-brand-name {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: -0.3px;
+.fs-brand-badge {
   flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 254, 254, 0.9);
+  border-radius: 14px;
+  padding: 1px 14px;
+
+  img { width: 100%; max-width: 200px; height: auto; display: block; }
 }
 
 /* Bouton fermer mobile — caché sur desktop */
@@ -80,6 +93,21 @@
   border-radius: 8px;
   cursor: pointer;
   color: var(--sb-text-mid, #475569);
+  &:hover { background: var(--sb-hover-bg, rgba(0,0,0,0.05)); }
+  .material-icons-round { font-size: 20px !important; }
+}
+
+/* Bouton réduire/agrandir — desktop uniquement */
+.fs-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  border: none; background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--sb-text-mid, #475569);
+  flex-shrink: 0;
   &:hover { background: var(--sb-hover-bg, rgba(0,0,0,0.05)); }
   .material-icons-round { font-size: 20px !important; }
 }
@@ -186,10 +214,15 @@
 
 .fs-content {
   padding: 32px;
-  max-width: 1200px;
-  margin: 0 auto;
   width: 100%;
   flex: 1;
+
+  /* Pages plein-cadre (ex: canvas de l'arbre) : occupent tout l'espace dispo, sans marge */
+  &.fs-content-full {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* ===== TOPBAR (desktop + mobile) — identique au mode gestionnaire ===== */
@@ -419,8 +452,9 @@
     &.fs-sidebar-open { transform: translateX(0); }
   }
 
-  /* Bouton fermer visible */
+  /* Bouton fermer visible, toggle réduire/agrandir caché (pas de mode compact sur mobile) */
   .fs-close-btn { display: flex; }
+  .fs-toggle-btn { display: none; }
 
   /* Hamburger visible sur mobile */
   .ft-btn-menu { display: flex; }
