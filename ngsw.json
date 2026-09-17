@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1789594285834,
+  "timestamp": 1789652992680,
   "index": "/mam_buudu_web/index.html",
   "assetGroups": [
     {
@@ -12,7 +12,7 @@
       },
       "urls": [
         "/mam_buudu_web/chunk-2TQHDR7D.js",
-        "/mam_buudu_web/chunk-AFNCN5KU.js",
+        "/mam_buudu_web/chunk-AHTEADWS.js",
         "/mam_buudu_web/chunk-DD4GLD5F.js",
         "/mam_buudu_web/chunk-FDERIQAA.js",
         "/mam_buudu_web/chunk-FK6H3RFT.js",
@@ -27,12 +27,12 @@
         "/mam_buudu_web/chunk-PNBD77LW.js",
         "/mam_buudu_web/chunk-PZLIE7PD.js",
         "/mam_buudu_web/chunk-QIAU756D.js",
+        "/mam_buudu_web/chunk-QUV4CD5T.js",
         "/mam_buudu_web/chunk-S6FBXLHX.js",
-        "/mam_buudu_web/chunk-T2YQMR2J.js",
         "/mam_buudu_web/chunk-XQIKVSPD.js",
         "/mam_buudu_web/favicon.ico",
         "/mam_buudu_web/index.html",
-        "/mam_buudu_web/main-IKJMH5FS.js",
+        "/mam_buudu_web/main-RE2TMB7F.js",
         "/mam_buudu_web/manifest.webmanifest",
         "/mam_buudu_web/polyfills-5CFQRCPP.js",
         "/mam_buudu_web/styles-JUBSW44I.css"
@@ -70,7 +70,7 @@
   ],
   "hashTable": {
     "/mam_buudu_web/chunk-2TQHDR7D.js": "79b84951eac11923ded31e0646f0cefa5f2e7868",
-    "/mam_buudu_web/chunk-AFNCN5KU.js": "9499698e2e663d3eaf56b3735bf800c4dead2dec",
+    "/mam_buudu_web/chunk-AHTEADWS.js": "694e70214c2718c1d9be8b4be0b9074b917381dd",
     "/mam_buudu_web/chunk-DD4GLD5F.js": "365fc7cd28066af1b11632f0b155bd436994b432",
     "/mam_buudu_web/chunk-FDERIQAA.js": "15d85ae44d58f9569a95e3112d9ea18d82c7a34d",
     "/mam_buudu_web/chunk-FK6H3RFT.js": "3c538698719f1cf34410542b8c702bc484e025ee",
@@ -85,13 +85,13 @@
     "/mam_buudu_web/chunk-PNBD77LW.js": "6cc9188c5385d872913a55172a45a25f8f6309a4",
     "/mam_buudu_web/chunk-PZLIE7PD.js": "fad29ec59235ebc2b5689f1e568840f8b12d9d9e",
     "/mam_buudu_web/chunk-QIAU756D.js": "62e81e5d879ce59676b753ad9ae99d9bcbb91cb3",
+    "/mam_buudu_web/chunk-QUV4CD5T.js": "51cbbc22420e47410088bfb0cb17d7dd895ced26",
     "/mam_buudu_web/chunk-S6FBXLHX.js": "7d7cd1cc02c20216b89fca25125d91d3a29b968a",
-    "/mam_buudu_web/chunk-T2YQMR2J.js": "5c9ce568a2c2ec0b57ee906eeb11c066a527a398",
     "/mam_buudu_web/chunk-XQIKVSPD.js": "ed3195e66e9100eb9c34285c1e3b95538fb87dc6",
     "/mam_buudu_web/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
     "/mam_buudu_web/favicon.svg": "449955da7e9b695a5367e8a0667a01ff6a58bd6c",
-    "/mam_buudu_web/index.html": "3b889530d510e34a0dffd920403d336cbe4d57aa",
-    "/mam_buudu_web/main-IKJMH5FS.js": "8690cc8e0b156975e83b3abea4e96fc6b6b74b02",
+    "/mam_buudu_web/index.html": "66eb26218b5018ee013695d3184b62aff1698602",
+    "/mam_buudu_web/main-RE2TMB7F.js": "be0513b291c142319c2027346986ccffd3224144",
     "/mam_buudu_web/manifest.webmanifest": "d88dec5a94aa9f8ab0ba9d8e5ece8812d9adbe6e",
     "/mam_buudu_web/polyfills-5CFQRCPP.js": "f2241e9a25858f895ce299d15f6f22e849e2fd72",
     "/mam_buudu_web/styles-JUBSW44I.css": "81a4046ef4c44909d410851f86e682fc05b926ed"
