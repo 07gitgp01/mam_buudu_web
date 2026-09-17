@@ -103,8 +103,17 @@ export class SuperAdminService {
   }
 
   // Broadcast
-  broadcast(titre: string, message: string): Observable<{ sent: number }> {
-    return this.http.post<{ sent: number }>(`${this.base}/broadcast`, { titre, message }, this.headers());
+  broadcast(titre: string, message: string): Observable<{ sent: number; pushSent: number }> {
+    return this.http.post<{ sent: number; pushSent: number }>(`${this.base}/broadcast`, { titre, message }, this.headers());
+  }
+
+  // Mot de passe
+  changePassword(ancienPassword: string, nouveauPassword: string): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(`${this.base}/change-password`, { ancienPassword, nouveauPassword }, this.headers());
+  }
+
+  resetUserPassword(userId: string, newPassword: string): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(`${this.base}/users/${userId}/reset-password`, { newPassword }, this.headers());
   }
 
   // Export CSV (ouvre dans un nouvel onglet avec le token dans l'URL — on passe le token en header via fetch)

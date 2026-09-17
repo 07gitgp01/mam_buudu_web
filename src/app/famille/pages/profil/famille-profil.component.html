@@ -174,7 +174,7 @@
         </div>
 
         <div class="fp-security-list" *ngIf="!showPwSection">
-          <div class="fp-security-row">
+          <div class="fp-security-row" *ngIf="user?.role !== 'viewonly'">
             <div class="fp-security-left">
               <span class="material-icons-round">lock</span>
               <div>
@@ -195,7 +195,7 @@
           </div>
         </div>
 
-        <div class="fp-form" *ngIf="showPwSection">
+        <div class="fp-form" *ngIf="showPwSection && user?.role !== 'viewonly'">
           <div class="fp-form-group">
             <label>Mot de passe actuel</label>
             <input type="password" [(ngModel)]="pwForm.ancien" placeholder="••••••••" />

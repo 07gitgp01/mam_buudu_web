@@ -115,12 +115,35 @@ export class SaSettingsComponent implements OnInit {
     this.broadcasting = true;
     this.sa.broadcast(this.broadcastTitre, this.broadcastMsg).subscribe({
       next: (r) => {
-        this.broadcastDone = `Envoyé à ${r.sent} membres`;
+        this.broadcastDone = `Envoyé à ${r.sent} membres (dont ${r.pushSent} notifications push)`;
         this.broadcastTitre = ''; this.broadcastMsg = '';
         this.broadcasting = false;
         setTimeout(() => this.broadcastDone = '', 5000);
       },
       error: (err) => { this.broadcasting = false; this.broadcastErreur = err?.error?.error ?? "Erreur lors de l'envoi."; },
+    });
+  }
+
+  // Changement de mot de passe (superadmin)
+  pwForm = { ancien: '', nouveau: '', confirm: '' };
+  pwSaving = false;
+  pwDone = '';
+  pwErreur: string | null = null;
+
+  changePassword(): void {
+    if (!this.pwForm.ancien || !this.pwForm.nouveau) { this.pwErreur = 'Tous les champs sont requis.'; return; }
+    if (this.pwForm.nouveau !== this.pwForm.confirm) { this.pwErreur = 'Les mots de passe ne correspondent pas.'; return; }
+    if (this.pwForm.nouveau.length < 8) { this.pwErreur = 'Minimum 8 caractères.'; return; }
+    this.pwErreur = null;
+    this.pwSaving = true;
+    this.sa.changePassword(this.pwForm.ancien, this.pwForm.nouveau).subscribe({
+      next: () => {
+        this.pwSaving = false;
+        this.pwDone = 'Mot de passe mis à jour avec succès.';
+        this.pwForm = { ancien: '', nouveau: '', confirm: '' };
+        setTimeout(() => this.pwDone = '', 5000);
+      },
+      error: (err) => { this.pwSaving = false; this.pwErreur = err?.error?.error ?? 'Erreur lors du changement.'; },
     });
   }
 }

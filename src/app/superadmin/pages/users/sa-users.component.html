@@ -79,6 +79,9 @@
                           [title]="u.suspended ? 'Réactiver' : 'Suspendre'">
                     <span class="material-icons-round">{{ u.suspended ? 'lock_open' : 'lock' }}</span>
                   </button>
+                  <button class="sa-act-btn" (click)="resetPassword(u)" [disabled]="actionLoading === u.id" title="Réinitialiser le mot de passe">
+                    <span class="material-icons-round">key</span>
+                  </button>
                   <button class="sa-act-btn danger" (click)="delete(u)" [disabled]="actionLoading === u.id">
                     <span class="material-icons-round">delete</span>
                   </button>

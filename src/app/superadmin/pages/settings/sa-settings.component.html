@@ -118,5 +118,34 @@
         }
       </button>
     </div>
+
+    <!-- Mon mot de passe -->
+    <div class="sa-broadcast-card">
+      <div class="sa-broadcast-header">
+        <span class="material-icons-round">lock</span>
+        <h3>Mon mot de passe</h3>
+        <span class="sa-broadcast-warn">Change ton propre mot de passe superadmin</span>
+      </div>
+      <div class="sa-broadcast-fields">
+        <input type="password" [(ngModel)]="pwForm.ancien" placeholder="Ancien mot de passe" class="sa-add-input"/>
+        <input type="password" [(ngModel)]="pwForm.nouveau" placeholder="Nouveau mot de passe (8 caractères min.)" class="sa-add-input"/>
+        <input type="password" [(ngModel)]="pwForm.confirm" placeholder="Confirmer le nouveau mot de passe" class="sa-add-input"/>
+      </div>
+      @if (pwDone) {
+        <div class="sa-broadcast-success">
+          <span class="material-icons-round">check_circle</span> {{ pwDone }}
+        </div>
+      }
+      @if (pwErreur) {
+        <div class="error-state" style="margin-bottom:12px">
+          <span class="material-icons-round">error_outline</span>{{ pwErreur }}
+        </div>
+      }
+      <button class="sa-btn-broadcast" (click)="changePassword()" [disabled]="!pwForm.ancien || !pwForm.nouveau || pwSaving">
+        @if (pwSaving) { <span class="sa-spinner-sm"></span> } @else {
+          <span class="material-icons-round">check</span> Mettre à jour
+        }
+      </button>
+    </div>
   }
 </div>

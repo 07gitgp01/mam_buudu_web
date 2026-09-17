@@ -69,6 +69,22 @@ export class SaUsersComponent implements OnInit {
     });
   }
 
+  resetPassword(u: SaUser): void {
+    const nom = `${u.prenom} ${u.nom}`;
+    const newPassword = prompt(`Nouveau mot de passe pour "${nom}" (6 caractères min.) :\n\nÀ communiquer manuellement à la personne concernée.`);
+    if (!newPassword) return;
+    if (newPassword.length < 6) {
+      this.actionErreur = 'Le nouveau mot de passe doit contenir au moins 6 caractères.';
+      return;
+    }
+    this.actionLoading = u.id;
+    this.actionErreur = null;
+    this.sa.resetUserPassword(u.id, newPassword).subscribe({
+      next: () => { this.actionLoading = ''; alert(`Mot de passe de "${nom}" réinitialisé avec succès.`); },
+      error: (err) => { this.actionLoading = ''; this.actionErreur = err?.error?.error ?? 'Erreur lors de la réinitialisation.'; },
+    });
+  }
+
   delete(u: SaUser): void {
     if (!confirm(`Supprimer "${u.prenom} ${u.nom}" ? Irréversible.`)) return;
     this.actionLoading = u.id;
