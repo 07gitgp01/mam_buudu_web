@@ -101,10 +101,7 @@ export class AdminComponent implements OnInit {
         this.plans         = plans;
         this.initEditingRoles();
         this.loading = false;
-        if (creds?.familleCode) {
-          this.qrcode.generate(creds.familleCode, { size: 150, color: '#2563eb', bgcolor: '#eff6ff' })
-            .then(url => this.viewonlyQrUrl = url);
-        }
+        if (creds) this.buildViewonlyQr(creds);
       },
       error: () => {
         this.erreur = 'Impossible de charger les données.';
@@ -273,12 +270,23 @@ export class AdminComponent implements OnInit {
     this.api.regenerateViewonlyPassword().subscribe({
       next: (creds) => {
         this.viewonlyCreds = creds;
+        this.buildViewonlyQr(creds);
         this.regeneratingViewonly = false;
         this.saveSuccess = 'Mot de passe lecture seule régénéré';
         setTimeout(() => (this.saveSuccess = ''), 3000);
       },
       error: () => { this.regeneratingViewonly = false; },
     });
+  }
+
+  // Le QR encode les identifiants lecture seule complets (pas juste le code
+  // famille), pour permettre à l'app mobile de se connecter en scannant —
+  // voir mam_buudu/lib/screens/auth/qr_scan_screen.dart côté mobile.
+  private buildViewonlyQr(creds: { familleCode: string; viewonlyUsername: string; viewonlyPassword: string }): void {
+    const params = new URLSearchParams({ code: creds.familleCode, u: creds.viewonlyUsername, p: creds.viewonlyPassword });
+    const data = `mambuudu://join?${params.toString()}`;
+    this.qrcode.generate(data, { size: 150, color: '#2563eb', bgcolor: '#eff6ff' })
+      .then(url => this.viewonlyQrUrl = url);
   }
 
   copyFamilleCode(): void {

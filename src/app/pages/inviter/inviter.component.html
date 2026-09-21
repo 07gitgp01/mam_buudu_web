@@ -17,7 +17,15 @@
   <div class="inv-card inv-card-qr">
     <div class="inv-qr-frame">
       <img [src]="qrUrl" alt="QR code famille" class="inv-qr" *ngIf="familleCode" />
-      <p class="inv-qr-caption">Scanner avec l'appareil photo</p>
+      <p class="inv-qr-caption">Scanner avec l'app mobile pour un accès lecture seule immédiat</p>
+      <p class="inv-qr-caption" style="color:#dc2626" *ngIf="viewonlyError">
+        QR lecture seule indisponible ({{ viewonlyError }}) — code brut affiché à la place
+      </p>
+      <button class="inv-icon-btn" (click)="regenerateViewonly()" [disabled]="regenerating"
+              title="Régénère le mot de passe lecture seule — invalide ce QR">
+        <span class="material-icons-round spin" *ngIf="regenerating">sync</span>
+        <span *ngIf="!regenerating">Régénérer le QR</span>
+      </button>
     </div>
     <div class="inv-or"><span>ou entrer le code</span></div>
     <div class="inv-code-section">
