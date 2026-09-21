@@ -21,13 +21,22 @@
       <p class="inv-qr-caption" style="color:#dc2626" *ngIf="viewonlyError">
         QR lecture seule indisponible ({{ viewonlyError }}) — code brut affiché à la place
       </p>
-      <button class="inv-icon-btn" (click)="regenerateViewonly()" [disabled]="regenerating"
-              title="Régénère le mot de passe lecture seule — invalide ce QR">
-        <span class="material-icons-round spin" *ngIf="regenerating">sync</span>
-        <span *ngIf="!regenerating">Régénérer le QR</span>
-      </button>
+      <div class="inv-qr-actions">
+        <button class="inv-icon-btn" (click)="downloadQr()" title="Télécharger le QR en image">
+          <span class="material-icons-round">download</span> Télécharger
+        </button>
+        <button class="inv-icon-btn" (click)="printQr()" title="Imprimer le QR">
+          <span class="material-icons-round">print</span> Imprimer
+        </button>
+        <button class="inv-icon-btn" (click)="regenerateViewonly()" [disabled]="regenerating"
+                title="Régénère le mot de passe lecture seule — invalide ce QR">
+          <span class="material-icons-round spin" *ngIf="regenerating">sync</span>
+          <span *ngIf="!regenerating">Régénérer</span>
+        </button>
+      </div>
     </div>
-    <div class="inv-or"><span>ou entrer le code</span></div>
+
+    <!-- Tous les accès : code famille + identifiants lecture seule -->
     <div class="inv-code-section">
       <p class="inv-label">Code d'accès famille</p>
       <div class="inv-code-row">
@@ -39,6 +48,25 @@
       <p class="inv-hint" [style.color]="codeCopied ? '#059669' : null">
         {{ codeCopied ? 'Code copié !' : 'À entrer dans l\'app lors de l\'inscription' }}
       </p>
+
+      <ng-container *ngIf="viewonlyUsername">
+        <p class="inv-label" style="margin-top:16px">Accès lecture seule — identifiant</p>
+        <div class="inv-code-row">
+          <span class="inv-code">{{ viewonlyUsername }}</span>
+          <button class="inv-icon-btn" (click)="copyUsername()" [title]="usernameCopied ? 'Copié !' : 'Copier'">
+            <span class="material-icons-round">{{ usernameCopied ? 'check' : 'content_copy' }}</span>
+          </button>
+        </div>
+
+        <p class="inv-label" style="margin-top:16px">Accès lecture seule — mot de passe</p>
+        <div class="inv-code-row">
+          <span class="inv-code">{{ viewonlyPassword }}</span>
+          <button class="inv-icon-btn" (click)="copyPassword()" [title]="passwordCopied ? 'Copié !' : 'Copier'">
+            <span class="material-icons-round">{{ passwordCopied ? 'check' : 'content_copy' }}</span>
+          </button>
+        </div>
+        <p class="inv-hint">Ces identifiants donnent un accès en lecture seule à tout l'arbre familial.</p>
+      </ng-container>
     </div>
   </div>
 
@@ -73,6 +101,23 @@
       <span class="material-icons-round">help_outline</span>
       Comment rejoindre ?
     </h3>
+    <p class="inv-card-sub" style="margin-top:-8px;margin-bottom:12px;">
+      <strong>Option rapide</strong> — consulter l'arbre sans créer de compte
+    </p>
+    <ol class="inv-steps">
+      <li class="inv-step">
+        <div class="inv-step-num">1</div>
+        <div><strong>Téléchargez</strong> l'application Mam Buudu</div>
+      </li>
+      <li class="inv-step">
+        <div class="inv-step-num">2</div>
+        <div><strong>Scannez</strong> le QR code ci-contre — accès immédiat en lecture seule</div>
+      </li>
+    </ol>
+
+    <p class="inv-card-sub" style="margin-bottom:12px;">
+      <strong>Devenir membre</strong> — pour modifier l'arbre, ajouter des photos, etc.
+    </p>
     <ol class="inv-steps">
       <li class="inv-step">
         <div class="inv-step-num">1</div>

@@ -46,6 +46,16 @@
 
 .inv-qr-caption { font-size: 11px; color: var(--text-muted); text-align: center; margin: 0; }
 
+.inv-qr-actions {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; width: 100%;
+}
+
+.inv-qr-actions .inv-icon-btn {
+  width: auto; height: auto; padding: 6px 12px; gap: 6px;
+  font-size: 12px; font-weight: 600; color: var(--primary);
+  .material-icons-round { font-size: 15px !important; }
+}
+
 .inv-or {
   display: flex; align-items: center; gap: 10px; width: 100%;
   font-size: 12px; color: var(--text-muted);
